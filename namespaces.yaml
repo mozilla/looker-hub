@@ -206,10 +206,6 @@ ads:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_native_desktop_ad_metrics
-    metric_definitions_native_desktop_ad_metrics_by_position:
-      type: metric_definitions_explore
-      views:
-        base_view: metric_definitions_native_desktop_ad_metrics_by_position
   glean_app: false
   owners:
   - cmorales@mozilla.com
@@ -247,8 +243,6 @@ ads:
     metric_definitions_consolidated_ads_spocs:
       type: metric_definitions_view
     metric_definitions_native_desktop_ad_metrics:
-      type: metric_definitions_view
-    metric_definitions_native_desktop_ad_metrics_by_position:
       type: metric_definitions_view
     tiles_addressable_inventory_hourly:
       tables:
@@ -480,56 +474,6 @@ contextual_services_private:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.topsites_impression
       type: ping_view
-debug_ping_view:
-  explores:
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
-  glean_app: true
-  owners:
-  - glean-team@mozilla.com
-  pretty_name: Glean Debug Ping Viewer
-  spoke: looker-spoke-default
-  views:
-    deletion_request:
-      tables:
-      - table: mozdata.debug_ping_view.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.debug_ping_view.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.debug_ping_view.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_stream_table:
-      tables:
-      - channel: null
-        table: mozdata.debug_ping_view.events_stream
-      type: table_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.debug_ping_view.events
-      type: table_view
-    events_unnested_table:
-      tables:
-      - channel: null
-        table: mozdata.debug_ping_view.events_unnested
-      type: table_view
 device_manufacturer_partnerships:
   glean_app: false
   owners:
@@ -630,20 +574,40 @@ experimentation:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_cumulative_population_estimate
       type: table_view
+    experiment_enrollment_cumulative_population_estimate_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_cumulative_population_estimate_v2
+      type: table_view
     experiment_enrollment_daily_active_population:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_daily_active_population
+      type: table_view
+    experiment_enrollment_daily_active_population_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_daily_active_population_v2
       type: table_view
     experiment_enrollment_other_events_overall:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_other_events_overall
       type: table_view
+    experiment_enrollment_other_events_overall_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_other_events_overall_v2
+      type: table_view
     experiment_enrollment_overall:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_overall
+      type: table_view
+    experiment_enrollment_overall_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_overall_v2
       type: table_view
     experiment_search_aggregates_live:
       tables:
@@ -654,6 +618,11 @@ experimentation:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_unenrollment_overall
+      type: table_view
+    experiment_unenrollment_overall_v2:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_unenrollment_overall_v2
       type: table_view
     experimenter_experiments:
       tables:
@@ -675,18 +644,8 @@ experimentation:
       - channel: release
         table: moz-fx-data-experiments.monitoring.task_monitoring_logs
       type: table_view
-fakespot:
-  glean_app: false
-  owners:
-  - wstuckey@mozilla.com
-  pretty_name: Fakespot
-  spoke: looker-spoke-default
 fenix:
   explores:
-    activation:
-      type: glean_ping_explore
-      views:
-        base_view: activation
     addresses_sync:
       type: glean_ping_explore
       views:
@@ -699,34 +658,14 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: baseline
-    baseline_clients_daily:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_daily
-    baseline_clients_first_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_first_seen
-    baseline_clients_last_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_last_seen
     bookmarks_sync:
       type: glean_ping_explore
       views:
         base_view: bookmarks_sync
-    bounce_tracking_protection:
-      type: glean_ping_explore
-      views:
-        base_view: bounce_tracking_protection
     broken_site_report:
       type: glean_ping_explore
       views:
         base_view: broken_site_report
-    captcha_detection:
-      type: glean_ping_explore
-      views:
-        base_view: captcha_detection
     client_counts:
       type: client_counts_explore
       views:
@@ -736,10 +675,6 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: client_deduplication
-    cookie_banner_report_site:
-      type: glean_ping_explore
-      views:
-        base_view: cookie_banner_report_site
     crash:
       type: glean_ping_explore
       views:
@@ -748,10 +683,6 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: creditcards_sync
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -785,10 +716,6 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: first_session
-    fog_validation:
-      type: glean_ping_explore
-      views:
-        base_view: fog_validation
     font_list:
       type: glean_ping_explore
       views:
@@ -805,10 +732,6 @@ fenix:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    hang_report:
-      type: glean_ping_explore
-      views:
-        base_view: hang_report
     history_sync:
       type: glean_ping_explore
       views:
@@ -889,10 +812,6 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: onboarding_opt_out
-    pageload:
-      type: glean_ping_explore
-      views:
-        base_view: pageload
     play_store_attribution:
       type: glean_ping_explore
       views:
@@ -917,10 +836,6 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: topsites_impression
-    usage_deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -955,19 +870,6 @@ fenix:
   pretty_name: Fenix
   spoke: looker-spoke-default
   views:
-    activation:
-      tables:
-      - channel: release
-        table: mozdata.fenix.activation
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.activation
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.activation
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.activation
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.activation
-      type: glean_ping_view
     activation_table:
       tables:
       - channel: release
@@ -1079,11 +981,6 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.baseline
       type: glean_ping_view
-    baseline_clients_daily:
-      tables:
-      - channel: release
-        table: mozdata.fenix.baseline_clients_daily
-      type: glean_ping_view
     baseline_clients_daily_table:
       tables:
       - channel: release
@@ -1097,11 +994,6 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.baseline_clients_daily
       type: table_view
-    baseline_clients_first_seen:
-      tables:
-      - channel: release
-        table: mozdata.fenix.baseline_clients_first_seen
-      type: glean_ping_view
     baseline_clients_first_seen_table:
       tables:
       - channel: release
@@ -1115,11 +1007,6 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.baseline_clients_first_seen
       type: table_view
-    baseline_clients_last_seen:
-      tables:
-      - channel: release
-        table: mozdata.fenix.baseline_clients_last_seen
-      type: glean_ping_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -1172,19 +1059,6 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.bookmarks_sync
       type: table_view
-    bounce_tracking_protection:
-      tables:
-      - channel: release
-        table: mozdata.fenix.bounce_tracking_protection
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.bounce_tracking_protection
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.bounce_tracking_protection
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.bounce_tracking_protection
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.bounce_tracking_protection
-      type: glean_ping_view
     bounce_tracking_protection_table:
       tables:
       - channel: release
@@ -1224,19 +1098,6 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.broken_site_report
       type: table_view
-    captcha_detection:
-      tables:
-      - channel: release
-        table: mozdata.fenix.captcha_detection
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.captcha_detection
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.captcha_detection
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.captcha_detection
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.captcha_detection
-      type: glean_ping_view
     captcha_detection_table:
       tables:
       - channel: release
@@ -1302,19 +1163,6 @@ fenix:
       - channel: release
         table: mozdata.fenix.composite_active_users
       type: table_view
-    cookie_banner_report_site:
-      tables:
-      - channel: release
-        table: mozdata.fenix.cookie_banner_report_site
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.cookie_banner_report_site
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.cookie_banner_report_site
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.cookie_banner_report_site
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.cookie_banner_report_site
-      type: glean_ping_view
     cookie_banner_report_site_table:
       tables:
       - channel: release
@@ -1380,19 +1228,6 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.creditcards_sync
       type: table_view
-    dau_reporting:
-      tables:
-      - channel: release
-        table: mozdata.fenix.dau_reporting
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.dau_reporting
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.dau_reporting
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.dau_reporting
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: release
@@ -1556,19 +1391,6 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.first_session
       type: table_view
-    fog_validation:
-      tables:
-      - channel: release
-        table: mozdata.fenix.fog_validation
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.fog_validation
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.fog_validation
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.fog_validation
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.fog_validation
-      type: glean_ping_view
     fog_validation_table:
       tables:
       - channel: release
@@ -1662,19 +1484,6 @@ fenix:
       tables:
       - table: mozdata.fenix.baseline_clients_last_seen
       type: growth_accounting_view
-    hang_report:
-      tables:
-      - channel: release
-        table: mozdata.fenix.hang_report
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.hang_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.hang_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.hang_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.hang_report
-      type: glean_ping_view
     hang_report_table:
       tables:
       - channel: release
@@ -1997,19 +1806,6 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.onboarding_opt_out
       type: table_view
-    pageload:
-      tables:
-      - channel: release
-        table: mozdata.fenix.pageload
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.pageload
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.pageload
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.pageload
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.pageload
-      type: glean_ping_view
     pageload_table:
       tables:
       - channel: release
@@ -2214,19 +2010,6 @@ fenix:
       - channel: release
         table: mozdata.fenix.tos_rollout_enrollments
       type: table_view
-    usage_deletion_request:
-      tables:
-      - channel: release
-        table: mozdata.fenix.usage_deletion_request
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.usage_deletion_request
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.usage_deletion_request
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.usage_deletion_request
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.usage_deletion_request
-      type: glean_ping_view
     usage_deletion_request_table:
       tables:
       - channel: release
@@ -2700,150 +2483,16 @@ firefox_accounts:
       tables:
       - table: moz-fx-data-shared-prod.firefox_accounts_derived.registration_funnels_legacy_events_v1
       type: table_view
-firefox_crashreporter:
-  explores:
-    baseline:
-      type: glean_ping_explore
-      views:
-        base_view: baseline
-    client_counts:
-      type: client_counts_explore
-      views:
-        base_view: client_counts
-        extended_view: baseline_clients_daily_table
-    crash:
-      type: glean_ping_explore
-      views:
-        base_view: crash
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
-    metrics:
-      type: glean_ping_explore
-      views:
-        base_view: metrics
-  glean_app: true
-  owners:
-  - afranchuk@mozilla.com
-  pretty_name: Firefox Crash Reporter
-  spoke: looker-spoke-default
-  views:
-    baseline:
-      tables:
-      - table: mozdata.firefox_crashreporter.baseline
-      type: glean_ping_view
-    baseline_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.baseline_clients_daily
-      type: table_view
-    baseline_clients_first_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.baseline_clients_first_seen
-      type: table_view
-    baseline_clients_last_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.baseline_clients_last_seen
-      type: table_view
-    baseline_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.baseline
-      type: table_view
-    client_counts:
-      tables:
-      - table: mozdata.firefox_crashreporter.baseline_clients_daily
-      type: client_counts_view
-    crash:
-      tables:
-      - table: mozdata.firefox_crashreporter.crash
-      type: glean_ping_view
-    crash_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.crash
-      type: table_view
-    deletion_request:
-      tables:
-      - table: mozdata.firefox_crashreporter.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.firefox_crashreporter.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_stream_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.events_stream
-      type: table_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.events
-      type: table_view
-    events_unnested_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.events_unnested
-      type: table_view
-    growth_accounting:
-      tables:
-      - table: mozdata.firefox_crashreporter.baseline_clients_last_seen
-      type: growth_accounting_view
-    metrics:
-      tables:
-      - table: mozdata.firefox_crashreporter.metrics
-      type: glean_ping_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.metrics_clients_daily
-      type: table_view
-    metrics_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_crashreporter.metrics
-      type: table_view
 firefox_desktop:
   explores:
     baseline:
       type: glean_ping_explore
       views:
         base_view: baseline
-    bounce_tracking_protection:
-      type: glean_ping_explore
-      views:
-        base_view: bounce_tracking_protection
     broken_site_report:
       type: glean_ping_explore
       views:
         base_view: broken_site_report
-    captcha_detection:
-      type: glean_ping_explore
-      views:
-        base_view: captcha_detection
     client_counts:
       type: client_counts_explore
       views:
@@ -2857,10 +2506,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: crash
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     default_browser:
       type: ping_explore
       views:
@@ -2886,10 +2531,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: first_startup
-    fog_validation:
-      type: glean_ping_explore
-      views:
-        base_view: fog_validation
     funnel_analysis:
       type: funnel_analysis_explore
       views:
@@ -2907,10 +2548,6 @@ firefox_desktop:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    hang_report:
-      type: glean_ping_explore
-      views:
-        base_view: hang_report
     heartbeat:
       type: glean_ping_explore
       views:
@@ -3019,10 +2656,6 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_sponsored_tiles_clients_daily
-    metric_definitions_urlbar_events:
-      type: metric_definitions_explore
-      views:
-        base_view: metric_definitions_urlbar_events
     metrics:
       type: glean_ping_explore
       views:
@@ -3051,10 +2684,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: onboarding_opt_out
-    pageload:
-      type: glean_ping_explore
-      views:
-        base_view: pageload
     pocket_button:
       type: glean_ping_explore
       views:
@@ -3111,10 +2740,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: urlbar_potential_exposure
-    usage_deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -3177,10 +2802,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.baseline
       type: table_view
-    bounce_tracking_protection:
-      tables:
-      - table: mozdata.firefox_desktop.bounce_tracking_protection
-      type: glean_ping_view
     bounce_tracking_protection_table:
       tables:
       - channel: null
@@ -3195,10 +2816,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.broken_site_report
       type: table_view
-    captcha_detection:
-      tables:
-      - table: mozdata.firefox_desktop.captcha_detection
-      type: glean_ping_view
     captcha_detection_table:
       tables:
       - channel: null
@@ -3262,10 +2879,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.crash
       type: table_view
-    dau_reporting:
-      tables:
-      - table: mozdata.firefox_desktop.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: null
@@ -3382,10 +2995,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.first_startup
       type: table_view
-    fog_validation:
-      tables:
-      - table: mozdata.firefox_desktop.fog_validation
-      type: glean_ping_view
     fog_validation_table:
       tables:
       - channel: null
@@ -3418,10 +3027,6 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_last_seen
       type: growth_accounting_view
-    hang_report:
-      tables:
-      - table: mozdata.firefox_desktop.hang_report
-      type: glean_ping_view
     hang_report_table:
       tables:
       - channel: null
@@ -3504,8 +3109,6 @@ firefox_desktop:
     metric_definitions_site_breakage_events:
       type: metric_definitions_view
     metric_definitions_sponsored_tiles_clients_daily:
-      type: metric_definitions_view
-    metric_definitions_urlbar_events:
       type: metric_definitions_view
     metrics:
       tables:
@@ -3613,10 +3216,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.onboarding
       type: table_view
-    pageload:
-      tables:
-      - table: mozdata.firefox_desktop.pageload
-      type: glean_ping_view
     pageload_1pct_table:
       tables:
       - channel: null
@@ -3808,10 +3407,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.urlbar_potential_exposure
       type: table_view
-    usage_deletion_request:
-      tables:
-      - table: mozdata.firefox_desktop.usage_deletion_request
-      type: glean_ping_view
     usage_deletion_request_table:
       tables:
       - channel: null
@@ -3869,138 +3464,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.user_characteristics
       type: table_view
-firefox_desktop_background_defaultagent:
-  explores:
-    baseline:
-      type: glean_ping_explore
-      views:
-        base_view: baseline
-    client_counts:
-      type: client_counts_explore
-      views:
-        base_view: client_counts
-        extended_view: baseline_clients_daily_table
-    default_agent:
-      type: glean_ping_explore
-      views:
-        base_view: default_agent
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
-    metrics:
-      type: glean_ping_explore
-      views:
-        base_view: metrics
-  glean_app: true
-  owners:
-  - nrishel@mozilla.com
-  - install-update@mozilla.com
-  pretty_name: Firefox Desktop Default Agent Task
-  spoke: looker-spoke-default
-  views:
-    baseline:
-      tables:
-      - table: mozdata.firefox_desktop_background_defaultagent.baseline
-      type: glean_ping_view
-    baseline_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_daily
-      type: table_view
-    baseline_clients_first_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_first_seen
-      type: table_view
-    baseline_clients_last_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_last_seen
-      type: table_view
-    baseline_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.baseline
-      type: table_view
-    client_counts:
-      tables:
-      - table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_daily
-      type: client_counts_view
-    default_agent:
-      tables:
-      - table: mozdata.firefox_desktop_background_defaultagent.default_agent
-      type: glean_ping_view
-    default_agent_agg_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.default_agent_agg
-      type: table_view
-    default_agent_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.default_agent
-      type: table_view
-    deletion_request:
-      tables:
-      - table: mozdata.firefox_desktop_background_defaultagent.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.firefox_desktop_background_defaultagent.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_stream_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.events_stream
-      type: table_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.events
-      type: table_view
-    events_unnested_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.events_unnested
-      type: table_view
-    growth_accounting:
-      tables:
-      - table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_last_seen
-      type: growth_accounting_view
-    metrics:
-      tables:
-      - table: mozdata.firefox_desktop_background_defaultagent.metrics
-      type: glean_ping_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.metrics_clients_daily
-      type: table_view
-    metrics_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_defaultagent.metrics
-      type: table_view
 firefox_desktop_background_update:
   explores:
     background_update:
@@ -4011,18 +3474,10 @@ firefox_desktop_background_update:
       type: glean_ping_explore
       views:
         base_view: baseline
-    bounce_tracking_protection:
-      type: glean_ping_explore
-      views:
-        base_view: bounce_tracking_protection
     broken_site_report:
       type: glean_ping_explore
       views:
         base_view: broken_site_report
-    captcha_detection:
-      type: glean_ping_explore
-      views:
-        base_view: captcha_detection
     client_counts:
       type: client_counts_explore
       views:
@@ -4032,10 +3487,6 @@ firefox_desktop_background_update:
       type: glean_ping_explore
       views:
         base_view: crash
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -4049,26 +3500,14 @@ firefox_desktop_background_update:
       type: table_explore
       views:
         base_view: events_stream_table
-    fog_validation:
-      type: glean_ping_explore
-      views:
-        base_view: fog_validation
     growth_accounting:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    hang_report:
-      type: glean_ping_explore
-      views:
-        base_view: hang_report
     metrics:
       type: glean_ping_explore
       views:
         base_view: metrics
-    pageload:
-      type: glean_ping_explore
-      views:
-        base_view: pageload
     update:
       type: glean_ping_explore
       views:
@@ -4120,10 +3559,6 @@ firefox_desktop_background_update:
       - channel: null
         table: mozdata.firefox_desktop_background_update.baseline
       type: table_view
-    bounce_tracking_protection:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.bounce_tracking_protection
-      type: glean_ping_view
     bounce_tracking_protection_table:
       tables:
       - channel: null
@@ -4138,10 +3573,6 @@ firefox_desktop_background_update:
       - channel: null
         table: mozdata.firefox_desktop_background_update.broken_site_report
       type: table_view
-    captcha_detection:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.captcha_detection
-      type: glean_ping_view
     captcha_detection_table:
       tables:
       - channel: null
@@ -4165,10 +3596,6 @@ firefox_desktop_background_update:
       - channel: null
         table: mozdata.firefox_desktop_background_update.crash
       type: table_view
-    dau_reporting:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: null
@@ -4203,10 +3630,6 @@ firefox_desktop_background_update:
       - channel: null
         table: mozdata.firefox_desktop_background_update.events_unnested
       type: table_view
-    fog_validation:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.fog_validation
-      type: glean_ping_view
     fog_validation_table:
       tables:
       - channel: null
@@ -4216,10 +3639,6 @@ firefox_desktop_background_update:
       tables:
       - table: mozdata.firefox_desktop_background_update.baseline_clients_last_seen
       type: growth_accounting_view
-    hang_report:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.hang_report
-      type: glean_ping_view
     hang_report_table:
       tables:
       - channel: null
@@ -4244,10 +3663,6 @@ firefox_desktop_background_update:
       - channel: null
         table: mozdata.firefox_desktop_background_update.metrics
       type: table_view
-    pageload:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.pageload
-      type: glean_ping_view
     pageload_table:
       tables:
       - channel: null
@@ -4286,18 +3701,6 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: baseline
-    baseline_clients_daily:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_daily
-    baseline_clients_first_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_first_seen
-    baseline_clients_last_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_last_seen
     bookmarks_sync:
       type: glean_ping_explore
       views:
@@ -4315,10 +3718,6 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: creditcards_sync
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -4480,10 +3879,6 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: topsites_impression
-    usage_deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -4568,11 +3963,6 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.baseline
       type: glean_ping_view
-    baseline_clients_daily:
-      tables:
-      - channel: release
-        table: mozdata.firefox_ios.baseline_clients_daily
-      type: glean_ping_view
     baseline_clients_daily_table:
       tables:
       - channel: release
@@ -4582,11 +3972,6 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.baseline_clients_daily
       type: table_view
-    baseline_clients_first_seen:
-      tables:
-      - channel: release
-        table: mozdata.firefox_ios.baseline_clients_first_seen
-      type: glean_ping_view
     baseline_clients_first_seen_table:
       tables:
       - channel: release
@@ -4596,11 +3981,6 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.baseline_clients_first_seen
       type: table_view
-    baseline_clients_last_seen:
-      tables:
-      - channel: release
-        table: mozdata.firefox_ios.baseline_clients_last_seen
-      type: glean_ping_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -4693,15 +4073,6 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.creditcards_sync
       type: table_view
-    dau_reporting:
-      tables:
-      - channel: release
-        table: mozdata.firefox_ios.dau_reporting
-      - channel: beta
-        table: mozdata.org_mozilla_ios_firefoxbeta.dau_reporting
-      - channel: nightly
-        table: mozdata.org_mozilla_ios_fennec.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: release
@@ -5256,15 +4627,6 @@ firefox_ios:
       - channel: release
         table: mozdata.firefox_ios.tos_rollout_enrollments
       type: table_view
-    usage_deletion_request:
-      tables:
-      - channel: release
-        table: mozdata.firefox_ios.usage_deletion_request
-      - channel: beta
-        table: mozdata.org_mozilla_ios_firefoxbeta.usage_deletion_request
-      - channel: nightly
-        table: mozdata.org_mozilla_ios_fennec.usage_deletion_request
-      type: glean_ping_view
     usage_deletion_request_table:
       tables:
       - channel: release
@@ -5400,55 +4762,23 @@ fivetran:
       type: table_view
 focus_android:
   explores:
-    activation:
-      type: glean_ping_explore
-      views:
-        base_view: activation
     baseline:
       type: glean_ping_explore
       views:
         base_view: baseline
-    baseline_clients_daily:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_daily
-    baseline_clients_first_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_first_seen
-    baseline_clients_last_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_last_seen
-    bounce_tracking_protection:
-      type: glean_ping_explore
-      views:
-        base_view: bounce_tracking_protection
     broken_site_report:
       type: glean_ping_explore
       views:
         base_view: broken_site_report
-    captcha_detection:
-      type: glean_ping_explore
-      views:
-        base_view: captcha_detection
     client_counts:
       type: client_counts_explore
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
-    cookie_banner_report_site:
-      type: glean_ping_explore
-      views:
-        base_view: cookie_banner_report_site
     crash:
       type: glean_ping_explore
       views:
         base_view: crash
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -5470,18 +4800,10 @@ focus_android:
       type: glean_ping_explore
       views:
         base_view: events_unnested
-    fog_validation:
-      type: glean_ping_explore
-      views:
-        base_view: fog_validation
     growth_accounting:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    hang_report:
-      type: glean_ping_explore
-      views:
-        base_view: hang_report
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -5518,14 +4840,6 @@ focus_android:
       type: glean_ping_explore
       views:
         base_view: metrics
-    pageload:
-      type: glean_ping_explore
-      views:
-        base_view: pageload
-    usage_deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -5557,15 +4871,6 @@ focus_android:
   pretty_name: Focus Android
   spoke: looker-spoke-default
   views:
-    activation:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.activation
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.activation
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.activation
-      type: glean_ping_view
     activation_table:
       tables:
       - channel: release
@@ -5599,11 +4904,6 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.baseline
       type: glean_ping_view
-    baseline_clients_daily:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.baseline_clients_daily
-      type: glean_ping_view
     baseline_clients_daily_table:
       tables:
       - channel: release
@@ -5613,11 +4913,6 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.baseline_clients_daily
       type: table_view
-    baseline_clients_first_seen:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.baseline_clients_first_seen
-      type: glean_ping_view
     baseline_clients_first_seen_table:
       tables:
       - channel: release
@@ -5627,11 +4922,6 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.baseline_clients_first_seen
       type: table_view
-    baseline_clients_last_seen:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.baseline_clients_last_seen
-      type: glean_ping_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -5650,15 +4940,6 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.baseline
       type: table_view
-    bounce_tracking_protection:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.bounce_tracking_protection
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.bounce_tracking_protection
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.bounce_tracking_protection
-      type: glean_ping_view
     bounce_tracking_protection_table:
       tables:
       - channel: release
@@ -5686,15 +4967,6 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.broken_site_report
       type: table_view
-    captcha_detection:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.captcha_detection
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.captcha_detection
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.captcha_detection
-      type: glean_ping_view
     captcha_detection_table:
       tables:
       - channel: release
@@ -5723,15 +4995,6 @@ focus_android:
       - channel: release
         table: mozdata.focus_android.composite_active_users
       type: table_view
-    cookie_banner_report_site:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.cookie_banner_report_site
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.cookie_banner_report_site
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.cookie_banner_report_site
-      type: glean_ping_view
     cookie_banner_report_site_table:
       tables:
       - channel: release
@@ -5759,15 +5022,6 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.crash
       type: table_view
-    dau_reporting:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.dau_reporting
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.dau_reporting
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: release
@@ -5843,15 +5097,6 @@ focus_android:
       - channel: release
         table: mozdata.focus_android.events_unnested
       type: table_view
-    fog_validation:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.fog_validation
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.fog_validation
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.fog_validation
-      type: glean_ping_view
     fog_validation_table:
       tables:
       - channel: release
@@ -5865,15 +5110,6 @@ focus_android:
       tables:
       - table: mozdata.focus_android.baseline_clients_last_seen
       type: growth_accounting_view
-    hang_report:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.hang_report
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.hang_report
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.hang_report
-      type: glean_ping_view
     hang_report_table:
       tables:
       - channel: release
@@ -5947,15 +5183,6 @@ focus_android:
       - channel: release
         table: mozdata.focus_android.new_profiles
       type: table_view
-    pageload:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.pageload
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.pageload
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.pageload
-      type: glean_ping_view
     pageload_table:
       tables:
       - channel: release
@@ -5975,15 +5202,6 @@ focus_android:
       - channel: release
         table: mozdata.focus_android.retention
       type: table_view
-    usage_deletion_request:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.usage_deletion_request
-      - channel: beta
-        table: mozdata.org_mozilla_focus_beta.usage_deletion_request
-      - channel: nightly
-        table: mozdata.org_mozilla_focus_nightly.usage_deletion_request
-      type: glean_ping_view
     usage_deletion_request_table:
       tables:
       - channel: release
@@ -6110,10 +5328,6 @@ focus_ios:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -6162,10 +5376,6 @@ focus_ios:
       type: glean_ping_explore
       views:
         base_view: metrics
-    usage_deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -6205,10 +5415,6 @@ focus_ios:
       tables:
       - table: mozdata.org_mozilla_ios_focus.baseline_clients_daily
       type: client_counts_view
-    dau_reporting:
-      tables:
-      - table: mozdata.org_mozilla_ios_focus.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: null
@@ -6262,10 +5468,6 @@ focus_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_focus.metrics
       type: table_view
-    usage_deletion_request:
-      tables:
-      - table: mozdata.org_mozilla_ios_focus.usage_deletion_request
-      type: glean_ping_view
     usage_deletion_request_table:
       tables:
       - channel: null
@@ -6532,43 +5734,23 @@ jira_service_desk:
       type: table_view
 klar_android:
   explores:
-    activation:
-      type: glean_ping_explore
-      views:
-        base_view: activation
     baseline:
       type: glean_ping_explore
       views:
         base_view: baseline
-    bounce_tracking_protection:
-      type: glean_ping_explore
-      views:
-        base_view: bounce_tracking_protection
     broken_site_report:
       type: glean_ping_explore
       views:
         base_view: broken_site_report
-    captcha_detection:
-      type: glean_ping_explore
-      views:
-        base_view: captcha_detection
     client_counts:
       type: client_counts_explore
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
-    cookie_banner_report_site:
-      type: glean_ping_explore
-      views:
-        base_view: cookie_banner_report_site
     crash:
       type: glean_ping_explore
       views:
         base_view: crash
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -6577,18 +5759,10 @@ klar_android:
       type: table_explore
       views:
         base_view: events_stream_table
-    fog_validation:
-      type: glean_ping_explore
-      views:
-        base_view: fog_validation
     growth_accounting:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    hang_report:
-      type: glean_ping_explore
-      views:
-        base_view: hang_report
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -6617,14 +5791,6 @@ klar_android:
       type: glean_ping_explore
       views:
         base_view: metrics
-    pageload:
-      type: glean_ping_explore
-      views:
-        base_view: pageload
-    usage_deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -6644,10 +5810,6 @@ klar_android:
   pretty_name: Klar Android
   spoke: looker-spoke-default
   views:
-    activation:
-      tables:
-      - table: mozdata.org_mozilla_klar.activation
-      type: glean_ping_view
     activation_table:
       tables:
       - channel: null
@@ -6677,10 +5839,6 @@ klar_android:
       - channel: null
         table: mozdata.org_mozilla_klar.baseline
       type: table_view
-    bounce_tracking_protection:
-      tables:
-      - table: mozdata.org_mozilla_klar.bounce_tracking_protection
-      type: glean_ping_view
     bounce_tracking_protection_table:
       tables:
       - channel: null
@@ -6695,10 +5853,6 @@ klar_android:
       - channel: null
         table: mozdata.org_mozilla_klar.broken_site_report
       type: table_view
-    captcha_detection:
-      tables:
-      - table: mozdata.org_mozilla_klar.captcha_detection
-      type: glean_ping_view
     captcha_detection_table:
       tables:
       - channel: null
@@ -6708,10 +5862,6 @@ klar_android:
       tables:
       - table: mozdata.org_mozilla_klar.baseline_clients_daily
       type: client_counts_view
-    cookie_banner_report_site:
-      tables:
-      - table: mozdata.org_mozilla_klar.cookie_banner_report_site
-      type: glean_ping_view
     cookie_banner_report_site_table:
       tables:
       - channel: null
@@ -6726,10 +5876,6 @@ klar_android:
       - channel: null
         table: mozdata.org_mozilla_klar.crash
       type: table_view
-    dau_reporting:
-      tables:
-      - table: mozdata.org_mozilla_klar.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: null
@@ -6754,10 +5900,6 @@ klar_android:
       - channel: null
         table: mozdata.org_mozilla_klar.events
       type: table_view
-    fog_validation:
-      tables:
-      - table: mozdata.org_mozilla_klar.fog_validation
-      type: glean_ping_view
     fog_validation_table:
       tables:
       - channel: null
@@ -6767,10 +5909,6 @@ klar_android:
       tables:
       - table: mozdata.org_mozilla_klar.baseline_clients_last_seen
       type: growth_accounting_view
-    hang_report:
-      tables:
-      - table: mozdata.org_mozilla_klar.hang_report
-      type: glean_ping_view
     hang_report_table:
       tables:
       - channel: null
@@ -6797,19 +5935,11 @@ klar_android:
       - channel: null
         table: mozdata.org_mozilla_klar.metrics
       type: table_view
-    pageload:
-      tables:
-      - table: mozdata.org_mozilla_klar.pageload
-      type: glean_ping_view
     pageload_table:
       tables:
       - channel: null
         table: mozdata.org_mozilla_klar.pageload
       type: table_view
-    usage_deletion_request:
-      tables:
-      - table: mozdata.org_mozilla_klar.usage_deletion_request
-      type: glean_ping_view
     usage_deletion_request_table:
       tables:
       - channel: null
@@ -6853,10 +5983,6 @@ klar_ios:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -6897,10 +6023,6 @@ klar_ios:
       type: glean_ping_explore
       views:
         base_view: metrics
-    usage_deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: usage_deletion_request
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -6940,10 +6062,6 @@ klar_ios:
       tables:
       - table: mozdata.org_mozilla_ios_klar.baseline_clients_daily
       type: client_counts_view
-    dau_reporting:
-      tables:
-      - table: mozdata.org_mozilla_ios_klar.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: null
@@ -6993,10 +6111,6 @@ klar_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_klar.metrics
       type: table_view
-    usage_deletion_request:
-      tables:
-      - table: mozdata.org_mozilla_ios_klar.usage_deletion_request
-      type: glean_ping_view
     usage_deletion_request_table:
       tables:
       - channel: null
@@ -7503,18 +6617,6 @@ mozilla_vpn:
       type: glean_ping_explore
       views:
         base_view: baseline
-    baseline_clients_daily:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_daily
-    baseline_clients_first_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_first_seen
-    baseline_clients_last_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_last_seen
     client_counts:
       type: client_counts_explore
       views:
@@ -7599,31 +6701,16 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.baseline
       type: glean_ping_view
-    baseline_clients_daily:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.baseline_clients_daily
-      type: glean_ping_view
     baseline_clients_daily_table:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.baseline_clients_daily
       type: table_view
-    baseline_clients_first_seen:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.baseline_clients_first_seen
-      type: glean_ping_view
     baseline_clients_first_seen_table:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.baseline_clients_first_seen
       type: table_view
-    baseline_clients_last_seen:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.baseline_clients_last_seen
-      type: glean_ping_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -11662,8 +10749,8 @@ operational_monitoring:
             default: release
             options:
             - release
-            - aurora
             - esr
+            - aurora
             - beta
             - nightly
             - default
@@ -12460,10 +11547,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id332
           normalized_channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
+            - beta
             - aurora
             - release
             - esr
@@ -13164,10 +12251,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id374
           os:
-            default: Linux
+            default: Windows
             options:
-            - Linux
             - Windows
+            - Linux
             - Mac
             - Other
         explore: garbage_collection
@@ -14558,15 +13645,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id506
           app:
-            default: iOS - daemon_session
+            default: Windows - vpn_session
             options:
-            - iOS - daemon_session
-            - Linux - vpn_session
             - Windows - vpn_session
-            - iOS - vpn_session
-            - Darwin - vpn_session
+            - Linux - vpn_session
             - Android - daemon_session
             - Android - vpn_session
+            - iOS - vpn_session
+            - iOS - daemon_session
+            - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id507
@@ -15984,17 +15071,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id611
           channel:
-            default: release
+            default: beta
             options:
+            - beta
             - release
             - nightly
-            - beta
           os:
             default: Darwin
             options:
             - Darwin
-            - Windows_NT
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id612
@@ -23440,91 +22527,6 @@ revenue_private:
       tables:
       - table: mozdata.search.search_revenue_levers_daily
       type: table_view
-review_checker:
-  explores:
-    android_clients:
-      type: table_explore
-      views:
-        base_view: android_clients
-    android_events:
-      type: table_explore
-      views:
-        base_view: android_events
-    desktop_clients:
-      type: table_explore
-      views:
-        base_view: desktop_clients
-    desktop_events:
-      type: table_explore
-      views:
-        base_view: desktop_events
-    desktop_microsurvey:
-      type: table_explore
-      views:
-        base_view: desktop_microsurvey
-    ios_clients:
-      type: table_explore
-      views:
-        base_view: ios_clients
-    ios_events:
-      type: table_explore
-      views:
-        base_view: ios_events
-  glean_app: false
-  owners:
-  - betling@mozilla.com
-  - akommasani@mozilla.com
-  pretty_name: Review Checker
-  spoke: looker-spoke-default
-  views:
-    android_clients:
-      tables:
-      - table: mozdata.org_mozilla_fenix.review_checker_clients
-      type: table_view
-    android_events:
-      tables:
-      - table: mozdata.org_mozilla_fenix.review_checker_events
-      type: table_view
-    desktop_clients:
-      tables:
-      - table: mozdata.firefox_desktop.review_checker_clients
-      type: table_view
-    desktop_events:
-      tables:
-      - table: mozdata.firefox_desktop.review_checker_events
-      type: table_view
-    desktop_microsurvey:
-      tables:
-      - table: mozdata.firefox_desktop.review_checker_microsurvey
-      type: table_view
-    ios_clients:
-      tables:
-      - table: mozdata.org_mozilla_ios_firefox.review_checker_clients
-      type: table_view
-    ios_events:
-      tables:
-      - table: mozdata.org_mozilla_ios_firefox.review_checker_events
-      type: table_view
-review_checker_desktop:
-  glean_app: false
-  owners:
-  - betling@mozilla.com
-  - akommasani@mozilla.com
-  pretty_name: Review Checker Desktop
-  spoke: looker-spoke-default
-  views:
-    clients:
-      tables:
-      - table: mozdata.firefox_desktop.review_checker_clients
-      type: table_view
-    events:
-      tables:
-      - table: mozdata.firefox_desktop.review_checker_events
-      type: table_view
-    microsurvey:
-      tables:
-      - table: mozdata.firefox_desktop.review_checker_microsurvey
-      type: table_view
 search:
   explores:
     desktop_search_alert_records:
@@ -23814,240 +22816,21 @@ telemetry_dev_cycle:
       tables:
       - table: mozdata.telemetry_dev_cycle.telemetry_probes_stats
       type: table_view
-thunderbird_android:
-  explores:
-    baseline:
-      type: glean_ping_explore
-      views:
-        base_view: baseline
-    baseline_clients_daily:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_daily
-    baseline_clients_first_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_first_seen
-    baseline_clients_last_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_last_seen
-    client_counts:
-      type: client_counts_explore
-      views:
-        base_view: client_counts
-        extended_view: baseline_clients_daily_table
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    events_stream:
-      type: glean_ping_explore
-      views:
-        base_view: events_stream
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
-    events_unnested:
-      type: glean_ping_explore
-      views:
-        base_view: events_unnested
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
-    metrics:
-      type: glean_ping_explore
-      views:
-        base_view: metrics
-  glean_app: true
-  owners:
-  - alessandro@thunderbird.net
-  - sancus@thunderbird.net
-  - kewisch@thunderbird.net
-  pretty_name: Thunderbird for Android
-  spoke: looker-spoke-default
-  views:
-    baseline:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.baseline
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.baseline
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.baseline
-      type: glean_ping_view
-    baseline_clients_daily:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.baseline_clients_daily
-      type: glean_ping_view
-    baseline_clients_daily_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.baseline_clients_daily
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.baseline_clients_daily
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.baseline_clients_daily
-      type: table_view
-    baseline_clients_first_seen:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.baseline_clients_first_seen
-      type: glean_ping_view
-    baseline_clients_first_seen_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.baseline_clients_first_seen
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.baseline_clients_first_seen
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.baseline_clients_first_seen
-      type: table_view
-    baseline_clients_last_seen:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.baseline_clients_last_seen
-      type: glean_ping_view
-    baseline_clients_last_seen_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.baseline_clients_last_seen
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.baseline_clients_last_seen
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.baseline_clients_last_seen
-      type: table_view
-    baseline_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.baseline
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.baseline
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.baseline
-      type: table_view
-    client_counts:
-      tables:
-      - table: mozdata.thunderbird_android.baseline_clients_daily
-      type: client_counts_view
-    deletion_request:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.deletion_request
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.deletion_request
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.deletion_request
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.deletion_request
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.thunderbird_android.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_stream:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.events_stream
-      type: glean_ping_view
-    events_stream_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.events_stream
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.events_stream
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.events_stream
-      type: table_view
-    events_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.events
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.events
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.events
-      type: table_view
-    events_unnested:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.events_unnested
-      type: glean_ping_view
-    events_unnested_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.events_unnested
-      type: table_view
-    growth_accounting:
-      tables:
-      - table: mozdata.thunderbird_android.baseline_clients_last_seen
-      type: growth_accounting_view
-    metrics:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.metrics
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.metrics
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.metrics
-      type: glean_ping_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.metrics_clients_daily
-      type: table_view
-    metrics_table:
-      tables:
-      - channel: release
-        table: mozdata.thunderbird_android.metrics
-      - channel: beta
-        table: mozdata.net_thunderbird_android_beta.metrics
-      - channel: nightly
-        table: mozdata.net_thunderbird_android_daily.metrics
-      type: table_view
 thunderbird_desktop:
   explores:
     baseline:
       type: glean_ping_explore
       views:
         base_view: baseline
-    bounce_tracking_protection:
-      type: glean_ping_explore
-      views:
-        base_view: bounce_tracking_protection
     broken_site_report:
       type: glean_ping_explore
       views:
         base_view: broken_site_report
-    captcha_detection:
-      type: glean_ping_explore
-      views:
-        base_view: captcha_detection
     client_counts:
       type: client_counts_explore
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
-    dau_reporting:
-      type: glean_ping_explore
-      views:
-        base_view: dau_reporting
     deletion_request:
       type: glean_ping_explore
       views:
@@ -24061,26 +22844,14 @@ thunderbird_desktop:
       type: table_explore
       views:
         base_view: events_stream_table
-    fog_validation:
-      type: glean_ping_explore
-      views:
-        base_view: fog_validation
     growth_accounting:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    hang_report:
-      type: glean_ping_explore
-      views:
-        base_view: hang_report
     metrics:
       type: glean_ping_explore
       views:
         base_view: metrics
-    pageload:
-      type: glean_ping_explore
-      views:
-        base_view: pageload
     use_counters:
       type: glean_ping_explore
       views:
@@ -24120,10 +22891,6 @@ thunderbird_desktop:
       - channel: null
         table: mozdata.thunderbird_desktop.baseline
       type: table_view
-    bounce_tracking_protection:
-      tables:
-      - table: mozdata.thunderbird_desktop.bounce_tracking_protection
-      type: glean_ping_view
     bounce_tracking_protection_table:
       tables:
       - channel: null
@@ -24138,10 +22905,6 @@ thunderbird_desktop:
       - channel: null
         table: mozdata.thunderbird_desktop.broken_site_report
       type: table_view
-    captcha_detection:
-      tables:
-      - table: mozdata.thunderbird_desktop.captcha_detection
-      type: glean_ping_view
     captcha_detection_table:
       tables:
       - channel: null
@@ -24151,10 +22914,6 @@ thunderbird_desktop:
       tables:
       - table: mozdata.thunderbird_desktop.baseline_clients_daily
       type: client_counts_view
-    dau_reporting:
-      tables:
-      - table: mozdata.thunderbird_desktop.dau_reporting
-      type: glean_ping_view
     dau_reporting_table:
       tables:
       - channel: null
@@ -24189,10 +22948,6 @@ thunderbird_desktop:
       - channel: null
         table: mozdata.thunderbird_desktop.events_unnested
       type: table_view
-    fog_validation:
-      tables:
-      - table: mozdata.thunderbird_desktop.fog_validation
-      type: glean_ping_view
     fog_validation_table:
       tables:
       - channel: null
@@ -24202,10 +22957,6 @@ thunderbird_desktop:
       tables:
       - table: mozdata.thunderbird_desktop.baseline_clients_last_seen
       type: growth_accounting_view
-    hang_report:
-      tables:
-      - table: mozdata.thunderbird_desktop.hang_report
-      type: glean_ping_view
     hang_report_table:
       tables:
       - channel: null
@@ -24225,10 +22976,6 @@ thunderbird_desktop:
       - channel: null
         table: mozdata.thunderbird_desktop.metrics
       type: table_view
-    pageload:
-      tables:
-      - table: mozdata.thunderbird_desktop.pageload
-      type: glean_ping_view
     pageload_table:
       tables:
       - channel: null
