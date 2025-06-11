@@ -12,7 +12,7 @@ datagroup: looker_usage_models_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'monitoring' AND table_name = 'looker_usage_models')
+    WHERE (table_schema = 'monitoring_derived' AND table_name = 'looker_usage_models_v1')
 
     ) ;;
   description: "Updates for looker_usage_models when referenced tables are modified."

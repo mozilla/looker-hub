@@ -406,7 +406,7 @@ This will be null for Google subscriptions."
     sql: ${TABLE}.provider_plan_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Provider \"plan ID\".
+    description: "Provider plan ID.
 For Stripe subscriptions this will be the plan/price ID.
 For Google subscriptions this will be the SKU."
   }
@@ -415,7 +415,7 @@ For Google subscriptions this will be the SKU."
     sql: ${TABLE}.provider_product_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Provider \"product ID\".
+    description: "Provider product ID.
 For Stripe subscriptions this will be the product ID.
 For Google subscriptions this will be the package name."
   }
@@ -431,7 +431,9 @@ For Google subscriptions this will be the package name."
     sql: ${TABLE}.provider_subscription_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Provider subscription ID."
+    description: "Provider subscription ID.
+For Stripe subscriptions this will be the subscription ID.
+For Google subscriptions this will be the purchase token."
   }
 
   dimension: provider_subscription_item_id {

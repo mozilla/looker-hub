@@ -5,14 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: usage_reporting_clients_last_seen_table {
-  dimension: app_channel {
-    sql: ${TABLE}.app_channel ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "The channel the application is being distributed on.
-"
-  }
-
   dimension: days_active_bits {
     sql: ${TABLE}.days_active_bits ;;
     type: number
@@ -35,18 +27,6 @@ view: usage_reporting_clients_last_seen_table {
     suggest_persist_for: "24 hours"
     description: "Bit field shows on which of the last 28 days a client sent us the usage_reporting ping.
 "
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: normalized_channel {
-    sql: ${TABLE}.normalized_channel ;;
-    type: string
-    suggest_persist_for: "24 hours"
   }
 
   dimension: usage_profile_id {

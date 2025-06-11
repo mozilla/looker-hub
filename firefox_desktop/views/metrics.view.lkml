@@ -3819,6 +3819,24 @@ Implies `fxa.account_enabled`.
 "
   }
 
+  dimension: metrics__boolean__genai_linkpreview_ai_optin {
+    label: "Genai Linkpreview Ai Optin"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_ai_optin ;;
+    type: yesno
+    group_label: "Genai Linkpreview"
+    group_item_label: "Ai Optin"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Linkpreview Ai Optin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_ai_optin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has opted-in to use AI for key points generation
+"
+  }
+
   dimension: metrics__boolean__genai_linkpreview_enabled {
     label: "Genai Linkpreview Enabled"
     hidden: no
@@ -3834,6 +3852,42 @@ Implies `fxa.account_enabled`.
     }
 
     description: "Records if the user has link previews enabled
+"
+  }
+
+  dimension: metrics__boolean__genai_linkpreview_key_points {
+    label: "Genai Linkpreview Key Points"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_key_points ;;
+    type: yesno
+    group_label: "Genai Linkpreview"
+    group_item_label: "Key Points"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Linkpreview Key Points"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_key_points"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user defaults to expanded state for key point generation
+"
+  }
+
+  dimension: metrics__string__genai_linkpreview_shortcut {
+    label: "Genai Linkpreview Shortcut"
+    hidden: no
+    sql: ${TABLE}.metrics.string.genai_linkpreview_shortcut ;;
+    type: string
+    group_label: "Genai Linkpreview"
+    group_item_label: "Shortcut"
+
+    link: {
+      label: "Glean Dictionary reference for Genai Linkpreview Shortcut"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_shortcut"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records which type of shortcut the user selected for Link Previews (comma separated if more than one)
 "
   }
 
@@ -20496,6 +20550,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__sum {
+    label: "Javascript GC Time Between Minor Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.sum ;;
+    type: number
+    group_label: "Javascript GC"
+    group_item_label: "Time Between Minor Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript GC Time Between Minor Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_time_between_minor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between minor garbage collections (nursery collections) for all runtimes.
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_time_between_slices__sum {
     label: "Javascript GC Time Between Slices Sum"
     hidden: no
@@ -23721,6 +23793,22 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
     description: "Number of times the captive portal banner was displayed in this session. This metric was generated to correspond to the Legacy Telemetry scalar networking.captive_portal_banner_displayed.
 "
+  }
+
+  dimension: metrics__labeled_counter__networking_connection_address_type {
+    label: "Networking Connection Address Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_connection_address_type ;;
+    group_label: "Networking"
+    group_item_label: "Connection Address Type"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Connection Address Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_connection_address_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the IP address family (IPv4 or IPv6) used when an HTTP transaction is dispatched."
   }
 
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
@@ -55239,6 +55327,47 @@ view: metrics__metrics__labeled_counter__networking_captive_portal_banner_displa
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_connection_address_type {
+  label: "Networking - Connection Address Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
   label: "Networking - Cookie Timestamp Fixed Count"
 
@@ -82261,6 +82390,20 @@ view: metrics__metrics__timing_distribution__javascript_gc_task_start_delay__val
 }
 
 view: metrics__metrics__timing_distribution__javascript_gc_time_between__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_time_between_minor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

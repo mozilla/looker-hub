@@ -89,11 +89,11 @@ view: desktop_retention_clients_table {
     description: "An ISO 3166-1 alpha-2 country code"
   }
 
-  dimension: days_active_bits {
-    sql: ${TABLE}.days_active_bits ;;
+  dimension: days_desktop_active_bits {
+    sql: ${TABLE}.days_desktop_active_bits ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Days Active Bits"
+    description: "Days Desktop Active Bits"
   }
 
   dimension: days_seen_bits {
@@ -206,6 +206,13 @@ view: desktop_retention_clients_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension: windows_version {
+    sql: ${TABLE}.windows_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Windows Version"
   }
 
   dimension_group: first_seen {
