@@ -11,8 +11,26 @@ view: holiday {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: ascension_day {
+    sql: ${TABLE}.ascension_day ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ashura {
+    sql: ${TABLE}.ashura ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: au_anzac_day {
     sql: ${TABLE}.au_anzac_day ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: australia_day {
+    sql: ${TABLE}.australia_day ;;
     type: number
     suggest_persist_for: "24 hours"
   }
@@ -53,8 +71,20 @@ view: holiday {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: corpus_christi {
+    sql: ${TABLE}.corpus_christi ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: de_unity_day {
     sql: ${TABLE}.de_unity_day ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: dussehra {
+    sql: ${TABLE}.dussehra ;;
     type: number
     suggest_persist_for: "24 hours"
   }
@@ -160,6 +190,12 @@ view: holiday {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: ir_death_of_khomeini {
+    sql: ${TABLE}.ir_death_of_khomeini ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: lunar_new_year {
     sql: ${TABLE}.lunar_new_year ;;
     type: number
@@ -186,6 +222,24 @@ view: holiday {
 
   dimension: new_years_eve {
     sql: ${TABLE}.new_years_eve ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: nowruz {
+    sql: ${TABLE}.nowruz ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: orthodox_christmas {
+    sql: ${TABLE}.orthodox_christmas ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: prophets_birthday {
+    sql: ${TABLE}.prophets_birthday ;;
     type: number
     suggest_persist_for: "24 hours"
   }
