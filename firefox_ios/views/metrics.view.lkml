@@ -1751,7 +1751,7 @@ Downloads and Synced tabs
 
   dimension: metrics__counter__migration_image_sd_cache_cleanup {
     label: "Migration Image Sd Cache Cleanup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_image_sd_cache_cleanup ;;
     type: number
     group_label: "Migration"
@@ -9362,19 +9362,19 @@ view: metrics__metrics__labeled_counter__library_panel_pressed {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
