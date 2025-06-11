@@ -7,7 +7,7 @@
 view: pocket_button {
   dimension: metrics__string__pocket_button_event_action {
     label: "Pocket Button Event Action"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.pocket_button_event_action ;;
     type: string
     group_label: "Pocket Button"
@@ -25,7 +25,7 @@ view: pocket_button {
 
   dimension: metrics__quantity__pocket_button_event_position {
     label: "Pocket Button Event Position"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.pocket_button_event_position ;;
     type: number
     group_label: "Pocket Button"
@@ -43,7 +43,7 @@ view: pocket_button {
 
   dimension: metrics__string__pocket_button_event_source {
     label: "Pocket Button Event Source"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.pocket_button_event_source ;;
     type: string
     group_label: "Pocket Button"
@@ -61,7 +61,7 @@ view: pocket_button {
 
   dimension: metrics__uuid__pocket_button_impression_id {
     label: "Pocket Button Impression ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.pocket_button_impression_id ;;
     type: string
     group_label: "Pocket Button"
@@ -79,7 +79,7 @@ view: pocket_button {
 
   dimension: metrics__string__pocket_button_model {
     label: "Pocket Button Model"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.pocket_button_model ;;
     type: string
     group_label: "Pocket Button"
@@ -97,7 +97,7 @@ view: pocket_button {
 
   dimension: metrics__boolean__pocket_button_pocket_logged_in_status {
     label: "Pocket Button Pocket Logged In Status"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.pocket_button_pocket_logged_in_status ;;
     type: yesno
     group_label: "Pocket Button"
@@ -115,7 +115,7 @@ view: pocket_button {
 
   dimension: metrics__quantity__pocket_button_profile_creation_date {
     label: "Pocket Button Profile Creation Date"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.pocket_button_profile_creation_date ;;
     type: number
     group_label: "Pocket Button"
