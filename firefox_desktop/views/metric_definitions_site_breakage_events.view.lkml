@@ -74,14 +74,14 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
             FROM
                 (
     SELECT
-        metrics.uuid.legacy_telemetry_client_id AS client_id,
+        legacy_telemetry_client_id as client_id,
         DATE(submission_timestamp) AS submission_date,
-        ping_info.experiments AS experiments,
-        event.name AS event_name,
-    FROM `mozdata.firefox_desktop.events`
-    CROSS JOIN UNNEST(events) AS event
+        experiments,
+        event_name,
+        event_extra,
+    FROM `mozdata.firefox_desktop.events_stream`
     WHERE
-        event.category = 'webcompatreporting'
+        event_category = 'webcompatreporting'
 )
             ) AS site_breakage_events
         JOIN
