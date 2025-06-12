@@ -9948,7 +9948,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__http_proxy_type__sum {
     label: "HTTP Proxy Type Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_proxy_type.sum ;;
     type: number
     group_label: "HTTP"

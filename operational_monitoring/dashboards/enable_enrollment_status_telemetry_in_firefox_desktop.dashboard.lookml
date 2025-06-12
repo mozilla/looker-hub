@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_enrollment_status_telemetry_in_firefox_desktop
+    type: looker_line
+    fields: [
+      enable_enrollment_status_telemetry_in_firefox_desktop.submission_date,
+      enable_enrollment_status_telemetry_in_firefox_desktop.branch,
+      enable_enrollment_status_telemetry_in_firefox_desktop.point
+    ]
+    pivots: [
+      enable_enrollment_status_telemetry_in_firefox_desktop.branch
+    ]
+    filters:
+      enable_enrollment_status_telemetry_in_firefox_desktop.metric: 'ad_clicks'
+      enable_enrollment_status_telemetry_in_firefox_desktop.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_enrollment_status_telemetry_in_firefox_desktop.submission_date
+    field_y: enable_enrollment_status_telemetry_in_firefox_desktop.point
+    log_scale: false
+    ci_lower: enable_enrollment_status_telemetry_in_firefox_desktop.lower
+    ci_upper: enable_enrollment_status_telemetry_in_firefox_desktop.upper
+    show_grid: true
+    listen:
+      Date: enable_enrollment_status_telemetry_in_firefox_desktop.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       enable_enrollment_status_telemetry_in_firefox_desktop.metric: 'uri_count'
       enable_enrollment_status_telemetry_in_firefox_desktop.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: enable_enrollment_status_telemetry_in_firefox_desktop.submission_date
@@ -61,40 +95,6 @@
     ]
     filters:
       enable_enrollment_status_telemetry_in_firefox_desktop.metric: 'active_hours'
-      enable_enrollment_status_telemetry_in_firefox_desktop.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: enable_enrollment_status_telemetry_in_firefox_desktop.submission_date
-    field_y: enable_enrollment_status_telemetry_in_firefox_desktop.point
-    log_scale: false
-    ci_lower: enable_enrollment_status_telemetry_in_firefox_desktop.lower
-    ci_upper: enable_enrollment_status_telemetry_in_firefox_desktop.upper
-    show_grid: true
-    listen:
-      Date: enable_enrollment_status_telemetry_in_firefox_desktop.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_enrollment_status_telemetry_in_firefox_desktop
-    type: looker_line
-    fields: [
-      enable_enrollment_status_telemetry_in_firefox_desktop.submission_date,
-      enable_enrollment_status_telemetry_in_firefox_desktop.branch,
-      enable_enrollment_status_telemetry_in_firefox_desktop.point
-    ]
-    pivots: [
-      enable_enrollment_status_telemetry_in_firefox_desktop.branch
-    ]
-    filters:
-      enable_enrollment_status_telemetry_in_firefox_desktop.metric: 'ad_clicks'
       enable_enrollment_status_telemetry_in_firefox_desktop.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       enable_enrollment_status_telemetry_in_firefox_desktop.branch
     ]
     filters:
-      enable_enrollment_status_telemetry_in_firefox_desktop.metric: 'search_count'
+      enable_enrollment_status_telemetry_in_firefox_desktop.metric: 'days_of_use'
       enable_enrollment_status_telemetry_in_firefox_desktop.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       enable_enrollment_status_telemetry_in_firefox_desktop.branch
     ]
     filters:
-      enable_enrollment_status_telemetry_in_firefox_desktop.metric: 'days_of_use'
+      enable_enrollment_status_telemetry_in_firefox_desktop.metric: 'search_count'
       enable_enrollment_status_telemetry_in_firefox_desktop.statistic: mean
     row: 30
     col: 0

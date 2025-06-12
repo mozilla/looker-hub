@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: spoc_placement_second_row
+    type: looker_line
+    fields: [
+      spoc_placement_second_row.submission_date,
+      spoc_placement_second_row.branch,
+      spoc_placement_second_row.point
+    ]
+    pivots: [
+      spoc_placement_second_row.branch
+    ]
+    filters:
+      spoc_placement_second_row.metric: 'ad_clicks'
+      spoc_placement_second_row.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: spoc_placement_second_row.submission_date
+    field_y: spoc_placement_second_row.point
+    log_scale: false
+    ci_lower: spoc_placement_second_row.lower
+    ci_upper: spoc_placement_second_row.upper
+    show_grid: true
+    listen:
+      Date: spoc_placement_second_row.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       spoc_placement_second_row.metric: 'uri_count'
       spoc_placement_second_row.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: spoc_placement_second_row.submission_date
@@ -61,40 +95,6 @@
     ]
     filters:
       spoc_placement_second_row.metric: 'active_hours'
-      spoc_placement_second_row.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: spoc_placement_second_row.submission_date
-    field_y: spoc_placement_second_row.point
-    log_scale: false
-    ci_lower: spoc_placement_second_row.lower
-    ci_upper: spoc_placement_second_row.upper
-    show_grid: true
-    listen:
-      Date: spoc_placement_second_row.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: spoc_placement_second_row
-    type: looker_line
-    fields: [
-      spoc_placement_second_row.submission_date,
-      spoc_placement_second_row.branch,
-      spoc_placement_second_row.point
-    ]
-    pivots: [
-      spoc_placement_second_row.branch
-    ]
-    filters:
-      spoc_placement_second_row.metric: 'ad_clicks'
       spoc_placement_second_row.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       spoc_placement_second_row.branch
     ]
     filters:
-      spoc_placement_second_row.metric: 'search_count'
+      spoc_placement_second_row.metric: 'days_of_use'
       spoc_placement_second_row.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       spoc_placement_second_row.branch
     ]
     filters:
-      spoc_placement_second_row.metric: 'days_of_use'
+      spoc_placement_second_row.metric: 'search_count'
       spoc_placement_second_row.statistic: mean
     row: 30
     col: 0

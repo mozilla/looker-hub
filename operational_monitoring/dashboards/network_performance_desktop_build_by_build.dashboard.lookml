@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: HTTP Page TLS Handshake
-    name: HTTP Page TLS Handshake_percentile
+  - title: HTTP Sub TLS Handshake
+    name: HTTP Sub TLS Handshake_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -28,7 +28,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'http_page_tls_handshake'
+      network_performance_desktop_build_by_build.metric: 'http_sub_tls_handshake'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 0
     col: 0
@@ -84,8 +84,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: HTTP Sub TLS Handshake
-    name: HTTP Sub TLS Handshake_percentile
+  - title: HTTP Page TLS Handshake
+    name: HTTP Page TLS Handshake_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -102,7 +102,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'http_sub_tls_handshake'
+      network_performance_desktop_build_by_build.metric: 'http_page_tls_handshake'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 10
     col: 0
