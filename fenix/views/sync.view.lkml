@@ -120,26 +120,6 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
 "
   }
 
-  dimension: metrics__datetime__syncs_session_start_date {
-    label: "Syncs Session Start Date"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.syncs_session_start_date ;;
-    type: string
-    group_label: "Syncs"
-    group_item_label: "Session Start Date"
-
-    link: {
-      label: "Glean Dictionary reference for Syncs Session Start Date"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_session_start_date"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "When the sync telemetry session begins (the `SyncTelemetryImpl`
-constructor runs).
-Typically useful for ordering \"sync\" pings.
-"
-  }
-
   dimension: metrics__string__syncs_sync_node_type {
     label: "Syncs Sync Node Type"
     hidden: no

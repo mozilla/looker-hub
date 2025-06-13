@@ -7,7 +7,7 @@
 view: metric_definitions_protections_popup_events {
   derived_table: {
     sql: SELECT
-                COALESCE(COUNTIF(event_name  = 'click_etp_toggle_off'), 0) AS etp_disablement,
+                CAST(COALESCE(LOGICAL_OR(event_name  = 'click_etp_toggle_off'), FALSE) AS INT64) AS etp_disablement,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
