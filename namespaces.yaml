@@ -23191,6 +23191,18 @@ thunderbird_desktop:
       - channel: null
         table: mozdata.thunderbird_desktop.user_characteristics
       type: table_view
+trust_and_safety:
+  glean_app: false
+  owners:
+  - mhirose@mozilla.com
+  - kik@mozilla.com
+  pretty_name: Trust and Safety
+  spoke: looker-spoke-private
+  views:
+    cinder_jobs_and_decisions:
+      tables:
+      - table: moz-fx-data-shared-prod.cinder_derived.jobs_decisions_v1
+      type: table_view
 user_journey:
   glean_app: false
   owners:

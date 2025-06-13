@@ -472,12 +472,12 @@ view: sync_table {
     hidden: yes
   }
 
-  dimension: metrics__datetime__syncs_session_start_date {
-    sql: ${TABLE}.metrics.datetime.syncs_session_start_date ;;
+  dimension: metrics__datetime__raw_syncs_session_start_date {
+    sql: ${TABLE}.metrics.datetime.raw_syncs_session_start_date ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
-    group_item_label: "Syncs Session Start Date"
+    group_item_label: "Raw Syncs Session Start Date"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -751,6 +751,22 @@ view: sync_table {
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__syncs_session_start {
+    sql: ${TABLE}.metrics.datetime.syncs_session_start_date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Syncs Session Start Date"
   }
 
   dimension_group: ping_info__parsed_end {

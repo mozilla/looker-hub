@@ -7,8 +7,8 @@
 view: metric_definitions_site_breakage_events {
   derived_table: {
     sql: SELECT
-                COALESCE(COUNTIF(event_name = 'opened'), 0) AS site_breakage_impressions,
-COALESCE(COUNTIF(event_name = 'send' OR event_name = 'send_more_info'), 0) AS site_breakage_uses,
+                CAST(COALESCE(LOGICAL_OR(event_name = 'opened'), FALSE) AS INT64) AS site_breakage_impressions,
+CAST(COALESCE(LOGICAL_OR(event_name = 'send' OR event_name = 'send_more_info'), FALSE) AS INT64) AS site_breakage_uses,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
