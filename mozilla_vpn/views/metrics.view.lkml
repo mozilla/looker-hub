@@ -25,7 +25,7 @@ view: metrics {
 
   dimension: metrics__boolean__settings_connect_on_startup_active {
     label: "Settings Connect On Startup Active"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.settings_connect_on_startup_active ;;
     type: yesno
     group_label: "Settings"
@@ -43,7 +43,7 @@ view: metrics {
 
   dimension: metrics__boolean__settings_using_system_language {
     label: "Settings Using System Language"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.settings_using_system_language ;;
     type: yesno
     group_label: "Settings"

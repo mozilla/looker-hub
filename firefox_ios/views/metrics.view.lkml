@@ -1421,7 +1421,7 @@ History, Reading List, or Downloads buttons
 
   dimension: metrics__counter__history_group_list {
     label: "History Group List"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.history_group_list ;;
     type: number
     group_label: "History"
@@ -1442,7 +1442,7 @@ of all Site items that appear in that group.
 
   dimension: metrics__quantity__history_num_visits {
     label: "History Num Visits"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.history_num_visits ;;
     type: number
     group_label: "History"
@@ -1751,7 +1751,7 @@ Downloads and Synced tabs
 
   dimension: metrics__counter__migration_image_sd_cache_cleanup {
     label: "Migration Image Sd Cache Cleanup"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_image_sd_cache_cleanup ;;
     type: number
     group_label: "Migration"
@@ -2205,7 +2205,7 @@ from the page action menu.
 
   dimension: metrics__timing_distribution__places_history_migration_duration__sum {
     label: "Places History Migration Duration Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.sum ;;
     type: number
     group_label: "Places History Migration"
@@ -2223,7 +2223,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_ended_rate__numerator {
     label: "Places History Migration Migration Ended Rate Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.numerator ;;
     type: number
     group_label: "Places History Migration"
@@ -2241,7 +2241,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_ended_rate__denominator {
     label: "Places History Migration Migration Ended Rate Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.denominator ;;
     type: number
     group_label: "Places History Migration"
@@ -2259,7 +2259,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_error_rate__numerator {
     label: "Places History Migration Migration Error Rate Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.numerator ;;
     type: number
     group_label: "Places History Migration"
@@ -2277,7 +2277,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_error_rate__denominator {
     label: "Places History Migration Migration Error Rate Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.denominator ;;
     type: number
     group_label: "Places History Migration"
@@ -2295,7 +2295,7 @@ from the page action menu.
 
   dimension: metrics__quantity__places_history_migration_num_migrated {
     label: "Places History Migration Num Migrated"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.places_history_migration_num_migrated ;;
     type: number
     group_label: "Places History Migration"
@@ -2313,7 +2313,7 @@ from the page action menu.
 
   dimension: metrics__quantity__places_history_migration_num_to_migrate {
     label: "Places History Migration Num To Migrate"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.places_history_migration_num_to_migrate ;;
     type: number
     group_label: "Places History Migration"
@@ -3188,7 +3188,7 @@ is closed.
 
   dimension: metrics__counter__tabs_cumulative_count {
     label: "Tabs Cumulative Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.tabs_cumulative_count ;;
     type: number
     group_label: "Tabs"
@@ -3214,7 +3214,7 @@ average open tabs per foreground \"session\".
 
   dimension: metrics__counter__tabs_grouped_tab_closed {
     label: "Tabs Grouped Tab Closed"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
     type: number
     group_label: "Tabs"
@@ -3232,7 +3232,7 @@ average open tabs per foreground \"session\".
 
   dimension: metrics__counter__tabs_grouped_tab_search {
     label: "Tabs Grouped Tab Search"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.tabs_grouped_tab_search ;;
     type: number
     group_label: "Tabs"
@@ -3251,7 +3251,7 @@ icon for grouped tabs in the tab tray.
 
   dimension: metrics__quantity__tabs_inactive_tabs_count {
     label: "Tabs Inactive Tabs Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.tabs_inactive_tabs_count ;;
     type: number
     group_label: "Tabs"
@@ -3365,7 +3365,7 @@ pressed
 
   dimension: metrics__quantity__tabs_normal_tabs_quantity {
     label: "Tabs Normal Tabs Quantity"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
     type: number
     group_label: "Tabs"
@@ -3403,7 +3403,7 @@ is opened.
 
   dimension: metrics__quantity__tabs_private_tabs_quantity {
     label: "Tabs Private Tabs Quantity"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.tabs_private_tabs_quantity ;;
     type: number
     group_label: "Tabs"
@@ -9362,19 +9362,19 @@ view: metrics__metrics__labeled_counter__library_panel_pressed {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -9813,19 +9813,19 @@ view: metrics__metrics__labeled_counter__tabs_close {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -9854,19 +9854,19 @@ view: metrics__metrics__labeled_counter__tabs_close_all {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -9895,19 +9895,19 @@ view: metrics__metrics__labeled_counter__tabs_open {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 

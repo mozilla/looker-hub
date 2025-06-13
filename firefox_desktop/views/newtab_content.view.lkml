@@ -25,7 +25,7 @@ view: newtab_content {
 
   dimension: metrics__string__newtab_content_coarse_os_version {
     label: "Newtab Content Coarse OS Version"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.newtab_content_coarse_os_version ;;
     type: string
     group_label: "Newtab Content"
@@ -39,62 +39,6 @@ view: newtab_content {
 
     description: "The user-visible version of the operating system (e.g. \"1.2.3\").
 If the version detection fails, this metric gets set to 0.
-"
-  }
-
-  dimension: metrics__string__newtab_content_country {
-    label: "Newtab Content Country"
-    hidden: no
-    sql: ${TABLE}.metrics.string.newtab_content_country ;;
-    type: string
-    group_label: "Newtab Content"
-    group_item_label: "Country"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Content Country"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_country"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the detected home region of the user. This is the general region of the user's machine.
-If a machine moves location, there is a minimum 2-week delay before this will be updated.
-See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html) for more information about updates.
-"
-  }
-
-  dimension: metrics__string__newtab_content_experiment_branch {
-    label: "Newtab Content Experiment Branch"
-    hidden: no
-    sql: ${TABLE}.metrics.string.newtab_content_experiment_branch ;;
-    type: string
-    group_label: "Newtab Content"
-    group_item_label: "Experiment Branch"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Content Experiment Branch"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_experiment_branch"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The branch of the primary new tab content experiment. We don't include all experiments to prevent user fingerprinting.
-"
-  }
-
-  dimension: metrics__string__newtab_content_experiment_name {
-    label: "Newtab Content Experiment Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.newtab_content_experiment_name ;;
-    type: string
-    group_label: "Newtab Content"
-    group_item_label: "Experiment Name"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Content Experiment Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_experiment_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The name of the primary new tab content experiment. We don't include all experiments to prevent user fingerprinting.
 "
   }
 
@@ -130,7 +74,7 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "<0-24> positive UTC offset, rounded to the nearest integer number greater than 0. (If less than 0, then add 24.). The value may be clamped by expected time zone ranges for a surface.
+    description: "<0-24> positive UTC offset, rounded to the nearest integer number greater than 0. (If less than 0, then add 24.)
 "
   }
 

@@ -131,12 +131,6 @@ view: desktop_retention_clients_table {
     description: "Legacy Telemetry Client Identifier"
   }
 
-  dimension: lifecycle_stage {
-    sql: ${TABLE}.lifecycle_stage ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
