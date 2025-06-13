@@ -227,6 +227,16 @@ view: usage_reporting_table {
 "
   }
 
+  dimension: metrics__boolean__usage_windows_backup_enabled {
+    sql: ${TABLE}.metrics.boolean.usage_windows_backup_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Usage Windows Backup Enabled"
+    description: "Tracks if Windows Backup is enabled and configured to back up applications.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_active_ticks {
     sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
     type: number

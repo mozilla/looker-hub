@@ -12705,7 +12705,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__http_proxy_type__sum {
     label: "HTTP Proxy Type Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_proxy_type.sum ;;
     type: number
     group_label: "HTTP"
@@ -22813,7 +22813,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__process_lifetime__sum {
     label: "Process Lifetime Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.process_lifetime.sum ;;
     type: number
     group_label: "Process"

@@ -1421,7 +1421,7 @@ History, Reading List, or Downloads buttons
 
   dimension: metrics__counter__history_group_list {
     label: "History Group List"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.history_group_list ;;
     type: number
     group_label: "History"
@@ -1442,7 +1442,7 @@ of all Site items that appear in that group.
 
   dimension: metrics__quantity__history_num_visits {
     label: "History Num Visits"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.history_num_visits ;;
     type: number
     group_label: "History"
@@ -2205,7 +2205,7 @@ from the page action menu.
 
   dimension: metrics__timing_distribution__places_history_migration_duration__sum {
     label: "Places History Migration Duration Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.sum ;;
     type: number
     group_label: "Places History Migration"
@@ -2223,7 +2223,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_ended_rate__numerator {
     label: "Places History Migration Migration Ended Rate Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.numerator ;;
     type: number
     group_label: "Places History Migration"
@@ -2241,7 +2241,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_ended_rate__denominator {
     label: "Places History Migration Migration Ended Rate Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.denominator ;;
     type: number
     group_label: "Places History Migration"
@@ -2259,7 +2259,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_error_rate__numerator {
     label: "Places History Migration Migration Error Rate Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.numerator ;;
     type: number
     group_label: "Places History Migration"
@@ -2277,7 +2277,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_error_rate__denominator {
     label: "Places History Migration Migration Error Rate Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.denominator ;;
     type: number
     group_label: "Places History Migration"
@@ -2295,7 +2295,7 @@ from the page action menu.
 
   dimension: metrics__quantity__places_history_migration_num_migrated {
     label: "Places History Migration Num Migrated"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.places_history_migration_num_migrated ;;
     type: number
     group_label: "Places History Migration"
@@ -2313,7 +2313,7 @@ from the page action menu.
 
   dimension: metrics__quantity__places_history_migration_num_to_migrate {
     label: "Places History Migration Num To Migrate"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.places_history_migration_num_to_migrate ;;
     type: number
     group_label: "Places History Migration"

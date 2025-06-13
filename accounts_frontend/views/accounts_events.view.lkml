@@ -79,6 +79,23 @@ by query parameter `entrypoint_variation` in the URL.
 "
   }
 
+  dimension: metrics__string__event_choice {
+    label: "Event Choice"
+    hidden: no
+    sql: ${TABLE}.metrics.string.event_choice ;;
+    type: string
+    group_label: "Event"
+    group_item_label: "Choice"
+
+    link: {
+      label: "Glean Dictionary reference for Event Choice"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_choice"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "the choice made by the user in a given event"
+  }
+
   dimension: metrics__string__event_name {
     label: "Event Name"
     hidden: no
