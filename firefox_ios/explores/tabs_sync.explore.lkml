@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/tabs_sync.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/tabs_sync_last_updated.datagroup.lkml"
 
 explore: tabs_sync {
   sql_always_where: ${tabs_sync.submission_date} >= '2010-01-01' ;;
   view_label: " Tabs_Sync"
   description: "Explore for the tabs_sync ping. A ping sent for every Tabs engine sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: tabs_sync
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -72,6 +66,15 @@ explore: tabs_sync {
   join: tabs_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${tabs_sync.ping_info__experiments}) AS tabs_sync__ping_info__experiments ;;
+  }
+
+  persist_with: tabs_sync_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

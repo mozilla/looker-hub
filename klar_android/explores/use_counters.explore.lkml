@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/klar_android/views/use_counters.view.lkml"
+include: "/looker-hub/klar_android/datagroups/use_counters_last_updated.datagroup.lkml"
 
 explore: use_counters {
   sql_always_where: ${use_counters.submission_date} >= '2010-01-01' ;;
   view_label: " Use_Counters"
   description: "Explore for the use_counters ping. Collects counts of uses of web platform features. See [Use Counters Documentation](https://firefox-source-docs.mozilla.org/dom/use-counters.html) for more information."
   view_name: use_counters
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: use_counters__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -56,6 +51,14 @@ explore: use_counters {
   join: use_counters__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${use_counters.ping_info__experiments}) AS use_counters__ping_info__experiments ;;
+  }
+
+  persist_with: use_counters_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

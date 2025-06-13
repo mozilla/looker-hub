@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/contextual_services_private/views/event_aggregates_spons_tiles.view.lkml"
+include: "/looker-hub/contextual_services_private/datagroups/event_aggregates_spons_tiles_last_updated.datagroup.lkml"
 
 explore: event_aggregates_spons_tiles {
   sql_always_where: ${event_aggregates_spons_tiles.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: event_aggregates_spons_tiles {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: event_aggregates_spons_tiles_last_updated
 }

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/accounts_backend/views/accounts_events.view.lkml"
+include: "/looker-hub/accounts_backend/datagroups/accounts_events_last_updated.datagroup.lkml"
 
 explore: accounts_events {
   hidden: yes
@@ -12,12 +13,6 @@ explore: accounts_events {
   view_label: " Accounts_Events"
   description: "Explore for the accounts_events ping. An account service side event"
   view_name: accounts_events
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: accounts_events__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -52,6 +47,14 @@ explore: accounts_events {
   join: accounts_events__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${accounts_events.ping_info__experiments}) AS accounts_events__ping_info__experiments ;;
+  }
+
+  persist_with: accounts_events_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

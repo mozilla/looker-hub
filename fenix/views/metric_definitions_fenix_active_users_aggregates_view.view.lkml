@@ -17,9 +17,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -28,6 +34,7 @@ looker_base_fields_client_info__session_count,
 looker_base_fields_client_info__session_id,
 looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields_client_info__windows_build_number,
+looker_base_fields_is_bot_generated,
 looker_base_fields_metadata__geo__city,
 looker_base_fields_metadata__geo__country,
 looker_base_fields_metadata__geo__db_version,
@@ -35,6 +42,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -60,8 +68,6 @@ fenix_active_users_aggregates_view_adjust_network,
 fenix_active_users_aggregates_view_app_name,
 fenix_active_users_aggregates_view_app_version,
 fenix_active_users_aggregates_view_app_version_is_major_release,
-fenix_active_users_aggregates_view_app_version_major,
-fenix_active_users_aggregates_view_app_version_minor,
 fenix_active_users_aggregates_view_app_version_patch_revision,
 fenix_active_users_aggregates_view_attributed,
 fenix_active_users_aggregates_view_attribution_medium,
@@ -127,9 +133,15 @@ looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
 looker_base_fields.client_info.architecture AS looker_base_fields_client_info__architecture,
+looker_base_fields.client_info.attribution.campaign AS looker_base_fields_client_info__attribution__campaign,
+looker_base_fields.client_info.attribution.content AS looker_base_fields_client_info__attribution__content,
+looker_base_fields.client_info.attribution.medium AS looker_base_fields_client_info__attribution__medium,
+looker_base_fields.client_info.attribution.source AS looker_base_fields_client_info__attribution__source,
+looker_base_fields.client_info.attribution.term AS looker_base_fields_client_info__attribution__term,
 looker_base_fields.client_info.build_date AS looker_base_fields_client_info__build_date,
 looker_base_fields.client_info.device_manufacturer AS looker_base_fields_client_info__device_manufacturer,
 looker_base_fields.client_info.device_model AS looker_base_fields_client_info__device_model,
+looker_base_fields.client_info.distribution.name AS looker_base_fields_client_info__distribution__name,
 looker_base_fields.client_info.first_run_date AS looker_base_fields_client_info__first_run_date,
 looker_base_fields.client_info.locale AS looker_base_fields_client_info__locale,
 looker_base_fields.client_info.os AS looker_base_fields_client_info__os,
@@ -138,6 +150,7 @@ looker_base_fields.client_info.session_count AS looker_base_fields_client_info__
 looker_base_fields.client_info.session_id AS looker_base_fields_client_info__session_id,
 looker_base_fields.client_info.telemetry_sdk_build AS looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields.client_info.windows_build_number AS looker_base_fields_client_info__windows_build_number,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.metadata.geo.city AS looker_base_fields_metadata__geo__city,
 looker_base_fields.metadata.geo.country AS looker_base_fields_metadata__geo__country,
 looker_base_fields.metadata.geo.db_version AS looker_base_fields_metadata__geo__db_version,
@@ -145,6 +158,7 @@ looker_base_fields.metadata.geo.subdivision1 AS looker_base_fields_metadata__geo
 looker_base_fields.metadata.geo.subdivision2 AS looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields.metadata.header.date AS looker_base_fields_metadata__header__date,
 looker_base_fields.metadata.header.dnt AS looker_base_fields_metadata__header__dnt,
+looker_base_fields.metadata.header.parsed_date AS looker_base_fields_metadata__header__parsed,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_cipher_hex AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields.metadata.header.parsed_x_lb_tags.tls_version AS looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields.metadata.header.x_debug_id AS looker_base_fields_metadata__header__x_debug_id,
@@ -170,8 +184,6 @@ fenix_active_users_aggregates_view.adjust_network AS fenix_active_users_aggregat
 fenix_active_users_aggregates_view.app_name AS fenix_active_users_aggregates_view_app_name,
 fenix_active_users_aggregates_view.app_version AS fenix_active_users_aggregates_view_app_version,
 fenix_active_users_aggregates_view.app_version_is_major_release AS fenix_active_users_aggregates_view_app_version_is_major_release,
-fenix_active_users_aggregates_view.app_version_major AS fenix_active_users_aggregates_view_app_version_major,
-fenix_active_users_aggregates_view.app_version_minor AS fenix_active_users_aggregates_view_app_version_minor,
 fenix_active_users_aggregates_view.app_version_patch_revision AS fenix_active_users_aggregates_view_app_version_patch_revision,
 fenix_active_users_aggregates_view.attributed AS fenix_active_users_aggregates_view_attributed,
 fenix_active_users_aggregates_view.attribution_medium AS fenix_active_users_aggregates_view_attribution_medium,
@@ -246,9 +258,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -257,6 +275,7 @@ looker_base_fields_client_info__session_count,
 looker_base_fields_client_info__session_id,
 looker_base_fields_client_info__telemetry_sdk_build,
 looker_base_fields_client_info__windows_build_number,
+looker_base_fields_is_bot_generated,
 looker_base_fields_metadata__geo__city,
 looker_base_fields_metadata__geo__country,
 looker_base_fields_metadata__geo__db_version,
@@ -264,6 +283,7 @@ looker_base_fields_metadata__geo__subdivision1,
 looker_base_fields_metadata__geo__subdivision2,
 looker_base_fields_metadata__header__date,
 looker_base_fields_metadata__header__dnt,
+looker_base_fields_metadata__header__parsed,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex,
 looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version,
 looker_base_fields_metadata__header__x_debug_id,
@@ -289,8 +309,6 @@ fenix_active_users_aggregates_view_adjust_network,
 fenix_active_users_aggregates_view_app_name,
 fenix_active_users_aggregates_view_app_version,
 fenix_active_users_aggregates_view_app_version_is_major_release,
-fenix_active_users_aggregates_view_app_version_major,
-fenix_active_users_aggregates_view_app_version_minor,
 fenix_active_users_aggregates_view_app_version_patch_revision,
 fenix_active_users_aggregates_view_attributed,
 fenix_active_users_aggregates_view_attribution_medium,
@@ -350,31 +368,36 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: app_version_major {
     sql: ${TABLE}.looker_base_fields_app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.looker_base_fields_app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.looker_base_fields_app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.looker_base_fields_client_info__android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
     sql: ${TABLE}.looker_base_fields_client_info__app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Build"
   }
@@ -382,6 +405,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: client_info__app_channel {
     sql: ${TABLE}.looker_base_fields_client_info__app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Channel"
   }
@@ -389,6 +413,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: client_info__app_display_version {
     sql: ${TABLE}.looker_base_fields_client_info__app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Display Version"
   }
@@ -396,13 +421,61 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: client_info__architecture {
     sql: ${TABLE}.looker_base_fields_client_info__architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Architecture"
+  }
+
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Term"
   }
 
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Build Date"
   }
@@ -416,6 +489,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.looker_base_fields_client_info__device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Manufacturer"
   }
@@ -423,13 +497,29 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: client_info__device_model {
     sql: ${TABLE}.looker_base_fields_client_info__device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
     sql: ${TABLE}.looker_base_fields_client_info__first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "First Run Date"
   }
@@ -437,6 +527,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: client_info__locale {
     sql: ${TABLE}.looker_base_fields_client_info__locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Locale"
   }
@@ -444,20 +535,23 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: client_info__os {
     sql: ${TABLE}.looker_base_fields_client_info__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
     sql: ${TABLE}.looker_base_fields_client_info__os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
     sql: ${TABLE}.looker_base_fields_client_info__session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Count"
   }
@@ -465,20 +559,23 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: client_info__session_id {
     sql: ${TABLE}.looker_base_fields_client_info__session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.looker_base_fields_client_info__telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.looker_base_fields_client_info__windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Windows Build Number"
   }
@@ -489,9 +586,17 @@ fenix_active_users_aggregates_view_weekly_users,
     group_label: "Base Fields"
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.looker_base_fields_metadata__geo__city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "City"
   }
@@ -499,6 +604,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__geo__country {
     sql: ${TABLE}.looker_base_fields_metadata__geo__country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Country"
     map_layer_name: countries
@@ -507,13 +613,15 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.looker_base_fields_metadata__geo__db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.looker_base_fields_metadata__geo__subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision1"
   }
@@ -521,6 +629,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.looker_base_fields_metadata__geo__subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
   }
@@ -528,6 +637,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__header__date {
     sql: ${TABLE}.looker_base_fields_metadata__header__date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Date"
   }
@@ -535,22 +645,25 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__header__dnt {
     sql: ${TABLE}.looker_base_fields_metadata__header__dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed_x_lb_tags__tls_cipher_hex ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Tls Cipher Hex"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed_x_lb_tags__tls_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Tls Version"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -562,27 +675,31 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
   }
 
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Pingsender Version"
   }
@@ -590,6 +707,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Source Tags"
   }
@@ -597,6 +715,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.looker_base_fields_metadata__header__x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "X Telemetry Agent"
   }
@@ -604,13 +723,15 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.looker_base_fields_metadata__isp__db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: metadata__isp__name {
     sql: ${TABLE}.looker_base_fields_metadata__isp__name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Name"
   }
@@ -618,6 +739,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__isp__organization {
     sql: ${TABLE}.looker_base_fields_metadata__isp__organization ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Organization"
   }
@@ -625,6 +747,7 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.looker_base_fields_metadata__user_agent__browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Browser"
   }
@@ -632,13 +755,15 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.looker_base_fields_metadata__user_agent__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.looker_base_fields_metadata__user_agent__version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Version"
   }
@@ -646,108 +771,126 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: normalized_app_id {
     sql: ${TABLE}.looker_base_fields_normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.looker_base_fields_normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.looker_base_fields_normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.looker_base_fields_normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.fenix_active_users_aggregates_view_adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_name {
     sql: ${TABLE}.fenix_active_users_aggregates_view_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version {
     sql: ${TABLE}.fenix_active_users_aggregates_view_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_is_major_release {
     sql: ${TABLE}.fenix_active_users_aggregates_view_app_version_is_major_release ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch_revision {
     sql: ${TABLE}.fenix_active_users_aggregates_view_app_version_patch_revision ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attributed {
     sql: ${TABLE}.fenix_active_users_aggregates_view_attributed ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_medium {
     sql: ${TABLE}.fenix_active_users_aggregates_view_attribution_medium ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: attribution_source {
     sql: ${TABLE}.fenix_active_users_aggregates_view_attribution_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: channel {
     sql: ${TABLE}.fenix_active_users_aggregates_view_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: city {
     sql: ${TABLE}.fenix_active_users_aggregates_view_city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.fenix_active_users_aggregates_view_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -755,108 +898,126 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension: daily_users {
     sql: ${TABLE}.fenix_active_users_aggregates_view_daily_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dau {
     sql: ${TABLE}.fenix_active_users_aggregates_view_dau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.fenix_active_users_aggregates_view_distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: first_seen_year {
     sql: ${TABLE}.fenix_active_users_aggregates_view_first_seen_year ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: install_source {
     sql: ${TABLE}.fenix_active_users_aggregates_view_install_source ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_default_browser {
     sql: ${TABLE}.fenix_active_users_aggregates_view_is_default_browser ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: locale {
     sql: ${TABLE}.fenix_active_users_aggregates_view_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: mau {
     sql: ${TABLE}.fenix_active_users_aggregates_view_mau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: monthly_users {
     sql: ${TABLE}.fenix_active_users_aggregates_view_monthly_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os {
     sql: ${TABLE}.fenix_active_users_aggregates_view_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os_grouped {
     sql: ${TABLE}.fenix_active_users_aggregates_view_os_grouped ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os_version {
     sql: ${TABLE}.fenix_active_users_aggregates_view_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os_version_major {
     sql: ${TABLE}.fenix_active_users_aggregates_view_os_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: os_version_minor {
     sql: ${TABLE}.fenix_active_users_aggregates_view_os_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: partnership {
     sql: ${TABLE}.fenix_active_users_aggregates_view_partnership ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: segment {
     sql: ${TABLE}.fenix_active_users_aggregates_view_segment ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: wau {
     sql: ${TABLE}.fenix_active_users_aggregates_view_wau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: weekly_users {
     sql: ${TABLE}.fenix_active_users_aggregates_view_weekly_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -873,6 +1034,23 @@ fenix_active_users_aggregates_view_weekly_users,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata Header: Parsed Date"
+    group_label: "Base Fields"
   }
 
   set: metrics {

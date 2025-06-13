@@ -688,96 +688,112 @@ a wallpaper.
   dimension: ads_value_tier {
     sql: ${TABLE}.countries_ads_value_tier ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: code {
     sql: ${TABLE}.countries_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: code_3 {
     sql: ${TABLE}.countries_code_3 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: mozilla_vpn_available {
     sql: ${TABLE}.countries_mozilla_vpn_available ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: name {
     sql: ${TABLE}.countries_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_available_on_newtab {
     sql: ${TABLE}.countries_pocket_available_on_newtab ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: region_name {
     sql: ${TABLE}.countries_region_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_tiles_available_on_newtab {
     sql: ${TABLE}.countries_sponsored_tiles_available_on_newtab ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: subregion_name {
     sql: ${TABLE}.countries_subregion_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: activity_segment {
     sql: ${TABLE}.newtab_clients_daily_activity_segment ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: browser_name {
     sql: ${TABLE}.newtab_clients_daily_browser_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: browser_version {
     sql: ${TABLE}.newtab_clients_daily_browser_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: channel {
     sql: ${TABLE}.newtab_clients_daily_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country_code {
     sql: ${TABLE}.newtab_clients_daily_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: default_private_search_engine {
     sql: ${TABLE}.newtab_clients_daily_default_private_search_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: default_search_engine {
     sql: ${TABLE}.newtab_clients_daily_default_search_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -790,414 +806,483 @@ a wallpaper.
   dimension: follow_on_search_ad_clicks {
     sql: ${TABLE}.newtab_clients_daily_follow_on_search_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: follow_on_search_ad_impressions {
     sql: ${TABLE}.newtab_clients_daily_follow_on_search_ad_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_new_profile {
     sql: ${TABLE}.newtab_clients_daily_is_new_profile ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: legacy_telemetry_client_id {
     sql: ${TABLE}.newtab_clients_daily_legacy_telemetry_client_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: list_card_clicks {
     sql: ${TABLE}.newtab_clients_daily_list_card_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: list_card_dismissals {
     sql: ${TABLE}.newtab_clients_daily_list_card_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: list_card_impressions {
     sql: ${TABLE}.newtab_clients_daily_list_card_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: list_card_saves {
     sql: ${TABLE}.newtab_clients_daily_list_card_saves ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: locale {
     sql: ${TABLE}.newtab_clients_daily_locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: newtab_dismissal_count {
     sql: ${TABLE}.newtab_clients_daily_newtab_dismissal_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: newtab_homepage_category {
     sql: ${TABLE}.newtab_clients_daily_newtab_homepage_category ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: newtab_newtab_category {
     sql: ${TABLE}.newtab_clients_daily_newtab_newtab_category ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: newtab_visit_count {
     sql: ${TABLE}.newtab_clients_daily_newtab_visit_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: non_search_engagement_count {
     sql: ${TABLE}.newtab_clients_daily_non_search_engagement_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.newtab_clients_daily_normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.newtab_clients_daily_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_list_card_clicks {
     sql: ${TABLE}.newtab_clients_daily_organic_list_card_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_list_card_dismissals {
     sql: ${TABLE}.newtab_clients_daily_organic_list_card_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_list_card_impressions {
     sql: ${TABLE}.newtab_clients_daily_organic_list_card_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_list_card_saves {
     sql: ${TABLE}.newtab_clients_daily_organic_list_card_saves ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_pocket_dismissals {
     sql: ${TABLE}.newtab_clients_daily_organic_pocket_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_pocket_saves {
     sql: ${TABLE}.newtab_clients_daily_organic_pocket_saves ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_topsite_tile_clicks {
     sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_topsite_tile_dismissals {
     sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic_topsite_tile_impressions {
     sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_clicks {
     sql: ${TABLE}.newtab_clients_daily_pocket_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_enabled {
     sql: ${TABLE}.newtab_clients_daily_pocket_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_impressions {
     sql: ${TABLE}.newtab_clients_daily_pocket_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_is_signed_in {
     sql: ${TABLE}.newtab_clients_daily_pocket_is_signed_in ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_saves {
     sql: ${TABLE}.newtab_clients_daily_pocket_saves ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_sponsored_stories_enabled {
     sql: ${TABLE}.newtab_clients_daily_pocket_sponsored_stories_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_thumb_voting_events {
     sql: ${TABLE}.newtab_clients_daily_pocket_thumb_voting_events ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_thumbs_down {
     sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_down ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pocket_thumbs_up {
     sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_up ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: profile_group_id {
     sql: ${TABLE}.newtab_clients_daily_profile_group_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: searches {
     sql: ${TABLE}.newtab_clients_daily_searches ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_list_card_clicks {
     sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_list_card_dismissals {
     sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_list_card_impressions {
     sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_list_card_saves {
     sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_saves ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_pocket_dismissals {
     sql: ${TABLE}.newtab_clients_daily_sponsored_pocket_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_pocket_saves {
     sql: ${TABLE}.newtab_clients_daily_sponsored_pocket_saves ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_topsite_tile_clicks {
     sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_topsite_tile_dismissals {
     sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sponsored_topsite_tile_impressions {
     sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: tagged_follow_on_search_ad_clicks {
     sql: ${TABLE}.newtab_clients_daily_tagged_follow_on_search_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: tagged_follow_on_search_ad_impressions {
     sql: ${TABLE}.newtab_clients_daily_tagged_follow_on_search_ad_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: tagged_search_ad_clicks {
     sql: ${TABLE}.newtab_clients_daily_tagged_search_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: tagged_search_ad_impressions {
     sql: ${TABLE}.newtab_clients_daily_tagged_search_ad_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topic_preferences_set {
     sql: ${TABLE}.newtab_clients_daily_topic_preferences_set ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topic_selection_dismissals {
     sql: ${TABLE}.newtab_clients_daily_topic_selection_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topic_selection_opened {
     sql: ${TABLE}.newtab_clients_daily_topic_selection_opened ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topic_selection_selected_topics_first_time {
     sql: ${TABLE}.newtab_clients_daily_topic_selection_selected_topics_first_time ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topic_selection_updates {
     sql: ${TABLE}.newtab_clients_daily_topic_selection_updates ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topsite_tile_clicks {
     sql: ${TABLE}.newtab_clients_daily_topsite_tile_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topsite_tile_dismissals {
     sql: ${TABLE}.newtab_clients_daily_topsite_tile_dismissals ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topsite_tile_impressions {
     sql: ${TABLE}.newtab_clients_daily_topsite_tile_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topsites_enabled {
     sql: ${TABLE}.newtab_clients_daily_topsites_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topsites_rows {
     sql: ${TABLE}.newtab_clients_daily_topsites_rows ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topsites_sponsored_enabled {
     sql: ${TABLE}.newtab_clients_daily_topsites_sponsored_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: topsites_sponsored_tiles_configured {
     sql: ${TABLE}.newtab_clients_daily_topsites_sponsored_tiles_configured ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: visits_with_default_ui {
     sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: visits_with_default_ui_with_non_impression_engagement {
     sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: visits_with_default_ui_with_non_search_engagement {
     sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui_with_non_search_engagement ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: visits_with_non_default_ui {
     sql: ${TABLE}.newtab_clients_daily_visits_with_non_default_ui ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: visits_with_non_impression_engagement {
     sql: ${TABLE}.newtab_clients_daily_visits_with_non_impression_engagement ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: visits_with_non_search_engagement {
     sql: ${TABLE}.newtab_clients_daily_visits_with_non_search_engagement ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: wallpaper_category_clicks {
     sql: ${TABLE}.newtab_clients_daily_wallpaper_category_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: weather_widget_location_selected {
     sql: ${TABLE}.newtab_clients_daily_weather_widget_location_selected ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -1222,6 +1307,108 @@ a wallpaper.
     label: "Newtab Ad Click Rate Average"
     group_label: "Statistics"
     description: "Average of Newtab Ad Click Rate"
+  }
+
+  measure: sponsored_pocket_clicks_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Pocket Clicks Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.sponsored_pocket_clicks > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Pocket Clicks"
+    hidden: yes
+  }
+
+  measure: sponsored_pocket_clicks_client_count {
+    type: number
+    label: "Sponsored Pocket Clicks Client Count"
+    group_label: "Statistics"
+    sql: ${sponsored_pocket_clicks_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Pocket Clicks"
+  }
+
+  measure: sponsored_pocket_impressions_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Pocket Impressions Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.sponsored_pocket_impressions > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Pocket Impressions"
+    hidden: yes
+  }
+
+  measure: sponsored_pocket_impressions_client_count {
+    type: number
+    label: "Sponsored Pocket Impressions Client Count"
+    group_label: "Statistics"
+    sql: ${sponsored_pocket_impressions_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Pocket Impressions"
+  }
+
+  measure: sponsored_tile_impressions_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Tile Impressions Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.sponsored_tile_impressions > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Tile Impressions"
+    hidden: yes
+  }
+
+  measure: sponsored_tile_impressions_client_count {
+    type: number
+    label: "Sponsored Tile Impressions Client Count"
+    group_label: "Statistics"
+    sql: ${sponsored_tile_impressions_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Tile Impressions"
+  }
+
+  measure: sponsored_tile_clicks_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Tile Clicks Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.sponsored_tile_clicks > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Tile Clicks"
+    hidden: yes
+  }
+
+  measure: sponsored_tile_clicks_client_count {
+    type: number
+    label: "Sponsored Tile Clicks Client Count"
+    group_label: "Statistics"
+    sql: ${sponsored_tile_clicks_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Tile Clicks"
+  }
+
+  measure: newtab_sponsored_tiles_enabled_client_count_sampled {
+    type: count_distinct
+    label: "Newtab Sponsored Tiles Enabled Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.newtab_sponsored_tiles_enabled > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Newtab Sponsored Tiles Enabled"
+    hidden: yes
+  }
+
+  measure: newtab_sponsored_tiles_enabled_client_count {
+    type: number
+    label: "Newtab Sponsored Tiles Enabled Client Count"
+    group_label: "Statistics"
+    sql: ${newtab_sponsored_tiles_enabled_client_count_sampled} *1 ;;
+    description: "Number of clients with Newtab Sponsored Tiles Enabled"
+  }
+
+  measure: newtab_sponsored_pocket_stories_enabled_client_count_sampled {
+    type: count_distinct
+    label: "Newtab Sponsored Pocket Stories Enabled Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.newtab_sponsored_pocket_stories_enabled > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Newtab Sponsored Pocket Stories Enabled"
+    hidden: yes
+  }
+
+  measure: newtab_sponsored_pocket_stories_enabled_client_count {
+    type: number
+    label: "Newtab Sponsored Pocket Stories Enabled Client Count"
+    group_label: "Statistics"
+    sql: ${newtab_sponsored_pocket_stories_enabled_client_count_sampled} *1 ;;
+    description: "Number of clients with Newtab Sponsored Pocket Stories Enabled"
   }
 
   measure: newtab_visits_sum {
@@ -1294,6 +1481,18 @@ a wallpaper.
       weather_widget_change_display_to_detailed,
       weather_widget_change_display_to_simple,
       newtab_ad_click_rate_average,
+      sponsored_pocket_clicks_client_count_sampled,
+      sponsored_pocket_clicks_client_count,
+      sponsored_pocket_impressions_client_count_sampled,
+      sponsored_pocket_impressions_client_count,
+      sponsored_tile_impressions_client_count_sampled,
+      sponsored_tile_impressions_client_count,
+      sponsored_tile_clicks_client_count_sampled,
+      sponsored_tile_clicks_client_count,
+      newtab_sponsored_tiles_enabled_client_count_sampled,
+      newtab_sponsored_tiles_enabled_client_count,
+      newtab_sponsored_pocket_stories_enabled_client_count_sampled,
+      newtab_sponsored_pocket_stories_enabled_client_count,
       newtab_visits_sum,
       newtab_visits_client_count_sampled,
       newtab_visits_client_count,

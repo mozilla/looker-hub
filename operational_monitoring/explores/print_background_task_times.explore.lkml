@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/print_background_task_times.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/print_background_task_times_last_updated.datagroup.lkml"
 
 explore: print_background_task_times {
   always_filter: {
@@ -14,4 +15,5 @@ explore: print_background_task_times {
   }
 
   hidden: yes
+  persist_with: print_background_task_times_last_updated
 }

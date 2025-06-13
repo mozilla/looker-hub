@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/serp_categorization.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/serp_categorization_last_updated.datagroup.lkml"
 
 explore: serp_categorization {
   sql_always_where: ${serp_categorization.submission_date} >= '2010-01-01' ;;
   view_label: " Serp_Categorization"
   description: "Explore for the serp_categorization ping. A ping representing a series of SERP loads that have been categorized. Does not contain `client_id`. Is sent after a threshold of SERP loads is reached."
   view_name: serp_categorization
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: serp_categorization__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -46,6 +41,14 @@ explore: serp_categorization {
   join: serp_categorization__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${serp_categorization__events.extra}) AS serp_categorization__events__extra ;;
+  }
+
+  persist_with: serp_categorization_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

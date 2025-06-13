@@ -8,6 +8,7 @@ view: fxa_users_services_first_seen_table {
   dimension: did_register {
     sql: ${TABLE}.did_register ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     description: "Set to True if the user submitted
 the event_type of `fxa_reg - complete`
 event on the specific submission_date.
@@ -17,6 +18,7 @@ event on the specific submission_date.
   dimension: first_service_app_version {
     sql: ${TABLE}.first_service_app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Mozilla app version,
 follows format: major.minor.patch (e.g. 99.3.3).
 "
@@ -25,6 +27,7 @@ follows format: major.minor.patch (e.g. 99.3.3).
   dimension: first_service_country {
     sql: ${TABLE}.first_service_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "2 char string representing the country where the device was located.
 "
   }
@@ -32,41 +35,49 @@ follows format: major.minor.patch (e.g. 99.3.3).
   dimension: first_service_flow_entrypoint {
     sql: ${TABLE}.first_service_flow_entrypoint ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_service_flow_id {
     sql: ${TABLE}.first_service_flow_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_service_flow_utm_campaign {
     sql: ${TABLE}.first_service_flow_utm_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_service_flow_utm_content {
     sql: ${TABLE}.first_service_flow_utm_content ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_service_flow_utm_medium {
     sql: ${TABLE}.first_service_flow_utm_medium ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_service_flow_utm_source {
     sql: ${TABLE}.first_service_flow_utm_source ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_service_flow_utm_term {
     sql: ${TABLE}.first_service_flow_utm_term ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_service_language {
     sql: ${TABLE}.first_service_language ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Language settings used by the device.
 "
   }
@@ -74,6 +85,7 @@ follows format: major.minor.patch (e.g. 99.3.3).
   dimension: first_service_os_name {
     sql: ${TABLE}.first_service_os_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Name of the operating system the device was using.
 E.g. Android
 "
@@ -82,6 +94,7 @@ E.g. Android
   dimension: first_service_os_version {
     sql: ${TABLE}.first_service_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Version of the OS the device was using.
 "
   }
@@ -89,6 +102,7 @@ E.g. Android
   dimension: first_service_ua_browser {
     sql: ${TABLE}.first_service_ua_browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The user's web browser, e.g. 'Firefox' or 'Chrome'.
 "
   }
@@ -96,6 +110,7 @@ E.g. Android
   dimension: first_service_ua_version {
     sql: ${TABLE}.first_service_ua_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The user's browser version.
 "
   }
@@ -103,6 +118,7 @@ E.g. Android
   dimension: service {
     sql: ${TABLE}.service ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The service identifier. For Sync it may be empty or sync.
 For OAuth reliers it is their hex client id.
 Example: sync
@@ -112,6 +128,7 @@ Example: sync
   dimension: user_id {
     sql: ${TABLE}.user_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "36-char long hash randomly assigned when the account
 is created.
 "
@@ -120,6 +137,7 @@ is created.
   dimension_group: first_service_flow {
     sql: ${TABLE}.first_service_flow_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -134,6 +152,7 @@ is created.
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/account_spotlight_modal_english_rollout_v2.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/account_spotlight_modal_english_rollout_v2_last_updated.datagroup.lkml"
 
 explore: account_spotlight_modal_english_rollout_v2 {
   always_filter: {
@@ -14,4 +15,5 @@ explore: account_spotlight_modal_english_rollout_v2 {
   }
 
   hidden: yes
+  persist_with: account_spotlight_modal_english_rollout_v2_last_updated
 }

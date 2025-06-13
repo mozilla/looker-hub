@@ -8,16 +8,19 @@ view: ltv_states_table {
   dimension: active {
     sql: ${TABLE}.active ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_id {
@@ -29,33 +32,39 @@ view: ltv_states_table {
   dimension: days_since_first_seen {
     sql: ${TABLE}.days_since_first_seen ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Days Since First Seen"
   }
 
   dimension: days_since_seen {
     sql: ${TABLE}.days_since_seen ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Days Since Seen"
   }
 
   dimension: death_time {
     sql: ${TABLE}.death_time ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_reported_country {
     sql: ${TABLE}.first_reported_country ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_reported_isp {
     sql: ${TABLE}.first_reported_isp ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: markov_state__state_ios_v2 {
     sql: ${TABLE}.markov_state.state_ios_v2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Markov State"
     group_item_label: "State Ios V2"
   }
@@ -63,27 +72,32 @@ view: ltv_states_table {
   dimension: max_weeks {
     sql: ${TABLE}.max_weeks ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: pattern {
     sql: ${TABLE}.pattern ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Sample ID"
   }
 
   dimension: total_historic_ad_clicks {
     sql: ${TABLE}.total_historic_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -100,6 +114,7 @@ view: ltv_states_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

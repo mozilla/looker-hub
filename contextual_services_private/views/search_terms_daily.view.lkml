@@ -8,16 +8,19 @@ view: search_terms_daily {
   dimension: query {
     sql: ${TABLE}.query ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: search_sessions {
     sql: ${TABLE}.search_sessions ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

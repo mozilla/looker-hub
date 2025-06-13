@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/home.view.lkml"
+include: "/looker-hub/fenix/datagroups/home_last_updated.datagroup.lkml"
 
 explore: home {
   sql_always_where: ${home.submission_date} >= '2010-01-01' ;;
   view_label: " Home"
   description: "Explore for the home ping. Homepage new tab related instrumentation."
   view_name: home
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: home__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -52,6 +46,15 @@ explore: home {
   join: home__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${home.ping_info__experiments}) AS home__ping_info__experiments ;;
+  }
+
+  persist_with: home_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

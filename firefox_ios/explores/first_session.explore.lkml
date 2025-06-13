@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/first_session.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/first_session_last_updated.datagroup.lkml"
 
 explore: first_session {
   sql_always_where: ${first_session.submission_date} >= '2010-01-01' ;;
   view_label: " First_Session"
   description: "Explore for the first_session ping. Recorded on first_session when the user installs the app."
   view_name: first_session
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: first_session__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -52,6 +46,15 @@ explore: first_session {
   join: first_session__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${first_session.ping_info__experiments}) AS first_session__ping_info__experiments ;;
+  }
+
+  persist_with: first_session_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

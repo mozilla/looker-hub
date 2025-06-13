@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/creditcards_sync.view.lkml"
+include: "/looker-hub/fenix/datagroups/creditcards_sync_last_updated.datagroup.lkml"
 
 explore: creditcards_sync {
   sql_always_where: ${creditcards_sync.submission_date} >= '2010-01-01' ;;
   view_label: " Creditcards_Sync"
   description: "Explore for the creditcards_sync ping. A ping sent for every Credit Cards engine sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: creditcards_sync
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: creditcards_sync__metrics__labeled_counter__creditcards_sync_incoming {
     relationship: one_to_many
@@ -72,6 +66,15 @@ explore: creditcards_sync {
   join: creditcards_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${creditcards_sync.ping_info__experiments}) AS creditcards_sync__ping_info__experiments ;;
+  }
+
+  persist_with: creditcards_sync_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

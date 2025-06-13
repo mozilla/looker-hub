@@ -8,21 +8,31 @@ view: survey_intercept_q3_table {
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: language {
+    sql: ${TABLE}.language ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: response_time {
     sql: ${TABLE}.response_time ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: session_id {
     sql: ${TABLE}.session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: status {
     sql: ${TABLE}.status ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: survey_data {
@@ -30,9 +40,30 @@ view: survey_intercept_q3_table {
     hidden: yes
   }
 
+  dimension: url_variables {
+    sql: ${TABLE}.url_variables ;;
+    hidden: yes
+  }
+
+  dimension_group: date_started {
+    sql: ${TABLE}.date_started ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -52,16 +83,19 @@ view: survey_intercept_q3_table__survey_data {
   dimension: answer {
     sql: ${TABLE}.answer ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: answer_id {
     sql: ${TABLE}.answer_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: options {
@@ -72,31 +106,43 @@ view: survey_intercept_q3_table__survey_data {
   dimension: original_answer {
     sql: ${TABLE}.original_answer ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: parent {
+    sql: ${TABLE}.parent ;;
+    type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: question {
     sql: ${TABLE}.question ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: section_id {
     sql: ${TABLE}.section_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: shown {
     sql: ${TABLE}.shown ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: subquestions {
     sql: ${TABLE}.subquestions ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: type {
     sql: ${TABLE}.type ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -104,15 +150,32 @@ view: survey_intercept_q3_table__survey_data__options {
   dimension: answer {
     sql: ${TABLE}.answer ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: option {
     sql: ${TABLE}.option ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: survey_intercept_q3_table__url_variables {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 }

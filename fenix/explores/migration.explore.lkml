@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/migration.view.lkml"
+include: "/looker-hub/fenix/datagroups/migration_last_updated.datagroup.lkml"
 
 explore: migration {
   sql_always_where: ${migration.submission_date} >= '2010-01-01' ;;
   view_label: " Migration"
   description: "Explore for the migration ping. A ping sent after a Fennec->Fenix migration was completed."
   view_name: migration
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: migration__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -67,6 +61,15 @@ explore: migration {
   join: migration__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${migration.ping_info__experiments}) AS migration__ping_info__experiments ;;
+  }
+
+  persist_with: migration_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

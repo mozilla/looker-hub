@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/usage_reporting.view.lkml"
+include: "/looker-hub/fenix/datagroups/usage_reporting_last_updated.datagroup.lkml"
 
 explore: usage_reporting {
   sql_always_where: ${usage_reporting.submission_date} >= '2010-01-01' ;;
   view_label: " Usage_Reporting"
   description: "Explore for the usage_reporting ping. Minimal ping to measure the usage frequency of Firefox. Sent on the baseline schedule."
   view_name: usage_reporting
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: usage_reporting__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -47,6 +41,15 @@ explore: usage_reporting {
   join: usage_reporting__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${usage_reporting__events.extra}) AS usage_reporting__events__extra ;;
+  }
+
+  persist_with: usage_reporting_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

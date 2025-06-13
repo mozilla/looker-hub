@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/mozilla_vpn/views/daemonsession.view.lkml"
+include: "/looker-hub/mozilla_vpn/datagroups/daemonsession_last_updated.datagroup.lkml"
 
 explore: daemonsession {
   sql_always_where: ${daemonsession.submission_date} >= '2010-01-01' ;;
   view_label: " Daemonsession"
   description: "Explore for the daemonsession ping. Only on iOS and Android. Data for VPN sessions, as recorded from the Android daemon and iOS Network Extension. This ping will record start/end datestamp, session-based metrics, etc."
   view_name: daemonsession
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: daemonsession__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: daemonsession {
   join: daemonsession__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${daemonsession.ping_info__experiments}) AS daemonsession__ping_info__experiments ;;
+  }
+
+  persist_with: daemonsession_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

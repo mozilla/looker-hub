@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/addresses_sync.view.lkml"
+include: "/looker-hub/fenix/datagroups/addresses_sync_last_updated.datagroup.lkml"
 
 explore: addresses_sync {
   sql_always_where: ${addresses_sync.submission_date} >= '2010-01-01' ;;
   view_label: " Addresses_Sync"
   description: "Explore for the addresses_sync ping. A ping sent for every Addresses engine sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: addresses_sync
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: addresses_sync__metrics__labeled_counter__addresses_sync_incoming {
     relationship: one_to_many
@@ -72,6 +66,15 @@ explore: addresses_sync {
   join: addresses_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${addresses_sync.ping_info__experiments}) AS addresses_sync__ping_info__experiments ;;
+  }
+
+  persist_with: addresses_sync_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/klar_android/views/crash.view.lkml"
+include: "/looker-hub/klar_android/datagroups/crash_last_updated.datagroup.lkml"
 
 explore: crash {
   sql_always_where: ${crash.submission_date} >= '2010-01-01' ;;
   view_label: " Crash"
   description: "Explore for the crash ping. A ping to report crash information. This information is sent as soon as possible after a crash occurs (whether the crash is a background/content process or the main process). It is expected to be used for crash report analysis and to reduce blind spots in crash reporting."
   view_name: crash
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: crash__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: crash {
   join: crash__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${crash.ping_info__experiments}) AS crash__ping_info__experiments ;;
+  }
+
+  persist_with: crash_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

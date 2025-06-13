@@ -25,9 +25,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -41,6 +47,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -91,9 +98,15 @@ looker_base_fields.client_info.app_build AS looker_base_fields_client_info__app_
 looker_base_fields.client_info.app_channel AS looker_base_fields_client_info__app_channel,
 looker_base_fields.client_info.app_display_version AS looker_base_fields_client_info__app_display_version,
 looker_base_fields.client_info.architecture AS looker_base_fields_client_info__architecture,
+looker_base_fields.client_info.attribution.campaign AS looker_base_fields_client_info__attribution__campaign,
+looker_base_fields.client_info.attribution.content AS looker_base_fields_client_info__attribution__content,
+looker_base_fields.client_info.attribution.medium AS looker_base_fields_client_info__attribution__medium,
+looker_base_fields.client_info.attribution.source AS looker_base_fields_client_info__attribution__source,
+looker_base_fields.client_info.attribution.term AS looker_base_fields_client_info__attribution__term,
 looker_base_fields.client_info.build_date AS looker_base_fields_client_info__build_date,
 looker_base_fields.client_info.device_manufacturer AS looker_base_fields_client_info__device_manufacturer,
 looker_base_fields.client_info.device_model AS looker_base_fields_client_info__device_model,
+looker_base_fields.client_info.distribution.name AS looker_base_fields_client_info__distribution__name,
 looker_base_fields.client_info.first_run_date AS looker_base_fields_client_info__first_run_date,
 looker_base_fields.client_info.locale AS looker_base_fields_client_info__locale,
 looker_base_fields.client_info.os AS looker_base_fields_client_info__os,
@@ -107,6 +120,7 @@ looker_base_fields.geo.country AS looker_base_fields_geo__country,
 looker_base_fields.geo.db_version AS looker_base_fields_geo__db_version,
 looker_base_fields.geo.subdivision1 AS looker_base_fields_geo__subdivision1,
 looker_base_fields.geo.subdivision2 AS looker_base_fields_geo__subdivision2,
+looker_base_fields.is_bot_generated AS looker_base_fields_is_bot_generated,
 looker_base_fields.normalized_app_id AS looker_base_fields_normalized_app_id,
 looker_base_fields.normalized_app_name AS looker_base_fields_normalized_app_name,
 looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
@@ -186,9 +200,15 @@ looker_base_fields_client_info__app_build,
 looker_base_fields_client_info__app_channel,
 looker_base_fields_client_info__app_display_version,
 looker_base_fields_client_info__architecture,
+looker_base_fields_client_info__attribution__campaign,
+looker_base_fields_client_info__attribution__content,
+looker_base_fields_client_info__attribution__medium,
+looker_base_fields_client_info__attribution__source,
+looker_base_fields_client_info__attribution__term,
 looker_base_fields_client_info__build_date,
 looker_base_fields_client_info__device_manufacturer,
 looker_base_fields_client_info__device_model,
+looker_base_fields_client_info__distribution__name,
 looker_base_fields_client_info__first_run_date,
 looker_base_fields_client_info__locale,
 looker_base_fields_client_info__os,
@@ -202,6 +222,7 @@ looker_base_fields_geo__country,
 looker_base_fields_geo__db_version,
 looker_base_fields_geo__subdivision1,
 looker_base_fields_geo__subdivision2,
+looker_base_fields_is_bot_generated,
 looker_base_fields_normalized_app_id,
 looker_base_fields_normalized_app_name,
 looker_base_fields_normalized_channel,
@@ -323,31 +344,36 @@ looker_base_fields_user_agent__version,
   dimension: app_version_major {
     sql: ${TABLE}.looker_base_fields_app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.looker_base_fields_app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.looker_base_fields_app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.looker_base_fields_client_info__android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
   }
 
   dimension: client_info__app_build {
     sql: ${TABLE}.looker_base_fields_client_info__app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Build"
   }
@@ -355,6 +381,7 @@ looker_base_fields_user_agent__version,
   dimension: client_info__app_channel {
     sql: ${TABLE}.looker_base_fields_client_info__app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Channel"
   }
@@ -362,6 +389,7 @@ looker_base_fields_user_agent__version,
   dimension: client_info__app_display_version {
     sql: ${TABLE}.looker_base_fields_client_info__app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "App Display Version"
   }
@@ -369,13 +397,61 @@ looker_base_fields_user_agent__version,
   dimension: client_info__architecture {
     sql: ${TABLE}.looker_base_fields_client_info__architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Architecture"
+  }
+
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.looker_base_fields_client_info__attribution__term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Term"
   }
 
   dimension: client_info__build_date {
     sql: ${TABLE}.looker_base_fields_client_info__build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Build Date"
   }
@@ -389,6 +465,7 @@ looker_base_fields_user_agent__version,
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.looker_base_fields_client_info__device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Manufacturer"
   }
@@ -396,13 +473,29 @@ looker_base_fields_user_agent__version,
   dimension: client_info__device_model {
     sql: ${TABLE}.looker_base_fields_client_info__device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__ext ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.looker_base_fields_client_info__distribution__name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+    group_item_label: "Name"
   }
 
   dimension: client_info__first_run_date {
     sql: ${TABLE}.looker_base_fields_client_info__first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "First Run Date"
   }
@@ -410,6 +503,7 @@ looker_base_fields_user_agent__version,
   dimension: client_info__locale {
     sql: ${TABLE}.looker_base_fields_client_info__locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Locale"
   }
@@ -417,20 +511,23 @@ looker_base_fields_user_agent__version,
   dimension: client_info__os {
     sql: ${TABLE}.looker_base_fields_client_info__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: client_info__os_version {
     sql: ${TABLE}.looker_base_fields_client_info__os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
   }
 
   dimension: client_info__session_count {
     sql: ${TABLE}.looker_base_fields_client_info__session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Session Count"
   }
@@ -438,20 +535,23 @@ looker_base_fields_user_agent__version,
   dimension: client_info__session_id {
     sql: ${TABLE}.looker_base_fields_client_info__session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
   }
 
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.looker_base_fields_client_info__telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
   }
 
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.looker_base_fields_client_info__windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Windows Build Number"
   }
@@ -465,6 +565,7 @@ looker_base_fields_user_agent__version,
   dimension: geo__city {
     sql: ${TABLE}.looker_base_fields_geo__city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "City"
   }
@@ -472,6 +573,7 @@ looker_base_fields_user_agent__version,
   dimension: geo__country {
     sql: ${TABLE}.looker_base_fields_geo__country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Country"
   }
@@ -479,13 +581,15 @@ looker_base_fields_user_agent__version,
   dimension: geo__db_version {
     sql: ${TABLE}.looker_base_fields_geo__db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
   }
 
   dimension: geo__subdivision1 {
     sql: ${TABLE}.looker_base_fields_geo__subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision1"
   }
@@ -493,55 +597,71 @@ looker_base_fields_user_agent__version,
   dimension: geo__subdivision2 {
     sql: ${TABLE}.looker_base_fields_geo__subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Subdivision2"
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.looker_base_fields_is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
   }
 
   dimension: normalized_app_id {
     sql: ${TABLE}.looker_base_fields_normalized_app_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.looker_base_fields_normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.looker_base_fields_normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.looker_base_fields_normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.looker_base_fields_sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: user_agent__browser {
     sql: ${TABLE}.looker_base_fields_user_agent__browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Browser"
   }
@@ -549,13 +669,15 @@ looker_base_fields_user_agent__version,
   dimension: user_agent__os {
     sql: ${TABLE}.looker_base_fields_user_agent__os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: user_agent__version {
     sql: ${TABLE}.looker_base_fields_user_agent__version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
     group_item_label: "Version"
   }

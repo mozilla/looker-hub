@@ -8,6 +8,7 @@ view: ltv_state_values_table {
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     description: "The country that this prediction is specified for. Countries not explicitly present are bucketed into \"ROW\".
 "
@@ -16,24 +17,28 @@ view: ltv_state_values_table {
   dimension: predicted_ad_clicks {
     sql: ${TABLE}.predicted_ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of predicted ad clicks for the specified time horizon."
   }
 
   dimension: state {
     sql: ${TABLE}.state ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The markov state, as determined by the state function."
   }
 
   dimension: state_function {
     sql: ${TABLE}.state_function ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The state function used to determine the LTV for this state."
   }
 
   dimension: time_horizon {
     sql: ${TABLE}.time_horizon ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Number of days into the future that ad clicks are being predicted for."
   }
 

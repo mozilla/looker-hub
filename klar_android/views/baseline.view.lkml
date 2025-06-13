@@ -7,7 +7,7 @@
 view: baseline {
   dimension: metrics__string__browser_default_search_engine {
     label: "Browser Default Search Engine"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.browser_default_search_engine ;;
     type: string
     group_label: "Browser"
@@ -90,15 +90,15 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
   }
 
   dimension: metrics__counter__browser_total_uri_count {
-    label: "Browser Total Uri Count"
-    hidden: no
+    label: "Browser Total URI Count"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
     group_label: "Browser"
-    group_item_label: "Total Uri Count"
+    group_item_label: "Total URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Browser Total Uri Count"
+      label: "Glean Dictionary reference for Browser Total URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_total_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -112,21 +112,72 @@ that programmatically redirect to a new location.
   }
 
   dimension: metrics__uuid__legacy_ids_client_id {
-    label: "Legacy Ids Client Id"
-    hidden: no
+    label: "Legacy Ids Client ID"
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     group_label: "Legacy Ids"
-    group_item_label: "Client Id"
+    group_item_label: "Client ID"
 
     link: {
-      label: "Glean Dictionary reference for Legacy Ids Client Id"
+      label: "Glean Dictionary reference for Legacy Ids Client ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/legacy_ids_client_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
     description: "Sets the legacy client ID as part of the deletion-request ping.
 **No longer reported set since Focus 124, where legacy telemetry was removed**.
+"
+  }
+
+  dimension: metrics__string__startup_profile_selection_reason {
+    label: "Startup Profile Selection Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
+    type: string
+    group_label: "Startup"
+    group_item_label: "Profile Selection Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Startup Profile Selection Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/startup_profile_selection_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How the profile was selected during startup. One of the following reasons:
+  unknown:
+    Generally should not happen, set as a default in case no other reason
+    occured.
+  profile-manager:
+    The profile was selected by the profile manager.
+  profile-selector:
+    The profile was selected by the profile selector window.
+  profile-reset:
+    The profile was selected for reset, normally this would mean a restart.
+  restart:
+    The user restarted the application, the same profile as previous will
+    be used.
+  argument-profile:
+    The profile was selected by the --profile command line argument.
+  argument-p:
+    The profile was selected by the -p command line argument.
+  firstrun-claimed-default:
+    A first run of a dedicated profiles build chose the old default
+    profile to be the default for this install.
+  firstrun-skipped-default:
+    A first run of a dedicated profiles build skipped over the old default
+    profile and created a new profile.
+  restart-claimed-default:
+    A first run of a dedicated profiles build after a restart chose the
+    old default profile to be the default for this install.
+  restart-skipped-default:
+    A first run of a dedicated profiles build after a restart skipped over
+    the old default profile and created a new profile.
+  firstrun-created-default:
+    A first run of the application created a new profile to use.
+  default:
+    The default profile was selected as normal.
+This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_selection_reason.
 "
   }
 
@@ -170,15 +221,15 @@ to indicate \"undetermined\".
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
+    label: "Glean Client Annotation Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
+    group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -313,29 +364,34 @@ Now it only records counts for the Glean built-in pings.
   dimension: app_version_major {
     sql: ${TABLE}.app_version_major ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version_patch {
     sql: ${TABLE}.app_version_patch ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_info__android_sdk_version {
     sql: ${TABLE}.client_info.android_sdk_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+    group_item_label: "Android SDK Version"
     description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
     sql: ${TABLE}.client_info.app_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
     description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
@@ -344,6 +400,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: client_info__app_channel {
     sql: ${TABLE}.client_info.app_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
     description: "The channel the application is being distributed on."
@@ -352,6 +409,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: client_info__app_display_version {
     sql: ${TABLE}.client_info.app_display_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
     description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
@@ -360,14 +418,66 @@ Now it only records counts for the Glean built-in pings.
   dimension: client_info__architecture {
     sql: ${TABLE}.client_info.architecture ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
     description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Attribution"
+    group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
+  }
+
   dimension: client_info__build_date {
     sql: ${TABLE}.client_info.build_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
     description: "The date & time the application was built"
@@ -382,6 +492,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: client_info__device_manufacturer {
     sql: ${TABLE}.client_info.device_manufacturer ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
     description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
@@ -390,14 +501,30 @@ Now it only records counts for the Glean built-in pings.
   dimension: client_info__device_model {
     sql: ${TABLE}.client_info.device_model ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
     description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info Distribution"
+    group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
+  }
+
   dimension: client_info__first_run_date {
     sql: ${TABLE}.client_info.first_run_date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
     description: "The date of the first run of the application."
@@ -406,6 +533,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: client_info__locale {
     sql: ${TABLE}.client_info.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
     description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
@@ -414,22 +542,25 @@ Now it only records counts for the Glean built-in pings.
   dimension: client_info__os {
     sql: ${TABLE}.client_info.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os"
+    group_item_label: "OS"
     description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
     sql: ${TABLE}.client_info.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Os Version"
+    group_item_label: "OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__session_count {
     sql: ${TABLE}.client_info.session_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
     description: "An optional running counter of the number of sessions for a client."
@@ -438,22 +569,25 @@ Now it only records counts for the Glean built-in pings.
   dimension: client_info__session_id {
     sql: ${TABLE}.client_info.session_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Session Id"
+    group_item_label: "Session ID"
     description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+    group_item_label: "Telemetry SDK Build"
     description: "The version of the Glean SDK"
   }
 
   dimension: client_info__windows_build_number {
     sql: ${TABLE}.client_info.windows_build_number ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
     description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
@@ -471,9 +605,16 @@ Now it only records counts for the Glean built-in pings.
     hidden: yes
   }
 
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "City"
   }
@@ -481,6 +622,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__geo__country {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
@@ -490,14 +632,16 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__geo__db_version {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
-    group_item_label: "Db Version"
+    group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
@@ -506,6 +650,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__geo__subdivision2 {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
@@ -514,6 +659,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__header__date {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
     description: "Date HTTP header"
@@ -522,23 +668,26 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__header__dnt {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "Dnt"
+    group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Cipher Hex"
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_version {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
-    group_label: "Metadata Header Parsed X Lb Tags"
-    group_item_label: "Tls Version"
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header Parsed X LB Tags"
+    group_item_label: "TLS Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -549,30 +698,34 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__header__x_debug_id {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Debug Id"
+    group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Foxsec Ip Reputation"
+    group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
-    group_item_label: "X Lb Tags"
+    group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
@@ -581,6 +734,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__header__x_source_tags {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
@@ -589,6 +743,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__header__x_telemetry_agent {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
@@ -597,15 +752,17 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
-    group_label: "Metadata Isp"
-    group_item_label: "Db Version"
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
-    group_label: "Metadata Isp"
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -613,7 +770,8 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__isp__organization {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
-    group_label: "Metadata Isp"
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -621,6 +779,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__user_agent__browser {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Browser"
   }
@@ -628,13 +787,15 @@ Now it only records counts for the Glean built-in pings.
   dimension: metadata__user_agent__os {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
-    group_item_label: "Os"
+    group_item_label: "OS"
   }
 
   dimension: metadata__user_agent__version {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Metadata User Agent"
     group_item_label: "Version"
   }
@@ -642,35 +803,41 @@ Now it only records counts for the Glean built-in pings.
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ping_info__end_time {
     sql: ${TABLE}.ping_info.end_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "End Time"
   }
@@ -683,6 +850,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: ping_info__ping_type {
     sql: ${TABLE}.ping_info.ping_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Ping Type"
   }
@@ -690,6 +858,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: ping_info__reason {
     sql: ${TABLE}.ping_info.reason ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Reason"
   }
@@ -697,6 +866,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: ping_info__seq {
     sql: ${TABLE}.ping_info.seq ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
   }
@@ -704,6 +874,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Start Time"
   }
@@ -711,6 +882,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
@@ -735,6 +907,7 @@ Now it only records counts for the Glean built-in pings.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -750,6 +923,7 @@ Now it only records counts for the Glean built-in pings.
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -765,6 +939,7 @@ Now it only records counts for the Glean built-in pings.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -780,6 +955,7 @@ Now it only records counts for the Glean built-in pings.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -806,7 +982,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${metrics__counter__browser_total_uri_count} ;;
 
     link: {
-      label: "Glean Dictionary reference for Browser Total Uri Count"
+      label: "Glean Dictionary reference for Browser Total URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_total_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -820,7 +996,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Browser Total Uri Count"
+      label: "Glean Dictionary reference for Browser Total URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_total_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -879,19 +1055,19 @@ view: baseline__metrics__labeled_counter__browser_search_ad_clicks {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -920,19 +1096,19 @@ view: baseline__metrics__labeled_counter__browser_search_in_content {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -961,19 +1137,19 @@ view: baseline__metrics__labeled_counter__browser_search_search_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -1207,6 +1383,7 @@ view: baseline__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: extra {
@@ -1217,11 +1394,13 @@ view: baseline__events {
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1229,11 +1408,13 @@ view: baseline__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -1241,11 +1422,13 @@ view: baseline__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value__branch {
     sql: ${TABLE}.value.branch ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
   }
@@ -1253,13 +1436,15 @@ view: baseline__ping_info__experiments {
   dimension: value__extra__enrollment_id {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+    group_item_label: "Enrollment ID"
   }
 
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Value Extra"
     group_item_label: "Type"
   }

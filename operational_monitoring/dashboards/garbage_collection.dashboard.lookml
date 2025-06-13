@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gc Ms
-    name: Gc Ms_percentile
+  - title: GC Budget Overrun
+    name: GC Budget Overrun_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -28,7 +28,7 @@
       garbage_collection.branch
     ]
     filters:
-      garbage_collection.metric: 'gc_ms'
+      garbage_collection.metric: 'gc_budget_overrun'
       garbage_collection.statistic: percentile
     row: 0
     col: 0
@@ -43,12 +43,12 @@
     listen:
       Date: garbage_collection.submission_date
       Percentile: garbage_collection.parameter
-      Os: garbage_collection.os
+      OS: garbage_collection.os
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Gc Effectiveness
-    name: Gc Effectiveness_percentile
+  - title: GC Effectiveness
+    name: GC Effectiveness_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -80,12 +80,12 @@
     listen:
       Date: garbage_collection.submission_date
       Percentile: garbage_collection.parameter
-      Os: garbage_collection.os
+      OS: garbage_collection.os
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Gc Budget Overrun
-    name: Gc Budget Overrun_percentile
+  - title: GC Ms
+    name: GC Ms_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -102,7 +102,7 @@
       garbage_collection.branch
     ]
     filters:
-      garbage_collection.metric: 'gc_budget_overrun'
+      garbage_collection.metric: 'gc_ms'
       garbage_collection.statistic: percentile
     row: 10
     col: 0
@@ -117,7 +117,7 @@
     listen:
       Date: garbage_collection.submission_date
       Percentile: garbage_collection.parameter
-      Os: garbage_collection.os
+      OS: garbage_collection.os
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -208,8 +208,8 @@
     listens_to_filters: []
     field: garbage_collection.parameter
   
-  - title: Os
-    name: Os
+  - title: OS
+    name: OS
     type: string_filter
     default_value: 'Linux'
     allow_multiple_values: false

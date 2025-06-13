@@ -68,6 +68,7 @@ feature_usage_metrics_v1_logins_deleted,
 feature_usage_metrics_v1_logins_deleted_users,
 feature_usage_metrics_v1_logins_modified,
 feature_usage_metrics_v1_logins_modified_users,
+feature_usage_metrics_v1_metric,
 feature_usage_metrics_v1_metrics_default_browser,
 feature_usage_metrics_v1_metrics_default_browser_users,
 feature_usage_metrics_v1_metrics_desktop_bookmarks_count,
@@ -171,6 +172,7 @@ feature_usage_metrics_v1.logins_deleted AS feature_usage_metrics_v1_logins_delet
 feature_usage_metrics_v1.logins_deleted_users AS feature_usage_metrics_v1_logins_deleted_users,
 feature_usage_metrics_v1.logins_modified AS feature_usage_metrics_v1_logins_modified,
 feature_usage_metrics_v1.logins_modified_users AS feature_usage_metrics_v1_logins_modified_users,
+feature_usage_metrics_v1.metric_date AS feature_usage_metrics_v1_metric,
 feature_usage_metrics_v1.metrics_default_browser AS feature_usage_metrics_v1_metrics_default_browser,
 feature_usage_metrics_v1.metrics_default_browser_users AS feature_usage_metrics_v1_metrics_default_browser_users,
 feature_usage_metrics_v1.metrics_desktop_bookmarks_count AS feature_usage_metrics_v1_metrics_desktop_bookmarks_count,
@@ -278,6 +280,7 @@ feature_usage_metrics_v1_logins_deleted,
 feature_usage_metrics_v1_logins_deleted_users,
 feature_usage_metrics_v1_logins_modified,
 feature_usage_metrics_v1_logins_modified_users,
+feature_usage_metrics_v1_metric,
 feature_usage_metrics_v1_metrics_default_browser,
 feature_usage_metrics_v1_metrics_default_browser_users,
 feature_usage_metrics_v1_metrics_desktop_bookmarks_count,
@@ -351,114 +354,133 @@ feature_usage_metrics_v1_metrics_tabs_open_count_users,
   dimension: addresses_deleted {
     sql: ${TABLE}.feature_usage_metrics_v1_addresses_deleted ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: addresses_deleted_users {
     sql: ${TABLE}.feature_usage_metrics_v1_addresses_deleted_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: addresses_modified {
     sql: ${TABLE}.feature_usage_metrics_v1_addresses_modified ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: addresses_modified_users {
     sql: ${TABLE}.feature_usage_metrics_v1_addresses_modified_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.feature_usage_metrics_v1_adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: awesomebar_bottom_users {
     sql: ${TABLE}.feature_usage_metrics_v1_awesomebar_bottom_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: awesomebar_null_users {
     sql: ${TABLE}.feature_usage_metrics_v1_awesomebar_null_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: awesomebar_top_users {
     sql: ${TABLE}.feature_usage_metrics_v1_awesomebar_top_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: bookmarks_add {
     sql: ${TABLE}.feature_usage_metrics_v1_bookmarks_add ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: bookmarks_add_users {
     sql: ${TABLE}.feature_usage_metrics_v1_bookmarks_add_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: bookmarks_delete {
     sql: ${TABLE}.feature_usage_metrics_v1_bookmarks_delete ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: bookmarks_delete_users {
     sql: ${TABLE}.feature_usage_metrics_v1_bookmarks_delete_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: bookmarks_edit {
     sql: ${TABLE}.feature_usage_metrics_v1_bookmarks_edit ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: bookmarks_edit_users {
     sql: ${TABLE}.feature_usage_metrics_v1_bookmarks_edit_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: bookmarks_open {
     sql: ${TABLE}.feature_usage_metrics_v1_bookmarks_open ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: bookmarks_open_users {
     sql: ${TABLE}.feature_usage_metrics_v1_bookmarks_open_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: channel {
     sql: ${TABLE}.feature_usage_metrics_v1_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: clients {
     sql: ${TABLE}.feature_usage_metrics_v1_clients ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.feature_usage_metrics_v1_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -466,312 +488,364 @@ feature_usage_metrics_v1_metrics_tabs_open_count_users,
   dimension: credit_cards_deleted {
     sql: ${TABLE}.feature_usage_metrics_v1_credit_cards_deleted ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: credit_cards_deleted_users {
     sql: ${TABLE}.feature_usage_metrics_v1_credit_cards_deleted_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: currently_stored_addresses {
     sql: ${TABLE}.feature_usage_metrics_v1_currently_stored_addresses ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: currently_stored_addresses_users {
     sql: ${TABLE}.feature_usage_metrics_v1_currently_stored_addresses_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: currently_stored_credit_cards {
     sql: ${TABLE}.feature_usage_metrics_v1_currently_stored_credit_cards ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: currently_stored_credit_cards_users {
     sql: ${TABLE}.feature_usage_metrics_v1_currently_stored_credit_cards_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: currently_stored_logins {
     sql: ${TABLE}.feature_usage_metrics_v1_currently_stored_logins ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: currently_stored_logins_users {
     sql: ${TABLE}.feature_usage_metrics_v1_currently_stored_logins_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_contile {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_contile ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_contile_users {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_contile_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_jump_back_in {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_jump_back_in ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_jump_back_in_users {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_jump_back_in_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_most_visited_sites {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_most_visited_sites ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_most_visited_sites_users {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_most_visited_sites_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_pocket {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_pocket ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_pocket_users {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_pocket_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_recently_saved {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_recently_saved ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_recently_saved_users {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_recently_saved_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_recently_visited {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_recently_visited ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: customize_home_recently_visited_users {
     sql: ${TABLE}.feature_usage_metrics_v1_customize_home_recently_visited_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dau {
     sql: ${TABLE}.feature_usage_metrics_v1_dau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: etp_custom {
     sql: ${TABLE}.feature_usage_metrics_v1_etp_custom ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: etp_custom_users {
     sql: ${TABLE}.feature_usage_metrics_v1_etp_custom_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: etp_disabled {
     sql: ${TABLE}.feature_usage_metrics_v1_etp_disabled ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: etp_disabled_users {
     sql: ${TABLE}.feature_usage_metrics_v1_etp_disabled_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: etp_standard {
     sql: ${TABLE}.feature_usage_metrics_v1_etp_standard ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: etp_standard_users {
     sql: ${TABLE}.feature_usage_metrics_v1_etp_standard_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: etp_strict {
     sql: ${TABLE}.feature_usage_metrics_v1_etp_strict ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: etp_strict_users {
     sql: ${TABLE}.feature_usage_metrics_v1_etp_strict_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: events_marketing_notification_allowed {
     sql: ${TABLE}.feature_usage_metrics_v1_events_marketing_notification_allowed ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: events_marketing_notification_allowed_users {
     sql: ${TABLE}.feature_usage_metrics_v1_events_marketing_notification_allowed_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: is_default_browser {
     sql: ${TABLE}.feature_usage_metrics_v1_is_default_browser ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: logins_deleted {
     sql: ${TABLE}.feature_usage_metrics_v1_logins_deleted ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: logins_deleted_users {
     sql: ${TABLE}.feature_usage_metrics_v1_logins_deleted_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: logins_modified {
     sql: ${TABLE}.feature_usage_metrics_v1_logins_modified ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: logins_modified_users {
     sql: ${TABLE}.feature_usage_metrics_v1_logins_modified_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_default_browser {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_default_browser ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_default_browser_users {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_default_browser_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_desktop_bookmarks_count {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_desktop_bookmarks_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_desktop_bookmarks_count_users {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_desktop_bookmarks_count_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_has_desktop_bookmarks {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_has_desktop_bookmarks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_has_desktop_bookmarks_users {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_has_desktop_bookmarks_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_has_mobile_bookmarks {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_has_mobile_bookmarks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_has_mobile_bookmarks_users {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_has_mobile_bookmarks_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_mobile_bookmarks_count {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_mobile_bookmarks_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_mobile_bookmarks_count_users {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_mobile_bookmarks_count_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_notifications_allowed {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_notifications_allowed ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_notifications_allowed_users {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_notifications_allowed_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_private_tabs_open_count {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_private_tabs_open_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_private_tabs_open_count_users {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_private_tabs_open_count_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_tabs_open_count {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_tabs_open_count ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: metrics_tabs_open_count_users {
     sql: ${TABLE}.feature_usage_metrics_v1_metrics_tabs_open_count_users ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -788,6 +862,23 @@ feature_usage_metrics_v1_metrics_tabs_open_count_users,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: metric {
+    sql: ${TABLE}.feature_usage_metrics_v1_metric ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   measure: bookmarks_add_v1_sum {

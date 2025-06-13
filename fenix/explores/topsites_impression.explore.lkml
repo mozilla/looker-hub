@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/topsites_impression.view.lkml"
+include: "/looker-hub/fenix/datagroups/topsites_impression_last_updated.datagroup.lkml"
 
 explore: topsites_impression {
   sql_always_where: ${topsites_impression.submission_date} >= '2010-01-01' ;;
   view_label: " Topsites_Impression"
   description: "Explore for the topsites_impression ping. Recorded when a sponsored top site is rendered and visible on the home screen. Visibility is qualified as when the homepage is brought to the front of the Browser, and sponsored tiles are 100% visible on screen."
   view_name: topsites_impression
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: topsites_impression__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -52,6 +46,15 @@ explore: topsites_impression {
   join: topsites_impression__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression.ping_info__experiments}) AS topsites_impression__ping_info__experiments ;;
+  }
+
+  persist_with: topsites_impression_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

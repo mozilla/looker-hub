@@ -8,30 +8,35 @@ view: google_search_console_by_site {
   dimension: average_top_position {
     sql: ${TABLE}.average_top_position ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The average top position of the site in the search results, where `1` is the topmost position."
   }
 
   dimension: clicks {
     sql: ${TABLE}.clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The number of times a user clicked at least one search result link to the site."
   }
 
   dimension: device_type {
     sql: ${TABLE}.device_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The type of device on which the user was searching: Desktop, Mobile, or Tablet."
   }
 
   dimension: impressions {
     sql: ${TABLE}.impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The number of times that search results with at least one link to the site were shown to a user."
   }
 
   dimension: is_anonymized {
     sql: ${TABLE}.is_anonymized ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     description: "Whether Google has anonymized the search impression to protect the users' privacy.
 The `query` field will be null for anonymized search impressions."
   }
@@ -39,12 +44,14 @@ The `query` field will be null for anonymized search impressions."
   dimension: query {
     sql: ${TABLE}.query ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The search query."
   }
 
   dimension: query_type {
     sql: ${TABLE}.query_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Type of search query:
   * Anonymized: Query was redacted by Google to protect the users' privacy.
   * Brand: Query contained one or more Mozilla brand keywords.
@@ -55,6 +62,7 @@ The `query` field will be null for anonymized search impressions."
   dimension: search_type {
     sql: ${TABLE}.search_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Where the link was seen by the user:
   * Web: In Google Search's default \"All\" tab.
   * Image: In Google Search's \"Images\" tab.
@@ -65,12 +73,14 @@ The `query` field will be null for anonymized search impressions."
   dimension: site_domain_name {
     sql: ${TABLE}.site_domain_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Domain name of the site."
   }
 
   dimension: site_url {
     sql: ${TABLE}.site_url ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "For domain properties, this will be `sc-domain:` followed by the domain name.
 For URL-prefix properties, it will be the full URL of the property definition."
   }
@@ -78,30 +88,35 @@ For URL-prefix properties, it will be the full URL of the property definition."
   dimension: user_country {
     sql: ${TABLE}.user_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Country from which the user was searching."
   }
 
   dimension: user_country_code {
     sql: ${TABLE}.user_country_code ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Country from which the user was searching, in ISO-3166-1-alpha-3 format."
   }
 
   dimension: user_region {
     sql: ${TABLE}.user_region ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Region from which the user was searching."
   }
 
   dimension: user_subregion {
     sql: ${TABLE}.user_subregion ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Sub-region from which the user was searching."
   }
 
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

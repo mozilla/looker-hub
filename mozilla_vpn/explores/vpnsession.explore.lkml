@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/mozilla_vpn/views/vpnsession.view.lkml"
+include: "/looker-hub/mozilla_vpn/datagroups/vpnsession_last_updated.datagroup.lkml"
 
 explore: vpnsession {
   sql_always_where: ${vpnsession.submission_date} >= '2010-01-01' ;;
   view_label: " Vpnsession"
   description: "Explore for the vpnsession ping. Data for one VPN session, defined as a user turning on and eventually turning off the VPN in the app. This ping will record start/end datestamp, session-based metrics, etc."
   view_name: vpnsession
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: vpnsession__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: vpnsession {
   join: vpnsession__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${vpnsession.ping_info__experiments}) AS vpnsession__ping_info__experiments ;;
+  }
+
+  persist_with: vpnsession_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

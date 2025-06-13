@@ -8,9 +8,13 @@
 datagroup: users_table_last_updated {
   label: "users_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'mozilla_vpn_derived'
-    AND table_name = 'users_v1' ;;
-  description: "Updates for users_table when moz-fx-data-shared-prod.mozilla_vpn_derived.users_v1 is modified."
+    WHERE (table_schema = 'mozilla_vpn_derived' AND table_name = 'users_v1')
+
+    ) ;;
+  description: "Updates for users_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

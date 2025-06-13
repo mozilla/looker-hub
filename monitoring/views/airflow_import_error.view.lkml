@@ -8,21 +8,25 @@ view: airflow_import_error {
   dimension: filename {
     sql: ${TABLE}.filename ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: stacktrace {
     sql: ${TABLE}.stacktrace ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

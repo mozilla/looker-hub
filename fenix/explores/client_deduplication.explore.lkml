@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/client_deduplication.view.lkml"
+include: "/looker-hub/fenix/datagroups/client_deduplication_last_updated.datagroup.lkml"
 
 explore: client_deduplication {
   sql_always_where: ${client_deduplication.submission_date} >= '2010-01-01' ;;
   view_label: " Client_Deduplication"
   description: "Explore for the client_deduplication ping. Contains data to help identify if client IDs are being regenerated erroneously."
   view_name: client_deduplication
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: client_deduplication__metrics__labeled_counter__browser_search_ad_clicks {
     relationship: one_to_many
@@ -71,6 +66,14 @@ explore: client_deduplication {
   join: client_deduplication__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_deduplication.ping_info__experiments}) AS client_deduplication__ping_info__experiments ;;
+  }
+
+  persist_with: client_deduplication_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

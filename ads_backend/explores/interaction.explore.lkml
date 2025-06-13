@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/ads_backend/views/interaction.view.lkml"
+include: "/looker-hub/ads_backend/datagroups/interaction_last_updated.datagroup.lkml"
 
 explore: interaction {
   sql_always_where: ${interaction.submission_date} >= '2010-01-01' ;;
   view_label: " Interaction"
   description: "Explore for the interaction ping. Ad interaction with an ad."
   view_name: interaction
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: interaction__events {
     relationship: one_to_many
@@ -31,5 +26,13 @@ explore: interaction {
   join: interaction__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${interaction.ping_info__experiments}) AS interaction__ping_info__experiments ;;
+  }
+
+  persist_with: interaction_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }

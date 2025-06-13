@@ -8,36 +8,43 @@ view: health_lighthouse {
   dimension: audit {
     sql: ${TABLE}.audit ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: formfactor {
     sql: ${TABLE}.formfactor ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: numVal {
     sql: ${TABLE}.numVal ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: score {
     sql: ${TABLE}.score ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: url {
     sql: ${TABLE}.url ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: fetchTime {
     sql: ${TABLE}.fetchTime ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

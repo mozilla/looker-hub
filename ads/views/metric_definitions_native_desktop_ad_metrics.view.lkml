@@ -17,6 +17,8 @@ SUM(saves) AS native_saves,
 native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics_campaign_name,
+native_desktop_ad_metrics_campaign_name_custom,
+native_desktop_ad_metrics_campaign_name_custom_2,
 native_desktop_ad_metrics_click_rate,
 native_desktop_ad_metrics_clicks,
 native_desktop_ad_metrics_country,
@@ -73,6 +75,8 @@ native_desktop_ad_metrics_zone_name,
 native_desktop_ad_metrics.advertiser AS native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics.campaign_id AS native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics.campaign_name AS native_desktop_ad_metrics_campaign_name,
+native_desktop_ad_metrics.campaign_name_custom AS native_desktop_ad_metrics_campaign_name_custom,
+native_desktop_ad_metrics.campaign_name_custom_2 AS native_desktop_ad_metrics_campaign_name_custom_2,
 native_desktop_ad_metrics.click_rate AS native_desktop_ad_metrics_click_rate,
 native_desktop_ad_metrics.clicks AS native_desktop_ad_metrics_clicks,
 native_desktop_ad_metrics.country AS native_desktop_ad_metrics_country,
@@ -99,7 +103,14 @@ native_desktop_ad_metrics.zone_name AS native_desktop_ad_metrics_zone_name,
             SELECT
                 *
             FROM
-                moz-fx-data-shared-prod.ads.native_desktop_ad_metrics_hourly
+                (
+  SELECT
+    *,
+    REGEXP_EXTRACT(ad_url, r'utm_campaign=([^&]+)') AS campaign_name_custom,
+    REGEXP_EXTRACT(ad_url, r'ref=([^&]+)') AS campaign_name_custom_2
+  FROM `mozdata.ads.native_desktop_ad_metrics_hourly`
+)
+
             ) AS native_desktop_ad_metrics
         
                     WHERE 
@@ -120,6 +131,8 @@ native_desktop_ad_metrics.zone_name AS native_desktop_ad_metrics_zone_name,
 native_desktop_ad_metrics_advertiser,
 native_desktop_ad_metrics_campaign_id,
 native_desktop_ad_metrics_campaign_name,
+native_desktop_ad_metrics_campaign_name_custom,
+native_desktop_ad_metrics_campaign_name_custom_2,
 native_desktop_ad_metrics_click_rate,
 native_desktop_ad_metrics_clicks,
 native_desktop_ad_metrics_country,
@@ -197,42 +210,63 @@ native_desktop_ad_metrics_zone_name,
   dimension: ad_url {
     sql: ${TABLE}.native_desktop_ad_metrics_ad_url ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: advertiser {
     sql: ${TABLE}.native_desktop_ad_metrics_advertiser ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: campaign_id {
     sql: ${TABLE}.native_desktop_ad_metrics_campaign_id ;;
-    type: string
+    type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: campaign_name {
     sql: ${TABLE}.native_desktop_ad_metrics_campaign_name ;;
     type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: campaign_name_custom {
+    sql: ${TABLE}.native_desktop_ad_metrics_campaign_name_custom ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: campaign_name_custom_2 {
+    sql: ${TABLE}.native_desktop_ad_metrics_campaign_name_custom_2 ;;
+    type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: click_rate {
     sql: ${TABLE}.native_desktop_ad_metrics_click_rate ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: clicks {
     sql: ${TABLE}.native_desktop_ad_metrics_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.native_desktop_ad_metrics_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -240,102 +274,119 @@ native_desktop_ad_metrics_zone_name,
   dimension: creative_type {
     sql: ${TABLE}.native_desktop_ad_metrics_creative_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dismiss_rate {
     sql: ${TABLE}.native_desktop_ad_metrics_dismiss_rate ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dismisses {
     sql: ${TABLE}.native_desktop_ad_metrics_dismisses ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: external_param {
     sql: ${TABLE}.native_desktop_ad_metrics_external_param ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: flight_id {
     sql: ${TABLE}.native_desktop_ad_metrics_flight_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: image_url {
     sql: ${TABLE}.native_desktop_ad_metrics_image_url ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: impressions {
     sql: ${TABLE}.native_desktop_ad_metrics_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: pid {
     sql: ${TABLE}.native_desktop_ad_metrics_pid ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: position {
     sql: ${TABLE}.native_desktop_ad_metrics_position ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: rate_type {
     sql: ${TABLE}.native_desktop_ad_metrics_rate_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: save_rate {
     sql: ${TABLE}.native_desktop_ad_metrics_save_rate ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: saves {
     sql: ${TABLE}.native_desktop_ad_metrics_saves ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: site_name {
     sql: ${TABLE}.native_desktop_ad_metrics_site_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: spend {
     sql: ${TABLE}.native_desktop_ad_metrics_spend ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: spoc_id {
     sql: ${TABLE}.native_desktop_ad_metrics_spoc_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: title {
     sql: ${TABLE}.native_desktop_ad_metrics_title ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: zone_name {
     sql: ${TABLE}.native_desktop_ad_metrics_zone_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 

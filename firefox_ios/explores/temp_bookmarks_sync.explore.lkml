@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/temp_bookmarks_sync.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/temp_bookmarks_sync_last_updated.datagroup.lkml"
 
 explore: temp_bookmarks_sync {
   sql_always_where: ${temp_bookmarks_sync.submission_date} >= '2010-01-01' ;;
   view_label: " Temp_Bookmarks_Sync"
   description: "Explore for the temp_bookmarks_sync ping. A ping sent for every bookmarks sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: temp_bookmarks_sync
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_failure_reason {
     relationship: one_to_many
@@ -67,6 +61,15 @@ explore: temp_bookmarks_sync {
   join: temp_bookmarks_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_bookmarks_sync.ping_info__experiments}) AS temp_bookmarks_sync__ping_info__experiments ;;
+  }
+
+  persist_with: temp_bookmarks_sync_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

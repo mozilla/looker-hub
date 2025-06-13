@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/startup_timeline.view.lkml"
+include: "/looker-hub/fenix/datagroups/startup_timeline_last_updated.datagroup.lkml"
 
 explore: startup_timeline {
   sql_always_where: ${startup_timeline.submission_date} >= '2010-01-01' ;;
   view_label: " Startup_Timeline"
   description: "Explore for the startup_timeline ping. This ping is intended to provide an understanding of startup performance. In addition to being captured on real devices, the ping data was prematurely optimized into this separate ping to be isolated from other metrics to be more easily captured by performance testing automation but that hasn't happened in practice. We would have removed it but implementation details don't make that possible: https://github.com/mozilla-mobile/fenix/issues/17972#issuecomment-781002987"
   view_name: startup_timeline
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: startup_timeline__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -52,6 +46,15 @@ explore: startup_timeline {
   join: startup_timeline__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${startup_timeline.ping_info__experiments}) AS startup_timeline__ping_info__experiments ;;
+  }
+
+  persist_with: startup_timeline_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -8,6 +8,7 @@ view: attributable_clients_table {
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The number of times a user clicked on an ad on SERP pages.
 "
   }
@@ -15,6 +16,7 @@ view: attributable_clients_table {
   dimension: adjust_adgroup {
     sql: ${TABLE}.adjust_adgroup ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Structure parameter for the the ad group of a campaign.
 "
   }
@@ -22,6 +24,7 @@ view: attributable_clients_table {
   dimension: adjust_campaign {
     sql: ${TABLE}.adjust_campaign ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Structure parameter for the campaign name.
 "
   }
@@ -29,6 +32,7 @@ view: attributable_clients_table {
   dimension: adjust_creative {
     sql: ${TABLE}.adjust_creative ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Structure parameter for the creative content of a campaign.
 "
   }
@@ -36,6 +40,7 @@ view: attributable_clients_table {
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The type of source of a client installation.
 "
   }
@@ -50,6 +55,7 @@ view: attributable_clients_table {
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     description: "Determines if a client is a new profile.
 "
   }
@@ -57,6 +63,7 @@ view: attributable_clients_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "Sample ID to limit query results during an analysis.
 "
   }
@@ -64,6 +71,7 @@ view: attributable_clients_table {
   dimension: searches {
     sql: ${TABLE}.searches ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The number of search interactions the user had on SERP pages.
 "
   }
@@ -71,6 +79,7 @@ view: attributable_clients_table {
   dimension: searches_with_ads {
     sql: ${TABLE}.searches_with_ads ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The number of SERP pages with ads shown to the user.
 "
   }
@@ -78,6 +87,7 @@ view: attributable_clients_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -95,6 +105,7 @@ view: attributable_clients_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

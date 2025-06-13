@@ -161,6 +161,7 @@ WHERE
     type: string
     suggest_explore: event_names
     suggest_dimension: event_names.category
+    suggest_persist_for: "24 hours"
   }
 
   filter: event {
@@ -168,6 +169,7 @@ WHERE
     type: string
     suggest_explore: event_names
     suggest_dimension: event_names.event
+    suggest_persist_for: "24 hours"
   }
 
   filter: property_name {
@@ -175,6 +177,7 @@ WHERE
     type: string
     suggest_explore: event_names
     suggest_dimension: event_names.property_name
+    suggest_persist_for: "24 hours"
   }
 
   filter: property_value {
@@ -182,6 +185,7 @@ WHERE
     type: string
     suggest_explore: event_names
     suggest_dimension: event_names.property_value
+    suggest_persist_for: "24 hours"
   }
 
   dimension: match_string {

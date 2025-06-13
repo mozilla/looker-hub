@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/contextual_services_private/views/search_terms_daily.view.lkml"
+include: "/looker-hub/contextual_services_private/datagroups/search_terms_daily_last_updated.datagroup.lkml"
 
 explore: search_terms_daily {
   sql_always_where: ${search_terms_daily.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: search_terms_daily {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: search_terms_daily_last_updated
 }

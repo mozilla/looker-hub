@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/upgrade_spotlight_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/upgrade_spotlight_rollout_last_updated.datagroup.lkml"
 
 explore: upgrade_spotlight_rollout {
   always_filter: {
@@ -14,4 +15,5 @@ explore: upgrade_spotlight_rollout {
   }
 
   hidden: yes
+  persist_with: upgrade_spotlight_rollout_last_updated
 }

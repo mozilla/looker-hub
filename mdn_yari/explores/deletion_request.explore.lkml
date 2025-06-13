@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/mdn_yari/views/deletion_request.view.lkml"
+include: "/looker-hub/mdn_yari/datagroups/deletion_request_last_updated.datagroup.lkml"
 
 explore: deletion_request {
   sql_always_where: ${deletion_request.submission_date} >= '2010-01-01' ;;
   view_label: " Deletion_Request"
   description: "Explore for the deletion_request ping. This ping is submitted when a user opts out of sending technical and interaction data to Mozilla. This ping is intended to communicate to the Data Pipeline that the user wishes to have their reported Telemetry data deleted. As such it attempts to send itself at the moment the user opts out of data collection."
   view_name: deletion_request
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: deletion_request__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: deletion_request {
   join: deletion_request__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${deletion_request.ping_info__experiments}) AS deletion_request__ping_info__experiments ;;
+  }
+
+  persist_with: deletion_request_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

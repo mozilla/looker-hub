@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/history_sync.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/history_sync_last_updated.datagroup.lkml"
 
 explore: history_sync {
   sql_always_where: ${history_sync.submission_date} >= '2010-01-01' ;;
   view_label: " History_Sync"
   description: "Explore for the history_sync ping. A ping sent for every history sync. It doesn't include the `client_id` because it reports a hashed version of the user's Firefox Account ID."
   view_name: history_sync
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: history_sync__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -72,6 +66,15 @@ explore: history_sync {
   join: history_sync__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${history_sync.ping_info__experiments}) AS history_sync__ping_info__experiments ;;
+  }
+
+  persist_with: history_sync_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

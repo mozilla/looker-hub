@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Installs By Os
-    name: Installs By Os_sum
+  - title: Installs By OS
+    name: Installs By OS_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       firefox_install_demo.branch, firefox_install_demo.metric
     ]
     filters:
-      firefox_install_demo.metric: '"install_volume_win7", "install_volume_win8", "install_volume_win8_1", "install_volume_win10"'
+      firefox_install_demo.metric: '"install_volume_win8_1", "install_volume_win8", "install_volume_win10", "install_volume_win7"'
       firefox_install_demo.statistic: sum
     row: 0
     col: 0
@@ -43,8 +43,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Installs By Os
-    name: Installs By Os_mean
+  - title: Installs By OS
+    name: Installs By OS_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -59,7 +59,7 @@
       firefox_install_demo.branch, firefox_install_demo.metric
     ]
     filters:
-      firefox_install_demo.metric: '"install_volume_win7", "install_volume_win8", "install_volume_win8_1", "install_volume_win10"'
+      firefox_install_demo.metric: '"install_volume_win8_1", "install_volume_win8", "install_volume_win10", "install_volume_win7"'
       firefox_install_demo.statistic: mean
     row: 0
     col: 12

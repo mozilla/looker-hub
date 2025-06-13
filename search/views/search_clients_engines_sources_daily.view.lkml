@@ -8,36 +8,43 @@ view: search_clients_engines_sources_daily {
   dimension: active_addons_count_mean {
     sql: ${TABLE}.active_addons_count_mean ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: active_hours_sum {
     sql: ${TABLE}.active_hours_sum ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ad_click {
     sql: ${TABLE}.ad_click ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: ad_click_organic {
     sql: ${TABLE}.ad_click_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: addon_version {
     sql: ${TABLE}.addon_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: browser_version_info__is_major_release {
     sql: ${TABLE}.browser_version_info.is_major_release ;;
     type: yesno
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Is Major Release"
   }
@@ -45,6 +52,7 @@ view: search_clients_engines_sources_daily {
   dimension: browser_version_info__major_version {
     sql: ${TABLE}.browser_version_info.major_version ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Major Version"
   }
@@ -52,6 +60,7 @@ view: search_clients_engines_sources_daily {
   dimension: browser_version_info__minor_version {
     sql: ${TABLE}.browser_version_info.minor_version ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Minor Version"
   }
@@ -59,6 +68,7 @@ view: search_clients_engines_sources_daily {
   dimension: browser_version_info__patch_revision {
     sql: ${TABLE}.browser_version_info.patch_revision ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Patch Revision"
   }
@@ -66,6 +76,7 @@ view: search_clients_engines_sources_daily {
   dimension: browser_version_info__version {
     sql: ${TABLE}.browser_version_info.version ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Version"
   }
@@ -73,6 +84,7 @@ view: search_clients_engines_sources_daily {
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: client_id {
@@ -83,47 +95,56 @@ view: search_clients_engines_sources_daily {
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
   }
 
   dimension: default_private_search_engine {
     sql: ${TABLE}.default_private_search_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: default_private_search_engine_data_load_path {
     sql: ${TABLE}.default_private_search_engine_data_load_path ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: default_private_search_engine_data_submission_url {
     sql: ${TABLE}.default_private_search_engine_data_submission_url ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: default_search_engine {
     sql: ${TABLE}.default_search_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: default_search_engine_data_load_path {
     sql: ${TABLE}.default_search_engine_data_load_path ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: default_search_engine_data_submission_url {
     sql: ${TABLE}.default_search_engine_data_submission_url ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: engine {
     sql: ${TABLE}.engine ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: experiments {
@@ -134,86 +155,103 @@ view: search_clients_engines_sources_daily {
   dimension: has_adblocker_addon {
     sql: ${TABLE}.has_adblocker_addon ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_sap_monetizable {
     sql: ${TABLE}.is_sap_monetizable ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: max_concurrent_tab_count_max {
     sql: ${TABLE}.max_concurrent_tab_count_max ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_engine {
     sql: ${TABLE}.normalized_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: organic {
     sql: ${TABLE}.organic ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os_version_major {
     sql: ${TABLE}.os_version_major ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: policies_is_enterprise {
     sql: ${TABLE}.policies_is_enterprise ;;
     type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: profile_age_in_days {
     sql: ${TABLE}.profile_age_in_days ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: profile_creation_date {
     sql: ${TABLE}.profile_creation_date ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: profile_group_id {
     sql: ${TABLE}.profile_group_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sap {
     sql: ${TABLE}.sap ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: scalar_parent_urlbar_searchmode_bookmarkmenu_sum {
@@ -284,66 +322,79 @@ view: search_clients_engines_sources_daily {
   dimension: search_cohort {
     sql: ${TABLE}.search_cohort ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: search_with_ads {
     sql: ${TABLE}.search_with_ads ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: search_with_ads_organic {
     sql: ${TABLE}.search_with_ads_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sessions_started_on_this_day {
     sql: ${TABLE}.sessions_started_on_this_day ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: source {
     sql: ${TABLE}.source ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: subsession_hours_sum {
     sql: ${TABLE}.subsession_hours_sum ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: tab_open_event_count_sum {
     sql: ${TABLE}.tab_open_event_count_sum ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: tagged_follow_on {
     sql: ${TABLE}.tagged_follow_on ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: tagged_sap {
     sql: ${TABLE}.tagged_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: total_uri_count {
     sql: ${TABLE}.total_uri_count ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: unknown {
     sql: ${TABLE}.unknown ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: user_pref_browser_search_region {
     sql: ${TABLE}.user_pref_browser_search_region ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -359,6 +410,7 @@ view: search_clients_engines_sources_daily {
   dimension_group: submission_date_s3 {
     sql: ${TABLE}.submission_date_s3 ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -378,11 +430,13 @@ view: search_clients_engines_sources_daily__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -390,11 +444,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_book
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -402,11 +458,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_hand
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -414,11 +472,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_keyw
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -426,11 +486,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_oneo
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -438,11 +500,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_othe
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -450,11 +514,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_shor
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -462,11 +528,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_tabm
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -474,11 +542,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_tabt
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -486,11 +556,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_tabt
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -498,11 +570,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_tops
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -510,11 +584,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_tops
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -522,11 +598,13 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_touc
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }
 
@@ -534,10 +612,12 @@ view: search_clients_engines_sources_daily__scalar_parent_urlbar_searchmode_type
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 }

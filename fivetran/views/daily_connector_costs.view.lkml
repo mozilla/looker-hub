@@ -8,6 +8,7 @@ view: daily_connector_costs {
   dimension: active_rows {
     sql: ${TABLE}.active_rows ;;
     type: number
+    suggest_persist_for: "24 hours"
     description: "The number of new distinct primary keys on the current day synced for the connector.
 "
   }
@@ -15,6 +16,7 @@ view: daily_connector_costs {
   dimension: billing_type {
     sql: ${TABLE}.billing_type ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Information on how the active rows got billed, paid or free.
 "
   }
@@ -22,6 +24,7 @@ view: daily_connector_costs {
   dimension: connector {
     sql: ${TABLE}.connector ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "The name of the connector being measured.
 "
   }
@@ -29,6 +32,7 @@ view: daily_connector_costs {
   dimension: cost_in_usd {
     sql: ${TABLE}.cost_in_usd ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Costs in USD for that row. This value is not rounded to the cent but contains fractional cents for later calculations.
 "
   }
@@ -36,6 +40,7 @@ view: daily_connector_costs {
   dimension: destination {
     sql: ${TABLE}.destination ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Name of the destination warehouse.
 "
   }
@@ -43,6 +48,7 @@ view: daily_connector_costs {
   dimension_group: measured {
     sql: ${TABLE}.measured_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

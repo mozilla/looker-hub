@@ -13,11 +13,13 @@ view: fxa_first_seen_table {
   dimension: user_id {
     sql: ${TABLE}.user_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

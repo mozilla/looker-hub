@@ -8,9 +8,13 @@
 datagroup: table_partition_expirations_last_updated {
   label: "table_partition_expirations Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'monitoring_derived'
-    AND table_name = 'table_partition_expirations_v1' ;;
-  description: "Updates for table_partition_expirations when moz-fx-data-shared-prod.monitoring_derived.table_partition_expirations_v1 is modified."
+    WHERE (table_schema = 'monitoring_derived' AND table_name = 'table_partition_expirations_v1')
+
+    ) ;;
+  description: "Updates for table_partition_expirations when referenced tables are modified."
   max_cache_age: "24 hours"
 }

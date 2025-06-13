@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/prototype_no_code_events.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/prototype_no_code_events_last_updated.datagroup.lkml"
 
 explore: prototype_no_code_events {
   sql_always_where: ${prototype_no_code_events.submission_date} >= '2010-01-01' ;;
   view_label: " Prototype_No_Code_Events"
   description: "Explore for the prototype_no_code_events ping. **Prototype-only ping not for general use!** Transport for no-code Firefox Desktop frontend instrumentation, should mostly contain no-code events in browser.ui.* categories. Submitted whenever the next flow of events begins (including startup)."
   view_name: prototype_no_code_events
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: prototype_no_code_events__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: prototype_no_code_events {
   join: prototype_no_code_events__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${prototype_no_code_events.ping_info__experiments}) AS prototype_no_code_events__ping_info__experiments ;;
+  }
+
+  persist_with: prototype_no_code_events_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -8,11 +8,13 @@ view: bigeye_usage {
   dimension: cost {
     sql: ${TABLE}.cost ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: job_id {
     sql: ${TABLE}.job_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: labels {
@@ -23,21 +25,25 @@ view: bigeye_usage {
   dimension: reference_dataset_id {
     sql: ${TABLE}.reference_dataset_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: reference_project_id {
     sql: ${TABLE}.reference_project_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: reference_table_id {
     sql: ${TABLE}.reference_table_id ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: service_account {
     sql: ${TABLE}.service_account ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: task_duration {
@@ -48,26 +54,31 @@ view: bigeye_usage {
   dimension: task_duration_seconds {
     sql: ${TABLE}.task_duration_seconds ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: total_slot_ms {
     sql: ${TABLE}.total_slot_ms ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: total_terabytes_billed {
     sql: ${TABLE}.total_terabytes_billed ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: total_terabytes_processed {
     sql: ${TABLE}.total_terabytes_processed ;;
     type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: creation {
     sql: ${TABLE}.creation_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -83,6 +94,7 @@ view: bigeye_usage {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
+    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -127,10 +139,12 @@ view: bigeye_usage__labels {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
   }
 }

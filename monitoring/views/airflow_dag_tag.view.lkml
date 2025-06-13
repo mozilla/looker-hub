@@ -8,6 +8,7 @@ view: airflow_dag_tag {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
+    suggest_persist_for: "24 hours"
     description: "Airflow DAG id"
   }
 

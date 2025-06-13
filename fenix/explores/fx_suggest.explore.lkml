@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/fx_suggest.view.lkml"
+include: "/looker-hub/fenix/datagroups/fx_suggest_last_updated.datagroup.lkml"
 
 explore: fx_suggest {
   sql_always_where: ${fx_suggest.submission_date} >= '2010-01-01' ;;
   view_label: " Fx_Suggest"
   description: "Explore for the fx_suggest ping. A ping representing a single event occurring with or to a Firefox Suggestion. Distinguishable by its `ping_type`. Does not contain a `client_id`, preferring a `context_id` instead."
   view_name: fx_suggest
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: fx_suggest__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -52,6 +46,15 @@ explore: fx_suggest {
   join: fx_suggest__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fx_suggest.ping_info__experiments}) AS fx_suggest__ping_info__experiments ;;
+  }
+
+  persist_with: fx_suggest_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

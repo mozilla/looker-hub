@@ -8,9 +8,13 @@
 datagroup: event_error_monitoring_aggregates_last_updated {
   label: "event_error_monitoring_aggregates Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'monitoring_derived'
-    AND table_name = 'event_error_monitoring_aggregates_v1' ;;
-  description: "Updates for event_error_monitoring_aggregates when moz-fx-data-shared-prod.monitoring_derived.event_error_monitoring_aggregates_v1 is modified."
+    WHERE (table_schema = 'monitoring_derived' AND table_name = 'event_error_monitoring_aggregates_v1')
+
+    ) ;;
+  description: "Updates for event_error_monitoring_aggregates when referenced tables are modified."
   max_cache_age: "24 hours"
 }

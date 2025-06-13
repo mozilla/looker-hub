@@ -8,9 +8,13 @@
 datagroup: tasks_base_last_updated {
   label: "tasks_base Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'fxci'
-    AND table_name = 'tasks_v1' ;;
-  description: "Updates for tasks_base when moz-fx-data-shared-prod.fxci.tasks_v1 is modified."
+    WHERE (table_schema = 'fxci_derived' AND table_name = 'tasks_v2')
+
+    ) ;;
+  description: "Updates for tasks_base when referenced tables are modified."
   max_cache_age: "24 hours"
 }

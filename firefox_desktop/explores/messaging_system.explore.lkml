@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/messaging_system.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/messaging_system_last_updated.datagroup.lkml"
 
 explore: messaging_system {
   sql_always_where: ${messaging_system.submission_date} >= '2010-01-01' ;;
   view_label: " Messaging_System"
   description: "Explore for the messaging_system ping. This is a ping representing single events triggered by the messaging system and captures some pings from About:Welcome, ASRouter, and other corners."
   view_name: messaging_system
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: messaging_system__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -66,6 +61,14 @@ explore: messaging_system {
   join: messaging_system__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${messaging_system.ping_info__experiments}) AS messaging_system__ping_info__experiments ;;
+  }
+
+  persist_with: messaging_system_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

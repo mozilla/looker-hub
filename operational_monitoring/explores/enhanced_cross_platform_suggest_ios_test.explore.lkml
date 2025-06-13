@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/enhanced_cross_platform_suggest_ios_test.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/enhanced_cross_platform_suggest_ios_test_last_updated.datagroup.lkml"
 
 explore: enhanced_cross_platform_suggest_ios_test {
   always_filter: {
@@ -14,4 +15,5 @@ explore: enhanced_cross_platform_suggest_ios_test {
   }
 
   hidden: yes
+  persist_with: enhanced_cross_platform_suggest_ios_test_last_updated
 }

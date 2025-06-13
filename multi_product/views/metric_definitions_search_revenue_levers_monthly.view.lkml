@@ -23,6 +23,7 @@ search_revenue_levers_monthly_revenue,
 search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly_search_with_ads_organic,
+search_revenue_levers_monthly_submission_month,
 search_revenue_levers_monthly_tagged_follow_on,
 search_revenue_levers_monthly_tagged_sap,
 
@@ -71,6 +72,7 @@ search_revenue_levers_monthly.revenue AS search_revenue_levers_monthly_revenue,
 search_revenue_levers_monthly.sap AS search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly.search_with_ads AS search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly.search_with_ads_organic AS search_revenue_levers_monthly_search_with_ads_organic,
+search_revenue_levers_monthly.submission_month AS search_revenue_levers_monthly_submission_month,
 search_revenue_levers_monthly.tagged_follow_on AS search_revenue_levers_monthly_tagged_follow_on,
 search_revenue_levers_monthly.tagged_sap AS search_revenue_levers_monthly_tagged_sap,
 
@@ -110,6 +112,7 @@ search_revenue_levers_monthly_revenue,
 search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly_search_with_ads_organic,
+search_revenue_levers_monthly_submission_month,
 search_revenue_levers_monthly_tagged_follow_on,
 search_revenue_levers_monthly_tagged_sap,
 
@@ -138,18 +141,21 @@ search_revenue_levers_monthly_tagged_sap,
   dimension: ad_click {
     sql: ${TABLE}.search_revenue_levers_monthly_ad_click ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: ad_click_organic {
     sql: ${TABLE}.search_revenue_levers_monthly_ad_click_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: country {
     sql: ${TABLE}.search_revenue_levers_monthly_country ;;
     type: string
+    suggest_persist_for: "24 hours"
     map_layer_name: countries
     group_label: "Base Fields"
   }
@@ -157,78 +163,91 @@ search_revenue_levers_monthly_tagged_sap,
   dimension: dau {
     sql: ${TABLE}.search_revenue_levers_monthly_dau ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dau_engaged_w_sap {
     sql: ${TABLE}.search_revenue_levers_monthly_dau_engaged_w_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: dau_w_engine_as_default {
     sql: ${TABLE}.search_revenue_levers_monthly_dau_w_engine_as_default ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: device {
     sql: ${TABLE}.search_revenue_levers_monthly_device ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: monetizable_sap {
     sql: ${TABLE}.search_revenue_levers_monthly_monetizable_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: organic {
     sql: ${TABLE}.search_revenue_levers_monthly_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: partner_name {
     sql: ${TABLE}.search_revenue_levers_monthly_partner_name ;;
     type: string
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: revenue {
     sql: ${TABLE}.search_revenue_levers_monthly_revenue ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: sap {
     sql: ${TABLE}.search_revenue_levers_monthly_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: search_with_ads {
     sql: ${TABLE}.search_revenue_levers_monthly_search_with_ads ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: search_with_ads_organic {
     sql: ${TABLE}.search_revenue_levers_monthly_search_with_ads_organic ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: tagged_follow_on {
     sql: ${TABLE}.search_revenue_levers_monthly_tagged_follow_on ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
   dimension: tagged_sap {
     sql: ${TABLE}.search_revenue_levers_monthly_tagged_sap ;;
     type: number
+    suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
@@ -245,6 +264,23 @@ search_revenue_levers_monthly_tagged_sap,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: submission_month {
+    sql: ${TABLE}.search_revenue_levers_monthly_submission_month ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {

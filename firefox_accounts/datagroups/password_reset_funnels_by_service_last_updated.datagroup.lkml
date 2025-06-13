@@ -8,9 +8,13 @@
 datagroup: password_reset_funnels_by_service_last_updated {
   label: "password_reset_funnels_by_service Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM (
+        
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'accounts_frontend_derived'
-    AND table_name = 'pwd_reset_funnels_by_service_v1' ;;
-  description: "Updates for password_reset_funnels_by_service when moz-fx-data-shared-prod.accounts_frontend_derived.pwd_reset_funnels_by_service_v1 is modified."
+    WHERE (table_schema = 'accounts_frontend_derived' AND table_name = 'pwd_reset_funnels_by_service_v1')
+
+    ) ;;
+  description: "Updates for password_reset_funnels_by_service when referenced tables are modified."
   max_cache_age: "24 hours"
 }

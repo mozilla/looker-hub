@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/focus_android/views/events_stream_table.view.lkml"
+include: "/looker-hub/focus_android/datagroups/events_stream_table_last_updated.datagroup.lkml"
 
 explore: events_stream_table {
   sql_always_where: ${events_stream_table.submission_date} >= '2010-01-01' ;;
@@ -15,4 +16,6 @@ explore: events_stream_table {
       submission_date: "28 days",
     ]
   }
+
+  persist_with: events_stream_table_last_updated
 }

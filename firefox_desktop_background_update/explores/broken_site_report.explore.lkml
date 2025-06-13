@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop_background_update/views/broken_site_report.view.lkml"
+include: "/looker-hub/firefox_desktop_background_update/datagroups/broken_site_report_last_updated.datagroup.lkml"
 
 explore: broken_site_report {
   sql_always_where: ${broken_site_report.submission_date} >= '2010-01-01' ;;
   view_label: " Broken_Site_Report"
   description: "Explore for the broken_site_report ping. A ping containing the data for a user-initiated report for a broken site. Does not contain a `client_id`. All report data is self-contained."
   view_name: broken_site_report
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: broken_site_report__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: broken_site_report {
   join: broken_site_report__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${broken_site_report.ping_info__experiments}) AS broken_site_report__ping_info__experiments ;;
+  }
+
+  persist_with: broken_site_report_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

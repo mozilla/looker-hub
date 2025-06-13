@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/spoc.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/spoc_last_updated.datagroup.lkml"
 
 explore: spoc {
   sql_always_where: ${spoc.submission_date} >= '2010-01-01' ;;
   view_label: " Spoc"
   description: "Explore for the spoc ping. A ping for submitting the pocket sponsored content's `shim`. Does not contain a `client_id`."
   view_name: spoc
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: spoc__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: spoc {
   join: spoc__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${spoc.ping_info__experiments}) AS spoc__ping_info__experiments ;;
+  }
+
+  persist_with: spoc_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

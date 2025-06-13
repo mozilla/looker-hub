@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/nimbus_targeting_context.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/nimbus_targeting_context_last_updated.datagroup.lkml"
 
 explore: nimbus_targeting_context {
   sql_always_where: ${nimbus_targeting_context.submission_date} >= '2010-01-01' ;;
   view_label: " Nimbus_Targeting_Context"
   description: "Explore for the nimbus_targeting_context ping. Sent by Nimbus during every experiment update cycle."
   view_name: nimbus_targeting_context
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: nimbus_targeting_context__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -61,6 +56,14 @@ explore: nimbus_targeting_context {
   join: nimbus_targeting_context__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${nimbus_targeting_context.ping_info__experiments}) AS nimbus_targeting_context__ping_info__experiments ;;
+  }
+
+  persist_with: nimbus_targeting_context_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/user_characteristics.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/user_characteristics_last_updated.datagroup.lkml"
 
 explore: user_characteristics {
   sql_always_where: ${user_characteristics.submission_date} >= '2010-01-01' ;;
   view_label: " User_Characteristics"
   description: "Explore for the user_characteristics ping. A ping representing user hardware and software settings. Note that this ping does not include client_id. More details are available in Bug 1879151"
   view_name: user_characteristics
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: user_characteristics__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -46,6 +41,14 @@ explore: user_characteristics {
   join: user_characteristics__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${user_characteristics__events.extra}) AS user_characteristics__events__extra ;;
+  }
+
+  persist_with: user_characteristics_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

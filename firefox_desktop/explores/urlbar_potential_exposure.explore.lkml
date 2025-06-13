@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_desktop/views/urlbar_potential_exposure.view.lkml"
+include: "/looker-hub/firefox_desktop/datagroups/urlbar_potential_exposure_last_updated.datagroup.lkml"
 
 explore: urlbar_potential_exposure {
   sql_always_where: ${urlbar_potential_exposure.submission_date} >= '2010-01-01' ;;
   view_label: " Urlbar_Potential_Exposure"
   description: "Explore for the urlbar_potential_exposure ping. This ping is submitted at the end of urlbar sessions during which the user typed a keyword defined by the Nimbus variable `potentialExposureKeywords`. A \"session\" begins when the user focuses the urlbar and ends with an engagement or abandonment. The ping will contain one `urlbar.potential_exposure` event per unique keyword that is typed during the session. This ping is not submitted for sessions in private windows."
   view_name: urlbar_potential_exposure
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: urlbar_potential_exposure__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: urlbar_potential_exposure {
   join: urlbar_potential_exposure__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${urlbar_potential_exposure.ping_info__experiments}) AS urlbar_potential_exposure__ping_info__experiments ;;
+  }
+
+  persist_with: urlbar_potential_exposure_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

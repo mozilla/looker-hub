@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/klar_ios/views/baseline.view.lkml"
+include: "/looker-hub/klar_ios/datagroups/baseline_last_updated.datagroup.lkml"
 
 explore: baseline {
   sql_always_where: ${baseline.submission_date} >= '2010-01-01' ;;
   view_label: " Baseline"
   description: "Explore for the baseline ping. This ping is intended to provide metrics that are managed by the library itself, and not explicitly set by the application or included in the application's `metrics.yaml` file. The `baseline` ping is automatically sent when the application becomes inactive and when the application becomes active again (including application start). Please see the Reasons section for more information."
   view_name: baseline
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: baseline__metrics__labeled_counter__browser_search_ad_clicks {
     relationship: one_to_many
@@ -76,6 +71,14 @@ explore: baseline {
   join: baseline__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${baseline.ping_info__experiments}) AS baseline__ping_info__experiments ;;
+  }
+
+  persist_with: baseline_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 

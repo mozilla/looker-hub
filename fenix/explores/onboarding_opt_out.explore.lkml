@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/fenix/views/onboarding_opt_out.view.lkml"
+include: "/looker-hub/fenix/datagroups/onboarding_opt_out_last_updated.datagroup.lkml"
 
 explore: onboarding_opt_out {
   sql_always_where: ${onboarding_opt_out.submission_date} >= '2010-01-01' ;;
   view_label: " Onboarding_Opt_Out"
   description: "Explore for the onboarding_opt_out ping. Indicates the user has opted out of sending technical and interaction data."
   view_name: onboarding_opt_out
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -47,6 +41,15 @@ explore: onboarding_opt_out {
   join: onboarding_opt_out__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${onboarding_opt_out__events.extra}) AS onboarding_opt_out__events__extra ;;
+  }
+
+  persist_with: onboarding_opt_out_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

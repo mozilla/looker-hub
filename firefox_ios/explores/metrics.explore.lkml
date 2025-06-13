@@ -5,19 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/firefox_ios/views/metrics.view.lkml"
+include: "/looker-hub/firefox_ios/datagroups/metrics_last_updated.datagroup.lkml"
 
 explore: metrics {
   sql_always_where: ${metrics.submission_date} >= '2010-01-01' ;;
   view_label: " Metrics"
   description: "Explore for the metrics ping. The `metrics` ping is intended for all of the metrics that are explicitly set by the application or are included in the application's `metrics.yaml` file (except events). The reported data is tied to the ping's *measurement window*, which is the time between the collection of two `metrics` ping. Ideally, this window is expected to be about 24 hours, given that the collection is scheduled daily at 4AM. Data in the `ping_info` section of the ping can be used to infer the length of this window."
   view_name: metrics
-
-  always_filter: {
-    filters: [
-      channel: "release",
-      submission_date: "28 days",
-    ]
-  }
 
   join: metrics__metrics__labeled_counter__bookmarks_add {
     relationship: one_to_many
@@ -139,6 +133,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__history_selected_item}) AS metrics__metrics__labeled_counter__history_selected_item ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__history_selected_item.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__homepage_section_viewed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__homepage_section_viewed}) AS metrics__metrics__labeled_counter__homepage_section_viewed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__homepage_section_viewed.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__library_panel_pressed {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__library_panel_pressed}) AS metrics__metrics__labeled_counter__library_panel_pressed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__library_panel_pressed.document_id} ;;
@@ -237,6 +236,15 @@ explore: metrics {
   join: metrics__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
+  }
+
+  persist_with: metrics_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
   }
 }
 

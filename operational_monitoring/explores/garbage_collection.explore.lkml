@@ -5,6 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/operational_monitoring/views/garbage_collection.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/garbage_collection_last_updated.datagroup.lkml"
 
 explore: garbage_collection {
   always_filter: {
@@ -14,4 +15,5 @@ explore: garbage_collection {
   }
 
   hidden: yes
+  persist_with: garbage_collection_last_updated
 }

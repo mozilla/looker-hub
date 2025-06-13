@@ -5,18 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 include: "/looker-hub/mdn_yari/views/action.view.lkml"
+include: "/looker-hub/mdn_yari/datagroups/action_last_updated.datagroup.lkml"
 
 explore: action {
   sql_always_where: ${action.submission_date} >= '2010-01-01' ;;
   view_label: " Action"
   description: "Explore for the action ping. A ping that will be sent everytime a page event happens (user interaction)."
   view_name: action
-
-  always_filter: {
-    filters: [
-      submission_date: "28 days",
-    ]
-  }
 
   join: action__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
@@ -51,6 +46,14 @@ explore: action {
   join: action__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${action.ping_info__experiments}) AS action__ping_info__experiments ;;
+  }
+
+  persist_with: action_last_updated
+
+  always_filter: {
+    filters: [
+      submission_date: "28 days",
+    ]
   }
 }
 
