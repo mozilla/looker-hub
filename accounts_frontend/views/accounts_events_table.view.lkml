@@ -551,6 +551,15 @@ by query parameter `entrypoint_variation` in the URL.
 "
   }
 
+  dimension: metrics__string__event_choice {
+    sql: ${TABLE}.metrics.string.event_choice ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Event Choice"
+    description: "the choice made by the user in a given event"
+  }
+
   dimension: metrics__string__event_name {
     sql: ${TABLE}.metrics.string.event_name ;;
     type: string
