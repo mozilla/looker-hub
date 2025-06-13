@@ -5,6 +5,342 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: sync {
+  dimension: metrics__custom_distribution__pwmgr_login_page_safety__sum {
+    label: "Pwmgr Login Page Safety Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.sum ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Login Page Safety Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Login Page Safety Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pwmgr_login_page_safety"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The safety of a page where we see a password field. (0: safe page & safe submit; 1: safe page & unsafe submit; 2: safe page & unknown submit; 3: unsafe page & safe submit; 4: unsafe page & unsafe submit; 5: unsafe page & unknown submit)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PWMGR_LOGIN_PAGE_SAFETY.
+"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__sum {
+    label: "Pwmgr Prompt Remember Action Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.sum ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Prompt Remember Action Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Prompt Remember Action Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pwmgr_prompt_remember_action"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Action taken by user through prompt for creating a login. (0=Prompt displayed [always recorded], 1=Add login, 2=Don't save now, 3=Never save)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PWMGR_PROMPT_REMEMBER_ACTION.
+"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_update_action__sum {
+    label: "Pwmgr Prompt Update Action Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.sum ;;
+    type: number
+    group_label: "Pwmgr"
+    group_item_label: "Prompt Update Action Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Prompt Update Action Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pwmgr_prompt_update_action"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Action taken by user through prompt for modifying a login. (0=Prompt displayed [always recorded], 1=Update login, 2=Don't update, 3=Remove saved login)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram PWMGR_PROMPT_UPDATE_ACTION.
+"
+  }
+
+  dimension: metrics__quantity__syncs_discarded {
+    label: "Syncs Discarded"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.syncs_discarded ;;
+    type: number
+    group_label: "Syncs"
+    group_item_label: "Discarded"
+
+    link: {
+      label: "Glean Dictionary reference for Syncs Discarded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_discarded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many syncs happened which were not reported in detail
+due to being over the number of syncs we report detailed information for.
+"
+  }
+
+  dimension: metrics__string__syncs_hashed_device_id {
+    label: "Syncs Hashed Device ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.syncs_hashed_device_id ;;
+    type: string
+    group_label: "Syncs"
+    group_item_label: "Hashed Device ID"
+
+    link: {
+      label: "Glean Dictionary reference for Syncs Hashed Device ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_hashed_device_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hashed FxA device ID, hex string of 64 characters.
+Not included if the user is not logged in.
+If this changes between syncs, the \"sync\" ping is submitted with reason \"idchanged\".
+"
+  }
+
+  dimension: metrics__string__syncs_hashed_fxa_uid {
+    label: "Syncs Hashed Fxa Uid"
+    hidden: no
+    sql: ${TABLE}.metrics.string.syncs_hashed_fxa_uid ;;
+    type: string
+    group_label: "Syncs"
+    group_item_label: "Hashed Fxa Uid"
+
+    link: {
+      label: "Glean Dictionary reference for Syncs Hashed Fxa Uid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_hashed_fxa_uid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Hashed FxA unique ID, or string of 32 zeroes.
+If this changes between syncs, the \"sync\" ping is submitted with reason \"idchanged\".
+"
+  }
+
+  dimension: metrics__datetime__syncs_session_start_date {
+    label: "Syncs Session Start Date"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.syncs_session_start_date ;;
+    type: string
+    group_label: "Syncs"
+    group_item_label: "Session Start Date"
+
+    link: {
+      label: "Glean Dictionary reference for Syncs Session Start Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_session_start_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When the sync telemetry session begins (the `SyncTelemetryImpl`
+constructor runs).
+Typically useful for ordering \"sync\" pings.
+"
+  }
+
+  dimension: metrics__string__syncs_sync_node_type {
+    label: "Syncs Sync Node Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.syncs_sync_node_type ;;
+    type: string
+    group_label: "Syncs"
+    group_item_label: "Sync Node Type"
+
+    link: {
+      label: "Glean Dictionary reference for Syncs Sync Node Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_sync_node_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The \"node type\" as reported by the token server.
+This will not change from sync to sync.
+May not be present if the token server omits this information.
+"
+  }
+
+  dimension: metrics__string__system_os_distro {
+    label: "System OS Distro"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_distro ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Distro"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Distro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_distro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's distribution, according to sysinfo.
+Linux only.
+e.g. \"Linuxmint\"
+"
+  }
+
+  dimension: metrics__string__system_os_distro_version {
+    label: "System OS Distro Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_distro_version ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Distro Version"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Distro Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_distro_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's distribution's version, according to sysinfo.
+Linux only.
+e.g. \"22\"
+"
+  }
+
+  dimension: metrics__string__system_os_locale {
+    label: "System OS Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_locale ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Locale"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's local, according to ospreferences.
+e.g. \"en-US\"
+"
+  }
+
+  dimension: metrics__string__system_os_name {
+    label: "System OS Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_name ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Name"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's name, according to sysinfo.
+e.g. \"Windows_NT\"
+Expected in most cases to be identical to `client_info.os`.
+"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_major {
+    label: "System OS Service Pack Major"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
+    type: number
+    group_label: "System OS"
+    group_item_label: "Service Pack Major"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Service Pack Major"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_service_pack_major"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows service pack's major version, according to WindowsVersionInfo.
+Windows only.
+e.g. 0
+"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_minor {
+    label: "System OS Service Pack Minor"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
+    type: number
+    group_label: "System OS"
+    group_item_label: "Service Pack Minor"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Service Pack Minor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_service_pack_minor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows service pack's minor version, according to WindowsVersionInfo.
+Windows only.
+e.g. 0
+"
+  }
+
+  dimension: metrics__string__system_os_version {
+    label: "System OS Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_version ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's version, according to sysinfo.
+e.g. \"6.3\"
+Expected in most cases to be identical to `client_info.os_version`.
+"
+  }
+
+  dimension: metrics__quantity__system_os_windows_build_number {
+    label: "System OS Windows Build Number"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
+    type: number
+    group_label: "System OS"
+    group_item_label: "Windows Build Number"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Windows Build Number"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_windows_build_number"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows build number, according to WindowsVersionInfo.
+Windows only.
+e.g. 26100
+Expected in most cases to be identical to `client_info.windows_build_number`.
+"
+  }
+
+  dimension: metrics__quantity__system_os_windows_ubr {
+    label: "System OS Windows Ubr"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
+    type: number
+    group_label: "System OS"
+    group_item_label: "Windows Ubr"
+
+    link: {
+      label: "Glean Dictionary reference for System OS Windows Ubr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_windows_ubr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows update build revision number, according to
+`SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion`.
+Windows only.
+e.g. 3775
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation ID"
     hidden: no
@@ -965,6 +1301,48 @@ view: sync__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: sync__metrics__custom_distribution__pwmgr_login_page_safety__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: sync__metrics__custom_distribution__pwmgr_prompt_remember_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: sync__metrics__custom_distribution__pwmgr_prompt_update_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }
