@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       weather_rollout_united_kingdom.branch
     ]
     filters:
-      weather_rollout_united_kingdom.metric: 'ad_clicks'
+      weather_rollout_united_kingdom.metric: 'search_count'
       weather_rollout_united_kingdom.statistic: mean
     row: 0
     col: 0
@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: weather_rollout_united_kingdom
-    type: looker_line
-    fields: [
-      weather_rollout_united_kingdom.submission_date,
-      weather_rollout_united_kingdom.branch,
-      weather_rollout_united_kingdom.point
-    ]
-    pivots: [
-      weather_rollout_united_kingdom.branch
-    ]
-    filters:
-      weather_rollout_united_kingdom.metric: 'active_hours'
-      weather_rollout_united_kingdom.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: weather_rollout_united_kingdom.submission_date
-    field_y: weather_rollout_united_kingdom.point
-    log_scale: false
-    ci_lower: weather_rollout_united_kingdom.lower
-    ci_upper: weather_rollout_united_kingdom.upper
-    show_grid: true
-    listen:
-      Date: weather_rollout_united_kingdom.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -131,6 +97,42 @@
       weather_rollout_united_kingdom.metric: 'qualified_cumulative_days_of_use'
       weather_rollout_united_kingdom.statistic: mean
     row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: weather_rollout_united_kingdom.submission_date
+    field_y: weather_rollout_united_kingdom.point
+    log_scale: false
+    ci_lower: weather_rollout_united_kingdom.lower
+    ci_upper: weather_rollout_united_kingdom.upper
+    show_grid: true
+    listen:
+      Date: weather_rollout_united_kingdom.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: weather_rollout_united_kingdom
+    type: "ci-line-chart"
+    fields: [
+      weather_rollout_united_kingdom.submission_date,
+      weather_rollout_united_kingdom.branch,
+      weather_rollout_united_kingdom.upper,
+      weather_rollout_united_kingdom.lower,
+      weather_rollout_united_kingdom.point
+    ]
+    pivots: [
+      weather_rollout_united_kingdom.branch
+    ]
+    filters:
+      weather_rollout_united_kingdom.metric: 'memory_total'
+      weather_rollout_united_kingdom.statistic: percentile
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -142,6 +144,7 @@
     show_grid: true
     listen:
       Date: weather_rollout_united_kingdom.submission_date
+      Percentile: weather_rollout_united_kingdom.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,45 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: weather_rollout_united_kingdom
-    type: "ci-line-chart"
-    fields: [
-      weather_rollout_united_kingdom.submission_date,
-      weather_rollout_united_kingdom.branch,
-      weather_rollout_united_kingdom.upper,
-      weather_rollout_united_kingdom.lower,
-      weather_rollout_united_kingdom.point
-    ]
-    pivots: [
-      weather_rollout_united_kingdom.branch
-    ]
-    filters:
-      weather_rollout_united_kingdom.metric: 'memory_total'
-      weather_rollout_united_kingdom.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: weather_rollout_united_kingdom.submission_date
-    field_y: weather_rollout_united_kingdom.point
-    log_scale: false
-    ci_lower: weather_rollout_united_kingdom.lower
-    ci_upper: weather_rollout_united_kingdom.upper
-    show_grid: true
-    listen:
-      Date: weather_rollout_united_kingdom.submission_date
-      Percentile: weather_rollout_united_kingdom.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,10 +199,10 @@
       weather_rollout_united_kingdom.branch
     ]
     filters:
-      weather_rollout_united_kingdom.metric: 'search_count'
+      weather_rollout_united_kingdom.metric: 'active_hours'
       weather_rollout_united_kingdom.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: weather_rollout_united_kingdom.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       weather_rollout_united_kingdom.metric: 'retained'
+      weather_rollout_united_kingdom.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: weather_rollout_united_kingdom.submission_date
+    field_y: weather_rollout_united_kingdom.point
+    log_scale: false
+    ci_lower: weather_rollout_united_kingdom.lower
+    ci_upper: weather_rollout_united_kingdom.upper
+    show_grid: true
+    listen:
+      Date: weather_rollout_united_kingdom.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: weather_rollout_united_kingdom
+    type: looker_line
+    fields: [
+      weather_rollout_united_kingdom.submission_date,
+      weather_rollout_united_kingdom.branch,
+      weather_rollout_united_kingdom.point
+    ]
+    pivots: [
+      weather_rollout_united_kingdom.branch
+    ]
+    filters:
+      weather_rollout_united_kingdom.metric: 'ad_clicks'
       weather_rollout_united_kingdom.statistic: mean
     row: 30
     col: 12

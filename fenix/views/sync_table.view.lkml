@@ -409,6 +409,77 @@ view: sync_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__custom_distribution__pwmgr_login_page_safety__count {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Login Page Safety"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_login_page_safety__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Login Page Safety"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_login_page_safety__values {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__count {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Prompt Remember Action"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Prompt Remember Action"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__values {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_update_action__count {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Prompt Update Action"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_update_action__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Pwmgr Prompt Update Action"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pwmgr_prompt_update_action__values {
+    sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__datetime__syncs_session_start_date {
+    sql: ${TABLE}.metrics.datetime.syncs_session_start_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Datetime"
+    group_item_label: "Syncs Session Start Date"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -439,12 +510,126 @@ view: sync_table {
     hidden: yes
   }
 
+  dimension: metrics__object__syncs_migrations {
+    sql: ${TABLE}.metrics.object.syncs_migrations ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__syncs_syncs {
+    sql: ${TABLE}.metrics.object.syncs_syncs ;;
+    hidden: yes
+  }
+
+  dimension: metrics__quantity__syncs_discarded {
+    sql: ${TABLE}.metrics.quantity.syncs_discarded ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Syncs Discarded"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_major {
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Service Pack Major"
+  }
+
+  dimension: metrics__quantity__system_os_service_pack_minor {
+    sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Service Pack Minor"
+  }
+
+  dimension: metrics__quantity__system_os_windows_build_number {
+    sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Windows Build Number"
+  }
+
+  dimension: metrics__quantity__system_os_windows_ubr {
+    sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "System OS Windows Ubr"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation ID"
+  }
+
+  dimension: metrics__string__syncs_hashed_device_id {
+    sql: ${TABLE}.metrics.string.syncs_hashed_device_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Syncs Hashed Device ID"
+  }
+
+  dimension: metrics__string__syncs_hashed_fxa_uid {
+    sql: ${TABLE}.metrics.string.syncs_hashed_fxa_uid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Syncs Hashed Fxa Uid"
+  }
+
+  dimension: metrics__string__syncs_sync_node_type {
+    sql: ${TABLE}.metrics.string.syncs_sync_node_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Syncs Sync Node Type"
+  }
+
+  dimension: metrics__string__system_os_distro {
+    sql: ${TABLE}.metrics.string.system_os_distro ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Distro"
+  }
+
+  dimension: metrics__string__system_os_distro_version {
+    sql: ${TABLE}.metrics.string.system_os_distro_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Distro Version"
+  }
+
+  dimension: metrics__string__system_os_locale {
+    sql: ${TABLE}.metrics.string.system_os_locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Locale"
+  }
+
+  dimension: metrics__string__system_os_name {
+    sql: ${TABLE}.metrics.string.system_os_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Name"
+  }
+
+  dimension: metrics__string__system_os_version {
+    sql: ${TABLE}.metrics.string.system_os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "System OS Version"
   }
 
   dimension: metrics__uuid__sync_sync_uuid {
@@ -683,6 +868,48 @@ view: sync_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: sync_table__metrics__custom_distribution__pwmgr_login_page_safety__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: sync_table__metrics__custom_distribution__pwmgr_prompt_remember_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: sync_table__metrics__custom_distribution__pwmgr_prompt_update_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }
