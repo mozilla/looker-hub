@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       extensions_migration_in_import_wizard_116_rollout.branch
     ]
     filters:
-      extensions_migration_in_import_wizard_116_rollout.metric: 'uri_count'
+      extensions_migration_in_import_wizard_116_rollout.metric: 'active_hours'
       extensions_migration_in_import_wizard_116_rollout.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: extensions_migration_in_import_wizard_116_rollout.submission_date
+    field_y: extensions_migration_in_import_wizard_116_rollout.point
+    log_scale: false
+    ci_lower: extensions_migration_in_import_wizard_116_rollout.lower
+    ci_upper: extensions_migration_in_import_wizard_116_rollout.upper
+    show_grid: true
+    listen:
+      Date: extensions_migration_in_import_wizard_116_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: extensions_migration_in_import_wizard_116_rollout
+    type: looker_line
+    fields: [
+      extensions_migration_in_import_wizard_116_rollout.submission_date,
+      extensions_migration_in_import_wizard_116_rollout.branch,
+      extensions_migration_in_import_wizard_116_rollout.point
+    ]
+    pivots: [
+      extensions_migration_in_import_wizard_116_rollout.branch
+    ]
+    filters:
+      extensions_migration_in_import_wizard_116_rollout.metric: 'ad_clicks'
+      extensions_migration_in_import_wizard_116_rollout.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: extensions_migration_in_import_wizard_116_rollout.submission_date
@@ -97,42 +131,6 @@
       extensions_migration_in_import_wizard_116_rollout.metric: 'qualified_cumulative_days_of_use'
       extensions_migration_in_import_wizard_116_rollout.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: extensions_migration_in_import_wizard_116_rollout.submission_date
-    field_y: extensions_migration_in_import_wizard_116_rollout.point
-    log_scale: false
-    ci_lower: extensions_migration_in_import_wizard_116_rollout.lower
-    ci_upper: extensions_migration_in_import_wizard_116_rollout.upper
-    show_grid: true
-    listen:
-      Date: extensions_migration_in_import_wizard_116_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: extensions_migration_in_import_wizard_116_rollout
-    type: "ci-line-chart"
-    fields: [
-      extensions_migration_in_import_wizard_116_rollout.submission_date,
-      extensions_migration_in_import_wizard_116_rollout.branch,
-      extensions_migration_in_import_wizard_116_rollout.upper,
-      extensions_migration_in_import_wizard_116_rollout.lower,
-      extensions_migration_in_import_wizard_116_rollout.point
-    ]
-    pivots: [
-      extensions_migration_in_import_wizard_116_rollout.branch
-    ]
-    filters:
-      extensions_migration_in_import_wizard_116_rollout.metric: 'memory_total'
-      extensions_migration_in_import_wizard_116_rollout.statistic: percentile
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -144,7 +142,6 @@
     show_grid: true
     listen:
       Date: extensions_migration_in_import_wizard_116_rollout.submission_date
-      Percentile: extensions_migration_in_import_wizard_116_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +196,7 @@
       extensions_migration_in_import_wizard_116_rollout.branch
     ]
     filters:
-      extensions_migration_in_import_wizard_116_rollout.metric: 'active_hours'
+      extensions_migration_in_import_wizard_116_rollout.metric: 'uri_count'
       extensions_migration_in_import_wizard_116_rollout.statistic: mean
     row: 20
     col: 12
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: extensions_migration_in_import_wizard_116_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       extensions_migration_in_import_wizard_116_rollout.submission_date,
       extensions_migration_in_import_wizard_116_rollout.branch,
+      extensions_migration_in_import_wizard_116_rollout.upper,
+      extensions_migration_in_import_wizard_116_rollout.lower,
       extensions_migration_in_import_wizard_116_rollout.point
     ]
     pivots: [
       extensions_migration_in_import_wizard_116_rollout.branch
     ]
     filters:
-      extensions_migration_in_import_wizard_116_rollout.metric: 'ad_clicks'
-      extensions_migration_in_import_wizard_116_rollout.statistic: mean
+      extensions_migration_in_import_wizard_116_rollout.metric: 'memory_total'
+      extensions_migration_in_import_wizard_116_rollout.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: extensions_migration_in_import_wizard_116_rollout.submission_date
+      Percentile: extensions_migration_in_import_wizard_116_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

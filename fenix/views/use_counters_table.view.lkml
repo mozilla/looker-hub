@@ -14201,6 +14201,30 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Dateparse Impl Def"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_error_capturestacktrace {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_error_capturestacktrace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Error Capturestacktrace"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_error_capturestacktrace_ctor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_error_capturestacktrace_ctor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Error Capturestacktrace Ctor"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_error_capturestacktrace_uncallable_ctor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_error_capturestacktrace_uncallable_ctor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Error Capturestacktrace Uncallable Ctor"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_errorstack_getter {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter ;;
     type: number
@@ -17775,6 +17799,30 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Dateparse Impl Def"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_error_capturestacktrace {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_error_capturestacktrace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Error Capturestacktrace"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_error_capturestacktrace_ctor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_error_capturestacktrace_ctor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Error Capturestacktrace Ctor"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_error_capturestacktrace_uncallable_ctor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_error_capturestacktrace_uncallable_ctor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Error Capturestacktrace Uncallable Ctor"
   }
 
   dimension: metrics__counter__use_counter_page_js_errorstack_getter {

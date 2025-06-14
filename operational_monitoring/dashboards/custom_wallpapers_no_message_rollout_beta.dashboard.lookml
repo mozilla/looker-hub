@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       custom_wallpapers_no_message_rollout_beta.branch
     ]
     filters:
-      custom_wallpapers_no_message_rollout_beta.metric: 'uri_count'
+      custom_wallpapers_no_message_rollout_beta.metric: 'active_hours'
       custom_wallpapers_no_message_rollout_beta.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: custom_wallpapers_no_message_rollout_beta.submission_date
+    field_y: custom_wallpapers_no_message_rollout_beta.point
+    log_scale: false
+    ci_lower: custom_wallpapers_no_message_rollout_beta.lower
+    ci_upper: custom_wallpapers_no_message_rollout_beta.upper
+    show_grid: true
+    listen:
+      Date: custom_wallpapers_no_message_rollout_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: custom_wallpapers_no_message_rollout_beta
+    type: looker_line
+    fields: [
+      custom_wallpapers_no_message_rollout_beta.submission_date,
+      custom_wallpapers_no_message_rollout_beta.branch,
+      custom_wallpapers_no_message_rollout_beta.point
+    ]
+    pivots: [
+      custom_wallpapers_no_message_rollout_beta.branch
+    ]
+    filters:
+      custom_wallpapers_no_message_rollout_beta.metric: 'ad_clicks'
+      custom_wallpapers_no_message_rollout_beta.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: custom_wallpapers_no_message_rollout_beta.submission_date
@@ -97,42 +131,6 @@
       custom_wallpapers_no_message_rollout_beta.metric: 'qualified_cumulative_days_of_use'
       custom_wallpapers_no_message_rollout_beta.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: custom_wallpapers_no_message_rollout_beta.submission_date
-    field_y: custom_wallpapers_no_message_rollout_beta.point
-    log_scale: false
-    ci_lower: custom_wallpapers_no_message_rollout_beta.lower
-    ci_upper: custom_wallpapers_no_message_rollout_beta.upper
-    show_grid: true
-    listen:
-      Date: custom_wallpapers_no_message_rollout_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: custom_wallpapers_no_message_rollout_beta
-    type: "ci-line-chart"
-    fields: [
-      custom_wallpapers_no_message_rollout_beta.submission_date,
-      custom_wallpapers_no_message_rollout_beta.branch,
-      custom_wallpapers_no_message_rollout_beta.upper,
-      custom_wallpapers_no_message_rollout_beta.lower,
-      custom_wallpapers_no_message_rollout_beta.point
-    ]
-    pivots: [
-      custom_wallpapers_no_message_rollout_beta.branch
-    ]
-    filters:
-      custom_wallpapers_no_message_rollout_beta.metric: 'memory_total'
-      custom_wallpapers_no_message_rollout_beta.statistic: percentile
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -144,7 +142,6 @@
     show_grid: true
     listen:
       Date: custom_wallpapers_no_message_rollout_beta.submission_date
-      Percentile: custom_wallpapers_no_message_rollout_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +196,7 @@
       custom_wallpapers_no_message_rollout_beta.branch
     ]
     filters:
-      custom_wallpapers_no_message_rollout_beta.metric: 'active_hours'
+      custom_wallpapers_no_message_rollout_beta.metric: 'uri_count'
       custom_wallpapers_no_message_rollout_beta.statistic: mean
     row: 20
     col: 12
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: custom_wallpapers_no_message_rollout_beta
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       custom_wallpapers_no_message_rollout_beta.submission_date,
       custom_wallpapers_no_message_rollout_beta.branch,
+      custom_wallpapers_no_message_rollout_beta.upper,
+      custom_wallpapers_no_message_rollout_beta.lower,
       custom_wallpapers_no_message_rollout_beta.point
     ]
     pivots: [
       custom_wallpapers_no_message_rollout_beta.branch
     ]
     filters:
-      custom_wallpapers_no_message_rollout_beta.metric: 'ad_clicks'
-      custom_wallpapers_no_message_rollout_beta.statistic: mean
+      custom_wallpapers_no_message_rollout_beta.metric: 'memory_total'
+      custom_wallpapers_no_message_rollout_beta.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: custom_wallpapers_no_message_rollout_beta.submission_date
+      Percentile: custom_wallpapers_no_message_rollout_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
