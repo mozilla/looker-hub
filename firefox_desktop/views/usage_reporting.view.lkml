@@ -263,7 +263,7 @@ not shared with other telemetry data.
 
   dimension: metrics__boolean__usage_windows_backup_enabled {
     label: "Usage Windows Backup Enabled"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.usage_windows_backup_enabled ;;
     type: yesno
     group_label: "Usage"
