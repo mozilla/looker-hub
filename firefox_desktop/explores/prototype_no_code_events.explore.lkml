@@ -56,7 +56,3 @@ explore: prototype_no_code_events {
     ]
   }
 }
-
-explore: suggest__prototype_no_code_events__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

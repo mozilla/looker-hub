@@ -56,7 +56,3 @@ explore: urlbar_potential_exposure {
     ]
   }
 }
-
-explore: suggest__urlbar_potential_exposure__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

@@ -56,7 +56,3 @@ explore: quick_suggest_deletion_request {
     ]
   }
 }
-
-explore: suggest__quick_suggest_deletion_request__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

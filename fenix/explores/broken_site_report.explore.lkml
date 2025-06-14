@@ -57,7 +57,3 @@ explore: broken_site_report {
     ]
   }
 }
-
-explore: suggest__broken_site_report__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

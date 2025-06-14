@@ -56,7 +56,3 @@ explore: fx_accounts {
     ]
   }
 }
-
-explore: suggest__fx_accounts__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

@@ -51,7 +51,3 @@ explore: onboarding_opt_out {
     ]
   }
 }
-
-explore: suggest__onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

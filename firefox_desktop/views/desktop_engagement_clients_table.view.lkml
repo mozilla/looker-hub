@@ -117,6 +117,13 @@ view: desktop_engagement_clients_table {
     description: "Internet Service Provider Name"
   }
 
+  dimension: legacy_telemetry_client_id {
+    sql: ${TABLE}.legacy_telemetry_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Legacy Telemetry Client Identifier"
+  }
+
   dimension: lifecycle_stage {
     sql: ${TABLE}.lifecycle_stage ;;
     type: string
@@ -163,6 +170,13 @@ view: desktop_engagement_clients_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension: windows_version {
+    sql: ${TABLE}.windows_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Windows Version"
   }
 
   dimension_group: first_seen {

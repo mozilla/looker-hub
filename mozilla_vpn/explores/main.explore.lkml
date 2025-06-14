@@ -56,7 +56,3 @@ explore: main {
     ]
   }
 }
-
-explore: suggest__main__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

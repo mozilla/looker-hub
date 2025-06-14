@@ -56,7 +56,3 @@ explore: extensionsession {
     ]
   }
 }
-
-explore: suggest__extensionsession__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

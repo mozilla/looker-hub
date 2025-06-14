@@ -56,7 +56,3 @@ explore: vpnsession {
     ]
   }
 }
-
-explore: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
