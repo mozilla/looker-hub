@@ -7666,7 +7666,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
     label: "Geckoview Content Process Lifetime Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
     type: number
     group_label: "Geckoview"
@@ -7774,7 +7774,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
     label: "Geckoview Startup Runtime Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
     type: number
     group_label: "Geckoview"
