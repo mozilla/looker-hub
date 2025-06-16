@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: homescreen_ios_ios_rebuild_release
-    type: looker_line
-    fields: [
-      homescreen_ios_ios_rebuild_release.submission_date,
-      homescreen_ios_ios_rebuild_release.branch,
-      homescreen_ios_ios_rebuild_release.point
-    ]
-    pivots: [
-      homescreen_ios_ios_rebuild_release.branch
-    ]
-    filters:
-      homescreen_ios_ios_rebuild_release.metric: 'search_count'
-      homescreen_ios_ios_rebuild_release.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: homescreen_ios_ios_rebuild_release.submission_date
-    field_y: homescreen_ios_ios_rebuild_release.point
-    log_scale: false
-    ci_lower: homescreen_ios_ios_rebuild_release.lower
-    ci_upper: homescreen_ios_ios_rebuild_release.upper
-    show_grid: true
-    listen:
-      Date: homescreen_ios_ios_rebuild_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       homescreen_ios_ios_rebuild_release.metric: 'days_of_use'
       homescreen_ios_ios_rebuild_release.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: homescreen_ios_ios_rebuild_release.submission_date
@@ -129,6 +95,40 @@
     ]
     filters:
       homescreen_ios_ios_rebuild_release.metric: 'ad_clicks'
+      homescreen_ios_ios_rebuild_release.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: homescreen_ios_ios_rebuild_release.submission_date
+    field_y: homescreen_ios_ios_rebuild_release.point
+    log_scale: false
+    ci_lower: homescreen_ios_ios_rebuild_release.lower
+    ci_upper: homescreen_ios_ios_rebuild_release.upper
+    show_grid: true
+    listen:
+      Date: homescreen_ios_ios_rebuild_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: homescreen_ios_ios_rebuild_release
+    type: looker_line
+    fields: [
+      homescreen_ios_ios_rebuild_release.submission_date,
+      homescreen_ios_ios_rebuild_release.branch,
+      homescreen_ios_ios_rebuild_release.point
+    ]
+    pivots: [
+      homescreen_ios_ios_rebuild_release.branch
+    ]
+    filters:
+      homescreen_ios_ios_rebuild_release.metric: 'search_count'
       homescreen_ios_ios_rebuild_release.statistic: mean
     row: 10
     col: 12
