@@ -144,6 +144,13 @@ view: desktop_engagement_aggregates_table {
     description: "Number of weekly active users"
   }
 
+  dimension: windows_version {
+    sql: ${TABLE}.windows_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Windows Version"
+  }
+
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time

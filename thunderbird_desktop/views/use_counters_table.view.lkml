@@ -17689,6 +17689,36 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_error_capturestacktrace {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_error_capturestacktrace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Error Capturestacktrace"
+    description: "Whether a document called Error.captureStackTrace. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_error_capturestacktrace_ctor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_error_capturestacktrace_ctor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Error Capturestacktrace Ctor"
+    description: "Whether a document called Error.captureStackTrace with a constructor argument. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_error_capturestacktrace_uncallable_ctor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_error_capturestacktrace_uncallable_ctor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Error Capturestacktrace Uncallable Ctor"
+    description: "Whether a document called Error.captureStackTrace with a non-callable constructor argument. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_errorstack_getter {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_errorstack_getter ;;
     type: number
@@ -22156,6 +22186,36 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Dateparse Impl Def"
     description: "Whether a page call to Date.parse used implementation defined behaviour. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_error_capturestacktrace {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_error_capturestacktrace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Error Capturestacktrace"
+    description: "Whether a page called Error.captureStackTrace. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_error_capturestacktrace_ctor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_error_capturestacktrace_ctor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Error Capturestacktrace Ctor"
+    description: "Whether a page called Error.captureStackTrace with a constructor argument. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_error_capturestacktrace_uncallable_ctor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_error_capturestacktrace_uncallable_ctor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Error Capturestacktrace Uncallable Ctor"
+    description: "Whether a page called Error.captureStackTrace with a non-callable constructor argument. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

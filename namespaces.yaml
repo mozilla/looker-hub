@@ -2400,6 +2400,10 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.fx_accounts
       type: table_view
+    glean_desktop_new_profiles:
+      tables:
+      - table: mozdata.firefox_desktop.new_profiles_aggregates
+      type: table_view
     glean_events:
       tables:
       - base_table: mozdata.firefox_desktop.events_unnested
