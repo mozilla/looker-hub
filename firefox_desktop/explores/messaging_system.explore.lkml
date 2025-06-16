@@ -71,7 +71,3 @@ explore: messaging_system {
     ]
   }
 }
-
-explore: suggest__messaging_system__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

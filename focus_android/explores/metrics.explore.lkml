@@ -1727,7 +1727,3 @@ explore: metrics {
     ]
   }
 }
-
-explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

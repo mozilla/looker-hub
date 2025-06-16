@@ -407,8 +407,6 @@ view: onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
   }
 
@@ -521,25 +519,6 @@ view: onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_value {
     type: sum
     sql: ${value} ;;
     hidden: no
-  }
-}
-
-view: suggest__onboarding_opt_out__metrics__labeled_counter__glean_error_invalid_label {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.fenix.onboarding_opt_out as t,
-unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
   }
 }
 

@@ -57,7 +57,3 @@ explore: crash {
     ]
   }
 }
-
-explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

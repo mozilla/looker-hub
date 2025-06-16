@@ -56,7 +56,3 @@ explore: top_sites {
     ]
   }
 }
-
-explore: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

@@ -62,7 +62,3 @@ explore: use_counters {
     ]
   }
 }
-
-explore: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

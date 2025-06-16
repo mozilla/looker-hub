@@ -57,7 +57,3 @@ explore: accounts_events {
     ]
   }
 }
-
-explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
