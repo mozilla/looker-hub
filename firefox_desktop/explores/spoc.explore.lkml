@@ -56,7 +56,3 @@ explore: spoc {
     ]
   }
 }
-
-explore: suggest__spoc__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

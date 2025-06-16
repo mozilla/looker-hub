@@ -87,7 +87,3 @@ explore: bookmarks_sync {
     ]
   }
 }
-
-explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

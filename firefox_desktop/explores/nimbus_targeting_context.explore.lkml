@@ -66,7 +66,3 @@ explore: nimbus_targeting_context {
     ]
   }
 }
-
-explore: suggest__nimbus_targeting_context__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}

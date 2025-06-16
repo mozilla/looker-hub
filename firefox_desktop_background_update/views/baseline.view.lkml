@@ -883,8 +883,6 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
   }
 
@@ -1062,25 +1060,6 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
     hidden: no
-  }
-}
-
-view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop_background_update.baseline as t,
-unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
   }
 }
 

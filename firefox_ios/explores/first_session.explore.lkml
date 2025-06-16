@@ -57,7 +57,3 @@ explore: first_session {
     ]
   }
 }
-
-explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
