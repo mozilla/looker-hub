@@ -298,6 +298,24 @@ not shared with other telemetry data.
 "
   }
 
+  dimension: metrics__quantity__usage_windows_user_profile_age_in_days {
+    label: "Usage Windows User Profile Age In Days"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.usage_windows_user_profile_age_in_days ;;
+    type: number
+    group_label: "Usage"
+    group_item_label: "Windows User Profile Age In Days"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Windows User Profile Age In Days"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_windows_user_profile_age_in_days"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The age of the current users home folder in days.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation ID"
     hidden: no

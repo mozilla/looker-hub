@@ -322,6 +322,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__usage_windows_user_profile_age_in_days {
+    sql: ${TABLE}.metrics.quantity.usage_windows_user_profile_age_in_days ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Usage Windows User Profile Age In Days"
+    description: "The age of the current users home folder in days.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
