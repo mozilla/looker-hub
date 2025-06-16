@@ -10268,7 +10268,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__fontlist_gdi_init_total__sum {
     label: "Fontlist Gdi Init Total Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.sum ;;
     type: number
     group_label: "Fontlist"
