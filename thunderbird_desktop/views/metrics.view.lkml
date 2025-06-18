@@ -11676,7 +11676,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
     label: "Javascript Pageload Baseline Compile Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11694,7 +11694,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
     label: "Javascript Pageload Delazification Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11712,7 +11712,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
     label: "Javascript Pageload Execution Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11730,7 +11730,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
     label: "Javascript Pageload GC Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11748,7 +11748,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
     label: "Javascript Pageload Parse Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11766,7 +11766,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
     label: "Javascript Pageload Protect Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11784,7 +11784,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
     label: "Javascript Pageload Xdr Encode Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
