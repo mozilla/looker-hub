@@ -74,6 +74,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                 (
     SELECT
         legacy_telemetry_client_id as client_id,
+        profile_group_id,
         DATE(submission_timestamp) AS submission_date,
         experiments,
         event_name,

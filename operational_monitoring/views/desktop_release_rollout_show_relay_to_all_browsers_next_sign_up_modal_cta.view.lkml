@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: custom_wallpapers_rollout_nightly {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.custom_wallpapers_rollout_nightly_statistics ;;
+view: desktop_release_rollout_show_relay_to_all_browsers_next_sign_up_modal_cta {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.desktop_release_rollout_show_relay_to_all_browsers_next_sign_up_modal_cta_statistics ;;
 
   dimension: submission_date {
     type: date
