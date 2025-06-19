@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       viewpoint_android_2025_rolling.branch
     ]
     filters:
-      viewpoint_android_2025_rolling.metric: 'search_count'
+      viewpoint_android_2025_rolling.metric: 'days_of_use'
       viewpoint_android_2025_rolling.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       viewpoint_android_2025_rolling.branch
     ]
     filters:
-      viewpoint_android_2025_rolling.metric: 'uri_count'
+      viewpoint_android_2025_rolling.metric: 'retained'
       viewpoint_android_2025_rolling.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       viewpoint_android_2025_rolling.branch
     ]
     filters:
-      viewpoint_android_2025_rolling.metric: 'days_of_use'
+      viewpoint_android_2025_rolling.metric: 'search_count'
       viewpoint_android_2025_rolling.statistic: mean
     row: 20
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       viewpoint_android_2025_rolling.branch
     ]
     filters:
-      viewpoint_android_2025_rolling.metric: 'retained'
+      viewpoint_android_2025_rolling.metric: 'uri_count'
       viewpoint_android_2025_rolling.statistic: mean
     row: 20
     col: 12

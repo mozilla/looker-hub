@@ -17956,6 +17956,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_cookie_db_validation {
+    label: "Networking Cookie DB Validation"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_cookie_db_validation ;;
+    group_label: "Networking"
+    group_item_label: "Cookie DB Validation"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie DB Validation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_db_validation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts cookies loaded from the DB grouped by validation result.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__sum {
     label: "Networking Cookie Purge Entry Max Sum"
     hidden: no
@@ -46886,6 +46903,47 @@ view: metrics__metrics__labeled_counter__networking_captive_portal_banner_displa
 
 view: metrics__metrics__labeled_counter__networking_connection_address_type {
   label: "Networking - Connection Address Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_cookie_db_validation {
+  label: "Networking - Cookie DB Validation"
 
   dimension: document_id {
     type: string
