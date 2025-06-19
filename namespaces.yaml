@@ -9553,11 +9553,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id254
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
             - Linux
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11382,14 +11382,14 @@ operational_monitoring:
             default: nightly
             options:
             - nightly
-            - release
             - beta
+            - release
           os:
-            default: Darwin
+            default: Linux
             options:
+            - Linux
             - Darwin
             - Windows_NT
-            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id405
