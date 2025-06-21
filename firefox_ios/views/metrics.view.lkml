@@ -159,7 +159,7 @@ often Firefox is set as the default browser.
 
   dimension: metrics__counter__app_menu_block_images_disabled {
     label: "App Menu Block Images Disabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_block_images_disabled ;;
     type: number
     group_label: "App Menu"
@@ -178,7 +178,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_block_images_enabled {
     label: "App Menu Block Images Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_block_images_enabled ;;
     type: number
     group_label: "App Menu"
@@ -197,7 +197,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_customize_homepage {
     label: "App Menu Customize Homepage"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_customize_homepage ;;
     type: number
     group_label: "App Menu"
@@ -216,7 +216,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_help {
     label: "App Menu Help"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_help ;;
     type: number
     group_label: "App Menu"
@@ -234,7 +234,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_home {
     label: "App Menu Home"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_home ;;
     type: number
     group_label: "App Menu"
@@ -252,7 +252,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_homepage_menu {
     label: "App Menu Homepage Menu"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_homepage_menu ;;
     type: number
     group_label: "App Menu"
@@ -289,7 +289,7 @@ on the homepage
 
   dimension: metrics__counter__app_menu_logins {
     label: "App Menu Logins"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_logins ;;
     type: number
     group_label: "App Menu"
@@ -308,7 +308,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_night_mode_disabled {
     label: "App Menu Night Mode Disabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_night_mode_disabled ;;
     type: number
     group_label: "App Menu"
@@ -327,7 +327,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_night_mode_enabled {
     label: "App Menu Night Mode Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_night_mode_enabled ;;
     type: number
     group_label: "App Menu"
@@ -346,7 +346,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_settings {
     label: "App Menu Settings"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_settings ;;
     type: number
     group_label: "App Menu"
@@ -364,7 +364,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_sign_into_sync {
     label: "App Menu Sign Into Sync"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_sign_into_sync ;;
     type: number
     group_label: "App Menu"
@@ -383,7 +383,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_site_menu {
     label: "App Menu Site Menu"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_site_menu ;;
     type: number
     group_label: "App Menu"
@@ -402,7 +402,7 @@ from a website
 
   dimension: metrics__counter__app_menu_whats_new {
     label: "App Menu Whats New"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_whats_new ;;
     type: number
     group_label: "App Menu"
@@ -476,7 +476,7 @@ preference.
 
   dimension: metrics__timing_distribution__awesomebar_query_time__sum {
     label: "Awesomebar Query Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.sum ;;
     type: number
     group_label: "Awesomebar"
@@ -1496,7 +1496,7 @@ items that appear inside a group, and those that do not.
 
   dimension: metrics__counter__inactive_tabs_tray_inactive_tab_shown {
     label: "Inactive Tabs Tray Inactive Tab Shown"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_shown ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -1514,7 +1514,7 @@ items that appear inside a group, and those that do not.
 
   dimension: metrics__counter__inactive_tabs_tray_inactive_tab_swipe_close {
     label: "Inactive Tabs Tray Inactive Tab Swipe Close"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_swipe_close ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -1532,7 +1532,7 @@ items that appear inside a group, and those that do not.
 
   dimension: metrics__counter__inactive_tabs_tray_inactive_tabs_close_all_btn {
     label: "Inactive Tabs Tray Inactive Tabs Close All Btn"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tabs_close_all_btn ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -1550,7 +1550,7 @@ items that appear inside a group, and those that do not.
 
   dimension: metrics__counter__inactive_tabs_tray_open_inactive_tab {
     label: "Inactive Tabs Tray Open Inactive Tab"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_inactive_tab ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -1941,7 +1941,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_copy_address {
     label: "Page Action Menu Copy Address"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_copy_address ;;
     type: number
     group_label: "Page Action Menu"
@@ -1960,7 +1960,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_create_new_tab {
     label: "Page Action Menu Create New Tab"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_create_new_tab ;;
     type: number
     group_label: "Page Action Menu"
@@ -1979,7 +1979,7 @@ page action menu.
 
   dimension: metrics__counter__page_action_menu_find_in_page {
     label: "Page Action Menu Find In Page"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_find_in_page ;;
     type: number
     group_label: "Page Action Menu"
@@ -1998,7 +1998,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_pin_to_top_sites {
     label: "Page Action Menu Pin To Top Sites"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_pin_to_top_sites ;;
     type: number
     group_label: "Page Action Menu"
@@ -2017,7 +2017,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_remove_pinned_site {
     label: "Page Action Menu Remove Pinned Site"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_remove_pinned_site ;;
     type: number
     group_label: "Page Action Menu"
@@ -2036,7 +2036,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_report_site_issue {
     label: "Page Action Menu Report Site Issue"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_report_site_issue ;;
     type: number
     group_label: "Page Action Menu"
@@ -2055,7 +2055,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_request_desktop_site {
     label: "Page Action Menu Request Desktop Site"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_request_desktop_site ;;
     type: number
     group_label: "Page Action Menu"
@@ -2074,7 +2074,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_request_mobile_site {
     label: "Page Action Menu Request Mobile Site"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_request_mobile_site ;;
     type: number
     group_label: "Page Action Menu"
@@ -2093,7 +2093,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_send_to_device {
     label: "Page Action Menu Send To Device"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_send_to_device ;;
     type: number
     group_label: "Page Action Menu"
@@ -2112,7 +2112,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_share_page_with {
     label: "Page Action Menu Share Page With"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_share_page_with ;;
     type: number
     group_label: "Page Action Menu"
@@ -2131,7 +2131,7 @@ page action menu
 
   dimension: metrics__counter__page_action_menu_view_downloads_panel {
     label: "Page Action Menu View Downloads Panel"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_view_downloads_panel ;;
     type: number
     group_label: "Page Action Menu"
@@ -2150,7 +2150,7 @@ from the page action menu.
 
   dimension: metrics__counter__page_action_menu_view_history_panel {
     label: "Page Action Menu View History Panel"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_view_history_panel ;;
     type: number
     group_label: "Page Action Menu"
@@ -2708,7 +2708,7 @@ is enabled to be displayed.
 
   dimension: metrics__counter__reader_mode_close {
     label: "Reader Mode Close"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.reader_mode_close ;;
     type: number
     group_label: "Reader Mode"
@@ -2726,7 +2726,7 @@ is enabled to be displayed.
 
   dimension: metrics__counter__reader_mode_open {
     label: "Reader Mode Open"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.reader_mode_open ;;
     type: number
     group_label: "Reader Mode"

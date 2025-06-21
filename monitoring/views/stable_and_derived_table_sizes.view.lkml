@@ -17,6 +17,12 @@ view: stable_and_derived_table_sizes {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: row_count {
+    sql: ${TABLE}.row_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: table_id {
     sql: ${TABLE}.table_id ;;
     type: string
