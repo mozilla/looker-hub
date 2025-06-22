@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/nigh_mode_dark_reader_rollout.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/nigh_mode_dark_reader_rollout_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/fenix_nightly_port_blocking.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/fenix_nightly_port_blocking_last_updated.datagroup.lkml"
 
-explore: nigh_mode_dark_reader_rollout {
+explore: fenix_nightly_port_blocking {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: nigh_mode_dark_reader_rollout {
   }
 
   hidden: yes
-  persist_with: nigh_mode_dark_reader_rollout_last_updated
+  persist_with: fenix_nightly_port_blocking_last_updated
 }

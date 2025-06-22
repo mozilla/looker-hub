@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: nigh_mode_dark_reader_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.nigh_mode_dark_reader_rollout_statistics ;;
+view: fenix_nightly_port_blocking {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.fenix_nightly_port_blocking_statistics ;;
 
   dimension: submission_date {
     type: date
