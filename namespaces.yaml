@@ -190,6 +190,10 @@ activity_stream:
 ads:
   connection: bigquery-oauth
   explores:
+    metric_definitions_ad_metrics_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_ad_metrics_daily
     metric_definitions_ad_mmm_metrics_daily:
       type: metric_definitions_explore
       views:
@@ -240,6 +244,8 @@ ads:
       tables:
       - table: mozdata.ads.consolidated_ad_metrics_hourly
       type: table_view
+    metric_definitions_ad_metrics_daily:
+      type: metric_definitions_view
     metric_definitions_ad_mmm_metrics_daily:
       type: metric_definitions_view
     metric_definitions_admarketplace:
