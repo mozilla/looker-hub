@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: upgrade_spotlight_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       upgrade_spotlight_rollout.submission_date,
       upgrade_spotlight_rollout.branch,
+      upgrade_spotlight_rollout.upper,
+      upgrade_spotlight_rollout.lower,
       upgrade_spotlight_rollout.point
     ]
     pivots: [
       upgrade_spotlight_rollout.branch
     ]
     filters:
-      upgrade_spotlight_rollout.metric: 'days_of_use'
-      upgrade_spotlight_rollout.statistic: mean
+      upgrade_spotlight_rollout.metric: 'memory_total'
+      upgrade_spotlight_rollout.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,6 +42,7 @@
     show_grid: true
     listen:
       Date: upgrade_spotlight_rollout.submission_date
+      Percentile: upgrade_spotlight_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -78,43 +81,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: upgrade_spotlight_rollout
-    type: "ci-line-chart"
-    fields: [
-      upgrade_spotlight_rollout.submission_date,
-      upgrade_spotlight_rollout.branch,
-      upgrade_spotlight_rollout.upper,
-      upgrade_spotlight_rollout.lower,
-      upgrade_spotlight_rollout.point
-    ]
-    pivots: [
-      upgrade_spotlight_rollout.branch
-    ]
-    filters:
-      upgrade_spotlight_rollout.metric: 'memory_total'
-      upgrade_spotlight_rollout.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: upgrade_spotlight_rollout.submission_date
-    field_y: upgrade_spotlight_rollout.point
-    log_scale: false
-    ci_lower: upgrade_spotlight_rollout.lower
-    ci_upper: upgrade_spotlight_rollout.upper
-    show_grid: true
-    listen:
-      Date: upgrade_spotlight_rollout.submission_date
-      Percentile: upgrade_spotlight_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -134,40 +100,6 @@
       upgrade_spotlight_rollout.metric: 'qualified_cumulative_days_of_use'
       upgrade_spotlight_rollout.statistic: mean
     row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: upgrade_spotlight_rollout.submission_date
-    field_y: upgrade_spotlight_rollout.point
-    log_scale: false
-    ci_lower: upgrade_spotlight_rollout.lower
-    ci_upper: upgrade_spotlight_rollout.upper
-    show_grid: true
-    listen:
-      Date: upgrade_spotlight_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: upgrade_spotlight_rollout
-    type: looker_line
-    fields: [
-      upgrade_spotlight_rollout.submission_date,
-      upgrade_spotlight_rollout.branch,
-      upgrade_spotlight_rollout.point
-    ]
-    pivots: [
-      upgrade_spotlight_rollout.branch
-    ]
-    filters:
-      upgrade_spotlight_rollout.metric: 'uri_count'
-      upgrade_spotlight_rollout.statistic: mean
-    row: 20
     col: 0
     width: 12
     height: 8
@@ -201,7 +133,7 @@
     filters:
       upgrade_spotlight_rollout.metric: 'search_count'
       upgrade_spotlight_rollout.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -235,7 +167,7 @@
     filters:
       upgrade_spotlight_rollout.metric: 'active_hours'
       upgrade_spotlight_rollout.statistic: mean
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       upgrade_spotlight_rollout.metric: 'ad_clicks'
+      upgrade_spotlight_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: upgrade_spotlight_rollout.submission_date
+    field_y: upgrade_spotlight_rollout.point
+    log_scale: false
+    ci_lower: upgrade_spotlight_rollout.lower
+    ci_upper: upgrade_spotlight_rollout.upper
+    show_grid: true
+    listen:
+      Date: upgrade_spotlight_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: upgrade_spotlight_rollout
+    type: looker_line
+    fields: [
+      upgrade_spotlight_rollout.submission_date,
+      upgrade_spotlight_rollout.branch,
+      upgrade_spotlight_rollout.point
+    ]
+    pivots: [
+      upgrade_spotlight_rollout.branch
+    ]
+    filters:
+      upgrade_spotlight_rollout.metric: 'days_of_use'
+      upgrade_spotlight_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: upgrade_spotlight_rollout.submission_date
+    field_y: upgrade_spotlight_rollout.point
+    log_scale: false
+    ci_lower: upgrade_spotlight_rollout.lower
+    ci_upper: upgrade_spotlight_rollout.upper
+    show_grid: true
+    listen:
+      Date: upgrade_spotlight_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: upgrade_spotlight_rollout
+    type: looker_line
+    fields: [
+      upgrade_spotlight_rollout.submission_date,
+      upgrade_spotlight_rollout.branch,
+      upgrade_spotlight_rollout.point
+    ]
+    pivots: [
+      upgrade_spotlight_rollout.branch
+    ]
+    filters:
+      upgrade_spotlight_rollout.metric: 'uri_count'
       upgrade_spotlight_rollout.statistic: mean
     row: 30
     col: 12
