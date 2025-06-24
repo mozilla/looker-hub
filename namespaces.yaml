@@ -8680,10 +8680,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -9783,8 +9783,8 @@ operational_monitoring:
             default: Mac
             options:
             - Mac
-            - Linux
             - Windows
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11461,17 +11461,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id407
           channel:
-            default: release
+            default: nightly
             options:
-            - release
-            - beta
             - nightly
+            - beta
+            - release
           os:
-            default: Darwin
+            default: Windows_NT
             options:
+            - Windows_NT
             - Darwin
             - Linux
-            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id408

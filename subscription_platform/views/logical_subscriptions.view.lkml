@@ -32,7 +32,8 @@ This may be \"Unknown\" for some subscriptions."
     sql: ${TABLE}.current_period_discount_amount ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Current period discount amount (if any)."
+    description: "Current period discount amount (if any).
+This may be null for Apple subscriptions."
   }
 
   dimension: current_period_discount_name {
@@ -40,7 +41,7 @@ This may be \"Unknown\" for some subscriptions."
     type: string
     suggest_persist_for: "24 hours"
     description: "Current period discount name (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: current_period_discount_promotion_code {
@@ -135,7 +136,7 @@ For example, this should be `1` for their first logical subscription, `2` for th
     type: yesno
     suggest_persist_for: "24 hours"
     description: "Whether the subscription has had fraudulent charges.
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: has_refunds {
@@ -158,7 +159,7 @@ This will be null for Google subscriptions."
     type: string
     suggest_persist_for: "24 hours"
     description: "Initial discount name (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: initial_discount_promotion_code {
@@ -281,7 +282,8 @@ This may be missing for some subscriptions."
     sql: ${TABLE}.ongoing_discount_amount ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Ongoing discount amount (if any)."
+    description: "Ongoing discount amount (if any).
+This may be null for Apple subscriptions."
   }
 
   dimension: ongoing_discount_name {
@@ -289,7 +291,7 @@ This may be missing for some subscriptions."
     type: string
     suggest_persist_for: "24 hours"
     description: "Ongoing discount name (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: ongoing_discount_promotion_code {
@@ -305,21 +307,24 @@ This will be null for Google subscriptions."
     suggest_persist_for: "24 hours"
     description: "Payment provider for the subscription.
 For Stripe subscriptions this will be \"Stripe\" or \"PayPal\".
-For Google subscriptions this will be \"Google\"."
+For Google subscriptions this will be \"Google\".
+For Apple subscriptions this will be \"Apple\"."
   }
 
   dimension: plan_amount {
     sql: ${TABLE}.plan_amount ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Subscription plan's amount in the specified currency."
+    description: "Subscription plan's amount in the specified currency.
+For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming a USD amount due to a lack of source data (FXA-10549)."
   }
 
   dimension: plan_currency {
     sql: ${TABLE}.plan_currency ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "ISO 4217 code for the subscription plan's currency."
+    description: "ISO 4217 code for the subscription plan's currency.
+For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming USD due to a lack of source data (FXA-10549)."
   }
 
   dimension: plan_interval {
@@ -370,7 +375,7 @@ For all subscriptions this will be the associated Stripe product name."
     sql: ${TABLE}.provider ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Provider of the subscription (\"Stripe\" or \"Google\")."
+    description: "Provider of the subscription (\"Stripe\", \"Google\", or \"Apple\")."
   }
 
   dimension: provider_customer_id {
@@ -378,7 +383,7 @@ For all subscriptions this will be the associated Stripe product name."
     type: string
     suggest_persist_for: "24 hours"
     description: "Provider customer ID (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: provider_plan_id {
@@ -387,7 +392,8 @@ This will be null for Google subscriptions."
     suggest_persist_for: "24 hours"
     description: "Provider plan ID.
 For Stripe subscriptions this will be the plan/price ID.
-For Google subscriptions this will be the SKU."
+For Google subscriptions this will be the SKU.
+For Apple subscriptions this will be the product ID."
   }
 
   dimension: provider_product_id {
@@ -396,7 +402,8 @@ For Google subscriptions this will be the SKU."
     suggest_persist_for: "24 hours"
     description: "Provider product ID.
 For Stripe subscriptions this will be the product ID.
-For Google subscriptions this will be the package name."
+For Google subscriptions this will be the package name.
+For Apple subscriptions this will be the bundle ID."
   }
 
   dimension: provider_status {
@@ -412,7 +419,8 @@ For Google subscriptions this will be the package name."
     suggest_persist_for: "24 hours"
     description: "Provider subscription ID.
 For Stripe subscriptions this will be the subscription ID.
-For Google subscriptions this will be the purchase token."
+For Google subscriptions this will be the purchase token.
+For Apple subscriptions this will be the original transaction ID."
   }
 
   dimension: provider_subscription_item_id {
@@ -420,7 +428,7 @@ For Google subscriptions this will be the purchase token."
     type: string
     suggest_persist_for: "24 hours"
     description: "Provider subscription item ID (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: services {
@@ -544,7 +552,8 @@ This will be null for active subscriptions."
       quarter,
       year,
     ]
-    description: "When the ongoing discount ends (if any)."
+    description: "When the ongoing discount ends (if any).
+This will be null for Apple subscriptions."
   }
 
   dimension_group: provider_subscription_created_at {

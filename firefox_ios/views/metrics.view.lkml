@@ -3590,7 +3590,7 @@ with a home page origin.
 
   dimension: metrics__boolean__tracking_protection_enabled {
     label: "Tracking Protection Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_enabled ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -3609,7 +3609,7 @@ preference.
 
   dimension: metrics__string__tracking_protection_strength {
     label: "Tracking Protection Strength"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.tracking_protection_strength ;;
     type: string
     group_label: "Tracking Protection"

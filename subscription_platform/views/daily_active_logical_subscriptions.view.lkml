@@ -54,7 +54,8 @@ This may be \"Unknown\" for some subscriptions."
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Current Period Discount Amount"
-    description: "Current period discount amount (if any)."
+    description: "Current period discount amount (if any).
+This may be null for Apple subscriptions."
   }
 
   dimension: subscription__current_period_discount_name {
@@ -64,7 +65,7 @@ This may be \"Unknown\" for some subscriptions."
     group_label: "Subscription"
     group_item_label: "Current Period Discount Name"
     description: "Current period discount name (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: subscription__current_period_discount_promotion_code {
@@ -165,7 +166,7 @@ For example, this should be `1` for their first logical subscription, `2` for th
     group_label: "Subscription"
     group_item_label: "Has Fraudulent Charges"
     description: "Whether the subscription has had fraudulent charges.
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: subscription__has_refunds {
@@ -194,7 +195,7 @@ This will be null for Google subscriptions."
     group_label: "Subscription"
     group_item_label: "Initial Discount Name"
     description: "Initial discount name (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: subscription__initial_discount_promotion_code {
@@ -331,7 +332,8 @@ This may be missing for some subscriptions."
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Ongoing Discount Amount"
-    description: "Ongoing discount amount (if any)."
+    description: "Ongoing discount amount (if any).
+This may be null for Apple subscriptions."
   }
 
   dimension: subscription__ongoing_discount_name {
@@ -341,7 +343,7 @@ This may be missing for some subscriptions."
     group_label: "Subscription"
     group_item_label: "Ongoing Discount Name"
     description: "Ongoing discount name (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: subscription__ongoing_discount_promotion_code {
@@ -361,7 +363,8 @@ This will be null for Google subscriptions."
     group_item_label: "Payment Provider"
     description: "Payment provider for the subscription.
 For Stripe subscriptions this will be \"Stripe\" or \"PayPal\".
-For Google subscriptions this will be \"Google\"."
+For Google subscriptions this will be \"Google\".
+For Apple subscriptions this will be \"Apple\"."
   }
 
   dimension: subscription__plan_amount {
@@ -370,7 +373,8 @@ For Google subscriptions this will be \"Google\"."
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Amount"
-    description: "Subscription plan's amount in the specified currency."
+    description: "Subscription plan's amount in the specified currency.
+For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming a USD amount due to a lack of source data (FXA-10549)."
   }
 
   dimension: subscription__plan_currency {
@@ -379,7 +383,8 @@ For Google subscriptions this will be \"Google\"."
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Plan Currency"
-    description: "ISO 4217 code for the subscription plan's currency."
+    description: "ISO 4217 code for the subscription plan's currency.
+For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming USD due to a lack of source data (FXA-10549)."
   }
 
   dimension: subscription__plan_interval {
@@ -444,7 +449,7 @@ For all subscriptions this will be the associated Stripe product name."
     suggest_persist_for: "24 hours"
     group_label: "Subscription"
     group_item_label: "Provider"
-    description: "Provider of the subscription (\"Stripe\" or \"Google\")."
+    description: "Provider of the subscription (\"Stripe\", \"Google\", or \"Apple\")."
   }
 
   dimension: subscription__provider_customer_id {
@@ -454,7 +459,7 @@ For all subscriptions this will be the associated Stripe product name."
     group_label: "Subscription"
     group_item_label: "Provider Customer ID"
     description: "Provider customer ID (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: subscription__provider_plan_id {
@@ -465,7 +470,8 @@ This will be null for Google subscriptions."
     group_item_label: "Provider Plan ID"
     description: "Provider plan ID.
 For Stripe subscriptions this will be the plan/price ID.
-For Google subscriptions this will be the SKU."
+For Google subscriptions this will be the SKU.
+For Apple subscriptions this will be the product ID."
   }
 
   dimension: subscription__provider_product_id {
@@ -476,7 +482,8 @@ For Google subscriptions this will be the SKU."
     group_item_label: "Provider Product ID"
     description: "Provider product ID.
 For Stripe subscriptions this will be the product ID.
-For Google subscriptions this will be the package name."
+For Google subscriptions this will be the package name.
+For Apple subscriptions this will be the bundle ID."
   }
 
   dimension: subscription__provider_status {
@@ -496,7 +503,8 @@ For Google subscriptions this will be the package name."
     group_item_label: "Provider Subscription ID"
     description: "Provider subscription ID.
 For Stripe subscriptions this will be the subscription ID.
-For Google subscriptions this will be the purchase token."
+For Google subscriptions this will be the purchase token.
+For Apple subscriptions this will be the original transaction ID."
   }
 
   dimension: subscription__provider_subscription_item_id {
@@ -506,7 +514,7 @@ For Google subscriptions this will be the purchase token."
     group_label: "Subscription"
     group_item_label: "Provider Subscription Item ID"
     description: "Provider subscription item ID (if any).
-This will be null for Google subscriptions."
+This will be null for Google and Apple subscriptions."
   }
 
   dimension: subscription__services {
@@ -666,7 +674,8 @@ This will be null for active subscriptions."
       year,
     ]
     label: "Subscription: Ongoing Discount Ends At"
-    description: "When the ongoing discount ends (if any)."
+    description: "When the ongoing discount ends (if any).
+This will be null for Apple subscriptions."
   }
 
   dimension_group: subscription__provider_subscription_created_at {
