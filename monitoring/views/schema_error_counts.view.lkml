@@ -54,6 +54,13 @@ view: schema_error_counts {
     description: "concatenated error messages, limited to 300 characters"
   }
 
+  dimension: valid_ping_count {
+    sql: ${TABLE}.valid_ping_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of rows in the associated stable table"
+  }
+
   dimension_group: hour {
     sql: ${TABLE}.hour ;;
     type: time

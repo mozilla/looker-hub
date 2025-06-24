@@ -11550,6 +11550,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     description: "Records the IP address family (IPv4 or IPv6) used when an HTTP transaction is dispatched."
   }
 
+  dimension: metrics__labeled_counter__networking_cookie_db_validation {
+    sql: ${TABLE}.metrics.labeled_counter.networking_cookie_db_validation ;;
+    hidden: yes
+    description: "Counts cookies loaded from the DB grouped by validation result.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes

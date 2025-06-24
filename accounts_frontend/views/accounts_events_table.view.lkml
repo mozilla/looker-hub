@@ -551,6 +551,16 @@ by query parameter `entrypoint_variation` in the URL.
 "
   }
 
+  dimension: metrics__string__event_app_framework {
+    sql: ${TABLE}.metrics.string.event_app_framework ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Event App Framework"
+    description: "The name of the framework used by the app (ie React or Backbone).
+"
+  }
+
   dimension: metrics__string__event_choice {
     sql: ${TABLE}.metrics.string.event_choice ;;
     type: string

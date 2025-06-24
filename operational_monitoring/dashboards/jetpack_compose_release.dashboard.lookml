@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       jetpack_compose_release.branch
     ]
     filters:
-      jetpack_compose_release.metric: 'ad_clicks'
+      jetpack_compose_release.metric: 'retained'
       jetpack_compose_release.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: jetpack_compose_release.submission_date
+    field_y: jetpack_compose_release.point
+    log_scale: false
+    ci_lower: jetpack_compose_release.lower
+    ci_upper: jetpack_compose_release.upper
+    show_grid: true
+    listen:
+      Date: jetpack_compose_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: jetpack_compose_release
+    type: looker_line
+    fields: [
+      jetpack_compose_release.submission_date,
+      jetpack_compose_release.branch,
+      jetpack_compose_release.point
+    ]
+    pivots: [
+      jetpack_compose_release.branch
+    ]
+    filters:
+      jetpack_compose_release.metric: 'uri_count'
+      jetpack_compose_release.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: jetpack_compose_release.submission_date
@@ -62,8 +96,8 @@
     filters:
       jetpack_compose_release.metric: 'tagged_sap_searches'
       jetpack_compose_release.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: jetpack_compose_release.submission_date
@@ -97,108 +131,6 @@
       jetpack_compose_release.metric: 'search_count'
       jetpack_compose_release.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: jetpack_compose_release.submission_date
-    field_y: jetpack_compose_release.point
-    log_scale: false
-    ci_lower: jetpack_compose_release.lower
-    ci_upper: jetpack_compose_release.upper
-    show_grid: true
-    listen:
-      Date: jetpack_compose_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: jetpack_compose_release
-    type: looker_line
-    fields: [
-      jetpack_compose_release.submission_date,
-      jetpack_compose_release.branch,
-      jetpack_compose_release.point
-    ]
-    pivots: [
-      jetpack_compose_release.branch
-    ]
-    filters:
-      jetpack_compose_release.metric: 'days_of_use'
-      jetpack_compose_release.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: jetpack_compose_release.submission_date
-    field_y: jetpack_compose_release.point
-    log_scale: false
-    ci_lower: jetpack_compose_release.lower
-    ci_upper: jetpack_compose_release.upper
-    show_grid: true
-    listen:
-      Date: jetpack_compose_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: jetpack_compose_release
-    type: looker_line
-    fields: [
-      jetpack_compose_release.submission_date,
-      jetpack_compose_release.branch,
-      jetpack_compose_release.point
-    ]
-    pivots: [
-      jetpack_compose_release.branch
-    ]
-    filters:
-      jetpack_compose_release.metric: 'uri_count'
-      jetpack_compose_release.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: jetpack_compose_release.submission_date
-    field_y: jetpack_compose_release.point
-    log_scale: false
-    ci_lower: jetpack_compose_release.lower
-    ci_upper: jetpack_compose_release.upper
-    show_grid: true
-    listen:
-      Date: jetpack_compose_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: jetpack_compose_release
-    type: looker_line
-    fields: [
-      jetpack_compose_release.submission_date,
-      jetpack_compose_release.branch,
-      jetpack_compose_release.point
-    ]
-    pivots: [
-      jetpack_compose_release.branch
-    ]
-    filters:
-      jetpack_compose_release.metric: 'retained'
-      jetpack_compose_release.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -231,6 +163,74 @@
     ]
     filters:
       jetpack_compose_release.metric: 'active_hours'
+      jetpack_compose_release.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: jetpack_compose_release.submission_date
+    field_y: jetpack_compose_release.point
+    log_scale: false
+    ci_lower: jetpack_compose_release.lower
+    ci_upper: jetpack_compose_release.upper
+    show_grid: true
+    listen:
+      Date: jetpack_compose_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: jetpack_compose_release
+    type: looker_line
+    fields: [
+      jetpack_compose_release.submission_date,
+      jetpack_compose_release.branch,
+      jetpack_compose_release.point
+    ]
+    pivots: [
+      jetpack_compose_release.branch
+    ]
+    filters:
+      jetpack_compose_release.metric: 'ad_clicks'
+      jetpack_compose_release.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: jetpack_compose_release.submission_date
+    field_y: jetpack_compose_release.point
+    log_scale: false
+    ci_lower: jetpack_compose_release.lower
+    ci_upper: jetpack_compose_release.upper
+    show_grid: true
+    listen:
+      Date: jetpack_compose_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: jetpack_compose_release
+    type: looker_line
+    fields: [
+      jetpack_compose_release.submission_date,
+      jetpack_compose_release.branch,
+      jetpack_compose_release.point
+    ]
+    pivots: [
+      jetpack_compose_release.branch
+    ]
+    filters:
+      jetpack_compose_release.metric: 'days_of_use'
       jetpack_compose_release.statistic: mean
     row: 30
     col: 0

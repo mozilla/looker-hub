@@ -79,6 +79,24 @@ by query parameter `entrypoint_variation` in the URL.
 "
   }
 
+  dimension: metrics__string__event_app_framework {
+    label: "Event App Framework"
+    hidden: no
+    sql: ${TABLE}.metrics.string.event_app_framework ;;
+    type: string
+    group_label: "Event"
+    group_item_label: "App Framework"
+
+    link: {
+      label: "Glean Dictionary reference for Event App Framework"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_app_framework"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the framework used by the app (ie React or Backbone).
+"
+  }
+
   dimension: metrics__string__event_choice {
     label: "Event Choice"
     hidden: no

@@ -11869,7 +11869,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
     label: "Javascript Pageload Baseline Compile Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11887,7 +11887,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
     label: "Javascript Pageload Delazification Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11905,7 +11905,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
     label: "Javascript Pageload Execution Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11923,7 +11923,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
     label: "Javascript Pageload GC Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11941,7 +11941,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
     label: "Javascript Pageload Parse Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11959,7 +11959,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
     label: "Javascript Pageload Protect Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -11977,7 +11977,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
     label: "Javascript Pageload Xdr Encode Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -15196,6 +15196,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "If we fix up a cookie creation timestamp that is in the future this metric records the number of seconds that timestamp was off from NOW.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_cookie_db_validation {
+    label: "Networking Cookie DB Validation"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_cookie_db_validation ;;
+    group_label: "Networking"
+    group_item_label: "Cookie DB Validation"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie DB Validation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_cookie_db_validation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts cookies loaded from the DB grouped by validation result.
 "
   }
 
@@ -41874,6 +41891,47 @@ view: metrics__metrics__labeled_counter__networking_captive_portal_banner_displa
 
 view: metrics__metrics__labeled_counter__networking_connection_address_type {
   label: "Networking - Connection Address Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_cookie_db_validation {
+  label: "Networking - Cookie DB Validation"
 
   dimension: document_id {
     type: string

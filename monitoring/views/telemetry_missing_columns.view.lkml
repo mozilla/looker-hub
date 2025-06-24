@@ -41,6 +41,12 @@ view: telemetry_missing_columns {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: total_row_count {
+    sql: ${TABLE}.total_row_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
