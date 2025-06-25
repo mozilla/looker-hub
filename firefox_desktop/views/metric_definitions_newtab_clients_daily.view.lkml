@@ -41,6 +41,8 @@ COALESCE(SUM(weather_widget_clicks), 0) AS weather_widget_clicks,
 COALESCE(SUM(weather_widget_load_errors), 0) AS weather_widget_load_errors,
 COALESCE(SUM(weather_widget_change_display_to_detailed), 0) AS weather_widget_change_display_to_detailed,
 COALESCE(SUM(weather_widget_change_display_to_simple), 0) AS weather_widget_change_display_to_simple,
+SUM(sponsored_pocket_impressions) + SUM(sponsored_topsite_tile_impressions) AS sponsored_impressions,
+COUNT(DISTINCT client_id) AS client_count,
 
                 countries_ads_value_tier,
 countries_code,
@@ -683,6 +685,23 @@ a wallpaper.
 "
     type: number
     sql: ${TABLE}.weather_widget_change_display_to_simple ;;
+  }
+
+  dimension: sponsored_impressions {
+    group_label: "Metrics"
+    label: "Sponsored Impressions"
+    description: "Total number of sponsored impressions across content and tiles on New Tab
+"
+    type: number
+    sql: ${TABLE}.sponsored_impressions ;;
+  }
+
+  dimension: client_count {
+    group_label: "Metrics"
+    label: "Client Count"
+    description: "Count of clients"
+    type: number
+    sql: ${TABLE}.client_count ;;
   }
 
   dimension: ads_value_tier {
@@ -1444,6 +1463,31 @@ a wallpaper.
     description: "Sum of Newtab Engaged Visit Count"
   }
 
+  measure: sponsored_impressions_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_impressions*1 ;;
+    label: "Sponsored Impressions Sum"
+    group_label: "Statistics"
+    description: "Sum of Sponsored Impressions"
+  }
+
+  measure: sponsored_impressions_client_count_sampled {
+    type: count_distinct
+    label: "Sponsored Impressions Client Count"
+    group_label: "Statistics"
+    sql: IF(${TABLE}.sponsored_impressions > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Impressions"
+    hidden: yes
+  }
+
+  measure: sponsored_impressions_client_count {
+    type: number
+    label: "Sponsored Impressions Client Count"
+    group_label: "Statistics"
+    sql: ${sponsored_impressions_client_count_sampled} *1 ;;
+    description: "Number of clients with Sponsored Impressions"
+  }
+
   set: metrics {
     fields: [
       newtab_searches,
@@ -1480,6 +1524,8 @@ a wallpaper.
       weather_widget_load_errors,
       weather_widget_change_display_to_detailed,
       weather_widget_change_display_to_simple,
+      sponsored_impressions,
+      client_count,
       newtab_ad_click_rate_average,
       sponsored_pocket_clicks_client_count_sampled,
       sponsored_pocket_clicks_client_count,
@@ -1497,6 +1543,9 @@ a wallpaper.
       newtab_visits_client_count_sampled,
       newtab_visits_client_count,
       newtab_engaged_visits_sum,
+      sponsored_impressions_sum,
+      sponsored_impressions_client_count_sampled,
+      sponsored_impressions_client_count,
     ]
   }
 

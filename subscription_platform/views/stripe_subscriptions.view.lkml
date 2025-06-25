@@ -323,6 +323,14 @@ view: stripe_subscriptions {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metadata__amount {
+    sql: ${TABLE}.metadata.amount ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "Amount"
+  }
+
   dimension: metadata__appliedPromotionCode {
     sql: ${TABLE}.metadata.appliedPromotionCode ;;
     type: string
@@ -339,12 +347,92 @@ view: stripe_subscriptions {
     group_item_label: "Cancellation Reason"
   }
 
+  dimension: metadata__currency {
+    sql: ${TABLE}.metadata.currency ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "Currency"
+  }
+
   dimension: metadata__previous_plan_id {
     sql: ${TABLE}.metadata.previous_plan_id ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metadata"
     group_item_label: "Previous Plan ID"
+  }
+
+  dimension: metadata__session_entrypoint {
+    sql: ${TABLE}.metadata.session_entrypoint ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "Session Entrypoint"
+  }
+
+  dimension: metadata__session_entrypoint_experiment {
+    sql: ${TABLE}.metadata.session_entrypoint_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "Session Entrypoint Experiment"
+  }
+
+  dimension: metadata__session_entrypoint_variation {
+    sql: ${TABLE}.metadata.session_entrypoint_variation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "Session Entrypoint Variation"
+  }
+
+  dimension: metadata__session_flow_id {
+    sql: ${TABLE}.metadata.session_flow_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "Session Flow ID"
+  }
+
+  dimension: metadata__utm_campaign {
+    sql: ${TABLE}.metadata.utm_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "UTM Campaign"
+  }
+
+  dimension: metadata__utm_content {
+    sql: ${TABLE}.metadata.utm_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "UTM Content"
+  }
+
+  dimension: metadata__utm_medium {
+    sql: ${TABLE}.metadata.utm_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "UTM Medium"
+  }
+
+  dimension: metadata__utm_source {
+    sql: ${TABLE}.metadata.utm_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "UTM Source"
+  }
+
+  dimension: metadata__utm_term {
+    sql: ${TABLE}.metadata.utm_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata"
+    group_item_label: "UTM Term"
   }
 
   dimension: pending_setup_intent_id {
