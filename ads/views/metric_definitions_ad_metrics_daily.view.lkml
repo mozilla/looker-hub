@@ -7,9 +7,11 @@
 view: metric_definitions_ad_metrics_daily {
   derived_table: {
     sql: SELECT
-                SUM(revenue) AS revenue,
-SAFE_DIVIDE(COALESCE(SUM(revenue), 0), (COALESCE(SUM(impressions),0)/1000)) AS ecpm,
-SAFE_DIVIDE(COALESCE(SUM(clicks), 0), COALESCE(SUM(impressions), 0)) AS click_through_rate,
+                SUM(impressions) AS ad_metrics_ad_impressions,
+SUM(clicks) AS ad_metrics_ad_clicks,
+SUM(revenue) AS revenue,
+SUM(impressions)/1000 AS milli_impressions,
+COUNT(DISTINCT ad_id) AS ads_count,
 
                 ad_metrics_daily_ad_id,
 ad_metrics_daily_advertiser_id,
@@ -182,6 +184,22 @@ ad_metrics_daily_zone_name,
     description: "Unique client identifier"
   }
 
+  dimension: ad_metrics_ad_impressions {
+    group_label: "Metrics"
+    label: "Ad Impressions"
+    description: "Ad impressions"
+    type: number
+    sql: ${TABLE}.ad_metrics_ad_impressions ;;
+  }
+
+  dimension: ad_metrics_ad_clicks {
+    group_label: "Metrics"
+    label: "Ad Clicks"
+    description: "Ad clicks"
+    type: number
+    sql: ${TABLE}.ad_metrics_ad_clicks ;;
+  }
+
   dimension: revenue {
     group_label: "Metrics"
     label: "Revenue"
@@ -190,20 +208,20 @@ ad_metrics_daily_zone_name,
     sql: ${TABLE}.revenue ;;
   }
 
-  dimension: ecpm {
+  dimension: milli_impressions {
     group_label: "Metrics"
-    label: "eCPM"
-    description: "effective CPM, calculated as average revenue per thousand impressions"
+    label: "Milli Impressions"
+    description: "Impressions in thousands"
     type: number
-    sql: ${TABLE}.ecpm ;;
+    sql: ${TABLE}.milli_impressions ;;
   }
 
-  dimension: click_through_rate {
+  dimension: ads_count {
     group_label: "Metrics"
-    label: "Click Through Rate"
-    description: "Ratio of ad clicks to ad impressions"
+    label: "Ads Count"
+    description: "Number of unique ads served"
     type: number
-    sql: ${TABLE}.click_through_rate ;;
+    sql: ${TABLE}.ads_count ;;
   }
 
   dimension: ad_id {
@@ -469,8 +487,41 @@ ad_metrics_daily_zone_name,
     group_label: "Base Fields"
   }
 
+  measure: ad_metrics_ad_impressions_sum {
+    type: sum
+    sql: ${TABLE}.ad_metrics_ad_impressions*1 ;;
+    label: "Ad Impressions Sum"
+    group_label: "Statistics"
+    description: "Sum of Ad Impressions"
+  }
+
+  measure: ad_metrics_ad_clicks_sum {
+    type: sum
+    sql: ${TABLE}.ad_metrics_ad_clicks*1 ;;
+    label: "Ad Clicks Sum"
+    group_label: "Statistics"
+    description: "Sum of Ad Clicks"
+  }
+
+  measure: revenue_sum {
+    type: sum
+    sql: ${TABLE}.revenue*1 ;;
+    label: "Revenue Sum"
+    group_label: "Statistics"
+    description: "Sum of Revenue"
+  }
+
   set: metrics {
-    fields: [revenue, ecpm, click_through_rate]
+    fields: [
+      ad_metrics_ad_impressions,
+      ad_metrics_ad_clicks,
+      revenue,
+      milli_impressions,
+      ads_count,
+      ad_metrics_ad_impressions_sum,
+      ad_metrics_ad_clicks_sum,
+      revenue_sum,
+    ]
   }
 
   parameter: aggregate_metrics_by {
