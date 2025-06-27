@@ -7,7 +7,12 @@
 view: metric_definitions_serp_events {
   derived_table: {
     sql: SELECT
-                COUNT(*) AS serp_impressions,
+                COUNTIF(is_tagged) AS tagged_search_count_glean,
+COUNTIF((is_tagged = TRUE) AND (sap_source = "follow_on_from_refine_on_incontent_search" OR sap_source = "follow_on_from_refine_on_SERP")) AS tagged_follow_on_search_count_glean,
+COUNTIF(is_tagged = TRUE AND num_ads_visible > 0) AS searches_with_ads_glean,
+COUNTIF(is_tagged = FALSE) AS organic_search_count_glean,
+SUM(IF(is_tagged = TRUE, num_ad_clicks, 0)) AS ad_click_glean,
+COUNT(*) AS serp_impressions,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -162,6 +167,64 @@ looker_base_fields_sample_id,
     description: "Unique client identifier"
   }
 
+  dimension: tagged_search_count_glean {
+    group_label: "Metrics"
+    label: "Tagged SAP searches in Glean"
+    description: "    Counts the number of searches a user performed through Firefox's
+    Search Access Points that were submitted with a partner code
+    and were potentially revenue-generating.
+    Learn more in the
+    [search data documentation](https://docs.telemetry.mozilla.org/datasets/search.html).
+"
+    type: number
+    sql: ${TABLE}.tagged_search_count_glean ;;
+  }
+
+  dimension: tagged_follow_on_search_count_glean {
+    group_label: "Metrics"
+    label: "Tagged follow-on searches in Glean"
+    description: "    Counts the number of follow-on searches with a Mozilla partner tag.
+    These are additional searches that users performed from a search engine
+    results page after executing a tagged search through a SAP.
+    Learn more in the
+    [search data documentation](https://docs.telemetry.mozilla.org/datasets/search.html).
+"
+    type: number
+    sql: ${TABLE}.tagged_follow_on_search_count_glean ;;
+  }
+
+  dimension: searches_with_ads_glean {
+    group_label: "Metrics"
+    label: "Search result pages with ads in Glean"
+    description: "    Counts search result pages served with advertising.
+    Users may not actually see these ads thanks to e.g. ad-blockers.
+    Learn more in the
+    [search analysis documentation](https://mozilla-private.report/search-analysis-docs/book/in_content_searches.html).
+"
+    type: number
+    sql: ${TABLE}.searches_with_ads_glean ;;
+  }
+
+  dimension: organic_search_count_glean {
+    group_label: "Metrics"
+    label: "Organic searches"
+    description: "    Counts organic searches, which are searches that are _not_ performed
+    through a Firefox SAP and which are not monetizable.
+    Learn more in the
+    [search data documentation](https://docs.telemetry.mozilla.org/datasets/search.html).
+"
+    type: number
+    sql: ${TABLE}.organic_search_count_glean ;;
+  }
+
+  dimension: ad_click_glean {
+    group_label: "Metrics"
+    label: "Num Ad Clicks in Glean"
+    description: "Total number of Ad Clicks From Serp Events in Glean "
+    type: number
+    sql: ${TABLE}.ad_click_glean ;;
+  }
+
   dimension: serp_impressions {
     group_label: "Metrics"
     label: "SERP impressions"
@@ -277,7 +340,14 @@ looker_base_fields_sample_id,
   }
 
   set: metrics {
-    fields: [serp_impressions]
+    fields: [
+      tagged_search_count_glean,
+      tagged_follow_on_search_count_glean,
+      searches_with_ads_glean,
+      organic_search_count_glean,
+      ad_click_glean,
+      serp_impressions,
+    ]
   }
 
   parameter: aggregate_metrics_by {
