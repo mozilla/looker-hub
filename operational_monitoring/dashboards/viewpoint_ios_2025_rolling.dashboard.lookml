@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       viewpoint_ios_2025_rolling.branch
     ]
     filters:
-      viewpoint_ios_2025_rolling.metric: 'active_hours'
+      viewpoint_ios_2025_rolling.metric: 'retained'
       viewpoint_ios_2025_rolling.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       viewpoint_ios_2025_rolling.branch
     ]
     filters:
-      viewpoint_ios_2025_rolling.metric: 'ad_clicks'
+      viewpoint_ios_2025_rolling.metric: 'search_count'
       viewpoint_ios_2025_rolling.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       viewpoint_ios_2025_rolling.branch
     ]
     filters:
-      viewpoint_ios_2025_rolling.metric: 'search_count'
+      viewpoint_ios_2025_rolling.metric: 'ad_clicks'
       viewpoint_ios_2025_rolling.statistic: mean
     row: 10
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       viewpoint_ios_2025_rolling.branch
     ]
     filters:
-      viewpoint_ios_2025_rolling.metric: 'retained'
+      viewpoint_ios_2025_rolling.metric: 'active_hours'
       viewpoint_ios_2025_rolling.statistic: mean
     row: 20
     col: 0
