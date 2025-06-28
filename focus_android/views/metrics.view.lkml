@@ -2130,7 +2130,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__cert_validation_success_by_ca__sum {
     label: "Cert Validation Success By Ca Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca.sum ;;
     type: number
     group_label: "Cert"
@@ -2232,7 +2232,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__cert_pinning_failures_by_ca__sum {
     label: "Cert Pinning Failures By Ca Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca.sum ;;
     type: number
     group_label: "Cert Pinning"
@@ -17990,6 +17990,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
+    label: "Pdfjs Digital Signature Certificate"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_digital_signature_certificate ;;
+    group_label: "Pdfjs Digital Signature"
+    group_item_label: "Certificate"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Digital Signature Certificate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/pdfjs_digital_signature_certificate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of certificates used to sign a PDF document.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_editing {
     label: "Pdfjs Editing"
     hidden: yes
@@ -21946,7 +21963,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca__sum {
     label: "SSL Ct Policy Non Compliant Connections By Ca Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca.sum ;;
     type: number
     group_label: "SSL"
@@ -43542,6 +43559,47 @@ view: metrics__metrics__labeled_counter__orb_did_ever_block_response {
 
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs - Buttons"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_digital_signature_certificate {
+  label: "Pdfjs Digital Signature - Certificate"
 
   dimension: document_id {
     type: string

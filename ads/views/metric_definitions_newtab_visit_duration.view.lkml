@@ -8,6 +8,8 @@ view: metric_definitions_newtab_visit_duration {
   derived_table: {
     sql: SELECT
                 AVG(avg_duration_seconds) AS avg_visit_duration,
+AVG(p50_duration_seconds) AS p50_visit_duration,
+AVG(p95_duration_seconds) AS p95_visit_duration,
 
                 newtab_visit_duration_avg_duration_seconds,
 newtab_visit_duration_country_code,
@@ -101,10 +103,26 @@ newtab_visit_duration_week,
 
   dimension: avg_visit_duration {
     group_label: "Metrics"
-    label: "HNT visit duration (seconds)"
+    label: "Avg HNT visit duration (seconds)"
     description: "Home Newtab (HNT) average visit duration in seconds"
     type: number
     sql: ${TABLE}.avg_visit_duration ;;
+  }
+
+  dimension: p50_visit_duration {
+    group_label: "Metrics"
+    label: "Median HNT visit duration (seconds)"
+    description: "Home Newtab (HNT) median / p50 visit duration in seconds"
+    type: number
+    sql: ${TABLE}.p50_visit_duration ;;
+  }
+
+  dimension: p95_visit_duration {
+    group_label: "Metrics"
+    label: "P95 HNT visit duration (seconds)"
+    description: "Home Newtab (HNT) p95 visit duration in seconds"
+    type: number
+    sql: ${TABLE}.p95_visit_duration ;;
   }
 
   dimension: avg_duration_seconds {
@@ -182,7 +200,7 @@ newtab_visit_duration_week,
   }
 
   set: metrics {
-    fields: [avg_visit_duration]
+    fields: [avg_visit_duration, p50_visit_duration, p95_visit_duration]
   }
 
   parameter: aggregate_metrics_by {

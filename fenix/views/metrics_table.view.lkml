@@ -11191,6 +11191,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_digital_signature_certificate ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__pdfjs_editing {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
     hidden: yes
