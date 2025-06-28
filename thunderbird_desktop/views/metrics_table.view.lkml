@@ -11873,6 +11873,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_digital_signature_certificate ;;
+    hidden: yes
+    description: "Counts the number of certificates used to sign a PDF document.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_editing {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
     hidden: yes

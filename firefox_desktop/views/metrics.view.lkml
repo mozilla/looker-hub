@@ -11120,7 +11120,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__cert_validation_success_by_ca__sum {
     label: "Cert Validation Success By Ca Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca.sum ;;
     type: number
     group_label: "Cert"
@@ -11222,7 +11222,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__cert_pinning_failures_by_ca__sum {
     label: "Cert Pinning Failures By Ca Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca.sum ;;
     type: number
     group_label: "Cert Pinning"
@@ -30593,7 +30593,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca__sum {
     label: "SSL Ct Policy Non Compliant Connections By Ca Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca.sum ;;
     type: number
     group_label: "SSL"
