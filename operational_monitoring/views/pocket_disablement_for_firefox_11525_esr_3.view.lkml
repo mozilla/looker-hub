@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: segemented_search_codes {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.segemented_search_codes_statistics ;;
+view: pocket_disablement_for_firefox_11525_esr_3 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.pocket_disablement_for_firefox_11525_esr_3_statistics ;;
 
   dimension: submission_date {
     type: date
