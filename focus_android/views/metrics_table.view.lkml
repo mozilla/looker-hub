@@ -1777,6 +1777,14 @@ view: metrics_table {
     group_item_label: "Networking Doh Heuristics Pass Count"
   }
 
+  dimension: metrics__counter__networking_local_network_blocked_tracker {
+    sql: ${TABLE}.metrics.counter.networking_local_network_blocked_tracker ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Local Network Blocked Tracker"
+  }
+
   dimension: metrics__counter__networking_os_socket_limit_reached {
     sql: ${TABLE}.metrics.counter.networking_os_socket_limit_reached ;;
     type: number
@@ -2685,6 +2693,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca_2__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca_2.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Cert Pinning Failures By Ca 2"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca_2__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca_2.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Cert Pinning Failures By Ca 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca_2__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca_2.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cert_pinning_moz_results_by_host__count {
     sql: ${TABLE}.metrics.custom_distribution.cert_pinning_moz_results_by_host.count ;;
     type: number
@@ -2766,6 +2795,27 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__cert_validation_success_by_ca__values {
     sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cert_validation_success_by_ca_2__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca_2.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Cert Validation Success By Ca 2"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cert_validation_success_by_ca_2__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca_2.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Cert Validation Success By Ca 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_validation_success_by_ca_2__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca_2.values ;;
     hidden: yes
   }
 
@@ -7074,6 +7124,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__count {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca_2.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Ct Policy Non Compliant Connections By Ca 2"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__sum {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca_2.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Ct Policy Non Compliant Connections By Ca 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__values {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca_2.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__ssl_handshake_completed__count {
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_completed.count ;;
     type: number
@@ -10144,6 +10215,36 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__network_rel_preload_miss_ratio {
     sql: ${TABLE}.metrics.labeled_counter.network_rel_preload_miss_ratio ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_addon_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_addon_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_addonversion_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_addonversion_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_other_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_other_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_remote_settings_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_remote_settings_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_telemetry_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_telemetry_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_update_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_update_status ;;
     hidden: yes
   }
 
@@ -39390,6 +39491,20 @@ view: metrics_table__metrics__custom_distribution__cert_pinning_failures_by_ca__
   }
 }
 
+view: metrics_table__metrics__custom_distribution__cert_pinning_failures_by_ca_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__cert_pinning_moz_results_by_host__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -39433,6 +39548,20 @@ view: metrics_table__metrics__custom_distribution__cert_validation_http_request_
 }
 
 view: metrics_table__metrics__custom_distribution__cert_validation_success_by_ca__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_validation_success_by_ca_2__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -42303,6 +42432,20 @@ view: metrics_table__metrics__custom_distribution__ssl_cert_verification_errors_
 }
 
 view: metrics_table__metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
