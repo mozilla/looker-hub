@@ -13,9 +13,7 @@ AVG(p95_duration_seconds) AS p95_visit_duration,
 
                 newtab_visit_duration_avg_duration_seconds,
 newtab_visit_duration_country_code,
-newtab_visit_duration_p25_duration_seconds,
 newtab_visit_duration_p50_duration_seconds,
-newtab_visit_duration_p75_duration_seconds,
 newtab_visit_duration_p95_duration_seconds,
 newtab_visit_duration_week,
 
@@ -52,9 +50,7 @@ newtab_visit_duration_week,
                         newtab_visit_duration.*,
                         newtab_visit_duration.avg_duration_seconds AS newtab_visit_duration_avg_duration_seconds,
 newtab_visit_duration.country_code AS newtab_visit_duration_country_code,
-newtab_visit_duration.p25_duration_seconds AS newtab_visit_duration_p25_duration_seconds,
 newtab_visit_duration.p50_duration_seconds AS newtab_visit_duration_p50_duration_seconds,
-newtab_visit_duration.p75_duration_seconds AS newtab_visit_duration_p75_duration_seconds,
 newtab_visit_duration.p95_duration_seconds AS newtab_visit_duration_p95_duration_seconds,
 newtab_visit_duration.week AS newtab_visit_duration_week,
 
@@ -82,9 +78,7 @@ newtab_visit_duration.week AS newtab_visit_duration_week,
             GROUP BY
                 newtab_visit_duration_avg_duration_seconds,
 newtab_visit_duration_country_code,
-newtab_visit_duration_p25_duration_seconds,
 newtab_visit_duration_p50_duration_seconds,
-newtab_visit_duration_p75_duration_seconds,
 newtab_visit_duration_p95_duration_seconds,
 newtab_visit_duration_week,
 
@@ -139,22 +133,8 @@ newtab_visit_duration_week,
     group_label: "Base Fields"
   }
 
-  dimension: p25_duration_seconds {
-    sql: ${TABLE}.newtab_visit_duration_p25_duration_seconds ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
   dimension: p50_duration_seconds {
     sql: ${TABLE}.newtab_visit_duration_p50_duration_seconds ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: p75_duration_seconds {
-    sql: ${TABLE}.newtab_visit_duration_p75_duration_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
