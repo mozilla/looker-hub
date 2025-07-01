@@ -4365,6 +4365,24 @@ startup, as part of the initialization sequence.
 "
   }
 
+  dimension: metrics__counter__logins_store_local_undecryptable_deleted {
+    label: "Logins Store Local Undecryptable Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_local_undecryptable_deleted ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Local Undecryptable Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_local_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Track how many logins we deleted locally due to various reasons that prevent us from decrypting the login
+"
+  }
+
   dimension: metrics__counter__logins_store_migration_num_failed {
     label: "Logins Store Migration Num Failed"
     hidden: yes
@@ -4434,6 +4452,24 @@ startup, as part of the initialization sequence.
     }
 
     description: "How long the migration tool
+"
+  }
+
+  dimension: metrics__counter__logins_store_mirror_undecryptable_deleted {
+    label: "Logins Store Mirror Undecryptable Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_mirror_undecryptable_deleted ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Mirror Undecryptable Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_mirror_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Track how many logins we deleted in the mirror table due to various reasons that prevent us from decrypting the login
 "
   }
 
@@ -8099,6 +8135,31 @@ startup, as part of the initialization sequence.
     }
   }
 
+  measure: logins_store_local_undecryptable_deleted {
+    type: sum
+    sql: ${metrics__counter__logins_store_local_undecryptable_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_local_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_local_undecryptable_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_local_undecryptable_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_local_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: logins_store_migration_num_failed {
     type: sum
     sql: ${metrics__counter__logins_store_migration_num_failed} ;;
@@ -8170,6 +8231,31 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_succeeded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_mirror_undecryptable_deleted {
+    type: sum
+    sql: ${metrics__counter__logins_store_mirror_undecryptable_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_mirror_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_mirror_undecryptable_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_mirror_undecryptable_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_mirror_undecryptable_deleted"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
