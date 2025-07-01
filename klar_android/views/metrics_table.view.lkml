@@ -2247,6 +2247,16 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__networking_local_network_blocked_tracker {
+    sql: ${TABLE}.metrics.counter.networking_local_network_blocked_tracker ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Local Network Blocked Tracker"
+    description: "Counts the number of times the channel was blocked because it's a LNA load triggered by a tracker
+"
+  }
+
   dimension: metrics__counter__networking_os_socket_limit_reached {
     sql: ${TABLE}.metrics.counter.networking_os_socket_limit_reached ;;
     type: number
@@ -3366,6 +3376,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca_2__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca_2.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Cert Pinning Failures By Ca 2"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca_2__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca_2.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Cert Pinning Failures By Ca 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca_2__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca_2.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__cert_pinning_moz_results_by_host__count {
     sql: ${TABLE}.metrics.custom_distribution.cert_pinning_moz_results_by_host.count ;;
     type: number
@@ -3451,6 +3483,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__cert_validation_success_by_ca__values {
     sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cert_validation_success_by_ca_2__count {
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca_2.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Cert Validation Success By Ca 2"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cert_validation_success_by_ca_2__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca_2.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Cert Validation Success By Ca 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cert_validation_success_by_ca_2__values {
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca_2.values ;;
     hidden: yes
   }
 
@@ -7964,6 +8018,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__count {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca_2.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Ct Policy Non Compliant Connections By Ca 2"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__sum {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca_2.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Ct Policy Non Compliant Connections By Ca 2"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__values {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca_2.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__ssl_handshake_completed__count {
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_completed.count ;;
     type: number
@@ -11664,6 +11740,48 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_retried_system_channel_addon_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_addon_status ;;
+    hidden: yes
+    description: "Counts the status of fallback requests to addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_addonversion_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_addonversion_status ;;
+    hidden: yes
+    description: "Counts the status of fallback requests to *.addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_other_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_other_status ;;
+    hidden: yes
+    description: "Counts the status of fallback requests to other mozilla.org domains
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_remote_settings_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_remote_settings_status ;;
+    hidden: yes
+    description: "Counts the status of fallback requests to firefox.settings.services.mozilla.com
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_telemetry_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_telemetry_status ;;
+    hidden: yes
+    description: "Counts the status of fallback requests to incoming.telemetry.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_update_status {
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_update_status ;;
+    hidden: yes
+    description: "Counts the status of fallback requests to aus5.mozilla.org
+"
+  }
+
   dimension: metrics__labeled_counter__network_sso_entra_success {
     sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
     hidden: yes
@@ -12078,6 +12196,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
     hidden: yes
     description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_digital_signature_certificate ;;
+    hidden: yes
+    description: "Counts the number of certificates used to sign a PDF document.
 "
   }
 
@@ -42524,6 +42649,20 @@ view: metrics_table__metrics__custom_distribution__cert_pinning_failures_by_ca__
   }
 }
 
+view: metrics_table__metrics__custom_distribution__cert_pinning_failures_by_ca_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__cert_pinning_moz_results_by_host__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -42567,6 +42706,20 @@ view: metrics_table__metrics__custom_distribution__cert_validation_http_request_
 }
 
 view: metrics_table__metrics__custom_distribution__cert_validation_success_by_ca__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cert_validation_success_by_ca_2__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -45437,6 +45590,20 @@ view: metrics_table__metrics__custom_distribution__ssl_cert_verification_errors_
 }
 
 view: metrics_table__metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

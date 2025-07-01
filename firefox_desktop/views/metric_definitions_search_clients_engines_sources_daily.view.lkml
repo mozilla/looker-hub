@@ -176,7 +176,7 @@ looker_base_fields_sample_id,
 
   dimension: search_count {
     group_label: "Metrics"
-    label: "SAP searches"
+    label: "SAP searches in Glean"
     description: "    Counts the number of searches a user performed through Firefox's
     Search Access Points.
     Learn more in the

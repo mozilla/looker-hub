@@ -293,6 +293,12 @@ view: issue {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: work_type {
+    sql: ${TABLE}.work_type ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
     type: time

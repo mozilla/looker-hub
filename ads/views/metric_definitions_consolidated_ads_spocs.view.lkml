@@ -267,6 +267,14 @@ consolidated_ads_spocs_url,
     description: "Sum of SPOC revenue"
   }
 
+  measure: revenue_sum {
+    type: sum
+    sql: ${TABLE}.revenue*1 ;;
+    label: "revenue Sum"
+    group_label: "Statistics"
+    description: "Sum of revenue"
+  }
+
   set: metrics {
     fields: [
       spoc_impressions,

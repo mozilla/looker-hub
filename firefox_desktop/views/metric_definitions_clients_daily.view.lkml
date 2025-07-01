@@ -9,6 +9,7 @@ view: metric_definitions_clients_daily {
     sql: SELECT
                 COALESCE(SUM(active_hours_sum), 0) AS active_hours,
 COALESCE(SUM(scalar_parent_browser_engagement_total_uri_count_sum), 0) AS uri_count,
+COALESCE(SUM(scalar_parent_browser_engagement_total_uri_count_normal_and_private_mode_sum), 0) AS uri_count_v2,
 COUNT(submission_date) AS days_of_use,
 COUNTIF(
     active_hours_sum > 0 AND
@@ -205,6 +206,16 @@ looker_base_fields_sample_id,
 "
     type: number
     sql: ${TABLE}.uri_count ;;
+  }
+
+  dimension: uri_count_v2 {
+    group_label: "Metrics"
+    label: "URIs visited"
+    description: "    Counts the total number of URIs visited for both normal and private mode.
+    Includes within-page navigation events (e.g. to anchors).
+"
+    type: number
+    sql: ${TABLE}.uri_count_v2 ;;
   }
 
   dimension: days_of_use {
@@ -548,6 +559,7 @@ looker_base_fields_sample_id,
     fields: [
       active_hours,
       uri_count,
+      uri_count_v2,
       days_of_use,
       qualified_cumulative_days_of_use,
       daily_active_users,

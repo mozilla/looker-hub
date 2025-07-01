@@ -74,6 +74,12 @@ view: newtab_visits_daily_table {
     description: "user setting for the appearance of homepage or new window during open"
   }
 
+  dimension: is_any_interaction {
+    sql: ${TABLE}.is_any_interaction ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_content_click {
     sql: ${TABLE}.is_content_click ;;
     type: yesno
@@ -107,6 +113,24 @@ view: newtab_visits_daily_table {
     type: yesno
     suggest_persist_for: "24 hours"
     description: "TRUE if the user opened a newtab"
+  }
+
+  dimension: is_nonsearch_interaction {
+    sql: ${TABLE}.is_nonsearch_interaction ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: is_organic_content_interaction {
+    sql: ${TABLE}.is_organic_content_interaction ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: is_organic_topsite_interaction {
+    sql: ${TABLE}.is_organic_topsite_interaction ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 
   dimension: is_other_interaction {
