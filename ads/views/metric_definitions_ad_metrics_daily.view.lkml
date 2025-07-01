@@ -13,7 +13,16 @@ SUM(revenue) AS revenue,
 SUM(impressions)/1000 AS milli_impressions,
 COUNT(DISTINCT ad_id) AS ads_count,
 
-                ad_metrics_daily_ad_id,
+                countries_ads_value_tier,
+countries_code,
+countries_code_3,
+countries_mozilla_vpn_available,
+countries_name,
+countries_pocket_available_on_newtab,
+countries_region_name,
+countries_sponsored_tiles_available_on_newtab,
+countries_subregion_name,
+ad_metrics_daily_ad_id,
 ad_metrics_daily_advertiser_id,
 ad_metrics_daily_advertiser_name,
 ad_metrics_daily_campaign_id,
@@ -79,7 +88,16 @@ ad_metrics_daily_zone_name,
                 (
                     SELECT
                         ad_metrics_daily.*,
-                        ad_metrics_daily.ad_id AS ad_metrics_daily_ad_id,
+                        countries.ads_value_tier AS countries_ads_value_tier,
+countries.code AS countries_code,
+countries.code_3 AS countries_code_3,
+countries.mozilla_vpn_available AS countries_mozilla_vpn_available,
+countries.name AS countries_name,
+countries.pocket_available_on_newtab AS countries_pocket_available_on_newtab,
+countries.region_name AS countries_region_name,
+countries.sponsored_tiles_available_on_newtab AS countries_sponsored_tiles_available_on_newtab,
+countries.subregion_name AS countries_subregion_name,
+ad_metrics_daily.ad_id AS ad_metrics_daily_ad_id,
 ad_metrics_daily.advertiser_id AS ad_metrics_daily_advertiser_id,
 ad_metrics_daily.advertiser_name AS ad_metrics_daily_advertiser_name,
 ad_metrics_daily.campaign_id AS ad_metrics_daily_campaign_id,
@@ -121,7 +139,18 @@ ad_metrics_daily.zone_name AS ad_metrics_daily_zone_name,
             FROM
                 mozdata.ads.ad_metrics_daily
             ) AS ad_metrics_daily
+        LEFT JOIN
+    (
+            SELECT
+                *
+            FROM
+                mozdata.static.country_codes_v1
+            ) AS countries
         
+    ON 
+    ad_metrics_daily.country = countries.code
+    
+                
                     WHERE 
                     ad_metrics_daily.submission_date
                     BETWEEN
@@ -136,7 +165,16 @@ ad_metrics_daily.zone_name AS ad_metrics_daily_zone_name,
                 
                 )
             GROUP BY
-                ad_metrics_daily_ad_id,
+                countries_ads_value_tier,
+countries_code,
+countries_code_3,
+countries_mozilla_vpn_available,
+countries_name,
+countries_pocket_available_on_newtab,
+countries_region_name,
+countries_sponsored_tiles_available_on_newtab,
+countries_subregion_name,
+ad_metrics_daily_ad_id,
 ad_metrics_daily_advertiser_id,
 ad_metrics_daily_advertiser_name,
 ad_metrics_daily_campaign_id,
@@ -222,6 +260,69 @@ ad_metrics_daily_zone_name,
     description: "Number of unique ads served"
     type: number
     sql: ${TABLE}.ads_count ;;
+  }
+
+  dimension: ads_value_tier {
+    sql: ${TABLE}.countries_ads_value_tier ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: code {
+    sql: ${TABLE}.countries_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: code_3 {
+    sql: ${TABLE}.countries_code_3 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: mozilla_vpn_available {
+    sql: ${TABLE}.countries_mozilla_vpn_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: name {
+    sql: ${TABLE}.countries_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: pocket_available_on_newtab {
+    sql: ${TABLE}.countries_pocket_available_on_newtab ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: region_name {
+    sql: ${TABLE}.countries_region_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_tiles_available_on_newtab {
+    sql: ${TABLE}.countries_sponsored_tiles_available_on_newtab ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: subregion_name {
+    sql: ${TABLE}.countries_subregion_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
   }
 
   dimension: ad_id {
@@ -511,6 +612,14 @@ ad_metrics_daily_zone_name,
     description: "Sum of Revenue"
   }
 
+  measure: milli_impressions_sum {
+    type: sum
+    sql: ${TABLE}.milli_impressions*1 ;;
+    label: "Milli Impressions Sum"
+    group_label: "Statistics"
+    description: "Sum of Milli Impressions"
+  }
+
   set: metrics {
     fields: [
       ad_metrics_ad_impressions,
@@ -521,6 +630,7 @@ ad_metrics_daily_zone_name,
       ad_metrics_ad_impressions_sum,
       ad_metrics_ad_clicks_sum,
       revenue_sum,
+      milli_impressions_sum,
     ]
   }
 

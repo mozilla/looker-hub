@@ -1655,6 +1655,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__custom_distribution__cert_validation_success_by_ca_2__sum {
+    label: "Cert Validation Success By Ca 2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca_2.sum ;;
+    type: number
+    group_label: "Cert"
+    group_item_label: "Validation Success By Ca 2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Validation Success By Ca 2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_validation_success_by_ca_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Successful SSL server cert validations by CA (see KnownRootHashes.txt for names of CAs).
+"
+  }
+
   dimension: metrics__custom_distribution__cert_compression_brotli_saved_bytes__sum {
     label: "Cert Compression Brotli Saved Bytes Sum"
     hidden: yes
@@ -1754,6 +1772,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Pinning failures by CA (see RootHashes.inc for names of CAs)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_PINNING_FAILURES_BY_CA_2.
+"
+  }
+
+  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca_2__sum {
+    label: "Cert Pinning Failures By Ca 2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca_2.sum ;;
+    type: number
+    group_label: "Cert Pinning"
+    group_item_label: "Failures By Ca 2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Pinning Failures By Ca 2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_pinning_failures_by_ca_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Pinning failures by CA (see KnownRootHashes.txt for names of CAs).
 "
   }
 
@@ -13944,6 +13980,108 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_retried_system_channel_addon_status {
+    label: "Network Retried System Channel Addon Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_addon_status ;;
+    group_label: "Network"
+    group_item_label: "Retried System Channel Addon Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network Retried System Channel Addon Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_retried_system_channel_addon_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of fallback requests to addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_addonversion_status {
+    label: "Network Retried System Channel Addonversion Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_addonversion_status ;;
+    group_label: "Network"
+    group_item_label: "Retried System Channel Addonversion Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network Retried System Channel Addonversion Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_retried_system_channel_addonversion_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of fallback requests to *.addons.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_other_status {
+    label: "Network Retried System Channel Other Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_other_status ;;
+    group_label: "Network"
+    group_item_label: "Retried System Channel Other Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network Retried System Channel Other Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_retried_system_channel_other_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of fallback requests to other mozilla.org domains
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_remote_settings_status {
+    label: "Network Retried System Channel Remote Settings Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_remote_settings_status ;;
+    group_label: "Network"
+    group_item_label: "Retried System Channel Remote Settings Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network Retried System Channel Remote Settings Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_retried_system_channel_remote_settings_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of fallback requests to firefox.settings.services.mozilla.com
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_telemetry_status {
+    label: "Network Retried System Channel Telemetry Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_telemetry_status ;;
+    group_label: "Network"
+    group_item_label: "Retried System Channel Telemetry Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network Retried System Channel Telemetry Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_retried_system_channel_telemetry_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of fallback requests to incoming.telemetry.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_retried_system_channel_update_status {
+    label: "Network Retried System Channel Update Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_update_status ;;
+    group_label: "Network"
+    group_item_label: "Retried System Channel Update Status"
+
+    link: {
+      label: "Glean Dictionary reference for Network Retried System Channel Update Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_retried_system_channel_update_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the status of fallback requests to aus5.mozilla.org
+"
+  }
+
   dimension: metrics__labeled_counter__network_sso_entra_success {
     label: "Network Sso Entra Success"
     hidden: yes
@@ -16327,6 +16465,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "port used for local network access
+"
+  }
+
+  dimension: metrics__counter__networking_local_network_blocked_tracker {
+    label: "Networking Local Network Blocked Tracker"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_local_network_blocked_tracker ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Local Network Blocked Tracker"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Blocked Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_local_network_blocked_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the channel was blocked because it's a LNA load triggered by a tracker
 "
   }
 
@@ -21485,6 +21641,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Number of successfully established TLS connections NOT compliant with the Certificate Transparency Policy, by CA. See https://searchfox.org/mozilla-central/source/security/manager/ssl/RootHashes.inc for names of CAs. Bucket zero holds CAs not present in the list.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_CT_POLICY_NON_COMPLIANT_CONNECTIONS_BY_CA_2.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__sum {
+    label: "SSL Ct Policy Non Compliant Connections By Ca 2 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca_2.sum ;;
+    type: number
+    group_label: "SSL"
+    group_item_label: "Ct Policy Non Compliant Connections By Ca 2 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for SSL Ct Policy Non Compliant Connections By Ca 2 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ssl_ct_policy_non_compliant_connections_by_ca_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of successfully established TLS connections NOT compliant with the Certificate Transparency Policy, by CA. See KnownRootHashes.txt for names of CAs. range_min: 0
 "
   }
 
@@ -30611,6 +30785,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Networking Doh Heuristics Pass Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_doh_heuristics_pass_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_local_network_blocked_tracker {
+    type: sum
+    sql: ${metrics__counter__networking_local_network_blocked_tracker} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Blocked Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_local_network_blocked_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_local_network_blocked_tracker_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_local_network_blocked_tracker: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Blocked Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_local_network_blocked_tracker"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -40533,6 +40732,252 @@ view: metrics__metrics__labeled_counter__network_rel_preload_miss_ratio {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_retried_system_channel_addon_status {
+  label: "Network - Retried System Channel Addon Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_retried_system_channel_addonversion_status {
+  label: "Network - Retried System Channel Addonversion Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_retried_system_channel_other_status {
+  label: "Network - Retried System Channel Other Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_retried_system_channel_remote_settings_status {
+  label: "Network - Retried System Channel Remote Settings Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_retried_system_channel_telemetry_status {
+  label: "Network - Retried System Channel Telemetry Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_retried_system_channel_update_status {
+  label: "Network - Retried System Channel Update Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_sso_entra_success {
   label: "Network Sso - Entra Success"
 
@@ -46849,6 +47294,20 @@ view: metrics__metrics__custom_distribution__cert_pinning_failures_by_ca__values
   }
 }
 
+view: metrics__metrics__custom_distribution__cert_pinning_failures_by_ca_2__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__cert_pinning_moz_results_by_host__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -46892,6 +47351,20 @@ view: metrics__metrics__custom_distribution__cert_validation_http_request_result
 }
 
 view: metrics__metrics__custom_distribution__cert_validation_success_by_ca__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__cert_validation_success_by_ca_2__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -49762,6 +50235,20 @@ view: metrics__metrics__custom_distribution__ssl_cert_verification_errors__value
 }
 
 view: metrics__metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
