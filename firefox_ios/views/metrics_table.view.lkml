@@ -1161,6 +1161,14 @@ view: metrics_table {
     group_item_label: "Logins Saved"
   }
 
+  dimension: metrics__counter__logins_store_local_undecryptable_deleted {
+    sql: ${TABLE}.metrics.counter.logins_store_local_undecryptable_deleted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Local Undecryptable Deleted"
+  }
+
   dimension: metrics__counter__logins_store_migration_num_failed {
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
     type: number
@@ -1183,6 +1191,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Logins Store Migration Num Succeeded"
+  }
+
+  dimension: metrics__counter__logins_store_mirror_undecryptable_deleted {
+    sql: ${TABLE}.metrics.counter.logins_store_mirror_undecryptable_deleted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Mirror Undecryptable Deleted"
   }
 
   dimension: metrics__counter__logins_store_read_query_count {
