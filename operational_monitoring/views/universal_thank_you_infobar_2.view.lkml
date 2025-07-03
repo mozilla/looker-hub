@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: new_menu_redesign {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_menu_redesign_statistics ;;
+view: universal_thank_you_infobar_2 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.universal_thank_you_infobar_2_statistics ;;
 
   dimension: submission_date {
     type: date
