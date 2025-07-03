@@ -529,6 +529,22 @@ view: metrics_table {
     group_item_label: "Contentblocking Fingerprinting Blocking Enabled"
   }
 
+  dimension: metrics__boolean__contentblocking_tp_allowlist_baseline_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_baseline_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Tp Allowlist Baseline Enabled"
+  }
+
+  dimension: metrics__boolean__contentblocking_tp_allowlist_convenience_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_convenience_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Tp Allowlist Convenience Enabled"
+  }
+
   dimension: metrics__boolean__contextual_menu_long_press_tapped {
     sql: ${TABLE}.metrics.boolean.contextual_menu_long_press_tapped ;;
     type: yesno

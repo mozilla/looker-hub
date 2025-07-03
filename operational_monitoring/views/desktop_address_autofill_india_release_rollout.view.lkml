@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: change_app_color_icon_on_release_smoke_test_reset_to_control_for_enrolled_users {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.change_app_color_icon_on_release_smoke_test_reset_to_control_for_enrolled_users_statistics ;;
+view: desktop_address_autofill_india_release_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.desktop_address_autofill_india_release_rollout_statistics ;;
 
   dimension: submission_date {
     type: date

@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/new_menu_redesign.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/new_menu_redesign_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/universal_thank_you_infobar_2.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/universal_thank_you_infobar_2_last_updated.datagroup.lkml"
 
-explore: new_menu_redesign {
+explore: universal_thank_you_infobar_2 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: new_menu_redesign {
   }
 
   hidden: yes
-  persist_with: new_menu_redesign_last_updated
+  persist_with: universal_thank_you_infobar_2_last_updated
 }
