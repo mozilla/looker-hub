@@ -26377,6 +26377,25 @@ e.g. 3775
 "
   }
 
+  dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
+    label: "System Special Directory Appdata Fallback"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.system_special_directory_appdata_fallback ;;
+    type: string
+    group_label: "System"
+    group_item_label: "Special Directory Appdata Fallback"
+
+    link: {
+      label: "Glean Dictionary reference for System Special Directory Appdata Fallback"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_special_directory_appdata_fallback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Success status of using SpecialSystemDirectory's fallback path to retrieve
+either %AppData% or %LocalAppData%.
+"
+  }
+
   dimension: metrics__quantity__system_virtual_memory {
     label: "System Virtual Memory"
     hidden: no
@@ -30934,6 +30953,24 @@ startup, as part of the initialization sequence.
     description: "The total number of operations performed by the FxA client."
   }
 
+  dimension: metrics__counter__logins_store_local_undecryptable_deleted {
+    label: "Logins Store Local Undecryptable Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_local_undecryptable_deleted ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Local Undecryptable Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_local_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Track how many logins we deleted locally due to various reasons that prevent us from decrypting the login
+"
+  }
+
   dimension: metrics__counter__logins_store_migration_num_failed {
     label: "Logins Store Migration Num Failed"
     hidden: yes
@@ -31003,6 +31040,24 @@ startup, as part of the initialization sequence.
     }
 
     description: "How long the migration tool
+"
+  }
+
+  dimension: metrics__counter__logins_store_mirror_undecryptable_deleted {
+    label: "Logins Store Mirror Undecryptable Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_mirror_undecryptable_deleted ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Mirror Undecryptable Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_mirror_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Track how many logins we deleted in the mirror table due to various reasons that prevent us from decrypting the login
 "
   }
 
@@ -38082,6 +38137,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: logins_store_local_undecryptable_deleted {
+    type: sum
+    sql: ${metrics__counter__logins_store_local_undecryptable_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_local_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_local_undecryptable_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_local_undecryptable_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_local_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: logins_store_migration_num_failed {
     type: sum
     sql: ${metrics__counter__logins_store_migration_num_failed} ;;
@@ -38153,6 +38233,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_succeeded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_mirror_undecryptable_deleted {
+    type: sum
+    sql: ${metrics__counter__logins_store_mirror_undecryptable_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_mirror_undecryptable_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_mirror_undecryptable_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_mirror_undecryptable_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_mirror_undecryptable_deleted"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -57874,6 +57979,20 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
 }
 
 view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__system_special_directory_appdata_fallback {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

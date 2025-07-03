@@ -10020,6 +10020,14 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
+    sql: ${TABLE}.metrics.labeled_boolean.system_special_directory_appdata_fallback ;;
+    hidden: yes
+    description: "Success status of using SpecialSystemDirectory's fallback path to retrieve
+either %AppData% or %LocalAppData%.
+"
+  }
+
   dimension: metrics__labeled_boolean__widget_pointing_devices {
     sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
     hidden: yes
@@ -46633,6 +46641,20 @@ view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
 }
 
 view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__system_special_directory_appdata_fallback {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

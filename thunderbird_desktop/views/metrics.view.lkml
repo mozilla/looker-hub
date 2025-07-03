@@ -23427,6 +23427,25 @@ e.g. 3775
 "
   }
 
+  dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
+    label: "System Special Directory Appdata Fallback"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.system_special_directory_appdata_fallback ;;
+    type: string
+    group_label: "System"
+    group_item_label: "Special Directory Appdata Fallback"
+
+    link: {
+      label: "Glean Dictionary reference for System Special Directory Appdata Fallback"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/system_special_directory_appdata_fallback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Success status of using SpecialSystemDirectory's fallback path to retrieve
+either %AppData% or %LocalAppData%.
+"
+  }
+
   dimension: metrics__quantity__system_virtual_memory {
     label: "System Virtual Memory"
     hidden: no
@@ -52296,6 +52315,20 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
 }
 
 view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__system_special_directory_appdata_fallback {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
