@@ -9,9 +9,13 @@ view: metric_definitions_ad_metrics_daily {
     sql: SELECT
                 SUM(impressions) AS ad_metrics_ad_impressions,
 SUM(clicks) AS ad_metrics_ad_clicks,
+SUM(reports) AS ad_metrics_ad_reports,
 SUM(revenue) AS revenue,
 SUM(impressions)/1000 AS milli_impressions,
 COUNT(DISTINCT ad_id) AS ads_count,
+SUM(1) AS revenue_per_ad,
+SUM(1) AS ecpm,
+SUM(1) AS click_through_rate,
 
                 countries_ads_value_tier,
 countries_code,
@@ -241,6 +245,14 @@ ad_metrics_daily_zone_name,
     sql: ${TABLE}.ad_metrics_ad_clicks ;;
   }
 
+  dimension: ad_metrics_ad_reports {
+    group_label: "Metrics"
+    label: "Ads Reported"
+    description: "Number of time ad was reported"
+    type: number
+    sql: ${TABLE}.ad_metrics_ad_reports ;;
+  }
+
   dimension: revenue {
     group_label: "Metrics"
     label: "Revenue"
@@ -263,6 +275,30 @@ ad_metrics_daily_zone_name,
     description: "Number of unique ads served"
     type: number
     sql: ${TABLE}.ads_count ;;
+  }
+
+  dimension: revenue_per_ad {
+    group_label: "Metrics"
+    label: "Revenue Per Ad"
+    description: "Revenue Per Ad"
+    type: number
+    sql: ${TABLE}.revenue_per_ad ;;
+  }
+
+  dimension: ecpm {
+    group_label: "Metrics"
+    label: "eCPM"
+    description: "effective CPM, calculated as average revenue per thousand impressions"
+    type: number
+    sql: ${TABLE}.ecpm ;;
+  }
+
+  dimension: click_through_rate {
+    group_label: "Metrics"
+    label: "Click Through Rate"
+    description: "Ratio of ad clicks to ad impressions"
+    type: number
+    sql: ${TABLE}.click_through_rate ;;
   }
 
   dimension: ads_value_tier {
@@ -614,6 +650,14 @@ ad_metrics_daily_zone_name,
     description: "Sum of Ad Clicks"
   }
 
+  measure: ad_metrics_ad_reports_sum {
+    type: sum
+    sql: ${TABLE}.ad_metrics_ad_reports*1 ;;
+    label: "Ads Reported Sum"
+    group_label: "Statistics"
+    description: "Sum of Ads Reported"
+  }
+
   measure: revenue_sum {
     type: sum
     sql: ${TABLE}.revenue*1 ;;
@@ -630,17 +674,55 @@ ad_metrics_daily_zone_name,
     description: "Sum of Milli Impressions"
   }
 
+  measure: revenue_per_ad_ratio {
+    type: number
+    label: "Revenue Per Ad Ratio"
+    sql: SAFE_DIVIDE(${revenue_sum}, ${ads_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between revenue.sum and
+                                        ads_count.sum"
+  }
+
+  measure: ecpm_ratio {
+    type: number
+    label: "eCPM Ratio"
+    sql: SAFE_DIVIDE(${revenue_sum}, ${milli_impressions_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between revenue.sum and
+                                        milli_impressions.sum"
+  }
+
+  measure: click_through_rate_ratio {
+    type: number
+    label: "Click Through Rate Ratio"
+    sql: SAFE_DIVIDE(${clicks_sum}, ${impressions_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between clicks.sum and
+                                        impressions.sum"
+  }
+
   set: metrics {
     fields: [
       ad_metrics_ad_impressions,
       ad_metrics_ad_clicks,
+      ad_metrics_ad_reports,
       revenue,
       milli_impressions,
       ads_count,
+      revenue_per_ad,
+      ecpm,
+      click_through_rate,
       ad_metrics_ad_impressions_sum,
       ad_metrics_ad_clicks_sum,
+      ad_metrics_ad_reports_sum,
       revenue_sum,
       milli_impressions_sum,
+      revenue_per_ad_ratio,
+      ecpm_ratio,
+      click_through_rate_ratio,
     ]
   }
 
