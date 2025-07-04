@@ -43,7 +43,7 @@ COALESCE(SUM(weather_widget_change_display_to_detailed), 0) AS weather_widget_ch
 COALESCE(SUM(weather_widget_change_display_to_simple), 0) AS weather_widget_change_display_to_simple,
 SUM(sponsored_pocket_impressions) + SUM(sponsored_topsite_tile_impressions) AS sponsored_impressions,
 SUM(1) AS sponsored_pocket_impressions_per_client,
-SUM(1) AS sponsored_topsite_tile_impressions_per_client,
+SUM(1) AS sponsored_tile_impressions_per_client,
 SUM(1) AS sponsored_impressions_per_client,
 
                 countries_ads_value_tier,
@@ -707,13 +707,13 @@ a wallpaper.
     sql: ${TABLE}.sponsored_pocket_impressions_per_client ;;
   }
 
-  dimension: sponsored_topsite_tile_impressions_per_client {
+  dimension: sponsored_tile_impressions_per_client {
     group_label: "Metrics"
     label: "Sponsored Topsite Tile Impressions Per Client"
     description: "Number of sponsored topsite tile impressions divided by number of clients
 "
     type: number
-    sql: ${TABLE}.sponsored_topsite_tile_impressions_per_client ;;
+    sql: ${TABLE}.sponsored_tile_impressions_per_client ;;
   }
 
   dimension: sponsored_impressions_per_client {
@@ -1349,6 +1349,14 @@ a wallpaper.
     description: "Average of Newtab Ad Click Rate"
   }
 
+  measure: sponsored_pocket_clicks_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_pocket_clicks*1 ;;
+    label: "Sponsored Pocket Clicks Sum"
+    group_label: "Statistics"
+    description: "Sum of Sponsored Pocket Clicks"
+  }
+
   measure: sponsored_pocket_clicks_client_count_sampled {
     type: count_distinct
     label: "Sponsored Pocket Clicks Client Count"
@@ -1376,6 +1384,14 @@ a wallpaper.
                                         sponsored_pocket_impressions.sum"
   }
 
+  measure: sponsored_pocket_impressions_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_pocket_impressions*1 ;;
+    label: "Sponsored Pocket Impressions Sum"
+    group_label: "Statistics"
+    description: "Sum of Sponsored Pocket Impressions"
+  }
+
   measure: sponsored_pocket_impressions_client_count_sampled {
     type: count_distinct
     label: "Sponsored Pocket Impressions Client Count"
@@ -1393,6 +1409,14 @@ a wallpaper.
     description: "Number of clients with Sponsored Pocket Impressions"
   }
 
+  measure: sponsored_tile_impressions_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_tile_impressions*1 ;;
+    label: "Sponsored Tile Impressions Sum"
+    group_label: "Statistics"
+    description: "Sum of Sponsored Tile Impressions"
+  }
+
   measure: sponsored_tile_impressions_client_count_sampled {
     type: count_distinct
     label: "Sponsored Tile Impressions Client Count"
@@ -1408,6 +1432,14 @@ a wallpaper.
     group_label: "Statistics"
     sql: ${sponsored_tile_impressions_client_count_sampled} *1 ;;
     description: "Number of clients with Sponsored Tile Impressions"
+  }
+
+  measure: sponsored_tile_clicks_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_tile_clicks*1 ;;
+    label: "Sponsored Tile Clicks Sum"
+    group_label: "Statistics"
+    description: "Sum of Sponsored Tile Clicks"
   }
 
   measure: sponsored_tile_clicks_client_count_sampled {
@@ -1539,13 +1571,13 @@ a wallpaper.
                                         sponsored_impressions.client_count"
   }
 
-  measure: sponsored_topsite_tile_impressions_per_client_ratio {
+  measure: sponsored_tile_impressions_per_client_ratio {
     type: number
     label: "Sponsored Topsite Tile Impressions Per Client Ratio"
-    sql: SAFE_DIVIDE(${sponsored_topsite_tile_impressions_sum}, ${sponsored_impressions_client_count}) ;;
+    sql: SAFE_DIVIDE(${sponsored_tile_impressions_sum}, ${sponsored_impressions_client_count}) ;;
     group_label: "Statistics"
     description: "\"
-                                        Ratio between sponsored_topsite_tile_impressions.sum and
+                                        Ratio between sponsored_tile_impressions.sum and
                                         sponsored_impressions.client_count"
   }
 
@@ -1597,16 +1629,20 @@ a wallpaper.
       weather_widget_change_display_to_simple,
       sponsored_impressions,
       sponsored_pocket_impressions_per_client,
-      sponsored_topsite_tile_impressions_per_client,
+      sponsored_tile_impressions_per_client,
       sponsored_impressions_per_client,
       newtab_ad_click_rate_average,
+      sponsored_pocket_clicks_sum,
       sponsored_pocket_clicks_client_count_sampled,
       sponsored_pocket_clicks_client_count,
       sponsored_pocket_clicks_ratio,
+      sponsored_pocket_impressions_sum,
       sponsored_pocket_impressions_client_count_sampled,
       sponsored_pocket_impressions_client_count,
+      sponsored_tile_impressions_sum,
       sponsored_tile_impressions_client_count_sampled,
       sponsored_tile_impressions_client_count,
+      sponsored_tile_clicks_sum,
       sponsored_tile_clicks_client_count_sampled,
       sponsored_tile_clicks_client_count,
       sponsored_tile_clicks_ratio,
@@ -1622,7 +1658,7 @@ a wallpaper.
       sponsored_impressions_client_count_sampled,
       sponsored_impressions_client_count,
       sponsored_pocket_impressions_per_client_ratio,
-      sponsored_topsite_tile_impressions_per_client_ratio,
+      sponsored_tile_impressions_per_client_ratio,
       sponsored_impressions_per_client_ratio,
     ]
   }
