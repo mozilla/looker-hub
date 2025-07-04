@@ -674,6 +674,14 @@ ad_metrics_daily_zone_name,
     description: "Sum of Milli Impressions"
   }
 
+  measure: ads_count_sum {
+    type: sum
+    sql: ${TABLE}.ads_count*1 ;;
+    label: "Ads Count Sum"
+    group_label: "Statistics"
+    description: "Sum of Ads Count"
+  }
+
   measure: revenue_per_ad_ratio {
     type: number
     label: "Revenue Per Ad Ratio"
@@ -697,11 +705,11 @@ ad_metrics_daily_zone_name,
   measure: click_through_rate_ratio {
     type: number
     label: "Click Through Rate Ratio"
-    sql: SAFE_DIVIDE(${clicks_sum}, ${impressions_sum}) ;;
+    sql: SAFE_DIVIDE(${ad_metrics_ad_clicks_sum}, ${ad_metrics_ad_impressions_sum}) ;;
     group_label: "Statistics"
     description: "\"
-                                        Ratio between clicks.sum and
-                                        impressions.sum"
+                                        Ratio between ad_metrics_ad_clicks.sum and
+                                        ad_metrics_ad_impressions.sum"
   }
 
   set: metrics {
@@ -720,6 +728,7 @@ ad_metrics_daily_zone_name,
       ad_metrics_ad_reports_sum,
       revenue_sum,
       milli_impressions_sum,
+      ads_count_sum,
       revenue_per_ad_ratio,
       ecpm_ratio,
       click_through_rate_ratio,
