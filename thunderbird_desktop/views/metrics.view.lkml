@@ -2758,6 +2758,42 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 "
   }
 
+  dimension: metrics__boolean__contentblocking_tp_allowlist_baseline_enabled {
+    label: "Contentblocking Tp Allowlist Baseline Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_baseline_enabled ;;
+    type: yesno
+    group_label: "Contentblocking"
+    group_item_label: "Tp Allowlist Baseline Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Tp Allowlist Baseline Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/contentblocking_tp_allowlist_baseline_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the tracking protection allowlist convenience option is enabled. Updates on \"idle daily\".
+"
+  }
+
+  dimension: metrics__boolean__contentblocking_tp_allowlist_convenience_enabled {
+    label: "Contentblocking Tp Allowlist Convenience Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_convenience_enabled ;;
+    type: yesno
+    group_label: "Contentblocking"
+    group_item_label: "Tp Allowlist Convenience Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking Tp Allowlist Convenience Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/thunderbird_desktop/metrics/contentblocking_tp_allowlist_convenience_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the tracking protection allowlist baseline option is enabled. Updates on \"idle daily\".
+"
+  }
+
   dimension: metrics__counter__contentblocking_trackers_blocked_count {
     label: "Contentblocking Trackers Blocked Count"
     hidden: no
