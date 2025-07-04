@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: disable_enrollment_status_telemetry_for_firefox_desktop {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.disable_enrollment_status_telemetry_for_firefox_desktop_statistics ;;
+view: change_app_color_icon_android_copy {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.change_app_color_icon_android_copy_statistics ;;
 
   dimension: submission_date {
     type: date
