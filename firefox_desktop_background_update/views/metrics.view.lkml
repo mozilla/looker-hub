@@ -2461,7 +2461,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__boolean__contentblocking_tp_allowlist_baseline_enabled {
     label: "Contentblocking Tp Allowlist Baseline Enabled"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_baseline_enabled ;;
     type: yesno
     group_label: "Contentblocking"
@@ -2479,7 +2479,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__boolean__contentblocking_tp_allowlist_convenience_enabled {
     label: "Contentblocking Tp Allowlist Convenience Enabled"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_convenience_enabled ;;
     type: yesno
     group_label: "Contentblocking"

@@ -10028,10 +10028,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id278
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
+            - Mac
             - Linux
             - Other
         explore: garbage_collection
