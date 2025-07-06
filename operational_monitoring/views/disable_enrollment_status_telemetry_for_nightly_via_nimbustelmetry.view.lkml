@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: anti_fingerprinting_characteristic_evaluation_androidreleaseglobal_round_1 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.anti_fingerprinting_characteristic_evaluation_androidreleaseglobal_round_1_statistics ;;
+view: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry_statistics ;;
 
   dimension: submission_date {
     type: date
