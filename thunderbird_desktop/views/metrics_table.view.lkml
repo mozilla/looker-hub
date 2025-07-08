@@ -2724,6 +2724,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__use_counter_top_level_content_documents_destroyed {
+    sql: ${TABLE}.metrics.counter.use_counter_top_level_content_documents_destroyed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Top Level Content Documents Destroyed"
+    description: "A count of how many \"pages\" were destroyed. Used to turn page use counters' counts into rates. Excludes pages that contain only documents for which we do not count use counters (See `Document::ShouldIncludeInTelemetry`).
+"
+  }
+
   dimension: metrics__counter__web_notification_insecure_context_permission_request {
     sql: ${TABLE}.metrics.counter.web_notification_insecure_context_permission_request ;;
     type: number

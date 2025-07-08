@@ -22,6 +22,12 @@ view: metric_definitions_metrics {
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "ink")) > 0, FALSE)
 ) AS pdf_ink,
 (
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "stamp")) > 0, FALSE)
+) AS pdf_stamp,
+(
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "signature")) > 0, FALSE)
+) AS pdf_signature,
+(
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "print")) > 0, FALSE)
 ) AS pdf_print,
 (
@@ -220,6 +226,22 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.pdf_ink ;;
   }
 
+  dimension: pdf_stamp {
+    group_label: "Metrics"
+    label: "Pdf Stamp"
+    description: ""
+    type: number
+    sql: ${TABLE}.pdf_stamp ;;
+  }
+
+  dimension: pdf_signature {
+    group_label: "Metrics"
+    label: "Pdf Signature"
+    description: ""
+    type: number
+    sql: ${TABLE}.pdf_signature ;;
+  }
+
   dimension: pdf_print {
     group_label: "Metrics"
     label: "Pdf Print"
@@ -371,6 +393,8 @@ looker_base_fields_sample_id,
       pdf_engagement,
       pdf_freetext,
       pdf_ink,
+      pdf_stamp,
+      pdf_signature,
       pdf_print,
       pdf_save,
       pdf_opening,

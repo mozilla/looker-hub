@@ -25685,6 +25685,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__counter__use_counter_top_level_content_documents_destroyed {
+    label: "Use Counter Top Level Content Documents Destroyed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_top_level_content_documents_destroyed ;;
+    type: number
+    group_label: "Use Counter"
+    group_item_label: "Top Level Content Documents Destroyed"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Top Level Content Documents Destroyed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_top_level_content_documents_destroyed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of how many \"pages\" were destroyed. Used to turn page use counters' counts into rates. Excludes pages that contain only documents for which we do not count use counters (See `Document::ShouldIncludeInTelemetry`).
+"
+  }
+
   dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__numerator {
     label: "Verification Used Cert From Built In Roots Module Numerator"
     hidden: no
@@ -33139,6 +33157,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Update Unable To Apply Subsequent"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/update_unable_to_apply_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_top_level_content_documents_destroyed {
+    type: sum
+    sql: ${metrics__counter__use_counter_top_level_content_documents_destroyed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Top Level Content Documents Destroyed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_top_level_content_documents_destroyed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_top_level_content_documents_destroyed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_top_level_content_documents_destroyed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Top Level Content Documents Destroyed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_top_level_content_documents_destroyed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
