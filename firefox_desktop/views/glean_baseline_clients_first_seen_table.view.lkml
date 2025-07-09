@@ -11,7 +11,6 @@ view: glean_baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Campaign"
-    description: "The attribution campaign (e.g. 'mozilla-org')."
   }
 
   dimension: attribution__content {
@@ -20,7 +19,6 @@ view: glean_baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Content"
-    description: "The attribution content (e.g. 'firefoxview')."
   }
 
   dimension: attribution__medium {
@@ -29,7 +27,6 @@ view: glean_baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Medium"
-    description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
 
   dimension: attribution__source {
@@ -38,7 +35,6 @@ view: glean_baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Source"
-    description: "The attribution source (e.g. 'google-play')."
   }
 
   dimension: attribution__term {
@@ -47,7 +43,6 @@ view: glean_baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Term"
-    description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
   dimension: attribution_dlsource {
@@ -71,7 +66,6 @@ view: glean_baseline_clients_first_seen_table {
   dimension: attribution_ext {
     sql: ${TABLE}.attribution_ext ;;
     hidden: yes
-    description: "Extended Attribution Information"
   }
 
   dimension: attribution_ua {
@@ -91,42 +85,64 @@ view: glean_baseline_clients_first_seen_table {
     hidden: yes
   }
 
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    map_layer_name: countries
+  }
+
   dimension: distribution__name {
     sql: ${TABLE}.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Distribution"
     group_item_label: "Name"
-    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: distribution_ext {
     sql: ${TABLE}.distribution_ext ;;
     hidden: yes
-    description: "Extended Distribution Information"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: legacy_telemetry_client_id {
     sql: ${TABLE}.legacy_telemetry_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The client_id according to Telemetry. 
-Might not always have a value due to being too early for it to have loaded. 
-Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0` in pings near when 
-the data upload pref is disabled (if Telemetry gets to go first), or between when a client_id 
-has been removed and when it has been regenerated. 
-Does not need to be sent in the Glean \"deletion-request\" ping."
   }
 
   dimension: legacy_telemetry_profile_group_id {
     sql: ${TABLE}.legacy_telemetry_profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: windows_build_number {
+    sql: ${TABLE}.windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
   }

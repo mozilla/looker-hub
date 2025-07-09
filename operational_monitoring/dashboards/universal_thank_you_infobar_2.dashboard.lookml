@@ -10,6 +10,108 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: universal_thank_you_infobar_2
+    type: looker_line
+    fields: [
+      universal_thank_you_infobar_2.submission_date,
+      universal_thank_you_infobar_2.branch,
+      universal_thank_you_infobar_2.point
+    ]
+    pivots: [
+      universal_thank_you_infobar_2.branch
+    ]
+    filters:
+      universal_thank_you_infobar_2.metric: 'qualified_cumulative_days_of_use'
+      universal_thank_you_infobar_2.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: universal_thank_you_infobar_2.submission_date
+    field_y: universal_thank_you_infobar_2.point
+    log_scale: false
+    ci_lower: universal_thank_you_infobar_2.lower
+    ci_upper: universal_thank_you_infobar_2.upper
+    show_grid: true
+    listen:
+      Date: universal_thank_you_infobar_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: universal_thank_you_infobar_2
+    type: looker_line
+    fields: [
+      universal_thank_you_infobar_2.submission_date,
+      universal_thank_you_infobar_2.branch,
+      universal_thank_you_infobar_2.point
+    ]
+    pivots: [
+      universal_thank_you_infobar_2.branch
+    ]
+    filters:
+      universal_thank_you_infobar_2.metric: 'active_hours'
+      universal_thank_you_infobar_2.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: universal_thank_you_infobar_2.submission_date
+    field_y: universal_thank_you_infobar_2.point
+    log_scale: false
+    ci_lower: universal_thank_you_infobar_2.lower
+    ci_upper: universal_thank_you_infobar_2.upper
+    show_grid: true
+    listen:
+      Date: universal_thank_you_infobar_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: universal_thank_you_infobar_2
+    type: looker_line
+    fields: [
+      universal_thank_you_infobar_2.submission_date,
+      universal_thank_you_infobar_2.branch,
+      universal_thank_you_infobar_2.point
+    ]
+    pivots: [
+      universal_thank_you_infobar_2.branch
+    ]
+    filters:
+      universal_thank_you_infobar_2.metric: 'uri_count'
+      universal_thank_you_infobar_2.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: universal_thank_you_infobar_2.submission_date
+    field_y: universal_thank_you_infobar_2.point
+    log_scale: false
+    ci_lower: universal_thank_you_infobar_2.lower
+    ci_upper: universal_thank_you_infobar_2.upper
+    show_grid: true
+    listen:
+      Date: universal_thank_you_infobar_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -28,7 +130,41 @@
     filters:
       universal_thank_you_infobar_2.metric: 'search_count'
       universal_thank_you_infobar_2.statistic: mean
-    row: 0
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: universal_thank_you_infobar_2.submission_date
+    field_y: universal_thank_you_infobar_2.point
+    log_scale: false
+    ci_lower: universal_thank_you_infobar_2.lower
+    ci_upper: universal_thank_you_infobar_2.upper
+    show_grid: true
+    listen:
+      Date: universal_thank_you_infobar_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: universal_thank_you_infobar_2
+    type: looker_line
+    fields: [
+      universal_thank_you_infobar_2.submission_date,
+      universal_thank_you_infobar_2.branch,
+      universal_thank_you_infobar_2.point
+    ]
+    pivots: [
+      universal_thank_you_infobar_2.branch
+    ]
+    filters:
+      universal_thank_you_infobar_2.metric: 'retained'
+      universal_thank_you_infobar_2.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -62,7 +198,7 @@
     filters:
       universal_thank_you_infobar_2.metric: 'days_of_use'
       universal_thank_you_infobar_2.statistic: mean
-    row: 0
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -98,7 +234,7 @@
     filters:
       universal_thank_you_infobar_2.metric: 'memory_total'
       universal_thank_you_infobar_2.statistic: percentile
-    row: 10
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -111,108 +247,6 @@
     listen:
       Date: universal_thank_you_infobar_2.submission_date
       Percentile: universal_thank_you_infobar_2.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: universal_thank_you_infobar_2
-    type: looker_line
-    fields: [
-      universal_thank_you_infobar_2.submission_date,
-      universal_thank_you_infobar_2.branch,
-      universal_thank_you_infobar_2.point
-    ]
-    pivots: [
-      universal_thank_you_infobar_2.branch
-    ]
-    filters:
-      universal_thank_you_infobar_2.metric: 'uri_count'
-      universal_thank_you_infobar_2.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: universal_thank_you_infobar_2.submission_date
-    field_y: universal_thank_you_infobar_2.point
-    log_scale: false
-    ci_lower: universal_thank_you_infobar_2.lower
-    ci_upper: universal_thank_you_infobar_2.upper
-    show_grid: true
-    listen:
-      Date: universal_thank_you_infobar_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: universal_thank_you_infobar_2
-    type: looker_line
-    fields: [
-      universal_thank_you_infobar_2.submission_date,
-      universal_thank_you_infobar_2.branch,
-      universal_thank_you_infobar_2.point
-    ]
-    pivots: [
-      universal_thank_you_infobar_2.branch
-    ]
-    filters:
-      universal_thank_you_infobar_2.metric: 'qualified_cumulative_days_of_use'
-      universal_thank_you_infobar_2.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: universal_thank_you_infobar_2.submission_date
-    field_y: universal_thank_you_infobar_2.point
-    log_scale: false
-    ci_lower: universal_thank_you_infobar_2.lower
-    ci_upper: universal_thank_you_infobar_2.upper
-    show_grid: true
-    listen:
-      Date: universal_thank_you_infobar_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: universal_thank_you_infobar_2
-    type: looker_line
-    fields: [
-      universal_thank_you_infobar_2.submission_date,
-      universal_thank_you_infobar_2.branch,
-      universal_thank_you_infobar_2.point
-    ]
-    pivots: [
-      universal_thank_you_infobar_2.branch
-    ]
-    filters:
-      universal_thank_you_infobar_2.metric: 'active_hours'
-      universal_thank_you_infobar_2.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: universal_thank_you_infobar_2.submission_date
-    field_y: universal_thank_you_infobar_2.point
-    log_scale: false
-    ci_lower: universal_thank_you_infobar_2.lower
-    ci_upper: universal_thank_you_infobar_2.upper
-    show_grid: true
-    listen:
-      Date: universal_thank_you_infobar_2.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -234,40 +268,6 @@
     ]
     filters:
       universal_thank_you_infobar_2.metric: 'ad_clicks'
-      universal_thank_you_infobar_2.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: universal_thank_you_infobar_2.submission_date
-    field_y: universal_thank_you_infobar_2.point
-    log_scale: false
-    ci_lower: universal_thank_you_infobar_2.lower
-    ci_upper: universal_thank_you_infobar_2.upper
-    show_grid: true
-    listen:
-      Date: universal_thank_you_infobar_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: universal_thank_you_infobar_2
-    type: looker_line
-    fields: [
-      universal_thank_you_infobar_2.submission_date,
-      universal_thank_you_infobar_2.branch,
-      universal_thank_you_infobar_2.point
-    ]
-    pivots: [
-      universal_thank_you_infobar_2.branch
-    ]
-    filters:
-      universal_thank_you_infobar_2.metric: 'retained'
       universal_thank_you_infobar_2.statistic: mean
     row: 30
     col: 12
