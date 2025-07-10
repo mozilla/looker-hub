@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: firefox_labs_custom_wallpapers_aurora_dev {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.firefox_labs_custom_wallpapers_aurora_dev_statistics ;;
+view: fast_udp_for_firefox_treatment_fast_udp_release_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.fast_udp_for_firefox_treatment_fast_udp_release_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
