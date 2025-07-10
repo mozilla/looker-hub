@@ -223,7 +223,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled {
     label: "Broken Site Report Browser Info Prefs H1 In Section Useragent Styles Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
