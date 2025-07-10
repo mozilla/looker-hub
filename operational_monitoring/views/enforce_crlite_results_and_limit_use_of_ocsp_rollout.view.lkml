@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: uk_billboard_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.uk_billboard_rollout_statistics ;;
+view: enforce_crlite_results_and_limit_use_of_ocsp_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.enforce_crlite_results_and_limit_use_of_ocsp_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
