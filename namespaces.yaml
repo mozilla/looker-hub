@@ -5070,14 +5070,56 @@ marketing:
       - table: mozdata.analysis.marketing_firefox_for_families_forecasted_expectations
       type: table_view
 mdn_fred:
-  explores: {}
+  explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
   glean_app: true
   owners:
   - caugner@mozilla.com
   - glean-team@mozilla.com
   pretty_name: MDN
   spoke: looker-spoke-default
-  views: {}
+  views:
+    deletion_request:
+      tables:
+      - table: mozdata.mdn_fred.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.mdn_fred.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.mdn_fred.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.mdn_fred.events_stream
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.mdn_fred.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.mdn_fred.events_unnested
+      type: table_view
 mdn_yari:
   explores:
     action:

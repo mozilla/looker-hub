@@ -398,6 +398,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_accessibility_simulation_activated}) AS metrics__metrics__labeled_counter__devtools_accessibility_simulation_activated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_accessibility_simulation_activated.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__devtools_console_javascript_error_displayed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_console_javascript_error_displayed}) AS metrics__metrics__labeled_counter__devtools_console_javascript_error_displayed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_console_javascript_error_displayed.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__devtools_current_theme {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_current_theme}) AS metrics__metrics__labeled_counter__devtools_current_theme ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_current_theme.document_id} ;;
@@ -1746,6 +1751,226 @@ explore: metrics {
   join: metrics__events__extra {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics__events.extra}) AS metrics__events__extra ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__application_reputation_server_verdict_2 {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__application_reputation_server_verdict_2}) AS metrics__metrics__dual_labeled_counter__application_reputation_server_verdict_2 ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__application_reputation_server_verdict_2.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__application_reputation_server_verdict_2__value}) AS metrics__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__crash_submit_success {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__crash_submit_success}) AS metrics__metrics__dual_labeled_counter__crash_submit_success ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__crash_submit_success.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__crash_submit_success__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__crash_submit_success__value}) AS metrics__metrics__dual_labeled_counter__crash_submit_success__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__crash_submit_success__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_lookup_disposition {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_lookup_disposition}) AS metrics__metrics__dual_labeled_counter__dns_lookup_disposition ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_lookup_disposition.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_lookup_disposition__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_lookup_disposition__value}) AS metrics__metrics__dual_labeled_counter__dns_lookup_disposition__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_lookup_disposition__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_blacklisted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_blacklisted}) AS metrics__metrics__dual_labeled_counter__dns_trr_blacklisted ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_blacklisted.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_blacklisted__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_blacklisted__value}) AS metrics__metrics__dual_labeled_counter__dns_trr_blacklisted__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_blacklisted__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_disabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_disabled}) AS metrics__metrics__dual_labeled_counter__dns_trr_disabled ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_disabled.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_disabled__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_disabled__value}) AS metrics__metrics__dual_labeled_counter__dns_trr_disabled__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_disabled__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_first {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_first}) AS metrics__metrics__dual_labeled_counter__dns_trr_first ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_first.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_first__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_first__value}) AS metrics__metrics__dual_labeled_counter__dns_trr_first__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_first__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_http_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_http_version}) AS metrics__metrics__dual_labeled_counter__dns_trr_http_version ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_http_version.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_http_version__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_http_version__value}) AS metrics__metrics__dual_labeled_counter__dns_trr_http_version__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_http_version__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_ns_verfified {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_ns_verfified}) AS metrics__metrics__dual_labeled_counter__dns_trr_ns_verfified ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_ns_verfified.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_ns_verfified__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_ns_verfified__value}) AS metrics__metrics__dual_labeled_counter__dns_trr_ns_verfified__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_ns_verfified__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_success {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_success}) AS metrics__metrics__dual_labeled_counter__dns_trr_success ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_success.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dns_trr_success__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dns_trr_success__value}) AS metrics__metrics__dual_labeled_counter__dns_trr_success__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dns_trr_success__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dom_quota_first_initialization_attempt}) AS metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value}) AS metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid}) AS metrics__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid__value}) AS metrics__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid}) AS metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid__value}) AS metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__http_cache_disposition {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__http_cache_disposition}) AS metrics__metrics__dual_labeled_counter__http_cache_disposition ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__http_cache_disposition.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__http_cache_disposition__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__http_cache_disposition__value}) AS metrics__metrics__dual_labeled_counter__http_cache_disposition__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__http_cache_disposition__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__http_traffic_analysis {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__http_traffic_analysis}) AS metrics__metrics__dual_labeled_counter__http_traffic_analysis ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__http_traffic_analysis.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__http_traffic_analysis__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__http_traffic_analysis__value}) AS metrics__metrics__dual_labeled_counter__http_traffic_analysis__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__http_traffic_analysis__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__networking_http3_channel_onstart_success}) AS metrics__metrics__dual_labeled_counter__networking_http3_channel_onstart_success ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__networking_http3_channel_onstart_success.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__networking_http3_channel_onstart_success__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__networking_http3_channel_onstart_success__value}) AS metrics__metrics__dual_labeled_counter__networking_http3_channel_onstart_success__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__networking_http3_channel_onstart_success__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade}) AS metrics__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade__value}) AS metrics__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__page_load_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__page_load_error}) AS metrics__metrics__dual_labeled_counter__page_load_error ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__page_load_error.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__page_load_error__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__page_load_error__value}) AS metrics__metrics__dual_labeled_counter__page_load_error__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__page_load_error__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__security_content_signature_verification_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__security_content_signature_verification_errors}) AS metrics__metrics__dual_labeled_counter__security_content_signature_verification_errors ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__security_content_signature_verification_errors.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__security_content_signature_verification_errors__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__security_content_signature_verification_errors__value}) AS metrics__metrics__dual_labeled_counter__security_content_signature_verification_errors__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__security_content_signature_verification_errors__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__security_https_only_mode_upgrade_type}) AS metrics__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__security_https_only_mode_upgrade_type__value}) AS metrics__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__sqlite_store_open {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__sqlite_store_open}) AS metrics__metrics__dual_labeled_counter__sqlite_store_open ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__sqlite_store_open.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__sqlite_store_open__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__sqlite_store_open__value}) AS metrics__metrics__dual_labeled_counter__sqlite_store_open__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__sqlite_store_open__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__sqlite_store_query {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__sqlite_store_query}) AS metrics__metrics__dual_labeled_counter__sqlite_store_query ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__sqlite_store_query.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__sqlite_store_query__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__sqlite_store_query__value}) AS metrics__metrics__dual_labeled_counter__sqlite_store_query__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__sqlite_store_query__value.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__urlclassifier_complete_timeout}) AS metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout.document_id} ;;
+  }
+
+  join: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.metrics__dual_labeled_counter__urlclassifier_complete_timeout__value}) AS metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value ON ${metrics__events.document_id} = ${metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value.document_id} ;;
   }
 
   join: metrics__ping_info__experiments {

@@ -9952,6 +9952,111 @@ view: metrics_table {
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
+  dimension: metrics__dual_labeled_counter__application_reputation_server_verdict_2 {
+    sql: ${TABLE}.metrics.dual_labeled_counter.application_reputation_server_verdict_2 ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_lookup_disposition {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_lookup_disposition ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_blacklisted {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_blacklisted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_disabled {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_disabled ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_first {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_first ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_http_version {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_http_version ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_ns_verfified {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_ns_verfified ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_success {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_success ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__dom_quota_first_initialization_attempt {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dom_quota_first_initialization_attempt ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid {
+    sql: ${TABLE}.metrics.dual_labeled_counter.extensions_counters_browser_action_preload_result_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid {
+    sql: ${TABLE}.metrics.dual_labeled_counter.extensions_counters_event_page_idle_result_by_addonid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__http_cache_disposition {
+    sql: ${TABLE}.metrics.dual_labeled_counter.http_cache_disposition ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__http_traffic_analysis {
+    sql: ${TABLE}.metrics.dual_labeled_counter.http_traffic_analysis ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
+    sql: ${TABLE}.metrics.dual_labeled_counter.networking_http3_channel_onstart_success ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade {
+    sql: ${TABLE}.metrics.dual_labeled_counter.networking_http_channel_disposition_upgrade ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__page_load_error {
+    sql: ${TABLE}.metrics.dual_labeled_counter.page_load_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__security_content_signature_verification_errors {
+    sql: ${TABLE}.metrics.dual_labeled_counter.security_content_signature_verification_errors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__security_https_only_mode_upgrade_type {
+    sql: ${TABLE}.metrics.dual_labeled_counter.security_https_only_mode_upgrade_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__sqlite_store_open {
+    sql: ${TABLE}.metrics.dual_labeled_counter.sqlite_store_open ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__sqlite_store_query {
+    sql: ${TABLE}.metrics.dual_labeled_counter.sqlite_store_query ;;
+    hidden: yes
+  }
+
+  dimension: metrics__dual_labeled_counter__urlclassifier_complete_timeout {
+    sql: ${TABLE}.metrics.dual_labeled_counter.urlclassifier_complete_timeout ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__a11y_theme {
     sql: ${TABLE}.metrics.labeled_boolean.a11y_theme ;;
     hidden: yes
@@ -10414,6 +10519,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__devtools_accessibility_simulation_activated {
     sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_simulation_activated ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__devtools_console_javascript_error_displayed {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_console_javascript_error_displayed ;;
     hidden: yes
   }
 
@@ -48701,6 +48811,573 @@ view: metrics_table__metrics__custom_distribution__webrtc_video_quality_outbound
 }
 
 view: metrics_table__metrics__custom_distribution__websockets_handshake_type__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__application_reputation_server_verdict_2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_lookup_disposition {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_lookup_disposition__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_blacklisted {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_blacklisted__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_disabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_disabled__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_first {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_first__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_http_version {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_http_version__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_ns_verfified {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_ns_verfified__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_success {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_success__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__http_cache_disposition {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__http_cache_disposition__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__http_traffic_analysis {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__http_traffic_analysis__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__networking_http3_channel_onstart_success__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__page_load_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__page_load_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__security_content_signature_verification_errors {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__security_content_signature_verification_errors__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__sqlite_store_open {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__sqlite_store_open__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__sqlite_store_query {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__sqlite_store_query__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeout {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
