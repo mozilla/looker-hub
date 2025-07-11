@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       smart_tab_groups_rollout_worldwide_en_excluding_us.branch
     ]
     filters:
-      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'ad_clicks'
+      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'active_hours'
       smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
     row: 0
     col: 0
@@ -112,77 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
-    type: "ci-line-chart"
-    fields: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.upper,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.lower,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    ]
-    pivots: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
-    ]
-    filters:
-      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'memory_total'
-      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: percentile
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    log_scale: false
-    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
-    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
-    show_grid: true
-    listen:
-      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-      Percentile: smart_tab_groups_rollout_worldwide_en_excluding_us.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
-    type: looker_line
-    fields: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    ]
-    pivots: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
-    ]
-    filters:
-      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'active_hours'
-      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    log_scale: false
-    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
-    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
-    show_grid: true
-    listen:
-      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -201,7 +130,7 @@
     filters:
       smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'uri_count'
       smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -235,6 +164,76 @@
     filters:
       smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'days_of_use'
       smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    log_scale: false
+    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
+    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
+    show_grid: true
+    listen:
+      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
+    type: looker_line
+    fields: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    ]
+    pivots: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
+    ]
+    filters:
+      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'ad_clicks'
+      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    log_scale: false
+    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
+    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
+    show_grid: true
+    listen:
+      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
+    type: "ci-line-chart"
+    fields: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.upper,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.lower,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    ]
+    pivots: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
+    ]
+    filters:
+      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'memory_total'
+      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,6 +246,7 @@
     show_grid: true
     listen:
       Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+      Percentile: smart_tab_groups_rollout_worldwide_en_excluding_us.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
