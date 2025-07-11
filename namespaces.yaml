@@ -4458,15 +4458,6 @@ focus_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_focus.usage_reporting
       type: table_view
-fpa:
-  connection: bigquery-oauth
-  glean_app: false
-  owners:
-  - ngrammater@mozilla.com
-  - rmiller@mozilla.com
-  - lakshmimurugan@google.com
-  pretty_name: FP&A
-  spoke: looker-spoke-private
 fxci:
   glean_app: false
   owners:
@@ -5937,13 +5928,6 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.waitlist
       type: table_view
-mozilla_vpn_private:
-  connection: bigquery-oauth
-  glean_app: false
-  owners:
-  - dthorn@mozilla.com
-  pretty_name: Mozilla VPN
-  spoke: looker-spoke-private
 multi_product:
   explores:
     metric_definitions_mobile_active_users_aggregates_view:
@@ -5980,14 +5964,6 @@ multi_product:
       type: metric_definitions_view
     metric_definitions_search_revenue_levers_monthly:
       type: metric_definitions_view
-newtab:
-  connection: bigquery-oauth
-  glean_app: false
-  owners:
-  - cmorales@mozilla.com
-  - mbowerman@mozilla.com
-  pretty_name: New Tab
-  spoke: looker-spoke-private
 operational_monitoring:
   dashboards:
     1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout:
