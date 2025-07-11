@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       tab_groups_promotional_onboarding.branch
     ]
     filters:
-      tab_groups_promotional_onboarding.metric: 'ad_clicks'
+      tab_groups_promotional_onboarding.metric: 'active_hours'
       tab_groups_promotional_onboarding.statistic: mean
     row: 0
     col: 0
@@ -112,77 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: tab_groups_promotional_onboarding
-    type: "ci-line-chart"
-    fields: [
-      tab_groups_promotional_onboarding.submission_date,
-      tab_groups_promotional_onboarding.branch,
-      tab_groups_promotional_onboarding.upper,
-      tab_groups_promotional_onboarding.lower,
-      tab_groups_promotional_onboarding.point
-    ]
-    pivots: [
-      tab_groups_promotional_onboarding.branch
-    ]
-    filters:
-      tab_groups_promotional_onboarding.metric: 'memory_total'
-      tab_groups_promotional_onboarding.statistic: percentile
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tab_groups_promotional_onboarding.submission_date
-    field_y: tab_groups_promotional_onboarding.point
-    log_scale: false
-    ci_lower: tab_groups_promotional_onboarding.lower
-    ci_upper: tab_groups_promotional_onboarding.upper
-    show_grid: true
-    listen:
-      Date: tab_groups_promotional_onboarding.submission_date
-      Percentile: tab_groups_promotional_onboarding.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: tab_groups_promotional_onboarding
-    type: looker_line
-    fields: [
-      tab_groups_promotional_onboarding.submission_date,
-      tab_groups_promotional_onboarding.branch,
-      tab_groups_promotional_onboarding.point
-    ]
-    pivots: [
-      tab_groups_promotional_onboarding.branch
-    ]
-    filters:
-      tab_groups_promotional_onboarding.metric: 'active_hours'
-      tab_groups_promotional_onboarding.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: tab_groups_promotional_onboarding.submission_date
-    field_y: tab_groups_promotional_onboarding.point
-    log_scale: false
-    ci_lower: tab_groups_promotional_onboarding.lower
-    ci_upper: tab_groups_promotional_onboarding.upper
-    show_grid: true
-    listen:
-      Date: tab_groups_promotional_onboarding.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -201,7 +130,7 @@
     filters:
       tab_groups_promotional_onboarding.metric: 'uri_count'
       tab_groups_promotional_onboarding.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -235,6 +164,76 @@
     filters:
       tab_groups_promotional_onboarding.metric: 'days_of_use'
       tab_groups_promotional_onboarding.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: tab_groups_promotional_onboarding.submission_date
+    field_y: tab_groups_promotional_onboarding.point
+    log_scale: false
+    ci_lower: tab_groups_promotional_onboarding.lower
+    ci_upper: tab_groups_promotional_onboarding.upper
+    show_grid: true
+    listen:
+      Date: tab_groups_promotional_onboarding.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: tab_groups_promotional_onboarding
+    type: looker_line
+    fields: [
+      tab_groups_promotional_onboarding.submission_date,
+      tab_groups_promotional_onboarding.branch,
+      tab_groups_promotional_onboarding.point
+    ]
+    pivots: [
+      tab_groups_promotional_onboarding.branch
+    ]
+    filters:
+      tab_groups_promotional_onboarding.metric: 'ad_clicks'
+      tab_groups_promotional_onboarding.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: tab_groups_promotional_onboarding.submission_date
+    field_y: tab_groups_promotional_onboarding.point
+    log_scale: false
+    ci_lower: tab_groups_promotional_onboarding.lower
+    ci_upper: tab_groups_promotional_onboarding.upper
+    show_grid: true
+    listen:
+      Date: tab_groups_promotional_onboarding.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: tab_groups_promotional_onboarding
+    type: "ci-line-chart"
+    fields: [
+      tab_groups_promotional_onboarding.submission_date,
+      tab_groups_promotional_onboarding.branch,
+      tab_groups_promotional_onboarding.upper,
+      tab_groups_promotional_onboarding.lower,
+      tab_groups_promotional_onboarding.point
+    ]
+    pivots: [
+      tab_groups_promotional_onboarding.branch
+    ]
+    filters:
+      tab_groups_promotional_onboarding.metric: 'memory_total'
+      tab_groups_promotional_onboarding.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,6 +246,7 @@
     show_grid: true
     listen:
       Date: tab_groups_promotional_onboarding.submission_date
+      Percentile: tab_groups_promotional_onboarding.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

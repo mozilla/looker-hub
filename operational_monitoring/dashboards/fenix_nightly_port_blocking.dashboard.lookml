@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fenix_nightly_port_blocking.branch
     ]
     filters:
-      fenix_nightly_port_blocking.metric: 'ad_clicks'
+      fenix_nightly_port_blocking.metric: 'active_hours'
       fenix_nightly_port_blocking.statistic: mean
     row: 0
     col: 0
@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fenix_nightly_port_blocking
-    type: looker_line
-    fields: [
-      fenix_nightly_port_blocking.submission_date,
-      fenix_nightly_port_blocking.branch,
-      fenix_nightly_port_blocking.point
-    ]
-    pivots: [
-      fenix_nightly_port_blocking.branch
-    ]
-    filters:
-      fenix_nightly_port_blocking.metric: 'active_hours'
-      fenix_nightly_port_blocking.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: fenix_nightly_port_blocking.submission_date
-    field_y: fenix_nightly_port_blocking.point
-    log_scale: false
-    ci_lower: fenix_nightly_port_blocking.lower
-    ci_upper: fenix_nightly_port_blocking.upper
-    show_grid: true
-    listen:
-      Date: fenix_nightly_port_blocking.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -131,7 +97,7 @@
       fenix_nightly_port_blocking.metric: 'uri_count'
       fenix_nightly_port_blocking.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: fenix_nightly_port_blocking.submission_date
@@ -163,6 +129,40 @@
     ]
     filters:
       fenix_nightly_port_blocking.metric: 'days_of_use'
+      fenix_nightly_port_blocking.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: fenix_nightly_port_blocking.submission_date
+    field_y: fenix_nightly_port_blocking.point
+    log_scale: false
+    ci_lower: fenix_nightly_port_blocking.lower
+    ci_upper: fenix_nightly_port_blocking.upper
+    show_grid: true
+    listen:
+      Date: fenix_nightly_port_blocking.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fenix_nightly_port_blocking
+    type: looker_line
+    fields: [
+      fenix_nightly_port_blocking.submission_date,
+      fenix_nightly_port_blocking.branch,
+      fenix_nightly_port_blocking.point
+    ]
+    pivots: [
+      fenix_nightly_port_blocking.branch
+    ]
+    filters:
+      fenix_nightly_port_blocking.metric: 'ad_clicks'
       fenix_nightly_port_blocking.statistic: mean
     row: 20
     col: 0
