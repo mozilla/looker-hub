@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: new_alt_text_flow_and_generation_in_pdfs_for_en_locales_outside_of_eu_pre_137 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_alt_text_flow_and_generation_in_pdfs_for_en_locales_outside_of_eu_pre_137_statistics ;;
+view: multiple_profile_switching_feature_v1_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.multiple_profile_switching_feature_v1_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
