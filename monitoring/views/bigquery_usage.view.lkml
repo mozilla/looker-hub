@@ -60,6 +60,13 @@ view: bigquery_usage {
     description: "A short error code that summarizes the error"
   }
 
+  dimension: is_materialized_view_refresh {
+    sql: ${TABLE}.is_materialized_view_refresh ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Whether or not the query is a materialized view refresh, based on the query string."
+  }
+
   dimension: is_scheduled {
     sql: ${TABLE}.is_scheduled ;;
     type: yesno
