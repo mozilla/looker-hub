@@ -560,6 +560,26 @@ Corresponds to the `extensions.blocklist.enabled` pref.
 "
   }
 
+  dimension: metrics__boolean__contentblocking_tp_allowlist_baseline_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_baseline_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Tp Allowlist Baseline Enabled"
+    description: "True if the tracking protection allowlist convenience option is enabled. Updates on \"idle daily\".
+"
+  }
+
+  dimension: metrics__boolean__contentblocking_tp_allowlist_convenience_enabled {
+    sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_convenience_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Contentblocking Tp Allowlist Convenience Enabled"
+    description: "True if the tracking protection allowlist baseline option is enabled. Updates on \"idle daily\".
+"
+  }
+
   dimension: metrics__boolean__cookie_banners_service_detect_only {
     sql: ${TABLE}.metrics.boolean.cookie_banners_service_detect_only ;;
     type: yesno
@@ -2701,6 +2721,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_item_label: "Update Unable To Apply Subsequent"
     description: "Update: count of systems that cannot apply updates (timer initiated)
 This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_UNABLE_TO_APPLY_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__counter__use_counter_top_level_content_documents_destroyed {
+    sql: ${TABLE}.metrics.counter.use_counter_top_level_content_documents_destroyed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Top Level Content Documents Destroyed"
+    description: "A count of how many \"pages\" were destroyed. Used to turn page use counters' counts into rates. Excludes pages that contain only documents for which we do not count use counters (See `Document::ShouldIncludeInTelemetry`).
 "
   }
 
@@ -6759,6 +6789,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_sent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Udp Datagram Segments Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_sent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Udp Datagram Segments Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_sent.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.count ;;
     type: number
@@ -9931,6 +9983,173 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
+  dimension: metrics__dual_labeled_counter__application_reputation_server_verdict_2 {
+    sql: ${TABLE}.metrics.dual_labeled_counter.application_reputation_server_verdict_2 ;;
+    hidden: yes
+    description: "Application reputation remote verdict, keyed by file extension
+This metric was generated to correspond to the Legacy Telemetry categorical histogram APPLICATION_REPUTATION_SERVER_VERDICT_2.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_lookup_disposition {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_lookup_disposition ;;
+    hidden: yes
+    description: "DNS: lookup algorithm; Keyed by TRR domain
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_LOOKUP_DISPOSITION3.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_blacklisted {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_blacklisted ;;
+    hidden: yes
+    description: "DNS check for TRR was blocked by blacklist; Keyed by TRR domain
+This metric was generated to correspond to the Legacy Telemetry boolean histogram DNS_TRR_BLACKLISTED3.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_disabled {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_disabled ;;
+    hidden: yes
+    description: "Resolve success rate when in TRR-first and called TRR-disabled (fall-back mode); Keyed by TRR domain
+This metric was generated to correspond to the Legacy Telemetry boolean histogram DNS_TRR_DISABLED3.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_first {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_first ;;
+    hidden: yes
+    description: "TRR-first mode distribution. 0=Worked, 1=fell back fine after TRR fail, 2=native worked, 3=both failed; Keyed by TRR domain
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_TRR_FIRST4.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_http_version {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_http_version ;;
+    hidden: yes
+    description: "HTTP version used by DoH endpoint
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_TRR_HTTP_VERSION2.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_ns_verfified {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_ns_verfified ;;
+    hidden: yes
+    description: "TRR managed to verify NS entry; Keyed by TRR domain
+This metric was generated to correspond to the Legacy Telemetry boolean histogram DNS_TRR_NS_VERFIFIED3.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dns_trr_success {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_success ;;
+    hidden: yes
+    description: "How often TRR (Trusted Recursive Resolver) requests are fine, time-out or error. Keyed by TRR domain
+This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_TRR_SUCCESS3.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__dom_quota_first_initialization_attempt {
+    sql: ${TABLE}.metrics.dual_labeled_counter.dom_quota_first_initialization_attempt ;;
+    hidden: yes
+    description: "True if the first initialization attempt succeeded, keyed by the initialization type.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram QM_FIRST_INITIALIZATION_ATTEMPT.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid {
+    sql: ${TABLE}.metrics.dual_labeled_counter.extensions_counters_browser_action_preload_result_by_addonid ;;
+    hidden: yes
+    description: "The number of times a browserAction popup is preloaded and results in one of the categories, keyed by addon id.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram WEBEXT_BROWSERACTION_POPUP_PRELOAD_RESULT_COUNT_BY_ADDONID.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid {
+    sql: ${TABLE}.metrics.dual_labeled_counter.extensions_counters_event_page_idle_result_by_addonid ;;
+    hidden: yes
+    description: "The number of times an event page hit the idle timeout and results in one of the categories, keyed by addon id.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram WEBEXT_EVENTPAGE_IDLE_RESULT_COUNT_BY_ADDONID.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__http_cache_disposition {
+    sql: ${TABLE}.metrics.dual_labeled_counter.http_cache_disposition ;;
+    hidden: yes
+    description: "HTTP Cache v2 hit/miss stats keyed by content type.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram HTTP_CACHE_DISPOSITION_3.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__http_traffic_analysis {
+    sql: ${TABLE}.metrics.dual_labeled_counter.http_traffic_analysis ;;
+    hidden: yes
+    description: "Numbers of HTTP transactions and connections by type. There are some categories separated by labels based on 5 parameters: 1. normal browsing or private browsing 2. system principal or not 3. first party or third party 4. class of service (Leader/Background/Others) 5. tracking classification (Basic/Content/FingerprintingContent).
+This metric was generated to correspond to the Legacy Telemetry categorical histogram HTTP_TRAFFIC_ANALYSIS_3.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
+    sql: ${TABLE}.metrics.dual_labeled_counter.networking_http3_channel_onstart_success ;;
+    hidden: yes
+    description: "Successfully started HTTP channels when HTTP3 is used
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP3_CHANNEL_ONSTART_SUCCESS.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade {
+    sql: ${TABLE}.metrics.dual_labeled_counter.networking_http_channel_disposition_upgrade ;;
+    hidden: yes
+    description: "Upgrading display content Channel Disposition
+This metric was generated to correspond to the Legacy Telemetry categorical histogram HTTP_CHANNEL_DISPOSITION_UPGRADE.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__page_load_error {
+    sql: ${TABLE}.metrics.dual_labeled_counter.page_load_error ;;
+    hidden: yes
+    description: "Page load errors. Match values with type of error in nsDocShellTelemetryUtils.cpp
+This metric was generated to correspond to the Legacy Telemetry categorical histogram PAGE_LOAD_ERROR.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__security_content_signature_verification_errors {
+    sql: ${TABLE}.metrics.dual_labeled_counter.security_content_signature_verification_errors ;;
+    hidden: yes
+    description: "Result of the content signature verification keyed by application (certificate fingerprint).
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__security_https_only_mode_upgrade_type {
+    sql: ${TABLE}.metrics.dual_labeled_counter.security_https_only_mode_upgrade_type ;;
+    hidden: yes
+    description: "What content type did we upgrade, and did it load successfully?
+This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTPS_ONLY_MODE_UPGRADE_TYPE.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__sqlite_store_open {
+    sql: ${TABLE}.metrics.dual_labeled_counter.sqlite_store_open ;;
+    hidden: yes
+    description: "The result of attempting to open a sqlite file.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram SQLITE_STORE_OPEN.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__sqlite_store_query {
+    sql: ${TABLE}.metrics.dual_labeled_counter.sqlite_store_query ;;
+    hidden: yes
+    description: "The result of attempting to query a sqlite file.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram SQLITE_STORE_QUERY.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__urlclassifier_complete_timeout {
+    sql: ${TABLE}.metrics.dual_labeled_counter.urlclassifier_complete_timeout ;;
+    hidden: yes
+    description: "This metric is recorded every time a gethash lookup is performed, `true` is recorded if the lookup times out. Keyed by provider
+This metric was generated to correspond to the Legacy Telemetry boolean histogram URLCLASSIFIER_COMPLETE_TIMEOUT2.
+"
+  }
+
   dimension: metrics__labeled_boolean__a11y_theme {
     sql: ${TABLE}.metrics.labeled_boolean.a11y_theme ;;
     hidden: yes
@@ -10040,6 +10259,14 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.labeled_boolean.pdfjs_image_alt_text_edit ;;
     hidden: yes
     description: "Stores alt text modal settings for the user.
+"
+  }
+
+  dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
+    sql: ${TABLE}.metrics.labeled_boolean.system_special_directory_appdata_fallback ;;
+    hidden: yes
+    description: "Success status of using SpecialSystemDirectory's fallback path to retrieve
+either %AppData% or %LocalAppData%.
 "
   }
 
@@ -10609,6 +10836,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.devtools_accessibility_simulation_activated ;;
     hidden: yes
     description: "Number of times accessibility simulation was activated (with mouse or keyboard) from the accessibility panel's toolbar. Keyed by the simulation type (e.g. \"DEUTERANOPIA\"). This metric was generated to correspond to the Legacy Telemetry scalar devtools.accessibility.simulation_activated.
+"
+  }
+
+  dimension: metrics__labeled_counter__devtools_console_javascript_error_displayed {
+    sql: ${TABLE}.metrics.labeled_counter.devtools_console_javascript_error_displayed ;;
+    hidden: yes
+    description: "Records the key-identifiers of error messages when they are displayed in the webconsole of the debugger. Nothing should be recorded unless they are visible on the user screen. The label will be the error message name or \"Unknown\".
+This metric replaces the Legacy Telemetry boolean histogram DEVTOOLS_JAVASCRIPT_ERROR_DISPLAYED.
 "
   }
 
@@ -14455,6 +14690,28 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Size Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Size Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.values ;;
     hidden: yes
   }
 
@@ -44677,6 +44934,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagra
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -46665,6 +46936,573 @@ view: metrics_table__metrics__custom_distribution__websockets_handshake_type__va
   }
 }
 
+view: metrics_table__metrics__dual_labeled_counter__application_reputation_server_verdict_2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_lookup_disposition {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_lookup_disposition__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_blacklisted {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_blacklisted__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_disabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_disabled__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_first {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_first__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_http_version {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_http_version__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_ns_verfified {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_ns_verfified__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_success {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dns_trr_success__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__dom_quota_first_initialization_attempt__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__extensions_counters_browser_action_preload_result_by_addonid__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__http_cache_disposition {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__http_cache_disposition__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__http_traffic_analysis {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__http_traffic_analysis__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__networking_http3_channel_onstart_success__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__networking_http_channel_disposition_upgrade__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__page_load_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__page_load_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__security_content_signature_verification_errors {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__security_content_signature_verification_errors__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__security_https_only_mode_upgrade_type__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__sqlite_store_open {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__sqlite_store_open__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__sqlite_store_query {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__sqlite_store_query__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeout {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__a11y_theme {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -46890,6 +47728,20 @@ view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
 }
 
 view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__system_special_directory_appdata_fallback {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -55381,6 +56233,20 @@ view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagra
 }
 
 view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

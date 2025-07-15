@@ -393,6 +393,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_accessibility_simulation_activated}) AS metrics__metrics__labeled_counter__devtools_accessibility_simulation_activated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_accessibility_simulation_activated.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__devtools_console_javascript_error_displayed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_console_javascript_error_displayed}) AS metrics__metrics__labeled_counter__devtools_console_javascript_error_displayed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_console_javascript_error_displayed.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__devtools_current_theme {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__devtools_current_theme}) AS metrics__metrics__labeled_counter__devtools_current_theme ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__devtools_current_theme.document_id} ;;
