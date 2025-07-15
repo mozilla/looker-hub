@@ -348,6 +348,10 @@ combined_browser_metrics:
       tables:
       - table: moz-fx-data-shared-prod.telemetry.active_users_aggregates_device
       type: table_view
+    cohort_churn:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.cohort_daily_churn
+      type: table_view
     cohort_daily_statistics:
       tables:
       - table: moz-fx-data-shared-prod.telemetry.cohort_daily_statistics
@@ -2200,6 +2204,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: pageload_domain
+    profiles:
+      type: glean_ping_explore
+      views:
+        base_view: profiles
     prototype_no_code_events:
       type: glean_ping_explore
       views:
@@ -2706,6 +2714,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.pageload_nightly
+      type: table_view
+    profiles:
+      tables:
+      - table: mozdata.firefox_desktop.profiles
+      type: glean_ping_view
+    profiles_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.profiles
       type: table_view
     prototype_no_code_events:
       tables:

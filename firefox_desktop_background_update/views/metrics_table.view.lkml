@@ -6790,6 +6790,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_sent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Udp Datagram Segments Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_sent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Networking HTTP 3 Udp Datagram Segments Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_sent.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.count ;;
     type: number
@@ -14550,6 +14572,28 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_received.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Size Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Networking HTTP 3 Udp Datagram Size Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.values ;;
     hidden: yes
   }
 
@@ -44697,6 +44741,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagra
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -55799,6 +55857,20 @@ view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagra
 }
 
 view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
