@@ -16261,6 +16261,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__sum {
+    label: "Networking HTTP 3 Udp Datagram Segments Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Udp Datagram Segments Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking HTTP 3 Udp Datagram Segments Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_udp_datagram_segments_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP number of segments per datagram sent.
+"
+  }
+
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__sum {
     label: "Networking HTTP 3 Udp Datagram Size Received Sum"
     hidden: no
@@ -16276,6 +16294,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "HTTP3 UDP datagram size received.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__sum {
+    label: "Networking HTTP 3 Udp Datagram Size Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Udp Datagram Size Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking HTTP 3 Udp Datagram Size Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_udp_datagram_size_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3 UDP datagram size sent.
 "
   }
 
@@ -50556,6 +50592,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_udp_datagram_segm
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -61519,6 +61569,20 @@ view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_segm
 }
 
 view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size_received__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
