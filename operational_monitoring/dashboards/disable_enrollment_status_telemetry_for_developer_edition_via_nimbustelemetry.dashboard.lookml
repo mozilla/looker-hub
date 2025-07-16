@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       disable_enrollment_status_telemetry_for_developer_edition_via_nimbustelemetry.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_developer_edition_via_nimbustelemetry.metric: 'active_hours'
+      disable_enrollment_status_telemetry_for_developer_edition_via_nimbustelemetry.metric: 'retained'
       disable_enrollment_status_telemetry_for_developer_edition_via_nimbustelemetry.statistic: mean
     row: 0
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       disable_enrollment_status_telemetry_for_developer_edition_via_nimbustelemetry.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_developer_edition_via_nimbustelemetry.metric: 'retained'
+      disable_enrollment_status_telemetry_for_developer_edition_via_nimbustelemetry.metric: 'active_hours'
       disable_enrollment_status_telemetry_for_developer_edition_via_nimbustelemetry.statistic: mean
     row: 20
     col: 12

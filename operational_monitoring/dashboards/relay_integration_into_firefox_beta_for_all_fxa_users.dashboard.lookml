@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       relay_integration_into_firefox_beta_for_all_fxa_users.branch
     ]
     filters:
-      relay_integration_into_firefox_beta_for_all_fxa_users.metric: 'active_hours'
+      relay_integration_into_firefox_beta_for_all_fxa_users.metric: 'retained'
       relay_integration_into_firefox_beta_for_all_fxa_users.statistic: mean
     row: 0
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       relay_integration_into_firefox_beta_for_all_fxa_users.branch
     ]
     filters:
-      relay_integration_into_firefox_beta_for_all_fxa_users.metric: 'retained'
+      relay_integration_into_firefox_beta_for_all_fxa_users.metric: 'active_hours'
       relay_integration_into_firefox_beta_for_all_fxa_users.statistic: mean
     row: 20
     col: 12

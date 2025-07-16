@@ -417,6 +417,22 @@ view: main_table {
     group_item_label: "Settings Connect On Startup Active"
   }
 
+  dimension: metrics__boolean__settings_is_using_system_theme {
+    sql: ${TABLE}.metrics.boolean.settings_is_using_system_theme ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Settings Is Using System Theme"
+  }
+
+  dimension: metrics__boolean__settings_using_dark_mode {
+    sql: ${TABLE}.metrics.boolean.settings_using_dark_mode ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Settings Using Dark Mode"
+  }
+
   dimension: metrics__boolean__settings_using_system_language {
     sql: ${TABLE}.metrics.boolean.settings_using_system_language ;;
     type: yesno

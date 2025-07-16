@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       improved_mailto_handling_with_os_integration_treatment_a_rollout.branch
     ]
     filters:
-      improved_mailto_handling_with_os_integration_treatment_a_rollout.metric: 'active_hours'
+      improved_mailto_handling_with_os_integration_treatment_a_rollout.metric: 'retained'
       improved_mailto_handling_with_os_integration_treatment_a_rollout.statistic: mean
     row: 0
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       improved_mailto_handling_with_os_integration_treatment_a_rollout.branch
     ]
     filters:
-      improved_mailto_handling_with_os_integration_treatment_a_rollout.metric: 'retained'
+      improved_mailto_handling_with_os_integration_treatment_a_rollout.metric: 'active_hours'
       improved_mailto_handling_with_os_integration_treatment_a_rollout.statistic: mean
     row: 20
     col: 12

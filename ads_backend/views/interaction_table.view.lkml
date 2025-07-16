@@ -535,6 +535,16 @@ view: interaction_table {
 "
   }
 
+  dimension: metrics__string__ad_creative_id {
+    sql: ${TABLE}.metrics.string.ad_creative_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Ad Creative ID"
+    description: "Advertiser/partner provided identifier for assets used in a specific ad.  May be null.
+"
+  }
+
   dimension: metrics__string__ad_flight_id {
     sql: ${TABLE}.metrics.string.ad_flight_id ;;
     type: string
@@ -572,6 +582,16 @@ view: interaction_table {
     group_label: "Metrics String"
     group_item_label: "Ad Interaction"
     description: "The type of ad interaction (e.g. impression, click, ...).  Should not be null.
+"
+  }
+
+  dimension: metrics__string__ad_line_item_id {
+    sql: ${TABLE}.metrics.string.ad_line_item_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Ad Line Item ID"
+    description: "Advertiser/partner provided identifier for the line item used in a specific ad. Will be null for a Kevel supplied ad, use flight_id instead.
 "
   }
 
