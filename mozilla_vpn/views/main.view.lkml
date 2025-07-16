@@ -41,6 +41,44 @@ view: main {
 "
   }
 
+  dimension: metrics__boolean__settings_is_using_system_theme {
+    label: "Settings Is Using System Theme"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.settings_is_using_system_theme ;;
+    type: yesno
+    group_label: "Settings"
+    group_item_label: "Is Using System Theme"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Is Using System Theme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/settings_is_using_system_theme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the client is set to use the system theme, false if not.
+"
+  }
+
+  dimension: metrics__boolean__settings_using_dark_mode {
+    label: "Settings Using Dark Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.settings_using_dark_mode ;;
+    type: yesno
+    group_label: "Settings"
+    group_item_label: "Using Dark Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Using Dark Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/settings_using_dark_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the client is displaying dark mode, false if it's displaying
+light mode. This is recorded whether the mode was manually selected by
+the user or whether it was used because \"use system theme\" was true.
+"
+  }
+
   dimension: metrics__boolean__settings_using_system_language {
     label: "Settings Using System Language"
     hidden: yes

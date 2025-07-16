@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       firefox_labs_link_previews_nightly.branch
     ]
     filters:
-      firefox_labs_link_previews_nightly.metric: 'active_hours'
+      firefox_labs_link_previews_nightly.metric: 'retained'
       firefox_labs_link_previews_nightly.statistic: mean
     row: 0
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       firefox_labs_link_previews_nightly.branch
     ]
     filters:
-      firefox_labs_link_previews_nightly.metric: 'retained'
+      firefox_labs_link_previews_nightly.metric: 'active_hours'
       firefox_labs_link_previews_nightly.statistic: mean
     row: 20
     col: 12

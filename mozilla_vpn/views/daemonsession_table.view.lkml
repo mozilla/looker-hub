@@ -409,6 +409,14 @@ view: daemonsession_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__session_server_in_same_country {
+    sql: ${TABLE}.metrics.boolean.session_server_in_same_country ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Session Server In Same Country"
+  }
+
   dimension: metrics__counter__connection_health_no_signal_count {
     sql: ${TABLE}.metrics.counter.connection_health_no_signal_count ;;
     type: number
