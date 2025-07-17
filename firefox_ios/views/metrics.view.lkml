@@ -2479,7 +2479,7 @@ it is initially set to Firefox Home.
 
   dimension: metrics__boolean__preferences_jump_back_in {
     label: "Preferences Jump Back In"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_jump_back_in ;;
     type: yesno
     group_label: "Preferences"
@@ -2520,7 +2520,7 @@ of users is using their client.
 
   dimension: metrics__string__preferences_new_tab_experience {
     label: "Preferences New Tab Experience"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.preferences_new_tab_experience ;;
     type: string
     group_label: "Preferences"
@@ -2562,7 +2562,7 @@ introduce the new Activity Stream features.
 
   dimension: metrics__boolean__preferences_pocket {
     label: "Preferences Pocket"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_pocket ;;
     type: yesno
     group_label: "Preferences"
@@ -2580,7 +2580,7 @@ introduce the new Activity Stream features.
 
   dimension: metrics__boolean__preferences_recently_saved {
     label: "Preferences Recently Saved"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_recently_saved ;;
     type: yesno
     group_label: "Preferences"
@@ -2599,7 +2599,7 @@ is enabled to be displayed.
 
   dimension: metrics__boolean__preferences_recently_visited {
     label: "Preferences Recently Visited"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_recently_visited ;;
     type: yesno
     group_label: "Preferences"
@@ -2636,7 +2636,7 @@ is enabled to be displayed.
 
   dimension: metrics__boolean__preferences_show_clipboard_bar {
     label: "Preferences Show Clipboard Bar"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_show_clipboard_bar ;;
     type: yesno
     group_label: "Preferences"

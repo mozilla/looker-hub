@@ -43,7 +43,7 @@ view: cinder_jobs_and_decisions {
     sql: ${TABLE}.entity_slug ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Which slug based on entity - amo, adds"
+    description: "Which slug based on entity - amo, ads"
   }
 
   dimension: handle_time_seconds {
@@ -78,7 +78,7 @@ view: cinder_jobs_and_decisions {
     sql: ${TABLE}.queue_slug ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Which queue dod the job come from"
+    description: "Which queue did the job come from"
   }
 
   dimension: resolution_time_minutes {

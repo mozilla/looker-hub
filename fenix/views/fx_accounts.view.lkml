@@ -7,7 +7,7 @@
 view: fx_accounts {
   dimension: metrics__string__metrics_client_association {
     label: "Metrics Client Association"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.metrics_client_association ;;
     type: string
     group_label: "Metrics"
