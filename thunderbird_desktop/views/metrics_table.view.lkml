@@ -13292,10 +13292,48 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 "
   }
 
+  dimension: metrics__labeled_quantity__addons_manager_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.addons_manager_startup_timeline ;;
+    hidden: yes
+    description: "Events on the startup timeline, in millis since process creation.
+Previously carried in Legacy \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__labeled_quantity__browser_timings_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.browser_timings_startup_timeline ;;
+    hidden: yes
+    description: "Events on the startup timeline, in millis since process creation.
+Previously carried in the Legacy \"main\" ping `simpleMeasurements`.
+"
+  }
+
   dimension: metrics__labeled_quantity__normandy_recipe_freshness {
     sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
     hidden: yes
     description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
+"
+  }
+
+  dimension: metrics__labeled_quantity__timestamps_global_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.timestamps_global_startup_timeline ;;
+    hidden: yes
+    description: "Events on the startup timeline across all components,
+in millis since process creation.
+Combination of
+  - `timestamps.startup_timeline`
+  - `addons_manager.startup_timeline`
+  - `browser.timings.startup_timeline`
+  - `session_restore.startup_timeline`
+Previously instrumented in \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__labeled_quantity__timestamps_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.timestamps_startup_timeline ;;
+    hidden: yes
+    description: "Events on the startup timeline, in millis since process creation.
+See `StartupTimeline.h`
 "
   }
 
@@ -13854,6 +13892,15 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     hidden: yes
     description: "Tracking how long a Worker thread is blocked when a sync operation is executed on the main-thread.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SYNC_WORKER_OPERATION.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__xpi_database_rebuilds {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.xpi_database_rebuilds ;;
+    hidden: yes
+    description: "How long it took to rebuild the XPI Database
+per reason it was rebuilt.
+Previously reported in \"main\" ping `simpleMeasurements`.
 "
   }
 
@@ -14967,6 +15014,23 @@ This metric is an echo of the Legacy Telemetry Environment field
 addons.activeGMPlugins. Like its counterpart, it will only have data in
 Firefox Desktop and at times and on platforms where the environment would
 have values.
+"
+  }
+
+  dimension: metrics__object__addons_manager_exception {
+    sql: ${TABLE}.metrics.object.addons_manager_exception ;;
+    hidden: yes
+    description: "Most recent exception reported by the Addons Manager this app session.
+Previously reported in the \"main\" ping `simpleMeasurements`.
+```
+{
+  module: string module name,
+  context: string context, like the method name,
+  message: string message of the exception,
+  file: the file that the exception occured in,
+  line: the line number the exception was thrown from,
+}
+```
 "
   }
 
@@ -16850,6 +16914,17 @@ operating system.
 "
   }
 
+  dimension: metrics__string__xpi_database_startup_error {
+    sql: ${TABLE}.metrics.string.xpi_database_startup_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Xpi Database Startup Error"
+    description: "Reason for XPI Database startup error.
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
+  }
+
   dimension: metrics__string_list__intl_accept_languages {
     sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
     hidden: yes
@@ -16898,6 +16973,70 @@ operating system.
   dimension: metrics__string_list__system_cpu_extensions {
     sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes
+  }
+
+  dimension: metrics__string_list__xpi_database_startup_load_reasons {
+    sql: ${TABLE}.metrics.string_list.xpi_database_startup_load_reasons ;;
+    hidden: yes
+  }
+
+  dimension: metrics__text__xpi_database_late_load {
+    sql: ${TABLE}.metrics.text.xpi_database_late_load ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text"
+    group_item_label: "Xpi Database Late Load"
+  }
+
+  dimension: metrics__text__xpi_database_late_stack {
+    sql: ${TABLE}.metrics.text.xpi_database_late_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text"
+    group_item_label: "Xpi Database Late Stack"
+  }
+
+  dimension: metrics__text__xpi_database_sync_stack {
+    sql: ${TABLE}.metrics.text.xpi_database_sync_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text"
+    group_item_label: "Xpi Database Sync Stack"
+  }
+
+  dimension: metrics__text2__xpi_database_late_load {
+    sql: ${TABLE}.metrics.text2.xpi_database_late_load ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Xpi Database Late Load"
+    description: "Stack of XPI Database `asyncLoadDB` call happening while the XPI provider
+is closing.
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__text2__xpi_database_late_stack {
+    sql: ${TABLE}.metrics.text2.xpi_database_late_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Xpi Database Late Stack"
+    description: "Stack of XPI Database `saveChanges` call happening while the XPI provider
+is closing.
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__text2__xpi_database_sync_stack {
+    sql: ${TABLE}.metrics.text2.xpi_database_sync_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Xpi Database Sync Stack"
+    description: "Stack of XPI Database `syncLoadDB` call.
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
   }
 
   dimension: metrics__timespan__extensions_startup_cache_load_time__time_unit {
@@ -42156,6 +42295,73 @@ operating system.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__xpi_database_parses__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__count {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__range {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__sum {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__values {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.values ;;
+    hidden: yes
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -49925,7 +50131,63 @@ view: metrics_table__metrics__labeled_memory_distribution__networking_trr_respon
   }
 }
 
+view: metrics_table__metrics__labeled_quantity__addons_manager_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__browser_timings_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_quantity__normandy_recipe_freshness {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__timestamps_global_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__timestamps_startup_timeline {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -55701,6 +55963,95 @@ view: metrics_table__metrics__labeled_timing_distribution__workers_sync_worker_o
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__workers_sync_worker_operation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__xpi_database_rebuilds {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__xpi_database_rebuilds__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -61651,6 +62002,20 @@ view: metrics_table__metrics__timing_distribution__wr_time_to_frame_build__value
 }
 
 view: metrics_table__metrics__timing_distribution__wr_time_to_render_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__xpi_database_parses__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
