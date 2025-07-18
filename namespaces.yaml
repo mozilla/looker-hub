@@ -17260,6 +17260,14 @@ trust_and_safety:
   pretty_name: Trust and Safety
   spoke: looker-spoke-private
   views:
+    cinder_decisions:
+      tables:
+      - table: moz-fx-data-shared-prod.cinder_derived.decisions_v1
+      type: table_view
+    cinder_jobs:
+      tables:
+      - table: moz-fx-data-shared-prod.cinder_derived.jobs_v1
+      type: table_view
     cinder_jobs_and_decisions:
       tables:
       - table: moz-fx-data-shared-prod.cinder_derived.jobs_decisions_v1
