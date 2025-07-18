@@ -5,6 +5,30 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: subscriptions_table {
+  dimension: apple_receipt__active_period__interval {
+    sql: ${TABLE}.apple_receipt.active_period.interval ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Apple Receipt Active Period"
+    group_item_label: "Interval"
+  }
+
+  dimension: apple_receipt__active_period__interval_count {
+    sql: ${TABLE}.apple_receipt.active_period.interval_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Apple Receipt Active Period"
+    group_item_label: "Interval Count"
+  }
+
+  dimension: apple_receipt__environment {
+    sql: ${TABLE}.apple_receipt.environment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Apple Receipt"
+    group_item_label: "Environment"
+  }
+
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
@@ -14,6 +38,12 @@ view: subscriptions_table {
   dimension: is_active {
     sql: ${TABLE}.is_active ;;
     type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: provider {
+    sql: ${TABLE}.provider ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
@@ -27,6 +57,70 @@ view: subscriptions_table {
     sql: ${TABLE}.user_id ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension_group: apple_receipt__active_period__end {
+    sql: ${TABLE}.apple_receipt.active_period.end_time ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Apple Receipt Active Period: End Time"
+  }
+
+  dimension_group: apple_receipt__active_period__start {
+    sql: ${TABLE}.apple_receipt.active_period.start_time ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Apple Receipt Active Period: Start Time"
+  }
+
+  dimension_group: apple_receipt__trial_period__end {
+    sql: ${TABLE}.apple_receipt.trial_period.end_time ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Apple Receipt Trial Period: End Time"
+  }
+
+  dimension_group: apple_receipt__trial_period__start {
+    sql: ${TABLE}.apple_receipt.trial_period.start_time ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Apple Receipt Trial Period: Start Time"
   }
 
   dimension_group: created_at {
