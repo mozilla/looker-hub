@@ -191,7 +191,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 
   dimension: metrics__boolean__nimbus_targeting_context_has_pinned_tabs {
     label: "Nimbus Targeting Context Has Pinned Tabs"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_has_pinned_tabs ;;
     type: yesno
     group_label: "Nimbus Targeting Context"
