@@ -2883,6 +2883,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.urlbar_events_daily_engagement_by_position
       type: table_view
+    urlbar_events_daily_engagement_by_product_result_type_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.urlbar_events_daily_engagement_by_product_result_type
+      type: table_view
     urlbar_events_daily_table:
       tables:
       - table: mozdata.firefox_desktop.urlbar_events_daily
@@ -17255,6 +17260,14 @@ trust_and_safety:
   pretty_name: Trust and Safety
   spoke: looker-spoke-private
   views:
+    cinder_decisions:
+      tables:
+      - table: moz-fx-data-shared-prod.cinder_derived.decisions_v1
+      type: table_view
+    cinder_jobs:
+      tables:
+      - table: moz-fx-data-shared-prod.cinder_derived.jobs_v1
+      type: table_view
     cinder_jobs_and_decisions:
       tables:
       - table: moz-fx-data-shared-prod.cinder_derived.jobs_decisions_v1
