@@ -11393,8 +11393,28 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_quantity__addons_manager_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.addons_manager_startup_timeline ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__browser_timings_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.browser_timings_startup_timeline ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_quantity__normandy_recipe_freshness {
     sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__timestamps_global_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.timestamps_global_startup_timeline ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__timestamps_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.timestamps_startup_timeline ;;
     hidden: yes
   }
 
@@ -11715,6 +11735,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_timing_distribution__workers_sync_worker_operation {
     sql: ${TABLE}.metrics.labeled_timing_distribution.workers_sync_worker_operation ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__xpi_database_rebuilds {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.xpi_database_rebuilds ;;
     hidden: yes
   }
 
@@ -12733,6 +12758,11 @@ view: metrics_table {
 
   dimension: metrics__object__addons_active_g_m_plugins {
     sql: ${TABLE}.metrics.object.addons_active_g_m_plugins ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__addons_manager_exception {
+    sql: ${TABLE}.metrics.object.addons_manager_exception ;;
     hidden: yes
   }
 
@@ -14184,6 +14214,14 @@ view: metrics_table {
     group_item_label: "Xpcom Abi"
   }
 
+  dimension: metrics__string__xpi_database_startup_error {
+    sql: ${TABLE}.metrics.string.xpi_database_startup_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Xpi Database Startup Error"
+  }
+
   dimension: metrics__string_list__intl_accept_languages {
     sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
     hidden: yes
@@ -14222,6 +14260,59 @@ view: metrics_table {
   dimension: metrics__string_list__system_cpu_extensions {
     sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes
+  }
+
+  dimension: metrics__string_list__xpi_database_startup_load_reasons {
+    sql: ${TABLE}.metrics.string_list.xpi_database_startup_load_reasons ;;
+    hidden: yes
+  }
+
+  dimension: metrics__text__xpi_database_late_load {
+    sql: ${TABLE}.metrics.text.xpi_database_late_load ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text"
+    group_item_label: "Xpi Database Late Load"
+  }
+
+  dimension: metrics__text__xpi_database_late_stack {
+    sql: ${TABLE}.metrics.text.xpi_database_late_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text"
+    group_item_label: "Xpi Database Late Stack"
+  }
+
+  dimension: metrics__text__xpi_database_sync_stack {
+    sql: ${TABLE}.metrics.text.xpi_database_sync_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text"
+    group_item_label: "Xpi Database Sync Stack"
+  }
+
+  dimension: metrics__text2__xpi_database_late_load {
+    sql: ${TABLE}.metrics.text2.xpi_database_late_load ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Xpi Database Late Load"
+  }
+
+  dimension: metrics__text2__xpi_database_late_stack {
+    sql: ${TABLE}.metrics.text2.xpi_database_late_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Xpi Database Late Stack"
+  }
+
+  dimension: metrics__text2__xpi_database_sync_stack {
+    sql: ${TABLE}.metrics.text2.xpi_database_sync_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Text2"
+    group_item_label: "Xpi Database Sync Stack"
   }
 
   dimension: metrics__timespan__extensions_startup_cache_load_time__time_unit {
@@ -39186,6 +39277,72 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__xpi_database_parses__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__count {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__range {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__sum {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Xpi Database Parses"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__values {
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__legacy_ids_client_id {
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
@@ -46868,7 +47025,63 @@ view: metrics_table__metrics__labeled_memory_distribution__networking_trr_respon
   }
 }
 
+view: metrics_table__metrics__labeled_quantity__addons_manager_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__browser_timings_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_quantity__normandy_recipe_freshness {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__timestamps_global_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__timestamps_startup_timeline {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -52427,6 +52640,94 @@ view: metrics_table__metrics__labeled_timing_distribution__workers_sync_worker_o
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__workers_sync_worker_operation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__xpi_database_rebuilds {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__xpi_database_rebuilds__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -58377,6 +58678,20 @@ view: metrics_table__metrics__timing_distribution__wr_time_to_frame_build__value
 }
 
 view: metrics_table__metrics__timing_distribution__wr_time_to_render_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__xpi_database_parses__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

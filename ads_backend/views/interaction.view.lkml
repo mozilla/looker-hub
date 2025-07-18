@@ -41,6 +41,24 @@ view: interaction {
 "
   }
 
+  dimension: metrics__string__ad_creative_id {
+    label: "Ad Creative ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_creative_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Creative ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Creative ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_creative_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Advertiser/partner provided identifier for assets used in a specific ad.  May be null.
+"
+  }
+
   dimension: metrics__string__ad_flight_id {
     label: "Ad Flight ID"
     hidden: no
@@ -110,6 +128,24 @@ view: interaction {
     }
 
     description: "The type of ad interaction (e.g. impression, click, ...).  Should not be null.
+"
+  }
+
+  dimension: metrics__string__ad_line_item_id {
+    label: "Ad Line Item ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_line_item_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Line Item ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Line Item ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_line_item_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Advertiser/partner provided identifier for the line item used in a specific ad. Will be null for a Kevel supplied ad, use flight_id instead.
 "
   }
 
