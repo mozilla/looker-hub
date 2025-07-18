@@ -429,6 +429,14 @@ view: fx_accounts_table {
     hidden: yes
   }
 
+  dimension: metrics__string__client_association_uid {
+    sql: ${TABLE}.metrics.string.client_association_uid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Client Association Uid"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string

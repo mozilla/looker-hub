@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: fx_accounts {
+  dimension: metrics__string__client_association_uid {
+    label: "Client Association Uid"
+    hidden: no
+    sql: ${TABLE}.metrics.string.client_association_uid ;;
+    type: string
+    group_label: "Client Association"
+    group_item_label: "Uid"
+
+    link: {
+      label: "Glean Dictionary reference for Client Association Uid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/client_association_uid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Mozilla Account UID associated with the user.
+"
+  }
+
   dimension: metrics__string__metrics_client_association {
     label: "Metrics Client Association"
     hidden: yes

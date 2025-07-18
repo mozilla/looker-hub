@@ -467,6 +467,15 @@ view: nimbus_targeting_context_table {
     description: "Whether the profile has any active enterprise policies."
   }
 
+  dimension: metrics__boolean__nimbus_targeting_context_has_pinned_tabs {
+    sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_has_pinned_tabs ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Nimbus Targeting Context Has Pinned Tabs"
+    description: "Whether the profile has any pinned tabs in any open window."
+  }
+
   dimension: metrics__boolean__nimbus_targeting_context_is_default_browser {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_default_browser ;;
     type: yesno

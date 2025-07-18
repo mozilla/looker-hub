@@ -189,6 +189,23 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     description: "Whether the profile has any active enterprise policies."
   }
 
+  dimension: metrics__boolean__nimbus_targeting_context_has_pinned_tabs {
+    label: "Nimbus Targeting Context Has Pinned Tabs"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_has_pinned_tabs ;;
+    type: yesno
+    group_label: "Nimbus Targeting Context"
+    group_item_label: "Has Pinned Tabs"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Targeting Context Has Pinned Tabs"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_targeting_context_has_pinned_tabs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the profile has any pinned tabs in any open window."
+  }
+
   dimension: metrics__boolean__nimbus_targeting_context_is_default_browser {
     label: "Nimbus Targeting Context Is Default Browser"
     hidden: no

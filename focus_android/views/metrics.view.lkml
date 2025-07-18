@@ -947,6 +947,25 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_quantity__addons_manager_startup_timeline {
+    label: "Addons Manager Startup Timeline"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_quantity.addons_manager_startup_timeline ;;
+    type: string
+    group_label: "Addons Manager"
+    group_item_label: "Startup Timeline"
+
+    link: {
+      label: "Glean Dictionary reference for Addons Manager Startup Timeline"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/addons_manager_startup_timeline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Events on the startup timeline, in millis since process creation.
+Previously carried in Legacy \"main\" ping `simpleMeasurements`.
+"
+  }
+
   dimension: metrics__labeled_counter__application_reputation_binary_archive {
     label: "Application Reputation Binary Archive"
     hidden: yes
@@ -1906,6 +1925,25 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
     description: "Firefox: Time taken to reload a page (ms) when caches are skipped
 This metric was generated to correspond to the Legacy Telemetry linear histogram FX_PAGE_RELOAD_SKIP_CACHE_MS.
+"
+  }
+
+  dimension: metrics__labeled_quantity__browser_timings_startup_timeline {
+    label: "Browser Timings Startup Timeline"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_quantity.browser_timings_startup_timeline ;;
+    type: string
+    group_label: "Browser Timings"
+    group_item_label: "Startup Timeline"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Timings Startup Timeline"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_timings_startup_timeline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Events on the startup timeline, in millis since process creation.
+Previously carried in the Legacy \"main\" ping `simpleMeasurements`.
 "
   }
 
@@ -23958,6 +23996,50 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_quantity__timestamps_global_startup_timeline {
+    label: "Timestamps Global Startup Timeline"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_quantity.timestamps_global_startup_timeline ;;
+    type: string
+    group_label: "Timestamps"
+    group_item_label: "Global Startup Timeline"
+
+    link: {
+      label: "Glean Dictionary reference for Timestamps Global Startup Timeline"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/timestamps_global_startup_timeline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Events on the startup timeline across all components,
+in millis since process creation.
+Combination of
+  - `timestamps.startup_timeline`
+  - `addons_manager.startup_timeline`
+  - `browser.timings.startup_timeline`
+  - `session_restore.startup_timeline`
+Previously instrumented in \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__labeled_quantity__timestamps_startup_timeline {
+    label: "Timestamps Startup Timeline"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_quantity.timestamps_startup_timeline ;;
+    type: string
+    group_label: "Timestamps"
+    group_item_label: "Startup Timeline"
+
+    link: {
+      label: "Glean Dictionary reference for Timestamps Startup Timeline"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/timestamps_startup_timeline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Events on the startup timeline, in millis since process creation.
+See `StartupTimeline.h`
+"
+  }
+
   dimension: metrics__counter__tls_certificate_verifications {
     label: "TLS Certificate Verifications"
     hidden: no
@@ -27732,6 +27814,103 @@ The result takes the form <processor>-<compilerABI>, for example:
 
 This value should almost always be used in combination with the
 operating system.
+"
+  }
+
+  dimension: metrics__text2__xpi_database_late_load {
+    label: "Xpi Database Late Load"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.xpi_database_late_load ;;
+    type: string
+    group_label: "Xpi Database"
+    group_item_label: "Late Load"
+
+    link: {
+      label: "Glean Dictionary reference for Xpi Database Late Load"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/xpi_database_late_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Stack of XPI Database `asyncLoadDB` call happening while the XPI provider
+is closing.
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__text2__xpi_database_late_stack {
+    label: "Xpi Database Late Stack"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.xpi_database_late_stack ;;
+    type: string
+    group_label: "Xpi Database"
+    group_item_label: "Late Stack"
+
+    link: {
+      label: "Glean Dictionary reference for Xpi Database Late Stack"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/xpi_database_late_stack"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Stack of XPI Database `saveChanges` call happening while the XPI provider
+is closing.
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__timing_distribution__xpi_database_parses__sum {
+    label: "Xpi Database Parses Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.sum ;;
+    type: number
+    group_label: "Xpi Database"
+    group_item_label: "Parses Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Xpi Database Parses Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/xpi_database_parses"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long it took to parse the XPI Database.
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__string__xpi_database_startup_error {
+    label: "Xpi Database Startup Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.xpi_database_startup_error ;;
+    type: string
+    group_label: "Xpi Database"
+    group_item_label: "Startup Error"
+
+    link: {
+      label: "Glean Dictionary reference for Xpi Database Startup Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/xpi_database_startup_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reason for XPI Database startup error.
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
+  }
+
+  dimension: metrics__text2__xpi_database_sync_stack {
+    label: "Xpi Database Sync Stack"
+    hidden: yes
+    sql: ${TABLE}.metrics.text2.xpi_database_sync_stack ;;
+    type: string
+    group_label: "Xpi Database"
+    group_item_label: "Sync Stack"
+
+    link: {
+      label: "Glean Dictionary reference for Xpi Database Sync Stack"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/xpi_database_sync_stack"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Stack of XPI Database `syncLoadDB` call.
+Previously reported in \"main\" ping `simpleMeasurements`.
 "
   }
 
@@ -55492,7 +55671,63 @@ view: metrics__metrics__labeled_memory_distribution__networking_trr_response_siz
   }
 }
 
+view: metrics__metrics__labeled_quantity__addons_manager_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__browser_timings_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_quantity__normandy_recipe_freshness {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__timestamps_global_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__timestamps_startup_timeline {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -61051,6 +61286,94 @@ view: metrics__metrics__labeled_timing_distribution__workers_sync_worker_operati
 }
 
 view: metrics__metrics__labeled_timing_distribution__workers_sync_worker_operation__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__xpi_database_rebuilds {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__xpi_database_rebuilds__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -67001,6 +67324,20 @@ view: metrics__metrics__timing_distribution__wr_time_to_frame_build__values {
 }
 
 view: metrics__metrics__timing_distribution__wr_time_to_render_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__xpi_database_parses__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
