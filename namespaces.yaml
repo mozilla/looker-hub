@@ -2883,6 +2883,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.urlbar_events_daily_engagement_by_position
       type: table_view
+    urlbar_events_daily_engagement_by_product_result_type_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.urlbar_events_daily_engagement_by_product_result_type
+      type: table_view
     urlbar_events_daily_table:
       tables:
       - table: mozdata.firefox_desktop.urlbar_events_daily
