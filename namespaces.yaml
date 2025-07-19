@@ -9286,10 +9286,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - esr
-            - nightly
-            - beta
             - aurora
+            - nightly
+            - esr
+            - beta
             - default
             - nightly-pine
             - nightly-try
@@ -9821,8 +9821,8 @@ operational_monitoring:
             default: beta
             options:
             - beta
-            - nightly
             - aurora
+            - nightly
             - release
             - esr
             - Other
@@ -10268,11 +10268,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id293
           os:
-            default: Linux
+            default: Windows
             options:
-            - Linux
-            - Mac
             - Windows
+            - Mac
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11130,15 +11130,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id374
           app:
-            default: iOS - vpn_session
+            default: iOS - daemon_session
             options:
-            - iOS - vpn_session
-            - Windows - vpn_session
-            - Linux - vpn_session
-            - Android - daemon_session
-            - Darwin - vpn_session
-            - Android - vpn_session
             - iOS - daemon_session
+            - Darwin - vpn_session
+            - iOS - vpn_session
+            - Linux - vpn_session
+            - Windows - vpn_session
+            - Android - vpn_session
+            - Android - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id375
@@ -11980,14 +11980,14 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
             - beta
+            - nightly
           os:
             default: Linux
             options:
             - Linux
-            - Windows_NT
             - Darwin
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id432
