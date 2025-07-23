@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_urlbar_events {
+view: metric_definitions_urlbar_events_daily_engagement_by_product_result_type_v1 {
   derived_table: {
     sql: SELECT
-                COALESCE(COUNTIF(is_terminal), 0) AS urlbar_impressions,
+                SUM(urlbar_impressions) AS urlbar_impressions,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -22,7 +22,7 @@ looker_base_fields_os,
 looker_base_fields_partner_id,
 looker_base_fields_sample_id,
 
-                legacy_telemetry_client_id AS client_id,
+                client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
                 submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
@@ -52,7 +52,7 @@ looker_base_fields_sample_id,
             FROM
                 (
                     SELECT
-                        urlbar_events.*,
+                        urlbar_events_daily_engagement_by_product_result_type_v1.*,
                         looker_base_fields.app_name AS looker_base_fields_app_name,
 looker_base_fields.app_version AS looker_base_fields_app_version,
 looker_base_fields.country AS looker_base_fields_country,
@@ -72,9 +72,9 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                 *
             FROM
                 (
-    SELECT * FROM `moz-fx-data-shared-prod.firefox_desktop.urlbar_events`
+    SELECT * FROM `mozdata.firefox_desktop.urlbar_events_daily_engagement_by_product_result_type`
 )
-            ) AS urlbar_events
+            ) AS urlbar_events_daily_engagement_by_product_result_type_v1
         JOIN
     (
             SELECT
@@ -104,14 +104,14 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
             ) AS looker_base_fields
         
     ON 
-    urlbar_events.legacy_telemetry_client_id =
+    urlbar_events_daily_engagement_by_product_result_type_v1.client_id =
         looker_base_fields.client_id AND
-        urlbar_events.submission_date =
+        urlbar_events_daily_engagement_by_product_result_type_v1.submission_date =
         looker_base_fields.submission_date
     
                 
                     WHERE 
-                    urlbar_events.submission_date
+                    urlbar_events_daily_engagement_by_product_result_type_v1.submission_date
                     BETWEEN
                     COALESCE(
                         SAFE_CAST(
