@@ -128,6 +128,12 @@ view: glean_baseline_clients_first_seen_table {
     description: "The distribution ID associated with the install of Firefox."
   }
 
+  dimension: is_desktop {
+    sql: ${TABLE}.is_desktop ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: isp {
     sql: ${TABLE}.isp ;;
     type: string
@@ -193,6 +199,12 @@ Does not need to be sent in the Glean \"deletion-request\" ping."
     type: number
     suggest_persist_for: "24 hours"
     description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms."
+  }
+
+  dimension: windows_version {
+    sql: ${TABLE}.windows_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension_group: first_seen {
