@@ -9,36 +9,48 @@ view: funnel_retention_week_4_table {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Structure parameter for the the ad group of a campaign.
+"
   }
 
   dimension: adjust_campaign {
     sql: ${TABLE}.adjust_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Structure parameter for the campaign name.
+"
   }
 
   dimension: adjust_creative {
     sql: ${TABLE}.adjust_creative ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Structure parameter for the creative content of a campaign.
+"
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The type of source of a client installation.
+"
   }
 
   dimension: first_reported_country {
     sql: ${TABLE}.first_reported_country ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "First reported country for the client installation.
+"
   }
 
   dimension: first_reported_isp {
     sql: ${TABLE}.first_reported_isp ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Name of the first reported isp (Internet Service Provider).
+"
   }
 
   dimension: install_source {
@@ -51,18 +63,24 @@ view: funnel_retention_week_4_table {
     sql: ${TABLE}.new_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Count of new_profiles for the given grouping.
+"
   }
 
   dimension: repeat_user {
     sql: ${TABLE}.repeat_user ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Count of clients categorised as \"repeat_first_month_user\" for the grouping.
+"
   }
 
   dimension: retained_week_4 {
     sql: ${TABLE}.retained_week_4 ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Count of clients categorised as \"retained_week_4\" for the grouping.
+"
   }
 
   dimension_group: first_seen {
@@ -79,6 +97,8 @@ view: funnel_retention_week_4_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Date of when the client was first seen.
+"
   }
 
   dimension_group: submission {
@@ -95,6 +115,8 @@ view: funnel_retention_week_4_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Partition field, also corresponds to internal execution date of the job (first_seen_date + 28 days).
+"
   }
 
   sql_table_name: `mozdata.fenix.funnel_retention_week_4` ;;
