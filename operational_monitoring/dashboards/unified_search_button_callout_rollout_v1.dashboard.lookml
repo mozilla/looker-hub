@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       unified_search_button_callout_rollout_v1.branch
     ]
     filters:
-      unified_search_button_callout_rollout_v1.metric: 'qualified_cumulative_days_of_use'
+      unified_search_button_callout_rollout_v1.metric: 'search_count'
       unified_search_button_callout_rollout_v1.statistic: mean
     row: 0
     col: 0
@@ -40,6 +40,77 @@
     show_grid: true
     listen:
       Date: unified_search_button_callout_rollout_v1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: unified_search_button_callout_rollout_v1
+    type: looker_line
+    fields: [
+      unified_search_button_callout_rollout_v1.submission_date,
+      unified_search_button_callout_rollout_v1.branch,
+      unified_search_button_callout_rollout_v1.point
+    ]
+    pivots: [
+      unified_search_button_callout_rollout_v1.branch
+    ]
+    filters:
+      unified_search_button_callout_rollout_v1.metric: 'days_of_use'
+      unified_search_button_callout_rollout_v1.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: unified_search_button_callout_rollout_v1.submission_date
+    field_y: unified_search_button_callout_rollout_v1.point
+    log_scale: false
+    ci_lower: unified_search_button_callout_rollout_v1.lower
+    ci_upper: unified_search_button_callout_rollout_v1.upper
+    show_grid: true
+    listen:
+      Date: unified_search_button_callout_rollout_v1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: unified_search_button_callout_rollout_v1
+    type: "ci-line-chart"
+    fields: [
+      unified_search_button_callout_rollout_v1.submission_date,
+      unified_search_button_callout_rollout_v1.branch,
+      unified_search_button_callout_rollout_v1.upper,
+      unified_search_button_callout_rollout_v1.lower,
+      unified_search_button_callout_rollout_v1.point
+    ]
+    pivots: [
+      unified_search_button_callout_rollout_v1.branch
+    ]
+    filters:
+      unified_search_button_callout_rollout_v1.metric: 'memory_total'
+      unified_search_button_callout_rollout_v1.statistic: percentile
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: unified_search_button_callout_rollout_v1.submission_date
+    field_y: unified_search_button_callout_rollout_v1.point
+    log_scale: false
+    ci_lower: unified_search_button_callout_rollout_v1.lower
+    ci_upper: unified_search_button_callout_rollout_v1.upper
+    show_grid: true
+    listen:
+      Date: unified_search_button_callout_rollout_v1.submission_date
+      Percentile: unified_search_button_callout_rollout_v1.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -61,74 +132,6 @@
     ]
     filters:
       unified_search_button_callout_rollout_v1.metric: 'retained'
-      unified_search_button_callout_rollout_v1.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: unified_search_button_callout_rollout_v1.submission_date
-    field_y: unified_search_button_callout_rollout_v1.point
-    log_scale: false
-    ci_lower: unified_search_button_callout_rollout_v1.lower
-    ci_upper: unified_search_button_callout_rollout_v1.upper
-    show_grid: true
-    listen:
-      Date: unified_search_button_callout_rollout_v1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: unified_search_button_callout_rollout_v1
-    type: looker_line
-    fields: [
-      unified_search_button_callout_rollout_v1.submission_date,
-      unified_search_button_callout_rollout_v1.branch,
-      unified_search_button_callout_rollout_v1.point
-    ]
-    pivots: [
-      unified_search_button_callout_rollout_v1.branch
-    ]
-    filters:
-      unified_search_button_callout_rollout_v1.metric: 'ad_clicks'
-      unified_search_button_callout_rollout_v1.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: unified_search_button_callout_rollout_v1.submission_date
-    field_y: unified_search_button_callout_rollout_v1.point
-    log_scale: false
-    ci_lower: unified_search_button_callout_rollout_v1.lower
-    ci_upper: unified_search_button_callout_rollout_v1.upper
-    show_grid: true
-    listen:
-      Date: unified_search_button_callout_rollout_v1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: unified_search_button_callout_rollout_v1
-    type: looker_line
-    fields: [
-      unified_search_button_callout_rollout_v1.submission_date,
-      unified_search_button_callout_rollout_v1.branch,
-      unified_search_button_callout_rollout_v1.point
-    ]
-    pivots: [
-      unified_search_button_callout_rollout_v1.branch
-    ]
-    filters:
-      unified_search_button_callout_rollout_v1.metric: 'search_count'
       unified_search_button_callout_rollout_v1.statistic: mean
     row: 10
     col: 12
@@ -180,6 +183,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: unified_search_button_callout_rollout_v1
+    type: looker_line
+    fields: [
+      unified_search_button_callout_rollout_v1.submission_date,
+      unified_search_button_callout_rollout_v1.branch,
+      unified_search_button_callout_rollout_v1.point
+    ]
+    pivots: [
+      unified_search_button_callout_rollout_v1.branch
+    ]
+    filters:
+      unified_search_button_callout_rollout_v1.metric: 'qualified_cumulative_days_of_use'
+      unified_search_button_callout_rollout_v1.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: unified_search_button_callout_rollout_v1.submission_date
+    field_y: unified_search_button_callout_rollout_v1.point
+    log_scale: false
+    ci_lower: unified_search_button_callout_rollout_v1.lower
+    ci_upper: unified_search_button_callout_rollout_v1.upper
+    show_grid: true
+    listen:
+      Date: unified_search_button_callout_rollout_v1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -198,40 +235,6 @@
     filters:
       unified_search_button_callout_rollout_v1.metric: 'uri_count'
       unified_search_button_callout_rollout_v1.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: unified_search_button_callout_rollout_v1.submission_date
-    field_y: unified_search_button_callout_rollout_v1.point
-    log_scale: false
-    ci_lower: unified_search_button_callout_rollout_v1.lower
-    ci_upper: unified_search_button_callout_rollout_v1.upper
-    show_grid: true
-    listen:
-      Date: unified_search_button_callout_rollout_v1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: unified_search_button_callout_rollout_v1
-    type: looker_line
-    fields: [
-      unified_search_button_callout_rollout_v1.submission_date,
-      unified_search_button_callout_rollout_v1.branch,
-      unified_search_button_callout_rollout_v1.point
-    ]
-    pivots: [
-      unified_search_button_callout_rollout_v1.branch
-    ]
-    filters:
-      unified_search_button_callout_rollout_v1.metric: 'days_of_use'
-      unified_search_button_callout_rollout_v1.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: unified_search_button_callout_rollout_v1
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       unified_search_button_callout_rollout_v1.submission_date,
       unified_search_button_callout_rollout_v1.branch,
-      unified_search_button_callout_rollout_v1.upper,
-      unified_search_button_callout_rollout_v1.lower,
       unified_search_button_callout_rollout_v1.point
     ]
     pivots: [
       unified_search_button_callout_rollout_v1.branch
     ]
     filters:
-      unified_search_button_callout_rollout_v1.metric: 'memory_total'
-      unified_search_button_callout_rollout_v1.statistic: percentile
+      unified_search_button_callout_rollout_v1.metric: 'ad_clicks'
+      unified_search_button_callout_rollout_v1.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: unified_search_button_callout_rollout_v1.submission_date
-      Percentile: unified_search_button_callout_rollout_v1.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

@@ -756,7 +756,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__labeled_quantity__addons_manager_startup_timeline {
     label: "Addons Manager Startup Timeline"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.labeled_quantity.addons_manager_startup_timeline ;;
     type: string
     group_label: "Addons Manager"
@@ -1737,7 +1737,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__labeled_quantity__browser_timings_startup_timeline {
     label: "Browser Timings Startup Timeline"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.labeled_quantity.browser_timings_startup_timeline ;;
     type: string
     group_label: "Browser Timings"
@@ -27626,7 +27626,7 @@ operating system.
 
   dimension: metrics__text2__xpi_database_late_load {
     label: "Xpi Database Late Load"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.xpi_database_late_load ;;
     type: string
     group_label: "Xpi Database"
@@ -27646,7 +27646,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__text2__xpi_database_late_stack {
     label: "Xpi Database Late Stack"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.xpi_database_late_stack ;;
     type: string
     group_label: "Xpi Database"
@@ -27666,7 +27666,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__xpi_database_parses__sum {
     label: "Xpi Database Parses Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.sum ;;
     type: number
     group_label: "Xpi Database"
@@ -27685,7 +27685,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__string__xpi_database_startup_error {
     label: "Xpi Database Startup Error"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.xpi_database_startup_error ;;
     type: string
     group_label: "Xpi Database"
@@ -27704,7 +27704,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__text2__xpi_database_sync_stack {
     label: "Xpi Database Sync Stack"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.xpi_database_sync_stack ;;
     type: string
     group_label: "Xpi Database"
