@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: viewpoint_ios_jul_2025 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_jul_2025_statistics ;;
+view: enable_nimbus_sql_datastore {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.enable_nimbus_sql_datastore_statistics ;;
 
   dimension: submission_date {
     type: date
