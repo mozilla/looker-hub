@@ -16641,7 +16641,8 @@ relay_backend:
         base_view: events_stream_table
   glean_app: true
   owners:
-  - jwhitlock@mozilla.com
+  - lcrouch@mozilla.com
+  - jhermann@mozilla.com
   pretty_name: Firefox Relay Backend
   spoke: looker-spoke-default
   views:
