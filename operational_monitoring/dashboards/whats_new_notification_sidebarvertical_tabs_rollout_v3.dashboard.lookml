@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: whats_new_notification_sidebarvertical_tabs_rollout_v3
+    type: looker_line
+    fields: [
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date,
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.branch,
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.point
+    ]
+    pivots: [
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.branch
+    ]
+    filters:
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'qualified_cumulative_days_of_use'
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
+    field_y: whats_new_notification_sidebarvertical_tabs_rollout_v3.point
+    log_scale: false
+    ci_lower: whats_new_notification_sidebarvertical_tabs_rollout_v3.lower
+    ci_upper: whats_new_notification_sidebarvertical_tabs_rollout_v3.upper
+    show_grid: true
+    listen:
+      Date: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -29,6 +63,40 @@
       whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'search_count'
       whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: mean
     row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
+    field_y: whats_new_notification_sidebarvertical_tabs_rollout_v3.point
+    log_scale: false
+    ci_lower: whats_new_notification_sidebarvertical_tabs_rollout_v3.lower
+    ci_upper: whats_new_notification_sidebarvertical_tabs_rollout_v3.upper
+    show_grid: true
+    listen:
+      Date: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: whats_new_notification_sidebarvertical_tabs_rollout_v3
+    type: looker_line
+    fields: [
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date,
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.branch,
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.point
+    ]
+    pivots: [
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.branch
+    ]
+    filters:
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'ad_clicks'
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,7 +130,7 @@
     filters:
       whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'days_of_use'
       whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: mean
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -98,7 +166,7 @@
     filters:
       whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'memory_total'
       whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: percentile
-    row: 10
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -111,40 +179,6 @@
     listen:
       Date: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
       Percentile: whats_new_notification_sidebarvertical_tabs_rollout_v3.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: whats_new_notification_sidebarvertical_tabs_rollout_v3
-    type: looker_line
-    fields: [
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date,
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.branch,
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.point
-    ]
-    pivots: [
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.branch
-    ]
-    filters:
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'retained'
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
-    field_y: whats_new_notification_sidebarvertical_tabs_rollout_v3.point
-    log_scale: false
-    ci_lower: whats_new_notification_sidebarvertical_tabs_rollout_v3.lower
-    ci_upper: whats_new_notification_sidebarvertical_tabs_rollout_v3.upper
-    show_grid: true
-    listen:
-      Date: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -166,40 +200,6 @@
     ]
     filters:
       whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'active_hours'
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
-    field_y: whats_new_notification_sidebarvertical_tabs_rollout_v3.point
-    log_scale: false
-    ci_lower: whats_new_notification_sidebarvertical_tabs_rollout_v3.lower
-    ci_upper: whats_new_notification_sidebarvertical_tabs_rollout_v3.upper
-    show_grid: true
-    listen:
-      Date: whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: whats_new_notification_sidebarvertical_tabs_rollout_v3
-    type: looker_line
-    fields: [
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.submission_date,
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.branch,
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.point
-    ]
-    pivots: [
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.branch
-    ]
-    filters:
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'qualified_cumulative_days_of_use'
       whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       whats_new_notification_sidebarvertical_tabs_rollout_v3.branch
     ]
     filters:
-      whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'ad_clicks'
+      whats_new_notification_sidebarvertical_tabs_rollout_v3.metric: 'retained'
       whats_new_notification_sidebarvertical_tabs_rollout_v3.statistic: mean
     row: 30
     col: 12
