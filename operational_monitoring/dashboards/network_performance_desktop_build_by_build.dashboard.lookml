@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: HTTP Page Open To First Sent
-    name: HTTP Page Open To First Sent_percentile
+  - title: Time To Response Start Ms
+    name: Time To Response Start Ms_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -28,7 +28,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'http_page_open_to_first_sent'
+      network_performance_desktop_build_by_build.metric: 'time_to_response_start_ms'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 0
     col: 0
@@ -47,8 +47,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: HTTP Sub TLS Handshake
-    name: HTTP Sub TLS Handshake_percentile
+  - title: DNS Lookup Time
+    name: DNS Lookup Time_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -65,7 +65,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'http_sub_tls_handshake'
+      network_performance_desktop_build_by_build.metric: 'dns_lookup_time'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 0
     col: 12
@@ -121,8 +121,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Time To Response Start Ms
-    name: Time To Response Start Ms_percentile
+  - title: HTTP Sub TLS Handshake
+    name: HTTP Sub TLS Handshake_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -139,7 +139,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'time_to_response_start_ms'
+      network_performance_desktop_build_by_build.metric: 'http_sub_tls_handshake'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 10
     col: 12
@@ -158,8 +158,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: DNS Lookup Time
-    name: DNS Lookup Time_percentile
+  - title: HTTP Page Open To First Sent
+    name: HTTP Page Open To First Sent_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -176,7 +176,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'dns_lookup_time'
+      network_performance_desktop_build_by_build.metric: 'http_page_open_to_first_sent'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 20
     col: 0
