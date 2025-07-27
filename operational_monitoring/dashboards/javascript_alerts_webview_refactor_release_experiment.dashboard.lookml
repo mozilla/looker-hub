@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       javascript_alerts_webview_refactor_release_experiment.branch
     ]
     filters:
-      javascript_alerts_webview_refactor_release_experiment.metric: 'days_of_use'
+      javascript_alerts_webview_refactor_release_experiment.metric: 'search_count'
       javascript_alerts_webview_refactor_release_experiment.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       javascript_alerts_webview_refactor_release_experiment.branch
     ]
     filters:
-      javascript_alerts_webview_refactor_release_experiment.metric: 'search_count'
+      javascript_alerts_webview_refactor_release_experiment.metric: 'days_of_use'
       javascript_alerts_webview_refactor_release_experiment.statistic: mean
     row: 10
     col: 12
