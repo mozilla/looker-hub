@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       rust_keychain_refactor_ios_rollout.branch
     ]
     filters:
-      rust_keychain_refactor_ios_rollout.metric: 'retained'
+      rust_keychain_refactor_ios_rollout.metric: 'active_hours'
       rust_keychain_refactor_ios_rollout.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       rust_keychain_refactor_ios_rollout.branch
     ]
     filters:
-      rust_keychain_refactor_ios_rollout.metric: 'active_hours'
+      rust_keychain_refactor_ios_rollout.metric: 'retained'
       rust_keychain_refactor_ios_rollout.statistic: mean
     row: 20
     col: 0
