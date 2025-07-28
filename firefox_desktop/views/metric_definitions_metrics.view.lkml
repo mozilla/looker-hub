@@ -7,7 +7,8 @@
 view: metric_definitions_metrics {
   derived_table: {
     sql: SELECT
-                (
+                COALESCE(LOGICAL_OR(mozfun.map.get_key(metrics.labeled_boolean.os_environment_is_default_handler, '.pdf')), FALSE) AS is_default_pdf_handler,
+(
     (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "freetext")) > 0, FALSE) OR
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "ink")) > 0, FALSE) OR
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing_highlight_kind, "highlight")) > 0, FALSE) OR
@@ -42,6 +43,16 @@ view: metric_definitions_metrics {
 (
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing_highlight_kind, "free_highlight")) > 0, FALSE)
 ) AS pdf_free_highlight,
+(
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.os_environment_invoked_to_handle, '.pdf')) > 0, FALSE)
+) AS pdf_invoked_to_handle,
+(
+    COALESCE(SUM(mozfun.map.get_key( metrics.labeled_counter.os_environment_launched_to_handle, '.pdf')) > 0, FALSE)
+) AS pdf_launched_to_handle,
+(
+    (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.os_environment_invoked_to_handle, '.pdf')) > 0, FALSE) OR
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.os_environment_launched_to_handle, '.pdf')) > 0, FALSE))
+) AS pdf_launched_or_invoked_to_handle,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -202,6 +213,15 @@ looker_base_fields_sample_id,
     description: "Unique client identifier"
   }
 
+  dimension: is_default_pdf_handler {
+    group_label: "Metrics"
+    label: "Is Default PDF Handler (Windows)"
+    description: "Was Firefox the default PDF Handler at any point during the interval?
+"
+    type: number
+    sql: ${TABLE}.is_default_pdf_handler ;;
+  }
+
   dimension: pdf_engagement {
     group_label: "Metrics"
     label: "Pdf Engagement"
@@ -280,6 +300,30 @@ looker_base_fields_sample_id,
     description: ""
     type: number
     sql: ${TABLE}.pdf_free_highlight ;;
+  }
+
+  dimension: pdf_invoked_to_handle {
+    group_label: "Metrics"
+    label: "PDF Invoked to Handle"
+    description: "Firefox was invoked (i.e., was already running and was not launched) to handle a pdf file"
+    type: number
+    sql: ${TABLE}.pdf_invoked_to_handle ;;
+  }
+
+  dimension: pdf_launched_to_handle {
+    group_label: "Metrics"
+    label: "PDF Launched to Handle"
+    description: "Firefox was launched afresh (i.e., was not already running) to handle a pdf file"
+    type: number
+    sql: ${TABLE}.pdf_launched_to_handle ;;
+  }
+
+  dimension: pdf_launched_or_invoked_to_handle {
+    group_label: "Metrics"
+    label: "PDF Launched or Invoked"
+    description: "Firefox was launched or invoked to handle a pdf file"
+    type: number
+    sql: ${TABLE}.pdf_launched_or_invoked_to_handle ;;
   }
 
   dimension: app_name {
@@ -390,6 +434,7 @@ looker_base_fields_sample_id,
 
   set: metrics {
     fields: [
+      is_default_pdf_handler,
       pdf_engagement,
       pdf_freetext,
       pdf_ink,
@@ -400,6 +445,9 @@ looker_base_fields_sample_id,
       pdf_opening,
       pdf_highlight,
       pdf_free_highlight,
+      pdf_invoked_to_handle,
+      pdf_launched_to_handle,
+      pdf_launched_or_invoked_to_handle,
     ]
   }
 
