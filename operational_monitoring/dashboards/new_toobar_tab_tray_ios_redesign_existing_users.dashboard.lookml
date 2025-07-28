@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       new_toobar_tab_tray_ios_redesign_existing_users.branch
     ]
     filters:
-      new_toobar_tab_tray_ios_redesign_existing_users.metric: 'retained'
+      new_toobar_tab_tray_ios_redesign_existing_users.metric: 'active_hours'
       new_toobar_tab_tray_ios_redesign_existing_users.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       new_toobar_tab_tray_ios_redesign_existing_users.branch
     ]
     filters:
-      new_toobar_tab_tray_ios_redesign_existing_users.metric: 'active_hours'
+      new_toobar_tab_tray_ios_redesign_existing_users.metric: 'retained'
       new_toobar_tab_tray_ios_redesign_existing_users.statistic: mean
     row: 20
     col: 0
