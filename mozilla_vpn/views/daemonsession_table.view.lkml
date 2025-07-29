@@ -551,6 +551,11 @@ view: daemonsession_table {
     group_item_label: "Session Daemon Session Source"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__connection_health_no_signal_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.bucket_count ;;
     type: number

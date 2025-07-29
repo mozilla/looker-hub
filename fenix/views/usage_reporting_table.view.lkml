@@ -300,6 +300,11 @@ view: usage_reporting_table {
     group_item_label: "Usage Reason"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__usage_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.usage_duration.time_unit ;;
     type: string
