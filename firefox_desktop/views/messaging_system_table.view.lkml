@@ -783,6 +783,11 @@ name.
 "
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__text__messaging_system_cfr_action {
     sql: ${TABLE}.metrics.text.messaging_system_cfr_action ;;
     type: string

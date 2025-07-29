@@ -795,6 +795,11 @@ for the purpose of experimentation enrollment.
     description: "The full Firefox version string."
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__text__nimbus_targeting_environment_targeting_context_value {
     sql: ${TABLE}.metrics.text.nimbus_targeting_environment_targeting_context_value ;;
     type: string

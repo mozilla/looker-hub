@@ -769,6 +769,11 @@ for the purpose of experimentation enrollment.
     hidden: yes
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__background_update_client_id {
     sql: ${TABLE}.metrics.uuid.background_update_client_id ;;
     type: string
