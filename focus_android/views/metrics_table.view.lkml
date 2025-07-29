@@ -14222,6 +14222,11 @@ view: metrics_table {
     group_item_label: "Xpi Database Startup Error"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__intl_accept_languages {
     sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
     hidden: yes

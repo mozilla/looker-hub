@@ -541,6 +541,11 @@ view: bookmarks_sync_table {
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__sync_sync_uuid {
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string

@@ -2297,6 +2297,11 @@ view: user_characteristics_table {
     hidden: yes
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__text2__characteristics_audio_devices {
     sql: ${TABLE}.metrics.text2.characteristics_audio_devices ;;
     type: string

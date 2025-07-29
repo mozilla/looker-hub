@@ -469,6 +469,11 @@ view: main_table {
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__performance_time_to_main_screen__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.bucket_count ;;
     type: number

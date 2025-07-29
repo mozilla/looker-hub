@@ -2220,6 +2220,11 @@ view: metrics_table {
     group_item_label: "Tracking Protection Strength"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__logins_store_migration_errors {
     sql: ${TABLE}.metrics.string_list.logins_store_migration_errors ;;
     hidden: yes
