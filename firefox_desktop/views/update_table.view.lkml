@@ -1091,6 +1091,11 @@ operating system.
 "
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__system_cpu_extensions {
     sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes

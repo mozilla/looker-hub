@@ -380,6 +380,11 @@ If the version detection fails, this metric gets set to `Unknown`.
 "
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__usage_profile_group_id {
     sql: ${TABLE}.metrics.uuid.usage_profile_group_id ;;
     type: string

@@ -870,6 +870,11 @@ for the purpose of experimentation enrollment.
     hidden: yes
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__crash_uptime__time_unit {
     sql: ${TABLE}.metrics.timespan.crash_uptime.time_unit ;;
     type: string
