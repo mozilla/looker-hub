@@ -10,74 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_activation_telemetry_android_beta
-    type: looker_line
-    fields: [
-      enable_activation_telemetry_android_beta.submission_date,
-      enable_activation_telemetry_android_beta.branch,
-      enable_activation_telemetry_android_beta.point
-    ]
-    pivots: [
-      enable_activation_telemetry_android_beta.branch
-    ]
-    filters:
-      enable_activation_telemetry_android_beta.metric: 'days_of_use'
-      enable_activation_telemetry_android_beta.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: enable_activation_telemetry_android_beta.submission_date
-    field_y: enable_activation_telemetry_android_beta.point
-    log_scale: false
-    ci_lower: enable_activation_telemetry_android_beta.lower
-    ci_upper: enable_activation_telemetry_android_beta.upper
-    show_grid: true
-    listen:
-      Date: enable_activation_telemetry_android_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_activation_telemetry_android_beta
-    type: looker_line
-    fields: [
-      enable_activation_telemetry_android_beta.submission_date,
-      enable_activation_telemetry_android_beta.branch,
-      enable_activation_telemetry_android_beta.point
-    ]
-    pivots: [
-      enable_activation_telemetry_android_beta.branch
-    ]
-    filters:
-      enable_activation_telemetry_android_beta.metric: 'tagged_sap_searches'
-      enable_activation_telemetry_android_beta.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: enable_activation_telemetry_android_beta.submission_date
-    field_y: enable_activation_telemetry_android_beta.point
-    log_scale: false
-    ci_lower: enable_activation_telemetry_android_beta.lower
-    ci_upper: enable_activation_telemetry_android_beta.upper
-    show_grid: true
-    listen:
-      Date: enable_activation_telemetry_android_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -96,7 +28,7 @@
     filters:
       enable_activation_telemetry_android_beta.metric: 'uri_count'
       enable_activation_telemetry_android_beta.statistic: mean
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -130,42 +62,8 @@
     filters:
       enable_activation_telemetry_android_beta.metric: 'active_hours'
       enable_activation_telemetry_android_beta.statistic: mean
-    row: 10
+    row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: enable_activation_telemetry_android_beta.submission_date
-    field_y: enable_activation_telemetry_android_beta.point
-    log_scale: false
-    ci_lower: enable_activation_telemetry_android_beta.lower
-    ci_upper: enable_activation_telemetry_android_beta.upper
-    show_grid: true
-    listen:
-      Date: enable_activation_telemetry_android_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_activation_telemetry_android_beta
-    type: looker_line
-    fields: [
-      enable_activation_telemetry_android_beta.submission_date,
-      enable_activation_telemetry_android_beta.branch,
-      enable_activation_telemetry_android_beta.point
-    ]
-    pivots: [
-      enable_activation_telemetry_android_beta.branch
-    ]
-    filters:
-      enable_activation_telemetry_android_beta.metric: 'retained'
-      enable_activation_telemetry_android_beta.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: enable_activation_telemetry_android_beta.submission_date
@@ -198,7 +96,41 @@
     filters:
       enable_activation_telemetry_android_beta.metric: 'ad_clicks'
       enable_activation_telemetry_android_beta.statistic: mean
-    row: 20
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_activation_telemetry_android_beta.submission_date
+    field_y: enable_activation_telemetry_android_beta.point
+    log_scale: false
+    ci_lower: enable_activation_telemetry_android_beta.lower
+    ci_upper: enable_activation_telemetry_android_beta.upper
+    show_grid: true
+    listen:
+      Date: enable_activation_telemetry_android_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_activation_telemetry_android_beta
+    type: looker_line
+    fields: [
+      enable_activation_telemetry_android_beta.submission_date,
+      enable_activation_telemetry_android_beta.branch,
+      enable_activation_telemetry_android_beta.point
+    ]
+    pivots: [
+      enable_activation_telemetry_android_beta.branch
+    ]
+    filters:
+      enable_activation_telemetry_android_beta.metric: 'retained'
+      enable_activation_telemetry_android_beta.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -231,6 +163,74 @@
     ]
     filters:
       enable_activation_telemetry_android_beta.metric: 'search_count'
+      enable_activation_telemetry_android_beta.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_activation_telemetry_android_beta.submission_date
+    field_y: enable_activation_telemetry_android_beta.point
+    log_scale: false
+    ci_lower: enable_activation_telemetry_android_beta.lower
+    ci_upper: enable_activation_telemetry_android_beta.upper
+    show_grid: true
+    listen:
+      Date: enable_activation_telemetry_android_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_activation_telemetry_android_beta
+    type: looker_line
+    fields: [
+      enable_activation_telemetry_android_beta.submission_date,
+      enable_activation_telemetry_android_beta.branch,
+      enable_activation_telemetry_android_beta.point
+    ]
+    pivots: [
+      enable_activation_telemetry_android_beta.branch
+    ]
+    filters:
+      enable_activation_telemetry_android_beta.metric: 'tagged_sap_searches'
+      enable_activation_telemetry_android_beta.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: enable_activation_telemetry_android_beta.submission_date
+    field_y: enable_activation_telemetry_android_beta.point
+    log_scale: false
+    ci_lower: enable_activation_telemetry_android_beta.lower
+    ci_upper: enable_activation_telemetry_android_beta.upper
+    show_grid: true
+    listen:
+      Date: enable_activation_telemetry_android_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_activation_telemetry_android_beta
+    type: looker_line
+    fields: [
+      enable_activation_telemetry_android_beta.submission_date,
+      enable_activation_telemetry_android_beta.branch,
+      enable_activation_telemetry_android_beta.point
+    ]
+    pivots: [
+      enable_activation_telemetry_android_beta.branch
+    ]
+    filters:
+      enable_activation_telemetry_android_beta.metric: 'days_of_use'
       enable_activation_telemetry_android_beta.statistic: mean
     row: 30
     col: 0
