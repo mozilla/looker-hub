@@ -9613,10 +9613,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - esr
-            - beta
             - nightly
+            - esr
             - aurora
+            - beta
             - default
             - nightly-pine
             - nightly-try
@@ -9734,13 +9734,13 @@ operational_monitoring:
             default: '39.0'
             options:
             - '39.0'
-            - '126.0'
             - '130.0'
+            - '126.0'
             - '131.0'
             - '123.0'
             - '117.0'
-            - '122.0'
             - '132.0'
+            - '122.0'
             - '125.0'
             - '124.0'
         explore: firefox_ios_beta_health
@@ -10145,10 +10145,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id287
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
-            - aurora
             - nightly
+            - aurora
             - beta
             - release
             - esr
@@ -10598,8 +10598,8 @@ operational_monitoring:
             default: Linux
             options:
             - Linux
-            - Windows
             - Mac
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11457,13 +11457,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id389
           app:
-            default: Windows - vpn_session
+            default: Darwin - vpn_session
             options:
-            - Windows - vpn_session
+            - Darwin - vpn_session
             - iOS - daemon_session
             - iOS - vpn_session
             - Android - vpn_session
-            - Darwin - vpn_session
+            - Windows - vpn_session
             - Android - daemon_session
             - Linux - vpn_session
         explore: mozilla_vpn
@@ -12380,17 +12380,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id452
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
+            - nightly
             - beta
           os:
-            default: Linux
+            default: Windows_NT
             options:
-            - Linux
             - Windows_NT
             - Darwin
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id453
