@@ -277,6 +277,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__newtab_content_ping_version {
+    sql: ${TABLE}.metrics.quantity.newtab_content_ping_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Newtab Content Ping Version"
+    description: "Marks major revisions of data collection methods or format for this ping. Because we are not recording Firefox version, this field has been added to assist the data pipeline. To avoid user possible fingerprinting, this should be updated only when necessary.
+"
+  }
+
   dimension: metrics__quantity__newtab_content_utc_offset {
     sql: ${TABLE}.metrics.quantity.newtab_content_utc_offset ;;
     type: number

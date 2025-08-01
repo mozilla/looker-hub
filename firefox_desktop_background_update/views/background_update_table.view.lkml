@@ -529,6 +529,16 @@ view: background_update_table {
 "
   }
 
+  dimension: metrics__boolean__background_update_throttled {
+    sql: ${TABLE}.metrics.boolean.background_update_throttled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Throttled"
+    description: "True if this invocation of the background task was throttled and did not attempt to actually update.
+"
+  }
+
   dimension: metrics__boolean__update_auto_download {
     sql: ${TABLE}.metrics.boolean.update_auto_download ;;
     type: yesno
@@ -619,6 +629,16 @@ view: background_update_table {
 "
   }
 
+  dimension: metrics__counter__background_update_debounced {
+    sql: ${TABLE}.metrics.counter.background_update_debounced ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Background Update Debounced"
+    description: "The number of debounced background task invocations between this invocation and the last invocation that was not debounced.
+"
+  }
+
   dimension: metrics__counter__update_no_window_auto_restarts {
     sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
     type: number
@@ -695,6 +715,16 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.labeled_counter.update_skip_startup_update_reason ;;
     hidden: yes
     description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be "
+  }
+
+  dimension: metrics__quantity__background_update_days_since_last_browsed {
+    sql: ${TABLE}.metrics.quantity.background_update_days_since_last_browsed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Update Days Since Last Browsed"
+    description: "The number of days since the default profile was last used for browsing, i.e., since `environment.currentDate` of the default profile's serialized targeting snapshot.
+"
   }
 
   dimension: metrics__quantity__background_update_targeting_env_firefox_version {
