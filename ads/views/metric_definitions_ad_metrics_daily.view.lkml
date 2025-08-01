@@ -43,6 +43,7 @@ ad_metrics_daily_flight_name,
 ad_metrics_daily_image_url,
 ad_metrics_daily_impressions,
 ad_metrics_daily_kevel_metadata_updated_at,
+ad_metrics_daily_line_item_id,
 ad_metrics_daily_normalized_os,
 ad_metrics_daily_position,
 ad_metrics_daily_price,
@@ -119,6 +120,7 @@ ad_metrics_daily.flight_name AS ad_metrics_daily_flight_name,
 ad_metrics_daily.image_url AS ad_metrics_daily_image_url,
 ad_metrics_daily.impressions AS ad_metrics_daily_impressions,
 ad_metrics_daily.kevel_metadata_updated_at AS ad_metrics_daily_kevel_metadata_updated_at,
+ad_metrics_daily.line_item_id AS ad_metrics_daily_line_item_id,
 ad_metrics_daily.normalized_os AS ad_metrics_daily_normalized_os,
 ad_metrics_daily.position AS ad_metrics_daily_position,
 ad_metrics_daily.price AS ad_metrics_daily_price,
@@ -197,6 +199,7 @@ ad_metrics_daily_flight_name,
 ad_metrics_daily_image_url,
 ad_metrics_daily_impressions,
 ad_metrics_daily_kevel_metadata_updated_at,
+ad_metrics_daily_line_item_id,
 ad_metrics_daily_normalized_os,
 ad_metrics_daily_position,
 ad_metrics_daily_price,
@@ -472,6 +475,13 @@ ad_metrics_daily_zone_name,
 
   dimension: impressions {
     sql: ${TABLE}.ad_metrics_daily_impressions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: line_item_id {
+    sql: ${TABLE}.ad_metrics_daily_line_item_id ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
