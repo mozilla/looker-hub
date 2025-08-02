@@ -2138,7 +2138,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__quantity__cert_verifier_trust_obj_count {
     label: "Cert Verifier Trust Obj Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
     type: number
     group_label: "Cert Verifier"
