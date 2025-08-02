@@ -6323,7 +6323,7 @@ For other engines, this is `other-<engineName>`.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[app]appDefault` for an app-provided engine.
+  `[app]appDefault` for a config search engine.
   `[addon]<extension id>` for a WebExtension-based engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
@@ -6511,7 +6511,7 @@ default engine, and hence both versions of these fields will be filled in.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[app]appDefault` for an app-provided engine.
+  `[app]appDefault` for a config search engine.
   `[addon]<extension id>` for a WebExtension-based engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
@@ -6700,7 +6700,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of aborted search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of aborted search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -6717,7 +6717,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of failed search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of failed search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -6734,7 +6734,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of successful search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of successful search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -10244,6 +10244,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__web_app_usage_time__sum {
+    label: "Web App Usage Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.web_app_usage_time.sum ;;
+    type: number
+    group_label: "Web App"
+    group_item_label: "Usage Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Web App Usage Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_app_usage_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time that the user has the Taskbar Tab focused.
+"
+  }
+
   dimension: metrics__boolean__widget_dark_mode {
     label: "Widget Dark Mode"
     hidden: yes
@@ -12271,7 +12289,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__quantity__cert_verifier_trust_obj_count {
     label: "Cert Verifier Trust Obj Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
     type: number
     group_label: "Cert Verifier"
@@ -88923,6 +88941,20 @@ view: metrics__metrics__timing_distribution__urlclassifier_vlps_fallocate_time__
 }
 
 view: metrics__metrics__timing_distribution__urlclassifier_vlps_fileload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__web_app_usage_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -50,7 +50,6 @@ ad_metrics_daily_price,
 ad_metrics_daily_product,
 ad_metrics_daily_provider,
 ad_metrics_daily_rate_type,
-ad_metrics_daily_reports,
 ad_metrics_daily_site_id,
 ad_metrics_daily_site_name,
 ad_metrics_daily_sponsor,
@@ -127,7 +126,6 @@ ad_metrics_daily.price AS ad_metrics_daily_price,
 ad_metrics_daily.product AS ad_metrics_daily_product,
 ad_metrics_daily.provider AS ad_metrics_daily_provider,
 ad_metrics_daily.rate_type AS ad_metrics_daily_rate_type,
-ad_metrics_daily.reports AS ad_metrics_daily_reports,
 ad_metrics_daily.site_id AS ad_metrics_daily_site_id,
 ad_metrics_daily.site_name AS ad_metrics_daily_site_name,
 ad_metrics_daily.sponsor AS ad_metrics_daily_sponsor,
@@ -206,7 +204,6 @@ ad_metrics_daily_price,
 ad_metrics_daily_product,
 ad_metrics_daily_provider,
 ad_metrics_daily_rate_type,
-ad_metrics_daily_reports,
 ad_metrics_daily_site_id,
 ad_metrics_daily_site_name,
 ad_metrics_daily_sponsor,
@@ -525,13 +522,6 @@ ad_metrics_daily_zone_name,
   dimension: rate_type {
     sql: ${TABLE}.ad_metrics_daily_rate_type ;;
     type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: reports {
-    sql: ${TABLE}.ad_metrics_daily_reports ;;
-    type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
