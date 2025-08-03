@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: semantic_search_test_day_event_2025 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.semantic_search_test_day_event_2025_statistics ;;
+view: feature_prioritization_h2_2025_desktop_copy {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.feature_prioritization_h2_2025_desktop_copy_statistics ;;
 
   dimension: submission_date {
     type: date

@@ -12563,6 +12563,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu_visual ;;
+    hidden: yes
+    description: "The count of URI loads triggered in a subsession from the context menu's visual search menuitem, broken down by the originating action.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_searchbar ;;
     hidden: yes
@@ -12665,6 +12672,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu_visual ;;
+    hidden: yes
+    description: "Records clicks of adverts on visual-search SERP pages where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_adclicks_reload {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_reload ;;
     hidden: yes
@@ -12756,6 +12770,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_content_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu_visual ;;
+    hidden: yes
+    description: "Records counts for in-content visual searches where the search was most likely started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_content_reload {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_reload ;;
     hidden: yes
@@ -12844,6 +12865,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu ;;
     hidden: yes
     description: "Records counts of SERP pages with adverts displayed where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.contextmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu_visual ;;
+    hidden: yes
+    description: "Records counts of visual-search SERP pages with adverts displayed where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
 "
   }
 
@@ -15312,21 +15340,21 @@ success - search service successfully initialized.
   dimension: metrics__labeled_counter__search_suggestions_aborted_requests {
     sql: ${TABLE}.metrics.labeled_counter.search_suggestions_aborted_requests ;;
     hidden: yes
-    description: "Counts the number of aborted search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of aborted search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
   dimension: metrics__labeled_counter__search_suggestions_failed_requests {
     sql: ${TABLE}.metrics.labeled_counter.search_suggestions_failed_requests ;;
     hidden: yes
-    description: "Counts the number of failed search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of failed search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
   dimension: metrics__labeled_counter__search_suggestions_successful_requests {
     sql: ${TABLE}.metrics.labeled_counter.search_suggestions_successful_requests ;;
     hidden: yes
-    description: "Counts the number of successful search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of successful search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -21294,7 +21322,7 @@ For other engines, this is `other-<engineName>`.
     group_item_label: "Search Engine Default Load Path"
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[app]appDefault` for an app-provided engine.
+  `[app]appDefault` for a config search engine.
   `[addon]<extension id>` for a WebExtension-based engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
@@ -21393,7 +21421,7 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Search Engine Private Load Path"
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[app]appDefault` for an app-provided engine.
+  `[app]appDefault` for a config search engine.
   `[addon]<extension id>` for a WebExtension-based engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.

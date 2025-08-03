@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/upgrade_spotlight_rollout.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/upgrade_spotlight_rollout_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/viewpoint_desktop_2025_h2_rolling.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/viewpoint_desktop_2025_h2_rolling_last_updated.datagroup.lkml"
 
-explore: upgrade_spotlight_rollout {
+explore: viewpoint_desktop_2025_h2_rolling {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: upgrade_spotlight_rollout {
   }
 
   hidden: yes
-  persist_with: upgrade_spotlight_rollout_last_updated
+  persist_with: viewpoint_desktop_2025_h2_rolling_last_updated
 }

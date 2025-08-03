@@ -2824,6 +2824,24 @@ default: true
 "
   }
 
+  dimension: metrics__string__preferences_toolbar_mode_setting {
+    label: "Preferences Toolbar Mode Setting"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_toolbar_mode_setting ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Toolbar Mode Setting"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Toolbar Mode Setting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_toolbar_mode_setting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The mode of the toolbar. Possible values are: simple or expanded.
+"
+  }
+
   dimension: metrics__string__preferences_toolbar_position_setting {
     label: "Preferences Toolbar Position Setting"
     hidden: no
