@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: upgrade_spotlight_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.upgrade_spotlight_rollout_statistics ;;
+view: viewpoint_desktop_2025_h2_rolling {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.viewpoint_desktop_2025_h2_rolling_statistics ;;
 
   dimension: submission_date {
     type: date

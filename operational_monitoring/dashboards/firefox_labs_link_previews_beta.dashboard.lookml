@@ -10,6 +10,77 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: firefox_labs_link_previews_beta
+    type: "ci-line-chart"
+    fields: [
+      firefox_labs_link_previews_beta.submission_date,
+      firefox_labs_link_previews_beta.branch,
+      firefox_labs_link_previews_beta.upper,
+      firefox_labs_link_previews_beta.lower,
+      firefox_labs_link_previews_beta.point
+    ]
+    pivots: [
+      firefox_labs_link_previews_beta.branch
+    ]
+    filters:
+      firefox_labs_link_previews_beta.metric: 'memory_total'
+      firefox_labs_link_previews_beta.statistic: percentile
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_labs_link_previews_beta.submission_date
+    field_y: firefox_labs_link_previews_beta.point
+    log_scale: false
+    ci_lower: firefox_labs_link_previews_beta.lower
+    ci_upper: firefox_labs_link_previews_beta.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_link_previews_beta.submission_date
+      Percentile: firefox_labs_link_previews_beta.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_link_previews_beta
+    type: looker_line
+    fields: [
+      firefox_labs_link_previews_beta.submission_date,
+      firefox_labs_link_previews_beta.branch,
+      firefox_labs_link_previews_beta.point
+    ]
+    pivots: [
+      firefox_labs_link_previews_beta.branch
+    ]
+    filters:
+      firefox_labs_link_previews_beta.metric: 'active_hours'
+      firefox_labs_link_previews_beta.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_labs_link_previews_beta.submission_date
+    field_y: firefox_labs_link_previews_beta.point
+    log_scale: false
+    ci_lower: firefox_labs_link_previews_beta.lower
+    ci_upper: firefox_labs_link_previews_beta.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_link_previews_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -28,7 +99,7 @@
     filters:
       firefox_labs_link_previews_beta.metric: 'uri_count'
       firefox_labs_link_previews_beta.statistic: mean
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,7 +133,7 @@
     filters:
       firefox_labs_link_previews_beta.metric: 'qualified_cumulative_days_of_use'
       firefox_labs_link_previews_beta.statistic: mean
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -95,77 +166,6 @@
     ]
     filters:
       firefox_labs_link_previews_beta.metric: 'search_count'
-      firefox_labs_link_previews_beta.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_link_previews_beta.submission_date
-    field_y: firefox_labs_link_previews_beta.point
-    log_scale: false
-    ci_lower: firefox_labs_link_previews_beta.lower
-    ci_upper: firefox_labs_link_previews_beta.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_link_previews_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: firefox_labs_link_previews_beta
-    type: "ci-line-chart"
-    fields: [
-      firefox_labs_link_previews_beta.submission_date,
-      firefox_labs_link_previews_beta.branch,
-      firefox_labs_link_previews_beta.upper,
-      firefox_labs_link_previews_beta.lower,
-      firefox_labs_link_previews_beta.point
-    ]
-    pivots: [
-      firefox_labs_link_previews_beta.branch
-    ]
-    filters:
-      firefox_labs_link_previews_beta.metric: 'memory_total'
-      firefox_labs_link_previews_beta.statistic: percentile
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_labs_link_previews_beta.submission_date
-    field_y: firefox_labs_link_previews_beta.point
-    log_scale: false
-    ci_lower: firefox_labs_link_previews_beta.lower
-    ci_upper: firefox_labs_link_previews_beta.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_link_previews_beta.submission_date
-      Percentile: firefox_labs_link_previews_beta.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_link_previews_beta
-    type: looker_line
-    fields: [
-      firefox_labs_link_previews_beta.submission_date,
-      firefox_labs_link_previews_beta.branch,
-      firefox_labs_link_previews_beta.point
-    ]
-    pivots: [
-      firefox_labs_link_previews_beta.branch
-    ]
-    filters:
-      firefox_labs_link_previews_beta.metric: 'days_of_use'
       firefox_labs_link_previews_beta.statistic: mean
     row: 20
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       firefox_labs_link_previews_beta.branch
     ]
     filters:
-      firefox_labs_link_previews_beta.metric: 'active_hours'
+      firefox_labs_link_previews_beta.metric: 'days_of_use'
       firefox_labs_link_previews_beta.statistic: mean
     row: 30
     col: 12
