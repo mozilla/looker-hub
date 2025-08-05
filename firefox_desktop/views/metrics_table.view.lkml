@@ -15313,6 +15313,13 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_contextmenu_visual ;;
+    hidden: yes
+    description: "Count of impressions of the visual search context menu item. The counter's label is the engine's identifier if the engine is known at the time of impression and it's an app-provided engine. Otherwise the label is \"none\".
+"
+  }
+
   dimension: metrics__labeled_counter__script_preloader_requests {
     sql: ${TABLE}.metrics.labeled_counter.script_preloader_requests ;;
     hidden: yes
