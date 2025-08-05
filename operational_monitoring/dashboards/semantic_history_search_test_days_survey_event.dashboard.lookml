@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       semantic_history_search_test_days_survey_event.branch
     ]
     filters:
-      semantic_history_search_test_days_survey_event.metric: 'ad_clicks'
+      semantic_history_search_test_days_survey_event.metric: 'active_hours'
       semantic_history_search_test_days_survey_event.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: semantic_history_search_test_days_survey_event
+    type: "ci-line-chart"
+    fields: [
+      semantic_history_search_test_days_survey_event.submission_date,
+      semantic_history_search_test_days_survey_event.branch,
+      semantic_history_search_test_days_survey_event.upper,
+      semantic_history_search_test_days_survey_event.lower,
+      semantic_history_search_test_days_survey_event.point
+    ]
+    pivots: [
+      semantic_history_search_test_days_survey_event.branch
+    ]
+    filters:
+      semantic_history_search_test_days_survey_event.metric: 'memory_total'
+      semantic_history_search_test_days_survey_event.statistic: percentile
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: semantic_history_search_test_days_survey_event.submission_date
+    field_y: semantic_history_search_test_days_survey_event.point
+    log_scale: false
+    ci_lower: semantic_history_search_test_days_survey_event.lower
+    ci_upper: semantic_history_search_test_days_survey_event.upper
+    show_grid: true
+    listen:
+      Date: semantic_history_search_test_days_survey_event.submission_date
+      Percentile: semantic_history_search_test_days_survey_event.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,9 +131,43 @@
       semantic_history_search_test_days_survey_event.branch
     ]
     filters:
-      semantic_history_search_test_days_survey_event.metric: 'active_hours'
+      semantic_history_search_test_days_survey_event.metric: 'qualified_cumulative_days_of_use'
       semantic_history_search_test_days_survey_event.statistic: mean
     row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: semantic_history_search_test_days_survey_event.submission_date
+    field_y: semantic_history_search_test_days_survey_event.point
+    log_scale: false
+    ci_lower: semantic_history_search_test_days_survey_event.lower
+    ci_upper: semantic_history_search_test_days_survey_event.upper
+    show_grid: true
+    listen:
+      Date: semantic_history_search_test_days_survey_event.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: semantic_history_search_test_days_survey_event
+    type: looker_line
+    fields: [
+      semantic_history_search_test_days_survey_event.submission_date,
+      semantic_history_search_test_days_survey_event.branch,
+      semantic_history_search_test_days_survey_event.point
+    ]
+    pivots: [
+      semantic_history_search_test_days_survey_event.branch
+    ]
+    filters:
+      semantic_history_search_test_days_survey_event.metric: 'ad_clicks'
+      semantic_history_search_test_days_survey_event.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -130,113 +201,8 @@
     filters:
       semantic_history_search_test_days_survey_event.metric: 'days_of_use'
       semantic_history_search_test_days_survey_event.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: semantic_history_search_test_days_survey_event.submission_date
-    field_y: semantic_history_search_test_days_survey_event.point
-    log_scale: false
-    ci_lower: semantic_history_search_test_days_survey_event.lower
-    ci_upper: semantic_history_search_test_days_survey_event.upper
-    show_grid: true
-    listen:
-      Date: semantic_history_search_test_days_survey_event.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: semantic_history_search_test_days_survey_event
-    type: looker_line
-    fields: [
-      semantic_history_search_test_days_survey_event.submission_date,
-      semantic_history_search_test_days_survey_event.branch,
-      semantic_history_search_test_days_survey_event.point
-    ]
-    pivots: [
-      semantic_history_search_test_days_survey_event.branch
-    ]
-    filters:
-      semantic_history_search_test_days_survey_event.metric: 'qualified_cumulative_days_of_use'
-      semantic_history_search_test_days_survey_event.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: semantic_history_search_test_days_survey_event.submission_date
-    field_y: semantic_history_search_test_days_survey_event.point
-    log_scale: false
-    ci_lower: semantic_history_search_test_days_survey_event.lower
-    ci_upper: semantic_history_search_test_days_survey_event.upper
-    show_grid: true
-    listen:
-      Date: semantic_history_search_test_days_survey_event.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: semantic_history_search_test_days_survey_event
-    type: "ci-line-chart"
-    fields: [
-      semantic_history_search_test_days_survey_event.submission_date,
-      semantic_history_search_test_days_survey_event.branch,
-      semantic_history_search_test_days_survey_event.upper,
-      semantic_history_search_test_days_survey_event.lower,
-      semantic_history_search_test_days_survey_event.point
-    ]
-    pivots: [
-      semantic_history_search_test_days_survey_event.branch
-    ]
-    filters:
-      semantic_history_search_test_days_survey_event.metric: 'memory_total'
-      semantic_history_search_test_days_survey_event.statistic: percentile
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: semantic_history_search_test_days_survey_event.submission_date
-    field_y: semantic_history_search_test_days_survey_event.point
-    log_scale: false
-    ci_lower: semantic_history_search_test_days_survey_event.lower
-    ci_upper: semantic_history_search_test_days_survey_event.upper
-    show_grid: true
-    listen:
-      Date: semantic_history_search_test_days_survey_event.submission_date
-      Percentile: semantic_history_search_test_days_survey_event.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: semantic_history_search_test_days_survey_event
-    type: looker_line
-    fields: [
-      semantic_history_search_test_days_survey_event.submission_date,
-      semantic_history_search_test_days_survey_event.branch,
-      semantic_history_search_test_days_survey_event.point
-    ]
-    pivots: [
-      semantic_history_search_test_days_survey_event.branch
-    ]
-    filters:
-      semantic_history_search_test_days_survey_event.metric: 'retained'
-      semantic_history_search_test_days_survey_event.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: semantic_history_search_test_days_survey_event.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       semantic_history_search_test_days_survey_event.metric: 'search_count'
+      semantic_history_search_test_days_survey_event.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: semantic_history_search_test_days_survey_event.submission_date
+    field_y: semantic_history_search_test_days_survey_event.point
+    log_scale: false
+    ci_lower: semantic_history_search_test_days_survey_event.lower
+    ci_upper: semantic_history_search_test_days_survey_event.upper
+    show_grid: true
+    listen:
+      Date: semantic_history_search_test_days_survey_event.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: semantic_history_search_test_days_survey_event
+    type: looker_line
+    fields: [
+      semantic_history_search_test_days_survey_event.submission_date,
+      semantic_history_search_test_days_survey_event.branch,
+      semantic_history_search_test_days_survey_event.point
+    ]
+    pivots: [
+      semantic_history_search_test_days_survey_event.branch
+    ]
+    filters:
+      semantic_history_search_test_days_survey_event.metric: 'retained'
       semantic_history_search_test_days_survey_event.statistic: mean
     row: 30
     col: 12

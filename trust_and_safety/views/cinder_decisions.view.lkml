@@ -53,6 +53,13 @@ view: cinder_decisions {
     description: "How long did it take for the reviewer to handle the job in seconds"
   }
 
+  dimension: is_illegal {
+    sql: ${TABLE}.is_illegal ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "is the entity doing or promoting something illegal"
+  }
+
   dimension: is_violation {
     sql: ${TABLE}.is_violation ;;
     type: yesno
@@ -74,6 +81,13 @@ view: cinder_decisions {
     description: "Anonymized moderator"
   }
 
+  dimension: overall_policy {
+    sql: ${TABLE}.overall_policy ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "parent policy used in decision"
+  }
+
   dimension: queue_slug {
     sql: ${TABLE}.queue_slug ;;
     type: string
@@ -93,6 +107,13 @@ view: cinder_decisions {
     type: string
     suggest_persist_for: "24 hours"
     description: "Who reviewed the job - email address"
+  }
+
+  dimension: sub_policy {
+    sql: ${TABLE}.sub_policy ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "more specific policy used in decision"
   }
 
   dimension: team {
