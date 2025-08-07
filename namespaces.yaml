@@ -330,7 +330,6 @@ ads_backend:
         table: mozdata.ads_backend.request_stats
       type: table_view
 bigeye:
-  connection: bigquery-oauth
   explores:
     dashboards:
       type: table_explore
@@ -347,7 +346,7 @@ bigeye:
   glean_app: false
   owners:
   - phlee@mozilla.com
-  pretty_name: BigEye
+  pretty_name: Bigeye
   spoke: looker-spoke-default
   views:
     collections:
