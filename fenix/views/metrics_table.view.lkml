@@ -15214,6 +15214,14 @@ view: metrics_table {
     group_item_label: "Preferences Open Links In App Enabled"
   }
 
+  dimension: metrics__string__preferences_toolbar_mode_setting {
+    sql: ${TABLE}.metrics.string.preferences_toolbar_mode_setting ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Preferences Toolbar Mode Setting"
+  }
+
   dimension: metrics__string__preferences_toolbar_position_setting {
     sql: ${TABLE}.metrics.string.preferences_toolbar_position_setting ;;
     type: string
@@ -15389,6 +15397,11 @@ view: metrics_table {
 
   dimension: metrics__string_list__addons_installed_addons {
     sql: ${TABLE}.metrics.string_list.addons_installed_addons ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
   }
 

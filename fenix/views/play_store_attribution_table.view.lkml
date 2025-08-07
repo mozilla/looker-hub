@@ -485,6 +485,11 @@ view: play_store_attribution_table {
     group_item_label: "Play Store Attribution Term"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__text__play_store_attribution_install_referrer_response {
     sql: ${TABLE}.metrics.text.play_store_attribution_install_referrer_response ;;
     type: string

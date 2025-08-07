@@ -61,6 +61,42 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__quantity__background_update_days_since_last_browsed {
+    label: "Background Update Days Since Last Browsed"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.background_update_days_since_last_browsed ;;
+    type: number
+    group_label: "Background Update"
+    group_item_label: "Days Since Last Browsed"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Days Since Last Browsed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_days_since_last_browsed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of days since the default profile was last used for browsing, i.e., since `environment.currentDate` of the default profile's serialized targeting snapshot.
+"
+  }
+
+  dimension: metrics__counter__background_update_debounced {
+    label: "Background Update Debounced"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.background_update_debounced ;;
+    type: number
+    group_label: "Background Update"
+    group_item_label: "Debounced"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Debounced"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_debounced"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of debounced background task invocations between this invocation and the last invocation that was not debounced.
+"
+  }
+
   dimension: metrics__boolean__background_update_exit_code_exception {
     label: "Background Update Exit Code Exception"
     hidden: no
@@ -221,6 +257,24 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
     description: "If the default profile had a targeting snapshot serialized to disk, the `version` of the snapshot.
 This version number does not have a physical unit: it's only useful to compare between versions.
+"
+  }
+
+  dimension: metrics__boolean__background_update_throttled {
+    label: "Background Update Throttled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_throttled ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Throttled"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Throttled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_throttled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if this invocation of the background task was throttled and did not attempt to actually update.
 "
   }
 
@@ -1202,6 +1256,31 @@ The labels are the `category.name` identifier of the metric.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: background_update_debounced {
+    type: sum
+    sql: ${metrics__counter__background_update_debounced} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Debounced"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_debounced"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: background_update_debounced_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__background_update_debounced: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Debounced"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_debounced"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: update_no_window_auto_restarts {

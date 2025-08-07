@@ -777,6 +777,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
+    label: "Browser Engagement Navigation Contextmenu Visual"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu_visual ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Contextmenu Visual"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation Contextmenu Visual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_navigation_contextmenu_visual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of URI loads triggered in a subsession from the context menu's visual search menuitem, broken down by the originating action.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     label: "Browser Engagement Navigation Searchbar"
     hidden: yes
@@ -1508,6 +1525,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu_visual {
+    label: "Browser Search Adclicks Contextmenu Visual"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu_visual ;;
+    group_label: "Browser Search Adclicks"
+    group_item_label: "Contextmenu Visual"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Adclicks Contextmenu Visual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_adclicks_contextmenu_visual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on visual-search SERP pages where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_adclicks_reload {
     label: "Browser Search Adclicks Reload"
     hidden: yes
@@ -1729,6 +1763,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_content_contextmenu_visual {
+    label: "Browser Search Content Contextmenu Visual"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu_visual ;;
+    group_label: "Browser Search Content"
+    group_item_label: "Contextmenu Visual"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Content Contextmenu Visual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_content_contextmenu_visual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts for in-content visual searches where the search was most likely started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_content_reload {
     label: "Browser Search Content Reload"
     hidden: yes
@@ -1947,6 +1998,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records counts of SERP pages with adverts displayed where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.contextmenu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_contextmenu_visual {
+    label: "Browser Search Withads Contextmenu Visual"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu_visual ;;
+    group_label: "Browser Search Withads"
+    group_item_label: "Contextmenu Visual"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Withads Contextmenu Visual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_withads_contextmenu_visual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of visual-search SERP pages with adverts displayed where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
 "
   }
 
@@ -6263,6 +6331,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
+    label: "Sap Impression Counts Contextmenu Visual"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_contextmenu_visual ;;
+    group_label: "Sap Impression Counts"
+    group_item_label: "Contextmenu Visual"
+
+    link: {
+      label: "Glean Dictionary reference for Sap Impression Counts Contextmenu Visual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sap_impression_counts_contextmenu_visual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of impressions of the visual search context menu item. The counter's label is the engine's identifier if the engine is known at the time of impression and it's an app-provided engine. Otherwise the label is \"none\".
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
@@ -6323,7 +6408,7 @@ For other engines, this is `other-<engineName>`.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[app]appDefault` for an app-provided engine.
+  `[app]appDefault` for a config search engine.
   `[addon]<extension id>` for a WebExtension-based engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
@@ -6511,7 +6596,7 @@ default engine, and hence both versions of these fields will be filled in.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[app]appDefault` for an app-provided engine.
+  `[app]appDefault` for a config search engine.
   `[addon]<extension id>` for a WebExtension-based engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
@@ -6700,7 +6785,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of aborted search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of aborted search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -6717,7 +6802,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of failed search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of failed search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -6734,7 +6819,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of successful search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of successful search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -10244,6 +10329,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__web_app_usage_time__sum {
+    label: "Web App Usage Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.web_app_usage_time.sum ;;
+    type: number
+    group_label: "Web App"
+    group_item_label: "Usage Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Web App Usage Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_app_usage_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time that the user has the Taskbar Tab focused.
+"
+  }
+
   dimension: metrics__boolean__widget_dark_mode {
     label: "Widget Dark Mode"
     hidden: yes
@@ -12271,7 +12374,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__quantity__cert_verifier_trust_obj_count {
     label: "Cert Verifier Trust Obj Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
     type: number
     group_label: "Cert Verifier"
@@ -45897,6 +46000,47 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextme
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
+  label: "Browser Engagement Navigation - Contextmenu Visual"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar {
   label: "Browser Engagement Navigation - Searchbar"
 
@@ -46471,6 +46615,47 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu_visual {
+  label: "Browser Search Adclicks - Contextmenu Visual"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_adclicks_reload {
   label: "Browser Search Adclicks - Reload"
 
@@ -47004,6 +47189,47 @@ view: metrics__metrics__labeled_counter__browser_search_content_contextmenu {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_search_content_contextmenu_visual {
+  label: "Browser Search Content - Contextmenu Visual"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_content_reload {
   label: "Browser Search Content - Reload"
 
@@ -47498,6 +47724,47 @@ view: metrics__metrics__labeled_counter__browser_search_withads_about_newtab {
 
 view: metrics__metrics__labeled_counter__browser_search_withads_contextmenu {
   label: "Browser Search Withads - Contextmenu"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_withads_contextmenu_visual {
+  label: "Browser Search Withads - Contextmenu Visual"
 
   dimension: document_id {
     type: string
@@ -60905,6 +61172,47 @@ view: metrics__metrics__labeled_counter__sandbox_rejected_syscalls {
 
 view: metrics__metrics__labeled_counter__sap_deprecated_counts {
   label: "Sap - Deprecated Counts"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
+  label: "Sap Impression Counts - Contextmenu Visual"
 
   dimension: document_id {
     type: string
@@ -88923,6 +89231,20 @@ view: metrics__metrics__timing_distribution__urlclassifier_vlps_fallocate_time__
 }
 
 view: metrics__metrics__timing_distribution__urlclassifier_vlps_fileload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__web_app_usage_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -485,6 +485,11 @@ view: fx_suggest_table {
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__url__fx_suggest_reporting_url {
     sql: ${TABLE}.metrics.url.fx_suggest_reporting_url ;;
     type: string

@@ -563,6 +563,11 @@ for the purpose of experimentation enrollment.
     A first run of a dedicate"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.time_unit ;;
     type: string

@@ -984,6 +984,11 @@ then the value will be 'custom'.
 "
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__glean_database_write_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.bucket_count ;;
     type: number

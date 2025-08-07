@@ -680,6 +680,11 @@ view: broken_site_report_table {
     hidden: yes
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__text__broken_site_report_browser_info_app_default_useragent_string {
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_app_default_useragent_string ;;
     type: string

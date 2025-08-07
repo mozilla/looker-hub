@@ -15175,7 +15175,7 @@ have values.
     hidden: yes
     description: "Most recent exception reported by the Addons Manager this app session.
 Previously reported in the \"main\" ping `simpleMeasurements`.
-```
+```text
 {
   module: string module name,
   context: string context, like the method name,
@@ -17121,6 +17121,11 @@ operating system.
     description: "Reason for XPI Database startup error.
 Previously reported in \"main\" ping `simpleMeasurements`.
 "
+  }
+
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
   }
 
   dimension: metrics__string_list__intl_accept_languages {

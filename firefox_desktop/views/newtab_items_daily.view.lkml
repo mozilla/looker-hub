@@ -11,6 +11,13 @@ view: newtab_items_daily {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: authors {
+    sql: ${TABLE}.authors ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The names of the authors of the piece being recommended, concatenated with commas"
+  }
+
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
@@ -87,11 +94,25 @@ view: newtab_items_daily {
     description: "The position (0-index) of the pocket tile."
   }
 
+  dimension: publisher {
+    sql: ${TABLE}.publisher ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The name of the recommendation publisher"
+  }
+
   dimension: received_rank {
     sql: ${TABLE}.received_rank ;;
     type: number
     suggest_persist_for: "24 hours"
     description: "The rank or order of the recommendation at the time it was sent to the client."
+  }
+
+  dimension: recommendation_url {
+    sql: ${TABLE}.recommendation_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The URL of the recommendation at the publisher's domain"
   }
 
   dimension: save_count {
@@ -121,6 +142,13 @@ view: newtab_items_daily {
     type: number
     suggest_persist_for: "24 hours"
     description: "If click belongs in a section, the numberic position of the section"
+  }
+
+  dimension: title {
+    sql: ${TABLE}.title ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The title of the recommendation."
   }
 
   dimension: topic {

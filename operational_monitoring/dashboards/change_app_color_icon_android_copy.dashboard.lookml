@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       change_app_color_icon_android_copy.branch
     ]
     filters:
-      change_app_color_icon_android_copy.metric: 'search_count'
+      change_app_color_icon_android_copy.metric: 'active_hours'
       change_app_color_icon_android_copy.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: change_app_color_icon_android_copy.submission_date
+    field_y: change_app_color_icon_android_copy.point
+    log_scale: false
+    ci_lower: change_app_color_icon_android_copy.lower
+    ci_upper: change_app_color_icon_android_copy.upper
+    show_grid: true
+    listen:
+      Date: change_app_color_icon_android_copy.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: change_app_color_icon_android_copy
+    type: looker_line
+    fields: [
+      change_app_color_icon_android_copy.submission_date,
+      change_app_color_icon_android_copy.branch,
+      change_app_color_icon_android_copy.point
+    ]
+    pivots: [
+      change_app_color_icon_android_copy.branch
+    ]
+    filters:
+      change_app_color_icon_android_copy.metric: 'retained'
+      change_app_color_icon_android_copy.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: change_app_color_icon_android_copy.submission_date
@@ -62,8 +96,8 @@
     filters:
       change_app_color_icon_android_copy.metric: 'ad_clicks'
       change_app_color_icon_android_copy.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: change_app_color_icon_android_copy.submission_date
@@ -95,40 +129,6 @@
     ]
     filters:
       change_app_color_icon_android_copy.metric: 'uri_count'
-      change_app_color_icon_android_copy.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: change_app_color_icon_android_copy.submission_date
-    field_y: change_app_color_icon_android_copy.point
-    log_scale: false
-    ci_lower: change_app_color_icon_android_copy.lower
-    ci_upper: change_app_color_icon_android_copy.upper
-    show_grid: true
-    listen:
-      Date: change_app_color_icon_android_copy.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: change_app_color_icon_android_copy
-    type: looker_line
-    fields: [
-      change_app_color_icon_android_copy.submission_date,
-      change_app_color_icon_android_copy.branch,
-      change_app_color_icon_android_copy.point
-    ]
-    pivots: [
-      change_app_color_icon_android_copy.branch
-    ]
-    filters:
-      change_app_color_icon_android_copy.metric: 'active_hours'
       change_app_color_icon_android_copy.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       change_app_color_icon_android_copy.branch
     ]
     filters:
-      change_app_color_icon_android_copy.metric: 'retained'
+      change_app_color_icon_android_copy.metric: 'search_count'
       change_app_color_icon_android_copy.statistic: mean
     row: 20
     col: 12

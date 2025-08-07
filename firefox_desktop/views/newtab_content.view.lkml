@@ -98,6 +98,24 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
 "
   }
 
+  dimension: metrics__quantity__newtab_content_ping_version {
+    label: "Newtab Content Ping Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.newtab_content_ping_version ;;
+    type: number
+    group_label: "Newtab Content"
+    group_item_label: "Ping Version"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Content Ping Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_content_ping_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Marks major revisions of data collection methods or format for this ping. Because we are not recording Firefox version, this field has been added to assist the data pipeline. To avoid user possible fingerprinting, this should be updated only when necessary.
+"
+  }
+
   dimension: metrics__string__newtab_content_surface_id {
     label: "Newtab Content Surface ID"
     hidden: no

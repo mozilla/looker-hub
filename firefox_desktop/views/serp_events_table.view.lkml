@@ -185,6 +185,12 @@ view: serp_events_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: partner_code {
+    sql: ${TABLE}.partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: ping_seq {
     sql: ${TABLE}.ping_seq ;;
     type: number

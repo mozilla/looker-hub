@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Focus Ios Daily Active Users V2
-    name: Focus Ios Daily Active Users V2_sum
+  - title: Firefox Ios Daily Active Users V2
+    name: Firefox Ios Daily Active Users V2_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       all_browsers_dau.branch
     ]
     filters:
-      all_browsers_dau.metric: 'focus_ios_daily_active_users_v2'
+      all_browsers_dau.metric: 'firefox_ios_daily_active_users_v2'
       all_browsers_dau.statistic: sum
     row: 0
     col: 0
@@ -43,8 +43,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Fenix Daily Active Users V2
-    name: Fenix Daily Active Users V2_sum
+  - title: Focus Android Daily Active Users V2
+    name: Focus Android Daily Active Users V2_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -59,7 +59,7 @@
       all_browsers_dau.branch
     ]
     filters:
-      all_browsers_dau.metric: 'fenix_daily_active_users_v2'
+      all_browsers_dau.metric: 'focus_android_daily_active_users_v2'
       all_browsers_dau.statistic: sum
     row: 0
     col: 12
@@ -109,8 +109,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Ios Daily Active Users V2
-    name: Firefox Ios Daily Active Users V2_sum
+  - title: Fenix Daily Active Users V2
+    name: Fenix Daily Active Users V2_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -125,7 +125,7 @@
       all_browsers_dau.branch
     ]
     filters:
-      all_browsers_dau.metric: 'firefox_ios_daily_active_users_v2'
+      all_browsers_dau.metric: 'fenix_daily_active_users_v2'
       all_browsers_dau.statistic: sum
     row: 10
     col: 12
@@ -142,8 +142,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Focus Android Daily Active Users V2
-    name: Focus Android Daily Active Users V2_sum
+  - title: Focus Ios Daily Active Users V2
+    name: Focus Ios Daily Active Users V2_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -158,7 +158,7 @@
       all_browsers_dau.branch
     ]
     filters:
-      all_browsers_dau.metric: 'focus_android_daily_active_users_v2'
+      all_browsers_dau.metric: 'focus_ios_daily_active_users_v2'
       all_browsers_dau.statistic: sum
     row: 20
     col: 0
