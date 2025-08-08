@@ -2318,10 +2318,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: serp_categorization
-    serp_categorization_unnested:
-      type: table_explore
-      views:
-        base_view: serp_categorization_unnested_table
     spoc:
       type: glean_ping_explore
       views:
