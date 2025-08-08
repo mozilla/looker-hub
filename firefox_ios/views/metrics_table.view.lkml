@@ -673,6 +673,22 @@ view: metrics_table {
     group_item_label: "Tracking Protection Enabled"
   }
 
+  dimension: metrics__boolean__user_ai_summarize_shake_gesture_enabled {
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_shake_gesture_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "User Ai Summarize Shake Gesture Enabled"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_summarization_enabled {
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "User Ai Summarize Summarization Enabled"
+  }
+
   dimension: metrics__counter__app_menu_block_images_disabled {
     sql: ${TABLE}.metrics.counter.app_menu_block_images_disabled ;;
     type: number
@@ -2246,6 +2262,72 @@ view: metrics_table {
     group_item_label: "Value"
   }
 
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__awesomebar_query_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.bucket_count ;;
     type: number
@@ -3519,6 +3601,20 @@ view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceed
 }
 
 view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ai_summarize_summarization_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

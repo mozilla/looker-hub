@@ -4321,6 +4321,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Text Decoration Thickness"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_decoration_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_decoration_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Decoration Trim"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_text_emphasis {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_emphasis ;;
     type: number
@@ -10031,6 +10039,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Text Decoration Thickness"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_text_decoration_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_decoration_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Decoration Trim"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_text_emphasis {
