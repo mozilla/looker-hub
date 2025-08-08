@@ -99,6 +99,26 @@ Firefox-iOS.
 "
   }
 
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__sum {
+    label: "Ai Summarize Summarization Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.sum ;;
+    type: number
+    group_label: "Ai Summarize"
+    group_item_label: "Summarization Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ai Summarize Summarization Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/ai_summarize_summarization_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the total time for generating the summary and showing it to the user.
+Starts when the user triggers summarization.
+Ends when user sees the result or an error.
+"
+  }
+
   dimension: metrics__boolean__app_choice_screen_acquisition {
     label: "App Choice Screen Acquisition"
     hidden: no
@@ -3625,6 +3645,42 @@ preference.
 tracking-protection that is enabled. One of:
 * basic
 * strict
+"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_shake_gesture_enabled {
+    label: "User Ai Summarize Shake Gesture Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_shake_gesture_enabled ;;
+    type: yesno
+    group_label: "User Ai Summarize"
+    group_item_label: "Shake Gesture Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for User Ai Summarize Shake Gesture Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_ai_summarize_shake_gesture_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has shake to summarize option enabled
+"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_summarization_enabled {
+    label: "User Ai Summarize Summarization Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_enabled ;;
+    type: yesno
+    group_label: "User Ai Summarize"
+    group_item_label: "Summarization Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for User Ai Summarize Summarization Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_ai_summarize_summarization_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has summarization enabled.
 "
   }
 
@@ -10186,6 +10242,20 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__ai_summarize_summarization_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
