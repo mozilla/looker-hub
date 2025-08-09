@@ -38,6 +38,7 @@ ad_metrics_daily_country,
 ad_metrics_daily_creative_id,
 ad_metrics_daily_creative_title,
 ad_metrics_daily_creative_url,
+ad_metrics_daily_external_param,
 ad_metrics_daily_flight_id,
 ad_metrics_daily_flight_name,
 ad_metrics_daily_image_url,
@@ -114,6 +115,7 @@ ad_metrics_daily.country AS ad_metrics_daily_country,
 ad_metrics_daily.creative_id AS ad_metrics_daily_creative_id,
 ad_metrics_daily.creative_title AS ad_metrics_daily_creative_title,
 ad_metrics_daily.creative_url AS ad_metrics_daily_creative_url,
+ad_metrics_daily.external_param AS ad_metrics_daily_external_param,
 ad_metrics_daily.flight_id AS ad_metrics_daily_flight_id,
 ad_metrics_daily.flight_name AS ad_metrics_daily_flight_name,
 ad_metrics_daily.image_url AS ad_metrics_daily_image_url,
@@ -192,6 +194,7 @@ ad_metrics_daily_country,
 ad_metrics_daily_creative_id,
 ad_metrics_daily_creative_title,
 ad_metrics_daily_creative_url,
+ad_metrics_daily_external_param,
 ad_metrics_daily_flight_id,
 ad_metrics_daily_flight_name,
 ad_metrics_daily_image_url,
@@ -444,6 +447,13 @@ ad_metrics_daily_zone_name,
 
   dimension: creative_url {
     sql: ${TABLE}.ad_metrics_daily_creative_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: external_param {
+    sql: ${TABLE}.ad_metrics_daily_external_param ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

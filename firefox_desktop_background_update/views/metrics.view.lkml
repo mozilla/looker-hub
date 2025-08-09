@@ -6747,7 +6747,7 @@ Child-process data will likely be absent, or incomplete.
 
   dimension: metrics__timespan__fog_initialization__value {
     label: "Fog Initialization Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
     type: number
     group_label: "Fog"
