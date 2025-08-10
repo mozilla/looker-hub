@@ -1697,6 +1697,30 @@ view: metrics_table {
     group_item_label: "Httpsfirst Upgraded Schemeless"
   }
 
+  dimension: metrics__counter__idb_maintenance_fallback_fullrestore_metadata {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_fallback_fullrestore_metadata ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Fallback Fullrestore Metadata"
+  }
+
+  dimension: metrics__counter__idb_maintenance_metadata_restored {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_metadata_restored ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Metadata Restored"
+  }
+
+  dimension: metrics__counter__idb_maintenance_unknown_metadata {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_unknown_metadata ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Unknown Metadata"
+  }
+
   dimension: metrics__counter__localstorage_request_recv_cancel_counter {
     sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
     type: number
@@ -12771,6 +12795,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__fog_data_directory_info {
+    sql: ${TABLE}.metrics.object.fog_data_directory_info ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__fog_validation_some_object {
     sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
     hidden: yes
@@ -20139,6 +20168,72 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
     sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__range {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__values {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.values ;;
     hidden: yes
   }
 
@@ -54623,6 +54718,20 @@ view: metrics_table__metrics__timing_distribution__fingerprinting_protection_can
 }
 
 view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fog_initializations__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
