@@ -724,14 +724,6 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: baseline
-    bookmarks_sync:
-      type: glean_ping_explore
-      views:
-        base_view: bookmarks_sync
-    broken_site_report:
-      type: glean_ping_explore
-      views:
-        base_view: broken_site_report
     client_counts:
       type: client_counts_explore
       views:
@@ -850,10 +842,6 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: metrics
-    migration:
-      type: glean_ping_explore
-      views:
-        base_view: migration
     onboarding_opt_out:
       type: glean_ping_explore
       views:
@@ -993,58 +981,6 @@ fenix:
         table: mozdata.org_mozilla_fenix_nightly.baseline
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.baseline
-      type: table_view
-    bookmarks_sync:
-      tables:
-      - channel: release
-        table: mozdata.fenix.bookmarks_sync
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.bookmarks_sync
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.bookmarks_sync
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.bookmarks_sync
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.bookmarks_sync
-      type: glean_ping_view
-    bookmarks_sync_table:
-      tables:
-      - channel: release
-        table: mozdata.fenix.bookmarks_sync
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.bookmarks_sync
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.bookmarks_sync
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.bookmarks_sync
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.bookmarks_sync
-      type: table_view
-    broken_site_report:
-      tables:
-      - channel: release
-        table: mozdata.fenix.broken_site_report
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.broken_site_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.broken_site_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.broken_site_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.broken_site_report
-      type: glean_ping_view
-    broken_site_report_table:
-      tables:
-      - channel: release
-        table: mozdata.fenix.broken_site_report
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.broken_site_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.broken_site_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.broken_site_report
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.broken_site_report
       type: table_view
     client_adclicks_history_table:
       tables:
@@ -1477,32 +1413,6 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.migrated_clients
-      type: table_view
-    migration:
-      tables:
-      - channel: release
-        table: mozdata.fenix.migration
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.migration
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.migration
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.migration
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.migration
-      type: glean_ping_view
-    migration_table:
-      tables:
-      - channel: release
-        table: mozdata.fenix.migration
-      - channel: beta
-        table: mozdata.org_mozilla_firefox_beta.migration
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix.migration
-      - channel: nightly
-        table: mozdata.org_mozilla_fenix_nightly.migration
-      - channel: nightly
-        table: mozdata.org_mozilla_fennec_aurora.migration
       type: table_view
     new_profile_activation_clients_table:
       tables:
@@ -3080,241 +2990,6 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.user_characteristics
-      type: table_view
-firefox_desktop_background_update:
-  explores:
-    background_update:
-      type: glean_ping_explore
-      views:
-        base_view: background_update
-    baseline:
-      type: glean_ping_explore
-      views:
-        base_view: baseline
-    broken_site_report:
-      type: glean_ping_explore
-      views:
-        base_view: broken_site_report
-    client_counts:
-      type: client_counts_explore
-      views:
-        base_view: client_counts
-        extended_view: baseline_clients_daily_table
-    crash:
-      type: glean_ping_explore
-      views:
-        base_view: crash
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
-    metrics:
-      type: glean_ping_explore
-      views:
-        base_view: metrics
-    pageload_base_domain:
-      type: glean_ping_explore
-      views:
-        base_view: pageload_base_domain
-    pageload_domain:
-      type: glean_ping_explore
-      views:
-        base_view: pageload_domain
-    temp_fog_initial_state:
-      type: glean_ping_explore
-      views:
-        base_view: temp_fog_initial_state
-    update:
-      type: glean_ping_explore
-      views:
-        base_view: update
-    use_counters:
-      type: glean_ping_explore
-      views:
-        base_view: use_counters
-    user_characteristics:
-      type: glean_ping_explore
-      views:
-        base_view: user_characteristics
-  glean_app: true
-  owners:
-  - chutten@mozilla.com
-  pretty_name: Firefox for Desktop Background Update Task
-  spoke: looker-spoke-default
-  views:
-    background_update:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.background_update
-      type: glean_ping_view
-    background_update_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.background_update
-      type: table_view
-    baseline:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.baseline
-      type: glean_ping_view
-    baseline_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.baseline_clients_daily
-      type: table_view
-    baseline_clients_last_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.baseline_clients_last_seen
-      type: table_view
-    baseline_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.baseline
-      type: table_view
-    broken_site_report:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.broken_site_report
-      type: glean_ping_view
-    broken_site_report_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.broken_site_report
-      type: table_view
-    client_counts:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.baseline_clients_daily
-      type: client_counts_view
-    clients_last_seen_joined_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.clients_last_seen_joined
-      type: table_view
-    crash:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.crash
-      type: glean_ping_view
-    crash_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.crash
-      type: table_view
-    deletion_request:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.firefox_desktop_background_update.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_stream_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.events_stream
-      type: table_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.events
-      type: table_view
-    events_unnested_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.events_unnested
-      type: table_view
-    growth_accounting:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.baseline_clients_last_seen
-      type: growth_accounting_view
-    metrics:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.metrics
-      type: glean_ping_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.metrics_clients_daily
-      type: table_view
-    metrics_clients_last_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.metrics_clients_last_seen
-      type: table_view
-    metrics_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.metrics
-      type: table_view
-    pageload_base_domain:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.pageload_base_domain
-      type: glean_ping_view
-    pageload_base_domain_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.pageload_base_domain
-      type: table_view
-    pageload_domain:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.pageload_domain
-      type: glean_ping_view
-    pageload_domain_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.pageload_domain
-      type: table_view
-    temp_fog_initial_state:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.temp_fog_initial_state
-      type: glean_ping_view
-    temp_fog_initial_state_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.temp_fog_initial_state
-      type: table_view
-    update:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.update
-      type: glean_ping_view
-    update_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.update
-      type: table_view
-    use_counters:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.use_counters
-      type: glean_ping_view
-    use_counters_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.use_counters
-      type: table_view
-    user_characteristics:
-      tables:
-      - table: mozdata.firefox_desktop_background_update.user_characteristics
-      type: glean_ping_view
-    user_characteristics_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop_background_update.user_characteristics
       type: table_view
 firefox_ios:
   explores:
@@ -5479,19 +5154,11 @@ monitor_frontend:
       type: table_explore
       views:
         base_view: dashboard_user_journey_funnels
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
     events:
       type: events_explore
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
   glean_app: true
   owners:
   - rhelmer@mozilla.com
@@ -5503,25 +5170,11 @@ monitor_frontend:
       tables:
       - table: moz-fx-data-shared-prod.monitor_frontend_derived.monitor_dashboard_user_journey_funnels_v1
       type: table_view
-    deletion_request:
-      tables:
-      - table: mozdata.monitor_frontend.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.monitor_frontend.deletion_request
-      type: table_view
     events:
       tables:
       - base_table: mozdata.monitor_frontend.events_unnested
         events_table_view: events_unnested_table
       type: events_view
-    events_stream_table:
-      tables:
-      - channel: null
-        table: mozdata.monitor_frontend.events_stream
-      type: table_view
     events_table:
       tables:
       - channel: null
@@ -5534,10 +5187,6 @@ monitor_frontend:
       type: table_view
 monitoring:
   explores:
-    column_size:
-      type: ping_explore
-      views:
-        base_view: column_size
     glean_event_counts:
       type: table_explore
       views:
@@ -5558,10 +5207,6 @@ monitoring:
       type: table_explore
       views:
         base_view: looker_usage_models
-    looker_usage_unused_explores:
-      type: table_explore
-      views:
-        base_view: looker_usage_unused_explores
     payload_bytes_error_all:
       type: ping_explore
       views:
@@ -5732,10 +5377,6 @@ monitoring:
     looker_usage_models:
       tables:
       - table: moz-fx-data-shared-prod.monitoring.looker_usage_models
-      type: table_view
-    looker_usage_unused_explores:
-      tables:
-      - table: moz-fx-data-shared-prod.monitoring.looker_usage_unused_explores
       type: table_view
     metadata_completeness:
       tables:
@@ -17732,193 +17373,6 @@ telemetry_dev_cycle:
     telemetry_probes_stats:
       tables:
       - table: mozdata.telemetry_dev_cycle.telemetry_probes_stats
-      type: table_view
-thunderbird_desktop:
-  explores:
-    baseline:
-      type: glean_ping_explore
-      views:
-        base_view: baseline
-    broken_site_report:
-      type: glean_ping_explore
-      views:
-        base_view: broken_site_report
-    client_counts:
-      type: client_counts_explore
-      views:
-        base_view: client_counts
-        extended_view: baseline_clients_daily_table
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
-    metrics:
-      type: glean_ping_explore
-      views:
-        base_view: metrics
-    pageload_base_domain:
-      type: glean_ping_explore
-      views:
-        base_view: pageload_base_domain
-    pageload_domain:
-      type: glean_ping_explore
-      views:
-        base_view: pageload_domain
-    temp_fog_initial_state:
-      type: glean_ping_explore
-      views:
-        base_view: temp_fog_initial_state
-    use_counters:
-      type: glean_ping_explore
-      views:
-        base_view: use_counters
-    user_characteristics:
-      type: glean_ping_explore
-      views:
-        base_view: user_characteristics
-  glean_app: true
-  owners:
-  - alessandro@thunderbird.net
-  - sancus@thunderbird.net
-  pretty_name: Thunderbird
-  spoke: looker-spoke-default
-  views:
-    baseline:
-      tables:
-      - table: mozdata.thunderbird_desktop.baseline
-      type: glean_ping_view
-    baseline_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.baseline_clients_daily
-      type: table_view
-    baseline_clients_last_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.baseline_clients_last_seen
-      type: table_view
-    baseline_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.baseline
-      type: table_view
-    broken_site_report:
-      tables:
-      - table: mozdata.thunderbird_desktop.broken_site_report
-      type: glean_ping_view
-    broken_site_report_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.broken_site_report
-      type: table_view
-    client_counts:
-      tables:
-      - table: mozdata.thunderbird_desktop.baseline_clients_daily
-      type: client_counts_view
-    deletion_request:
-      tables:
-      - table: mozdata.thunderbird_desktop.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.thunderbird_desktop.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_stream_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.events_stream
-      type: table_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.events
-      type: table_view
-    events_unnested_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.events_unnested
-      type: table_view
-    growth_accounting:
-      tables:
-      - table: mozdata.thunderbird_desktop.baseline_clients_last_seen
-      type: growth_accounting_view
-    metrics:
-      tables:
-      - table: mozdata.thunderbird_desktop.metrics
-      type: glean_ping_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.metrics_clients_daily
-      type: table_view
-    metrics_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.metrics
-      type: table_view
-    pageload_base_domain:
-      tables:
-      - table: mozdata.thunderbird_desktop.pageload_base_domain
-      type: glean_ping_view
-    pageload_base_domain_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.pageload_base_domain
-      type: table_view
-    pageload_domain:
-      tables:
-      - table: mozdata.thunderbird_desktop.pageload_domain
-      type: glean_ping_view
-    pageload_domain_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.pageload_domain
-      type: table_view
-    temp_fog_initial_state:
-      tables:
-      - table: mozdata.thunderbird_desktop.temp_fog_initial_state
-      type: glean_ping_view
-    temp_fog_initial_state_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.temp_fog_initial_state
-      type: table_view
-    use_counters:
-      tables:
-      - table: mozdata.thunderbird_desktop.use_counters
-      type: glean_ping_view
-    use_counters_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.use_counters
-      type: table_view
-    user_characteristics:
-      tables:
-      - table: mozdata.thunderbird_desktop.user_characteristics
-      type: glean_ping_view
-    user_characteristics_table:
-      tables:
-      - channel: null
-        table: mozdata.thunderbird_desktop.user_characteristics
       type: table_view
 trust_and_safety:
   connection: bigquery-oauth
