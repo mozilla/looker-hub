@@ -5269,6 +5269,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_autospace {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_autospace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Autospace"
+    description: "Whether a document used the CSS property text-autospace. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_text_combine_upright {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_combine_upright ;;
     type: number
@@ -12416,6 +12426,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Text Anchor"
     description: "Whether a page used the CSS property text-anchor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_text_autospace {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_autospace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Autospace"
+    description: "Whether a page used the CSS property text-autospace. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
