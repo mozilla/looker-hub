@@ -32542,7 +32542,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__sum {
     label: "Sts Poll And Event The Last Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -32561,7 +32561,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_and_events_cycle__sum {
     label: "Sts Poll And Events Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -32580,7 +32580,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_block_time__sum {
     label: "Sts Poll Block Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.sum ;;
     type: number
     group_label: "Sts"
@@ -32599,7 +32599,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_cycle__sum {
     label: "Sts Poll Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.sum ;;
     type: number
     group_label: "Sts"
