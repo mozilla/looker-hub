@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: whats_new_notification_sidebarvertical_tabs_rollout_v3_last_updated {
-  label: "whats_new_notification_sidebarvertical_tabs_rollout_v3 Last Updated"
+datagroup: unexpected_script_load_table_last_updated {
+  label: "unexpected_script_load_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'whats_new_notification_sidebarvertical_tabs_rollout_v3_statistics')
+    WHERE (table_schema = 'firefox_desktop_stable' AND table_name = 'unexpected_script_load_v1')
 
     ) ;;
-  description: "Updates for whats_new_notification_sidebarvertical_tabs_rollout_v3 when referenced tables are modified."
+  description: "Updates for unexpected_script_load_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }
