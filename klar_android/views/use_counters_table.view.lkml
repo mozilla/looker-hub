@@ -18079,6 +18079,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_use_asm {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_use_asm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Use Asm"
+    description: "Whether a document has instantiated a script containing \"use asm\" either in the top level or a nested function. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_wasm {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm ;;
     type: number
@@ -22576,6 +22586,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Thenable Standard Proto"
     description: "Whether a page resolved a promise using thenable on a standard prototype. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_use_asm {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_use_asm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Use Asm"
+    description: "Whether a page has instantiated a script containing \"use asm\" either in the top level or a nested function. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

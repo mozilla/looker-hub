@@ -4614,6 +4614,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__memory_distribution__ipprotection_usage_rx__sum {
+    label: "Ipprotection Usage Rx Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_rx.sum ;;
+    type: number
+    group_label: "Ipprotection"
+    group_item_label: "Usage Rx Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Usage Rx Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_usage_rx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bytes transmitted (incoming) while IP Protection is running.
+"
+  }
+
+  dimension: metrics__memory_distribution__ipprotection_usage_tx__sum {
+    label: "Ipprotection Usage Tx Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_tx.sum ;;
+    type: number
+    group_label: "Ipprotection"
+    group_item_label: "Usage Tx Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Usage Tx Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_usage_tx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bytes transmitted (outgoing) while IP Protection is running.
+"
+  }
+
   dimension: metrics__uuid__legacy_telemetry_client_id {
     label: "Legacy Telemetry Client ID"
     hidden: no
@@ -5172,6 +5208,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records technical data about whether the ping registration at runtime succeeded
+"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__sum {
+    label: "Newtab Spons Nav Traffic Recvd Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.sum ;;
+    type: number
+    group_label: "Newtab"
+    group_item_label: "Spons Nav Traffic Recvd Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Spons Nav Traffic Recvd Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_spons_nav_traffic_recvd"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The volume of traffic received through browsers that were link targets for sponsored topsite or content navigations.
+"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__sum {
+    label: "Newtab Spons Nav Traffic Sent Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.sum ;;
+    type: number
+    group_label: "Newtab"
+    group_item_label: "Spons Nav Traffic Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Spons Nav Traffic Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_spons_nav_traffic_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The volume of traffic sent through browsers that were link targets for sponsored topsite or content navigations.
 "
   }
 
@@ -82937,6 +83009,34 @@ view: metrics__metrics__memory_distribution__image_decode_speed_webp__values {
   }
 }
 
+view: metrics__metrics__memory_distribution__ipprotection_usage_rx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__ipprotection_usage_tx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -83218,6 +83318,34 @@ view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size
 }
 
 view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__newtab_spons_nav_traffic_recvd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__newtab_spons_nav_traffic_sent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

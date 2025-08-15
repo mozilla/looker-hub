@@ -9,7 +9,6 @@ view: metric_definitions_ad_metrics_daily {
     sql: SELECT
                 SUM(impressions) AS ad_metrics_ad_impressions,
 SUM(clicks) AS ad_metrics_ad_clicks,
-SUM(reports) AS ad_metrics_ad_reports,
 SUM(revenue) AS revenue,
 SUM(impressions)/1000 AS milli_impressions,
 COUNT(DISTINCT ad_id) AS ads_count,
@@ -246,14 +245,6 @@ ad_metrics_daily_zone_name,
     description: "Ad clicks"
     type: number
     sql: ${TABLE}.ad_metrics_ad_clicks ;;
-  }
-
-  dimension: ad_metrics_ad_reports {
-    group_label: "Metrics"
-    label: "Ads Reported"
-    description: "Number of time ad was reported"
-    type: number
-    sql: ${TABLE}.ad_metrics_ad_reports ;;
   }
 
   dimension: revenue {
@@ -660,14 +651,6 @@ ad_metrics_daily_zone_name,
     description: "Sum of Ad Clicks"
   }
 
-  measure: ad_metrics_ad_reports_sum {
-    type: sum
-    sql: ${TABLE}.ad_metrics_ad_reports*1 ;;
-    label: "Ads Reported Sum"
-    group_label: "Statistics"
-    description: "Sum of Ads Reported"
-  }
-
   measure: revenue_sum {
     type: sum
     sql: ${TABLE}.revenue*1 ;;
@@ -726,7 +709,6 @@ ad_metrics_daily_zone_name,
     fields: [
       ad_metrics_ad_impressions,
       ad_metrics_ad_clicks,
-      ad_metrics_ad_reports,
       revenue,
       milli_impressions,
       ads_count,
@@ -735,7 +717,6 @@ ad_metrics_daily_zone_name,
       click_through_rate,
       ad_metrics_ad_impressions_sum,
       ad_metrics_ad_clicks_sum,
-      ad_metrics_ad_reports_sum,
       revenue_sum,
       milli_impressions_sum,
       ads_count_sum,
