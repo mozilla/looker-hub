@@ -14513,6 +14513,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Thenable Standard Proto"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_use_asm {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_use_asm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Use Asm"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_wasm {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm ;;
     type: number
@@ -18111,6 +18119,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Thenable Standard Proto"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_use_asm {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_use_asm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Use Asm"
   }
 
   dimension: metrics__counter__use_counter_page_js_wasm {

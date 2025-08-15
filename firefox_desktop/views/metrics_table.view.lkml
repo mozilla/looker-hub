@@ -18021,6 +18021,50 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__ipprotection_usage_rx__count {
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_rx.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Ipprotection Usage Rx"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__ipprotection_usage_rx__sum {
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_rx.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Ipprotection Usage Rx"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__ipprotection_usage_rx__values {
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_rx.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__ipprotection_usage_tx__count {
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_tx.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Ipprotection Usage Tx"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__ipprotection_usage_tx__sum {
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_tx.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Ipprotection Usage Tx"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__ipprotection_usage_tx__values {
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_tx.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__count {
     sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.count ;;
     type: number
@@ -18480,6 +18524,50 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__count {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Newtab Spons Nav Traffic Recvd"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__sum {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Newtab Spons Nav Traffic Recvd"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__values {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__count {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Newtab Spons Nav Traffic Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__sum {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Memory Distribution Newtab Spons Nav Traffic Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__values {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.values ;;
     hidden: yes
   }
 
@@ -67687,6 +67775,34 @@ view: metrics_table__metrics__memory_distribution__image_decode_speed_webp__valu
   }
 }
 
+view: metrics_table__metrics__memory_distribution__ipprotection_usage_rx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__ipprotection_usage_tx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -67968,6 +68084,34 @@ view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagra
 }
 
 view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__newtab_spons_nav_traffic_recvd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__newtab_spons_nav_traffic_sent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
