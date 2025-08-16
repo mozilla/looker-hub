@@ -17395,6 +17395,10 @@ subscription_platform:
       tables:
       - table: mozdata.subscription_platform.daily_active_service_subscriptions
       type: table_view
+    exchange_rates:
+      tables:
+      - table: mozdata.subscription_platform.exchange_rates
+      type: table_view
     google_subscriptions_v1:
       measures:
         count:
@@ -17444,6 +17448,10 @@ subscription_platform:
           type: count
       tables:
       - table: moz-fx-data-shared-prod.subscription_platform_derived.stripe_subscriptions_v1
+      type: table_view
+    vat_rates:
+      tables:
+      - table: mozdata.subscription_platform.vat_rates
       type: table_view
 subscription_platform_backend:
   explores:
