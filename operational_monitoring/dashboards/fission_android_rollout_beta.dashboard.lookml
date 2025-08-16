@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fission_android_rollout_beta.branch
     ]
     filters:
-      fission_android_rollout_beta.metric: 'active_hours'
+      fission_android_rollout_beta.metric: 'retained'
       fission_android_rollout_beta.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       fission_android_rollout_beta.branch
     ]
     filters:
-      fission_android_rollout_beta.metric: 'ad_clicks'
+      fission_android_rollout_beta.metric: 'uri_count'
       fission_android_rollout_beta.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       fission_android_rollout_beta.branch
     ]
     filters:
-      fission_android_rollout_beta.metric: 'tagged_sap_searches'
+      fission_android_rollout_beta.metric: 'search_count'
       fission_android_rollout_beta.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       fission_android_rollout_beta.branch
     ]
     filters:
-      fission_android_rollout_beta.metric: 'retained'
+      fission_android_rollout_beta.metric: 'tagged_sap_searches'
       fission_android_rollout_beta.statistic: mean
     row: 20
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       fission_android_rollout_beta.branch
     ]
     filters:
-      fission_android_rollout_beta.metric: 'uri_count'
+      fission_android_rollout_beta.metric: 'ad_clicks'
       fission_android_rollout_beta.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       fission_android_rollout_beta.branch
     ]
     filters:
-      fission_android_rollout_beta.metric: 'search_count'
+      fission_android_rollout_beta.metric: 'active_hours'
       fission_android_rollout_beta.statistic: mean
     row: 30
     col: 0
