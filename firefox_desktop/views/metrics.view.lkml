@@ -5213,7 +5213,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__sum {
     label: "Newtab Spons Nav Traffic Recvd Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.sum ;;
     type: number
     group_label: "Newtab"
@@ -5231,7 +5231,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__sum {
     label: "Newtab Spons Nav Traffic Sent Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.sum ;;
     type: number
     group_label: "Newtab"
