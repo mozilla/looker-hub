@@ -9,33 +9,28 @@ view: issues {
     sql: ${TABLE}.ack_snooze_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "ack_snooze_seconds associated with this record."
   }
 
   dimension: acked_time_seconds {
     sql: ${TABLE}.acked_time_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "acked_time_seconds associated with this record."
   }
 
   dimension: alert_count {
     sql: ${TABLE}.alert_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "alert_count associated with this record."
   }
 
   dimension: alerting_metrics {
     sql: ${TABLE}.alerting_metrics ;;
     hidden: yes
-    description: "Alerting Metrics"
   }
 
   dimension: alerting_metrics_with_label {
     sql: ${TABLE}.alerting_metrics_with_label ;;
     hidden: yes
-    description: "Alerting Metrics with Label"
   }
 
   dimension: assignee_email {
@@ -47,7 +42,6 @@ view: issues {
   dimension: assignee_groups {
     sql: ${TABLE}.assignee_groups ;;
     hidden: yes
-    description: "Assignee Groups"
   }
 
   dimension: assignee_id {
@@ -59,14 +53,12 @@ view: issues {
   dimension: assignee_idp_groups {
     sql: ${TABLE}.assignee_idp_groups ;;
     hidden: yes
-    description: "Assignee IDP Groups"
   }
 
   dimension: assignee_last_login_at {
     sql: ${TABLE}.assignee_last_login_at ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Assignee Last Login At"
   }
 
   dimension: assignee_name {
@@ -79,89 +71,76 @@ view: issues {
     sql: ${TABLE}.assignee_picture_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Assignee Picture URL"
   }
 
   dimension: closed_time_seconds {
     sql: ${TABLE}.closed_time_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "closed_time_seconds associated with this record."
   }
 
   dimension: current_closing_feedback {
     sql: ${TABLE}.current_closing_feedback ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "current_closing_feedback associated with this record."
   }
 
   dimension: current_status {
     sql: ${TABLE}.current_status ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "current_status associated with this record."
   }
 
   dimension: description {
     sql: ${TABLE}.description ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "description associated with this record."
   }
 
   dimension: earliest_alerting_point_time_seconds {
     sql: ${TABLE}.earliest_alerting_point_time_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "earliest_alerting_point_time_seconds associated with this record."
   }
 
   dimension: events {
     sql: ${TABLE}.events ;;
     hidden: yes
-    description: "events associated with this record."
   }
 
   dimension: first_metric_run_status {
     sql: ${TABLE}.first_metric_run_status ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "First Metric Run Status associated with this record."
   }
 
   dimension: id {
     sql: ${TABLE}.id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "id associated with this record."
   }
 
   dimension: issue_resolution_steps {
     sql: ${TABLE}.issue_resolution_steps ;;
     hidden: yes
-    description: "Issue Resolution Steps"
   }
 
   dimension: issue_type {
     sql: ${TABLE}.issue_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Issue Type"
   }
 
   dimension: metric_configuration_bigconfig_namespace {
     sql: ${TABLE}.metric_configuration_bigconfig_namespace ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Bigconfig Namespace"
   }
 
   dimension: metric_configuration_dataset_id {
     sql: ${TABLE}.metric_configuration_dataset_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Dataset ID"
   }
 
   dimension: metric_configuration_description {
@@ -173,7 +152,6 @@ view: issues {
   dimension: metric_configuration_filters {
     sql: ${TABLE}.metric_configuration_filters ;;
     hidden: yes
-    description: "Metric Configuration Filters"
   }
 
   dimension: metric_configuration_grain_seconds {
@@ -185,14 +163,12 @@ view: issues {
   dimension: metric_configuration_group_bys {
     sql: ${TABLE}.metric_configuration_group_bys ;;
     hidden: yes
-    description: "metric_configuration_group_bys associated with this record."
   }
 
   dimension: metric_configuration_id {
     sql: ${TABLE}.metric_configuration_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration ID"
   }
 
   dimension: metric_configuration_is_lookback_using_current_time {
@@ -258,63 +234,48 @@ view: issues {
     sql: ${TABLE}.metric_configuration_metric_schedule_schedule_frequency_interval_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Metric Schedule Schedule Frequency Interval Type"
   }
 
   dimension: metric_configuration_metric_schedule_schedule_frequency_interval_value {
     sql: ${TABLE}.metric_configuration_metric_schedule_schedule_frequency_interval_value ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Metric Schedule Schedule Frequency Interval Value"
   }
 
   dimension: metric_configuration_metric_type_is_metadata_metric {
     sql: ${TABLE}.metric_configuration_metric_type_is_metadata_metric ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Metric Type Is Metadata Metric"
   }
 
   dimension: metric_configuration_metric_type_is_table_metric {
     sql: ${TABLE}.metric_configuration_metric_type_is_table_metric ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Metric Type Is Table Metric"
   }
 
   dimension: metric_configuration_metric_type_predefined_metric_metric_name {
     sql: ${TABLE}.metric_configuration_metric_type_predefined_metric_metric_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Metric Type Predefined Metric Metric Name"
   }
 
   dimension: metric_configuration_metric_type_template_metric_aggregation_type {
     sql: ${TABLE}.metric_configuration_metric_type_template_metric_aggregation_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Metric Type Template Metric Aggregation Type"
   }
 
   dimension: metric_configuration_metric_type_template_metric_template_id {
     sql: ${TABLE}.metric_configuration_metric_type_template_metric_template_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Metric Type Template Metric Template ID"
   }
 
   dimension: metric_configuration_metric_type_template_metric_template_name {
     sql: ${TABLE}.metric_configuration_metric_type_template_metric_template_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Metric Type Template Metric Template Name"
-  }
-
-  dimension: metric_configuration_muted_until_epoch_seconds {
-    sql: ${TABLE}.metric_configuration_muted_until_epoch_seconds ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    description: "Metric Configuration Muted Until Epoch Seconds"
   }
 
   dimension: metric_configuration_name {
@@ -343,14 +304,12 @@ view: issues {
     sql: ${TABLE}.metric_configuration_schedule_frequency_interval_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Schedule Frequency Interval Type"
   }
 
   dimension: metric_configuration_schedule_frequency_interval_value {
     sql: ${TABLE}.metric_configuration_schedule_frequency_interval_value ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Schedule Frequency Interval Value"
   }
 
   dimension: metric_configuration_thresholds {
@@ -362,7 +321,6 @@ view: issues {
     sql: ${TABLE}.metric_configuration_warehouse_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Metric Configuration Warehouse ID"
   }
 
   dimension: metric_metadata_companion_metrics {
@@ -476,83 +434,71 @@ view: issues {
     sql: ${TABLE}.muted_until_timestamp ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Muted Until Timestamp"
   }
 
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "name associated with this record."
   }
 
   dimension: notification_channels {
     sql: ${TABLE}.notification_channels ;;
     hidden: yes
-    description: "notification_channels associated with this record."
   }
 
   dimension: opened_time_seconds {
     sql: ${TABLE}.opened_time_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "opened_time_seconds associated with this record."
   }
 
   dimension: parent_issue_display_name {
     sql: ${TABLE}.parent_issue_display_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Parent Issue Display Name"
   }
 
   dimension: parent_issue_id {
     sql: ${TABLE}.parent_issue_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Parent Issue ID"
   }
 
   dimension: priority {
     sql: ${TABLE}.priority ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Priority associated with this record."
   }
 
   dimension: priority_score {
     sql: ${TABLE}.priority_score ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Priority score associated with this record."
   }
 
   dimension: summary {
     sql: ${TABLE}.summary ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "summary associated with this record."
   }
 
   dimension: time_to_ack_seconds {
     sql: ${TABLE}.time_to_ack_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Time to acknowledge (in seconds) associated with this record."
   }
 
   dimension: time_to_resolve_seconds {
     sql: ${TABLE}.time_to_resolve_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Time to resolve (in seconds) associated with this record."
   }
 
   dimension: workspace_id {
     sql: ${TABLE}.workspace_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Workspace ID"
   }
 
   dimension_group: refreshed_at {
@@ -568,7 +514,6 @@ view: issues {
       quarter,
       year,
     ]
-    description: "Refreshed Timestamp"
   }
 
   sql_table_name: `moz-fx-data-shared-prod.bigeye_derived.issue_service_v1` ;;
