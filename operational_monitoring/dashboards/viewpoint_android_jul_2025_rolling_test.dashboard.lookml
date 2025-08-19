@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       viewpoint_android_jul_2025_rolling_test.branch
     ]
     filters:
-      viewpoint_android_jul_2025_rolling_test.metric: 'tagged_sap_searches'
+      viewpoint_android_jul_2025_rolling_test.metric: 'active_hours'
       viewpoint_android_jul_2025_rolling_test.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,77 +94,9 @@
       viewpoint_android_jul_2025_rolling_test.branch
     ]
     filters:
-      viewpoint_android_jul_2025_rolling_test.metric: 'days_of_use'
+      viewpoint_android_jul_2025_rolling_test.metric: 'tagged_sap_searches'
       viewpoint_android_jul_2025_rolling_test.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: viewpoint_android_jul_2025_rolling_test.submission_date
-    field_y: viewpoint_android_jul_2025_rolling_test.point
-    log_scale: false
-    ci_lower: viewpoint_android_jul_2025_rolling_test.lower
-    ci_upper: viewpoint_android_jul_2025_rolling_test.upper
-    show_grid: true
-    listen:
-      Date: viewpoint_android_jul_2025_rolling_test.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: viewpoint_android_jul_2025_rolling_test
-    type: looker_line
-    fields: [
-      viewpoint_android_jul_2025_rolling_test.submission_date,
-      viewpoint_android_jul_2025_rolling_test.branch,
-      viewpoint_android_jul_2025_rolling_test.point
-    ]
-    pivots: [
-      viewpoint_android_jul_2025_rolling_test.branch
-    ]
-    filters:
-      viewpoint_android_jul_2025_rolling_test.metric: 'ad_clicks'
-      viewpoint_android_jul_2025_rolling_test.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: viewpoint_android_jul_2025_rolling_test.submission_date
-    field_y: viewpoint_android_jul_2025_rolling_test.point
-    log_scale: false
-    ci_lower: viewpoint_android_jul_2025_rolling_test.lower
-    ci_upper: viewpoint_android_jul_2025_rolling_test.upper
-    show_grid: true
-    listen:
-      Date: viewpoint_android_jul_2025_rolling_test.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: viewpoint_android_jul_2025_rolling_test
-    type: looker_line
-    fields: [
-      viewpoint_android_jul_2025_rolling_test.submission_date,
-      viewpoint_android_jul_2025_rolling_test.branch,
-      viewpoint_android_jul_2025_rolling_test.point
-    ]
-    pivots: [
-      viewpoint_android_jul_2025_rolling_test.branch
-    ]
-    filters:
-      viewpoint_android_jul_2025_rolling_test.metric: 'active_hours'
-      viewpoint_android_jul_2025_rolling_test.statistic: mean
-    row: 20
     col: 0
     width: 12
     height: 8
@@ -198,7 +130,7 @@
     filters:
       viewpoint_android_jul_2025_rolling_test.metric: 'search_count'
       viewpoint_android_jul_2025_rolling_test.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -231,6 +163,74 @@
     ]
     filters:
       viewpoint_android_jul_2025_rolling_test.metric: 'retained'
+      viewpoint_android_jul_2025_rolling_test.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: viewpoint_android_jul_2025_rolling_test.submission_date
+    field_y: viewpoint_android_jul_2025_rolling_test.point
+    log_scale: false
+    ci_lower: viewpoint_android_jul_2025_rolling_test.lower
+    ci_upper: viewpoint_android_jul_2025_rolling_test.upper
+    show_grid: true
+    listen:
+      Date: viewpoint_android_jul_2025_rolling_test.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: viewpoint_android_jul_2025_rolling_test
+    type: looker_line
+    fields: [
+      viewpoint_android_jul_2025_rolling_test.submission_date,
+      viewpoint_android_jul_2025_rolling_test.branch,
+      viewpoint_android_jul_2025_rolling_test.point
+    ]
+    pivots: [
+      viewpoint_android_jul_2025_rolling_test.branch
+    ]
+    filters:
+      viewpoint_android_jul_2025_rolling_test.metric: 'days_of_use'
+      viewpoint_android_jul_2025_rolling_test.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: viewpoint_android_jul_2025_rolling_test.submission_date
+    field_y: viewpoint_android_jul_2025_rolling_test.point
+    log_scale: false
+    ci_lower: viewpoint_android_jul_2025_rolling_test.lower
+    ci_upper: viewpoint_android_jul_2025_rolling_test.upper
+    show_grid: true
+    listen:
+      Date: viewpoint_android_jul_2025_rolling_test.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: viewpoint_android_jul_2025_rolling_test
+    type: looker_line
+    fields: [
+      viewpoint_android_jul_2025_rolling_test.submission_date,
+      viewpoint_android_jul_2025_rolling_test.branch,
+      viewpoint_android_jul_2025_rolling_test.point
+    ]
+    pivots: [
+      viewpoint_android_jul_2025_rolling_test.branch
+    ]
+    filters:
+      viewpoint_android_jul_2025_rolling_test.metric: 'ad_clicks'
       viewpoint_android_jul_2025_rolling_test.statistic: mean
     row: 30
     col: 0
