@@ -2049,10 +2049,6 @@ firefox_desktop:
       views:
         base_view: events
         extended_view: desktop_events_table
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
     first_startup:
       type: glean_ping_explore
       views:
@@ -2218,18 +2214,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: onboarding_opt_out
-    pageload_base_domain:
-      type: glean_ping_explore
-      views:
-        base_view: pageload_base_domain
-    pageload_domain:
-      type: glean_ping_explore
-      views:
-        base_view: pageload_domain
-    profiles:
-      type: glean_ping_explore
-      views:
-        base_view: profiles
     prototype_no_code_events:
       type: glean_ping_explore
       views:
@@ -2238,18 +2222,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: quick_suggest
-    quick_suggest_deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: quick_suggest_deletion_request
     search_with:
       type: glean_ping_explore
       views:
         base_view: search_with
-    serp_categorization:
-      type: glean_ping_explore
-      views:
-        base_view: serp_categorization
     spoc:
       type: glean_ping_explore
       views:
@@ -2262,14 +2238,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: temp_fog_initial_state
-    third_party_modules:
-      type: glean_ping_explore
-      views:
-        base_view: third_party_modules
-    top_sites:
-      type: glean_ping_explore
-      views:
-        base_view: top_sites
     unexpected_script_load:
       type: glean_ping_explore
       views:
@@ -2466,11 +2434,6 @@ firefox_desktop:
       tables:
       - channel: release
         table: mozdata.telemetry.events_daily
-      type: table_view
-    events_stream_table:
-      tables:
-      - channel: null
-        table: mozdata.firefox_desktop.events_stream
       type: table_view
     events_table:
       tables:
@@ -2715,19 +2678,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.pageload_1pct
       type: table_view
-    pageload_base_domain:
-      tables:
-      - table: mozdata.firefox_desktop.pageload_base_domain
-      type: glean_ping_view
     pageload_base_domain_table:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.pageload_base_domain
       type: table_view
-    pageload_domain:
-      tables:
-      - table: mozdata.firefox_desktop.pageload_domain
-      type: glean_ping_view
     pageload_domain_table:
       tables:
       - channel: null
@@ -2738,10 +2693,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.pageload_nightly
       type: table_view
-    profiles:
-      tables:
-      - table: mozdata.firefox_desktop.profiles
-      type: glean_ping_view
     profiles_table:
       tables:
       - channel: null
@@ -2764,10 +2715,6 @@ firefox_desktop:
     quick_suggest:
       tables:
       - table: mozdata.firefox_desktop.quick_suggest
-      type: glean_ping_view
-    quick_suggest_deletion_request:
-      tables:
-      - table: mozdata.firefox_desktop.quick_suggest_deletion_request
       type: glean_ping_view
     quick_suggest_deletion_request_table:
       tables:
@@ -2803,10 +2750,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.search_with
       type: table_view
-    serp_categorization:
-      tables:
-      - table: mozdata.firefox_desktop.serp_categorization
-      type: glean_ping_view
     serp_categorization_table:
       tables:
       - channel: null
@@ -2869,19 +2812,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.temp_fog_initial_state
       type: table_view
-    third_party_modules:
-      tables:
-      - table: mozdata.firefox_desktop.third_party_modules
-      type: glean_ping_view
     third_party_modules_table:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.third_party_modules
       type: table_view
-    top_sites:
-      tables:
-      - table: mozdata.firefox_desktop.top_sites
-      type: glean_ping_view
     top_sites_table:
       tables:
       - channel: null
