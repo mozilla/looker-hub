@@ -2206,14 +2206,6 @@ firefox_desktop:
       type: table_explore
       views:
         base_view: newtab_items_daily
-    nimbus_targeting_context:
-      type: glean_ping_explore
-      views:
-        base_view: nimbus_targeting_context
-    onboarding_opt_out:
-      type: glean_ping_explore
-      views:
-        base_view: onboarding_opt_out
     prototype_no_code_events:
       type: glean_ping_explore
       views:
@@ -2242,10 +2234,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: unexpected_script_load
-    update:
-      type: glean_ping_explore
-      views:
-        base_view: update
     urlbar_events_daily:
       type: table_explore
       views:
@@ -2650,19 +2638,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.newtab_visits
       type: table_view
-    nimbus_targeting_context:
-      tables:
-      - table: mozdata.firefox_desktop.nimbus_targeting_context
-      type: glean_ping_view
     nimbus_targeting_context_table:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.nimbus_targeting_context
       type: table_view
-    onboarding_opt_out:
-      tables:
-      - table: mozdata.firefox_desktop.onboarding_opt_out
-      type: glean_ping_view
     onboarding_opt_out_table:
       tables:
       - channel: null
@@ -2836,10 +2816,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.unexpected_script_load
       type: table_view
-    update:
-      tables:
-      - table: mozdata.firefox_desktop.update
-      type: glean_ping_view
     update_table:
       tables:
       - channel: null
