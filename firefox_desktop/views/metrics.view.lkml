@@ -4614,6 +4614,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__memory_distribution__ipprotection_usage_rx__sum {
+    label: "Ipprotection Usage Rx Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_rx.sum ;;
+    type: number
+    group_label: "Ipprotection"
+    group_item_label: "Usage Rx Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Usage Rx Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_usage_rx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bytes transmitted (incoming) while IP Protection is running.
+"
+  }
+
+  dimension: metrics__memory_distribution__ipprotection_usage_tx__sum {
+    label: "Ipprotection Usage Tx Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_tx.sum ;;
+    type: number
+    group_label: "Ipprotection"
+    group_item_label: "Usage Tx Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Usage Tx Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_usage_tx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bytes transmitted (outgoing) while IP Protection is running.
+"
+  }
+
   dimension: metrics__uuid__legacy_telemetry_client_id {
     label: "Legacy Telemetry Client ID"
     hidden: no
@@ -5172,6 +5208,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records technical data about whether the ping registration at runtime succeeded
+"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__sum {
+    label: "Newtab Spons Nav Traffic Recvd Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.sum ;;
+    type: number
+    group_label: "Newtab"
+    group_item_label: "Spons Nav Traffic Recvd Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Spons Nav Traffic Recvd Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_spons_nav_traffic_recvd"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The volume of traffic received through browsers that were link targets for sponsored topsite or content navigations.
+"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__sum {
+    label: "Newtab Spons Nav Traffic Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.sum ;;
+    type: number
+    group_label: "Newtab"
+    group_item_label: "Spons Nav Traffic Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Spons Nav Traffic Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_spons_nav_traffic_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The volume of traffic sent through browsers that were link targets for sponsored topsite or content navigations.
 "
   }
 
@@ -16820,7 +16892,7 @@ Child-process data will likely be absent, or incomplete.
 
   dimension: metrics__timespan__fog_initialization__value {
     label: "Fog Initialization Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
     type: number
     group_label: "Fog"
@@ -16833,6 +16905,24 @@ Child-process data will likely be absent, or incomplete.
     }
 
     description: "Time the FOG initialization takes.
+"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__sum {
+    label: "Fog Initializations Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.sum ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Initializations Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Initializations Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_initializations"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time the FOG initializations take.
 "
   }
 
@@ -20381,6 +20471,60 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_fallback_fullrestore_metadata {
+    label: "Idb Maintenance Fallback Fullrestore Metadata"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.idb_maintenance_fallback_fullrestore_metadata ;;
+    type: number
+    group_label: "Idb Maintenance"
+    group_item_label: "Fallback Fullrestore Metadata"
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_fallback_fullrestore_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracks the number of times we need to fallback to restore metadata object by reading metadata-v2 file on disk when performing idle-maintenance on IDB database.
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_metadata_restored {
+    label: "Idb Maintenance Metadata Restored"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.idb_maintenance_metadata_restored ;;
+    type: number
+    group_label: "Idb Maintenance"
+    group_item_label: "Metadata Restored"
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_metadata_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times we failed to load metadata object and had to restore it
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_unknown_metadata {
+    label: "Idb Maintenance Unknown Metadata"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.idb_maintenance_unknown_metadata ;;
+    type: number
+    group_label: "Idb Maintenance"
+    group_item_label: "Unknown Metadata"
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_unknown_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments upon encountering an unknown metadata object when performing idle-maintenance on IDB database. During idle-maintenance, we iterate over idb directories/files and construct a metadata object by calling QuotaManager::GetOriginMetadata or LoadFullOriginMetadataWithRestore. It seems that in some cases, the metadata object we get here can be invalid and this metric is used to track those instances.
 "
   }
 
@@ -32470,7 +32614,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__sum {
     label: "Sts Poll And Event The Last Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -32489,7 +32633,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_and_events_cycle__sum {
     label: "Sts Poll And Events Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -32508,7 +32652,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_block_time__sum {
     label: "Sts Poll Block Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.sum ;;
     type: number
     group_label: "Sts"
@@ -32527,7 +32671,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_cycle__sum {
     label: "Sts Poll Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -42083,6 +42227,81 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Httpsfirst Upgraded Schemeless"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/httpsfirst_upgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_fallback_fullrestore_metadata {
+    type: sum
+    sql: ${metrics__counter__idb_maintenance_fallback_fullrestore_metadata} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_fallback_fullrestore_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_fallback_fullrestore_metadata_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__idb_maintenance_fallback_fullrestore_metadata: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_fallback_fullrestore_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_metadata_restored {
+    type: sum
+    sql: ${metrics__counter__idb_maintenance_metadata_restored} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_metadata_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_metadata_restored_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__idb_maintenance_metadata_restored: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_metadata_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_unknown_metadata {
+    type: sum
+    sql: ${metrics__counter__idb_maintenance_unknown_metadata} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_unknown_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_unknown_metadata_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__idb_maintenance_unknown_metadata: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_unknown_metadata"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -82790,6 +83009,34 @@ view: metrics__metrics__memory_distribution__image_decode_speed_webp__values {
   }
 }
 
+view: metrics__metrics__memory_distribution__ipprotection_usage_rx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__ipprotection_usage_tx__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__memory_distribution__javascript_gc_nursery_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -83071,6 +83318,34 @@ view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size
 }
 
 view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__newtab_spons_nav_traffic_recvd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__newtab_spons_nav_traffic_sent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -84835,6 +85110,20 @@ view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_no
 }
 
 view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__fog_initializations__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

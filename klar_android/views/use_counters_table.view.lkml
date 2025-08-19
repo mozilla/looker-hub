@@ -5269,6 +5269,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_autospace {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_autospace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Autospace"
+    description: "Whether a document used the CSS property text-autospace. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_text_combine_upright {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_combine_upright ;;
     type: number
@@ -5336,6 +5346,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Text Decoration Thickness"
     description: "Whether a document used the CSS property text-decoration-thickness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_text_decoration_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_decoration_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Decoration Trim"
+    description: "Whether a document used the CSS property text-decoration-trim. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -12409,6 +12429,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_text_autospace {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_autospace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Autospace"
+    description: "Whether a page used the CSS property text-autospace. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_text_combine_upright {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_combine_upright ;;
     type: number
@@ -12476,6 +12506,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Text Decoration Thickness"
     description: "Whether a page used the CSS property text-decoration-thickness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_text_decoration_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_decoration_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Decoration Trim"
+    description: "Whether a page used the CSS property text-decoration-trim. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18039,6 +18079,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_use_asm {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_use_asm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Use Asm"
+    description: "Whether a document has instantiated a script containing \"use asm\" either in the top level or a nested function. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_wasm {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm ;;
     type: number
@@ -22536,6 +22586,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Thenable Standard Proto"
     description: "Whether a page resolved a promise using thenable on a standard prototype. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_use_asm {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_use_asm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Use Asm"
+    description: "Whether a page has instantiated a script containing \"use asm\" either in the top level or a nested function. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

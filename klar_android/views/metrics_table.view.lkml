@@ -2147,6 +2147,36 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__idb_maintenance_fallback_fullrestore_metadata {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_fallback_fullrestore_metadata ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Fallback Fullrestore Metadata"
+    description: "Tracks the number of times we need to fallback to restore metadata object by reading metadata-v2 file on disk when performing idle-maintenance on IDB database.
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_metadata_restored {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_metadata_restored ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Metadata Restored"
+    description: "Counts the number of times we failed to load metadata object and had to restore it
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_unknown_metadata {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_unknown_metadata ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Unknown Metadata"
+    description: "Increments upon encountering an unknown metadata object when performing idle-maintenance on IDB database. During idle-maintenance, we iterate over idb directories/files and construct a metadata object by calling QuotaManager::GetOriginMetadata or LoadFullOriginMetadataWithRestore. It seems that in some cases, the metadata object we get here can be invalid and this metric is used to track those instances.
+"
+  }
+
   dimension: metrics__counter__localstorage_request_recv_cancel_counter {
     sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
     type: number
@@ -10378,6 +10408,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "The result of attempting to open a sqlite file.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram SQLITE_STORE_OPEN.
+Initially this metric also recorded the \"success\" category, but due to the high volume of recording those, only failure categories are now tracked.
 "
   }
 
@@ -10386,6 +10417,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "The result of attempting to query a sqlite file.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram SQLITE_STORE_QUERY.
+Initially this metric also recorded the \"success\" category, but due to the high volume of recording those, only failure categories are now tracked.
 "
   }
 
@@ -15202,6 +15234,28 @@ addons.theme. Like its counterpart, it will only have data in Firefox
 Desktop and at times and on platforms where the environment would have
 values.
 "
+  }
+
+  dimension: metrics__object__fog_data_directory_info {
+    sql: ${TABLE}.metrics.object.fog_data_directory_info ;;
+    hidden: yes
+    description: "Information about the data directories and files used by FOG.
+
+Structure is an array of objects, each containing the following properties:
+- `dir_name`: The name of the directory. This is the subdirectory name relative to the
+  FOG data directory and should only include \"db\", \"events\", and \"pending_pings\".
+- `dir_exists`: Whether the directory exists. This should only be false on the first
+  run of FOG, or if the directory was deleted.
+- `dir_created`: The creation time of the directory, in seconds since the unix epoch. If
+  the directory does not exist, this will be `null` and if the time cannot be determined,
+  it will default to `0`.
+- `dir_modified`: The last modification time of the directory, in seconds since the unix
+  epoch. If the directory does not exist, this will be `null` and if the time cannot be
+  determined, it will default to `0`.
+- `file_count`: The number of files in the directory. If the directory does not exist,
+  this will be `0`.
+- `files`: An array of objects, each containing:
+  - `fil"
   }
 
   dimension: metrics__object__fog_validation_some_object {
@@ -23138,6 +23192,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
     sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__range {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__values {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.values ;;
     hidden: yes
   }
 
@@ -58019,6 +58140,20 @@ view: metrics_table__metrics__timing_distribution__fingerprinting_protection_can
 }
 
 view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fog_initializations__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
