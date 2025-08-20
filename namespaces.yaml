@@ -2206,10 +2206,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: spoc
-    sync:
-      type: glean_ping_explore
-      views:
-        base_view: sync
     temp_fog_initial_state:
       type: glean_ping_explore
       views:
@@ -2222,10 +2218,6 @@ firefox_desktop:
       type: table_explore
       views:
         base_view: urlbar_events_daily_table
-    urlbar_keyword_exposure:
-      type: glean_ping_explore
-      views:
-        base_view: urlbar_keyword_exposure
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -2738,10 +2730,6 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.suggest_clients_daily
       type: table_view
-    sync:
-      tables:
-      - table: mozdata.firefox_desktop.sync
-      type: glean_ping_view
     sync_table:
       tables:
       - channel: null
@@ -2808,10 +2796,6 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.urlbar_events
       type: table_view
-    urlbar_keyword_exposure:
-      tables:
-      - table: mozdata.firefox_desktop.urlbar_keyword_exposure
-      type: glean_ping_view
     urlbar_keyword_exposure_table:
       tables:
       - channel: null
