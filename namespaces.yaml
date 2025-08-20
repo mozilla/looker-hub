@@ -2053,10 +2053,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: first_startup
-    funnel_analysis:
-      type: funnel_analysis_explore
-      views:
-        base_view: funnel_analysis
     fx_accounts:
       type: glean_ping_explore
       views:
@@ -2066,10 +2062,6 @@ firefox_desktop:
       views:
         base_view: glean_events
         extended_view: events_unnested_table
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
     messaging_system:
       type: glean_ping_explore
       views:
@@ -2198,18 +2190,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: newtab
-    newtab_content:
-      type: glean_ping_explore
-      views:
-        base_view: newtab_content
     newtab_items_daily:
       type: table_explore
       views:
         base_view: newtab_items_daily
-    prototype_no_code_events:
-      type: glean_ping_explore
-      views:
-        base_view: prototype_no_code_events
     quick_suggest:
       type: glean_ping_explore
       views:
@@ -2242,10 +2226,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: urlbar_keyword_exposure
-    urlbar_potential_exposure:
-      type: glean_ping_explore
-      views:
-        base_view: urlbar_potential_exposure
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -2456,15 +2436,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.first_startup
       type: table_view
-    funnel_analysis:
-      tables:
-      - event_types: mozdata.telemetry.event_types
-        funnel_analysis: events_daily_table
-        step_1: event_types
-        step_2: event_types
-        step_3: event_types
-        step_4: event_types
-      type: funnel_analysis_view
     fx_accounts:
       tables:
       - table: mozdata.firefox_desktop.fx_accounts
@@ -2488,10 +2459,6 @@ firefox_desktop:
       - base_table: mozdata.firefox_desktop.events_unnested
         events_table_view: events_unnested_table
       type: events_view
-    growth_accounting:
-      tables:
-      - table: mozdata.telemetry.clients_last_seen
-      type: growth_accounting_view
     locale_aggregates_table:
       tables:
       - channel: null
@@ -2607,10 +2574,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.newtab_clients_daily
       type: table_view
-    newtab_content:
-      tables:
-      - table: mozdata.firefox_desktop.newtab_content
-      type: glean_ping_view
     newtab_content_table:
       tables:
       - channel: null
@@ -2683,10 +2646,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.profiles
       type: table_view
-    prototype_no_code_events:
-      tables:
-      - table: mozdata.firefox_desktop.prototype_no_code_events
-      type: glean_ping_view
     prototype_no_code_events_table:
       tables:
       - channel: null
@@ -2858,10 +2817,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.urlbar_keyword_exposure
       type: table_view
-    urlbar_potential_exposure:
-      tables:
-      - table: mozdata.firefox_desktop.urlbar_potential_exposure
-      type: glean_ping_view
     urlbar_potential_exposure_table:
       tables:
       - channel: null
