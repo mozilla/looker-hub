@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/firefox_labs_link_previews_beta.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/firefox_labs_link_previews_beta_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/viewpoint_ios_aug_2025.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/viewpoint_ios_aug_2025_last_updated.datagroup.lkml"
 
-explore: firefox_labs_link_previews_beta {
+explore: viewpoint_ios_aug_2025 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: firefox_labs_link_previews_beta {
   }
 
   hidden: yes
-  persist_with: firefox_labs_link_previews_beta_last_updated
+  persist_with: viewpoint_ios_aug_2025_last_updated
 }
