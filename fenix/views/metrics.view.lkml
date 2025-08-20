@@ -3469,6 +3469,74 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__counter__terms_of_use_dismiss_count {
+    label: "Terms Of Use Dismiss Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.terms_of_use_dismiss_count ;;
+    type: number
+    group_label: "Terms Of Use"
+    group_item_label: "Dismiss Count"
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times the user dismissed the Terms of Use prompt."
+  }
+
+  dimension: metrics__counter__terms_of_use_impression_count {
+    label: "Terms Of Use Impression Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.terms_of_use_impression_count ;;
+    type: number
+    group_label: "Terms Of Use"
+    group_item_label: "Impression Count"
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of Terms of Use prompt impressions the user has had."
+  }
+
+  dimension: metrics__counter__terms_of_use_remind_me_later_count {
+    label: "Terms Of Use Remind Me Later Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.terms_of_use_remind_me_later_count ;;
+    type: number
+    group_label: "Terms Of Use"
+    group_item_label: "Remind Me Later Count"
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times the user clicked 'remind me later' on the Terms of Use prompt."
+  }
+
+  dimension: metrics__quantity__terms_of_use_version {
+    label: "Terms Of Use Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.terms_of_use_version ;;
+    type: number
+    group_label: "Terms Of Use"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Terms of Use the user accepted."
+  }
+
   dimension: metrics__boolean__wallpapers_discovered_wallpaper_feature {
     label: "Wallpapers Discovered Wallpaper Feature"
     hidden: yes
@@ -33934,6 +34002,81 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Tabs Tray Open Inactive Tab"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_dismiss_count {
+    type: sum
+    sql: ${metrics__counter__terms_of_use_dismiss_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_dismiss_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__terms_of_use_dismiss_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_impression_count {
+    type: sum
+    sql: ${metrics__counter__terms_of_use_impression_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_impression_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__terms_of_use_impression_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_remind_me_later_count {
+    type: sum
+    sql: ${metrics__counter__terms_of_use_remind_me_later_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_remind_me_later_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__terms_of_use_remind_me_later_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_remind_me_later_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
