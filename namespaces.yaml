@@ -2226,10 +2226,6 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: use_counters
-    user_characteristics:
-      type: glean_ping_explore
-      views:
-        base_view: user_characteristics
   glean_app: true
   owners:
   - chutten@mozilla.com
@@ -2830,10 +2826,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.use_counters
       type: table_view
-    user_characteristics:
-      tables:
-      - table: mozdata.firefox_desktop.user_characteristics
-      type: glean_ping_view
     user_characteristics_table:
       tables:
       - channel: null
