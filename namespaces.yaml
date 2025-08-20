@@ -2714,10 +2714,6 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.spoc
       type: table_view
-    sponsored_tiles_clients_daily:
-      tables:
-      - table: mozdata.telemetry.sponsored_tiles_clients_daily
-      type: table_view
     sponsored_tiles_clients_daily_table:
       tables:
       - table: mozdata.telemetry.sponsored_tiles_clients_daily
