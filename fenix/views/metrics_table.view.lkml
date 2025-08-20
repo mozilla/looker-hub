@@ -2777,6 +2777,30 @@ view: metrics_table {
     group_item_label: "Tabs Tray Open Inactive Tab"
   }
 
+  dimension: metrics__counter__terms_of_use_dismiss_count {
+    sql: ${TABLE}.metrics.counter.terms_of_use_dismiss_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Terms Of Use Dismiss Count"
+  }
+
+  dimension: metrics__counter__terms_of_use_impression_count {
+    sql: ${TABLE}.metrics.counter.terms_of_use_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Terms Of Use Impression Count"
+  }
+
+  dimension: metrics__counter__terms_of_use_remind_me_later_count {
+    sql: ${TABLE}.metrics.counter.terms_of_use_remind_me_later_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Terms Of Use Remind Me Later Count"
+  }
+
   dimension: metrics__counter__tls_certificate_verifications {
     sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
     type: number
@@ -14313,6 +14337,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "System Virtual Memory"
+  }
+
+  dimension: metrics__quantity__terms_of_use_version {
+    sql: ${TABLE}.metrics.quantity.terms_of_use_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Terms Of Use Version"
   }
 
   dimension: metrics__quantity__timestamps_first_paint {
