@@ -11,15 +11,15 @@ view: consolidated_ad_metrics_hourly {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: advertiser {
-    sql: ${TABLE}.advertiser ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: advertiser_id {
     sql: ${TABLE}.advertiser_id ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: advertiser_name {
+    sql: ${TABLE}.advertiser_name ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
@@ -31,6 +31,12 @@ view: consolidated_ad_metrics_hourly {
 
   dimension: campaign_name {
     sql: ${TABLE}.campaign_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
   }
@@ -72,9 +78,9 @@ view: consolidated_ad_metrics_hourly {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: dismissals {
-    sql: ${TABLE}.dismissals ;;
-    type: number
+  dimension: external_param {
+    sql: ${TABLE}.external_param ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
@@ -99,6 +105,18 @@ view: consolidated_ad_metrics_hourly {
   dimension: impressions {
     sql: ${TABLE}.impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: line_item_id {
+    sql: ${TABLE}.line_item_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
@@ -132,6 +150,12 @@ view: consolidated_ad_metrics_hourly {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: reports {
+    sql: ${TABLE}.reports ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: revenue {
     sql: ${TABLE}.revenue ;;
     type: number
@@ -162,21 +186,33 @@ view: consolidated_ad_metrics_hourly {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: targeted_against_default_site {
-    sql: ${TABLE}.targeted_against_default_site ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: targeted_against_default_zone {
-    sql: ${TABLE}.targeted_against_default_zone ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: targeted_country {
     sql: ${TABLE}.targeted_country ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: targets_default_site {
+    sql: ${TABLE}.targets_default_site ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: targets_default_zone {
+    sql: ${TABLE}.targets_default_zone ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: telemetry_source {
+    sql: ${TABLE}.telemetry_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: version {
+    sql: ${TABLE}.version ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 
@@ -207,8 +243,8 @@ view: consolidated_ad_metrics_hourly {
     ]
   }
 
-  dimension_group: submission {
-    sql: ${TABLE}.submission_timestamp ;;
+  dimension_group: submission_hour {
+    sql: ${TABLE}.submission_hour ;;
     type: time
     suggest_persist_for: "24 hours"
     timeframes: [
@@ -222,5 +258,5 @@ view: consolidated_ad_metrics_hourly {
     ]
   }
 
-  sql_table_name: `mozdata.ads.consolidated_ad_metrics_hourly` ;;
+  sql_table_name: `mozdata.ads.ad_metrics` ;;
 }
