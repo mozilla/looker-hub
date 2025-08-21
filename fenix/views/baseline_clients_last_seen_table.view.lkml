@@ -227,6 +227,11 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
+  }
+
   dimension: geo_subdivision {
     sql: ${TABLE}.geo_subdivision ;;
     type: string
@@ -396,4 +401,36 @@ view: baseline_clients_last_seen_table {
   }
 
   sql_table_name: `{% parameter channel %}` ;;
+}
+
+view: baseline_clients_last_seen_table__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value Extra"
+    group_item_label: "Enrollment ID"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value Extra"
+    group_item_label: "Type"
+  }
 }
