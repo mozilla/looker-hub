@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: windows_10_eos_sync_messaging_background_message
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       windows_10_eos_sync_messaging_background_message.submission_date,
       windows_10_eos_sync_messaging_background_message.branch,
+      windows_10_eos_sync_messaging_background_message.upper,
+      windows_10_eos_sync_messaging_background_message.lower,
       windows_10_eos_sync_messaging_background_message.point
     ]
     pivots: [
       windows_10_eos_sync_messaging_background_message.branch
     ]
     filters:
-      windows_10_eos_sync_messaging_background_message.metric: 'search_count'
-      windows_10_eos_sync_messaging_background_message.statistic: mean
+      windows_10_eos_sync_messaging_background_message.metric: 'memory_total'
+      windows_10_eos_sync_messaging_background_message.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,6 +42,7 @@
     show_grid: true
     listen:
       Date: windows_10_eos_sync_messaging_background_message.submission_date
+      Percentile: windows_10_eos_sync_messaging_background_message.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -78,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +97,7 @@
       windows_10_eos_sync_messaging_background_message.branch
     ]
     filters:
-      windows_10_eos_sync_messaging_background_message.metric: 'ad_clicks'
+      windows_10_eos_sync_messaging_background_message.metric: 'retained'
       windows_10_eos_sync_messaging_background_message.statistic: mean
     row: 10
     col: 0
@@ -112,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +131,7 @@
       windows_10_eos_sync_messaging_background_message.branch
     ]
     filters:
-      windows_10_eos_sync_messaging_background_message.metric: 'active_hours'
+      windows_10_eos_sync_messaging_background_message.metric: 'ad_clicks'
       windows_10_eos_sync_messaging_background_message.statistic: mean
     row: 10
     col: 12
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       windows_10_eos_sync_messaging_background_message.branch
     ]
     filters:
-      windows_10_eos_sync_messaging_background_message.metric: 'retained'
+      windows_10_eos_sync_messaging_background_message.metric: 'search_count'
       windows_10_eos_sync_messaging_background_message.statistic: mean
     row: 20
     col: 12
@@ -210,43 +213,6 @@
     show_grid: true
     listen:
       Date: windows_10_eos_sync_messaging_background_message.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: windows_10_eos_sync_messaging_background_message
-    type: "ci-line-chart"
-    fields: [
-      windows_10_eos_sync_messaging_background_message.submission_date,
-      windows_10_eos_sync_messaging_background_message.branch,
-      windows_10_eos_sync_messaging_background_message.upper,
-      windows_10_eos_sync_messaging_background_message.lower,
-      windows_10_eos_sync_messaging_background_message.point
-    ]
-    pivots: [
-      windows_10_eos_sync_messaging_background_message.branch
-    ]
-    filters:
-      windows_10_eos_sync_messaging_background_message.metric: 'memory_total'
-      windows_10_eos_sync_messaging_background_message.statistic: percentile
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: windows_10_eos_sync_messaging_background_message.submission_date
-    field_y: windows_10_eos_sync_messaging_background_message.point
-    log_scale: false
-    ci_lower: windows_10_eos_sync_messaging_background_message.lower
-    ci_upper: windows_10_eos_sync_messaging_background_message.upper
-    show_grid: true
-    listen:
-      Date: windows_10_eos_sync_messaging_background_message.submission_date
-      Percentile: windows_10_eos_sync_messaging_background_message.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +234,40 @@
     ]
     filters:
       windows_10_eos_sync_messaging_background_message.metric: 'qualified_cumulative_days_of_use'
+      windows_10_eos_sync_messaging_background_message.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: windows_10_eos_sync_messaging_background_message.submission_date
+    field_y: windows_10_eos_sync_messaging_background_message.point
+    log_scale: false
+    ci_lower: windows_10_eos_sync_messaging_background_message.lower
+    ci_upper: windows_10_eos_sync_messaging_background_message.upper
+    show_grid: true
+    listen:
+      Date: windows_10_eos_sync_messaging_background_message.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_eos_sync_messaging_background_message
+    type: looker_line
+    fields: [
+      windows_10_eos_sync_messaging_background_message.submission_date,
+      windows_10_eos_sync_messaging_background_message.branch,
+      windows_10_eos_sync_messaging_background_message.point
+    ]
+    pivots: [
+      windows_10_eos_sync_messaging_background_message.branch
+    ]
+    filters:
+      windows_10_eos_sync_messaging_background_message.metric: 'active_hours'
       windows_10_eos_sync_messaging_background_message.statistic: mean
     row: 30
     col: 12

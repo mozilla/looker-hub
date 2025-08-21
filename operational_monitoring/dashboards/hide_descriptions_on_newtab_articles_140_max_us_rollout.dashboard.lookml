@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: hide_descriptions_on_newtab_articles_140_max_us_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date,
       hide_descriptions_on_newtab_articles_140_max_us_rollout.branch,
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.upper,
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.lower,
       hide_descriptions_on_newtab_articles_140_max_us_rollout.point
     ]
     pivots: [
       hide_descriptions_on_newtab_articles_140_max_us_rollout.branch
     ]
     filters:
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'search_count'
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.statistic: mean
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'memory_total'
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,6 +42,7 @@
     show_grid: true
     listen:
       Date: hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date
+      Percentile: hide_descriptions_on_newtab_articles_140_max_us_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -78,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +97,7 @@
       hide_descriptions_on_newtab_articles_140_max_us_rollout.branch
     ]
     filters:
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'ad_clicks'
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'retained'
       hide_descriptions_on_newtab_articles_140_max_us_rollout.statistic: mean
     row: 10
     col: 0
@@ -112,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +131,7 @@
       hide_descriptions_on_newtab_articles_140_max_us_rollout.branch
     ]
     filters:
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'active_hours'
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'ad_clicks'
       hide_descriptions_on_newtab_articles_140_max_us_rollout.statistic: mean
     row: 10
     col: 12
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       hide_descriptions_on_newtab_articles_140_max_us_rollout.branch
     ]
     filters:
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'retained'
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'search_count'
       hide_descriptions_on_newtab_articles_140_max_us_rollout.statistic: mean
     row: 20
     col: 12
@@ -210,43 +213,6 @@
     show_grid: true
     listen:
       Date: hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: hide_descriptions_on_newtab_articles_140_max_us_rollout
-    type: "ci-line-chart"
-    fields: [
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date,
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.branch,
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.upper,
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.lower,
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.point
-    ]
-    pivots: [
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.branch
-    ]
-    filters:
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'memory_total'
-      hide_descriptions_on_newtab_articles_140_max_us_rollout.statistic: percentile
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date
-    field_y: hide_descriptions_on_newtab_articles_140_max_us_rollout.point
-    log_scale: false
-    ci_lower: hide_descriptions_on_newtab_articles_140_max_us_rollout.lower
-    ci_upper: hide_descriptions_on_newtab_articles_140_max_us_rollout.upper
-    show_grid: true
-    listen:
-      Date: hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date
-      Percentile: hide_descriptions_on_newtab_articles_140_max_us_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +234,40 @@
     ]
     filters:
       hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'qualified_cumulative_days_of_use'
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date
+    field_y: hide_descriptions_on_newtab_articles_140_max_us_rollout.point
+    log_scale: false
+    ci_lower: hide_descriptions_on_newtab_articles_140_max_us_rollout.lower
+    ci_upper: hide_descriptions_on_newtab_articles_140_max_us_rollout.upper
+    show_grid: true
+    listen:
+      Date: hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hide_descriptions_on_newtab_articles_140_max_us_rollout
+    type: looker_line
+    fields: [
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.submission_date,
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.branch,
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.point
+    ]
+    pivots: [
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.branch
+    ]
+    filters:
+      hide_descriptions_on_newtab_articles_140_max_us_rollout.metric: 'active_hours'
       hide_descriptions_on_newtab_articles_140_max_us_rollout.statistic: mean
     row: 30
     col: 12
