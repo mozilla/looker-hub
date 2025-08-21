@@ -12,7 +12,7 @@ datagroup: consolidated_ad_metrics_daily_pt_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'ads' AND table_name = 'consolidated_ad_metrics_daily_pt')
+    WHERE (table_schema = 'ads' AND table_name = 'ad_metrics_daily_pt')
 
     ) ;;
   description: "Updates for consolidated_ad_metrics_daily_pt when referenced tables are modified."
