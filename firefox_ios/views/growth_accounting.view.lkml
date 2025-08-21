@@ -227,6 +227,11 @@ view: growth_accounting {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
+  }
+
   dimension: geo_subdivision {
     sql: ${TABLE}.geo_subdivision ;;
     type: string
