@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: report_this_ad
+    type: looker_line
+    fields: [
+      report_this_ad.submission_date,
+      report_this_ad.branch,
+      report_this_ad.point
+    ]
+    pivots: [
+      report_this_ad.branch
+    ]
+    filters:
+      report_this_ad.metric: 'days_of_use'
+      report_this_ad.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: report_this_ad.submission_date
+    field_y: report_this_ad.point
+    log_scale: false
+    ci_lower: report_this_ad.lower
+    ci_upper: report_this_ad.upper
+    show_grid: true
+    listen:
+      Date: report_this_ad.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -31,7 +65,7 @@
       report_this_ad.metric: 'memory_total'
       report_this_ad.statistic: percentile
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: report_this_ad.submission_date
@@ -47,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,10 +97,10 @@
       report_this_ad.branch
     ]
     filters:
-      report_this_ad.metric: 'uri_count'
+      report_this_ad.metric: 'qualified_cumulative_days_of_use'
       report_this_ad.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: report_this_ad.submission_date
@@ -100,40 +134,6 @@
       report_this_ad.metric: 'retained'
       report_this_ad.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: report_this_ad.submission_date
-    field_y: report_this_ad.point
-    log_scale: false
-    ci_lower: report_this_ad.lower
-    ci_upper: report_this_ad.upper
-    show_grid: true
-    listen:
-      Date: report_this_ad.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: report_this_ad
-    type: looker_line
-    fields: [
-      report_this_ad.submission_date,
-      report_this_ad.branch,
-      report_this_ad.point
-    ]
-    pivots: [
-      report_this_ad.branch
-    ]
-    filters:
-      report_this_ad.metric: 'ad_clicks'
-      report_this_ad.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -149,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,10 +165,44 @@
       report_this_ad.branch
     ]
     filters:
-      report_this_ad.metric: 'days_of_use'
+      report_this_ad.metric: 'active_hours'
       report_this_ad.statistic: mean
     row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: report_this_ad.submission_date
+    field_y: report_this_ad.point
+    log_scale: false
+    ci_lower: report_this_ad.lower
+    ci_upper: report_this_ad.upper
+    show_grid: true
+    listen:
+      Date: report_this_ad.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: report_this_ad
+    type: looker_line
+    fields: [
+      report_this_ad.submission_date,
+      report_this_ad.branch,
+      report_this_ad.point
+    ]
+    pivots: [
+      report_this_ad.branch
+    ]
+    filters:
+      report_this_ad.metric: 'uri_count'
+      report_this_ad.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: report_this_ad.submission_date
@@ -201,40 +235,6 @@
     filters:
       report_this_ad.metric: 'search_count'
       report_this_ad.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: report_this_ad.submission_date
-    field_y: report_this_ad.point
-    log_scale: false
-    ci_lower: report_this_ad.lower
-    ci_upper: report_this_ad.upper
-    show_grid: true
-    listen:
-      Date: report_this_ad.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: report_this_ad
-    type: looker_line
-    fields: [
-      report_this_ad.submission_date,
-      report_this_ad.branch,
-      report_this_ad.point
-    ]
-    pivots: [
-      report_this_ad.branch
-    ]
-    filters:
-      report_this_ad.metric: 'qualified_cumulative_days_of_use'
-      report_this_ad.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       report_this_ad.branch
     ]
     filters:
-      report_this_ad.metric: 'active_hours'
+      report_this_ad.metric: 'ad_clicks'
       report_this_ad.statistic: mean
     row: 30
     col: 12

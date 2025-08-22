@@ -9835,7 +9835,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__http_altsvc_entries_per_header__sum {
     label: "HTTP Altsvc Entries Per Header Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_altsvc_entries_per_header.sum ;;
     type: number
     group_label: "HTTP"
@@ -10189,7 +10189,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__http_saw_quic_alt_protocol__sum {
     label: "HTTP Saw Quic Alt Protocol Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_saw_quic_alt_protocol.sum ;;
     type: number
     group_label: "HTTP"
@@ -21939,7 +21939,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_chunk_recvd__sum {
     label: "Spdy Chunk Recvd Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_chunk_recvd.sum ;;
     type: number
     group_label: "Spdy"
@@ -42044,19 +42044,19 @@ view: metrics__metrics__labeled_counter__network_race_cache_with_network_usage {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
