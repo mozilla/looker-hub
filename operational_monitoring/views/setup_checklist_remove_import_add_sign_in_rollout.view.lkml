@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: tab_groups_promotional_onboarding {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.tab_groups_promotional_onboarding_statistics ;;
+view: setup_checklist_remove_import_add_sign_in_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.setup_checklist_remove_import_add_sign_in_rollout_statistics ;;
 
   dimension: submission_date {
     type: date

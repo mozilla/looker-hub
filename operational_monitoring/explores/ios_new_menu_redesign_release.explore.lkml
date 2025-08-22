@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/tab_groups_promotional_onboarding.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/tab_groups_promotional_onboarding_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/ios_new_menu_redesign_release.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/ios_new_menu_redesign_release_last_updated.datagroup.lkml"
 
-explore: tab_groups_promotional_onboarding {
+explore: ios_new_menu_redesign_release {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: tab_groups_promotional_onboarding {
   }
 
   hidden: yes
-  persist_with: tab_groups_promotional_onboarding_last_updated
+  persist_with: ios_new_menu_redesign_release_last_updated
 }

@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: train_hop_pilot_to_beta_start_and_wait_for_escape_hatch_signal {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.train_hop_pilot_to_beta_start_and_wait_for_escape_hatch_signal_statistics ;;
+view: login_verification_ios_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.login_verification_ios_rollout_statistics ;;
 
   dimension: submission_date {
     type: date

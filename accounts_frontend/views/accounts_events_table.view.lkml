@@ -449,6 +449,16 @@ view: accounts_events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__event_cms_customization_enrollment {
+    sql: ${TABLE}.metrics.boolean.event_cms_customization_enrollment ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Event Cms Customization Enrollment"
+    description: "Whether the user has been enrolled in a CMS customization.
+"
+  }
+
   dimension: metrics__boolean__event_third_party_links {
     sql: ${TABLE}.metrics.boolean.event_third_party_links ;;
     type: yesno

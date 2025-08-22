@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: 2025_1st_run_new_tab_microsurvey_r_s_existing_users_us_ca_de_gb {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.2025_1st_run_new_tab_microsurvey_r_s_existing_users_us_ca_de_gb_statistics ;;
+view: taskbar_tabs_labs_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.taskbar_tabs_labs_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
