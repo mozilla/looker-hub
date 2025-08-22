@@ -21574,6 +21574,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
+    label: "Perf Js Exec Asm Js Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Js Exec Asm Js Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Js Exec Asm Js Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_js_exec_asm_js"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds spent executing Javascript for top level documents that contain the asm.js use counter.  Measures 5min of activity after the use counter is set then records the value in this histogram.
+"
+  }
+
   dimension: metrics__timing_distribution__perf_largest_contentful_paint__sum {
     label: "Perf Largest Contentful Paint Sum"
     hidden: no
@@ -72013,6 +72031,20 @@ view: metrics__metrics__timing_distribution__perf_awesomebar_shortcuts_suggestio
 }
 
 view: metrics__metrics__timing_distribution__perf_awesomebar_synced_tabs_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_js_exec_asm_js__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
