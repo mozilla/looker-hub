@@ -32909,6 +32909,72 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__range {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__values {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__perf_largest_contentful_paint__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.bucket_count ;;
     type: number
@@ -57420,6 +57486,20 @@ view: metrics_table__metrics__timing_distribution__ocsp_request_time_success__va
 }
 
 view: metrics_table__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__perf_js_exec_asm_js__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
