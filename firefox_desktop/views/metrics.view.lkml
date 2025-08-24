@@ -33329,7 +33329,7 @@ e.g. 3775
 
   dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
     label: "System Special Directory Appdata Fallback"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.system_special_directory_appdata_fallback ;;
     type: string
     group_label: "System"
