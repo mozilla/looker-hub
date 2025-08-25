@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       spoc_positions_and_placements_beta_rollout.branch
     ]
     filters:
-      spoc_positions_and_placements_beta_rollout.metric: 'days_of_use'
+      spoc_positions_and_placements_beta_rollout.metric: 'uri_count'
       spoc_positions_and_placements_beta_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,45 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: spoc_positions_and_placements_beta_rollout
-    type: "ci-line-chart"
-    fields: [
-      spoc_positions_and_placements_beta_rollout.submission_date,
-      spoc_positions_and_placements_beta_rollout.branch,
-      spoc_positions_and_placements_beta_rollout.upper,
-      spoc_positions_and_placements_beta_rollout.lower,
-      spoc_positions_and_placements_beta_rollout.point
-    ]
-    pivots: [
-      spoc_positions_and_placements_beta_rollout.branch
-    ]
-    filters:
-      spoc_positions_and_placements_beta_rollout.metric: 'memory_total'
-      spoc_positions_and_placements_beta_rollout.statistic: percentile
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: spoc_positions_and_placements_beta_rollout.submission_date
-    field_y: spoc_positions_and_placements_beta_rollout.point
-    log_scale: false
-    ci_lower: spoc_positions_and_placements_beta_rollout.lower
-    ci_upper: spoc_positions_and_placements_beta_rollout.upper
-    show_grid: true
-    listen:
-      Date: spoc_positions_and_placements_beta_rollout.submission_date
-      Percentile: spoc_positions_and_placements_beta_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,7 +60,41 @@
       spoc_positions_and_placements_beta_rollout.branch
     ]
     filters:
-      spoc_positions_and_placements_beta_rollout.metric: 'qualified_cumulative_days_of_use'
+      spoc_positions_and_placements_beta_rollout.metric: 'ad_clicks'
+      spoc_positions_and_placements_beta_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: spoc_positions_and_placements_beta_rollout.submission_date
+    field_y: spoc_positions_and_placements_beta_rollout.point
+    log_scale: false
+    ci_lower: spoc_positions_and_placements_beta_rollout.lower
+    ci_upper: spoc_positions_and_placements_beta_rollout.upper
+    show_grid: true
+    listen:
+      Date: spoc_positions_and_placements_beta_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: spoc_positions_and_placements_beta_rollout
+    type: looker_line
+    fields: [
+      spoc_positions_and_placements_beta_rollout.submission_date,
+      spoc_positions_and_placements_beta_rollout.branch,
+      spoc_positions_and_placements_beta_rollout.point
+    ]
+    pivots: [
+      spoc_positions_and_placements_beta_rollout.branch
+    ]
+    filters:
+      spoc_positions_and_placements_beta_rollout.metric: 'active_hours'
       spoc_positions_and_placements_beta_rollout.statistic: mean
     row: 10
     col: 0
@@ -149,24 +146,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: spoc_positions_and_placements_beta_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       spoc_positions_and_placements_beta_rollout.submission_date,
       spoc_positions_and_placements_beta_rollout.branch,
+      spoc_positions_and_placements_beta_rollout.upper,
+      spoc_positions_and_placements_beta_rollout.lower,
       spoc_positions_and_placements_beta_rollout.point
     ]
     pivots: [
       spoc_positions_and_placements_beta_rollout.branch
     ]
     filters:
-      spoc_positions_and_placements_beta_rollout.metric: 'active_hours'
-      spoc_positions_and_placements_beta_rollout.statistic: mean
+      spoc_positions_and_placements_beta_rollout.metric: 'memory_total'
+      spoc_positions_and_placements_beta_rollout.statistic: percentile
     row: 20
     col: 0
     width: 12
@@ -179,12 +178,13 @@
     show_grid: true
     listen:
       Date: spoc_positions_and_placements_beta_rollout.submission_date
+      Percentile: spoc_positions_and_placements_beta_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       spoc_positions_and_placements_beta_rollout.branch
     ]
     filters:
-      spoc_positions_and_placements_beta_rollout.metric: 'uri_count'
+      spoc_positions_and_placements_beta_rollout.metric: 'days_of_use'
       spoc_positions_and_placements_beta_rollout.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       spoc_positions_and_placements_beta_rollout.branch
     ]
     filters:
-      spoc_positions_and_placements_beta_rollout.metric: 'ad_clicks'
+      spoc_positions_and_placements_beta_rollout.metric: 'qualified_cumulative_days_of_use'
       spoc_positions_and_placements_beta_rollout.statistic: mean
     row: 30
     col: 12
