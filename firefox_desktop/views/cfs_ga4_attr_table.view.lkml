@@ -194,11 +194,6 @@ view: cfs_ga4_attr_table {
     hidden: yes
   }
 
-  dimension: ga4_all_reported_stub_session_ids {
-    sql: ${TABLE}.ga4_all_reported_stub_session_ids ;;
-    hidden: yes
-  }
-
   dimension: ga4_browser {
     sql: ${TABLE}.ga4_browser ;;
     type: string
@@ -331,12 +326,6 @@ view: cfs_ga4_attr_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: ga4_last_reported_stub_session_id {
-    sql: ${TABLE}.ga4_last_reported_stub_session_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: ga4_manual_campaign_id {
     sql: ${TABLE}.ga4_manual_campaign_id ;;
     type: string
@@ -399,6 +388,12 @@ view: cfs_ga4_attr_table {
 
   dimension: ga4_region {
     sql: ${TABLE}.ga4_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ga4_stub_session_id {
+    sql: ${TABLE}.ga4_stub_session_id ;;
     type: string
     suggest_persist_for: "24 hours"
   }
