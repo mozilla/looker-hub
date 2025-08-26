@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ios_dma_remove_set_to_default.branch
     ]
     filters:
-      ios_dma_remove_set_to_default.metric: 'retained'
+      ios_dma_remove_set_to_default.metric: 'search_count'
       ios_dma_remove_set_to_default.statistic: mean
     row: 0
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       ios_dma_remove_set_to_default.branch
     ]
     filters:
-      ios_dma_remove_set_to_default.metric: 'search_count'
+      ios_dma_remove_set_to_default.metric: 'retained'
       ios_dma_remove_set_to_default.statistic: mean
     row: 20
     col: 0
