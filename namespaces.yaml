@@ -17324,7 +17324,7 @@ websites:
       type: table_view
     ga4_sessions:
       tables:
-      - table: moz-fx-data-shared-prod.mozilla_org.ga_sessions_v2
+      - table: moz-fx-data-shared-prod.mozilla_org.ga_sessions
       type: table_view
     ga4_www_site_downloads:
       tables:
