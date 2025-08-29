@@ -2076,6 +2076,14 @@ view: metrics_table {
     group_item_label: "Tabs Private Tabs Quantity"
   }
 
+  dimension: metrics__quantity__termsofuse_version {
+    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Termsofuse Version"
+  }
+
   dimension: metrics__quantity__windows_ipad_window_count {
     sql: ${TABLE}.metrics.quantity.windows_ipad_window_count ;;
     type: number

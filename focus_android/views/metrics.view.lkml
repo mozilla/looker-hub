@@ -22561,6 +22561,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__sum {
+    label: "SSL Scts From Tiled Logs Per Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.sum ;;
+    type: number
+    group_label: "SSL"
+    group_item_label: "Scts From Tiled Logs Per Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for SSL Scts From Tiled Logs Per Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ssl_scts_from_tiled_logs_per_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Histogram of the number of Signed Certificate Timestamps from tiled logs per TLS connection from all sources (embedded / OCSP Stapling / TLS handshake). Bucket 0 counts the cases when no SCTs from tiled logs were received, or none were extracted due to parsing errors.
+"
+  }
+
   dimension: metrics__custom_distribution__ssl_scts_origin__sum {
     label: "SSL Scts Origin Sum"
     hidden: no
@@ -51847,6 +51865,20 @@ view: metrics__metrics__custom_distribution__ssl_permanent_cert_error_overrides_
 }
 
 view: metrics__metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

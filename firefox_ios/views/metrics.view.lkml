@@ -3477,6 +3477,24 @@ button in the URL bar.
 "
   }
 
+  dimension: metrics__quantity__termsofuse_version {
+    label: "Termsofuse Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Terms of Use the user accepted.
+"
+  }
+
   dimension: metrics__boolean__theme_automatic_mode {
     label: "Theme Automatic Mode"
     hidden: yes
