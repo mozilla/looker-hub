@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/fenix_doh_ui_nightly.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/fenix_doh_ui_nightly_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/sections_rollout_us.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/sections_rollout_us_last_updated.datagroup.lkml"
 
-explore: fenix_doh_ui_nightly {
+explore: sections_rollout_us {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: fenix_doh_ui_nightly {
   }
 
   hidden: yes
-  persist_with: fenix_doh_ui_nightly_last_updated
+  persist_with: sections_rollout_us_last_updated
 }
