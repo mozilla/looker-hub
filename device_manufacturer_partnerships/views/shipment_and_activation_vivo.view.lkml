@@ -18,22 +18,26 @@ view: shipment_and_activation_vivo {
     map_layer_name: countries
   }
 
-  dimension: country_code {
-    sql: ${TABLE}.country_code ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: date {
-    sql: ${TABLE}.date ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: shipped {
     sql: ${TABLE}.shipped ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension_group: date {
+    sql: ${TABLE}.date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
   }
 
   sql_table_name: `mozdata.device_manufacturer_partnerships.shipment_and_activation_vivo` ;;

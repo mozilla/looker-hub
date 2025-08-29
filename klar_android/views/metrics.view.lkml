@@ -9573,7 +9573,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_bytes_evicted_compressor__sum {
     label: "Hpack Bytes Evicted Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9592,7 +9592,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_bytes_evicted_decompressor__sum {
     label: "Hpack Bytes Evicted Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9611,7 +9611,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__sum {
     label: "Hpack Bytes Evicted Ratio Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9630,7 +9630,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_decompressor__sum {
     label: "Hpack Bytes Evicted Ratio Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9649,7 +9649,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_elements_evicted_compressor__sum {
     label: "Hpack Elements Evicted Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9668,7 +9668,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_elements_evicted_decompressor__sum {
     label: "Hpack Elements Evicted Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9687,7 +9687,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_peak_count_compressor__sum {
     label: "Hpack Peak Count Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9706,7 +9706,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_peak_count_decompressor__sum {
     label: "Hpack Peak Count Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9725,7 +9725,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_peak_size_compressor__sum {
     label: "Hpack Peak Size Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9744,7 +9744,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_peak_size_decompressor__sum {
     label: "Hpack Peak Size Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -22109,7 +22109,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_settings_iw__sum {
     label: "Spdy Settings Iw Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_settings_iw.sum ;;
     type: number
     group_label: "Spdy"
@@ -22147,7 +22147,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__spdy_syn_ratio__sum {
     label: "Spdy Syn Ratio Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.spdy_syn_ratio.sum ;;
     type: number
     group_label: "Spdy"
@@ -22166,7 +22166,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__spdy_syn_reply_ratio__sum {
     label: "Spdy Syn Reply Ratio Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.spdy_syn_reply_ratio.sum ;;
     type: number
     group_label: "Spdy"
@@ -22185,7 +22185,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__memory_distribution__spdy_syn_reply_size__sum {
     label: "Spdy Syn Reply Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_syn_reply_size.sum ;;
     type: number
     group_label: "Spdy"
@@ -22204,7 +22204,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_syn_size__sum {
     label: "Spdy Syn Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_syn_size.sum ;;
     type: number
     group_label: "Spdy"
