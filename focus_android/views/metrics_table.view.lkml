@@ -7571,6 +7571,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__count {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Scts From Tiled Logs Per Connection"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__sum {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Scts From Tiled Logs Per Connection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__ssl_scts_origin__count {
     sql: ${TABLE}.metrics.custom_distribution.ssl_scts_origin.count ;;
     type: number
@@ -43202,6 +43223,20 @@ view: metrics_table__metrics__custom_distribution__ssl_permanent_cert_error_over
 }
 
 view: metrics_table__metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
