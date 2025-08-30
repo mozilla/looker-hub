@@ -124,6 +124,12 @@ view: newtab_component_content_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: tile_size {
+    sql: ${TABLE}.tile_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time

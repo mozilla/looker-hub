@@ -1713,6 +1713,14 @@ view: metrics_table {
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
+  dimension: metrics__datetime__raw_termsofuse_date {
+    sql: ${TABLE}.metrics.datetime.raw_termsofuse_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Termsofuse Date"
+  }
+
   dimension: metrics__labeled_counter__bookmarks_add {
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_add ;;
     hidden: yes
@@ -3469,6 +3477,22 @@ view: metrics_table {
       year,
     ]
     label: "Metrics Datetime: Glean Validation First Run Hour"
+  }
+
+  dimension_group: metrics__datetime__termsofuse {
+    sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Termsofuse Date"
   }
 
   dimension_group: ping_info__parsed_end {
