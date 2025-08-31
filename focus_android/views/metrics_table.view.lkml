@@ -1769,6 +1769,14 @@ view: metrics_table {
     group_item_label: "Media Element In Page Count"
   }
 
+  dimension: metrics__counter__media_mkv_content_count {
+    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Media Mkv Content Count"
+  }
+
   dimension: metrics__counter__netwerk_parent_connect_timeout {
     sql: ${TABLE}.metrics.counter.netwerk_parent_connect_timeout ;;
     type: number

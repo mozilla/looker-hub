@@ -3477,6 +3477,60 @@ button in the URL bar.
 "
   }
 
+  dimension: metrics__counter__termsofuse_dismiss_count {
+    label: "Termsofuse Dismiss Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.termsofuse_dismiss_count ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Dismiss Count"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times a user clicks to dismiss (does not include tapping accept or remind me later).
+"
+  }
+
+  dimension: metrics__counter__termsofuse_impression_count {
+    label: "Termsofuse Impression Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.termsofuse_impression_count ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Impression Count"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of ToU impressions the user has had.
+"
+  }
+
+  dimension: metrics__counter__termsofuse_remind_me_later_count {
+    label: "Termsofuse Remind Me Later Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.termsofuse_remind_me_later_count ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Remind Me Later Count"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times a user clicks \"remind me later\".
+"
+  }
+
   dimension: metrics__quantity__termsofuse_version {
     label: "Termsofuse Version"
     hidden: no
@@ -7805,6 +7859,81 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Tabs Reload From URL Bar"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_dismiss_count {
+    type: sum
+    sql: ${metrics__counter__termsofuse_dismiss_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_dismiss_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__termsofuse_dismiss_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_impression_count {
+    type: sum
+    sql: ${metrics__counter__termsofuse_impression_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_impression_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__termsofuse_impression_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_remind_me_later_count {
+    type: sum
+    sql: ${metrics__counter__termsofuse_remind_me_later_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_remind_me_later_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__termsofuse_remind_me_later_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

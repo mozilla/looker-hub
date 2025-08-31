@@ -2313,6 +2313,14 @@ view: metrics_table {
     group_item_label: "Media Element In Page Count"
   }
 
+  dimension: metrics__counter__media_mkv_content_count {
+    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Media Mkv Content Count"
+  }
+
   dimension: metrics__counter__metrics_credit_cards_autofill_count {
     sql: ${TABLE}.metrics.counter.metrics_credit_cards_autofill_count ;;
     type: number
