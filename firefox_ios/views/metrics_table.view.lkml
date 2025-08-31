@@ -1633,6 +1633,30 @@ view: metrics_table {
     group_item_label: "Tabs Reload From URL Bar"
   }
 
+  dimension: metrics__counter__termsofuse_dismiss_count {
+    sql: ${TABLE}.metrics.counter.termsofuse_dismiss_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Termsofuse Dismiss Count"
+  }
+
+  dimension: metrics__counter__termsofuse_impression_count {
+    sql: ${TABLE}.metrics.counter.termsofuse_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Termsofuse Impression Count"
+  }
+
+  dimension: metrics__counter__termsofuse_remind_me_later_count {
+    sql: ${TABLE}.metrics.counter.termsofuse_remind_me_later_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Termsofuse Remind Me Later Count"
+  }
+
   dimension: metrics__counter__widget_l_tabs_open_url {
     sql: ${TABLE}.metrics.counter.widget_l_tabs_open_url ;;
     type: number

@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: account_adoption_app_menu_rollout
+    type: looker_line
+    fields: [
+      account_adoption_app_menu_rollout.submission_date,
+      account_adoption_app_menu_rollout.branch,
+      account_adoption_app_menu_rollout.point
+    ]
+    pivots: [
+      account_adoption_app_menu_rollout.branch
+    ]
+    filters:
+      account_adoption_app_menu_rollout.metric: 'uri_count'
+      account_adoption_app_menu_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: account_adoption_app_menu_rollout.submission_date
+    field_y: account_adoption_app_menu_rollout.point
+    log_scale: false
+    ci_lower: account_adoption_app_menu_rollout.lower
+    ci_upper: account_adoption_app_menu_rollout.upper
+    show_grid: true
+    listen:
+      Date: account_adoption_app_menu_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       account_adoption_app_menu_rollout.metric: 'ad_clicks'
       account_adoption_app_menu_rollout.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: account_adoption_app_menu_rollout.submission_date
@@ -62,42 +96,6 @@
     filters:
       account_adoption_app_menu_rollout.metric: 'days_of_use'
       account_adoption_app_menu_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: account_adoption_app_menu_rollout.submission_date
-    field_y: account_adoption_app_menu_rollout.point
-    log_scale: false
-    ci_lower: account_adoption_app_menu_rollout.lower
-    ci_upper: account_adoption_app_menu_rollout.upper
-    show_grid: true
-    listen:
-      Date: account_adoption_app_menu_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: account_adoption_app_menu_rollout
-    type: "ci-line-chart"
-    fields: [
-      account_adoption_app_menu_rollout.submission_date,
-      account_adoption_app_menu_rollout.branch,
-      account_adoption_app_menu_rollout.upper,
-      account_adoption_app_menu_rollout.lower,
-      account_adoption_app_menu_rollout.point
-    ]
-    pivots: [
-      account_adoption_app_menu_rollout.branch
-    ]
-    filters:
-      account_adoption_app_menu_rollout.metric: 'memory_total'
-      account_adoption_app_menu_rollout.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -110,13 +108,12 @@
     show_grid: true
     listen:
       Date: account_adoption_app_menu_rollout.submission_date
-      Percentile: account_adoption_app_menu_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +128,7 @@
       account_adoption_app_menu_rollout.branch
     ]
     filters:
-      account_adoption_app_menu_rollout.metric: 'qualified_cumulative_days_of_use'
+      account_adoption_app_menu_rollout.metric: 'retained'
       account_adoption_app_menu_rollout.statistic: mean
     row: 10
     col: 12
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: account_adoption_app_menu_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       account_adoption_app_menu_rollout.submission_date,
       account_adoption_app_menu_rollout.branch,
+      account_adoption_app_menu_rollout.upper,
+      account_adoption_app_menu_rollout.lower,
       account_adoption_app_menu_rollout.point
     ]
     pivots: [
       account_adoption_app_menu_rollout.branch
     ]
     filters:
-      account_adoption_app_menu_rollout.metric: 'uri_count'
-      account_adoption_app_menu_rollout.statistic: mean
+      account_adoption_app_menu_rollout.metric: 'memory_total'
+      account_adoption_app_menu_rollout.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,12 +212,13 @@
     show_grid: true
     listen:
       Date: account_adoption_app_menu_rollout.submission_date
+      Percentile: account_adoption_app_menu_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       account_adoption_app_menu_rollout.branch
     ]
     filters:
-      account_adoption_app_menu_rollout.metric: 'retained'
+      account_adoption_app_menu_rollout.metric: 'qualified_cumulative_days_of_use'
       account_adoption_app_menu_rollout.statistic: mean
     row: 30
     col: 0

@@ -208,6 +208,14 @@ view: usage_reporting_table {
     group_item_label: "Usage Is Managed Device"
   }
 
+  dimension: metrics__datetime__termsofuse_date {
+    sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Datetime"
+    group_item_label: "Termsofuse Date"
+  }
+
   dimension: metrics__datetime__usage_first_run_date {
     sql: ${TABLE}.metrics.datetime.usage_first_run_date ;;
     type: string
@@ -234,6 +242,14 @@ view: usage_reporting_table {
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__termsofuse_version {
+    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Termsofuse Version"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {

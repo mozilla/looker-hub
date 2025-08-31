@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: win10_eos_survey_2025_it
+    type: looker_line
+    fields: [
+      win10_eos_survey_2025_it.submission_date,
+      win10_eos_survey_2025_it.branch,
+      win10_eos_survey_2025_it.point
+    ]
+    pivots: [
+      win10_eos_survey_2025_it.branch
+    ]
+    filters:
+      win10_eos_survey_2025_it.metric: 'uri_count'
+      win10_eos_survey_2025_it.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: win10_eos_survey_2025_it.submission_date
+    field_y: win10_eos_survey_2025_it.point
+    log_scale: false
+    ci_lower: win10_eos_survey_2025_it.lower
+    ci_upper: win10_eos_survey_2025_it.upper
+    show_grid: true
+    listen:
+      Date: win10_eos_survey_2025_it.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       win10_eos_survey_2025_it.metric: 'ad_clicks'
       win10_eos_survey_2025_it.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: win10_eos_survey_2025_it.submission_date
@@ -62,42 +96,6 @@
     filters:
       win10_eos_survey_2025_it.metric: 'days_of_use'
       win10_eos_survey_2025_it.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: win10_eos_survey_2025_it.submission_date
-    field_y: win10_eos_survey_2025_it.point
-    log_scale: false
-    ci_lower: win10_eos_survey_2025_it.lower
-    ci_upper: win10_eos_survey_2025_it.upper
-    show_grid: true
-    listen:
-      Date: win10_eos_survey_2025_it.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: win10_eos_survey_2025_it
-    type: "ci-line-chart"
-    fields: [
-      win10_eos_survey_2025_it.submission_date,
-      win10_eos_survey_2025_it.branch,
-      win10_eos_survey_2025_it.upper,
-      win10_eos_survey_2025_it.lower,
-      win10_eos_survey_2025_it.point
-    ]
-    pivots: [
-      win10_eos_survey_2025_it.branch
-    ]
-    filters:
-      win10_eos_survey_2025_it.metric: 'memory_total'
-      win10_eos_survey_2025_it.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -110,13 +108,12 @@
     show_grid: true
     listen:
       Date: win10_eos_survey_2025_it.submission_date
-      Percentile: win10_eos_survey_2025_it.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +128,7 @@
       win10_eos_survey_2025_it.branch
     ]
     filters:
-      win10_eos_survey_2025_it.metric: 'qualified_cumulative_days_of_use'
+      win10_eos_survey_2025_it.metric: 'retained'
       win10_eos_survey_2025_it.statistic: mean
     row: 10
     col: 12
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: win10_eos_survey_2025_it
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       win10_eos_survey_2025_it.submission_date,
       win10_eos_survey_2025_it.branch,
+      win10_eos_survey_2025_it.upper,
+      win10_eos_survey_2025_it.lower,
       win10_eos_survey_2025_it.point
     ]
     pivots: [
       win10_eos_survey_2025_it.branch
     ]
     filters:
-      win10_eos_survey_2025_it.metric: 'uri_count'
-      win10_eos_survey_2025_it.statistic: mean
+      win10_eos_survey_2025_it.metric: 'memory_total'
+      win10_eos_survey_2025_it.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,12 +212,13 @@
     show_grid: true
     listen:
       Date: win10_eos_survey_2025_it.submission_date
+      Percentile: win10_eos_survey_2025_it.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       win10_eos_survey_2025_it.branch
     ]
     filters:
-      win10_eos_survey_2025_it.metric: 'retained'
+      win10_eos_survey_2025_it.metric: 'qualified_cumulative_days_of_use'
       win10_eos_survey_2025_it.statistic: mean
     row: 30
     col: 0
