@@ -22341,6 +22341,24 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__media_mkv_content_count {
+    label: "Media Mkv Content Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Mkv Content Count"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_mkv_content_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times MKV content is detected as a source for media playback. This metric does not determine whether the MKV file is valid; it is simply a count based on the sniffed MIME type.
+"
+  }
+
   dimension: metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__sum {
     label: "Media Mp4 Parse Num Sample Description Entries Sum"
     hidden: no
@@ -42488,6 +42506,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Media Element In Page Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_element_in_page_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_mkv_content_count {
+    type: sum
+    sql: ${metrics__counter__media_mkv_content_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_mkv_content_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_mkv_content_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_mkv_content_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_mkv_content_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

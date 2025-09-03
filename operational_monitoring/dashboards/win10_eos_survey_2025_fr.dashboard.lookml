@@ -10,43 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: win10_eos_survey_2025_fr
-    type: "ci-line-chart"
-    fields: [
-      win10_eos_survey_2025_fr.submission_date,
-      win10_eos_survey_2025_fr.branch,
-      win10_eos_survey_2025_fr.upper,
-      win10_eos_survey_2025_fr.lower,
-      win10_eos_survey_2025_fr.point
-    ]
-    pivots: [
-      win10_eos_survey_2025_fr.branch
-    ]
-    filters:
-      win10_eos_survey_2025_fr.metric: 'memory_total'
-      win10_eos_survey_2025_fr.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: win10_eos_survey_2025_fr.submission_date
-    field_y: win10_eos_survey_2025_fr.point
-    log_scale: false
-    ci_lower: win10_eos_survey_2025_fr.lower
-    ci_upper: win10_eos_survey_2025_fr.upper
-    show_grid: true
-    listen:
-      Date: win10_eos_survey_2025_fr.submission_date
-      Percentile: win10_eos_survey_2025_fr.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -66,40 +29,6 @@
       win10_eos_survey_2025_fr.metric: 'ad_clicks'
       win10_eos_survey_2025_fr.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: win10_eos_survey_2025_fr.submission_date
-    field_y: win10_eos_survey_2025_fr.point
-    log_scale: false
-    ci_lower: win10_eos_survey_2025_fr.lower
-    ci_upper: win10_eos_survey_2025_fr.upper
-    show_grid: true
-    listen:
-      Date: win10_eos_survey_2025_fr.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: win10_eos_survey_2025_fr
-    type: looker_line
-    fields: [
-      win10_eos_survey_2025_fr.submission_date,
-      win10_eos_survey_2025_fr.branch,
-      win10_eos_survey_2025_fr.point
-    ]
-    pivots: [
-      win10_eos_survey_2025_fr.branch
-    ]
-    filters:
-      win10_eos_survey_2025_fr.metric: 'active_hours'
-      win10_eos_survey_2025_fr.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -132,6 +61,74 @@
     ]
     filters:
       win10_eos_survey_2025_fr.metric: 'qualified_cumulative_days_of_use'
+      win10_eos_survey_2025_fr.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: win10_eos_survey_2025_fr.submission_date
+    field_y: win10_eos_survey_2025_fr.point
+    log_scale: false
+    ci_lower: win10_eos_survey_2025_fr.lower
+    ci_upper: win10_eos_survey_2025_fr.upper
+    show_grid: true
+    listen:
+      Date: win10_eos_survey_2025_fr.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: win10_eos_survey_2025_fr
+    type: looker_line
+    fields: [
+      win10_eos_survey_2025_fr.submission_date,
+      win10_eos_survey_2025_fr.branch,
+      win10_eos_survey_2025_fr.point
+    ]
+    pivots: [
+      win10_eos_survey_2025_fr.branch
+    ]
+    filters:
+      win10_eos_survey_2025_fr.metric: 'days_of_use'
+      win10_eos_survey_2025_fr.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: win10_eos_survey_2025_fr.submission_date
+    field_y: win10_eos_survey_2025_fr.point
+    log_scale: false
+    ci_lower: win10_eos_survey_2025_fr.lower
+    ci_upper: win10_eos_survey_2025_fr.upper
+    show_grid: true
+    listen:
+      Date: win10_eos_survey_2025_fr.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: win10_eos_survey_2025_fr
+    type: looker_line
+    fields: [
+      win10_eos_survey_2025_fr.submission_date,
+      win10_eos_survey_2025_fr.branch,
+      win10_eos_survey_2025_fr.point
+    ]
+    pivots: [
+      win10_eos_survey_2025_fr.branch
+    ]
+    filters:
+      win10_eos_survey_2025_fr.metric: 'active_hours'
       win10_eos_survey_2025_fr.statistic: mean
     row: 10
     col: 12
@@ -183,6 +180,43 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: win10_eos_survey_2025_fr
+    type: "ci-line-chart"
+    fields: [
+      win10_eos_survey_2025_fr.submission_date,
+      win10_eos_survey_2025_fr.branch,
+      win10_eos_survey_2025_fr.upper,
+      win10_eos_survey_2025_fr.lower,
+      win10_eos_survey_2025_fr.point
+    ]
+    pivots: [
+      win10_eos_survey_2025_fr.branch
+    ]
+    filters:
+      win10_eos_survey_2025_fr.metric: 'memory_total'
+      win10_eos_survey_2025_fr.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: win10_eos_survey_2025_fr.submission_date
+    field_y: win10_eos_survey_2025_fr.point
+    log_scale: false
+    ci_lower: win10_eos_survey_2025_fr.lower
+    ci_upper: win10_eos_survey_2025_fr.upper
+    show_grid: true
+    listen:
+      Date: win10_eos_survey_2025_fr.submission_date
+      Percentile: win10_eos_survey_2025_fr.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -201,8 +235,8 @@
     filters:
       win10_eos_survey_2025_fr.metric: 'retained'
       win10_eos_survey_2025_fr.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: win10_eos_survey_2025_fr.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       win10_eos_survey_2025_fr.metric: 'uri_count'
-      win10_eos_survey_2025_fr.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: win10_eos_survey_2025_fr.submission_date
-    field_y: win10_eos_survey_2025_fr.point
-    log_scale: false
-    ci_lower: win10_eos_survey_2025_fr.lower
-    ci_upper: win10_eos_survey_2025_fr.upper
-    show_grid: true
-    listen:
-      Date: win10_eos_survey_2025_fr.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: win10_eos_survey_2025_fr
-    type: looker_line
-    fields: [
-      win10_eos_survey_2025_fr.submission_date,
-      win10_eos_survey_2025_fr.branch,
-      win10_eos_survey_2025_fr.point
-    ]
-    pivots: [
-      win10_eos_survey_2025_fr.branch
-    ]
-    filters:
-      win10_eos_survey_2025_fr.metric: 'days_of_use'
       win10_eos_survey_2025_fr.statistic: mean
     row: 30
     col: 12
