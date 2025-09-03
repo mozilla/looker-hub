@@ -5,6 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: service_subscriptions {
+  dimension: annual_recurring_revenue_usd {
+    sql: ${TABLE}.annual_recurring_revenue_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Projected annual recurring revenue for the subscription in US dollars."
+  }
+
   dimension: auto_renew {
     sql: ${TABLE}.auto_renew ;;
     type: yesno
@@ -28,11 +35,26 @@ This may be missing for some subscriptions."
 This may be \"Unknown\" for some subscriptions."
   }
 
+  dimension: country_vat_rate {
+    sql: ${TABLE}.country_vat_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "VAT rate for the country the subscription is in (if any)."
+  }
+
   dimension: current_period_discount_amount {
     sql: ${TABLE}.current_period_discount_amount ;;
     type: number
     suggest_persist_for: "24 hours"
     description: "Current period discount amount (if any).
+This may be null for Apple subscriptions."
+  }
+
+  dimension: current_period_discount_amount_usd {
+    sql: ${TABLE}.current_period_discount_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Current period discount amount in US dollars (if any).
 This may be null for Apple subscriptions."
   }
 
@@ -277,6 +299,13 @@ This will be null for Google and Apple subscriptions."
     description: "ID of the associated logical subscription this service subscription was derived from."
   }
 
+  dimension: monthly_recurring_revenue_usd {
+    sql: ${TABLE}.monthly_recurring_revenue_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Projected monthly recurring revenue for the subscription in US dollars."
+  }
+
   dimension: mozilla_account_id {
     sql: ${TABLE}.mozilla_account_id ;;
     type: string
@@ -298,6 +327,14 @@ This may be missing for some subscriptions."
     type: number
     suggest_persist_for: "24 hours"
     description: "Ongoing discount amount (if any).
+This may be null for Apple subscriptions."
+  }
+
+  dimension: ongoing_discount_amount_usd {
+    sql: ${TABLE}.ongoing_discount_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Ongoing discount amount in US dollars (if any).
 This may be null for Apple subscriptions."
   }
 
@@ -340,12 +377,27 @@ For Apple subscriptions this will be \"Apple\"."
 For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming a USD amount due to a lack of source data (FXA-10549)."
   }
 
+  dimension: plan_amount_usd {
+    sql: ${TABLE}.plan_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Subscription plan's amount in US dollars.
+For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming a USD amount due to a lack of source data (FXA-10549)."
+  }
+
   dimension: plan_currency {
     sql: ${TABLE}.plan_currency ;;
     type: string
     suggest_persist_for: "24 hours"
     description: "ISO 4217 code for the subscription plan's currency.
 For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming USD due to a lack of source data (FXA-10549)."
+  }
+
+  dimension: plan_currency_usd_exchange_rate {
+    sql: ${TABLE}.plan_currency_usd_exchange_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Exchange rate for converting the subscription plan's currency into US dollars (if any)."
   }
 
   dimension: plan_interval {
