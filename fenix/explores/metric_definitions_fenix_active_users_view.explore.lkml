@@ -9,7 +9,6 @@ include: "/looker-hub/fenix/views/metric_definitions_fenix_active_users_view.vie
 explore: metric_definitions_fenix_active_users_view {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

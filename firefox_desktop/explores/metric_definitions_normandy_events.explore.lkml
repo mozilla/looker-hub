@@ -9,7 +9,6 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_normandy_events.v
 explore: metric_definitions_normandy_events {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

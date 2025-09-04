@@ -9,7 +9,6 @@ include: "/looker-hub/focus_ios/views/metric_definitions_focus_ios_active_users_
 explore: metric_definitions_focus_ios_active_users_aggregates_view {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

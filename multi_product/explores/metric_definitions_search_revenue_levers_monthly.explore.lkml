@@ -9,7 +9,6 @@ include: "/looker-hub/multi_product/views/metric_definitions_search_revenue_leve
 explore: metric_definitions_search_revenue_levers_monthly {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }
