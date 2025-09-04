@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fenix_release_140_port_blocking
+    type: looker_line
+    fields: [
+      fenix_release_140_port_blocking.submission_date,
+      fenix_release_140_port_blocking.branch,
+      fenix_release_140_port_blocking.point
+    ]
+    pivots: [
+      fenix_release_140_port_blocking.branch
+    ]
+    filters:
+      fenix_release_140_port_blocking.metric: 'tagged_sap_searches'
+      fenix_release_140_port_blocking.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: fenix_release_140_port_blocking.submission_date
+    field_y: fenix_release_140_port_blocking.point
+    log_scale: false
+    ci_lower: fenix_release_140_port_blocking.lower
+    ci_upper: fenix_release_140_port_blocking.upper
+    show_grid: true
+    listen:
+      Date: fenix_release_140_port_blocking.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -29,40 +63,6 @@
       fenix_release_140_port_blocking.metric: 'days_of_use'
       fenix_release_140_port_blocking.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: fenix_release_140_port_blocking.submission_date
-    field_y: fenix_release_140_port_blocking.point
-    log_scale: false
-    ci_lower: fenix_release_140_port_blocking.lower
-    ci_upper: fenix_release_140_port_blocking.upper
-    show_grid: true
-    listen:
-      Date: fenix_release_140_port_blocking.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fenix_release_140_port_blocking
-    type: looker_line
-    fields: [
-      fenix_release_140_port_blocking.submission_date,
-      fenix_release_140_port_blocking.branch,
-      fenix_release_140_port_blocking.point
-    ]
-    pivots: [
-      fenix_release_140_port_blocking.branch
-    ]
-    filters:
-      fenix_release_140_port_blocking.metric: 'ad_clicks'
-      fenix_release_140_port_blocking.statistic: mean
-    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       fenix_release_140_port_blocking.branch
     ]
     filters:
-      fenix_release_140_port_blocking.metric: 'tagged_sap_searches'
+      fenix_release_140_port_blocking.metric: 'retained'
       fenix_release_140_port_blocking.statistic: mean
     row: 10
     col: 0
@@ -146,74 +146,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fenix_release_140_port_blocking
-    type: looker_line
-    fields: [
-      fenix_release_140_port_blocking.submission_date,
-      fenix_release_140_port_blocking.branch,
-      fenix_release_140_port_blocking.point
-    ]
-    pivots: [
-      fenix_release_140_port_blocking.branch
-    ]
-    filters:
-      fenix_release_140_port_blocking.metric: 'active_hours'
-      fenix_release_140_port_blocking.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: fenix_release_140_port_blocking.submission_date
-    field_y: fenix_release_140_port_blocking.point
-    log_scale: false
-    ci_lower: fenix_release_140_port_blocking.lower
-    ci_upper: fenix_release_140_port_blocking.upper
-    show_grid: true
-    listen:
-      Date: fenix_release_140_port_blocking.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fenix_release_140_port_blocking
-    type: looker_line
-    fields: [
-      fenix_release_140_port_blocking.submission_date,
-      fenix_release_140_port_blocking.branch,
-      fenix_release_140_port_blocking.point
-    ]
-    pivots: [
-      fenix_release_140_port_blocking.branch
-    ]
-    filters:
-      fenix_release_140_port_blocking.metric: 'retained'
-      fenix_release_140_port_blocking.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: fenix_release_140_port_blocking.submission_date
-    field_y: fenix_release_140_port_blocking.point
-    log_scale: false
-    ci_lower: fenix_release_140_port_blocking.lower
-    ci_upper: fenix_release_140_port_blocking.upper
-    show_grid: true
-    listen:
-      Date: fenix_release_140_port_blocking.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -231,6 +163,74 @@
     ]
     filters:
       fenix_release_140_port_blocking.metric: 'uri_count'
+      fenix_release_140_port_blocking.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: fenix_release_140_port_blocking.submission_date
+    field_y: fenix_release_140_port_blocking.point
+    log_scale: false
+    ci_lower: fenix_release_140_port_blocking.lower
+    ci_upper: fenix_release_140_port_blocking.upper
+    show_grid: true
+    listen:
+      Date: fenix_release_140_port_blocking.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fenix_release_140_port_blocking
+    type: looker_line
+    fields: [
+      fenix_release_140_port_blocking.submission_date,
+      fenix_release_140_port_blocking.branch,
+      fenix_release_140_port_blocking.point
+    ]
+    pivots: [
+      fenix_release_140_port_blocking.branch
+    ]
+    filters:
+      fenix_release_140_port_blocking.metric: 'ad_clicks'
+      fenix_release_140_port_blocking.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: fenix_release_140_port_blocking.submission_date
+    field_y: fenix_release_140_port_blocking.point
+    log_scale: false
+    ci_lower: fenix_release_140_port_blocking.lower
+    ci_upper: fenix_release_140_port_blocking.upper
+    show_grid: true
+    listen:
+      Date: fenix_release_140_port_blocking.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fenix_release_140_port_blocking
+    type: looker_line
+    fields: [
+      fenix_release_140_port_blocking.submission_date,
+      fenix_release_140_port_blocking.branch,
+      fenix_release_140_port_blocking.point
+    ]
+    pivots: [
+      fenix_release_140_port_blocking.branch
+    ]
+    filters:
+      fenix_release_140_port_blocking.metric: 'active_hours'
       fenix_release_140_port_blocking.statistic: mean
     row: 30
     col: 0
