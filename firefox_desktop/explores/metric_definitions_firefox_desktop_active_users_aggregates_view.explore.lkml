@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_firefox_desktop_a
 explore: metric_definitions_firefox_desktop_active_users_aggregates_view {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

@@ -9,6 +9,7 @@ include: "/looker-hub/focus_android/views/metric_definitions_focus_android_engag
 explore: metric_definitions_focus_android_engagement_view {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

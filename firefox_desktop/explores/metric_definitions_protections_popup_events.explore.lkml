@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_protections_popup
 explore: metric_definitions_protections_popup_events {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

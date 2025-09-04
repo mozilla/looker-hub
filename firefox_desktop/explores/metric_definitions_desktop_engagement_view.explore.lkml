@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_desktop_engagemen
 explore: metric_definitions_desktop_engagement_view {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

@@ -9,6 +9,7 @@ include: "/looker-hub/klar_android/views/metric_definitions_klar_android_active_
 explore: metric_definitions_klar_android_active_users_view {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

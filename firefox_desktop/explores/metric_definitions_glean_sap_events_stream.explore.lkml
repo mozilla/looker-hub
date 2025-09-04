@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_glean_sap_events_
 explore: metric_definitions_glean_sap_events_stream {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

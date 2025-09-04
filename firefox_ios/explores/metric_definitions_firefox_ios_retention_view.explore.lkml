@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_ios/views/metric_definitions_firefox_ios_retention
 explore: metric_definitions_firefox_ios_retention_view {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

@@ -9,6 +9,7 @@ include: "/looker-hub/ads/views/metric_definitions_native_desktop_ad_metrics.vie
 explore: metric_definitions_native_desktop_ad_metrics {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

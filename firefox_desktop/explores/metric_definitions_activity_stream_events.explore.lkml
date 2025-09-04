@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_activity_stream_e
 explore: metric_definitions_activity_stream_events {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

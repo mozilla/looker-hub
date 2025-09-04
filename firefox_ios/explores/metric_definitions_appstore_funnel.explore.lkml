@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_ios/views/metric_definitions_appstore_funnel.view.
 explore: metric_definitions_appstore_funnel {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

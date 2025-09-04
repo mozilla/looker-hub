@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_newtab_visits_top
 explore: metric_definitions_newtab_visits_topsite_tile_interactions {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

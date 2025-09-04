@@ -213,33 +213,15 @@ feature_usage_metrics_v1.metrics_tabs_open_count_users AS feature_usage_metrics_
         
                     WHERE 
                     feature_usage_metrics_v1.submission_date
-                    {% if _filters['analysis_period'] != "" %}
                     BETWEEN
-                    DATE_SUB(
-                        COALESCE(
-                            SAFE_CAST(
-                                {% date_start analysis_period %} AS DATE
-                            ), CURRENT_DATE()),
-                        INTERVAL {% parameter lookback_days %} DAY
-                    ) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_end analysis_period %} AS DATE
-                        ), CURRENT_DATE())
-                    {% else %}
-                    BETWEEN
-                    DATE_SUB(
-                        COALESCE(
-                            SAFE_CAST(
-                                {% date_start submission_date %} AS DATE
-                            ), CURRENT_DATE()),
-                        INTERVAL {% parameter lookback_days %} DAY
-                    ) AND
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
                     COALESCE(
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
-                    {% endif %}
                 
                 )
             GROUP BY
@@ -869,9 +851,8 @@ feature_usage_metrics_v1_metrics_tabs_open_count_users,
 
   dimension_group: submission {
     type: time
-    datatype: date
     group_label: "Base Fields"
-    sql: ${TABLE}.analysis_basis ;;
+    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -1040,25 +1021,5 @@ feature_usage_metrics_v1_metrics_tabs_open_count_users,
     type: unquoted
     default_value: "100"
     hidden: yes
-  }
-
-  parameter: lookback_days {
-    label: "Lookback (Days)"
-    type: unquoted
-    description: "Number of days added before the filtered date range. Useful for period-over-period comparisons."
-    default_value: "0"
-  }
-
-  parameter: date_groupby_position {
-    label: "Date Group By Position"
-    type: unquoted
-    description: "Position of the date field in the group by clause. Required when submission_week, submission_month, submission_quarter, submission_year is selected as BigQuery can't correctly resolve the GROUP BY otherwise"
-    default_value: ""
-  }
-
-  filter: analysis_period {
-    type: date
-    label: "Analysis Period (with Lookback)"
-    description: "Use this filter to define the main analysis period. The results will include the selected date range plus any additional days specified by the 'Lookback days' setting."
   }
 }

@@ -9,6 +9,7 @@ include: "/looker-hub/ads/views/metric_definitions_consolidated_ads_spocs.view.l
 explore: metric_definitions_consolidated_ads_spocs {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

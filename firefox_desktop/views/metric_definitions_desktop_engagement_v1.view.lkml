@@ -127,33 +127,15 @@ desktop_engagement_v1.wau AS desktop_engagement_v1_wau,
                 
                     WHERE 
                     desktop_engagement_v1.submission_date
-                    {% if _filters['analysis_period'] != "" %}
                     BETWEEN
-                    DATE_SUB(
-                        COALESCE(
-                            SAFE_CAST(
-                                {% date_start analysis_period %} AS DATE
-                            ), CURRENT_DATE()),
-                        INTERVAL {% parameter lookback_days %} DAY
-                    ) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_end analysis_period %} AS DATE
-                        ), CURRENT_DATE())
-                    {% else %}
-                    BETWEEN
-                    DATE_SUB(
-                        COALESCE(
-                            SAFE_CAST(
-                                {% date_start submission_date %} AS DATE
-                            ), CURRENT_DATE()),
-                        INTERVAL {% parameter lookback_days %} DAY
-                    ) AND
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
                     COALESCE(
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
-                    {% endif %}
                 
                 )
             GROUP BY
@@ -439,9 +421,8 @@ desktop_engagement_v1_wau,
 
   dimension_group: submission {
     type: time
-    datatype: date
     group_label: "Base Fields"
-    sql: ${TABLE}.analysis_basis ;;
+    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -488,80 +469,32 @@ desktop_engagement_v1_wau,
                                         desktop_engagement_mau_v1.sum"
   }
 
-  measure: desktop_engagement_dau_v1_rolling_average_sum_1_day {
+  measure: desktop_engagement_dau_v1_1_day_rolling_average {
     type: number
-    label: "(non-official) DAU Sum 1 Day Rolling Average"
-    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_week._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_month._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
-                                                    AVG(${desktop_engagement_dau_v1_sum}) OVER (
-                                                        {% if date_groupby_position._parameter_value != "" %}
-                                                        ORDER BY {% parameter date_groupby_position %}
-                                                        {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
-                                                        ORDER BY ${TABLE}.analysis_basis
-                                                        {% else %}
-                                                        ERROR("date_groupby_position needs to be set when using submission_week,
-                                                        submission_month, submission_quarter, or submission_year")
-                                                        {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
-                                                    {% else %}
-                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+    label: "(non-official) DAU 1 Day Rolling Average"
+    sql: AVG(sum(${TABLE}.desktop_engagement_dau_v1 * 1)) OVER (
+                                                ROWS 1 PRECEDING
+                                        ) ;;
     group_label: "Statistics"
     description: "1 day rolling average of (non-official) DAU"
   }
 
-  measure: desktop_engagement_dau_v1_rolling_average_sum_7_day {
+  measure: desktop_engagement_dau_v1_7_day_rolling_average {
     type: number
-    label: "(non-official) DAU Sum 7 Day Rolling Average"
-    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_week._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_month._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
-                                                    AVG(${desktop_engagement_dau_v1_sum}) OVER (
-                                                        {% if date_groupby_position._parameter_value != "" %}
-                                                        ORDER BY {% parameter date_groupby_position %}
-                                                        {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
-                                                        ORDER BY ${TABLE}.analysis_basis
-                                                        {% else %}
-                                                        ERROR("date_groupby_position needs to be set when using submission_week,
-                                                        submission_month, submission_quarter, or submission_year")
-                                                        {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
-                                                    {% else %}
-                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+    label: "(non-official) DAU 7 Day Rolling Average"
+    sql: AVG(sum(${TABLE}.desktop_engagement_dau_v1 * 1)) OVER (
+                                                ROWS 7 PRECEDING
+                                        ) ;;
     group_label: "Statistics"
     description: "7 day rolling average of (non-official) DAU"
   }
 
-  measure: desktop_engagement_dau_v1_rolling_average_sum_28_day {
+  measure: desktop_engagement_dau_v1_28_day_rolling_average {
     type: number
-    label: "(non-official) DAU Sum 28 Day Rolling Average"
-    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_week._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_month._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
-                                                        metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
-                                                    AVG(${desktop_engagement_dau_v1_sum}) OVER (
-                                                        {% if date_groupby_position._parameter_value != "" %}
-                                                        ORDER BY {% parameter date_groupby_position %}
-                                                        {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
-                                                        ORDER BY ${TABLE}.analysis_basis
-                                                        {% else %}
-                                                        ERROR("date_groupby_position needs to be set when using submission_week,
-                                                        submission_month, submission_quarter, or submission_year")
-                                                        {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
-                                                    {% else %}
-                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+    label: "(non-official) DAU 28 Day Rolling Average"
+    sql: AVG(sum(${TABLE}.desktop_engagement_dau_v1 * 1)) OVER (
+                                                ROWS 28 PRECEDING
+                                        ) ;;
     group_label: "Statistics"
     description: "28 day rolling average of (non-official) DAU"
   }
@@ -589,9 +522,9 @@ desktop_engagement_v1_wau,
       desktop_engagement_mau_v1,
       desktop_engagement_dau_v1_sum,
       desktop_engagement_dau_v1_ratio,
-      desktop_engagement_dau_v1_rolling_average_sum_1_day,
-      desktop_engagement_dau_v1_rolling_average_sum_7_day,
-      desktop_engagement_dau_v1_rolling_average_sum_28_day,
+      desktop_engagement_dau_v1_1_day_rolling_average,
+      desktop_engagement_dau_v1_7_day_rolling_average,
+      desktop_engagement_dau_v1_28_day_rolling_average,
       desktop_engagement_wau_v1_sum,
       desktop_engagement_mau_v1_sum,
     ]
@@ -638,25 +571,5 @@ desktop_engagement_v1_wau,
     type: unquoted
     default_value: "100"
     hidden: yes
-  }
-
-  parameter: lookback_days {
-    label: "Lookback (Days)"
-    type: unquoted
-    description: "Number of days added before the filtered date range. Useful for period-over-period comparisons."
-    default_value: "0"
-  }
-
-  parameter: date_groupby_position {
-    label: "Date Group By Position"
-    type: unquoted
-    description: "Position of the date field in the group by clause. Required when submission_week, submission_month, submission_quarter, submission_year is selected as BigQuery can't correctly resolve the GROUP BY otherwise"
-    default_value: ""
-  }
-
-  filter: analysis_period {
-    type: date
-    label: "Analysis Period (with Lookback)"
-    description: "Use this filter to define the main analysis period. The results will include the selected date range plus any additional days specified by the 'Lookback days' setting."
   }
 }

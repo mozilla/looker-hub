@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_ios/views/metric_definitions_new_profile_activatio
 explore: metric_definitions_new_profile_activation {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

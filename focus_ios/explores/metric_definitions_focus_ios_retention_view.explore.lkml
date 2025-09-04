@@ -9,6 +9,7 @@ include: "/looker-hub/focus_ios/views/metric_definitions_focus_ios_retention_vie
 explore: metric_definitions_focus_ios_retention_view {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }

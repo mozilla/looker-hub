@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_site_breakage_eve
 explore: metric_definitions_site_breakage_events {
   always_filter: {
     filters: [
+      submission_date: "7 days",
       sampling: "1",
     ]
   }
