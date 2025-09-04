@@ -41,7 +41,6 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Campaign"
-    description: "The attribution campaign (e.g. 'mozilla-org')."
   }
 
   dimension: attribution__content {
@@ -50,7 +49,6 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Content"
-    description: "The attribution content (e.g. 'firefoxview')."
   }
 
   dimension: attribution__medium {
@@ -59,7 +57,6 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Medium"
-    description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
 
   dimension: attribution__source {
@@ -68,7 +65,6 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Source"
-    description: "The attribution source (e.g. 'google-play')."
   }
 
   dimension: attribution__term {
@@ -77,42 +73,36 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Attribution"
     group_item_label: "Term"
-    description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
   dimension: attribution_dlsource {
     sql: ${TABLE}.attribution_dlsource ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Identifier that indicates where installations of Firefox originate."
   }
 
   dimension: attribution_dltoken {
     sql: ${TABLE}.attribution_dltoken ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Unique token created at Firefox download time."
   }
 
   dimension: attribution_experiment {
     sql: ${TABLE}.attribution_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Name/id of the enrolled funnel experiment."
   }
 
   dimension: attribution_ua {
     sql: ${TABLE}.attribution_ua ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Identifier derived from the user agent downloading the installer."
   }
 
   dimension: attribution_variation {
     sql: ${TABLE}.attribution_variation ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Name/id of the variation cohort used in the enrolled funnel experiment."
   }
 
   dimension: browser_engagement_active_ticks {
@@ -205,6 +195,18 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: days_since_visited_1_uri {
+    sql: ${TABLE}.days_since_visited_1_uri ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_visited_1_uri_bits {
+    sql: ${TABLE}.days_visited_1_uri_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
@@ -223,7 +225,6 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
     group_label: "Distribution"
     group_item_label: "Name"
-    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: distribution_id {
