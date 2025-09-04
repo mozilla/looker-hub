@@ -321,24 +321,6 @@ sessions start outside the app. Values should be \"app\" or \"system\".
 "
   }
 
-  dimension: metrics__boolean__session_server_in_same_country {
-    label: "Session Server In Same Country"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.session_server_in_same_country ;;
-    type: yesno
-    group_label: "Session"
-    group_item_label: "Server In Same Country"
-
-    link: {
-      label: "Glean Dictionary reference for Session Server In Same Country"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_server_in_same_country"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "True if the VPN server's country is the same as the user's actual country.
-When using multihop, the exit server is used."
-  }
-
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation ID"
     hidden: no

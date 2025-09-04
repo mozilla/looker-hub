@@ -59,24 +59,6 @@ view: fx_suggest {
 "
   }
 
-  dimension: metrics__string__fx_suggest_country {
-    label: "Fx Suggest Country"
-    hidden: no
-    sql: ${TABLE}.metrics.string.fx_suggest_country ;;
-    type: string
-    group_label: "Fx Suggest"
-    group_item_label: "Country"
-
-    link: {
-      label: "Glean Dictionary reference for Fx Suggest Country"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fx_suggest_country"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the home region of the user as determined by MLS, the same used for configuring region specific search providers.
-"
-  }
-
   dimension: metrics__string__fx_suggest_iab_category {
     label: "Fx Suggest Iab Category"
     hidden: no

@@ -9,7 +9,6 @@ include: "/looker-hub/fenix/views/metric_definitions_mobile_search_clients_engin
 explore: metric_definitions_mobile_search_clients_engines_sources_daily {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

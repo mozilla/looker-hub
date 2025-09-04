@@ -99,26 +99,6 @@ Firefox-iOS.
 "
   }
 
-  dimension: metrics__timing_distribution__ai_summarize_summarization_time__sum {
-    label: "Ai Summarize Summarization Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.sum ;;
-    type: number
-    group_label: "Ai Summarize"
-    group_item_label: "Summarization Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Ai Summarize Summarization Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/ai_summarize_summarization_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the total time for generating the summary and showing it to the user.
-Starts when the user triggers summarization.
-Ends when user sees the result or an error.
-"
-  }
-
   dimension: metrics__boolean__app_choice_screen_acquisition {
     label: "App Choice Screen Acquisition"
     hidden: no
@@ -1441,7 +1421,7 @@ History, Reading List, or Downloads buttons
 
   dimension: metrics__counter__history_group_list {
     label: "History Group List"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.history_group_list ;;
     type: number
     group_label: "History"
@@ -1462,7 +1442,7 @@ of all Site items that appear in that group.
 
   dimension: metrics__quantity__history_num_visits {
     label: "History Num Visits"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.history_num_visits ;;
     type: number
     group_label: "History"
@@ -1771,7 +1751,7 @@ Downloads and Synced tabs
 
   dimension: metrics__counter__migration_image_sd_cache_cleanup {
     label: "Migration Image Sd Cache Cleanup"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_image_sd_cache_cleanup ;;
     type: number
     group_label: "Migration"
@@ -2225,7 +2205,7 @@ from the page action menu.
 
   dimension: metrics__timing_distribution__places_history_migration_duration__sum {
     label: "Places History Migration Duration Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.sum ;;
     type: number
     group_label: "Places History Migration"
@@ -2243,7 +2223,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_ended_rate__numerator {
     label: "Places History Migration Migration Ended Rate Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.numerator ;;
     type: number
     group_label: "Places History Migration"
@@ -2261,7 +2241,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_ended_rate__denominator {
     label: "Places History Migration Migration Ended Rate Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.denominator ;;
     type: number
     group_label: "Places History Migration"
@@ -2279,7 +2259,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_error_rate__numerator {
     label: "Places History Migration Migration Error Rate Numerator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.numerator ;;
     type: number
     group_label: "Places History Migration"
@@ -2297,7 +2277,7 @@ from the page action menu.
 
   dimension: metrics__rate__places_history_migration_migration_error_rate__denominator {
     label: "Places History Migration Migration Error Rate Denominator"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.denominator ;;
     type: number
     group_label: "Places History Migration"
@@ -2315,7 +2295,7 @@ from the page action menu.
 
   dimension: metrics__quantity__places_history_migration_num_migrated {
     label: "Places History Migration Num Migrated"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.places_history_migration_num_migrated ;;
     type: number
     group_label: "Places History Migration"
@@ -2333,7 +2313,7 @@ from the page action menu.
 
   dimension: metrics__quantity__places_history_migration_num_to_migrate {
     label: "Places History Migration Num To Migrate"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.places_history_migration_num_to_migrate ;;
     type: number
     group_label: "Places History Migration"
@@ -2499,7 +2479,7 @@ it is initially set to Firefox Home.
 
   dimension: metrics__boolean__preferences_jump_back_in {
     label: "Preferences Jump Back In"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_jump_back_in ;;
     type: yesno
     group_label: "Preferences"
@@ -2540,7 +2520,7 @@ of users is using their client.
 
   dimension: metrics__string__preferences_new_tab_experience {
     label: "Preferences New Tab Experience"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.preferences_new_tab_experience ;;
     type: string
     group_label: "Preferences"
@@ -2582,7 +2562,7 @@ introduce the new Activity Stream features.
 
   dimension: metrics__boolean__preferences_pocket {
     label: "Preferences Pocket"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_pocket ;;
     type: yesno
     group_label: "Preferences"
@@ -2600,7 +2580,7 @@ introduce the new Activity Stream features.
 
   dimension: metrics__boolean__preferences_recently_saved {
     label: "Preferences Recently Saved"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_recently_saved ;;
     type: yesno
     group_label: "Preferences"
@@ -2619,7 +2599,7 @@ is enabled to be displayed.
 
   dimension: metrics__boolean__preferences_recently_visited {
     label: "Preferences Recently Visited"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_recently_visited ;;
     type: yesno
     group_label: "Preferences"
@@ -2656,7 +2636,7 @@ is enabled to be displayed.
 
   dimension: metrics__boolean__preferences_show_clipboard_bar {
     label: "Preferences Show Clipboard Bar"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_show_clipboard_bar ;;
     type: yesno
     group_label: "Preferences"
@@ -3208,7 +3188,7 @@ is closed.
 
   dimension: metrics__counter__tabs_cumulative_count {
     label: "Tabs Cumulative Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.tabs_cumulative_count ;;
     type: number
     group_label: "Tabs"
@@ -3234,7 +3214,7 @@ average open tabs per foreground \"session\".
 
   dimension: metrics__counter__tabs_grouped_tab_closed {
     label: "Tabs Grouped Tab Closed"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
     type: number
     group_label: "Tabs"
@@ -3252,7 +3232,7 @@ average open tabs per foreground \"session\".
 
   dimension: metrics__counter__tabs_grouped_tab_search {
     label: "Tabs Grouped Tab Search"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.tabs_grouped_tab_search ;;
     type: number
     group_label: "Tabs"
@@ -3271,7 +3251,7 @@ icon for grouped tabs in the tab tray.
 
   dimension: metrics__quantity__tabs_inactive_tabs_count {
     label: "Tabs Inactive Tabs Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.tabs_inactive_tabs_count ;;
     type: number
     group_label: "Tabs"
@@ -3385,7 +3365,7 @@ pressed
 
   dimension: metrics__quantity__tabs_normal_tabs_quantity {
     label: "Tabs Normal Tabs Quantity"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
     type: number
     group_label: "Tabs"
@@ -3423,7 +3403,7 @@ is opened.
 
   dimension: metrics__quantity__tabs_private_tabs_quantity {
     label: "Tabs Private Tabs Quantity"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.tabs_private_tabs_quantity ;;
     type: number
     group_label: "Tabs"
@@ -3474,78 +3454,6 @@ button in the URL bar.
     }
 
     description: "Counts how long it takes to switch to another tab
-"
-  }
-
-  dimension: metrics__counter__termsofuse_dismiss_count {
-    label: "Termsofuse Dismiss Count"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.termsofuse_dismiss_count ;;
-    type: number
-    group_label: "Termsofuse"
-    group_item_label: "Dismiss Count"
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the number of times a user clicks to dismiss (does not include tapping accept or remind me later).
-"
-  }
-
-  dimension: metrics__counter__termsofuse_impression_count {
-    label: "Termsofuse Impression Count"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.termsofuse_impression_count ;;
-    type: number
-    group_label: "Termsofuse"
-    group_item_label: "Impression Count"
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Impression Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the number of ToU impressions the user has had.
-"
-  }
-
-  dimension: metrics__counter__termsofuse_remind_me_later_count {
-    label: "Termsofuse Remind Me Later Count"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.termsofuse_remind_me_later_count ;;
-    type: number
-    group_label: "Termsofuse"
-    group_item_label: "Remind Me Later Count"
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the number of times a user clicks \"remind me later\".
-"
-  }
-
-  dimension: metrics__quantity__termsofuse_version {
-    label: "Termsofuse Version"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
-    type: number
-    group_label: "Termsofuse"
-    group_item_label: "Version"
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The version of the Terms of Use the user accepted.
 "
   }
 
@@ -3717,42 +3625,6 @@ preference.
 tracking-protection that is enabled. One of:
 * basic
 * strict
-"
-  }
-
-  dimension: metrics__boolean__user_ai_summarize_shake_gesture_enabled {
-    label: "User Ai Summarize Shake Gesture Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.user_ai_summarize_shake_gesture_enabled ;;
-    type: yesno
-    group_label: "User Ai Summarize"
-    group_item_label: "Shake Gesture Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for User Ai Summarize Shake Gesture Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_ai_summarize_shake_gesture_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records if the user has shake to summarize option enabled
-"
-  }
-
-  dimension: metrics__boolean__user_ai_summarize_summarization_enabled {
-    label: "User Ai Summarize Summarization Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_enabled ;;
-    type: yesno
-    group_label: "User Ai Summarize"
-    group_item_label: "Summarization Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for User Ai Summarize Summarization Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_ai_summarize_summarization_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records if the user has summarization enabled.
 "
   }
 
@@ -4493,24 +4365,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__counter__logins_store_local_undecryptable_deleted {
-    label: "Logins Store Local Undecryptable Deleted"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.logins_store_local_undecryptable_deleted ;;
-    type: number
-    group_label: "Logins Store"
-    group_item_label: "Local Undecryptable Deleted"
-
-    link: {
-      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_local_undecryptable_deleted"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Track how many logins we deleted locally due to various reasons that prevent us from decrypting the login
-"
-  }
-
   dimension: metrics__counter__logins_store_migration_num_failed {
     label: "Logins Store Migration Num Failed"
     hidden: yes
@@ -4580,24 +4434,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "How long the migration tool
-"
-  }
-
-  dimension: metrics__counter__logins_store_mirror_undecryptable_deleted {
-    label: "Logins Store Mirror Undecryptable Deleted"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.logins_store_mirror_undecryptable_deleted ;;
-    type: number
-    group_label: "Logins Store"
-    group_item_label: "Mirror Undecryptable Deleted"
-
-    link: {
-      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_mirror_undecryptable_deleted"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Track how many logins we deleted in the mirror table due to various reasons that prevent us from decrypting the login
 "
   }
 
@@ -7863,81 +7699,6 @@ startup, as part of the initialization sequence.
     }
   }
 
-  measure: termsofuse_dismiss_count {
-    type: sum
-    sql: ${metrics__counter__termsofuse_dismiss_count} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: termsofuse_dismiss_count_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__termsofuse_dismiss_count: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: termsofuse_impression_count {
-    type: sum
-    sql: ${metrics__counter__termsofuse_impression_count} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Impression Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: termsofuse_impression_count_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__termsofuse_impression_count: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Impression Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: termsofuse_remind_me_later_count {
-    type: sum
-    sql: ${metrics__counter__termsofuse_remind_me_later_count} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: termsofuse_remind_me_later_count_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__termsofuse_remind_me_later_count: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
   measure: widget_l_tabs_open_url {
     type: sum
     sql: ${metrics__counter__widget_l_tabs_open_url} ;;
@@ -8338,31 +8099,6 @@ startup, as part of the initialization sequence.
     }
   }
 
-  measure: logins_store_local_undecryptable_deleted {
-    type: sum
-    sql: ${metrics__counter__logins_store_local_undecryptable_deleted} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_local_undecryptable_deleted"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: logins_store_local_undecryptable_deleted_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__logins_store_local_undecryptable_deleted: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Logins Store Local Undecryptable Deleted"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_local_undecryptable_deleted"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
   measure: logins_store_migration_num_failed {
     type: sum
     sql: ${metrics__counter__logins_store_migration_num_failed} ;;
@@ -8434,31 +8170,6 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_succeeded"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: logins_store_mirror_undecryptable_deleted {
-    type: sum
-    sql: ${metrics__counter__logins_store_mirror_undecryptable_deleted} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_mirror_undecryptable_deleted"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: logins_store_mirror_undecryptable_deleted_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__logins_store_mirror_undecryptable_deleted: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Logins Store Mirror Undecryptable Deleted"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_mirror_undecryptable_deleted"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -9649,19 +9360,19 @@ view: metrics__metrics__labeled_counter__library_panel_pressed {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -10100,19 +9811,19 @@ view: metrics__metrics__labeled_counter__tabs_close {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -10141,19 +9852,19 @@ view: metrics__metrics__labeled_counter__tabs_close_all {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -10182,19 +9893,19 @@ view: metrics__metrics__labeled_counter__tabs_open {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 

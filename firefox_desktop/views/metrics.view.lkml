@@ -777,23 +777,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
-    label: "Browser Engagement Navigation Contextmenu Visual"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu_visual ;;
-    group_label: "Browser Engagement Navigation"
-    group_item_label: "Contextmenu Visual"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Engagement Navigation Contextmenu Visual"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_navigation_contextmenu_visual"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The count of URI loads triggered in a subsession from the context menu's visual search menuitem, broken down by the originating action.
-"
-  }
-
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     label: "Browser Engagement Navigation Searchbar"
     hidden: yes
@@ -1525,23 +1508,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu_visual {
-    label: "Browser Search Adclicks Contextmenu Visual"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu_visual ;;
-    group_label: "Browser Search Adclicks"
-    group_item_label: "Contextmenu Visual"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search Adclicks Contextmenu Visual"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_adclicks_contextmenu_visual"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records clicks of adverts on visual-search SERP pages where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
-"
-  }
-
   dimension: metrics__labeled_counter__browser_search_adclicks_reload {
     label: "Browser Search Adclicks Reload"
     hidden: yes
@@ -1763,23 +1729,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__labeled_counter__browser_search_content_contextmenu_visual {
-    label: "Browser Search Content Contextmenu Visual"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu_visual ;;
-    group_label: "Browser Search Content"
-    group_item_label: "Contextmenu Visual"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search Content Contextmenu Visual"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_content_contextmenu_visual"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records counts for in-content visual searches where the search was most likely started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
-"
-  }
-
   dimension: metrics__labeled_counter__browser_search_content_reload {
     label: "Browser Search Content Reload"
     hidden: yes
@@ -1998,23 +1947,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records counts of SERP pages with adverts displayed where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.contextmenu.
-"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_withads_contextmenu_visual {
-    label: "Browser Search Withads Contextmenu Visual"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu_visual ;;
-    group_label: "Browser Search Withads"
-    group_item_label: "Contextmenu Visual"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Search Withads Contextmenu Visual"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_withads_contextmenu_visual"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records counts of visual-search SERP pages with adverts displayed where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
 "
   }
 
@@ -2423,24 +2355,6 @@ This metric was generated to correspond to the Legacy Telemetry scalar browser.s
     }
 
     description: "True if the about:home startup cache was written via the AsyncShutdown blocker. This metric was generated to correspond to the Legacy Telemetry scalar browser.startup.abouthome_cache_shutdownwrite.
-"
-  }
-
-  dimension: metrics__boolean__browser_startup_kiosk_mode {
-    label: "Browser Startup Kiosk Mode"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.browser_startup_kiosk_mode ;;
-    type: yesno
-    group_label: "Browser Startup"
-    group_item_label: "Kiosk Mode"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Startup Kiosk Mode"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_startup_kiosk_mode"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "True when the browser was started in kiosk mode.
 "
   }
 
@@ -3090,274 +3004,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__string__content_analysis_agent_name {
-    label: "Content Analysis Agent Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.content_analysis_agent_name ;;
-    type: string
-    group_label: "Content Analysis"
-    group_item_label: "Agent Name"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Agent Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_agent_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The name of the DLP agent that Firefox is connected to. This is set via enterprise policy."
-  }
-
-  dimension: metrics__boolean__content_analysis_allow_url_regex_list_set {
-    label: "Content Analysis Allow URL Regex List Set"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.content_analysis_allow_url_regex_list_set ;;
-    type: yesno
-    group_label: "Content Analysis"
-    group_item_label: "Allow URL Regex List Set"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Allow URL Regex List Set"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_allow_url_regex_list_set"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the allow_url_regex_list pref is set to a non-default value."
-  }
-
-  dimension: metrics__boolean__content_analysis_bypass_for_same_tab_operations {
-    label: "Content Analysis Bypass For Same Tab Operations"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.content_analysis_bypass_for_same_tab_operations ;;
-    type: yesno
-    group_label: "Content Analysis"
-    group_item_label: "Bypass For Same Tab Operations"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Bypass For Same Tab Operations"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_bypass_for_same_tab_operations"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The bypass_for_same_tab_operations pref that is set via enterprise policy."
-  }
-
-  dimension: metrics__string__content_analysis_client_signature {
-    label: "Content Analysis Client Signature"
-    hidden: no
-    sql: ${TABLE}.metrics.string.content_analysis_client_signature ;;
-    type: string
-    group_label: "Content Analysis"
-    group_item_label: "Client Signature"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Client Signature"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_client_signature"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The client_signature pref that is set via enterprise policy."
-  }
-
-  dimension: metrics__counter__content_analysis_connection_attempt {
-    label: "Content Analysis Connection Attempt"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.content_analysis_connection_attempt ;;
-    type: number
-    group_label: "Content Analysis"
-    group_item_label: "Connection Attempt"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Connection Attempt"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_connection_attempt"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Recorded when Firefox attempts to connect to the DLP agent."
-  }
-
-  dimension: metrics__counter__content_analysis_connection_attempt_retry {
-    label: "Content Analysis Connection Attempt Retry"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.content_analysis_connection_attempt_retry ;;
-    type: number
-    group_label: "Content Analysis"
-    group_item_label: "Connection Attempt Retry"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Connection Attempt Retry"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_connection_attempt_retry"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Recorded when Firefox attempts to retry connecting to the DLP agent (because a previous attempt to communicate with the agent failed)."
-  }
-
-  dimension: metrics__labeled_counter__content_analysis_connection_failure {
-    label: "Content Analysis Connection Failure"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.content_analysis_connection_failure ;;
-    group_label: "Content Analysis"
-    group_item_label: "Connection Failure"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Connection Failure"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_connection_failure"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Recorded when Firefox fails to connect to the DLP agent. The label is the nsresult that was returned by the connection attempt."
-  }
-
-  dimension: metrics__quantity__content_analysis_default_result {
-    label: "Content Analysis Default Result"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.content_analysis_default_result ;;
-    type: number
-    group_label: "Content Analysis"
-    group_item_label: "Default Result"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Default Result"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_default_result"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The default_result pref that is set via enterprise policy."
-  }
-
-  dimension: metrics__boolean__content_analysis_deny_url_regex_list_set {
-    label: "Content Analysis Deny URL Regex List Set"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.content_analysis_deny_url_regex_list_set ;;
-    type: yesno
-    group_label: "Content Analysis"
-    group_item_label: "Deny URL Regex List Set"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Deny URL Regex List Set"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_deny_url_regex_list_set"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the deny_url_regex_list pref is set to a non-default value."
-  }
-
-  dimension: metrics__counter__content_analysis_request_allowed_by_allow_url {
-    label: "Content Analysis Request Allowed By Allow URL"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.content_analysis_request_allowed_by_allow_url ;;
-    type: number
-    group_label: "Content Analysis"
-    group_item_label: "Request Allowed By Allow URL"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Request Allowed By Allow URL"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_request_allowed_by_allow_url"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Recorded when a request is allowed by the allow_url_regex_list."
-  }
-
-  dimension: metrics__counter__content_analysis_request_blocked_by_deny_url {
-    label: "Content Analysis Request Blocked By Deny URL"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.content_analysis_request_blocked_by_deny_url ;;
-    type: number
-    group_label: "Content Analysis"
-    group_item_label: "Request Blocked By Deny URL"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Request Blocked By Deny URL"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_request_blocked_by_deny_url"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Recorded when a request is blocked by the deny_url_regex_list."
-  }
-
-  dimension: metrics__labeled_counter__content_analysis_request_sent_by_analysis_type {
-    label: "Content Analysis Request Sent By Analysis Type"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.content_analysis_request_sent_by_analysis_type ;;
-    group_label: "Content Analysis"
-    group_item_label: "Request Sent By Analysis Type"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Request Sent By Analysis Type"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_request_sent_by_analysis_type"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Recorded when a request is sent to the DLP agent. The label is the analysisType of the request, which corresponds to a value in the AnalysisConnector enum in analysis.proto. (e.g. \"FILE_DOWNLOADED\", \"FILE_ATTACHED\", \"BULK_DATA_ENTRY\", etc.)"
-  }
-
-  dimension: metrics__labeled_counter__content_analysis_request_sent_by_reason {
-    label: "Content Analysis Request Sent By Reason"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.content_analysis_request_sent_by_reason ;;
-    group_label: "Content Analysis"
-    group_item_label: "Request Sent By Reason"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Request Sent By Reason"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_request_sent_by_reason"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Recorded when a request is sent to the DLP agent. The label is the reason of the request, which corresponds to a value in the ContentAnalysisRequest::Reason enum in analysis.proto. (e.g. \"CLIPBOARD_PASTE\", \"DRAG_AND_DROP\", etc.)"
-  }
-
-  dimension: metrics__labeled_counter__content_analysis_response_action {
-    label: "Content Analysis Response Action"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.content_analysis_response_action ;;
-    group_label: "Content Analysis"
-    group_item_label: "Response Action"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Response Action"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_response_action"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Recorded when a response is received from the DLP agent. The label is the action of the response, converted to a string (so \"1\"). The values correspond to nsIContentAnalysisResponse::Action."
-  }
-
-  dimension: metrics__boolean__content_analysis_show_blocked_result {
-    label: "Content Analysis Show Blocked Result"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.content_analysis_show_blocked_result ;;
-    type: yesno
-    group_label: "Content Analysis"
-    group_item_label: "Show Blocked Result"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Show Blocked Result"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_show_blocked_result"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The show_blocked_result pref that is set via enterprise policy."
-  }
-
-  dimension: metrics__quantity__content_analysis_timeout_result {
-    label: "Content Analysis Timeout Result"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.content_analysis_timeout_result ;;
-    type: number
-    group_label: "Content Analysis"
-    group_item_label: "Timeout Result"
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Timeout Result"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_timeout_result"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The timeout_result pref that is set via enterprise policy."
-  }
-
   dimension: metrics__labeled_counter__contextual_services_topsites_click {
     label: "Contextual Services Topsites Click"
     hidden: yes
@@ -3930,49 +3576,6 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
-  dimension: metrics__boolean__extensions_button_prefers_hidden_button {
-    label: "Extensions Button Prefers Hidden Button"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.extensions_button_prefers_hidden_button ;;
-    type: yesno
-    group_label: "Extensions Button"
-    group_item_label: "Prefers Hidden Button"
-
-    link: {
-      label: "Glean Dictionary reference for Extensions Button Prefers Hidden Button"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_button_prefers_hidden_button"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records whether the user prefers the Extensions Button to be hidden. Corresponds to the inverse value of the `exceptions.unifiedExtensions.button.always_visible` pref.
-"
-  }
-
-  dimension: metrics__labeled_counter__extensions_button_temporarily_unhidden {
-    label: "Extensions Button Temporarily Unhidden"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.extensions_button_temporarily_unhidden ;;
-    group_label: "Extensions Button"
-    group_item_label: "Temporarily Unhidden"
-
-    link: {
-      label: "Glean Dictionary reference for Extensions Button Temporarily Unhidden"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_button_temporarily_unhidden"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts how often the hidden Extensions Button is temporarily shown. There are multiple possible triggers for showing the extensions button, only the first that would trigger the transition from hidden to shown is going to be counted. For example, if the button is shown because the \"attention\" dot is shown, and a permission prompt is shown, then we only count the trigger for the attention dot, not the permission prompt.
-customize is when the user entered Customize Mode, which causes the Extensions Button to show unconditionally until the user exits the mode.
-addon_install_doorhanger covers notifications related to add-on installations, including blocked installations, add-on download progress, and failed installations. Permission prompts are NOT part of this, but covered by extension_permission_prompt. A typical installation flow triggers both addon_install_doorhanger and extension_permission_prompt.
-extension_controlled_setting is when a notification is anchored to the Extensions Button that notifies the user of an extension-triggered change (new tab page, home page, first use of tabs.hide()). This is shown on first use of the relevant feature after the installation of an extension.
-browser_action_open_popup is when the browserAction popup is opened. This is usually user-triggered (shortcut, context menu) or via the `action.openPopup()` API.
-extension_permission_prompt is when an extension permission prompt is shown. This does not distinguish between install-time permission prompts, permission prompts on update or optional permission prompts at runtime.
-extensions_panel_showing is when the Extensions Panel is being shown, for example via the Extensions appmenu item.
-attention_blocklist is when the browser wants to draw attention to the fact that one of the add-ons has been blocklisted.
-attention_permission_denied is when the browser wants to draw attention to the fact that one of the extensions was denied access to the page in the currently displayed tab. The access request is not a strong signal: a MV3 extension with content scripts whose permissions have been revoked by the user could trigger such an attention request on all websites.
-"
-  }
-
   dimension: metrics__timing_distribution__fullscreen_change__sum {
     label: "Fullscreen Change Sum"
     hidden: no
@@ -3989,43 +3592,6 @@ attention_permission_denied is when the browser wants to draw attention to the f
 
     description: "The time content uses to enter/exit fullscreen regardless of fullscreen transition timeout
 This metric was generated to correspond to the Legacy Telemetry exponential histogram FULLSCREEN_CHANGE_MS.
-"
-  }
-
-  dimension: metrics__boolean__fxa_account_enabled {
-    label: "Fxa Account Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.fxa_account_enabled ;;
-    type: yesno
-    group_label: "Fxa"
-    group_item_label: "Account Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Fxa Account Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fxa_account_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the user's logged in to an FxA account.
-"
-  }
-
-  dimension: metrics__boolean__fxa_sync_enabled {
-    label: "Fxa Sync Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.fxa_sync_enabled ;;
-    type: yesno
-    group_label: "Fxa"
-    group_item_label: "Sync Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Fxa Sync Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fxa_sync_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the weave service is present and enabled.
-Implies `fxa.account_enabled`.
 "
   }
 
@@ -4065,24 +3631,6 @@ Implies `fxa.account_enabled`.
 "
   }
 
-  dimension: metrics__string__genai_chatbot_badges {
-    label: "Genai Chatbot Badges"
-    hidden: no
-    sql: ${TABLE}.metrics.string.genai_chatbot_badges ;;
-    type: string
-    group_label: "Genai Chatbot"
-    group_item_label: "Badges"
-
-    link: {
-      label: "Glean Dictionary reference for Genai Chatbot Badges"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_chatbot_badges"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Which badges are shown in various surfaces (comma separated).
-"
-  }
-
   dimension: metrics__boolean__genai_chatbot_enabled {
     label: "Genai Chatbot Enabled"
     hidden: no
@@ -4098,42 +3646,6 @@ Implies `fxa.account_enabled`.
     }
 
     description: "Indicates if the chatbot feature is enabled.
-"
-  }
-
-  dimension: metrics__boolean__genai_chatbot_menu {
-    label: "Genai Chatbot Menu"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.genai_chatbot_menu ;;
-    type: yesno
-    group_label: "Genai Chatbot"
-    group_item_label: "Menu"
-
-    link: {
-      label: "Glean Dictionary reference for Genai Chatbot Menu"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_chatbot_menu"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Indicates if the chatbot menu is shown without provider.
-"
-  }
-
-  dimension: metrics__boolean__genai_chatbot_page {
-    label: "Genai Chatbot Page"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.genai_chatbot_page ;;
-    type: yesno
-    group_label: "Genai Chatbot"
-    group_item_label: "Page"
-
-    link: {
-      label: "Glean Dictionary reference for Genai Chatbot Page"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_chatbot_page"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Indicates if the chatbot page level features are enabled.
 "
   }
 
@@ -4209,24 +3721,6 @@ Implies `fxa.account_enabled`.
 "
   }
 
-  dimension: metrics__boolean__genai_linkpreview_ai_optin {
-    label: "Genai Linkpreview Ai Optin"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.genai_linkpreview_ai_optin ;;
-    type: yesno
-    group_label: "Genai Linkpreview"
-    group_item_label: "Ai Optin"
-
-    link: {
-      label: "Glean Dictionary reference for Genai Linkpreview Ai Optin"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_ai_optin"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records if the user has opted-in to use AI for key points generation
-"
-  }
-
   dimension: metrics__boolean__genai_linkpreview_enabled {
     label: "Genai Linkpreview Enabled"
     hidden: no
@@ -4242,42 +3736,6 @@ Implies `fxa.account_enabled`.
     }
 
     description: "Records if the user has link previews enabled
-"
-  }
-
-  dimension: metrics__boolean__genai_linkpreview_key_points {
-    label: "Genai Linkpreview Key Points"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.genai_linkpreview_key_points ;;
-    type: yesno
-    group_label: "Genai Linkpreview"
-    group_item_label: "Key Points"
-
-    link: {
-      label: "Glean Dictionary reference for Genai Linkpreview Key Points"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_key_points"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records if the user defaults to expanded state for key point generation
-"
-  }
-
-  dimension: metrics__string__genai_linkpreview_shortcut {
-    label: "Genai Linkpreview Shortcut"
-    hidden: no
-    sql: ${TABLE}.metrics.string.genai_linkpreview_shortcut ;;
-    type: string
-    group_label: "Genai Linkpreview"
-    group_item_label: "Shortcut"
-
-    link: {
-      label: "Glean Dictionary reference for Genai Linkpreview Shortcut"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/genai_linkpreview_shortcut"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records which type of shortcut the user selected for Link Previews (comma separated if more than one)
 "
   }
 
@@ -4596,60 +4054,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__boolean__ipprotection_enabled {
-    label: "Ipprotection Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.ipprotection_enabled ;;
-    type: yesno
-    group_label: "Ipprotection"
-    group_item_label: "Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Ipprotection Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "True if IP Protection is running.
-"
-  }
-
-  dimension: metrics__memory_distribution__ipprotection_usage_rx__sum {
-    label: "Ipprotection Usage Rx Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_rx.sum ;;
-    type: number
-    group_label: "Ipprotection"
-    group_item_label: "Usage Rx Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Ipprotection Usage Rx Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_usage_rx"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Bytes transmitted (incoming) while IP Protection is running.
-"
-  }
-
-  dimension: metrics__memory_distribution__ipprotection_usage_tx__sum {
-    label: "Ipprotection Usage Tx Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.ipprotection_usage_tx.sum ;;
-    type: number
-    group_label: "Ipprotection"
-    group_item_label: "Usage Tx Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Ipprotection Usage Tx Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipprotection_usage_tx"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Bytes transmitted (outgoing) while IP Protection is running.
-"
-  }
-
   dimension: metrics__uuid__legacy_telemetry_client_id {
     label: "Legacy Telemetry Client ID"
     hidden: no
@@ -4693,25 +4097,6 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 Might not always have a value due to being too early for it to have
 loaded.
 Does not need to be sent in the Glean \"deletion-request\" ping.
-"
-  }
-
-  dimension: metrics__uuid__legacy_telemetry_session_id {
-    label: "Legacy Telemetry Session ID"
-    hidden: no
-    sql: ${TABLE}.metrics.uuid.legacy_telemetry_session_id ;;
-    type: string
-    group_label: "Legacy Telemetry"
-    group_item_label: "Session ID"
-
-    link: {
-      label: "Glean Dictionary reference for Legacy Telemetry Session ID"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_session_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Legacy Telemetry's session identifier.
-Set near startup and stable until shutdown.
 "
   }
 
@@ -5103,60 +4488,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__boolean__newtab_activity_stream_ctor_success {
-    label: "Newtab Activity Stream Ctor Success"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.newtab_activity_stream_ctor_success ;;
-    type: yesno
-    group_label: "Newtab"
-    group_item_label: "Activity Stream Ctor Success"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Activity Stream Ctor Success"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_activity_stream_ctor_success"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records technical data about whether Activity Stream construction completed successfully
-"
-  }
-
-  dimension: metrics__boolean__newtab_addon_ready_success {
-    label: "Newtab Addon Ready Success"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.newtab_addon_ready_success ;;
-    type: yesno
-    group_label: "Newtab"
-    group_item_label: "Addon Ready Success"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Addon Ready Success"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_addon_ready_success"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records technical data about whether waiting for the newtab built-in addon readyPromise succeeded.
-"
-  }
-
-  dimension: metrics__boolean__newtab_addon_xpi_used {
-    label: "Newtab Addon Xpi Used"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.newtab_addon_xpi_used ;;
-    type: yesno
-    group_label: "Newtab"
-    group_item_label: "Addon Xpi Used"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Addon Xpi Used"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_addon_xpi_used"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "True if a downloaded XPI file is where the newtab resources are being mapped from.
-"
-  }
-
   dimension: metrics__boolean__newtab_handoff_preference_enabled {
     label: "Newtab Handoff Preference Enabled"
     hidden: no
@@ -5208,42 +4539,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records technical data about whether the ping registration at runtime succeeded
-"
-  }
-
-  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__sum {
-    label: "Newtab Spons Nav Traffic Recvd Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.sum ;;
-    type: number
-    group_label: "Newtab"
-    group_item_label: "Spons Nav Traffic Recvd Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Spons Nav Traffic Recvd Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_spons_nav_traffic_recvd"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The volume of traffic received through browsers that were link targets for sponsored topsite or content navigations.
-"
-  }
-
-  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__sum {
-    label: "Newtab Spons Nav Traffic Sent Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.sum ;;
-    type: number
-    group_label: "Newtab"
-    group_item_label: "Spons Nav Traffic Sent Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Newtab Spons Nav Traffic Sent Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_spons_nav_traffic_sent"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The volume of traffic sent through browsers that were link targets for sponsored topsite or content navigations.
 "
   }
 
@@ -5628,41 +4923,6 @@ broken down by structured ingestion namespace.
 "
   }
 
-  dimension: metrics__labeled_counter__pinned_tabs_activations {
-    label: "Pinned Tabs Activations"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.pinned_tabs_activations ;;
-    group_label: "Pinned Tabs"
-    group_item_label: "Activations"
-
-    link: {
-      label: "Glean Dictionary reference for Pinned Tabs Activations"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pinned_tabs_activations"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records how many times a pinned tab gets activated.
-"
-  }
-
-  dimension: metrics__labeled_quantity__pinned_tabs_count {
-    label: "Pinned Tabs Count"
-    hidden: no
-    sql: ${TABLE}.metrics.labeled_quantity.pinned_tabs_count ;;
-    type: string
-    group_label: "Pinned Tabs"
-    group_item_label: "Count"
-
-    link: {
-      label: "Glean Dictionary reference for Pinned Tabs Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pinned_tabs_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records how many pinned tabs the user currently has across all windows.
-"
-  }
-
   dimension: metrics__custom_distribution__places_annos_pages_count__sum {
     label: "Places Annos Pages Count Sum"
     hidden: no
@@ -5793,24 +5053,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "PLACES: Database filesize (MB)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_DATABASE_FILESIZE_MB.
-"
-  }
-
-  dimension: metrics__memory_distribution__places_database_semantic_history_filesize__sum {
-    label: "Places Database Semantic History Filesize Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.places_database_semantic_history_filesize.sum ;;
-    type: number
-    group_label: "Places"
-    group_item_label: "Database Semantic History Filesize Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Places Database Semantic History Filesize Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_database_semantic_history_filesize"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "PLACES: Semantic History database filesize (MB)
 "
   }
 
@@ -6039,60 +5281,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__timing_distribution__places_semantic_history_chunk_calculate_time__sum {
-    label: "Places Semantic History Chunk Calculate Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.places_semantic_history_chunk_calculate_time.sum ;;
-    type: number
-    group_label: "Places"
-    group_item_label: "Semantic History Chunk Calculate Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Places Semantic History Chunk Calculate Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_semantic_history_chunk_calculate_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time to calculate a chunk of embeddings.
-"
-  }
-
-  dimension: metrics__timing_distribution__places_semantic_history_find_chunks_time__sum {
-    label: "Places Semantic History Find Chunks Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.places_semantic_history_find_chunks_time.sum ;;
-    type: number
-    group_label: "Places"
-    group_item_label: "Semantic History Find Chunks Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Places Semantic History Find Chunks Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_semantic_history_find_chunks_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time to find URLs to calculate embeddings for.
-"
-  }
-
-  dimension: metrics__quantity__places_semantic_history_max_chunks_count {
-    label: "Places Semantic History Max Chunks Count"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.places_semantic_history_max_chunks_count ;;
-    type: number
-    group_label: "Places"
-    group_item_label: "Semantic History Max Chunks Count"
-
-    link: {
-      label: "Glean Dictionary reference for Places Semantic History Max Chunks Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_semantic_history_max_chunks_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Max number of chunks of embeddings to calculate.
-"
-  }
-
   dimension: metrics__custom_distribution__places_sorted_bookmarks_perc__sum {
     label: "Places Sorted Bookmarks Perc Sum"
     hidden: no
@@ -6273,26 +5461,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__quantity__profile_lock_failed_lock_count {
-    label: "Profile Lock Failed Lock Count"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.profile_lock_failed_lock_count ;;
-    type: number
-    group_label: "Profile Lock"
-    group_item_label: "Failed Lock Count"
-
-    link: {
-      label: "Glean Dictionary reference for Profile Lock Failed Lock Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profile_lock_failed_lock_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The number of failed profile lock attempts that occurred prior to
-successfully locking the profile and starting the app.
-Previously collected in the \"main\" ping's `simpleMeasurements`.
-"
-  }
-
   dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
     label: "Protocolhandler Mailto Handler Prompt Shown"
     hidden: yes
@@ -6403,23 +5571,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
-  dimension: metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
-    label: "Sap Impression Counts Contextmenu Visual"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_contextmenu_visual ;;
-    group_label: "Sap Impression Counts"
-    group_item_label: "Contextmenu Visual"
-
-    link: {
-      label: "Glean Dictionary reference for Sap Impression Counts Contextmenu Visual"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sap_impression_counts_contextmenu_visual"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Count of impressions of the visual search context menu item. The counter's label is the engine's identifier if the engine is known at the time of impression and it's an app-provided engine. Otherwise the label is \"none\".
-"
-  }
-
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
@@ -6480,7 +5631,7 @@ For other engines, this is `other-<engineName>`.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[app]appDefault` for a config search engine.
+  `[app]appDefault` for an app-provided engine.
   `[addon]<extension id>` for a WebExtension-based engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
@@ -6668,7 +5819,7 @@ default engine, and hence both versions of these fields will be filled in.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[app]appDefault` for a config search engine.
+  `[app]appDefault` for an app-provided engine.
   `[addon]<extension id>` for a WebExtension-based engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
   engine.
@@ -6857,7 +6008,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of aborted search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of aborted search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -6874,7 +6025,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of failed search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of failed search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -6891,7 +6042,7 @@ success - search service successfully initialized.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of successful search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+    description: "Counts the number of successful search suggestion fetches per search engine. Only records app provided engines using their short IDs ('id', not 'identifier') as labels.
 "
   }
 
@@ -7247,23 +6398,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__labeled_counter__session_restore_shutdown_flush_all_outcomes {
-    label: "Session Restore Shutdown Flush All Outcomes"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_flush_all_outcomes ;;
-    group_label: "Session Restore"
-    group_item_label: "Shutdown Flush All Outcomes"
-
-    link: {
-      label: "Glean Dictionary reference for Session Restore Shutdown Flush All Outcomes"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_shutdown_flush_all_outcomes"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The count of time-outs, abnormal shutdown and frameloader crashes observed during an async shutdown
-"
-  }
-
   dimension: metrics__labeled_counter__session_restore_shutdown_ok {
     label: "Session Restore Shutdown Ok"
     hidden: yes
@@ -7279,23 +6413,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Did the browser start after a successful shutdown
 This metric was generated to correspond to the Legacy Telemetry boolean histogram SHUTDOWN_OK.
-"
-  }
-
-  dimension: metrics__labeled_counter__session_restore_shutdown_type {
-    label: "Session Restore Shutdown Type"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_type ;;
-    group_label: "Session Restore"
-    group_item_label: "Shutdown Type"
-
-    link: {
-      label: "Glean Dictionary reference for Session Restore Shutdown Type"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_shutdown_type"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "On quit-application-granted, is the shutdown sync (immediate) or async
 "
   }
 
@@ -7337,25 +6454,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__labeled_quantity__session_restore_startup_timeline {
-    label: "Session Restore Startup Timeline"
-    hidden: no
-    sql: ${TABLE}.metrics.labeled_quantity.session_restore_startup_timeline ;;
-    type: string
-    group_label: "Session Restore"
-    group_item_label: "Startup Timeline"
-
-    link: {
-      label: "Glean Dictionary reference for Session Restore Startup Timeline"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_startup_timeline"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Events on the startup timeline, in millis since process creation.
-Previously carried in Legacy \"main\" ping `simpleMeasurements`.
-"
-  }
-
   dimension: metrics__timing_distribution__session_restore_write_file__sum {
     label: "Session Restore Write File Sum"
     hidden: no
@@ -7377,7 +6475,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__shopping_product_page_visits {
     label: "Shopping Product Page Visits"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
     type: number
     group_label: "Shopping"
@@ -7416,7 +6514,7 @@ Set during shopping component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_auto_open_user_disabled {
     label: "Shopping Settings Auto Open User Disabled"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_open_user_disabled ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -7435,7 +6533,7 @@ Set during shopping component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -7454,7 +6552,7 @@ Set during shopping component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_disabled_ads {
     label: "Shopping Settings Disabled Ads"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -7473,7 +6571,7 @@ component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_has_onboarded {
     label: "Shopping Settings Has Onboarded"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.shopping_settings_has_onboarded ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -7493,7 +6591,7 @@ in browser.
 
   dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
     label: "Shopping Settings Nimbus Disabled Shopping"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -7630,46 +6728,6 @@ in browser.
     }
 
     description: "Records whether TLS key logging has been enabled via the environment variable SSLKEYLOGFILE.
-"
-  }
-
-  dimension: metrics__labeled_quantity__startup_io_read {
-    label: "Startup IO Read"
-    hidden: no
-    sql: ${TABLE}.metrics.labeled_quantity.startup_io_read ;;
-    type: string
-    group_label: "Startup IO"
-    group_item_label: "Read"
-
-    link: {
-      label: "Glean Dictionary reference for Startup IO Read"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/startup_io_read"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Windows-only.
-Cumulative bytes read by the application according to the OS, per startup
-phase.
-"
-  }
-
-  dimension: metrics__labeled_quantity__startup_io_write {
-    label: "Startup IO Write"
-    hidden: no
-    sql: ${TABLE}.metrics.labeled_quantity.startup_io_write ;;
-    type: string
-    group_label: "Startup IO"
-    group_item_label: "Write"
-
-    link: {
-      label: "Glean Dictionary reference for Startup IO Write"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/startup_io_write"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Windows-only.
-Cumulative bytes written by the application according to the OS, per startup
-phase.
 "
   }
 
@@ -7829,24 +6887,6 @@ phase.
     }
 
     description: "Records the number of saved tab groups present in the user's session
-"
-  }
-
-  dimension: metrics__boolean__tabgroup_smart_tab_enabled {
-    label: "Tabgroup Smart Tab Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.tabgroup_smart_tab_enabled ;;
-    type: yesno
-    group_label: "Tabgroup"
-    group_item_label: "Smart Tab Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Tabgroup Smart Tab Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tabgroup_smart_tab_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records if the user has smart tab groups enabled
 "
   }
 
@@ -8634,24 +7674,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__quantity__termsofuse_version {
-    label: "Termsofuse Version"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
-    type: number
-    group_label: "Termsofuse"
-    group_item_label: "Version"
-
-    link: {
-      label: "Glean Dictionary reference for Termsofuse Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/termsofuse_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The version of the Terms of Use the user accepted.
-"
-  }
-
   dimension: metrics__timing_distribution__text_recognition_api_performance__sum {
     label: "Text Recognition Api Performance Sum"
     hidden: no
@@ -8921,42 +7943,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "A uint recording the number of engagements the user completes in the urlbar.  An engagement occurs when the user navigates to a page using the urlbar, for example by picking a result in the urlbar panel or typing a search term or URL in the urlbar and pressing the enter key. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.engagement.
-"
-  }
-
-  dimension: metrics__rate__urlbar_heuristic_result_missing__numerator {
-    label: "Urlbar Heuristic Result Missing Numerator"
-    hidden: no
-    sql: ${TABLE}.metrics.rate.urlbar_heuristic_result_missing.numerator ;;
-    type: number
-    group_label: "Urlbar"
-    group_item_label: "Heuristic Result Missing Numerator"
-
-    link: {
-      label: "Glean Dictionary reference for Urlbar Heuristic Result Missing Numerator"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_heuristic_result_missing"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "A uint recording the number of times the address bar handleCommand fallback path is hit.
-"
-  }
-
-  dimension: metrics__rate__urlbar_heuristic_result_missing__denominator {
-    label: "Urlbar Heuristic Result Missing Denominator"
-    hidden: no
-    sql: ${TABLE}.metrics.rate.urlbar_heuristic_result_missing.denominator ;;
-    type: number
-    group_label: "Urlbar"
-    group_item_label: "Heuristic Result Missing Denominator"
-
-    link: {
-      label: "Glean Dictionary reference for Urlbar Heuristic Result Missing Denominator"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_heuristic_result_missing"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "A uint recording the number of times the address bar handleCommand fallback path is hit.
 "
   }
 
@@ -10401,24 +9387,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__timing_distribution__web_app_usage_time__sum {
-    label: "Web App Usage Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.web_app_usage_time.sum ;;
-    type: number
-    group_label: "Web App"
-    group_item_label: "Usage Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Web App Usage Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_app_usage_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time that the user has the Taskbar Tab focused.
-"
-  }
-
   dimension: metrics__boolean__widget_dark_mode {
     label: "Widget Dark Mode"
     hidden: yes
@@ -10760,25 +9728,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether application compatibility is enforced for add-ons.
-"
-  }
-
-  dimension: metrics__labeled_quantity__addons_manager_startup_timeline {
-    label: "Addons Manager Startup Timeline"
-    hidden: no
-    sql: ${TABLE}.metrics.labeled_quantity.addons_manager_startup_timeline ;;
-    type: string
-    group_label: "Addons Manager"
-    group_item_label: "Startup Timeline"
-
-    link: {
-      label: "Glean Dictionary reference for Addons Manager Startup Timeline"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/addons_manager_startup_timeline"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Events on the startup timeline, in millis since process creation.
-Previously carried in Legacy \"main\" ping `simpleMeasurements`.
 "
   }
 
@@ -11744,25 +10693,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 "
   }
 
-  dimension: metrics__labeled_quantity__browser_timings_startup_timeline {
-    label: "Browser Timings Startup Timeline"
-    hidden: no
-    sql: ${TABLE}.metrics.labeled_quantity.browser_timings_startup_timeline ;;
-    type: string
-    group_label: "Browser Timings"
-    group_item_label: "Startup Timeline"
-
-    link: {
-      label: "Glean Dictionary reference for Browser Timings Startup Timeline"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_timings_startup_timeline"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Events on the startup timeline, in millis since process creation.
-Previously carried in the Legacy \"main\" ping `simpleMeasurements`.
-"
-  }
-
   dimension: metrics__timing_distribution__browser_timings_tab_click__sum {
     label: "Browser Timings Tab Click Sum"
     hidden: no
@@ -11984,7 +10914,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__cert_validation_success_by_ca__sum {
     label: "Cert Validation Success By Ca Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca.sum ;;
     type: number
     group_label: "Cert"
@@ -11998,24 +10928,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Successful SSL server cert validations by CA (see RootHashes.inc for names of CAs)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_VALIDATION_SUCCESS_BY_CA_2.
-"
-  }
-
-  dimension: metrics__custom_distribution__cert_validation_success_by_ca_2__sum {
-    label: "Cert Validation Success By Ca 2 Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.cert_validation_success_by_ca_2.sum ;;
-    type: number
-    group_label: "Cert"
-    group_item_label: "Validation Success By Ca 2 Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cert Validation Success By Ca 2 Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_validation_success_by_ca_2"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Successful SSL server cert validations by CA (see KnownRootHashes.txt for names of CAs).
 "
   }
 
@@ -12104,7 +11016,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__cert_pinning_failures_by_ca__sum {
     label: "Cert Pinning Failures By Ca Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca.sum ;;
     type: number
     group_label: "Cert Pinning"
@@ -12118,24 +11030,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Pinning failures by CA (see RootHashes.inc for names of CAs)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram CERT_PINNING_FAILURES_BY_CA_2.
-"
-  }
-
-  dimension: metrics__custom_distribution__cert_pinning_failures_by_ca_2__sum {
-    label: "Cert Pinning Failures By Ca 2 Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.cert_pinning_failures_by_ca_2.sum ;;
-    type: number
-    group_label: "Cert Pinning"
-    group_item_label: "Failures By Ca 2 Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cert Pinning Failures By Ca 2 Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_pinning_failures_by_ca_2"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Pinning failures by CA (see KnownRootHashes.txt for names of CAs).
 "
   }
 
@@ -12446,7 +11340,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__quantity__cert_verifier_trust_obj_count {
     label: "Cert Verifier Trust Obj Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
     type: number
     group_label: "Cert Verifier"
@@ -12802,42 +11696,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "The number of query parameters removed, if any, when strip on share is used
 This metric was generated to correspond to the Legacy Telemetry linear histogram STRIP_ON_SHARE_PARAMS_REMOVED.
-"
-  }
-
-  dimension: metrics__boolean__contentblocking_tp_allowlist_baseline_enabled {
-    label: "Contentblocking Tp Allowlist Baseline Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_baseline_enabled ;;
-    type: yesno
-    group_label: "Contentblocking"
-    group_item_label: "Tp Allowlist Baseline Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Contentblocking Tp Allowlist Baseline Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/contentblocking_tp_allowlist_baseline_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "True if the tracking protection allowlist convenience option is enabled. Updates on \"idle daily\".
-"
-  }
-
-  dimension: metrics__boolean__contentblocking_tp_allowlist_convenience_enabled {
-    label: "Contentblocking Tp Allowlist Convenience Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.contentblocking_tp_allowlist_convenience_enabled ;;
-    type: yesno
-    group_label: "Contentblocking"
-    group_item_label: "Tp Allowlist Convenience Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Contentblocking Tp Allowlist Convenience Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/contentblocking_tp_allowlist_convenience_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "True if the tracking protection allowlist baseline option is enabled. Updates on \"idle daily\".
 "
   }
 
@@ -14207,24 +13065,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
     description: "How long has the computed view been active (seconds)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_COMPUTEDVIEW_TIME_ACTIVE_SECONDS.
-"
-  }
-
-  dimension: metrics__labeled_counter__devtools_console_javascript_error_displayed {
-    label: "Devtools Console Javascript Error Displayed"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.devtools_console_javascript_error_displayed ;;
-    group_label: "Devtools Console"
-    group_item_label: "Javascript Error Displayed"
-
-    link: {
-      label: "Glean Dictionary reference for Devtools Console Javascript Error Displayed"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/devtools_console_javascript_error_displayed"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the key-identifiers of error messages when they are displayed in the webconsole of the debugger. Nothing should be recorded unless they are visible on the user screen. The label will be the error message name or \"Unknown\".
-This metric replaces the Legacy Telemetry boolean histogram DEVTOOLS_JAVASCRIPT_ERROR_DISPLAYED.
 "
   }
 
@@ -16892,7 +15732,7 @@ Child-process data will likely be absent, or incomplete.
 
   dimension: metrics__timespan__fog_initialization__value {
     label: "Fog Initialization Value"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
     type: number
     group_label: "Fog"
@@ -16905,24 +15745,6 @@ Child-process data will likely be absent, or incomplete.
     }
 
     description: "Time the FOG initialization takes.
-"
-  }
-
-  dimension: metrics__timing_distribution__fog_initializations__sum {
-    label: "Fog Initializations Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.sum ;;
-    type: number
-    group_label: "Fog"
-    group_item_label: "Initializations Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Fog Initializations Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_initializations"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time the FOG initializations take.
 "
   }
 
@@ -17310,7 +16132,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__fontlist_gdi_init_total__sum {
     label: "Fontlist Gdi Init Total Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.fontlist_gdi_init_total.sum ;;
     type: number
     group_label: "Fontlist"
@@ -17622,7 +16444,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
     label: "Geckoview Content Process Lifetime Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
     type: number
     group_label: "Geckoview"
@@ -17730,7 +16552,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
     label: "Geckoview Startup Runtime Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
     type: number
     group_label: "Geckoview"
@@ -18285,24 +17107,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__string__gfx_content_backend {
-    label: "Gfx Content Backend"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_content_backend ;;
-    type: string
-    group_label: "Gfx"
-    group_item_label: "Content Backend"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Backend"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_content_backend"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The content backend (e.g. \"Direct2D 1.1\", \"Skia\", \"Cairo\").
-"
-  }
-
   dimension: metrics__custom_distribution__gfx_content_failed_to_acquire_device__sum {
     label: "Gfx Content Failed To Acquire Device Sum"
     hidden: no
@@ -18338,24 +17142,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Graphics Crash Reason (...)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram GFX_CRASH.
-"
-  }
-
-  dimension: metrics__boolean__gfx_d2d_enabled {
-    label: "Gfx D2D Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.gfx_d2d_enabled ;;
-    type: yesno
-    group_label: "Gfx"
-    group_item_label: "D2D Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx D2D Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_d2d_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether Direct2D is enabled. (Windows-only)
 "
   }
 
@@ -18451,24 +17237,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 "
   }
 
-  dimension: metrics__boolean__gfx_dwrite_enabled {
-    label: "Gfx Dwrite Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.gfx_dwrite_enabled ;;
-    type: yesno
-    group_label: "Gfx"
-    group_item_label: "Dwrite Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Dwrite Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_dwrite_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether DirectWrite is enabled. (Windows-only)
-"
-  }
-
   dimension: metrics__string__gfx_feature_webrender {
     label: "Gfx Feature Webrender"
     hidden: no
@@ -18484,26 +17252,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
-"
-  }
-
-  dimension: metrics__string__gfx_features_compositor {
-    label: "Gfx Features Compositor"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_features_compositor ;;
-    type: string
-    group_label: "Gfx Features"
-    group_item_label: "Compositor"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Features Compositor"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_features_compositor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Layers backend for compositing.
-One of \"d3d9\", \"d3d11\", \"opengl\", \"basic\", or \"none\".
-\"none\" indicates no compositors have been created.
 "
   }
 
@@ -18560,24 +17308,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "A bitfield representation of the available DXGI color spaces of the connected displays on Windows. See (https://docs.microsoft.com/en- us/windows/desktop/api/dxgicommon/ne-dxgicommon- dxgi_color_space_type) for definitions of color spaces. Each N'th bit of this scalar indicates whether the DXGI color space with index 'N' is available on at least one connected monitor. This metric was generated to correspond to the Legacy Telemetry scalar gfx.hdr.windows_display_colorspace_bitfield.
-"
-  }
-
-  dimension: metrics__boolean__gfx_headless {
-    label: "Gfx Headless"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.gfx_headless ;;
-    type: yesno
-    group_label: "Gfx"
-    group_item_label: "Headless"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Headless"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_headless"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the app's running in headless mode (e.g. via `MOZ_HEADLESS`).
 "
   }
 
@@ -18762,42 +17492,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
-  dimension: metrics__quantity__gfx_target_frame_rate {
-    label: "Gfx Target Frame Rate"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_target_frame_rate ;;
-    type: number
-    group_label: "Gfx"
-    group_item_label: "Target Frame Rate"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Target Frame Rate"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_target_frame_rate"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The frame rate in Hz, typically 60 or more.
-"
-  }
-
-  dimension: metrics__string__gfx_text_scale_factor {
-    label: "Gfx Text Scale Factor"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_text_scale_factor ;;
-    type: string
-    group_label: "Gfx"
-    group_item_label: "Text Scale Factor"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Text Scale Factor"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gfx_text_scale_factor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The text scale factor.
-"
-  }
-
   dimension: metrics__boolean__gfx_tmp_writable {
     label: "Gfx Tmp Writable"
     hidden: yes
@@ -18838,7 +17532,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__glam_experiment_async_sheet_load__sum {
     label: "Glam Experiment Async Sheet Load Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_async_sheet_load.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -18971,7 +17665,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_time__sum {
     label: "Glam Experiment Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_time.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -19190,7 +17884,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_bytes_evicted_compressor__sum {
     label: "Hpack Bytes Evicted Compressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19209,7 +17903,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_bytes_evicted_decompressor__sum {
     label: "Hpack Bytes Evicted Decompressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19228,7 +17922,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__sum {
     label: "Hpack Bytes Evicted Ratio Compressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19247,7 +17941,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_decompressor__sum {
     label: "Hpack Bytes Evicted Ratio Decompressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19266,7 +17960,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_elements_evicted_compressor__sum {
     label: "Hpack Elements Evicted Compressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19285,7 +17979,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_elements_evicted_decompressor__sum {
     label: "Hpack Elements Evicted Decompressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19304,7 +17998,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_peak_count_compressor__sum {
     label: "Hpack Peak Count Compressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19323,7 +18017,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_peak_count_decompressor__sum {
     label: "Hpack Peak Count Decompressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19342,7 +18036,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_peak_size_compressor__sum {
     label: "Hpack Peak Size Compressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19361,7 +18055,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_peak_size_decompressor__sum {
     label: "Hpack Peak Size Decompressor Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -19452,7 +18146,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__http_altsvc_entries_per_header__sum {
     label: "HTTP Altsvc Entries Per Header Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.http_altsvc_entries_per_header.sum ;;
     type: number
     group_label: "HTTP"
@@ -19711,7 +18405,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__http_proxy_type__sum {
     label: "HTTP Proxy Type Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.http_proxy_type.sum ;;
     type: number
     group_label: "HTTP"
@@ -19806,7 +18500,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__http_saw_quic_alt_protocol__sum {
     label: "HTTP Saw Quic Alt Protocol Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.http_saw_quic_alt_protocol.sum ;;
     type: number
     group_label: "HTTP"
@@ -20471,60 +19165,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
-"
-  }
-
-  dimension: metrics__counter__idb_maintenance_fallback_fullrestore_metadata {
-    label: "Idb Maintenance Fallback Fullrestore Metadata"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.idb_maintenance_fallback_fullrestore_metadata ;;
-    type: number
-    group_label: "Idb Maintenance"
-    group_item_label: "Fallback Fullrestore Metadata"
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_fallback_fullrestore_metadata"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Tracks the number of times we need to fallback to restore metadata object by reading metadata-v2 file on disk when performing idle-maintenance on IDB database.
-"
-  }
-
-  dimension: metrics__counter__idb_maintenance_metadata_restored {
-    label: "Idb Maintenance Metadata Restored"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.idb_maintenance_metadata_restored ;;
-    type: number
-    group_label: "Idb Maintenance"
-    group_item_label: "Metadata Restored"
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_metadata_restored"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times we failed to load metadata object and had to restore it
-"
-  }
-
-  dimension: metrics__counter__idb_maintenance_unknown_metadata {
-    label: "Idb Maintenance Unknown Metadata"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.idb_maintenance_unknown_metadata ;;
-    type: number
-    group_label: "Idb Maintenance"
-    group_item_label: "Unknown Metadata"
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_unknown_metadata"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Increments upon encountering an unknown metadata object when performing idle-maintenance on IDB database. During idle-maintenance, we iterate over idb directories/files and construct a metadata object by calling QuotaManager::GetOriginMetadata or LoadFullOriginMetadataWithRestore. It seems that in some cases, the metadata object we get here can be invalid and this metric is used to track those instances.
 "
   }
 
@@ -21576,24 +20216,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__sum {
-    label: "Javascript GC Time Between Minor Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Time Between Minor Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC Time Between Minor Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_time_between_minor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between minor garbage collections (nursery collections) for all runtimes.
-"
-  }
-
   dimension: metrics__timing_distribution__javascript_gc_time_between_slices__sum {
     label: "Javascript GC Time Between Slices Sum"
     hidden: no
@@ -21686,7 +20308,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
     label: "Javascript Pageload Baseline Compile Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -21704,7 +20326,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
     label: "Javascript Pageload Delazification Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -21722,7 +20344,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
     label: "Javascript Pageload Execution Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -21740,7 +20362,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
     label: "Javascript Pageload GC Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -21758,7 +20380,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
     label: "Javascript Pageload Parse Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -21776,7 +20398,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
     label: "Javascript Pageload Protect Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -21794,7 +20416,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
     label: "Javascript Pageload Xdr Encode Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -22338,24 +20960,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
-"
-  }
-
-  dimension: metrics__counter__media_mkv_content_count {
-    label: "Media Mkv Content Count"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
-    type: number
-    group_label: "Media"
-    group_item_label: "Mkv Content Count"
-
-    link: {
-      label: "Glean Dictionary reference for Media Mkv Content Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_mkv_content_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The number of times MKV content is detected as a source for media playback. This metric does not determine whether the MKV file is valid; it is simply a count based on the sniffed MIME type.
 "
   }
 
@@ -24254,108 +22858,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
-  dimension: metrics__labeled_counter__network_retried_system_channel_addon_status {
-    label: "Network Retried System Channel Addon Status"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_addon_status ;;
-    group_label: "Network"
-    group_item_label: "Retried System Channel Addon Status"
-
-    link: {
-      label: "Glean Dictionary reference for Network Retried System Channel Addon Status"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_retried_system_channel_addon_status"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the status of fallback requests to addons.mozilla.org
-"
-  }
-
-  dimension: metrics__labeled_counter__network_retried_system_channel_addonversion_status {
-    label: "Network Retried System Channel Addonversion Status"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_addonversion_status ;;
-    group_label: "Network"
-    group_item_label: "Retried System Channel Addonversion Status"
-
-    link: {
-      label: "Glean Dictionary reference for Network Retried System Channel Addonversion Status"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_retried_system_channel_addonversion_status"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the status of fallback requests to *.addons.mozilla.org
-"
-  }
-
-  dimension: metrics__labeled_counter__network_retried_system_channel_other_status {
-    label: "Network Retried System Channel Other Status"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_other_status ;;
-    group_label: "Network"
-    group_item_label: "Retried System Channel Other Status"
-
-    link: {
-      label: "Glean Dictionary reference for Network Retried System Channel Other Status"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_retried_system_channel_other_status"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the status of fallback requests to other mozilla.org domains
-"
-  }
-
-  dimension: metrics__labeled_counter__network_retried_system_channel_remote_settings_status {
-    label: "Network Retried System Channel Remote Settings Status"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_remote_settings_status ;;
-    group_label: "Network"
-    group_item_label: "Retried System Channel Remote Settings Status"
-
-    link: {
-      label: "Glean Dictionary reference for Network Retried System Channel Remote Settings Status"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_retried_system_channel_remote_settings_status"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the status of fallback requests to firefox.settings.services.mozilla.com
-"
-  }
-
-  dimension: metrics__labeled_counter__network_retried_system_channel_telemetry_status {
-    label: "Network Retried System Channel Telemetry Status"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_telemetry_status ;;
-    group_label: "Network"
-    group_item_label: "Retried System Channel Telemetry Status"
-
-    link: {
-      label: "Glean Dictionary reference for Network Retried System Channel Telemetry Status"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_retried_system_channel_telemetry_status"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the status of fallback requests to incoming.telemetry.mozilla.org
-"
-  }
-
-  dimension: metrics__labeled_counter__network_retried_system_channel_update_status {
-    label: "Network Retried System Channel Update Status"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_update_status ;;
-    group_label: "Network"
-    group_item_label: "Retried System Channel Update Status"
-
-    link: {
-      label: "Glean Dictionary reference for Network Retried System Channel Update Status"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_retried_system_channel_update_status"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the status of fallback requests to aus5.mozilla.org
-"
-  }
-
   dimension: metrics__labeled_counter__network_sso_entra_success {
     label: "Network Sso Entra Success"
     hidden: yes
@@ -24941,22 +23443,6 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
-  dimension: metrics__labeled_counter__networking_connection_address_type {
-    label: "Networking Connection Address Type"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.networking_connection_address_type ;;
-    group_label: "Networking"
-    group_item_label: "Connection Address Type"
-
-    link: {
-      label: "Glean Dictionary reference for Networking Connection Address Type"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_connection_address_type"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records the IP address family (IPv4 or IPv6) used when an HTTP transaction is dispatched."
-  }
-
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
     label: "Networking Cookie Access Fixup Diff Sum"
     hidden: no
@@ -25116,23 +23602,6 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "If we fix up a cookie creation timestamp that is in the future this metric records the number of seconds that timestamp was off from NOW.
-"
-  }
-
-  dimension: metrics__labeled_counter__networking_cookie_db_validation {
-    label: "Networking Cookie DB Validation"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.networking_cookie_db_validation ;;
-    group_label: "Networking"
-    group_item_label: "Cookie DB Validation"
-
-    link: {
-      label: "Glean Dictionary reference for Networking Cookie DB Validation"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_db_validation"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts cookies loaded from the DB grouped by validation result.
 "
   }
 
@@ -25917,24 +24386,6 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
-  dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_sent__sum {
-    label: "Networking HTTP 3 Udp Datagram Segments Sent Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_sent.sum ;;
-    type: number
-    group_label: "Networking"
-    group_item_label: "HTTP 3 Udp Datagram Segments Sent Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Networking HTTP 3 Udp Datagram Segments Sent Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_udp_datagram_segments_sent"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "HTTP3 UDP number of segments per datagram sent.
-"
-  }
-
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_received__sum {
     label: "Networking HTTP 3 Udp Datagram Size Received Sum"
     hidden: no
@@ -25950,24 +24401,6 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "HTTP3 UDP datagram size received.
-"
-  }
-
-  dimension: metrics__memory_distribution__networking_http_3_udp_datagram_size_sent__sum {
-    label: "Networking HTTP 3 Udp Datagram Size Sent Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_size_sent.sum ;;
-    type: number
-    group_label: "Networking"
-    group_item_label: "HTTP 3 Udp Datagram Size Sent Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Networking HTTP 3 Udp Datagram Size Sent Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_udp_datagram_size_sent"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "HTTP3 UDP datagram size sent.
 "
   }
 
@@ -26668,59 +25101,6 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "The time in milliseconds to load any external certificates. This occurs off of the main-thread, but can block main-thread operations. This metric was generated to correspond to the Legacy Telemetry scalar networking.loading_certs_task.
-"
-  }
-
-  dimension: metrics__labeled_counter__networking_local_network_access {
-    label: "Networking Local Network Access"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access ;;
-    group_label: "Networking"
-    group_item_label: "Local Network Access"
-
-    link: {
-      label: "Glean Dictionary reference for Networking Local Network Access"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_local_network_access"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the request is crossing to a more private addresspace
-"
-  }
-
-  dimension: metrics__custom_distribution__networking_local_network_access_port__sum {
-    label: "Networking Local Network Access Port Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.sum ;;
-    type: number
-    group_label: "Networking"
-    group_item_label: "Local Network Access Port Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Networking Local Network Access Port Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_local_network_access_port"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "port used for local network access
-"
-  }
-
-  dimension: metrics__counter__networking_local_network_blocked_tracker {
-    label: "Networking Local Network Blocked Tracker"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.networking_local_network_blocked_tracker ;;
-    type: number
-    group_label: "Networking"
-    group_item_label: "Local Network Blocked Tracker"
-
-    link: {
-      label: "Glean Dictionary reference for Networking Local Network Blocked Tracker"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_local_network_blocked_tracker"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times the channel was blocked because it's a LNA load triggered by a tracker
 "
   }
 
@@ -27892,23 +26272,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
-    label: "Pdfjs Digital Signature Certificate"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.pdfjs_digital_signature_certificate ;;
-    group_label: "Pdfjs Digital Signature"
-    group_item_label: "Certificate"
-
-    link: {
-      label: "Glean Dictionary reference for Pdfjs Digital Signature Certificate"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_digital_signature_certificate"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of certificates used to sign a PDF document.
-"
-  }
-
   dimension: metrics__labeled_counter__pdfjs_editing {
     label: "Pdfjs Editing"
     hidden: yes
@@ -28277,24 +26640,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
-    label: "Perf Js Exec Asm Js Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.sum ;;
-    type: number
-    group_label: "Perf"
-    group_item_label: "Js Exec Asm Js Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Perf Js Exec Asm Js Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/perf_js_exec_asm_js"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time in milliseconds spent executing Javascript for top level documents that contain the asm.js use counter.  Measures 5min of activity after the use counter is set then records the value in this histogram.
-"
-  }
-
   dimension: metrics__timing_distribution__perf_largest_contentful_paint__sum {
     label: "Perf Largest Contentful Paint Sum"
     hidden: no
@@ -28333,7 +26678,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
     label: "Performance Clone Deserialize Items Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
@@ -28351,7 +26696,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
     label: "Performance Clone Deserialize Size Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
@@ -28369,7 +26714,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
     label: "Performance Clone Deserialize Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
@@ -28459,7 +26804,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__sum {
     label: "Performance Pageload Async Sheet Load Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -30010,7 +28355,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__process_lifetime__sum {
     label: "Process Lifetime Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.process_lifetime.sum ;;
     type: number
     group_label: "Process"
@@ -30024,92 +28369,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Average lifetime of a content process in seconds
 This metric was generated to correspond to the Legacy Telemetry exponential histogram PROCESS_LIFETIME.
-"
-  }
-
-  dimension: metrics__quantity__profiles_creation_date {
-    label: "Profiles Creation Date"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.profiles_creation_date ;;
-    type: number
-    group_label: "Profiles"
-    group_item_label: "Creation Date"
-
-    link: {
-      label: "Glean Dictionary reference for Profiles Creation Date"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_creation_date"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The day the profile was created,
-as determined by checking various file metadata in the profile directory.
-Not considered to be particularly reliable in practice.
-Prefer `client_info.first_run_date` in most cases.
-e.g. 16446
-"
-  }
-
-  dimension: metrics__quantity__profiles_first_use_date {
-    label: "Profiles First Use Date"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.profiles_first_use_date ;;
-    type: number
-    group_label: "Profiles"
-    group_item_label: "First Use Date"
-
-    link: {
-      label: "Glean Dictionary reference for Profiles First Use Date"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_first_use_date"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Optional.
-The day the profile was first used,
-as determined by noticing that `times.json` wasn't present.
-Prefer `client_info.first_run_date` in most cases.
-e.g. 16446
-"
-  }
-
-  dimension: metrics__quantity__profiles_recovered_from_backup {
-    label: "Profiles Recovered From Backup"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.profiles_recovered_from_backup ;;
-    type: number
-    group_label: "Profiles"
-    group_item_label: "Recovered From Backup"
-
-    link: {
-      label: "Glean Dictionary reference for Profiles Recovered From Backup"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_recovered_from_backup"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Optional.
-The day the profile was recovered from backup,
-persisted in `times.json`.
-e.g. 16446
-"
-  }
-
-  dimension: metrics__quantity__profiles_reset_date {
-    label: "Profiles Reset Date"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.profiles_reset_date ;;
-    type: number
-    group_label: "Profiles"
-    group_item_label: "Reset Date"
-
-    link: {
-      label: "Glean Dictionary reference for Profiles Reset Date"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_reset_date"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Optional.
-The day the profile was most recently reset,
-persisted in `times.json`.
-e.g. 16446
 "
   }
 
@@ -31034,46 +29293,6 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
 "
   }
 
-  dimension: metrics__quantity__sandbox_content_win32k_lockdown_state {
-    label: "Sandbox Content Win32K Lockdown State"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.sandbox_content_win32k_lockdown_state ;;
-    type: number
-    group_label: "Sandbox"
-    group_item_label: "Content Win32K Lockdown State"
-
-    link: {
-      label: "Glean Dictionary reference for Sandbox Content Win32K Lockdown State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sandbox_content_win32k_lockdown_state"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The current win32k.sys lockdown state.
-Possible values are defined in the ContentWin32kLockdownState enum.
-Reported even on non-Windows machines.
-"
-  }
-
-  dimension: metrics__quantity__sandbox_effective_content_process_level {
-    label: "Sandbox Effective Content Process Level"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.sandbox_effective_content_process_level ;;
-    type: number
-    group_label: "Sandbox"
-    group_item_label: "Effective Content Process Level"
-
-    link: {
-      label: "Glean Dictionary reference for Sandbox Effective Content Process Level"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/sandbox_effective_content_process_level"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The current sandbox level.
-The \"security.sandbox.content.level\" preference rounded up to the current minimum allowed level.
-0 if `MOZ_DISABLE_CONTENT_SANDBOX` is set.
-"
-  }
-
   dimension: metrics__labeled_counter__sandbox_has_user_namespaces {
     label: "Sandbox Has User Namespaces"
     hidden: yes
@@ -31465,7 +29684,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_chunk_recvd__sum {
     label: "Spdy Chunk Recvd Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.spdy_chunk_recvd.sum ;;
     type: number
     group_label: "Spdy"
@@ -31617,7 +29836,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_settings_iw__sum {
     label: "Spdy Settings Iw Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.spdy_settings_iw.sum ;;
     type: number
     group_label: "Spdy"
@@ -31655,7 +29874,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__spdy_syn_ratio__sum {
     label: "Spdy Syn Ratio Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.spdy_syn_ratio.sum ;;
     type: number
     group_label: "Spdy"
@@ -31674,7 +29893,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__spdy_syn_reply_ratio__sum {
     label: "Spdy Syn Reply Ratio Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.spdy_syn_reply_ratio.sum ;;
     type: number
     group_label: "Spdy"
@@ -31693,7 +29912,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__memory_distribution__spdy_syn_reply_size__sum {
     label: "Spdy Syn Reply Size Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.spdy_syn_reply_size.sum ;;
     type: number
     group_label: "Spdy"
@@ -31712,7 +29931,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_syn_size__sum {
     label: "Spdy Syn Size Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.spdy_syn_size.sum ;;
     type: number
     group_label: "Spdy"
@@ -31845,7 +30064,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca__sum {
     label: "SSL Ct Policy Non Compliant Connections By Ca Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca.sum ;;
     type: number
     group_label: "SSL"
@@ -31859,24 +30078,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Number of successfully established TLS connections NOT compliant with the Certificate Transparency Policy, by CA. See https://searchfox.org/mozilla-central/source/security/manager/ssl/RootHashes.inc for names of CAs. Bucket zero holds CAs not present in the list.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_CT_POLICY_NON_COMPLIANT_CONNECTIONS_BY_CA_2.
-"
-  }
-
-  dimension: metrics__custom_distribution__ssl_ct_policy_non_compliant_connections_by_ca_2__sum {
-    label: "SSL Ct Policy Non Compliant Connections By Ca 2 Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.ssl_ct_policy_non_compliant_connections_by_ca_2.sum ;;
-    type: number
-    group_label: "SSL"
-    group_item_label: "Ct Policy Non Compliant Connections By Ca 2 Sum"
-
-    link: {
-      label: "Glean Dictionary reference for SSL Ct Policy Non Compliant Connections By Ca 2 Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_ct_policy_non_compliant_connections_by_ca_2"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Number of successfully established TLS connections NOT compliant with the Certificate Transparency Policy, by CA. See KnownRootHashes.txt for names of CAs. range_min: 0
 "
   }
 
@@ -32069,24 +30270,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__sum {
-    label: "SSL Scts From Tiled Logs Per Connection Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.sum ;;
-    type: number
-    group_label: "SSL"
-    group_item_label: "Scts From Tiled Logs Per Connection Sum"
-
-    link: {
-      label: "Glean Dictionary reference for SSL Scts From Tiled Logs Per Connection Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ssl_scts_from_tiled_logs_per_connection"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Histogram of the number of Signed Certificate Timestamps from tiled logs per TLS connection from all sources (embedded / OCSP Stapling / TLS handshake). Bucket 0 counts the cases when no SCTs from tiled logs were received, or none were extracted due to parsing errors.
-"
-  }
-
   dimension: metrics__custom_distribution__ssl_scts_origin__sum {
     label: "SSL Scts Origin Sum"
     hidden: no
@@ -32139,7 +30322,8 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Verification status of Signed Certificate Timestamps received (0=Decoding error, 1=Valid SCT, 2=SCT from unknown log, 3=Invalid SCT signature, 4=SCT timestamp is in the future, 5=Valid SCT from a disqualified log 6=SCT timestamp is after the root's distrustAfter time).
+    description: "Verification status of Signed Certificate Timestamps received (0=Decoding error, 1=Valid SCT, 2=SCT from unknown log, 3=Invalid SCT signature, 4=SCT timestamp is in the future, 5=Valid SCT from a disqualified log)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram SSL_SCTS_VERIFICATION_STATUS.
 "
   }
 
@@ -32668,7 +30852,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__sum {
     label: "Sts Poll And Event The Last Cycle Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -32687,7 +30871,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_and_events_cycle__sum {
     label: "Sts Poll And Events Cycle Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -32706,7 +30890,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_block_time__sum {
     label: "Sts Poll Block Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.sum ;;
     type: number
     group_label: "Sts"
@@ -32725,7 +30909,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_cycle__sum {
     label: "Sts Poll Cycle Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -32849,26 +31033,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Number of mobile devices associated with this Sync account. Recorded each time Sync successfully completes the 'clients' engine.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram WEAVE_DEVICE_COUNT_MOBILE.
-"
-  }
-
-  dimension: metrics__string__system_apple_model_id {
-    label: "System Apple Model ID"
-    hidden: no
-    sql: ${TABLE}.metrics.string.system_apple_model_id ;;
-    type: string
-    group_label: "System"
-    group_item_label: "Apple Model ID"
-
-    link: {
-      label: "Glean Dictionary reference for System Apple Model ID"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_apple_model_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The `hw.model` of the hardware running this software.
-Mac only.
-e.g. \"MacBookPro14,1\"
 "
   }
 
@@ -33106,325 +31270,6 @@ e.g. \"MacBookPro14,1\"
 "
   }
 
-  dimension: metrics__boolean__system_has_win_package_id {
-    label: "System Has Win Package ID"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.system_has_win_package_id ;;
-    type: yesno
-    group_label: "System"
-    group_item_label: "Has Win Package ID"
-
-    link: {
-      label: "Glean Dictionary reference for System Has Win Package ID"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_has_win_package_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the app has a package identity.
-Windows only.
-"
-  }
-
-  dimension: metrics__boolean__system_is_wow_64 {
-    label: "System Is Wow 64"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.system_is_wow_64 ;;
-    type: yesno
-    group_label: "System"
-    group_item_label: "Is Wow 64"
-
-    link: {
-      label: "Glean Dictionary reference for System Is Wow 64"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_is_wow_64"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether we're in Windows32-on-Windows64 mode.
-Windows only.
-"
-  }
-
-  dimension: metrics__boolean__system_is_wow_arm_64 {
-    label: "System Is Wow Arm 64"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.system_is_wow_arm_64 ;;
-    type: yesno
-    group_label: "System"
-    group_item_label: "Is Wow Arm 64"
-
-    link: {
-      label: "Glean Dictionary reference for System Is Wow Arm 64"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_is_wow_arm_64"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether we're in Windows32-on-WindowsForArm64 mode.
-Windows only.
-"
-  }
-
-  dimension: metrics__quantity__system_memory {
-    label: "System Memory"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.system_memory ;;
-    type: number
-    group_label: "System"
-    group_item_label: "Memory"
-
-    link: {
-      label: "Glean Dictionary reference for System Memory"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_memory"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The physical memory size in MB (2^20 bytes).
-e.g. 32211
-"
-  }
-
-  dimension: metrics__string__system_os_distro {
-    label: "System OS Distro"
-    hidden: no
-    sql: ${TABLE}.metrics.string.system_os_distro ;;
-    type: string
-    group_label: "System OS"
-    group_item_label: "Distro"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Distro"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_distro"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Operating System's distribution, according to sysinfo.
-Linux only.
-e.g. \"Linuxmint\"
-"
-  }
-
-  dimension: metrics__string__system_os_distro_version {
-    label: "System OS Distro Version"
-    hidden: no
-    sql: ${TABLE}.metrics.string.system_os_distro_version ;;
-    type: string
-    group_label: "System OS"
-    group_item_label: "Distro Version"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Distro Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_distro_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Operating System's distribution's version, according to sysinfo.
-Linux only.
-e.g. \"22\"
-"
-  }
-
-  dimension: metrics__string__system_os_locale {
-    label: "System OS Locale"
-    hidden: no
-    sql: ${TABLE}.metrics.string.system_os_locale ;;
-    type: string
-    group_label: "System OS"
-    group_item_label: "Locale"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Locale"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_locale"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Operating System's local, according to ospreferences.
-e.g. \"en-US\"
-"
-  }
-
-  dimension: metrics__string__system_os_name {
-    label: "System OS Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.system_os_name ;;
-    type: string
-    group_label: "System OS"
-    group_item_label: "Name"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Operating System's name, according to sysinfo.
-e.g. \"Windows_NT\"
-Expected in most cases to be identical to `client_info.os`.
-"
-  }
-
-  dimension: metrics__quantity__system_os_service_pack_major {
-    label: "System OS Service Pack Major"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
-    type: number
-    group_label: "System OS"
-    group_item_label: "Service Pack Major"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Service Pack Major"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_service_pack_major"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Windows service pack's major version, according to WindowsVersionInfo.
-Windows only.
-e.g. 0
-"
-  }
-
-  dimension: metrics__quantity__system_os_service_pack_minor {
-    label: "System OS Service Pack Minor"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
-    type: number
-    group_label: "System OS"
-    group_item_label: "Service Pack Minor"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Service Pack Minor"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_service_pack_minor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Windows service pack's minor version, according to WindowsVersionInfo.
-Windows only.
-e.g. 0
-"
-  }
-
-  dimension: metrics__string__system_os_version {
-    label: "System OS Version"
-    hidden: no
-    sql: ${TABLE}.metrics.string.system_os_version ;;
-    type: string
-    group_label: "System OS"
-    group_item_label: "Version"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Operating System's version, according to sysinfo.
-e.g. \"6.3\"
-Expected in most cases to be identical to `client_info.os_version`.
-"
-  }
-
-  dimension: metrics__quantity__system_os_windows_build_number {
-    label: "System OS Windows Build Number"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
-    type: number
-    group_label: "System OS"
-    group_item_label: "Windows Build Number"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Windows Build Number"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_windows_build_number"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Windows build number, according to WindowsVersionInfo.
-Windows only.
-e.g. 26100
-Expected in most cases to be identical to `client_info.windows_build_number`.
-"
-  }
-
-  dimension: metrics__quantity__system_os_windows_ubr {
-    label: "System OS Windows Ubr"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
-    type: number
-    group_label: "System OS"
-    group_item_label: "Windows Ubr"
-
-    link: {
-      label: "Glean Dictionary reference for System OS Windows Ubr"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_os_windows_ubr"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The Windows update build revision number, according to
-`SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion`.
-Windows only.
-e.g. 3775
-"
-  }
-
-  dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
-    label: "System Special Directory Appdata Fallback"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_boolean.system_special_directory_appdata_fallback ;;
-    type: string
-    group_label: "System"
-    group_item_label: "Special Directory Appdata Fallback"
-
-    link: {
-      label: "Glean Dictionary reference for System Special Directory Appdata Fallback"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_special_directory_appdata_fallback"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Success status of using SpecialSystemDirectory's fallback path to retrieve
-either %AppData% or %LocalAppData%.
-"
-  }
-
-  dimension: metrics__quantity__system_virtual_memory {
-    label: "System Virtual Memory"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.system_virtual_memory ;;
-    type: number
-    group_label: "System"
-    group_item_label: "Virtual Memory"
-
-    link: {
-      label: "Glean Dictionary reference for System Virtual Memory"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_virtual_memory"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The size of the user-mode portion of the virtual address space of the parent process.
-Windows only.
-e.g. 134217728
-"
-  }
-
-  dimension: metrics__string__system_win_package_family_name {
-    label: "System Win Package Family Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.system_win_package_family_name ;;
-    type: string
-    group_label: "System"
-    group_item_label: "Win Package Family Name"
-
-    link: {
-      label: "Glean Dictionary reference for System Win Package Family Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/system_win_package_family_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The full application package name without any of the components that might change
-during the life cycle of the app (such as the version number or the architecture).
-Uniquely identifies the application within one Windows installation.
-Windows only.
-Only included if it begins with \"Mozilla.\" or \"MozillaCorporation.\".
-e.g. \"Mozilla.Firefox_n80bbvh6b1yt2\"
-"
-  }
-
   dimension: metrics__timing_distribution__thumbnails_capture_canvas_draw_time__sum {
     label: "Thumbnails Capture Canvas Draw Time Sum"
     hidden: no
@@ -33609,50 +31454,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Record the timestamp of the first main window paint, in milliseconds since process start. Intended to replace first_paint since first_paint is broken. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint_two.
-"
-  }
-
-  dimension: metrics__labeled_quantity__timestamps_global_startup_timeline {
-    label: "Timestamps Global Startup Timeline"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_quantity.timestamps_global_startup_timeline ;;
-    type: string
-    group_label: "Timestamps"
-    group_item_label: "Global Startup Timeline"
-
-    link: {
-      label: "Glean Dictionary reference for Timestamps Global Startup Timeline"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/timestamps_global_startup_timeline"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Events on the startup timeline across all components,
-in millis since process creation.
-Combination of
-  - `timestamps.startup_timeline`
-  - `addons_manager.startup_timeline`
-  - `browser.timings.startup_timeline`
-  - `session_restore.startup_timeline`
-Previously instrumented in \"main\" ping `simpleMeasurements`.
-"
-  }
-
-  dimension: metrics__labeled_quantity__timestamps_startup_timeline {
-    label: "Timestamps Startup Timeline"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_quantity.timestamps_startup_timeline ;;
-    type: string
-    group_label: "Timestamps"
-    group_item_label: "Startup Timeline"
-
-    link: {
-      label: "Glean Dictionary reference for Timestamps Startup Timeline"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/timestamps_startup_timeline"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Events on the startup timeline, in millis since process creation.
-See `StartupTimeline.h`
 "
   }
 
@@ -34831,80 +32632,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
-  dimension: metrics__boolean__update_settings_auto_download {
-    label: "Update Settings Auto Download"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.update_settings_auto_download ;;
-    type: yesno
-    group_label: "Update Settings"
-    group_item_label: "Auto Download"
-
-    link: {
-      label: "Glean Dictionary reference for Update Settings Auto Download"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_settings_auto_download"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether app updates are set to auto-download.
-"
-  }
-
-  dimension: metrics__boolean__update_settings_background {
-    label: "Update Settings Background"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.update_settings_background ;;
-    type: yesno
-    group_label: "Update Settings"
-    group_item_label: "Background"
-
-    link: {
-      label: "Glean Dictionary reference for Update Settings Background"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_settings_background"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether updates can be delivered in the background.
-"
-  }
-
-  dimension: metrics__string__update_settings_channel {
-    label: "Update Settings Channel"
-    hidden: no
-    sql: ${TABLE}.metrics.string.update_settings_channel ;;
-    type: string
-    group_label: "Update Settings"
-    group_item_label: "Channel"
-
-    link: {
-      label: "Glean Dictionary reference for Update Settings Channel"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_settings_channel"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The update channel according to defaults,
-including partner bits.
-e.g. \"nightly-cck\"
-"
-  }
-
-  dimension: metrics__boolean__update_settings_enabled {
-    label: "Update Settings Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.update_settings_enabled ;;
-    type: yesno
-    group_label: "Update Settings"
-    group_item_label: "Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Update Settings Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_settings_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether updates are available.
-"
-  }
-
   dimension: metrics__custom_distribution__update_state_code_complete_stage__sum {
     label: "Update State Code Complete Stage Sum"
     hidden: no
@@ -35433,24 +33160,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Whether or not the metadata for a variable-length prefix set loaded from disk is corrupted (true = file corrupted).
 This metric was generated to correspond to the Legacy Telemetry boolean histogram URLCLASSIFIER_VLPS_METADATA_CORRUPT.
-"
-  }
-
-  dimension: metrics__counter__use_counter_top_level_content_documents_destroyed {
-    label: "Use Counter Top Level Content Documents Destroyed"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.use_counter_top_level_content_documents_destroyed ;;
-    type: number
-    group_label: "Use Counter"
-    group_item_label: "Top Level Content Documents Destroyed"
-
-    link: {
-      label: "Glean Dictionary reference for Use Counter Top Level Content Documents Destroyed"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_top_level_content_documents_destroyed"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "A count of how many \"pages\" were destroyed. Used to turn page use counters' counts into rates. Excludes pages that contain only documents for which we do not count use counters (See `Document::ShouldIncludeInTelemetry`).
 "
   }
 
@@ -37397,103 +35106,6 @@ operating system.
 "
   }
 
-  dimension: metrics__text2__xpi_database_late_load {
-    label: "Xpi Database Late Load"
-    hidden: no
-    sql: ${TABLE}.metrics.text2.xpi_database_late_load ;;
-    type: string
-    group_label: "Xpi Database"
-    group_item_label: "Late Load"
-
-    link: {
-      label: "Glean Dictionary reference for Xpi Database Late Load"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/xpi_database_late_load"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Stack of XPI Database `asyncLoadDB` call happening while the XPI provider
-is closing.
-Previously reported in \"main\" ping `simpleMeasurements`.
-"
-  }
-
-  dimension: metrics__text2__xpi_database_late_stack {
-    label: "Xpi Database Late Stack"
-    hidden: no
-    sql: ${TABLE}.metrics.text2.xpi_database_late_stack ;;
-    type: string
-    group_label: "Xpi Database"
-    group_item_label: "Late Stack"
-
-    link: {
-      label: "Glean Dictionary reference for Xpi Database Late Stack"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/xpi_database_late_stack"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Stack of XPI Database `saveChanges` call happening while the XPI provider
-is closing.
-Previously reported in \"main\" ping `simpleMeasurements`.
-"
-  }
-
-  dimension: metrics__timing_distribution__xpi_database_parses__sum {
-    label: "Xpi Database Parses Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.sum ;;
-    type: number
-    group_label: "Xpi Database"
-    group_item_label: "Parses Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Xpi Database Parses Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/xpi_database_parses"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How long it took to parse the XPI Database.
-Previously reported in \"main\" ping `simpleMeasurements`.
-"
-  }
-
-  dimension: metrics__string__xpi_database_startup_error {
-    label: "Xpi Database Startup Error"
-    hidden: no
-    sql: ${TABLE}.metrics.string.xpi_database_startup_error ;;
-    type: string
-    group_label: "Xpi Database"
-    group_item_label: "Startup Error"
-
-    link: {
-      label: "Glean Dictionary reference for Xpi Database Startup Error"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/xpi_database_startup_error"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Reason for XPI Database startup error.
-Previously reported in \"main\" ping `simpleMeasurements`.
-"
-  }
-
-  dimension: metrics__text2__xpi_database_sync_stack {
-    label: "Xpi Database Sync Stack"
-    hidden: no
-    sql: ${TABLE}.metrics.text2.xpi_database_sync_stack ;;
-    type: string
-    group_label: "Xpi Database"
-    group_item_label: "Sync Stack"
-
-    link: {
-      label: "Glean Dictionary reference for Xpi Database Sync Stack"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/xpi_database_sync_stack"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Stack of XPI Database `syncLoadDB` call.
-Previously reported in \"main\" ping `simpleMeasurements`.
-"
-  }
-
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation ID"
     hidden: no
@@ -39106,106 +36718,6 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Browser UI Interaction Textrecognition Error"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_textrecognition_error"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: content_analysis_connection_attempt {
-    type: sum
-    sql: ${metrics__counter__content_analysis_connection_attempt} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Connection Attempt"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_connection_attempt"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: content_analysis_connection_attempt_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__content_analysis_connection_attempt: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Connection Attempt"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_connection_attempt"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: content_analysis_connection_attempt_retry {
-    type: sum
-    sql: ${metrics__counter__content_analysis_connection_attempt_retry} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Connection Attempt Retry"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_connection_attempt_retry"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: content_analysis_connection_attempt_retry_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__content_analysis_connection_attempt_retry: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Connection Attempt Retry"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_connection_attempt_retry"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: content_analysis_request_allowed_by_allow_url {
-    type: sum
-    sql: ${metrics__counter__content_analysis_request_allowed_by_allow_url} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Request Allowed By Allow URL"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_request_allowed_by_allow_url"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: content_analysis_request_allowed_by_allow_url_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__content_analysis_request_allowed_by_allow_url: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Request Allowed By Allow URL"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_request_allowed_by_allow_url"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: content_analysis_request_blocked_by_deny_url {
-    type: sum
-    sql: ${metrics__counter__content_analysis_request_blocked_by_deny_url} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Request Blocked By Deny URL"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_request_blocked_by_deny_url"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: content_analysis_request_blocked_by_deny_url_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__content_analysis_request_blocked_by_deny_url: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Content Analysis Request Blocked By Deny URL"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/content_analysis_request_blocked_by_deny_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -42285,81 +39797,6 @@ documented in the ping's pings.yaml file.
     }
   }
 
-  measure: idb_maintenance_fallback_fullrestore_metadata {
-    type: sum
-    sql: ${metrics__counter__idb_maintenance_fallback_fullrestore_metadata} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_fallback_fullrestore_metadata"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: idb_maintenance_fallback_fullrestore_metadata_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__idb_maintenance_fallback_fullrestore_metadata: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_fallback_fullrestore_metadata"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: idb_maintenance_metadata_restored {
-    type: sum
-    sql: ${metrics__counter__idb_maintenance_metadata_restored} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_metadata_restored"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: idb_maintenance_metadata_restored_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__idb_maintenance_metadata_restored: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_metadata_restored"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: idb_maintenance_unknown_metadata {
-    type: sum
-    sql: ${metrics__counter__idb_maintenance_unknown_metadata} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_unknown_metadata"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: idb_maintenance_unknown_metadata_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__idb_maintenance_unknown_metadata: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/idb_maintenance_unknown_metadata"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
   measure: localstorage_request_recv_cancel_counter {
     type: sum
     sql: ${metrics__counter__localstorage_request_recv_cancel_counter} ;;
@@ -42510,31 +39947,6 @@ documented in the ping's pings.yaml file.
     }
   }
 
-  measure: media_mkv_content_count {
-    type: sum
-    sql: ${metrics__counter__media_mkv_content_count} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Media Mkv Content Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_mkv_content_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: media_mkv_content_count_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__media_mkv_content_count: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Media Mkv Content Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_mkv_content_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
   measure: netwerk_parent_connect_timeout {
     type: sum
     sql: ${metrics__counter__netwerk_parent_connect_timeout} ;;
@@ -42631,31 +40043,6 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Networking Cookie Count Invalid First Party Partitioned In DB"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_count_invalid_first_party_partitioned_in_db"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: networking_local_network_blocked_tracker {
-    type: sum
-    sql: ${metrics__counter__networking_local_network_blocked_tracker} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Networking Local Network Blocked Tracker"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_local_network_blocked_tracker"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: networking_local_network_blocked_tracker_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__networking_local_network_blocked_tracker: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Networking Local Network Blocked Tracker"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_local_network_blocked_tracker"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -44181,31 +41568,6 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Update Unable To Apply Subsequent"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_unable_to_apply_subsequent"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: use_counter_top_level_content_documents_destroyed {
-    type: sum
-    sql: ${metrics__counter__use_counter_top_level_content_documents_destroyed} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Use Counter Top Level Content Documents Destroyed"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_top_level_content_documents_destroyed"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: use_counter_top_level_content_documents_destroyed_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__use_counter_top_level_content_documents_destroyed: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Use Counter Top Level Content Documents Destroyed"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_top_level_content_documents_destroyed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -46298,47 +43660,6 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextme
   }
 }
 
-view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
-  label: "Browser Engagement Navigation - Contextmenu Visual"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar {
   label: "Browser Engagement Navigation - Searchbar"
 
@@ -46913,47 +44234,6 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu {
   }
 }
 
-view: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu_visual {
-  label: "Browser Search Adclicks - Contextmenu Visual"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__browser_search_adclicks_reload {
   label: "Browser Search Adclicks - Reload"
 
@@ -47487,47 +44767,6 @@ view: metrics__metrics__labeled_counter__browser_search_content_contextmenu {
   }
 }
 
-view: metrics__metrics__labeled_counter__browser_search_content_contextmenu_visual {
-  label: "Browser Search Content - Contextmenu Visual"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__browser_search_content_reload {
   label: "Browser Search Content - Reload"
 
@@ -48022,47 +45261,6 @@ view: metrics__metrics__labeled_counter__browser_search_withads_about_newtab {
 
 view: metrics__metrics__labeled_counter__browser_search_withads_contextmenu {
   label: "Browser Search Withads - Contextmenu"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__browser_search_withads_contextmenu_visual {
-  label: "Browser Search Withads - Contextmenu Visual"
 
   dimension: document_id {
     type: string
@@ -50521,170 +47719,6 @@ view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
   }
 }
 
-view: metrics__metrics__labeled_counter__content_analysis_connection_failure {
-  label: "Content Analysis - Connection Failure"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__content_analysis_request_sent_by_analysis_type {
-  label: "Content Analysis - Request Sent By Analysis Type"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__content_analysis_request_sent_by_reason {
-  label: "Content Analysis - Request Sent By Reason"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__content_analysis_response_action {
-  label: "Content Analysis - Response Action"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__contentblocking_cryptominers_blocked_count {
   label: "Contentblocking - Cryptominers Blocked Count"
 
@@ -51956,47 +48990,6 @@ view: metrics__metrics__labeled_counter__devtools_accessibility_simulation_activ
   }
 }
 
-view: metrics__metrics__labeled_counter__devtools_console_javascript_error_displayed {
-  label: "Devtools Console - Javascript Error Displayed"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__devtools_current_theme {
   label: "Devtools - Current Theme"
 
@@ -52309,19 +49302,19 @@ view: metrics__metrics__labeled_counter__dns_grace_period_renewal {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -52773,47 +49766,6 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__extensions_button_temporarily_unhidden {
-  label: "Extensions Button - Temporarily Unhidden"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
   }
 }
 
@@ -56860,270 +53812,24 @@ view: metrics__metrics__labeled_counter__network_race_cache_with_network_usage {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
 view: metrics__metrics__labeled_counter__network_rel_preload_miss_ratio {
   label: "Network - Rel Preload Miss Ratio"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__network_retried_system_channel_addon_status {
-  label: "Network - Retried System Channel Addon Status"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__network_retried_system_channel_addonversion_status {
-  label: "Network - Retried System Channel Addonversion Status"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__network_retried_system_channel_other_status {
-  label: "Network - Retried System Channel Other Status"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__network_retried_system_channel_remote_settings_status {
-  label: "Network - Retried System Channel Remote Settings Status"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__network_retried_system_channel_telemetry_status {
-  label: "Network - Retried System Channel Telemetry Status"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__network_retried_system_channel_update_status {
-  label: "Network - Retried System Channel Update Status"
 
   dimension: document_id {
     type: string
@@ -57616,88 +54322,6 @@ view: metrics__metrics__labeled_counter__networking_cache_purge_due_to_memory_li
 
 view: metrics__metrics__labeled_counter__networking_captive_portal_banner_display_time {
   label: "Networking - Captive Portal Banner Display Time"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__networking_connection_address_type {
-  label: "Networking - Connection Address Type"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__networking_cookie_db_validation {
-  label: "Networking - Cookie DB Validation"
 
   dimension: document_id {
     type: string
@@ -58459,19 +55083,19 @@ view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -58500,19 +55124,19 @@ view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -58882,47 +55506,6 @@ view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr 
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__networking_local_network_access {
-  label: "Networking - Local Network Access"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
   }
 }
 
@@ -59459,47 +56042,6 @@ view: metrics__metrics__labeled_counter__pdfjs_buttons {
   }
 }
 
-view: metrics__metrics__labeled_counter__pdfjs_digital_signature_certificate {
-  label: "Pdfjs Digital Signature - Certificate"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__pdfjs_editing {
   label: "Pdfjs - Editing"
 
@@ -59989,47 +56531,6 @@ view: metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__pinned_tabs_activations {
-  label: "Pinned Tabs - Activations"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
   }
 }
 
@@ -61509,47 +58010,6 @@ view: metrics__metrics__labeled_counter__sap_deprecated_counts {
   }
 }
 
-view: metrics__metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
-  label: "Sap Impression Counts - Contextmenu Visual"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__script_preloader_requests {
   label: "Script Preloader - Requests"
 
@@ -61960,90 +58420,8 @@ view: metrics__metrics__labeled_counter__session_restore_corrupt_file {
   }
 }
 
-view: metrics__metrics__labeled_counter__session_restore_shutdown_flush_all_outcomes {
-  label: "Session Restore - Shutdown Flush All Outcomes"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__session_restore_shutdown_ok {
   label: "Session Restore - Shutdown Ok"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__session_restore_shutdown_type {
-  label: "Session Restore - Shutdown Type"
 
   dimension: document_id {
     type: string
@@ -70862,6 +67240,20 @@ view: metrics__metrics__custom_distribution__pwmgr_prompt_remember_action__value
 }
 
 view: metrics__metrics__custom_distribution__pwmgr_prompt_update_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -9,7 +9,6 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_clients_first_see
 explore: metric_definitions_clients_first_seen_v2 {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

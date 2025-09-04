@@ -223,7 +223,7 @@ view: broken_site_report {
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled {
     label: "Broken Site Report Browser Info Prefs H1 In Section Useragent Styles Enabled"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled ;;
     type: yesno
     group_label: "Broken Site Report Browser Info Prefs"
@@ -434,24 +434,6 @@ view: broken_site_report {
     }
 
     description: "Whether the site in the current tab has recently been purged by Bounce Tracking Protection.
-"
-  }
-
-  dimension: metrics__string__broken_site_report_tab_info_antitracking_etp_category {
-    label: "Broken Site Report Tab Info Antitracking Etp Category"
-    hidden: no
-    sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_etp_category ;;
-    type: string
-    group_label: "Broken Site Report Tab Info Antitracking"
-    group_item_label: "Etp Category"
-
-    link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Etp Category"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_antitracking_etp_category"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The current ETP category, either `standard`, `strict`, or `custom`.
 "
   }
 

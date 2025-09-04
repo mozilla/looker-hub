@@ -4828,8 +4828,12 @@ marketing:
       tables:
       - table: mozdata.analysis.marketing_firefox_for_families_forecasted_expectations
       type: table_view
-mdn_fred:
+mdn_yari:
   explores:
+    action:
+      type: glean_ping_explore
+      views:
+        base_view: action
     deletion_request:
       type: glean_ping_explore
       views:
@@ -4843,49 +4847,6 @@ mdn_fred:
       type: table_explore
       views:
         base_view: events_stream_table
-  glean_app: true
-  owners:
-  - caugner@mozilla.com
-  - glean-team@mozilla.com
-  pretty_name: MDN
-  spoke: looker-spoke-default
-  views:
-    deletion_request:
-      tables:
-      - table: mozdata.mdn_fred.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.mdn_fred.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.mdn_fred.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_stream_table:
-      tables:
-      - channel: null
-        table: mozdata.mdn_fred.events_stream
-      type: table_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.mdn_fred.events
-      type: table_view
-    events_unnested_table:
-      tables:
-      - channel: null
-        table: mozdata.mdn_fred.events_unnested
-      type: table_view
-mdn_yari:
-  explores:
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
     page:
       type: glean_ping_explore
       views:
@@ -4897,11 +4858,19 @@ mdn_yari:
   pretty_name: "MDN (2022\u20132025)"
   spoke: looker-spoke-default
   views:
+    action:
+      tables:
+      - table: mozdata.mdn_yari.action
+      type: glean_ping_view
     action_table:
       tables:
       - channel: null
         table: mozdata.mdn_yari.action
       type: table_view
+    deletion_request:
+      tables:
+      - table: mozdata.mdn_yari.deletion_request
+      type: glean_ping_view
     deletion_request_table:
       tables:
       - channel: null
@@ -4912,6 +4881,11 @@ mdn_yari:
       - base_table: mozdata.mdn_yari.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.mdn_yari.events_stream
+      type: table_view
     events_table:
       tables:
       - channel: null
@@ -9200,10 +9174,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -9244,8 +9218,8 @@ operational_monitoring:
             - release
             - nightly
             - esr
-            - beta
             - aurora
+            - beta
             - default
             - nightly-pine
             - nightly-larch
@@ -10148,11 +10122,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id308
           os:
-            default: Linux
+            default: Windows
             options:
-            - Linux
             - Windows
             - Mac
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11152,15 +11126,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id404
           app:
-            default: Android - daemon_session
+            default: Android - vpn_session
             options:
-            - Android - daemon_session
             - Android - vpn_session
-            - iOS - vpn_session
             - Windows - vpn_session
-            - Darwin - vpn_session
             - Linux - vpn_session
             - iOS - daemon_session
+            - iOS - vpn_session
+            - Darwin - vpn_session
+            - Android - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id405
@@ -12075,10 +12049,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id467
           channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
             - beta
+            - nightly
             - release
           os:
             default: Linux

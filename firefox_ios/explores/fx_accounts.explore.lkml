@@ -10,28 +10,8 @@ include: "/looker-hub/firefox_ios/datagroups/fx_accounts_last_updated.datagroup.
 explore: fx_accounts {
   sql_always_where: ${fx_accounts.submission_date} >= '2010-01-01' ;;
   view_label: " Fx_Accounts"
-  description: "Explore for the fx_accounts ping. A ping for information about Mozilla Account usage. Sent at the same cadence as the baseline ping. Owner: @jdavis"
+  description: "Explore for the fx_accounts ping. "
   view_name: fx_accounts
-
-  join: fx_accounts__metrics__labeled_counter__glean_error_invalid_label {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${fx_accounts.metrics__labeled_counter__glean_error_invalid_label}) AS fx_accounts__metrics__labeled_counter__glean_error_invalid_label ON ${fx_accounts.document_id} = ${fx_accounts__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
-  }
-
-  join: fx_accounts__metrics__labeled_counter__glean_error_invalid_overflow {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${fx_accounts.metrics__labeled_counter__glean_error_invalid_overflow}) AS fx_accounts__metrics__labeled_counter__glean_error_invalid_overflow ON ${fx_accounts.document_id} = ${fx_accounts__metrics__labeled_counter__glean_error_invalid_overflow.document_id} ;;
-  }
-
-  join: fx_accounts__metrics__labeled_counter__glean_error_invalid_state {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${fx_accounts.metrics__labeled_counter__glean_error_invalid_state}) AS fx_accounts__metrics__labeled_counter__glean_error_invalid_state ON ${fx_accounts.document_id} = ${fx_accounts__metrics__labeled_counter__glean_error_invalid_state.document_id} ;;
-  }
-
-  join: fx_accounts__metrics__labeled_counter__glean_error_invalid_value {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${fx_accounts.metrics__labeled_counter__glean_error_invalid_value}) AS fx_accounts__metrics__labeled_counter__glean_error_invalid_value ON ${fx_accounts.document_id} = ${fx_accounts__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
-  }
 
   join: fx_accounts__events {
     relationship: one_to_many

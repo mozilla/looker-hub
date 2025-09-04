@@ -205,25 +205,6 @@ If the version detection fails, this metric gets set to `Unknown`.
 "
   }
 
-  dimension: metrics__uuid__usage_profile_group_id {
-    label: "Usage Profile Group ID"
-    hidden: no
-    sql: ${TABLE}.metrics.uuid.usage_profile_group_id ;;
-    type: string
-    group_label: "Usage"
-    group_item_label: "Profile Group ID"
-
-    link: {
-      label: "Glean Dictionary reference for Usage Profile Group ID"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_profile_group_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "A UUID uniquely identifying the profile group,
-not shared with other telemetry data.
-"
-  }
-
   dimension: metrics__uuid__usage_profile_id {
     label: "Usage Profile ID"
     hidden: no
@@ -261,24 +242,6 @@ not shared with other telemetry data.
 "
   }
 
-  dimension: metrics__boolean__usage_windows_backup_enabled {
-    label: "Usage Windows Backup Enabled"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.usage_windows_backup_enabled ;;
-    type: yesno
-    group_label: "Usage"
-    group_item_label: "Windows Backup Enabled"
-
-    link: {
-      label: "Glean Dictionary reference for Usage Windows Backup Enabled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_windows_backup_enabled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Tracks if Windows Backup is enabled and configured to back up applications.
-"
-  }
-
   dimension: metrics__quantity__usage_windows_build_number {
     label: "Usage Windows Build Number"
     hidden: no
@@ -295,24 +258,6 @@ not shared with other telemetry data.
 
     description: "The optional Windows build number, reported by Windows
 (e.g. 22000) and not set for other platforms.
-"
-  }
-
-  dimension: metrics__quantity__usage_windows_user_profile_age_in_days {
-    label: "Usage Windows User Profile Age In Days"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.usage_windows_user_profile_age_in_days ;;
-    type: number
-    group_label: "Usage"
-    group_item_label: "Windows User Profile Age In Days"
-
-    link: {
-      label: "Glean Dictionary reference for Usage Windows User Profile Age In Days"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/usage_windows_user_profile_age_in_days"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The age of the current users home folder in days.
 "
   }
 

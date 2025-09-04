@@ -9,7 +9,6 @@ include: "/looker-hub/websites/views/metric_definitions_www_site_landing_page_me
 explore: metric_definitions_www_site_landing_page_metrics {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

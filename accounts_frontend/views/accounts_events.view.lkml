@@ -79,59 +79,6 @@ by query parameter `entrypoint_variation` in the URL.
 "
   }
 
-  dimension: metrics__string__event_app_framework {
-    label: "Event App Framework"
-    hidden: no
-    sql: ${TABLE}.metrics.string.event_app_framework ;;
-    type: string
-    group_label: "Event"
-    group_item_label: "App Framework"
-
-    link: {
-      label: "Glean Dictionary reference for Event App Framework"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_app_framework"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The name of the framework used by the app (ie React or Backbone).
-"
-  }
-
-  dimension: metrics__string__event_choice {
-    label: "Event Choice"
-    hidden: no
-    sql: ${TABLE}.metrics.string.event_choice ;;
-    type: string
-    group_label: "Event"
-    group_item_label: "Choice"
-
-    link: {
-      label: "Glean Dictionary reference for Event Choice"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_choice"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "the choice made by the user in a given event"
-  }
-
-  dimension: metrics__boolean__event_cms_customization_enrollment {
-    label: "Event Cms Customization Enrollment"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.event_cms_customization_enrollment ;;
-    type: yesno
-    group_label: "Event"
-    group_item_label: "Cms Customization Enrollment"
-
-    link: {
-      label: "Glean Dictionary reference for Event Cms Customization Enrollment"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_cms_customization_enrollment"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the user has been enrolled in a CMS customization.
-"
-  }
-
   dimension: metrics__string__event_name {
     label: "Event Name"
     hidden: no
