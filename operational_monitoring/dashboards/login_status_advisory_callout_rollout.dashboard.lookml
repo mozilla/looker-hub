@@ -115,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +131,7 @@
       login_status_advisory_callout_rollout.branch
     ]
     filters:
-      login_status_advisory_callout_rollout.metric: 'ad_clicks'
+      login_status_advisory_callout_rollout.metric: 'retained'
       login_status_advisory_callout_rollout.statistic: mean
     row: 10
     col: 12
@@ -183,74 +183,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: login_status_advisory_callout_rollout
-    type: looker_line
-    fields: [
-      login_status_advisory_callout_rollout.submission_date,
-      login_status_advisory_callout_rollout.branch,
-      login_status_advisory_callout_rollout.point
-    ]
-    pivots: [
-      login_status_advisory_callout_rollout.branch
-    ]
-    filters:
-      login_status_advisory_callout_rollout.metric: 'active_hours'
-      login_status_advisory_callout_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: login_status_advisory_callout_rollout.submission_date
-    field_y: login_status_advisory_callout_rollout.point
-    log_scale: false
-    ci_lower: login_status_advisory_callout_rollout.lower
-    ci_upper: login_status_advisory_callout_rollout.upper
-    show_grid: true
-    listen:
-      Date: login_status_advisory_callout_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: login_status_advisory_callout_rollout
-    type: looker_line
-    fields: [
-      login_status_advisory_callout_rollout.submission_date,
-      login_status_advisory_callout_rollout.branch,
-      login_status_advisory_callout_rollout.point
-    ]
-    pivots: [
-      login_status_advisory_callout_rollout.branch
-    ]
-    filters:
-      login_status_advisory_callout_rollout.metric: 'retained'
-      login_status_advisory_callout_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: login_status_advisory_callout_rollout.submission_date
-    field_y: login_status_advisory_callout_rollout.point
-    log_scale: false
-    ci_lower: login_status_advisory_callout_rollout.lower
-    ci_upper: login_status_advisory_callout_rollout.upper
-    show_grid: true
-    listen:
-      Date: login_status_advisory_callout_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -268,6 +200,74 @@
     ]
     filters:
       login_status_advisory_callout_rollout.metric: 'uri_count'
+      login_status_advisory_callout_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: login_status_advisory_callout_rollout.submission_date
+    field_y: login_status_advisory_callout_rollout.point
+    log_scale: false
+    ci_lower: login_status_advisory_callout_rollout.lower
+    ci_upper: login_status_advisory_callout_rollout.upper
+    show_grid: true
+    listen:
+      Date: login_status_advisory_callout_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: login_status_advisory_callout_rollout
+    type: looker_line
+    fields: [
+      login_status_advisory_callout_rollout.submission_date,
+      login_status_advisory_callout_rollout.branch,
+      login_status_advisory_callout_rollout.point
+    ]
+    pivots: [
+      login_status_advisory_callout_rollout.branch
+    ]
+    filters:
+      login_status_advisory_callout_rollout.metric: 'ad_clicks'
+      login_status_advisory_callout_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: login_status_advisory_callout_rollout.submission_date
+    field_y: login_status_advisory_callout_rollout.point
+    log_scale: false
+    ci_lower: login_status_advisory_callout_rollout.lower
+    ci_upper: login_status_advisory_callout_rollout.upper
+    show_grid: true
+    listen:
+      Date: login_status_advisory_callout_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: login_status_advisory_callout_rollout
+    type: looker_line
+    fields: [
+      login_status_advisory_callout_rollout.submission_date,
+      login_status_advisory_callout_rollout.branch,
+      login_status_advisory_callout_rollout.point
+    ]
+    pivots: [
+      login_status_advisory_callout_rollout.branch
+    ]
+    filters:
+      login_status_advisory_callout_rollout.metric: 'active_hours'
       login_status_advisory_callout_rollout.statistic: mean
     row: 30
     col: 12

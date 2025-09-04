@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/context_id_rotation_every_30_days.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/context_id_rotation_every_30_days_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/moscary_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/moscary_rollout_last_updated.datagroup.lkml"
 
-explore: context_id_rotation_every_30_days {
+explore: moscary_rollout {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: context_id_rotation_every_30_days {
   }
 
   hidden: yes
-  persist_with: context_id_rotation_every_30_days_last_updated
+  persist_with: moscary_rollout_last_updated
 }
