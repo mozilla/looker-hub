@@ -9,7 +9,6 @@ include: "/looker-hub/fenix/views/metric_definitions_fenix_retention_view.view.l
 explore: metric_definitions_fenix_retention_view {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }
