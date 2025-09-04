@@ -23648,6 +23648,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__sum {
+    label: "Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.sum ;;
+    type: number
+    group_label: "Quotamanager Initialize Temporarystorage"
+    group_item_label: "Non Persisted Zero Usage Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Logs the number of non-persisted origins that have zero quota-charged usage after full temporary storage initialization. These origins do not store any real data but still contribute to internal bookkeeping by having directories and files created on disk, which can unnecessarily increase initialization costs. Measuring how many such origins exist in the wild helps evaluate whether the temporary storage cleanup logic should be updated to clear them. This in turn can guide potential optimizations and improve the performance of temporary storage initialization over time, while also helping to detect unexpected regressions. Note: Non-persisted origins can be cleared when they have no data, while persisted origins cannot be cleared even at zero usage because the persisted flag is currently stored alongside the origin data and would be lost.
+"
+  }
+
   dimension: metrics__timing_distribution__quotamanager_initialize_temporarystorage_total_time_excluding_suspend__sum {
     label: "Quotamanager Initialize Temporarystorage Total Time Excluding Suspend Sum"
     hidden: no
@@ -56884,6 +56902,20 @@ view: metrics__metrics__custom_distribution__pwmgr_prompt_remember_action__value
 }
 
 view: metrics__metrics__custom_distribution__pwmgr_prompt_update_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

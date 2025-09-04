@@ -9,7 +9,6 @@ include: "/looker-hub/klar_ios/views/metric_definitions_metrics.view.lkml"
 explore: metric_definitions_metrics {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

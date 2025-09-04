@@ -9,7 +9,6 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_desktop_cohort_da
 explore: metric_definitions_desktop_cohort_daily_retention {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

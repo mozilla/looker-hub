@@ -9,7 +9,6 @@ include: "/looker-hub/ads/views/metric_definitions_native_desktop_ad_metrics_by_
 explore: metric_definitions_native_desktop_ad_metrics_by_position {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

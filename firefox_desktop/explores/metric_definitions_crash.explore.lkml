@@ -9,7 +9,6 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_crash.view.lkml"
 explore: metric_definitions_crash {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

@@ -7482,6 +7482,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__count {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__sum {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__readermode_download_result__count {
     sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.count ;;
     type: number
@@ -47617,6 +47638,20 @@ view: metrics_table__metrics__custom_distribution__pwmgr_prompt_remember_action_
 }
 
 view: metrics_table__metrics__custom_distribution__pwmgr_prompt_update_action__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
