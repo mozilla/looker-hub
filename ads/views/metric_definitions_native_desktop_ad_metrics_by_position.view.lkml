@@ -117,7 +117,7 @@ native_desktop_ad_metrics_by_position.zone_name AS native_desktop_ad_metrics_by_
         
                     WHERE 
                     native_desktop_ad_metrics_by_position.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

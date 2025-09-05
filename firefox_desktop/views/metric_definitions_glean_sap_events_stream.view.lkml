@@ -118,7 +118,7 @@ WHERE
                 
                     WHERE 
                     glean_sap_events_stream.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -147,7 +147,7 @@ WHERE
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

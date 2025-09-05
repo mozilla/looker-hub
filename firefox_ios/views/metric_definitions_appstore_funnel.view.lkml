@@ -150,7 +150,7 @@ appstore_funnel.total_downloads AS appstore_funnel_total_downloads,
         
                     WHERE 
                     appstore_funnel.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -179,7 +179,7 @@ appstore_funnel.total_downloads AS appstore_funnel_total_downloads,
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

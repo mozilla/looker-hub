@@ -127,7 +127,7 @@ desktop_engagement_v1.wau AS desktop_engagement_v1_wau,
                 
                     WHERE 
                     desktop_engagement_v1.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

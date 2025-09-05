@@ -186,7 +186,7 @@ funnel_retention.retained_week_4_new_profiles AS funnel_retention_retained_week_
         
                     WHERE 
                     funnel_retention.metric_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -215,7 +215,7 @@ funnel_retention.retained_week_4_new_profiles AS funnel_retention_retained_week_
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

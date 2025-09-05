@@ -223,7 +223,7 @@ fenix_retention_view.retained_week_4_new_profiles AS fenix_retention_view_retain
         
                     WHERE 
                     fenix_retention_view.metric_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -252,7 +252,7 @@ fenix_retention_view.retained_week_4_new_profiles AS fenix_retention_view_retain
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

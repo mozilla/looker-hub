@@ -213,7 +213,7 @@ feature_usage_metrics_v1.metrics_tabs_open_count_users AS feature_usage_metrics_
         
                     WHERE 
                     feature_usage_metrics_v1.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

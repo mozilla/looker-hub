@@ -123,7 +123,7 @@ desktop_retention_view.startup_profile_selection_reason AS desktop_retention_vie
         
                     WHERE 
                     desktop_retention_view.metric_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -152,7 +152,7 @@ desktop_retention_view.startup_profile_selection_reason AS desktop_retention_vie
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

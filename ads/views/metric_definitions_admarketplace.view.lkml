@@ -57,7 +57,7 @@ SAFE_DIVIDE(SUM(revenue), SUM(valid_impressions)) * 1000 AS amp_revenue_per_thou
         
                     WHERE 
                     admarketplace.adm_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

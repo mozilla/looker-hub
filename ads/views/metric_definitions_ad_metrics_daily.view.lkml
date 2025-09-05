@@ -160,7 +160,7 @@ ad_metrics_daily.zone_name AS ad_metrics_daily_zone_name,
                 
                     WHERE 
                     ad_metrics_daily.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

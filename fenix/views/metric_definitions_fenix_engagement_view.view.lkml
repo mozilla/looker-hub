@@ -212,7 +212,7 @@ fenix_engagement_view.wau AS fenix_engagement_view_wau,
         
                     WHERE 
                     fenix_engagement_view.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -241,7 +241,7 @@ fenix_engagement_view.wau AS fenix_engagement_view_wau,
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

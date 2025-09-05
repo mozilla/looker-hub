@@ -129,7 +129,7 @@ firefox_desktop_active_users_aggregates_view.weekly_users AS firefox_desktop_act
         
                     WHERE 
                     firefox_desktop_active_users_aggregates_view.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -158,7 +158,7 @@ firefox_desktop_active_users_aggregates_view.weekly_users AS firefox_desktop_act
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

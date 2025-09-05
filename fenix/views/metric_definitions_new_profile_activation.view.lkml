@@ -184,7 +184,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                 
                     WHERE 
                     new_profile_activation.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -213,7 +213,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

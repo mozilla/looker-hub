@@ -64,7 +64,7 @@ newtab_visit_duration.week AS newtab_visit_duration_week,
         
                     WHERE 
                     newtab_visit_duration.week
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

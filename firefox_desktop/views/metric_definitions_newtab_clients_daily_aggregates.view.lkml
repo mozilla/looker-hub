@@ -134,7 +134,7 @@ AND (newtab_clients_daily_aggregates.newtab_search_enabled = newtab_clients_dail
                 
                     WHERE 
                     newtab_clients_daily_aggregates.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -163,7 +163,7 @@ AND (newtab_clients_daily_aggregates.newtab_search_enabled = newtab_clients_dail
                     {% endif %}
                  AND 
                     newtab_clients_daily_aggregates_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

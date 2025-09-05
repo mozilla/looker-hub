@@ -175,7 +175,7 @@ klar_android_retention_view.retained_week_4_new_profiles AS klar_android_retenti
         
                     WHERE 
                     klar_android_retention_view.metric_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -204,7 +204,7 @@ klar_android_retention_view.retained_week_4_new_profiles AS klar_android_retenti
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

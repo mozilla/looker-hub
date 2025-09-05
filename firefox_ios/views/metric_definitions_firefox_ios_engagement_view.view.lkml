@@ -174,7 +174,7 @@ firefox_ios_engagement_view.wau AS firefox_ios_engagement_view_wau,
         
                     WHERE 
                     firefox_ios_engagement_view.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -203,7 +203,7 @@ firefox_ios_engagement_view.wau AS firefox_ios_engagement_view_wau,
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

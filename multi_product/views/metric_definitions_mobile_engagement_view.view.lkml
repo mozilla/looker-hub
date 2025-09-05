@@ -108,7 +108,7 @@ mobile_engagement_view.wau AS mobile_engagement_view_wau,
         
                     WHERE 
                     mobile_engagement_view.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

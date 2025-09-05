@@ -139,7 +139,7 @@ desktop_cohort_daily_retention.vendor AS desktop_cohort_daily_retention_vendor,
         
                     WHERE 
                     desktop_cohort_daily_retention.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -168,7 +168,7 @@ desktop_cohort_daily_retention.vendor AS desktop_cohort_daily_retention_vendor,
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

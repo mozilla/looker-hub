@@ -119,7 +119,7 @@ mobile_retention_view.retained_week_4_new_profiles AS mobile_retention_view_reta
         
                     WHERE 
                     mobile_retention_view.metric_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

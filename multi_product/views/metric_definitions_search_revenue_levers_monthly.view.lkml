@@ -86,7 +86,7 @@ search_revenue_levers_monthly.tagged_sap AS search_revenue_levers_monthly_tagged
         
                     WHERE 
                     search_revenue_levers_monthly.submission_month
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

@@ -66,7 +66,7 @@ www_site_landing_page_metrics.operating_system AS www_site_landing_page_metrics_
         
                     WHERE 
                     www_site_landing_page_metrics.date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

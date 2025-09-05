@@ -80,7 +80,7 @@ ad_mmm_metrics_daily.sponsor AS ad_mmm_metrics_daily_sponsor,
         
                     WHERE 
                     ad_mmm_metrics_daily.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

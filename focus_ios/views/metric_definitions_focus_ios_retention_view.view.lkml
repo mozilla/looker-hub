@@ -175,7 +175,7 @@ focus_ios_retention_view.retained_week_4_new_profiles AS focus_ios_retention_vie
         
                     WHERE 
                     focus_ios_retention_view.metric_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -204,7 +204,7 @@ focus_ios_retention_view.retained_week_4_new_profiles AS focus_ios_retention_vie
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

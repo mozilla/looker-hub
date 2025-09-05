@@ -270,7 +270,7 @@ newtab_clients_daily.weather_widget_location_selected AS newtab_clients_daily_we
                 
                     WHERE 
                     newtab_clients_daily.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

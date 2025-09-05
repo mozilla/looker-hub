@@ -196,7 +196,7 @@ focus_ios_active_users_aggregates_view.weekly_users AS focus_ios_active_users_ag
         
                     WHERE 
                     focus_ios_active_users_aggregates_view.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -225,7 +225,7 @@ focus_ios_active_users_aggregates_view.weekly_users AS focus_ios_active_users_ag
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

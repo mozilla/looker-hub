@@ -168,7 +168,7 @@ looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
                 
                     WHERE 
                     baseline_v2.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -197,7 +197,7 @@ looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

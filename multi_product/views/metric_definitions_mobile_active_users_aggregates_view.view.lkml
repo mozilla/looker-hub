@@ -119,7 +119,7 @@ mobile_active_users_aggregates_view.weekly_users AS mobile_active_users_aggregat
         
                     WHERE 
                     mobile_active_users_aggregates_view.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

@@ -98,7 +98,7 @@ consolidated_ads_spocs.url AS consolidated_ads_spocs_url,
         
                     WHERE 
                     consolidated_ads_spocs.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(

@@ -112,7 +112,7 @@ desktop_engagement_view.wau AS desktop_engagement_view_wau,
         
                     WHERE 
                     desktop_engagement_view.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
@@ -141,7 +141,7 @@ desktop_engagement_view.wau AS desktop_engagement_view_wau,
                     {% endif %}
                  AND 
                     looker_base_fields.submission_date
-                    {% if _filters['analysis_period'] != "" %}
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
                     DATE_SUB(
                         COALESCE(
