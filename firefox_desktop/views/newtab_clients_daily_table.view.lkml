@@ -151,6 +151,12 @@ view: newtab_clients_daily_table {
     description: "country where the newtab event is reported"
   }
 
+  dimension: cumulative_newtab_visit_duration {
+    sql: ${TABLE}.cumulative_newtab_visit_duration ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: default_private_search_engine {
     sql: ${TABLE}.default_private_search_engine ;;
     type: string
