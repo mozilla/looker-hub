@@ -10209,6 +10209,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__fog_subdir_err {
+    sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
     hidden: yes
@@ -10776,6 +10781,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
     sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_metadata_err ;;
     hidden: yes
   }
 
@@ -49969,6 +49984,20 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
 }
 
 view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__fog_subdir_err {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

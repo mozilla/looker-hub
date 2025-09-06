@@ -10255,6 +10255,62 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__labeled_counter__fog_subdir_entry_err {
+    label: "Fog Subdir Entry Err"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
+    group_label: "Fog"
+    group_item_label: "Subdir Entry Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Entry Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_subdir_entry_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many dir entries per data subdirectory errored while reporting fog.data_diretory_info.
+(Potentially because they were removed between `read_dir` and the iteration).
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    label: "Fog Subdir Entry Metadata Err"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_metadata_err ;;
+    group_label: "Fog"
+    group_item_label: "Subdir Entry Metadata Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Entry Metadata Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_subdir_entry_metadata_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many dir entries per data subdirectory errored while retrieving their metadata
+while reporting fog.data_diretory_info.
+"
+  }
+
+  dimension: metrics__labeled_boolean__fog_subdir_err {
+    label: "Fog Subdir Err"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
+    type: string
+    group_label: "Fog"
+    group_item_label: "Subdir Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_subdir_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which data subdirectories suffered an err between is_dir and read_dir
+while reporting fog.data_diretory_info.
+(Potentially because they were removed in the interim).
+"
+  }
+
   dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     label: "Fog Validation Gvsv Audio Stream Init"
     hidden: yes
@@ -43428,6 +43484,88 @@ view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
   }
 }
 
+view: metrics__metrics__labeled_counter__fog_subdir_entry_err {
+  label: "Fog - Subdir Entry Err"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_subdir_entry_metadata_err {
+  label: "Fog - Subdir Entry Metadata Err"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
   label: "Fog Validation - Gvsv Audio Stream Init"
 
@@ -59233,6 +59371,20 @@ view: metrics__metrics__labeled_boolean__data_storage_migration {
 }
 
 view: metrics__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__fog_subdir_err {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
