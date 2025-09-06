@@ -533,6 +533,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_startup_cache_read_errors}) AS metrics__metrics__labeled_counter__extensions_startup_cache_read_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__fog_subdir_entry_err {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_subdir_entry_err}) AS metrics__metrics__labeled_counter__fog_subdir_entry_err ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_subdir_entry_err.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_subdir_entry_metadata_err}) AS metrics__metrics__labeled_counter__fog_subdir_entry_metadata_err ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_subdir_entry_metadata_err.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_validation_gvsv_audio_stream_init}) AS metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init.document_id} ;;

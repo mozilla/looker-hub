@@ -12267,6 +12267,15 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_boolean__fog_subdir_err {
+    sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
+    hidden: yes
+    description: "Which data subdirectories suffered an err between is_dir and read_dir
+while reporting fog.data_diretory_info.
+(Potentially because they were removed in the interim).
+"
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
     hidden: yes
@@ -13838,6 +13847,22 @@ builds.
     hidden: yes
     description: "The number of times an unexpected error has been raised while reading
 the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
+    hidden: yes
+    description: "How many dir entries per data subdirectory errored while reporting fog.data_diretory_info.
+(Potentially because they were removed between `read_dir` and the iteration).
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_metadata_err ;;
+    hidden: yes
+    description: "How many dir entries per data subdirectory errored while retrieving their metadata
+while reporting fog.data_diretory_info.
 "
   }
 
@@ -58195,6 +58220,20 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
 }
 
 view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__fog_subdir_err {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

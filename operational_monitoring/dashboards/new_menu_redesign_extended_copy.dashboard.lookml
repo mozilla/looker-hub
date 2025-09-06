@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       new_menu_redesign_extended_copy.branch
     ]
     filters:
-      new_menu_redesign_extended_copy.metric: 'days_of_use'
+      new_menu_redesign_extended_copy.metric: 'search_count'
       new_menu_redesign_extended_copy.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       new_menu_redesign_extended_copy.branch
     ]
     filters:
-      new_menu_redesign_extended_copy.metric: 'search_count'
+      new_menu_redesign_extended_copy.metric: 'active_hours'
       new_menu_redesign_extended_copy.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       new_menu_redesign_extended_copy.branch
     ]
     filters:
-      new_menu_redesign_extended_copy.metric: 'active_hours'
+      new_menu_redesign_extended_copy.metric: 'days_of_use'
       new_menu_redesign_extended_copy.statistic: mean
     row: 20
     col: 0
