@@ -2635,6 +2635,23 @@ default: true
 "
   }
 
+  dimension: metrics__boolean__preferences_isolated_content_processes_enabled {
+    label: "Preferences Isolated Content Processes Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_isolated_content_processes_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Isolated Content Processes Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Isolated Content Processes Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_isolated_content_processes_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True when isolated content processes are enabled on the runtime."
+  }
+
   dimension: metrics__string__preferences_open_links_in_app_enabled {
     label: "Preferences Open Links In App Enabled"
     hidden: no

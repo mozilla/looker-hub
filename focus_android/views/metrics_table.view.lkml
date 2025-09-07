@@ -12920,6 +12920,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__hdd_binary {
     sql: ${TABLE}.metrics.object.hdd_binary ;;
     hidden: yes
