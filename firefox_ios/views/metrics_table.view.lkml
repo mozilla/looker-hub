@@ -2023,6 +2023,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__nimbus_system_recorded_nimbus_context {
     sql: ${TABLE}.metrics.object.nimbus_system_recorded_nimbus_context ;;
     hidden: yes

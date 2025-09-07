@@ -1001,6 +1001,14 @@ view: metrics_table {
     group_item_label: "Preferences Inactive Tabs Enabled"
   }
 
+  dimension: metrics__boolean__preferences_isolated_content_processes_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_isolated_content_processes_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Isolated Content Processes Enabled"
+  }
+
   dimension: metrics__boolean__preferences_open_links_in_app_enabled {
     sql: ${TABLE}.metrics.boolean.preferences_open_links_in_app_enabled ;;
     type: yesno
@@ -13848,6 +13856,11 @@ view: metrics_table {
 
   dimension: metrics__object__gfx_monitors {
     sql: ${TABLE}.metrics.object.gfx_monitors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
     hidden: yes
   }
 
