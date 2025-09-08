@@ -449,6 +449,38 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__policies_is_enterprise {
+    sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Policies Is Enterprise"
+    description: "Attempt to determine if the user is an enterprise user based on various signals. This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
+    sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Search Engine Default Overridden By Third Party"
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
+  dimension: metrics__boolean__search_engine_private_overridden_by_third_party {
+    sql: ${TABLE}.metrics.boolean.search_engine_private_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Search Engine Private Overridden By Third Party"
+    description: "Set to true if the user's default search engine has been allowed to be
+overridden by a third-party add-on or OpenSearch engine.
+"
+  }
+
   dimension: metrics__boolean__urlbar_pref_quicksuggest_data_collection {
     sql: ${TABLE}.metrics.boolean.urlbar_pref_quicksuggest_data_collection ;;
     type: yesno
@@ -519,6 +551,58 @@ view: events_table {
 "
   }
 
+  dimension: metrics__boolean__usage_is_default_browser {
+    sql: ${TABLE}.metrics.boolean.usage_is_default_browser ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Usage Is Default Browser"
+    description: "Whether Firefox is set as the default browser.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_active_ticks {
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Active Ticks"
+    description: "The number of five-second intervals ('ticks') the user was considered
+'active'.
+
+'active' means keyboard or mouse interaction with the application.
+It doesn't take into account whether or not the window has focus or is in
+the foreground, only if it is receiving these interaction events.
+
+Migrated from Telemetry's `browser.engagement.active_ticks`.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_open_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Tab Open Event Count"
+    description: "The count of tab open events per subsession, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement URI Count"
+    description: "The number of total non-unique http(s) URIs visited, including page
+reloads, after the session has been restored. URIs on minimized or
+background tabs may also be counted. Private browsing uris are included.
+
+Migrated from Telemetry's
+`browser.engagement.total_uri_count_normal_and_private_mode`.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -583,6 +667,16 @@ Mapped to client_info.distribution.ext in datasets.
 "
   }
 
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Count"
+    description: "The count of maximum number of tabs open during a subsession, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
+"
+  }
+
   dimension: metrics__quantity__urlbar_pref_max_results {
     sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
     type: number
@@ -604,9 +698,194 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__region_home_region {
+    sql: ${TABLE}.metrics.string.region_home_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Region Home Region"
+    description: "Records the detected home region of the user. This is the general region of the user's machine.
+If a machine moves location, there is a minimum 2-week delay before this will be updated.
+See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html) for more information about updates.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_display_name {
+    sql: ${TABLE}.metrics.string.search_engine_default_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Default Display Name"
+    description: "The display name of the user's default engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_load_path {
+    sql: ${TABLE}.metrics.string.search_engine_default_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Default Load Path"
+    description: "A path relating to where the search engine was installed/loaded from.
+For example:
+  `[app]appDefault` for a config search engine.
+  `[addon]<extension id>` for a WebExtension-based engine.
+  `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
+  engine.
+  `[policy]` for an enteprise policy engine.
+  `[user]` for a search engine defined by the user or generated from a
+  web page.
+Note: this metric is truncated at 100 characters.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_partner_code {
+    sql: ${TABLE}.metrics.string.search_engine_default_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Default Partner Code"
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_default_provider_id {
+    sql: ${TABLE}.metrics.string.search_engine_default_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Default Provider ID"
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_display_name {
+    sql: ${TABLE}.metrics.string.search_engine_private_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Private Display Name"
+    description: "The display name of the user's default engine.
+
+If this string is an empty string (`\"\"`), this means that one or both of
+the preferences `browser.search.separatePrivateDefault` and
+`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+It is possible that the user selects the same private engine as for the
+default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_load_path {
+    sql: ${TABLE}.metrics.string.search_engine_private_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Private Load Path"
+    description: "A path relating to where the search engine was installed/loaded from.
+For example:
+  `[app]appDefault` for a config search engine.
+  `[addon]<extension id>` for a WebExtension-based engine.
+  `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
+  engine.
+  `[policy]` for an enteprise policy engine.
+  `[user]` for a search engine defined by the user or generated from a
+  web page.
+Note: this metric is truncated at 100 characters.
+
+If this string is an empty string (`\"\"`), this means that one or both of
+the preferences `browser.search.separatePrivateDefault` and
+`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+It is possible that the user selects the same private engine as for the
+default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_partner_code {
+    sql: ${TABLE}.metrics.string.search_engine_private_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Private Partner Code"
+    description: "The partner code of the user's default search engine, if defined/known,
+that is being used for the search. Not all search engines have partner
+codes.
+
+May be empty for engines that are overridden by a third-party add-on or
+OpenSearch engine.
+"
+  }
+
+  dimension: metrics__string__search_engine_private_provider_id {
+    sql: ${TABLE}.metrics.string.search_engine_private_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Search Engine Private Provider ID"
+    description: "The identifier of the user's default search engine if the search engine is
+an application provided engine. For user installed engines, this value will
+be `other`.
+"
+  }
+
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+  }
+
+  dimension: metrics__url__search_engine_default_submission_url {
+    sql: ${TABLE}.metrics.url.search_engine_default_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics URL"
+    group_item_label: "Search Engine Default Submission URL"
+  }
+
+  dimension: metrics__url__search_engine_private_submission_url {
+    sql: ${TABLE}.metrics.url.search_engine_private_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics URL"
+    group_item_label: "Search Engine Private Submission URL"
+  }
+
+  dimension: metrics__url2__search_engine_default_submission_url {
+    sql: ${TABLE}.metrics.url2.search_engine_default_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Url2"
+    group_item_label: "Search Engine Default Submission URL"
+    description: "The submission URL of the default engine. This is only reported in the
+cases where:
+  The engine is an application provided engine.
+  The engine has the same name as an application provided engine.
+  The engine matches one of a specific list of well known search engines.
+"
+  }
+
+  dimension: metrics__url2__search_engine_private_submission_url {
+    sql: ${TABLE}.metrics.url2.search_engine_private_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Url2"
+    group_item_label: "Search Engine Private Submission URL"
+    description: "The submission URL of the default engine. This is only reported in the
+cases where:
+  The engine is an application provided engine.
+  The engine has the same name as an application provided engine.
+  The engine matches one of a specific list of well known search engines.
+If this string is an empty string (`\"\"`), this means that one or both of
+the preferences `browser.search.separatePrivateDefault` and
+`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+It is possible that the user selects the same private engine as for the
+default engine, and hence both versions of these fields will be filled in.
+"
   }
 
   dimension: metrics__uuid__legacy_telemetry_client_id {
