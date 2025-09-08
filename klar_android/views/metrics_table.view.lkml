@@ -15526,6 +15526,28 @@ On Linux only a single monitor is returned for the primary screen.
 "
   }
 
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
+    hidden: yes
+    description: "Information about the data directories and files used by FOG.
+
+Structure is an array of objects, each containing the following properties:
+- `dir_name`: The name of the directory. This is the subdirectory name relative to the
+  FOG data directory and should only include \"db\", \"events\", and \"pending_pings\".
+- `dir_exists`: Whether the directory exists. This should only be false on the first
+  run of FOG, or if the directory was deleted.
+- `dir_created`: The creation time of the directory, in seconds since the unix epoch. If
+  the directory does not exist, this will be `null` and if the time cannot be determined,
+  it will default to `0`.
+- `dir_modified`: The last modification time of the directory, in seconds since the unix
+  epoch. If the directory does not exist, this will be `null` and if the time cannot be
+  determined, it will default to `0`.
+- `file_count`: The number of files in the directory. If the directory does not exist,
+  this will be `0`.
+- `files`: An array of objects, each containing:
+  - `fil"
+  }
+
   dimension: metrics__object__hdd_binary {
     sql: ${TABLE}.metrics.object.hdd_binary ;;
     hidden: yes
