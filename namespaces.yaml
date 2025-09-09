@@ -2625,7 +2625,7 @@ firefox_desktop:
       type: table_view
     newtab_items_daily:
       tables:
-      - table: moz-fx-data-shared-prod.firefox_desktop_derived.newtab_items_daily_v1
+      - table: moz-fx-data-shared-prod.firefox_desktop_derived.newtab_content_items_daily_combined_v1
       type: table_view
     newtab_live_table:
       tables:
