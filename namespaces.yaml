@@ -786,6 +786,10 @@ fenix:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
     history_sync:
       type: glean_ping_explore
       views:
@@ -1298,6 +1302,32 @@ fenix:
       tables:
       - table: mozdata.fenix.baseline_clients_last_seen
       type: growth_accounting_view
+    health:
+      tables:
+      - channel: release
+        table: mozdata.fenix.health
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.health
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.health
+      type: table_view
     history_sync:
       tables:
       - channel: release
@@ -2062,6 +2092,10 @@ firefox_desktop:
       views:
         base_view: glean_events
         extended_view: events_unnested_table
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
     messaging_system:
       type: glean_ping_explore
       views:
@@ -2447,6 +2481,15 @@ firefox_desktop:
       - base_table: mozdata.firefox_desktop.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    health:
+      tables:
+      - table: mozdata.firefox_desktop.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.health
+      type: table_view
     locale_aggregates_table:
       tables:
       - channel: null
@@ -2900,6 +2943,10 @@ firefox_ios:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
     history_sync:
       type: glean_ping_explore
       views:
@@ -3298,6 +3345,24 @@ firefox_ios:
       tables:
       - table: mozdata.firefox_ios.baseline_clients_last_seen
       type: growth_accounting_view
+    health:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.health
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.health
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.health
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.health
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.health
+      type: table_view
     history_sync:
       tables:
       - channel: release
@@ -3610,6 +3675,10 @@ focus_android:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -3858,6 +3927,24 @@ focus_android:
       tables:
       - table: mozdata.focus_android.baseline_clients_last_seen
       type: growth_accounting_view
+    health:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.health
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.health
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.health
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.health
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.health
+      type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
     metric_definitions_baseline_v2:
@@ -4073,6 +4160,10 @@ focus_ios:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -4166,6 +4257,15 @@ focus_ios:
       tables:
       - table: mozdata.org_mozilla_ios_focus.baseline_clients_last_seen
       type: growth_accounting_view
+    health:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_focus.health
+      type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
     metric_definitions_baseline_v2:
@@ -4457,6 +4557,10 @@ klar_android:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -4580,6 +4684,15 @@ klar_android:
       tables:
       - table: mozdata.org_mozilla_klar.baseline_clients_last_seen
       type: growth_accounting_view
+    health:
+      tables:
+      - table: mozdata.org_mozilla_klar.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_klar.health
+      type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
     metric_definitions_klar_android_active_users_view:
@@ -4678,6 +4791,10 @@ klar_ios:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -4763,6 +4880,15 @@ klar_ios:
       tables:
       - table: mozdata.org_mozilla_ios_klar.baseline_clients_last_seen
       type: growth_accounting_view
+    health:
+      tables:
+      - table: mozdata.org_mozilla_ios_klar.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_klar.health
+      type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
     metric_definitions_klar_ios_active_users_view:
@@ -5314,6 +5440,10 @@ mozilla_vpn:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
     main:
       type: glean_ping_explore
       views:
@@ -5507,6 +5637,16 @@ mozilla_vpn:
       tables:
       - table: mozdata.mozilla_vpn.baseline_clients_last_seen
       type: growth_accounting_view
+    health:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.health
+      type: table_view
     login_flows_table:
       tables:
       - channel: release
