@@ -9,7 +9,6 @@ include: "/looker-hub/multi_product/views/metric_definitions_mobile_engagement_v
 explore: metric_definitions_mobile_engagement_view {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

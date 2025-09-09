@@ -9,7 +9,6 @@ include: "/looker-hub/firefox_ios/views/metric_definitions_special_onboarding_ev
 explore: metric_definitions_special_onboarding_events {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

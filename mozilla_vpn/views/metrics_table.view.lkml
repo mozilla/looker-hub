@@ -622,6 +622,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
+    hidden: yes
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string

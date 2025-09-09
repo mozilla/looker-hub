@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,9 +26,77 @@
       perplexity_continuation.branch
     ]
     filters:
-      perplexity_continuation.metric: 'uri_count'
+      perplexity_continuation.metric: 'active_hours'
       perplexity_continuation.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: perplexity_continuation.submission_date
+    field_y: perplexity_continuation.point
+    log_scale: false
+    ci_lower: perplexity_continuation.lower
+    ci_upper: perplexity_continuation.upper
+    show_grid: true
+    listen:
+      Date: perplexity_continuation.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: perplexity_continuation
+    type: looker_line
+    fields: [
+      perplexity_continuation.submission_date,
+      perplexity_continuation.branch,
+      perplexity_continuation.point
+    ]
+    pivots: [
+      perplexity_continuation.branch
+    ]
+    filters:
+      perplexity_continuation.metric: 'search_count'
+      perplexity_continuation.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: perplexity_continuation.submission_date
+    field_y: perplexity_continuation.point
+    log_scale: false
+    ci_lower: perplexity_continuation.lower
+    ci_upper: perplexity_continuation.upper
+    show_grid: true
+    listen:
+      Date: perplexity_continuation.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: perplexity_continuation
+    type: looker_line
+    fields: [
+      perplexity_continuation.submission_date,
+      perplexity_continuation.branch,
+      perplexity_continuation.point
+    ]
+    pivots: [
+      perplexity_continuation.branch
+    ]
+    filters:
+      perplexity_continuation.metric: 'qualified_cumulative_days_of_use'
+      perplexity_continuation.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,7 +130,7 @@
     filters:
       perplexity_continuation.metric: 'ad_clicks'
       perplexity_continuation.statistic: mean
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -78,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,44 +162,10 @@
       perplexity_continuation.branch
     ]
     filters:
-      perplexity_continuation.metric: 'active_hours'
+      perplexity_continuation.metric: 'days_of_use'
       perplexity_continuation.statistic: mean
-    row: 10
+    row: 20
     col: 0
-    width: 12
-    height: 8
-    field_x: perplexity_continuation.submission_date
-    field_y: perplexity_continuation.point
-    log_scale: false
-    ci_lower: perplexity_continuation.lower
-    ci_upper: perplexity_continuation.upper
-    show_grid: true
-    listen:
-      Date: perplexity_continuation.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: perplexity_continuation
-    type: looker_line
-    fields: [
-      perplexity_continuation.submission_date,
-      perplexity_continuation.branch,
-      perplexity_continuation.point
-    ]
-    pivots: [
-      perplexity_continuation.branch
-    ]
-    filters:
-      perplexity_continuation.metric: 'retained'
-      perplexity_continuation.statistic: mean
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: perplexity_continuation.submission_date
@@ -167,7 +201,7 @@
       perplexity_continuation.metric: 'memory_total'
       perplexity_continuation.statistic: percentile
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: perplexity_continuation.submission_date
@@ -183,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,41 +233,7 @@
       perplexity_continuation.branch
     ]
     filters:
-      perplexity_continuation.metric: 'days_of_use'
-      perplexity_continuation.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: perplexity_continuation.submission_date
-    field_y: perplexity_continuation.point
-    log_scale: false
-    ci_lower: perplexity_continuation.lower
-    ci_upper: perplexity_continuation.upper
-    show_grid: true
-    listen:
-      Date: perplexity_continuation.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: perplexity_continuation
-    type: looker_line
-    fields: [
-      perplexity_continuation.submission_date,
-      perplexity_continuation.branch,
-      perplexity_continuation.point
-    ]
-    pivots: [
-      perplexity_continuation.branch
-    ]
-    filters:
-      perplexity_continuation.metric: 'search_count'
+      perplexity_continuation.metric: 'retained'
       perplexity_continuation.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       perplexity_continuation.branch
     ]
     filters:
-      perplexity_continuation.metric: 'qualified_cumulative_days_of_use'
+      perplexity_continuation.metric: 'uri_count'
       perplexity_continuation.statistic: mean
     row: 30
     col: 12

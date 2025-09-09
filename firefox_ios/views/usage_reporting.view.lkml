@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: usage_reporting {
+  dimension: metrics__datetime__termsofuse_date {
+    label: "Termsofuse Date"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
+    type: string
+    group_label: "Termsofuse"
+    group_item_label: "Date"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The timestamp when the user accepted the Terms of Use.
+"
+  }
+
+  dimension: metrics__quantity__termsofuse_version {
+    label: "Termsofuse Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Terms of Use the user accepted.
+"
+  }
+
   dimension: metrics__string__usage_app_build {
     label: "Usage App Build"
     hidden: no

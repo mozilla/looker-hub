@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: login_verification_ios_rollout
-    type: looker_line
-    fields: [
-      login_verification_ios_rollout.submission_date,
-      login_verification_ios_rollout.branch,
-      login_verification_ios_rollout.point
-    ]
-    pivots: [
-      login_verification_ios_rollout.branch
-    ]
-    filters:
-      login_verification_ios_rollout.metric: 'retained'
-      login_verification_ios_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: login_verification_ios_rollout.submission_date
-    field_y: login_verification_ios_rollout.point
-    log_scale: false
-    ci_lower: login_verification_ios_rollout.lower
-    ci_upper: login_verification_ios_rollout.upper
-    show_grid: true
-    listen:
-      Date: login_verification_ios_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       login_verification_ios_rollout.metric: 'active_hours'
+      login_verification_ios_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: login_verification_ios_rollout.submission_date
+    field_y: login_verification_ios_rollout.point
+    log_scale: false
+    ci_lower: login_verification_ios_rollout.lower
+    ci_upper: login_verification_ios_rollout.upper
+    show_grid: true
+    listen:
+      Date: login_verification_ios_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: login_verification_ios_rollout
+    type: looker_line
+    fields: [
+      login_verification_ios_rollout.submission_date,
+      login_verification_ios_rollout.branch,
+      login_verification_ios_rollout.point
+    ]
+    pivots: [
+      login_verification_ios_rollout.branch
+    ]
+    filters:
+      login_verification_ios_rollout.metric: 'search_count'
       login_verification_ios_rollout.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       login_verification_ios_rollout.branch
     ]
     filters:
-      login_verification_ios_rollout.metric: 'search_count'
+      login_verification_ios_rollout.metric: 'retained'
       login_verification_ios_rollout.statistic: mean
     row: 20
     col: 0

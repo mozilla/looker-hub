@@ -7412,6 +7412,62 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__labeled_counter__fog_subdir_entry_err {
+    label: "Fog Subdir Entry Err"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
+    group_label: "Fog"
+    group_item_label: "Subdir Entry Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Entry Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_subdir_entry_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many dir entries per data subdirectory errored while reporting fog.data_diretory_info.
+(Potentially because they were removed between `read_dir` and the iteration).
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    label: "Fog Subdir Entry Metadata Err"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_metadata_err ;;
+    group_label: "Fog"
+    group_item_label: "Subdir Entry Metadata Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Entry Metadata Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_subdir_entry_metadata_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many dir entries per data subdirectory errored while retrieving their metadata
+while reporting fog.data_diretory_info.
+"
+  }
+
+  dimension: metrics__labeled_boolean__fog_subdir_err {
+    label: "Fog Subdir Err"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
+    type: string
+    group_label: "Fog"
+    group_item_label: "Subdir Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_subdir_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which data subdirectories suffered an err between is_dir and read_dir
+while reporting fog.data_diretory_info.
+(Potentially because they were removed in the interim).
+"
+  }
+
   dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     label: "Fog Validation Gvsv Audio Stream Init"
     hidden: yes
@@ -9573,7 +9629,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_bytes_evicted_compressor__sum {
     label: "Hpack Bytes Evicted Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9592,7 +9648,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_bytes_evicted_decompressor__sum {
     label: "Hpack Bytes Evicted Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9611,7 +9667,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__sum {
     label: "Hpack Bytes Evicted Ratio Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9630,7 +9686,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_decompressor__sum {
     label: "Hpack Bytes Evicted Ratio Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9649,7 +9705,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_elements_evicted_compressor__sum {
     label: "Hpack Elements Evicted Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9668,7 +9724,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_elements_evicted_decompressor__sum {
     label: "Hpack Elements Evicted Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9687,7 +9743,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_peak_count_compressor__sum {
     label: "Hpack Peak Count Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9706,7 +9762,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_peak_count_decompressor__sum {
     label: "Hpack Peak Count Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9725,7 +9781,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_peak_size_compressor__sum {
     label: "Hpack Peak Size Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -9744,7 +9800,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_peak_size_decompressor__sum {
     label: "Hpack Peak Size Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12721,6 +12777,24 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
+"
+  }
+
+  dimension: metrics__counter__media_mkv_content_count {
+    label: "Media Mkv Content Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Mkv Content Count"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_mkv_content_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times MKV content is detected as a source for media playback. This metric does not determine whether the MKV file is valid; it is simply a count based on the sniffed MIME type.
 "
   }
 
@@ -20787,6 +20861,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__sum {
+    label: "Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.sum ;;
+    type: number
+    group_label: "Quotamanager Initialize Temporarystorage"
+    group_item_label: "Non Persisted Zero Usage Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Logs the number of non-persisted origins that have zero quota-charged usage after full temporary storage initialization. These origins do not store any real data but still contribute to internal bookkeeping by having directories and files created on disk, which can unnecessarily increase initialization costs. Measuring how many such origins exist in the wild helps evaluate whether the temporary storage cleanup logic should be updated to clear them. This in turn can guide potential optimizations and improve the performance of temporary storage initialization over time, while also helping to detect unexpected regressions. Note: Non-persisted origins can be cleared when they have no data, while persisted origins cannot be cleared even at zero usage because the persisted flag is currently stored alongside the origin data and would be lost.
+"
+  }
+
   dimension: metrics__timing_distribution__quotamanager_initialize_temporarystorage_total_time_excluding_suspend__sum {
     label: "Quotamanager Initialize Temporarystorage Total Time Excluding Suspend Sum"
     hidden: no
@@ -22109,7 +22201,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_settings_iw__sum {
     label: "Spdy Settings Iw Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_settings_iw.sum ;;
     type: number
     group_label: "Spdy"
@@ -22147,7 +22239,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__spdy_syn_ratio__sum {
     label: "Spdy Syn Ratio Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.spdy_syn_ratio.sum ;;
     type: number
     group_label: "Spdy"
@@ -22166,7 +22258,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__spdy_syn_reply_ratio__sum {
     label: "Spdy Syn Reply Ratio Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.spdy_syn_reply_ratio.sum ;;
     type: number
     group_label: "Spdy"
@@ -22185,7 +22277,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__memory_distribution__spdy_syn_reply_size__sum {
     label: "Spdy Syn Reply Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_syn_reply_size.sum ;;
     type: number
     group_label: "Spdy"
@@ -22204,7 +22296,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_syn_size__sum {
     label: "Spdy Syn Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_syn_size.sum ;;
     type: number
     group_label: "Spdy"
@@ -22558,6 +22650,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "complete TLS connect that used TLS Session Resumption (collected at same time as SSL_TIME_UNTIL_HANDSHAKE_FINISHED)
 This metric was generated to correspond to the Legacy Telemetry boolean histogram SSL_RESUMED_SESSION.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__sum {
+    label: "SSL Scts From Tiled Logs Per Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.sum ;;
+    type: number
+    group_label: "SSL"
+    group_item_label: "Scts From Tiled Logs Per Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for SSL Scts From Tiled Logs Per Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/ssl_scts_from_tiled_logs_per_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Histogram of the number of Signed Certificate Timestamps from tiled logs per TLS connection from all sources (embedded / OCSP Stapling / TLS handshake). Bucket 0 counts the cases when no SCTs from tiled logs were received, or none were extracted due to parsing errors.
 "
   }
 
@@ -31858,6 +31968,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: media_mkv_content_count {
+    type: sum
+    sql: ${metrics__counter__media_mkv_content_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_mkv_content_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_mkv_content_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_mkv_content_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_mkv_content_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: netwerk_parent_connect_timeout {
     type: sum
     sql: ${metrics__counter__netwerk_parent_connect_timeout} ;;
@@ -37828,19 +37963,19 @@ view: metrics__metrics__labeled_counter__dns_grace_period_renewal {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -37992,19 +38127,19 @@ view: metrics__metrics__labeled_counter__dom_innerwindows_with_mutation_listener
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -38461,6 +38596,88 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
 
 view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
   label: "Extensions - Startup Cache Read Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_subdir_entry_err {
+  label: "Fog - Subdir Entry Err"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_subdir_entry_metadata_err {
+  label: "Fog - Subdir Entry Metadata Err"
 
   dimension: document_id {
     type: string
@@ -39304,19 +39521,19 @@ view: metrics__metrics__labeled_counter__htmleditors_with_mutation_listeners_wit
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -51316,6 +51533,20 @@ view: metrics__metrics__custom_distribution__pwmgr_prompt_update_action__values 
   }
 }
 
+view: metrics__metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__readermode_download_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -51877,6 +52108,20 @@ view: metrics__metrics__custom_distribution__ssl_permanent_cert_error_overrides_
 }
 
 view: metrics__metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -53606,6 +53851,20 @@ view: metrics__metrics__labeled_boolean__data_storage_migration {
 }
 
 view: metrics__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__fog_subdir_err {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

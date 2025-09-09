@@ -131,6 +131,24 @@ view: interaction {
 "
   }
 
+  dimension: metrics__string__ad_internal_line_item_id {
+    label: "Ad Internal Line Item ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_internal_line_item_id ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Internal Line Item ID"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Internal Line Item ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_internal_line_item_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Internally generated identifier mapped to the ad partner line item used for internal reporting.
+"
+  }
+
   dimension: metrics__string__ad_line_item_id {
     label: "Ad Line Item ID"
     hidden: no

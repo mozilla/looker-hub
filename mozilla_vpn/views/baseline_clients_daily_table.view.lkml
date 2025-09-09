@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: baseline_clients_daily_table {
+  dimension: active_hours_sum {
+    sql: ${TABLE}.active_hours_sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string

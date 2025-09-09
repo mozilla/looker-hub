@@ -1633,6 +1633,30 @@ view: metrics_table {
     group_item_label: "Tabs Reload From URL Bar"
   }
 
+  dimension: metrics__counter__termsofuse_dismiss_count {
+    sql: ${TABLE}.metrics.counter.termsofuse_dismiss_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Termsofuse Dismiss Count"
+  }
+
+  dimension: metrics__counter__termsofuse_impression_count {
+    sql: ${TABLE}.metrics.counter.termsofuse_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Termsofuse Impression Count"
+  }
+
+  dimension: metrics__counter__termsofuse_remind_me_later_count {
+    sql: ${TABLE}.metrics.counter.termsofuse_remind_me_later_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Termsofuse Remind Me Later Count"
+  }
+
   dimension: metrics__counter__widget_l_tabs_open_url {
     sql: ${TABLE}.metrics.counter.widget_l_tabs_open_url ;;
     type: number
@@ -1711,6 +1735,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Datetime"
     group_item_label: "Raw Glean Validation First Run Hour"
+  }
+
+  dimension: metrics__datetime__raw_termsofuse_date {
+    sql: ${TABLE}.metrics.datetime.raw_termsofuse_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Termsofuse Date"
   }
 
   dimension: metrics__labeled_counter__bookmarks_add {
@@ -1991,6 +2023,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__nimbus_system_recorded_nimbus_context {
     sql: ${TABLE}.metrics.object.nimbus_system_recorded_nimbus_context ;;
     hidden: yes
@@ -2074,6 +2111,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Quantity"
     group_item_label: "Tabs Private Tabs Quantity"
+  }
+
+  dimension: metrics__quantity__termsofuse_version {
+    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Termsofuse Version"
   }
 
   dimension: metrics__quantity__windows_ipad_window_count {
@@ -3461,6 +3506,22 @@ view: metrics_table {
       year,
     ]
     label: "Metrics Datetime: Glean Validation First Run Hour"
+  }
+
+  dimension_group: metrics__datetime__termsofuse {
+    sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Termsofuse Date"
   }
 
   dimension_group: ping_info__parsed_end {

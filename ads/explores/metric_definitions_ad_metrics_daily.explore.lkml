@@ -9,7 +9,6 @@ include: "/looker-hub/ads/views/metric_definitions_ad_metrics_daily.view.lkml"
 explore: metric_definitions_ad_metrics_daily {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

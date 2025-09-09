@@ -2237,6 +2237,16 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__media_mkv_content_count {
+    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Media Mkv Content Count"
+    description: "The number of times MKV content is detected as a source for media playback. This metric does not determine whether the MKV file is valid; it is simply a count based on the sniffed MIME type.
+"
+  }
+
   dimension: metrics__counter__netwerk_parent_connect_timeout {
     sql: ${TABLE}.metrics.counter.netwerk_parent_connect_timeout ;;
     type: number
@@ -7594,6 +7604,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__count {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__sum {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__readermode_download_result__count {
     sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.count ;;
     type: number
@@ -8493,6 +8525,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
     sql: ${TABLE}.metrics.custom_distribution.ssl_reasons_for_not_false_starting.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__count {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Scts From Tiled Logs Per Connection"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__sum {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Scts From Tiled Logs Per Connection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.values ;;
     hidden: yes
   }
 
@@ -10463,6 +10517,15 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_boolean__fog_subdir_err {
+    sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
+    hidden: yes
+    description: "Which data subdirectories suffered an err between is_dir and read_dir
+while reporting fog.data_diretory_info.
+(Potentially because they were removed in the interim).
+"
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
     hidden: yes
@@ -11329,6 +11392,22 @@ builds.
     hidden: yes
     description: "The number of times an unexpected error has been raised while reading
 the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
+    hidden: yes
+    description: "How many dir entries per data subdirectory errored while reporting fog.data_diretory_info.
+(Potentially because they were removed between `read_dir` and the iteration).
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_metadata_err ;;
+    hidden: yes
+    description: "How many dir entries per data subdirectory errored while retrieving their metadata
+while reporting fog.data_diretory_info.
 "
   }
 
@@ -15445,6 +15524,28 @@ On Linux only a single monitor is returned for the primary screen.
 * refreshRate - (Windows only) The target screen refresh rate, in Hz, or 0 if unknown.
 * pseudoDislay - (Windows only) Whether the screen is a pseudo display.
 "
+  }
+
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
+    hidden: yes
+    description: "Information about the data directories and files used by FOG.
+
+Structure is an array of objects, each containing the following properties:
+- `dir_name`: The name of the directory. This is the subdirectory name relative to the
+  FOG data directory and should only include \"db\", \"events\", and \"pending_pings\".
+- `dir_exists`: Whether the directory exists. This should only be false on the first
+  run of FOG, or if the directory was deleted.
+- `dir_created`: The creation time of the directory, in seconds since the unix epoch. If
+  the directory does not exist, this will be `null` and if the time cannot be determined,
+  it will default to `0`.
+- `dir_modified`: The last modification time of the directory, in seconds since the unix
+  epoch. If the directory does not exist, this will be `null` and if the time cannot be
+  determined, it will default to `0`.
+- `file_count`: The number of files in the directory. If the directory does not exist,
+  this will be `0`.
+- `files`: An array of objects, each containing:
+  - `fil"
   }
 
   dimension: metrics__object__hdd_binary {
@@ -45951,6 +46052,20 @@ view: metrics_table__metrics__custom_distribution__pwmgr_prompt_update_action__v
   }
 }
 
+view: metrics_table__metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__readermode_download_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -46512,6 +46627,20 @@ view: metrics_table__metrics__custom_distribution__ssl_permanent_cert_error_over
 }
 
 view: metrics_table__metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -48241,6 +48370,20 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
 }
 
 view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__fog_subdir_err {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

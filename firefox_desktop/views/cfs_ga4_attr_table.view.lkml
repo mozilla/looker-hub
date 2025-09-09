@@ -194,11 +194,6 @@ view: cfs_ga4_attr_table {
     hidden: yes
   }
 
-  dimension: ga4_all_reported_stub_session_ids {
-    sql: ${TABLE}.ga4_all_reported_stub_session_ids ;;
-    hidden: yes
-  }
-
   dimension: ga4_browser {
     sql: ${TABLE}.ga4_browser ;;
     type: string
@@ -239,6 +234,16 @@ view: cfs_ga4_attr_table {
     hidden: yes
   }
 
+  dimension: ga4_distinct_experiment_branches_from_event_params {
+    sql: ${TABLE}.ga4_distinct_experiment_branches_from_event_params ;;
+    hidden: yes
+  }
+
+  dimension: ga4_distinct_experiment_ids_from_event_params {
+    sql: ${TABLE}.ga4_distinct_experiment_ids_from_event_params ;;
+    hidden: yes
+  }
+
   dimension: ga4_distinct_mediums_from_event_params {
     sql: ${TABLE}.ga4_distinct_mediums_from_event_params ;;
     hidden: yes
@@ -268,6 +273,18 @@ view: cfs_ga4_attr_table {
 
   dimension: ga4_first_content_from_event_params {
     sql: ${TABLE}.ga4_first_content_from_event_params ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ga4_first_experiment_branch_from_event_params {
+    sql: ${TABLE}.ga4_first_experiment_branch_from_event_params ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ga4_first_experiment_id_from_event_params {
+    sql: ${TABLE}.ga4_first_experiment_id_from_event_params ;;
     type: string
     suggest_persist_for: "24 hours"
   }
@@ -327,12 +344,6 @@ view: cfs_ga4_attr_table {
 
   dimension: ga4_last_reported_install_target {
     sql: ${TABLE}.ga4_last_reported_install_target ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: ga4_last_reported_stub_session_id {
-    sql: ${TABLE}.ga4_last_reported_stub_session_id ;;
     type: string
     suggest_persist_for: "24 hours"
   }
@@ -399,6 +410,12 @@ view: cfs_ga4_attr_table {
 
   dimension: ga4_region {
     sql: ${TABLE}.ga4_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ga4_stub_session_id {
+    sql: ${TABLE}.ga4_stub_session_id ;;
     type: string
     suggest_persist_for: "24 hours"
   }

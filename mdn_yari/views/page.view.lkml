@@ -80,7 +80,7 @@ view: page {
 
   dimension: metrics__string__navigator_viewport_breakpoint {
     label: "Navigator Viewport Breakpoint"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.navigator_viewport_breakpoint ;;
     type: string
     group_label: "Navigator"
@@ -136,7 +136,7 @@ expressed as a percentage.
 
   dimension: metrics__string__page_http_status {
     label: "Page HTTP Status"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_http_status ;;
     type: string
     group_label: "Page"
@@ -154,7 +154,7 @@ expressed as a percentage.
 
   dimension: metrics__string__page_is_baseline {
     label: "Page Is Baseline"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_is_baseline ;;
     type: string
     group_label: "Page"

@@ -1001,6 +1001,14 @@ view: metrics_table {
     group_item_label: "Preferences Inactive Tabs Enabled"
   }
 
+  dimension: metrics__boolean__preferences_isolated_content_processes_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_isolated_content_processes_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Isolated Content Processes Enabled"
+  }
+
   dimension: metrics__boolean__preferences_open_links_in_app_enabled {
     sql: ${TABLE}.metrics.boolean.preferences_open_links_in_app_enabled ;;
     type: yesno
@@ -2311,6 +2319,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Media Element In Page Count"
+  }
+
+  dimension: metrics__counter__media_mkv_content_count {
+    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Media Mkv Content Count"
   }
 
   dimension: metrics__counter__metrics_credit_cards_autofill_count {
@@ -7474,6 +7490,27 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__count {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__sum {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__readermode_download_result__count {
     sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.count ;;
     type: number
@@ -8353,6 +8390,27 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
     sql: ${TABLE}.metrics.custom_distribution.ssl_reasons_for_not_false_starting.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__count {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Scts From Tiled Logs Per Connection"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__sum {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Scts From Tiled Logs Per Connection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.values ;;
     hidden: yes
   }
 
@@ -10159,6 +10217,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__fog_subdir_err {
+    sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
     hidden: yes
@@ -10726,6 +10789,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
     sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_metadata_err ;;
     hidden: yes
   }
 
@@ -13783,6 +13856,11 @@ view: metrics_table {
 
   dimension: metrics__object__gfx_monitors {
     sql: ${TABLE}.metrics.object.gfx_monitors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
     hidden: yes
   }
 
@@ -47601,6 +47679,20 @@ view: metrics_table__metrics__custom_distribution__pwmgr_prompt_update_action__v
   }
 }
 
+view: metrics_table__metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__readermode_download_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -48176,6 +48268,20 @@ view: metrics_table__metrics__custom_distribution__ssl_permanent_cert_error_over
 }
 
 view: metrics_table__metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -49891,6 +49997,20 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
 }
 
 view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__fog_subdir_err {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

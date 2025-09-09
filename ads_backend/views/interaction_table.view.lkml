@@ -585,6 +585,16 @@ view: interaction_table {
 "
   }
 
+  dimension: metrics__string__ad_internal_line_item_id {
+    sql: ${TABLE}.metrics.string.ad_internal_line_item_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Ad Internal Line Item ID"
+    description: "Internally generated identifier mapped to the ad partner line item used for internal reporting.
+"
+  }
+
   dimension: metrics__string__ad_line_item_id {
     sql: ${TABLE}.metrics.string.ad_line_item_id ;;
     type: string
