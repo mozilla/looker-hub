@@ -9,24 +9,18 @@ view: metrics {
     sql: ${TABLE}.active_issue_display_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "active_issue_display_name associated with this record.
-"
   }
 
   dimension: active_issue_id {
     sql: ${TABLE}.active_issue_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "active_issue_id associated with this record.
-"
   }
 
   dimension: can_backfill {
     sql: ${TABLE}.can_backfill ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "can_backfill associated with this record.
-"
   }
 
   dimension: collections {
@@ -38,272 +32,216 @@ view: metrics {
     sql: ${TABLE}.critical_group_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "critical_group_count associated with this record.
-"
   }
 
   dimension: group_count {
     sql: ${TABLE}.group_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "group_count associated with this record.
-"
   }
 
   dimension: is_snoozed {
     sql: ${TABLE}.is_snoozed ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "is_snoozed associated with this record.
-"
   }
 
   dimension: latest_metric_runs {
     sql: ${TABLE}.latest_metric_runs ;;
     hidden: yes
-    description: "latest_metric_runs associated with this record.
-"
   }
 
   dimension: metric_configuration_bigconfig_namespace {
     sql: ${TABLE}.metric_configuration_bigconfig_namespace ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_bigconfig_namespace associated with this record.
-"
   }
 
   dimension: metric_configuration_dataset_id {
     sql: ${TABLE}.metric_configuration_dataset_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_dataset_id associated with this record.
-"
   }
 
   dimension: metric_configuration_description {
     sql: ${TABLE}.metric_configuration_description ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_description associated with this record.
-"
+  }
+
+  dimension: metric_configuration_dimension_display_name {
+    sql: ${TABLE}.metric_configuration_dimension_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: metric_configuration_dimension_id {
+    sql: ${TABLE}.metric_configuration_dimension_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_configuration_filters {
     sql: ${TABLE}.metric_configuration_filters ;;
     hidden: yes
-    description: "metric_configuration_filters associated with this record.
-"
   }
 
   dimension: metric_configuration_grain_seconds {
     sql: ${TABLE}.metric_configuration_grain_seconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_grain_seconds associated with this record.
-"
   }
 
   dimension: metric_configuration_group_bys {
     sql: ${TABLE}.metric_configuration_group_bys ;;
     hidden: yes
-    description: "metric_configuration_group_bys associated with this record.
-"
   }
 
   dimension: metric_configuration_id {
     sql: ${TABLE}.metric_configuration_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_id associated with this record.
-"
   }
 
   dimension: metric_configuration_is_lookback_using_current_time {
     sql: ${TABLE}.metric_configuration_is_lookback_using_current_time ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_is_lookback_using_current_time associated with this record.
-"
   }
 
   dimension: metric_configuration_is_table_metric {
     sql: ${TABLE}.metric_configuration_is_table_metric ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_is_table_metric associated with this record.
-"
   }
 
   dimension: metric_configuration_lookback_interval_type {
     sql: ${TABLE}.metric_configuration_lookback_interval_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_lookback_interval_type associated with this record.
-"
   }
 
   dimension: metric_configuration_lookback_interval_value {
     sql: ${TABLE}.metric_configuration_lookback_interval_value ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_lookback_interval_value associated with this record.
-"
   }
 
   dimension: metric_configuration_lookback_type {
     sql: ${TABLE}.metric_configuration_lookback_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_lookback_type associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_creation_state {
     sql: ${TABLE}.metric_configuration_metric_creation_state ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_creation_state associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_group_overrides {
     sql: ${TABLE}.metric_configuration_metric_group_overrides ;;
     hidden: yes
-    description: "metric_configuration_metric_group_overrides associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_schedule_named_schedule_cron {
     sql: ${TABLE}.metric_configuration_metric_schedule_named_schedule_cron ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_schedule_named_schedule_cron associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_schedule_named_schedule_id {
     sql: ${TABLE}.metric_configuration_metric_schedule_named_schedule_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_schedule_named_schedule_id associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_schedule_named_schedule_name {
     sql: ${TABLE}.metric_configuration_metric_schedule_named_schedule_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_schedule_named_schedule_name associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_schedule_schedule_frequency_interval_type {
     sql: ${TABLE}.metric_configuration_metric_schedule_schedule_frequency_interval_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_schedule_schedule_frequency_interval_type associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_schedule_schedule_frequency_interval_value {
     sql: ${TABLE}.metric_configuration_metric_schedule_schedule_frequency_interval_value ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_schedule_schedule_frequency_interval_value associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_type_is_metadata_metric {
     sql: ${TABLE}.metric_configuration_metric_type_is_metadata_metric ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_type_is_metadata_metric associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_type_is_table_metric {
     sql: ${TABLE}.metric_configuration_metric_type_is_table_metric ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_type_is_table_metric associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_type_predefined_metric_metric_name {
     sql: ${TABLE}.metric_configuration_metric_type_predefined_metric_metric_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_type_predefined_metric_metric_name associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_type_template_metric_aggregation_type {
     sql: ${TABLE}.metric_configuration_metric_type_template_metric_aggregation_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_type_template_metric_aggregation_type associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_type_template_metric_template_id {
     sql: ${TABLE}.metric_configuration_metric_type_template_metric_template_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_type_template_metric_template_id associated with this record.
-"
   }
 
   dimension: metric_configuration_metric_type_template_metric_template_name {
     sql: ${TABLE}.metric_configuration_metric_type_template_metric_template_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_metric_type_template_metric_template_name associated with this record.
-"
   }
 
   dimension: metric_configuration_name {
     sql: ${TABLE}.metric_configuration_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_name associated with this record.
-"
   }
 
   dimension: metric_configuration_notification_channels {
     sql: ${TABLE}.metric_configuration_notification_channels ;;
     hidden: yes
-    description: "metric_configuration_notification_channels associated with this record."
   }
 
   dimension: metric_configuration_parameters {
     sql: ${TABLE}.metric_configuration_parameters ;;
     hidden: yes
-    description: "metric_configuration_parameters associated with this record."
   }
 
   dimension: metric_configuration_rct_override {
     sql: ${TABLE}.metric_configuration_rct_override ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_rct_override associated with this record.
-"
   }
 
   dimension: metric_configuration_schedule_frequency_interval_type {
     sql: ${TABLE}.metric_configuration_schedule_frequency_interval_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_schedule_frequency_interval_type associated with this record.
-"
   }
 
   dimension: metric_configuration_schedule_frequency_interval_value {
     sql: ${TABLE}.metric_configuration_schedule_frequency_interval_value ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_schedule_frequency_interval_value associated with this record.
-"
   }
 
   dimension: metric_configuration_thresholds {
@@ -315,188 +253,142 @@ view: metrics {
     sql: ${TABLE}.metric_configuration_warehouse_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_configuration_warehouse_id associated with this record.
-"
   }
 
   dimension: metric_metadata_companion_metrics {
     sql: ${TABLE}.metric_metadata_companion_metrics ;;
     hidden: yes
-    description: "metric_metadata_companion_metrics associated with this record."
   }
 
   dimension: metric_metadata_created_at {
     sql: ${TABLE}.metric_metadata_created_at ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_created_at associated with this record.
-"
   }
 
   dimension: metric_metadata_current_metric_status {
     sql: ${TABLE}.metric_metadata_current_metric_status ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_current_metric_status associated with this record.
-"
   }
 
   dimension: metric_metadata_dataset_id {
     sql: ${TABLE}.metric_metadata_dataset_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_dataset_id associated with this record.
-"
   }
 
   dimension: metric_metadata_dataset_name {
     sql: ${TABLE}.metric_metadata_dataset_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_dataset_name associated with this record.
-"
   }
 
   dimension: metric_metadata_dataset_time_column_name {
     sql: ${TABLE}.metric_metadata_dataset_time_column_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_dataset_time_column_name associated with this record.
-"
   }
 
   dimension: metric_metadata_field_id {
     sql: ${TABLE}.metric_metadata_field_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_field_id associated with this record.
-"
   }
 
   dimension: metric_metadata_field_name {
     sql: ${TABLE}.metric_metadata_field_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_field_name associated with this record.
-"
   }
 
   dimension: metric_metadata_is_favorite {
     sql: ${TABLE}.metric_metadata_is_favorite ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_is_favorite associated with this record.
-"
   }
 
   dimension: metric_metadata_metric_history_begin_at {
     sql: ${TABLE}.metric_metadata_metric_history_begin_at ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_metric_history_begin_at associated with this record.
-"
   }
 
   dimension: metric_metadata_metric_history_end_at {
     sql: ${TABLE}.metric_metadata_metric_history_end_at ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_metric_history_end_at associated with this record.
-"
   }
 
   dimension: metric_metadata_run_at {
     sql: ${TABLE}.metric_metadata_run_at ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_run_at associated with this record.
-"
   }
 
   dimension: metric_metadata_schema_id {
     sql: ${TABLE}.metric_metadata_schema_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_schema_id associated with this record.
-"
   }
 
   dimension: metric_metadata_schema_name {
     sql: ${TABLE}.metric_metadata_schema_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_schema_name associated with this record.
-"
   }
 
   dimension: metric_metadata_statistic_full_name {
     sql: ${TABLE}.metric_metadata_statistic_full_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_statistic_full_name associated with this record.
-"
   }
 
   dimension: metric_metadata_statistic_name {
     sql: ${TABLE}.metric_metadata_statistic_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_statistic_name associated with this record.
-"
   }
 
   dimension: metric_metadata_warehouse_id {
     sql: ${TABLE}.metric_metadata_warehouse_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_warehouse_id associated with this record.
-"
   }
 
   dimension: metric_metadata_warehouse_name {
     sql: ${TABLE}.metric_metadata_warehouse_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_warehouse_name associated with this record.
-"
   }
 
   dimension: metric_metadata_workspace_id {
     sql: ${TABLE}.metric_metadata_workspace_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "metric_metadata_workspace_id associated with this record.
-"
   }
 
   dimension: no_value_group_count {
     sql: ${TABLE}.no_value_group_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "no_value_group_count associated with this record.
-"
   }
 
   dimension: reason_cannot_backfill {
     sql: ${TABLE}.reason_cannot_backfill ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Reason Cannot Backfill"
   }
 
   dimension: status {
     sql: ${TABLE}.status ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "status associated with this record.
-"
   }
 
   dimension: tags {
     sql: ${TABLE}.tags ;;
     hidden: yes
-    description: "tags associated with this record.
-"
   }
 
   dimension_group: refreshed_at {
@@ -512,8 +404,6 @@ view: metrics {
       quarter,
       year,
     ]
-    description: "refreshed_at associated with this record.
-"
   }
 
   sql_table_name: `moz-fx-data-shared-prod.bigeye_derived.metric_service_v1` ;;
@@ -538,14 +428,12 @@ view: metrics__latest_metric_runs {
     sql: ${TABLE}.exceptionClass ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Exception Class"
   }
 
   dimension: exceptionMessage {
     sql: ${TABLE}.exceptionMessage ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Exception Message"
   }
 
   dimension: failureReason {
@@ -569,28 +457,24 @@ view: metrics__latest_metric_runs {
   dimension: groupDimensions {
     sql: ${TABLE}.groupDimensions ;;
     hidden: yes
-    description: "Group Dimensions"
   }
 
   dimension: groupName {
     sql: ${TABLE}.groupName ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Group Name"
   }
 
   dimension: hasRowCounts {
     sql: ${TABLE}.hasRowCounts ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Has Row Counts"
   }
 
   dimension: hasRowsMatched {
     sql: ${TABLE}.hasRowsMatched ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Has Rows Matched"
   }
 
   dimension: id {

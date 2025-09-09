@@ -31,6 +31,7 @@ native_desktop_ad_metrics_image_url,
 native_desktop_ad_metrics_impressions,
 native_desktop_ad_metrics_pid,
 native_desktop_ad_metrics_position,
+native_desktop_ad_metrics_provider,
 native_desktop_ad_metrics_rate_type,
 native_desktop_ad_metrics_save_rate,
 native_desktop_ad_metrics_saves,
@@ -89,6 +90,7 @@ native_desktop_ad_metrics.image_url AS native_desktop_ad_metrics_image_url,
 native_desktop_ad_metrics.impressions AS native_desktop_ad_metrics_impressions,
 native_desktop_ad_metrics.pid AS native_desktop_ad_metrics_pid,
 native_desktop_ad_metrics.position AS native_desktop_ad_metrics_position,
+native_desktop_ad_metrics.provider AS native_desktop_ad_metrics_provider,
 native_desktop_ad_metrics.rate_type AS native_desktop_ad_metrics_rate_type,
 native_desktop_ad_metrics.save_rate AS native_desktop_ad_metrics_save_rate,
 native_desktop_ad_metrics.saves AS native_desktop_ad_metrics_saves,
@@ -163,6 +165,7 @@ native_desktop_ad_metrics_image_url,
 native_desktop_ad_metrics_impressions,
 native_desktop_ad_metrics_pid,
 native_desktop_ad_metrics_position,
+native_desktop_ad_metrics_provider,
 native_desktop_ad_metrics_rate_type,
 native_desktop_ad_metrics_save_rate,
 native_desktop_ad_metrics_saves,
@@ -348,6 +351,13 @@ native_desktop_ad_metrics_zone_name,
   dimension: position {
     sql: ${TABLE}.native_desktop_ad_metrics_position ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: provider {
+    sql: ${TABLE}.native_desktop_ad_metrics_provider ;;
+    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }

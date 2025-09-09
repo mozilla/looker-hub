@@ -31,6 +31,7 @@ native_desktop_ad_metrics_by_position_image_url,
 native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position_pid,
 native_desktop_ad_metrics_by_position_position,
+native_desktop_ad_metrics_by_position_provider,
 native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position_saves,
@@ -90,6 +91,7 @@ native_desktop_ad_metrics_by_position.image_url AS native_desktop_ad_metrics_by_
 native_desktop_ad_metrics_by_position.impressions AS native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position.pid AS native_desktop_ad_metrics_by_position_pid,
 native_desktop_ad_metrics_by_position.position AS native_desktop_ad_metrics_by_position_position,
+native_desktop_ad_metrics_by_position.provider AS native_desktop_ad_metrics_by_position_provider,
 native_desktop_ad_metrics_by_position.rate_type AS native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position.save_rate AS native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position.saves AS native_desktop_ad_metrics_by_position_saves,
@@ -165,6 +167,7 @@ native_desktop_ad_metrics_by_position_image_url,
 native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position_pid,
 native_desktop_ad_metrics_by_position_position,
+native_desktop_ad_metrics_by_position_provider,
 native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position_saves,
@@ -351,6 +354,13 @@ native_desktop_ad_metrics_by_position_zone_name,
   dimension: position {
     sql: ${TABLE}.native_desktop_ad_metrics_by_position_position ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: provider {
+    sql: ${TABLE}.native_desktop_ad_metrics_by_position_provider ;;
+    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
