@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_eos_sync_messaging_background_message
-    type: looker_line
-    fields: [
-      windows_10_eos_sync_messaging_background_message.submission_date,
-      windows_10_eos_sync_messaging_background_message.branch,
-      windows_10_eos_sync_messaging_background_message.point
-    ]
-    pivots: [
-      windows_10_eos_sync_messaging_background_message.branch
-    ]
-    filters:
-      windows_10_eos_sync_messaging_background_message.metric: 'uri_count'
-      windows_10_eos_sync_messaging_background_message.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: windows_10_eos_sync_messaging_background_message.submission_date
-    field_y: windows_10_eos_sync_messaging_background_message.point
-    log_scale: false
-    ci_lower: windows_10_eos_sync_messaging_background_message.lower
-    ci_upper: windows_10_eos_sync_messaging_background_message.upper
-    show_grid: true
-    listen:
-      Date: windows_10_eos_sync_messaging_background_message.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -96,41 +62,7 @@
     filters:
       windows_10_eos_sync_messaging_background_message.metric: 'search_count'
       windows_10_eos_sync_messaging_background_message.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: windows_10_eos_sync_messaging_background_message.submission_date
-    field_y: windows_10_eos_sync_messaging_background_message.point
-    log_scale: false
-    ci_lower: windows_10_eos_sync_messaging_background_message.lower
-    ci_upper: windows_10_eos_sync_messaging_background_message.upper
-    show_grid: true
-    listen:
-      Date: windows_10_eos_sync_messaging_background_message.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_eos_sync_messaging_background_message
-    type: looker_line
-    fields: [
-      windows_10_eos_sync_messaging_background_message.submission_date,
-      windows_10_eos_sync_messaging_background_message.branch,
-      windows_10_eos_sync_messaging_background_message.point
-    ]
-    pivots: [
-      windows_10_eos_sync_messaging_background_message.branch
-    ]
-    filters:
-      windows_10_eos_sync_messaging_background_message.metric: 'days_of_use'
-      windows_10_eos_sync_messaging_background_message.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -164,42 +96,8 @@
     filters:
       windows_10_eos_sync_messaging_background_message.metric: 'qualified_cumulative_days_of_use'
       windows_10_eos_sync_messaging_background_message.statistic: mean
-    row: 20
+    row: 10
     col: 0
-    width: 12
-    height: 8
-    field_x: windows_10_eos_sync_messaging_background_message.submission_date
-    field_y: windows_10_eos_sync_messaging_background_message.point
-    log_scale: false
-    ci_lower: windows_10_eos_sync_messaging_background_message.lower
-    ci_upper: windows_10_eos_sync_messaging_background_message.upper
-    show_grid: true
-    listen:
-      Date: windows_10_eos_sync_messaging_background_message.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_eos_sync_messaging_background_message
-    type: looker_line
-    fields: [
-      windows_10_eos_sync_messaging_background_message.submission_date,
-      windows_10_eos_sync_messaging_background_message.branch,
-      windows_10_eos_sync_messaging_background_message.point
-    ]
-    pivots: [
-      windows_10_eos_sync_messaging_background_message.branch
-    ]
-    filters:
-      windows_10_eos_sync_messaging_background_message.metric: 'retained'
-      windows_10_eos_sync_messaging_background_message.statistic: mean
-    row: 20
-    col: 12
     width: 12
     height: 8
     field_x: windows_10_eos_sync_messaging_background_message.submission_date
@@ -232,7 +130,41 @@
     filters:
       windows_10_eos_sync_messaging_background_message.metric: 'ad_clicks'
       windows_10_eos_sync_messaging_background_message.statistic: mean
-    row: 30
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: windows_10_eos_sync_messaging_background_message.submission_date
+    field_y: windows_10_eos_sync_messaging_background_message.point
+    log_scale: false
+    ci_lower: windows_10_eos_sync_messaging_background_message.lower
+    ci_upper: windows_10_eos_sync_messaging_background_message.upper
+    show_grid: true
+    listen:
+      Date: windows_10_eos_sync_messaging_background_message.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_eos_sync_messaging_background_message
+    type: looker_line
+    fields: [
+      windows_10_eos_sync_messaging_background_message.submission_date,
+      windows_10_eos_sync_messaging_background_message.branch,
+      windows_10_eos_sync_messaging_background_message.point
+    ]
+    pivots: [
+      windows_10_eos_sync_messaging_background_message.branch
+    ]
+    filters:
+      windows_10_eos_sync_messaging_background_message.metric: 'days_of_use'
+      windows_10_eos_sync_messaging_background_message.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -268,7 +200,7 @@
     filters:
       windows_10_eos_sync_messaging_background_message.metric: 'memory_total'
       windows_10_eos_sync_messaging_background_message.statistic: percentile
-    row: 30
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -281,6 +213,74 @@
     listen:
       Date: windows_10_eos_sync_messaging_background_message.submission_date
       Percentile: windows_10_eos_sync_messaging_background_message.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_eos_sync_messaging_background_message
+    type: looker_line
+    fields: [
+      windows_10_eos_sync_messaging_background_message.submission_date,
+      windows_10_eos_sync_messaging_background_message.branch,
+      windows_10_eos_sync_messaging_background_message.point
+    ]
+    pivots: [
+      windows_10_eos_sync_messaging_background_message.branch
+    ]
+    filters:
+      windows_10_eos_sync_messaging_background_message.metric: 'retained'
+      windows_10_eos_sync_messaging_background_message.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: windows_10_eos_sync_messaging_background_message.submission_date
+    field_y: windows_10_eos_sync_messaging_background_message.point
+    log_scale: false
+    ci_lower: windows_10_eos_sync_messaging_background_message.lower
+    ci_upper: windows_10_eos_sync_messaging_background_message.upper
+    show_grid: true
+    listen:
+      Date: windows_10_eos_sync_messaging_background_message.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_eos_sync_messaging_background_message
+    type: looker_line
+    fields: [
+      windows_10_eos_sync_messaging_background_message.submission_date,
+      windows_10_eos_sync_messaging_background_message.branch,
+      windows_10_eos_sync_messaging_background_message.point
+    ]
+    pivots: [
+      windows_10_eos_sync_messaging_background_message.branch
+    ]
+    filters:
+      windows_10_eos_sync_messaging_background_message.metric: 'uri_count'
+      windows_10_eos_sync_messaging_background_message.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: windows_10_eos_sync_messaging_background_message.submission_date
+    field_y: windows_10_eos_sync_messaging_background_message.point
+    log_scale: false
+    ci_lower: windows_10_eos_sync_messaging_background_message.lower
+    ci_upper: windows_10_eos_sync_messaging_background_message.upper
+    show_grid: true
+    listen:
+      Date: windows_10_eos_sync_messaging_background_message.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

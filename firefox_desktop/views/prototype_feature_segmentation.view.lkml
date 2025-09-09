@@ -1,0 +1,61 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
+view: prototype_feature_segmentation {
+  dimension: bucket {
+    sql: ${TABLE}.bucket ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: desktop_retention_metric_year {
+    sql: ${TABLE}.desktop_retention_metric_year ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: desktop_retention_new_profile_retention {
+    sql: ${TABLE}.desktop_retention_new_profile_retention ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: event_type {
+    sql: ${TABLE}.event_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: new_profiles {
+    sql: ${TABLE}.new_profiles ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: retained_week_4 {
+    sql: ${TABLE}.retained_week_4 ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension_group: desktop_retention_date_yoy {
+    sql: ${TABLE}.desktop_retention_date_yoy ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  sql_table_name: `moz-fx-data-shared-prod.firefox_desktop.prototype_user_segmentation_tabgroups_v2` ;;
+}
