@@ -35,6 +35,7 @@ native_desktop_ad_metrics_provider,
 native_desktop_ad_metrics_rate_type,
 native_desktop_ad_metrics_save_rate,
 native_desktop_ad_metrics_saves,
+native_desktop_ad_metrics_shepherd_line_item_id,
 native_desktop_ad_metrics_site_name,
 native_desktop_ad_metrics_spend,
 native_desktop_ad_metrics_spoc_id,
@@ -94,6 +95,7 @@ native_desktop_ad_metrics.provider AS native_desktop_ad_metrics_provider,
 native_desktop_ad_metrics.rate_type AS native_desktop_ad_metrics_rate_type,
 native_desktop_ad_metrics.save_rate AS native_desktop_ad_metrics_save_rate,
 native_desktop_ad_metrics.saves AS native_desktop_ad_metrics_saves,
+native_desktop_ad_metrics.shepherd_line_item_id AS native_desktop_ad_metrics_shepherd_line_item_id,
 native_desktop_ad_metrics.site_name AS native_desktop_ad_metrics_site_name,
 native_desktop_ad_metrics.spend AS native_desktop_ad_metrics_spend,
 native_desktop_ad_metrics.spoc_id AS native_desktop_ad_metrics_spoc_id,
@@ -169,6 +171,7 @@ native_desktop_ad_metrics_provider,
 native_desktop_ad_metrics_rate_type,
 native_desktop_ad_metrics_save_rate,
 native_desktop_ad_metrics_saves,
+native_desktop_ad_metrics_shepherd_line_item_id,
 native_desktop_ad_metrics_site_name,
 native_desktop_ad_metrics_spend,
 native_desktop_ad_metrics_spoc_id,
@@ -378,6 +381,13 @@ native_desktop_ad_metrics_zone_name,
 
   dimension: saves {
     sql: ${TABLE}.native_desktop_ad_metrics_saves ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: shepherd_line_item_id {
+    sql: ${TABLE}.native_desktop_ad_metrics_shepherd_line_item_id ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

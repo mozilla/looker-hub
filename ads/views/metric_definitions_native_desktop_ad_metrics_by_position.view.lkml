@@ -35,6 +35,7 @@ native_desktop_ad_metrics_by_position_provider,
 native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position_saves,
+native_desktop_ad_metrics_by_position_shepherd_line_item_id,
 native_desktop_ad_metrics_by_position_site_name,
 native_desktop_ad_metrics_by_position_spend,
 native_desktop_ad_metrics_by_position_spoc_id,
@@ -95,6 +96,7 @@ native_desktop_ad_metrics_by_position.provider AS native_desktop_ad_metrics_by_p
 native_desktop_ad_metrics_by_position.rate_type AS native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position.save_rate AS native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position.saves AS native_desktop_ad_metrics_by_position_saves,
+native_desktop_ad_metrics_by_position.shepherd_line_item_id AS native_desktop_ad_metrics_by_position_shepherd_line_item_id,
 native_desktop_ad_metrics_by_position.site_name AS native_desktop_ad_metrics_by_position_site_name,
 native_desktop_ad_metrics_by_position.spend AS native_desktop_ad_metrics_by_position_spend,
 native_desktop_ad_metrics_by_position.spoc_id AS native_desktop_ad_metrics_by_position_spoc_id,
@@ -171,6 +173,7 @@ native_desktop_ad_metrics_by_position_provider,
 native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position_saves,
+native_desktop_ad_metrics_by_position_shepherd_line_item_id,
 native_desktop_ad_metrics_by_position_site_name,
 native_desktop_ad_metrics_by_position_spend,
 native_desktop_ad_metrics_by_position_spoc_id,
@@ -381,6 +384,13 @@ native_desktop_ad_metrics_by_position_zone_name,
 
   dimension: saves {
     sql: ${TABLE}.native_desktop_ad_metrics_by_position_saves ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: shepherd_line_item_id {
+    sql: ${TABLE}.native_desktop_ad_metrics_by_position_shepherd_line_item_id ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
