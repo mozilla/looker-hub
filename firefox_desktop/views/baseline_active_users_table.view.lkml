@@ -191,6 +191,12 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: days_interacted_bits {
+    sql: ${TABLE}.days_interacted_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: days_seen_bits {
     sql: ${TABLE}.days_seen_bits ;;
     type: number
