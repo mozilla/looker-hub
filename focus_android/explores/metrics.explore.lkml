@@ -853,6 +853,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_decode_error_per_mime_type}) AS metrics__metrics__labeled_counter__media_decode_error_per_mime_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_decode_error_per_mime_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__media_mkv_codec_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_mkv_codec_type}) AS metrics__metrics__labeled_counter__media_mkv_codec_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_mkv_codec_type.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs}) AS metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs.document_id} ;;
