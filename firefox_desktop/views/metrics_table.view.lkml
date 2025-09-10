@@ -14370,6 +14370,13 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__media_mkv_codec_type {
+    sql: ${TABLE}.metrics.labeled_counter.media_mkv_codec_type ;;
+    hidden: yes
+    description: "Count the amount of the real world codec usage inside Matroska.
+"
+  }
+
   dimension: metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs {
     sql: ${TABLE}.metrics.labeled_counter.media_mp4_parse_sample_description_entries_have_multiple_codecs ;;
     hidden: yes

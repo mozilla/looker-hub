@@ -1073,6 +1073,22 @@ view: metrics_table {
     group_item_label: "Preferences Search Term Groups Enabled"
   }
 
+  dimension: metrics__boolean__preferences_show_non_sponsor_suggestions_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_show_non_sponsor_suggestions_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Show Non Sponsor Suggestions Enabled"
+  }
+
+  dimension: metrics__boolean__preferences_show_sponsor_suggestions_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_show_sponsor_suggestions_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Show Sponsor Suggestions Enabled"
+  }
+
   dimension: metrics__boolean__preferences_signed_in_sync {
     sql: ${TABLE}.metrics.boolean.preferences_signed_in_sync ;;
     type: yesno
@@ -11134,6 +11150,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__media_decode_error_per_mime_type {
     sql: ${TABLE}.metrics.labeled_counter.media_decode_error_per_mime_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__media_mkv_codec_type {
+    sql: ${TABLE}.metrics.labeled_counter.media_mkv_codec_type ;;
     hidden: yes
   }
 

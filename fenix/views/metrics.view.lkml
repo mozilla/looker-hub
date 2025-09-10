@@ -2783,6 +2783,44 @@ default: true
 "
   }
 
+  dimension: metrics__boolean__preferences_show_non_sponsor_suggestions_enabled {
+    label: "Preferences Show Non Sponsor Suggestions Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_show_non_sponsor_suggestions_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Show Non Sponsor Suggestions Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Show Non Sponsor Suggestions Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_show_non_sponsor_suggestions_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user has non sponsor search suggestions enabled
+default: true
+"
+  }
+
+  dimension: metrics__boolean__preferences_show_sponsor_suggestions_enabled {
+    label: "Preferences Show Sponsor Suggestions Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_show_sponsor_suggestions_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Show Sponsor Suggestions Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Show Sponsor Suggestions Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_show_sponsor_suggestions_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user has sponsor search suggestions enabled
+default: true
+"
+  }
+
   dimension: metrics__boolean__preferences_signed_in_sync {
     label: "Preferences Signed In Sync"
     hidden: no
@@ -15637,6 +15675,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_mkv_codec_type {
+    label: "Media Mkv Codec Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_mkv_codec_type ;;
+    group_label: "Media"
+    group_item_label: "Mkv Codec Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Codec Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mkv_codec_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the amount of the real world codec usage inside Matroska.
 "
   }
 
@@ -46291,6 +46346,47 @@ view: metrics__metrics__labeled_counter__media_codec_used {
 
 view: metrics__metrics__labeled_counter__media_decode_error_per_mime_type {
   label: "Media - Decode Error Per Mime Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_mkv_codec_type {
+  label: "Media - Mkv Codec Type"
 
   dimension: document_id {
     type: string
