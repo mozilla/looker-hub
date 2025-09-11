@@ -22,6 +22,30 @@ view: serp_events_table {
     hidden: yes
   }
 
+  dimension: browser_engagement_active_ticks {
+    sql: ${TABLE}.browser_engagement_active_ticks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: browser_engagement_max_concurrent_tab_count {
+    sql: ${TABLE}.browser_engagement_max_concurrent_tab_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: browser_engagement_tab_open_event_count {
+    sql: ${TABLE}.browser_engagement_tab_open_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: browser_engagement_uri_count {
+    sql: ${TABLE}.browser_engagement_uri_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: browser_version_info__is_major_release {
     sql: ${TABLE}.browser_version_info.is_major_release ;;
     type: yesno
@@ -60,6 +84,18 @@ view: serp_events_table {
     suggest_persist_for: "24 hours"
     group_label: "Browser Version Info"
     group_item_label: "Version"
+  }
+
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_timestamp {
@@ -115,6 +151,12 @@ view: serp_events_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: non_ad_engagements {
     sql: ${TABLE}.non_ad_engagements ;;
     hidden: yes
@@ -123,6 +165,12 @@ view: serp_events_table {
   dimension: non_ad_impressions {
     sql: ${TABLE}.non_ad_impressions ;;
     hidden: yes
+  }
+
+  dimension: normalized_app_name {
+    sql: ${TABLE}.normalized_app_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_channel {
@@ -185,6 +233,12 @@ view: serp_events_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: partner_code {
     sql: ${TABLE}.partner_code ;;
     type: string
@@ -197,8 +251,20 @@ view: serp_events_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: policies_is_enterprise {
+    sql: ${TABLE}.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: profile_group_id {
     sql: ${TABLE}.profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: region_home_region {
+    sql: ${TABLE}.region_home_region ;;
     type: string
     suggest_persist_for: "24 hours"
   }
@@ -218,6 +284,90 @@ view: serp_events_table {
   dimension: search_engine {
     sql: ${TABLE}.search_engine ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_default_display_name {
+    sql: ${TABLE}.search_engine_default_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_default_load_path {
+    sql: ${TABLE}.search_engine_default_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_default_overridden_by_third_party {
+    sql: ${TABLE}.search_engine_default_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_default_partner_code {
+    sql: ${TABLE}.search_engine_default_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_default_provider_id {
+    sql: ${TABLE}.search_engine_default_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_default_submission_url {
+    sql: ${TABLE}.search_engine_default_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_private_display_name {
+    sql: ${TABLE}.search_engine_private_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_private_load_path {
+    sql: ${TABLE}.search_engine_private_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_private_overridden_by_third_party {
+    sql: ${TABLE}.search_engine_private_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_private_partner_code {
+    sql: ${TABLE}.search_engine_private_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_private_provider_id {
+    sql: ${TABLE}.search_engine_private_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_engine_private_submission_url {
+    sql: ${TABLE}.search_engine_private_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: usage_is_default_browser {
+    sql: ${TABLE}.usage_is_default_browser ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: windows_build_number {
+    sql: ${TABLE}.windows_build_number ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 
