@@ -5796,6 +5796,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__sum {
+    label: "Places Database Semantic History Defragment Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.sum ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Database Semantic History Defragment Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Database Semantic History Defragment Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_database_semantic_history_defragment_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Time to defragment the semantic database (ms)
+"
+  }
+
   dimension: metrics__memory_distribution__places_database_semantic_history_filesize__sum {
     label: "Places Database Semantic History Filesize Sum"
     hidden: no
@@ -5811,6 +5829,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Semantic History database filesize (MB)
+"
+  }
+
+  dimension: metrics__quantity__places_database_semantic_history_wasted_percentage {
+    label: "Places Database Semantic History Wasted Percentage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.places_database_semantic_history_wasted_percentage ;;
+    type: number
+    group_label: "Places"
+    group_item_label: "Database Semantic History Wasted Percentage"
+
+    link: {
+      label: "Glean Dictionary reference for Places Database Semantic History Wasted Percentage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/places_database_semantic_history_wasted_percentage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "PLACES: Semantic History database wasted space in percentage (0-100)
 "
   }
 
@@ -88749,6 +88785,20 @@ view: metrics__metrics__timing_distribution__places_backups_daysfromlast__values
 }
 
 view: metrics__metrics__timing_distribution__places_backups_tojson__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_database_semantic_history_defragment_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

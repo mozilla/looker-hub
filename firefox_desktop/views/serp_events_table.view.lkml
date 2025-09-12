@@ -98,6 +98,11 @@ view: serp_events_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: document_id {
+    sql: ${TABLE}.document_id ;;
+    hidden: yes
+  }
+
   dimension: event_timestamp {
     sql: ${TABLE}.event_timestamp ;;
     type: number
@@ -239,6 +244,12 @@ view: serp_events_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: overridden_by_third_party {
+    sql: ${TABLE}.overridden_by_third_party ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: partner_code {
     sql: ${TABLE}.partner_code ;;
     type: string
@@ -355,6 +366,30 @@ view: serp_events_table {
 
   dimension: search_engine_private_submission_url {
     sql: ${TABLE}.search_engine_private_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_mode {
+    sql: ${TABLE}.search_mode ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: subsession_counter {
+    sql: ${TABLE}.subsession_counter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: subsession_end_time {
+    sql: ${TABLE}.subsession_end_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: subsession_start_time {
+    sql: ${TABLE}.subsession_start_time ;;
     type: string
     suggest_persist_for: "24 hours"
   }
