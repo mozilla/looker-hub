@@ -20160,6 +20160,16 @@ See `nsIXULRuntime.launcherProcessState`
     description: "The number of third-party PKCS#11 modules loaded."
   }
 
+  dimension: metrics__quantity__places_database_semantic_history_wasted_percentage {
+    sql: ${TABLE}.metrics.quantity.places_database_semantic_history_wasted_percentage ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Places Database Semantic History Wasted Percentage"
+    description: "PLACES: Semantic History database wasted space in percentage (0-100)
+"
+  }
+
   dimension: metrics__quantity__places_pages_need_frecency_recalculation {
     sql: ${TABLE}.metrics.quantity.places_pages_need_frecency_recalculation ;;
     type: number
@@ -45184,6 +45194,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__places_backups_tojson__values {
     sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Database Semantic History Defragment Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Database Semantic History Defragment Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Database Semantic History Defragment Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Database Semantic History Defragment Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Database Semantic History Defragment Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Database Semantic History Defragment Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Places Database Semantic History Defragment Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.values ;;
     hidden: yes
   }
 
@@ -73397,6 +73474,20 @@ view: metrics_table__metrics__timing_distribution__places_backups_daysfromlast__
 }
 
 view: metrics_table__metrics__timing_distribution__places_backups_tojson__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_database_semantic_history_defragment_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
