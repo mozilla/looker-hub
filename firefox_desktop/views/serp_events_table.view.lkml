@@ -114,6 +114,12 @@ view: serp_events_table {
     hidden: yes
   }
 
+  dimension: first_run_date {
+    sql: ${TABLE}.first_run_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: glean_client_id {
     sql: ${TABLE}.glean_client_id ;;
     type: string
@@ -186,6 +192,18 @@ view: serp_events_table {
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.normalized_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
   }

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       windows_ui_automation.branch
     ]
     filters:
-      windows_ui_automation.metric: 'active_hours'
+      windows_ui_automation.metric: 'retained'
       windows_ui_automation.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: windows_ui_automation
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       windows_ui_automation.submission_date,
       windows_ui_automation.branch,
+      windows_ui_automation.upper,
+      windows_ui_automation.lower,
       windows_ui_automation.point
     ]
     pivots: [
       windows_ui_automation.branch
     ]
     filters:
-      windows_ui_automation.metric: 'retained'
-      windows_ui_automation.statistic: mean
+      windows_ui_automation.metric: 'memory_total'
+      windows_ui_automation.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: windows_ui_automation.submission_date
+      Percentile: windows_ui_automation.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: windows_ui_automation
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       windows_ui_automation.submission_date,
       windows_ui_automation.branch,
-      windows_ui_automation.upper,
-      windows_ui_automation.lower,
       windows_ui_automation.point
     ]
     pivots: [
       windows_ui_automation.branch
     ]
     filters:
-      windows_ui_automation.metric: 'memory_total'
-      windows_ui_automation.statistic: percentile
+      windows_ui_automation.metric: 'active_hours'
+      windows_ui_automation.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: windows_ui_automation.submission_date
-      Percentile: windows_ui_automation.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

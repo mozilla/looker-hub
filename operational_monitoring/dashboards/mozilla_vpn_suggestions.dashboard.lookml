@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       mozilla_vpn_suggestions.branch
     ]
     filters:
-      mozilla_vpn_suggestions.metric: 'active_hours'
+      mozilla_vpn_suggestions.metric: 'retained'
       mozilla_vpn_suggestions.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: mozilla_vpn_suggestions
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       mozilla_vpn_suggestions.submission_date,
       mozilla_vpn_suggestions.branch,
+      mozilla_vpn_suggestions.upper,
+      mozilla_vpn_suggestions.lower,
       mozilla_vpn_suggestions.point
     ]
     pivots: [
       mozilla_vpn_suggestions.branch
     ]
     filters:
-      mozilla_vpn_suggestions.metric: 'retained'
-      mozilla_vpn_suggestions.statistic: mean
+      mozilla_vpn_suggestions.metric: 'memory_total'
+      mozilla_vpn_suggestions.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: mozilla_vpn_suggestions.submission_date
+      Percentile: mozilla_vpn_suggestions.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: mozilla_vpn_suggestions
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       mozilla_vpn_suggestions.submission_date,
       mozilla_vpn_suggestions.branch,
-      mozilla_vpn_suggestions.upper,
-      mozilla_vpn_suggestions.lower,
       mozilla_vpn_suggestions.point
     ]
     pivots: [
       mozilla_vpn_suggestions.branch
     ]
     filters:
-      mozilla_vpn_suggestions.metric: 'memory_total'
-      mozilla_vpn_suggestions.statistic: percentile
+      mozilla_vpn_suggestions.metric: 'active_hours'
+      mozilla_vpn_suggestions.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: mozilla_vpn_suggestions.submission_date
-      Percentile: mozilla_vpn_suggestions.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

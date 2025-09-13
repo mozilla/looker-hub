@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.metric: 'active_hours'
+      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.metric: 'retained'
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.submission_date,
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.branch,
+      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.upper,
+      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.lower,
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.point
     ]
     pivots: [
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.metric: 'retained'
-      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.statistic: mean
+      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.metric: 'memory_total'
+      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.submission_date
+      Percentile: disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.submission_date,
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.branch,
-      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.upper,
-      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.lower,
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.point
     ]
     pivots: [
       disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.metric: 'memory_total'
-      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.statistic: percentile
+      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.metric: 'active_hours'
+      disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.submission_date
-      Percentile: disable_enrollment_status_telemetry_for_firefox_desktop_nimbustelemetry_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       unified_search_button_callout_rollout_v1.branch
     ]
     filters:
-      unified_search_button_callout_rollout_v1.metric: 'active_hours'
+      unified_search_button_callout_rollout_v1.metric: 'retained'
       unified_search_button_callout_rollout_v1.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: unified_search_button_callout_rollout_v1
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       unified_search_button_callout_rollout_v1.submission_date,
       unified_search_button_callout_rollout_v1.branch,
+      unified_search_button_callout_rollout_v1.upper,
+      unified_search_button_callout_rollout_v1.lower,
       unified_search_button_callout_rollout_v1.point
     ]
     pivots: [
       unified_search_button_callout_rollout_v1.branch
     ]
     filters:
-      unified_search_button_callout_rollout_v1.metric: 'retained'
-      unified_search_button_callout_rollout_v1.statistic: mean
+      unified_search_button_callout_rollout_v1.metric: 'memory_total'
+      unified_search_button_callout_rollout_v1.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: unified_search_button_callout_rollout_v1.submission_date
+      Percentile: unified_search_button_callout_rollout_v1.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: unified_search_button_callout_rollout_v1
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       unified_search_button_callout_rollout_v1.submission_date,
       unified_search_button_callout_rollout_v1.branch,
-      unified_search_button_callout_rollout_v1.upper,
-      unified_search_button_callout_rollout_v1.lower,
       unified_search_button_callout_rollout_v1.point
     ]
     pivots: [
       unified_search_button_callout_rollout_v1.branch
     ]
     filters:
-      unified_search_button_callout_rollout_v1.metric: 'memory_total'
-      unified_search_button_callout_rollout_v1.statistic: percentile
+      unified_search_button_callout_rollout_v1.metric: 'active_hours'
+      unified_search_button_callout_rollout_v1.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: unified_search_button_callout_rollout_v1.submission_date
-      Percentile: unified_search_button_callout_rollout_v1.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
