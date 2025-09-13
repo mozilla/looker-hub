@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       one_click_set_to_default_new_users_rollout.branch
     ]
     filters:
-      one_click_set_to_default_new_users_rollout.metric: 'active_hours'
+      one_click_set_to_default_new_users_rollout.metric: 'retained'
       one_click_set_to_default_new_users_rollout.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: one_click_set_to_default_new_users_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       one_click_set_to_default_new_users_rollout.submission_date,
       one_click_set_to_default_new_users_rollout.branch,
+      one_click_set_to_default_new_users_rollout.upper,
+      one_click_set_to_default_new_users_rollout.lower,
       one_click_set_to_default_new_users_rollout.point
     ]
     pivots: [
       one_click_set_to_default_new_users_rollout.branch
     ]
     filters:
-      one_click_set_to_default_new_users_rollout.metric: 'retained'
-      one_click_set_to_default_new_users_rollout.statistic: mean
+      one_click_set_to_default_new_users_rollout.metric: 'memory_total'
+      one_click_set_to_default_new_users_rollout.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: one_click_set_to_default_new_users_rollout.submission_date
+      Percentile: one_click_set_to_default_new_users_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: one_click_set_to_default_new_users_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       one_click_set_to_default_new_users_rollout.submission_date,
       one_click_set_to_default_new_users_rollout.branch,
-      one_click_set_to_default_new_users_rollout.upper,
-      one_click_set_to_default_new_users_rollout.lower,
       one_click_set_to_default_new_users_rollout.point
     ]
     pivots: [
       one_click_set_to_default_new_users_rollout.branch
     ]
     filters:
-      one_click_set_to_default_new_users_rollout.metric: 'memory_total'
-      one_click_set_to_default_new_users_rollout.statistic: percentile
+      one_click_set_to_default_new_users_rollout.metric: 'active_hours'
+      one_click_set_to_default_new_users_rollout.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: one_click_set_to_default_new_users_rollout.submission_date
-      Percentile: one_click_set_to_default_new_users_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

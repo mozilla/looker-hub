@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       unified_api_rollout_android_beta.branch
     ]
     filters:
-      unified_api_rollout_android_beta.metric: 'active_hours'
+      unified_api_rollout_android_beta.metric: 'retained'
       unified_api_rollout_android_beta.statistic: mean
     row: 0
     col: 0
@@ -112,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: unified_api_rollout_android_beta
-    type: looker_line
-    fields: [
-      unified_api_rollout_android_beta.submission_date,
-      unified_api_rollout_android_beta.branch,
-      unified_api_rollout_android_beta.point
-    ]
-    pivots: [
-      unified_api_rollout_android_beta.branch
-    ]
-    filters:
-      unified_api_rollout_android_beta.metric: 'tagged_sap_searches'
-      unified_api_rollout_android_beta.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: unified_api_rollout_android_beta.submission_date
-    field_y: unified_api_rollout_android_beta.point
-    log_scale: false
-    ci_lower: unified_api_rollout_android_beta.lower
-    ci_upper: unified_api_rollout_android_beta.upper
-    show_grid: true
-    listen:
-      Date: unified_api_rollout_android_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -164,8 +130,8 @@
     filters:
       unified_api_rollout_android_beta.metric: 'days_of_use'
       unified_api_rollout_android_beta.statistic: mean
-    row: 20
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: unified_api_rollout_android_beta.submission_date
@@ -180,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,10 +162,10 @@
       unified_api_rollout_android_beta.branch
     ]
     filters:
-      unified_api_rollout_android_beta.metric: 'retained'
+      unified_api_rollout_android_beta.metric: 'tagged_sap_searches'
       unified_api_rollout_android_beta.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: unified_api_rollout_android_beta.submission_date
@@ -231,6 +197,40 @@
     ]
     filters:
       unified_api_rollout_android_beta.metric: 'search_count'
+      unified_api_rollout_android_beta.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: unified_api_rollout_android_beta.submission_date
+    field_y: unified_api_rollout_android_beta.point
+    log_scale: false
+    ci_lower: unified_api_rollout_android_beta.lower
+    ci_upper: unified_api_rollout_android_beta.upper
+    show_grid: true
+    listen:
+      Date: unified_api_rollout_android_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: unified_api_rollout_android_beta
+    type: looker_line
+    fields: [
+      unified_api_rollout_android_beta.submission_date,
+      unified_api_rollout_android_beta.branch,
+      unified_api_rollout_android_beta.point
+    ]
+    pivots: [
+      unified_api_rollout_android_beta.branch
+    ]
+    filters:
+      unified_api_rollout_android_beta.metric: 'active_hours'
       unified_api_rollout_android_beta.statistic: mean
     row: 30
     col: 0

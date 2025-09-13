@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'active_hours'
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'retained'
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date,
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch,
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.upper,
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.lower,
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.point
     ]
     pivots: [
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'retained'
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'memory_total'
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
+      Percentile: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date,
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch,
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.upper,
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.lower,
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.point
     ]
     pivots: [
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'memory_total'
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: percentile
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'active_hours'
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
-      Percentile: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

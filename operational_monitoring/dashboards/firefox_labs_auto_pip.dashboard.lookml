@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       firefox_labs_auto_pip.branch
     ]
     filters:
-      firefox_labs_auto_pip.metric: 'active_hours'
+      firefox_labs_auto_pip.metric: 'retained'
       firefox_labs_auto_pip.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: firefox_labs_auto_pip
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       firefox_labs_auto_pip.submission_date,
       firefox_labs_auto_pip.branch,
+      firefox_labs_auto_pip.upper,
+      firefox_labs_auto_pip.lower,
       firefox_labs_auto_pip.point
     ]
     pivots: [
       firefox_labs_auto_pip.branch
     ]
     filters:
-      firefox_labs_auto_pip.metric: 'retained'
-      firefox_labs_auto_pip.statistic: mean
+      firefox_labs_auto_pip.metric: 'memory_total'
+      firefox_labs_auto_pip.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: firefox_labs_auto_pip.submission_date
+      Percentile: firefox_labs_auto_pip.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: firefox_labs_auto_pip
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       firefox_labs_auto_pip.submission_date,
       firefox_labs_auto_pip.branch,
-      firefox_labs_auto_pip.upper,
-      firefox_labs_auto_pip.lower,
       firefox_labs_auto_pip.point
     ]
     pivots: [
       firefox_labs_auto_pip.branch
     ]
     filters:
-      firefox_labs_auto_pip.metric: 'memory_total'
-      firefox_labs_auto_pip.statistic: percentile
+      firefox_labs_auto_pip.metric: 'active_hours'
+      firefox_labs_auto_pip.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: firefox_labs_auto_pip.submission_date
-      Percentile: firefox_labs_auto_pip.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.branch
     ]
     filters:
-      enforce_crlite_results_and_limit_use_of_ocsp_rollout.metric: 'active_hours'
+      enforce_crlite_results_and_limit_use_of_ocsp_rollout.metric: 'retained'
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: enforce_crlite_results_and_limit_use_of_ocsp_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.submission_date,
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.branch,
+      enforce_crlite_results_and_limit_use_of_ocsp_rollout.upper,
+      enforce_crlite_results_and_limit_use_of_ocsp_rollout.lower,
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.point
     ]
     pivots: [
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.branch
     ]
     filters:
-      enforce_crlite_results_and_limit_use_of_ocsp_rollout.metric: 'retained'
-      enforce_crlite_results_and_limit_use_of_ocsp_rollout.statistic: mean
+      enforce_crlite_results_and_limit_use_of_ocsp_rollout.metric: 'memory_total'
+      enforce_crlite_results_and_limit_use_of_ocsp_rollout.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: enforce_crlite_results_and_limit_use_of_ocsp_rollout.submission_date
+      Percentile: enforce_crlite_results_and_limit_use_of_ocsp_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: enforce_crlite_results_and_limit_use_of_ocsp_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.submission_date,
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.branch,
-      enforce_crlite_results_and_limit_use_of_ocsp_rollout.upper,
-      enforce_crlite_results_and_limit_use_of_ocsp_rollout.lower,
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.point
     ]
     pivots: [
       enforce_crlite_results_and_limit_use_of_ocsp_rollout.branch
     ]
     filters:
-      enforce_crlite_results_and_limit_use_of_ocsp_rollout.metric: 'memory_total'
-      enforce_crlite_results_and_limit_use_of_ocsp_rollout.statistic: percentile
+      enforce_crlite_results_and_limit_use_of_ocsp_rollout.metric: 'active_hours'
+      enforce_crlite_results_and_limit_use_of_ocsp_rollout.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: enforce_crlite_results_and_limit_use_of_ocsp_rollout.submission_date
-      Percentile: enforce_crlite_results_and_limit_use_of_ocsp_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       report_this_ad.branch
     ]
     filters:
-      report_this_ad.metric: 'active_hours'
+      report_this_ad.metric: 'retained'
       report_this_ad.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: report_this_ad
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       report_this_ad.submission_date,
       report_this_ad.branch,
+      report_this_ad.upper,
+      report_this_ad.lower,
       report_this_ad.point
     ]
     pivots: [
       report_this_ad.branch
     ]
     filters:
-      report_this_ad.metric: 'retained'
-      report_this_ad.statistic: mean
+      report_this_ad.metric: 'memory_total'
+      report_this_ad.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: report_this_ad.submission_date
+      Percentile: report_this_ad.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: report_this_ad
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       report_this_ad.submission_date,
       report_this_ad.branch,
-      report_this_ad.upper,
-      report_this_ad.lower,
       report_this_ad.point
     ]
     pivots: [
       report_this_ad.branch
     ]
     filters:
-      report_this_ad.metric: 'memory_total'
-      report_this_ad.statistic: percentile
+      report_this_ad.metric: 'active_hours'
+      report_this_ad.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: report_this_ad.submission_date
-      Percentile: report_this_ad.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

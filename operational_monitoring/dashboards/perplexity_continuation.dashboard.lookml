@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       perplexity_continuation.branch
     ]
     filters:
-      perplexity_continuation.metric: 'active_hours'
+      perplexity_continuation.metric: 'retained'
       perplexity_continuation.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: perplexity_continuation
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       perplexity_continuation.submission_date,
       perplexity_continuation.branch,
+      perplexity_continuation.upper,
+      perplexity_continuation.lower,
       perplexity_continuation.point
     ]
     pivots: [
       perplexity_continuation.branch
     ]
     filters:
-      perplexity_continuation.metric: 'retained'
-      perplexity_continuation.statistic: mean
+      perplexity_continuation.metric: 'memory_total'
+      perplexity_continuation.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: perplexity_continuation.submission_date
+      Percentile: perplexity_continuation.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: perplexity_continuation
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       perplexity_continuation.submission_date,
       perplexity_continuation.branch,
-      perplexity_continuation.upper,
-      perplexity_continuation.lower,
       perplexity_continuation.point
     ]
     pivots: [
       perplexity_continuation.branch
     ]
     filters:
-      perplexity_continuation.metric: 'memory_total'
-      perplexity_continuation.statistic: percentile
+      perplexity_continuation.metric: 'active_hours'
+      perplexity_continuation.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: perplexity_continuation.submission_date
-      Percentile: perplexity_continuation.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       rollout_local_network_access.branch
     ]
     filters:
-      rollout_local_network_access.metric: 'active_hours'
+      rollout_local_network_access.metric: 'retained'
       rollout_local_network_access.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: rollout_local_network_access
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       rollout_local_network_access.submission_date,
       rollout_local_network_access.branch,
+      rollout_local_network_access.upper,
+      rollout_local_network_access.lower,
       rollout_local_network_access.point
     ]
     pivots: [
       rollout_local_network_access.branch
     ]
     filters:
-      rollout_local_network_access.metric: 'retained'
-      rollout_local_network_access.statistic: mean
+      rollout_local_network_access.metric: 'memory_total'
+      rollout_local_network_access.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: rollout_local_network_access.submission_date
+      Percentile: rollout_local_network_access.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: rollout_local_network_access
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       rollout_local_network_access.submission_date,
       rollout_local_network_access.branch,
-      rollout_local_network_access.upper,
-      rollout_local_network_access.lower,
       rollout_local_network_access.point
     ]
     pivots: [
       rollout_local_network_access.branch
     ]
     filters:
-      rollout_local_network_access.metric: 'memory_total'
-      rollout_local_network_access.statistic: percentile
+      rollout_local_network_access.metric: 'active_hours'
+      rollout_local_network_access.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: rollout_local_network_access.submission_date
-      Percentile: rollout_local_network_access.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

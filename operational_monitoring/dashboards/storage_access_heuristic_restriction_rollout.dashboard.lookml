@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       storage_access_heuristic_restriction_rollout.branch
     ]
     filters:
-      storage_access_heuristic_restriction_rollout.metric: 'active_hours'
+      storage_access_heuristic_restriction_rollout.metric: 'retained'
       storage_access_heuristic_restriction_rollout.statistic: mean
     row: 0
     col: 0
@@ -180,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: storage_access_heuristic_restriction_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       storage_access_heuristic_restriction_rollout.submission_date,
       storage_access_heuristic_restriction_rollout.branch,
+      storage_access_heuristic_restriction_rollout.upper,
+      storage_access_heuristic_restriction_rollout.lower,
       storage_access_heuristic_restriction_rollout.point
     ]
     pivots: [
       storage_access_heuristic_restriction_rollout.branch
     ]
     filters:
-      storage_access_heuristic_restriction_rollout.metric: 'retained'
-      storage_access_heuristic_restriction_rollout.statistic: mean
+      storage_access_heuristic_restriction_rollout.metric: 'memory_total'
+      storage_access_heuristic_restriction_rollout.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: storage_access_heuristic_restriction_rollout.submission_date
+      Percentile: storage_access_heuristic_restriction_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: storage_access_heuristic_restriction_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       storage_access_heuristic_restriction_rollout.submission_date,
       storage_access_heuristic_restriction_rollout.branch,
-      storage_access_heuristic_restriction_rollout.upper,
-      storage_access_heuristic_restriction_rollout.lower,
       storage_access_heuristic_restriction_rollout.point
     ]
     pivots: [
       storage_access_heuristic_restriction_rollout.branch
     ]
     filters:
-      storage_access_heuristic_restriction_rollout.metric: 'memory_total'
-      storage_access_heuristic_restriction_rollout.statistic: percentile
+      storage_access_heuristic_restriction_rollout.metric: 'active_hours'
+      storage_access_heuristic_restriction_rollout.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: storage_access_heuristic_restriction_rollout.submission_date
-      Percentile: storage_access_heuristic_restriction_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
