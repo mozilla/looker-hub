@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: summarizer_mistral_model_full_rollout
-    type: looker_line
-    fields: [
-      summarizer_mistral_model_full_rollout.submission_date,
-      summarizer_mistral_model_full_rollout.branch,
-      summarizer_mistral_model_full_rollout.point
-    ]
-    pivots: [
-      summarizer_mistral_model_full_rollout.branch
-    ]
-    filters:
-      summarizer_mistral_model_full_rollout.metric: 'retained'
-      summarizer_mistral_model_full_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: summarizer_mistral_model_full_rollout.submission_date
-    field_y: summarizer_mistral_model_full_rollout.point
-    log_scale: false
-    ci_lower: summarizer_mistral_model_full_rollout.lower
-    ci_upper: summarizer_mistral_model_full_rollout.upper
-    show_grid: true
-    listen:
-      Date: summarizer_mistral_model_full_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -63,7 +29,75 @@
       summarizer_mistral_model_full_rollout.metric: 'ad_clicks'
       summarizer_mistral_model_full_rollout.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: summarizer_mistral_model_full_rollout.submission_date
+    field_y: summarizer_mistral_model_full_rollout.point
+    log_scale: false
+    ci_lower: summarizer_mistral_model_full_rollout.lower
+    ci_upper: summarizer_mistral_model_full_rollout.upper
+    show_grid: true
+    listen:
+      Date: summarizer_mistral_model_full_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: summarizer_mistral_model_full_rollout
+    type: looker_line
+    fields: [
+      summarizer_mistral_model_full_rollout.submission_date,
+      summarizer_mistral_model_full_rollout.branch,
+      summarizer_mistral_model_full_rollout.point
+    ]
+    pivots: [
+      summarizer_mistral_model_full_rollout.branch
+    ]
+    filters:
+      summarizer_mistral_model_full_rollout.metric: 'active_hours'
+      summarizer_mistral_model_full_rollout.statistic: mean
+    row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: summarizer_mistral_model_full_rollout.submission_date
+    field_y: summarizer_mistral_model_full_rollout.point
+    log_scale: false
+    ci_lower: summarizer_mistral_model_full_rollout.lower
+    ci_upper: summarizer_mistral_model_full_rollout.upper
+    show_grid: true
+    listen:
+      Date: summarizer_mistral_model_full_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: summarizer_mistral_model_full_rollout
+    type: looker_line
+    fields: [
+      summarizer_mistral_model_full_rollout.submission_date,
+      summarizer_mistral_model_full_rollout.branch,
+      summarizer_mistral_model_full_rollout.point
+    ]
+    pivots: [
+      summarizer_mistral_model_full_rollout.branch
+    ]
+    filters:
+      summarizer_mistral_model_full_rollout.metric: 'retained'
+      summarizer_mistral_model_full_rollout.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: summarizer_mistral_model_full_rollout.submission_date
@@ -97,7 +131,7 @@
       summarizer_mistral_model_full_rollout.metric: 'days_of_use'
       summarizer_mistral_model_full_rollout.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: summarizer_mistral_model_full_rollout.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       summarizer_mistral_model_full_rollout.metric: 'search_count'
-      summarizer_mistral_model_full_rollout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: summarizer_mistral_model_full_rollout.submission_date
-    field_y: summarizer_mistral_model_full_rollout.point
-    log_scale: false
-    ci_lower: summarizer_mistral_model_full_rollout.lower
-    ci_upper: summarizer_mistral_model_full_rollout.upper
-    show_grid: true
-    listen:
-      Date: summarizer_mistral_model_full_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: summarizer_mistral_model_full_rollout
-    type: looker_line
-    fields: [
-      summarizer_mistral_model_full_rollout.submission_date,
-      summarizer_mistral_model_full_rollout.branch,
-      summarizer_mistral_model_full_rollout.point
-    ]
-    pivots: [
-      summarizer_mistral_model_full_rollout.branch
-    ]
-    filters:
-      summarizer_mistral_model_full_rollout.metric: 'active_hours'
       summarizer_mistral_model_full_rollout.statistic: mean
     row: 20
     col: 0
