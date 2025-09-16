@@ -102,6 +102,48 @@ view: newtab_clients_daily_aggregates_table {
     description: "Firefox Desktop deployment channel"
   }
 
+  dimension: content_thumbs_down_clients {
+    sql: ${TABLE}.content_thumbs_down_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clients with at least one visit giving a thumbs down to content on the newtab in the default UI"
+  }
+
+  dimension: content_thumbs_down_count {
+    sql: ${TABLE}.content_thumbs_down_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of thumbs down interactions on content on the newtab in the default UI"
+  }
+
+  dimension: content_thumbs_down_visits {
+    sql: ${TABLE}.content_thumbs_down_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits with at least one thumbs down interaction on content on the newtab in the default UI"
+  }
+
+  dimension: content_thumbs_up_clients {
+    sql: ${TABLE}.content_thumbs_up_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clients with at least one visit giving a thumbs up to content on the newtab in the default UI"
+  }
+
+  dimension: content_thumbs_up_count {
+    sql: ${TABLE}.content_thumbs_up_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of thumbs up interactions on content on the newtab in the default UI"
+  }
+
+  dimension: content_thumbs_up_visits {
+    sql: ${TABLE}.content_thumbs_up_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits with at least one thumbs up interaction on content on the newtab in the default UI"
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -180,6 +222,27 @@ view: newtab_clients_daily_aggregates_table {
     description: "Count of clicks on Organic content with newtab opened in default ui"
   }
 
+  dimension: organic_content_dismissal_clients {
+    sql: ${TABLE}.organic_content_dismissal_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clients with at least one visit that dismissed organic content on the newtab in the default UI"
+  }
+
+  dimension: organic_content_dismissal_count {
+    sql: ${TABLE}.organic_content_dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of dismissals on organic content on the newtab in the default UI"
+  }
+
+  dimension: organic_content_dismissal_visits {
+    sql: ${TABLE}.organic_content_dismissal_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits with at least one dismissal of organic content on the newtab in the default UI"
+  }
+
   dimension: organic_content_enabled {
     sql: ${TABLE}.organic_content_enabled ;;
     type: yesno
@@ -213,6 +276,27 @@ view: newtab_clients_daily_aggregates_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Count of clicks on organic topsite with newtab opened in default ui"
+  }
+
+  dimension: organic_topsite_dismissal_clients {
+    sql: ${TABLE}.organic_topsite_dismissal_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clients with at least one visit that dismissed an organic topsite on the newtab in the default UI"
+  }
+
+  dimension: organic_topsite_dismissal_count {
+    sql: ${TABLE}.organic_topsite_dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of dismissals on organic topsites on the newtab in the default UI"
+  }
+
+  dimension: organic_topsite_dismissal_visits {
+    sql: ${TABLE}.organic_topsite_dismissal_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits with at least one dismissal of organic topsites on the newtab in the default UI"
   }
 
   dimension: organic_topsite_engagement_clients {
@@ -250,6 +334,27 @@ view: newtab_clients_daily_aggregates_table {
     description: "OS name of the host system"
   }
 
+  dimension: other_engagement_visits {
+    sql: ${TABLE}.other_engagement_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits associated with other interactions (e.g., wallpaper, topic_selection, sections) on the newtab in the default UI"
+  }
+
+  dimension: other_impression_count {
+    sql: ${TABLE}.other_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of impressions for other categories (e.g., wallpaper, topic_selection, sections) on the newtab in the default UI"
+  }
+
+  dimension: other_interaction_count {
+    sql: ${TABLE}.other_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of interactions for other categories (e.g., wallpaper, topic_selection, sections) on the newtab in the default UI"
+  }
+
   dimension: others_engagement_clients {
     sql: ${TABLE}.others_engagement_clients ;;
     type: number
@@ -264,11 +369,81 @@ view: newtab_clients_daily_aggregates_table {
     description: "Count of visits associated with wallpaper, topic_selection, sections with newtab opened in default ui"
   }
 
+  dimension: search_ad_click_clients {
+    sql: ${TABLE}.search_ad_click_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clients with at least one visit that clicked a search ad on the newtab in the default UI"
+  }
+
+  dimension: search_ad_click_count {
+    sql: ${TABLE}.search_ad_click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of search ad clicks on the newtab in the default UI"
+  }
+
+  dimension: search_ad_click_visits {
+    sql: ${TABLE}.search_ad_click_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits with at least one search ad click on the newtab in the default UI"
+  }
+
+  dimension: search_ad_impression_count {
+    sql: ${TABLE}.search_ad_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of search ad impressions on the newtab in the default UI"
+  }
+
+  dimension: search_engagement_clients {
+    sql: ${TABLE}.search_engagement_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clients with at least one visit having any search engagement on the newtab in the default UI"
+  }
+
+  dimension: search_engagement_visits {
+    sql: ${TABLE}.search_engagement_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits with any search engagement on the newtab in the default UI"
+  }
+
+  dimension: search_interaction_count {
+    sql: ${TABLE}.search_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of search interactions on the newtab in the default UI"
+  }
+
   dimension: sponsored_content_click_count {
     sql: ${TABLE}.sponsored_content_click_count ;;
     type: number
     suggest_persist_for: "24 hours"
     description: "Count of clicks on sponsored content with newtab opened in default ui"
+  }
+
+  dimension: sponsored_content_dismissal_clients {
+    sql: ${TABLE}.sponsored_content_dismissal_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clients with at least one visit that dismissed sponsored content on the newtab in the default UI"
+  }
+
+  dimension: sponsored_content_dismissal_count {
+    sql: ${TABLE}.sponsored_content_dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of dismissals on sponsored content on the newtab in the default UI"
+  }
+
+  dimension: sponsored_content_dismissal_visits {
+    sql: ${TABLE}.sponsored_content_dismissal_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits with at least one dismissal of sponsored content on the newtab in the default UI"
   }
 
   dimension: sponsored_content_enabled {
@@ -304,6 +479,27 @@ view: newtab_clients_daily_aggregates_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Count of clicks on sponsored topsite with newtab opened in default ui"
+  }
+
+  dimension: sponsored_topsite_dismissal_clients {
+    sql: ${TABLE}.sponsored_topsite_dismissal_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of clients with at least one visit that dismissed a sponsored topsite on the newtab in the default UI"
+  }
+
+  dimension: sponsored_topsite_dismissal_count {
+    sql: ${TABLE}.sponsored_topsite_dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of dismissals on sponsored topsites on the newtab in the default UI"
+  }
+
+  dimension: sponsored_topsite_dismissal_visits {
+    sql: ${TABLE}.sponsored_topsite_dismissal_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of visits with at least one dismissal of sponsored topsites on the newtab in the default UI"
   }
 
   dimension: sponsored_topsite_engagement_clients {
@@ -346,6 +542,20 @@ view: newtab_clients_daily_aggregates_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Count of widget engagement visits with newtab opened in default ui"
+  }
+
+  dimension: widget_impression_count {
+    sql: ${TABLE}.widget_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of widget impressions on the newtab in the default UI"
+  }
+
+  dimension: widget_interaction_count {
+    sql: ${TABLE}.widget_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of widget interactions on the newtab in the default UI"
   }
 
   dimension_group: submission {
