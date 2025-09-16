@@ -1,0 +1,59 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
+include: "/looker-hub/fenix/views/fx_suggest_api.view.lkml"
+include: "/looker-hub/fenix/datagroups/fx_suggest_api_last_updated.datagroup.lkml"
+
+explore: fx_suggest_api {
+  sql_always_where: ${fx_suggest_api.submission_date} >= '2010-01-01' ;;
+  view_label: " Fx_Suggest_Api"
+  description: "Explore for the fx_suggest_api ping. A ping representing a single interaction event with Firefox Suggestions API. Distinguishable by its `ping_type`. Does not contain a `client_id`."
+  view_name: fx_suggest_api
+
+  join: fx_suggest_api__metrics__labeled_counter__glean_error_invalid_label {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest_api.metrics__labeled_counter__glean_error_invalid_label}) AS fx_suggest_api__metrics__labeled_counter__glean_error_invalid_label ON ${fx_suggest_api.document_id} = ${fx_suggest_api__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
+  }
+
+  join: fx_suggest_api__metrics__labeled_counter__glean_error_invalid_overflow {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest_api.metrics__labeled_counter__glean_error_invalid_overflow}) AS fx_suggest_api__metrics__labeled_counter__glean_error_invalid_overflow ON ${fx_suggest_api.document_id} = ${fx_suggest_api__metrics__labeled_counter__glean_error_invalid_overflow.document_id} ;;
+  }
+
+  join: fx_suggest_api__metrics__labeled_counter__glean_error_invalid_state {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest_api.metrics__labeled_counter__glean_error_invalid_state}) AS fx_suggest_api__metrics__labeled_counter__glean_error_invalid_state ON ${fx_suggest_api.document_id} = ${fx_suggest_api__metrics__labeled_counter__glean_error_invalid_state.document_id} ;;
+  }
+
+  join: fx_suggest_api__metrics__labeled_counter__glean_error_invalid_value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest_api.metrics__labeled_counter__glean_error_invalid_value}) AS fx_suggest_api__metrics__labeled_counter__glean_error_invalid_value ON ${fx_suggest_api.document_id} = ${fx_suggest_api__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
+  }
+
+  join: fx_suggest_api__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest_api.events}) AS fx_suggest_api__events ;;
+  }
+
+  join: fx_suggest_api__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest_api__events.extra}) AS fx_suggest_api__events__extra ;;
+  }
+
+  join: fx_suggest_api__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest_api.ping_info__experiments}) AS fx_suggest_api__ping_info__experiments ;;
+  }
+
+  persist_with: fx_suggest_api_last_updated
+
+  always_filter: {
+    filters: [
+      channel: "release",
+      submission_date: "28 days",
+    ]
+  }
+}
