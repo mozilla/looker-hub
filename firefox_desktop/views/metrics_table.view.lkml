@@ -14977,6 +14977,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_local_network_access_prompts_shown {
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access_prompts_shown ;;
+    hidden: yes
+    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_proxy_info_type {
     sql: ${TABLE}.metrics.labeled_counter.networking_proxy_info_type ;;
     hidden: yes

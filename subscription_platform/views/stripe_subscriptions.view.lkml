@@ -142,6 +142,14 @@ view: stripe_subscriptions {
     group_item_label: "ID"
   }
 
+  dimension: customer__invoice_settings__default_payment_method_id {
+    sql: ${TABLE}.customer.invoice_settings.default_payment_method_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Customer Invoice Settings"
+    group_item_label: "Default Payment Method ID"
+  }
+
   dimension: customer__is_deleted {
     sql: ${TABLE}.customer.is_deleted ;;
     type: yesno
