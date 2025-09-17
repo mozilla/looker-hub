@@ -3479,7 +3479,7 @@ button in the URL bar.
 
   dimension: metrics__counter__termsofuse_dismiss_count {
     label: "Termsofuse Dismiss Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.termsofuse_dismiss_count ;;
     type: number
     group_label: "Termsofuse"
@@ -3497,7 +3497,7 @@ button in the URL bar.
 
   dimension: metrics__counter__termsofuse_impression_count {
     label: "Termsofuse Impression Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.termsofuse_impression_count ;;
     type: number
     group_label: "Termsofuse"
@@ -3515,7 +3515,7 @@ button in the URL bar.
 
   dimension: metrics__counter__termsofuse_remind_me_later_count {
     label: "Termsofuse Remind Me Later Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.termsofuse_remind_me_later_count ;;
     type: number
     group_label: "Termsofuse"
@@ -3533,7 +3533,7 @@ button in the URL bar.
 
   dimension: metrics__quantity__termsofuse_version {
     label: "Termsofuse Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
     type: number
     group_label: "Termsofuse"

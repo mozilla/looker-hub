@@ -1238,6 +1238,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_local_network_access}) AS metrics__metrics__labeled_counter__networking_local_network_access ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_local_network_access.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_local_network_access_prompts_shown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_local_network_access_prompts_shown}) AS metrics__metrics__labeled_counter__networking_local_network_access_prompts_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_local_network_access_prompts_shown.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_proxy_info_type {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_proxy_info_type}) AS metrics__metrics__labeled_counter__networking_proxy_info_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_proxy_info_type.document_id} ;;

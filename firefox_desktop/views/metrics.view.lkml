@@ -26815,6 +26815,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_local_network_access_prompts_shown {
+    label: "Networking Local Network Access Prompts Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access_prompts_shown ;;
+    group_label: "Networking"
+    group_item_label: "Local Network Access Prompts Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Access Prompts Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_local_network_access_prompts_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types.
+"
+  }
+
   dimension: metrics__counter__networking_local_network_blocked_tracker {
     label: "Networking Local Network Blocked Tracker"
     hidden: no
@@ -59137,6 +59154,47 @@ view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr 
 
 view: metrics__metrics__labeled_counter__networking_local_network_access {
   label: "Networking - Local Network Access"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_local_network_access_prompts_shown {
+  label: "Networking - Local Network Access Prompts Shown"
 
   dimension: document_id {
     type: string

@@ -7,7 +7,7 @@
 view: usage_reporting {
   dimension: metrics__datetime__termsofuse_date {
     label: "Termsofuse Date"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
     type: string
     group_label: "Termsofuse"
@@ -25,7 +25,7 @@ view: usage_reporting {
 
   dimension: metrics__quantity__termsofuse_version {
     label: "Termsofuse Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
     type: number
     group_label: "Termsofuse"
