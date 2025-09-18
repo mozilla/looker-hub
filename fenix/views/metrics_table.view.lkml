@@ -12942,7 +12942,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -14239,6 +14239,20 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "Update: whether the service is installed (after we already have an update ready)
 This metric was generated to correspond to the Legacy Telemetry boolean histogram UPDATE_SERVICE_INSTALLED_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_lookup_hit {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_hit ;;
+    hidden: yes
+    description: "Counts the number of times that a lookup hits a table. Keyed by table name.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_lookup_miss {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_miss ;;
+    hidden: yes
+    description: "Counts the number of times that a lookup misses a table. Keyed by table name.
 "
   }
 
