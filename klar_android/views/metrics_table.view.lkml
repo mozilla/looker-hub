@@ -13078,6 +13078,20 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__urlclassifier_lookup_hit {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_hit ;;
+    hidden: yes
+    description: "Counts the number of times that a lookup hits a table. Keyed by table name.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_lookup_miss {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_miss ;;
+    hidden: yes
+    description: "Counts the number of times that a lookup misses a table. Keyed by table name.
+"
+  }
+
   dimension: metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt {
     sql: ${TABLE}.metrics.labeled_counter.urlclassifier_vlps_metadata_corrupt ;;
     hidden: yes
