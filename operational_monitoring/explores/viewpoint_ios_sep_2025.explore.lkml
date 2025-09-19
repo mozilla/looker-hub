@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/rollout_local_network_access.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/rollout_local_network_access_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/viewpoint_ios_sep_2025.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/viewpoint_ios_sep_2025_last_updated.datagroup.lkml"
 
-explore: rollout_local_network_access {
+explore: viewpoint_ios_sep_2025 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: rollout_local_network_access {
   }
 
   hidden: yes
-  persist_with: rollout_local_network_access_last_updated
+  persist_with: viewpoint_ios_sep_2025_last_updated
 }
