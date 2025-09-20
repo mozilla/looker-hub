@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/moscary_rollout.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/moscary_rollout_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/android_compose_toolbar_refactor.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/android_compose_toolbar_refactor_last_updated.datagroup.lkml"
 
-explore: moscary_rollout {
+explore: android_compose_toolbar_refactor {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: moscary_rollout {
   }
 
   hidden: yes
-  persist_with: moscary_rollout_last_updated
+  persist_with: android_compose_toolbar_refactor_last_updated
 }
