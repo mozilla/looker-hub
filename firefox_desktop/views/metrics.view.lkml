@@ -4283,7 +4283,7 @@ Implies `fxa.account_enabled`.
 
   dimension: metrics__counter__glam_experiment_active_ticks {
     label: "Glam Experiment Active Ticks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_active_ticks ;;
     type: number
     group_label: "Glam Experiment"
@@ -4306,7 +4306,7 @@ of the experiment. See Bug 1947604 for more information.
 
   dimension: metrics__counter__glam_experiment_panel_shown {
     label: "Glam Experiment Panel Shown"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_panel_shown ;;
     type: number
     group_label: "Glam Experiment"
@@ -18949,7 +18949,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__counter__glam_experiment_cpu_time_bogus_values {
     label: "Glam Experiment CPU Time Bogus Values"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_cpu_time_bogus_values ;;
     type: number
     group_label: "Glam Experiment"
@@ -18968,7 +18968,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
     label: "Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -18987,7 +18987,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__sum {
     label: "Glam Experiment Largest Contentful Paint Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -19006,7 +19006,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__counter__glam_experiment_os_socket_limit_reached {
     label: "Glam Experiment OS Socket Limit Reached"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_os_socket_limit_reached ;;
     type: number
     group_label: "Glam Experiment"
@@ -19025,7 +19025,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_protect_time__sum {
     label: "Glam Experiment Protect Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -19044,7 +19044,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__sum {
     label: "Glam Experiment Sub Complete Load Net Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -19082,7 +19082,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__counter__glam_experiment_total_cpu_time_ms {
     label: "Glam Experiment Total CPU Time Ms"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_total_cpu_time_ms ;;
     type: number
     group_label: "Glam Experiment"
@@ -19101,7 +19101,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__counter__glam_experiment_used {
     label: "Glam Experiment Used"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_used ;;
     type: number
     group_label: "Glam Experiment"
@@ -25104,7 +25104,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
     label: "Networking Cookie Count Invalid First Party Partitioned In DB"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.networking_cookie_count_invalid_first_party_partitioned_in_db ;;
     type: number
     group_label: "Networking"
@@ -27577,7 +27577,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__networking_set_invalid_first_party_partitioned_cookie {
     label: "Networking Set Invalid First Party Partitioned Cookie"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.networking_set_invalid_first_party_partitioned_cookie ;;
     type: number
     group_label: "Networking"
