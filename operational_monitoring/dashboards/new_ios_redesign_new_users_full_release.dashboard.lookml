@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       new_ios_redesign_new_users_full_release.branch
     ]
     filters:
-      new_ios_redesign_new_users_full_release.metric: 'search_count'
+      new_ios_redesign_new_users_full_release.metric: 'ad_clicks'
       new_ios_redesign_new_users_full_release.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       new_ios_redesign_new_users_full_release.branch
     ]
     filters:
-      new_ios_redesign_new_users_full_release.metric: 'ad_clicks'
+      new_ios_redesign_new_users_full_release.metric: 'search_count'
       new_ios_redesign_new_users_full_release.statistic: mean
     row: 20
     col: 0
