@@ -551,11 +551,15 @@ contextual_services_private:
 device_manufacturer_partnerships:
   glean_app: false
   owners:
-  - mbowerman@mozilla.com
+  - betling@mozilla.com
   - kik@mozilla.com
   pretty_name: Device Manufacturer Partnerships
   spoke: looker-spoke-default
   views:
+    fenix_distribution_deals:
+      tables:
+      - table: moz-fx-data-shared-prod.device_manufacturer_partnerships.fenix_distribution_deals
+      type: table_view
     shipment_and_activation_vivo:
       tables:
       - table: mozdata.device_manufacturer_partnerships.shipment_and_activation_vivo
