@@ -6914,6 +6914,57 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__search_suggestions_ohttp_aborted_requests {
+    label: "Search Suggestions Ohttp Aborted Requests"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_ohttp_aborted_requests ;;
+    group_label: "Search Suggestions Ohttp"
+    group_item_label: "Aborted Requests"
+
+    link: {
+      label: "Glean Dictionary reference for Search Suggestions Ohttp Aborted Requests"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_suggestions_ohttp_aborted_requests"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of aborted search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_suggestions_ohttp_failed_requests {
+    label: "Search Suggestions Ohttp Failed Requests"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_ohttp_failed_requests ;;
+    group_label: "Search Suggestions Ohttp"
+    group_item_label: "Failed Requests"
+
+    link: {
+      label: "Glean Dictionary reference for Search Suggestions Ohttp Failed Requests"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_suggestions_ohttp_failed_requests"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of failed search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_suggestions_ohttp_successful_requests {
+    label: "Search Suggestions Ohttp Successful Requests"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_ohttp_successful_requests ;;
+    group_label: "Search Suggestions Ohttp"
+    group_item_label: "Successful Requests"
+
+    link: {
+      label: "Glean Dictionary reference for Search Suggestions Ohttp Successful Requests"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_suggestions_ohttp_successful_requests"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of successful search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+"
+  }
+
   dimension: metrics__labeled_counter__search_suggestions_successful_requests {
     label: "Search Suggestions Successful Requests"
     hidden: yes
@@ -62056,6 +62107,129 @@ view: metrics__metrics__labeled_counter__search_suggestions_failed_requests {
   }
 }
 
+view: metrics__metrics__labeled_counter__search_suggestions_ohttp_aborted_requests {
+  label: "Search Suggestions Ohttp - Aborted Requests"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__search_suggestions_ohttp_failed_requests {
+  label: "Search Suggestions Ohttp - Failed Requests"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__search_suggestions_ohttp_successful_requests {
+  label: "Search Suggestions Ohttp - Successful Requests"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__search_suggestions_successful_requests {
   label: "Search Suggestions - Successful Requests"
 
@@ -81926,6 +82100,95 @@ view: metrics__metrics__labeled_timing_distribution__search_suggestions_latency 
 }
 
 view: metrics__metrics__labeled_timing_distribution__search_suggestions_latency__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__search_suggestions_ohttp_latency {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__search_suggestions_ohttp_latency__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -15483,6 +15483,27 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__labeled_counter__search_suggestions_ohttp_aborted_requests {
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_ohttp_aborted_requests ;;
+    hidden: yes
+    description: "Counts the number of aborted search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_suggestions_ohttp_failed_requests {
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_ohttp_failed_requests ;;
+    hidden: yes
+    description: "Counts the number of failed search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_suggestions_ohttp_successful_requests {
+    sql: ${TABLE}.metrics.labeled_counter.search_suggestions_ohttp_successful_requests ;;
+    hidden: yes
+    description: "Counts the number of successful search suggestion fetches per search engine. Only records config engines using their short IDs ('id', not 'identifier') as labels.
+"
+  }
+
   dimension: metrics__labeled_counter__search_suggestions_successful_requests {
     sql: ${TABLE}.metrics.labeled_counter.search_suggestions_successful_requests ;;
     hidden: yes
@@ -17569,8 +17590,16 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine when not using OHTTP. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
+This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__search_suggestions_ohttp_latency {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_ohttp_latency ;;
+    hidden: yes
+    description: "Records the latencies (ms) of search suggestions fetches per search engine when using OHTTP. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
 "
   }
 
@@ -19433,8 +19462,7 @@ Structure is an array of objects, each containing the following properties:
   determined, it will default to `0`.
 - `file_count`: The number of files in the directory. If the directory does not exist,
   this will be `0`.
-- `files`: An array of objects, each containing:
-  - `fil"
+- `error_message`: If there was an error accessing the di"
   }
 
   dimension: metrics__object__hdd_binary {
@@ -66462,6 +66490,95 @@ view: metrics_table__metrics__labeled_timing_distribution__search_suggestions_la
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__search_suggestions_latency__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__search_suggestions_ohttp_latency {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__search_suggestions_ohttp_latency__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

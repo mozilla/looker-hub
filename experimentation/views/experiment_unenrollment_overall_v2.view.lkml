@@ -17,6 +17,12 @@ view: experiment_unenrollment_overall_v2 {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
