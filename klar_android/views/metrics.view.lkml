@@ -27641,6 +27641,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__sum {
+    label: "Webrtcdtls Key Exchange Algorithm Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.sum ;;
+    type: number
+    group_label: "Webrtcdtls"
+    group_item_label: "Key Exchange Algorithm Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Key Exchange Algorithm Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/webrtcdtls_key_exchange_algorithm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL Handshake Key Exchange Algorithm (null=0, rsa=1, dh=2, ecdh=4, ecdh_hybrid=8)
+"
+  }
+
   dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
     label: "Webrtcdtls Protocol Version"
     hidden: yes
@@ -53432,6 +53450,20 @@ view: metrics__metrics__custom_distribution__webrtc_video_quality_inbound_packet
 }
 
 view: metrics__metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

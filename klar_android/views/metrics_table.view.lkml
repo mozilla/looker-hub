@@ -10244,6 +10244,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Webrtcdtls Key Exchange Algorithm"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Webrtcdtls Key Exchange Algorithm"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__websockets_handshake_type__count {
     sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.count ;;
     type: number
@@ -15572,8 +15594,7 @@ Structure is an array of objects, each containing the following properties:
   determined, it will default to `0`.
 - `file_count`: The number of files in the directory. If the directory does not exist,
   this will be `0`.
-- `files`: An array of objects, each containing:
-  - `fil"
+- `error_message`: If there was an error accessing the di"
   }
 
   dimension: metrics__object__hdd_binary {
@@ -47747,6 +47768,20 @@ view: metrics_table__metrics__custom_distribution__webrtc_video_quality_inbound_
 }
 
 view: metrics_table__metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

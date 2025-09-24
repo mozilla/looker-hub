@@ -1608,6 +1608,16 @@ Corresponds to the value of the `MOZ_UPDATER` define.
 "
   }
 
+  dimension: metrics__boolean__urlbar_pref_switch_tabs_search_all_containers {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_switch_tabs_search_all_containers ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Switch Tabs Search All Containers"
+    description: "Whether the \"Switch to Tab\" feature searches across all containers. Corresponds to the value of the `browser.urlbar.switchTabs.searchAllContainers` pref.
+"
+  }
+
   dimension: metrics__boolean__widget_dark_mode {
     sql: ${TABLE}.metrics.boolean.widget_dark_mode ;;
     type: yesno
@@ -11947,6 +11957,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Webrtcdtls Key Exchange Algorithm"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Webrtcdtls Key Exchange Algorithm"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__websockets_handshake_type__count {
     sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.count ;;
     type: number
@@ -17590,9 +17622,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine when not using OHTTP. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
-This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 
@@ -57656,6 +57687,20 @@ view: metrics_table__metrics__custom_distribution__webrtc_video_quality_inbound_
 }
 
 view: metrics_table__metrics__custom_distribution__webrtc_video_quality_outbound_packetloss_rate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
