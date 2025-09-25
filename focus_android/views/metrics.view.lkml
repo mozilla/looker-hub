@@ -20611,6 +20611,27 @@ e.g. 16446
 "
   }
 
+  dimension: metrics__labeled_counter__profiles_creation_place {
+    label: "Profiles Creation Place"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.profiles_creation_place ;;
+    group_label: "Profiles"
+    group_item_label: "Creation Place"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles Creation Place"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/profiles_creation_place"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracking where profiles have been created.  The `legacy_forced` refers to
+usage of `MOZ_LEGACY_HOME=1` while `legacy_existing` is for the case an
+existing legacy profile was detected. The `xdg_default` accounts for lack
+of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
+`xdg_config` refers to existing `XDG_CONFIG_HOME`.
+"
+  }
+
   dimension: metrics__quantity__profiles_first_use_date {
     label: "Profiles First Use Date"
     hidden: no
@@ -46277,6 +46298,47 @@ view: metrics__metrics__labeled_counter__printing_target_type {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__profiles_creation_place {
+  label: "Profiles - Creation Place"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
