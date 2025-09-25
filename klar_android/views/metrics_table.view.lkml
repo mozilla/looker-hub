@@ -12821,6 +12821,17 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__profiles_creation_place {
+    sql: ${TABLE}.metrics.labeled_counter.profiles_creation_place ;;
+    hidden: yes
+    description: "Tracking where profiles have been created.  The `legacy_forced` refers to
+usage of `MOZ_LEGACY_HOME=1` while `legacy_existing` is for the case an
+existing legacy profile was detected. The `xdg_default` accounts for lack
+of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
+`xdg_config` refers to existing `XDG_CONFIG_HOME`.
+"
+  }
+
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
     hidden: yes

@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/context_id_rotation_every_15_days.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/context_id_rotation_every_15_days_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/etp_strict_message_nightly.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/etp_strict_message_nightly_last_updated.datagroup.lkml"
 
-explore: context_id_rotation_every_15_days {
+explore: etp_strict_message_nightly {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: context_id_rotation_every_15_days {
   }
 
   hidden: yes
-  persist_with: context_id_rotation_every_15_days_last_updated
+  persist_with: etp_strict_message_nightly_last_updated
 }

@@ -1453,6 +1453,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__printing_target_type}) AS metrics__metrics__labeled_counter__printing_target_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__printing_target_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__profiles_creation_place {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__profiles_creation_place}) AS metrics__metrics__labeled_counter__profiles_creation_place ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__profiles_creation_place.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_form_autofill_result}) AS metrics__metrics__labeled_counter__pwmgr_form_autofill_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_form_autofill_result.document_id} ;;

@@ -203,6 +203,14 @@ view: events_stream {
     group_item_label: "Telemetry SDK Build"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
