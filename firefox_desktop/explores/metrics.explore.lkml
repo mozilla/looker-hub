@@ -1993,6 +1993,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__private_attribution_save_impression}) AS metrics__metrics__labeled_counter__private_attribution_save_impression ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__private_attribution_save_impression.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__profiles_creation_place {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__profiles_creation_place}) AS metrics__metrics__labeled_counter__profiles_creation_place ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__profiles_creation_place.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown}) AS metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown.document_id} ;;
