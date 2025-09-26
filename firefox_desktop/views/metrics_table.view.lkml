@@ -12209,6 +12209,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__search_suggestions_ohttp_request_counter {
+    sql: ${TABLE}.metrics.dual_labeled_counter.search_suggestions_ohttp_request_counter ;;
+    hidden: yes
+    description: "Counts the number of search suggestion requests for OHTTP.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__security_content_signature_verification_errors {
     sql: ${TABLE}.metrics.dual_labeled_counter.security_content_signature_verification_errors ;;
     hidden: yes
@@ -15362,6 +15369,17 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.private_attribution_save_impression ;;
     hidden: yes
     description: "The count of outcomes for the saveImpression API
+"
+  }
+
+  dimension: metrics__labeled_counter__profiles_creation_place {
+    sql: ${TABLE}.metrics.labeled_counter.profiles_creation_place ;;
+    hidden: yes
+    description: "Tracking where profiles have been created.  The `legacy_forced` refers to
+usage of `MOZ_LEGACY_HOME=1` while `legacy_existing` is for the case an
+existing legacy profile was detected. The `xdg_default` accounts for lack
+of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
+`xdg_config` refers to existing `XDG_CONFIG_HOME`.
 "
   }
 
@@ -58174,6 +58192,33 @@ view: metrics_table__metrics__dual_labeled_counter__page_load_error {
 }
 
 view: metrics_table__metrics__dual_labeled_counter__page_load_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__search_suggestions_ohttp_request_counter {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__search_suggestions_ohttp_request_counter__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
