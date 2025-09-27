@@ -18839,6 +18839,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__sum {
+    label: "Perf Cold Applink Process Launch To Load URI Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Cold Applink Process Launch To Load URI Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Cold Applink Process Launch To Load URI Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/perf_cold_applink_process_launch_to_load_uri"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration from cold process launch to load URI for an android applink.
+"
+  }
+
   dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
     label: "Perf Js Exec Asm Js Sum"
     hidden: no
@@ -66859,6 +66877,20 @@ view: metrics__metrics__timing_distribution__ocsp_request_time_success__values {
 }
 
 view: metrics__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
