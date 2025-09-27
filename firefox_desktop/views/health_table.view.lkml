@@ -662,8 +662,7 @@ Structure is an array of objects, each containing the following properties:
   determined, it will default to `0`.
 - `file_count`: The number of files in the directory. If the directory does not exist,
   this will be `0`.
-- `files`: An array of objects, each containing:
-  - `fil"
+- `error_message`: If there was an error accessing the di"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -1025,6 +1024,36 @@ for the purpose of experimentation enrollment.
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__values {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics UUID"
+    group_item_label: "Legacy Telemetry Client ID"
+    description: "The client_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
+in pings near when the data upload pref is disabled (if Telemetry gets
+to go first), or between when a client_id has been removed and when it
+has been regenerated.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics UUID"
+    group_item_label: "Legacy Telemetry Profile Group ID"
+    description: "The profile_group_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
   }
 
   dimension: normalized_app_name {

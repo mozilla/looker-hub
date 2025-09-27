@@ -4540,10 +4540,6 @@ growth:
       tables:
       - table: mozdata.fenix.new_profile_activation_clients
       type: table_view
-    ios_app_campaign_stats:
-      tables:
-      - table: moz-fx-data-shared-prod.apple_ads_external.ios_app_campaign_stats_v1
-      type: table_view
     operating_system_usage:
       tables:
       - table: mozdata.cloudflare.os_usage
