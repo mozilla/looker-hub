@@ -39585,6 +39585,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics Timing Distribution Perf Cold Applink Main To Load URI"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__histogram_type {

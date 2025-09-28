@@ -336,6 +336,7 @@ view: holiday {
     ]
     convert_tz: no
     datatype: date
+    description: "Submission Date"
   }
 
   sql_table_name: `mozdata.external.holidays` ;;
