@@ -236,6 +236,24 @@ In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
+  dimension: metrics__counter__glean_health_init_count {
+    label: "Glean Health Init Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_health_init_count ;;
+    type: number
+    group_label: "Glean Health"
+    group_item_label: "Init Count"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health Init Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_health_init_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A running count of how many times the Glean SDK has been initialized.
+"
+  }
+
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
     label: "Glean Upload Deleted Pings After Quota Hit"
     hidden: no
@@ -1121,6 +1139,31 @@ Most samples are expected to be below the 10s timeout used.
     link: {
       label: "Glean Dictionary reference for Glean Error Preinit Tasks Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_preinit_tasks_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_health_init_count {
+    type: sum
+    sql: ${metrics__counter__glean_health_init_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health Init Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_health_init_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_health_init_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_health_init_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health Init Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_health_init_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

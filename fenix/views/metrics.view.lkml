@@ -21751,7 +21751,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The duration from cold process launch to load URI for an android applink.
+    description: "The duration from cold process launch to load URI for an android cold applink.
 "
   }
 

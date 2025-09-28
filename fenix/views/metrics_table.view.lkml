@@ -12964,7 +12964,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -16843,6 +16843,13 @@ On Linux only a single monitor is returned for the primary screen.
 * contentsScaleFactor - The number of device pixels per desktop pixel for this screen.
 * refreshRate - (Windows only) The target screen refresh rate, in Hz, or 0 if unknown.
 * pseudoDislay - (Windows only) Whether the screen is a pseudo display.
+"
+  }
+
+  dimension: metrics__object__glean_database_load_sizes {
+    sql: ${TABLE}.metrics.object.glean_database_load_sizes ;;
+    hidden: yes
+    description: "The size of the db file during specific phases of initialization.
 "
   }
 

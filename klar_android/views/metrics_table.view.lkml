@@ -15587,6 +15587,13 @@ On Linux only a single monitor is returned for the primary screen.
 "
   }
 
+  dimension: metrics__object__glean_database_load_sizes {
+    sql: ${TABLE}.metrics.object.glean_database_load_sizes ;;
+    hidden: yes
+    description: "The size of the db file during specific phases of initialization.
+"
+  }
+
   dimension: metrics__object__glean_health_data_directory_info {
     sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
     hidden: yes

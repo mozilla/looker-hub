@@ -473,6 +473,16 @@ In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
+  dimension: metrics__counter__glean_health_init_count {
+    sql: ${TABLE}.metrics.counter.glean_health_init_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Glean Health Init Count"
+    description: "A running count of how many times the Glean SDK has been initialized.
+"
+  }
+
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number

@@ -19480,6 +19480,13 @@ Mapped to client_info.attribution.ext in datasets.
 "
   }
 
+  dimension: metrics__object__glean_database_load_sizes {
+    sql: ${TABLE}.metrics.object.glean_database_load_sizes ;;
+    hidden: yes
+    description: "The size of the db file during specific phases of initialization.
+"
+  }
+
   dimension: metrics__object__glean_distribution_ext {
     sql: ${TABLE}.metrics.object.glean_distribution_ext ;;
     hidden: yes

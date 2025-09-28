@@ -2726,6 +2726,13 @@ the currently selected wallpaper if it's not the default.
     hidden: yes
   }
 
+  dimension: metrics__object__glean_database_load_sizes {
+    sql: ${TABLE}.metrics.object.glean_database_load_sizes ;;
+    hidden: yes
+    description: "The size of the db file during specific phases of initialization.
+"
+  }
+
   dimension: metrics__object__glean_health_data_directory_info {
     sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
     hidden: yes
@@ -2744,8 +2751,7 @@ Structure is an array of objects, each containing the following properties:
   determined, it will default to `0`.
 - `file_count`: The number of files in the directory. If the directory does not exist,
   this will be `0`.
-- `files`: An array of objects, each containing:
-  - `fil"
+- `error_message`: If there was an error accessing the di"
   }
 
   dimension: metrics__object__nimbus_system_recorded_nimbus_context {
