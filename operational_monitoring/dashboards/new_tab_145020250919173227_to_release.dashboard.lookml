@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_145020250919173227_to_release
-    type: looker_line
-    fields: [
-      new_tab_145020250919173227_to_release.submission_date,
-      new_tab_145020250919173227_to_release.branch,
-      new_tab_145020250919173227_to_release.point
-    ]
-    pivots: [
-      new_tab_145020250919173227_to_release.branch
-    ]
-    filters:
-      new_tab_145020250919173227_to_release.metric: 'search_count'
-      new_tab_145020250919173227_to_release.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_tab_145020250919173227_to_release.submission_date
-    field_y: new_tab_145020250919173227_to_release.point
-    log_scale: false
-    ci_lower: new_tab_145020250919173227_to_release.lower
-    ci_upper: new_tab_145020250919173227_to_release.upper
-    show_grid: true
-    listen:
-      Date: new_tab_145020250919173227_to_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       new_tab_145020250919173227_to_release.metric: 'retained'
+      new_tab_145020250919173227_to_release.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_tab_145020250919173227_to_release.submission_date
+    field_y: new_tab_145020250919173227_to_release.point
+    log_scale: false
+    ci_lower: new_tab_145020250919173227_to_release.lower
+    ci_upper: new_tab_145020250919173227_to_release.upper
+    show_grid: true
+    listen:
+      Date: new_tab_145020250919173227_to_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_145020250919173227_to_release
+    type: looker_line
+    fields: [
+      new_tab_145020250919173227_to_release.submission_date,
+      new_tab_145020250919173227_to_release.branch,
+      new_tab_145020250919173227_to_release.point
+    ]
+    pivots: [
+      new_tab_145020250919173227_to_release.branch
+    ]
+    filters:
+      new_tab_145020250919173227_to_release.metric: 'ad_clicks'
       new_tab_145020250919173227_to_release.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       new_tab_145020250919173227_to_release.branch
     ]
     filters:
-      new_tab_145020250919173227_to_release.metric: 'active_hours'
+      new_tab_145020250919173227_to_release.metric: 'search_count'
       new_tab_145020250919173227_to_release.statistic: mean
     row: 10
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       new_tab_145020250919173227_to_release.branch
     ]
     filters:
-      new_tab_145020250919173227_to_release.metric: 'ad_clicks'
+      new_tab_145020250919173227_to_release.metric: 'active_hours'
       new_tab_145020250919173227_to_release.statistic: mean
     row: 30
     col: 12

@@ -83,6 +83,12 @@ view: holiday {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: dia_de_los_muertos {
+    sql: ${TABLE}.dia_de_los_muertos ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: dussehra {
     sql: ${TABLE}.dussehra ;;
     type: number
@@ -202,6 +208,12 @@ view: holiday {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: mid_autumn_festival {
+    sql: ${TABLE}.mid_autumn_festival ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: mx_independence_day {
     sql: ${TABLE}.mx_independence_day ;;
     type: number
@@ -276,6 +288,12 @@ view: holiday {
 
   dimension: us_labor_day {
     sql: ${TABLE}.us_labor_day ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: us_martin_luther_king_jr_day {
+    sql: ${TABLE}.us_martin_luther_king_jr_day ;;
     type: number
     suggest_persist_for: "24 hours"
   }
