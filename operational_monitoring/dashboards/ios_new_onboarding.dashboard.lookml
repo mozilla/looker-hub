@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_new_onboarding
-    type: looker_line
-    fields: [
-      ios_new_onboarding.submission_date,
-      ios_new_onboarding.branch,
-      ios_new_onboarding.point
-    ]
-    pivots: [
-      ios_new_onboarding.branch
-    ]
-    filters:
-      ios_new_onboarding.metric: 'search_count'
-      ios_new_onboarding.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_new_onboarding.submission_date
-    field_y: ios_new_onboarding.point
-    log_scale: false
-    ci_lower: ios_new_onboarding.lower
-    ci_upper: ios_new_onboarding.upper
-    show_grid: true
-    listen:
-      Date: ios_new_onboarding.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -63,6 +29,40 @@
       ios_new_onboarding.metric: 'retained'
       ios_new_onboarding.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_new_onboarding.submission_date
+    field_y: ios_new_onboarding.point
+    log_scale: false
+    ci_lower: ios_new_onboarding.lower
+    ci_upper: ios_new_onboarding.upper
+    show_grid: true
+    listen:
+      Date: ios_new_onboarding.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_new_onboarding
+    type: looker_line
+    fields: [
+      ios_new_onboarding.submission_date,
+      ios_new_onboarding.branch,
+      ios_new_onboarding.point
+    ]
+    pivots: [
+      ios_new_onboarding.branch
+    ]
+    filters:
+      ios_new_onboarding.metric: 'ad_clicks'
+      ios_new_onboarding.statistic: mean
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       ios_new_onboarding.branch
     ]
     filters:
-      ios_new_onboarding.metric: 'active_hours'
+      ios_new_onboarding.metric: 'search_count'
       ios_new_onboarding.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       ios_new_onboarding.branch
     ]
     filters:
-      ios_new_onboarding.metric: 'ad_clicks'
+      ios_new_onboarding.metric: 'active_hours'
       ios_new_onboarding.statistic: mean
     row: 20
     col: 0

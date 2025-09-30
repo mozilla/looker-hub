@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_sections_follow_block_v3
-    type: looker_line
-    fields: [
-      firefox_labs_sections_follow_block_v3.submission_date,
-      firefox_labs_sections_follow_block_v3.branch,
-      firefox_labs_sections_follow_block_v3.point
-    ]
-    pivots: [
-      firefox_labs_sections_follow_block_v3.branch
-    ]
-    filters:
-      firefox_labs_sections_follow_block_v3.metric: 'search_count'
-      firefox_labs_sections_follow_block_v3.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_sections_follow_block_v3.submission_date
-    field_y: firefox_labs_sections_follow_block_v3.point
-    log_scale: false
-    ci_lower: firefox_labs_sections_follow_block_v3.lower
-    ci_upper: firefox_labs_sections_follow_block_v3.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_sections_follow_block_v3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       firefox_labs_sections_follow_block_v3.metric: 'retained'
+      firefox_labs_sections_follow_block_v3.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_labs_sections_follow_block_v3.submission_date
+    field_y: firefox_labs_sections_follow_block_v3.point
+    log_scale: false
+    ci_lower: firefox_labs_sections_follow_block_v3.lower
+    ci_upper: firefox_labs_sections_follow_block_v3.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_sections_follow_block_v3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_sections_follow_block_v3
+    type: looker_line
+    fields: [
+      firefox_labs_sections_follow_block_v3.submission_date,
+      firefox_labs_sections_follow_block_v3.branch,
+      firefox_labs_sections_follow_block_v3.point
+    ]
+    pivots: [
+      firefox_labs_sections_follow_block_v3.branch
+    ]
+    filters:
+      firefox_labs_sections_follow_block_v3.metric: 'ad_clicks'
       firefox_labs_sections_follow_block_v3.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       firefox_labs_sections_follow_block_v3.branch
     ]
     filters:
-      firefox_labs_sections_follow_block_v3.metric: 'active_hours'
+      firefox_labs_sections_follow_block_v3.metric: 'search_count'
       firefox_labs_sections_follow_block_v3.statistic: mean
     row: 10
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       firefox_labs_sections_follow_block_v3.branch
     ]
     filters:
-      firefox_labs_sections_follow_block_v3.metric: 'ad_clicks'
+      firefox_labs_sections_follow_block_v3.metric: 'active_hours'
       firefox_labs_sections_follow_block_v3.statistic: mean
     row: 30
     col: 12
