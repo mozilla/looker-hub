@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_auto_pip
+    type: looker_line
+    fields: [
+      firefox_labs_auto_pip.submission_date,
+      firefox_labs_auto_pip.branch,
+      firefox_labs_auto_pip.point
+    ]
+    pivots: [
+      firefox_labs_auto_pip.branch
+    ]
+    filters:
+      firefox_labs_auto_pip.metric: 'search_count'
+      firefox_labs_auto_pip.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_labs_auto_pip.submission_date
+    field_y: firefox_labs_auto_pip.point
+    log_scale: false
+    ci_lower: firefox_labs_auto_pip.lower
+    ci_upper: firefox_labs_auto_pip.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_auto_pip.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -29,108 +63,6 @@
       firefox_labs_auto_pip.metric: 'retained'
       firefox_labs_auto_pip.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_auto_pip.submission_date
-    field_y: firefox_labs_auto_pip.point
-    log_scale: false
-    ci_lower: firefox_labs_auto_pip.lower
-    ci_upper: firefox_labs_auto_pip.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_auto_pip.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_auto_pip
-    type: looker_line
-    fields: [
-      firefox_labs_auto_pip.submission_date,
-      firefox_labs_auto_pip.branch,
-      firefox_labs_auto_pip.point
-    ]
-    pivots: [
-      firefox_labs_auto_pip.branch
-    ]
-    filters:
-      firefox_labs_auto_pip.metric: 'ad_clicks'
-      firefox_labs_auto_pip.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_labs_auto_pip.submission_date
-    field_y: firefox_labs_auto_pip.point
-    log_scale: false
-    ci_lower: firefox_labs_auto_pip.lower
-    ci_upper: firefox_labs_auto_pip.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_auto_pip.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_auto_pip
-    type: looker_line
-    fields: [
-      firefox_labs_auto_pip.submission_date,
-      firefox_labs_auto_pip.branch,
-      firefox_labs_auto_pip.point
-    ]
-    pivots: [
-      firefox_labs_auto_pip.branch
-    ]
-    filters:
-      firefox_labs_auto_pip.metric: 'uri_count'
-      firefox_labs_auto_pip.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_labs_auto_pip.submission_date
-    field_y: firefox_labs_auto_pip.point
-    log_scale: false
-    ci_lower: firefox_labs_auto_pip.lower
-    ci_upper: firefox_labs_auto_pip.upper
-    show_grid: true
-    listen:
-      Date: firefox_labs_auto_pip.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_labs_auto_pip
-    type: looker_line
-    fields: [
-      firefox_labs_auto_pip.submission_date,
-      firefox_labs_auto_pip.branch,
-      firefox_labs_auto_pip.point
-    ]
-    pivots: [
-      firefox_labs_auto_pip.branch
-    ]
-    filters:
-      firefox_labs_auto_pip.metric: 'search_count'
-      firefox_labs_auto_pip.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -164,7 +96,7 @@
     filters:
       firefox_labs_auto_pip.metric: 'days_of_use'
       firefox_labs_auto_pip.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -198,7 +130,7 @@
     filters:
       firefox_labs_auto_pip.metric: 'qualified_cumulative_days_of_use'
       firefox_labs_auto_pip.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -234,7 +166,7 @@
     filters:
       firefox_labs_auto_pip.metric: 'memory_total'
       firefox_labs_auto_pip.statistic: percentile
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -247,6 +179,40 @@
     listen:
       Date: firefox_labs_auto_pip.submission_date
       Percentile: firefox_labs_auto_pip.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_auto_pip
+    type: looker_line
+    fields: [
+      firefox_labs_auto_pip.submission_date,
+      firefox_labs_auto_pip.branch,
+      firefox_labs_auto_pip.point
+    ]
+    pivots: [
+      firefox_labs_auto_pip.branch
+    ]
+    filters:
+      firefox_labs_auto_pip.metric: 'uri_count'
+      firefox_labs_auto_pip.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_labs_auto_pip.submission_date
+    field_y: firefox_labs_auto_pip.point
+    log_scale: false
+    ci_lower: firefox_labs_auto_pip.lower
+    ci_upper: firefox_labs_auto_pip.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_auto_pip.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +234,40 @@
     ]
     filters:
       firefox_labs_auto_pip.metric: 'active_hours'
+      firefox_labs_auto_pip.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_labs_auto_pip.submission_date
+    field_y: firefox_labs_auto_pip.point
+    log_scale: false
+    ci_lower: firefox_labs_auto_pip.lower
+    ci_upper: firefox_labs_auto_pip.upper
+    show_grid: true
+    listen:
+      Date: firefox_labs_auto_pip.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_labs_auto_pip
+    type: looker_line
+    fields: [
+      firefox_labs_auto_pip.submission_date,
+      firefox_labs_auto_pip.branch,
+      firefox_labs_auto_pip.point
+    ]
+    pivots: [
+      firefox_labs_auto_pip.branch
+    ]
+    filters:
+      firefox_labs_auto_pip.metric: 'ad_clicks'
       firefox_labs_auto_pip.statistic: mean
     row: 30
     col: 12

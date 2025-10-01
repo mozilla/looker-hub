@@ -1726,7 +1726,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__timing_distribution__metrics_search_page_load_time__sum {
     label: "Metrics Search Page Load Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.sum ;;
     type: number
     group_label: "Metrics"
