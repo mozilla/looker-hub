@@ -6931,6 +6931,25 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__boolean__search_suggestions_ohttp_enabled {
+    label: "Search Suggestions Ohttp Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.search_suggestions_ohttp_enabled ;;
+    type: yesno
+    group_label: "Search Suggestions Ohttp"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Search Suggestions Ohttp Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_suggestions_ohttp_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reflects the value of the user's browser.search.suggest.ohttp.enabled
+preference. This does not reflect the value of the featureGate preference.
+"
+  }
+
   dimension: metrics__labeled_counter__search_suggestions_ohttp_failed_requests {
     label: "Search Suggestions Ohttp Failed Requests"
     hidden: yes
@@ -26448,7 +26467,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__sum {
     label: "Networking HTTP Content Cssloader Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Networking"

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       homescreen_ios_ios_rebuild_release_100.branch
     ]
     filters:
-      homescreen_ios_ios_rebuild_release_100.metric: 'search_count'
+      homescreen_ios_ios_rebuild_release_100.metric: 'active_hours'
       homescreen_ios_ios_rebuild_release_100.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       homescreen_ios_ios_rebuild_release_100.branch
     ]
     filters:
-      homescreen_ios_ios_rebuild_release_100.metric: 'active_hours'
+      homescreen_ios_ios_rebuild_release_100.metric: 'search_count'
       homescreen_ios_ios_rebuild_release_100.statistic: mean
     row: 10
     col: 12

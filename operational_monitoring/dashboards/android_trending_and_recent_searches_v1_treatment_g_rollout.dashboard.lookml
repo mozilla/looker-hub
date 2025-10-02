@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       android_trending_and_recent_searches_v1_treatment_g_rollout.branch
     ]
     filters:
-      android_trending_and_recent_searches_v1_treatment_g_rollout.metric: 'search_count'
+      android_trending_and_recent_searches_v1_treatment_g_rollout.metric: 'active_hours'
       android_trending_and_recent_searches_v1_treatment_g_rollout.statistic: mean
     row: 0
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       android_trending_and_recent_searches_v1_treatment_g_rollout.branch
     ]
     filters:
-      android_trending_and_recent_searches_v1_treatment_g_rollout.metric: 'active_hours'
+      android_trending_and_recent_searches_v1_treatment_g_rollout.metric: 'search_count'
       android_trending_and_recent_searches_v1_treatment_g_rollout.statistic: mean
     row: 20
     col: 12

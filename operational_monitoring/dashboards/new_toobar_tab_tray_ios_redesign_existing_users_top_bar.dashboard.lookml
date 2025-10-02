@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       new_toobar_tab_tray_ios_redesign_existing_users_top_bar.branch
     ]
     filters:
-      new_toobar_tab_tray_ios_redesign_existing_users_top_bar.metric: 'search_count'
+      new_toobar_tab_tray_ios_redesign_existing_users_top_bar.metric: 'active_hours'
       new_toobar_tab_tray_ios_redesign_existing_users_top_bar.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       new_toobar_tab_tray_ios_redesign_existing_users_top_bar.branch
     ]
     filters:
-      new_toobar_tab_tray_ios_redesign_existing_users_top_bar.metric: 'active_hours'
+      new_toobar_tab_tray_ios_redesign_existing_users_top_bar.metric: 'search_count'
       new_toobar_tab_tray_ios_redesign_existing_users_top_bar.statistic: mean
     row: 10
     col: 12

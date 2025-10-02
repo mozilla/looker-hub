@@ -1408,6 +1408,17 @@ overridden by a third-party add-on or OpenSearch engine.
 "
   }
 
+  dimension: metrics__boolean__search_suggestions_ohttp_enabled {
+    sql: ${TABLE}.metrics.boolean.search_suggestions_ohttp_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Search Suggestions Ohttp Enabled"
+    description: "Reflects the value of the user's browser.search.suggest.ohttp.enabled
+preference. This does not reflect the value of the featureGate preference.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_auto_close_user_disabled {
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_close_user_disabled ;;
     type: yesno
@@ -17640,8 +17651,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine when not using OHTTP. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
+This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 

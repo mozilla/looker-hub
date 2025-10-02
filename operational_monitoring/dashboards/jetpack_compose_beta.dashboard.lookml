@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       jetpack_compose_beta.branch
     ]
     filters:
-      jetpack_compose_beta.metric: 'search_count'
+      jetpack_compose_beta.metric: 'active_hours'
       jetpack_compose_beta.statistic: mean
     row: 0
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       jetpack_compose_beta.branch
     ]
     filters:
-      jetpack_compose_beta.metric: 'active_hours'
+      jetpack_compose_beta.metric: 'search_count'
       jetpack_compose_beta.statistic: mean
     row: 20
     col: 12
