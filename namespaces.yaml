@@ -17973,6 +17973,10 @@ websites:
       tables:
       - table: moz-fx-data-shared-prod.mozilla_org.firefox_whatsnew_summary
       type: table_view
+    ga4_blog_performance:
+      tables:
+      - table: mozdata.mozilla_org.blog_performance
+      type: table_view
     ga4_blogs_goals:
       tables:
       - table: moz-fx-data-shared-prod.mozilla_org.blogs_goals

@@ -3771,6 +3771,7 @@ tracking-protection that is enabled. One of:
     }
 
     description: "Records the number of times a user taps to dismiss (does not include tapping accept or remind me later).
+
 **Developer Note**: This replaces the old `termsofuse.dismiss_count` metric.
 "
   }
@@ -3790,6 +3791,7 @@ tracking-protection that is enabled. One of:
     }
 
     description: "Records the number of times a user taps \"remind me later\".
+
 **Developer Note**: This replaces the old `termsofuse.remind_me_later_count` metric.
 "
   }
@@ -3809,6 +3811,7 @@ tracking-protection that is enabled. One of:
     }
 
     description: "Records the number of ToU impressions the user has had.
+
 **Developer Note**: This replaces the old `termsofuse.impression_count` metric.
 "
   }
@@ -3828,6 +3831,7 @@ tracking-protection that is enabled. One of:
     }
 
     description: "The version of the Terms of Use the user accepted.
+
 **Developer Note**: This replaces the old `termsofuse.version` metric.
 "
   }
@@ -5458,6 +5462,7 @@ startup, as part of the initialization sequence.
       year,
     ]
     description: "The timestamp when the user accepted the Terms of Use.
+
 **Developer Note**: This replaces the old `termsofuse.date` metric.
 "
   }

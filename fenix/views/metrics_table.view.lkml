@@ -13020,6 +13020,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
   }
 
+  dimension: metrics__labeled_counter__media_recorder_mime_type_query {
+    sql: ${TABLE}.metrics.labeled_counter.media_recorder_mime_type_query ;;
+    hidden: yes
+    description: "Count the amount of times where a mime type is queried via MediaRecorder.isTypeSupported() or passed to the MediaRecorder constructor. The result is accumulated per mime type.
+"
+  }
+
   dimension: metrics__labeled_counter__media_sniffer_mp4_brand_pattern {
     sql: ${TABLE}.metrics.labeled_counter.media_sniffer_mp4_brand_pattern ;;
     hidden: yes
