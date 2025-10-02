@@ -25,7 +25,7 @@ explore: event_counts {
 
   always_filter: {
     filters: [
-      submission_date: "28 days",
+      submission_date: "7 days",
     ]
   }
 

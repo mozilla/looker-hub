@@ -13,7 +13,7 @@ explore: content_auth_stdout_event_counts {
 
   always_filter: {
     filters: [
-      timestamp_date: "28 days",
+      timestamp_date: "7 days",
     ]
   }
 
