@@ -12921,6 +12921,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
   }
 
+  dimension: metrics__labeled_counter__media_recorder_mime_type_query {
+    label: "Media Recorder Mime Type Query"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_recorder_mime_type_query ;;
+    group_label: "Media Recorder"
+    group_item_label: "Mime Type Query"
+
+    link: {
+      label: "Glean Dictionary reference for Media Recorder Mime Type Query"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/media_recorder_mime_type_query"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the amount of times where a mime type is queried via MediaRecorder.isTypeSupported() or passed to the MediaRecorder constructor. The result is accumulated per mime type.
+"
+  }
+
   dimension: metrics__timing_distribution__media_video_clearkey_play_time__sum {
     label: "Media Video Clearkey Play Time Sum"
     hidden: no
@@ -41619,6 +41636,47 @@ view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_recorder_mime_type_query {
+  label: "Media Recorder - Mime Type Query"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
