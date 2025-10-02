@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       mobile_bookmarks_improvements_release.branch
     ]
     filters:
-      mobile_bookmarks_improvements_release.metric: 'search_count'
+      mobile_bookmarks_improvements_release.metric: 'active_hours'
       mobile_bookmarks_improvements_release.statistic: mean
     row: 0
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       mobile_bookmarks_improvements_release.branch
     ]
     filters:
-      mobile_bookmarks_improvements_release.metric: 'active_hours'
+      mobile_bookmarks_improvements_release.metric: 'search_count'
       mobile_bookmarks_improvements_release.statistic: mean
     row: 20
     col: 12

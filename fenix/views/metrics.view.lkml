@@ -1726,7 +1726,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__timing_distribution__metrics_search_page_load_time__sum {
     label: "Metrics Search Page Load Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.sum ;;
     type: number
     group_label: "Metrics"
@@ -19713,7 +19713,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__sum {
     label: "Networking HTTP Content Cssloader Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Networking"

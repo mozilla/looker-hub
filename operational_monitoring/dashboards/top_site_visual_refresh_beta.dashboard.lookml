@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       top_site_visual_refresh_beta.branch
     ]
     filters:
-      top_site_visual_refresh_beta.metric: 'search_count'
+      top_site_visual_refresh_beta.metric: 'active_hours'
       top_site_visual_refresh_beta.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       top_site_visual_refresh_beta.branch
     ]
     filters:
-      top_site_visual_refresh_beta.metric: 'active_hours'
+      top_site_visual_refresh_beta.metric: 'search_count'
       top_site_visual_refresh_beta.statistic: mean
     row: 10
     col: 12
