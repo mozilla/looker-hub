@@ -247,6 +247,7 @@ documented in the ping's pings.yaml file.
     }
 
     description: "The timestamp when the user accepted the Terms of Use.
+
 **Developer Note**: This replaces the old `termsofuse.date` metric.
 "
   }
@@ -266,6 +267,7 @@ documented in the ping's pings.yaml file.
     }
 
     description: "The version of the Terms of Use the user accepted.
+
 **Developer Note**: This replaces the old `termsofuse.version` metric.
 "
   }
