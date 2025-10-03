@@ -15135,6 +15135,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_comment_edit {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_comment_edit ;;
+    hidden: yes
+    description: "Counts the number of times the user edits or deletes comments.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_digital_signature_certificate ;;
     hidden: yes
@@ -17658,9 +17665,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine when not using OHTTP. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
-This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 
