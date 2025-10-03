@@ -1353,6 +1353,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_buttons}) AS metrics__metrics__labeled_counter__pdfjs_buttons ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_buttons.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pdfjs_comment_edit {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_comment_edit}) AS metrics__metrics__labeled_counter__pdfjs_comment_edit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_comment_edit.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_digital_signature_certificate {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_digital_signature_certificate}) AS metrics__metrics__labeled_counter__pdfjs_digital_signature_certificate ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_digital_signature_certificate.document_id} ;;

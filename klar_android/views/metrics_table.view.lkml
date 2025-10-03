@@ -12588,6 +12588,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_comment_edit {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_comment_edit ;;
+    hidden: yes
+    description: "Counts the number of times the user edits or deletes comments.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_digital_signature_certificate ;;
     hidden: yes

@@ -18471,6 +18471,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_comment_edit {
+    label: "Pdfjs Comment Edit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_comment_edit ;;
+    group_label: "Pdfjs Comment"
+    group_item_label: "Edit"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Comment Edit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_comment_edit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user edits or deletes comments.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
     label: "Pdfjs Digital Signature Certificate"
     hidden: yes
@@ -45070,6 +45087,47 @@ view: metrics__metrics__labeled_counter__orb_did_ever_block_response {
 
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs - Buttons"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_comment_edit {
+  label: "Pdfjs Comment - Edit"
 
   dimension: document_id {
     type: string
