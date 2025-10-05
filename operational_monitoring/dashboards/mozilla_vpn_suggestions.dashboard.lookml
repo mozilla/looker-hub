@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       mozilla_vpn_suggestions.branch
     ]
     filters:
-      mozilla_vpn_suggestions.metric: 'days_of_use'
+      mozilla_vpn_suggestions.metric: 'active_hours'
       mozilla_vpn_suggestions.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: mozilla_vpn_suggestions.submission_date
-    field_y: mozilla_vpn_suggestions.point
-    log_scale: false
-    ci_lower: mozilla_vpn_suggestions.lower
-    ci_upper: mozilla_vpn_suggestions.upper
-    show_grid: true
-    listen:
-      Date: mozilla_vpn_suggestions.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mozilla_vpn_suggestions
-    type: looker_line
-    fields: [
-      mozilla_vpn_suggestions.submission_date,
-      mozilla_vpn_suggestions.branch,
-      mozilla_vpn_suggestions.point
-    ]
-    pivots: [
-      mozilla_vpn_suggestions.branch
-    ]
-    filters:
-      mozilla_vpn_suggestions.metric: 'search_count'
-      mozilla_vpn_suggestions.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: mozilla_vpn_suggestions.submission_date
@@ -96,41 +62,7 @@
     filters:
       mozilla_vpn_suggestions.metric: 'qualified_cumulative_days_of_use'
       mozilla_vpn_suggestions.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: mozilla_vpn_suggestions.submission_date
-    field_y: mozilla_vpn_suggestions.point
-    log_scale: false
-    ci_lower: mozilla_vpn_suggestions.lower
-    ci_upper: mozilla_vpn_suggestions.upper
-    show_grid: true
-    listen:
-      Date: mozilla_vpn_suggestions.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mozilla_vpn_suggestions
-    type: looker_line
-    fields: [
-      mozilla_vpn_suggestions.submission_date,
-      mozilla_vpn_suggestions.branch,
-      mozilla_vpn_suggestions.point
-    ]
-    pivots: [
-      mozilla_vpn_suggestions.branch
-    ]
-    filters:
-      mozilla_vpn_suggestions.metric: 'ad_clicks'
-      mozilla_vpn_suggestions.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -164,8 +96,42 @@
     filters:
       mozilla_vpn_suggestions.metric: 'uri_count'
       mozilla_vpn_suggestions.statistic: mean
-    row: 20
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: mozilla_vpn_suggestions.submission_date
+    field_y: mozilla_vpn_suggestions.point
+    log_scale: false
+    ci_lower: mozilla_vpn_suggestions.lower
+    ci_upper: mozilla_vpn_suggestions.upper
+    show_grid: true
+    listen:
+      Date: mozilla_vpn_suggestions.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mozilla_vpn_suggestions
+    type: looker_line
+    fields: [
+      mozilla_vpn_suggestions.submission_date,
+      mozilla_vpn_suggestions.branch,
+      mozilla_vpn_suggestions.point
+    ]
+    pivots: [
+      mozilla_vpn_suggestions.branch
+    ]
+    filters:
+      mozilla_vpn_suggestions.metric: 'days_of_use'
+      mozilla_vpn_suggestions.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: mozilla_vpn_suggestions.submission_date
@@ -197,6 +163,40 @@
     ]
     filters:
       mozilla_vpn_suggestions.metric: 'retained'
+      mozilla_vpn_suggestions.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: mozilla_vpn_suggestions.submission_date
+    field_y: mozilla_vpn_suggestions.point
+    log_scale: false
+    ci_lower: mozilla_vpn_suggestions.lower
+    ci_upper: mozilla_vpn_suggestions.upper
+    show_grid: true
+    listen:
+      Date: mozilla_vpn_suggestions.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mozilla_vpn_suggestions
+    type: looker_line
+    fields: [
+      mozilla_vpn_suggestions.submission_date,
+      mozilla_vpn_suggestions.branch,
+      mozilla_vpn_suggestions.point
+    ]
+    pivots: [
+      mozilla_vpn_suggestions.branch
+    ]
+    filters:
+      mozilla_vpn_suggestions.metric: 'search_count'
       mozilla_vpn_suggestions.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       mozilla_vpn_suggestions.branch
     ]
     filters:
-      mozilla_vpn_suggestions.metric: 'active_hours'
+      mozilla_vpn_suggestions.metric: 'ad_clicks'
       mozilla_vpn_suggestions.statistic: mean
     row: 30
     col: 12
