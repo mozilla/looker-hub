@@ -9815,10 +9815,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -9857,10 +9857,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
             - aurora
-            - esr
+            - nightly
             - beta
+            - esr
             - default
             - nightly-pine
             - nightly-larch
@@ -10237,11 +10237,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id299
           normalized_channel:
-            default: nightly
+            default: aurora
             options:
-            - nightly
             - aurora
             - beta
+            - nightly
             - release
             - esr
             - Other
@@ -10728,8 +10728,8 @@ operational_monitoring:
             default: Windows
             options:
             - Windows
-            - Mac
             - Linux
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11555,15 +11555,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id401
           app:
-            default: Android - vpn_session
+            default: Windows - vpn_session
             options:
-            - Android - vpn_session
-            - iOS - vpn_session
-            - Android - daemon_session
-            - Darwin - vpn_session
             - Windows - vpn_session
+            - iOS - vpn_session
+            - Android - vpn_session
             - iOS - daemon_session
+            - Darwin - vpn_session
             - Linux - vpn_session
+            - Android - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id402
