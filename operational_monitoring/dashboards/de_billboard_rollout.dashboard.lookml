@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: de_billboard_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       de_billboard_rollout.submission_date,
       de_billboard_rollout.branch,
+      de_billboard_rollout.upper,
+      de_billboard_rollout.lower,
       de_billboard_rollout.point
     ]
     pivots: [
       de_billboard_rollout.branch
     ]
     filters:
-      de_billboard_rollout.metric: 'active_hours'
-      de_billboard_rollout.statistic: mean
+      de_billboard_rollout.metric: 'memory_total'
+      de_billboard_rollout.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,12 +42,13 @@
     show_grid: true
     listen:
       Date: de_billboard_rollout.submission_date
+      Percentile: de_billboard_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +63,7 @@
       de_billboard_rollout.branch
     ]
     filters:
-      de_billboard_rollout.metric: 'search_count'
+      de_billboard_rollout.metric: 'ad_clicks'
       de_billboard_rollout.statistic: mean
     row: 0
     col: 12
@@ -112,26 +115,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: de_billboard_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       de_billboard_rollout.submission_date,
       de_billboard_rollout.branch,
-      de_billboard_rollout.upper,
-      de_billboard_rollout.lower,
       de_billboard_rollout.point
     ]
     pivots: [
       de_billboard_rollout.branch
     ]
     filters:
-      de_billboard_rollout.metric: 'memory_total'
-      de_billboard_rollout.statistic: percentile
+      de_billboard_rollout.metric: 'days_of_use'
+      de_billboard_rollout.statistic: mean
     row: 10
     col: 12
     width: 12
@@ -144,7 +145,40 @@
     show_grid: true
     listen:
       Date: de_billboard_rollout.submission_date
-      Percentile: de_billboard_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: de_billboard_rollout
+    type: looker_line
+    fields: [
+      de_billboard_rollout.submission_date,
+      de_billboard_rollout.branch,
+      de_billboard_rollout.point
+    ]
+    pivots: [
+      de_billboard_rollout.branch
+    ]
+    filters:
+      de_billboard_rollout.metric: 'search_count'
+      de_billboard_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: de_billboard_rollout.submission_date
+    field_y: de_billboard_rollout.point
+    log_scale: false
+    ci_lower: de_billboard_rollout.lower
+    ci_upper: de_billboard_rollout.upper
+    show_grid: true
+    listen:
+      Date: de_billboard_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -168,7 +202,7 @@
       de_billboard_rollout.metric: 'qualified_cumulative_days_of_use'
       de_billboard_rollout.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: de_billboard_rollout.submission_date
@@ -201,40 +235,6 @@
     filters:
       de_billboard_rollout.metric: 'uri_count'
       de_billboard_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: de_billboard_rollout.submission_date
-    field_y: de_billboard_rollout.point
-    log_scale: false
-    ci_lower: de_billboard_rollout.lower
-    ci_upper: de_billboard_rollout.upper
-    show_grid: true
-    listen:
-      Date: de_billboard_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: de_billboard_rollout
-    type: looker_line
-    fields: [
-      de_billboard_rollout.submission_date,
-      de_billboard_rollout.branch,
-      de_billboard_rollout.point
-    ]
-    pivots: [
-      de_billboard_rollout.branch
-    ]
-    filters:
-      de_billboard_rollout.metric: 'ad_clicks'
-      de_billboard_rollout.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       de_billboard_rollout.branch
     ]
     filters:
-      de_billboard_rollout.metric: 'days_of_use'
+      de_billboard_rollout.metric: 'active_hours'
       de_billboard_rollout.statistic: mean
     row: 30
     col: 12
