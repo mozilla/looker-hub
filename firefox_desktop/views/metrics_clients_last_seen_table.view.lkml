@@ -43,10 +43,18 @@ view: metrics_clients_last_seen_table {
     description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
+  dimension: search_count_all {
+    sql: ${TABLE}.search_count_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of searches on client's last seen date in last 28 days."
+  }
+
   dimension: search_with_ads_count_all {
     sql: ${TABLE}.search_with_ads_count_all ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of searches with ads on client's last seen date in last 28 days."
   }
 
   dimension_group: submission {

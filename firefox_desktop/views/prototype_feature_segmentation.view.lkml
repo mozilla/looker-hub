@@ -23,8 +23,26 @@ view: prototype_feature_segmentation {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: device_model {
+    sql: ${TABLE}.device_model ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: event_type {
     sql: ${TABLE}.event_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: first_run_date {
+    sql: ${TABLE}.first_run_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
   }
@@ -32,6 +50,12 @@ view: prototype_feature_segmentation {
   dimension: new_profiles {
     sql: ${TABLE}.new_profiles ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os {
+    sql: ${TABLE}.os ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 

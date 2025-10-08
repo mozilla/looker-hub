@@ -42,6 +42,18 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: dau_with_ad_clicks_count {
+    sql: ${TABLE}.dau_with_ad_clicks_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: dau_with_search_count {
+    sql: ${TABLE}.dau_with_search_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: default_browser_count {
     sql: ${TABLE}.default_browser_count ;;
     type: number
@@ -60,6 +72,12 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: existing_profile_count {
+    sql: ${TABLE}.existing_profile_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
@@ -74,6 +92,12 @@ view: fenix_distribution_deals {
 
   dimension: mau {
     sql: ${TABLE}.mau ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: new_profile_count {
+    sql: ${TABLE}.new_profile_count ;;
     type: number
     suggest_persist_for: "24 hours"
   }
