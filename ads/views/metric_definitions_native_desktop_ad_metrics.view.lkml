@@ -7,7 +7,8 @@
 view: metric_definitions_native_desktop_ad_metrics {
   derived_table: {
     sql: SELECT
-                SUM(spend) AS native_spend,
+                ANY_VALUE(GENERATE_UUID()) AS id,
+SUM(spend) AS native_spend,
 SUM(dismisses) AS native_dismisses,
 SUM(impressions) AS native_impressions,
 SUM(clicks) AS native_clicks,
@@ -189,6 +190,14 @@ native_desktop_ad_metrics_zone_name,
     primary_key: yes
     group_label: "Base Fields"
     description: "Unique client identifier"
+  }
+
+  dimension: id {
+    group_label: "Metrics"
+    label: "ID"
+    description: "Randomly generated unique identifier for a row"
+    type: number
+    sql: ${TABLE}.id ;;
   }
 
   dimension: native_spend {
@@ -516,6 +525,7 @@ native_desktop_ad_metrics_zone_name,
 
   set: metrics {
     fields: [
+      id,
       native_spend,
       native_dismisses,
       native_impressions,
