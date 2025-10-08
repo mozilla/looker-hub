@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: smart_tab_groups_rollout_beta
-    type: "ci-line-chart"
-    fields: [
-      smart_tab_groups_rollout_beta.submission_date,
-      smart_tab_groups_rollout_beta.branch,
-      smart_tab_groups_rollout_beta.upper,
-      smart_tab_groups_rollout_beta.lower,
-      smart_tab_groups_rollout_beta.point
-    ]
-    pivots: [
-      smart_tab_groups_rollout_beta.branch
-    ]
-    filters:
-      smart_tab_groups_rollout_beta.metric: 'memory_total'
-      smart_tab_groups_rollout_beta.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: smart_tab_groups_rollout_beta.submission_date
-    field_y: smart_tab_groups_rollout_beta.point
-    log_scale: false
-    ci_lower: smart_tab_groups_rollout_beta.lower
-    ci_upper: smart_tab_groups_rollout_beta.upper
-    show_grid: true
-    listen:
-      Date: smart_tab_groups_rollout_beta.submission_date
-      Percentile: smart_tab_groups_rollout_beta.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,10 +26,10 @@
       smart_tab_groups_rollout_beta.branch
     ]
     filters:
-      smart_tab_groups_rollout_beta.metric: 'ad_clicks'
+      smart_tab_groups_rollout_beta.metric: 'active_hours'
       smart_tab_groups_rollout_beta.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: smart_tab_groups_rollout_beta.submission_date
@@ -99,8 +62,8 @@
     filters:
       smart_tab_groups_rollout_beta.metric: 'retained'
       smart_tab_groups_rollout_beta.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: smart_tab_groups_rollout_beta.submission_date
@@ -115,8 +78,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: smart_tab_groups_rollout_beta
+    type: "ci-line-chart"
+    fields: [
+      smart_tab_groups_rollout_beta.submission_date,
+      smart_tab_groups_rollout_beta.branch,
+      smart_tab_groups_rollout_beta.upper,
+      smart_tab_groups_rollout_beta.lower,
+      smart_tab_groups_rollout_beta.point
+    ]
+    pivots: [
+      smart_tab_groups_rollout_beta.branch
+    ]
+    filters:
+      smart_tab_groups_rollout_beta.metric: 'memory_total'
+      smart_tab_groups_rollout_beta.statistic: percentile
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: smart_tab_groups_rollout_beta.submission_date
+    field_y: smart_tab_groups_rollout_beta.point
+    log_scale: false
+    ci_lower: smart_tab_groups_rollout_beta.lower
+    ci_upper: smart_tab_groups_rollout_beta.upper
+    show_grid: true
+    listen:
+      Date: smart_tab_groups_rollout_beta.submission_date
+      Percentile: smart_tab_groups_rollout_beta.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +131,7 @@
       smart_tab_groups_rollout_beta.branch
     ]
     filters:
-      smart_tab_groups_rollout_beta.metric: 'days_of_use'
+      smart_tab_groups_rollout_beta.metric: 'qualified_cumulative_days_of_use'
       smart_tab_groups_rollout_beta.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       smart_tab_groups_rollout_beta.branch
     ]
     filters:
-      smart_tab_groups_rollout_beta.metric: 'qualified_cumulative_days_of_use'
+      smart_tab_groups_rollout_beta.metric: 'ad_clicks'
       smart_tab_groups_rollout_beta.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       smart_tab_groups_rollout_beta.branch
     ]
     filters:
-      smart_tab_groups_rollout_beta.metric: 'active_hours'
+      smart_tab_groups_rollout_beta.metric: 'days_of_use'
       smart_tab_groups_rollout_beta.statistic: mean
     row: 30
     col: 12

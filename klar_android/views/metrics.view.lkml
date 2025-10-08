@@ -16850,7 +16850,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
     label: "Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -16886,7 +16886,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__sum {
     label: "Networking HTTP Content Ondatafinished Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -16904,7 +16904,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__sum {
     label: "Networking HTTP Content Ondatafinished Delay 2 Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.sum ;;
     type: number
     group_label: "Networking"
@@ -16922,7 +16922,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__sum {
     label: "Networking HTTP Content Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -16958,7 +16958,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
     label: "Networking HTTP Content Onstart Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -16976,7 +16976,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_onstop_delay__sum {
     label: "Networking HTTP Content Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -43593,19 +43593,19 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_coun
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -43634,19 +43634,19 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_coun
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
