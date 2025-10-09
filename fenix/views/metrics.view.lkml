@@ -2571,6 +2571,25 @@ default: true
 "
   }
 
+  dimension: metrics__string__preferences_doh_protection_level {
+    label: "Preferences Doh Protection Level"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_doh_protection_level ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Doh Protection Level"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Doh Protection Level"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_doh_protection_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the DNS over HTTPS (DoH) setting at start-up.
+Example values include: \"Default\", \"Increased\", \"Max\", \"Off\".
+"
+  }
+
   dimension: metrics__string__preferences_enhanced_tracking_protection {
     label: "Preferences Enhanced Tracking Protection"
     hidden: no
@@ -2613,6 +2632,42 @@ Possible values:
 - unvisited for “Cookies from unvisited sites”
 - third-party for “All third-party cookies..”
 - all for “All cookies..”
+"
+  }
+
+  dimension: metrics__boolean__preferences_global_privacy_control_enabled {
+    label: "Preferences Global Privacy Control Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_global_privacy_control_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Global Privacy Control Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Global Privacy Control Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_global_privacy_control_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the Global Privacy Control (GPC) setting at start-up."
+  }
+
+  dimension: metrics__string__preferences_https_only_mode {
+    label: "Preferences Https Only Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_https_only_mode ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Https Only Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Https Only Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_https_only_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the HTTPS-Only setting at start-up.
+Example values include: \"DISABLED\", \"ENABLED_PRIVATE_ONLY\", \"ENABLED\".
 "
   }
 
@@ -16269,25 +16324,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__memory_distribution__memory_js_gc_heap__sum {
-    label: "Memory Js GC Heap Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.memory_js_gc_heap.sum ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Js GC Heap Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Memory Js GC Heap Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_gc_heap"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Memory used by the garbage-collected JavaScript heap (KB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_GC_HEAP.
-"
-  }
-
   dimension: metrics__custom_distribution__memory_js_realms_system__sum {
     label: "Memory Js Realms System Sum"
     hidden: no
@@ -16364,44 +16400,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__memory_distribution__memory_resident_fast__sum {
-    label: "Memory Resident Fast Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.memory_resident_fast.sum ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Resident Fast Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Memory Resident Fast Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_resident_fast"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Resident memory size (KB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_FAST.
-"
-  }
-
-  dimension: metrics__memory_distribution__memory_resident_peak__sum {
-    label: "Memory Resident Peak Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.memory_resident_peak.sum ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Resident Peak Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Memory Resident Peak Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_resident_peak"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Peak resident memory size (KB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_PEAK.
-"
-  }
-
   dimension: metrics__memory_distribution__memory_storage_sqlite__sum {
     label: "Memory Storage Sqlite Sum"
     hidden: no
@@ -16437,25 +16435,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Total Memory Across All Processes (KB) (inaccurate WRT shared memory. See MemoryTelemetry.cpp)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_TOTAL.
-"
-  }
-
-  dimension: metrics__memory_distribution__memory_unique__sum {
-    label: "Memory Unique Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.memory_unique.sum ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Unique Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Memory Unique Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_unique"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Unique Set Size (KB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_UNIQUE.
 "
   }
 
@@ -22688,6 +22667,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_inference_process {
+    label: "Power CPU Ms Per Thread Inference Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_inference_process ;;
+    group_label: "Power CPU Ms Per Thread"
+    group_item_label: "Inference Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power CPU Ms Per Thread Inference Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_ms_per_thread_inference_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
     label: "Power CPU Ms Per Thread Parent Active"
     hidden: yes
@@ -22941,6 +22937,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     link: {
       label: "Glean Dictionary reference for Power Wakeups Per Thread GPU Process"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_inference_process {
+    label: "Power Wakeups Per Thread Inference Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_inference_process ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Inference Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Inference Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_inference_process"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -51223,6 +51236,47 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
   }
 }
 
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_inference_process {
+  label: "Power CPU Ms Per Thread - Inference Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
   label: "Power CPU Ms Per Thread - Parent Active"
 
@@ -51594,6 +51648,47 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foregr
 
 view: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
   label: "Power Wakeups Per Thread - GPU Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_inference_process {
+  label: "Power Wakeups Per Thread - Inference Process"
 
   dimension: document_id {
     type: string
@@ -62083,6 +62178,182 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeou
 }
 
 view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeout__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_js_gc_heap {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_js_gc_heap__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_resident_fast {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_resident_fast__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_resident_peak {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_resident_peak__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_unique {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_unique__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

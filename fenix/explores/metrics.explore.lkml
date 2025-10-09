@@ -1443,6 +1443,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_inference_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_inference_process}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_inference_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_inference_process.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_parent_active}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.document_id} ;;
@@ -1491,6 +1496,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_gpu_process}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_inference_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_inference_process}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_inference_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_inference_process.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {

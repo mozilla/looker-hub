@@ -1204,6 +1204,15 @@ default: true
 "
   }
 
+  dimension: metrics__boolean__preferences_global_privacy_control_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_global_privacy_control_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Global Privacy Control Enabled"
+    description: "Measures user retention of the Global Privacy Control (GPC) setting at start-up."
+  }
+
   dimension: metrics__boolean__preferences_inactive_tabs_enabled {
     sql: ${TABLE}.metrics.boolean.preferences_inactive_tabs_enabled ;;
     type: yesno
@@ -13872,6 +13881,13 @@ pr"
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_inference_process {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_inference_process ;;
+    hidden: yes
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
     sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_active ;;
     hidden: yes
@@ -13937,6 +13953,13 @@ pr"
 
   dimension: metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
     sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_gpu_process ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_inference_process {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_inference_process ;;
     hidden: yes
     description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
 "
@@ -14863,6 +14886,38 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     hidden: yes
     description: " Whether or not an update timed out (0 = no timeout, 1 = server respond
 timeout, 2 = overall timeout). Keyed by provider This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UPDATE_TIMEOUT.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__memory_js_gc_heap {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.memory_js_gc_heap ;;
+    hidden: yes
+    description: "Memory used by the garbage-collected JavaScript heap (KB) by process type
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_GC_HEAP.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__memory_resident_fast {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.memory_resident_fast ;;
+    hidden: yes
+    description: "Resident memory size (KB) by process type
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_FAST.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__memory_resident_peak {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.memory_resident_peak ;;
+    hidden: yes
+    description: "Peak resident memory size (KB) by process type
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_PEAK.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__memory_unique {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.memory_unique ;;
+    hidden: yes
+    description: "Unique Set Size (KB) by process type
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_UNIQUE.
 "
   }
 
@@ -18680,6 +18735,17 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__string__preferences_doh_protection_level {
+    sql: ${TABLE}.metrics.string.preferences_doh_protection_level ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Preferences Doh Protection Level"
+    description: "Measures user retention of the DNS over HTTPS (DoH) setting at start-up.
+Example values include: \"Default\", \"Increased\", \"Max\", \"Off\".
+"
+  }
+
   dimension: metrics__string__preferences_enhanced_tracking_protection {
     sql: ${TABLE}.metrics.string.preferences_enhanced_tracking_protection ;;
     type: string
@@ -18706,6 +18772,17 @@ Possible values:
 - unvisited for “Cookies from unvisited sites”
 - third-party for “All third-party cookies..”
 - all for “All cookies..”
+"
+  }
+
+  dimension: metrics__string__preferences_https_only_mode {
+    sql: ${TABLE}.metrics.string.preferences_https_only_mode ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Preferences Https Only Mode"
+    description: "Measures user retention of the HTTPS-Only setting at start-up.
+Example values include: \"DISABLED\", \"ENABLED_PRIVATE_ONLY\", \"ENABLED\".
 "
   }
 
@@ -56220,6 +56297,182 @@ view: metrics_table__metrics__labeled_custom_distribution__urlclassifier_update_
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__urlclassifier_update_timeout__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_js_gc_heap {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_js_gc_heap__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_resident_fast {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_resident_fast__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_resident_peak {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_resident_peak__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_unique {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_unique__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
