@@ -144,6 +144,11 @@ view: metrics {
     hidden: yes
   }
 
+  dimension: metric_configuration_metric_observed_column_response {
+    sql: ${TABLE}.metric_configuration_metric_observed_column_response ;;
+    hidden: yes
+  }
+
   dimension: metric_configuration_metric_schedule_named_schedule_cron {
     sql: ${TABLE}.metric_configuration_metric_schedule_named_schedule_cron ;;
     type: string

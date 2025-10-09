@@ -11,6 +11,12 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: ad_clicks_count_all {
+    sql: ${TABLE}.ad_clicks_count_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string

@@ -5,6 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics_clients_last_seen_table {
+  dimension: ad_clicks_count_all {
+    sql: ${TABLE}.ad_clicks_count_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of ad clicks on client's last seen date in last 28 days."
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
