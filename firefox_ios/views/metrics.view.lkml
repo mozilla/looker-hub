@@ -2728,7 +2728,7 @@ is enabled to be displayed.
 
   dimension: metrics__counter__reader_mode_close {
     label: "Reader Mode Close"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.reader_mode_close ;;
     type: number
     group_label: "Reader Mode"
@@ -2746,7 +2746,7 @@ is enabled to be displayed.
 
   dimension: metrics__counter__reader_mode_open {
     label: "Reader Mode Open"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.reader_mode_open ;;
     type: number
     group_label: "Reader Mode"
@@ -3442,7 +3442,7 @@ closes the application.
 
   dimension: metrics__counter__tabs_reload_from_url_bar {
     label: "Tabs Reload From URL Bar"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_reload_from_url_bar ;;
     type: number
     group_label: "Tabs"
