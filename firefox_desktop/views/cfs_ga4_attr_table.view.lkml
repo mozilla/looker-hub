@@ -244,6 +244,11 @@ view: cfs_ga4_attr_table {
     hidden: yes
   }
 
+  dimension: ga4_distinct_gad_campaignid_from_event_params {
+    sql: ${TABLE}.ga4_distinct_gad_campaignid_from_event_params ;;
+    hidden: yes
+  }
+
   dimension: ga4_distinct_mediums_from_event_params {
     sql: ${TABLE}.ga4_distinct_mediums_from_event_params ;;
     hidden: yes
@@ -285,6 +290,12 @@ view: cfs_ga4_attr_table {
 
   dimension: ga4_first_experiment_id_from_event_params {
     sql: ${TABLE}.ga4_first_experiment_id_from_event_params ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ga4_first_gad_campaignid_from_event_params {
+    sql: ${TABLE}.ga4_first_gad_campaignid_from_event_params ;;
     type: string
     suggest_persist_for: "24 hours"
   }

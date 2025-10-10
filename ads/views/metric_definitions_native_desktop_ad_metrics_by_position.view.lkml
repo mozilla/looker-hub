@@ -27,6 +27,7 @@ native_desktop_ad_metrics_by_position_dismiss_rate,
 native_desktop_ad_metrics_by_position_dismisses,
 native_desktop_ad_metrics_by_position_external_param,
 native_desktop_ad_metrics_by_position_flight_id,
+native_desktop_ad_metrics_by_position_id,
 native_desktop_ad_metrics_by_position_image_url,
 native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position_pid,
@@ -88,6 +89,7 @@ native_desktop_ad_metrics_by_position.dismiss_rate AS native_desktop_ad_metrics_
 native_desktop_ad_metrics_by_position.dismisses AS native_desktop_ad_metrics_by_position_dismisses,
 native_desktop_ad_metrics_by_position.external_param AS native_desktop_ad_metrics_by_position_external_param,
 native_desktop_ad_metrics_by_position.flight_id AS native_desktop_ad_metrics_by_position_flight_id,
+native_desktop_ad_metrics_by_position.id AS native_desktop_ad_metrics_by_position_id,
 native_desktop_ad_metrics_by_position.image_url AS native_desktop_ad_metrics_by_position_image_url,
 native_desktop_ad_metrics_by_position.impressions AS native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position.pid AS native_desktop_ad_metrics_by_position_pid,
@@ -165,6 +167,7 @@ native_desktop_ad_metrics_by_position_dismiss_rate,
 native_desktop_ad_metrics_by_position_dismisses,
 native_desktop_ad_metrics_by_position_external_param,
 native_desktop_ad_metrics_by_position_flight_id,
+native_desktop_ad_metrics_by_position_id,
 native_desktop_ad_metrics_by_position_image_url,
 native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position_pid,
@@ -329,6 +332,13 @@ native_desktop_ad_metrics_by_position_zone_name,
   dimension: flight_id {
     sql: ${TABLE}.native_desktop_ad_metrics_by_position_flight_id ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: id {
+    sql: ${TABLE}.native_desktop_ad_metrics_by_position_id ;;
+    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
