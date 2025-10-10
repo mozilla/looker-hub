@@ -161,6 +161,12 @@ view: firefox_com_ga4_sessions {
     description: "All non-null reported experiment IDs from event_params for this session."
   }
 
+  dimension: distinct_gad_campaignid_from_event_params {
+    sql: ${TABLE}.distinct_gad_campaignid_from_event_params ;;
+    hidden: yes
+    description: "All non-null reported gad_campaignid from event_params for this session."
+  }
+
   dimension: distinct_mediums_from_event_params {
     sql: ${TABLE}.distinct_mediums_from_event_params ;;
     hidden: yes
@@ -212,6 +218,13 @@ view: firefox_com_ga4_sessions {
     type: string
     suggest_persist_for: "24 hours"
     description: "The first non-null reported experiment ID from event_params for this session."
+  }
+
+  dimension: first_gad_campaignid_from_event_params {
+    sql: ${TABLE}.first_gad_campaignid_from_event_params ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The first non-null reported gad_campaignid from event_params for this session."
   }
 
   dimension: first_medium_from_event_params {

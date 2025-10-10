@@ -7,8 +7,7 @@
 view: metric_definitions_native_desktop_ad_metrics {
   derived_table: {
     sql: SELECT
-                ANY_VALUE(GENERATE_UUID()) AS id,
-SUM(spend) AS native_spend,
+                SUM(spend) AS native_spend,
 SUM(dismisses) AS native_dismisses,
 SUM(impressions) AS native_impressions,
 SUM(clicks) AS native_clicks,
@@ -28,6 +27,7 @@ native_desktop_ad_metrics_dismiss_rate,
 native_desktop_ad_metrics_dismisses,
 native_desktop_ad_metrics_external_param,
 native_desktop_ad_metrics_flight_id,
+native_desktop_ad_metrics_id,
 native_desktop_ad_metrics_image_url,
 native_desktop_ad_metrics_impressions,
 native_desktop_ad_metrics_pid,
@@ -88,6 +88,7 @@ native_desktop_ad_metrics.dismiss_rate AS native_desktop_ad_metrics_dismiss_rate
 native_desktop_ad_metrics.dismisses AS native_desktop_ad_metrics_dismisses,
 native_desktop_ad_metrics.external_param AS native_desktop_ad_metrics_external_param,
 native_desktop_ad_metrics.flight_id AS native_desktop_ad_metrics_flight_id,
+native_desktop_ad_metrics.id AS native_desktop_ad_metrics_id,
 native_desktop_ad_metrics.image_url AS native_desktop_ad_metrics_image_url,
 native_desktop_ad_metrics.impressions AS native_desktop_ad_metrics_impressions,
 native_desktop_ad_metrics.pid AS native_desktop_ad_metrics_pid,
@@ -164,6 +165,7 @@ native_desktop_ad_metrics_dismiss_rate,
 native_desktop_ad_metrics_dismisses,
 native_desktop_ad_metrics_external_param,
 native_desktop_ad_metrics_flight_id,
+native_desktop_ad_metrics_id,
 native_desktop_ad_metrics_image_url,
 native_desktop_ad_metrics_impressions,
 native_desktop_ad_metrics_pid,
@@ -190,14 +192,6 @@ native_desktop_ad_metrics_zone_name,
     primary_key: yes
     group_label: "Base Fields"
     description: "Unique client identifier"
-  }
-
-  dimension: id {
-    group_label: "Metrics"
-    label: "ID"
-    description: "Randomly generated unique identifier for a row"
-    type: number
-    sql: ${TABLE}.id ;;
   }
 
   dimension: native_spend {
@@ -335,6 +329,13 @@ native_desktop_ad_metrics_zone_name,
   dimension: flight_id {
     sql: ${TABLE}.native_desktop_ad_metrics_flight_id ;;
     type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: id {
+    sql: ${TABLE}.native_desktop_ad_metrics_id ;;
+    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
@@ -525,7 +526,6 @@ native_desktop_ad_metrics_zone_name,
 
   set: metrics {
     fields: [
-      id,
       native_spend,
       native_dismisses,
       native_impressions,
