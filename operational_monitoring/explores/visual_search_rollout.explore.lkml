@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/enable_nimbus_sql_datastore.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/enable_nimbus_sql_datastore_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/visual_search_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/visual_search_rollout_last_updated.datagroup.lkml"
 
-explore: enable_nimbus_sql_datastore {
+explore: visual_search_rollout {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: enable_nimbus_sql_datastore {
   }
 
   hidden: yes
-  persist_with: enable_nimbus_sql_datastore_last_updated
+  persist_with: visual_search_rollout_last_updated
 }
