@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: test_enable_custom_review_prompt
+    type: looker_line
+    fields: [
+      test_enable_custom_review_prompt.submission_date,
+      test_enable_custom_review_prompt.branch,
+      test_enable_custom_review_prompt.point
+    ]
+    pivots: [
+      test_enable_custom_review_prompt.branch
+    ]
+    filters:
+      test_enable_custom_review_prompt.metric: 'ad_clicks'
+      test_enable_custom_review_prompt.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: test_enable_custom_review_prompt.submission_date
+    field_y: test_enable_custom_review_prompt.point
+    log_scale: false
+    ci_lower: test_enable_custom_review_prompt.lower
+    ci_upper: test_enable_custom_review_prompt.upper
+    show_grid: true
+    listen:
+      Date: test_enable_custom_review_prompt.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -29,75 +63,7 @@
       test_enable_custom_review_prompt.metric: 'active_hours'
       test_enable_custom_review_prompt.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: test_enable_custom_review_prompt.submission_date
-    field_y: test_enable_custom_review_prompt.point
-    log_scale: false
-    ci_lower: test_enable_custom_review_prompt.lower
-    ci_upper: test_enable_custom_review_prompt.upper
-    show_grid: true
-    listen:
-      Date: test_enable_custom_review_prompt.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: test_enable_custom_review_prompt
-    type: looker_line
-    fields: [
-      test_enable_custom_review_prompt.submission_date,
-      test_enable_custom_review_prompt.branch,
-      test_enable_custom_review_prompt.point
-    ]
-    pivots: [
-      test_enable_custom_review_prompt.branch
-    ]
-    filters:
-      test_enable_custom_review_prompt.metric: 'tagged_sap_searches'
-      test_enable_custom_review_prompt.statistic: mean
-    row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: test_enable_custom_review_prompt.submission_date
-    field_y: test_enable_custom_review_prompt.point
-    log_scale: false
-    ci_lower: test_enable_custom_review_prompt.lower
-    ci_upper: test_enable_custom_review_prompt.upper
-    show_grid: true
-    listen:
-      Date: test_enable_custom_review_prompt.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: test_enable_custom_review_prompt
-    type: looker_line
-    fields: [
-      test_enable_custom_review_prompt.submission_date,
-      test_enable_custom_review_prompt.branch,
-      test_enable_custom_review_prompt.point
-    ]
-    pivots: [
-      test_enable_custom_review_prompt.branch
-    ]
-    filters:
-      test_enable_custom_review_prompt.metric: 'ad_clicks'
-      test_enable_custom_review_prompt.statistic: mean
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: test_enable_custom_review_prompt.submission_date
@@ -131,7 +97,7 @@
       test_enable_custom_review_prompt.metric: 'search_count'
       test_enable_custom_review_prompt.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: test_enable_custom_review_prompt.submission_date
@@ -164,8 +130,8 @@
     filters:
       test_enable_custom_review_prompt.metric: 'uri_count'
       test_enable_custom_review_prompt.statistic: mean
-    row: 20
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: test_enable_custom_review_prompt.submission_date
@@ -197,6 +163,40 @@
     ]
     filters:
       test_enable_custom_review_prompt.metric: 'retained'
+      test_enable_custom_review_prompt.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: test_enable_custom_review_prompt.submission_date
+    field_y: test_enable_custom_review_prompt.point
+    log_scale: false
+    ci_lower: test_enable_custom_review_prompt.lower
+    ci_upper: test_enable_custom_review_prompt.upper
+    show_grid: true
+    listen:
+      Date: test_enable_custom_review_prompt.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: test_enable_custom_review_prompt
+    type: looker_line
+    fields: [
+      test_enable_custom_review_prompt.submission_date,
+      test_enable_custom_review_prompt.branch,
+      test_enable_custom_review_prompt.point
+    ]
+    pivots: [
+      test_enable_custom_review_prompt.branch
+    ]
+    filters:
+      test_enable_custom_review_prompt.metric: 'tagged_sap_searches'
       test_enable_custom_review_prompt.statistic: mean
     row: 20
     col: 12
