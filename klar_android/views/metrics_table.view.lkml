@@ -2978,6 +2978,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__update_state_write_failure {
+    sql: ${TABLE}.metrics.counter.update_state_write_failure ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update State Write Failure"
+    description: "Update: Count of the number of times we have shown a notification to the user that they need to manually update because we cannot write to the update status file.
+"
+  }
+
   dimension: metrics__counter__update_unable_to_apply_external {
     sql: ${TABLE}.metrics.counter.update_unable_to_apply_external ;;
     type: number

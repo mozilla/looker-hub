@@ -41,42 +41,6 @@ view: prototype_feature_segmentation {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: sum_selected_other_as_reason_to_use_fx {
-    sql: ${TABLE}.sum_selected_other_as_reason_to_use_fx ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: sum_selected_personal_as_reason_to_use_fx {
-    sql: ${TABLE}.sum_selected_personal_as_reason_to_use_fx ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: sum_selected_privacy_and_security_as_reason_to_use_fx {
-    sql: ${TABLE}.sum_selected_privacy_and_security_as_reason_to_use_fx ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: sum_selected_productivity_as_reason_to_use_fx {
-    sql: ${TABLE}.sum_selected_productivity_as_reason_to_use_fx ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: sum_selected_school_as_reason_to_use_fx {
-    sql: ${TABLE}.sum_selected_school_as_reason_to_use_fx ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: sum_selected_work_as_reason_to_use_fx {
-    sql: ${TABLE}.sum_selected_work_as_reason_to_use_fx ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
   dimension_group: desktop_retention_date_yoy {
     sql: ${TABLE}.desktop_retention_date_yoy ;;
     type: time
