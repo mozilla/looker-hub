@@ -4548,6 +4548,10 @@ fxci:
   pretty_name: Firefox-CI Taskcluster
   spoke: looker-spoke-default
   views:
+    task_definitions_base:
+      tables:
+      - table: moz-fx-data-shared-prod.fxci.task_definitions
+      type: table_view
     task_run_costs_base:
       tables:
       - table: moz-fx-data-shared-prod.fxci.task_run_costs

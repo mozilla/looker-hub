@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: fenix_distribution_deals {
+  dimension: active_metric_date {
+    sql: ${TABLE}.active_metric_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: ad_click {
     sql: ${TABLE}.ad_click ;;
     type: number
@@ -98,6 +104,12 @@ view: fenix_distribution_deals {
 
   dimension: new_profile_count {
     sql: ${TABLE}.new_profile_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: new_profile_metric_date {
+    sql: ${TABLE}.new_profile_metric_date ;;
     type: number
     suggest_persist_for: "24 hours"
   }
