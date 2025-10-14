@@ -3848,6 +3848,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__update_state_write_failure {
+    sql: ${TABLE}.metrics.counter.update_state_write_failure ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update State Write Failure"
+    description: "Update: Count of the number of times we have shown a notification to the user that they need to manually update because we cannot write to the update status file.
+"
+  }
+
   dimension: metrics__counter__update_unable_to_apply_external {
     sql: ${TABLE}.metrics.counter.update_unable_to_apply_external ;;
     type: number
@@ -17711,9 +17721,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine when not using OHTTP. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
-This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 
@@ -20788,6 +20797,16 @@ e.g. 134217728
     group_label: "Metrics Quantity"
     group_item_label: "Timestamps First Paint Two"
     description: "Record the timestamp of the first main window paint, in milliseconds since process start. Intended to replace first_paint since first_paint is broken. This metric was generated to correspond to the Legacy Telemetry scalar timestamps.first_paint_two.
+"
+  }
+
+  dimension: metrics__quantity__web_app_installed_web_app_count {
+    sql: ${TABLE}.metrics.quantity.web_app_installed_web_app_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Web App Installed Web App Count"
+    description: "Count of currently installed web apps. Note that Firefox does not detect unpinning or deleting the shortcut outside of Firefox, so this could include web apps that the user has no way to access; see bug 1990342.
 "
   }
 

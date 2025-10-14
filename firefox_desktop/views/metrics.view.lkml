@@ -10525,6 +10525,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__quantity__web_app_installed_web_app_count {
+    label: "Web App Installed Web App Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.web_app_installed_web_app_count ;;
+    type: number
+    group_label: "Web App"
+    group_item_label: "Installed Web App Count"
+
+    link: {
+      label: "Glean Dictionary reference for Web App Installed Web App Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_app_installed_web_app_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of currently installed web apps. Note that Firefox does not detect unpinning or deleting the shortcut outside of Firefox, so this could include web apps that the user has no way to access; see bug 1990342.
+"
+  }
+
   dimension: metrics__timing_distribution__web_app_usage_time__sum {
     label: "Web App Usage Time Sum"
     hidden: no
@@ -35300,6 +35318,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__counter__update_state_write_failure {
+    label: "Update State Write Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_state_write_failure ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "State Write Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Update State Write Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_write_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: Count of the number of times we have shown a notification to the user that they need to manually update because we cannot write to the update status file.
+"
+  }
+
   dimension: metrics__custom_distribution__update_status_error_code_complete_stage__sum {
     label: "Update Status Error Code Complete Stage Sum"
     hidden: no
@@ -44439,6 +44475,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Update Service Manually Uninstalled Subsequent"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_service_manually_uninstalled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_state_write_failure {
+    type: sum
+    sql: ${metrics__counter__update_state_write_failure} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update State Write Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_write_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_state_write_failure_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_state_write_failure: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update State Write Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_state_write_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
