@@ -185,6 +185,13 @@ view: ga4_sessions {
     description: "All non-null reported terms from event_params for this session."
   }
 
+  dimension: engaged_session {
+    sql: ${TABLE}.engaged_session ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "A 1/0 flag indicating if the session was engaged"
+  }
+
   dimension: firefox_desktop_downloads {
     sql: ${TABLE}.firefox_desktop_downloads ;;
     type: number

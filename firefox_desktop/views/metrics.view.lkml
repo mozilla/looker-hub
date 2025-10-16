@@ -2969,6 +2969,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_tab_movement {
+    label: "Browser UI Interaction Tab Movement"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tab_movement ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Tab Movement"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction Tab Movement"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_tab_movement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records information about user tab movements within the tab strip.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_tabs_bar {
     label: "Browser UI Interaction Tabs Bar"
     hidden: yes
@@ -4820,6 +4837,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The number of history-specific or bookmark-specific searches made from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.search.
+"
+  }
+
+  dimension: metrics__boolean__link_handling_open_next_to_active_tab_settings_enabled {
+    label: "Link Handling Open Next To Active Tab Settings Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.link_handling_open_next_to_active_tab_settings_enabled ;;
+    type: yesno
+    group_label: "Link Handling"
+    group_item_label: "Open Next To Active Tab Settings Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Link Handling Open Next To Active Tab Settings Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/link_handling_open_next_to_active_tab_settings_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has the \"Open links from apps next to your active tab\" feature enabled.
 "
   }
 
@@ -49974,6 +50009,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane
 
 view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown {
   label: "Browser UI Interaction - Preferences Pane Unknown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_tab_movement {
+  label: "Browser UI Interaction - Tab Movement"
 
   dimension: document_id {
     type: string

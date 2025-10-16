@@ -1216,6 +1216,16 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__link_handling_open_next_to_active_tab_settings_enabled {
+    sql: ${TABLE}.metrics.boolean.link_handling_open_next_to_active_tab_settings_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Link Handling Open Next To Active Tab Settings Enabled"
+    description: "Records if the user has the \"Open links from apps next to your active tab\" feature enabled.
+"
+  }
+
   dimension: metrics__boolean__migration_uninstaller_profile_refresh {
     sql: ${TABLE}.metrics.boolean.migration_uninstaller_profile_refresh ;;
     type: yesno
@@ -13291,6 +13301,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_unknown ;;
     hidden: yes
     description: "Records the items interacted with in any other section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneUnknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_tab_movement {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tab_movement ;;
+    hidden: yes
+    description: "Records information about user tab movements within the tab strip.
 "
   }
 
