@@ -593,6 +593,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_tab_movement {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_tab_movement}) AS metrics__metrics__labeled_counter__browser_ui_interaction_tab_movement ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_tab_movement.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_ui_interaction_tabs_bar {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_tabs_bar}) AS metrics__metrics__labeled_counter__browser_ui_interaction_tabs_bar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_tabs_bar.document_id} ;;
