@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       client_side_sampling_for_performance_metrics_proof_of_concept.branch
     ]
     filters:
-      client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'uri_count'
+      client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'active_hours'
       client_side_sampling_for_performance_metrics_proof_of_concept.statistic: mean
     row: 0
     col: 0
@@ -78,74 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_for_performance_metrics_proof_of_concept
-    type: looker_line
-    fields: [
-      client_side_sampling_for_performance_metrics_proof_of_concept.submission_date,
-      client_side_sampling_for_performance_metrics_proof_of_concept.branch,
-      client_side_sampling_for_performance_metrics_proof_of_concept.point
-    ]
-    pivots: [
-      client_side_sampling_for_performance_metrics_proof_of_concept.branch
-    ]
-    filters:
-      client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'active_hours'
-      client_side_sampling_for_performance_metrics_proof_of_concept.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: client_side_sampling_for_performance_metrics_proof_of_concept.submission_date
-    field_y: client_side_sampling_for_performance_metrics_proof_of_concept.point
-    log_scale: false
-    ci_lower: client_side_sampling_for_performance_metrics_proof_of_concept.lower
-    ci_upper: client_side_sampling_for_performance_metrics_proof_of_concept.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_for_performance_metrics_proof_of_concept.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_for_performance_metrics_proof_of_concept
-    type: looker_line
-    fields: [
-      client_side_sampling_for_performance_metrics_proof_of_concept.submission_date,
-      client_side_sampling_for_performance_metrics_proof_of_concept.branch,
-      client_side_sampling_for_performance_metrics_proof_of_concept.point
-    ]
-    pivots: [
-      client_side_sampling_for_performance_metrics_proof_of_concept.branch
-    ]
-    filters:
-      client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'retained'
-      client_side_sampling_for_performance_metrics_proof_of_concept.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: client_side_sampling_for_performance_metrics_proof_of_concept.submission_date
-    field_y: client_side_sampling_for_performance_metrics_proof_of_concept.point
-    log_scale: false
-    ci_lower: client_side_sampling_for_performance_metrics_proof_of_concept.lower
-    ci_upper: client_side_sampling_for_performance_metrics_proof_of_concept.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_for_performance_metrics_proof_of_concept.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -166,7 +98,7 @@
     filters:
       client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'memory_total'
       client_side_sampling_for_performance_metrics_proof_of_concept.statistic: percentile
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -201,7 +133,7 @@
     filters:
       client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'days_of_use'
       client_side_sampling_for_performance_metrics_proof_of_concept.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -234,6 +166,74 @@
     ]
     filters:
       client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'search_count'
+      client_side_sampling_for_performance_metrics_proof_of_concept.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: client_side_sampling_for_performance_metrics_proof_of_concept.submission_date
+    field_y: client_side_sampling_for_performance_metrics_proof_of_concept.point
+    log_scale: false
+    ci_lower: client_side_sampling_for_performance_metrics_proof_of_concept.lower
+    ci_upper: client_side_sampling_for_performance_metrics_proof_of_concept.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_for_performance_metrics_proof_of_concept.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_for_performance_metrics_proof_of_concept
+    type: looker_line
+    fields: [
+      client_side_sampling_for_performance_metrics_proof_of_concept.submission_date,
+      client_side_sampling_for_performance_metrics_proof_of_concept.branch,
+      client_side_sampling_for_performance_metrics_proof_of_concept.point
+    ]
+    pivots: [
+      client_side_sampling_for_performance_metrics_proof_of_concept.branch
+    ]
+    filters:
+      client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'retained'
+      client_side_sampling_for_performance_metrics_proof_of_concept.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: client_side_sampling_for_performance_metrics_proof_of_concept.submission_date
+    field_y: client_side_sampling_for_performance_metrics_proof_of_concept.point
+    log_scale: false
+    ci_lower: client_side_sampling_for_performance_metrics_proof_of_concept.lower
+    ci_upper: client_side_sampling_for_performance_metrics_proof_of_concept.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_for_performance_metrics_proof_of_concept.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_for_performance_metrics_proof_of_concept
+    type: looker_line
+    fields: [
+      client_side_sampling_for_performance_metrics_proof_of_concept.submission_date,
+      client_side_sampling_for_performance_metrics_proof_of_concept.branch,
+      client_side_sampling_for_performance_metrics_proof_of_concept.point
+    ]
+    pivots: [
+      client_side_sampling_for_performance_metrics_proof_of_concept.branch
+    ]
+    filters:
+      client_side_sampling_for_performance_metrics_proof_of_concept.metric: 'uri_count'
       client_side_sampling_for_performance_metrics_proof_of_concept.statistic: mean
     row: 30
     col: 0

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       windows_10_eos_sync_messaging_rollout_1.branch
     ]
     filters:
-      windows_10_eos_sync_messaging_rollout_1.metric: 'uri_count'
+      windows_10_eos_sync_messaging_rollout_1.metric: 'active_hours'
       windows_10_eos_sync_messaging_rollout_1.statistic: mean
     row: 0
     col: 0
@@ -78,74 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_eos_sync_messaging_rollout_1
-    type: looker_line
-    fields: [
-      windows_10_eos_sync_messaging_rollout_1.submission_date,
-      windows_10_eos_sync_messaging_rollout_1.branch,
-      windows_10_eos_sync_messaging_rollout_1.point
-    ]
-    pivots: [
-      windows_10_eos_sync_messaging_rollout_1.branch
-    ]
-    filters:
-      windows_10_eos_sync_messaging_rollout_1.metric: 'active_hours'
-      windows_10_eos_sync_messaging_rollout_1.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: windows_10_eos_sync_messaging_rollout_1.submission_date
-    field_y: windows_10_eos_sync_messaging_rollout_1.point
-    log_scale: false
-    ci_lower: windows_10_eos_sync_messaging_rollout_1.lower
-    ci_upper: windows_10_eos_sync_messaging_rollout_1.upper
-    show_grid: true
-    listen:
-      Date: windows_10_eos_sync_messaging_rollout_1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_eos_sync_messaging_rollout_1
-    type: looker_line
-    fields: [
-      windows_10_eos_sync_messaging_rollout_1.submission_date,
-      windows_10_eos_sync_messaging_rollout_1.branch,
-      windows_10_eos_sync_messaging_rollout_1.point
-    ]
-    pivots: [
-      windows_10_eos_sync_messaging_rollout_1.branch
-    ]
-    filters:
-      windows_10_eos_sync_messaging_rollout_1.metric: 'retained'
-      windows_10_eos_sync_messaging_rollout_1.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: windows_10_eos_sync_messaging_rollout_1.submission_date
-    field_y: windows_10_eos_sync_messaging_rollout_1.point
-    log_scale: false
-    ci_lower: windows_10_eos_sync_messaging_rollout_1.lower
-    ci_upper: windows_10_eos_sync_messaging_rollout_1.upper
-    show_grid: true
-    listen:
-      Date: windows_10_eos_sync_messaging_rollout_1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -166,7 +98,7 @@
     filters:
       windows_10_eos_sync_messaging_rollout_1.metric: 'memory_total'
       windows_10_eos_sync_messaging_rollout_1.statistic: percentile
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -201,7 +133,7 @@
     filters:
       windows_10_eos_sync_messaging_rollout_1.metric: 'days_of_use'
       windows_10_eos_sync_messaging_rollout_1.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -234,6 +166,74 @@
     ]
     filters:
       windows_10_eos_sync_messaging_rollout_1.metric: 'search_count'
+      windows_10_eos_sync_messaging_rollout_1.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: windows_10_eos_sync_messaging_rollout_1.submission_date
+    field_y: windows_10_eos_sync_messaging_rollout_1.point
+    log_scale: false
+    ci_lower: windows_10_eos_sync_messaging_rollout_1.lower
+    ci_upper: windows_10_eos_sync_messaging_rollout_1.upper
+    show_grid: true
+    listen:
+      Date: windows_10_eos_sync_messaging_rollout_1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_eos_sync_messaging_rollout_1
+    type: looker_line
+    fields: [
+      windows_10_eos_sync_messaging_rollout_1.submission_date,
+      windows_10_eos_sync_messaging_rollout_1.branch,
+      windows_10_eos_sync_messaging_rollout_1.point
+    ]
+    pivots: [
+      windows_10_eos_sync_messaging_rollout_1.branch
+    ]
+    filters:
+      windows_10_eos_sync_messaging_rollout_1.metric: 'retained'
+      windows_10_eos_sync_messaging_rollout_1.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: windows_10_eos_sync_messaging_rollout_1.submission_date
+    field_y: windows_10_eos_sync_messaging_rollout_1.point
+    log_scale: false
+    ci_lower: windows_10_eos_sync_messaging_rollout_1.lower
+    ci_upper: windows_10_eos_sync_messaging_rollout_1.upper
+    show_grid: true
+    listen:
+      Date: windows_10_eos_sync_messaging_rollout_1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_eos_sync_messaging_rollout_1
+    type: looker_line
+    fields: [
+      windows_10_eos_sync_messaging_rollout_1.submission_date,
+      windows_10_eos_sync_messaging_rollout_1.branch,
+      windows_10_eos_sync_messaging_rollout_1.point
+    ]
+    pivots: [
+      windows_10_eos_sync_messaging_rollout_1.branch
+    ]
+    filters:
+      windows_10_eos_sync_messaging_rollout_1.metric: 'uri_count'
       windows_10_eos_sync_messaging_rollout_1.statistic: mean
     row: 30
     col: 0
