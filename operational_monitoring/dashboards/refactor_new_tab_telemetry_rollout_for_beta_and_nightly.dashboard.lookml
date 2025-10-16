@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch
     ]
     filters:
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'uri_count'
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'active_hours'
       refactor_new_tab_telemetry_rollout_for_beta_and_nightly.statistic: mean
     row: 0
     col: 0
@@ -78,74 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: refactor_new_tab_telemetry_rollout_for_beta_and_nightly
-    type: looker_line
-    fields: [
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date,
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch,
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.point
-    ]
-    pivots: [
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch
-    ]
-    filters:
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'active_hours'
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date
-    field_y: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.point
-    log_scale: false
-    ci_lower: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.lower
-    ci_upper: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.upper
-    show_grid: true
-    listen:
-      Date: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: refactor_new_tab_telemetry_rollout_for_beta_and_nightly
-    type: looker_line
-    fields: [
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date,
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch,
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.point
-    ]
-    pivots: [
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch
-    ]
-    filters:
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'retained'
-      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date
-    field_y: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.point
-    log_scale: false
-    ci_lower: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.lower
-    ci_upper: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.upper
-    show_grid: true
-    listen:
-      Date: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -166,7 +98,7 @@
     filters:
       refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'memory_total'
       refactor_new_tab_telemetry_rollout_for_beta_and_nightly.statistic: percentile
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -201,7 +133,7 @@
     filters:
       refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'days_of_use'
       refactor_new_tab_telemetry_rollout_for_beta_and_nightly.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -234,6 +166,74 @@
     ]
     filters:
       refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'search_count'
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date
+    field_y: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.point
+    log_scale: false
+    ci_lower: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.lower
+    ci_upper: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.upper
+    show_grid: true
+    listen:
+      Date: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: refactor_new_tab_telemetry_rollout_for_beta_and_nightly
+    type: looker_line
+    fields: [
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date,
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch,
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.point
+    ]
+    pivots: [
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch
+    ]
+    filters:
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'retained'
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date
+    field_y: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.point
+    log_scale: false
+    ci_lower: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.lower
+    ci_upper: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.upper
+    show_grid: true
+    listen:
+      Date: refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: refactor_new_tab_telemetry_rollout_for_beta_and_nightly
+    type: looker_line
+    fields: [
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.submission_date,
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch,
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.point
+    ]
+    pivots: [
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.branch
+    ]
+    filters:
+      refactor_new_tab_telemetry_rollout_for_beta_and_nightly.metric: 'uri_count'
       refactor_new_tab_telemetry_rollout_for_beta_and_nightly.statistic: mean
     row: 30
     col: 0

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       local_network_access_rollout_143_beta.branch
     ]
     filters:
-      local_network_access_rollout_143_beta.metric: 'uri_count'
+      local_network_access_rollout_143_beta.metric: 'active_hours'
       local_network_access_rollout_143_beta.statistic: mean
     row: 0
     col: 0
@@ -78,74 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_rollout_143_beta
-    type: looker_line
-    fields: [
-      local_network_access_rollout_143_beta.submission_date,
-      local_network_access_rollout_143_beta.branch,
-      local_network_access_rollout_143_beta.point
-    ]
-    pivots: [
-      local_network_access_rollout_143_beta.branch
-    ]
-    filters:
-      local_network_access_rollout_143_beta.metric: 'active_hours'
-      local_network_access_rollout_143_beta.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_143_beta.submission_date
-    field_y: local_network_access_rollout_143_beta.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_143_beta.lower
-    ci_upper: local_network_access_rollout_143_beta.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_143_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_rollout_143_beta
-    type: looker_line
-    fields: [
-      local_network_access_rollout_143_beta.submission_date,
-      local_network_access_rollout_143_beta.branch,
-      local_network_access_rollout_143_beta.point
-    ]
-    pivots: [
-      local_network_access_rollout_143_beta.branch
-    ]
-    filters:
-      local_network_access_rollout_143_beta.metric: 'retained'
-      local_network_access_rollout_143_beta.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_143_beta.submission_date
-    field_y: local_network_access_rollout_143_beta.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_143_beta.lower
-    ci_upper: local_network_access_rollout_143_beta.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_143_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -166,7 +98,7 @@
     filters:
       local_network_access_rollout_143_beta.metric: 'memory_total'
       local_network_access_rollout_143_beta.statistic: percentile
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -201,7 +133,7 @@
     filters:
       local_network_access_rollout_143_beta.metric: 'days_of_use'
       local_network_access_rollout_143_beta.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -234,6 +166,74 @@
     ]
     filters:
       local_network_access_rollout_143_beta.metric: 'search_count'
+      local_network_access_rollout_143_beta.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_143_beta.submission_date
+    field_y: local_network_access_rollout_143_beta.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_143_beta.lower
+    ci_upper: local_network_access_rollout_143_beta.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_143_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_rollout_143_beta
+    type: looker_line
+    fields: [
+      local_network_access_rollout_143_beta.submission_date,
+      local_network_access_rollout_143_beta.branch,
+      local_network_access_rollout_143_beta.point
+    ]
+    pivots: [
+      local_network_access_rollout_143_beta.branch
+    ]
+    filters:
+      local_network_access_rollout_143_beta.metric: 'retained'
+      local_network_access_rollout_143_beta.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_143_beta.submission_date
+    field_y: local_network_access_rollout_143_beta.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_143_beta.lower
+    ci_upper: local_network_access_rollout_143_beta.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_143_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_rollout_143_beta
+    type: looker_line
+    fields: [
+      local_network_access_rollout_143_beta.submission_date,
+      local_network_access_rollout_143_beta.branch,
+      local_network_access_rollout_143_beta.point
+    ]
+    pivots: [
+      local_network_access_rollout_143_beta.branch
+    ]
+    filters:
+      local_network_access_rollout_143_beta.metric: 'uri_count'
       local_network_access_rollout_143_beta.statistic: mean
     row: 30
     col: 0
