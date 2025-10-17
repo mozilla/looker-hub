@@ -786,6 +786,11 @@ for the purpose of experimentation enrollment.
     hidden: yes
   }
 
+  dimension: metrics__string_list__broken_site_report_tab_info_antitracking_blocked_origins {
+    sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_antitracking_blocked_origins ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__broken_site_report_tab_info_languages {
     sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_languages ;;
     hidden: yes

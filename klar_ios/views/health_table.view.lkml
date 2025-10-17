@@ -473,6 +473,16 @@ In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
+  dimension: metrics__counter__glean_health_init_count {
+    sql: ${TABLE}.metrics.counter.glean_health_init_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Glean Health Init Count"
+    description: "A running count of how many times the Glean SDK has been initialized.
+"
+  }
+
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
@@ -644,6 +654,13 @@ Now it only records counts for the Glean built-in pings.
     hidden: yes
   }
 
+  dimension: metrics__object__glean_database_load_sizes {
+    sql: ${TABLE}.metrics.object.glean_database_load_sizes ;;
+    hidden: yes
+    description: "The size of the db file during specific phases of initialization.
+"
+  }
+
   dimension: metrics__object__glean_health_data_directory_info {
     sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
     hidden: yes
@@ -662,8 +679,7 @@ Structure is an array of objects, each containing the following properties:
   determined, it will default to `0`.
 - `file_count`: The number of files in the directory. If the directory does not exist,
   this will be `0`.
-- `files`: An array of objects, each containing:
-  - `fil"
+- `error_message`: If there was an error accessing the di"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {

@@ -5,6 +5,52 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: health {
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    label: "Legacy Telemetry Client ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Client ID"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry Client ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_client_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The client_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
+in pings near when the data upload pref is disabled (if Telemetry gets
+to go first), or between when a client_id has been removed and when it
+has been regenerated.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    label: "Legacy Telemetry Profile Group ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Profile Group ID"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry Profile Group ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_profile_group_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The profile_group_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation ID"
     hidden: no
@@ -187,6 +233,24 @@ when writing a pending ping to disk.
 Only sent if the buffer ever overflows.
 
 In Version 0 this reported the total number of tasks enqueued.
+"
+  }
+
+  dimension: metrics__counter__glean_health_init_count {
+    label: "Glean Health Init Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_health_init_count ;;
+    type: number
+    group_label: "Glean Health"
+    group_item_label: "Init Count"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health Init Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_health_init_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A running count of how many times the Glean SDK has been initialized.
 "
   }
 
@@ -1075,6 +1139,31 @@ Most samples are expected to be below the 10s timeout used.
     link: {
       label: "Glean Dictionary reference for Glean Error Preinit Tasks Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_preinit_tasks_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_health_init_count {
+    type: sum
+    sql: ${metrics__counter__glean_health_init_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health Init Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_health_init_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_health_init_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_health_init_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health Init Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_health_init_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

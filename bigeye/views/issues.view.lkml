@@ -230,6 +230,11 @@ view: issues {
     hidden: yes
   }
 
+  dimension: metric_configuration_metric_observed_column_response {
+    sql: ${TABLE}.metric_configuration_metric_observed_column_response ;;
+    hidden: yes
+  }
+
   dimension: metric_configuration_metric_schedule_named_schedule_cron {
     sql: ${TABLE}.metric_configuration_metric_schedule_named_schedule_cron ;;
     type: string
@@ -274,24 +279,6 @@ view: issues {
 
   dimension: metric_configuration_metric_type_predefined_metric_metric_name {
     sql: ${TABLE}.metric_configuration_metric_type_predefined_metric_metric_name ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: metric_configuration_metric_type_template_metric_aggregation_type {
-    sql: ${TABLE}.metric_configuration_metric_type_template_metric_aggregation_type ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: metric_configuration_metric_type_template_metric_template_id {
-    sql: ${TABLE}.metric_configuration_metric_type_template_metric_template_id ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: metric_configuration_metric_type_template_metric_template_name {
-    sql: ${TABLE}.metric_configuration_metric_type_template_metric_template_name ;;
     type: string
     suggest_persist_for: "24 hours"
   }

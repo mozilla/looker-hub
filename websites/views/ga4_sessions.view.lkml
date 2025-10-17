@@ -161,6 +161,12 @@ view: ga4_sessions {
     description: "All non-null reported experiment IDs from event_params for this session."
   }
 
+  dimension: distinct_gad_campaignid_from_event_params {
+    sql: ${TABLE}.distinct_gad_campaignid_from_event_params ;;
+    hidden: yes
+    description: "All non-null reported gad_campaignid from event_params for this session."
+  }
+
   dimension: distinct_mediums_from_event_params {
     sql: ${TABLE}.distinct_mediums_from_event_params ;;
     hidden: yes
@@ -177,6 +183,13 @@ view: ga4_sessions {
     sql: ${TABLE}.distinct_terms_from_event_params ;;
     hidden: yes
     description: "All non-null reported terms from event_params for this session."
+  }
+
+  dimension: engaged_session {
+    sql: ${TABLE}.engaged_session ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "A 1/0 flag indicating if the session was engaged"
   }
 
   dimension: firefox_desktop_downloads {
@@ -212,6 +225,13 @@ view: ga4_sessions {
     type: string
     suggest_persist_for: "24 hours"
     description: "The first non-null reported experiment ID from event_params for this session."
+  }
+
+  dimension: first_gad_campaignid_from_event_params {
+    sql: ${TABLE}.first_gad_campaignid_from_event_params ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The first non-null reported gad_campaignid from event_params for this session."
   }
 
   dimension: first_medium_from_event_params {

@@ -27,6 +27,7 @@ native_desktop_ad_metrics_by_position_dismiss_rate,
 native_desktop_ad_metrics_by_position_dismisses,
 native_desktop_ad_metrics_by_position_external_param,
 native_desktop_ad_metrics_by_position_flight_id,
+native_desktop_ad_metrics_by_position_id,
 native_desktop_ad_metrics_by_position_image_url,
 native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position_pid,
@@ -35,6 +36,7 @@ native_desktop_ad_metrics_by_position_provider,
 native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position_saves,
+native_desktop_ad_metrics_by_position_shepherd_line_item_id,
 native_desktop_ad_metrics_by_position_site_name,
 native_desktop_ad_metrics_by_position_spend,
 native_desktop_ad_metrics_by_position_spoc_id,
@@ -87,6 +89,7 @@ native_desktop_ad_metrics_by_position.dismiss_rate AS native_desktop_ad_metrics_
 native_desktop_ad_metrics_by_position.dismisses AS native_desktop_ad_metrics_by_position_dismisses,
 native_desktop_ad_metrics_by_position.external_param AS native_desktop_ad_metrics_by_position_external_param,
 native_desktop_ad_metrics_by_position.flight_id AS native_desktop_ad_metrics_by_position_flight_id,
+native_desktop_ad_metrics_by_position.id AS native_desktop_ad_metrics_by_position_id,
 native_desktop_ad_metrics_by_position.image_url AS native_desktop_ad_metrics_by_position_image_url,
 native_desktop_ad_metrics_by_position.impressions AS native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position.pid AS native_desktop_ad_metrics_by_position_pid,
@@ -95,6 +98,7 @@ native_desktop_ad_metrics_by_position.provider AS native_desktop_ad_metrics_by_p
 native_desktop_ad_metrics_by_position.rate_type AS native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position.save_rate AS native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position.saves AS native_desktop_ad_metrics_by_position_saves,
+native_desktop_ad_metrics_by_position.shepherd_line_item_id AS native_desktop_ad_metrics_by_position_shepherd_line_item_id,
 native_desktop_ad_metrics_by_position.site_name AS native_desktop_ad_metrics_by_position_site_name,
 native_desktop_ad_metrics_by_position.spend AS native_desktop_ad_metrics_by_position_spend,
 native_desktop_ad_metrics_by_position.spoc_id AS native_desktop_ad_metrics_by_position_spoc_id,
@@ -163,6 +167,7 @@ native_desktop_ad_metrics_by_position_dismiss_rate,
 native_desktop_ad_metrics_by_position_dismisses,
 native_desktop_ad_metrics_by_position_external_param,
 native_desktop_ad_metrics_by_position_flight_id,
+native_desktop_ad_metrics_by_position_id,
 native_desktop_ad_metrics_by_position_image_url,
 native_desktop_ad_metrics_by_position_impressions,
 native_desktop_ad_metrics_by_position_pid,
@@ -171,6 +176,7 @@ native_desktop_ad_metrics_by_position_provider,
 native_desktop_ad_metrics_by_position_rate_type,
 native_desktop_ad_metrics_by_position_save_rate,
 native_desktop_ad_metrics_by_position_saves,
+native_desktop_ad_metrics_by_position_shepherd_line_item_id,
 native_desktop_ad_metrics_by_position_site_name,
 native_desktop_ad_metrics_by_position_spend,
 native_desktop_ad_metrics_by_position_spoc_id,
@@ -330,6 +336,13 @@ native_desktop_ad_metrics_by_position_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: id {
+    sql: ${TABLE}.native_desktop_ad_metrics_by_position_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: image_url {
     sql: ${TABLE}.native_desktop_ad_metrics_by_position_image_url ;;
     type: string
@@ -381,6 +394,13 @@ native_desktop_ad_metrics_by_position_zone_name,
 
   dimension: saves {
     sql: ${TABLE}.native_desktop_ad_metrics_by_position_saves ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: shepherd_line_item_id {
+    sql: ${TABLE}.native_desktop_ad_metrics_by_position_shepherd_line_item_id ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

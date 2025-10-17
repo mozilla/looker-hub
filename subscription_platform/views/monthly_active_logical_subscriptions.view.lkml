@@ -116,76 +116,18 @@ This will be null for Google and Apple subscriptions."
 For example, this should be `1` for their first logical subscription, `2` for their second logical subscription, etc."
   }
 
-  dimension: subscription__first_touch_attribution__entrypoint {
-    sql: ${TABLE}.subscription.first_touch_attribution.entrypoint ;;
+  dimension: subscription__ended_reason {
+    sql: ${TABLE}.subscription.ended_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "Entrypoint"
-    description: "First-touch attribution entrypoint."
-  }
-
-  dimension: subscription__first_touch_attribution__entrypoint_experiment {
-    sql: ${TABLE}.subscription.first_touch_attribution.entrypoint_experiment ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "Entrypoint Experiment"
-    description: "First-touch attribution entrypoint experiment."
-  }
-
-  dimension: subscription__first_touch_attribution__entrypoint_variation {
-    sql: ${TABLE}.subscription.first_touch_attribution.entrypoint_variation ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "Entrypoint Variation"
-    description: "First-touch attribution entrypoint experiment variation."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_campaign {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_campaign ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Campaign"
-    description: "First-touch attribution UTM campaign."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_content {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_content ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Content"
-    description: "First-touch attribution UTM content."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_medium {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_medium ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Medium"
-    description: "First-touch attribution UTM medium."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_source {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_source ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Source"
-    description: "First-touch attribution UTM source."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_term {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_term ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Term"
-    description: "First-touch attribution UTM term."
+    group_label: "Subscription"
+    group_item_label: "Ended Reason"
+    description: "Reason why the subscription ended.
+Possible values:
+  * `Admin Initiated` - An admin at Mozilla ended the subscription, either directly or by deleting the customer's Mozilla Account.
+  * `Customer Initiated` - The customer ended their subscription, either directly or by turning off auto-renewal or deleting their Mozilla Account.
+  * `Payment Failure` - The subscription was unable to auto-renew due to a payment failure.
+  * `Other` - The subscription ended for some other reason, such as unverified Mozilla Accounts being automatically deleted."
   }
 
   dimension: subscription__has_fraudulent_charges {
@@ -708,23 +650,6 @@ This will be null for inactive subscriptions and for all Google subcriptions."
     label: "Subscription: Ended At"
     description: "When the subscription ended.
 This will be null for active subscriptions."
-  }
-
-  dimension_group: subscription__first_touch_attribution__impression_at {
-    sql: ${TABLE}.subscription.first_touch_attribution.impression_at ;;
-    type: time
-    suggest_persist_for: "24 hours"
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Subscription First Touch Attribution: Impression At"
-    description: "When the first-touch attribution impression occurred."
   }
 
   dimension_group: subscription__last_touch_attribution__impression_at {

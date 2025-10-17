@@ -1,0 +1,397 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
+view: newtab_content_live_table {
+  dimension: additional_properties {
+    sql: ${TABLE}.additional_properties ;;
+    hidden: yes
+  }
+
+  dimension: document_id {
+    sql: ${TABLE}.document_id ;;
+    hidden: yes
+  }
+
+  dimension: events {
+    sql: ${TABLE}.events ;;
+    hidden: yes
+  }
+
+  dimension: metadata__geo__city {
+    sql: ${TABLE}.metadata.geo.city ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Geo"
+    group_item_label: "City"
+  }
+
+  dimension: metadata__geo__country {
+    sql: ${TABLE}.metadata.geo.country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Geo"
+    group_item_label: "Country"
+    map_layer_name: countries
+  }
+
+  dimension: metadata__geo__db_version {
+    sql: ${TABLE}.metadata.geo.db_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Geo"
+    group_item_label: "DB Version"
+  }
+
+  dimension: metadata__geo__subdivision1 {
+    sql: ${TABLE}.metadata.geo.subdivision1 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Geo"
+    group_item_label: "Subdivision1"
+  }
+
+  dimension: metadata__geo__subdivision2 {
+    sql: ${TABLE}.metadata.geo.subdivision2 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Geo"
+    group_item_label: "Subdivision2"
+  }
+
+  dimension: metadata__header__date {
+    sql: ${TABLE}.metadata.header.date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header"
+    group_item_label: "Date"
+  }
+
+  dimension: metadata__header__dnt {
+    sql: ${TABLE}.metadata.header.dnt ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header"
+    group_item_label: "DNT"
+  }
+
+  dimension: metadata__header__x_debug_id {
+    sql: ${TABLE}.metadata.header.x_debug_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header"
+    group_item_label: "X Debug ID"
+  }
+
+  dimension: metadata__header__x_foxsec_ip_reputation {
+    sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header"
+    group_item_label: "X Foxsec IP Reputation"
+  }
+
+  dimension: metadata__header__x_lb_tags {
+    sql: ${TABLE}.metadata.header.x_lb_tags ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header"
+    group_item_label: "X LB Tags"
+  }
+
+  dimension: metadata__header__x_pingsender_version {
+    sql: ${TABLE}.metadata.header.x_pingsender_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header"
+    group_item_label: "X Pingsender Version"
+  }
+
+  dimension: metadata__header__x_source_tags {
+    sql: ${TABLE}.metadata.header.x_source_tags ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header"
+    group_item_label: "X Source Tags"
+  }
+
+  dimension: metadata__header__x_telemetry_agent {
+    sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata Header"
+    group_item_label: "X Telemetry Agent"
+  }
+
+  dimension: metadata__isp__db_version {
+    sql: ${TABLE}.metadata.isp.db_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata ISP"
+    group_item_label: "DB Version"
+  }
+
+  dimension: metadata__isp__name {
+    sql: ${TABLE}.metadata.isp.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata ISP"
+    group_item_label: "Name"
+  }
+
+  dimension: metadata__isp__organization {
+    sql: ${TABLE}.metadata.isp.organization ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata ISP"
+    group_item_label: "Organization"
+  }
+
+  dimension: metadata__user_agent__browser {
+    sql: ${TABLE}.metadata.user_agent.browser ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata User Agent"
+    group_item_label: "Browser"
+  }
+
+  dimension: metadata__user_agent__os {
+    sql: ${TABLE}.metadata.user_agent.os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata User Agent"
+    group_item_label: "OS"
+  }
+
+  dimension: metadata__user_agent__version {
+    sql: ${TABLE}.metadata.user_agent.version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata User Agent"
+    group_item_label: "Version"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__newtab_content_active_experiments {
+    sql: ${TABLE}.metrics.object.newtab_content_active_experiments ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__newtab_content_active_rollouts {
+    sql: ${TABLE}.metrics.object.newtab_content_active_rollouts ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__newtab_content_enrollments_map {
+    sql: ${TABLE}.metrics.object.newtab_content_enrollments_map ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__newtab_content_inferred_interests {
+    sql: ${TABLE}.metrics.object.newtab_content_inferred_interests ;;
+    hidden: yes
+  }
+
+  dimension: metrics__quantity__newtab_content_ping_version {
+    sql: ${TABLE}.metrics.quantity.newtab_content_ping_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Newtab Content Ping Version"
+  }
+
+  dimension: metrics__quantity__newtab_content_utc_offset {
+    sql: ${TABLE}.metrics.quantity.newtab_content_utc_offset ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Newtab Content Utc Offset"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation ID"
+  }
+
+  dimension: metrics__string__newtab_content_coarse_os {
+    sql: ${TABLE}.metrics.string.newtab_content_coarse_os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Coarse OS"
+  }
+
+  dimension: metrics__string__newtab_content_coarse_os_version {
+    sql: ${TABLE}.metrics.string.newtab_content_coarse_os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Coarse OS Version"
+  }
+
+  dimension: metrics__string__newtab_content_country {
+    sql: ${TABLE}.metrics.string.newtab_content_country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Country"
+  }
+
+  dimension: metrics__string__newtab_content_experiment_branch {
+    sql: ${TABLE}.metrics.string.newtab_content_experiment_branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Experiment Branch"
+  }
+
+  dimension: metrics__string__newtab_content_experiment_name {
+    sql: ${TABLE}.metrics.string.newtab_content_experiment_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Experiment Name"
+  }
+
+  dimension: metrics__string__newtab_content_inferred_interests {
+    sql: ${TABLE}.metrics.string.newtab_content_inferred_interests ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Inferred Interests"
+  }
+
+  dimension: metrics__string__newtab_content_surface_id {
+    sql: ${TABLE}.metrics.string.newtab_content_surface_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Newtab Content Surface ID"
+  }
+
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__newtab_content_followed_sections {
+    sql: ${TABLE}.metrics.string_list.newtab_content_followed_sections ;;
+    hidden: yes
+  }
+
+  dimension: normalized_app_name {
+    sql: ${TABLE}.normalized_app_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_country_code {
+    sql: ${TABLE}.normalized_country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.normalized_os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_timestamp ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  sql_table_name: `mozdata.firefox_desktop.newtab_content_live` ;;
+}
+
+view: newtab_content_live_table__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: newtab_content_live_table__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}

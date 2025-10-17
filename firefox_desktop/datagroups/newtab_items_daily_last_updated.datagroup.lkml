@@ -12,7 +12,11 @@ datagroup: newtab_items_daily_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'newtab_items_daily_v1')
+    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'newtab_content_items_daily_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'snowflake_migration_derived' AND table_name = 'corpus_items_updated_v1')
 
     ) ;;
   description: "Updates for newtab_items_daily when referenced tables are modified."

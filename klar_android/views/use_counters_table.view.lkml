@@ -15039,6 +15039,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_fullscreen_attribute {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_fullscreen_attribute ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Fullscreen Attribute"
+    description: "Whether a document used FullscreenAttribute. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbobject_store_create_index_locale ;;
     type: number
@@ -15636,6 +15646,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Form Submission Untrusted Event"
     description: "Whether a page used FormSubmissionUntrustedEvent. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_fullscreen_attribute {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_fullscreen_attribute ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Fullscreen Attribute"
+    description: "Whether a page used FullscreenAttribute. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
