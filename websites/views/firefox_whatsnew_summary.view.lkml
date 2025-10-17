@@ -95,9 +95,21 @@ view: firefox_whatsnew_summary {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: event_name {
+    sql: ${TABLE}.event_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: event_params {
     sql: ${TABLE}.event_params ;;
     hidden: yes
+  }
+
+  dimension: event_timestamp {
+    sql: ${TABLE}.event_timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
   }
 
   dimension: geo_city {
