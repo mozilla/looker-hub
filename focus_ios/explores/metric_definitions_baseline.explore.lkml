@@ -9,7 +9,6 @@ include: "/looker-hub/focus_ios/views/metric_definitions_baseline.view.lkml"
 explore: metric_definitions_baseline {
   always_filter: {
     filters: [
-      submission_date: "7 days",
       sampling: "1",
     ]
   }

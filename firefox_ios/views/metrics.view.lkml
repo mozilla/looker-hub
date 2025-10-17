@@ -99,6 +99,26 @@ Firefox-iOS.
 "
   }
 
+  dimension: metrics__timing_distribution__ai_summarize_summarization_time__sum {
+    label: "Ai Summarize Summarization Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.sum ;;
+    type: number
+    group_label: "Ai Summarize"
+    group_item_label: "Summarization Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ai Summarize Summarization Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/ai_summarize_summarization_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the total time for generating the summary and showing it to the user.
+Starts when the user triggers summarization.
+Ends when user sees the result or an error.
+"
+  }
+
   dimension: metrics__boolean__app_choice_screen_acquisition {
     label: "App Choice Screen Acquisition"
     hidden: no
@@ -2708,7 +2728,7 @@ is enabled to be displayed.
 
   dimension: metrics__counter__reader_mode_close {
     label: "Reader Mode Close"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.reader_mode_close ;;
     type: number
     group_label: "Reader Mode"
@@ -2726,7 +2746,7 @@ is enabled to be displayed.
 
   dimension: metrics__counter__reader_mode_open {
     label: "Reader Mode Open"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.reader_mode_open ;;
     type: number
     group_label: "Reader Mode"
@@ -3422,7 +3442,7 @@ closes the application.
 
   dimension: metrics__counter__tabs_reload_from_url_bar {
     label: "Tabs Reload From URL Bar"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_reload_from_url_bar ;;
     type: number
     group_label: "Tabs"
@@ -3454,6 +3474,78 @@ button in the URL bar.
     }
 
     description: "Counts how long it takes to switch to another tab
+"
+  }
+
+  dimension: metrics__counter__termsofuse_dismiss_count {
+    label: "Termsofuse Dismiss Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.termsofuse_dismiss_count ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Dismiss Count"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times a user clicks to dismiss (does not include tapping accept or remind me later).
+"
+  }
+
+  dimension: metrics__counter__termsofuse_impression_count {
+    label: "Termsofuse Impression Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.termsofuse_impression_count ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Impression Count"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of ToU impressions the user has had.
+"
+  }
+
+  dimension: metrics__counter__termsofuse_remind_me_later_count {
+    label: "Termsofuse Remind Me Later Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.termsofuse_remind_me_later_count ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Remind Me Later Count"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times a user clicks \"remind me later\".
+"
+  }
+
+  dimension: metrics__quantity__termsofuse_version {
+    label: "Termsofuse Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
+    type: number
+    group_label: "Termsofuse"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Terms of Use the user accepted.
 "
   }
 
@@ -3625,6 +3717,122 @@ preference.
 tracking-protection that is enabled. One of:
 * basic
 * strict
+"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_shake_gesture_enabled {
+    label: "User Ai Summarize Shake Gesture Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_shake_gesture_enabled ;;
+    type: yesno
+    group_label: "User Ai Summarize"
+    group_item_label: "Shake Gesture Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for User Ai Summarize Shake Gesture Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_ai_summarize_shake_gesture_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has shake to summarize option enabled
+"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_summarization_enabled {
+    label: "User Ai Summarize Summarization Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_enabled ;;
+    type: yesno
+    group_label: "User Ai Summarize"
+    group_item_label: "Summarization Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for User Ai Summarize Summarization Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_ai_summarize_summarization_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has summarization enabled.
+"
+  }
+
+  dimension: metrics__counter__user_terms_of_use_dismissed_count {
+    label: "User Terms Of Use Dismissed Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.user_terms_of_use_dismissed_count ;;
+    type: number
+    group_label: "User Terms Of Use"
+    group_item_label: "Dismissed Count"
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Dismissed Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_dismissed_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times a user taps to dismiss (does not include tapping accept or remind me later).
+
+**Developer Note**: This replaces the old `termsofuse.dismiss_count` metric.
+"
+  }
+
+  dimension: metrics__counter__user_terms_of_use_remind_me_later_count {
+    label: "User Terms Of Use Remind Me Later Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.user_terms_of_use_remind_me_later_count ;;
+    type: number
+    group_label: "User Terms Of Use"
+    group_item_label: "Remind Me Later Count"
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times a user taps \"remind me later\".
+
+**Developer Note**: This replaces the old `termsofuse.remind_me_later_count` metric.
+"
+  }
+
+  dimension: metrics__counter__user_terms_of_use_shown_count {
+    label: "User Terms Of Use Shown Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.user_terms_of_use_shown_count ;;
+    type: number
+    group_label: "User Terms Of Use"
+    group_item_label: "Shown Count"
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Shown Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_shown_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of ToU impressions the user has had.
+
+**Developer Note**: This replaces the old `termsofuse.impression_count` metric.
+"
+  }
+
+  dimension: metrics__quantity__user_terms_of_use_version_accepted {
+    label: "User Terms Of Use Version Accepted"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.user_terms_of_use_version_accepted ;;
+    type: number
+    group_label: "User Terms Of Use"
+    group_item_label: "Version Accepted"
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Version Accepted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_version_accepted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Terms of Use the user accepted.
+
+**Developer Note**: This replaces the old `termsofuse.version` metric.
 "
   }
 
@@ -4686,6 +4894,7 @@ startup, as part of the initialization sequence.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: app_version_major {
@@ -4712,6 +4921,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android SDK Version"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -4720,6 +4930,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
+    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -4728,6 +4939,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -4736,6 +4948,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -4744,6 +4957,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__attribution__campaign {
@@ -4752,6 +4966,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
   }
 
   dimension: client_info__attribution__content {
@@ -4760,6 +4975,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
   }
 
   dimension: client_info__attribution__ext {
@@ -4773,6 +4989,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
 
   dimension: client_info__attribution__source {
@@ -4781,6 +4998,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
   }
 
   dimension: client_info__attribution__term {
@@ -4789,6 +5007,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
   dimension: client_info__build_date {
@@ -4797,11 +5016,13 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
+    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -4810,6 +5031,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -4818,6 +5040,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__distribution__ext {
@@ -4831,6 +5054,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info Distribution"
     group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {
@@ -4839,6 +5063,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
+    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -4847,6 +5072,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
+    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -4855,6 +5081,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS"
+    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -4863,6 +5090,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__session_count {
@@ -4871,6 +5099,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
   }
 
   dimension: client_info__session_id {
@@ -4879,6 +5108,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session ID"
+    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -4887,6 +5117,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry SDK Build"
+    description: "The version of the Glean SDK"
   }
 
   dimension: client_info__windows_build_number {
@@ -4895,11 +5126,13 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -4929,6 +5162,7 @@ startup, as part of the initialization sequence.
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -4937,6 +5171,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "DB Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -4945,6 +5180,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -4953,6 +5189,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -4961,6 +5198,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -4969,6 +5207,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "DNT"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -4998,6 +5237,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug ID"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -5006,6 +5246,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec IP Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -5014,6 +5255,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X LB Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -5022,6 +5264,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -5030,6 +5273,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -5038,6 +5282,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -5046,6 +5291,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "DB Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -5054,6 +5300,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -5062,6 +5309,7 @@ startup, as part of the initialization sequence.
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -5099,6 +5347,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
@@ -5112,12 +5361,14 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -5175,6 +5426,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metrics__datetime__app_last_opened_as_default_browser {
@@ -5192,6 +5444,26 @@ startup, as part of the initialization sequence.
       year,
     ]
     description: "The date of when the app was last opened as default browser.
+"
+  }
+
+  dimension_group: metrics__datetime__user_terms_of_use_date_accepted {
+    label: "User Terms Of Use Date Accepted"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.user_terms_of_use_date_accepted ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The timestamp when the user accepted the Terms of Use.
+
+**Developer Note**: This replaces the old `termsofuse.date` metric.
 "
   }
 
@@ -5274,6 +5546,7 @@ startup, as part of the initialization sequence.
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -7735,6 +8008,156 @@ startup, as part of the initialization sequence.
     }
   }
 
+  measure: termsofuse_dismiss_count {
+    type: sum
+    sql: ${metrics__counter__termsofuse_dismiss_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_dismiss_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__termsofuse_dismiss_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_impression_count {
+    type: sum
+    sql: ${metrics__counter__termsofuse_impression_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_impression_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__termsofuse_impression_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_remind_me_later_count {
+    type: sum
+    sql: ${metrics__counter__termsofuse_remind_me_later_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: termsofuse_remind_me_later_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__termsofuse_remind_me_later_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: user_terms_of_use_dismissed_count {
+    type: sum
+    sql: ${metrics__counter__user_terms_of_use_dismissed_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Dismissed Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_dismissed_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: user_terms_of_use_dismissed_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__user_terms_of_use_dismissed_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Dismissed Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_dismissed_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: user_terms_of_use_remind_me_later_count {
+    type: sum
+    sql: ${metrics__counter__user_terms_of_use_remind_me_later_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: user_terms_of_use_remind_me_later_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__user_terms_of_use_remind_me_later_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: user_terms_of_use_shown_count {
+    type: sum
+    sql: ${metrics__counter__user_terms_of_use_shown_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Shown Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_shown_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: user_terms_of_use_shown_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__user_terms_of_use_shown_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for User Terms Of Use Shown Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_terms_of_use_shown_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: widget_l_tabs_open_url {
     type: sum
     sql: ${metrics__counter__widget_l_tabs_open_url} ;;
@@ -10186,6 +10609,20 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__ai_summarize_summarization_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

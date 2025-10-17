@@ -5,6 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: logical_subscriptions {
+  dimension: annual_recurring_revenue_usd {
+    sql: ${TABLE}.annual_recurring_revenue_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Projected annual recurring revenue for the subscription in US dollars."
+  }
+
   dimension: auto_renew {
     sql: ${TABLE}.auto_renew ;;
     type: yesno
@@ -28,11 +35,26 @@ This may be missing for some subscriptions."
 This may be \"Unknown\" for some subscriptions."
   }
 
+  dimension: country_vat_rate {
+    sql: ${TABLE}.country_vat_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "VAT rate for the country the subscription is in (if any)."
+  }
+
   dimension: current_period_discount_amount {
     sql: ${TABLE}.current_period_discount_amount ;;
     type: number
     suggest_persist_for: "24 hours"
     description: "Current period discount amount (if any).
+This may be null for Apple subscriptions."
+  }
+
+  dimension: current_period_discount_amount_usd {
+    sql: ${TABLE}.current_period_discount_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Current period discount amount in US dollars (if any).
 This may be null for Apple subscriptions."
   }
 
@@ -59,76 +81,16 @@ This will be null for Google and Apple subscriptions."
 For example, this should be `1` for their first logical subscription, `2` for their second logical subscription, etc."
   }
 
-  dimension: first_touch_attribution__entrypoint {
-    sql: ${TABLE}.first_touch_attribution.entrypoint ;;
+  dimension: ended_reason {
+    sql: ${TABLE}.ended_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "First Touch Attribution"
-    group_item_label: "Entrypoint"
-    description: "First-touch attribution entrypoint."
-  }
-
-  dimension: first_touch_attribution__entrypoint_experiment {
-    sql: ${TABLE}.first_touch_attribution.entrypoint_experiment ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "First Touch Attribution"
-    group_item_label: "Entrypoint Experiment"
-    description: "First-touch attribution entrypoint experiment."
-  }
-
-  dimension: first_touch_attribution__entrypoint_variation {
-    sql: ${TABLE}.first_touch_attribution.entrypoint_variation ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "First Touch Attribution"
-    group_item_label: "Entrypoint Variation"
-    description: "First-touch attribution entrypoint experiment variation."
-  }
-
-  dimension: first_touch_attribution__utm_campaign {
-    sql: ${TABLE}.first_touch_attribution.utm_campaign ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "First Touch Attribution"
-    group_item_label: "UTM Campaign"
-    description: "First-touch attribution UTM campaign."
-  }
-
-  dimension: first_touch_attribution__utm_content {
-    sql: ${TABLE}.first_touch_attribution.utm_content ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "First Touch Attribution"
-    group_item_label: "UTM Content"
-    description: "First-touch attribution UTM content."
-  }
-
-  dimension: first_touch_attribution__utm_medium {
-    sql: ${TABLE}.first_touch_attribution.utm_medium ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "First Touch Attribution"
-    group_item_label: "UTM Medium"
-    description: "First-touch attribution UTM medium."
-  }
-
-  dimension: first_touch_attribution__utm_source {
-    sql: ${TABLE}.first_touch_attribution.utm_source ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "First Touch Attribution"
-    group_item_label: "UTM Source"
-    description: "First-touch attribution UTM source."
-  }
-
-  dimension: first_touch_attribution__utm_term {
-    sql: ${TABLE}.first_touch_attribution.utm_term ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "First Touch Attribution"
-    group_item_label: "UTM Term"
-    description: "First-touch attribution UTM term."
+    description: "Reason why the subscription ended.
+Possible values:
+  * `Admin Initiated` - An admin at Mozilla ended the subscription, either directly or by deleting the customer's Mozilla Account.
+  * `Customer Initiated` - The customer ended their subscription, either directly or by turning off auto-renewal or deleting their Mozilla Account.
+  * `Payment Failure` - The subscription was unable to auto-renew due to a payment failure.
+  * `Other` - The subscription ended for some other reason, such as unverified Mozilla Accounts being automatically deleted."
   }
 
   dimension: has_fraudulent_charges {
@@ -262,6 +224,13 @@ This will be null for Google and Apple subscriptions."
     description: "Last-touch attribution UTM term."
   }
 
+  dimension: monthly_recurring_revenue_usd {
+    sql: ${TABLE}.monthly_recurring_revenue_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Projected monthly recurring revenue for the subscription in US dollars."
+  }
+
   dimension: mozilla_account_id {
     sql: ${TABLE}.mozilla_account_id ;;
     type: string
@@ -283,6 +252,14 @@ This may be missing for some subscriptions."
     type: number
     suggest_persist_for: "24 hours"
     description: "Ongoing discount amount (if any).
+This may be null for Apple subscriptions."
+  }
+
+  dimension: ongoing_discount_amount_usd {
+    sql: ${TABLE}.ongoing_discount_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Ongoing discount amount in US dollars (if any).
 This may be null for Apple subscriptions."
   }
 
@@ -319,12 +296,27 @@ For Apple subscriptions this will be \"Apple\"."
 For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming a USD amount due to a lack of source data (FXA-10549)."
   }
 
+  dimension: plan_amount_usd {
+    sql: ${TABLE}.plan_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Subscription plan's amount in US dollars.
+For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming a USD amount due to a lack of source data (FXA-10549)."
+  }
+
   dimension: plan_currency {
     sql: ${TABLE}.plan_currency ;;
     type: string
     suggest_persist_for: "24 hours"
     description: "ISO 4217 code for the subscription plan's currency.
 For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming USD due to a lack of source data (FXA-10549)."
+  }
+
+  dimension: plan_currency_usd_exchange_rate {
+    sql: ${TABLE}.plan_currency_usd_exchange_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Exchange rate for converting the subscription plan's currency into US dollars (if any)."
   }
 
   dimension: plan_interval {
@@ -503,23 +495,6 @@ This will be null for inactive subscriptions and for all Google subcriptions."
     ]
     description: "When the subscription ended.
 This will be null for active subscriptions."
-  }
-
-  dimension_group: first_touch_attribution__impression_at {
-    sql: ${TABLE}.first_touch_attribution.impression_at ;;
-    type: time
-    suggest_persist_for: "24 hours"
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "First Touch Attribution: Impression At"
-    description: "When the first-touch attribution impression occurred."
   }
 
   dimension_group: last_touch_attribution__impression_at {

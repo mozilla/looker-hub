@@ -9,7 +9,7 @@ view: new_profiles_aggregates_table {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The application display version"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: attributed {
@@ -65,14 +65,7 @@ view: new_profiles_aggregates_table {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The Firefox channel, set to Other for unrecognized channel names."
-  }
-
-  dimension: city {
-    sql: ${TABLE}.city ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "City retrieved as a result of a geographic lookup based on the client's IP address."
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: country {
@@ -80,14 +73,14 @@ view: new_profiles_aggregates_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "The ISO 3166-1 alpha-2 country code."
+    description: "Name of the country in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The value of the `distribution.id` preference that identifies the Firefox distribution."
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: is_dau {
@@ -108,7 +101,7 @@ view: new_profiles_aggregates_table {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The best locale that the application should be localized to."
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: new_profiles {
@@ -122,7 +115,7 @@ view: new_profiles_aggregates_table {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The OS name, set to Other for unrecognized OS names."
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {

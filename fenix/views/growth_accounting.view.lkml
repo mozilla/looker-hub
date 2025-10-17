@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: growth_accounting {
+  dimension: active_hours_sum {
+    sql: ${TABLE}.active_hours_sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
@@ -195,6 +201,18 @@ view: growth_accounting {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: days_since_visited_1_uri {
+    sql: ${TABLE}.days_since_visited_1_uri ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_visited_1_uri_bits {
+    sql: ${TABLE}.days_visited_1_uri_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
@@ -225,6 +243,11 @@ view: growth_accounting {
     sql: ${TABLE}.durations ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
   }
 
   dimension: geo_subdivision {

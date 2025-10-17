@@ -9,7 +9,6 @@ view: metric_definitions_ad_metrics_daily {
     sql: SELECT
                 SUM(impressions) AS ad_metrics_ad_impressions,
 SUM(clicks) AS ad_metrics_ad_clicks,
-SUM(reports) AS ad_metrics_ad_reports,
 SUM(revenue) AS revenue,
 SUM(impressions)/1000 AS milli_impressions,
 COUNT(DISTINCT ad_id) AS ads_count,
@@ -38,18 +37,19 @@ ad_metrics_daily_country,
 ad_metrics_daily_creative_id,
 ad_metrics_daily_creative_title,
 ad_metrics_daily_creative_url,
+ad_metrics_daily_external_param,
 ad_metrics_daily_flight_id,
 ad_metrics_daily_flight_name,
 ad_metrics_daily_image_url,
 ad_metrics_daily_impressions,
 ad_metrics_daily_kevel_metadata_updated_at,
+ad_metrics_daily_line_item_id,
 ad_metrics_daily_normalized_os,
 ad_metrics_daily_position,
 ad_metrics_daily_price,
 ad_metrics_daily_product,
 ad_metrics_daily_provider,
 ad_metrics_daily_rate_type,
-ad_metrics_daily_reports,
 ad_metrics_daily_site_id,
 ad_metrics_daily_site_name,
 ad_metrics_daily_sponsor,
@@ -114,18 +114,19 @@ ad_metrics_daily.country AS ad_metrics_daily_country,
 ad_metrics_daily.creative_id AS ad_metrics_daily_creative_id,
 ad_metrics_daily.creative_title AS ad_metrics_daily_creative_title,
 ad_metrics_daily.creative_url AS ad_metrics_daily_creative_url,
+ad_metrics_daily.external_param AS ad_metrics_daily_external_param,
 ad_metrics_daily.flight_id AS ad_metrics_daily_flight_id,
 ad_metrics_daily.flight_name AS ad_metrics_daily_flight_name,
 ad_metrics_daily.image_url AS ad_metrics_daily_image_url,
 ad_metrics_daily.impressions AS ad_metrics_daily_impressions,
 ad_metrics_daily.kevel_metadata_updated_at AS ad_metrics_daily_kevel_metadata_updated_at,
+ad_metrics_daily.line_item_id AS ad_metrics_daily_line_item_id,
 ad_metrics_daily.normalized_os AS ad_metrics_daily_normalized_os,
 ad_metrics_daily.position AS ad_metrics_daily_position,
 ad_metrics_daily.price AS ad_metrics_daily_price,
 ad_metrics_daily.product AS ad_metrics_daily_product,
 ad_metrics_daily.provider AS ad_metrics_daily_provider,
 ad_metrics_daily.rate_type AS ad_metrics_daily_rate_type,
-ad_metrics_daily.reports AS ad_metrics_daily_reports,
 ad_metrics_daily.site_id AS ad_metrics_daily_site_id,
 ad_metrics_daily.site_name AS ad_metrics_daily_site_name,
 ad_metrics_daily.sponsor AS ad_metrics_daily_sponsor,
@@ -159,15 +160,33 @@ ad_metrics_daily.zone_name AS ad_metrics_daily_zone_name,
                 
                     WHERE 
                     ad_metrics_daily.submission_date
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start analysis_period %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_start submission_date %} AS DATE
-                        ), CURRENT_DATE()) AND
+                            {% date_end analysis_period %} AS DATE
+                        ), CURRENT_DATE())
+                    {% else %}
+                    BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start submission_date %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
+                    {% endif %}
                 
                 )
             GROUP BY
@@ -192,18 +211,19 @@ ad_metrics_daily_country,
 ad_metrics_daily_creative_id,
 ad_metrics_daily_creative_title,
 ad_metrics_daily_creative_url,
+ad_metrics_daily_external_param,
 ad_metrics_daily_flight_id,
 ad_metrics_daily_flight_name,
 ad_metrics_daily_image_url,
 ad_metrics_daily_impressions,
 ad_metrics_daily_kevel_metadata_updated_at,
+ad_metrics_daily_line_item_id,
 ad_metrics_daily_normalized_os,
 ad_metrics_daily_position,
 ad_metrics_daily_price,
 ad_metrics_daily_product,
 ad_metrics_daily_provider,
 ad_metrics_daily_rate_type,
-ad_metrics_daily_reports,
 ad_metrics_daily_site_id,
 ad_metrics_daily_site_name,
 ad_metrics_daily_sponsor,
@@ -243,14 +263,6 @@ ad_metrics_daily_zone_name,
     description: "Ad clicks"
     type: number
     sql: ${TABLE}.ad_metrics_ad_clicks ;;
-  }
-
-  dimension: ad_metrics_ad_reports {
-    group_label: "Metrics"
-    label: "Ads Reported"
-    description: "Number of time ad was reported"
-    type: number
-    sql: ${TABLE}.ad_metrics_ad_reports ;;
   }
 
   dimension: revenue {
@@ -449,6 +461,13 @@ ad_metrics_daily_zone_name,
     group_label: "Base Fields"
   }
 
+  dimension: external_param {
+    sql: ${TABLE}.ad_metrics_daily_external_param ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: flight_id {
     sql: ${TABLE}.ad_metrics_daily_flight_id ;;
     type: number
@@ -472,6 +491,13 @@ ad_metrics_daily_zone_name,
 
   dimension: impressions {
     sql: ${TABLE}.ad_metrics_daily_impressions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: line_item_id {
+    sql: ${TABLE}.ad_metrics_daily_line_item_id ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
@@ -515,13 +541,6 @@ ad_metrics_daily_zone_name,
   dimension: rate_type {
     sql: ${TABLE}.ad_metrics_daily_rate_type ;;
     type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: reports {
-    sql: ${TABLE}.ad_metrics_daily_reports ;;
-    type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
@@ -605,8 +624,9 @@ ad_metrics_daily_zone_name,
 
   dimension_group: submission {
     type: time
+    datatype: date
     group_label: "Base Fields"
-    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
+    sql: ${TABLE}.analysis_basis ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -648,14 +668,6 @@ ad_metrics_daily_zone_name,
     label: "Ad Clicks Sum"
     group_label: "Statistics"
     description: "Sum of Ad Clicks"
-  }
-
-  measure: ad_metrics_ad_reports_sum {
-    type: sum
-    sql: ${TABLE}.ad_metrics_ad_reports*1 ;;
-    label: "Ads Reported Sum"
-    group_label: "Statistics"
-    description: "Sum of Ads Reported"
   }
 
   measure: revenue_sum {
@@ -716,7 +728,6 @@ ad_metrics_daily_zone_name,
     fields: [
       ad_metrics_ad_impressions,
       ad_metrics_ad_clicks,
-      ad_metrics_ad_reports,
       revenue,
       milli_impressions,
       ads_count,
@@ -725,7 +736,6 @@ ad_metrics_daily_zone_name,
       click_through_rate,
       ad_metrics_ad_impressions_sum,
       ad_metrics_ad_clicks_sum,
-      ad_metrics_ad_reports_sum,
       revenue_sum,
       milli_impressions_sum,
       ads_count_sum,
@@ -776,5 +786,25 @@ ad_metrics_daily_zone_name,
     type: unquoted
     default_value: "100"
     hidden: yes
+  }
+
+  parameter: lookback_days {
+    label: "Lookback (Days)"
+    type: unquoted
+    description: "Number of days added before the filtered date range. Useful for period-over-period comparisons."
+    default_value: "0"
+  }
+
+  parameter: date_groupby_position {
+    label: "Date Group By Position"
+    type: unquoted
+    description: "Position of the date field in the group by clause. Required when submission_week, submission_month, submission_quarter, submission_year is selected as BigQuery can't correctly resolve the GROUP BY otherwise"
+    default_value: ""
+  }
+
+  filter: analysis_period {
+    type: date
+    label: "Analysis Period (with Lookback)"
+    description: "Use this filter to define the main analysis period. The results will include the selected date range plus any additional days specified by the 'Lookback days' setting."
   }
 }

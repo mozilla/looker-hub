@@ -5,6 +5,18 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: clients_last_seen_joined_table {
+  dimension: active_hours_sum {
+    sql: ${TABLE}.active_hours_sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ad_clicks_count_all {
+    sql: ${TABLE}.ad_clicks_count_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
@@ -219,6 +231,12 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: days_since_visited_1_uri {
+    sql: ${TABLE}.days_since_visited_1_uri ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
@@ -325,6 +343,18 @@ view: clients_last_seen_joined_table {
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_count_all {
+    sql: ${TABLE}.search_count_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_with_ads_count_all {
+    sql: ${TABLE}.search_with_ads_count_all ;;
     type: number
     suggest_persist_for: "24 hours"
   }

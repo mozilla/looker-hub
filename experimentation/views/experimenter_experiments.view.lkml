@@ -28,6 +28,11 @@ view: experimenter_experiments {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: channels {
+    sql: ${TABLE}.channels ;;
+    hidden: yes
+  }
+
   dimension: experimenter_slug {
     sql: ${TABLE}.experimenter_slug ;;
     type: string
@@ -39,8 +44,26 @@ view: experimenter_experiments {
     hidden: yes
   }
 
+  dimension: is_enrollment_paused {
+    sql: ${TABLE}.is_enrollment_paused ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: is_firefox_labs_opt_in {
+    sql: ${TABLE}.is_firefox_labs_opt_in ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_high_population {
     sql: ${TABLE}.is_high_population ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: is_rollout {
+    sql: ${TABLE}.is_rollout ;;
     type: yesno
     suggest_persist_for: "24 hours"
   }
@@ -57,9 +80,20 @@ view: experimenter_experiments {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: outcomes {
+    sql: ${TABLE}.outcomes ;;
+    hidden: yes
+  }
+
   dimension: proposed_enrollment {
     sql: ${TABLE}.proposed_enrollment ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: randomization_unit {
+    sql: ${TABLE}.randomization_unit ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
@@ -67,6 +101,11 @@ view: experimenter_experiments {
     sql: ${TABLE}.reference_branch ;;
     type: string
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: segments {
+    sql: ${TABLE}.segments ;;
+    hidden: yes
   }
 
   dimension: status {

@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics_clients_daily_table {
+  dimension: ad_clicks_count_all {
+    sql: ${TABLE}.ad_clicks_count_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
@@ -36,6 +42,18 @@ view: metrics_clients_daily_table {
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_count_all {
+    sql: ${TABLE}.search_count_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: search_with_ads_count_all {
+    sql: ${TABLE}.search_with_ads_count_all ;;
     type: number
     suggest_persist_for: "24 hours"
   }

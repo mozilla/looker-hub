@@ -3209,6 +3209,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_math_shift {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_math_shift ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Math Shift"
+    description: "Whether a document used the CSS property math-shift. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_math_style {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_math_style ;;
     type: number
@@ -5269,6 +5279,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_autospace {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_autospace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Autospace"
+    description: "Whether a document used the CSS property text-autospace. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_text_combine_upright {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_combine_upright ;;
     type: number
@@ -5336,6 +5356,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Text Decoration Thickness"
     description: "Whether a document used the CSS property text-decoration-thickness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_text_decoration_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_decoration_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Decoration Trim"
+    description: "Whether a document used the CSS property text-decoration-trim. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -10349,6 +10379,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_math_shift {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_math_shift ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Math Shift"
+    description: "Whether a page used the CSS property math-shift. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_math_style {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_math_style ;;
     type: number
@@ -12409,6 +12449,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_text_autospace {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_autospace ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Autospace"
+    description: "Whether a page used the CSS property text-autospace. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_text_combine_upright {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_combine_upright ;;
     type: number
@@ -12476,6 +12526,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Text Decoration Thickness"
     description: "Whether a page used the CSS property text-decoration-thickness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_text_decoration_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_decoration_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Decoration Trim"
+    description: "Whether a page used the CSS property text-decoration-trim. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -14979,6 +15039,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_fullscreen_attribute {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_fullscreen_attribute ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Fullscreen Attribute"
+    description: "Whether a document used FullscreenAttribute. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbobject_store_create_index_locale ;;
     type: number
@@ -15576,6 +15646,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Form Submission Untrusted Event"
     description: "Whether a page used FormSubmissionUntrustedEvent. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_fullscreen_attribute {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_fullscreen_attribute ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Fullscreen Attribute"
+    description: "Whether a page used FullscreenAttribute. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18036,6 +18116,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Thenable Standard Proto"
     description: "Whether a document resolved a promise using thenable on a standard prototype. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_use_asm {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_use_asm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Use Asm"
+    description: "Whether a document has instantiated a script containing \"use asm\" either in the top level or a nested function. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22539,6 +22629,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_js_use_asm {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_use_asm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Use Asm"
+    description: "Whether a page has instantiated a script containing \"use asm\" either in the top level or a nested function. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_js_wasm {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_wasm ;;
     type: number
@@ -26617,6 +26717,11 @@ The labels are the `category.name` identifier of the metric.
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
+  }
+
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
   }
 
   dimension: normalized_app_name {

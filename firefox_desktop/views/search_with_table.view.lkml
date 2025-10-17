@@ -492,6 +492,11 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__url__search_with_reporting_url {
     sql: ${TABLE}.metrics.url.search_with_reporting_url ;;
     type: string

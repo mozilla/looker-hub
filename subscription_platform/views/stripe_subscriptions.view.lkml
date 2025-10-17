@@ -11,6 +11,30 @@ view: stripe_subscriptions {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: cancellation_details__comment {
+    sql: ${TABLE}.cancellation_details.comment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Cancellation Details"
+    group_item_label: "Comment"
+  }
+
+  dimension: cancellation_details__feedback {
+    sql: ${TABLE}.cancellation_details.feedback ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Cancellation Details"
+    group_item_label: "Feedback"
+  }
+
+  dimension: cancellation_details__reason {
+    sql: ${TABLE}.cancellation_details.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Cancellation Details"
+    group_item_label: "Reason"
+  }
+
   dimension: collection_method {
     sql: ${TABLE}.collection_method ;;
     type: string
@@ -140,6 +164,14 @@ view: stripe_subscriptions {
     suggest_persist_for: "24 hours"
     group_label: "Customer"
     group_item_label: "ID"
+  }
+
+  dimension: customer__invoice_settings__default_payment_method_id {
+    sql: ${TABLE}.customer.invoice_settings.default_payment_method_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Customer Invoice Settings"
+    group_item_label: "Default Payment Method ID"
   }
 
   dimension: customer__is_deleted {

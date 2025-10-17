@@ -453,6 +453,11 @@ view: fx_accounts_table {
     group_item_label: "Metrics Client Association"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string

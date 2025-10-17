@@ -8,13 +8,11 @@ view: metric_definitions_admarketplace {
   derived_table: {
     sql: SELECT
                 AVG(avg_pub_cpc) AS amp_avg_cpc,
-SUM(billed_revenue) AS amp_revenue,
+SUM(revenue) AS amp_revenue,
 SUM(valid_clicks) AS amp_valid_clicks,
 SUM(valid_impressions) AS amp_valid_impressions,
-AVG(rpm_rate) AS amp_rpm_rate,
-SAFE_DIVIDE(SUM(billed_revenue), SUM(valid_clicks)) AS amp_cpc_rate,
-SAFE_DIVIDE(SUM(billed_revenue), SUM(valid_impressions)) * 1000 AS amp_revenue_per_thousand_impressions,
-SUM(alternative_revenue) AS amp_alternative_revenue,
+SAFE_DIVIDE(SUM(revenue), SUM(valid_clicks)) AS amp_cpc_rate,
+SAFE_DIVIDE(SUM(revenue), SUM(valid_impressions)) * 1000 AS amp_revenue_per_thousand_impressions,
 
                 
                 advertiser AS client_id,
@@ -54,20 +52,38 @@ SUM(alternative_revenue) AS amp_alternative_revenue,
             SELECT
                 *
             FROM
-                mozdata.revenue.admarketplace
+                mozdata.ads.admarketplace
             ) AS admarketplace
         
                     WHERE 
                     admarketplace.adm_date
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start analysis_period %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_start submission_date %} AS DATE
-                        ), CURRENT_DATE()) AND
+                            {% date_end analysis_period %} AS DATE
+                        ), CURRENT_DATE())
+                    {% else %}
+                    BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start submission_date %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
+                    {% endif %}
                 
                 )
             GROUP BY
@@ -95,7 +111,7 @@ SUM(alternative_revenue) AS amp_alternative_revenue,
 
   dimension: amp_revenue {
     group_label: "Metrics"
-    label: "Billed Revenue"
+    label: "Revenue"
     description: "Total amount paid to Mozilla in USD."
     type: number
     sql: ${TABLE}.amp_revenue ;;
@@ -117,14 +133,6 @@ SUM(alternative_revenue) AS amp_alternative_revenue,
     sql: ${TABLE}.amp_valid_impressions ;;
   }
 
-  dimension: amp_rpm_rate {
-    group_label: "Metrics"
-    label: "RPM Rate"
-    description: "Average revenue per thousand impressions (paid to Mozilla, in USD), calculated as RPM payout divided by valid impressions times 1000."
-    type: number
-    sql: ${TABLE}.amp_rpm_rate ;;
-  }
-
   dimension: amp_cpc_rate {
     group_label: "Metrics"
     label: "CPC Rate"
@@ -141,18 +149,11 @@ SUM(alternative_revenue) AS amp_alternative_revenue,
     sql: ${TABLE}.amp_revenue_per_thousand_impressions ;;
   }
 
-  dimension: amp_alternative_revenue {
-    group_label: "Metrics"
-    label: "Alternative Revenue"
-    description: "Potential Revenue from the other report. Note that this is zero for all revenue coming from CPC since we don't get data for RPM for mobile tiles or instant suggestions."
-    type: number
-    sql: ${TABLE}.amp_alternative_revenue ;;
-  }
-
   dimension_group: submission {
     type: time
+    datatype: date
     group_label: "Base Fields"
-    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
+    sql: ${TABLE}.analysis_basis ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -170,10 +171,8 @@ SUM(alternative_revenue) AS amp_alternative_revenue,
       amp_revenue,
       amp_valid_clicks,
       amp_valid_impressions,
-      amp_rpm_rate,
       amp_cpc_rate,
       amp_revenue_per_thousand_impressions,
-      amp_alternative_revenue,
     ]
   }
 
@@ -218,5 +217,25 @@ SUM(alternative_revenue) AS amp_alternative_revenue,
     type: unquoted
     default_value: "100"
     hidden: yes
+  }
+
+  parameter: lookback_days {
+    label: "Lookback (Days)"
+    type: unquoted
+    description: "Number of days added before the filtered date range. Useful for period-over-period comparisons."
+    default_value: "0"
+  }
+
+  parameter: date_groupby_position {
+    label: "Date Group By Position"
+    type: unquoted
+    description: "Position of the date field in the group by clause. Required when submission_week, submission_month, submission_quarter, submission_year is selected as BigQuery can't correctly resolve the GROUP BY otherwise"
+    default_value: ""
+  }
+
+  filter: analysis_period {
+    type: date
+    label: "Analysis Period (with Lookback)"
+    description: "Use this filter to define the main analysis period. The results will include the selected date range plus any additional days specified by the 'Lookback days' setting."
   }
 }

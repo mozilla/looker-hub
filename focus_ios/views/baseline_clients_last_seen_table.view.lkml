@@ -5,10 +5,18 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: baseline_clients_last_seen_table {
+  dimension: active_hours_sum {
+    sql: ${TABLE}.active_hours_sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Sum of the client's active hours on the most recent date the client was last seen in the last 28 days"
+  }
+
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: app_build {
@@ -33,6 +41,7 @@ view: baseline_clients_last_seen_table {
     sql: ${TABLE}.architecture ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: attribution__campaign {
@@ -136,6 +145,7 @@ view: baseline_clients_last_seen_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: country {
@@ -205,16 +215,31 @@ view: baseline_clients_last_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: days_since_visited_1_uri {
+    sql: ${TABLE}.days_since_visited_1_uri ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_visited_1_uri_bits {
+    sql: ${TABLE}.days_visited_1_uri_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Days Visited 1 URI Bits"
+  }
+
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: device_model {
     sql: ${TABLE}.device_model ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: distribution__name {
@@ -230,12 +255,19 @@ view: baseline_clients_last_seen_table {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
+    description: "A dictionary of active experiments."
   }
 
   dimension: geo_subdivision {
@@ -254,6 +286,7 @@ view: baseline_clients_last_seen_table {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A flag indicating whether the browser is set as the default browser on the client side."
   }
 
   dimension: is_new_profile {
@@ -266,6 +299,7 @@ view: baseline_clients_last_seen_table {
     sql: ${TABLE}.isp ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the internet service provider associated with the client's IP address."
   }
 
   dimension: legacy_telemetry_client_id {
@@ -278,12 +312,14 @@ view: baseline_clients_last_seen_table {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_os {
@@ -302,12 +338,14 @@ view: baseline_clients_last_seen_table {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: telemetry_sdk_build {
@@ -368,7 +406,44 @@ view: baseline_clients_last_seen_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.org_mozilla_ios_focus.baseline_clients_last_seen` ;;
+}
+
+view: baseline_clients_last_seen_table__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Experiment Key"
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Branch"
+    description: "Experiment Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value Extra"
+    group_item_label: "Enrollment ID"
+    description: "Experiment Enrollment ID"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value Extra"
+    group_item_label: "Type"
+    description: "Experiment Type"
+  }
 }

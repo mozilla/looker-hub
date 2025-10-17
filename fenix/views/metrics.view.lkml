@@ -1726,7 +1726,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__timing_distribution__metrics_search_page_load_time__sum {
     label: "Metrics Search Page Load Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.sum ;;
     type: number
     group_label: "Metrics"
@@ -2571,6 +2571,25 @@ default: true
 "
   }
 
+  dimension: metrics__string__preferences_doh_protection_level {
+    label: "Preferences Doh Protection Level"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_doh_protection_level ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Doh Protection Level"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Doh Protection Level"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_doh_protection_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the DNS over HTTPS (DoH) setting at start-up.
+Example values include: \"Default\", \"Increased\", \"Max\", \"Off\".
+"
+  }
+
   dimension: metrics__string__preferences_enhanced_tracking_protection {
     label: "Preferences Enhanced Tracking Protection"
     hidden: no
@@ -2616,6 +2635,42 @@ Possible values:
 "
   }
 
+  dimension: metrics__boolean__preferences_global_privacy_control_enabled {
+    label: "Preferences Global Privacy Control Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_global_privacy_control_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Global Privacy Control Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Global Privacy Control Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_global_privacy_control_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the Global Privacy Control (GPC) setting at start-up."
+  }
+
+  dimension: metrics__string__preferences_https_only_mode {
+    label: "Preferences Https Only Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_https_only_mode ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Https Only Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Https Only Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_https_only_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures user retention of the HTTPS-Only setting at start-up.
+Example values include: \"DISABLED\", \"ENABLED_PRIVATE_ONLY\", \"ENABLED\".
+"
+  }
+
   dimension: metrics__boolean__preferences_inactive_tabs_enabled {
     label: "Preferences Inactive Tabs Enabled"
     hidden: no
@@ -2633,6 +2688,23 @@ Possible values:
     description: "Whether or not the user has the inactive tabs feature enabled.
 default: true
 "
+  }
+
+  dimension: metrics__boolean__preferences_isolated_content_processes_enabled {
+    label: "Preferences Isolated Content Processes Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_isolated_content_processes_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Isolated Content Processes Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Isolated Content Processes Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_isolated_content_processes_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True when isolated content processes are enabled on the runtime."
   }
 
   dimension: metrics__string__preferences_open_links_in_app_enabled {
@@ -2766,6 +2838,44 @@ default: true
 "
   }
 
+  dimension: metrics__boolean__preferences_show_non_sponsor_suggestions_enabled {
+    label: "Preferences Show Non Sponsor Suggestions Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_show_non_sponsor_suggestions_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Show Non Sponsor Suggestions Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Show Non Sponsor Suggestions Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_show_non_sponsor_suggestions_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user has non sponsor search suggestions enabled
+default: true
+"
+  }
+
+  dimension: metrics__boolean__preferences_show_sponsor_suggestions_enabled {
+    label: "Preferences Show Sponsor Suggestions Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_show_sponsor_suggestions_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Show Sponsor Suggestions Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Show Sponsor Suggestions Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_show_sponsor_suggestions_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user has sponsor search suggestions enabled
+default: true
+"
+  }
+
   dimension: metrics__boolean__preferences_signed_in_sync {
     label: "Preferences Signed In Sync"
     hidden: no
@@ -2821,6 +2931,24 @@ default: false
 never receive a \"false\" value for this since telemetry would
 not send in that case.
 default: true
+"
+  }
+
+  dimension: metrics__string__preferences_toolbar_mode_setting {
+    label: "Preferences Toolbar Mode Setting"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_toolbar_mode_setting ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Toolbar Mode Setting"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Toolbar Mode Setting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_toolbar_mode_setting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The mode of the toolbar. Possible values are: simple or expanded.
 "
   }
 
@@ -3451,6 +3579,74 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__counter__terms_of_use_dismiss_count {
+    label: "Terms Of Use Dismiss Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.terms_of_use_dismiss_count ;;
+    type: number
+    group_label: "Terms Of Use"
+    group_item_label: "Dismiss Count"
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times the user dismissed the Terms of Use prompt."
+  }
+
+  dimension: metrics__counter__terms_of_use_impression_count {
+    label: "Terms Of Use Impression Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.terms_of_use_impression_count ;;
+    type: number
+    group_label: "Terms Of Use"
+    group_item_label: "Impression Count"
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of Terms of Use prompt impressions the user has had."
+  }
+
+  dimension: metrics__counter__terms_of_use_remind_me_later_count {
+    label: "Terms Of Use Remind Me Later Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.terms_of_use_remind_me_later_count ;;
+    type: number
+    group_label: "Terms Of Use"
+    group_item_label: "Remind Me Later Count"
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of times the user clicked 'remind me later' on the Terms of Use prompt."
+  }
+
+  dimension: metrics__quantity__terms_of_use_version {
+    label: "Terms Of Use Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.terms_of_use_version ;;
+    type: number
+    group_label: "Terms Of Use"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Terms of Use the user accepted."
+  }
+
   dimension: metrics__boolean__wallpapers_discovered_wallpaper_feature {
     label: "Wallpapers Discovered Wallpaper Feature"
     hidden: yes
@@ -3706,7 +3902,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__labeled_quantity__addons_manager_startup_timeline {
     label: "Addons Manager Startup Timeline"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.labeled_quantity.addons_manager_startup_timeline ;;
     type: string
     group_label: "Addons Manager"
@@ -4687,7 +4883,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__labeled_quantity__browser_timings_startup_timeline {
     label: "Browser Timings Startup Timeline"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.labeled_quantity.browser_timings_startup_timeline ;;
     type: string
     group_label: "Browser Timings"
@@ -5387,7 +5583,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__quantity__cert_verifier_trust_obj_count {
     label: "Cert Verifier Trust Obj Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
     type: number
     group_label: "Cert Verifier"
@@ -9996,7 +10192,7 @@ Child-process data will likely be absent, or incomplete.
 
   dimension: metrics__timespan__fog_initialization__value {
     label: "Fog Initialization Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
     type: number
     group_label: "Fog"
@@ -10009,6 +10205,24 @@ Child-process data will likely be absent, or incomplete.
     }
 
     description: "Time the FOG initialization takes.
+"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__sum {
+    label: "Fog Initializations Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.sum ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Initializations Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Initializations Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_initializations"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time the FOG initializations take.
 "
   }
 
@@ -10148,6 +10362,62 @@ Will likely be obsoleted by bug 1641989.
     }
 
     description: "Value of the configurable rate limit, in pings per minute, for Glean pings as set at init.
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_err {
+    label: "Fog Subdir Entry Err"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
+    group_label: "Fog"
+    group_item_label: "Subdir Entry Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Entry Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_subdir_entry_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many dir entries per data subdirectory errored while reporting fog.data_diretory_info.
+(Potentially because they were removed between `read_dir` and the iteration).
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    label: "Fog Subdir Entry Metadata Err"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_metadata_err ;;
+    group_label: "Fog"
+    group_item_label: "Subdir Entry Metadata Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Entry Metadata Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_subdir_entry_metadata_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many dir entries per data subdirectory errored while retrieving their metadata
+while reporting fog.data_diretory_info.
+"
+  }
+
+  dimension: metrics__labeled_boolean__fog_subdir_err {
+    label: "Fog Subdir Err"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
+    type: string
+    group_label: "Fog"
+    group_item_label: "Subdir Err"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Subdir Err"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_subdir_err"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which data subdirectories suffered an err between is_dir and read_dir
+while reporting fog.data_diretory_info.
+(Potentially because they were removed in the interim).
 "
   }
 
@@ -11979,7 +12249,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__counter__glam_experiment_cpu_time_bogus_values {
     label: "Glam Experiment CPU Time Bogus Values"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_cpu_time_bogus_values ;;
     type: number
     group_label: "Glam Experiment"
@@ -11998,7 +12268,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
     label: "Glam Experiment HTTP Content Html5Parser Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -12017,7 +12287,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_largest_contentful_paint__sum {
     label: "Glam Experiment Largest Contentful Paint Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_largest_contentful_paint.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -12036,7 +12306,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__counter__glam_experiment_os_socket_limit_reached {
     label: "Glam Experiment OS Socket Limit Reached"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_os_socket_limit_reached ;;
     type: number
     group_label: "Glam Experiment"
@@ -12055,7 +12325,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_protect_time__sum {
     label: "Glam Experiment Protect Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_protect_time.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -12074,7 +12344,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__timing_distribution__glam_experiment_sub_complete_load_net__sum {
     label: "Glam Experiment Sub Complete Load Net Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.glam_experiment_sub_complete_load_net.sum ;;
     type: number
     group_label: "Glam Experiment"
@@ -12112,7 +12382,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__counter__glam_experiment_total_cpu_time_ms {
     label: "Glam Experiment Total CPU Time Ms"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_total_cpu_time_ms ;;
     type: number
     group_label: "Glam Experiment"
@@ -12131,7 +12401,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
 
   dimension: metrics__counter__glam_experiment_used {
     label: "Glam Experiment Used"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glam_experiment_used ;;
     type: number
     group_label: "Glam Experiment"
@@ -12312,7 +12582,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_bytes_evicted_compressor__sum {
     label: "Hpack Bytes Evicted Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12331,7 +12601,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_bytes_evicted_decompressor__sum {
     label: "Hpack Bytes Evicted Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_bytes_evicted_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12350,7 +12620,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__sum {
     label: "Hpack Bytes Evicted Ratio Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12369,7 +12639,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_decompressor__sum {
     label: "Hpack Bytes Evicted Ratio Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12388,7 +12658,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_elements_evicted_compressor__sum {
     label: "Hpack Elements Evicted Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12407,7 +12677,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_elements_evicted_decompressor__sum {
     label: "Hpack Elements Evicted Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_elements_evicted_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12426,7 +12696,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_peak_count_compressor__sum {
     label: "Hpack Peak Count Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12445,7 +12715,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__hpack_peak_count_decompressor__sum {
     label: "Hpack Peak Count Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.hpack_peak_count_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12464,7 +12734,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_peak_size_compressor__sum {
     label: "Hpack Peak Size Compressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_compressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12483,7 +12753,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__hpack_peak_size_decompressor__sum {
     label: "Hpack Peak Size Decompressor Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.hpack_peak_size_decompressor.sum ;;
     type: number
     group_label: "Hpack"
@@ -12574,7 +12844,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__http_altsvc_entries_per_header__sum {
     label: "HTTP Altsvc Entries Per Header Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_altsvc_entries_per_header.sum ;;
     type: number
     group_label: "HTTP"
@@ -12928,7 +13198,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__http_saw_quic_alt_protocol__sum {
     label: "HTTP Saw Quic Alt Protocol Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_saw_quic_alt_protocol.sum ;;
     type: number
     group_label: "HTTP"
@@ -13593,6 +13863,60 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_fallback_fullrestore_metadata {
+    label: "Idb Maintenance Fallback Fullrestore Metadata"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.idb_maintenance_fallback_fullrestore_metadata ;;
+    type: number
+    group_label: "Idb Maintenance"
+    group_item_label: "Fallback Fullrestore Metadata"
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_fallback_fullrestore_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracks the number of times we need to fallback to restore metadata object by reading metadata-v2 file on disk when performing idle-maintenance on IDB database.
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_metadata_restored {
+    label: "Idb Maintenance Metadata Restored"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.idb_maintenance_metadata_restored ;;
+    type: number
+    group_label: "Idb Maintenance"
+    group_item_label: "Metadata Restored"
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_metadata_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times we failed to load metadata object and had to restore it
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_unknown_metadata {
+    label: "Idb Maintenance Unknown Metadata"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.idb_maintenance_unknown_metadata ;;
+    type: number
+    group_label: "Idb Maintenance"
+    group_item_label: "Unknown Metadata"
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_unknown_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments upon encountering an unknown metadata object when performing idle-maintenance on IDB database. During idle-maintenance, we iterate over idb directories/files and construct a metadata object by calling QuotaManager::GetOriginMetadata or LoadFullOriginMetadataWithRestore. It seems that in some cases, the metadata object we get here can be invalid and this metric is used to track those instances.
 "
   }
 
@@ -15409,6 +15733,41 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__media_mkv_codec_type {
+    label: "Media Mkv Codec Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_mkv_codec_type ;;
+    group_label: "Media"
+    group_item_label: "Mkv Codec Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Codec Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mkv_codec_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the amount of the real world codec usage inside Matroska.
+"
+  }
+
+  dimension: metrics__counter__media_mkv_content_count {
+    label: "Media Mkv Content Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Mkv Content Count"
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mkv_content_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times MKV content is detected as a source for media playback. This metric does not determine whether the MKV file is valid; it is simply a count based on the sniffed MIME type.
+"
+  }
+
   dimension: metrics__custom_distribution__media_mp4_parse_num_sample_description_entries__sum {
     label: "Media Mp4 Parse Num Sample Description Entries Sum"
     hidden: no
@@ -15513,6 +15872,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
+  }
+
+  dimension: metrics__labeled_counter__media_recorder_mime_type_query {
+    label: "Media Recorder Mime Type Query"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_recorder_mime_type_query ;;
+    group_label: "Media Recorder"
+    group_item_label: "Mime Type Query"
+
+    link: {
+      label: "Glean Dictionary reference for Media Recorder Mime Type Query"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_recorder_mime_type_query"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the amount of times where a mime type is queried via MediaRecorder.isTypeSupported() or passed to the MediaRecorder constructor. The result is accumulated per mime type.
+"
   }
 
   dimension: metrics__timing_distribution__media_video_clearkey_play_time__sum {
@@ -15948,25 +16324,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__memory_distribution__memory_js_gc_heap__sum {
-    label: "Memory Js GC Heap Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.memory_js_gc_heap.sum ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Js GC Heap Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Memory Js GC Heap Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_gc_heap"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Memory used by the garbage-collected JavaScript heap (KB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_GC_HEAP.
-"
-  }
-
   dimension: metrics__custom_distribution__memory_js_realms_system__sum {
     label: "Memory Js Realms System Sum"
     hidden: no
@@ -16043,44 +16400,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__memory_distribution__memory_resident_fast__sum {
-    label: "Memory Resident Fast Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.memory_resident_fast.sum ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Resident Fast Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Memory Resident Fast Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_resident_fast"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Resident memory size (KB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_FAST.
-"
-  }
-
-  dimension: metrics__memory_distribution__memory_resident_peak__sum {
-    label: "Memory Resident Peak Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.memory_resident_peak.sum ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Resident Peak Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Memory Resident Peak Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_resident_peak"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Peak resident memory size (KB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_PEAK.
-"
-  }
-
   dimension: metrics__memory_distribution__memory_storage_sqlite__sum {
     label: "Memory Storage Sqlite Sum"
     hidden: no
@@ -16116,25 +16435,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Total Memory Across All Processes (KB) (inaccurate WRT shared memory. See MemoryTelemetry.cpp)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_TOTAL.
-"
-  }
-
-  dimension: metrics__memory_distribution__memory_unique__sum {
-    label: "Memory Unique Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.memory_unique.sum ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Unique Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Memory Unique Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_unique"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Unique Set Size (KB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_UNIQUE.
 "
   }
 
@@ -18062,7 +18362,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__counter__networking_cookie_count_invalid_first_party_partitioned_in_db {
     label: "Networking Cookie Count Invalid First Party Partitioned In DB"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.networking_cookie_count_invalid_first_party_partitioned_in_db ;;
     type: number
     group_label: "Networking"
@@ -19409,7 +19709,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__sum {
     label: "Networking HTTP Content Cssloader Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -19427,7 +19727,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
     label: "Networking HTTP Content Html5Parser Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -19463,7 +19763,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__sum {
     label: "Networking HTTP Content Ondatafinished Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -19481,7 +19781,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay_2__sum {
     label: "Networking HTTP Content Ondatafinished Delay 2 Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay_2.sum ;;
     type: number
     group_label: "Networking"
@@ -19499,7 +19799,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__sum {
     label: "Networking HTTP Content Ondatafinished To Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -19535,7 +19835,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
     label: "Networking HTTP Content Onstart Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -19553,7 +19853,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_http_content_onstop_delay__sum {
     label: "Networking HTTP Content Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -19842,6 +20142,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "port used for local network access
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_local_network_access_prompts_shown {
+    label: "Networking Local Network Access Prompts Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access_prompts_shown ;;
+    group_label: "Networking"
+    group_item_label: "Local Network Access Prompts Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Local Network Access Prompts Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_local_network_access_prompts_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types.
 "
   }
 
@@ -20590,7 +20907,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__networking_set_invalid_first_party_partitioned_cookie {
     label: "Networking Set Invalid First Party Partitioned Cookie"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.networking_set_invalid_first_party_partitioned_cookie ;;
     type: number
     group_label: "Networking"
@@ -21031,6 +21348,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_comment_edit {
+    label: "Pdfjs Comment Edit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_comment_edit ;;
+    group_label: "Pdfjs Comment"
+    group_item_label: "Edit"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Comment Edit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_comment_edit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user edits or deletes comments.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_digital_signature_certificate {
     label: "Pdfjs Digital Signature Certificate"
     hidden: yes
@@ -21413,6 +21747,60 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "How many times PDF Viewer was used.
+"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__sum {
+    label: "Perf Cold Applink Main To Load URI Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Cold Applink Main To Load URI Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Cold Applink Main To Load URI Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_cold_applink_main_to_load_uri"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration from StartupTimeline::MAIN to load URI for an android cold applink.
+"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__sum {
+    label: "Perf Cold Applink Process Launch To Load URI Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Cold Applink Process Launch To Load URI Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Cold Applink Process Launch To Load URI Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_cold_applink_process_launch_to_load_uri"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration from cold process launch to load URI for an android cold applink.
+"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
+    label: "Perf Js Exec Asm Js Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Js Exec Asm Js Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Js Exec Asm Js Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_js_exec_asm_js"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds spent executing Javascript for top level documents that contain the asm.js use counter.  Measures 5min of activity after the use counter is set then records the value in this histogram.
 "
   }
 
@@ -22279,6 +22667,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_inference_process {
+    label: "Power CPU Ms Per Thread Inference Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_inference_process ;;
+    group_label: "Power CPU Ms Per Thread"
+    group_item_label: "Inference Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power CPU Ms Per Thread Inference Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_ms_per_thread_inference_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
     label: "Power CPU Ms Per Thread Parent Active"
     hidden: yes
@@ -22532,6 +22937,23 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     link: {
       label: "Glean Dictionary reference for Power Wakeups Per Thread GPU Process"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_inference_process {
+    label: "Power Wakeups Per Thread Inference Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_inference_process ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Inference Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Inference Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_inference_process"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -23170,6 +23592,27 @@ e.g. 16446
 "
   }
 
+  dimension: metrics__labeled_counter__profiles_creation_place {
+    label: "Profiles Creation Place"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.profiles_creation_place ;;
+    group_label: "Profiles"
+    group_item_label: "Creation Place"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles Creation Place"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/profiles_creation_place"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracking where profiles have been created.  The `legacy_forced` refers to
+usage of `MOZ_LEGACY_HOME=1` while `legacy_existing` is for the case an
+existing legacy profile was detected. The `xdg_default` accounts for lack
+of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
+`xdg_config` refers to existing `XDG_CONFIG_HOME`.
+"
+  }
+
   dimension: metrics__quantity__profiles_first_use_date {
     label: "Profiles First Use Date"
     hidden: no
@@ -23451,6 +23894,24 @@ Tracks the pref `signon.rememberSignons`.
 
     description: "Elapsed time to detect whether a <form> element is a signup form.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram PWMGR_SIGNUP_FORM_DETECTION_MS.
+"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__sum {
+    label: "Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.sum ;;
+    type: number
+    group_label: "Quotamanager Initialize Temporarystorage"
+    group_item_label: "Non Persisted Zero Usage Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Logs the number of non-persisted origins that have zero quota-charged usage after full temporary storage initialization. These origins do not store any real data but still contribute to internal bookkeeping by having directories and files created on disk, which can unnecessarily increase initialization costs. Measuring how many such origins exist in the wild helps evaluate whether the temporary storage cleanup logic should be updated to clear them. This in turn can guide potential optimizations and improve the performance of temporary storage initialization over time, while also helping to detect unexpected regressions. Note: Non-persisted origins can be cleared when they have no data, while persisted origins cannot be cleared even at zero usage because the persisted flag is currently stored alongside the origin data and would be lost.
 "
   }
 
@@ -24624,7 +25085,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_chunk_recvd__sum {
     label: "Spdy Chunk Recvd Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_chunk_recvd.sum ;;
     type: number
     group_label: "Spdy"
@@ -24776,7 +25237,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_settings_iw__sum {
     label: "Spdy Settings Iw Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_settings_iw.sum ;;
     type: number
     group_label: "Spdy"
@@ -24814,7 +25275,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__spdy_syn_ratio__sum {
     label: "Spdy Syn Ratio Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.spdy_syn_ratio.sum ;;
     type: number
     group_label: "Spdy"
@@ -24833,7 +25294,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__spdy_syn_reply_ratio__sum {
     label: "Spdy Syn Reply Ratio Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.spdy_syn_reply_ratio.sum ;;
     type: number
     group_label: "Spdy"
@@ -24852,7 +25313,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__memory_distribution__spdy_syn_reply_size__sum {
     label: "Spdy Syn Reply Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_syn_reply_size.sum ;;
     type: number
     group_label: "Spdy"
@@ -24871,7 +25332,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__spdy_syn_size__sum {
     label: "Spdy Syn Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.spdy_syn_size.sum ;;
     type: number
     group_label: "Spdy"
@@ -25225,6 +25686,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "complete TLS connect that used TLS Session Resumption (collected at same time as SSL_TIME_UNTIL_HANDSHAKE_FINISHED)
 This metric was generated to correspond to the Legacy Telemetry boolean histogram SSL_RESUMED_SESSION.
+"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__sum {
+    label: "SSL Scts From Tiled Logs Per Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.sum ;;
+    type: number
+    group_label: "SSL"
+    group_item_label: "Scts From Tiled Logs Per Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for SSL Scts From Tiled Logs Per Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ssl_scts_from_tiled_logs_per_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Histogram of the number of Signed Certificate Timestamps from tiled logs per TLS connection from all sources (embedded / OCSP Stapling / TLS handshake). Bucket 0 counts the cases when no SCTs from tiled logs were received, or none were extracted due to parsing errors.
 "
   }
 
@@ -25809,7 +26288,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__timing_distribution__sts_poll_and_event_the_last_cycle__sum {
     label: "Sts Poll And Event The Last Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_event_the_last_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -25828,7 +26307,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_and_events_cycle__sum {
     label: "Sts Poll And Events Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_and_events_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -25847,7 +26326,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_block_time__sum {
     label: "Sts Poll Block Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_block_time.sum ;;
     type: number
     group_label: "Sts"
@@ -25866,7 +26345,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__sts_poll_cycle__sum {
     label: "Sts Poll Cycle Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.sts_poll_cycle.sum ;;
     type: number
     group_label: "Sts"
@@ -26506,7 +26985,7 @@ e.g. 3775
 
   dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
     label: "System Special Directory Appdata Fallback"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.system_special_directory_appdata_fallback ;;
     type: string
     group_label: "System"
@@ -28160,6 +28639,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__counter__update_state_write_failure {
+    label: "Update State Write Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_state_write_failure ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "State Write Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Update State Write Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_state_write_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Update: Count of the number of times we have shown a notification to the user that they need to manually update because we cannot write to the update status file.
+"
+  }
+
   dimension: metrics__custom_distribution__update_status_error_code_complete_stage__sum {
     label: "Update Status Error Code Complete Stage Sum"
     hidden: no
@@ -28404,6 +28901,40 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "SafeBrowsing v4 hash completion error (0 = success, 1 = parsing failure, 2 = unknown threat type)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_COMPLETION_ERROR.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_lookup_hit {
+    label: "Urlclassifier Lookup Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_hit ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Lookup Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Lookup Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_lookup_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times that a lookup hits a table. Keyed by table name.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_lookup_miss {
+    label: "Urlclassifier Lookup Miss"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_miss ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Lookup Miss"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier Lookup Miss"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_lookup_miss"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times that a lookup misses a table. Keyed by table name.
 "
   }
 
@@ -30130,6 +30661,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__sum {
+    label: "Webrtcdtls Key Exchange Algorithm Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.sum ;;
+    type: number
+    group_label: "Webrtcdtls"
+    group_item_label: "Key Exchange Algorithm Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Key Exchange Algorithm Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/webrtcdtls_key_exchange_algorithm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SSL Handshake Key Exchange Algorithm (null=0, rsa=1, dh=2, ecdh=4, ecdh_hybrid=8)
+"
+  }
+
   dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
     label: "Webrtcdtls Protocol Version"
     hidden: yes
@@ -30576,7 +31125,7 @@ operating system.
 
   dimension: metrics__text2__xpi_database_late_load {
     label: "Xpi Database Late Load"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.xpi_database_late_load ;;
     type: string
     group_label: "Xpi Database"
@@ -30596,7 +31145,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__text2__xpi_database_late_stack {
     label: "Xpi Database Late Stack"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.xpi_database_late_stack ;;
     type: string
     group_label: "Xpi Database"
@@ -30616,7 +31165,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__xpi_database_parses__sum {
     label: "Xpi Database Parses Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.sum ;;
     type: number
     group_label: "Xpi Database"
@@ -30635,7 +31184,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__string__xpi_database_startup_error {
     label: "Xpi Database Startup Error"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.xpi_database_startup_error ;;
     type: string
     group_label: "Xpi Database"
@@ -30654,7 +31203,7 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__text2__xpi_database_sync_stack {
     label: "Xpi Database Sync Stack"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.text2.xpi_database_sync_stack ;;
     type: string
     group_label: "Xpi Database"
@@ -32238,6 +32787,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: app_version_major {
@@ -32264,6 +32814,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android SDK Version"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -32272,6 +32823,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
+    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -32280,6 +32832,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -32288,6 +32841,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -32296,6 +32850,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__attribution__campaign {
@@ -32304,6 +32859,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Campaign"
+    description: "The attribution campaign (e.g. 'mozilla-org')."
   }
 
   dimension: client_info__attribution__content {
@@ -32312,6 +32868,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Content"
+    description: "The attribution content (e.g. 'firefoxview')."
   }
 
   dimension: client_info__attribution__ext {
@@ -32325,6 +32882,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Medium"
+    description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
 
   dimension: client_info__attribution__source {
@@ -32333,6 +32891,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Source"
+    description: "The attribution source (e.g. 'google-play')."
   }
 
   dimension: client_info__attribution__term {
@@ -32341,6 +32900,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info Attribution"
     group_item_label: "Term"
+    description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
   dimension: client_info__build_date {
@@ -32349,11 +32909,13 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
+    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -32362,6 +32924,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -32370,6 +32933,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__distribution__ext {
@@ -32383,6 +32947,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info Distribution"
     group_item_label: "Name"
+    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {
@@ -32391,6 +32956,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
+    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -32399,6 +32965,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
+    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -32407,6 +32974,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS"
+    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -32415,6 +32983,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__session_count {
@@ -32423,6 +32992,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
   }
 
   dimension: client_info__session_id {
@@ -32431,6 +33001,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session ID"
+    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -32439,6 +33010,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry SDK Build"
+    description: "The version of the Glean SDK"
   }
 
   dimension: client_info__windows_build_number {
@@ -32447,11 +33019,13 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -32481,6 +33055,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -32489,6 +33064,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "DB Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -32497,6 +33073,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -32505,6 +33082,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -32513,6 +33091,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -32521,6 +33100,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "DNT"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -32550,6 +33130,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Debug ID"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -32558,6 +33139,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Foxsec IP Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -32566,6 +33148,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X LB Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -32574,6 +33157,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -32582,6 +33166,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -32590,6 +33175,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -32598,6 +33184,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "DB Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -32606,6 +33193,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -32614,6 +33202,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     suggest_persist_for: "24 hours"
     group_label: "Metadata ISP"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -32651,6 +33240,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
@@ -32664,12 +33254,14 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -32727,6 +33319,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
@@ -32862,6 +33455,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -33844,6 +34438,81 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Tabs Tray Open Inactive Tab"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_dismiss_count {
+    type: sum
+    sql: ${metrics__counter__terms_of_use_dismiss_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_dismiss_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__terms_of_use_dismiss_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Dismiss Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_dismiss_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_impression_count {
+    type: sum
+    sql: ${metrics__counter__terms_of_use_impression_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_impression_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__terms_of_use_impression_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Impression Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_impression_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_remind_me_later_count {
+    type: sum
+    sql: ${metrics__counter__terms_of_use_remind_me_later_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: terms_of_use_remind_me_later_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__terms_of_use_remind_me_later_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Terms Of Use Remind Me Later Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/terms_of_use_remind_me_later_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -35948,6 +36617,81 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: idb_maintenance_fallback_fullrestore_metadata {
+    type: sum
+    sql: ${metrics__counter__idb_maintenance_fallback_fullrestore_metadata} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_fallback_fullrestore_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_fallback_fullrestore_metadata_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__idb_maintenance_fallback_fullrestore_metadata: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Fallback Fullrestore Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_fallback_fullrestore_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_metadata_restored {
+    type: sum
+    sql: ${metrics__counter__idb_maintenance_metadata_restored} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_metadata_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_metadata_restored_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__idb_maintenance_metadata_restored: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Metadata Restored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_metadata_restored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_unknown_metadata {
+    type: sum
+    sql: ${metrics__counter__idb_maintenance_unknown_metadata} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_unknown_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: idb_maintenance_unknown_metadata_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__idb_maintenance_unknown_metadata: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_unknown_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: localstorage_request_recv_cancel_counter {
     type: sum
     sql: ${metrics__counter__localstorage_request_recv_cancel_counter} ;;
@@ -36094,6 +36838,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Media Element In Page Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_element_in_page_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_mkv_content_count {
+    type: sum
+    sql: ${metrics__counter__media_mkv_content_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mkv_content_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_mkv_content_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_mkv_content_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Mkv Content Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mkv_content_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -37719,6 +38488,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Update Service Manually Uninstalled Subsequent"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_service_manually_uninstalled_subsequent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_state_write_failure {
+    type: sum
+    sql: ${metrics__counter__update_state_write_failure} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update State Write Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_state_write_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_state_write_failure_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_state_write_failure: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update State Write Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_state_write_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -42310,19 +43104,19 @@ view: metrics__metrics__labeled_counter__dns_grace_period_renewal {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -42474,19 +43268,19 @@ view: metrics__metrics__labeled_counter__dom_innerwindows_with_mutation_listener
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -42984,6 +43778,88 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
 
 view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
   label: "Extensions - Startup Cache Read Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_subdir_entry_err {
+  label: "Fog - Subdir Entry Err"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_subdir_entry_metadata_err {
+  label: "Fog - Subdir Entry Metadata Err"
 
   dimension: document_id {
     type: string
@@ -43909,19 +44785,19 @@ view: metrics__metrics__labeled_counter__htmleditors_with_mutation_listeners_wit
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -45770,6 +46646,47 @@ view: metrics__metrics__labeled_counter__media_decode_error_per_mime_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_mkv_codec_type {
+  label: "Media - Mkv Codec Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs {
   label: "Media Mp4 Parse - Sample Description Entries Have Multiple Codecs"
 
@@ -45895,6 +46812,47 @@ view: metrics__metrics__labeled_counter__media_mse_source_buffer_type {
 
 view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
   label: "Media Playback - Not Supported Video Per Mime Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_recorder_mime_type_query {
+  label: "Media Recorder - Mime Type Query"
 
   dimension: document_id {
     type: string
@@ -47025,19 +47983,19 @@ view: metrics__metrics__labeled_counter__network_race_cache_with_network_usage {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -47763,19 +48721,19 @@ view: metrics__metrics__labeled_counter__networking_cache_purge_due_to_memory_li
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -48050,19 +49008,19 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_discard_coun
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -48091,19 +49049,19 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_coun
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -48624,19 +49582,19 @@ view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -48665,19 +49623,19 @@ view: metrics__metrics__labeled_counter__networking_http_ip_addr_any_hostnames {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -49052,6 +50010,47 @@ view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr 
 
 view: metrics__metrics__labeled_counter__networking_local_network_access {
   label: "Networking - Local Network Access"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_local_network_access_prompts_shown {
+  label: "Networking - Local Network Access Prompts Shown"
 
   dimension: document_id {
     type: string
@@ -49503,6 +50502,47 @@ view: metrics__metrics__labeled_counter__orb_did_ever_block_response {
 
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs - Buttons"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_comment_edit {
+  label: "Pdfjs Comment - Edit"
 
   dimension: document_id {
     type: string
@@ -50239,6 +51279,47 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
   }
 }
 
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_inference_process {
+  label: "Power CPU Ms Per Thread - Inference Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
   label: "Power CPU Ms Per Thread - Parent Active"
 
@@ -50649,6 +51730,47 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
   }
 }
 
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_inference_process {
+  label: "Power Wakeups Per Thread - Inference Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
   label: "Power Wakeups Per Thread - Parent Active"
 
@@ -50892,6 +52014,47 @@ view: metrics__metrics__labeled_counter__printing_target_type {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__profiles_creation_place {
+  label: "Profiles - Creation Place"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -51371,19 +52534,19 @@ view: metrics__metrics__labeled_counter__sandbox_has_user_namespaces {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -52414,6 +53577,88 @@ view: metrics__metrics__labeled_counter__update_service_installed_notify {
 
 view: metrics__metrics__labeled_counter__update_service_installed_subsequent {
   label: "Update - Service Installed Subsequent"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_lookup_hit {
+  label: "Urlclassifier - Lookup Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_lookup_miss {
+  label: "Urlclassifier - Lookup Miss"
 
   dimension: document_id {
     type: string
@@ -56510,6 +57755,20 @@ view: metrics__metrics__custom_distribution__pwmgr_prompt_update_action__values 
   }
 }
 
+view: metrics__metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__readermode_download_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -57085,6 +58344,20 @@ view: metrics__metrics__custom_distribution__ssl_permanent_cert_error_overrides_
 }
 
 view: metrics__metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -58162,6 +59435,20 @@ view: metrics__metrics__custom_distribution__webrtc_video_quality_outbound_packe
   }
 }
 
+view: metrics__metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__websockets_handshake_type__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -58813,6 +60100,20 @@ view: metrics__metrics__labeled_boolean__devtools_tool_registered {
   }
 }
 
+view: metrics__metrics__labeled_boolean__fog_subdir_err {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_boolean__geolocation_linux_provider {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -58966,6 +60267,7 @@ view: metrics__metrics__labeled_custom_distribution__contentblocking_canvas_fing
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59009,6 +60311,7 @@ view: metrics__metrics__labeled_custom_distribution__contentblocking_email_track
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59052,6 +60355,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_attempt_count {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59095,6 +60399,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59138,6 +60443,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59181,6 +60487,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59224,6 +60531,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59267,6 +60575,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59310,6 +60619,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59353,6 +60663,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_f
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59396,6 +60707,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59439,6 +60751,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_strict_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59482,6 +60795,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_trr_fir
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59525,6 +60839,7 @@ view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_bl
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59568,6 +60883,7 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_large_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59611,6 +60927,7 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_large_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59654,6 +60971,7 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_small_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59697,6 +61015,7 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_small_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59740,6 +61059,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_connection_close_code
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59783,6 +61103,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_counts_pto {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59826,6 +61147,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_ech_outcome {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59869,6 +61191,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_late_ack {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59912,6 +61235,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_late_ack_ratio {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59955,6 +61279,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_received_sent_dgrams 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -59998,6 +61323,7 @@ view: metrics__metrics__labeled_custom_distribution__http_channel_page_onstart_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60041,6 +61367,7 @@ view: metrics__metrics__labeled_custom_distribution__http_channel_sub_onstart_su
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60084,6 +61411,7 @@ view: metrics__metrics__labeled_custom_distribution__http_connection_close_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60127,6 +61455,7 @@ view: metrics__metrics__labeled_custom_distribution__http_upload_bandwidth_mbps 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60170,6 +61499,7 @@ view: metrics__metrics__labeled_custom_distribution__media_audible_play_time_per
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60213,6 +61543,7 @@ view: metrics__metrics__labeled_custom_distribution__media_muted_play_time_perce
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60256,6 +61587,7 @@ view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_tim
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60299,6 +61631,7 @@ view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60342,6 +61675,7 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60385,6 +61719,7 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60428,6 +61763,7 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60471,6 +61807,7 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_size_share {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60514,6 +61851,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ec
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60557,6 +61895,7 @@ view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_rep
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60600,6 +61939,7 @@ view: metrics__metrics__labeled_custom_distribution__sandbox_failed_launch_keyed
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60643,6 +61983,7 @@ view: metrics__metrics__labeled_custom_distribution__service_worker_running {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60686,6 +62027,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_complete_remo
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60729,6 +62071,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_error 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60772,6 +62115,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60815,6 +62159,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60858,6 +62203,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeou
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60888,6 +62234,182 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeou
   }
 }
 
+view: metrics__metrics__labeled_memory_distribution__memory_js_gc_heap {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_js_gc_heap__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_resident_fast {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_resident_fast__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_resident_peak {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_resident_peak__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_unique {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__memory_unique__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_memory_distribution__network_cache_size {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -60901,6 +62423,7 @@ view: metrics__metrics__labeled_memory_distribution__network_cache_size {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60944,6 +62467,7 @@ view: metrics__metrics__labeled_memory_distribution__network_page_load_size {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -60987,6 +62511,7 @@ view: metrics__metrics__labeled_memory_distribution__networking_trr_request_size
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -61030,6 +62555,7 @@ view: metrics__metrics__labeled_memory_distribution__networking_trr_response_siz
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -61165,6 +62691,7 @@ view: metrics__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61253,6 +62780,7 @@ view: metrics__metrics__labeled_timing_distribution__devtools_toolbox_page_reloa
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61341,6 +62869,7 @@ view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61429,6 +62958,7 @@ view: metrics__metrics__labeled_timing_distribution__dns_trr_lookup_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61517,6 +63047,7 @@ view: metrics__metrics__labeled_timing_distribution__dom_quota_info_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61605,6 +63136,7 @@ view: metrics__metrics__labeled_timing_distribution__dom_quota_shutdown_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61693,6 +63225,7 @@ view: metrics__metrics__labeled_timing_distribution__event_longtask {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61781,6 +63314,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_backgroun
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61869,6 +63403,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_browser_a
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -61957,6 +63492,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_content_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62045,6 +63581,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_event_pag
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62133,6 +63670,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_extension
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62221,6 +63759,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_page_acti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62309,6 +63848,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_storage_l
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62397,6 +63937,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_storage_l
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62485,6 +64026,7 @@ view: metrics__metrics__labeled_timing_distribution__firefox_ai_runtime_engine_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62573,6 +64115,7 @@ view: metrics__metrics__labeled_timing_distribution__firefox_ai_runtime_run_infe
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62661,6 +64204,7 @@ view: metrics__metrics__labeled_timing_distribution__media_media_play_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62749,6 +64293,7 @@ view: metrics__metrics__labeled_timing_distribution__media_video_visible_play_ti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62837,6 +64382,7 @@ view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_du
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -62925,6 +64471,7 @@ view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63013,6 +64560,7 @@ view: metrics__metrics__labeled_timing_distribution__network_async_open_child_to
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63101,6 +64649,7 @@ view: metrics__metrics__labeled_timing_distribution__network_dns_end_to_connect_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63189,6 +64738,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_avg_read_inte
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63277,6 +64827,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_complete_load
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63365,6 +64916,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_first_sent_to
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63453,6 +65005,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63541,6 +65094,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63629,6 +65183,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_tls_handshake
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63717,6 +65272,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63805,6 +65361,7 @@ view: metrics__metrics__labeled_timing_distribution__network_response_end_parent
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63893,6 +65450,7 @@ view: metrics__metrics__labeled_timing_distribution__network_response_start_pare
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -63981,6 +65539,7 @@ view: metrics__metrics__labeled_timing_distribution__network_sup_http3_tcp_conne
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64069,6 +65628,7 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64157,6 +65717,7 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64245,6 +65806,7 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64333,6 +65895,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_complete_loa
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64421,6 +65984,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_end {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64509,6 +66073,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_start {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64597,6 +66162,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_fetch_durati
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64685,6 +66251,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_first_sent_t
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64773,6 +66340,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_firs
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64861,6 +66429,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_firs
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -64949,6 +66518,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_tcp_connecti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65037,6 +66607,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_tls_handshak
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65125,6 +66696,7 @@ view: metrics__metrics__labeled_timing_distribution__orb_javascript_validation {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65213,6 +66785,7 @@ view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_valida
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65301,6 +66874,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_dns_first_byte {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65389,6 +66963,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_dns_first_contentful_p
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65477,6 +67052,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_h3p_first_contentful_p
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65565,6 +67141,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_h3p_page_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65653,6 +67230,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_http3_first_contentful
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65741,6 +67319,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_http3_page_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65829,6 +67408,7 @@ view: metrics__metrics__labeled_timing_distribution__security_https_only_mode_up
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -65917,6 +67497,7 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66005,6 +67586,7 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66093,6 +67675,7 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66181,6 +67764,7 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_interc
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66269,6 +67853,7 @@ view: metrics__metrics__labeled_timing_distribution__ssl_time_until_handshake_fi
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66357,6 +67942,7 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_cl_keyed_upda
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66445,6 +68031,7 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_complete_serv
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66533,6 +68120,7 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66621,6 +68209,7 @@ view: metrics__metrics__labeled_timing_distribution__workers_sync_worker_operati
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -66709,6 +68298,7 @@ view: metrics__metrics__labeled_timing_distribution__xpi_database_rebuilds {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -68751,6 +70341,20 @@ view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_no
 }
 
 view: metrics__metrics__timing_distribution__first_session_adjust_attribution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__fog_initializations__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -71691,6 +73295,48 @@ view: metrics__metrics__timing_distribution__perf_awesomebar_shortcuts_suggestio
 }
 
 view: metrics__metrics__timing_distribution__perf_awesomebar_synced_tabs_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_cold_applink_main_to_load_uri__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_js_exec_asm_js__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

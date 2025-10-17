@@ -449,6 +449,16 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__policies_is_enterprise {
+    sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Policies Is Enterprise"
+    description: "Attempt to determine if the user is an enterprise user based on various signals. This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -490,6 +500,23 @@ The labels are the `category.name` identifier of the metric.
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
+  }
+
+  dimension: metrics__string__region_home_region {
+    sql: ${TABLE}.metrics.string.region_home_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Region Home Region"
+    description: "Records the detected home region of the user. This is the general region of the user's machine.
+If a machine moves location, there is a minimum 2-week delay before this will be updated.
+See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/modules/toolkit_modules/Region.html) for more information about updates.
+"
+  }
+
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
   }
 
   dimension: metrics__uuid__legacy_ids_client_id {

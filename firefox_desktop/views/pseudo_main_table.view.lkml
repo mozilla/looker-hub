@@ -505,6 +505,11 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_renderer_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.bucket_count ;;
     type: number

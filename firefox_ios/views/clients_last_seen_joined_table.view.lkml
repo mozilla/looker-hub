@@ -207,6 +207,12 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: days_since_visited_1_uri {
+    sql: ${TABLE}.days_since_visited_1_uri ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
@@ -307,12 +313,6 @@ view: clients_last_seen_joined_table {
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: profile_group_id {
-    sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
   }

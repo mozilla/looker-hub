@@ -10,6 +10,12 @@ view: firefox_desktop_ltv {
     hidden: yes
   }
 
+  dimension: first_reported_country {
+    sql: ${TABLE}.first_reported_country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: future_value {
     sql: ${TABLE}.future_value ;;
     type: number

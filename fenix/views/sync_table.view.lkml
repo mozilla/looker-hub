@@ -632,6 +632,11 @@ view: sync_table {
     group_item_label: "System OS Version"
   }
 
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__sync_sync_uuid {
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string

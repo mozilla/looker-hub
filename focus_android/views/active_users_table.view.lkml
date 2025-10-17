@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: active_users_table {
+  dimension: active_hours_sum {
+    sql: ${TABLE}.active_hours_sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: activity_segment {
     sql: ${TABLE}.activity_segment ;;
     type: string
@@ -243,6 +249,18 @@ view: active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: days_since_visited_1_uri {
+    sql: ${TABLE}.days_since_visited_1_uri ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_visited_1_uri_bits {
+    sql: ${TABLE}.days_visited_1_uri_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
@@ -279,6 +297,11 @@ view: active_users_table {
     sql: ${TABLE}.durations ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
   }
 
   dimension: first_seen_year {
@@ -492,4 +515,36 @@ view: active_users_table {
   }
 
   sql_table_name: `mozdata.focus_android.active_users` ;;
+}
+
+view: active_users_table__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value Extra"
+    group_item_label: "Enrollment ID"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value Extra"
+    group_item_label: "Type"
+  }
 }

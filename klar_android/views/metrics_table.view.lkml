@@ -2147,6 +2147,36 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__idb_maintenance_fallback_fullrestore_metadata {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_fallback_fullrestore_metadata ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Fallback Fullrestore Metadata"
+    description: "Tracks the number of times we need to fallback to restore metadata object by reading metadata-v2 file on disk when performing idle-maintenance on IDB database.
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_metadata_restored {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_metadata_restored ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Metadata Restored"
+    description: "Counts the number of times we failed to load metadata object and had to restore it
+"
+  }
+
+  dimension: metrics__counter__idb_maintenance_unknown_metadata {
+    sql: ${TABLE}.metrics.counter.idb_maintenance_unknown_metadata ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Idb Maintenance Unknown Metadata"
+    description: "Increments upon encountering an unknown metadata object when performing idle-maintenance on IDB database. During idle-maintenance, we iterate over idb directories/files and construct a metadata object by calling QuotaManager::GetOriginMetadata or LoadFullOriginMetadataWithRestore. It seems that in some cases, the metadata object we get here can be invalid and this metric is used to track those instances.
+"
+  }
+
   dimension: metrics__counter__localstorage_request_recv_cancel_counter {
     sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
     type: number
@@ -2204,6 +2234,16 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Media Element In Page Count"
     description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
+"
+  }
+
+  dimension: metrics__counter__media_mkv_content_count {
+    sql: ${TABLE}.metrics.counter.media_mkv_content_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Media Mkv Content Count"
+    description: "The number of times MKV content is detected as a source for media playback. This metric does not determine whether the MKV file is valid; it is simply a count based on the sniffed MIME type.
 "
   }
 
@@ -2935,6 +2975,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_item_label: "Update Service Manually Uninstalled Subsequent"
     description: "Update: count of systems that manually uninstalled the service (timer initiated)
 This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_SERVICE_MANUALLY_UNINSTALLED_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__counter__update_state_write_failure {
+    sql: ${TABLE}.metrics.counter.update_state_write_failure ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Update State Write Failure"
+    description: "Update: Count of the number of times we have shown a notification to the user that they need to manually update because we cannot write to the update status file.
 "
   }
 
@@ -7564,6 +7614,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__count {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__sum {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Quotamanager Initialize Temporarystorage Non Persisted Zero Usage Origins"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+    sql: ${TABLE}.metrics.custom_distribution.quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__readermode_download_result__count {
     sql: ${TABLE}.metrics.custom_distribution.readermode_download_result.count ;;
     type: number
@@ -8463,6 +8535,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
     sql: ${TABLE}.metrics.custom_distribution.ssl_reasons_for_not_false_starting.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__count {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Scts From Tiled Logs Per Connection"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__sum {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution SSL Scts From Tiled Logs Per Connection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
+    sql: ${TABLE}.metrics.custom_distribution.ssl_scts_from_tiled_logs_per_connection.values ;;
     hidden: yes
   }
 
@@ -10160,6 +10254,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__count {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Webrtcdtls Key Exchange Algorithm"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__sum {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Custom Distribution Webrtcdtls Key Exchange Algorithm"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__values {
+    sql: ${TABLE}.metrics.custom_distribution.webrtcdtls_key_exchange_algorithm.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__websockets_handshake_type__count {
     sql: ${TABLE}.metrics.custom_distribution.websockets_handshake_type.count ;;
     type: number
@@ -10378,6 +10494,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "The result of attempting to open a sqlite file.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram SQLITE_STORE_OPEN.
+Initially this metric also recorded the \"success\" category, but due to the high volume of recording those, only failure categories are now tracked.
 "
   }
 
@@ -10386,6 +10503,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "The result of attempting to query a sqlite file.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram SQLITE_STORE_QUERY.
+Initially this metric also recorded the \"success\" category, but due to the high volume of recording those, only failure categories are now tracked.
 "
   }
 
@@ -10428,6 +10546,15 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_boolean.devtools_tool_registered ;;
     hidden: yes
     description: "Recorded on enable tool checkbox check/uncheck in Developer Tools options panel. Boolean stating if the tool was enabled or disabled by the user. Keyed by tool id. Current default tools with their id's are defined in https://searchfox.org/mozilla- central/source/devtools/client/definitions.js This metric was generated to correspond to the Legacy Telemetry scalar devtools.tool.registered.
+"
+  }
+
+  dimension: metrics__labeled_boolean__fog_subdir_err {
+    sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
+    hidden: yes
+    description: "Which data subdirectories suffered an err between is_dir and read_dir
+while reporting fog.data_diretory_info.
+(Potentially because they were removed in the interim).
 "
   }
 
@@ -11300,6 +11427,22 @@ the extensions StartupCache file.
 "
   }
 
+  dimension: metrics__labeled_counter__fog_subdir_entry_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
+    hidden: yes
+    description: "How many dir entries per data subdirectory errored while reporting fog.data_diretory_info.
+(Potentially because they were removed between `read_dir` and the iteration).
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_subdir_entry_metadata_err {
+    sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_metadata_err ;;
+    hidden: yes
+    description: "How many dir entries per data subdirectory errored while retrieving their metadata
+while reporting fog.data_diretory_info.
+"
+  }
+
   dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init ;;
     hidden: yes
@@ -11775,6 +11918,13 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__media_mkv_codec_type {
+    sql: ${TABLE}.metrics.labeled_counter.media_mkv_codec_type ;;
+    hidden: yes
+    description: "Count the amount of the real world codec usage inside Matroska.
+"
+  }
+
   dimension: metrics__labeled_counter__media_mp4_parse_sample_description_entries_have_multiple_codecs {
     sql: ${TABLE}.metrics.labeled_counter.media_mp4_parse_sample_description_entries_have_multiple_codecs ;;
     hidden: yes
@@ -11803,6 +11953,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.media_playback_not_supported_video_per_mime_type ;;
     hidden: yes
     description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
+  }
+
+  dimension: metrics__labeled_counter__media_recorder_mime_type_query {
+    sql: ${TABLE}.metrics.labeled_counter.media_recorder_mime_type_query ;;
+    hidden: yes
+    description: "Count the amount of times where a mime type is queried via MediaRecorder.isTypeSupported() or passed to the MediaRecorder constructor. The result is accumulated per mime type.
+"
   }
 
   dimension: metrics__labeled_counter__media_sniffer_mp4_brand_pattern {
@@ -12354,6 +12511,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_local_network_access_prompts_shown {
+    sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access_prompts_shown ;;
+    hidden: yes
+    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_proxy_info_type {
     sql: ${TABLE}.metrics.labeled_counter.networking_proxy_info_type ;;
     hidden: yes
@@ -12431,6 +12595,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
     hidden: yes
     description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_comment_edit {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_comment_edit ;;
+    hidden: yes
+    description: "Counts the number of times the user edits or deletes comments.
 "
   }
 
@@ -12561,6 +12732,13 @@ primary buckets:
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_inference_process {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_inference_process ;;
+    hidden: yes
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
     sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_active ;;
     hidden: yes
@@ -12631,6 +12809,13 @@ primary buckets:
 "
   }
 
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_inference_process {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_inference_process ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
   dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_active {
     sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_active ;;
     hidden: yes
@@ -12671,6 +12856,17 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.printing_target_type ;;
     hidden: yes
     description: "A counter incremented every time the user prints to a certain target type.  The 'pdf_unknown' count is for printers with names that we don't know about/check for, but that have 'pdf' in their name, and is mainly a sanity check that we're not missing significant counts in 'pdf_file'. For the most part, the 'unknown' count will be prints to a physical printer, but we can't know for sure since third party drivers could also be print to file drivers that we don't otherwise catch in the other counts. This metric was generated to correspond to the Legacy Telemetry scalar printing.target_type.
+"
+  }
+
+  dimension: metrics__labeled_counter__profiles_creation_place {
+    sql: ${TABLE}.metrics.labeled_counter.profiles_creation_place ;;
+    hidden: yes
+    description: "Tracking where profiles have been created.  The `legacy_forced` refers to
+usage of `MOZ_LEGACY_HOME=1` while `legacy_existing` is for the case an
+existing legacy profile was detected. The `xdg_default` accounts for lack
+of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
+`xdg_config` refers to existing `XDG_CONFIG_HOME`.
 "
   }
 
@@ -12950,6 +13146,20 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "Update: whether the service is installed (after we already have an update ready)
 This metric was generated to correspond to the Legacy Telemetry boolean histogram UPDATE_SERVICE_INSTALLED_SUBSEQUENT.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_lookup_hit {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_hit ;;
+    hidden: yes
+    description: "Counts the number of times that a lookup hits a table. Keyed by table name.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_lookup_miss {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_miss ;;
+    hidden: yes
+    description: "Counts the number of times that a lookup misses a table. Keyed by table name.
 "
   }
 
@@ -13506,6 +13716,38 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     hidden: yes
     description: " Whether or not an update timed out (0 = no timeout, 1 = server respond
 timeout, 2 = overall timeout). Keyed by provider This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UPDATE_TIMEOUT.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__memory_js_gc_heap {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.memory_js_gc_heap ;;
+    hidden: yes
+    description: "Memory used by the garbage-collected JavaScript heap (KB) by process type
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_JS_GC_HEAP.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__memory_resident_fast {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.memory_resident_fast ;;
+    hidden: yes
+    description: "Resident memory size (KB) by process type
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_FAST.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__memory_resident_peak {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.memory_resident_peak ;;
+    hidden: yes
+    description: "Peak resident memory size (KB) by process type
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_RESIDENT_PEAK.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__memory_unique {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.memory_unique ;;
+    hidden: yes
+    description: "Unique Set Size (KB) by process type
+This metric was generated to correspond to the Legacy Telemetry exponential histogram MEMORY_UNIQUE.
 "
   }
 
@@ -15175,7 +15417,7 @@ have values.
     hidden: yes
     description: "Most recent exception reported by the Addons Manager this app session.
 Previously reported in the \"main\" ping `simpleMeasurements`.
-```
+```text
 {
   module: string module name,
   context: string context, like the method name,
@@ -15202,6 +15444,28 @@ addons.theme. Like its counterpart, it will only have data in Firefox
 Desktop and at times and on platforms where the environment would have
 values.
 "
+  }
+
+  dimension: metrics__object__fog_data_directory_info {
+    sql: ${TABLE}.metrics.object.fog_data_directory_info ;;
+    hidden: yes
+    description: "Information about the data directories and files used by FOG.
+
+Structure is an array of objects, each containing the following properties:
+- `dir_name`: The name of the directory. This is the subdirectory name relative to the
+  FOG data directory and should only include \"db\", \"events\", and \"pending_pings\".
+- `dir_exists`: Whether the directory exists. This should only be false on the first
+  run of FOG, or if the directory was deleted.
+- `dir_created`: The creation time of the directory, in seconds since the unix epoch. If
+  the directory does not exist, this will be `null` and if the time cannot be determined,
+  it will default to `0`.
+- `dir_modified`: The last modification time of the directory, in seconds since the unix
+  epoch. If the directory does not exist, this will be `null` and if the time cannot be
+  determined, it will default to `0`.
+- `file_count`: The number of files in the directory. If the directory does not exist,
+  this will be `0`.
+- `files`: An array of objects, each containing:
+  - `fil"
   }
 
   dimension: metrics__object__fog_validation_some_object {
@@ -15391,6 +15655,34 @@ On Linux only a single monitor is returned for the primary screen.
 * refreshRate - (Windows only) The target screen refresh rate, in Hz, or 0 if unknown.
 * pseudoDislay - (Windows only) Whether the screen is a pseudo display.
 "
+  }
+
+  dimension: metrics__object__glean_database_load_sizes {
+    sql: ${TABLE}.metrics.object.glean_database_load_sizes ;;
+    hidden: yes
+    description: "The size of the db file during specific phases of initialization.
+"
+  }
+
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
+    hidden: yes
+    description: "Information about the data directories and files used by FOG.
+
+Structure is an array of objects, each containing the following properties:
+- `dir_name`: The name of the directory. This is the subdirectory name relative to the
+  FOG data directory and should only include \"db\", \"events\", and \"pending_pings\".
+- `dir_exists`: Whether the directory exists. This should only be false on the first
+  run of FOG, or if the directory was deleted.
+- `dir_created`: The creation time of the directory, in seconds since the unix epoch. If
+  the directory does not exist, this will be `null` and if the time cannot be determined,
+  it will default to `0`.
+- `dir_modified`: The last modification time of the directory, in seconds since the unix
+  epoch. If the directory does not exist, this will be `null` and if the time cannot be
+  determined, it will default to `0`.
+- `file_count`: The number of files in the directory. If the directory does not exist,
+  this will be `0`.
+- `error_message`: If there was an error accessing the di"
   }
 
   dimension: metrics__object__hdd_binary {
@@ -17121,6 +17413,11 @@ operating system.
     description: "Reason for XPI Database startup error.
 Previously reported in \"main\" ping `simpleMeasurements`.
 "
+  }
+
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
   }
 
   dimension: metrics__string_list__intl_accept_languages {
@@ -23133,6 +23430,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time_ns__values {
     sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time_ns.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__range {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Fog Initializations"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_initializations__values {
+    sql: ${TABLE}.metrics.timing_distribution.fog_initializations.values ;;
     hidden: yes
   }
 
@@ -36000,6 +36364,207 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Main To Load URI"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Main To Load URI"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Main To Load URI"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Main To Load URI"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__range {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__sum {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Main To Load URI"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Main To Load URI"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Main To Load URI"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_main_to_load_uri__values {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_main_to_load_uri.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Process Launch To Load URI"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Process Launch To Load URI"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Process Launch To Load URI"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Process Launch To Load URI"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__range {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__sum {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Process Launch To Load URI"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Process Launch To Load URI"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Cold Applink Process Launch To Load URI"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__values {
+    sql: ${TABLE}.metrics.timing_distribution.perf_cold_applink_process_launch_to_load_uri.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__range {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Timing Distribution Perf Js Exec Asm Js"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_js_exec_asm_js__values {
+    sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__perf_largest_contentful_paint__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.bucket_count ;;
     type: number
@@ -45758,6 +46323,20 @@ view: metrics_table__metrics__custom_distribution__pwmgr_prompt_update_action__v
   }
 }
 
+view: metrics_table__metrics__custom_distribution__quotamanager_initialize_temporarystorage_non_persisted_zero_usage_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__readermode_download_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -46319,6 +46898,20 @@ view: metrics_table__metrics__custom_distribution__ssl_permanent_cert_error_over
 }
 
 view: metrics_table__metrics__custom_distribution__ssl_reasons_for_not_false_starting__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__ssl_scts_from_tiled_logs_per_connection__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -47410,6 +48003,20 @@ view: metrics_table__metrics__custom_distribution__webrtc_video_quality_outbound
   }
 }
 
+view: metrics_table__metrics__custom_distribution__webrtcdtls_key_exchange_algorithm__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__websockets_handshake_type__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -48048,6 +48655,20 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
 }
 
 view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__fog_subdir_err {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -50168,6 +50789,182 @@ view: metrics_table__metrics__labeled_custom_distribution__urlclassifier_update_
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__urlclassifier_update_timeout__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_js_gc_heap {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_js_gc_heap__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_resident_fast {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_resident_fast__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_resident_peak {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_resident_peak__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_unique {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__memory_unique__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -58027,6 +58824,20 @@ view: metrics_table__metrics__timing_distribution__fingerprinting_protection_can
   }
 }
 
+view: metrics_table__metrics__timing_distribution__fog_initializations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -60702,6 +61513,48 @@ view: metrics_table__metrics__timing_distribution__ocsp_request_time_success__va
 }
 
 view: metrics_table__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__perf_cold_applink_main_to_load_uri__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__perf_cold_applink_process_launch_to_load_uri__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__perf_js_exec_asm_js__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

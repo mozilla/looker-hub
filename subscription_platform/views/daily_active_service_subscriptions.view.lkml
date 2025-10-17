@@ -26,6 +26,16 @@ view: daily_active_service_subscriptions {
     description: "ID of the `service_subscriptions_history_v1` record this daily snapshot record was derived from."
   }
 
+  dimension: subscription__annual_recurring_revenue_usd {
+    sql: ${TABLE}.subscription.annual_recurring_revenue_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Annual Recurring Revenue Usd"
+    description: "Projected annual recurring revenue for the subscription in US dollars.
+This will be null for Stripe subscriptions prior to 2023-02-27 (DENG-754)."
+  }
+
   dimension: subscription__auto_renew {
     sql: ${TABLE}.subscription.auto_renew ;;
     type: yesno
@@ -55,6 +65,15 @@ This may be missing for some subscriptions."
 This may be \"Unknown\" for some subscriptions."
   }
 
+  dimension: subscription__country_vat_rate {
+    sql: ${TABLE}.subscription.country_vat_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Country Vat Rate"
+    description: "VAT rate for the country the subscription is in (if any)."
+  }
+
   dimension: subscription__current_period_discount_amount {
     sql: ${TABLE}.subscription.current_period_discount_amount ;;
     type: number
@@ -62,6 +81,16 @@ This may be \"Unknown\" for some subscriptions."
     group_label: "Subscription"
     group_item_label: "Current Period Discount Amount"
     description: "Current period discount amount (if any).
+This may be null for Apple subscriptions."
+  }
+
+  dimension: subscription__current_period_discount_amount_usd {
+    sql: ${TABLE}.subscription.current_period_discount_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Current Period Discount Amount Usd"
+    description: "Current period discount amount in US dollars (if any).
 This may be null for Apple subscriptions."
   }
 
@@ -102,78 +131,6 @@ For example, this should be `1` for their first logical subscription, `2` for th
     group_item_label: "Customer Service Subscription Number"
     description: "Number of this service subscription in the overall sequence of all of the customer's service subscriptions to this service.
 For example, this should be `1` for their first service subscription to this service, `2` for their second service subscription to this service, etc."
-  }
-
-  dimension: subscription__first_touch_attribution__entrypoint {
-    sql: ${TABLE}.subscription.first_touch_attribution.entrypoint ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "Entrypoint"
-    description: "First-touch attribution entrypoint."
-  }
-
-  dimension: subscription__first_touch_attribution__entrypoint_experiment {
-    sql: ${TABLE}.subscription.first_touch_attribution.entrypoint_experiment ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "Entrypoint Experiment"
-    description: "First-touch attribution entrypoint experiment."
-  }
-
-  dimension: subscription__first_touch_attribution__entrypoint_variation {
-    sql: ${TABLE}.subscription.first_touch_attribution.entrypoint_variation ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "Entrypoint Variation"
-    description: "First-touch attribution entrypoint experiment variation."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_campaign {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_campaign ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Campaign"
-    description: "First-touch attribution UTM campaign."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_content {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_content ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Content"
-    description: "First-touch attribution UTM content."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_medium {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_medium ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Medium"
-    description: "First-touch attribution UTM medium."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_source {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_source ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Source"
-    description: "First-touch attribution UTM source."
-  }
-
-  dimension: subscription__first_touch_attribution__utm_term {
-    sql: ${TABLE}.subscription.first_touch_attribution.utm_term ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Subscription First Touch Attribution"
-    group_item_label: "UTM Term"
-    description: "First-touch attribution UTM term."
   }
 
   dimension: subscription__has_fraudulent_charges {
@@ -332,6 +289,15 @@ This will be null for Google and Apple subscriptions."
     description: "ID of the associated logical subscription this service subscription was derived from."
   }
 
+  dimension: subscription__monthly_recurring_revenue_usd {
+    sql: ${TABLE}.subscription.monthly_recurring_revenue_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Monthly Recurring Revenue Usd"
+    description: "Projected monthly recurring revenue for the subscription in US dollars."
+  }
+
   dimension: subscription__mozilla_account_id {
     sql: ${TABLE}.subscription.mozilla_account_id ;;
     type: string
@@ -359,6 +325,16 @@ This may be missing for some subscriptions."
     group_label: "Subscription"
     group_item_label: "Ongoing Discount Amount"
     description: "Ongoing discount amount (if any).
+This may be null for Apple subscriptions."
+  }
+
+  dimension: subscription__ongoing_discount_amount_usd {
+    sql: ${TABLE}.subscription.ongoing_discount_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Ongoing Discount Amount Usd"
+    description: "Ongoing discount amount in US dollars (if any).
 This may be null for Apple subscriptions."
   }
 
@@ -409,6 +385,16 @@ For Apple subscriptions this will be \"Apple\"."
 For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming a USD amount due to a lack of source data (FXA-10549)."
   }
 
+  dimension: subscription__plan_amount_usd {
+    sql: ${TABLE}.subscription.plan_amount_usd ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Plan Amount Usd"
+    description: "Subscription plan's amount in US dollars.
+For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming a USD amount due to a lack of source data (FXA-10549)."
+  }
+
   dimension: subscription__plan_currency {
     sql: ${TABLE}.subscription.plan_currency ;;
     type: string
@@ -417,6 +403,15 @@ For Apple subscriptions prior to 2024-10-30 this may have fallen back to assumin
     group_item_label: "Plan Currency"
     description: "ISO 4217 code for the subscription plan's currency.
 For Apple subscriptions prior to 2024-10-30 this may have fallen back to assuming USD due to a lack of source data (FXA-10549)."
+  }
+
+  dimension: subscription__plan_currency_usd_exchange_rate {
+    sql: ${TABLE}.subscription.plan_currency_usd_exchange_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Plan Currency Usd Exchange Rate"
+    description: "Exchange rate for converting the subscription plan's currency into US dollars (if any)."
   }
 
   dimension: subscription__plan_interval {
@@ -677,23 +672,6 @@ This will be null for inactive subscriptions and for all Google subcriptions."
     label: "Subscription: Ended At"
     description: "When the subscription ended.
 This will be null for active subscriptions."
-  }
-
-  dimension_group: subscription__first_touch_attribution__impression_at {
-    sql: ${TABLE}.subscription.first_touch_attribution.impression_at ;;
-    type: time
-    suggest_persist_for: "24 hours"
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Subscription First Touch Attribution: Impression At"
-    description: "When the first-touch attribution impression occurred."
   }
 
   dimension_group: subscription__last_touch_attribution__impression_at {

@@ -134,26 +134,62 @@ AND (newtab_clients_daily_aggregates.newtab_search_enabled = newtab_clients_dail
                 
                     WHERE 
                     newtab_clients_daily_aggregates.submission_date
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start analysis_period %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_start submission_date %} AS DATE
-                        ), CURRENT_DATE()) AND
+                            {% date_end analysis_period %} AS DATE
+                        ), CURRENT_DATE())
+                    {% else %}
+                    BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start submission_date %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
+                    {% endif %}
                  AND 
                     newtab_clients_daily_aggregates_base_fields.submission_date
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start analysis_period %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_start submission_date %} AS DATE
-                        ), CURRENT_DATE()) AND
+                            {% date_end analysis_period %} AS DATE
+                        ), CURRENT_DATE())
+                    {% else %}
+                    BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start submission_date %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
+                    {% endif %}
                 
                 )
             GROUP BY
@@ -526,8 +562,9 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
 
   dimension_group: submission {
     type: time
+    datatype: date
     group_label: "Base Fields"
-    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
+    sql: ${TABLE}.analysis_basis ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -609,6 +646,632 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
                                         default_ui_visits.sum"
   }
 
+  measure: any_content_engagement_visits_rolling_average_ratio_28_day {
+    type: number
+    label: "Any Content Engagement Visits Ratio 28 Day Rolling Average"
+    sql: {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ) ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of Any Content Engagement Visits"
+  }
+
+  measure: any_content_engagement_visits_rolling_average_sum_28_day {
+    type: number
+    label: "Any Content Engagement Visits Sum 28 Day Rolling Average"
+    sql: {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ) ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of Any Content Engagement Visits"
+  }
+
+  measure: any_content_engagement_visits_rolling_average_ratio_28_day_365_day_period_over_period_previous {
+    type: number
+    label: "Any Content Engagement Visits Ratio 28 Day Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of Any Content Engagement Visits Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %} ;;
+  }
+
+  measure: any_content_engagement_visits_rolling_average_ratio_28_day_365_day_period_over_period_relative_change {
+    type: number
+    label: "Any Content Engagement Visits Ratio 28 Day Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of Any Content Engagement Visits Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )), NULLIF(({% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %}), 0)) - 1 ;;
+  }
+
+  measure: any_content_engagement_visits_rolling_average_sum_28_day_365_day_period_over_period_previous {
+    type: number
+    label: "Any Content Engagement Visits Sum 28 Day Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of Any Content Engagement Visits Sum 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %} ;;
+  }
+
+  measure: any_content_engagement_visits_rolling_average_sum_28_day_365_day_period_over_period_relative_change {
+    type: number
+    label: "Any Content Engagement Visits Sum 28 Day Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of Any Content Engagement Visits Sum 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )), NULLIF(({% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %}), 0)) - 1 ;;
+  }
+
   measure: organic_content_engagement_visits_sum {
     type: sum
     sql: ${TABLE}.organic_content_engagement_visits*1 ;;
@@ -661,6 +1324,632 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     description: "\"
                                         Ratio between any_content_engagement_clients.sum and
                                         default_ui_clients.sum"
+  }
+
+  measure: any_content_engagement_clients_rolling_average_ratio_28_day {
+    type: number
+    label: "Any Content Engagement clients Ratio 28 Day Rolling Average"
+    sql: {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ) ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of Any Content Engagement clients"
+  }
+
+  measure: any_content_engagement_clients_rolling_average_sum_28_day {
+    type: number
+    label: "Any Content Engagement clients Sum 28 Day Rolling Average"
+    sql: {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ) ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of Any Content Engagement clients"
+  }
+
+  measure: any_content_engagement_clients_rolling_average_ratio_28_day_365_day_period_over_period_previous {
+    type: number
+    label: "Any Content Engagement clients Ratio 28 Day Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of Any Content Engagement clients Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %} ;;
+  }
+
+  measure: any_content_engagement_clients_rolling_average_ratio_28_day_365_day_period_over_period_relative_change {
+    type: number
+    label: "Any Content Engagement clients Ratio 28 Day Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of Any Content Engagement clients Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )), NULLIF(({% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %}), 0)) - 1 ;;
+  }
+
+  measure: any_content_engagement_clients_rolling_average_sum_28_day_365_day_period_over_period_previous {
+    type: number
+    label: "Any Content Engagement clients Sum 28 Day Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of Any Content Engagement clients Sum 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %} ;;
+  }
+
+  measure: any_content_engagement_clients_rolling_average_sum_28_day_365_day_period_over_period_relative_change {
+    type: number
+    label: "Any Content Engagement clients Sum 28 Day Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of Any Content Engagement clients Sum 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )), NULLIF(({% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily_aggregates.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_clients_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily_aggregates.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %}), 0)) - 1 ;;
   }
 
   measure: organic_content_engagement_clients_sum {
@@ -1029,12 +2318,24 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
       default_ui_clients_sum,
       any_content_engagement_visits_sum,
       any_content_engagement_visits_ratio,
+      any_content_engagement_visits_rolling_average_ratio_28_day,
+      any_content_engagement_visits_rolling_average_sum_28_day,
+      any_content_engagement_visits_rolling_average_ratio_28_day_365_day_period_over_period_previous,
+      any_content_engagement_visits_rolling_average_ratio_28_day_365_day_period_over_period_relative_change,
+      any_content_engagement_visits_rolling_average_sum_28_day_365_day_period_over_period_previous,
+      any_content_engagement_visits_rolling_average_sum_28_day_365_day_period_over_period_relative_change,
       organic_content_engagement_visits_sum,
       organic_content_engagement_visits_ratio,
       sponsored_content_engagement_visits_sum,
       sponsored_content_engagement_visits_ratio,
       any_content_engagement_clients_sum,
       any_content_engagement_clients_ratio,
+      any_content_engagement_clients_rolling_average_ratio_28_day,
+      any_content_engagement_clients_rolling_average_sum_28_day,
+      any_content_engagement_clients_rolling_average_ratio_28_day_365_day_period_over_period_previous,
+      any_content_engagement_clients_rolling_average_ratio_28_day_365_day_period_over_period_relative_change,
+      any_content_engagement_clients_rolling_average_sum_28_day_365_day_period_over_period_previous,
+      any_content_engagement_clients_rolling_average_sum_28_day_365_day_period_over_period_relative_change,
       organic_content_engagement_clients_sum,
       organic_content_engagement_clients_ratio,
       sponsored_content_engagement_clients_sum,
@@ -1116,5 +2417,25 @@ newtab_clients_daily_aggregates_base_fields_sponsored_topsites_enabled,
     type: unquoted
     default_value: "100"
     hidden: yes
+  }
+
+  parameter: lookback_days {
+    label: "Lookback (Days)"
+    type: unquoted
+    description: "Number of days added before the filtered date range. Useful for period-over-period comparisons."
+    default_value: "0"
+  }
+
+  parameter: date_groupby_position {
+    label: "Date Group By Position"
+    type: unquoted
+    description: "Position of the date field in the group by clause. Required when submission_week, submission_month, submission_quarter, submission_year is selected as BigQuery can't correctly resolve the GROUP BY otherwise"
+    default_value: ""
+  }
+
+  filter: analysis_period {
+    type: date
+    label: "Analysis Period (with Lookback)"
+    description: "Use this filter to define the main analysis period. The results will include the selected date range plus any additional days specified by the 'Lookback days' setting."
   }
 }

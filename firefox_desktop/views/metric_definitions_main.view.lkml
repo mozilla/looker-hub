@@ -20,7 +20,6 @@ SUM(payload.processes.parent.scalars.browser_engagement_tab_reload_count) AS tab
 SUM(payload.processes.parent.scalars.browser_engagement_tab_unload_count) AS tab_unload_count,
 SUM(payload.processes.parent.scalars.browser_engagement_max_concurrent_tab_pinned_count) AS concurrent_pinned_tab_count,
 SUM(payload.processes.parent.scalars.browser_engagement_max_concurrent_tab_count) AS concurrent_opened_tab_count,
-COALESCE(LOGICAL_OR(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_is_default_handler, '.pdf')), FALSE) AS is_default_pdf_handler,
 SUM(
     mozfun.map.get_key(mozfun.hist.extract(payload.histograms.http_pageload_is_ssl).values, 0)
 ) AS non_ssl_loads_v1,
@@ -28,16 +27,6 @@ SUM(
     mozfun.map.get_key(mozfun.hist.extract(payload.histograms.http_pageload_is_ssl).values, 1)
 ) AS ssl_loads_v1,
 COUNT(payload.histograms.http_pageload_is_ssl) / COUNT(*) AS http_pageload_is_ssl_ratio_v1,
-(
-    COALESCE(SUM(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_invoked_to_handle, '.pdf')) > 0, FALSE)
-) AS pdf_invoked_to_handle,
-(
-    COALESCE(SUM(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_launched_to_handle, '.pdf')) > 0, FALSE)
-) AS pdf_launched_to_handle,
-(
-    (COALESCE(SUM(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_invoked_to_handle, '.pdf')) > 0, FALSE) OR
-    COALESCE(SUM(mozfun.map.get_key(payload.processes.parent.keyed_scalars.os_environment_launched_to_handle, '.pdf')) > 0, FALSE))
-) AS pdf_launched_or_invoked_to_handle,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -146,26 +135,62 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                 
                     WHERE 
                     main.submission_date
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start analysis_period %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_start submission_date %} AS DATE
-                        ), CURRENT_DATE()) AND
+                            {% date_end analysis_period %} AS DATE
+                        ), CURRENT_DATE())
+                    {% else %}
+                    BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start submission_date %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
+                    {% endif %}
                  AND 
                     looker_base_fields.submission_date
+                    {% if analysis_period._is_filtered %}
                     BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start analysis_period %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_start submission_date %} AS DATE
-                        ), CURRENT_DATE()) AND
+                            {% date_end analysis_period %} AS DATE
+                        ), CURRENT_DATE())
+                    {% else %}
+                    BETWEEN
+                    DATE_SUB(
+                        COALESCE(
+                            SAFE_CAST(
+                                {% date_start submission_date %} AS DATE
+                            ), CURRENT_DATE()),
+                        INTERVAL {% parameter lookback_days %} DAY
+                    ) AND
                     COALESCE(
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
+                    {% endif %}
                 
                     AND
                         looker_base_fields.sample_id < {% parameter sampling %}
@@ -302,15 +327,6 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.concurrent_opened_tab_count ;;
   }
 
-  dimension: is_default_pdf_handler {
-    group_label: "Metrics"
-    label: "Is Default PDF Handler (Windows)"
-    description: "Was Firefox the default PDF Handler at any point during the interval?
-"
-    type: number
-    sql: ${TABLE}.is_default_pdf_handler ;;
-  }
-
   dimension: non_ssl_loads_v1 {
     group_label: "Metrics"
     label: "Non-SSL Loads"
@@ -333,30 +349,6 @@ looker_base_fields_sample_id,
     description: "Ratio of clients that have the http_pageload_is_ssl_ratio_v1 probe"
     type: number
     sql: ${TABLE}.http_pageload_is_ssl_ratio_v1 ;;
-  }
-
-  dimension: pdf_invoked_to_handle {
-    group_label: "Metrics"
-    label: "PDF Invoked to Handle"
-    description: "Firefox was invoked (i.e., was already running and was not launched) to handle a pdf file"
-    type: number
-    sql: ${TABLE}.pdf_invoked_to_handle ;;
-  }
-
-  dimension: pdf_launched_to_handle {
-    group_label: "Metrics"
-    label: "PDF Launched to Handle"
-    description: "Firefox was launched afresh (i.e., was not already running) to handle a pdf file"
-    type: number
-    sql: ${TABLE}.pdf_launched_to_handle ;;
-  }
-
-  dimension: pdf_launched_or_invoked_to_handle {
-    group_label: "Metrics"
-    label: "PDF Launched or Invoked"
-    description: "Firefox was launched or invoked to handle a pdf file"
-    type: number
-    sql: ${TABLE}.pdf_launched_or_invoked_to_handle ;;
   }
 
   dimension: app_name {
@@ -452,8 +444,9 @@ looker_base_fields_sample_id,
 
   dimension_group: submission {
     type: time
+    datatype: date
     group_label: "Base Fields"
-    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
+    sql: ${TABLE}.analysis_basis ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -480,13 +473,9 @@ looker_base_fields_sample_id,
       tab_unload_count,
       concurrent_pinned_tab_count,
       concurrent_opened_tab_count,
-      is_default_pdf_handler,
       non_ssl_loads_v1,
       ssl_loads_v1,
       http_pageload_is_ssl_ratio_v1,
-      pdf_invoked_to_handle,
-      pdf_launched_to_handle,
-      pdf_launched_or_invoked_to_handle,
     ]
   }
 
@@ -531,5 +520,25 @@ looker_base_fields_sample_id,
     type: unquoted
     default_value: "100"
     hidden: no
+  }
+
+  parameter: lookback_days {
+    label: "Lookback (Days)"
+    type: unquoted
+    description: "Number of days added before the filtered date range. Useful for period-over-period comparisons."
+    default_value: "0"
+  }
+
+  parameter: date_groupby_position {
+    label: "Date Group By Position"
+    type: unquoted
+    description: "Position of the date field in the group by clause. Required when submission_week, submission_month, submission_quarter, submission_year is selected as BigQuery can't correctly resolve the GROUP BY otherwise"
+    default_value: ""
+  }
+
+  filter: analysis_period {
+    type: date
+    label: "Analysis Period (with Lookback)"
+    description: "Use this filter to define the main analysis period. The results will include the selected date range plus any additional days specified by the 'Lookback days' setting."
   }
 }

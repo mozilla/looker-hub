@@ -5,16 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: baseline_active_users_table {
+  dimension: active_hours_sum {
+    sql: ${TABLE}.active_hours_sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: activity_segment {
     sql: ${TABLE}.activity_segment ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Classification of users based on their browsing activity. E.g., infrequent, casual, regular."
   }
 
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: app_build {
@@ -27,18 +35,21 @@ view: baseline_active_users_table {
     sql: ${TABLE}.app_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the application."
   }
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: app_version_is_major_release {
@@ -51,12 +62,14 @@ view: baseline_active_users_table {
     sql: ${TABLE}.app_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The major version of the user visible app version string for the browser, e.g. \"142.1.3\", has major version 142"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The minor version of the user visible app version string for the browser, e.g. \"142.1.3\" has minor version 1"
   }
 
   dimension: app_version_patch_revision {
@@ -69,6 +82,7 @@ view: baseline_active_users_table {
     sql: ${TABLE}.architecture ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: attribution_campaign {
@@ -147,17 +161,20 @@ view: baseline_active_users_table {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Name of the city in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: country {
@@ -165,6 +182,7 @@ view: baseline_active_users_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Name of the country in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: days_active_bits {
@@ -181,6 +199,12 @@ view: baseline_active_users_table {
 
   dimension: days_desktop_active_bits {
     sql: ${TABLE}.days_desktop_active_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_interacted_bits {
+    sql: ${TABLE}.days_interacted_bits ;;
     type: number
     suggest_persist_for: "24 hours"
   }
@@ -239,22 +263,37 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: days_since_visited_1_uri {
+    sql: ${TABLE}.days_since_visited_1_uri ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_visited_1_uri_bits {
+    sql: ${TABLE}.days_visited_1_uri_bits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: device_model {
     sql: ${TABLE}.device_model ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The model of the device the application is running on."
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: distribution_id_source {
@@ -273,6 +312,11 @@ view: baseline_active_users_table {
     sql: ${TABLE}.durations ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
   }
 
   dimension: first_seen_attribution_campaign {
@@ -315,12 +359,14 @@ view: baseline_active_users_table {
     sql: ${TABLE}.first_seen_year ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Year of the client's first seen date."
   }
 
   dimension: geo_subdivision {
     sql: ${TABLE}.geo_subdivision ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "First major country subdivision, typically a state, province, or county based on IP address."
   }
 
   dimension: install_source {
@@ -333,36 +379,42 @@ view: baseline_active_users_table {
     sql: ${TABLE}.is_daily_user ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Flag indicating if client is considered a daily user on the submission date."
   }
 
   dimension: is_dau {
     sql: ${TABLE}.is_dau ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Flag indicating the client is counted as a daily active user on this submission date."
   }
 
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A flag indicating whether the browser is set as the default browser on the client side."
   }
 
   dimension: is_desktop {
     sql: ${TABLE}.is_desktop ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates if the client is included in the desktop KPI."
   }
 
   dimension: is_mau {
     sql: ${TABLE}.is_mau ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Flag indicating the client is counted as a weekly active user on this submission date."
   }
 
   dimension: is_monthly_user {
     sql: ${TABLE}.is_monthly_user ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Flag indicating if client is considered a monthly user on the submission date."
   }
 
   dimension: is_new_profile {
@@ -375,18 +427,21 @@ view: baseline_active_users_table {
     sql: ${TABLE}.is_wau ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Flag indicating the client is counted as a weekly active user on this submission date."
   }
 
   dimension: is_weekly_user {
     sql: ${TABLE}.is_weekly_user ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Flag indicating if client is considered a weekly user on the submission date."
   }
 
   dimension: isp {
     sql: ${TABLE}.isp ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the internet service provider associated with the client's IP address."
   }
 
   dimension: legacy_telemetry_client_id {
@@ -399,6 +454,7 @@ view: baseline_active_users_table {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: os {
@@ -441,18 +497,21 @@ view: baseline_active_users_table {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: telemetry_sdk_build {
     sql: ${TABLE}.telemetry_sdk_build ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The version of the Glean SDK at the time the ping was collected (e.g. 25.0.0)."
   }
 
   dimension: windows_build_number {
@@ -475,6 +534,7 @@ view: baseline_active_users_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date of the first run of the application."
   }
 
   dimension_group: first_seen {
@@ -491,6 +551,7 @@ view: baseline_active_users_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Date when the server first received a ping from this client."
   }
 
   dimension_group: submission {
@@ -507,7 +568,40 @@ view: baseline_active_users_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.baseline_active_users` ;;
+}
+
+view: baseline_active_users_table__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value Extra"
+    group_item_label: "Enrollment ID"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value Extra"
+    group_item_label: "Type"
+  }
 }

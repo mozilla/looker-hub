@@ -907,6 +907,34 @@ It also indicates the screen it was removed from, home or browser.
     hidden: yes
   }
 
+  dimension: metrics__object__glean_database_load_sizes {
+    sql: ${TABLE}.metrics.object.glean_database_load_sizes ;;
+    hidden: yes
+    description: "The size of the db file during specific phases of initialization.
+"
+  }
+
+  dimension: metrics__object__glean_health_data_directory_info {
+    sql: ${TABLE}.metrics.object.glean_health_data_directory_info ;;
+    hidden: yes
+    description: "Information about the data directories and files used by FOG.
+
+Structure is an array of objects, each containing the following properties:
+- `dir_name`: The name of the directory. This is the subdirectory name relative to the
+  FOG data directory and should only include \"db\", \"events\", and \"pending_pings\".
+- `dir_exists`: Whether the directory exists. This should only be false on the first
+  run of FOG, or if the directory was deleted.
+- `dir_created`: The creation time of the directory, in seconds since the unix epoch. If
+  the directory does not exist, this will be `null` and if the time cannot be determined,
+  it will default to `0`.
+- `dir_modified`: The last modification time of the directory, in seconds since the unix
+  epoch. If the directory does not exist, this will be `null` and if the time cannot be
+  determined, it will default to `0`.
+- `file_count`: The number of files in the directory. If the directory does not exist,
+  this will be `0`.
+- `error_message`: If there was an error accessing the di"
+  }
+
   dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
     sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
     type: number
@@ -982,6 +1010,11 @@ documented in the ping's pings.yaml file.
 pre-loaded with Focus.  If it's a custom search engine,
 then the value will be 'custom'.
 "
+  }
+
+  dimension: metrics__string_list__glean_ping_uploader_capabilities {
+    sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__glean_database_write_time__bucket_count {

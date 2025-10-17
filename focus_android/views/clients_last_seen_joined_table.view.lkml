@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: clients_last_seen_joined_table {
+  dimension: active_hours_sum {
+    sql: ${TABLE}.active_hours_sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
@@ -203,6 +209,12 @@ view: clients_last_seen_joined_table {
 
   dimension: days_since_seen_session_start {
     sql: ${TABLE}.days_since_seen_session_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: days_since_visited_1_uri {
+    sql: ${TABLE}.days_since_visited_1_uri ;;
     type: number
     suggest_persist_for: "24 hours"
   }
