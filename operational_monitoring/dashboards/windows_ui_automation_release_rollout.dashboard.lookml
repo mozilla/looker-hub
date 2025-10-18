@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       windows_ui_automation_release_rollout.branch
     ]
     filters:
-      windows_ui_automation_release_rollout.metric: 'days_of_use'
+      windows_ui_automation_release_rollout.metric: 'search_count'
       windows_ui_automation_release_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       windows_ui_automation_release_rollout.branch
     ]
     filters:
-      windows_ui_automation_release_rollout.metric: 'uri_count'
+      windows_ui_automation_release_rollout.metric: 'days_of_use'
       windows_ui_automation_release_rollout.statistic: mean
     row: 0
     col: 12
@@ -149,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +165,7 @@
       windows_ui_automation_release_rollout.branch
     ]
     filters:
-      windows_ui_automation_release_rollout.metric: 'search_count'
+      windows_ui_automation_release_rollout.metric: 'uri_count'
       windows_ui_automation_release_rollout.statistic: mean
     row: 20
     col: 0
@@ -217,40 +217,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_ui_automation_release_rollout
-    type: looker_line
-    fields: [
-      windows_ui_automation_release_rollout.submission_date,
-      windows_ui_automation_release_rollout.branch,
-      windows_ui_automation_release_rollout.point
-    ]
-    pivots: [
-      windows_ui_automation_release_rollout.branch
-    ]
-    filters:
-      windows_ui_automation_release_rollout.metric: 'qualified_cumulative_days_of_use'
-      windows_ui_automation_release_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: windows_ui_automation_release_rollout.submission_date
-    field_y: windows_ui_automation_release_rollout.point
-    log_scale: false
-    ci_lower: windows_ui_automation_release_rollout.lower
-    ci_upper: windows_ui_automation_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: windows_ui_automation_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -268,6 +234,40 @@
     ]
     filters:
       windows_ui_automation_release_rollout.metric: 'ad_clicks'
+      windows_ui_automation_release_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: windows_ui_automation_release_rollout.submission_date
+    field_y: windows_ui_automation_release_rollout.point
+    log_scale: false
+    ci_lower: windows_ui_automation_release_rollout.lower
+    ci_upper: windows_ui_automation_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: windows_ui_automation_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_ui_automation_release_rollout
+    type: looker_line
+    fields: [
+      windows_ui_automation_release_rollout.submission_date,
+      windows_ui_automation_release_rollout.branch,
+      windows_ui_automation_release_rollout.point
+    ]
+    pivots: [
+      windows_ui_automation_release_rollout.branch
+    ]
+    filters:
+      windows_ui_automation_release_rollout.metric: 'qualified_cumulative_days_of_use'
       windows_ui_automation_release_rollout.statistic: mean
     row: 30
     col: 12
