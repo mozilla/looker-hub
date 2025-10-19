@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/taskbar_tabs_discovery_en_rollout.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/taskbar_tabs_discovery_en_rollout_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/android_tab_tray_redesign_beta.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/android_tab_tray_redesign_beta_last_updated.datagroup.lkml"
 
-explore: taskbar_tabs_discovery_en_rollout {
+explore: android_tab_tray_redesign_beta {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: taskbar_tabs_discovery_en_rollout {
   }
 
   hidden: yes
-  persist_with: taskbar_tabs_discovery_en_rollout_last_updated
+  persist_with: android_tab_tray_redesign_beta_last_updated
 }

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
     ]
     filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'days_of_use'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'search_count'
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
     ]
     filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'uri_count'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'days_of_use'
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
     row: 0
     col: 12
@@ -149,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +165,7 @@
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
     ]
     filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'search_count'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'uri_count'
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
     row: 20
     col: 0
@@ -217,40 +217,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only
-    type: looker_line
-    fields: [
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date,
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch,
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.point
-    ]
-    pivots: [
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
-    ]
-    filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'qualified_cumulative_days_of_use'
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date
-    field_y: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.point
-    log_scale: false
-    ci_lower: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.lower
-    ci_upper: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.upper
-    show_grid: true
-    listen:
-      Date: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -268,6 +234,40 @@
     ]
     filters:
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'ad_clicks'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date
+    field_y: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.point
+    log_scale: false
+    ci_lower: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.lower
+    ci_upper: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.upper
+    show_grid: true
+    listen:
+      Date: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only
+    type: looker_line
+    fields: [
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date,
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch,
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.point
+    ]
+    pivots: [
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
+    ]
+    filters:
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'qualified_cumulative_days_of_use'
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
     row: 30
     col: 12
