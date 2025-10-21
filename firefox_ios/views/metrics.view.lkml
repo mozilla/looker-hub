@@ -3836,6 +3836,24 @@ tracking-protection that is enabled. One of:
 "
   }
 
+  dimension: metrics__string__user_toolbar_middle_button_type {
+    label: "User Toolbar Middle Button Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.user_toolbar_middle_button_type ;;
+    type: string
+    group_label: "User Toolbar"
+    group_item_label: "Middle Button Type"
+
+    link: {
+      label: "Glean Dictionary reference for User Toolbar Middle Button Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_toolbar_middle_button_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the user's preference for the middle button (newTab or home).
+"
+  }
+
   dimension: metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
     label: "Wallpaper Analytics Themed Wallpaper"
     hidden: yes
