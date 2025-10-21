@@ -2129,6 +2129,7 @@ button in the URL bar.
     group_label: "Metrics Counter"
     group_item_label: "User Terms Of Use Dismissed Count"
     description: "Records the number of times a user taps to dismiss (does not include tapping accept or remind me later).
+
 **Developer Note**: This replaces the old `termsofuse.dismiss_count` metric.
 "
   }
@@ -2140,6 +2141,7 @@ button in the URL bar.
     group_label: "Metrics Counter"
     group_item_label: "User Terms Of Use Remind Me Later Count"
     description: "Records the number of times a user taps \"remind me later\".
+
 **Developer Note**: This replaces the old `termsofuse.remind_me_later_count` metric.
 "
   }
@@ -2151,6 +2153,7 @@ button in the URL bar.
     group_label: "Metrics Counter"
     group_item_label: "User Terms Of Use Shown Count"
     description: "Records the number of ToU impressions the user has had.
+
 **Developer Note**: This replaces the old `termsofuse.impression_count` metric.
 "
   }
@@ -2883,6 +2886,7 @@ closes the application.
     group_label: "Metrics Quantity"
     group_item_label: "User Terms Of Use Version Accepted"
     description: "The version of the Terms of Use the user accepted.
+
 **Developer Note**: This replaces the old `termsofuse.version` metric.
 "
   }
@@ -3102,6 +3106,16 @@ value of the automatic theme switching slider.
 tracking-protection that is enabled. One of:
 * basic
 * strict
+"
+  }
+
+  dimension: metrics__string__user_toolbar_middle_button_type {
+    sql: ${TABLE}.metrics.string.user_toolbar_middle_button_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "User Toolbar Middle Button Type"
+    description: "Records the user's preference for the middle button (newTab or home).
 "
   }
 
@@ -4391,6 +4405,7 @@ tracking-protection that is enabled. One of:
     ]
     label: "Metrics Datetime: User Terms Of Use Date Accepted"
     description: "The timestamp when the user accepted the Terms of Use.
+
 **Developer Note**: This replaces the old `termsofuse.date` metric.
 "
   }
