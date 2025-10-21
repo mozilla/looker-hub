@@ -245,10 +245,6 @@ ads:
       tables:
       - table: mozdata.ads.ad_metrics_daily_pt
       type: table_view
-    consolidated_ad_metrics_hourly:
-      tables:
-      - table: mozdata.ads.ad_metrics
-      type: table_view
     metric_definitions_ad_metrics_daily:
       type: metric_definitions_view
     metric_definitions_ad_mmm_metrics_daily:
