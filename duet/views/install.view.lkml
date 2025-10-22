@@ -232,6 +232,13 @@ view: install {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: launched_by {
+    sql: ${TABLE}.launched_by ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Program that launched the installer, according to the /LaunchedBy command-line argument"
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string

@@ -231,6 +231,18 @@ view: clients_last_seen_table {
     description: "Bookmark Migrations Quantity Safari"
   }
 
+  dimension: browser_backup_enabled {
+    sql: ${TABLE}.browser_backup_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: browser_backup_scheduler_enabled {
+    sql: ${TABLE}.browser_backup_scheduler_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string

@@ -192,6 +192,22 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
+  dimension_group: last_reported {
+    sql: ${TABLE}.last_reported_date ;;
+    type: time
+    suggest_persist_for: "24 hours"
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
   dimension_group: retention_metric {
     sql: ${TABLE}.retention_metric_date ;;
     type: time
