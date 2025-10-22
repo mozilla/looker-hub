@@ -194,6 +194,18 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: browser_backup_enabled {
+    sql: ${TABLE}.browser_backup_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: browser_backup_scheduler_enabled {
+    sql: ${TABLE}.browser_backup_scheduler_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: browser_version_info__is_major_release {
     sql: ${TABLE}.browser_version_info.is_major_release ;;
     type: yesno

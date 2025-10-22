@@ -3287,6 +3287,11 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.baseline
       type: glean_ping_view
+    baseline_clients_city_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.baseline_clients_city_seen
+      type: table_view
     baseline_clients_daily_table:
       tables:
       - channel: release
@@ -3983,6 +3988,11 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.baseline
       type: glean_ping_view
+    baseline_clients_city_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.baseline_clients_city_seen
+      type: table_view
     baseline_clients_daily_table:
       tables:
       - channel: release
@@ -9838,10 +9848,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - beta
             - esr
-            - aurora
+            - beta
             - nightly
+            - aurora
             - default
             - nightly-pine
             - nightly-larch
@@ -10218,11 +10228,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id296
           normalized_channel:
-            default: beta
+            default: nightly
             options:
-            - beta
-            - aurora
             - nightly
+            - aurora
+            - beta
             - release
             - esr
             - Other
@@ -10709,8 +10719,8 @@ operational_monitoring:
             default: Linux
             options:
             - Linux
-            - Mac
             - Windows
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11487,15 +11497,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id392
           app:
-            default: iOS - daemon_session
+            default: iOS - vpn_session
             options:
-            - iOS - daemon_session
-            - Android - vpn_session
             - iOS - vpn_session
-            - Windows - vpn_session
-            - Linux - vpn_session
-            - Darwin - vpn_session
+            - iOS - daemon_session
             - Android - daemon_session
+            - Darwin - vpn_session
+            - Linux - vpn_session
+            - Windows - vpn_session
+            - Android - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id393
@@ -12513,16 +12523,16 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id461
           channel:
-            default: nightly
+            default: release
             options:
+            - release
             - nightly
             - beta
-            - release
           os:
-            default: Darwin
+            default: Windows_NT
             options:
-            - Darwin
             - Windows_NT
+            - Darwin
             - Linux
         explore: print_background_task_times
         group_by_dimension: null
