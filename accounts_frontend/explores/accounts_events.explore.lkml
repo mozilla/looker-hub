@@ -29,6 +29,11 @@ explore: accounts_events {
     sql: LEFT JOIN UNNEST(${accounts_events.metrics__labeled_counter__glean_error_invalid_state}) AS accounts_events__metrics__labeled_counter__glean_error_invalid_state ON ${accounts_events.document_id} = ${accounts_events__metrics__labeled_counter__glean_error_invalid_state.document_id} ;;
   }
 
+  join: accounts_events__metrics__labeled_counter__glean_error_invalid_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${accounts_events.metrics__labeled_counter__glean_error_invalid_type}) AS accounts_events__metrics__labeled_counter__glean_error_invalid_type ON ${accounts_events.document_id} = ${accounts_events__metrics__labeled_counter__glean_error_invalid_type.document_id} ;;
+  }
+
   join: accounts_events__metrics__labeled_counter__glean_error_invalid_value {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${accounts_events.metrics__labeled_counter__glean_error_invalid_value}) AS accounts_events__metrics__labeled_counter__glean_error_invalid_value ON ${accounts_events.document_id} = ${accounts_events__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;

@@ -2514,6 +2514,23 @@ homescreen because the link was invalid).
 "
   }
 
+  dimension: metrics__boolean__preferences_app_zygote_isolated_content_processes_enabled {
+    label: "Preferences App Zygote Isolated Content Processes Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_app_zygote_isolated_content_processes_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "App Zygote Isolated Content Processes Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences App Zygote Isolated Content Processes Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_app_zygote_isolated_content_processes_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True when app Zygote preloading with isolated processes is enabled."
+  }
+
   dimension: metrics__boolean__preferences_bookmarks_suggestion {
     label: "Preferences Bookmarks Suggestion"
     hidden: no

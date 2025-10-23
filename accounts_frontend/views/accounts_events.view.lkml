@@ -516,6 +516,28 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__glean_error_invalid_type {
+    label: "Glean Error Invalid Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_type ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Type"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/glean_error_invalid_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric set a value which was not of the
+expected type.
+The labels are the `category.name` identifier of the metric.
+
+This error type is only recorded by the Glean JavaScript SDK.
+This error may only happen in dynamically typed languages.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
     hidden: yes
@@ -1225,6 +1247,47 @@ view: accounts_events__metrics__labeled_counter__glean_error_invalid_overflow {
 
 view: accounts_events__metrics__labeled_counter__glean_error_invalid_state {
   label: "Glean Error - Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${accounts_events.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${accounts_events.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: accounts_events__metrics__labeled_counter__glean_error_invalid_type {
+  label: "Glean Error - Invalid Type"
 
   dimension: document_id {
     type: string
