@@ -449,6 +449,16 @@ view: newtab_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__newtab_highlights_enabled {
+    sql: ${TABLE}.metrics.boolean.newtab_highlights_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Newtab Highlights Enabled"
+    description: "Whether \"highlights\" is enabled on the newtab. AKA the \"Recent Activity\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.section.highlights` pref.
+"
+  }
+
   dimension: metrics__boolean__newtab_search_enabled {
     sql: ${TABLE}.metrics.boolean.newtab_search_enabled ;;
     type: yesno

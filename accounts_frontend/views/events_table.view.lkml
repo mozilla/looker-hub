@@ -492,6 +492,18 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__glean_error_invalid_type {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_type ;;
+    hidden: yes
+    description: "Counts the number of times a metric set a value which was not of the
+expected type.
+The labels are the `category.name` identifier of the metric.
+
+This error type is only recorded by the Glean JavaScript SDK.
+This error may only happen in dynamically typed languages.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes

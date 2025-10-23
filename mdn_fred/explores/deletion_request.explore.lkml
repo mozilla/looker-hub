@@ -28,6 +28,11 @@ explore: deletion_request {
     sql: LEFT JOIN UNNEST(${deletion_request.metrics__labeled_counter__glean_error_invalid_state}) AS deletion_request__metrics__labeled_counter__glean_error_invalid_state ON ${deletion_request.document_id} = ${deletion_request__metrics__labeled_counter__glean_error_invalid_state.document_id} ;;
   }
 
+  join: deletion_request__metrics__labeled_counter__glean_error_invalid_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${deletion_request.metrics__labeled_counter__glean_error_invalid_type}) AS deletion_request__metrics__labeled_counter__glean_error_invalid_type ON ${deletion_request.document_id} = ${deletion_request__metrics__labeled_counter__glean_error_invalid_type.document_id} ;;
+  }
+
   join: deletion_request__metrics__labeled_counter__glean_error_invalid_value {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${deletion_request.metrics__labeled_counter__glean_error_invalid_value}) AS deletion_request__metrics__labeled_counter__glean_error_invalid_value ON ${deletion_request.document_id} = ${deletion_request__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;

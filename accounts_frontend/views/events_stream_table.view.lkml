@@ -455,6 +455,11 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__glean_error_invalid_type {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_type ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
