@@ -11,8 +11,8 @@ datagroup: events_daily_table_last_updated {
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'telemetry_derived' AND table_name = 'events_daily_v1')
+    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'telemetry' AND table_name = 'events_daily')
 
     ) ;;
   description: "Updates for events_daily_table when referenced tables are modified."
