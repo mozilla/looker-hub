@@ -51,6 +51,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__boolean__newtab_highlights_enabled {
+    label: "Newtab Highlights Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.newtab_highlights_enabled ;;
+    type: yesno
+    group_label: "Newtab"
+    group_item_label: "Highlights Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Highlights Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_highlights_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether \"highlights\" is enabled on the newtab. AKA the \"Recent Activity\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.section.highlights` pref.
+"
+  }
+
   dimension: metrics__string__newtab_homepage_category {
     label: "Newtab Homepage Category"
     hidden: no

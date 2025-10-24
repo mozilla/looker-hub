@@ -28,6 +28,11 @@ explore: page {
     sql: LEFT JOIN UNNEST(${page.metrics__labeled_counter__glean_error_invalid_state}) AS page__metrics__labeled_counter__glean_error_invalid_state ON ${page.document_id} = ${page__metrics__labeled_counter__glean_error_invalid_state.document_id} ;;
   }
 
+  join: page__metrics__labeled_counter__glean_error_invalid_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${page.metrics__labeled_counter__glean_error_invalid_type}) AS page__metrics__labeled_counter__glean_error_invalid_type ON ${page.document_id} = ${page__metrics__labeled_counter__glean_error_invalid_type.document_id} ;;
+  }
+
   join: page__metrics__labeled_counter__glean_error_invalid_value {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${page.metrics__labeled_counter__glean_error_invalid_value}) AS page__metrics__labeled_counter__glean_error_invalid_value ON ${page.document_id} = ${page__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;

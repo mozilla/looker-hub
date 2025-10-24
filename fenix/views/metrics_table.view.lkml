@@ -1171,6 +1171,15 @@ once we validate these assumptions.
 "
   }
 
+  dimension: metrics__boolean__preferences_app_zygote_isolated_content_processes_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_app_zygote_isolated_content_processes_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences App Zygote Isolated Content Processes Enabled"
+    description: "True when app Zygote preloading with isolated processes is enabled."
+  }
+
   dimension: metrics__boolean__preferences_bookmarks_suggestion {
     sql: ${TABLE}.metrics.boolean.preferences_bookmarks_suggestion ;;
     type: yesno
@@ -12983,7 +12992,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
