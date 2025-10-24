@@ -29,6 +29,12 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: client_count_on_last_reported_date {
+    sql: ${TABLE}.client_count_on_last_reported_date ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -84,12 +90,6 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: is_new_profile {
-    sql: ${TABLE}.is_new_profile ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: is_partner_distribution {
     sql: ${TABLE}.is_partner_distribution ;;
     type: yesno
@@ -108,8 +108,8 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: new_profile_metric_date {
-    sql: ${TABLE}.new_profile_metric_date ;;
+  dimension: new_profiles_metric_date {
+    sql: ${TABLE}.new_profiles_metric_date ;;
     type: number
     suggest_persist_for: "24 hours"
   }
@@ -132,8 +132,8 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: repeat_profile {
-    sql: ${TABLE}.repeat_profile ;;
+  dimension: repeat_profiles {
+    sql: ${TABLE}.repeat_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
   }
@@ -144,8 +144,8 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: retained_week_4_new_profile {
-    sql: ${TABLE}.retained_week_4_new_profile ;;
+  dimension: retained_week_4_new_profiles {
+    sql: ${TABLE}.retained_week_4_new_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
   }
@@ -186,26 +186,16 @@ view: fenix_distribution_deals {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: wau {
-    sql: ${TABLE}.wau ;;
+  dimension: total_ltv_on_last_reported_date {
+    sql: ${TABLE}.total_ltv_on_last_reported_date ;;
     type: number
     suggest_persist_for: "24 hours"
   }
 
-  dimension_group: last_reported {
-    sql: ${TABLE}.last_reported_date ;;
-    type: time
+  dimension: wau {
+    sql: ${TABLE}.wau ;;
+    type: number
     suggest_persist_for: "24 hours"
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
   }
 
   dimension_group: retention_metric {
