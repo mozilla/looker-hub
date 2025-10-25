@@ -109,7 +109,7 @@ view: quick_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether the \"Improve Suggest Experience\" checkbox is checked.
+    description: "Whether online Suggest is available to the user and enabled.
 "
   }
 
