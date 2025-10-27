@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_toobar_tab_tray_ios_redesign_previous_versions
-    type: looker_line
-    fields: [
-      new_toobar_tab_tray_ios_redesign_previous_versions.submission_date,
-      new_toobar_tab_tray_ios_redesign_previous_versions.branch,
-      new_toobar_tab_tray_ios_redesign_previous_versions.point
-    ]
-    pivots: [
-      new_toobar_tab_tray_ios_redesign_previous_versions.branch
-    ]
-    filters:
-      new_toobar_tab_tray_ios_redesign_previous_versions.metric: 'retained'
-      new_toobar_tab_tray_ios_redesign_previous_versions.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_toobar_tab_tray_ios_redesign_previous_versions.submission_date
-    field_y: new_toobar_tab_tray_ios_redesign_previous_versions.point
-    log_scale: false
-    ci_lower: new_toobar_tab_tray_ios_redesign_previous_versions.lower
-    ci_upper: new_toobar_tab_tray_ios_redesign_previous_versions.upper
-    show_grid: true
-    listen:
-      Date: new_toobar_tab_tray_ios_redesign_previous_versions.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       new_toobar_tab_tray_ios_redesign_previous_versions.metric: 'days_of_use'
       new_toobar_tab_tray_ios_redesign_previous_versions.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: new_toobar_tab_tray_ios_redesign_previous_versions.submission_date
@@ -78,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +60,10 @@
       new_toobar_tab_tray_ios_redesign_previous_versions.branch
     ]
     filters:
-      new_toobar_tab_tray_ios_redesign_previous_versions.metric: 'ad_clicks'
+      new_toobar_tab_tray_ios_redesign_previous_versions.metric: 'retained'
       new_toobar_tab_tray_ios_redesign_previous_versions.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: new_toobar_tab_tray_ios_redesign_previous_versions.submission_date
@@ -131,7 +97,7 @@
       new_toobar_tab_tray_ios_redesign_previous_versions.metric: 'search_count'
       new_toobar_tab_tray_ios_redesign_previous_versions.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: new_toobar_tab_tray_ios_redesign_previous_versions.submission_date
@@ -163,6 +129,40 @@
     ]
     filters:
       new_toobar_tab_tray_ios_redesign_previous_versions.metric: 'active_hours'
+      new_toobar_tab_tray_ios_redesign_previous_versions.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: new_toobar_tab_tray_ios_redesign_previous_versions.submission_date
+    field_y: new_toobar_tab_tray_ios_redesign_previous_versions.point
+    log_scale: false
+    ci_lower: new_toobar_tab_tray_ios_redesign_previous_versions.lower
+    ci_upper: new_toobar_tab_tray_ios_redesign_previous_versions.upper
+    show_grid: true
+    listen:
+      Date: new_toobar_tab_tray_ios_redesign_previous_versions.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_toobar_tab_tray_ios_redesign_previous_versions
+    type: looker_line
+    fields: [
+      new_toobar_tab_tray_ios_redesign_previous_versions.submission_date,
+      new_toobar_tab_tray_ios_redesign_previous_versions.branch,
+      new_toobar_tab_tray_ios_redesign_previous_versions.point
+    ]
+    pivots: [
+      new_toobar_tab_tray_ios_redesign_previous_versions.branch
+    ]
+    filters:
+      new_toobar_tab_tray_ios_redesign_previous_versions.metric: 'ad_clicks'
       new_toobar_tab_tray_ios_redesign_previous_versions.statistic: mean
     row: 20
     col: 0
