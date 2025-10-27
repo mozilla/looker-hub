@@ -241,10 +241,6 @@ ads:
       tables:
       - table: mozdata.ads.campaign_metrics_daily
       type: table_view
-    consolidated_ad_metrics_daily_pt:
-      tables:
-      - table: mozdata.ads.ad_metrics_daily_pt
-      type: table_view
     metric_definitions_ad_metrics_daily:
       type: metric_definitions_view
     metric_definitions_ad_mmm_metrics_daily:
@@ -2643,6 +2639,16 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.fx_accounts
+      type: table_view
+    fx_health_ind_antivirus_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_health_ind_antivirus
+      type: table_view
+    fx_health_ind_page_reloads_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_health_ind_page_reloads
       type: table_view
     gecko_trace:
       tables:
