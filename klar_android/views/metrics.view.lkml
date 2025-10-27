@@ -8782,7 +8782,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__boolean__gfx_d2d_enabled {
     label: "Gfx D2D Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.gfx_d2d_enabled ;;
     type: yesno
     group_label: "Gfx"

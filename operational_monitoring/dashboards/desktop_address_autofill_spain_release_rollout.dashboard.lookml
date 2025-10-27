@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: desktop_address_autofill_spain_release_rollout
+    type: looker_line
+    fields: [
+      desktop_address_autofill_spain_release_rollout.submission_date,
+      desktop_address_autofill_spain_release_rollout.branch,
+      desktop_address_autofill_spain_release_rollout.point
+    ]
+    pivots: [
+      desktop_address_autofill_spain_release_rollout.branch
+    ]
+    filters:
+      desktop_address_autofill_spain_release_rollout.metric: 'retained'
+      desktop_address_autofill_spain_release_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: desktop_address_autofill_spain_release_rollout.submission_date
+    field_y: desktop_address_autofill_spain_release_rollout.point
+    log_scale: false
+    ci_lower: desktop_address_autofill_spain_release_rollout.lower
+    ci_upper: desktop_address_autofill_spain_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: desktop_address_autofill_spain_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -29,6 +63,40 @@
       desktop_address_autofill_spain_release_rollout.metric: 'days_of_use'
       desktop_address_autofill_spain_release_rollout.statistic: mean
     row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: desktop_address_autofill_spain_release_rollout.submission_date
+    field_y: desktop_address_autofill_spain_release_rollout.point
+    log_scale: false
+    ci_lower: desktop_address_autofill_spain_release_rollout.lower
+    ci_upper: desktop_address_autofill_spain_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: desktop_address_autofill_spain_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: desktop_address_autofill_spain_release_rollout
+    type: looker_line
+    fields: [
+      desktop_address_autofill_spain_release_rollout.submission_date,
+      desktop_address_autofill_spain_release_rollout.branch,
+      desktop_address_autofill_spain_release_rollout.point
+    ]
+    pivots: [
+      desktop_address_autofill_spain_release_rollout.branch
+    ]
+    filters:
+      desktop_address_autofill_spain_release_rollout.metric: 'ad_clicks'
+      desktop_address_autofill_spain_release_rollout.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,7 +130,7 @@
     filters:
       desktop_address_autofill_spain_release_rollout.metric: 'search_count'
       desktop_address_autofill_spain_release_rollout.statistic: mean
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -98,7 +166,7 @@
     filters:
       desktop_address_autofill_spain_release_rollout.metric: 'memory_total'
       desktop_address_autofill_spain_release_rollout.statistic: percentile
-    row: 10
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -111,6 +179,40 @@
     listen:
       Date: desktop_address_autofill_spain_release_rollout.submission_date
       Percentile: desktop_address_autofill_spain_release_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: desktop_address_autofill_spain_release_rollout
+    type: looker_line
+    fields: [
+      desktop_address_autofill_spain_release_rollout.submission_date,
+      desktop_address_autofill_spain_release_rollout.branch,
+      desktop_address_autofill_spain_release_rollout.point
+    ]
+    pivots: [
+      desktop_address_autofill_spain_release_rollout.branch
+    ]
+    filters:
+      desktop_address_autofill_spain_release_rollout.metric: 'uri_count'
+      desktop_address_autofill_spain_release_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: desktop_address_autofill_spain_release_rollout.submission_date
+    field_y: desktop_address_autofill_spain_release_rollout.point
+    log_scale: false
+    ci_lower: desktop_address_autofill_spain_release_rollout.lower
+    ci_upper: desktop_address_autofill_spain_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: desktop_address_autofill_spain_release_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -133,8 +235,8 @@
     filters:
       desktop_address_autofill_spain_release_rollout.metric: 'qualified_cumulative_days_of_use'
       desktop_address_autofill_spain_release_rollout.statistic: mean
-    row: 10
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: desktop_address_autofill_spain_release_rollout.submission_date
@@ -166,108 +268,6 @@
     ]
     filters:
       desktop_address_autofill_spain_release_rollout.metric: 'active_hours'
-      desktop_address_autofill_spain_release_rollout.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: desktop_address_autofill_spain_release_rollout.submission_date
-    field_y: desktop_address_autofill_spain_release_rollout.point
-    log_scale: false
-    ci_lower: desktop_address_autofill_spain_release_rollout.lower
-    ci_upper: desktop_address_autofill_spain_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: desktop_address_autofill_spain_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: desktop_address_autofill_spain_release_rollout
-    type: looker_line
-    fields: [
-      desktop_address_autofill_spain_release_rollout.submission_date,
-      desktop_address_autofill_spain_release_rollout.branch,
-      desktop_address_autofill_spain_release_rollout.point
-    ]
-    pivots: [
-      desktop_address_autofill_spain_release_rollout.branch
-    ]
-    filters:
-      desktop_address_autofill_spain_release_rollout.metric: 'ad_clicks'
-      desktop_address_autofill_spain_release_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: desktop_address_autofill_spain_release_rollout.submission_date
-    field_y: desktop_address_autofill_spain_release_rollout.point
-    log_scale: false
-    ci_lower: desktop_address_autofill_spain_release_rollout.lower
-    ci_upper: desktop_address_autofill_spain_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: desktop_address_autofill_spain_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: desktop_address_autofill_spain_release_rollout
-    type: looker_line
-    fields: [
-      desktop_address_autofill_spain_release_rollout.submission_date,
-      desktop_address_autofill_spain_release_rollout.branch,
-      desktop_address_autofill_spain_release_rollout.point
-    ]
-    pivots: [
-      desktop_address_autofill_spain_release_rollout.branch
-    ]
-    filters:
-      desktop_address_autofill_spain_release_rollout.metric: 'uri_count'
-      desktop_address_autofill_spain_release_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: desktop_address_autofill_spain_release_rollout.submission_date
-    field_y: desktop_address_autofill_spain_release_rollout.point
-    log_scale: false
-    ci_lower: desktop_address_autofill_spain_release_rollout.lower
-    ci_upper: desktop_address_autofill_spain_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: desktop_address_autofill_spain_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: desktop_address_autofill_spain_release_rollout
-    type: looker_line
-    fields: [
-      desktop_address_autofill_spain_release_rollout.submission_date,
-      desktop_address_autofill_spain_release_rollout.branch,
-      desktop_address_autofill_spain_release_rollout.point
-    ]
-    pivots: [
-      desktop_address_autofill_spain_release_rollout.branch
-    ]
-    filters:
-      desktop_address_autofill_spain_release_rollout.metric: 'retained'
       desktop_address_autofill_spain_release_rollout.statistic: mean
     row: 30
     col: 12
