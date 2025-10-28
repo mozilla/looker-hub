@@ -10331,11 +10331,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id302
           normalized_channel:
-            default: beta
+            default: aurora
             options:
+            - aurora
             - beta
             - nightly
-            - aurora
             - release
             - esr
             - Other
@@ -10819,11 +10819,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id326
           os:
-            default: Windows
+            default: Mac
             options:
-            - Windows
-            - Linux
             - Mac
+            - Linux
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -12626,17 +12626,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id467
           channel:
-            default: nightly
+            default: release
             options:
+            - release
             - nightly
             - beta
-            - release
           os:
-            default: Windows_NT
+            default: Darwin
             options:
+            - Darwin
             - Windows_NT
             - Linux
-            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id468
