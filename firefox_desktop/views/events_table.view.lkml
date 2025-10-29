@@ -511,6 +511,16 @@ overridden by a third-party add-on or OpenSearch engine.
 "
   }
 
+  dimension: metrics__boolean__urlbar_pref_suggest_all {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_all ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest All"
+    description: "Whether Suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.all` pref.
+"
+  }
+
   dimension: metrics__boolean__urlbar_pref_suggest_data_collection {
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_data_collection ;;
     type: yesno
