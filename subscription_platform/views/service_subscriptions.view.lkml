@@ -89,6 +89,19 @@ For example, this should be `1` for their first logical subscription, `2` for th
 For example, this should be `1` for their first service subscription to this service, `2` for their second service subscription to this service, etc."
   }
 
+  dimension: ended_reason {
+    sql: ${TABLE}.ended_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Reason why the subscription ended.
+Possible values:
+  * `Admin Initiated` - An admin at Mozilla ended the subscription, either directly or by deleting the customer's Mozilla Account.
+  * `Customer Initiated` - The customer ended their subscription, either directly or by turning off auto-renewal or deleting their Mozilla Account.
+  * `Payment Failure` - The subscription was unable to auto-renew due to a payment failure.
+  * `Downgrade` - The subscription ended due to the customer moving to a lower tier subscription.
+  * `Other` - The subscription ended for some other reason, such as unverified Mozilla Accounts being automatically deleted."
+  }
+
   dimension: has_fraudulent_charges {
     sql: ${TABLE}.has_fraudulent_charges ;;
     type: yesno
