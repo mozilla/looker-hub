@@ -17,6 +17,24 @@ view: query_cost {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: duration_minutes {
+    sql: ${TABLE}.duration_minutes ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: error_message {
+    sql: ${TABLE}.error_message ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: error_reason {
+    sql: ${TABLE}.error_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: experiment_slug {
     sql: ${TABLE}.experiment_slug ;;
     type: string
