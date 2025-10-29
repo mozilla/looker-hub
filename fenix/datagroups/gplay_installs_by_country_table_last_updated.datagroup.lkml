@@ -5,8 +5,8 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: gplay_installs_by_country_last_updated {
-  label: "gplay_installs_by_country Last Updated"
+datagroup: gplay_installs_by_country_table_last_updated {
+  label: "gplay_installs_by_country_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
@@ -15,6 +15,6 @@ datagroup: gplay_installs_by_country_last_updated {
     WHERE (table_schema = 'fenix_external' AND table_name = 'gplay_installs_by_country_v1')
 
     ) ;;
-  description: "Updates for gplay_installs_by_country when referenced tables are modified."
+  description: "Updates for gplay_installs_by_country_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }

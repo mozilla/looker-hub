@@ -90,6 +90,21 @@ For example, this should be `1` for their first logical subscription, `2` for th
 For example, this should be `1` for their first service subscription to this service, `2` for their second service subscription to this service, etc."
   }
 
+  dimension: old_subscription__ended_reason {
+    sql: ${TABLE}.old_subscription.ended_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Old Subscription"
+    group_item_label: "Ended Reason"
+    description: "Reason why the subscription ended.
+Possible values:
+  * `Admin Initiated` - An admin at Mozilla ended the subscription, either directly or by deleting the customer's Mozilla Account.
+  * `Customer Initiated` - The customer ended their subscription, either directly or by turning off auto-renewal or deleting their Mozilla Account.
+  * `Payment Failure` - The subscription was unable to auto-renew due to a payment failure.
+  * `Downgrade` - The subscription ended due to the customer moving to a lower tier subscription.
+  * `Other` - The subscription ended for some other reason, such as unverified Mozilla Accounts being automatically deleted."
+  }
+
   dimension: old_subscription__has_fraudulent_charges {
     sql: ${TABLE}.old_subscription.has_fraudulent_charges ;;
     type: yesno
@@ -587,6 +602,21 @@ For example, this should be `1` for their first logical subscription, `2` for th
     group_item_label: "Customer Service Subscription Number"
     description: "Number of this service subscription in the overall sequence of all of the customer's service subscriptions to this service.
 For example, this should be `1` for their first service subscription to this service, `2` for their second service subscription to this service, etc."
+  }
+
+  dimension: subscription__ended_reason {
+    sql: ${TABLE}.subscription.ended_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Ended Reason"
+    description: "Reason why the subscription ended.
+Possible values:
+  * `Admin Initiated` - An admin at Mozilla ended the subscription, either directly or by deleting the customer's Mozilla Account.
+  * `Customer Initiated` - The customer ended their subscription, either directly or by turning off auto-renewal or deleting their Mozilla Account.
+  * `Payment Failure` - The subscription was unable to auto-renew due to a payment failure.
+  * `Downgrade` - The subscription ended due to the customer moving to a lower tier subscription.
+  * `Other` - The subscription ended for some other reason, such as unverified Mozilla Accounts being automatically deleted."
   }
 
   dimension: subscription__has_fraudulent_charges {

@@ -1406,6 +1406,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.geckoview_version
       type: table_view
+    gplay_installs_by_country_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.gplay_installs_by_country
+      type: table_view
     growth_accounting:
       tables:
       - table: mozdata.fenix.baseline_clients_last_seen
@@ -1486,6 +1491,11 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.marketing_attributable_metrics
+      type: table_view
+    meta_attribution_country_counts_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.meta_attribution_country_counts
       type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
@@ -3408,6 +3418,11 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.bookmarks_sync
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.bookmarks_sync
+      type: table_view
+    client_adclicks_history_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.client_adclicks_history
       type: table_view
     client_counts:
       tables:
