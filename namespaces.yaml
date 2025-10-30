@@ -2654,6 +2654,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.fx_accounts
       type: table_view
+    fx_cert_error_unique_users_os_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_cert_error_unique_users_os
+      type: table_view
     fx_health_ind_antivirus_table:
       tables:
       - channel: null
@@ -2673,6 +2678,11 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.fx_health_ind_bookmarks_by_os_version
+      type: table_view
+    fx_health_ind_cert_errors_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_health_ind_cert_errors
       type: table_view
     fx_health_ind_desktop_dau_by_device_type_table:
       tables:
