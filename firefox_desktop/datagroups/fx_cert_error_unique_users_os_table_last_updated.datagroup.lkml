@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: android_compose_toolbar_refactor_last_updated {
-  label: "android_compose_toolbar_refactor Last Updated"
+datagroup: fx_cert_error_unique_users_os_table_last_updated {
+  label: "fx_cert_error_unique_users_os_table Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'android_compose_toolbar_refactor_statistics')
+    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'fx_cert_error_unique_users_os_v1')
 
     ) ;;
-  description: "Updates for android_compose_toolbar_refactor when referenced tables are modified."
+  description: "Updates for fx_cert_error_unique_users_os_table when referenced tables are modified."
   max_cache_age: "24 hours"
 }
