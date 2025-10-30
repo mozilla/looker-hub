@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/upgraded_sidebar_138_broad_rollout.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/upgraded_sidebar_138_broad_rollout_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/internet_error_pages.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/internet_error_pages_last_updated.datagroup.lkml"
 
-explore: upgraded_sidebar_138_broad_rollout {
+explore: internet_error_pages {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: upgraded_sidebar_138_broad_rollout {
   }
 
   hidden: yes
-  persist_with: upgraded_sidebar_138_broad_rollout_last_updated
+  persist_with: internet_error_pages_last_updated
 }
