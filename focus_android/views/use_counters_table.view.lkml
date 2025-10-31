@@ -5319,6 +5319,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_decoration_inset {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_decoration_inset ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Decoration Inset"
+    description: "Whether a document used the CSS property text-decoration-inset. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_text_decoration_line {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_decoration_line ;;
     type: number
@@ -12489,6 +12499,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_text_decoration_inset {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_decoration_inset ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Decoration Inset"
+    description: "Whether a page used the CSS property text-decoration-inset. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_text_decoration_line {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_decoration_line ;;
     type: number
@@ -18859,6 +18879,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_webgpu_render_output {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_webgpu_render_output ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Webgpu Render Output"
+    description: "Whether a document displays WebGPU rendering output. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_webgpu_request_adapter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_webgpu_request_adapter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Webgpu Request Adapter"
+    description: "Whether a document requests a WebGPU adapter. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_window_absoluteorientationsensor {
     sql: ${TABLE}.metrics.counter.use_counter_doc_window_absoluteorientationsensor ;;
     type: number
@@ -23369,6 +23409,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_webgpu_render_output {
+    sql: ${TABLE}.metrics.counter.use_counter_page_webgpu_render_output ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Webgpu Render Output"
+    description: "Whether a page displays WebGPU rendering output. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_webgpu_request_adapter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_webgpu_request_adapter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Webgpu Request Adapter"
+    description: "Whether a page requests a WebGPU adapter. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_window_absoluteorientationsensor {
     sql: ${TABLE}.metrics.counter.use_counter_page_window_absoluteorientationsensor ;;
     type: number
@@ -25609,6 +25669,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_webgpu_request_adapter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_webgpu_request_adapter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Dedicated Webgpu Request Adapter"
+    description: "Whether a dedicated worker requests a WebGPU adapter. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_console_assert {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_console_assert ;;
     type: number
@@ -26139,6 +26209,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_webgpu_request_adapter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_webgpu_request_adapter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Service Webgpu Request Adapter"
+    description: "Whether a service worker requests a WebGPU adapter. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_shared_console_assert {
     sql: ${TABLE}.metrics.counter.use_counter_worker_shared_console_assert ;;
     type: number
@@ -26666,6 +26746,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Worker Shared Scheduler Posttask"
     description: "Whether a shared worker called called Scheduler.postTask. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_webgpu_request_adapter {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_webgpu_request_adapter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Worker Shared Webgpu Request Adapter"
+    description: "Whether a shared worker requests a WebGPU adapter. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 

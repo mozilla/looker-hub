@@ -61,6 +61,24 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__string__browser_backup_backup_disabled_reason {
+    label: "Browser Backup Backup Disabled Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.browser_backup_backup_disabled_reason ;;
+    type: string
+    group_label: "Browser Backup"
+    group_item_label: "Backup Disabled Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Backup Disabled Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_backup_disabled_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"managedProfiles\".
+"
+  }
+
   dimension: metrics__quantity__browser_backup_browser_extension_data_size {
     label: "Browser Backup Browser Extension Data Size"
     hidden: no
