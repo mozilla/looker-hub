@@ -785,6 +785,10 @@ fenix:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: glean_ping_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -1175,6 +1179,11 @@ fenix:
       - channel: release
         table: mozdata.fenix.events_daily
       type: table_view
+    events_stream:
+      tables:
+      - channel: release
+        table: mozdata.fenix.events_stream
+      type: glean_ping_view
     events_stream_table:
       tables:
       - channel: release
@@ -3203,6 +3212,10 @@ firefox_ios:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: glean_ping_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -3519,6 +3532,11 @@ firefox_ios:
       - base_table: mozdata.firefox_ios.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.events_stream
+      type: glean_ping_view
     events_stream_table:
       tables:
       - channel: release
@@ -3956,6 +3974,10 @@ focus_android:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: glean_ping_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -4196,6 +4218,11 @@ focus_android:
       - base_table: mozdata.focus_android.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.events_stream
+      type: glean_ping_view
     events_stream_table:
       tables:
       - channel: release
@@ -5783,6 +5810,10 @@ mozilla_vpn:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: glean_ping_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -5923,6 +5954,11 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.events_daily
       type: table_view
+    events_stream:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.events_stream
+      type: glean_ping_view
     events_stream_table:
       tables:
       - channel: release

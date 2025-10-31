@@ -728,6 +728,16 @@ The labels are the `category.name` identifier of the metric.
     description: "The UNIX timestamp of when the profile was created."
   }
 
+  dimension: metrics__quantity__nimbus_targeting_context_profile_group_profile_count {
+    sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_profile_group_profile_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Quantity"
+    group_item_label: "Nimbus Targeting Context Profile Group Profile Count"
+    description: "The number of profiles in the current profile group or zero if either the feature is not enabled or the user has not created any profiles.
+"
+  }
+
   dimension: metrics__quantity__nimbus_targeting_context_total_bookmarks_count {
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_total_bookmarks_count ;;
     type: number

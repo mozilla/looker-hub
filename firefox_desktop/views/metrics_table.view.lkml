@@ -21401,6 +21401,16 @@ e.g. 134217728
 "
   }
 
+  dimension: metrics__string__browser_backup_backup_disabled_reason {
+    sql: ${TABLE}.metrics.string.browser_backup_backup_disabled_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Browser Backup Backup Disabled Reason"
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"managedProfiles\".
+"
+  }
+
   dimension: metrics__string__content_analysis_agent_name {
     sql: ${TABLE}.metrics.string.content_analysis_agent_name ;;
     type: string
