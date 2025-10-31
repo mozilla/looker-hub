@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/test_enable_custom_review_prompt.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/test_enable_custom_review_prompt_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/sidebar_14402_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/sidebar_14402_rollout_last_updated.datagroup.lkml"
 
-explore: test_enable_custom_review_prompt {
+explore: sidebar_14402_rollout {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: test_enable_custom_review_prompt {
   }
 
   hidden: yes
-  persist_with: test_enable_custom_review_prompt_last_updated
+  persist_with: sidebar_14402_rollout_last_updated
 }

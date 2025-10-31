@@ -244,6 +244,46 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: extras__boolean__linking {
+    sql: ${TABLE}.extras.boolean.linking ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras Boolean"
+    group_item_label: "Linking"
+  }
+
+  dimension: extras__string__error_code {
+    sql: ${TABLE}.extras.string.error_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Error Code"
+  }
+
+  dimension: extras__string__reason {
+    sql: ${TABLE}.extras.string.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Reason"
+  }
+
+  dimension: extras__string__scopes {
+    sql: ${TABLE}.extras.string.scopes ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Scopes"
+  }
+
+  dimension: extras__string__type {
+    sql: ${TABLE}.extras.string.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Type"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
