@@ -785,10 +785,6 @@ fenix:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_stream:
-      type: glean_ping_explore
-      views:
-        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -1179,11 +1175,6 @@ fenix:
       - channel: release
         table: mozdata.fenix.events_daily
       type: table_view
-    events_stream:
-      tables:
-      - channel: release
-        table: mozdata.fenix.events_stream
-      type: glean_ping_view
     events_stream_table:
       tables:
       - channel: release
@@ -2654,6 +2645,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.fx_accounts
       type: table_view
+    fx_cert_error_unique_users_normalized_channel_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_cert_error_unique_users_normalized_channel
+      type: table_view
     fx_cert_error_unique_users_os_table:
       tables:
       - channel: null
@@ -2718,6 +2714,11 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.fx_health_ind_windows_versions_mau_per_os
+      type: table_view
+    fx_privacy_dau_agg_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_privacy_dau_agg
       type: table_view
     gecko_trace:
       tables:
@@ -3194,10 +3195,6 @@ firefox_ios:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_stream:
-      type: glean_ping_explore
-      views:
-        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -3514,11 +3511,6 @@ firefox_ios:
       - base_table: mozdata.firefox_ios.events_unnested
         events_table_view: events_unnested_table
       type: events_view
-    events_stream:
-      tables:
-      - channel: release
-        table: mozdata.firefox_ios.events_stream
-      type: glean_ping_view
     events_stream_table:
       tables:
       - channel: release
@@ -3956,10 +3948,6 @@ focus_android:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_stream:
-      type: glean_ping_explore
-      views:
-        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -4200,11 +4188,6 @@ focus_android:
       - base_table: mozdata.focus_android.events_unnested
         events_table_view: events_unnested_table
       type: events_view
-    events_stream:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.events_stream
-      type: glean_ping_view
     events_stream_table:
       tables:
       - channel: release
@@ -5792,10 +5775,6 @@ mozilla_vpn:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_stream:
-      type: glean_ping_explore
-      views:
-        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -5936,11 +5915,6 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.events_daily
       type: table_view
-    events_stream:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.events_stream
-      type: glean_ping_view
     events_stream_table:
       tables:
       - channel: release

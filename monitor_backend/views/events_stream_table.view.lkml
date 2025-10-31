@@ -244,6 +244,62 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: extras__string__path {
+    sql: ${TABLE}.extras.string.path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Path"
+  }
+
+  dimension: extras__string__referrer {
+    sql: ${TABLE}.extras.string.referrer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Referrer"
+  }
+
+  dimension: extras__string__utm_campaign {
+    sql: ${TABLE}.extras.string.utm_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "UTM Campaign"
+  }
+
+  dimension: extras__string__utm_content {
+    sql: ${TABLE}.extras.string.utm_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "UTM Content"
+  }
+
+  dimension: extras__string__utm_medium {
+    sql: ${TABLE}.extras.string.utm_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "UTM Medium"
+  }
+
+  dimension: extras__string__utm_source {
+    sql: ${TABLE}.extras.string.utm_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "UTM Source"
+  }
+
+  dimension: extras__string__utm_term {
+    sql: ${TABLE}.extras.string.utm_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "UTM Term"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
