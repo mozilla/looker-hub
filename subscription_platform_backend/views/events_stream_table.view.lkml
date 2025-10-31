@@ -244,6 +244,22 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: extras__boolean__subscription_voluntary_cancellation {
+    sql: ${TABLE}.extras.boolean.subscription_voluntary_cancellation ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras Boolean"
+    group_item_label: "Subscription Voluntary Cancellation"
+  }
+
+  dimension: extras__string__subscription_cancellation_reason {
+    sql: ${TABLE}.extras.string.subscription_cancellation_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Subscription Cancellation Reason"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno

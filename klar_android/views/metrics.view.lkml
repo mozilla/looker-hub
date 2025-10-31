@@ -17792,7 +17792,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__networking_set_cookie {
     label: "Networking Set Cookie"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.networking_set_cookie ;;
     type: number
     group_label: "Networking"
@@ -17846,7 +17846,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_foreign__numerator {
     label: "Networking Set Cookie Foreign Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.numerator ;;
     type: number
     group_label: "Networking"
@@ -17864,7 +17864,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_foreign__denominator {
     label: "Networking Set Cookie Foreign Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.denominator ;;
     type: number
     group_label: "Networking"
@@ -17882,7 +17882,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_foreign_partitioned__numerator {
     label: "Networking Set Cookie Foreign Partitioned Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.numerator ;;
     type: number
     group_label: "Networking"
@@ -17900,7 +17900,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_foreign_partitioned__denominator {
     label: "Networking Set Cookie Foreign Partitioned Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.denominator ;;
     type: number
     group_label: "Networking"
@@ -17918,7 +17918,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_partitioned__numerator {
     label: "Networking Set Cookie Partitioned Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
     type: number
     group_label: "Networking"
@@ -17936,7 +17936,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__rate__networking_set_cookie_partitioned__denominator {
     label: "Networking Set Cookie Partitioned Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.denominator ;;
     type: number
     group_label: "Networking"

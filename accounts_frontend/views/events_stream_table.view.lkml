@@ -244,6 +244,86 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: extras__boolean__third_party_links {
+    sql: ${TABLE}.extras.boolean.third_party_links ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras Boolean"
+    group_item_label: "Third Party Links"
+  }
+
+  dimension: extras__string__choice {
+    sql: ${TABLE}.extras.string.choice ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Choice"
+  }
+
+  dimension: extras__string__id {
+    sql: ${TABLE}.extras.string.id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "ID"
+  }
+
+  dimension: extras__string__label {
+    sql: ${TABLE}.extras.string.label ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Label"
+  }
+
+  dimension: extras__string__nimbus_user_id {
+    sql: ${TABLE}.extras.string.nimbus_user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Nimbus User ID"
+  }
+
+  dimension: extras__string__reason {
+    sql: ${TABLE}.extras.string.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Reason"
+  }
+
+  dimension: extras__string__referrer {
+    sql: ${TABLE}.extras.string.referrer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Referrer"
+  }
+
+  dimension: extras__string__title {
+    sql: ${TABLE}.extras.string.title ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Title"
+  }
+
+  dimension: extras__string__type {
+    sql: ${TABLE}.extras.string.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Type"
+  }
+
+  dimension: extras__string__url {
+    sql: ${TABLE}.extras.string.url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "URL"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
