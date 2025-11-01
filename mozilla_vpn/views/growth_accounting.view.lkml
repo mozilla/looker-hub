@@ -328,6 +328,12 @@ view: growth_accounting {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: startup_profile_selection_reason_first {
+    sql: ${TABLE}.startup_profile_selection_reason_first ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: telemetry_sdk_build {
     sql: ${TABLE}.telemetry_sdk_build ;;
     type: string
