@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: windows_10_eos_sync_messaging_rollout_1 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.windows_10_eos_sync_messaging_rollout_1_statistics ;;
+view: android_ui_redesign_beta {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.android_ui_redesign_beta_statistics ;;
 
   dimension: submission_date {
     type: date

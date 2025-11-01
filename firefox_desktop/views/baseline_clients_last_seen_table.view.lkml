@@ -133,12 +133,14 @@ If the value was not provided through configuration, this metric gets set to Unk
     sql: ${TABLE}.browser_engagement_active_ticks ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of five-second intervals ('ticks') the user was considered 'active' on the client's last seen date, if in last 28 days."
   }
 
   dimension: browser_engagement_uri_count {
     sql: ${TABLE}.browser_engagement_uri_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of total non-unique http(s) URIs visited, including page reloads, after the session has been restored on the client's last seen date, if in last 28 days."
   }
 
   dimension: city {
@@ -287,6 +289,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     sql: ${TABLE}.durations ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The sum of the duration of the last foreground session in seconds across each unique baseline ping"
   }
 
   dimension: experiments {
@@ -299,6 +302,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     sql: ${TABLE}.geo_subdivision ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "First major country subdivision, typically a state, province, or county based on IP address."
   }
 
   dimension: install_source {
@@ -318,6 +322,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates if the submission date is the same as the client's first seen date."
   }
 
   dimension: isp {
@@ -352,6 +357,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {
@@ -372,6 +378,13 @@ If the value was not provided through configuration, this metric gets set to Unk
     type: number
     suggest_persist_for: "24 hours"
     description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
+  }
+
+  dimension: startup_profile_selection_reason_first {
+    sql: ${TABLE}.startup_profile_selection_reason_first ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "How the profile was selected during startup"
   }
 
   dimension: telemetry_sdk_build {
@@ -402,6 +415,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     ]
     convert_tz: no
     datatype: date
+    description: "The date of the first run of the application."
   }
 
   dimension_group: first_seen {
@@ -418,6 +432,7 @@ If the value was not provided through configuration, this metric gets set to Unk
     ]
     convert_tz: no
     datatype: date
+    description: "Date when the server first received a ping from this client."
   }
 
   dimension_group: submission {
