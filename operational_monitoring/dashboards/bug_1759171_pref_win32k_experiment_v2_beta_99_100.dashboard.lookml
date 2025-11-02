@@ -47,11 +47,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: GPU Crashes
-    name: GPU Crashes_sum
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
     type: looker_line
     fields: [
@@ -63,8 +63,8 @@
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
     ]
     filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'gpu_crashes'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'uri_count'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
     row: 0
     col: 12
     width: 12
@@ -115,11 +115,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Sum
     explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
     type: looker_line
     fields: [
@@ -131,8 +131,8 @@
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
     ]
     filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'qualified_cumulative_days_of_use'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'content_crashes'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
     row: 10
     col: 12
     width: 12
@@ -183,244 +183,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
-    type: looker_line
-    fields: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    ]
-    pivots: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
-    ]
-    filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'retained'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    log_scale: false
-    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
-    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
-    show_grid: true
-    listen:
-      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
-    type: looker_line
-    fields: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    ]
-    pivots: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
-    ]
-    filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'days_of_use'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    log_scale: false
-    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
-    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
-    show_grid: true
-    listen:
-      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
-    type: looker_line
-    fields: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    ]
-    pivots: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
-    ]
-    filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'content_crashes'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    log_scale: false
-    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
-    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
-    show_grid: true
-    listen:
-      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Plugin Crashes
-    name: Plugin Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
-    type: looker_line
-    fields: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    ]
-    pivots: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
-    ]
-    filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'plugin_crashes'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
-    row: 40
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    log_scale: false
-    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
-    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
-    show_grid: true
-    listen:
-      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
-    type: looker_line
-    fields: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    ]
-    pivots: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
-    ]
-    filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'search_count'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
-    row: 40
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    log_scale: false
-    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
-    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
-    show_grid: true
-    listen:
-      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
-    type: looker_line
-    fields: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    ]
-    pivots: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
-    ]
-    filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'oom_crashes'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
-    row: 50
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    log_scale: false
-    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
-    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
-    show_grid: true
-    listen:
-      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
-    type: looker_line
-    fields: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    ]
-    pivots: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
-    ]
-    filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'startup_crashes'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
-    row: 50
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    log_scale: false
-    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
-    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
-    show_grid: true
-    listen:
-      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes_sum
     note_state: expanded
@@ -439,41 +201,7 @@
     filters:
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'main_crashes'
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
-    row: 60
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    log_scale: false
-    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
-    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
-    show_grid: true
-    listen:
-      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
-    type: looker_line
-    fields: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
-    ]
-    pivots: [
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
-    ]
-    filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'uri_count'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
-    row: 60
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -489,11 +217,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes_sum
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
     type: looker_line
     fields: [
@@ -505,9 +233,9 @@
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
     ]
     filters:
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'content_shutdown_crashes'
-      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
-    row: 70
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'qualified_cumulative_days_of_use'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -541,8 +269,110 @@
     filters:
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'ad_clicks'
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
-    row: 70
+    row: 30
     col: 12
+    width: 12
+    height: 8
+    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    log_scale: false
+    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
+    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
+    show_grid: true
+    listen:
+      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
+    type: looker_line
+    fields: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    ]
+    pivots: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
+    ]
+    filters:
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'retained'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    log_scale: false
+    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
+    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
+    show_grid: true
+    listen:
+      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Oom Crashes
+    name: Oom Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
+    type: looker_line
+    fields: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    ]
+    pivots: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
+    ]
+    filters:
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'oom_crashes'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    log_scale: false
+    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
+    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
+    show_grid: true
+    listen:
+      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
+    type: looker_line
+    fields: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    ]
+    pivots: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
+    ]
+    filters:
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'content_shutdown_crashes'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
+    row: 50
+    col: 0
     width: 12
     height: 8
     field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
@@ -574,6 +404,176 @@
     ]
     filters:
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'gmplugin_crashes'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
+    row: 50
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    log_scale: false
+    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
+    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
+    show_grid: true
+    listen:
+      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
+    type: looker_line
+    fields: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    ]
+    pivots: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
+    ]
+    filters:
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'startup_crashes'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
+    row: 60
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    log_scale: false
+    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
+    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
+    show_grid: true
+    listen:
+      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Plugin Crashes
+    name: Plugin Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
+    type: looker_line
+    fields: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    ]
+    pivots: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
+    ]
+    filters:
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'plugin_crashes'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
+    row: 60
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    log_scale: false
+    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
+    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
+    show_grid: true
+    listen:
+      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
+    type: looker_line
+    fields: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    ]
+    pivots: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
+    ]
+    filters:
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'search_count'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
+    row: 70
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    log_scale: false
+    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
+    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
+    show_grid: true
+    listen:
+      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
+    type: looker_line
+    fields: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    ]
+    pivots: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
+    ]
+    filters:
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'days_of_use'
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: mean
+    row: 70
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+    field_y: bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    log_scale: false
+    ci_lower: bug_1759171_pref_win32k_experiment_v2_beta_99_100.lower
+    ci_upper: bug_1759171_pref_win32k_experiment_v2_beta_99_100.upper
+    show_grid: true
+    listen:
+      Date: bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: GPU Crashes
+    name: GPU Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1759171_pref_win32k_experiment_v2_beta_99_100
+    type: looker_line
+    fields: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.submission_date,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch,
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.point
+    ]
+    pivots: [
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.branch
+    ]
+    filters:
+      bug_1759171_pref_win32k_experiment_v2_beta_99_100.metric: 'gpu_crashes'
       bug_1759171_pref_win32k_experiment_v2_beta_99_100.statistic: sum
     row: 80
     col: 0
