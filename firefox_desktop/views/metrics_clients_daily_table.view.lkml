@@ -11,6 +11,12 @@ view: metrics_clients_daily_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: apple_model_id {
+    sql: ${TABLE}.apple_model_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
