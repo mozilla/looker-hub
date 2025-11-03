@@ -15199,6 +15199,36 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_math_ml_deprecated_mo_explicit_accent {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_math_ml_deprecated_mo_explicit_accent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Math Ml Deprecated Mo Explicit Accent"
+    description: "Whether a document used MathML_DeprecateMoExplicitAccent. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_math_ml_deprecated_mover_non_explicit_accent {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_math_ml_deprecated_mover_non_explicit_accent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Math Ml Deprecated Mover Non Explicit Accent"
+    description: "Whether a document used MathML_DeprecatedMoverNonExplicitAccent. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_math_ml_deprecated_munder_non_explicit_accentunder {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_math_ml_deprecated_munder_non_explicit_accentunder ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Math Ml Deprecated Munder Non Explicit Accentunder"
+    description: "Whether a document used MathML_DeprecatedMunderNonExplicitAccentunder. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_math_ml_deprecated_stixgeneral_operator_stretching {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_math_ml_deprecated_stixgeneral_operator_stretching ;;
     type: number
@@ -15806,6 +15836,36 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Math Ml Deprecated Math Variant"
     description: "Whether a page used MathML_DeprecatedMathVariant. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_math_ml_deprecated_mo_explicit_accent {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_math_ml_deprecated_mo_explicit_accent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Math Ml Deprecated Mo Explicit Accent"
+    description: "Whether a page used MathML_DeprecatedMoExplicitAccent. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_math_ml_deprecated_mover_non_explicit_accent {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_math_ml_deprecated_mover_non_explicit_accent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Math Ml Deprecated Mover Non Explicit Accent"
+    description: "Whether a page used MathML_DeprecatedMoverNonExplicitAccent. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_math_ml_deprecated_munder_non_explicit_accentunder {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_math_ml_deprecated_munder_non_explicit_accentunder ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Math Ml Deprecated Munder Non Explicit Accentunder"
+    description: "Whether a page used MathML_DeprecatedMunderNonExplicitAccentunder. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
