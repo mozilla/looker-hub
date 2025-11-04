@@ -198,7 +198,7 @@ LEFT JOIN (
   FROM
     `mozdata.org_mozilla_firefox.events_stream` tm
 
-  WHERE event_category = "onboarding" 
+  WHERE event_category = "onboarding"
     AND JSON_QUERY(event_extra, "$.action") IS NOT NULL
     AND event_name in  ("set_to_default", "turn_on_notifications", "sign_in")
   AND DATE(submission_timestamp) >= "2023-01-01"
