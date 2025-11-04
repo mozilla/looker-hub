@@ -562,6 +562,20 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__glean_health_file_read_error {
+    sql: ${TABLE}.metrics.labeled_counter.glean_health_file_read_error ;;
+    hidden: yes
+    description: "Count of different errors that happened when trying to read the `client_id.txt` file from disk.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_health_file_write_error {
+    sql: ${TABLE}.metrics.labeled_counter.glean_health_file_write_error ;;
+    hidden: yes
+    description: "Count of different errors that happened when trying to write the `client_id.txt` file to disk.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
     sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
     hidden: yes
@@ -700,6 +714,22 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics String"
     group_item_label: "Glean Database Rkv Load Error"
     description: "If there was an error loading the RKV database, record it.
+"
+  }
+
+  dimension: metrics__string__glean_health_exception_state {
+    sql: ${TABLE}.metrics.string.glean_health_exception_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Glean Health Exception State"
+    description: "An exceptional state was detected upon trying to laod the database.
+
+Valid options are:
+  - empty-db
+  - regen-db
+  - c0ffee-in-db
+  - client-id-mismatch
 "
   }
 
@@ -1041,6 +1071,18 @@ for the purpose of experimentation enrollment.
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__values {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__uuid__glean_health_recovered_client_id {
+    sql: ${TABLE}.metrics.uuid.glean_health_recovered_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics UUID"
+    group_item_label: "Glean Health Recovered Client ID"
+    description: "A client_id recovered from a `client_id.txt` file on disk.
+Only expected to have a value for the exception states `empty-db`, `c0ffee-in-db` and `client-id-mismatch`.
+See `exception_state` for different exception states when this can happen.
+"
   }
 
   dimension: metrics__uuid__legacy_telemetry_client_id {

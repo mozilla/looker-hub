@@ -190,6 +190,64 @@ In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
+  dimension: metrics__string__glean_health_exception_state {
+    label: "Glean Health Exception State"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_health_exception_state ;;
+    type: string
+    group_label: "Glean Health"
+    group_item_label: "Exception State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health Exception State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_health_exception_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An exceptional state was detected upon trying to laod the database.
+
+Valid options are:
+  - empty-db
+  - regen-db
+  - c0ffee-in-db
+  - client-id-mismatch
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_health_file_read_error {
+    label: "Glean Health File Read Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_health_file_read_error ;;
+    group_label: "Glean Health"
+    group_item_label: "File Read Error"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health File Read Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_health_file_read_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of different errors that happened when trying to read the `client_id.txt` file from disk.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_health_file_write_error {
+    label: "Glean Health File Write Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_health_file_write_error ;;
+    group_label: "Glean Health"
+    group_item_label: "File Write Error"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health File Write Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_health_file_write_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of different errors that happened when trying to write the `client_id.txt` file to disk.
+"
+  }
+
   dimension: metrics__counter__glean_health_init_count {
     label: "Glean Health Init Count"
     hidden: no
@@ -205,6 +263,26 @@ In Version 0 this reported the total number of tasks enqueued.
     }
 
     description: "A running count of how many times the Glean SDK has been initialized.
+"
+  }
+
+  dimension: metrics__uuid__glean_health_recovered_client_id {
+    label: "Glean Health Recovered Client ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.glean_health_recovered_client_id ;;
+    type: string
+    group_label: "Glean Health"
+    group_item_label: "Recovered Client ID"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Health Recovered Client ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_health_recovered_client_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A client_id recovered from a `client_id.txt` file on disk.
+Only expected to have a value for the exception states `empty-db`, `c0ffee-in-db` and `client-id-mismatch`.
+See `exception_state` for different exception states when this can happen.
 "
   }
 
@@ -1365,6 +1443,88 @@ view: health__metrics__labeled_counter__glean_error_invalid_state {
 
 view: health__metrics__labeled_counter__glean_error_invalid_value {
   label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${health.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${health.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${health.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: health__metrics__labeled_counter__glean_health_file_read_error {
+  label: "Glean Health - File Read Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${health.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${health.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${health.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: health__metrics__labeled_counter__glean_health_file_write_error {
+  label: "Glean Health - File Write Error"
 
   dimension: document_id {
     type: string

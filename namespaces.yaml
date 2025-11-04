@@ -2713,6 +2713,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.fx_health_ind_new_profiles_by_os
       type: table_view
+    fx_health_ind_np_by_install_type_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_health_ind_np_by_install_type
+      type: table_view
     fx_health_ind_page_reloads_table:
       tables:
       - channel: null
