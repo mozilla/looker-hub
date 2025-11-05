@@ -63,7 +63,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__string__browser_backup_backup_disabled_reason {
     label: "Browser Backup Backup Disabled Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.browser_backup_backup_disabled_reason ;;
     type: string
     group_label: "Browser Backup"
@@ -165,7 +165,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "True if the BackupService is enabled by default.
+    description: "True if the BackupService has initialized and reached idle. You may want to use archive_enabled/restore_enabled to determine whether those features are available, or use scheduler_enabled for whether automatic backups are enabled.
 "
   }
 
