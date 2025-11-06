@@ -61,6 +61,42 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__string__browser_backup_archive_disabled_reason {
+    label: "Browser Backup Archive Disabled Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.browser_backup_archive_disabled_reason ;;
+    type: string
+    group_label: "Browser Backup"
+    group_item_label: "Archive Disabled Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Archive Disabled Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_archive_disabled_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\".
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_archive_enabled {
+    label: "Browser Backup Archive Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_backup_archive_enabled ;;
+    type: yesno
+    group_label: "Browser Backup"
+    group_item_label: "Archive Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Archive Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_archive_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user can create backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible.
+"
+  }
+
   dimension: metrics__string__browser_backup_backup_disabled_reason {
     label: "Browser Backup Backup Disabled Reason"
     hidden: yes
@@ -422,6 +458,42 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "True if the BackupService is configured to encrypt backups.
+"
+  }
+
+  dimension: metrics__string__browser_backup_restore_disabled_reason {
+    label: "Browser Backup Restore Disabled Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.browser_backup_restore_disabled_reason ;;
+    type: string
+    group_label: "Browser Backup"
+    group_item_label: "Restore Disabled Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Restore Disabled Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_restore_disabled_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\".
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_restore_enabled {
+    label: "Browser Backup Restore Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_backup_restore_enabled ;;
+    type: yesno
+    group_label: "Browser Backup"
+    group_item_label: "Restore Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Restore Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_restore_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the user can restore backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible.
 "
   }
 

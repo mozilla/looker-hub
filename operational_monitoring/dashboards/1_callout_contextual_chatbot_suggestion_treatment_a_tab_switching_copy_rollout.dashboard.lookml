@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch
     ]
     filters:
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'retained'
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'days_of_use'
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch
     ]
     filters:
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'uri_count'
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'retained'
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: mean
     row: 0
     col: 12
@@ -112,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout
-    type: looker_line
-    fields: [
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date,
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch,
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.point
-    ]
-    pivots: [
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch
-    ]
-    filters:
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'active_hours'
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
-    field_y: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.point
-    log_scale: false
-    ci_lower: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.lower
-    ci_upper: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.upper
-    show_grid: true
-    listen:
-      Date: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -164,8 +130,8 @@
     filters:
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'ad_clicks'
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: mean
-    row: 20
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
@@ -199,7 +165,75 @@
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'search_count'
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
+    field_y: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.point
+    log_scale: false
+    ci_lower: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.lower
+    ci_upper: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.upper
+    show_grid: true
+    listen:
+      Date: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout
+    type: looker_line
+    fields: [
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date,
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch,
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.point
+    ]
+    pivots: [
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch
+    ]
+    filters:
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'uri_count'
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: mean
+    row: 20
     col: 12
+    width: 12
+    height: 8
+    field_x: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
+    field_y: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.point
+    log_scale: false
+    ci_lower: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.lower
+    ci_upper: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.upper
+    show_grid: true
+    listen:
+      Date: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout
+    type: looker_line
+    fields: [
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date,
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch,
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.point
+    ]
+    pivots: [
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch
+    ]
+    filters:
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'active_hours'
+      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: mean
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
@@ -235,41 +269,6 @@
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'memory_total'
       1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: percentile
     row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
-    field_y: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.point
-    log_scale: false
-    ci_lower: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.lower
-    ci_upper: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.upper
-    show_grid: true
-    listen:
-      Date: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
-      Percentile: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout
-    type: looker_line
-    fields: [
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date,
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch,
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.point
-    ]
-    pivots: [
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.branch
-    ]
-    filters:
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.metric: 'days_of_use'
-      1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.statistic: mean
-    row: 30
     col: 12
     width: 12
     height: 8
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.submission_date
+      Percentile: 1_callout_contextual_chatbot_suggestion_treatment_a_tab_switching_copy_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
