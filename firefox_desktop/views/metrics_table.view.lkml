@@ -530,13 +530,23 @@ Corresponds to the `extensions.blocklist.enabled` pref.
 "
   }
 
+  dimension: metrics__boolean__browser_backup_archive_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_archive_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Archive Enabled"
+    description: "True if the user can create backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible.
+"
+  }
+
   dimension: metrics__boolean__browser_backup_enabled {
     sql: ${TABLE}.metrics.boolean.browser_backup_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics Boolean"
     group_item_label: "Browser Backup Enabled"
-    description: "True if the BackupService is enabled by default.
+    description: "True if the BackupService has initialized and reached idle. You may want to use archive_enabled/restore_enabled to determine whether those features are available, or use scheduler_enabled for whether automatic backups are enabled.
 "
   }
 
@@ -547,6 +557,16 @@ Corresponds to the `extensions.blocklist.enabled` pref.
     group_label: "Metrics Boolean"
     group_item_label: "Browser Backup Pswd Encrypted"
     description: "True if the BackupService is configured to encrypt backups.
+"
+  }
+
+  dimension: metrics__boolean__browser_backup_restore_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_restore_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Backup Restore Enabled"
+    description: "True if the user can restore backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible.
 "
   }
 
@@ -21401,6 +21421,16 @@ e.g. 134217728
 "
   }
 
+  dimension: metrics__string__browser_backup_archive_disabled_reason {
+    sql: ${TABLE}.metrics.string.browser_backup_archive_disabled_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Browser Backup Archive Disabled Reason"
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\".
+"
+  }
+
   dimension: metrics__string__browser_backup_backup_disabled_reason {
     sql: ${TABLE}.metrics.string.browser_backup_backup_disabled_reason ;;
     type: string
@@ -21408,6 +21438,16 @@ e.g. 134217728
     group_label: "Metrics String"
     group_item_label: "Browser Backup Backup Disabled Reason"
     description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"managedProfiles\".
+"
+  }
+
+  dimension: metrics__string__browser_backup_restore_disabled_reason {
+    sql: ${TABLE}.metrics.string.browser_backup_restore_disabled_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics String"
+    group_item_label: "Browser Backup Restore Disabled Reason"
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\".
 "
   }
 
