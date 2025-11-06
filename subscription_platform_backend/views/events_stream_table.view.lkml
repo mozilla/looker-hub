@@ -252,6 +252,14 @@ view: events_stream_table {
     group_item_label: "Subscription Voluntary Cancellation"
   }
 
+  dimension: extras__string__nimbus_user_id {
+    sql: ${TABLE}.extras.string.nimbus_user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Nimbus User ID"
+  }
+
   dimension: extras__string__subscription_cancellation_reason {
     sql: ${TABLE}.extras.string.subscription_cancellation_reason ;;
     type: string

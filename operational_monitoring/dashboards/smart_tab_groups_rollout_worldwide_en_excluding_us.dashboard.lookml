@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
-    type: looker_line
-    fields: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    ]
-    pivots: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
-    ]
-    filters:
-      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'days_of_use'
-      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    log_scale: false
-    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
-    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
-    show_grid: true
-    listen:
-      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -63,7 +29,75 @@
       smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'retained'
       smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    log_scale: false
+    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
+    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
+    show_grid: true
+    listen:
+      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
+    type: looker_line
+    fields: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    ]
+    pivots: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
+    ]
+    filters:
+      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'active_hours'
+      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
+    row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    log_scale: false
+    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
+    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
+    show_grid: true
+    listen:
+      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
+    type: looker_line
+    fields: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    ]
+    pivots: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
+    ]
+    filters:
+      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'uri_count'
+      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
@@ -97,6 +131,40 @@
       smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'qualified_cumulative_days_of_use'
       smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
     row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    log_scale: false
+    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
+    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
+    show_grid: true
+    listen:
+      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
+    type: looker_line
+    fields: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    ]
+    pivots: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
+    ]
+    filters:
+      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'days_of_use'
+      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -130,110 +198,8 @@
     filters:
       smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'ad_clicks'
       smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    log_scale: false
-    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
-    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
-    show_grid: true
-    listen:
-      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
-    type: looker_line
-    fields: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    ]
-    pivots: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
-    ]
-    filters:
-      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'search_count'
-      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    log_scale: false
-    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
-    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
-    show_grid: true
-    listen:
-      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
-    type: looker_line
-    fields: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    ]
-    pivots: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
-    ]
-    filters:
-      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'uri_count'
-      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    log_scale: false
-    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
-    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
-    show_grid: true
-    listen:
-      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
-    type: looker_line
-    fields: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
-      smart_tab_groups_rollout_worldwide_en_excluding_us.point
-    ]
-    pivots: [
-      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
-    ]
-    filters:
-      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'active_hours'
-      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
@@ -269,7 +235,7 @@
       smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'memory_total'
       smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: percentile
     row: 30
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
@@ -281,6 +247,40 @@
     listen:
       Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
       Percentile: smart_tab_groups_rollout_worldwide_en_excluding_us.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_tab_groups_rollout_worldwide_en_excluding_us
+    type: looker_line
+    fields: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch,
+      smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    ]
+    pivots: [
+      smart_tab_groups_rollout_worldwide_en_excluding_us.branch
+    ]
+    filters:
+      smart_tab_groups_rollout_worldwide_en_excluding_us.metric: 'search_count'
+      smart_tab_groups_rollout_worldwide_en_excluding_us.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
+    field_y: smart_tab_groups_rollout_worldwide_en_excluding_us.point
+    log_scale: false
+    ci_lower: smart_tab_groups_rollout_worldwide_en_excluding_us.lower
+    ci_upper: smart_tab_groups_rollout_worldwide_en_excluding_us.upper
+    show_grid: true
+    listen:
+      Date: smart_tab_groups_rollout_worldwide_en_excluding_us.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
