@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       jetpack_compose_release.branch
     ]
     filters:
-      jetpack_compose_release.metric: 'retained'
+      jetpack_compose_release.metric: 'uri_count'
       jetpack_compose_release.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       jetpack_compose_release.branch
     ]
     filters:
-      jetpack_compose_release.metric: 'uri_count'
+      jetpack_compose_release.metric: 'search_count'
       jetpack_compose_release.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       jetpack_compose_release.branch
     ]
     filters:
-      jetpack_compose_release.metric: 'tagged_sap_searches'
+      jetpack_compose_release.metric: 'retained'
       jetpack_compose_release.statistic: mean
     row: 10
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       jetpack_compose_release.branch
     ]
     filters:
-      jetpack_compose_release.metric: 'search_count'
+      jetpack_compose_release.metric: 'tagged_sap_searches'
       jetpack_compose_release.statistic: mean
     row: 30
     col: 0

@@ -10,21 +10,18 @@ view: vat_rates {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Country name."
   }
 
   dimension: country_code {
     sql: ${TABLE}.country_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "ISO 3166 alpha-2 country code."
   }
 
   dimension: vat {
     sql: ${TABLE}.vat ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "VAT rate."
   }
 
   dimension_group: effective {
@@ -41,7 +38,6 @@ view: vat_rates {
     ]
     convert_tz: no
     datatype: date
-    description: "Date when the VAT rate should take effect."
   }
 
   sql_table_name: `mozdata.mozilla_vpn.vat_rates` ;;
