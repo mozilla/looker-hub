@@ -28,6 +28,12 @@ view: metrics_clients_daily_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: default_search_engine {
+    sql: ${TABLE}.default_search_engine ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: n_metrics_ping {
     sql: ${TABLE}.n_metrics_ping ;;
     type: number
