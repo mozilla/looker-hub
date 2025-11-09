@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_pageload_domain_telemetry_on_desktop
+    type: looker_line
+    fields: [
+      disable_pageload_domain_telemetry_on_desktop.submission_date,
+      disable_pageload_domain_telemetry_on_desktop.branch,
+      disable_pageload_domain_telemetry_on_desktop.point
+    ]
+    pivots: [
+      disable_pageload_domain_telemetry_on_desktop.branch
+    ]
+    filters:
+      disable_pageload_domain_telemetry_on_desktop.metric: 'ad_clicks'
+      disable_pageload_domain_telemetry_on_desktop.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
+    field_y: disable_pageload_domain_telemetry_on_desktop.point
+    log_scale: false
+    ci_lower: disable_pageload_domain_telemetry_on_desktop.lower
+    ci_upper: disable_pageload_domain_telemetry_on_desktop.upper
+    show_grid: true
+    listen:
+      Date: disable_pageload_domain_telemetry_on_desktop.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -31,7 +65,7 @@
       disable_pageload_domain_telemetry_on_desktop.metric: 'memory_total'
       disable_pageload_domain_telemetry_on_desktop.statistic: percentile
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
@@ -43,142 +77,6 @@
     listen:
       Date: disable_pageload_domain_telemetry_on_desktop.submission_date
       Percentile: disable_pageload_domain_telemetry_on_desktop.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_pageload_domain_telemetry_on_desktop
-    type: looker_line
-    fields: [
-      disable_pageload_domain_telemetry_on_desktop.submission_date,
-      disable_pageload_domain_telemetry_on_desktop.branch,
-      disable_pageload_domain_telemetry_on_desktop.point
-    ]
-    pivots: [
-      disable_pageload_domain_telemetry_on_desktop.branch
-    ]
-    filters:
-      disable_pageload_domain_telemetry_on_desktop.metric: 'uri_count'
-      disable_pageload_domain_telemetry_on_desktop.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
-    field_y: disable_pageload_domain_telemetry_on_desktop.point
-    log_scale: false
-    ci_lower: disable_pageload_domain_telemetry_on_desktop.lower
-    ci_upper: disable_pageload_domain_telemetry_on_desktop.upper
-    show_grid: true
-    listen:
-      Date: disable_pageload_domain_telemetry_on_desktop.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_pageload_domain_telemetry_on_desktop
-    type: looker_line
-    fields: [
-      disable_pageload_domain_telemetry_on_desktop.submission_date,
-      disable_pageload_domain_telemetry_on_desktop.branch,
-      disable_pageload_domain_telemetry_on_desktop.point
-    ]
-    pivots: [
-      disable_pageload_domain_telemetry_on_desktop.branch
-    ]
-    filters:
-      disable_pageload_domain_telemetry_on_desktop.metric: 'active_hours'
-      disable_pageload_domain_telemetry_on_desktop.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
-    field_y: disable_pageload_domain_telemetry_on_desktop.point
-    log_scale: false
-    ci_lower: disable_pageload_domain_telemetry_on_desktop.lower
-    ci_upper: disable_pageload_domain_telemetry_on_desktop.upper
-    show_grid: true
-    listen:
-      Date: disable_pageload_domain_telemetry_on_desktop.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_pageload_domain_telemetry_on_desktop
-    type: looker_line
-    fields: [
-      disable_pageload_domain_telemetry_on_desktop.submission_date,
-      disable_pageload_domain_telemetry_on_desktop.branch,
-      disable_pageload_domain_telemetry_on_desktop.point
-    ]
-    pivots: [
-      disable_pageload_domain_telemetry_on_desktop.branch
-    ]
-    filters:
-      disable_pageload_domain_telemetry_on_desktop.metric: 'search_count'
-      disable_pageload_domain_telemetry_on_desktop.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
-    field_y: disable_pageload_domain_telemetry_on_desktop.point
-    log_scale: false
-    ci_lower: disable_pageload_domain_telemetry_on_desktop.lower
-    ci_upper: disable_pageload_domain_telemetry_on_desktop.upper
-    show_grid: true
-    listen:
-      Date: disable_pageload_domain_telemetry_on_desktop.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_pageload_domain_telemetry_on_desktop
-    type: looker_line
-    fields: [
-      disable_pageload_domain_telemetry_on_desktop.submission_date,
-      disable_pageload_domain_telemetry_on_desktop.branch,
-      disable_pageload_domain_telemetry_on_desktop.point
-    ]
-    pivots: [
-      disable_pageload_domain_telemetry_on_desktop.branch
-    ]
-    filters:
-      disable_pageload_domain_telemetry_on_desktop.metric: 'retained'
-      disable_pageload_domain_telemetry_on_desktop.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
-    field_y: disable_pageload_domain_telemetry_on_desktop.point
-    log_scale: false
-    ci_lower: disable_pageload_domain_telemetry_on_desktop.lower
-    ci_upper: disable_pageload_domain_telemetry_on_desktop.upper
-    show_grid: true
-    listen:
-      Date: disable_pageload_domain_telemetry_on_desktop.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -201,7 +99,41 @@
     filters:
       disable_pageload_domain_telemetry_on_desktop.metric: 'days_of_use'
       disable_pageload_domain_telemetry_on_desktop.statistic: mean
-    row: 20
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
+    field_y: disable_pageload_domain_telemetry_on_desktop.point
+    log_scale: false
+    ci_lower: disable_pageload_domain_telemetry_on_desktop.lower
+    ci_upper: disable_pageload_domain_telemetry_on_desktop.upper
+    show_grid: true
+    listen:
+      Date: disable_pageload_domain_telemetry_on_desktop.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_pageload_domain_telemetry_on_desktop
+    type: looker_line
+    fields: [
+      disable_pageload_domain_telemetry_on_desktop.submission_date,
+      disable_pageload_domain_telemetry_on_desktop.branch,
+      disable_pageload_domain_telemetry_on_desktop.point
+    ]
+    pivots: [
+      disable_pageload_domain_telemetry_on_desktop.branch
+    ]
+    filters:
+      disable_pageload_domain_telemetry_on_desktop.metric: 'uri_count'
+      disable_pageload_domain_telemetry_on_desktop.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -235,6 +167,74 @@
     filters:
       disable_pageload_domain_telemetry_on_desktop.metric: 'qualified_cumulative_days_of_use'
       disable_pageload_domain_telemetry_on_desktop.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
+    field_y: disable_pageload_domain_telemetry_on_desktop.point
+    log_scale: false
+    ci_lower: disable_pageload_domain_telemetry_on_desktop.lower
+    ci_upper: disable_pageload_domain_telemetry_on_desktop.upper
+    show_grid: true
+    listen:
+      Date: disable_pageload_domain_telemetry_on_desktop.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_pageload_domain_telemetry_on_desktop
+    type: looker_line
+    fields: [
+      disable_pageload_domain_telemetry_on_desktop.submission_date,
+      disable_pageload_domain_telemetry_on_desktop.branch,
+      disable_pageload_domain_telemetry_on_desktop.point
+    ]
+    pivots: [
+      disable_pageload_domain_telemetry_on_desktop.branch
+    ]
+    filters:
+      disable_pageload_domain_telemetry_on_desktop.metric: 'retained'
+      disable_pageload_domain_telemetry_on_desktop.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: disable_pageload_domain_telemetry_on_desktop.submission_date
+    field_y: disable_pageload_domain_telemetry_on_desktop.point
+    log_scale: false
+    ci_lower: disable_pageload_domain_telemetry_on_desktop.lower
+    ci_upper: disable_pageload_domain_telemetry_on_desktop.upper
+    show_grid: true
+    listen:
+      Date: disable_pageload_domain_telemetry_on_desktop.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_pageload_domain_telemetry_on_desktop
+    type: looker_line
+    fields: [
+      disable_pageload_domain_telemetry_on_desktop.submission_date,
+      disable_pageload_domain_telemetry_on_desktop.branch,
+      disable_pageload_domain_telemetry_on_desktop.point
+    ]
+    pivots: [
+      disable_pageload_domain_telemetry_on_desktop.branch
+    ]
+    filters:
+      disable_pageload_domain_telemetry_on_desktop.metric: 'active_hours'
+      disable_pageload_domain_telemetry_on_desktop.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       disable_pageload_domain_telemetry_on_desktop.branch
     ]
     filters:
-      disable_pageload_domain_telemetry_on_desktop.metric: 'ad_clicks'
+      disable_pageload_domain_telemetry_on_desktop.metric: 'search_count'
       disable_pageload_domain_telemetry_on_desktop.statistic: mean
     row: 30
     col: 12
