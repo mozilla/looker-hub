@@ -10,74 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: refactor_new_tab_telemetry_rollout
-    type: looker_line
-    fields: [
-      refactor_new_tab_telemetry_rollout.submission_date,
-      refactor_new_tab_telemetry_rollout.branch,
-      refactor_new_tab_telemetry_rollout.point
-    ]
-    pivots: [
-      refactor_new_tab_telemetry_rollout.branch
-    ]
-    filters:
-      refactor_new_tab_telemetry_rollout.metric: 'days_of_use'
-      refactor_new_tab_telemetry_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: refactor_new_tab_telemetry_rollout.submission_date
-    field_y: refactor_new_tab_telemetry_rollout.point
-    log_scale: false
-    ci_lower: refactor_new_tab_telemetry_rollout.lower
-    ci_upper: refactor_new_tab_telemetry_rollout.upper
-    show_grid: true
-    listen:
-      Date: refactor_new_tab_telemetry_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: refactor_new_tab_telemetry_rollout
-    type: looker_line
-    fields: [
-      refactor_new_tab_telemetry_rollout.submission_date,
-      refactor_new_tab_telemetry_rollout.branch,
-      refactor_new_tab_telemetry_rollout.point
-    ]
-    pivots: [
-      refactor_new_tab_telemetry_rollout.branch
-    ]
-    filters:
-      refactor_new_tab_telemetry_rollout.metric: 'uri_count'
-      refactor_new_tab_telemetry_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: refactor_new_tab_telemetry_rollout.submission_date
-    field_y: refactor_new_tab_telemetry_rollout.point
-    log_scale: false
-    ci_lower: refactor_new_tab_telemetry_rollout.lower
-    ci_upper: refactor_new_tab_telemetry_rollout.upper
-    show_grid: true
-    listen:
-      Date: refactor_new_tab_telemetry_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -96,6 +28,77 @@
     filters:
       refactor_new_tab_telemetry_rollout.metric: 'retained'
       refactor_new_tab_telemetry_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: refactor_new_tab_telemetry_rollout.submission_date
+    field_y: refactor_new_tab_telemetry_rollout.point
+    log_scale: false
+    ci_lower: refactor_new_tab_telemetry_rollout.lower
+    ci_upper: refactor_new_tab_telemetry_rollout.upper
+    show_grid: true
+    listen:
+      Date: refactor_new_tab_telemetry_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: refactor_new_tab_telemetry_rollout
+    type: "ci-line-chart"
+    fields: [
+      refactor_new_tab_telemetry_rollout.submission_date,
+      refactor_new_tab_telemetry_rollout.branch,
+      refactor_new_tab_telemetry_rollout.upper,
+      refactor_new_tab_telemetry_rollout.lower,
+      refactor_new_tab_telemetry_rollout.point
+    ]
+    pivots: [
+      refactor_new_tab_telemetry_rollout.branch
+    ]
+    filters:
+      refactor_new_tab_telemetry_rollout.metric: 'memory_total'
+      refactor_new_tab_telemetry_rollout.statistic: percentile
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: refactor_new_tab_telemetry_rollout.submission_date
+    field_y: refactor_new_tab_telemetry_rollout.point
+    log_scale: false
+    ci_lower: refactor_new_tab_telemetry_rollout.lower
+    ci_upper: refactor_new_tab_telemetry_rollout.upper
+    show_grid: true
+    listen:
+      Date: refactor_new_tab_telemetry_rollout.submission_date
+      Percentile: refactor_new_tab_telemetry_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: refactor_new_tab_telemetry_rollout
+    type: looker_line
+    fields: [
+      refactor_new_tab_telemetry_rollout.submission_date,
+      refactor_new_tab_telemetry_rollout.branch,
+      refactor_new_tab_telemetry_rollout.point
+    ]
+    pivots: [
+      refactor_new_tab_telemetry_rollout.branch
+    ]
+    filters:
+      refactor_new_tab_telemetry_rollout.metric: 'search_count'
+      refactor_new_tab_telemetry_rollout.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -112,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +131,7 @@
       refactor_new_tab_telemetry_rollout.branch
     ]
     filters:
-      refactor_new_tab_telemetry_rollout.metric: 'active_hours'
+      refactor_new_tab_telemetry_rollout.metric: 'days_of_use'
       refactor_new_tab_telemetry_rollout.statistic: mean
     row: 10
     col: 12
@@ -180,43 +183,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: refactor_new_tab_telemetry_rollout
-    type: "ci-line-chart"
-    fields: [
-      refactor_new_tab_telemetry_rollout.submission_date,
-      refactor_new_tab_telemetry_rollout.branch,
-      refactor_new_tab_telemetry_rollout.upper,
-      refactor_new_tab_telemetry_rollout.lower,
-      refactor_new_tab_telemetry_rollout.point
-    ]
-    pivots: [
-      refactor_new_tab_telemetry_rollout.branch
-    ]
-    filters:
-      refactor_new_tab_telemetry_rollout.metric: 'memory_total'
-      refactor_new_tab_telemetry_rollout.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: refactor_new_tab_telemetry_rollout.submission_date
-    field_y: refactor_new_tab_telemetry_rollout.point
-    log_scale: false
-    ci_lower: refactor_new_tab_telemetry_rollout.lower
-    ci_upper: refactor_new_tab_telemetry_rollout.upper
-    show_grid: true
-    listen:
-      Date: refactor_new_tab_telemetry_rollout.submission_date
-      Percentile: refactor_new_tab_telemetry_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -235,6 +201,40 @@
     filters:
       refactor_new_tab_telemetry_rollout.metric: 'ad_clicks'
       refactor_new_tab_telemetry_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: refactor_new_tab_telemetry_rollout.submission_date
+    field_y: refactor_new_tab_telemetry_rollout.point
+    log_scale: false
+    ci_lower: refactor_new_tab_telemetry_rollout.lower
+    ci_upper: refactor_new_tab_telemetry_rollout.upper
+    show_grid: true
+    listen:
+      Date: refactor_new_tab_telemetry_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: refactor_new_tab_telemetry_rollout
+    type: looker_line
+    fields: [
+      refactor_new_tab_telemetry_rollout.submission_date,
+      refactor_new_tab_telemetry_rollout.branch,
+      refactor_new_tab_telemetry_rollout.point
+    ]
+    pivots: [
+      refactor_new_tab_telemetry_rollout.branch
+    ]
+    filters:
+      refactor_new_tab_telemetry_rollout.metric: 'active_hours'
+      refactor_new_tab_telemetry_rollout.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       refactor_new_tab_telemetry_rollout.branch
     ]
     filters:
-      refactor_new_tab_telemetry_rollout.metric: 'search_count'
+      refactor_new_tab_telemetry_rollout.metric: 'uri_count'
       refactor_new_tab_telemetry_rollout.statistic: mean
     row: 30
     col: 12

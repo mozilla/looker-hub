@@ -250,13 +250,14 @@ In Version 0 this reported the total number of tasks enqueued.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "An exceptional state was detected upon trying to laod the database.
+    description: "An exceptional state was detected upon trying to load the database.
 
 Valid options are:
-  - empty-db
-  - regen-db
-  - c0ffee-in-db
-  - client-id-mismatch
+
+- `empty-db`
+- `regen-db`
+- `c0ffee-in-db`
+- `client-id-mismatch`
 "
   }
 
