@@ -10,77 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: etp_strict_message_release
-    type: looker_line
-    fields: [
-      etp_strict_message_release.submission_date,
-      etp_strict_message_release.branch,
-      etp_strict_message_release.point
-    ]
-    pivots: [
-      etp_strict_message_release.branch
-    ]
-    filters:
-      etp_strict_message_release.metric: 'ad_clicks'
-      etp_strict_message_release.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: etp_strict_message_release.submission_date
-    field_y: etp_strict_message_release.point
-    log_scale: false
-    ci_lower: etp_strict_message_release.lower
-    ci_upper: etp_strict_message_release.upper
-    show_grid: true
-    listen:
-      Date: etp_strict_message_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: etp_strict_message_release
-    type: "ci-line-chart"
-    fields: [
-      etp_strict_message_release.submission_date,
-      etp_strict_message_release.branch,
-      etp_strict_message_release.upper,
-      etp_strict_message_release.lower,
-      etp_strict_message_release.point
-    ]
-    pivots: [
-      etp_strict_message_release.branch
-    ]
-    filters:
-      etp_strict_message_release.metric: 'memory_total'
-      etp_strict_message_release.statistic: percentile
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: etp_strict_message_release.submission_date
-    field_y: etp_strict_message_release.point
-    log_scale: false
-    ci_lower: etp_strict_message_release.lower
-    ci_upper: etp_strict_message_release.upper
-    show_grid: true
-    listen:
-      Date: etp_strict_message_release.submission_date
-      Percentile: etp_strict_message_release.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -99,7 +28,7 @@
     filters:
       etp_strict_message_release.metric: 'days_of_use'
       etp_strict_message_release.statistic: mean
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -132,6 +61,74 @@
     ]
     filters:
       etp_strict_message_release.metric: 'uri_count'
+      etp_strict_message_release.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: etp_strict_message_release.submission_date
+    field_y: etp_strict_message_release.point
+    log_scale: false
+    ci_lower: etp_strict_message_release.lower
+    ci_upper: etp_strict_message_release.upper
+    show_grid: true
+    listen:
+      Date: etp_strict_message_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: etp_strict_message_release
+    type: looker_line
+    fields: [
+      etp_strict_message_release.submission_date,
+      etp_strict_message_release.branch,
+      etp_strict_message_release.point
+    ]
+    pivots: [
+      etp_strict_message_release.branch
+    ]
+    filters:
+      etp_strict_message_release.metric: 'retained'
+      etp_strict_message_release.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: etp_strict_message_release.submission_date
+    field_y: etp_strict_message_release.point
+    log_scale: false
+    ci_lower: etp_strict_message_release.lower
+    ci_upper: etp_strict_message_release.upper
+    show_grid: true
+    listen:
+      Date: etp_strict_message_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: etp_strict_message_release
+    type: looker_line
+    fields: [
+      etp_strict_message_release.submission_date,
+      etp_strict_message_release.branch,
+      etp_strict_message_release.point
+    ]
+    pivots: [
+      etp_strict_message_release.branch
+    ]
+    filters:
+      etp_strict_message_release.metric: 'active_hours'
       etp_strict_message_release.statistic: mean
     row: 10
     col: 12
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: etp_strict_message_release
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       etp_strict_message_release.submission_date,
       etp_strict_message_release.branch,
+      etp_strict_message_release.upper,
+      etp_strict_message_release.lower,
       etp_strict_message_release.point
     ]
     pivots: [
       etp_strict_message_release.branch
     ]
     filters:
-      etp_strict_message_release.metric: 'retained'
-      etp_strict_message_release.statistic: mean
+      etp_strict_message_release.metric: 'memory_total'
+      etp_strict_message_release.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,12 +212,13 @@
     show_grid: true
     listen:
       Date: etp_strict_message_release.submission_date
+      Percentile: etp_strict_message_release.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       etp_strict_message_release.branch
     ]
     filters:
-      etp_strict_message_release.metric: 'active_hours'
+      etp_strict_message_release.metric: 'ad_clicks'
       etp_strict_message_release.statistic: mean
     row: 30
     col: 0
