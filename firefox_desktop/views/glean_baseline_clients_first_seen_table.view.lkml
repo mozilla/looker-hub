@@ -11,6 +11,12 @@ view: glean_baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: architecture {
+    sql: ${TABLE}.architecture ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: attribution__campaign {
     sql: ${TABLE}.attribution.campaign ;;
     type: string
@@ -174,6 +180,12 @@ view: glean_baseline_clients_first_seen_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: startup_profile_selection_reason_first {
+    sql: ${TABLE}.startup_profile_selection_reason_first ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 

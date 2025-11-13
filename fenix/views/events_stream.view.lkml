@@ -1039,6 +1039,14 @@ view: events_stream {
     group_item_label: "Inactive Tabs Count"
   }
 
+  dimension: extras__quantity__inference_time {
+    sql: ${TABLE}.extras.quantity.inference_time ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras Quantity"
+    group_item_label: "Inference Time"
+  }
+
   dimension: extras__quantity__items_count {
     sql: ${TABLE}.extras.quantity.items_count ;;
     type: number
@@ -1349,6 +1357,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras Quantity"
     group_item_label: "Time"
+  }
+
+  dimension: extras__quantity__tokenizing_time {
+    sql: ${TABLE}.extras.quantity.tokenizing_time ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras Quantity"
+    group_item_label: "Tokenizing Time"
   }
 
   dimension: extras__quantity__total_completed_requests {
@@ -2701,6 +2717,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras String"
     group_item_label: "Install Origins"
+  }
+
+  dimension: extras__string__interaction {
+    sql: ${TABLE}.extras.string.interaction ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Interaction"
   }
 
   dimension: extras__string__issue {

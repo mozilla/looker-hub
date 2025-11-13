@@ -628,6 +628,14 @@ view: events_stream_table {
     group_item_label: "Error Code"
   }
 
+  dimension: extras__string__error_message {
+    sql: ${TABLE}.extras.string.error_message ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Error Message"
+  }
+
   dimension: extras__string__error_string {
     sql: ${TABLE}.extras.string.error_string ;;
     type: string

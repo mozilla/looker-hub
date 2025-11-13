@@ -70,6 +70,12 @@ view: metrics_clients_daily_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: xpcom_abi {
+    sql: ${TABLE}.xpcom_abi ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Sponsored Pocket Impressions
+    name: Sponsored Pocket Impressions_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fr_billboard_rollout.branch
     ]
     filters:
-      fr_billboard_rollout.metric: 'retained'
+      fr_billboard_rollout.metric: 'sponsored_pocket_impressions'
       fr_billboard_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,26 +44,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Organic Pocket Impressions
+    name: Organic Pocket Impressions_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: fr_billboard_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       fr_billboard_rollout.submission_date,
       fr_billboard_rollout.branch,
-      fr_billboard_rollout.upper,
-      fr_billboard_rollout.lower,
       fr_billboard_rollout.point
     ]
     pivots: [
       fr_billboard_rollout.branch
     ]
     filters:
-      fr_billboard_rollout.metric: 'memory_total'
-      fr_billboard_rollout.statistic: percentile
+      fr_billboard_rollout.metric: 'organic_pocket_impressions'
+      fr_billboard_rollout.statistic: mean
     row: 0
     col: 12
     width: 12
@@ -76,13 +74,12 @@
     show_grid: true
     listen:
       Date: fr_billboard_rollout.submission_date
-      Percentile: fr_billboard_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Newtab Pocket Enabled
+    name: Newtab Pocket Enabled_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,7 +94,7 @@
       fr_billboard_rollout.branch
     ]
     filters:
-      fr_billboard_rollout.metric: 'search_count'
+      fr_billboard_rollout.metric: 'newtab_pocket_enabled'
       fr_billboard_rollout.statistic: mean
     row: 10
     col: 0
@@ -115,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Newtab Sponsored Pocket Stories Enabled
+    name: Newtab Sponsored Pocket Stories Enabled_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +128,7 @@
       fr_billboard_rollout.branch
     ]
     filters:
-      fr_billboard_rollout.metric: 'days_of_use'
+      fr_billboard_rollout.metric: 'newtab_sponsored_pocket_stories_enabled'
       fr_billboard_rollout.statistic: mean
     row: 10
     col: 12
@@ -149,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Organic Pocket Clicks
+    name: Organic Pocket Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +162,7 @@
       fr_billboard_rollout.branch
     ]
     filters:
-      fr_billboard_rollout.metric: 'qualified_cumulative_days_of_use'
+      fr_billboard_rollout.metric: 'organic_pocket_clicks'
       fr_billboard_rollout.statistic: mean
     row: 20
     col: 0
@@ -183,11 +180,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Organic Pocket Clicks
+    name: Organic Pocket Clicks_total_ratio
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Total_Ratio
     explore: fr_billboard_rollout
     type: looker_line
     fields: [
@@ -199,8 +196,8 @@
       fr_billboard_rollout.branch
     ]
     filters:
-      fr_billboard_rollout.metric: 'ad_clicks'
-      fr_billboard_rollout.statistic: mean
+      fr_billboard_rollout.metric: 'organic_pocket_clicks'
+      fr_billboard_rollout.statistic: total_ratio
     row: 20
     col: 12
     width: 12
@@ -217,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Sponsored Pocket Clicks
+    name: Sponsored Pocket Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +230,7 @@
       fr_billboard_rollout.branch
     ]
     filters:
-      fr_billboard_rollout.metric: 'active_hours'
+      fr_billboard_rollout.metric: 'sponsored_pocket_clicks'
       fr_billboard_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,11 +248,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Sponsored Pocket Clicks
+    name: Sponsored Pocket Clicks_total_ratio
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Total_Ratio
     explore: fr_billboard_rollout
     type: looker_line
     fields: [
@@ -267,8 +264,8 @@
       fr_billboard_rollout.branch
     ]
     filters:
-      fr_billboard_rollout.metric: 'uri_count'
-      fr_billboard_rollout.statistic: mean
+      fr_billboard_rollout.metric: 'sponsored_pocket_clicks'
+      fr_billboard_rollout.statistic: total_ratio
     row: 30
     col: 12
     width: 12

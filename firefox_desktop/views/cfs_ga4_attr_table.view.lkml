@@ -9,6 +9,7 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.app_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: attribution__campaign {
@@ -67,6 +68,7 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.attribution_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The attribution experiment key."
   }
 
   dimension: attribution_ext {
@@ -84,11 +86,13 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.attribution_variation ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The attribution variation key."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: country {
@@ -96,6 +100,7 @@ view: cfs_ga4_attr_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Name of the country in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: distribution__name {
@@ -115,6 +120,7 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: ga4_ad_crosschannel_campaign {
@@ -441,12 +447,14 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.is_desktop ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates if the client is included in the desktop KPI."
   }
 
   dimension: isp {
     sql: ${TABLE}.isp ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the internet service provider associated with the client's IP address."
   }
 
   dimension: legacy_telemetry_client_id {
@@ -465,30 +473,35 @@ view: cfs_ga4_attr_table {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Version of the operating system version running at the client. E.g. \"100.9.11\"."
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: stub_attr_logs_dl_token {
@@ -541,6 +554,7 @@ view: cfs_ga4_attr_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Date when the server first received a ping from this client."
   }
 
   dimension_group: ga4_session {
@@ -604,6 +618,7 @@ view: cfs_ga4_attr_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.cfs_ga4_attr` ;;

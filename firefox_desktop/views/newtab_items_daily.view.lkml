@@ -48,6 +48,12 @@ view: newtab_items_daily {
     map_layer_name: countries
   }
 
+  dimension: curator {
+    sql: ${TABLE}.curator ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: dismiss_count {
     sql: ${TABLE}.dismiss_count ;;
     type: number

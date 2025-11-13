@@ -122,6 +122,7 @@ view: desktop_installs_table {
     sql: ${TABLE}.install_attempts ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Install Attempts - The count of install attempts"
   }
 
   dimension: installer_type {
@@ -135,21 +136,21 @@ view: desktop_installs_table {
     sql: ${TABLE}.installs ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Successful Installs"
+    description: "Successful Installs - The count of successful installs"
   }
 
   dimension: isp_name {
     sql: ${TABLE}.isp_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "ISP Name"
+    description: "The name of the internet service provider associated with the client's IP address."
   }
 
   dimension: isp_organization {
     sql: ${TABLE}.isp_organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "ISP Organization"
+    description: "ISP Organization - The internet service provider organization"
   }
 
   dimension: locale {
@@ -163,6 +164,7 @@ view: desktop_installs_table {
     sql: ${TABLE}.manual_download ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "True if the user clicked through the error message to the manual full installer download page"
   }
 
   dimension: new_default {
@@ -260,7 +262,7 @@ view: desktop_installs_table {
     sql: ${TABLE}.unsuccessful_installs ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Unsuccessful Installs"
+    description: "Unsuccessful Installs - The count of unsuccessful installs"
   }
 
   dimension: update_channel {
