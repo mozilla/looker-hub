@@ -30,6 +30,8 @@ COALESCE(MAX(CASE WHEN visits_with_non_impression_engagement > 0 THEN 1 ELSE 0 E
 COALESCE(SUM(newtab_visit_count), 0) AS newtab_visits,
 COALESCE(SUM(visits_with_non_impression_engagement), 0) AS newtab_engaged_visits,
 COALESCE(SUM(visits_with_non_search_engagement), 0) AS newtab_non_search_engagement,
+COALESCE(SUM(organic_topsite_tile_clicks), 0) AS newtab_organic_topsite_clicks_v2,
+COALESCE(SUM(organic_topsite_tile_impressions), 0) AS newtab_organic_topsite_impressions_v2,
 COALESCE(SUM(wallpaper_clicks), 0) AS wallpaper_clicks,
 COALESCE(SUM(wallpaper_clicks_had_previous_wallpaper), 0) AS wallpaper_clicks_had_previous_wallpaper,
 COALESCE(SUM(wallpaper_clicks_first_selected_wallpaper), 0) AS wallpaper_clicks_first_selected_wallpaper,
@@ -604,6 +606,24 @@ newtab_clients_daily_weather_widget_location_selected,
 "
     type: number
     sql: ${TABLE}.newtab_non_search_engagement ;;
+  }
+
+  dimension: newtab_organic_topsite_clicks_v2 {
+    group_label: "Metrics"
+    label: "Newtab Organic Tile Clicks"
+    description: "Count of New Tab organic tile clicks across all positions.
+"
+    type: number
+    sql: ${TABLE}.newtab_organic_topsite_clicks_v2 ;;
+  }
+
+  dimension: newtab_organic_topsite_impressions_v2 {
+    group_label: "Metrics"
+    label: "Newtab Organic Tile Impressions"
+    description: "Count of New Tab organic tile impressions across all positions.
+"
+    type: number
+    sql: ${TABLE}.newtab_organic_topsite_impressions_v2 ;;
   }
 
   dimension: wallpaper_clicks {
@@ -1635,6 +1655,8 @@ a wallpaper.
       newtab_visits,
       newtab_engaged_visits,
       newtab_non_search_engagement,
+      newtab_organic_topsite_clicks_v2,
+      newtab_organic_topsite_impressions_v2,
       wallpaper_clicks,
       wallpaper_clicks_had_previous_wallpaper,
       wallpaper_clicks_first_selected_wallpaper,

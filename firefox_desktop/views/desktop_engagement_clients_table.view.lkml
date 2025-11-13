@@ -9,7 +9,7 @@ view: desktop_engagement_clients_table {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Application Version - The user visible version string (e.g. \"1.0.3\"). If the value was not provided through configuration, this metric gets set to Unknown."
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: attribution_campaign {
@@ -64,7 +64,7 @@ view: desktop_engagement_clients_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    description: "UUID uniquely identifying a client."
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: country {
@@ -72,14 +72,14 @@ view: desktop_engagement_clients_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Distribution ID - The distribution id associated with the install of Firefox."
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: is_dau {
@@ -114,7 +114,7 @@ view: desktop_engagement_clients_table {
     sql: ${TABLE}.isp ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Internet Service Provider Name"
+    description: "The name of the internet service provider associated with the client's IP address."
   }
 
   dimension: legacy_telemetry_client_id {
@@ -134,21 +134,21 @@ view: desktop_engagement_clients_table {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Locale - The locale of the application during initialization"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized Channel"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized Operating System"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {
@@ -162,14 +162,14 @@ view: desktop_engagement_clients_table {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+    description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: windows_version {
@@ -210,7 +210,7 @@ view: desktop_engagement_clients_table {
     ]
     convert_tz: no
     datatype: date
-    description: "The date when the ingestion edge server accepted this message."
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.desktop_engagement_clients` ;;

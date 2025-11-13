@@ -417,6 +417,12 @@ view: issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_metadata_updated_at {
+    sql: ${TABLE}.metric_metadata_updated_at ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_metadata_warehouse_id {
     sql: ${TABLE}.metric_metadata_warehouse_id ;;
     type: number

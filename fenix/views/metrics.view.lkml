@@ -3527,7 +3527,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__boolean__tab_strip_enabled {
     label: "Tab Strip Enabled"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.tab_strip_enabled ;;
     type: yesno
     group_label: "Tab Strip"
@@ -3539,7 +3539,7 @@ ensure it's not too expensive.  This value is only available on Android
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the tab strip feature is enabled
+    description: "Whether or not Tab Strip is enabled by the user.
 "
   }
 
