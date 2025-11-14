@@ -34,6 +34,72 @@ view: metrics_clients_daily_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: installation_first_seen_admin_user {
+    sql: ${TABLE}.installation_first_seen_admin_user ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_default_path {
+    sql: ${TABLE}.installation_first_seen_default_path ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_failure_reason {
+    sql: ${TABLE}.installation_first_seen_failure_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_from_msi {
+    sql: ${TABLE}.installation_first_seen_from_msi ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_install_existed {
+    sql: ${TABLE}.installation_first_seen_install_existed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_installer_type {
+    sql: ${TABLE}.installation_first_seen_installer_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_other_inst {
+    sql: ${TABLE}.installation_first_seen_other_inst ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_other_msix_inst {
+    sql: ${TABLE}.installation_first_seen_other_msix_inst ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_profdir_existed {
+    sql: ${TABLE}.installation_first_seen_profdir_existed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_silent {
+    sql: ${TABLE}.installation_first_seen_silent ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: installation_first_seen_version {
+    sql: ${TABLE}.installation_first_seen_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: n_metrics_ping {
     sql: ${TABLE}.n_metrics_ping ;;
     type: number
