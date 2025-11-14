@@ -615,6 +615,14 @@ view: events_stream {
     group_item_label: "Is Private"
   }
 
+  dimension: extras__boolean__is_recent_search {
+    sql: ${TABLE}.extras.boolean.is_recent_search ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras Boolean"
+    group_item_label: "Is Recent Search"
+  }
+
   dimension: extras__boolean__is_remote {
     sql: ${TABLE}.extras.boolean.is_remote ;;
     type: yesno
@@ -2741,6 +2749,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras String"
     group_item_label: "Item"
+  }
+
+  dimension: extras__string__item_preference_key {
+    sql: ${TABLE}.extras.string.item_preference_key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Item Preference Key"
   }
 
   dimension: extras__string__key_system {

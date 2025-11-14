@@ -44,74 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: app_icon_selector_smoke_test_nightly
-    type: looker_line
-    fields: [
-      app_icon_selector_smoke_test_nightly.submission_date,
-      app_icon_selector_smoke_test_nightly.branch,
-      app_icon_selector_smoke_test_nightly.point
-    ]
-    pivots: [
-      app_icon_selector_smoke_test_nightly.branch
-    ]
-    filters:
-      app_icon_selector_smoke_test_nightly.metric: 'search_count'
-      app_icon_selector_smoke_test_nightly.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: app_icon_selector_smoke_test_nightly.submission_date
-    field_y: app_icon_selector_smoke_test_nightly.point
-    log_scale: false
-    ci_lower: app_icon_selector_smoke_test_nightly.lower
-    ci_upper: app_icon_selector_smoke_test_nightly.upper
-    show_grid: true
-    listen:
-      Date: app_icon_selector_smoke_test_nightly.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: app_icon_selector_smoke_test_nightly
-    type: looker_line
-    fields: [
-      app_icon_selector_smoke_test_nightly.submission_date,
-      app_icon_selector_smoke_test_nightly.branch,
-      app_icon_selector_smoke_test_nightly.point
-    ]
-    pivots: [
-      app_icon_selector_smoke_test_nightly.branch
-    ]
-    filters:
-      app_icon_selector_smoke_test_nightly.metric: 'retained'
-      app_icon_selector_smoke_test_nightly.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: app_icon_selector_smoke_test_nightly.submission_date
-    field_y: app_icon_selector_smoke_test_nightly.point
-    log_scale: false
-    ci_lower: app_icon_selector_smoke_test_nightly.lower
-    ci_upper: app_icon_selector_smoke_test_nightly.upper
-    show_grid: true
-    listen:
-      Date: app_icon_selector_smoke_test_nightly.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -129,6 +61,74 @@
     ]
     filters:
       app_icon_selector_smoke_test_nightly.metric: 'active_hours'
+      app_icon_selector_smoke_test_nightly.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: app_icon_selector_smoke_test_nightly.submission_date
+    field_y: app_icon_selector_smoke_test_nightly.point
+    log_scale: false
+    ci_lower: app_icon_selector_smoke_test_nightly.lower
+    ci_upper: app_icon_selector_smoke_test_nightly.upper
+    show_grid: true
+    listen:
+      Date: app_icon_selector_smoke_test_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: app_icon_selector_smoke_test_nightly
+    type: looker_line
+    fields: [
+      app_icon_selector_smoke_test_nightly.submission_date,
+      app_icon_selector_smoke_test_nightly.branch,
+      app_icon_selector_smoke_test_nightly.point
+    ]
+    pivots: [
+      app_icon_selector_smoke_test_nightly.branch
+    ]
+    filters:
+      app_icon_selector_smoke_test_nightly.metric: 'ad_clicks'
+      app_icon_selector_smoke_test_nightly.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: app_icon_selector_smoke_test_nightly.submission_date
+    field_y: app_icon_selector_smoke_test_nightly.point
+    log_scale: false
+    ci_lower: app_icon_selector_smoke_test_nightly.lower
+    ci_upper: app_icon_selector_smoke_test_nightly.upper
+    show_grid: true
+    listen:
+      Date: app_icon_selector_smoke_test_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: app_icon_selector_smoke_test_nightly
+    type: looker_line
+    fields: [
+      app_icon_selector_smoke_test_nightly.submission_date,
+      app_icon_selector_smoke_test_nightly.branch,
+      app_icon_selector_smoke_test_nightly.point
+    ]
+    pivots: [
+      app_icon_selector_smoke_test_nightly.branch
+    ]
+    filters:
+      app_icon_selector_smoke_test_nightly.metric: 'tagged_sap_searches'
       app_icon_selector_smoke_test_nightly.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       app_icon_selector_smoke_test_nightly.branch
     ]
     filters:
-      app_icon_selector_smoke_test_nightly.metric: 'ad_clicks'
+      app_icon_selector_smoke_test_nightly.metric: 'retained'
       app_icon_selector_smoke_test_nightly.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       app_icon_selector_smoke_test_nightly.branch
     ]
     filters:
-      app_icon_selector_smoke_test_nightly.metric: 'tagged_sap_searches'
+      app_icon_selector_smoke_test_nightly.metric: 'search_count'
       app_icon_selector_smoke_test_nightly.statistic: mean
     row: 30
     col: 0
