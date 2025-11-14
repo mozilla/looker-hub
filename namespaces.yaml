@@ -202,10 +202,6 @@ ads:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_admarketplace
-    metric_definitions_consolidated_ads_spocs:
-      type: metric_definitions_explore
-      views:
-        base_view: metric_definitions_consolidated_ads_spocs
     metric_definitions_native_desktop_ad_metrics:
       type: metric_definitions_explore
       views:
@@ -246,8 +242,6 @@ ads:
     metric_definitions_ad_mmm_metrics_daily:
       type: metric_definitions_view
     metric_definitions_admarketplace:
-      type: metric_definitions_view
-    metric_definitions_consolidated_ads_spocs:
       type: metric_definitions_view
     metric_definitions_native_desktop_ad_metrics:
       type: metric_definitions_view
@@ -1831,6 +1825,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.temp_fog_initial_state
       type: table_view
+    terms_of_use_status_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.terms_of_use_status
+      type: table_view
     tos_rollout_enrollments_table:
       tables:
       - channel: release
@@ -3110,6 +3109,16 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.temp_fog_initial_state
       type: table_view
+    terms_of_use_events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.terms_of_use_events
+      type: table_view
+    terms_of_use_status_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.terms_of_use_status
+      type: table_view
     third_party_modules_table:
       tables:
       - channel: null
@@ -3878,6 +3887,11 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.temp_baseline
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.temp_baseline
+      type: table_view
+    terms_of_use_status_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.terms_of_use_status
       type: table_view
     tos_rollout_enrollments_table:
       tables:
