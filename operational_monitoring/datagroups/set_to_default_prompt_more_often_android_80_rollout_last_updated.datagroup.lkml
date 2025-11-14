@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: funnel_retention_week_4_table_last_updated {
-  label: "funnel_retention_week_4_table Last Updated"
+datagroup: set_to_default_prompt_more_often_android_80_rollout_last_updated {
+  label: "set_to_default_prompt_more_often_android_80_rollout Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'fenix_derived' AND table_name = 'funnel_retention_week_4_v1')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'set_to_default_prompt_more_often_android_80_rollout_statistics')
 
     ) ;;
-  description: "Updates for funnel_retention_week_4_table when referenced tables are modified."
+  description: "Updates for set_to_default_prompt_more_often_android_80_rollout when referenced tables are modified."
   max_cache_age: "24 hours"
 }

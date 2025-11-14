@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: storage_access_heuristic_restriction_rollout_last_updated {
-  label: "storage_access_heuristic_restriction_rollout Last Updated"
+datagroup: set_to_default_prompt_more_often_android_new_users_80_rollout_last_updated {
+  label: "set_to_default_prompt_more_often_android_new_users_80_rollout Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'storage_access_heuristic_restriction_rollout_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'set_to_default_prompt_more_often_android_new_users_80_rollout_statistics')
 
     ) ;;
-  description: "Updates for storage_access_heuristic_restriction_rollout when referenced tables are modified."
+  description: "Updates for set_to_default_prompt_more_often_android_new_users_80_rollout when referenced tables are modified."
   max_cache_age: "24 hours"
 }
