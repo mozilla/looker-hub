@@ -6283,7 +6283,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     label: "Cookie Banners Google Gdpr Choice Cookie"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     type: string
     group_label: "Cookie Banners"
