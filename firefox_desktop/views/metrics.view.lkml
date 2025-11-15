@@ -661,6 +661,41 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__browser_customkeys_actions {
+    label: "Browser Customkeys Actions"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_customkeys_actions ;;
+    group_label: "Browser Customkeys"
+    group_item_label: "Actions"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Customkeys Actions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_customkeys_actions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The actions taken in about:keyboard.
+"
+  }
+
+  dimension: metrics__counter__browser_customkeys_opened {
+    label: "Browser Customkeys Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_customkeys_opened ;;
+    type: number
+    group_label: "Browser Customkeys"
+    group_item_label: "Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Customkeys Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_customkeys_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times about:keyboard has been opened.
+"
+  }
+
   dimension: metrics__boolean__browser_default_at_launch {
     label: "Browser Default At Launch"
     hidden: no
@@ -13396,7 +13431,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     label: "Cookie Banners Google Gdpr Choice Cookie"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     type: string
     group_label: "Cookie Banners"
@@ -39279,6 +39314,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: browser_customkeys_opened {
+    type: sum
+    sql: ${metrics__counter__browser_customkeys_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Customkeys Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_customkeys_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_customkeys_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_customkeys_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Customkeys Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_customkeys_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: browser_engagement_active_ticks {
     type: sum
     sql: ${metrics__counter__browser_engagement_active_ticks} ;;
@@ -46655,6 +46715,47 @@ view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count 
 
 view: metrics__metrics__labeled_counter__browser_attribution_errors {
   label: "Browser - Attribution Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_customkeys_actions {
+  label: "Browser Customkeys - Actions"
 
   dimension: document_id {
     type: string
