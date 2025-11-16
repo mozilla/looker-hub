@@ -10893,8 +10893,8 @@ operational_monitoring:
             default: Mac
             options:
             - Mac
-            - Linux
             - Windows
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -12650,16 +12650,16 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id461
           channel:
-            default: nightly
+            default: beta
             options:
+            - beta
             - nightly
             - release
-            - beta
           os:
-            default: Darwin
+            default: Windows_NT
             options:
-            - Darwin
             - Windows_NT
+            - Darwin
             - Linux
         explore: print_background_task_times
         group_by_dimension: null
