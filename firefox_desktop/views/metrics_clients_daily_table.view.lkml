@@ -19,11 +19,11 @@ view: metrics_clients_daily_table {
     description: "The hw.model of the hardware running this software. Mac only. e.g. \"MacBookPro14,1\""
   }
 
-  dimension: browser_backup_enabled {
-    sql: ${TABLE}.browser_backup_enabled ;;
+  dimension: browser_backup_archive_enabled {
+    sql: ${TABLE}.browser_backup_archive_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "True if the BackupService has initialized and reached idle."
+    description: "True if the user can create backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible."
   }
 
   dimension: browser_backup_scheduler_enabled {

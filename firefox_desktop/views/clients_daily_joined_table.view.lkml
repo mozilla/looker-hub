@@ -208,13 +208,11 @@ view: clients_daily_joined_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: browser_backup_enabled {
-    sql: ${TABLE}.browser_backup_enabled ;;
+  dimension: browser_backup_archive_enabled {
+    sql: ${TABLE}.browser_backup_archive_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "The value of payload.processes.parent.scalars.browser_backup_enabled most frequently seen on the submission date.
-If there is a tie, the value last seen according to submission_timestamp.
-True if the BackupService is enabled by default."
+    description: "True if the user can create backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible."
   }
 
   dimension: browser_backup_scheduler_enabled {
