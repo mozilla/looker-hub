@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       sections_rollout_us_beta_channel.branch
     ]
     filters:
-      sections_rollout_us_beta_channel.metric: 'days_of_use'
+      sections_rollout_us_beta_channel.metric: 'ad_clicks'
       sections_rollout_us_beta_channel.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       sections_rollout_us_beta_channel.branch
     ]
     filters:
-      sections_rollout_us_beta_channel.metric: 'ad_clicks'
+      sections_rollout_us_beta_channel.metric: 'active_hours'
       sections_rollout_us_beta_channel.statistic: mean
     row: 10
     col: 0
@@ -112,24 +112,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: sections_rollout_us_beta_channel
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       sections_rollout_us_beta_channel.submission_date,
       sections_rollout_us_beta_channel.branch,
+      sections_rollout_us_beta_channel.upper,
+      sections_rollout_us_beta_channel.lower,
       sections_rollout_us_beta_channel.point
     ]
     pivots: [
       sections_rollout_us_beta_channel.branch
     ]
     filters:
-      sections_rollout_us_beta_channel.metric: 'retained'
-      sections_rollout_us_beta_channel.statistic: mean
+      sections_rollout_us_beta_channel.metric: 'memory_total'
+      sections_rollout_us_beta_channel.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -142,6 +144,7 @@
     show_grid: true
     listen:
       Date: sections_rollout_us_beta_channel.submission_date
+      Percentile: sections_rollout_us_beta_channel.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -214,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +233,7 @@
       sections_rollout_us_beta_channel.branch
     ]
     filters:
-      sections_rollout_us_beta_channel.metric: 'active_hours'
+      sections_rollout_us_beta_channel.metric: 'retained'
       sections_rollout_us_beta_channel.statistic: mean
     row: 30
     col: 0
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: sections_rollout_us_beta_channel
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       sections_rollout_us_beta_channel.submission_date,
       sections_rollout_us_beta_channel.branch,
-      sections_rollout_us_beta_channel.upper,
-      sections_rollout_us_beta_channel.lower,
       sections_rollout_us_beta_channel.point
     ]
     pivots: [
       sections_rollout_us_beta_channel.branch
     ]
     filters:
-      sections_rollout_us_beta_channel.metric: 'memory_total'
-      sections_rollout_us_beta_channel.statistic: percentile
+      sections_rollout_us_beta_channel.metric: 'days_of_use'
+      sections_rollout_us_beta_channel.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: sections_rollout_us_beta_channel.submission_date
-      Percentile: sections_rollout_us_beta_channel.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

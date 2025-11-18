@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       product_insight_telemetry_via_server_knobs_rollout_release.branch
     ]
     filters:
-      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'days_of_use'
+      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'ad_clicks'
       product_insight_telemetry_via_server_knobs_rollout_release.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       product_insight_telemetry_via_server_knobs_rollout_release.branch
     ]
     filters:
-      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'ad_clicks'
+      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'active_hours'
       product_insight_telemetry_via_server_knobs_rollout_release.statistic: mean
     row: 10
     col: 0
@@ -112,24 +112,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: product_insight_telemetry_via_server_knobs_rollout_release
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       product_insight_telemetry_via_server_knobs_rollout_release.submission_date,
       product_insight_telemetry_via_server_knobs_rollout_release.branch,
+      product_insight_telemetry_via_server_knobs_rollout_release.upper,
+      product_insight_telemetry_via_server_knobs_rollout_release.lower,
       product_insight_telemetry_via_server_knobs_rollout_release.point
     ]
     pivots: [
       product_insight_telemetry_via_server_knobs_rollout_release.branch
     ]
     filters:
-      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'retained'
-      product_insight_telemetry_via_server_knobs_rollout_release.statistic: mean
+      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'memory_total'
+      product_insight_telemetry_via_server_knobs_rollout_release.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -142,6 +144,7 @@
     show_grid: true
     listen:
       Date: product_insight_telemetry_via_server_knobs_rollout_release.submission_date
+      Percentile: product_insight_telemetry_via_server_knobs_rollout_release.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -214,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +233,7 @@
       product_insight_telemetry_via_server_knobs_rollout_release.branch
     ]
     filters:
-      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'active_hours'
+      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'retained'
       product_insight_telemetry_via_server_knobs_rollout_release.statistic: mean
     row: 30
     col: 0
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: product_insight_telemetry_via_server_knobs_rollout_release
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       product_insight_telemetry_via_server_knobs_rollout_release.submission_date,
       product_insight_telemetry_via_server_knobs_rollout_release.branch,
-      product_insight_telemetry_via_server_knobs_rollout_release.upper,
-      product_insight_telemetry_via_server_knobs_rollout_release.lower,
       product_insight_telemetry_via_server_knobs_rollout_release.point
     ]
     pivots: [
       product_insight_telemetry_via_server_knobs_rollout_release.branch
     ]
     filters:
-      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'memory_total'
-      product_insight_telemetry_via_server_knobs_rollout_release.statistic: percentile
+      product_insight_telemetry_via_server_knobs_rollout_release.metric: 'days_of_use'
+      product_insight_telemetry_via_server_knobs_rollout_release.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: product_insight_telemetry_via_server_knobs_rollout_release.submission_date
-      Percentile: product_insight_telemetry_via_server_knobs_rollout_release.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

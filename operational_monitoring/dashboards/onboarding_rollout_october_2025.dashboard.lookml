@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       onboarding_rollout_october_2025.branch
     ]
     filters:
-      onboarding_rollout_october_2025.metric: 'days_of_use'
+      onboarding_rollout_october_2025.metric: 'ad_clicks'
       onboarding_rollout_october_2025.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       onboarding_rollout_october_2025.branch
     ]
     filters:
-      onboarding_rollout_october_2025.metric: 'ad_clicks'
+      onboarding_rollout_october_2025.metric: 'active_hours'
       onboarding_rollout_october_2025.statistic: mean
     row: 10
     col: 0
@@ -112,24 +112,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: onboarding_rollout_october_2025
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       onboarding_rollout_october_2025.submission_date,
       onboarding_rollout_october_2025.branch,
+      onboarding_rollout_october_2025.upper,
+      onboarding_rollout_october_2025.lower,
       onboarding_rollout_october_2025.point
     ]
     pivots: [
       onboarding_rollout_october_2025.branch
     ]
     filters:
-      onboarding_rollout_october_2025.metric: 'retained'
-      onboarding_rollout_october_2025.statistic: mean
+      onboarding_rollout_october_2025.metric: 'memory_total'
+      onboarding_rollout_october_2025.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -142,6 +144,7 @@
     show_grid: true
     listen:
       Date: onboarding_rollout_october_2025.submission_date
+      Percentile: onboarding_rollout_october_2025.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -214,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +233,7 @@
       onboarding_rollout_october_2025.branch
     ]
     filters:
-      onboarding_rollout_october_2025.metric: 'active_hours'
+      onboarding_rollout_october_2025.metric: 'retained'
       onboarding_rollout_october_2025.statistic: mean
     row: 30
     col: 0
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: onboarding_rollout_october_2025
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       onboarding_rollout_october_2025.submission_date,
       onboarding_rollout_october_2025.branch,
-      onboarding_rollout_october_2025.upper,
-      onboarding_rollout_october_2025.lower,
       onboarding_rollout_october_2025.point
     ]
     pivots: [
       onboarding_rollout_october_2025.branch
     ]
     filters:
-      onboarding_rollout_october_2025.metric: 'memory_total'
-      onboarding_rollout_october_2025.statistic: percentile
+      onboarding_rollout_october_2025.metric: 'days_of_use'
+      onboarding_rollout_october_2025.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: onboarding_rollout_october_2025.submission_date
-      Percentile: onboarding_rollout_october_2025.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
