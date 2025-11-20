@@ -380,6 +380,14 @@ view: events_stream_table {
     group_item_label: "Consecutive Crash"
   }
 
+  dimension: extras__quantity__count {
+    sql: ${TABLE}.extras.quantity.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras Quantity"
+    group_item_label: "Count"
+  }
+
   dimension: extras__quantity__groups_two_tabs_only {
     sql: ${TABLE}.extras.quantity.groups_two_tabs_only ;;
     type: number
