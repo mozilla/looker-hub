@@ -7093,7 +7093,7 @@ success - search service successfully initialized.
 
   dimension: metrics__boolean__search_suggestions_ohttp_enabled {
     label: "Search Suggestions Ohttp Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.search_suggestions_ohttp_enabled ;;
     type: yesno
     group_label: "Search Suggestions Ohttp"
@@ -62687,19 +62687,19 @@ view: metrics__metrics__labeled_counter__search_suggestions_aborted_requests {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -62728,19 +62728,19 @@ view: metrics__metrics__labeled_counter__search_suggestions_failed_requests {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -62892,19 +62892,19 @@ view: metrics__metrics__labeled_counter__search_suggestions_successful_requests 
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

@@ -215,6 +215,12 @@ view: metrics {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_configuration_monitor_type {
+    sql: ${TABLE}.metric_configuration_monitor_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_configuration_name {
     sql: ${TABLE}.metric_configuration_name ;;
     type: string

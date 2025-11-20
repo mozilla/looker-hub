@@ -332,6 +332,14 @@ view: events_stream_table {
     group_item_label: "Browser Major"
   }
 
+  dimension: extras__string__cg {
+    sql: ${TABLE}.extras.string.cg ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Cg"
+  }
+
   dimension: extras__string__choice {
     sql: ${TABLE}.extras.string.choice ;;
     type: string
@@ -346,6 +354,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras String"
     group_item_label: "Error Reason"
+  }
+
+  dimension: extras__string__hyb {
+    sql: ${TABLE}.extras.string.hyb ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Hyb"
   }
 
   dimension: extras__string__id {
@@ -388,6 +404,22 @@ view: events_stream_table {
     group_item_label: "OS Major"
   }
 
+  dimension: extras__string__ppa {
+    sql: ${TABLE}.extras.string.ppa ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Ppa"
+  }
+
+  dimension: extras__string__prf {
+    sql: ${TABLE}.extras.string.prf ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Prf"
+  }
+
   dimension: extras__string__reason {
     sql: ${TABLE}.extras.string.reason ;;
     type: string
@@ -402,6 +434,22 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras String"
     group_item_label: "Referrer"
+  }
+
+  dimension: extras__string__rel {
+    sql: ${TABLE}.extras.string.rel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Rel"
+  }
+
+  dimension: extras__string__supported {
+    sql: ${TABLE}.extras.string.supported ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Supported"
   }
 
   dimension: extras__string__title {
@@ -426,6 +474,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras String"
     group_item_label: "URL"
+  }
+
+  dimension: extras__string__uvpa {
+    sql: ${TABLE}.extras.string.uvpa ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Uvpa"
   }
 
   dimension: is_bot_generated {
