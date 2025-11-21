@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       encrypted_client_hello_fallback_mechanism.branch
     ]
     filters:
-      encrypted_client_hello_fallback_mechanism.metric: 'days_of_use'
+      encrypted_client_hello_fallback_mechanism.metric: 'qualified_cumulative_days_of_use'
       encrypted_client_hello_fallback_mechanism.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       encrypted_client_hello_fallback_mechanism.branch
     ]
     filters:
-      encrypted_client_hello_fallback_mechanism.metric: 'retained'
+      encrypted_client_hello_fallback_mechanism.metric: 'uri_count'
       encrypted_client_hello_fallback_mechanism.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       encrypted_client_hello_fallback_mechanism.branch
     ]
     filters:
-      encrypted_client_hello_fallback_mechanism.metric: 'qualified_cumulative_days_of_use'
+      encrypted_client_hello_fallback_mechanism.metric: 'ad_clicks'
       encrypted_client_hello_fallback_mechanism.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       encrypted_client_hello_fallback_mechanism.branch
     ]
     filters:
-      encrypted_client_hello_fallback_mechanism.metric: 'uri_count'
+      encrypted_client_hello_fallback_mechanism.metric: 'days_of_use'
       encrypted_client_hello_fallback_mechanism.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       encrypted_client_hello_fallback_mechanism.branch
     ]
     filters:
-      encrypted_client_hello_fallback_mechanism.metric: 'ad_clicks'
+      encrypted_client_hello_fallback_mechanism.metric: 'retained'
       encrypted_client_hello_fallback_mechanism.statistic: mean
     row: 30
     col: 12
