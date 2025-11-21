@@ -2122,6 +2122,16 @@ button in the URL bar.
 "
   }
 
+  dimension: metrics__counter__user_credit_cards_undecryptable_count {
+    sql: ${TABLE}.metrics.counter.user_credit_cards_undecryptable_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "User Credit Cards Undecryptable Count"
+    description: "Track how many undecryptable credit cards we scrub during the credit card verification process
+"
+  }
+
   dimension: metrics__counter__user_terms_of_use_dismissed_count {
     sql: ${TABLE}.metrics.counter.user_terms_of_use_dismissed_count ;;
     type: number
