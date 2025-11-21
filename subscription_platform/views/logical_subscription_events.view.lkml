@@ -928,7 +928,6 @@ This will be null for Google and Apple subscriptions."
   dimension_group: old_subscription__auto_renew_disabled_at {
     sql: ${TABLE}.old_subscription.auto_renew_disabled_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -946,7 +945,6 @@ This will be null for subscriptions set to auto-renew."
   dimension_group: old_subscription__current_period_ends_at {
     sql: ${TABLE}.old_subscription.current_period_ends_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -964,7 +962,6 @@ This will be null for inactive subscriptions."
   dimension_group: old_subscription__current_period_started_at {
     sql: ${TABLE}.old_subscription.current_period_started_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -982,7 +979,6 @@ This will be null for inactive subscriptions and for all Google subcriptions."
   dimension_group: old_subscription__ended_at {
     sql: ${TABLE}.old_subscription.ended_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1000,7 +996,6 @@ This will be null for active subscriptions."
   dimension_group: old_subscription__last_touch_attribution__impression_at {
     sql: ${TABLE}.old_subscription.last_touch_attribution.impression_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1017,7 +1012,6 @@ This will be null for active subscriptions."
   dimension_group: old_subscription__ongoing_discount_ends_at {
     sql: ${TABLE}.old_subscription.ongoing_discount_ends_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1035,7 +1029,6 @@ This will be null for Apple subscriptions."
   dimension_group: old_subscription__provider_subscription_created_at {
     sql: ${TABLE}.old_subscription.provider_subscription_created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1052,7 +1045,6 @@ This will be null for Apple subscriptions."
   dimension_group: old_subscription__provider_subscription_updated_at {
     sql: ${TABLE}.old_subscription.provider_subscription_updated_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1069,7 +1061,6 @@ This will be null for Apple subscriptions."
   dimension_group: old_subscription__started_at {
     sql: ${TABLE}.old_subscription.started_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1086,7 +1077,6 @@ This will be null for Apple subscriptions."
   dimension_group: subscription__auto_renew_disabled_at {
     sql: ${TABLE}.subscription.auto_renew_disabled_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1104,7 +1094,6 @@ This will be null for subscriptions set to auto-renew."
   dimension_group: subscription__current_period_ends_at {
     sql: ${TABLE}.subscription.current_period_ends_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1122,7 +1111,6 @@ This will be null for inactive subscriptions."
   dimension_group: subscription__current_period_started_at {
     sql: ${TABLE}.subscription.current_period_started_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1140,7 +1128,6 @@ This will be null for inactive subscriptions and for all Google subcriptions."
   dimension_group: subscription__ended_at {
     sql: ${TABLE}.subscription.ended_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1158,7 +1145,6 @@ This will be null for active subscriptions."
   dimension_group: subscription__last_touch_attribution__impression_at {
     sql: ${TABLE}.subscription.last_touch_attribution.impression_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1175,7 +1161,6 @@ This will be null for active subscriptions."
   dimension_group: subscription__ongoing_discount_ends_at {
     sql: ${TABLE}.subscription.ongoing_discount_ends_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1193,7 +1178,6 @@ This will be null for Apple subscriptions."
   dimension_group: subscription__provider_subscription_created_at {
     sql: ${TABLE}.subscription.provider_subscription_created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1210,7 +1194,6 @@ This will be null for Apple subscriptions."
   dimension_group: subscription__provider_subscription_updated_at {
     sql: ${TABLE}.subscription.provider_subscription_updated_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1227,7 +1210,6 @@ This will be null for Apple subscriptions."
   dimension_group: subscription__started_at {
     sql: ${TABLE}.subscription.started_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1244,7 +1226,6 @@ This will be null for Apple subscriptions."
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

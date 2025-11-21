@@ -199,7 +199,6 @@ view: new_profile_metrics_marketing_geo_testing_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

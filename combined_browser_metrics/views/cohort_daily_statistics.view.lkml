@@ -239,7 +239,6 @@ view: cohort_daily_statistics {
   dimension_group: activity {
     sql: ${TABLE}.activity_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -256,7 +255,6 @@ view: cohort_daily_statistics {
   dimension_group: cohort {
     sql: ${TABLE}.cohort_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

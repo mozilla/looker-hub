@@ -4323,7 +4323,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4339,7 +4338,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metrics__datetime__app_last_opened_as_default_browser {
     sql: ${TABLE}.metrics.datetime.app_last_opened_as_default_browser ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4357,7 +4355,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4375,7 +4372,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metrics__datetime__termsofuse {
     sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4393,7 +4389,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metrics__datetime__user_terms_of_use_date_accepted {
     sql: ${TABLE}.metrics.datetime.user_terms_of_use_date_accepted ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4413,7 +4408,6 @@ tracking-protection that is enabled. One of:
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4429,7 +4423,6 @@ tracking-protection that is enabled. One of:
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4445,7 +4438,6 @@ tracking-protection that is enabled. One of:
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

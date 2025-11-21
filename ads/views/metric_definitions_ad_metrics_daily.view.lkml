@@ -641,7 +641,6 @@ ad_metrics_daily_zone_name,
   dimension_group: kevel_metadata_updated_at {
     sql: ${TABLE}.ad_metrics_daily_kevel_metadata_updated_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -870,7 +870,6 @@ funnel_retention_retained_week_4_new_profiles,
   dimension_group: first_seen {
     sql: ${TABLE}.funnel_retention_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -887,7 +886,6 @@ funnel_retention_retained_week_4_new_profiles,
   dimension_group: metric {
     sql: ${TABLE}.funnel_retention_metric ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

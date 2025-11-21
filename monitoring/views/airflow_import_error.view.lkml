@@ -26,7 +26,6 @@ view: airflow_import_error {
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

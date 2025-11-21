@@ -289,7 +289,6 @@ view: desktop_installs_table {
   dimension_group: attribution_dltoken {
     sql: ${TABLE}.attribution_dltoken_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -306,7 +305,6 @@ view: desktop_installs_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

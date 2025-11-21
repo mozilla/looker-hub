@@ -71,7 +71,6 @@ view: shredder_targets_new_mismatched_targets {
   dimension_group: run {
     sql: ${TABLE}.run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -87,7 +86,6 @@ view: shredder_targets_new_mismatched_targets {
   dimension_group: table_creation {
     sql: ${TABLE}.table_creation_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

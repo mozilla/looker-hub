@@ -323,7 +323,6 @@ view: clients_first_seen_table {
   dimension_group: baseline_first_seen {
     sql: ${TABLE}.baseline_first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -339,7 +338,6 @@ view: clients_first_seen_table {
   dimension_group: baseline_submission {
     sql: ${TABLE}.baseline_submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -355,7 +353,6 @@ view: clients_first_seen_table {
   dimension_group: metric_first_seen {
     sql: ${TABLE}.metric_first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -371,7 +368,6 @@ view: clients_first_seen_table {
   dimension_group: metric_submission {
     sql: ${TABLE}.metric_submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

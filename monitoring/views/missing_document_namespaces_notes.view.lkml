@@ -38,7 +38,6 @@ view: missing_document_namespaces_notes {
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -54,7 +53,6 @@ view: missing_document_namespaces_notes {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

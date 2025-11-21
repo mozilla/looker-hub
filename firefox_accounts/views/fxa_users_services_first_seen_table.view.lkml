@@ -137,7 +137,6 @@ is created.
   dimension_group: first_service_flow {
     sql: ${TABLE}.first_service_flow_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -152,7 +151,6 @@ is created.
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

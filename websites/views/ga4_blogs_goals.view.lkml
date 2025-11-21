@@ -36,7 +36,6 @@ view: ga4_blogs_goals {
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

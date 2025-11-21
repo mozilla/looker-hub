@@ -21,7 +21,6 @@ view: airflow_user {
   dimension_group: changed_on {
     sql: ${TABLE}.changed_on ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -36,7 +35,6 @@ view: airflow_user {
   dimension_group: created_on {
     sql: ${TABLE}.created_on ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -51,7 +49,6 @@ view: airflow_user {
   dimension_group: last_login {
     sql: ${TABLE}.last_login ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

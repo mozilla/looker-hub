@@ -56,7 +56,6 @@ view: gplay_installs_by_country {
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

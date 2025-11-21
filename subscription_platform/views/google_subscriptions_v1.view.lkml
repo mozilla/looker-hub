@@ -104,7 +104,6 @@ view: google_subscriptions_v1 {
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -119,7 +118,6 @@ view: google_subscriptions_v1 {
   dimension_group: event {
     sql: ${TABLE}.event_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -134,7 +132,6 @@ view: google_subscriptions_v1 {
   dimension_group: subscription_end {
     sql: ${TABLE}.subscription_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -149,7 +146,6 @@ view: google_subscriptions_v1 {
   dimension_group: subscription_start {
     sql: ${TABLE}.subscription_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -164,7 +160,6 @@ view: google_subscriptions_v1 {
   dimension_group: trial_end {
     sql: ${TABLE}.trial_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -179,7 +174,6 @@ view: google_subscriptions_v1 {
   dimension_group: trial_start {
     sql: ${TABLE}.trial_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

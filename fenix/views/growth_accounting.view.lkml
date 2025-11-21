@@ -380,7 +380,6 @@ view: growth_accounting {
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -396,7 +395,6 @@ view: growth_accounting {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -412,7 +410,6 @@ view: growth_accounting {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -26,7 +26,6 @@ view: search_revenue_cat1 {
   dimension_group: month_year {
     sql: ${TABLE}.month_year ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

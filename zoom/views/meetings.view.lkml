@@ -64,7 +64,6 @@ Each meeting instance will generate its own meeting UUID."
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -80,7 +79,6 @@ Each meeting instance will generate its own meeting UUID."
   dimension_group: start {
     sql: ${TABLE}.start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -44,7 +44,6 @@ view: data_review_stats {
   dimension_group: update_datetime {
     sql: ${TABLE}.update_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

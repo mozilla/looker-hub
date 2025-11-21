@@ -118,7 +118,6 @@ view: groups {
   dimension_group: refreshed_at {
     sql: ${TABLE}.refreshed_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -133,7 +132,6 @@ view: groups {
   dimension_group: user_last_login_at {
     sql: ${TABLE}.user_last_login_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

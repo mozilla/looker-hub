@@ -44,7 +44,6 @@ view: health_lighthouse {
   dimension_group: fetchTime {
     sql: ${TABLE}.fetchTime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

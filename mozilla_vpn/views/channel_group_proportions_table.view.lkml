@@ -128,7 +128,6 @@ view: channel_group_proportions_table {
   dimension_group: subscription_start {
     sql: ${TABLE}.subscription_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

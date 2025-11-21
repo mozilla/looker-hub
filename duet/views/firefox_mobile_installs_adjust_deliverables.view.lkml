@@ -162,7 +162,6 @@ view: firefox_mobile_installs_adjust_deliverables {
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

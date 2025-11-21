@@ -44,7 +44,6 @@ view: urlbar_events_daily_engagement_by_position_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -36,7 +36,6 @@ view: imf_exchange_rates {
   dimension_group: last_updated {
     sql: ${TABLE}.last_updated ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -73,7 +73,6 @@ view: baseline_clients_city_seen_table {
   dimension_group: first_seen_city {
     sql: ${TABLE}.first_seen_city_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -89,7 +88,6 @@ view: baseline_clients_city_seen_table {
   dimension_group: last_seen_city {
     sql: ${TABLE}.last_seen_city_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

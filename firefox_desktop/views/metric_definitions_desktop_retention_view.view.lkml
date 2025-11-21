@@ -495,7 +495,6 @@ desktop_retention_view_startup_profile_selection_reason,
   dimension_group: first_seen {
     sql: ${TABLE}.desktop_retention_view_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -512,7 +511,6 @@ desktop_retention_view_startup_profile_selection_reason,
   dimension_group: metric {
     sql: ${TABLE}.desktop_retention_view_metric ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

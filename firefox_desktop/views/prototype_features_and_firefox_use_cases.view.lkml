@@ -80,7 +80,6 @@ view: prototype_features_and_firefox_use_cases {
   dimension_group: desktop_retention_date_yoy {
     sql: ${TABLE}.desktop_retention_date_yoy ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

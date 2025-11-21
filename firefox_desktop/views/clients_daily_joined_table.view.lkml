@@ -2364,7 +2364,6 @@ True if the BackupService is configured to automatically create backups in the b
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -2380,7 +2379,6 @@ True if the BackupService is configured to automatically create backups in the b
   dimension_group: second_seen {
     sql: ${TABLE}.second_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -2396,7 +2394,6 @@ True if the BackupService is configured to automatically create backups in the b
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -2413,7 +2410,6 @@ True if the BackupService is configured to automatically create backups in the b
   dimension_group: submission_timestamp_min {
     sql: ${TABLE}.submission_timestamp_min ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

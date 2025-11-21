@@ -32,7 +32,6 @@ view: experiment_enrollment_overall_v2 {
   dimension_group: time {
     sql: ${TABLE}.time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

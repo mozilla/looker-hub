@@ -558,7 +558,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: billing_cycle_anchor {
     sql: ${TABLE}.billing_cycle_anchor ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -574,7 +573,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: cancel_at {
     sql: ${TABLE}.cancel_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -590,7 +588,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: canceled_at {
     sql: ${TABLE}.canceled_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -606,7 +603,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -622,7 +618,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: current_period_end {
     sql: ${TABLE}.current_period_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -638,7 +633,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: current_period_start {
     sql: ${TABLE}.current_period_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -654,7 +648,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: customer__created {
     sql: ${TABLE}.customer.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -671,7 +664,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: customer__discount__coupon__created {
     sql: ${TABLE}.customer.discount.coupon.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -688,7 +680,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: customer__discount__coupon__redeem_by {
     sql: ${TABLE}.customer.discount.coupon.redeem_by ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -705,7 +696,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: customer__discount__end {
     sql: ${TABLE}.customer.discount.end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -722,7 +712,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: customer__discount__start {
     sql: ${TABLE}.customer.discount.start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -739,7 +728,6 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
   dimension_group: customer__metadata__geoip {
     sql: ${TABLE}.customer.metadata.geoip_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -757,7 +745,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: discount__coupon__created {
     sql: ${TABLE}.discount.coupon.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -774,7 +761,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: discount__coupon__redeem_by {
     sql: ${TABLE}.discount.coupon.redeem_by ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -791,7 +777,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: discount__end {
     sql: ${TABLE}.discount.end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -808,7 +793,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: discount__start {
     sql: ${TABLE}.discount.start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -825,7 +809,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: ended_at {
     sql: ${TABLE}.ended_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -841,7 +824,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: metadata__cancelled_for_customer_at {
     sql: ${TABLE}.metadata.cancelled_for_customer_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -858,7 +840,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: metadata__plan_change {
     sql: ${TABLE}.metadata.plan_change_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -875,7 +856,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -891,7 +871,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: trial_end {
     sql: ${TABLE}.trial_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -907,7 +886,6 @@ This isn't available for customers that were deleted before the initial Fivetran
   dimension_group: trial_start {
     sql: ${TABLE}.trial_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

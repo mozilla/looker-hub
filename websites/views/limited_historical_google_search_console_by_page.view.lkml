@@ -156,7 +156,6 @@ For URL-prefix properties, it will be the full URL of the property definition."
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

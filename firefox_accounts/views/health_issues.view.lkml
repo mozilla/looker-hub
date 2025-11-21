@@ -116,7 +116,6 @@ view: health_issues {
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -131,7 +130,6 @@ view: health_issues {
   dimension_group: resolutiondate {
     sql: ${TABLE}.resolutiondate ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -146,7 +144,6 @@ view: health_issues {
   dimension_group: updated {
     sql: ${TABLE}.updated ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

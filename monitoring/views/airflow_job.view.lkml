@@ -50,7 +50,6 @@ view: airflow_job {
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -65,7 +64,6 @@ view: airflow_job {
   dimension_group: latest_heartbeat {
     sql: ${TABLE}.latest_heartbeat ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -80,7 +78,6 @@ view: airflow_job {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

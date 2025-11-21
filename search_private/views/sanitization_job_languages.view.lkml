@@ -20,7 +20,6 @@ view: sanitization_job_languages {
   dimension_group: job_start {
     sql: ${TABLE}.job_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

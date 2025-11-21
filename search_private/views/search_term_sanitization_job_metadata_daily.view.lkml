@@ -104,7 +104,6 @@ view: search_term_sanitization_job_metadata_daily {
   dimension_group: finished_at {
     sql: ${TABLE}.finished_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -119,7 +118,6 @@ view: search_term_sanitization_job_metadata_daily {
   dimension_group: started_at {
     sql: ${TABLE}.started_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

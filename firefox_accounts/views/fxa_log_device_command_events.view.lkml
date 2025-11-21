@@ -68,7 +68,6 @@ view: fxa_log_device_command_events {
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

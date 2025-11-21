@@ -20,7 +20,6 @@ view: experiments_stats {
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -36,7 +35,6 @@ view: experiments_stats {
   dimension_group: enrollment_end {
     sql: ${TABLE}.enrollment_end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -52,7 +50,6 @@ view: experiments_stats {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -258,7 +258,6 @@ ad_mmm_metrics_daily_sponsor,
   dimension_group: campaign_end {
     sql: ${TABLE}.ad_mmm_metrics_daily_campaign_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -275,7 +274,6 @@ ad_mmm_metrics_daily_sponsor,
   dimension_group: campaign_start {
     sql: ${TABLE}.ad_mmm_metrics_daily_campaign_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
