@@ -2536,6 +2536,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_daily
       type: table_view
+    clients_first_seen_28_days_later_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.clients_first_seen_28_days_later
+      type: table_view
     clients_first_seen_table:
       tables:
       - channel: null

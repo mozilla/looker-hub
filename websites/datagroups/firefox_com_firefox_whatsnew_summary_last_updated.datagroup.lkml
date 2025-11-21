@@ -17,6 +17,10 @@ datagroup: firefox_com_firefox_whatsnew_summary_last_updated {
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'firefoxdotcom_derived' AND table_name = 'firefox_whatsnew_summary_v2')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'firefoxdotcom_derived' AND table_name = 'ga_sessions_v2')
 
     ) ;;
   description: "Updates for firefox_com_firefox_whatsnew_summary when referenced tables are modified."
