@@ -43,6 +43,14 @@ COALESCE(SUM(weather_widget_clicks), 0) AS weather_widget_clicks,
 COALESCE(SUM(weather_widget_load_errors), 0) AS weather_widget_load_errors,
 COALESCE(SUM(weather_widget_change_display_to_detailed), 0) AS weather_widget_change_display_to_detailed,
 COALESCE(SUM(weather_widget_change_display_to_simple), 0) AS weather_widget_change_display_to_simple,
+COALESCE(SUM(sponsored_topsite_tile_dismissals), 0) AS sponsored_tiles_dismissals,
+COALESCE(LOGICAL_OR(
+        sponsored_topsite_tile_dismissals > 0
+      ), FALSE) AS any_sponsored_tiles_dismissals,
+COALESCE(SUM(organic_topsite_tile_dismissals),0) AS organic_tiles_dismissals,
+COALESCE(LOGICAL_OR(
+        organic_topsite_tile_dismissals > 0
+      ), FALSE) AS any_organic_tiles_dismissals,
 SUM(sponsored_pocket_impressions) + SUM(sponsored_topsite_tile_impressions) AS sponsored_impressions,
 SUM(1) AS sponsored_pocket_impressions_per_client,
 SUM(1) AS sponsored_tile_impressions_per_client,
@@ -725,6 +733,38 @@ a wallpaper.
 "
     type: number
     sql: ${TABLE}.weather_widget_change_display_to_simple ;;
+  }
+
+  dimension: sponsored_tiles_dismissals {
+    group_label: "Metrics"
+    label: "Sponsored Tiles Dismissals Count"
+    description: "Count of sponsored tiles dismissals in all positions"
+    type: number
+    sql: ${TABLE}.sponsored_tiles_dismissals ;;
+  }
+
+  dimension: any_sponsored_tiles_dismissals {
+    group_label: "Metrics"
+    label: "Any Sponsored Tiles Dismissed"
+    description: "Clients that dismissed any sponsored tiles"
+    type: number
+    sql: ${TABLE}.any_sponsored_tiles_dismissals ;;
+  }
+
+  dimension: organic_tiles_dismissals {
+    group_label: "Metrics"
+    label: "Organic Tiles Dismissals Count"
+    description: "Count of organic tiles dismissals in all positions"
+    type: number
+    sql: ${TABLE}.organic_tiles_dismissals ;;
+  }
+
+  dimension: any_organic_tiles_dismissals {
+    group_label: "Metrics"
+    label: "Any Organic Tiles Dismissed"
+    description: "Clients that dismissed any organic tiles"
+    type: number
+    sql: ${TABLE}.any_organic_tiles_dismissals ;;
   }
 
   dimension: sponsored_impressions {
@@ -1668,6 +1708,10 @@ a wallpaper.
       weather_widget_load_errors,
       weather_widget_change_display_to_detailed,
       weather_widget_change_display_to_simple,
+      sponsored_tiles_dismissals,
+      any_sponsored_tiles_dismissals,
+      organic_tiles_dismissals,
+      any_organic_tiles_dismissals,
       sponsored_impressions,
       sponsored_pocket_impressions_per_client,
       sponsored_tile_impressions_per_client,
