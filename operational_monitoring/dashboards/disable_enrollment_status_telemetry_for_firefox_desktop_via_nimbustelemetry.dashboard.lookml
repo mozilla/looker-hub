@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'qualified_cumulative_days_of_use'
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'search_count'
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+    field_y: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
+    log_scale: false
+    ci_lower: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower
+    ci_upper: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper
+    show_grid: true
+    listen:
+      Date: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
+    type: looker_line
+    fields: [
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
+    ]
+    pivots: [
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
+    ]
+    filters:
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'days_of_use'
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
@@ -62,8 +96,76 @@
     filters:
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'retained'
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+    field_y: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
+    log_scale: false
+    ci_lower: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower
+    ci_upper: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper
+    show_grid: true
+    listen:
+      Date: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
+    type: looker_line
+    fields: [
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
+    ]
+    pivots: [
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
+    ]
+    filters:
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'active_hours'
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
+    row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+    field_y: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
+    log_scale: false
+    ci_lower: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower
+    ci_upper: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper
+    show_grid: true
+    listen:
+      Date: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
+    type: looker_line
+    fields: [
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
+    ]
+    pivots: [
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
+    ]
+    filters:
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'qualified_cumulative_days_of_use'
+      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
@@ -98,42 +200,7 @@
     filters:
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'memory_total'
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-    field_y: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
-    log_scale: false
-    ci_lower: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower
-    ci_upper: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper
-    show_grid: true
-    listen:
-      Date: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-      Percentile: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
-    type: looker_line
-    fields: [
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
-    ]
-    pivots: [
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
-    ]
-    filters:
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'days_of_use'
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
-    row: 10
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -145,6 +212,7 @@
     show_grid: true
     listen:
       Date: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+      Percentile: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -167,42 +235,8 @@
     filters:
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'uri_count'
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
-    row: 20
+    row: 30
     col: 0
-    width: 12
-    height: 8
-    field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-    field_y: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
-    log_scale: false
-    ci_lower: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower
-    ci_upper: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper
-    show_grid: true
-    listen:
-      Date: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
-    type: looker_line
-    fields: [
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
-    ]
-    pivots: [
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
-    ]
-    filters:
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'active_hours'
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
-    row: 20
-    col: 12
     width: 12
     height: 8
     field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'ad_clicks'
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-    field_y: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
-    log_scale: false
-    ci_lower: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower
-    ci_upper: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper
-    show_grid: true
-    listen:
-      Date: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
-    type: looker_line
-    fields: [
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
-    ]
-    pivots: [
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
-    ]
-    filters:
-      disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'search_count'
       disable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
     row: 30
     col: 12

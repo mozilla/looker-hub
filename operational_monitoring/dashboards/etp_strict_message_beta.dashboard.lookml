@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       etp_strict_message_beta.branch
     ]
     filters:
-      etp_strict_message_beta.metric: 'qualified_cumulative_days_of_use'
+      etp_strict_message_beta.metric: 'search_count'
       etp_strict_message_beta.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: etp_strict_message_beta.submission_date
+    field_y: etp_strict_message_beta.point
+    log_scale: false
+    ci_lower: etp_strict_message_beta.lower
+    ci_upper: etp_strict_message_beta.upper
+    show_grid: true
+    listen:
+      Date: etp_strict_message_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: etp_strict_message_beta
+    type: looker_line
+    fields: [
+      etp_strict_message_beta.submission_date,
+      etp_strict_message_beta.branch,
+      etp_strict_message_beta.point
+    ]
+    pivots: [
+      etp_strict_message_beta.branch
+    ]
+    filters:
+      etp_strict_message_beta.metric: 'days_of_use'
+      etp_strict_message_beta.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: etp_strict_message_beta.submission_date
@@ -62,8 +96,76 @@
     filters:
       etp_strict_message_beta.metric: 'retained'
       etp_strict_message_beta.statistic: mean
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: etp_strict_message_beta.submission_date
+    field_y: etp_strict_message_beta.point
+    log_scale: false
+    ci_lower: etp_strict_message_beta.lower
+    ci_upper: etp_strict_message_beta.upper
+    show_grid: true
+    listen:
+      Date: etp_strict_message_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: etp_strict_message_beta
+    type: looker_line
+    fields: [
+      etp_strict_message_beta.submission_date,
+      etp_strict_message_beta.branch,
+      etp_strict_message_beta.point
+    ]
+    pivots: [
+      etp_strict_message_beta.branch
+    ]
+    filters:
+      etp_strict_message_beta.metric: 'active_hours'
+      etp_strict_message_beta.statistic: mean
+    row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: etp_strict_message_beta.submission_date
+    field_y: etp_strict_message_beta.point
+    log_scale: false
+    ci_lower: etp_strict_message_beta.lower
+    ci_upper: etp_strict_message_beta.upper
+    show_grid: true
+    listen:
+      Date: etp_strict_message_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: etp_strict_message_beta
+    type: looker_line
+    fields: [
+      etp_strict_message_beta.submission_date,
+      etp_strict_message_beta.branch,
+      etp_strict_message_beta.point
+    ]
+    pivots: [
+      etp_strict_message_beta.branch
+    ]
+    filters:
+      etp_strict_message_beta.metric: 'qualified_cumulative_days_of_use'
+      etp_strict_message_beta.statistic: mean
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: etp_strict_message_beta.submission_date
@@ -98,42 +200,7 @@
     filters:
       etp_strict_message_beta.metric: 'memory_total'
       etp_strict_message_beta.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: etp_strict_message_beta.submission_date
-    field_y: etp_strict_message_beta.point
-    log_scale: false
-    ci_lower: etp_strict_message_beta.lower
-    ci_upper: etp_strict_message_beta.upper
-    show_grid: true
-    listen:
-      Date: etp_strict_message_beta.submission_date
-      Percentile: etp_strict_message_beta.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: etp_strict_message_beta
-    type: looker_line
-    fields: [
-      etp_strict_message_beta.submission_date,
-      etp_strict_message_beta.branch,
-      etp_strict_message_beta.point
-    ]
-    pivots: [
-      etp_strict_message_beta.branch
-    ]
-    filters:
-      etp_strict_message_beta.metric: 'days_of_use'
-      etp_strict_message_beta.statistic: mean
-    row: 10
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -145,6 +212,7 @@
     show_grid: true
     listen:
       Date: etp_strict_message_beta.submission_date
+      Percentile: etp_strict_message_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -167,42 +235,8 @@
     filters:
       etp_strict_message_beta.metric: 'uri_count'
       etp_strict_message_beta.statistic: mean
-    row: 20
+    row: 30
     col: 0
-    width: 12
-    height: 8
-    field_x: etp_strict_message_beta.submission_date
-    field_y: etp_strict_message_beta.point
-    log_scale: false
-    ci_lower: etp_strict_message_beta.lower
-    ci_upper: etp_strict_message_beta.upper
-    show_grid: true
-    listen:
-      Date: etp_strict_message_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: etp_strict_message_beta
-    type: looker_line
-    fields: [
-      etp_strict_message_beta.submission_date,
-      etp_strict_message_beta.branch,
-      etp_strict_message_beta.point
-    ]
-    pivots: [
-      etp_strict_message_beta.branch
-    ]
-    filters:
-      etp_strict_message_beta.metric: 'active_hours'
-      etp_strict_message_beta.statistic: mean
-    row: 20
-    col: 12
     width: 12
     height: 8
     field_x: etp_strict_message_beta.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       etp_strict_message_beta.metric: 'ad_clicks'
-      etp_strict_message_beta.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: etp_strict_message_beta.submission_date
-    field_y: etp_strict_message_beta.point
-    log_scale: false
-    ci_lower: etp_strict_message_beta.lower
-    ci_upper: etp_strict_message_beta.upper
-    show_grid: true
-    listen:
-      Date: etp_strict_message_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: etp_strict_message_beta
-    type: looker_line
-    fields: [
-      etp_strict_message_beta.submission_date,
-      etp_strict_message_beta.branch,
-      etp_strict_message_beta.point
-    ]
-    pivots: [
-      etp_strict_message_beta.branch
-    ]
-    filters:
-      etp_strict_message_beta.metric: 'search_count'
       etp_strict_message_beta.statistic: mean
     row: 30
     col: 12
