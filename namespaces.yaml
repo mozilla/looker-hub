@@ -5615,6 +5615,18 @@ monitoring:
       type: ping_explore
       views:
         base_view: schema_error_counts
+    shredder_per_table_stats:
+      type: table_explore
+      views:
+        base_view: shredder_per_table_stats
+    shredder_run_stats:
+      type: table_explore
+      views:
+        base_view: shredder_run_stats
+    shredder_targets:
+      type: table_explore
+      views:
+        base_view: shredder_targets
     stable_and_dervied_table_sizes:
       type: ping_explore
       views:
@@ -5825,6 +5837,18 @@ monitoring:
     shredder_per_job_stats:
       tables:
       - table: mozdata.monitoring.shredder_per_job_stats
+      type: table_view
+    shredder_per_table_stats:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring.shredder_per_table_stats
+      type: table_view
+    shredder_run_stats:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring.shredder_run_stats
+      type: table_view
+    shredder_targets:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring.shredder_targets
       type: table_view
     shredder_targets_new_mismatched_targets:
       tables:

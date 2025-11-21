@@ -3756,6 +3756,24 @@ tracking-protection that is enabled. One of:
 "
   }
 
+  dimension: metrics__counter__user_credit_cards_undecryptable_count {
+    label: "User Credit Cards Undecryptable Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.user_credit_cards_undecryptable_count ;;
+    type: number
+    group_label: "User Credit Cards"
+    group_item_label: "Undecryptable Count"
+
+    link: {
+      label: "Glean Dictionary reference for User Credit Cards Undecryptable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_credit_cards_undecryptable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Track how many undecryptable credit cards we scrub during the credit card verification process
+"
+  }
+
   dimension: metrics__counter__user_terms_of_use_dismissed_count {
     label: "User Terms Of Use Dismissed Count"
     hidden: no
@@ -8093,6 +8111,31 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Termsofuse Remind Me Later Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/termsofuse_remind_me_later_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: user_credit_cards_undecryptable_count {
+    type: sum
+    sql: ${metrics__counter__user_credit_cards_undecryptable_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for User Credit Cards Undecryptable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_credit_cards_undecryptable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: user_credit_cards_undecryptable_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__user_credit_cards_undecryptable_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for User Credit Cards Undecryptable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_credit_cards_undecryptable_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
