@@ -26,7 +26,6 @@ view: experiment_cumulative_search_with_ads_count {
   dimension_group: time {
     sql: ${TABLE}.time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

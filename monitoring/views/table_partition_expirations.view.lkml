@@ -53,7 +53,6 @@ view: table_partition_expirations {
   dimension_group: first_non_empty_partition_current {
     sql: ${TABLE}.first_non_empty_partition_current ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -70,7 +69,6 @@ view: table_partition_expirations {
   dimension_group: first_non_empty_partition_historical {
     sql: ${TABLE}.first_non_empty_partition_historical ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -88,7 +86,6 @@ view: table_partition_expirations {
   dimension_group: first_partition_current {
     sql: ${TABLE}.first_partition_current ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -105,7 +102,6 @@ view: table_partition_expirations {
   dimension_group: first_partition_historical {
     sql: ${TABLE}.first_partition_historical ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -122,7 +118,6 @@ view: table_partition_expirations {
   dimension_group: next_deletion {
     sql: ${TABLE}.next_deletion_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -140,7 +135,6 @@ view: table_partition_expirations {
   dimension_group: run {
     sql: ${TABLE}.run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

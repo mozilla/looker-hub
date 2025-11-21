@@ -302,7 +302,6 @@ view: issue {
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -317,7 +316,6 @@ view: issue {
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -332,7 +330,6 @@ view: issue {
   dimension_group: due {
     sql: ${TABLE}.due_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -348,7 +345,6 @@ view: issue {
   dimension_group: last_viewed {
     sql: ${TABLE}.last_viewed ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -363,7 +359,6 @@ view: issue {
   dimension_group: resolved {
     sql: ${TABLE}.resolved ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -378,7 +373,6 @@ view: issue {
   dimension_group: status_category_changed {
     sql: ${TABLE}.status_category_changed ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -393,7 +387,6 @@ view: issue {
   dimension_group: time {
     sql: ${TABLE}.time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -408,7 +401,6 @@ view: issue {
   dimension_group: updated {
     sql: ${TABLE}.updated ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

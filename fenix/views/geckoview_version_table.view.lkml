@@ -20,7 +20,6 @@ view: geckoview_version_table {
   dimension_group: build_hour {
     sql: ${TABLE}.build_hour ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

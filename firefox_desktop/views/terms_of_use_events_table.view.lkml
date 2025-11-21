@@ -72,7 +72,6 @@ for analysis. It is a pipeline-generated artifact that should match between ping
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

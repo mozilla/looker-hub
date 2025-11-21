@@ -44,7 +44,6 @@ view: calendar {
   dimension_group: first_date_of_month {
     sql: ${TABLE}.first_date_of_month ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -61,7 +60,6 @@ view: calendar {
   dimension_group: first_date_of_quarter {
     sql: ${TABLE}.first_date_of_quarter ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -78,7 +76,6 @@ view: calendar {
   dimension_group: first_date_of_week {
     sql: ${TABLE}.first_date_of_week ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -94,7 +91,6 @@ view: calendar {
   dimension_group: first_date_of_year {
     sql: ${TABLE}.first_date_of_year ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -110,7 +106,6 @@ view: calendar {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -276,7 +276,6 @@ view: virtual_tables {
   dimension_group: refreshed_at {
     sql: ${TABLE}.refreshed_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

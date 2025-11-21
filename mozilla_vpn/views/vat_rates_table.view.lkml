@@ -27,7 +27,6 @@ view: vat_rates_table {
   dimension_group: effective {
     sql: ${TABLE}.effective_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

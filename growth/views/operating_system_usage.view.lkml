@@ -57,7 +57,6 @@ view: operating_system_usage {
   dimension_group: dte {
     sql: ${TABLE}.dte ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -74,7 +73,6 @@ view: operating_system_usage {
   dimension_group: last_updated_ts {
     sql: ${TABLE}.last_updated_ts ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

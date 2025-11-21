@@ -68,7 +68,6 @@ view: firefox_ltv {
   dimension_group: set {
     sql: ${TABLE}.set_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

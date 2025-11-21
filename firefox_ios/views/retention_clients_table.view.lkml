@@ -200,7 +200,6 @@ view: retention_clients_table {
   dimension_group: adjust_attribution {
     sql: ${TABLE}.adjust_attribution_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -215,7 +214,6 @@ view: retention_clients_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -231,7 +229,6 @@ view: retention_clients_table {
   dimension_group: metric {
     sql: ${TABLE}.metric_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -247,7 +244,6 @@ view: retention_clients_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

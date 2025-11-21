@@ -14,7 +14,6 @@ view: active_subscription_ids {
   dimension_group: active {
     sql: ${TABLE}.active_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

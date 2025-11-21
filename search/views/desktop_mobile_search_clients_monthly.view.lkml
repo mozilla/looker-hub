@@ -80,7 +80,6 @@ view: desktop_mobile_search_clients_monthly {
   dimension_group: submission_month {
     sql: ${TABLE}.submission_month ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

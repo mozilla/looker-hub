@@ -104,7 +104,6 @@ for analysis. It is a pipeline-generated artifact that should match between ping
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -123,7 +122,6 @@ by the ETL process.
   dimension_group: terms_of_use_date_accepted {
     sql: ${TABLE}.terms_of_use_date_accepted ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

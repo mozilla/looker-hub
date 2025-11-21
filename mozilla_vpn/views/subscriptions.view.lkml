@@ -289,7 +289,6 @@ view: subscriptions {
   dimension_group: attribution {
     sql: ${TABLE}.attribution_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -304,7 +303,6 @@ view: subscriptions {
   dimension_group: cancel_at {
     sql: ${TABLE}.cancel_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -319,7 +317,6 @@ view: subscriptions {
   dimension_group: canceled_at {
     sql: ${TABLE}.canceled_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -334,7 +331,6 @@ view: subscriptions {
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -349,7 +345,6 @@ view: subscriptions {
   dimension_group: customer_start {
     sql: ${TABLE}.customer_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -364,7 +359,6 @@ view: subscriptions {
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -379,7 +373,6 @@ view: subscriptions {
   dimension_group: ended_at {
     sql: ${TABLE}.ended_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -394,7 +387,6 @@ view: subscriptions {
   dimension_group: event {
     sql: ${TABLE}.event_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -409,7 +401,6 @@ view: subscriptions {
   dimension_group: original_subscription_start {
     sql: ${TABLE}.original_subscription_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -424,7 +415,6 @@ view: subscriptions {
   dimension_group: subscription_start {
     sql: ${TABLE}.subscription_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -439,7 +429,6 @@ view: subscriptions {
   dimension_group: trial_end {
     sql: ${TABLE}.trial_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -454,7 +443,6 @@ view: subscriptions {
   dimension_group: trial_start {
     sql: ${TABLE}.trial_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -469,7 +457,6 @@ view: subscriptions {
   dimension_group: user_registration {
     sql: ${TABLE}.user_registration_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

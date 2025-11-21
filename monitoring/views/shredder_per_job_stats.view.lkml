@@ -92,7 +92,6 @@ view: shredder_per_job_stats {
   dimension_group: end {
     sql: ${TABLE}.end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -107,7 +106,6 @@ view: shredder_per_job_stats {
   dimension_group: partition {
     sql: ${TABLE}.partition_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -123,7 +121,6 @@ view: shredder_per_job_stats {
   dimension_group: shredder_run {
     sql: ${TABLE}.shredder_run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -139,7 +136,6 @@ view: shredder_per_job_stats {
   dimension_group: start {
     sql: ${TABLE}.start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

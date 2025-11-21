@@ -49,7 +49,6 @@ view: bigquery_tables_inventory {
   dimension_group: creation {
     sql: ${TABLE}.creation_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -66,7 +65,6 @@ view: bigquery_tables_inventory {
   dimension_group: deletion {
     sql: ${TABLE}.deletion_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -83,7 +81,6 @@ view: bigquery_tables_inventory {
   dimension_group: last_modified {
     sql: ${TABLE}.last_modified_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -100,7 +97,6 @@ view: bigquery_tables_inventory {
   dimension_group: last_used {
     sql: ${TABLE}.last_used_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -117,7 +113,6 @@ view: bigquery_tables_inventory {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

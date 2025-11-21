@@ -103,7 +103,6 @@ view: task_definitions_base {
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -118,7 +117,6 @@ view: task_definitions_base {
   dimension_group: deadline {
     sql: ${TABLE}.deadline ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -133,7 +131,6 @@ view: task_definitions_base {
   dimension_group: expires {
     sql: ${TABLE}.expires ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -148,7 +145,6 @@ view: task_definitions_base {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

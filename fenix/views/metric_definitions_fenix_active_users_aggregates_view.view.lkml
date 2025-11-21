@@ -1076,7 +1076,6 @@ fenix_active_users_aggregates_view_weekly_users,
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

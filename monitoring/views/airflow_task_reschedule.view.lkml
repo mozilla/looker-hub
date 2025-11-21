@@ -43,7 +43,6 @@ view: airflow_task_reschedule {
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -59,7 +58,6 @@ view: airflow_task_reschedule {
   dimension_group: reschedule {
     sql: ${TABLE}.reschedule_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -75,7 +73,6 @@ view: airflow_task_reschedule {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

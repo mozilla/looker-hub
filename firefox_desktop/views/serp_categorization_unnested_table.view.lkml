@@ -152,7 +152,6 @@ view: serp_categorization_unnested_table {
   dimension_group: glean {
     sql: ${TABLE}.glean_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -167,7 +166,6 @@ view: serp_categorization_unnested_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

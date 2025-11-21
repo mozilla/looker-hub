@@ -886,7 +886,6 @@ feature_usage_metrics_v1_metrics_tabs_open_count_users,
   dimension_group: metric {
     sql: ${TABLE}.feature_usage_metrics_v1_metric ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

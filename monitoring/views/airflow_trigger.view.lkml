@@ -38,7 +38,6 @@ view: airflow_trigger {
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -53,7 +52,6 @@ view: airflow_trigger {
   dimension_group: created {
     sql: ${TABLE}.created_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

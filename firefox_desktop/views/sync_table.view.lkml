@@ -863,7 +863,6 @@ Expected in most cases to be identical to `client_info.os_version`.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -879,7 +878,6 @@ Expected in most cases to be identical to `client_info.os_version`.
   dimension_group: metrics__datetime__syncs_session_start {
     sql: ${TABLE}.metrics.datetime.syncs_session_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -899,7 +897,6 @@ Typically useful for ordering \"sync\" pings.
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -915,7 +912,6 @@ Typically useful for ordering \"sync\" pings.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -931,7 +927,6 @@ Typically useful for ordering \"sync\" pings.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

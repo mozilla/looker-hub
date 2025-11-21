@@ -92,7 +92,6 @@ view: airflow_dag {
   dimension_group: last_parsed {
     sql: ${TABLE}.last_parsed_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -108,7 +107,6 @@ view: airflow_dag {
   dimension_group: next_dagrun {
     sql: ${TABLE}.next_dagrun ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -123,7 +121,6 @@ view: airflow_dag {
   dimension_group: next_dagrun_create_after {
     sql: ${TABLE}.next_dagrun_create_after ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -138,7 +135,6 @@ view: airflow_dag {
   dimension_group: next_dagrun_data_interval_end {
     sql: ${TABLE}.next_dagrun_data_interval_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -153,7 +149,6 @@ view: airflow_dag {
   dimension_group: next_dagrun_data_interval_start {
     sql: ${TABLE}.next_dagrun_data_interval_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

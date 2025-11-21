@@ -309,7 +309,6 @@ view: funnel_product_page_to_subscribed_table {
   dimension_group: partition {
     sql: ${TABLE}.partition_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -50,7 +50,6 @@ view: task_runs_base {
   dimension_group: resolved {
     sql: ${TABLE}.resolved ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -65,7 +64,6 @@ view: task_runs_base {
   dimension_group: scheduled {
     sql: ${TABLE}.scheduled ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -80,7 +78,6 @@ view: task_runs_base {
   dimension_group: started {
     sql: ${TABLE}.started ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -95,7 +92,6 @@ view: task_runs_base {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

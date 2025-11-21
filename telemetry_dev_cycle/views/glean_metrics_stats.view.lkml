@@ -32,7 +32,6 @@ view: glean_metrics_stats {
   dimension_group: expired {
     sql: ${TABLE}.expired_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -48,7 +47,6 @@ view: glean_metrics_stats {
   dimension_group: last {
     sql: ${TABLE}.last_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -64,7 +62,6 @@ view: glean_metrics_stats {
   dimension_group: release {
     sql: ${TABLE}.release_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

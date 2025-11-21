@@ -154,7 +154,6 @@ www_site_landing_page_metrics_operating_system,
   dimension_group: date {
     sql: ${TABLE}.www_site_landing_page_metrics_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

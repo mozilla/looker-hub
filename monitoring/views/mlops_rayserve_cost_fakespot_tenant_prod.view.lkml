@@ -26,7 +26,6 @@ view: mlops_rayserve_cost_fakespot_tenant_prod {
   dimension_group: invoice_day {
     sql: ${TABLE}.invoice_day ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

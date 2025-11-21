@@ -92,7 +92,6 @@ view: bigquery_table_storage {
   dimension_group: creation {
     sql: ${TABLE}.creation_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

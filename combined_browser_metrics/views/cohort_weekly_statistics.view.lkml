@@ -212,7 +212,6 @@ view: cohort_weekly_statistics {
   dimension_group: activity_date_week {
     sql: ${TABLE}.activity_date_week ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -229,7 +228,6 @@ view: cohort_weekly_statistics {
   dimension_group: cohort_date_week {
     sql: ${TABLE}.cohort_date_week ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

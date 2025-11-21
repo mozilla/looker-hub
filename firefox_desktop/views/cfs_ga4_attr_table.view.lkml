@@ -543,7 +543,6 @@ view: cfs_ga4_attr_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -560,7 +559,6 @@ view: cfs_ga4_attr_table {
   dimension_group: ga4_session {
     sql: ${TABLE}.ga4_session_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -576,7 +574,6 @@ view: cfs_ga4_attr_table {
   dimension_group: ga4_session_start {
     sql: ${TABLE}.ga4_session_start_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -591,7 +588,6 @@ view: cfs_ga4_attr_table {
   dimension_group: stub_attr_logs_first_seen {
     sql: ${TABLE}.stub_attr_logs_first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -607,7 +603,6 @@ view: cfs_ga4_attr_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

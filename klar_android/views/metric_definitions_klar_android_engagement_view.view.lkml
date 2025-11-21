@@ -751,7 +751,6 @@ klar_android_engagement_view_wau,
   dimension_group: first_seen {
     sql: ${TABLE}.klar_android_engagement_view_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

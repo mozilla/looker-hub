@@ -261,7 +261,6 @@ view: ltv_ios_aggregates_table {
   dimension_group: profile_creation_month {
     sql: ${TABLE}.profile_creation_month ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -277,7 +276,6 @@ view: ltv_ios_aggregates_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

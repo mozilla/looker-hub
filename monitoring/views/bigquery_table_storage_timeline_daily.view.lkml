@@ -106,7 +106,6 @@ view: bigquery_table_storage_timeline_daily {
   dimension_group: change {
     sql: ${TABLE}.change_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -123,7 +122,6 @@ view: bigquery_table_storage_timeline_daily {
   dimension_group: creation {
     sql: ${TABLE}.creation_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -427,7 +427,6 @@ The branding, model, and marketing name used to identify the mobile device."
   dimension_group: session {
     sql: ${TABLE}.session_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -444,7 +443,6 @@ The branding, model, and marketing name used to identify the mobile device."
   dimension_group: session_start {
     sql: ${TABLE}.session_start_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -75,7 +75,6 @@ view: campaign_metrics_daily {
   dimension_group: campaign_end {
     sql: ${TABLE}.campaign_end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -91,7 +90,6 @@ view: campaign_metrics_daily {
   dimension_group: campaign_start {
     sql: ${TABLE}.campaign_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -107,7 +105,6 @@ view: campaign_metrics_daily {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -26,7 +26,6 @@ view: mlops_job_cost_per_job_run {
   dimension_group: invoice_day {
     sql: ${TABLE}.invoice_day ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

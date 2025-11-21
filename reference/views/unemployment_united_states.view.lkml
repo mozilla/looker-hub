@@ -15,7 +15,6 @@ view: unemployment_united_states {
   dimension_group: LastUpdated {
     sql: ${TABLE}.LastUpdated ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -32,7 +31,6 @@ view: unemployment_united_states {
   dimension_group: PeriodStartDate {
     sql: ${TABLE}.PeriodStartDate ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -94,7 +94,6 @@ display_fail_reason = \"oversold\" corresponds to tiles we fail to display as al
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

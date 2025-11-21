@@ -62,7 +62,6 @@ view: subscriptions_table {
   dimension_group: apple_receipt__active_period__end {
     sql: ${TABLE}.apple_receipt.active_period.end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -78,7 +77,6 @@ view: subscriptions_table {
   dimension_group: apple_receipt__active_period__start {
     sql: ${TABLE}.apple_receipt.active_period.start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -94,7 +92,6 @@ view: subscriptions_table {
   dimension_group: apple_receipt__trial_period__end {
     sql: ${TABLE}.apple_receipt.trial_period.end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -110,7 +107,6 @@ view: subscriptions_table {
   dimension_group: apple_receipt__trial_period__start {
     sql: ${TABLE}.apple_receipt.trial_period.start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -126,7 +122,6 @@ view: subscriptions_table {
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -141,7 +136,6 @@ view: subscriptions_table {
   dimension_group: ended_at {
     sql: ${TABLE}.ended_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -156,7 +150,6 @@ view: subscriptions_table {
   dimension_group: updated_at {
     sql: ${TABLE}.updated_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

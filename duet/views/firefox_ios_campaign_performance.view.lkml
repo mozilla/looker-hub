@@ -80,7 +80,6 @@ view: firefox_ios_campaign_performance {
   dimension_group: date_day {
     sql: ${TABLE}.date_day ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

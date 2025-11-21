@@ -52826,7 +52826,6 @@ Set near startup and stable until shutdown.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52842,7 +52841,6 @@ Set near startup and stable until shutdown.
   dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
     sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52860,7 +52858,6 @@ Set near startup and stable until shutdown.
   dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
     sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52878,7 +52875,6 @@ Set near startup and stable until shutdown.
   dimension_group: metrics__datetime__blocklist_mlbf_generation {
     sql: ${TABLE}.metrics.datetime.blocklist_mlbf_generation_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52896,7 +52892,6 @@ Set near startup and stable until shutdown.
   dimension_group: metrics__datetime__blocklist_mlbf_softblocks_generation {
     sql: ${TABLE}.metrics.datetime.blocklist_mlbf_softblocks_generation_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52914,7 +52909,6 @@ Set near startup and stable until shutdown.
   dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
     sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52932,7 +52926,6 @@ Set near startup and stable until shutdown.
   dimension_group: metrics__datetime__blocklist_mlbf_stash_time_oldest {
     sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52950,7 +52943,6 @@ Set near startup and stable until shutdown.
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52968,7 +52960,6 @@ Set near startup and stable until shutdown.
   dimension_group: metrics__datetime__legacy_telemetry_session_start {
     sql: ${TABLE}.metrics.datetime.legacy_telemetry_session_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -52988,7 +52979,6 @@ Likely near to the (wall-clock) time that the application started.
   dimension_group: metrics__datetime__termsofuse {
     sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -53006,7 +52996,6 @@ Likely near to the (wall-clock) time that the application started.
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -53022,7 +53011,6 @@ Likely near to the (wall-clock) time that the application started.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -53038,7 +53026,6 @@ Likely near to the (wall-clock) time that the application started.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

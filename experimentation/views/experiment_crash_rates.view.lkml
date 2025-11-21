@@ -32,7 +32,6 @@ view: experiment_crash_rates {
   dimension_group: window_end {
     sql: ${TABLE}.window_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -47,7 +46,6 @@ view: experiment_crash_rates {
   dimension_group: window_start {
     sql: ${TABLE}.window_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -146,7 +146,6 @@ view: airflow_task_instance {
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -161,7 +160,6 @@ view: airflow_task_instance {
   dimension_group: queued_dttm {
     sql: ${TABLE}.queued_dttm ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -176,7 +174,6 @@ view: airflow_task_instance {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -191,7 +188,6 @@ view: airflow_task_instance {
   dimension_group: trigger_timeout {
     sql: ${TABLE}.trigger_timeout ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

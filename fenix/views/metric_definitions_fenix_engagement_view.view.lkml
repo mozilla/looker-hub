@@ -1004,7 +1004,6 @@ fenix_engagement_view_wau,
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1021,7 +1020,6 @@ fenix_engagement_view_wau,
   dimension_group: first_seen {
     sql: ${TABLE}.fenix_engagement_view_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
