@@ -2355,10 +2355,6 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_newtab_clients_daily_aggregates
-    metric_definitions_newtab_visits_topsite_tile_interactions:
-      type: metric_definitions_explore
-      views:
-        base_view: metric_definitions_newtab_visits_topsite_tile_interactions
     metric_definitions_normandy_events:
       type: metric_definitions_explore
       views:
@@ -2867,8 +2863,6 @@ firefox_desktop:
     metric_definitions_newtab_clients_daily:
       type: metric_definitions_view
     metric_definitions_newtab_clients_daily_aggregates:
-      type: metric_definitions_view
-    metric_definitions_newtab_visits_topsite_tile_interactions:
       type: metric_definitions_view
     metric_definitions_normandy_events:
       type: metric_definitions_view
