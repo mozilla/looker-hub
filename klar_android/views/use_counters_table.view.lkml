@@ -15205,7 +15205,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc Math Ml Deprecated Mo Explicit Accent"
-    description: "Whether a document used MathML_DeprecateMoExplicitAccent. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+    description: "Whether a document used MathML_DeprecatedMoExplicitAccent. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15466,6 +15466,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc Window Content Untrusted"
     description: "Whether a document used WindowContentUntrusted. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_xsltdeprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_xsltdeprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Xsltdeprecated"
+    description: "Whether a document used XSLTDeprecated. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -16106,6 +16116,16 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Window Content Untrusted"
     description: "Whether a page used WindowContentUntrusted. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_xsltdeprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_xsltdeprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Xsltdeprecated"
+    description: "Whether a page used XSLTDeprecated. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
