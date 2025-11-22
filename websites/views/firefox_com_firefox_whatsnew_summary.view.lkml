@@ -89,6 +89,12 @@ view: firefox_com_firefox_whatsnew_summary {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: engaged_session {
+    sql: ${TABLE}.engaged_session ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: engagement_time_msec {
     sql: ${TABLE}.engagement_time_msec ;;
     type: number
@@ -414,6 +420,12 @@ view: firefox_com_firefox_whatsnew_summary {
 
   dimension: traffic_source_source {
     sql: ${TABLE}.traffic_source_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: visit_identifier {
+    sql: ${TABLE}.visit_identifier ;;
     type: string
     suggest_persist_for: "24 hours"
   }
