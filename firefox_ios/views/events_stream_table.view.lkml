@@ -508,6 +508,14 @@ view: events_stream_table {
     group_item_label: "Action"
   }
 
+  dimension: extras__string__action_type {
+    sql: ${TABLE}.extras.string.action_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Action Type"
+  }
+
   dimension: extras__string__action_uuid {
     sql: ${TABLE}.extras.string.action_uuid ;;
     type: string
@@ -1066,6 +1074,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras String"
     group_item_label: "Tou Version"
+  }
+
+  dimension: extras__string__translation_flow_id {
+    sql: ${TABLE}.extras.string.translation_flow_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras String"
+    group_item_label: "Translation Flow ID"
   }
 
   dimension: extras__string__trigger {
