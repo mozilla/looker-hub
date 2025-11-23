@@ -75,7 +75,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\".
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\", \"os version\".
 "
   }
 
