@@ -949,6 +949,21 @@ view: stripe_subscriptions__default_tax_rates {
     suggest_persist_for: "24 hours"
     description: "Tax rate percentage out of 100. For tax calculations with `automatic_tax[enabled]=true`, this percentage includes the statutory tax rate of non-taxable jurisdictions."
   }
+
+  dimension_group: created {
+    sql: ${TABLE}.created ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Time at which the tax rate was created."
+  }
 }
 
 view: stripe_subscriptions__items {
@@ -1117,5 +1132,68 @@ view: stripe_subscriptions__items {
     type: number
     suggest_persist_for: "24 hours"
     description: "The quantity of the plan to which the customer should be subscribed."
+  }
+
+  dimension_group: created {
+    sql: ${TABLE}.created ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Time at which the subscription item was created."
+  }
+
+  dimension_group: plan__created {
+    sql: ${TABLE}.plan.created ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Plan: Created"
+    description: "Time at which the plan was created."
+  }
+
+  dimension_group: plan__product__created {
+    sql: ${TABLE}.plan.product.created ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Plan Product: Created"
+    description: "Time at which the product was created."
+  }
+
+  dimension_group: plan__product__updated {
+    sql: ${TABLE}.plan.product.updated ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Plan Product: Updated"
+    description: "Time at which the product was last updated."
   }
 }

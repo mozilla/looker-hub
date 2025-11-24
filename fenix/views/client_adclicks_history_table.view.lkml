@@ -30,4 +30,19 @@ view: client_adclicks_history_table__ad_click_history {
     type: number
     suggest_persist_for: "24 hours"
   }
+
+  dimension_group: key {
+    sql: ${TABLE}.key ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
 }

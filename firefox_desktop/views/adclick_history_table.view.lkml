@@ -27,4 +27,20 @@ view: adclick_history_table__ad_click_history {
     suggest_persist_for: "24 hours"
     description: "The total number of ad_clicks for the submission_date"
   }
+
+  dimension_group: key {
+    sql: ${TABLE}.key ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "The date associated with the ad_click value"
+  }
 }

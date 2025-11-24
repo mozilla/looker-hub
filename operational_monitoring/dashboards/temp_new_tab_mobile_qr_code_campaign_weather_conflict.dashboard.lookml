@@ -78,45 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: temp_new_tab_mobile_qr_code_campaign_weather_conflict
-    type: "ci-line-chart"
-    fields: [
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date,
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch,
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.upper,
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.lower,
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
-    ]
-    pivots: [
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch
-    ]
-    filters:
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'memory_total'
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
-    field_y: temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
-    log_scale: false
-    ci_lower: temp_new_tab_mobile_qr_code_campaign_weather_conflict.lower
-    ci_upper: temp_new_tab_mobile_qr_code_campaign_weather_conflict.upper
-    show_grid: true
-    listen:
-      Date: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
-      Percentile: temp_new_tab_mobile_qr_code_campaign_weather_conflict.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +94,41 @@
       temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch
     ]
     filters:
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'active_hours'
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'uri_count'
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
+    field_y: temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
+    log_scale: false
+    ci_lower: temp_new_tab_mobile_qr_code_campaign_weather_conflict.lower
+    ci_upper: temp_new_tab_mobile_qr_code_campaign_weather_conflict.upper
+    show_grid: true
+    listen:
+      Date: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: temp_new_tab_mobile_qr_code_campaign_weather_conflict
+    type: looker_line
+    fields: [
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date,
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch,
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
+    ]
+    pivots: [
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch
+    ]
+    filters:
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'ad_clicks'
       temp_new_tab_mobile_qr_code_campaign_weather_conflict.statistic: mean
     row: 10
     col: 12
@@ -183,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: temp_new_tab_mobile_qr_code_campaign_weather_conflict
-    type: looker_line
-    fields: [
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date,
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch,
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
-    ]
-    pivots: [
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch
-    ]
-    filters:
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'ad_clicks'
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
-    field_y: temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
-    log_scale: false
-    ci_lower: temp_new_tab_mobile_qr_code_campaign_weather_conflict.lower
-    ci_upper: temp_new_tab_mobile_qr_code_campaign_weather_conflict.upper
-    show_grid: true
-    listen:
-      Date: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -235,6 +198,40 @@
     filters:
       temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'search_count'
       temp_new_tab_mobile_qr_code_campaign_weather_conflict.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
+    field_y: temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
+    log_scale: false
+    ci_lower: temp_new_tab_mobile_qr_code_campaign_weather_conflict.lower
+    ci_upper: temp_new_tab_mobile_qr_code_campaign_weather_conflict.upper
+    show_grid: true
+    listen:
+      Date: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: temp_new_tab_mobile_qr_code_campaign_weather_conflict
+    type: looker_line
+    fields: [
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date,
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch,
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
+    ]
+    pivots: [
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch
+    ]
+    filters:
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'active_hours'
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: temp_new_tab_mobile_qr_code_campaign_weather_conflict
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date,
       temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch,
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.upper,
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.lower,
       temp_new_tab_mobile_qr_code_campaign_weather_conflict.point
     ]
     pivots: [
       temp_new_tab_mobile_qr_code_campaign_weather_conflict.branch
     ]
     filters:
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'uri_count'
-      temp_new_tab_mobile_qr_code_campaign_weather_conflict.statistic: mean
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.metric: 'memory_total'
+      temp_new_tab_mobile_qr_code_campaign_weather_conflict.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: temp_new_tab_mobile_qr_code_campaign_weather_conflict.submission_date
+      Percentile: temp_new_tab_mobile_qr_code_campaign_weather_conflict.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
