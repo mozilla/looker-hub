@@ -509,7 +509,7 @@ view: metrics__latest_metric_runs {
     sql: ${TABLE}.metricRunAnnotation.entityInfo.createdBy ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation Entityinfo"
+    group_label: "Metricrunannotation: Entityinfo"
     group_item_label: "Createdby"
   }
 
@@ -517,7 +517,7 @@ view: metrics__latest_metric_runs {
     sql: ${TABLE}.metricRunAnnotation.entityInfo.createdEpochSeconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation Entityinfo"
+    group_label: "Metricrunannotation: Entityinfo"
     group_item_label: "Createdepochseconds"
   }
 
@@ -525,7 +525,7 @@ view: metrics__latest_metric_runs {
     sql: ${TABLE}.metricRunAnnotation.entityInfo.updatedBy ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation Entityinfo"
+    group_label: "Metricrunannotation: Entityinfo"
     group_item_label: "Updatedby"
   }
 
@@ -533,7 +533,7 @@ view: metrics__latest_metric_runs {
     sql: ${TABLE}.metricRunAnnotation.entityInfo.updatedEpochSeconds ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation Entityinfo"
+    group_label: "Metricrunannotation: Entityinfo"
     group_item_label: "Updatedepochseconds"
   }
 
@@ -684,7 +684,7 @@ view: metrics__metric_configuration_thresholds {
     sql: ${TABLE}.autoThreshold.bound.boundType ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Autothreshold Bound"
+    group_label: "Autothreshold: Bound"
     group_item_label: "Boundtype"
   }
 
@@ -692,7 +692,7 @@ view: metrics__metric_configuration_thresholds {
     sql: ${TABLE}.autoThreshold.bound.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Autothreshold Bound"
+    group_label: "Autothreshold: Bound"
     group_item_label: "Value"
   }
 
@@ -724,7 +724,7 @@ view: metrics__metric_configuration_thresholds {
     sql: ${TABLE}.constantThreshold.bound.boundType ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Constantthreshold Bound"
+    group_label: "Constantthreshold: Bound"
     group_item_label: "Boundtype"
   }
 
@@ -732,7 +732,7 @@ view: metrics__metric_configuration_thresholds {
     sql: ${TABLE}.constantThreshold.bound.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Constantthreshold Bound"
+    group_label: "Constantthreshold: Bound"
     group_item_label: "Value"
   }
 
@@ -740,7 +740,7 @@ view: metrics__metric_configuration_thresholds {
     sql: ${TABLE}.freshnessScheduleThreshold.bound.boundType ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold Bound"
+    group_label: "Freshnessschedulethreshold: Bound"
     group_item_label: "Boundtype"
   }
 
@@ -748,7 +748,7 @@ view: metrics__metric_configuration_thresholds {
     sql: ${TABLE}.freshnessScheduleThreshold.bound.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold Bound"
+    group_label: "Freshnessschedulethreshold: Bound"
     group_item_label: "Value"
   }
 
@@ -764,7 +764,7 @@ view: metrics__metric_configuration_thresholds {
     sql: ${TABLE}.freshnessScheduleThreshold.delayAtUpdate.intervalType ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold Delayatupdate"
+    group_label: "Freshnessschedulethreshold: Delayatupdate"
     group_item_label: "Intervaltype"
   }
 
@@ -772,7 +772,7 @@ view: metrics__metric_configuration_thresholds {
     sql: ${TABLE}.freshnessScheduleThreshold.delayAtUpdate.intervalValue ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold Delayatupdate"
+    group_label: "Freshnessschedulethreshold: Delayatupdate"
     group_item_label: "Intervalvalue"
   }
 

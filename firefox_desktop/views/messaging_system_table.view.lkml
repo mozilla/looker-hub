@@ -78,7 +78,7 @@ view: messaging_system_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: messaging_system_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: messaging_system_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: messaging_system_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: messaging_system_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: messaging_system_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metrics.counter.messaging_system_event_context_parse_error ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Messaging System Event Context Parse Error"
     description: "How often we failed to parse event_context as JSON.
 "
@@ -463,7 +463,7 @@ view: messaging_system_table {
     sql: ${TABLE}.metrics.counter.messaging_system_unknown_key_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Messaging System Unknown Key Count"
     description: "The sum of all unknown keys counted.
 Useful for testing.
@@ -544,7 +544,7 @@ You may have forgotten to define an appropriate metric in
     sql: ${TABLE}.metrics.quantity.messaging_system_event_screen_index ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Messaging System Event Screen Index"
     description: "A number identifier of the screen index in a sequence of screens
 (e.g. 0 for first message).
@@ -555,7 +555,7 @@ You may have forgotten to define an appropriate metric in
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -566,7 +566,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.messaging_system_action ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Action"
     description: "What type of action resulted in the event. One of \"IMPRESSION\" or \"DISMISS\".
 "
@@ -576,7 +576,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.messaging_system_addon_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Addon Version"
     description: "Used to hold the system addon's version, now is almost certainly an echo of the app's build id.
 "
@@ -586,7 +586,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Campaign"
     description: "Attribution's campaign, possibly derived from the utm parameter of the
 same name.
@@ -597,7 +597,7 @@ same name.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Content"
     description: "Attribution's content, possibly derived from the utm parameter of the
 same name.
@@ -608,7 +608,7 @@ same name.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_dlsource ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Dlsource"
     description: "Mozilla-specific download \"source\" name. Could be something like
 \"mozillaci\" to identify that the installer came from
@@ -620,7 +620,7 @@ same name.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_dltoken ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Dltoken"
     description: "String representation of the dltoken identifying the particular
 installer used to install this Firefox.
@@ -632,7 +632,7 @@ Likely a UUID, if present.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Experiment"
     description: "Attribution's experiment key.
 "
@@ -642,7 +642,7 @@ Likely a UUID, if present.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Medium"
     description: "Attribution's medium, possibly derived from the utm parameter of the same
 name.
@@ -653,7 +653,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_msstoresignedin ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Msstoresignedin"
     description: "Either the string \"true\" or the string \"false\" to indicate whether the
 attributed install came from the Microsoft store and, if so, whether the
@@ -665,7 +665,7 @@ user was signed in at the time.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Source"
     description: "Attribution's source, possibly derived from the utm parameter of the same
 name.
@@ -676,7 +676,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_ua ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Ua"
     description: "Attribution's ua key.
 "
@@ -686,7 +686,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_attribution_variation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Attribution Variation"
     description: "Attribution's variation key.
 "
@@ -696,7 +696,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_bucket_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Bucket ID"
     description: "A name shared between multiple messages that may individually be too targetted. e.g. a message that gets shown on specific websites or a message asking about personal information.
 "
@@ -706,7 +706,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_event ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Event"
     description: "The type of event. Any user defined string (e.g. “IMPRESSION”, “CLICK_BUTTON”, \"INDEXEDDB_OPEN_FAILED\", “SESSION_END”)
 "
@@ -716,7 +716,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_event_page ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Event Page"
     description: "The event_context's `page`. Almost always \"about:welcome\".
 "
@@ -726,7 +726,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_event_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Event Reason"
     description: "The event_context's `reason`. Likely something like
 \"welcome-window-closed\" or \"app-shut-down\",.
@@ -737,7 +737,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_event_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Event Source"
     description: "The event_context's `source`. Likely something like \"primary_button\".
 "
@@ -747,7 +747,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Locale"
     description: "The locale as supplied to the messaging system by `Services.locale.appLocaleAsBCP47`.
 "
@@ -757,7 +757,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_page ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Page"
     description: "One of [”about:newtab”, “about:home”, “about:welcome”, “unknown” (which either means not-applicable or is a bug)].
 "
@@ -767,7 +767,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_ping_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Ping Type"
     description: "Type of event the ping is capturing. e.g. \"cfr\", \"onboarding\"
 "
@@ -777,7 +777,7 @@ name.
     sql: ${TABLE}.metrics.string.messaging_system_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Messaging System Source"
     description: "The source of the interaction described by the other metrics. e.g. \"frecent_links\", \"newtab\", \"CFR\"
 "
@@ -792,7 +792,7 @@ name.
     sql: ${TABLE}.metrics.text.messaging_system_cfr_action ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Messaging System Cfr Action"
   }
 
@@ -800,7 +800,7 @@ name.
     sql: ${TABLE}.metrics.text.messaging_system_event_context ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Messaging System Event Context"
   }
 
@@ -808,7 +808,7 @@ name.
     sql: ${TABLE}.metrics.text.messaging_system_event_screen_family ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Messaging System Event Screen Family"
   }
 
@@ -816,7 +816,7 @@ name.
     sql: ${TABLE}.metrics.text.messaging_system_event_screen_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Messaging System Event Screen ID"
   }
 
@@ -824,7 +824,7 @@ name.
     sql: ${TABLE}.metrics.text.messaging_system_event_screen_initials ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Messaging System Event Screen Initials"
   }
 
@@ -832,7 +832,7 @@ name.
     sql: ${TABLE}.metrics.text.messaging_system_message_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Messaging System Message ID"
   }
 
@@ -840,7 +840,7 @@ name.
     sql: ${TABLE}.metrics.text2.messaging_system_cfr_action ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Messaging System Cfr Action"
     description: "The Contextual Feature Recommender's action.
 "
@@ -850,7 +850,7 @@ name.
     sql: ${TABLE}.metrics.text2.messaging_system_event_context ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Messaging System Event Context"
     description: "The stringified JSON of `event_context`.
 "
@@ -860,7 +860,7 @@ name.
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_family ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Messaging System Event Screen Family"
     description: "A string identifier of the message family derived from the message id
 (e.g. MR_WELCOME_DEFAULT).
@@ -871,7 +871,7 @@ name.
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Messaging System Event Screen ID"
     description: "A string identifier of the message screen id
 (e.g. AW_MOBILE_DOWNLOAD).
@@ -882,7 +882,7 @@ name.
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_initials ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Messaging System Event Screen Initials"
     description: "A string identifier of the message screen initials
 (e.g. 'EMAG' for EASY_SETUP, MOBILE_DOWNLOADS, AMO, GRATITUDE).
@@ -893,7 +893,7 @@ name.
     sql: ${TABLE}.metrics.text2.messaging_system_message_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Messaging System Message ID"
     description: "A string identifier of the message in Activity Stream Router.
 "
@@ -903,7 +903,7 @@ name.
     sql: ${TABLE}.metrics.uuid.messaging_system_browser_session_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Messaging System Browser Session ID"
     description: "The Legacy Telemetry browser \"session id\". Identifies a specific period from application start to shutdown. See [the \"main\" ping docs](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/main-ping.html) for details.
 "
@@ -913,7 +913,7 @@ name.
     sql: ${TABLE}.metrics.uuid.messaging_system_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Messaging System Client ID"
     description: "The client_id according to Telemetry.
 Might not always have a value due to policy around specific types of
@@ -931,7 +931,7 @@ Present only in some circumstances (see
     sql: ${TABLE}.metrics.uuid.messaging_system_impression_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Messaging System Impression ID"
     description: "The unique impression identifier for a specific client.
 "
@@ -1035,7 +1035,7 @@ Present only in some circumstances (see
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -1144,7 +1144,7 @@ view: messaging_system_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1152,7 +1152,7 @@ view: messaging_system_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

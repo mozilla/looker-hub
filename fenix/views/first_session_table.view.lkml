@@ -72,7 +72,7 @@ view: first_session_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -80,7 +80,7 @@ view: first_session_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -93,7 +93,7 @@ view: first_session_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -101,7 +101,7 @@ view: first_session_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -109,7 +109,7 @@ view: first_session_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -151,7 +151,7 @@ view: first_session_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -239,7 +239,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -247,7 +247,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -256,7 +256,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -264,7 +264,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -272,7 +272,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -280,7 +280,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -288,7 +288,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -296,7 +296,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -304,7 +304,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -317,7 +317,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -325,7 +325,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -333,7 +333,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -341,7 +341,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -349,7 +349,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -357,7 +357,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -365,7 +365,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -373,7 +373,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -381,7 +381,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -389,7 +389,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -397,7 +397,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -405,7 +405,7 @@ view: first_session_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -413,7 +413,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.datetime.raw_first_session_timestamp ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw First Session Timestamp"
   }
 
@@ -441,7 +441,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.first_session_adgroup ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "First Session Adgroup"
   }
 
@@ -449,7 +449,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.first_session_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "First Session Campaign"
   }
 
@@ -457,7 +457,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.first_session_creative ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "First Session Creative"
   }
 
@@ -465,7 +465,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.first_session_distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "First Session Distribution ID"
   }
 
@@ -473,7 +473,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.first_session_install_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "First Session Install Source"
   }
 
@@ -481,7 +481,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.first_session_network ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "First Session Network"
   }
 
@@ -489,7 +489,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
@@ -497,7 +497,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.meta_attribution_app ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Meta Attribution App"
   }
 
@@ -505,7 +505,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.meta_attribution_nonce ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Meta Attribution Nonce"
   }
 
@@ -513,7 +513,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.meta_attribution_t ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Meta Attribution T"
   }
 
@@ -521,7 +521,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.play_store_attribution_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Play Store Attribution Campaign"
   }
 
@@ -529,7 +529,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.play_store_attribution_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Play Store Attribution Content"
   }
 
@@ -537,7 +537,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.play_store_attribution_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Play Store Attribution Medium"
   }
 
@@ -545,7 +545,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.play_store_attribution_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Play Store Attribution Source"
   }
 
@@ -553,7 +553,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.string.play_store_attribution_term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Play Store Attribution Term"
   }
 
@@ -566,7 +566,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.text.meta_attribution_data ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Meta Attribution Data"
   }
 
@@ -574,7 +574,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.text.play_store_attribution_install_referrer_response ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Play Store Attribution Install Referrer Response"
   }
 
@@ -582,7 +582,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.text2.meta_attribution_data ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Meta Attribution Data"
   }
 
@@ -590,7 +590,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.text2.play_store_attribution_install_referrer_response ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Play Store Attribution Install Referrer Response"
   }
 
@@ -598,7 +598,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timespan.first_session_adjust_attribution_timespan.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan First Session Adjust Attribution Timespan"
+    group_label: "Metrics: Timespan: First Session Adjust Attribution Timespan"
     group_item_label: "Time Unit"
   }
 
@@ -606,7 +606,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timespan.first_session_adjust_attribution_timespan.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan First Session Adjust Attribution Timespan"
+    group_label: "Metrics: Timespan: First Session Adjust Attribution Timespan"
     group_item_label: "Value"
   }
 
@@ -614,7 +614,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_label: "Metrics: Timing Distribution: First Session Adjust Attribution Time"
     group_item_label: "Bucket Count"
   }
 
@@ -622,7 +622,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_label: "Metrics: Timing Distribution: First Session Adjust Attribution Time"
     group_item_label: "Count"
   }
 
@@ -630,7 +630,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_label: "Metrics: Timing Distribution: First Session Adjust Attribution Time"
     group_item_label: "Histogram Type"
   }
 
@@ -638,7 +638,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_label: "Metrics: Timing Distribution: First Session Adjust Attribution Time"
     group_item_label: "Overflow"
   }
 
@@ -651,7 +651,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_label: "Metrics: Timing Distribution: First Session Adjust Attribution Time"
     group_item_label: "Sum"
   }
 
@@ -659,7 +659,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_label: "Metrics: Timing Distribution: First Session Adjust Attribution Time"
     group_item_label: "Time Unit"
   }
 
@@ -667,7 +667,7 @@ view: first_session_table {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_label: "Metrics: Timing Distribution: First Session Adjust Attribution Time"
     group_item_label: "Underflow"
   }
 
@@ -777,7 +777,7 @@ view: first_session_table {
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: metrics__datetime__first_session {
@@ -792,7 +792,7 @@ view: first_session_table {
       quarter,
       year,
     ]
-    label: "Metrics Datetime: First Session Timestamp"
+    label: "Metrics: Datetime: First Session Timestamp"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -944,7 +944,7 @@ view: first_session_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -952,7 +952,7 @@ view: first_session_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

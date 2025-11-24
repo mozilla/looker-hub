@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: glean_baseline_clients_first_seen_table {
+  dimension: app_build_id {
+    sql: ${TABLE}.app_build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string

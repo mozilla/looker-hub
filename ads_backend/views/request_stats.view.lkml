@@ -6,7 +6,7 @@
 
 view: request_stats {
   dimension: metrics__string__ad_country_code {
-    label: "Ad Country Code"
+    label: "Ad: Country Code"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_country_code ;;
     type: string
@@ -14,7 +14,7 @@ view: request_stats {
     group_item_label: "Country Code"
 
     link: {
-      label: "Glean Dictionary reference for Ad Country Code"
+      label: "Glean Dictionary reference for Ad: Country Code"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_country_code"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -24,7 +24,7 @@ view: request_stats {
   }
 
   dimension: metrics__string__ad_region_code {
-    label: "Ad Region Code"
+    label: "Ad: Region Code"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_region_code ;;
     type: string
@@ -32,7 +32,7 @@ view: request_stats {
     group_item_label: "Region Code"
 
     link: {
-      label: "Glean Dictionary reference for Ad Region Code"
+      label: "Glean Dictionary reference for Ad: Region Code"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_region_code"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -42,7 +42,7 @@ view: request_stats {
   }
 
   dimension: metrics__string__ad_client_form_factor {
-    label: "Ad Client Form Factor"
+    label: "Ad Client: Form Factor"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_client_form_factor ;;
     type: string
@@ -50,7 +50,7 @@ view: request_stats {
     group_item_label: "Form Factor"
 
     link: {
-      label: "Glean Dictionary reference for Ad Client Form Factor"
+      label: "Glean Dictionary reference for Ad Client: Form Factor"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_form_factor"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -60,7 +60,7 @@ view: request_stats {
   }
 
   dimension: metrics__string__ad_client_placement {
-    label: "Ad Client Placement"
+    label: "Ad Client: Placement"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_client_placement ;;
     type: string
@@ -68,7 +68,7 @@ view: request_stats {
     group_item_label: "Placement"
 
     link: {
-      label: "Glean Dictionary reference for Ad Client Placement"
+      label: "Glean Dictionary reference for Ad Client: Placement"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_placement"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -78,7 +78,7 @@ view: request_stats {
   }
 
   dimension: metrics__quantity__technical_operations_count_filtered {
-    label: "Technical Operations Count Filtered"
+    label: "Technical Operations: Count Filtered"
     hidden: no
     sql: ${TABLE}.metrics.quantity.technical_operations_count_filtered ;;
     type: number
@@ -86,7 +86,7 @@ view: request_stats {
     group_item_label: "Count Filtered"
 
     link: {
-      label: "Glean Dictionary reference for Technical Operations Count Filtered"
+      label: "Glean Dictionary reference for Technical Operations: Count Filtered"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_count_filtered"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -96,7 +96,7 @@ view: request_stats {
   }
 
   dimension: metrics__quantity__technical_operations_count_requested {
-    label: "Technical Operations Count Requested"
+    label: "Technical Operations: Count Requested"
     hidden: no
     sql: ${TABLE}.metrics.quantity.technical_operations_count_requested ;;
     type: number
@@ -104,7 +104,7 @@ view: request_stats {
     group_item_label: "Count Requested"
 
     link: {
-      label: "Glean Dictionary reference for Technical Operations Count Requested"
+      label: "Glean Dictionary reference for Technical Operations: Count Requested"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_count_requested"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -114,7 +114,7 @@ view: request_stats {
   }
 
   dimension: metrics__quantity__technical_operations_count_returned {
-    label: "Technical Operations Count Returned"
+    label: "Technical Operations: Count Returned"
     hidden: no
     sql: ${TABLE}.metrics.quantity.technical_operations_count_returned ;;
     type: number
@@ -122,7 +122,7 @@ view: request_stats {
     group_item_label: "Count Returned"
 
     link: {
-      label: "Glean Dictionary reference for Technical Operations Count Returned"
+      label: "Glean Dictionary reference for Technical Operations: Count Returned"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_count_returned"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -132,7 +132,7 @@ view: request_stats {
   }
 
   dimension: metrics__string__technical_operations_request_id {
-    label: "Technical Operations Request ID"
+    label: "Technical Operations: Request ID"
     hidden: no
     sql: ${TABLE}.metrics.string.technical_operations_request_id ;;
     type: string
@@ -140,7 +140,7 @@ view: request_stats {
     group_item_label: "Request ID"
 
     link: {
-      label: "Glean Dictionary reference for Technical Operations Request ID"
+      label: "Glean Dictionary reference for Technical Operations: Request ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_request_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -222,7 +222,7 @@ view: request_stats {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -231,7 +231,7 @@ view: request_stats {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -245,7 +245,7 @@ view: request_stats {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -254,7 +254,7 @@ view: request_stats {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -263,7 +263,7 @@ view: request_stats {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -310,7 +310,7 @@ view: request_stats {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -409,7 +409,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -417,7 +417,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -427,7 +427,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -436,7 +436,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -445,7 +445,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -454,7 +454,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -463,7 +463,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -472,7 +472,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -480,7 +480,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -493,7 +493,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -502,7 +502,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -511,7 +511,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -520,7 +520,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -529,7 +529,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -538,7 +538,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -547,7 +547,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -556,7 +556,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -565,7 +565,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -574,7 +574,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -582,7 +582,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -590,7 +590,7 @@ view: request_stats {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -692,7 +692,7 @@ view: request_stats {
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -810,7 +810,7 @@ view: request_stats__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -818,7 +818,7 @@ view: request_stats__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

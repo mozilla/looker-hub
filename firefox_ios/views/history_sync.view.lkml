@@ -6,7 +6,7 @@
 
 view: history_sync {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -14,7 +14,7 @@ view: history_sync {
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -25,14 +25,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -43,14 +43,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -61,14 +61,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -79,14 +79,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -97,7 +97,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_string__history_sync_failure_reason {
-    label: "History Sync Failure Reason"
+    label: "History Sync: Failure Reason"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_string.history_sync_failure_reason ;;
     type: string
@@ -105,7 +105,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Failure Reason"
 
     link: {
-      label: "Glean Dictionary reference for History Sync Failure Reason"
+      label: "Glean Dictionary reference for History Sync: Failure Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_failure_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -115,14 +115,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__history_sync_incoming {
-    label: "History Sync Incoming"
+    label: "History Sync: Incoming"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.history_sync_incoming ;;
     group_label: "History Sync"
     group_item_label: "Incoming"
 
     link: {
-      label: "Glean Dictionary reference for History Sync Incoming"
+      label: "Glean Dictionary reference for History Sync: Incoming"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_incoming"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -132,14 +132,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__history_sync_outgoing {
-    label: "History Sync Outgoing"
+    label: "History Sync: Outgoing"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.history_sync_outgoing ;;
     group_label: "History Sync"
     group_item_label: "Outgoing"
 
     link: {
-      label: "Glean Dictionary reference for History Sync Outgoing"
+      label: "Glean Dictionary reference for History Sync: Outgoing"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_outgoing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -149,7 +149,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__history_sync_outgoing_batches {
-    label: "History Sync Outgoing Batches"
+    label: "History Sync: Outgoing Batches"
     hidden: yes
     sql: ${TABLE}.metrics.counter.history_sync_outgoing_batches ;;
     type: number
@@ -157,7 +157,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Outgoing Batches"
 
     link: {
-      label: "Glean Dictionary reference for History Sync Outgoing Batches"
+      label: "Glean Dictionary reference for History Sync: Outgoing Batches"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_outgoing_batches"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -167,7 +167,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__history_sync_uid {
-    label: "History Sync Uid"
+    label: "History Sync: Uid"
     hidden: yes
     sql: ${TABLE}.metrics.string.history_sync_uid ;;
     type: string
@@ -175,7 +175,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Uid"
 
     link: {
-      label: "Glean Dictionary reference for History Sync Uid"
+      label: "Glean Dictionary reference for History Sync: Uid"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_uid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -185,7 +185,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_string__history_sync_v2_failure_reason {
-    label: "History Sync V2 Failure Reason"
+    label: "History Sync V2: Failure Reason"
     hidden: no
     sql: ${TABLE}.metrics.labeled_string.history_sync_v2_failure_reason ;;
     type: string
@@ -193,7 +193,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Failure Reason"
 
     link: {
-      label: "Glean Dictionary reference for History Sync V2 Failure Reason"
+      label: "Glean Dictionary reference for History Sync V2: Failure Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_v2_failure_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -203,14 +203,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__history_sync_v2_incoming {
-    label: "History Sync V2 Incoming"
+    label: "History Sync V2: Incoming"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.history_sync_v2_incoming ;;
     group_label: "History Sync V2"
     group_item_label: "Incoming"
 
     link: {
-      label: "Glean Dictionary reference for History Sync V2 Incoming"
+      label: "Glean Dictionary reference for History Sync V2: Incoming"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_v2_incoming"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -220,14 +220,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__history_sync_v2_outgoing {
-    label: "History Sync V2 Outgoing"
+    label: "History Sync V2: Outgoing"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.history_sync_v2_outgoing ;;
     group_label: "History Sync V2"
     group_item_label: "Outgoing"
 
     link: {
-      label: "Glean Dictionary reference for History Sync V2 Outgoing"
+      label: "Glean Dictionary reference for History Sync V2: Outgoing"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_v2_outgoing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -237,7 +237,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__history_sync_v2_outgoing_batches {
-    label: "History Sync V2 Outgoing Batches"
+    label: "History Sync V2: Outgoing Batches"
     hidden: no
     sql: ${TABLE}.metrics.counter.history_sync_v2_outgoing_batches ;;
     type: number
@@ -245,7 +245,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Outgoing Batches"
 
     link: {
-      label: "Glean Dictionary reference for History Sync V2 Outgoing Batches"
+      label: "Glean Dictionary reference for History Sync V2: Outgoing Batches"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_v2_outgoing_batches"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -255,7 +255,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__history_sync_v2_uid {
-    label: "History Sync V2 Uid"
+    label: "History Sync V2: Uid"
     hidden: no
     sql: ${TABLE}.metrics.string.history_sync_v2_uid ;;
     type: string
@@ -263,7 +263,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Uid"
 
     link: {
-      label: "Glean Dictionary reference for History Sync V2 Uid"
+      label: "Glean Dictionary reference for History Sync V2: Uid"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_sync_v2_uid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -273,7 +273,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__uuid__sync_sync_uuid {
-    label: "Sync Sync UUID"
+    label: "Sync: Sync UUID"
     hidden: yes
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
@@ -281,7 +281,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Sync UUID"
 
     link: {
-      label: "Glean Dictionary reference for Sync Sync UUID"
+      label: "Glean Dictionary reference for Sync: Sync UUID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/sync_sync_uuid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -291,7 +291,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__uuid__sync_v2_sync_uuid {
-    label: "Sync V2 Sync UUID"
+    label: "Sync V2: Sync UUID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.sync_v2_sync_uuid ;;
     type: string
@@ -299,7 +299,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Sync UUID"
 
     link: {
-      label: "Glean Dictionary reference for Sync V2 Sync UUID"
+      label: "Glean Dictionary reference for Sync V2: Sync UUID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/sync_v2_sync_uuid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -375,7 +375,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -383,7 +383,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -396,7 +396,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -404,7 +404,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -412,7 +412,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -454,7 +454,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -543,7 +543,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -551,7 +551,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -560,7 +560,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -568,7 +568,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -576,7 +576,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -584,7 +584,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -592,7 +592,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -600,7 +600,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -608,7 +608,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -621,7 +621,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -629,7 +629,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -637,7 +637,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -645,7 +645,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -653,7 +653,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -661,7 +661,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -669,7 +669,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -677,7 +677,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -685,7 +685,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -693,7 +693,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -701,7 +701,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -709,7 +709,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -803,7 +803,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension_group: metrics__datetime__history_sync_finished_at {
-    label: "History Sync Finished At"
+    label: "History Sync: Finished At"
     hidden: yes
     sql: ${TABLE}.metrics.datetime.history_sync_finished_at ;;
     type: time
@@ -821,7 +821,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension_group: metrics__datetime__history_sync_started_at {
-    label: "History Sync Started At"
+    label: "History Sync: Started At"
     hidden: yes
     sql: ${TABLE}.metrics.datetime.history_sync_started_at ;;
     type: time
@@ -839,7 +839,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension_group: metrics__datetime__history_sync_v2_finished_at {
-    label: "History Sync V2 Finished At"
+    label: "History Sync V2: Finished At"
     hidden: no
     sql: ${TABLE}.metrics.datetime.history_sync_v2_finished_at ;;
     type: time
@@ -857,7 +857,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension_group: metrics__datetime__history_sync_v2_started_at {
-    label: "History Sync V2 Started At"
+    label: "History Sync V2: Started At"
     hidden: no
     sql: ${TABLE}.metrics.datetime.history_sync_v2_started_at ;;
     type: time
@@ -886,7 +886,7 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -1004,7 +1004,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: history_sync__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1045,7 +1045,7 @@ view: history_sync__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: history_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1086,7 +1086,7 @@ view: history_sync__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: history_sync__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1127,7 +1127,7 @@ view: history_sync__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: history_sync__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1168,7 +1168,7 @@ view: history_sync__metrics__labeled_counter__glean_error_invalid_value {
 }
 
 view: history_sync__metrics__labeled_counter__history_sync_incoming {
-  label: "History Sync - Incoming"
+  label: "History Sync: Incoming"
 
   dimension: document_id {
     type: string
@@ -1209,7 +1209,7 @@ view: history_sync__metrics__labeled_counter__history_sync_incoming {
 }
 
 view: history_sync__metrics__labeled_counter__history_sync_outgoing {
-  label: "History Sync - Outgoing"
+  label: "History Sync: Outgoing"
 
   dimension: document_id {
     type: string
@@ -1250,7 +1250,7 @@ view: history_sync__metrics__labeled_counter__history_sync_outgoing {
 }
 
 view: history_sync__metrics__labeled_counter__history_sync_v2_incoming {
-  label: "History Sync V2 - Incoming"
+  label: "History Sync V2: Incoming"
 
   dimension: document_id {
     type: string
@@ -1291,7 +1291,7 @@ view: history_sync__metrics__labeled_counter__history_sync_v2_incoming {
 }
 
 view: history_sync__metrics__labeled_counter__history_sync_v2_outgoing {
-  label: "History Sync V2 - Outgoing"
+  label: "History Sync V2: Outgoing"
 
   dimension: document_id {
     type: string
@@ -1417,7 +1417,7 @@ view: history_sync__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1425,7 +1425,7 @@ view: history_sync__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

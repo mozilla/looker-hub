@@ -9,7 +9,7 @@ view: subscriptions_table {
     sql: ${TABLE}.apple_receipt.active_period.interval ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Apple Receipt Active Period"
+    group_label: "Apple Receipt: Active Period"
     group_item_label: "Interval"
   }
 
@@ -17,7 +17,7 @@ view: subscriptions_table {
     sql: ${TABLE}.apple_receipt.active_period.interval_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Apple Receipt Active Period"
+    group_label: "Apple Receipt: Active Period"
     group_item_label: "Interval Count"
   }
 
@@ -71,7 +71,7 @@ view: subscriptions_table {
       quarter,
       year,
     ]
-    label: "Apple Receipt Active Period: End Time"
+    label: "Apple Receipt: Active Period: End Time"
   }
 
   dimension_group: apple_receipt__active_period__start {
@@ -86,7 +86,7 @@ view: subscriptions_table {
       quarter,
       year,
     ]
-    label: "Apple Receipt Active Period: Start Time"
+    label: "Apple Receipt: Active Period: Start Time"
   }
 
   dimension_group: apple_receipt__trial_period__end {
@@ -101,7 +101,7 @@ view: subscriptions_table {
       quarter,
       year,
     ]
-    label: "Apple Receipt Trial Period: End Time"
+    label: "Apple Receipt: Trial Period: End Time"
   }
 
   dimension_group: apple_receipt__trial_period__start {
@@ -116,7 +116,7 @@ view: subscriptions_table {
       quarter,
       year,
     ]
-    label: "Apple Receipt Trial Period: Start Time"
+    label: "Apple Receipt: Trial Period: Start Time"
   }
 
   dimension_group: created_at {

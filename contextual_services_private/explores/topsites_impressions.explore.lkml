@@ -18,7 +18,7 @@ explore: topsites_impressions {
   }
 
   join: topsites_impression__experiments {
-    view_label: "Topsites Impression  Experiments"
+    view_label: "Topsites Impression: Experiments"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression.experiments}) AS topsites_impression__experiments ;;
   }

@@ -12,13 +12,13 @@ explore: events_stream_table {
   view_name: events_stream_table
 
   join: events_stream_table__metrics__labeled_boolean__standard_marketing {
-    view_label: "Events Stream Table  Metrics  Labeled Boolean  Standard Marketing"
+    view_label: "Events Stream Table: Metrics: Labeled Boolean: Standard Marketing"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${events_stream_table.metrics__labeled_boolean__standard_marketing}) AS events_stream_table__metrics__labeled_boolean__standard_marketing ;;
   }
 
   join: events_stream_table__metrics__labeled_boolean__sync_cwts {
-    view_label: "Events Stream Table  Metrics  Labeled Boolean  Sync Cwts"
+    view_label: "Events Stream Table: Metrics: Labeled Boolean: Sync Cwts"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${events_stream_table.metrics__labeled_boolean__sync_cwts}) AS events_stream_table__metrics__labeled_boolean__sync_cwts ;;
   }

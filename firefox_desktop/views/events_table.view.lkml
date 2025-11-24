@@ -78,7 +78,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: events_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: events_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: events_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: events_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: events_table {
     sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Policies Is Enterprise"
     description: "Attempt to determine if the user is an enterprise user based on various signals. This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise.
 "
@@ -463,7 +463,7 @@ view: events_table {
     sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Search Engine Default Overridden By Third Party"
     description: "Set to true if the user's default search engine has been allowed to be
 overridden by a third-party add-on or OpenSearch engine.
@@ -474,7 +474,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.search_engine_private_overridden_by_third_party ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Search Engine Private Overridden By Third Party"
     description: "Set to true if the user's default search engine has been allowed to be
 overridden by a third-party add-on or OpenSearch engine.
@@ -485,7 +485,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_quicksuggest_data_collection ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Quicksuggest Data Collection"
     description: "Whether the user has opted in to data collection for Firefox Suggest, i.e., online suggestions served from Merino. Corresponds to the value of the `browser.urlbar.quicksuggest.dataCollection.enabled` pref.
 "
@@ -495,7 +495,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_quicksuggest_nonsponsored ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Quicksuggest Nonsponsored"
     description: "Whether non-sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.nonsponsored` pref.
 "
@@ -505,7 +505,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_quicksuggest_sponsored ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Quicksuggest Sponsored"
     description: "Whether sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.sponsored` pref.
 "
@@ -515,7 +515,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_all ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Suggest All"
     description: "Whether Suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.all` pref.
 "
@@ -525,7 +525,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_data_collection ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Suggest Data Collection"
     description: "Whether the user has opted in to data collection for Firefox Suggest, i.e., online suggestions served from Merino. Corresponds to the value of the `browser.urlbar.quicksuggest.dataCollection.enabled` pref.
 "
@@ -535,7 +535,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_nonsponsored ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Suggest Nonsponsored"
     description: "Whether non-sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.nonsponsored` pref.
 "
@@ -545,7 +545,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_available ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Suggest Online Available"
     description: "Whether online Suggest is available to the user. Corresponds to the Nimbus variable `quickSuggestOnlineAvailable` and its fallback pref `browser.urlbar.quicksuggest.online.available`. NOTE: \"Online Suggest\" in this context means the new version of online Suggest introduced in 146 with Terms of Use and OHTTP.
 "
@@ -555,7 +555,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Suggest Online Enabled"
     description: "This pref is true for all users by default! You probably want to use this in conjunction with pref_suggest_online_available and/or restrict your analysis to user populations where you know online Suggest is available. Corresponds to `browser.urlbar.quicksuggest.online.enabled`. NOTE: \"Online Suggest\" in this context means the new version of online Suggest introduced in 146 with Terms of Use and OHTTP.
 "
@@ -565,7 +565,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_sponsored ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Suggest Sponsored"
     description: "Whether sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.sponsored` pref.
 "
@@ -575,7 +575,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_topsites ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Urlbar Pref Suggest Topsites"
     description: "Whether topsite results are enabled in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.topsites` pref.
 "
@@ -585,7 +585,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.boolean.usage_is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Usage Is Default Browser"
     description: "Whether Firefox is set as the default browser.
 "
@@ -595,7 +595,7 @@ overridden by a third-party add-on or OpenSearch engine.
     sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Browser Engagement Active Ticks"
     description: "The number of five-second intervals ('ticks') the user was considered
 'active'.
@@ -612,7 +612,7 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
     sql: ${TABLE}.metrics.counter.browser_engagement_tab_open_event_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Browser Engagement Tab Open Event Count"
     description: "The count of tab open events per subsession, across all windows, after the session has been restored. This includes tab open events from private windows and from manual session restorations (i.e. after crashes and from about:home), but excludes tabs opened vertically. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.tab_open_event_count.
 "
@@ -622,7 +622,7 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
     sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Browser Engagement URI Count"
     description: "The number of total non-unique http(s) URIs visited, including page
 reloads, after the session has been restored. URIs on minimized or
@@ -701,7 +701,7 @@ Mapped to client_info.distribution.ext in datasets.
     sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Browser Engagement Max Concurrent Tab Count"
     description: "The count of maximum number of tabs open during a subsession, across all windows, including tabs in private windows and restored at startup. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.max_concurrent_tab_count.
 "
@@ -711,7 +711,7 @@ Mapped to client_info.distribution.ext in datasets.
     sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Urlbar Pref Max Results"
     description: "Maximum results to show in the Address Bar. Corresponds to the value of the `browser.urlbar.maxRichResults` pref.
 "
@@ -721,7 +721,7 @@ Mapped to client_info.distribution.ext in datasets.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -732,7 +732,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.region_home_region ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Region Home Region"
     description: "Records the detected home region of the user. This is the general region of the user's machine.
 If a machine moves location, there is a minimum 2-week delay before this will be updated.
@@ -744,7 +744,7 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     sql: ${TABLE}.metrics.string.search_engine_default_display_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Engine Default Display Name"
     description: "The display name of the user's default engine.
 "
@@ -754,7 +754,7 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
     sql: ${TABLE}.metrics.string.search_engine_default_load_path ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Engine Default Load Path"
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
@@ -773,7 +773,7 @@ Note: this metric is truncated at 100 characters.
     sql: ${TABLE}.metrics.string.search_engine_default_partner_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Engine Default Partner Code"
     description: "The partner code of the user's default search engine, if defined/known,
 that is being used for the search. Not all search engines have partner
@@ -788,7 +788,7 @@ OpenSearch engine.
     sql: ${TABLE}.metrics.string.search_engine_default_provider_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Engine Default Provider ID"
     description: "The identifier of the user's default search engine if the search engine is
 an application provided engine. For user installed engines, this value will
@@ -800,7 +800,7 @@ be `other`.
     sql: ${TABLE}.metrics.string.search_engine_private_display_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Engine Private Display Name"
     description: "The display name of the user's default engine.
 
@@ -816,7 +816,7 @@ default engine, and hence both versions of these fields will be filled in.
     sql: ${TABLE}.metrics.string.search_engine_private_load_path ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Engine Private Load Path"
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
@@ -841,7 +841,7 @@ default engine, and hence both versions of these fields will be filled in.
     sql: ${TABLE}.metrics.string.search_engine_private_partner_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Engine Private Partner Code"
     description: "The partner code of the user's default search engine, if defined/known,
 that is being used for the search. Not all search engines have partner
@@ -856,7 +856,7 @@ OpenSearch engine.
     sql: ${TABLE}.metrics.string.search_engine_private_provider_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Engine Private Provider ID"
     description: "The identifier of the user's default search engine if the search engine is
 an application provided engine. For user installed engines, this value will
@@ -873,7 +873,7 @@ be `other`.
     sql: ${TABLE}.metrics.url.search_engine_default_submission_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics URL"
+    group_label: "Metrics: URL"
     group_item_label: "Search Engine Default Submission URL"
   }
 
@@ -881,7 +881,7 @@ be `other`.
     sql: ${TABLE}.metrics.url.search_engine_private_submission_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics URL"
+    group_label: "Metrics: URL"
     group_item_label: "Search Engine Private Submission URL"
   }
 
@@ -889,7 +889,7 @@ be `other`.
     sql: ${TABLE}.metrics.url2.search_engine_default_submission_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Url2"
+    group_label: "Metrics: Url2"
     group_item_label: "Search Engine Default Submission URL"
     description: "The submission URL of the default engine. This is only reported in the
 cases where:
@@ -903,7 +903,7 @@ cases where:
     sql: ${TABLE}.metrics.url2.search_engine_private_submission_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Url2"
+    group_label: "Metrics: Url2"
     group_item_label: "Search Engine Private Submission URL"
     description: "The submission URL of the default engine. This is only reported in the
 cases where:
@@ -922,7 +922,7 @@ default engine, and hence both versions of these fields will be filled in.
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Legacy Telemetry Client ID"
     description: "The client_id according to Telemetry.
 Might not always have a value due to being too early for it to have
@@ -939,7 +939,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Legacy Telemetry Profile Group ID"
     description: "The profile_group_id according to Telemetry.
 Might not always have a value due to being too early for it to have
@@ -1046,7 +1046,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -1155,7 +1155,7 @@ view: events_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1163,7 +1163,7 @@ view: events_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

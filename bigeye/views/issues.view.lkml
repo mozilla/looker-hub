@@ -598,7 +598,7 @@ view: issues__metric_configuration_thresholds {
     sql: ${TABLE}.autoThreshold.bound.boundType ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Autothreshold Bound"
+    group_label: "Autothreshold: Bound"
     group_item_label: "Boundtype"
   }
 
@@ -606,7 +606,7 @@ view: issues__metric_configuration_thresholds {
     sql: ${TABLE}.autoThreshold.bound.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Autothreshold Bound"
+    group_label: "Autothreshold: Bound"
     group_item_label: "Value"
   }
 
@@ -638,7 +638,7 @@ view: issues__metric_configuration_thresholds {
     sql: ${TABLE}.constantThreshold.bound.boundType ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Constantthreshold Bound"
+    group_label: "Constantthreshold: Bound"
     group_item_label: "Boundtype"
   }
 
@@ -646,7 +646,7 @@ view: issues__metric_configuration_thresholds {
     sql: ${TABLE}.constantThreshold.bound.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Constantthreshold Bound"
+    group_label: "Constantthreshold: Bound"
     group_item_label: "Value"
   }
 
@@ -654,7 +654,7 @@ view: issues__metric_configuration_thresholds {
     sql: ${TABLE}.freshnessScheduleThreshold.bound.boundType ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold Bound"
+    group_label: "Freshnessschedulethreshold: Bound"
     group_item_label: "Boundtype"
   }
 
@@ -662,7 +662,7 @@ view: issues__metric_configuration_thresholds {
     sql: ${TABLE}.freshnessScheduleThreshold.bound.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold Bound"
+    group_label: "Freshnessschedulethreshold: Bound"
     group_item_label: "Value"
   }
 
@@ -678,7 +678,7 @@ view: issues__metric_configuration_thresholds {
     sql: ${TABLE}.freshnessScheduleThreshold.delayAtUpdate.intervalType ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold Delayatupdate"
+    group_label: "Freshnessschedulethreshold: Delayatupdate"
     group_item_label: "Intervaltype"
   }
 
@@ -686,7 +686,7 @@ view: issues__metric_configuration_thresholds {
     sql: ${TABLE}.freshnessScheduleThreshold.delayAtUpdate.intervalValue ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold Delayatupdate"
+    group_label: "Freshnessschedulethreshold: Delayatupdate"
     group_item_label: "Intervalvalue"
   }
 
