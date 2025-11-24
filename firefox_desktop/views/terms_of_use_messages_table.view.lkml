@@ -4,14 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: terms_of_use_events_table {
-  dimension: client_id {
-    sql: ${TABLE}.client_id ;;
-    hidden: yes
-    description: "A UUID uniquely identifying the client.
-"
-  }
-
+view: terms_of_use_messages_table {
   dimension: legacy_telemetry_client_id {
     sql: ${TABLE}.legacy_telemetry_client_id ;;
     type: string
@@ -65,7 +58,7 @@ view: terms_of_use_events_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "A number, 0-99, that samples by client_id and allows filtering data
-for analysis. It is a pipeline-generated artifact that should match between pings.
+for analysis. It is a pipeline-generated artifact that should match between pings (based off legacy_telemetry_client_id).
 "
   }
 
@@ -86,5 +79,5 @@ by the ETL process and partitioning.
 "
   }
 
-  sql_table_name: `mozdata.firefox_desktop.terms_of_use_events` ;;
+  sql_table_name: `mozdata.firefox_desktop.terms_of_use_messages` ;;
 }

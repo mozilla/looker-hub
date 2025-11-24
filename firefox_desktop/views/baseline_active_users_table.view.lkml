@@ -551,7 +551,6 @@ view: baseline_active_users_table {
       week,
       month,
       quarter,
-      year,
     ]
     convert_tz: no
     datatype: date

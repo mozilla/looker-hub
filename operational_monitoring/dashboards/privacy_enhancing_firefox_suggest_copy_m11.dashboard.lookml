@@ -78,45 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: privacy_enhancing_firefox_suggest_copy_m11
-    type: "ci-line-chart"
-    fields: [
-      privacy_enhancing_firefox_suggest_copy_m11.submission_date,
-      privacy_enhancing_firefox_suggest_copy_m11.branch,
-      privacy_enhancing_firefox_suggest_copy_m11.upper,
-      privacy_enhancing_firefox_suggest_copy_m11.lower,
-      privacy_enhancing_firefox_suggest_copy_m11.point
-    ]
-    pivots: [
-      privacy_enhancing_firefox_suggest_copy_m11.branch
-    ]
-    filters:
-      privacy_enhancing_firefox_suggest_copy_m11.metric: 'memory_total'
-      privacy_enhancing_firefox_suggest_copy_m11.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: privacy_enhancing_firefox_suggest_copy_m11.submission_date
-    field_y: privacy_enhancing_firefox_suggest_copy_m11.point
-    log_scale: false
-    ci_lower: privacy_enhancing_firefox_suggest_copy_m11.lower
-    ci_upper: privacy_enhancing_firefox_suggest_copy_m11.upper
-    show_grid: true
-    listen:
-      Date: privacy_enhancing_firefox_suggest_copy_m11.submission_date
-      Percentile: privacy_enhancing_firefox_suggest_copy_m11.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +94,41 @@
       privacy_enhancing_firefox_suggest_copy_m11.branch
     ]
     filters:
-      privacy_enhancing_firefox_suggest_copy_m11.metric: 'active_hours'
+      privacy_enhancing_firefox_suggest_copy_m11.metric: 'uri_count'
+      privacy_enhancing_firefox_suggest_copy_m11.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: privacy_enhancing_firefox_suggest_copy_m11.submission_date
+    field_y: privacy_enhancing_firefox_suggest_copy_m11.point
+    log_scale: false
+    ci_lower: privacy_enhancing_firefox_suggest_copy_m11.lower
+    ci_upper: privacy_enhancing_firefox_suggest_copy_m11.upper
+    show_grid: true
+    listen:
+      Date: privacy_enhancing_firefox_suggest_copy_m11.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: privacy_enhancing_firefox_suggest_copy_m11
+    type: looker_line
+    fields: [
+      privacy_enhancing_firefox_suggest_copy_m11.submission_date,
+      privacy_enhancing_firefox_suggest_copy_m11.branch,
+      privacy_enhancing_firefox_suggest_copy_m11.point
+    ]
+    pivots: [
+      privacy_enhancing_firefox_suggest_copy_m11.branch
+    ]
+    filters:
+      privacy_enhancing_firefox_suggest_copy_m11.metric: 'ad_clicks'
       privacy_enhancing_firefox_suggest_copy_m11.statistic: mean
     row: 10
     col: 12
@@ -183,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: privacy_enhancing_firefox_suggest_copy_m11
-    type: looker_line
-    fields: [
-      privacy_enhancing_firefox_suggest_copy_m11.submission_date,
-      privacy_enhancing_firefox_suggest_copy_m11.branch,
-      privacy_enhancing_firefox_suggest_copy_m11.point
-    ]
-    pivots: [
-      privacy_enhancing_firefox_suggest_copy_m11.branch
-    ]
-    filters:
-      privacy_enhancing_firefox_suggest_copy_m11.metric: 'ad_clicks'
-      privacy_enhancing_firefox_suggest_copy_m11.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: privacy_enhancing_firefox_suggest_copy_m11.submission_date
-    field_y: privacy_enhancing_firefox_suggest_copy_m11.point
-    log_scale: false
-    ci_lower: privacy_enhancing_firefox_suggest_copy_m11.lower
-    ci_upper: privacy_enhancing_firefox_suggest_copy_m11.upper
-    show_grid: true
-    listen:
-      Date: privacy_enhancing_firefox_suggest_copy_m11.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -235,6 +198,40 @@
     filters:
       privacy_enhancing_firefox_suggest_copy_m11.metric: 'search_count'
       privacy_enhancing_firefox_suggest_copy_m11.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: privacy_enhancing_firefox_suggest_copy_m11.submission_date
+    field_y: privacy_enhancing_firefox_suggest_copy_m11.point
+    log_scale: false
+    ci_lower: privacy_enhancing_firefox_suggest_copy_m11.lower
+    ci_upper: privacy_enhancing_firefox_suggest_copy_m11.upper
+    show_grid: true
+    listen:
+      Date: privacy_enhancing_firefox_suggest_copy_m11.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: privacy_enhancing_firefox_suggest_copy_m11
+    type: looker_line
+    fields: [
+      privacy_enhancing_firefox_suggest_copy_m11.submission_date,
+      privacy_enhancing_firefox_suggest_copy_m11.branch,
+      privacy_enhancing_firefox_suggest_copy_m11.point
+    ]
+    pivots: [
+      privacy_enhancing_firefox_suggest_copy_m11.branch
+    ]
+    filters:
+      privacy_enhancing_firefox_suggest_copy_m11.metric: 'active_hours'
+      privacy_enhancing_firefox_suggest_copy_m11.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: privacy_enhancing_firefox_suggest_copy_m11
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       privacy_enhancing_firefox_suggest_copy_m11.submission_date,
       privacy_enhancing_firefox_suggest_copy_m11.branch,
+      privacy_enhancing_firefox_suggest_copy_m11.upper,
+      privacy_enhancing_firefox_suggest_copy_m11.lower,
       privacy_enhancing_firefox_suggest_copy_m11.point
     ]
     pivots: [
       privacy_enhancing_firefox_suggest_copy_m11.branch
     ]
     filters:
-      privacy_enhancing_firefox_suggest_copy_m11.metric: 'uri_count'
-      privacy_enhancing_firefox_suggest_copy_m11.statistic: mean
+      privacy_enhancing_firefox_suggest_copy_m11.metric: 'memory_total'
+      privacy_enhancing_firefox_suggest_copy_m11.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: privacy_enhancing_firefox_suggest_copy_m11.submission_date
+      Percentile: privacy_enhancing_firefox_suggest_copy_m11.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
