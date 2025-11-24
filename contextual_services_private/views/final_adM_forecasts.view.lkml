@@ -153,7 +153,6 @@ view: final_adM_forecasts {
   dimension_group: forecast_month {
     sql: ${TABLE}.forecast_month ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -169,7 +168,6 @@ view: final_adM_forecasts {
   dimension_group: submission_month {
     sql: ${TABLE}.submission_month ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

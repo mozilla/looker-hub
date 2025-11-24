@@ -370,7 +370,7 @@ fenix_engagement_view_wau,
     group_label: "Metrics"
     label: "Fenix Engagement Rate"
     description: "    The Engagement Rate is calculated as the ratio between DAU and MAU. For each day, we use the single-day DAU number and divide
-    it by the MAU corresponding to the 28-day period ending on that day. For OKR reporting, we then calculate a 
+    it by the MAU corresponding to the 28-day period ending on that day. For OKR reporting, we then calculate a
     28-day moving average of this number. More information is provided on the
     [New Profiles, Retention and Engagement Rate Confluence Page](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/814481685/Firefox+New+Profiles+Retention+and+Engagement#Engagement-Rate).
 "
@@ -1004,7 +1004,6 @@ fenix_engagement_view_wau,
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1014,14 +1013,13 @@ fenix_engagement_view_wau,
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
     group_label: "Base Fields"
   }
 
   dimension_group: first_seen {
     sql: ${TABLE}.fenix_engagement_view_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

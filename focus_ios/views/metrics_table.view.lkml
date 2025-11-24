@@ -78,7 +78,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Glean Error Preinit Tasks Timeout"
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
@@ -462,7 +462,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.boolean.mozilla_products_has_firefox_installed ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Mozilla Products Has Firefox Installed"
     description: "If Firefox is installed on the users's device.
 "
@@ -472,7 +472,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Tracking Protection Has Advertising Blocked"
     description: "The user has changed the setting for enhanced tracking protection
 at least once.
@@ -483,7 +483,7 @@ at least once.
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_analytics_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Tracking Protection Has Analytics Blocked"
     description: "The user has changed the setting for enhanced tracking protection
 at least once.
@@ -494,7 +494,7 @@ at least once.
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_content_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Tracking Protection Has Content Blocked"
     description: "The user has changed the setting for enhanced tracking protection
 at least once.
@@ -505,7 +505,7 @@ at least once.
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_ever_changed_etp ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Tracking Protection Has Ever Changed Etp"
     description: "The user has changed the setting for enhanced tracking protection
 at least once.
@@ -516,7 +516,7 @@ at least once.
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_social_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Tracking Protection Has Social Blocked"
     description: "The user has changed the setting for enhanced tracking protection
 at least once.
@@ -527,7 +527,7 @@ at least once.
     sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Opened As Default Browser"
     description: "Recorded when a preference is changed and includes the
 preference that changed as well as the value changed to
@@ -539,7 +539,7 @@ recorded in the extra keys.
     sql: ${TABLE}.metrics.counter.browser_pdf_viewer_used ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Browser Pdf Viewer Used"
     description: "Counts the number of times pdf view is opened in browser.
 "
@@ -549,7 +549,7 @@ recorded in the extra keys.
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Browser Total URI Count"
     description: "Records count of URIs visited by the user in the current session,
 including page reloads.
@@ -563,7 +563,7 @@ that programmatically redirect to a new location.
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Default Browser Onboarding Dismiss Pressed"
     description: "Counts the number of times default browser onboarding is dismissed.
 "
@@ -573,7 +573,7 @@ that programmatically redirect to a new location.
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Default Browser Onboarding Go To Settings Pressed"
     description: "Counts the number of times the Go To Settings button on
 default browser onboarding is clicked.
@@ -584,7 +584,7 @@ default browser onboarding is clicked.
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Error IO"
     description: "The number of times we encountered an IO error
 when writing a pending ping to disk.
@@ -595,7 +595,7 @@ when writing a pending ping to disk.
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Error Preinit Tasks Overflow"
     description: "The number of tasks that overflowed the pre-initialization buffer.
 Only sent if the buffer ever overflows.
@@ -608,7 +608,7 @@ In Version 0 this reported the total number of tasks enqueued.
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Time Invalid Timezone Offset"
     description: "Counts the number of times we encountered an invalid timezone offset
 when trying to get the current time.
@@ -621,7 +621,7 @@ If invalid a UTC offset is used (+0h).
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Upload Deleted Pings After Quota Hit"
     description: "The number of pings deleted after the quota
 for the size of the pending pings directory or number of files is hit.
@@ -635,7 +635,7 @@ deletion request pings are never deleted.
     sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Upload In Flight Pings Dropped"
     description: "How many pings were dropped because we found them already in-flight.
 "
@@ -645,7 +645,7 @@ deletion request pings are never deleted.
     sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Upload Missing Send Ids"
     description: "How many ping upload responses did we not record as a success or failure
 (in `glean.upload.send_success` or `glean.upload.send_failue`,
@@ -657,7 +657,7 @@ respectively) due to an inconsistency in our internal bookkeeping?
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Upload Pending Pings"
     description: "The total number of pending pings at startup.
 This does not include deletion-request pings.
@@ -668,7 +668,7 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Validation Foreground Count"
     description: "On mobile, the number of times the application went to foreground.
 "
@@ -678,7 +678,7 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Settings Screen Autocomplete Domain Added"
     description: "A counter that indicates how many times a user has added
 a website to the autocomplete list.
@@ -689,7 +689,7 @@ a website to the autocomplete list.
     sql: ${TABLE}.metrics.counter.settings_screen_set_as_default_browser_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Settings Screen Set As Default Browser Pressed"
     description: "Counts the number of times setting as default
 browser menu option is tapped.
@@ -700,7 +700,7 @@ browser menu option is tapped.
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Shortcuts Shortcut Added Counter"
     description: "A counter that indicates how many times a user has added
 a website to shortcuts.
@@ -711,7 +711,7 @@ a website to shortcuts.
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Shortcuts Shortcut Opened Counter"
     description: "A counter that indicates how many times a user has opened
 a website from a shortcut in the home screen.
@@ -722,7 +722,7 @@ a website from a shortcut in the home screen.
     sql: ${TABLE}.metrics.counter.tracking_protection_toolbar_shield_clicked ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tracking Protection Toolbar Shield Clicked"
     description: "A counter that indicates how many times a user has opened
 the tracking protection settings panel from the toolbar.
@@ -733,7 +733,7 @@ the tracking protection settings panel from the toolbar.
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
@@ -845,7 +845,7 @@ It also indicates the screen it was removed from, home or browser.
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_label: "Metrics: Memory Distribution: Glean Database Size"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -854,7 +854,7 @@ It also indicates the screen it was removed from, home or browser.
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_label: "Metrics: Memory Distribution: Glean Database Size"
     group_item_label: "Sum"
   }
 
@@ -867,7 +867,7 @@ It also indicates the screen it was removed from, home or browser.
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_label: "Metrics: Memory Distribution: Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -876,7 +876,7 @@ It also indicates the screen it was removed from, home or browser.
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_label: "Metrics: Memory Distribution: Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Sum"
   }
 
@@ -889,7 +889,7 @@ It also indicates the screen it was removed from, home or browser.
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_label: "Metrics: Memory Distribution: Glean Upload Pending Pings Directory Size"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -898,7 +898,7 @@ It also indicates the screen it was removed from, home or browser.
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_label: "Metrics: Memory Distribution: Glean Upload Pending Pings Directory Size"
     group_item_label: "Sum"
   }
 
@@ -939,7 +939,7 @@ Structure is an array of objects, each containing the following properties:
     sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Shortcuts Shortcuts On Home Number"
     description: "The number of shortcuts the user has on home screen,
 0, 1, 2, 3 or 4 (maximum)
@@ -950,7 +950,7 @@ Structure is an array of objects, each containing the following properties:
     sql: ${TABLE}.metrics.string.app_keyboard_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "App Keyboard Type"
     description: "Records the name of the keyboard (custom or default) everytime
 the keyboard appears on the screen.
@@ -961,7 +961,7 @@ the keyboard appears on the screen.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -972,7 +972,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Database Rkv Load Error"
     description: "If there was an error loading the RKV database, record it.
 "
@@ -982,7 +982,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Ping Reason"
     description: "The optional reason the ping was submitted.
 The specific values for reason are specific to each ping, and are
@@ -994,7 +994,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.string.preferences_user_theme ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Preferences User Theme"
     description: "A string that indicates the theme. Can be one of \"Light\", \"Dark\", or \"Follow device\". Default is \"Follow device\".
 "
@@ -1004,7 +1004,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.string.search_default_engine ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Default Engine"
     description: "The default search engine name if the search engine is
 pre-loaded with Focus.  If it's a custom search engine,
@@ -1021,7 +1021,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Bucket Count"
   }
 
@@ -1029,7 +1029,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -1038,7 +1038,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Histogram Type"
   }
 
@@ -1046,7 +1046,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Overflow"
   }
 
@@ -1059,7 +1059,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Sum"
   }
 
@@ -1067,7 +1067,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Time Unit"
   }
 
@@ -1075,7 +1075,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Underflow"
   }
 
@@ -1088,7 +1088,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Bucket Count"
   }
 
@@ -1096,7 +1096,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -1105,7 +1105,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Histogram Type"
   }
 
@@ -1113,7 +1113,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Overflow"
   }
 
@@ -1126,7 +1126,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Sum"
   }
 
@@ -1134,7 +1134,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Time Unit"
   }
 
@@ -1142,7 +1142,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Underflow"
   }
 
@@ -1155,7 +1155,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Bucket Count"
   }
 
@@ -1163,7 +1163,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -1172,7 +1172,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Histogram Type"
   }
 
@@ -1180,7 +1180,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Overflow"
   }
 
@@ -1193,7 +1193,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Sum"
   }
 
@@ -1201,7 +1201,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Time Unit"
   }
 
@@ -1209,7 +1209,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Underflow"
   }
 
@@ -1222,7 +1222,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Bucket Count"
   }
 
@@ -1230,7 +1230,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -1239,7 +1239,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Histogram Type"
   }
 
@@ -1247,7 +1247,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Overflow"
   }
 
@@ -1260,7 +1260,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Sum"
   }
 
@@ -1268,7 +1268,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Time Unit"
   }
 
@@ -1276,7 +1276,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Underflow"
   }
 
@@ -1289,7 +1289,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Bucket Count"
   }
 
@@ -1297,7 +1297,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -1306,7 +1306,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Histogram Type"
   }
 
@@ -1314,7 +1314,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Overflow"
   }
 
@@ -1327,7 +1327,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Sum"
   }
 
@@ -1335,7 +1335,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Time Unit"
   }
 
@@ -1343,7 +1343,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Underflow"
   }
 
@@ -1356,7 +1356,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Bucket Count"
   }
 
@@ -1364,7 +1364,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -1373,7 +1373,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Histogram Type"
   }
 
@@ -1381,7 +1381,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Overflow"
   }
 
@@ -1394,7 +1394,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Sum"
   }
 
@@ -1402,7 +1402,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Time Unit"
   }
 
@@ -1410,7 +1410,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Underflow"
   }
 
@@ -1423,7 +1423,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Bucket Count"
   }
 
@@ -1431,7 +1431,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -1440,7 +1440,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Histogram Type"
   }
 
@@ -1448,7 +1448,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Overflow"
   }
 
@@ -1461,7 +1461,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Sum"
   }
 
@@ -1469,7 +1469,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Time Unit"
   }
 
@@ -1477,7 +1477,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Underflow"
   }
 
@@ -1575,7 +1575,6 @@ then the value will be 'custom'.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1585,13 +1584,12 @@ then the value will be 'custom'.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1601,7 +1599,7 @@ then the value will be 'custom'.
       quarter,
       year,
     ]
-    label: "Metrics Datetime: Glean Validation First Run Hour"
+    label: "Metrics: Datetime: Glean Validation First Run Hour"
     description: "The hour of the first run of the application.
 "
   }
@@ -1609,7 +1607,6 @@ then the value will be 'custom'.
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1625,7 +1622,6 @@ then the value will be 'custom'.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1641,7 +1637,6 @@ then the value will be 'custom'.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1855,7 +1850,7 @@ view: metrics_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1863,7 +1858,7 @@ view: metrics_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

@@ -328,6 +328,12 @@ view: growth_accounting {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: startup_profile_selection_reason_first {
+    sql: ${TABLE}.startup_profile_selection_reason_first ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: telemetry_sdk_build {
     sql: ${TABLE}.telemetry_sdk_build ;;
     type: string
@@ -374,7 +380,6 @@ view: growth_accounting {
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -390,7 +395,6 @@ view: growth_accounting {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -406,7 +410,6 @@ view: growth_accounting {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

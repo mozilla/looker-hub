@@ -72,7 +72,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -80,7 +80,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -93,7 +93,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -101,7 +101,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -109,7 +109,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -151,7 +151,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -239,7 +239,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -247,7 +247,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -256,7 +256,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -264,7 +264,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -272,7 +272,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -280,7 +280,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -288,7 +288,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -296,7 +296,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -304,7 +304,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -317,7 +317,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -325,7 +325,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -333,7 +333,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -341,7 +341,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -349,7 +349,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -357,7 +357,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -365,7 +365,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -373,7 +373,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -381,7 +381,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -389,7 +389,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -397,7 +397,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -405,7 +405,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -413,7 +413,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_app_fission_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info App Fission Enabled"
   }
 
@@ -421,7 +421,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_graphics_has_touch_screen ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Graphics Has Touch Screen"
   }
 
@@ -429,7 +429,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
   }
 
@@ -437,7 +437,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_global_privacy_control_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Global Privacy Control Enabled"
   }
 
@@ -445,7 +445,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_installtrigger_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Installtrigger Enabled"
   }
 
@@ -453,7 +453,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_opaque_response_blocking ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Opaque Response Blocking"
   }
 
@@ -461,7 +461,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_resist_fingerprinting_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Resist Fingerprinting Enabled"
   }
 
@@ -469,7 +469,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_software_webrender ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Software Webrender"
   }
 
@@ -477,7 +477,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
   }
 
@@ -485,7 +485,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
   }
 
@@ -493,7 +493,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info System Is Tablet"
   }
 
@@ -501,7 +501,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
   }
 
@@ -509,7 +509,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Has Mixed Active Content Blocked"
   }
 
@@ -517,7 +517,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_display_content_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Has Mixed Display Content Blocked"
   }
 
@@ -525,7 +525,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_tracking_content_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Has Tracking Content Blocked"
   }
 
@@ -533,7 +533,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_is_private_browsing ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Is Private Browsing"
   }
 
@@ -541,7 +541,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_fastclick ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Frameworks Fastclick"
   }
 
@@ -549,7 +549,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_marfeel ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Frameworks Marfeel"
   }
 
@@ -557,7 +557,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_mobify ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Frameworks Mobify"
   }
 
@@ -585,7 +585,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_prefs_cookie_behavior ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Broken Site Report Browser Info Prefs Cookie Behavior"
   }
 
@@ -593,7 +593,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_system_memory ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Broken Site Report Browser Info System Memory"
   }
 
@@ -601,7 +601,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.string.broken_site_report_breakage_category ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Broken Site Report Breakage Category"
   }
 
@@ -609,7 +609,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.string.broken_site_report_browser_info_graphics_device_pixel_ratio ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Broken Site Report Browser Info Graphics Device Pixel Ratio"
   }
 
@@ -617,7 +617,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_block_list ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Broken Site Report Tab Info Antitracking Block List"
   }
 
@@ -625,7 +625,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
@@ -663,7 +663,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_app_default_useragent_string ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info App Default Useragent String"
   }
 
@@ -671,7 +671,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_graphics_devices_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info Graphics Devices Json"
   }
 
@@ -679,7 +679,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_graphics_drivers_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info Graphics Drivers Json"
   }
 
@@ -687,7 +687,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_graphics_features_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info Graphics Features Json"
   }
 
@@ -695,7 +695,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_graphics_monitors_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info Graphics Monitors Json"
   }
 
@@ -703,7 +703,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text.broken_site_report_description ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Description"
   }
 
@@ -711,7 +711,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text.broken_site_report_tab_info_useragent_string ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Tab Info Useragent String"
   }
 
@@ -719,7 +719,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_app_default_useragent_string ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info App Default Useragent String"
   }
 
@@ -727,7 +727,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_devices_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info Graphics Devices Json"
   }
 
@@ -735,7 +735,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_drivers_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info Graphics Drivers Json"
   }
 
@@ -743,7 +743,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_features_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info Graphics Features Json"
   }
 
@@ -751,7 +751,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_monitors_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info Graphics Monitors Json"
   }
 
@@ -759,7 +759,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text2.broken_site_report_description ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Description"
   }
 
@@ -767,7 +767,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.text2.broken_site_report_tab_info_useragent_string ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Tab Info Useragent String"
   }
 
@@ -775,7 +775,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.url.broken_site_report_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics URL"
+    group_label: "Metrics: URL"
     group_item_label: "Broken Site Report URL"
   }
 
@@ -783,7 +783,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.url2.broken_site_report_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Url2"
+    group_label: "Metrics: Url2"
     group_item_label: "Broken Site Report URL"
   }
 
@@ -879,7 +879,6 @@ view: broken_site_report_table {
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -889,13 +888,12 @@ view: broken_site_report_table {
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -911,7 +909,6 @@ view: broken_site_report_table {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -927,7 +924,6 @@ view: broken_site_report_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1020,7 +1016,7 @@ view: broken_site_report_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1028,7 +1024,7 @@ view: broken_site_report_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

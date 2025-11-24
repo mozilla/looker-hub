@@ -96,12 +96,6 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: is_active {
-    sql: ${TABLE}.is_active ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: is_daily_user {
     sql: ${TABLE}.is_daily_user ;;
     type: yesno
@@ -204,26 +198,9 @@ view: usage_reporting_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension_group: date {
-    sql: ${TABLE}.date ;;
-    type: time
-    suggest_persist_for: "24 hours"
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
-  }
-
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -239,14 +216,12 @@ view: usage_reporting_active_users_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
       week,
       month,
       quarter,
-      year,
     ]
     convert_tz: no
     datatype: date
@@ -255,7 +230,6 @@ view: usage_reporting_active_users_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -183,7 +183,6 @@ view: desktop_events_table {
   dimension_group: session_start {
     sql: ${TABLE}.session_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -198,7 +197,6 @@ view: desktop_events_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -214,7 +212,6 @@ view: desktop_events_table {
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

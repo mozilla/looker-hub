@@ -309,7 +309,6 @@ view: clients_first_seen_v2 {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -326,7 +325,6 @@ view: clients_first_seen_v2 {
   dimension_group: second_seen {
     sql: ${TABLE}.second_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

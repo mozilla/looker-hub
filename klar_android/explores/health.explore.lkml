@@ -33,6 +33,16 @@ explore: health {
     sql: LEFT JOIN UNNEST(${health.metrics__labeled_counter__glean_error_invalid_value}) AS health__metrics__labeled_counter__glean_error_invalid_value ON ${health.document_id} = ${health__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
 
+  join: health__metrics__labeled_counter__glean_health_file_read_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${health.metrics__labeled_counter__glean_health_file_read_error}) AS health__metrics__labeled_counter__glean_health_file_read_error ON ${health.document_id} = ${health__metrics__labeled_counter__glean_health_file_read_error.document_id} ;;
+  }
+
+  join: health__metrics__labeled_counter__glean_health_file_write_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${health.metrics__labeled_counter__glean_health_file_write_error}) AS health__metrics__labeled_counter__glean_health_file_write_error ON ${health.document_id} = ${health__metrics__labeled_counter__glean_health_file_write_error.document_id} ;;
+  }
+
   join: health__metrics__labeled_counter__glean_upload_ping_upload_failure {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${health.metrics__labeled_counter__glean_upload_ping_upload_failure}) AS health__metrics__labeled_counter__glean_upload_ping_upload_failure ON ${health.document_id} = ${health__metrics__labeled_counter__glean_upload_ping_upload_failure.document_id} ;;

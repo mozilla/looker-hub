@@ -78,7 +78,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Login Page Safety"
+    group_label: "Metrics: Custom Distribution: Pwmgr Login Page Safety"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -462,7 +462,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Login Page Safety"
+    group_label: "Metrics: Custom Distribution: Pwmgr Login Page Safety"
     group_item_label: "Sum"
   }
 
@@ -475,7 +475,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Prompt Remember Action"
+    group_label: "Metrics: Custom Distribution: Pwmgr Prompt Remember Action"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -484,7 +484,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Prompt Remember Action"
+    group_label: "Metrics: Custom Distribution: Pwmgr Prompt Remember Action"
     group_item_label: "Sum"
   }
 
@@ -497,7 +497,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Prompt Update Action"
+    group_label: "Metrics: Custom Distribution: Pwmgr Prompt Update Action"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -506,7 +506,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Prompt Update Action"
+    group_label: "Metrics: Custom Distribution: Pwmgr Prompt Update Action"
     group_item_label: "Sum"
   }
 
@@ -519,7 +519,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.datetime.raw_syncs_session_start_date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw Syncs Session Start Date"
   }
 
@@ -607,7 +607,7 @@ The \"sync\" ping is not submitted if this is empty.
     sql: ${TABLE}.metrics.quantity.syncs_discarded ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Syncs Discarded"
     description: "How many syncs happened which were not reported in detail
 due to being over the number of syncs we report detailed information for.
@@ -618,7 +618,7 @@ due to being over the number of syncs we report detailed information for.
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Service Pack Major"
     description: "The Windows service pack's major version, according to WindowsVersionInfo.
 Windows only.
@@ -630,7 +630,7 @@ e.g. 0
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Service Pack Minor"
     description: "The Windows service pack's minor version, according to WindowsVersionInfo.
 Windows only.
@@ -642,7 +642,7 @@ e.g. 0
     sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Windows Build Number"
     description: "The Windows build number, according to WindowsVersionInfo.
 Windows only.
@@ -655,7 +655,7 @@ Expected in most cases to be identical to `client_info.windows_build_number`.
     sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Windows Ubr"
     description: "The Windows update build revision number, according to
 `SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion`.
@@ -668,7 +668,7 @@ e.g. 3775
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -679,7 +679,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.syncs_hashed_device_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncs Hashed Device ID"
     description: "Hashed FxA device ID, hex string of 64 characters.
 Not included if the user is not logged in.
@@ -691,7 +691,7 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
     sql: ${TABLE}.metrics.string.syncs_hashed_fxa_uid ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncs Hashed Fxa Uid"
     description: "Hashed FxA unique ID, or string of 32 zeroes.
 If this changes between syncs, the \"sync\" ping is submitted with reason \"idchanged\".
@@ -702,7 +702,7 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
     sql: ${TABLE}.metrics.string.syncs_sync_node_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncs Sync Node Type"
     description: "The \"node type\" as reported by the token server.
 This will not change from sync to sync.
@@ -714,7 +714,7 @@ May not be present if the token server omits this information.
     sql: ${TABLE}.metrics.string.system_os_distro ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Distro"
     description: "The Operating System's distribution, according to sysinfo.
 Linux only.
@@ -726,7 +726,7 @@ e.g. \"Linuxmint\"
     sql: ${TABLE}.metrics.string.system_os_distro_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Distro Version"
     description: "The Operating System's distribution's version, according to sysinfo.
 Linux only.
@@ -738,7 +738,7 @@ e.g. \"22\"
     sql: ${TABLE}.metrics.string.system_os_locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Locale"
     description: "The Operating System's local, according to ospreferences.
 e.g. \"en-US\"
@@ -749,7 +749,7 @@ e.g. \"en-US\"
     sql: ${TABLE}.metrics.string.system_os_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Name"
     description: "The Operating System's name, according to sysinfo.
 e.g. \"Windows_NT\"
@@ -761,7 +761,7 @@ Expected in most cases to be identical to `client_info.os`.
     sql: ${TABLE}.metrics.string.system_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Version"
     description: "The Operating System's version, according to sysinfo.
 e.g. \"6.3\"
@@ -863,7 +863,6 @@ Expected in most cases to be identical to `client_info.os_version`.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -873,13 +872,12 @@ Expected in most cases to be identical to `client_info.os_version`.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: metrics__datetime__syncs_session_start {
     sql: ${TABLE}.metrics.datetime.syncs_session_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -889,7 +887,7 @@ Expected in most cases to be identical to `client_info.os_version`.
       quarter,
       year,
     ]
-    label: "Metrics Datetime: Syncs Session Start Date"
+    label: "Metrics: Datetime: Syncs Session Start Date"
     description: "When the sync telemetry session begins (the `SyncTelemetryImpl`
 constructor runs).
 Typically useful for ordering \"sync\" pings.
@@ -899,7 +897,6 @@ Typically useful for ordering \"sync\" pings.
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -915,7 +912,6 @@ Typically useful for ordering \"sync\" pings.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -931,7 +927,6 @@ Typically useful for ordering \"sync\" pings.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1047,7 +1042,7 @@ view: sync_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1055,7 +1050,7 @@ view: sync_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

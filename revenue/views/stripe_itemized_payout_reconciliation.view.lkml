@@ -290,7 +290,6 @@ view: stripe_itemized_payout_reconciliation {
   dimension_group: automatic_payout_effective_at {
     sql: ${TABLE}.automatic_payout_effective_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -305,7 +304,6 @@ view: stripe_itemized_payout_reconciliation {
   dimension_group: available_on {
     sql: ${TABLE}.available_on ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -320,7 +318,6 @@ view: stripe_itemized_payout_reconciliation {
   dimension_group: charge_created {
     sql: ${TABLE}.charge_created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -335,7 +332,6 @@ view: stripe_itemized_payout_reconciliation {
   dimension_group: created {
     sql: ${TABLE}.created ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

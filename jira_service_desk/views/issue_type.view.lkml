@@ -38,7 +38,6 @@ view: issue_type {
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -24,18 +24,6 @@ datagroup: composite_active_users_table_last_updated {
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_fennec_derived' AND table_name = 'usage_reporting_clients_daily_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_firefox_derived' AND table_name = 'usage_reporting_clients_daily_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_firefoxbeta_derived' AND table_name = 'usage_reporting_clients_daily_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'org_mozilla_ios_fennec_derived' AND table_name = 'usage_reporting_clients_first_seen_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time

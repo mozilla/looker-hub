@@ -32,7 +32,6 @@ view: devices {
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -47,7 +46,6 @@ view: devices {
   dimension_group: updated_at {
     sql: ${TABLE}.updated_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

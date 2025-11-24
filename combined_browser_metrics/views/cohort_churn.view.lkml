@@ -289,7 +289,6 @@ view: cohort_churn {
   dimension_group: cohort {
     sql: ${TABLE}.cohort_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -306,7 +305,6 @@ view: cohort_churn {
   dimension_group: table_last_updated {
     sql: ${TABLE}.table_last_updated_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

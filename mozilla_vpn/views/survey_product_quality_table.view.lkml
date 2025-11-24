@@ -48,7 +48,6 @@ view: survey_product_quality_table {
   dimension_group: date_started {
     sql: ${TABLE}.date_started ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -63,7 +62,6 @@ view: survey_product_quality_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

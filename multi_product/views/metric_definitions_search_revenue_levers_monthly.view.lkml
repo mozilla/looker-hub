@@ -288,7 +288,6 @@ search_revenue_levers_monthly_tagged_sap,
   dimension_group: submission_month {
     sql: ${TABLE}.search_revenue_levers_monthly_submission_month ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

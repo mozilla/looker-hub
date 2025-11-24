@@ -78,7 +78,7 @@ view: crash_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: crash_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: crash_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: crash_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: crash_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: crash_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: crash_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: crash_table {
     sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Crash Is Garbage Collecting"
     description: "Indicates that the crash occurred while the garbage collector was running.
 "
@@ -463,7 +463,7 @@ view: crash_table {
     sql: ${TABLE}.metrics.boolean.crash_startup ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Crash Startup"
     description: "If true, the crash occurred during process startup.
 "
@@ -473,7 +473,7 @@ view: crash_table {
     sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Environment Headless Mode"
     description: "Whether the app was invoked in headless mode via `--headless` or `--backgroundtask`.
 "
@@ -483,7 +483,7 @@ view: crash_table {
     sql: ${TABLE}.metrics.datetime.raw_crash_time ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw Crash Time"
   }
 
@@ -558,7 +558,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Crash Event Loop Nesting Level"
     description: "Indicates the nesting level of the event loop.
 "
@@ -568,7 +568,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Crash GPU Process Launch"
     description: "The number of times that the GPU process was launched.
 "
@@ -578,7 +578,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Available Commit"
     description: "Available commit space.
 "
@@ -588,7 +588,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Available Physical"
     description: "Available physical memory.
 "
@@ -598,7 +598,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Available Swap"
     description: "Available swap memory.
 "
@@ -608,7 +608,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Available Virtual"
     description: "Available virtual memory.
 "
@@ -618,7 +618,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Low Physical"
     description: "The number of times the available memory tracker has detected that free physical memory is running low.
 "
@@ -628,7 +628,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Oom Allocation Size"
     description: "The size of the allocation that caused on OOM crash.
 "
@@ -638,7 +638,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Purgeable Physical"
     description: "The amount of memory that can be deallocated by the OS in case of memory pressure.
 "
@@ -648,7 +648,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory System Use Percentage"
     description: "The percentage of memory in use.
 "
@@ -658,7 +658,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_texture ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Texture"
     description: "The amount of memory used in textures.
 "
@@ -668,7 +668,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Total Page File"
     description: "The total page file size.
 "
@@ -678,7 +678,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Total Physical"
     description: "The total physical memory.
 "
@@ -688,7 +688,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Memory Total Virtual"
     description: "The total virtual memory.
 "
@@ -698,7 +698,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_app_build ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash App Build"
     description: "The build id of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
 "
@@ -708,7 +708,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_app_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash App Channel"
     description: "The release channel of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
 "
@@ -718,7 +718,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_app_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash App Display Version"
     description: "The version of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
 "
@@ -728,7 +728,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_background_task_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Background Task Name"
     description: "The name of the background task if launched as one.
 "
@@ -738,7 +738,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_cause ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Cause"
     description: "The cause of the crash. May be one of `os_fault` or `java_exception`.
 "
@@ -748,7 +748,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_font_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Font Name"
     description: "The font family name that is being loaded when the crash occurred.
 "
@@ -758,7 +758,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Ipc Channel Error"
     description: "The error reason for an ipc-based content crash.
 "
@@ -768,7 +768,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Main Thread Runnable Name"
     description: "Name of the currently executing `nsIRunnable` on the main thread. Nightly-only.
 "
@@ -778,7 +778,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Minidump Sha256 Hash"
     description: "The SHA256 hash of the associated minidump file, if any.
 "
@@ -788,7 +788,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Moz Crash Reason"
     description: "Contains the string passed to `MOZ_CRASH()`.
 "
@@ -798,7 +798,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_process_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Process Type"
     description: "The type of process that experienced a crash. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#process-types).
 "
@@ -808,7 +808,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Profiler Child Shutdown Phase"
     description: "The shutdown phase of the profiler.
 "
@@ -818,7 +818,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_remote_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Remote Type"
     description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
 "
@@ -828,7 +828,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Crash Shutdown Progress"
     description: "The shutdown phase in which the crash occurred.
 "
@@ -838,7 +838,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -849,7 +849,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Memory Js Large Allocation Failure"
     description: "A large allocation couldn't be satisfied: What was its state when the crash happened.
 "
@@ -859,7 +859,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Memory Js Out Of Memory"
     description: "A small allocation couldn't be satisfied: What was its state when the crash happened.
 "
@@ -879,7 +879,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.timespan.crash_uptime.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan Crash Uptime"
+    group_label: "Metrics: Timespan: Crash Uptime"
     group_item_label: "Time Unit"
   }
 
@@ -887,7 +887,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan Crash Uptime"
+    group_label: "Metrics: Timespan: Crash Uptime"
     group_item_label: "Value"
   }
 
@@ -895,7 +895,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.timespan.environment_uptime.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan Environment Uptime"
+    group_label: "Metrics: Timespan: Environment Uptime"
     group_item_label: "Time Unit"
   }
 
@@ -903,7 +903,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan Environment Uptime"
+    group_label: "Metrics: Timespan: Environment Uptime"
     group_item_label: "Value"
   }
 
@@ -996,7 +996,6 @@ for the purpose of experimentation enrollment.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1006,13 +1005,12 @@ for the purpose of experimentation enrollment.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: metrics__datetime__crash {
     sql: ${TABLE}.metrics.datetime.crash_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1022,7 +1020,7 @@ for the purpose of experimentation enrollment.
       quarter,
       year,
     ]
-    label: "Metrics Datetime: Crash Time"
+    label: "Metrics: Datetime: Crash Time"
     description: "The time at which the crash occurred.
 "
   }
@@ -1030,7 +1028,6 @@ for the purpose of experimentation enrollment.
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1046,7 +1043,6 @@ for the purpose of experimentation enrollment.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1062,7 +1058,6 @@ for the purpose of experimentation enrollment.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1136,7 +1131,7 @@ view: crash_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1144,7 +1139,7 @@ view: crash_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

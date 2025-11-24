@@ -45,7 +45,6 @@ view: revenue_google_top10_row_data {
   dimension_group: date_lower {
     sql: ${TABLE}.date_lower ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -61,7 +60,6 @@ view: revenue_google_top10_row_data {
   dimension_group: date_upper {
     sql: ${TABLE}.date_upper ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

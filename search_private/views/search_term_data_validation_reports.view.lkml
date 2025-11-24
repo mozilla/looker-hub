@@ -122,7 +122,6 @@ view: search_term_data_validation_reports {
   dimension_group: from_sanitization_job_finished_at {
     sql: ${TABLE}.from_sanitization_job_finished_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -137,7 +136,6 @@ view: search_term_data_validation_reports {
   dimension_group: started_at {
     sql: ${TABLE}.started_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -72,7 +72,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -80,7 +80,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -93,7 +93,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -101,7 +101,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -109,7 +109,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -151,7 +151,7 @@ view: sync_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -239,7 +239,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -247,7 +247,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -256,7 +256,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -264,7 +264,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -272,7 +272,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -280,7 +280,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -288,7 +288,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -296,7 +296,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -304,7 +304,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -317,7 +317,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -325,7 +325,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -333,7 +333,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -341,7 +341,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -349,7 +349,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -357,7 +357,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -365,7 +365,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -373,7 +373,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -381,7 +381,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -389,7 +389,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -397,7 +397,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -405,7 +405,7 @@ view: sync_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -413,7 +413,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Login Page Safety"
+    group_label: "Metrics: Custom Distribution: Pwmgr Login Page Safety"
     group_item_label: "Count"
   }
 
@@ -421,7 +421,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Login Page Safety"
+    group_label: "Metrics: Custom Distribution: Pwmgr Login Page Safety"
     group_item_label: "Sum"
   }
 
@@ -434,7 +434,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Prompt Remember Action"
+    group_label: "Metrics: Custom Distribution: Pwmgr Prompt Remember Action"
     group_item_label: "Count"
   }
 
@@ -442,7 +442,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Prompt Remember Action"
+    group_label: "Metrics: Custom Distribution: Pwmgr Prompt Remember Action"
     group_item_label: "Sum"
   }
 
@@ -455,7 +455,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Prompt Update Action"
+    group_label: "Metrics: Custom Distribution: Pwmgr Prompt Update Action"
     group_item_label: "Count"
   }
 
@@ -463,7 +463,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Pwmgr Prompt Update Action"
+    group_label: "Metrics: Custom Distribution: Pwmgr Prompt Update Action"
     group_item_label: "Sum"
   }
 
@@ -476,7 +476,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.datetime.raw_syncs_session_start_date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw Syncs Session Start Date"
   }
 
@@ -524,7 +524,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.quantity.syncs_discarded ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Syncs Discarded"
   }
 
@@ -532,7 +532,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Service Pack Major"
   }
 
@@ -540,7 +540,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Service Pack Minor"
   }
 
@@ -548,7 +548,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Windows Build Number"
   }
 
@@ -556,7 +556,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Windows Ubr"
   }
 
@@ -564,7 +564,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
@@ -572,7 +572,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.syncs_hashed_device_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncs Hashed Device ID"
   }
 
@@ -580,7 +580,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.syncs_hashed_fxa_uid ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncs Hashed Fxa Uid"
   }
 
@@ -588,7 +588,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.syncs_sync_node_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncs Sync Node Type"
   }
 
@@ -596,7 +596,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.system_os_distro ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Distro"
   }
 
@@ -604,7 +604,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.system_os_distro_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Distro Version"
   }
 
@@ -612,7 +612,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.system_os_locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Locale"
   }
 
@@ -620,7 +620,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.system_os_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Name"
   }
 
@@ -628,7 +628,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.string.system_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Version"
   }
 
@@ -641,7 +641,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Sync Sync UUID"
   }
 
@@ -649,7 +649,7 @@ view: sync_table {
     sql: ${TABLE}.metrics.uuid.sync_v2_sync_uuid ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Sync V2 Sync UUID"
   }
 
@@ -745,7 +745,6 @@ view: sync_table {
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -755,13 +754,12 @@ view: sync_table {
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: metrics__datetime__syncs_session_start {
     sql: ${TABLE}.metrics.datetime.syncs_session_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -771,13 +769,12 @@ view: sync_table {
       quarter,
       year,
     ]
-    label: "Metrics Datetime: Syncs Session Start Date"
+    label: "Metrics: Datetime: Syncs Session Start Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -793,7 +790,6 @@ view: sync_table {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -809,7 +805,6 @@ view: sync_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -982,7 +977,7 @@ view: sync_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -990,7 +985,7 @@ view: sync_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

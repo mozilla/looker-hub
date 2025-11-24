@@ -78,7 +78,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: metrics_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: metrics_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.boolean.app_choice_screen_acquisition ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "App Choice Screen Acquisition"
     description: "The user installed the app via the browser choice screen
 "
@@ -463,7 +463,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.boolean.app_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "App Default Browser"
     description: "Is Firefox the default browser
 "
@@ -473,7 +473,7 @@ view: metrics_table {
     sql: ${TABLE}.metrics.boolean.application_services_bookmark_highlights_visible ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Application Services Bookmark Highlights Visible"
     description: "Measures the state of the show bookmark highlights
 preference.
@@ -484,7 +484,7 @@ preference.
     sql: ${TABLE}.metrics.boolean.application_services_pocket_stories_visible ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Application Services Pocket Stories Visible"
     description: "Measures the state of the show Pocket stories preference.
 "
@@ -494,7 +494,7 @@ preference.
     sql: ${TABLE}.metrics.boolean.application_services_recent_highlights_visible ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Application Services Recent Highlights Visible"
     description: "Measures the state of the show recent highlights
 preference.
@@ -505,7 +505,7 @@ preference.
     sql: ${TABLE}.metrics.boolean.bookmarks_has_mobile_bookmarks ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Bookmarks Has Mobile Bookmarks"
     description: "A boolean that indicates if the user has bookmarks
 in the mobile folder.
@@ -516,7 +516,7 @@ in the mobile folder.
     sql: ${TABLE}.metrics.boolean.credit_card_autofill_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Credit Card Autofill Enabled"
     description: "Recorded on startup to check if credit card
 autofill settings are enabled
@@ -527,7 +527,7 @@ autofill settings are enabled
     sql: ${TABLE}.metrics.boolean.credit_card_sync_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Credit Card Sync Enabled"
     description: "Recorded on startup to check if credit card
 sync settings are enabled
@@ -538,7 +538,7 @@ sync settings are enabled
     sql: ${TABLE}.metrics.boolean.device_authentication ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Device Authentication"
     description: "True if the device support device owner authentication
 with either biometrics or a passcode.
@@ -549,7 +549,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.firefox_home_page_pocket_stories_visible ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Firefox Home Page Pocket Stories Visible"
     description: "Measures the state of the show Pocket stories preference.
 "
@@ -559,7 +559,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.glean_core_migration_successful ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Glean Core Migration Successful"
     description: "Reports `true` if the client was successfully migrated from the Android-specific implementation of the Glean SDK to the cross-platform one."
   }
@@ -568,7 +568,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Glean Error Preinit Tasks Timeout"
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
@@ -577,7 +577,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.installed_mozilla_products_focus ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Installed Mozilla Products Focus"
     description: "If Focus is installed on the users's device.
 "
@@ -587,7 +587,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.installed_mozilla_products_klar ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Installed Mozilla Products Klar"
     description: "If Klar is installed on the users's device.
 "
@@ -597,7 +597,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.preferences_block_popups ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Block Popups"
     description: "Measures the state of the \"Block Popups\" preference.
 "
@@ -607,7 +607,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.preferences_close_private_tabs ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Close Private Tabs"
     description: "Measures the state of the \"Close Private Tabs\" preference.
 "
@@ -617,7 +617,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.preferences_fxa_logged_in ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Fxa Logged In"
     description: "Measures the state of the fxa login.
 "
@@ -627,7 +627,7 @@ with either biometrics or a passcode.
     sql: ${TABLE}.metrics.boolean.preferences_jump_back_in ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Jump Back In"
     description: "An indication of whether the Jump back in section
 is enabled to be displayed.
@@ -638,7 +638,7 @@ is enabled to be displayed.
     sql: ${TABLE}.metrics.boolean.preferences_pocket ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Pocket"
     description: "An indication of whether Pocket is enabled to be displayed.
 "
@@ -648,7 +648,7 @@ is enabled to be displayed.
     sql: ${TABLE}.metrics.boolean.preferences_recently_saved ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Recently Saved"
     description: "An indication of whether the recently saved section
 is enabled to be displayed.
@@ -659,7 +659,7 @@ is enabled to be displayed.
     sql: ${TABLE}.metrics.boolean.preferences_recently_visited ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Recently Visited"
     description: "An indication of whether the Recently visited section
 is enabled to be displayed.
@@ -670,7 +670,7 @@ is enabled to be displayed.
     sql: ${TABLE}.metrics.boolean.preferences_save_logins ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Save Logins"
     description: "Measures the state of the \"Save Logins\" preference.
 "
@@ -680,7 +680,7 @@ is enabled to be displayed.
     sql: ${TABLE}.metrics.boolean.preferences_show_clipboard_bar ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Show Clipboard Bar"
     description: "Measures the state of the \"Show Clipboard Bar\" preference.
 "
@@ -690,7 +690,7 @@ is enabled to be displayed.
     sql: ${TABLE}.metrics.boolean.preferences_sync_notifs ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Sync Notifs"
     description: "True if notifications for sync are allowed, otherwise false.
 "
@@ -700,7 +700,7 @@ is enabled to be displayed.
     sql: ${TABLE}.metrics.boolean.preferences_tips_and_features_notifs ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Preferences Tips And Features Notifs"
     description: "True if notifications for tips and features are allowed, otherwise false.
 "
@@ -710,7 +710,7 @@ is enabled to be displayed.
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Shopping Settings Component Opted Out"
     description: "Indicates if the user has opted out of using the shopping component.
 Set in BrowserViewController and updated when changed by user.
@@ -721,7 +721,7 @@ Set in BrowserViewController and updated when changed by user.
     sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Shopping Settings Disabled Ads"
     description: "Indicates if the user has opted out of being shown ads in the Fakespot screen
 experience. Set in BrowserViewController and updated when changed by user.
@@ -732,7 +732,7 @@ experience. Set in BrowserViewController and updated when changed by user.
     sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Shopping Settings Nimbus Disabled Shopping"
     description: "Indicates if Nimbus has disabled the use the shopping component.
 "
@@ -742,7 +742,7 @@ experience. Set in BrowserViewController and updated when changed by user.
     sql: ${TABLE}.metrics.boolean.shopping_settings_user_has_onboarded ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Shopping Settings User Has Onboarded"
     description: "Indicates if the user has completed the Shopping product Onboarding
 experience. Set in BrowserViewController and updated when changed by user.
@@ -753,7 +753,7 @@ experience. Set in BrowserViewController and updated when changed by user.
     sql: ${TABLE}.metrics.boolean.theme_automatic_mode ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Theme Automatic Mode"
     description: "Measures the state of the \"Manual/Automatic\" theme
 preference.
@@ -764,7 +764,7 @@ preference.
     sql: ${TABLE}.metrics.boolean.theme_use_system_theme ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Theme Use System Theme"
     description: "Measures the state of the \"Use System Light/Dark Mode\"
 theme preference.
@@ -775,7 +775,7 @@ theme preference.
     sql: ${TABLE}.metrics.boolean.top_sites_sponsored_shortcuts ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Top Sites Sponsored Shortcuts"
     description: "Tracks if the user has enabled sponsored shortcuts
 "
@@ -785,7 +785,7 @@ theme preference.
     sql: ${TABLE}.metrics.boolean.tracking_protection_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Tracking Protection Enabled"
     description: "Measures the state of the tracking-protection enabled
 preference.
@@ -796,7 +796,7 @@ preference.
     sql: ${TABLE}.metrics.boolean.user_ai_summarize_shake_gesture_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "User Ai Summarize Shake Gesture Enabled"
     description: "Records if the user has shake to summarize option enabled
 "
@@ -806,7 +806,7 @@ preference.
     sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "User Ai Summarize Summarization Enabled"
     description: "Records if the user has summarization enabled.
 "
@@ -816,7 +816,7 @@ preference.
     sql: ${TABLE}.metrics.counter.app_menu_block_images_disabled ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Block Images Disabled"
     description: "Counts the number of times a user disables Block Images
 in the app menu
@@ -827,7 +827,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_block_images_enabled ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Block Images Enabled"
     description: "Counts the number of times a user enables Block Images
 in the app menu
@@ -838,7 +838,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_customize_homepage ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Customize Homepage"
     description: "Counts the number of times a user taps Customize Homepage
 in the app menu
@@ -849,7 +849,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_help ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Help"
     description: "Counts the number of times a user taps Help in the app menu
 "
@@ -859,7 +859,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_home ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Home"
     description: "Counts the number of times a user taps Home in the app menu
 "
@@ -869,7 +869,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_homepage_menu ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Homepage Menu"
     description: "Counts the number of times a user taps in the menu toolbar
 on the homepage
@@ -880,7 +880,7 @@ on the homepage
     sql: ${TABLE}.metrics.counter.app_menu_library ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Library"
     description: "Counts the number of times a user taps Library in the app menu
 "
@@ -890,7 +890,7 @@ on the homepage
     sql: ${TABLE}.metrics.counter.app_menu_logins ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Logins"
     description: "Counts the number of times a user taps Logins & Passwords
 in the app menu
@@ -901,7 +901,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_night_mode_disabled ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Night Mode Disabled"
     description: "Counts the number of times a user taps Disable Night Mode
 in the app menu
@@ -912,7 +912,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_night_mode_enabled ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Night Mode Enabled"
     description: "Counts the number of times a user taps Enable Night Mode
 in the app menu
@@ -923,7 +923,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_settings ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Settings"
     description: "Counts the number of times a user taps Settings in the app menu
 "
@@ -933,7 +933,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_sign_into_sync ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Sign Into Sync"
     description: "Counts the number of times a user taps Sign Into Sync
 in the app menu
@@ -944,7 +944,7 @@ in the app menu
     sql: ${TABLE}.metrics.counter.app_menu_site_menu ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Site Menu"
     description: "Counts the number of times a user taps in the menu toolbar
 from a website
@@ -955,7 +955,7 @@ from a website
     sql: ${TABLE}.metrics.counter.app_menu_whats_new ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Menu Whats New"
     description: "Counts the number of times a user taps What's New in the app menu
 "
@@ -965,7 +965,7 @@ from a website
     sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "App Opened As Default Browser"
     description: "Counts the number of times the app is opened from an external
 link, implying the client has Firefox set as a default browser.
@@ -979,7 +979,7 @@ often Firefox is set as the default browser.
     sql: ${TABLE}.metrics.counter.credit_card_deleted ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Credit Card Deleted"
     description: "A counter of the number of credit cards that have been deleted by the user.
 "
@@ -989,7 +989,7 @@ often Firefox is set as the default browser.
     sql: ${TABLE}.metrics.counter.credit_card_modified ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Credit Card Modified"
     description: "A counter of the number of credit cards that have been modified by the user.
 "
@@ -999,7 +999,7 @@ often Firefox is set as the default browser.
     sql: ${TABLE}.metrics.counter.credit_card_saved ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Credit Card Saved"
     description: "A counter of the number of credit cards that have been saved by the user.
 "
@@ -1009,7 +1009,7 @@ often Firefox is set as the default browser.
     sql: ${TABLE}.metrics.counter.default_browser_card_dismiss_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Default Browser Card Dismiss Pressed"
     description: "Counts the number of times default browser card is dismissed.
 "
@@ -1019,7 +1019,7 @@ often Firefox is set as the default browser.
     sql: ${TABLE}.metrics.counter.default_browser_card_go_to_settings_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Default Browser Card Go To Settings Pressed"
     description: "Counts the number of times the Go To Settings button on
 default browser card is clicked.
@@ -1030,7 +1030,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Default Browser Onboarding Dismiss Pressed"
     description: "Counts the number of times default browser onboarding is dismissed.
 "
@@ -1040,7 +1040,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Default Browser Onboarding Go To Settings Pressed"
     description: "Counts the number of times the Go To Settings button on
 default browser onboarding is clicked.
@@ -1051,7 +1051,7 @@ default browser onboarding is clicked.
     sql: ${TABLE}.metrics.counter.firefox_home_page_customize_homepage_button ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Customize Homepage Button"
     description: "Counts the number of times a user taps to open the
 settings menu to customize the Firefox Homepage
@@ -1062,7 +1062,7 @@ settings menu to customize the Firefox Homepage
     sql: ${TABLE}.metrics.counter.firefox_home_page_cycle_wallpaper_button ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Cycle Wallpaper Button"
     description: "Counts the number of times a user changes the
 wallpaper by double-tapping on the Firefox logo
@@ -1074,7 +1074,7 @@ on the Firefox Homepage
     sql: ${TABLE}.metrics.counter.firefox_home_page_firefox_homepage_view ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Firefox Homepage View"
     description: "The number of times a user sees the Firefox Homepage
 "
@@ -1084,7 +1084,7 @@ on the Firefox Homepage
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_item_opened ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page History Highlights Item Opened"
     description: "Counts the number of times a user taps to open an
 existing tab from the History Highlights section
@@ -1095,7 +1095,7 @@ existing tab from the History Highlights section
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_show_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page History Highlights Show All"
     description: "Counts the number of times a user taps the
 Show All button in the History section
@@ -1106,7 +1106,7 @@ Show All button in the History section
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_view ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page History Highlights View"
     description: "Counts the number of times a user sees the
 History Highlights section on the homepage
@@ -1117,7 +1117,7 @@ History Highlights section on the homepage
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_group_opened ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Jump Back In Group Opened"
     description: "Counts the number of times a user taps to open an
 existing group from the Jump Back In section
@@ -1128,7 +1128,7 @@ existing group from the Jump Back In section
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_section_view ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Jump Back In Section View"
     description: "Counts the number of times a user sees the
 Jump Back In section on the homepage
@@ -1139,7 +1139,7 @@ Jump Back In section on the homepage
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_show_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Jump Back In Show All"
     description: "Counts the number of times a user taps the
 Show All button in the Jump Back In section.
@@ -1150,7 +1150,7 @@ Show All button in the Jump Back In section.
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_tab_opened ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Jump Back In Tab Opened"
     description: "Counts the number of times a user taps to open an
 existing tab from the Jump Back In section
@@ -1161,7 +1161,7 @@ existing tab from the Jump Back In section
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_tile_view ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Jump Back In Tile View"
     description: "Counts the number of times a user sees a Jump Back In tile
 in the Jump Back In section on the homepage
@@ -1172,7 +1172,7 @@ in the Jump Back In section on the homepage
     sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_awesomebar ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Open From Awesomebar"
     description: "Counts when a user opens Firefox Home
 from awesomebar.
@@ -1183,7 +1183,7 @@ from awesomebar.
     sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_menu_home_button ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Open From Menu Home Button"
     description: "Counts when user opens Firefox Home from
 bottom right hamburger menu Home button
@@ -1195,7 +1195,7 @@ and New Tab button.
     sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_bookmark_item ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Recently Saved Bookmark Item"
     description: "Counts the number of times a bookmarked item in
 the Recently Saved section is tapped
@@ -1206,7 +1206,7 @@ the Recently Saved section is tapped
     sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_reading_item ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Recently Saved Reading Item"
     description: "Counts the number of times a reading list
 item in the Recently Saved section is tapped.
@@ -1217,7 +1217,7 @@ item in the Recently Saved section is tapped.
     sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_show_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Recently Saved Show All"
     description: "Counts the number of times a user taps the Show All
 button of the Recently Saved Section
@@ -1228,7 +1228,7 @@ button of the Recently Saved Section
     sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_opened ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Synced Tab Opened"
     description: "Counts the number of times a user taps to open a
 synced tab from the Jump Back In section
@@ -1239,7 +1239,7 @@ synced tab from the Jump Back In section
     sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_show_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Synced Tab Show All"
     description: "Counts the number of times a user taps the
 Show All button of Synced Tab in the Jump Back In section.
@@ -1250,7 +1250,7 @@ Show All button of Synced Tab in the Jump Back In section.
     sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_tile_view ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Firefox Home Page Synced Tab Tile View"
     description: "Counts the number of times a user sees the
 Synced Tab tile on the homepage
@@ -1261,7 +1261,7 @@ Synced Tab tile on the homepage
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Error IO"
     description: "The number of times we encountered an IO error
 when writing a pending ping to disk.
@@ -1272,7 +1272,7 @@ when writing a pending ping to disk.
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Error Preinit Tasks Overflow"
     description: "The number of tasks that overflowed the pre-initialization buffer.
 Only sent if the buffer ever overflows.
@@ -1285,7 +1285,7 @@ In Version 0 this reported the total number of tasks enqueued.
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Time Invalid Timezone Offset"
     description: "Counts the number of times we encountered an invalid timezone offset
 when trying to get the current time.
@@ -1298,7 +1298,7 @@ If invalid a UTC offset is used (+0h).
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Upload Deleted Pings After Quota Hit"
     description: "The number of pings deleted after the quota
 for the size of the pending pings directory or number of files is hit.
@@ -1312,7 +1312,7 @@ deletion request pings are never deleted.
     sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Upload In Flight Pings Dropped"
     description: "How many pings were dropped because we found them already in-flight.
 "
@@ -1322,7 +1322,7 @@ deletion request pings are never deleted.
     sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Upload Missing Send Ids"
     description: "How many ping upload responses did we not record as a success or failure
 (in `glean.upload.send_success` or `glean.upload.send_failue`,
@@ -1334,7 +1334,7 @@ respectively) due to an inconsistency in our internal bookkeeping?
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Upload Pending Pings"
     description: "The total number of pending pings at startup.
 This does not include deletion-request pings.
@@ -1345,7 +1345,7 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.counter.glean_validation_app_forceclosed_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Validation App Forceclosed Count"
     description: "This metric counts how many times a dirty bit was detected when starting the Glean SDK, on Android. This dirty bit is set to `true` when Android's lifecycle `ON_START` is hit and flipped back to false on `ON_STOP`. When an application is force-closed, it might not get the `ON_STOP` and so the value would stay `true`. The next time Glean starts, it will increment this counter."
   }
@@ -1354,7 +1354,7 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.counter.glean_validation_baseline_ping_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Validation Baseline Ping Count"
     description: "The number of baseline pings sent during the lifetime of this metrics ping."
   }
@@ -1363,7 +1363,7 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Glean Validation Foreground Count"
     description: "On mobile, the number of times the application went to foreground.
 "
@@ -1373,7 +1373,7 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.counter.history_group_list ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "History Group List"
     description: "Counts the number of times a user has selected a
 search term group inside the history panel. Selecting
@@ -1386,7 +1386,7 @@ of all Site items that appear in that group.
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_shown ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Inactive Tabs Tray Inactive Tab Shown"
     description: "Recorded when a user is shown inactive tab view
 "
@@ -1396,7 +1396,7 @@ of all Site items that appear in that group.
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_swipe_close ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Inactive Tabs Tray Inactive Tab Swipe Close"
     description: "Recorded when a user swipes to close an inactive tab
 "
@@ -1406,7 +1406,7 @@ of all Site items that appear in that group.
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tabs_close_all_btn ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Inactive Tabs Tray Inactive Tabs Close All Btn"
     description: "Recorded when a user taps on close all inactive tabs button
 "
@@ -1416,7 +1416,7 @@ of all Site items that appear in that group.
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_inactive_tab ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Inactive Tabs Tray Open Inactive Tab"
     description: "Recorded when a user taps on an inactive tab
 "
@@ -1426,7 +1426,7 @@ of all Site items that appear in that group.
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_list ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Inactive Tabs Tray Open Recently Closed List"
     description: "Counts the number of times user opens recently closed
 section from inactive tabs tray.
@@ -1437,7 +1437,7 @@ section from inactive tabs tray.
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_tab ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Inactive Tabs Tray Open Recently Closed Tab"
     description: "Counts the number of times the Go To Settings button on
 default browser card is clicked.
@@ -1448,7 +1448,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_deleted ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Deleted"
     description: "A counter of the number of passwords that have been deleted by the user.
 "
@@ -1458,7 +1458,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_modified ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Modified"
     description: "A counter of the number of passwords that have been modified by the user.
 "
@@ -1468,7 +1468,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_saved ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Saved"
     description: "A counter of the number of passwords that have been saved by the user.
 "
@@ -1478,7 +1478,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_store_local_undecryptable_deleted ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Store Local Undecryptable Deleted"
     description: "Track how many logins we deleted locally due to various reasons that prevent us from decrypting the login
 "
@@ -1488,7 +1488,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Store Migration Num Failed"
     description: "The total number of login records which failed to migrate
 "
@@ -1498,7 +1498,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_processed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Store Migration Num Processed"
     description: "The total number of login records processed by the migration
 "
@@ -1508,7 +1508,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_succeeded ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Store Migration Num Succeeded"
     description: "The total number of login records successfully migrated
 "
@@ -1518,7 +1518,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_store_mirror_undecryptable_deleted ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Store Mirror Undecryptable Deleted"
     description: "Track how many logins we deleted in the mirror table due to various reasons that prevent us from decrypting the login
 "
@@ -1528,7 +1528,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_store_read_query_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Store Read Query Count"
     description: "The total number of read operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental reads performed as part of a sync. It is intended to be used together with `read_query_error_count` to measure the overall error rate of read operations on the logins store.
 "
@@ -1538,7 +1538,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_store_unlock_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Store Unlock Count"
     description: "The number of times the login store was unlocked. It is intended to be used together with `unlock_error_count` to measure the overall error rate of unlocking the logins store.
 "
@@ -1548,7 +1548,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.logins_store_write_query_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Logins Store Write Query Count"
     description: "The total number of write operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental writes performed as part of a sync. It is intended to be used together with `write_query_error_count` to measure the overall error rate of write operations on the logins store.
 "
@@ -1558,7 +1558,7 @@ default browser card is clicked.
     sql: ${TABLE}.metrics.counter.migration_image_sd_cache_cleanup ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Migration Image Sd Cache Cleanup"
     description: "Counts the number of times a user runs the
 sd web image library cache cleanup
@@ -1569,7 +1569,7 @@ sd web image library cache cleanup
     sql: ${TABLE}.metrics.counter.onboarding_sync_screen ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Onboarding Sync Screen"
     description: "The number of times a user is shown the second screen, the
 Sync Screen, from the onboarding process.
@@ -1580,7 +1580,7 @@ Sync Screen, from the onboarding process.
     sql: ${TABLE}.metrics.counter.onboarding_sync_screen_browse ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Onboarding Sync Screen Browse"
     description: "The number of times a user taps on the start browsing button
 in onboarding's second screen, the Sync Screen.
@@ -1591,7 +1591,7 @@ in onboarding's second screen, the Sync Screen.
     sql: ${TABLE}.metrics.counter.onboarding_sync_screen_sign_up ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Onboarding Sync Screen Sign Up"
     description: "The number of times a user taps on the sign up button in
 onboarding's second screen, the Sync Screen.
@@ -1602,7 +1602,7 @@ onboarding's second screen, the Sync Screen.
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Onboarding Welcome Screen"
     description: "The number of times a user is shown the first screen, the
 welcome screen, from the onboarding process.
@@ -1613,7 +1613,7 @@ welcome screen, from the onboarding process.
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_close ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Onboarding Welcome Screen Close"
     description: "The number of times a user taps on the close button in
 onboarding's first screen, the welcome screen.
@@ -1624,7 +1624,7 @@ onboarding's first screen, the welcome screen.
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_next ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Onboarding Welcome Screen Next"
     description: "The number of times a user taps on the next button in
 onboarding's first screen, the welcome screen.
@@ -1635,7 +1635,7 @@ onboarding's first screen, the welcome screen.
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_sign_in ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Onboarding Welcome Screen Sign In"
     description: "The number of times a user taps on the Sign In button in
 onboarding's first screen, the welcome screen.
@@ -1646,7 +1646,7 @@ onboarding's first screen, the welcome screen.
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_sign_up ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Onboarding Welcome Screen Sign Up"
     description: "The number of times a user taps the sign up button in
 onboarding's first screen, the welcome screen.
@@ -1657,7 +1657,7 @@ onboarding's first screen, the welcome screen.
     sql: ${TABLE}.metrics.counter.page_action_menu_add_to_reading_list ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Add To Reading List"
     description: "Counts the number of times a user taps Add to Reading List
 in the page action menu
@@ -1668,7 +1668,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_copy_address ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Copy Address"
     description: "Counts the number of times a user taps Copy Address
 in the page action menu
@@ -1679,7 +1679,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_create_new_tab ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Create New Tab"
     description: "Counts the number of times a user creates a new tab from the
 page action menu.
@@ -1690,7 +1690,7 @@ page action menu.
     sql: ${TABLE}.metrics.counter.page_action_menu_find_in_page ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Find In Page"
     description: "Counts the number of times a user taps Find in Page
 in the page action menu
@@ -1701,7 +1701,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_pin_to_top_sites ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Pin To Top Sites"
     description: "Counts the number of times a user taps Pin to Top Sites
 in the page action menu
@@ -1712,7 +1712,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_remove_pinned_site ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Remove Pinned Site"
     description: "Counts the number of times a user taps Pin to Top Sites
 in the page action menu
@@ -1723,7 +1723,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_report_site_issue ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Report Site Issue"
     description: "Counts the number of times a user taps Report Site Issue
 in the page action menu
@@ -1734,7 +1734,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_request_desktop_site ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Request Desktop Site"
     description: "Counts the number of times a user taps Request Desktop Site
 in the page action menu
@@ -1745,7 +1745,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_request_mobile_site ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Request Mobile Site"
     description: "Counts the number of times a user taps Request Mobile Site
 in the page action menu
@@ -1756,7 +1756,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_send_to_device ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Send To Device"
     description: "Counts the number of times a user taps Send to Device
 in the page action menu
@@ -1767,7 +1767,7 @@ in the page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_share_page_with ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu Share Page With"
     description: "Counts the number of times a user taps Share Page With in the
 page action menu
@@ -1778,7 +1778,7 @@ page action menu
     sql: ${TABLE}.metrics.counter.page_action_menu_view_downloads_panel ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu View Downloads Panel"
     description: "Counts the number of times a user navigates to the downloads panel
 from the page action menu.
@@ -1789,7 +1789,7 @@ from the page action menu.
     sql: ${TABLE}.metrics.counter.page_action_menu_view_history_panel ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Page Action Menu View History Panel"
     description: "Counts the number of times a user navigates to the history panel
 from the page action menu.
@@ -1800,7 +1800,7 @@ from the page action menu.
     sql: ${TABLE}.metrics.counter.password_generator_filled ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Password Generator Filled"
     description: "The \"use password button\" of the password generator bottom sheet was clicked.
 "
@@ -1810,7 +1810,7 @@ from the page action menu.
     sql: ${TABLE}.metrics.counter.password_generator_shown ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Password Generator Shown"
     description: "The password generator bottom sheet was shown and is visible
 "
@@ -1820,7 +1820,7 @@ from the page action menu.
     sql: ${TABLE}.metrics.counter.pocket_open_story ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Pocket Open Story"
     description: "Counts the number of times a user opens
 Pocket article from Firefox home Pocket feed
@@ -1831,7 +1831,7 @@ Pocket article from Firefox home Pocket feed
     sql: ${TABLE}.metrics.counter.pocket_section_impressions ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Pocket Section Impressions"
     description: "Counts when a user gets to pocket section
 on Firefox Home
@@ -1842,7 +1842,7 @@ on Firefox Home
     sql: ${TABLE}.metrics.counter.qr_code_scanned ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Qr Code Scanned"
     description: "Counts the number of times a QR code is scanned.
 "
@@ -1852,7 +1852,7 @@ on Firefox Home
     sql: ${TABLE}.metrics.counter.reader_mode_close ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Reader Mode Close"
     description: "Counts how many times the reader mode is closed.
 "
@@ -1862,7 +1862,7 @@ on Firefox Home
     sql: ${TABLE}.metrics.counter.reader_mode_open ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Reader Mode Open"
     description: "Counts how many times the reader mode is opened.
 "
@@ -1872,7 +1872,7 @@ on Firefox Home
     sql: ${TABLE}.metrics.counter.reading_list_mark_read ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Reading List Mark Read"
     description: "Counts the number of times a reading list item is
 marked as read.
@@ -1883,7 +1883,7 @@ marked as read.
     sql: ${TABLE}.metrics.counter.reading_list_mark_unread ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Reading List Mark Unread"
     description: "Counts the number of times a reading list item is
 marked as unread.
@@ -1894,7 +1894,7 @@ marked as unread.
     sql: ${TABLE}.metrics.counter.reading_list_open ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Reading List Open"
     description: "Counts the number of times an item is opened from the
 Reading List
@@ -1905,7 +1905,7 @@ Reading List
     sql: ${TABLE}.metrics.counter.search_start_search_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Search Start Search Pressed"
     description: "Counts the number of times the start search button is
 pressed
@@ -1916,7 +1916,7 @@ pressed
     sql: ${TABLE}.metrics.counter.settings_menu_set_as_default_browser_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Settings Menu Set As Default Browser Pressed"
     description: "Counts the number of times setting as default
 browser menu option is tapped.
@@ -1927,7 +1927,7 @@ browser menu option is tapped.
     sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Shopping Product Page Visits"
     description: "A count of the number of eligible product pages the user has visited.
 "
@@ -1937,7 +1937,7 @@ browser menu option is tapped.
     sql: ${TABLE}.metrics.counter.sync_create_account_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Sync Create Account Pressed"
     description: "Counts the number of times a user taps
 on create account button in sync library view
@@ -1948,7 +1948,7 @@ on create account button in sync library view
     sql: ${TABLE}.metrics.counter.sync_open_sync_home_shortcut ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Sync Open Sync Home Shortcut"
     description: "Counts the number of times a user opens
 synced tab list from home view
@@ -1959,7 +1959,7 @@ synced tab list from home view
     sql: ${TABLE}.metrics.counter.sync_open_tab ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Sync Open Tab"
     description: "Counts the number of times a user opens
 synced tab
@@ -1970,7 +1970,7 @@ synced tab
     sql: ${TABLE}.metrics.counter.sync_sign_in_sync_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Sync Sign In Sync Pressed"
     description: "Counts the number of times a user taps
 on sign in to sync button in sync
@@ -1982,7 +1982,7 @@ library view
     sql: ${TABLE}.metrics.counter.tabs_cumulative_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Cumulative Count"
     description: "Measures the current open tab count as the application
 goes to background. Each background event adds to this
@@ -2000,7 +2000,7 @@ average open tabs per foreground \"session\".
     sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Grouped Tab Closed"
     description: "Recorded when a user closes the tab in a group
 "
@@ -2010,7 +2010,7 @@ average open tabs per foreground \"session\".
     sql: ${TABLE}.metrics.counter.tabs_grouped_tab_search ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Grouped Tab Search"
     description: "This counts the number of times a user has tapped the search
 icon for grouped tabs in the tab tray.
@@ -2021,7 +2021,7 @@ icon for grouped tabs in the tab tray.
     sql: ${TABLE}.metrics.counter.tabs_navigate_tab_back_swipe ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Navigate Tab Back Swipe"
     description: "This counts the number of times a user navigates back in tab
 history by swiping from the left edge of the device to the right.
@@ -2032,7 +2032,7 @@ history by swiping from the left edge of the device to the right.
     sql: ${TABLE}.metrics.counter.tabs_navigate_tab_history_back ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Navigate Tab History Back"
     description: "This counts the number of times a user taps the back
 button on a tab's toolbar.
@@ -2043,7 +2043,7 @@ button on a tab's toolbar.
     sql: ${TABLE}.metrics.counter.tabs_navigate_tab_history_forward ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Navigate Tab History Forward"
     description: "This counts the number of times a user taps the forward
 button on a tab's toolbar.
@@ -2054,7 +2054,7 @@ button on a tab's toolbar.
     sql: ${TABLE}.metrics.counter.tabs_new_tab_pressed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs New Tab Pressed"
     description: "Counts the number of times the add new tab button is
 pressed
@@ -2065,7 +2065,7 @@ pressed
     sql: ${TABLE}.metrics.counter.tabs_normal_and_private_uri_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Normal And Private URI Count"
     description: "Record the number of URI's visited by the user.
 "
@@ -2075,7 +2075,7 @@ pressed
     sql: ${TABLE}.metrics.counter.tabs_pull_to_refresh ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Pull To Refresh"
     description: "Record event when user has executed pull to refresh.
 "
@@ -2085,7 +2085,7 @@ pressed
     sql: ${TABLE}.metrics.counter.tabs_reload_from_url_bar ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Tabs Reload From URL Bar"
     description: "This counts the number of times a user taps the reload
 button in the URL bar.
@@ -2096,7 +2096,7 @@ button in the URL bar.
     sql: ${TABLE}.metrics.counter.termsofuse_dismiss_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Termsofuse Dismiss Count"
     description: "Records the number of times a user clicks to dismiss (does not include tapping accept or remind me later).
 "
@@ -2106,7 +2106,7 @@ button in the URL bar.
     sql: ${TABLE}.metrics.counter.termsofuse_impression_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Termsofuse Impression Count"
     description: "Records the number of ToU impressions the user has had.
 "
@@ -2116,9 +2116,19 @@ button in the URL bar.
     sql: ${TABLE}.metrics.counter.termsofuse_remind_me_later_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Termsofuse Remind Me Later Count"
     description: "Records the number of times a user clicks \"remind me later\".
+"
+  }
+
+  dimension: metrics__counter__user_credit_cards_undecryptable_count {
+    sql: ${TABLE}.metrics.counter.user_credit_cards_undecryptable_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "User Credit Cards Undecryptable Count"
+    description: "Track how many undecryptable credit cards we scrub during the credit card verification process
 "
   }
 
@@ -2126,7 +2136,7 @@ button in the URL bar.
     sql: ${TABLE}.metrics.counter.user_terms_of_use_dismissed_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "User Terms Of Use Dismissed Count"
     description: "Records the number of times a user taps to dismiss (does not include tapping accept or remind me later).
 
@@ -2138,7 +2148,7 @@ button in the URL bar.
     sql: ${TABLE}.metrics.counter.user_terms_of_use_remind_me_later_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "User Terms Of Use Remind Me Later Count"
     description: "Records the number of times a user taps \"remind me later\".
 
@@ -2150,7 +2160,7 @@ button in the URL bar.
     sql: ${TABLE}.metrics.counter.user_terms_of_use_shown_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "User Terms Of Use Shown Count"
     description: "Records the number of ToU impressions the user has had.
 
@@ -2162,7 +2172,7 @@ button in the URL bar.
     sql: ${TABLE}.metrics.counter.widget_l_tabs_open_url ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Widget L Tabs Open URL"
     description: "Counts how many times the large tabs widget opens url
 "
@@ -2172,7 +2182,7 @@ button in the URL bar.
     sql: ${TABLE}.metrics.counter.widget_m_quick_action_close_private ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Widget M Quick Action Close Private"
     description: "Counts how many times medium quick action
 widget closes private tabs
@@ -2183,7 +2193,7 @@ widget closes private tabs
     sql: ${TABLE}.metrics.counter.widget_m_quick_action_copied_link ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Widget M Quick Action Copied Link"
     description: "Counts how many times medium quick action
 widget opens copied links
@@ -2194,7 +2204,7 @@ widget opens copied links
     sql: ${TABLE}.metrics.counter.widget_m_quick_action_private_search ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Widget M Quick Action Private Search"
     description: "Counts how many times medium quick action
 widget opens firefox for private search
@@ -2205,7 +2215,7 @@ widget opens firefox for private search
     sql: ${TABLE}.metrics.counter.widget_m_quick_action_search ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Widget M Quick Action Search"
     description: "Counts how many times medium quick action
 widget opens firefox for regular search
@@ -2216,7 +2226,7 @@ widget opens firefox for regular search
     sql: ${TABLE}.metrics.counter.widget_m_tabs_open_url ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Widget M Tabs Open URL"
     description: "Counts how many times the medium tabs widget opens url
 "
@@ -2226,7 +2236,7 @@ widget opens firefox for regular search
     sql: ${TABLE}.metrics.counter.widget_m_top_sites_widget ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Widget M Top Sites Widget"
     description: "Counts how many times user opens top site tabs
 "
@@ -2236,7 +2246,7 @@ widget opens firefox for regular search
     sql: ${TABLE}.metrics.counter.widget_s_quick_action_search ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Widget S Quick Action Search"
     description: "Counts how many times small quick action
 widget opens firefox for regular search
@@ -2247,7 +2257,7 @@ widget opens firefox for regular search
     sql: ${TABLE}.metrics.datetime.raw_app_last_opened_as_default_browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw App Last Opened As Default Browser"
   }
 
@@ -2255,7 +2265,7 @@ widget opens firefox for regular search
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
@@ -2263,7 +2273,7 @@ widget opens firefox for regular search
     sql: ${TABLE}.metrics.datetime.raw_termsofuse_date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw Termsofuse Date"
   }
 
@@ -2271,7 +2281,7 @@ widget opens firefox for regular search
     sql: ${TABLE}.metrics.datetime.raw_user_terms_of_use_date_accepted ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw User Terms Of Use Date Accepted"
   }
 
@@ -2667,7 +2677,7 @@ the currently selected wallpaper if it's not the default.
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_label: "Metrics: Memory Distribution: Glean Database Size"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -2676,7 +2686,7 @@ the currently selected wallpaper if it's not the default.
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_label: "Metrics: Memory Distribution: Glean Database Size"
     group_item_label: "Sum"
   }
 
@@ -2689,7 +2699,7 @@ the currently selected wallpaper if it's not the default.
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_label: "Metrics: Memory Distribution: Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -2698,7 +2708,7 @@ the currently selected wallpaper if it's not the default.
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_label: "Metrics: Memory Distribution: Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Sum"
   }
 
@@ -2711,7 +2721,7 @@ the currently selected wallpaper if it's not the default.
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_label: "Metrics: Memory Distribution: Glean Upload Pending Pings Directory Size"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -2720,7 +2730,7 @@ the currently selected wallpaper if it's not the default.
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_label: "Metrics: Memory Distribution: Glean Upload Pending Pings Directory Size"
     group_item_label: "Sum"
   }
 
@@ -2768,7 +2778,7 @@ Structure is an array of objects, each containing the following properties:
     sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Addresses Saved All"
     description: "A counter of the number of all addresses that are currently saved by the user.
 "
@@ -2778,7 +2788,7 @@ Structure is an array of objects, each containing the following properties:
     sql: ${TABLE}.metrics.quantity.bookmarks_mobile_bookmarks_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Bookmarks Mobile Bookmarks Count"
     description: "A quantity that indicates how many bookmarks a user
 has in the mobile folder.
@@ -2789,7 +2799,7 @@ has in the mobile folder.
     sql: ${TABLE}.metrics.quantity.credit_card_saved_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Credit Card Saved All"
     description: "Record the number of ALL the credit cards that have been currently stored by the user.
 "
@@ -2799,7 +2809,7 @@ has in the mobile folder.
     sql: ${TABLE}.metrics.quantity.history_num_visits ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "History Num Visits"
     description: "The number of visits in a User's history database
 "
@@ -2809,7 +2819,7 @@ has in the mobile folder.
     sql: ${TABLE}.metrics.quantity.logins_saved_all ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Logins Saved All"
     description: "Record the number of ALL the passwords that have been currently stored by the user.
 "
@@ -2819,7 +2829,7 @@ has in the mobile folder.
     sql: ${TABLE}.metrics.quantity.places_history_migration_num_migrated ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Places History Migration Num Migrated"
     description: "The number of visits migrated to the places.db
 "
@@ -2829,7 +2839,7 @@ has in the mobile folder.
     sql: ${TABLE}.metrics.quantity.places_history_migration_num_to_migrate ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Places History Migration Num To Migrate"
     description: "The number of visits expected to migrate to the places.db
 "
@@ -2839,7 +2849,7 @@ has in the mobile folder.
     sql: ${TABLE}.metrics.quantity.tabs_inactive_tabs_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Tabs Inactive Tabs Count"
     description: "A quantity that indicates how many INACTIVE tabs a user
 currently has open. This is reported when the user backgrounds
@@ -2851,7 +2861,7 @@ the app.
     sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Tabs Normal Tabs Quantity"
     description: "A snapshot of how many normal tabs a user has opened when he
 closes the application.
@@ -2862,7 +2872,7 @@ closes the application.
     sql: ${TABLE}.metrics.quantity.tabs_private_tabs_quantity ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Tabs Private Tabs Quantity"
     description: "A snapshot of how many private tabs a user has opened when he
 closes the application.
@@ -2873,7 +2883,7 @@ closes the application.
     sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Termsofuse Version"
     description: "The version of the Terms of Use the user accepted.
 "
@@ -2883,7 +2893,7 @@ closes the application.
     sql: ${TABLE}.metrics.quantity.user_terms_of_use_version_accepted ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "User Terms Of Use Version Accepted"
     description: "The version of the Terms of Use the user accepted.
 
@@ -2895,7 +2905,7 @@ closes the application.
     sql: ${TABLE}.metrics.quantity.windows_ipad_window_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Windows Ipad Window Count"
     description: "A snapshot of how many windows the user has opened on iPad.
 "
@@ -2905,7 +2915,7 @@ closes the application.
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.denominator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Places History Migration Migration Ended Rate"
+    group_label: "Metrics: Rate: Places History Migration Migration Ended Rate"
     group_item_label: "Denominator"
   }
 
@@ -2913,7 +2923,7 @@ closes the application.
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.numerator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Places History Migration Migration Ended Rate"
+    group_label: "Metrics: Rate: Places History Migration Migration Ended Rate"
     group_item_label: "Numerator"
   }
 
@@ -2921,7 +2931,7 @@ closes the application.
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.denominator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Places History Migration Migration Error Rate"
+    group_label: "Metrics: Rate: Places History Migration Migration Error Rate"
     group_item_label: "Denominator"
   }
 
@@ -2929,7 +2939,7 @@ closes the application.
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.numerator ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Rate Places History Migration Migration Error Rate"
+    group_label: "Metrics: Rate: Places History Migration Migration Error Rate"
     group_item_label: "Numerator"
   }
 
@@ -2937,7 +2947,7 @@ closes the application.
     sql: ${TABLE}.metrics.string.adjust_ad_group ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Adjust Ad Group"
     description: "A string containing the Adjust ad group ID from which the user installed
 Firefox-iOS.
@@ -2948,7 +2958,7 @@ Firefox-iOS.
     sql: ${TABLE}.metrics.string.adjust_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Adjust Campaign"
     description: "A string containing the Adjust campaign ID from which the user installed
 Firefox-iOS.
@@ -2959,7 +2969,7 @@ Firefox-iOS.
     sql: ${TABLE}.metrics.string.adjust_creative ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Adjust Creative"
     description: "A string containing the Adjust creative ID from which the user installed
 Firefox-iOS.
@@ -2970,7 +2980,7 @@ Firefox-iOS.
     sql: ${TABLE}.metrics.string.adjust_network ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Adjust Network"
     description: "A string containing the Adjust network ID from which the user installed
 Firefox-iOS.
@@ -2981,7 +2991,7 @@ Firefox-iOS.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -2992,7 +3002,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Database Rkv Load Error"
     description: "If there was an error loading the RKV database, record it.
 "
@@ -3002,7 +3012,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Ping Reason"
     description: "The optional reason the ping was submitted.
 The specific values for reason are specific to each ping, and are
@@ -3014,7 +3024,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.string.preferences_home_page_setting ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Preferences Home Page Setting"
     description: "The setting a user chooses as their Home page. By default,
 it is initially set to Firefox Home.
@@ -3025,7 +3035,7 @@ it is initially set to Firefox Home.
     sql: ${TABLE}.metrics.string.preferences_mail_client ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Preferences Mail Client"
     description: "The URL scheme of the mail client that the user wants to use
 for `mailto:` links. It is used to measure usage of this
@@ -3039,7 +3049,7 @@ of users is using their client.
     sql: ${TABLE}.metrics.string.preferences_new_tab_experience ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Preferences New Tab Experience"
     description: "The name of the view that the user wants to see on new tabs.
 For example History, Homepage or Blank. It is used to measure
@@ -3053,7 +3063,7 @@ introduce the new Activity Stream features.
     sql: ${TABLE}.metrics.string.preferences_opening_screen ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Preferences Opening Screen"
     description: "What opening screen preference the user has selected under
 \"Customize Home\". \"homepage,\" \"last tab,\" or
@@ -3065,7 +3075,7 @@ introduce the new Activity Stream features.
     sql: ${TABLE}.metrics.string.search_default_engine ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Search Default Engine"
     description: "The default search engine identifier if the search engine is
 pre-loaded with Firefox-iOS.  If it's a custom search engine,
@@ -3077,7 +3087,7 @@ then the value will be 'custom'.
     sql: ${TABLE}.metrics.string.theme_automatic_slider_value ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Theme Automatic Slider Value"
     description: "Measures the string representation of the current slider
 value of the automatic theme switching slider.
@@ -3088,7 +3098,7 @@ value of the automatic theme switching slider.
     sql: ${TABLE}.metrics.string.theme_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Theme Name"
     description: "Measures the name of the current theme.  One of:
 * normal
@@ -3100,7 +3110,7 @@ value of the automatic theme switching slider.
     sql: ${TABLE}.metrics.string.tracking_protection_strength ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Tracking Protection Strength"
     description: "A string representing the selected strength of the
 tracking-protection that is enabled. One of:
@@ -3113,7 +3123,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.string.user_toolbar_middle_button_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "User Toolbar Middle Button Type"
     description: "Records the user's preference for the middle button (newTab or home).
 "
@@ -3133,7 +3143,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan Logins Store Migration Total Duration"
+    group_label: "Metrics: Timespan: Logins Store Migration Total Duration"
     group_item_label: "Time Unit"
   }
 
@@ -3141,7 +3151,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan Logins Store Migration Total Duration"
+    group_label: "Metrics: Timespan: Logins Store Migration Total Duration"
     group_item_label: "Value"
   }
 
@@ -3149,7 +3159,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Summarization Time"
     group_item_label: "Bucket Count"
   }
 
@@ -3157,7 +3167,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Summarization Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3166,7 +3176,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Summarization Time"
     group_item_label: "Histogram Type"
   }
 
@@ -3174,7 +3184,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Summarization Time"
     group_item_label: "Overflow"
   }
 
@@ -3187,7 +3197,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Summarization Time"
     group_item_label: "Sum"
   }
 
@@ -3195,7 +3205,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Summarization Time"
     group_item_label: "Time Unit"
   }
 
@@ -3203,7 +3213,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.ai_summarize_summarization_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Ai Summarize Summarization Time"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Summarization Time"
     group_item_label: "Underflow"
   }
 
@@ -3216,7 +3226,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_label: "Metrics: Timing Distribution: Awesomebar Query Time"
     group_item_label: "Bucket Count"
   }
 
@@ -3224,7 +3234,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_label: "Metrics: Timing Distribution: Awesomebar Query Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3233,7 +3243,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_label: "Metrics: Timing Distribution: Awesomebar Query Time"
     group_item_label: "Histogram Type"
   }
 
@@ -3241,7 +3251,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_label: "Metrics: Timing Distribution: Awesomebar Query Time"
     group_item_label: "Overflow"
   }
 
@@ -3254,7 +3264,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_label: "Metrics: Timing Distribution: Awesomebar Query Time"
     group_item_label: "Sum"
   }
 
@@ -3262,7 +3272,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_label: "Metrics: Timing Distribution: Awesomebar Query Time"
     group_item_label: "Time Unit"
   }
 
@@ -3270,7 +3280,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_label: "Metrics: Timing Distribution: Awesomebar Query Time"
     group_item_label: "Underflow"
   }
 
@@ -3283,7 +3293,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Bucket Count"
   }
 
@@ -3291,7 +3301,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3300,7 +3310,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Histogram Type"
   }
 
@@ -3308,7 +3318,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Overflow"
   }
 
@@ -3321,7 +3331,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Sum"
   }
 
@@ -3329,7 +3339,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Time Unit"
   }
 
@@ -3337,7 +3347,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Database Write Time"
+    group_label: "Metrics: Timing Distribution: Glean Database Write Time"
     group_item_label: "Underflow"
   }
 
@@ -3350,7 +3360,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Bucket Count"
   }
 
@@ -3358,7 +3368,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3367,7 +3377,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Histogram Type"
   }
 
@@ -3375,7 +3385,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Overflow"
   }
 
@@ -3388,7 +3398,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Sum"
   }
 
@@ -3396,7 +3406,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Time Unit"
   }
 
@@ -3404,7 +3414,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Failure"
     group_item_label: "Underflow"
   }
 
@@ -3417,7 +3427,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Bucket Count"
   }
 
@@ -3425,7 +3435,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3434,7 +3444,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Histogram Type"
   }
 
@@ -3442,7 +3452,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Overflow"
   }
 
@@ -3455,7 +3465,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Sum"
   }
 
@@ -3463,7 +3473,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Time Unit"
   }
 
@@ -3471,7 +3481,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_label: "Metrics: Timing Distribution: Glean Upload Send Success"
     group_item_label: "Underflow"
   }
 
@@ -3484,7 +3494,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Bucket Count"
   }
 
@@ -3492,7 +3502,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3501,7 +3511,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Histogram Type"
   }
 
@@ -3509,7 +3519,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Overflow"
   }
 
@@ -3522,7 +3532,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Sum"
   }
 
@@ -3530,7 +3540,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Time Unit"
   }
 
@@ -3538,7 +3548,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Underflow"
   }
 
@@ -3551,7 +3561,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Bucket Count"
   }
 
@@ -3559,7 +3569,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3568,7 +3578,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Histogram Type"
   }
 
@@ -3576,7 +3586,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Overflow"
   }
 
@@ -3589,7 +3599,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Sum"
   }
 
@@ -3597,7 +3607,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Time Unit"
   }
 
@@ -3605,7 +3615,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_label: "Metrics: Timing Distribution: Glean Validation Shutdown Wait"
     group_item_label: "Underflow"
   }
 
@@ -3618,7 +3628,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Read Query Time"
     group_item_label: "Bucket Count"
   }
 
@@ -3626,7 +3636,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Read Query Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3635,7 +3645,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Read Query Time"
     group_item_label: "Histogram Type"
   }
 
@@ -3643,7 +3653,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Read Query Time"
     group_item_label: "Overflow"
   }
 
@@ -3656,7 +3666,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Read Query Time"
     group_item_label: "Sum"
   }
 
@@ -3664,7 +3674,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Read Query Time"
     group_item_label: "Time Unit"
   }
 
@@ -3672,7 +3682,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Read Query Time"
     group_item_label: "Underflow"
   }
 
@@ -3685,7 +3695,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Unlock Time"
     group_item_label: "Bucket Count"
   }
 
@@ -3693,7 +3703,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Unlock Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3702,7 +3712,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Unlock Time"
     group_item_label: "Histogram Type"
   }
 
@@ -3710,7 +3720,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Unlock Time"
     group_item_label: "Overflow"
   }
 
@@ -3723,7 +3733,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Unlock Time"
     group_item_label: "Sum"
   }
 
@@ -3731,7 +3741,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Unlock Time"
     group_item_label: "Time Unit"
   }
 
@@ -3739,7 +3749,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Unlock Time"
     group_item_label: "Underflow"
   }
 
@@ -3752,7 +3762,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Write Query Time"
     group_item_label: "Bucket Count"
   }
 
@@ -3760,7 +3770,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Write Query Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3769,7 +3779,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Write Query Time"
     group_item_label: "Histogram Type"
   }
 
@@ -3777,7 +3787,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Write Query Time"
     group_item_label: "Overflow"
   }
 
@@ -3790,7 +3800,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Write Query Time"
     group_item_label: "Sum"
   }
 
@@ -3798,7 +3808,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Write Query Time"
     group_item_label: "Time Unit"
   }
 
@@ -3806,7 +3816,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_label: "Metrics: Timing Distribution: Logins Store Write Query Time"
     group_item_label: "Underflow"
   }
 
@@ -3819,7 +3829,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Bucket Count"
   }
 
@@ -3827,7 +3837,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3836,7 +3846,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Histogram Type"
   }
 
@@ -3844,7 +3854,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Overflow"
   }
 
@@ -3857,7 +3867,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Sum"
   }
 
@@ -3865,7 +3875,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Time Unit"
   }
 
@@ -3873,7 +3883,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Underflow"
   }
 
@@ -3886,7 +3896,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Bucket Count"
   }
 
@@ -3894,7 +3904,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3903,7 +3913,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Histogram Type"
   }
 
@@ -3911,7 +3921,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Overflow"
   }
 
@@ -3924,7 +3934,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Sum"
   }
 
@@ -3932,7 +3942,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Time Unit"
   }
 
@@ -3940,7 +3950,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_label: "Metrics: Timing Distribution: Nimbus Health Fetch Experiments Time"
     group_item_label: "Underflow"
   }
 
@@ -3953,7 +3963,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_label: "Metrics: Timing Distribution: Places History Migration Duration"
     group_item_label: "Bucket Count"
   }
 
@@ -3961,7 +3971,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_label: "Metrics: Timing Distribution: Places History Migration Duration"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -3970,7 +3980,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_label: "Metrics: Timing Distribution: Places History Migration Duration"
     group_item_label: "Histogram Type"
   }
 
@@ -3978,7 +3988,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_label: "Metrics: Timing Distribution: Places History Migration Duration"
     group_item_label: "Overflow"
   }
 
@@ -3991,7 +4001,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_label: "Metrics: Timing Distribution: Places History Migration Duration"
     group_item_label: "Sum"
   }
 
@@ -3999,7 +4009,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_label: "Metrics: Timing Distribution: Places History Migration Duration"
     group_item_label: "Time Unit"
   }
 
@@ -4007,7 +4017,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_label: "Metrics: Timing Distribution: Places History Migration Duration"
     group_item_label: "Underflow"
   }
 
@@ -4020,7 +4030,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
+    group_label: "Metrics: Timing Distribution: Share Deeplink Open URL Startup Time"
     group_item_label: "Bucket Count"
   }
 
@@ -4028,7 +4038,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
+    group_label: "Metrics: Timing Distribution: Share Deeplink Open URL Startup Time"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4037,7 +4047,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
+    group_label: "Metrics: Timing Distribution: Share Deeplink Open URL Startup Time"
     group_item_label: "Histogram Type"
   }
 
@@ -4045,7 +4055,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
+    group_label: "Metrics: Timing Distribution: Share Deeplink Open URL Startup Time"
     group_item_label: "Overflow"
   }
 
@@ -4058,7 +4068,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
+    group_label: "Metrics: Timing Distribution: Share Deeplink Open URL Startup Time"
     group_item_label: "Sum"
   }
 
@@ -4066,7 +4076,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
+    group_label: "Metrics: Timing Distribution: Share Deeplink Open URL Startup Time"
     group_item_label: "Time Unit"
   }
 
@@ -4074,7 +4084,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.share_deeplink_open_url_startup_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Share Deeplink Open URL Startup Time"
+    group_label: "Metrics: Timing Distribution: Share Deeplink Open URL Startup Time"
     group_item_label: "Underflow"
   }
 
@@ -4087,7 +4097,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_label: "Metrics: Timing Distribution: Tabs Tab Switch"
     group_item_label: "Bucket Count"
   }
 
@@ -4095,7 +4105,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_label: "Metrics: Timing Distribution: Tabs Tab Switch"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4104,7 +4114,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_label: "Metrics: Timing Distribution: Tabs Tab Switch"
     group_item_label: "Histogram Type"
   }
 
@@ -4112,7 +4122,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_label: "Metrics: Timing Distribution: Tabs Tab Switch"
     group_item_label: "Overflow"
   }
 
@@ -4125,7 +4135,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_label: "Metrics: Timing Distribution: Tabs Tab Switch"
     group_item_label: "Sum"
   }
 
@@ -4133,7 +4143,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_label: "Metrics: Timing Distribution: Tabs Tab Switch"
     group_item_label: "Time Unit"
   }
 
@@ -4141,7 +4151,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_label: "Metrics: Timing Distribution: Tabs Tab Switch"
     group_item_label: "Underflow"
   }
 
@@ -4154,7 +4164,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.webview_page_load.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_label: "Metrics: Timing Distribution: Webview Page Load"
     group_item_label: "Bucket Count"
   }
 
@@ -4162,7 +4172,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.webview_page_load.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_label: "Metrics: Timing Distribution: Webview Page Load"
     group_item_label: "Count"
     description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
@@ -4171,7 +4181,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.webview_page_load.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_label: "Metrics: Timing Distribution: Webview Page Load"
     group_item_label: "Histogram Type"
   }
 
@@ -4179,7 +4189,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.webview_page_load.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_label: "Metrics: Timing Distribution: Webview Page Load"
     group_item_label: "Overflow"
   }
 
@@ -4192,7 +4202,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.webview_page_load.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_label: "Metrics: Timing Distribution: Webview Page Load"
     group_item_label: "Sum"
   }
 
@@ -4200,7 +4210,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.webview_page_load.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_label: "Metrics: Timing Distribution: Webview Page Load"
     group_item_label: "Time Unit"
   }
 
@@ -4208,7 +4218,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.timing_distribution.webview_page_load.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_label: "Metrics: Timing Distribution: Webview Page Load"
     group_item_label: "Underflow"
   }
 
@@ -4221,7 +4231,7 @@ tracking-protection that is enabled. One of:
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Legacy Ids Client ID"
     description: "The client id from legacy telemetry.
 "
@@ -4323,7 +4333,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4333,13 +4342,12 @@ tracking-protection that is enabled. One of:
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: metrics__datetime__app_last_opened_as_default_browser {
     sql: ${TABLE}.metrics.datetime.app_last_opened_as_default_browser ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4349,7 +4357,7 @@ tracking-protection that is enabled. One of:
       quarter,
       year,
     ]
-    label: "Metrics Datetime: App Last Opened As Default Browser"
+    label: "Metrics: Datetime: App Last Opened As Default Browser"
     description: "The date of when the app was last opened as default browser.
 "
   }
@@ -4357,7 +4365,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4367,7 +4374,7 @@ tracking-protection that is enabled. One of:
       quarter,
       year,
     ]
-    label: "Metrics Datetime: Glean Validation First Run Hour"
+    label: "Metrics: Datetime: Glean Validation First Run Hour"
     description: "The hour of the first run of the application.
 "
   }
@@ -4375,7 +4382,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metrics__datetime__termsofuse {
     sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4385,7 +4391,7 @@ tracking-protection that is enabled. One of:
       quarter,
       year,
     ]
-    label: "Metrics Datetime: Termsofuse Date"
+    label: "Metrics: Datetime: Termsofuse Date"
     description: "The timestamp when the user accepted the Terms of Use.
 "
   }
@@ -4393,7 +4399,6 @@ tracking-protection that is enabled. One of:
   dimension_group: metrics__datetime__user_terms_of_use_date_accepted {
     sql: ${TABLE}.metrics.datetime.user_terms_of_use_date_accepted ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4403,7 +4408,7 @@ tracking-protection that is enabled. One of:
       quarter,
       year,
     ]
-    label: "Metrics Datetime: User Terms Of Use Date Accepted"
+    label: "Metrics: Datetime: User Terms Of Use Date Accepted"
     description: "The timestamp when the user accepted the Terms of Use.
 
 **Developer Note**: This replaces the old `termsofuse.date` metric.
@@ -4413,7 +4418,6 @@ tracking-protection that is enabled. One of:
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4429,7 +4433,6 @@ tracking-protection that is enabled. One of:
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4445,7 +4448,6 @@ tracking-protection that is enabled. One of:
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -4805,7 +4807,7 @@ view: metrics_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -4813,7 +4815,7 @@ view: metrics_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

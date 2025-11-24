@@ -6,7 +6,7 @@
 
 view: first_session {
   dimension: metrics__string__first_session_adgroup {
-    label: "First Session Adgroup"
+    label: "First Session: Adgroup"
     hidden: no
     sql: ${TABLE}.metrics.string.first_session_adgroup ;;
     type: string
@@ -14,7 +14,7 @@ view: first_session {
     group_item_label: "Adgroup"
 
     link: {
-      label: "Glean Dictionary reference for First Session Adgroup"
+      label: "Glean Dictionary reference for First Session: Adgroup"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adgroup"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -24,7 +24,7 @@ view: first_session {
   }
 
   dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
-    label: "First Session Adjust Attribution Time Sum"
+    label: "First Session: Adjust Attribution Time Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
     type: number
@@ -32,7 +32,7 @@ view: first_session {
     group_item_label: "Adjust Attribution Time Sum"
 
     link: {
-      label: "Glean Dictionary reference for First Session Adjust Attribution Time Sum"
+      label: "Glean Dictionary reference for First Session: Adjust Attribution Time Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adjust_attribution_time"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -42,7 +42,7 @@ view: first_session {
   }
 
   dimension: metrics__timespan__first_session_adjust_attribution_timespan__value {
-    label: "First Session Adjust Attribution Timespan Value"
+    label: "First Session: Adjust Attribution Timespan Value"
     hidden: yes
     sql: ${TABLE}.metrics.timespan.first_session_adjust_attribution_timespan.value ;;
     type: number
@@ -50,7 +50,7 @@ view: first_session {
     group_item_label: "Adjust Attribution Timespan Value"
 
     link: {
-      label: "Glean Dictionary reference for First Session Adjust Attribution Timespan Value"
+      label: "Glean Dictionary reference for First Session: Adjust Attribution Timespan Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adjust_attribution_timespan"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -60,7 +60,7 @@ view: first_session {
   }
 
   dimension: metrics__string__first_session_campaign {
-    label: "First Session Campaign"
+    label: "First Session: Campaign"
     hidden: no
     sql: ${TABLE}.metrics.string.first_session_campaign ;;
     type: string
@@ -68,7 +68,7 @@ view: first_session {
     group_item_label: "Campaign"
 
     link: {
-      label: "Glean Dictionary reference for First Session Campaign"
+      label: "Glean Dictionary reference for First Session: Campaign"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_campaign"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -78,7 +78,7 @@ view: first_session {
   }
 
   dimension: metrics__string__first_session_creative {
-    label: "First Session Creative"
+    label: "First Session: Creative"
     hidden: no
     sql: ${TABLE}.metrics.string.first_session_creative ;;
     type: string
@@ -86,7 +86,7 @@ view: first_session {
     group_item_label: "Creative"
 
     link: {
-      label: "Glean Dictionary reference for First Session Creative"
+      label: "Glean Dictionary reference for First Session: Creative"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_creative"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -96,7 +96,7 @@ view: first_session {
   }
 
   dimension: metrics__string__first_session_distribution_id {
-    label: "First Session Distribution ID"
+    label: "First Session: Distribution ID"
     hidden: no
     sql: ${TABLE}.metrics.string.first_session_distribution_id ;;
     type: string
@@ -104,7 +104,7 @@ view: first_session {
     group_item_label: "Distribution ID"
 
     link: {
-      label: "Glean Dictionary reference for First Session Distribution ID"
+      label: "Glean Dictionary reference for First Session: Distribution ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_distribution_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -116,7 +116,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__first_session_install_source {
-    label: "First Session Install Source"
+    label: "First Session: Install Source"
     hidden: no
     sql: ${TABLE}.metrics.string.first_session_install_source ;;
     type: string
@@ -124,7 +124,7 @@ partnership deal distributions
     group_item_label: "Install Source"
 
     link: {
-      label: "Glean Dictionary reference for First Session Install Source"
+      label: "Glean Dictionary reference for First Session: Install Source"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_install_source"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -134,7 +134,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__first_session_network {
-    label: "First Session Network"
+    label: "First Session: Network"
     hidden: no
     sql: ${TABLE}.metrics.string.first_session_network ;;
     type: string
@@ -142,7 +142,7 @@ partnership deal distributions
     group_item_label: "Network"
 
     link: {
-      label: "Glean Dictionary reference for First Session Network"
+      label: "Glean Dictionary reference for First Session: Network"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_network"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -152,7 +152,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__meta_attribution_app {
-    label: "Meta Attribution App"
+    label: "Meta Attribution: App"
     hidden: no
     sql: ${TABLE}.metrics.string.meta_attribution_app ;;
     type: string
@@ -160,7 +160,7 @@ partnership deal distributions
     group_item_label: "App"
 
     link: {
-      label: "Glean Dictionary reference for Meta Attribution App"
+      label: "Glean Dictionary reference for Meta Attribution: App"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_app"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -170,7 +170,7 @@ partnership deal distributions
   }
 
   dimension: metrics__text2__meta_attribution_data {
-    label: "Meta Attribution Data"
+    label: "Meta Attribution: Data"
     hidden: no
     sql: ${TABLE}.metrics.text2.meta_attribution_data ;;
     type: string
@@ -178,7 +178,7 @@ partnership deal distributions
     group_item_label: "Data"
 
     link: {
-      label: "Glean Dictionary reference for Meta Attribution Data"
+      label: "Glean Dictionary reference for Meta Attribution: Data"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_data"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -188,7 +188,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__meta_attribution_nonce {
-    label: "Meta Attribution Nonce"
+    label: "Meta Attribution: Nonce"
     hidden: no
     sql: ${TABLE}.metrics.string.meta_attribution_nonce ;;
     type: string
@@ -196,7 +196,7 @@ partnership deal distributions
     group_item_label: "Nonce"
 
     link: {
-      label: "Glean Dictionary reference for Meta Attribution Nonce"
+      label: "Glean Dictionary reference for Meta Attribution: Nonce"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_nonce"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -206,7 +206,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__meta_attribution_t {
-    label: "Meta Attribution T"
+    label: "Meta Attribution: T"
     hidden: no
     sql: ${TABLE}.metrics.string.meta_attribution_t ;;
     type: string
@@ -214,7 +214,7 @@ partnership deal distributions
     group_item_label: "T"
 
     link: {
-      label: "Glean Dictionary reference for Meta Attribution T"
+      label: "Glean Dictionary reference for Meta Attribution: T"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_t"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -224,7 +224,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__play_store_attribution_campaign {
-    label: "Play Store Attribution Campaign"
+    label: "Play Store Attribution: Campaign"
     hidden: no
     sql: ${TABLE}.metrics.string.play_store_attribution_campaign ;;
     type: string
@@ -232,7 +232,7 @@ partnership deal distributions
     group_item_label: "Campaign"
 
     link: {
-      label: "Glean Dictionary reference for Play Store Attribution Campaign"
+      label: "Glean Dictionary reference for Play Store Attribution: Campaign"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_campaign"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -242,7 +242,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__play_store_attribution_content {
-    label: "Play Store Attribution Content"
+    label: "Play Store Attribution: Content"
     hidden: no
     sql: ${TABLE}.metrics.string.play_store_attribution_content ;;
     type: string
@@ -250,7 +250,7 @@ partnership deal distributions
     group_item_label: "Content"
 
     link: {
-      label: "Glean Dictionary reference for Play Store Attribution Content"
+      label: "Glean Dictionary reference for Play Store Attribution: Content"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_content"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -260,7 +260,7 @@ partnership deal distributions
   }
 
   dimension: metrics__text2__play_store_attribution_install_referrer_response {
-    label: "Play Store Attribution Install Referrer Response"
+    label: "Play Store Attribution: Install Referrer Response"
     hidden: no
     sql: ${TABLE}.metrics.text2.play_store_attribution_install_referrer_response ;;
     type: string
@@ -268,7 +268,7 @@ partnership deal distributions
     group_item_label: "Install Referrer Response"
 
     link: {
-      label: "Glean Dictionary reference for Play Store Attribution Install Referrer Response"
+      label: "Glean Dictionary reference for Play Store Attribution: Install Referrer Response"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_install_referrer_response"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -278,7 +278,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__play_store_attribution_medium {
-    label: "Play Store Attribution Medium"
+    label: "Play Store Attribution: Medium"
     hidden: no
     sql: ${TABLE}.metrics.string.play_store_attribution_medium ;;
     type: string
@@ -286,7 +286,7 @@ partnership deal distributions
     group_item_label: "Medium"
 
     link: {
-      label: "Glean Dictionary reference for Play Store Attribution Medium"
+      label: "Glean Dictionary reference for Play Store Attribution: Medium"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_medium"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -296,7 +296,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__play_store_attribution_source {
-    label: "Play Store Attribution Source"
+    label: "Play Store Attribution: Source"
     hidden: no
     sql: ${TABLE}.metrics.string.play_store_attribution_source ;;
     type: string
@@ -304,7 +304,7 @@ partnership deal distributions
     group_item_label: "Source"
 
     link: {
-      label: "Glean Dictionary reference for Play Store Attribution Source"
+      label: "Glean Dictionary reference for Play Store Attribution: Source"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_source"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -314,7 +314,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__play_store_attribution_term {
-    label: "Play Store Attribution Term"
+    label: "Play Store Attribution: Term"
     hidden: no
     sql: ${TABLE}.metrics.string.play_store_attribution_term ;;
     type: string
@@ -322,7 +322,7 @@ partnership deal distributions
     group_item_label: "Term"
 
     link: {
-      label: "Glean Dictionary reference for Play Store Attribution Term"
+      label: "Glean Dictionary reference for Play Store Attribution: Term"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_term"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -332,7 +332,7 @@ partnership deal distributions
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -340,7 +340,7 @@ partnership deal distributions
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -351,14 +351,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -369,14 +369,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -387,14 +387,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -405,14 +405,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -489,7 +489,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -497,7 +497,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -510,7 +510,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -518,7 +518,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -526,7 +526,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -568,7 +568,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -657,7 +657,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -665,7 +665,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -674,7 +674,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -682,7 +682,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -690,7 +690,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -698,7 +698,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -706,7 +706,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -714,7 +714,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -722,7 +722,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -735,7 +735,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -743,7 +743,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -751,7 +751,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -759,7 +759,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -767,7 +767,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -775,7 +775,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -783,7 +783,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -791,7 +791,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -799,7 +799,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -807,7 +807,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -815,7 +815,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -823,7 +823,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -919,7 +919,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -929,13 +928,12 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -951,7 +949,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -967,7 +964,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1000,7 +996,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: first_session__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1041,7 +1037,7 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: first_session__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1082,7 +1078,7 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: first_session__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1123,7 +1119,7 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: first_session__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1235,7 +1231,7 @@ view: first_session__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1243,7 +1239,7 @@ view: first_session__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

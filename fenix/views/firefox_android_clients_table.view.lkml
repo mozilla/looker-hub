@@ -257,7 +257,6 @@ view: firefox_android_clients_table {
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -273,7 +272,6 @@ view: firefox_android_clients_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -289,7 +287,6 @@ view: firefox_android_clients_table {
   dimension_group: last_reported {
     sql: ${TABLE}.last_reported_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -305,7 +302,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__adjust_network__source_ping_datetime {
     sql: ${TABLE}.metadata.adjust_network__source_ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -321,7 +317,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__install_source__source_ping_datetime {
     sql: ${TABLE}.metadata.install_source__source_ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -337,7 +332,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__meta_attribution_app__ping_datetime {
     sql: ${TABLE}.metadata.meta_attribution_app__ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -353,7 +347,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__min_first_session_ping_run {
     sql: ${TABLE}.metadata.min_first_session_ping_run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -370,7 +363,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__min_first_session_ping_submission {
     sql: ${TABLE}.metadata.min_first_session_ping_submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -387,7 +379,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__min_metrics_ping_submission {
     sql: ${TABLE}.metadata.min_metrics_ping_submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -404,7 +395,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__play_store_attribution_campaign__ping_datetime {
     sql: ${TABLE}.metadata.play_store_attribution_campaign__ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -420,7 +410,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__play_store_attribution_content__ping_datetime {
     sql: ${TABLE}.metadata.play_store_attribution_content__ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -436,7 +425,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__play_store_attribution_install_referrer_response__ping_datetime {
     sql: ${TABLE}.metadata.play_store_attribution_install_referrer_response__ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -452,7 +440,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__play_store_attribution_medium__ping_datetime {
     sql: ${TABLE}.metadata.play_store_attribution_medium__ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -468,7 +455,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__play_store_attribution_source__ping_datetime {
     sql: ${TABLE}.metadata.play_store_attribution_source__ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -484,7 +470,6 @@ view: firefox_android_clients_table {
   dimension_group: metadata__play_store_attribution_term__ping_datetime {
     sql: ${TABLE}.metadata.play_store_attribution_term__ping_datetime ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -500,7 +485,6 @@ view: firefox_android_clients_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

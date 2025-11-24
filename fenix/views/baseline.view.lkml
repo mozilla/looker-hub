@@ -6,14 +6,14 @@
 
 view: baseline {
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
-    label: "Browser Search Ad Clicks"
+    label: "Browser Search: Ad Clicks"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     group_label: "Browser Search"
     group_item_label: "Ad Clicks"
 
     link: {
-      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      label: "Glean Dictionary reference for Browser Search: Ad Clicks"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_ad_clicks"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -31,14 +31,14 @@ where:
   }
 
   dimension: metrics__labeled_counter__browser_search_in_content {
-    label: "Browser Search In Content"
+    label: "Browser Search: In Content"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
     group_label: "Browser Search"
     group_item_label: "In Content"
 
     link: {
-      label: "Glean Dictionary reference for Browser Search In Content"
+      label: "Glean Dictionary reference for Browser Search: In Content"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_in_content"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -48,14 +48,14 @@ where:
   }
 
   dimension: metrics__labeled_counter__browser_search_with_ads {
-    label: "Browser Search With Ads"
+    label: "Browser Search: With Ads"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     group_label: "Browser Search"
     group_item_label: "With Ads"
 
     link: {
-      label: "Glean Dictionary reference for Browser Search With Ads"
+      label: "Glean Dictionary reference for Browser Search: With Ads"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_with_ads"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -73,7 +73,7 @@ where:
   }
 
   dimension: metrics__counter__events_normal_and_private_uri_count {
-    label: "Events Normal And Private URI Count"
+    label: "Events: Normal And Private URI Count"
     hidden: no
     sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
     type: number
@@ -81,7 +81,7 @@ where:
     group_item_label: "Normal And Private URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Events Normal And Private URI Count"
+      label: "Glean Dictionary reference for Events: Normal And Private URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_normal_and_private_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -95,7 +95,7 @@ programmatically redirect to a new location.
   }
 
   dimension: metrics__counter__events_total_uri_count {
-    label: "Events Total URI Count"
+    label: "Events: Total URI Count"
     hidden: yes
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number
@@ -103,7 +103,7 @@ programmatically redirect to a new location.
     group_item_label: "Total URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Events Total URI Count"
+      label: "Glean Dictionary reference for Events: Total URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -117,7 +117,7 @@ location.
   }
 
   dimension: metrics__string__first_session_install_source {
-    label: "First Session Install Source"
+    label: "First Session: Install Source"
     hidden: no
     sql: ${TABLE}.metrics.string.first_session_install_source ;;
     type: string
@@ -125,7 +125,7 @@ location.
     group_item_label: "Install Source"
 
     link: {
-      label: "Glean Dictionary reference for First Session Install Source"
+      label: "Glean Dictionary reference for First Session: Install Source"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_install_source"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -135,7 +135,7 @@ location.
   }
 
   dimension: metrics__boolean__metrics_default_browser {
-    label: "Metrics Default Browser"
+    label: "Metrics: Default Browser"
     hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_default_browser ;;
     type: yesno
@@ -143,7 +143,7 @@ location.
     group_item_label: "Default Browser"
 
     link: {
-      label: "Glean Dictionary reference for Metrics Default Browser"
+      label: "Glean Dictionary reference for Metrics: Default Browser"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_default_browser"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -153,7 +153,7 @@ location.
   }
 
   dimension: metrics__string__metrics_distribution_id {
-    label: "Metrics Distribution ID"
+    label: "Metrics: Distribution ID"
     hidden: no
     sql: ${TABLE}.metrics.string.metrics_distribution_id ;;
     type: string
@@ -161,7 +161,7 @@ location.
     group_item_label: "Distribution ID"
 
     link: {
-      label: "Glean Dictionary reference for Metrics Distribution ID"
+      label: "Glean Dictionary reference for Metrics: Distribution ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_distribution_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -173,14 +173,14 @@ partnership deal distributions
   }
 
   dimension: metrics__labeled_counter__metrics_search_count {
-    label: "Metrics Search Count"
+    label: "Metrics: Search Count"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
     group_label: "Metrics"
     group_item_label: "Search Count"
 
     link: {
-      label: "Glean Dictionary reference for Metrics Search Count"
+      label: "Glean Dictionary reference for Metrics: Search Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_search_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -199,7 +199,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
   }
 
   dimension: metrics__string__search_default_engine_code {
-    label: "Search Default Engine Code"
+    label: "Search Default Engine: Code"
     hidden: no
     sql: ${TABLE}.metrics.string.search_default_engine_code ;;
     type: string
@@ -207,7 +207,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
     group_item_label: "Code"
 
     link: {
-      label: "Glean Dictionary reference for Search Default Engine Code"
+      label: "Glean Dictionary reference for Search Default Engine: Code"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_code"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -220,7 +220,7 @@ value will be \"custom\"
   }
 
   dimension: metrics__string__search_default_engine_name {
-    label: "Search Default Engine Name"
+    label: "Search Default Engine: Name"
     hidden: no
     sql: ${TABLE}.metrics.string.search_default_engine_name ;;
     type: string
@@ -228,7 +228,7 @@ value will be \"custom\"
     group_item_label: "Name"
 
     link: {
-      label: "Glean Dictionary reference for Search Default Engine Name"
+      label: "Glean Dictionary reference for Search Default Engine: Name"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -241,7 +241,7 @@ value will be \"custom\"
   }
 
   dimension: metrics__string__startup_profile_selection_reason {
-    label: "Startup Profile Selection Reason"
+    label: "Startup: Profile Selection Reason"
     hidden: no
     sql: ${TABLE}.metrics.string.startup_profile_selection_reason ;;
     type: string
@@ -249,7 +249,7 @@ value will be \"custom\"
     group_item_label: "Profile Selection Reason"
 
     link: {
-      label: "Glean Dictionary reference for Startup Profile Selection Reason"
+      label: "Glean Dictionary reference for Startup: Profile Selection Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/startup_profile_selection_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -292,7 +292,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
   }
 
   dimension: metrics__timespan__glean_baseline_duration__value {
-    label: "Glean Baseline Duration Value"
+    label: "Glean Baseline: Duration Value"
     hidden: no
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
     type: number
@@ -300,7 +300,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
     group_item_label: "Duration Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Baseline Duration Value"
+      label: "Glean Dictionary reference for Glean Baseline: Duration Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_baseline_duration"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -310,7 +310,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
   }
 
   dimension: metrics__string__glean_baseline_locale {
-    label: "Glean Baseline Locale"
+    label: "Glean Baseline: Locale"
     hidden: yes
     sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
     type: string
@@ -318,7 +318,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar startup.p
     group_item_label: "Locale"
 
     link: {
-      label: "Glean Dictionary reference for Glean Baseline Locale"
+      label: "Glean Dictionary reference for Glean Baseline: Locale"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_baseline_locale"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -331,7 +331,7 @@ to indicate \"undetermined\".
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -339,7 +339,7 @@ to indicate \"undetermined\".
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -350,14 +350,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -368,14 +368,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -386,14 +386,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -404,14 +404,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -422,14 +422,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
-    label: "Glean Validation Pings Submitted"
+    label: "Glean Validation: Pings Submitted"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Pings Submitted"
+      label: "Glean Dictionary reference for Glean Validation: Pings Submitted"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_pings_submitted"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -449,7 +449,7 @@ Now it only records counts for the Glean built-in pings.
   }
 
   dimension: metrics__counter__glean_validation_metrics_ping_count {
-    label: "Glean Validation Metrics Ping Count"
+    label: "Glean Validation: Metrics Ping Count"
     hidden: yes
     sql: ${TABLE}.metrics.counter.glean_validation_metrics_ping_count ;;
     type: number
@@ -457,7 +457,7 @@ Now it only records counts for the Glean built-in pings.
     group_item_label: "Metrics Ping Count"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
+      label: "Glean Dictionary reference for Glean Validation: Metrics Ping Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_metrics_ping_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -532,7 +532,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -540,7 +540,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -553,7 +553,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -561,7 +561,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -569,7 +569,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -611,7 +611,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -700,7 +700,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -708,7 +708,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -717,7 +717,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -725,7 +725,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -733,7 +733,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -741,7 +741,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -749,7 +749,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -757,7 +757,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -765,7 +765,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -778,7 +778,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -786,7 +786,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -794,7 +794,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -802,7 +802,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -810,7 +810,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -818,7 +818,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -826,7 +826,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -834,7 +834,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -842,7 +842,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -850,7 +850,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -858,7 +858,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -866,7 +866,7 @@ Now it only records counts for the Glean built-in pings.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -960,7 +960,7 @@ Now it only records counts for the Glean built-in pings.
   }
 
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
+    label: "Glean Validation: First Run Hour"
     hidden: yes
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
@@ -980,7 +980,6 @@ Now it only records counts for the Glean built-in pings.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -990,13 +989,12 @@ Now it only records counts for the Glean built-in pings.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1012,7 +1010,6 @@ Now it only records counts for the Glean built-in pings.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1028,7 +1025,6 @@ Now it only records counts for the Glean built-in pings.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1136,7 +1132,7 @@ Now it only records counts for the Glean built-in pings.
 }
 
 view: baseline__metrics__labeled_counter__browser_search_ad_clicks {
-  label: "Browser Search - Ad Clicks"
+  label: "Browser Search: Ad Clicks"
 
   dimension: document_id {
     type: string
@@ -1177,7 +1173,7 @@ view: baseline__metrics__labeled_counter__browser_search_ad_clicks {
 }
 
 view: baseline__metrics__labeled_counter__browser_search_in_content {
-  label: "Browser Search - In Content"
+  label: "Browser Search: In Content"
 
   dimension: document_id {
     type: string
@@ -1218,7 +1214,7 @@ view: baseline__metrics__labeled_counter__browser_search_in_content {
 }
 
 view: baseline__metrics__labeled_counter__browser_search_with_ads {
-  label: "Browser Search - With Ads"
+  label: "Browser Search: With Ads"
 
   dimension: document_id {
     type: string
@@ -1259,7 +1255,7 @@ view: baseline__metrics__labeled_counter__browser_search_with_ads {
 }
 
 view: baseline__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1300,7 +1296,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1341,7 +1337,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: baseline__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1382,7 +1378,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: baseline__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1423,7 +1419,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_value {
 }
 
 view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
-  label: "Glean Validation - Pings Submitted"
+  label: "Glean Validation: Pings Submitted"
 
   dimension: document_id {
     type: string
@@ -1464,7 +1460,7 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
 }
 
 view: baseline__metrics__labeled_counter__metrics_search_count {
-  label: "Metrics - Search Count"
+  label: "Metrics: Search Count"
 
   dimension: document_id {
     type: string
@@ -1562,7 +1558,7 @@ view: baseline__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1570,7 +1566,7 @@ view: baseline__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

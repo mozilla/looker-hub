@@ -201,7 +201,6 @@ view: fenix_distribution_deals {
   dimension_group: retention_metric {
     sql: ${TABLE}.retention_metric_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -217,7 +216,6 @@ view: fenix_distribution_deals {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

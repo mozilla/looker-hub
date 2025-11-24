@@ -17,6 +17,12 @@ view: experiment_enrollment_daily_active_population {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
@@ -26,7 +32,6 @@ view: experiment_enrollment_daily_active_population {
   dimension_group: time {
     sql: ${TABLE}.time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

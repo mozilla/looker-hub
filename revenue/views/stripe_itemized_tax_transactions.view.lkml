@@ -224,7 +224,6 @@ view: stripe_itemized_tax_transactions {
   dimension_group: tax_date_utc {
     sql: ${TABLE}.tax_date_utc ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -239,7 +238,6 @@ view: stripe_itemized_tax_transactions {
   dimension_group: transaction_date_utc {
     sql: ${TABLE}.transaction_date_utc ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -38,7 +38,6 @@ view: worker_costs_base {
   dimension_group: usage_start {
     sql: ${TABLE}.usage_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

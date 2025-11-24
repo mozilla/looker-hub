@@ -44,7 +44,7 @@ explore: client_counts {
   }
 
   join: baseline_clients_daily_table__experiments {
-    view_label: "Client Counts  Experiments"
+    view_label: "Client Counts: Experiments"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.experiments}) AS baseline_clients_daily_table__experiments ;;
   }

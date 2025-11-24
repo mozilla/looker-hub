@@ -9,8 +9,7 @@ view: firefox_desktop_baseline_active_users_aggregates {
     sql: ${TABLE}.activity_segment ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Profile segmentation based on the number of days active in the last 28 days.
-"
+    description: "Classification of users based on their browsing activity. E.g., infrequent, casual, regular."
   }
 
   dimension: app_name {
@@ -27,40 +26,35 @@ this is appended to the app_name.
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The user visible version string (e.g. \"1.0.3\"). If the value was not provided through configuration, this metric gets set to Unknown.
-"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: app_version_is_major_release {
     sql: ${TABLE}.app_version_is_major_release ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Boolean flag indicating if the app version was a major release
-"
+    description: "Boolean flag indicating if the app version was a major release"
   }
 
   dimension: app_version_major {
     sql: ${TABLE}.app_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The major version of the application version (e.g. if 123.0, then 123)
-"
+    description: "The major version of the application version (e.g. if 123.0, then 123)"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The minor version of the application version (e.g. if 123.0, then 0)
-"
+    description: "The minor version of the application version (e.g. if 123.0, then 0)"
   }
 
   dimension: app_version_patch_revision {
     sql: ${TABLE}.app_version_patch_revision ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The patch revision number of the app version
-"
+    description: "The patch revision number of the app version"
   }
 
   dimension: attribution_medium {
@@ -83,16 +77,14 @@ this is appended to the app_name.
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The channel the application is being distributed on, example values include: relase, beta, nightly.
-"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "City reported by the client.
-"
+    description: "City reported by the client."
   }
 
   dimension: country {
@@ -100,8 +92,7 @@ this is appended to the app_name.
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Country reported by the client.
-"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: daily_users {
@@ -124,32 +115,28 @@ this is appended to the app_name.
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The id of the browser distribution made available in installation sources.
-"
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: first_seen_year {
     sql: ${TABLE}.first_seen_year ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Year extracted from the first_seen_date, that corresponds to the date when the first ping was received.
-"
+    description: "Year extracted from the first_seen_date, that corresponds to the date when the first ping was received."
   }
 
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether the browser is set as the default browser on the client side.
-"
+    description: "A flag indicating whether the browser is set as the default browser on the client side."
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Locale reported by the client, which is a combination of language and regional settings.
-"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: mau {
@@ -172,48 +159,42 @@ this is appended to the app_name.
     sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Operating system reported by the client.
-"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: os_grouped {
     sql: ${TABLE}.os_grouped ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Operating system group reported by the client.
-"
+    description: "Operating system group reported by the client."
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "OS version reported by the client.
-"
+    description: "OS version reported by the client."
   }
 
   dimension: os_version_build {
     sql: ${TABLE}.os_version_build ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "OS version build reported by the client.
-"
+    description: "OS version build reported by the client."
   }
 
   dimension: os_version_major {
     sql: ${TABLE}.os_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "OS version major version reported by the client.
-"
+    description: "Major or first part of the operating system version running at the client. E.g. for version \"100.9.11\", the major is 100."
   }
 
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "OS version minor version reported by the client.
-"
+    description: "Minor part of the operating system version running at the client. E.g. for version \"100.9.11\", the minor is 9."
   }
 
   dimension: wau {
@@ -236,8 +217,7 @@ this is appended to the app_name.
     sql: ${TABLE}.windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms (Windows only).
-"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms (Windows only)."
   }
 
   dimension: windows_version {
@@ -249,7 +229,6 @@ this is appended to the app_name.
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -260,9 +239,7 @@ this is appended to the app_name.
     ]
     convert_tz: no
     datatype: date
-    description: "Logical date corresponding to the partition (date when our server received the ping)
-that was processed for generating the metrics.
-"
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.baseline_active_users_aggregates` ;;

@@ -184,7 +184,6 @@ newtab_visit_duration_week,
   dimension_group: week {
     sql: ${TABLE}.newtab_visit_duration_week ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

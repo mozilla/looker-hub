@@ -751,7 +751,6 @@ focus_ios_engagement_view_wau,
   dimension_group: first_seen {
     sql: ${TABLE}.focus_ios_engagement_view_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -101,7 +101,6 @@ If the participant is not part of the host's account, this is an empty string, w
   dimension_group: join {
     sql: ${TABLE}.join_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -117,7 +116,6 @@ If the participant is not part of the host's account, this is an empty string, w
   dimension_group: leave {
     sql: ${TABLE}.leave_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

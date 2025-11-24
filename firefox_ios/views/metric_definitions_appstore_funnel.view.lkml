@@ -693,7 +693,6 @@ appstore_funnel_total_downloads,
   dimension_group: first_seen {
     sql: ${TABLE}.appstore_funnel_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -12,19 +12,7 @@ datagroup: cfs_ga4_attr_table_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'baseline_clients_first_seen_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'stub_attribution_service_derived' AND table_name = 'dl_token_ga_attribution_lookup_v2')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefoxdotcom_derived' AND table_name = 'ga_sessions_v2')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'mozilla_org_derived' AND table_name = 'ga_sessions_v3')
+    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'cfs_ga4_attr_v1')
 
     ) ;;
   description: "Updates for cfs_ga4_attr_table when referenced tables are modified."

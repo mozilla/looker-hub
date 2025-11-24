@@ -147,14 +147,12 @@ view: composite_active_users_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
       week,
       month,
       quarter,
-      year,
     ]
     convert_tz: no
     datatype: date
@@ -163,7 +161,6 @@ view: composite_active_users_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

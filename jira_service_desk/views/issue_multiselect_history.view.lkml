@@ -44,7 +44,6 @@ view: issue_multiselect_history {
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -59,7 +58,6 @@ view: issue_multiselect_history {
   dimension_group: time {
     sql: ${TABLE}.time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

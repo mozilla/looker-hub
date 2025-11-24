@@ -194,8 +194,8 @@ view: clients_daily_table {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: browser_backup_enabled {
-    sql: ${TABLE}.browser_backup_enabled ;;
+  dimension: browser_backup_archive_enabled {
+    sql: ${TABLE}.browser_backup_archive_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
   }
@@ -2430,7 +2430,6 @@ view: clients_daily_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -2446,7 +2445,6 @@ view: clients_daily_table {
   dimension_group: second_seen {
     sql: ${TABLE}.second_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -2462,7 +2460,6 @@ view: clients_daily_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -2478,7 +2475,6 @@ view: clients_daily_table {
   dimension_group: submission_date_s3 {
     sql: ${TABLE}.submission_date_s3 ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -2494,7 +2490,6 @@ view: clients_daily_table {
   dimension_group: submission_timestamp_min {
     sql: ${TABLE}.submission_timestamp_min ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

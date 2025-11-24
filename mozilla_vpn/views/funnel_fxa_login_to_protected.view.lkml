@@ -50,7 +50,6 @@ view: funnel_fxa_login_to_protected {
   dimension_group: start {
     sql: ${TABLE}.start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

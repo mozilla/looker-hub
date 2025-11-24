@@ -80,6 +80,12 @@ view: newtab_visits_daily_table {
     description: "Unique ID for the client installation."
   }
 
+  dimension: content_position_components {
+    sql: ${TABLE}.content_position_components ;;
+    hidden: yes
+    description: "Detailed metrics for Pocket content at specific positions during this visit"
+  }
+
   dimension: content_thumbs_down_count {
     sql: ${TABLE}.content_thumbs_down_count ;;
     type: number
@@ -567,6 +573,12 @@ view: newtab_visits_daily_table {
     description: "The number of topsite tiles configured to be shown on newtab"
   }
 
+  dimension: topsite_tile_components {
+    sql: ${TABLE}.topsite_tile_components ;;
+    hidden: yes
+    description: "Detailed metrics for individual topsite tiles during this visit"
+  }
+
   dimension: widget_impression_count {
     sql: ${TABLE}.widget_impression_count ;;
     type: number
@@ -584,7 +596,6 @@ view: newtab_visits_daily_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -599,6 +610,78 @@ view: newtab_visits_daily_table {
   }
 
   sql_table_name: `mozdata.firefox_desktop.newtab_visits_daily` ;;
+}
+
+view: newtab_visits_daily_table__content_position_components {
+  dimension: click_count {
+    sql: ${TABLE}.click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of clicks on this content item"
+  }
+
+  dimension: dismissal_count {
+    sql: ${TABLE}.dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of dismissals for this content item"
+  }
+
+  dimension: format {
+    sql: ${TABLE}.format ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Format of the content item"
+  }
+
+  dimension: impression_count {
+    sql: ${TABLE}.impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of impressions for this content item"
+  }
+
+  dimension: is_section_followed {
+    sql: ${TABLE}.is_section_followed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Whether the section is followed by the user"
+  }
+
+  dimension: is_sponsored {
+    sql: ${TABLE}.is_sponsored ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Whether the content is sponsored"
+  }
+
+  dimension: position {
+    sql: ${TABLE}.position ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Position of the content item on the new tab page"
+  }
+
+  dimension: section_position {
+    sql: ${TABLE}.section_position ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Position of the section containing this content"
+  }
+
+  dimension: thumbs_down_count {
+    sql: ${TABLE}.thumbs_down_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of thumbs down votes for this content"
+  }
+
+  dimension: thumbs_up_count {
+    sql: ${TABLE}.thumbs_up_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of thumbs up votes for this content"
+  }
 }
 
 view: newtab_visits_daily_table__experiments {
@@ -620,7 +703,7 @@ view: newtab_visits_daily_table__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -628,7 +711,58 @@ view: newtab_visits_daily_table__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: newtab_visits_daily_table__topsite_tile_components {
+  dimension: click_count {
+    sql: ${TABLE}.click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of clicks on this tile"
+  }
+
+  dimension: dismissal_count {
+    sql: ${TABLE}.dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of dismissals for this tile"
+  }
+
+  dimension: impression_count {
+    sql: ${TABLE}.impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of impressions for this tile"
+  }
+
+  dimension: is_sponsored {
+    sql: ${TABLE}.is_sponsored ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Whether the tile is a sponsored topsite"
+  }
+
+  dimension: pin_count {
+    sql: ${TABLE}.pin_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of times this tile was pinned"
+  }
+
+  dimension: position {
+    sql: ${TABLE}.position ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Position of the tile on the new tab page"
+  }
+
+  dimension: unpin_count {
+    sql: ${TABLE}.unpin_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of times this tile was unpinned"
   }
 }

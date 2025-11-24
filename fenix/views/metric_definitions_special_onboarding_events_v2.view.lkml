@@ -198,7 +198,7 @@ LEFT JOIN (
   FROM
     `mozdata.org_mozilla_firefox.events_stream` tm
 
-  WHERE event_category = "onboarding" 
+  WHERE event_category = "onboarding"
     AND JSON_QUERY(event_extra, "$.action") IS NOT NULL
     AND event_name in  ("set_to_default", "turn_on_notifications", "sign_in")
   AND DATE(submission_timestamp) >= "2023-01-01"
@@ -868,7 +868,6 @@ looker_base_fields_sample_id,
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -878,7 +877,7 @@ looker_base_fields_sample_id,
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
     group_label: "Base Fields"
   }
 

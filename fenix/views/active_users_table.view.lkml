@@ -454,6 +454,12 @@ view: active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: startup_profile_selection_reason_first {
+    sql: ${TABLE}.startup_profile_selection_reason_first ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: telemetry_sdk_build {
     sql: ${TABLE}.telemetry_sdk_build ;;
     type: string
@@ -469,7 +475,6 @@ view: active_users_table {
   dimension_group: first_run {
     sql: ${TABLE}.first_run_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -485,14 +490,12 @@ view: active_users_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
       week,
       month,
       quarter,
-      year,
     ]
     convert_tz: no
     datatype: date
@@ -501,7 +504,6 @@ view: active_users_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -536,7 +538,7 @@ view: active_users_table__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -544,7 +546,7 @@ view: active_users_table__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

@@ -5,8 +5,20 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: glean_baseline_clients_first_seen_table {
+  dimension: app_build_id {
+    sql: ${TABLE}.app_build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: architecture {
+    sql: ${TABLE}.architecture ;;
     type: string
     suggest_persist_for: "24 hours"
   }
@@ -117,6 +129,30 @@ view: glean_baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: distribution_partner_id {
+    sql: ${TABLE}.distribution_partner_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: distribution_version {
+    sql: ${TABLE}.distribution_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: distributor {
+    sql: ${TABLE}.distributor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: distributor_channel {
+    sql: ${TABLE}.distributor_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_desktop {
     sql: ${TABLE}.is_desktop ;;
     type: yesno
@@ -177,6 +213,12 @@ view: glean_baseline_clients_first_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: startup_profile_selection_reason_first {
+    sql: ${TABLE}.startup_profile_selection_reason_first ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: windows_build_number {
     sql: ${TABLE}.windows_build_number ;;
     type: number
@@ -192,7 +234,6 @@ view: glean_baseline_clients_first_seen_table {
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -208,7 +249,6 @@ view: glean_baseline_clients_first_seen_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

@@ -44,7 +44,6 @@ view: amp_search_with {
   dimension_group: amp {
     sql: ${TABLE}.amp_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -60,7 +59,6 @@ view: amp_search_with {
   dimension_group: created {
     sql: ${TABLE}.created_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -75,7 +73,6 @@ view: amp_search_with {
   dimension_group: file {
     sql: ${TABLE}.file_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

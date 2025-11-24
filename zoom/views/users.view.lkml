@@ -116,7 +116,6 @@ The API does not return this value for users with the `pending` status."
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -132,7 +131,6 @@ The API does not return this value for users with the `pending` status."
   dimension_group: last_login {
     sql: ${TABLE}.last_login_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

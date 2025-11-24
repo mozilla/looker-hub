@@ -32,7 +32,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -40,7 +40,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -50,7 +50,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -59,7 +59,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -68,7 +68,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -77,7 +77,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -86,7 +86,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -95,7 +95,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -103,7 +103,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -116,7 +116,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -125,7 +125,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -134,7 +134,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -143,7 +143,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -152,7 +152,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -161,7 +161,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -170,7 +170,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -179,7 +179,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -188,7 +188,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -197,7 +197,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -205,7 +205,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -213,7 +213,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -221,7 +221,7 @@ view: usage_reporting_table {
     sql: ${TABLE}.metrics.boolean.browser_is_default ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Browser Is Default"
     description: "Is Focus the default browser? This is true only if the user
 changes the default browser through the app settings.
@@ -232,7 +232,7 @@ changes the default browser through the app settings.
     sql: ${TABLE}.metrics.datetime.usage_first_run_date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Usage First Run Date"
     description: "The date of the first run of the application.
 "
@@ -274,7 +274,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -285,7 +285,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.usage_app_build ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Usage App Build"
     description: "The build identifier generated by the CI system (e.g. \"1234/A\").
 If the value was not provided through configuration,
@@ -297,7 +297,7 @@ this metric gets set to `Unknown`.
     sql: ${TABLE}.metrics.string.usage_app_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Usage App Channel"
     description: "The channel the application is being distributed on.
 "
@@ -307,7 +307,7 @@ this metric gets set to `Unknown`.
     sql: ${TABLE}.metrics.string.usage_app_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Usage App Display Version"
     description: "The user visible version string (e.g. \"1.0.3\").
 If the value was not provided through configuration,
@@ -319,7 +319,7 @@ this metric gets set to `Unknown`.
     sql: ${TABLE}.metrics.string.usage_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Usage OS"
     description: "The name of the operating system.
 Possible values:
@@ -332,7 +332,7 @@ FreeBSD, NetBSD, OpenBSD, Solaris, Unknown
     sql: ${TABLE}.metrics.string.usage_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Usage OS Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\").
 If the version detection fails, this metric gets set to `Unknown`.
@@ -343,7 +343,7 @@ If the version detection fails, this metric gets set to `Unknown`.
     sql: ${TABLE}.metrics.string.usage_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Usage Reason"
     description: "The optional reason the ping was submitted.
 The specific values for reason are specific to each ping, and are
@@ -360,7 +360,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timespan.usage_duration.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan Usage Duration"
+    group_label: "Metrics: Timespan: Usage Duration"
     group_item_label: "Time Unit"
   }
 
@@ -368,7 +368,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.timespan.usage_duration.value ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timespan Usage Duration"
+    group_label: "Metrics: Timespan: Usage Duration"
     group_item_label: "Value"
   }
 
@@ -376,7 +376,7 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.metrics.uuid.usage_profile_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Usage Profile ID"
     description: "A UUID uniquely identifying the profile,
 not shared with other telemetry data.
@@ -427,7 +427,6 @@ not shared with other telemetry data.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -437,13 +436,12 @@ not shared with other telemetry data.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

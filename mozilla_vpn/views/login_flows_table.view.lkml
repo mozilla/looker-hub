@@ -25,7 +25,6 @@ view: login_flows_table {
   dimension_group: flow_completed {
     sql: ${TABLE}.flow_completed ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -40,7 +39,6 @@ view: login_flows_table {
   dimension_group: flow_started {
     sql: ${TABLE}.flow_started ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -201,7 +201,6 @@ view: fxa_events_table {
   dimension_group: receiveTimestamp {
     sql: ${TABLE}.receiveTimestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -216,7 +215,6 @@ view: fxa_events_table {
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

@@ -1056,7 +1056,6 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.looker_base_fields_metadata__header__parsed ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1066,14 +1065,13 @@ fenix_retention_view_retained_week_4_new_profiles,
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
     group_label: "Base Fields"
   }
 
   dimension_group: first_seen {
     sql: ${TABLE}.fenix_retention_view_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -1090,7 +1088,6 @@ fenix_retention_view_retained_week_4_new_profiles,
   dimension_group: metric {
     sql: ${TABLE}.fenix_retention_view_metric ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

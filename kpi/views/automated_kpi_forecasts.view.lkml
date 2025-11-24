@@ -194,7 +194,6 @@ view: automated_kpi_forecasts {
   dimension_group: ds {
     sql: ${TABLE}.ds ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

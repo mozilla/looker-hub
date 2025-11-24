@@ -741,7 +741,6 @@ view: feature_usage_events_table {
   dimension_group: ping {
     sql: ${TABLE}.ping_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -757,7 +756,6 @@ view: feature_usage_events_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

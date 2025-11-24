@@ -6,7 +6,7 @@
 
 view: crash {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -14,7 +14,7 @@ view: crash {
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -25,14 +25,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -43,14 +43,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -61,14 +61,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -79,14 +79,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -97,7 +97,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_app_build {
-    label: "Crash App Build"
+    label: "Crash: App Build"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_app_build ;;
     type: string
@@ -105,7 +105,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "App Build"
 
     link: {
-      label: "Glean Dictionary reference for Crash App Build"
+      label: "Glean Dictionary reference for Crash: App Build"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_app_build"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -115,7 +115,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_app_channel {
-    label: "Crash App Channel"
+    label: "Crash: App Channel"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_app_channel ;;
     type: string
@@ -123,7 +123,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "App Channel"
 
     link: {
-      label: "Glean Dictionary reference for Crash App Channel"
+      label: "Glean Dictionary reference for Crash: App Channel"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_app_channel"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -133,7 +133,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_app_display_version {
-    label: "Crash App Display Version"
+    label: "Crash: App Display Version"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_app_display_version ;;
     type: string
@@ -141,7 +141,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "App Display Version"
 
     link: {
-      label: "Glean Dictionary reference for Crash App Display Version"
+      label: "Glean Dictionary reference for Crash: App Display Version"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_app_display_version"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -151,7 +151,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_background_task_name {
-    label: "Crash Background Task Name"
+    label: "Crash: Background Task Name"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_background_task_name ;;
     type: string
@@ -159,7 +159,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Background Task Name"
 
     link: {
-      label: "Glean Dictionary reference for Crash Background Task Name"
+      label: "Glean Dictionary reference for Crash: Background Task Name"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_background_task_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -169,7 +169,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_cause {
-    label: "Crash Cause"
+    label: "Crash: Cause"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_cause ;;
     type: string
@@ -177,7 +177,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Cause"
 
     link: {
-      label: "Glean Dictionary reference for Crash Cause"
+      label: "Glean Dictionary reference for Crash: Cause"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_cause"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -187,7 +187,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__crash_event_loop_nesting_level {
-    label: "Crash Event Loop Nesting Level"
+    label: "Crash: Event Loop Nesting Level"
     hidden: no
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number
@@ -195,7 +195,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Event Loop Nesting Level"
 
     link: {
-      label: "Glean Dictionary reference for Crash Event Loop Nesting Level"
+      label: "Glean Dictionary reference for Crash: Event Loop Nesting Level"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_event_loop_nesting_level"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -205,7 +205,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_font_name {
-    label: "Crash Font Name"
+    label: "Crash: Font Name"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_font_name ;;
     type: string
@@ -213,7 +213,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Font Name"
 
     link: {
-      label: "Glean Dictionary reference for Crash Font Name"
+      label: "Glean Dictionary reference for Crash: Font Name"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_font_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -223,7 +223,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__crash_gpu_process_launch {
-    label: "Crash GPU Process Launch"
+    label: "Crash: GPU Process Launch"
     hidden: no
     sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
     type: number
@@ -231,7 +231,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "GPU Process Launch"
 
     link: {
-      label: "Glean Dictionary reference for Crash GPU Process Launch"
+      label: "Glean Dictionary reference for Crash: GPU Process Launch"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_gpu_process_launch"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -241,7 +241,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_ipc_channel_error {
-    label: "Crash Ipc Channel Error"
+    label: "Crash: Ipc Channel Error"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
     type: string
@@ -249,7 +249,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Ipc Channel Error"
 
     link: {
-      label: "Glean Dictionary reference for Crash Ipc Channel Error"
+      label: "Glean Dictionary reference for Crash: Ipc Channel Error"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_ipc_channel_error"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -259,7 +259,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__boolean__crash_is_garbage_collecting {
-    label: "Crash Is Garbage Collecting"
+    label: "Crash: Is Garbage Collecting"
     hidden: no
     sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
     type: yesno
@@ -267,7 +267,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Is Garbage Collecting"
 
     link: {
-      label: "Glean Dictionary reference for Crash Is Garbage Collecting"
+      label: "Glean Dictionary reference for Crash: Is Garbage Collecting"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_is_garbage_collecting"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -277,7 +277,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_main_thread_runnable_name {
-    label: "Crash Main Thread Runnable Name"
+    label: "Crash: Main Thread Runnable Name"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
     type: string
@@ -285,7 +285,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Main Thread Runnable Name"
 
     link: {
-      label: "Glean Dictionary reference for Crash Main Thread Runnable Name"
+      label: "Glean Dictionary reference for Crash: Main Thread Runnable Name"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_main_thread_runnable_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -295,7 +295,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_minidump_sha256_hash {
-    label: "Crash Minidump Sha256 Hash"
+    label: "Crash: Minidump Sha256 Hash"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
     type: string
@@ -303,7 +303,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Minidump Sha256 Hash"
 
     link: {
-      label: "Glean Dictionary reference for Crash Minidump Sha256 Hash"
+      label: "Glean Dictionary reference for Crash: Minidump Sha256 Hash"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_minidump_sha256_hash"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -313,7 +313,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_moz_crash_reason {
-    label: "Crash Moz Crash Reason"
+    label: "Crash: Moz Crash Reason"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
     type: string
@@ -321,7 +321,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Moz Crash Reason"
 
     link: {
-      label: "Glean Dictionary reference for Crash Moz Crash Reason"
+      label: "Glean Dictionary reference for Crash: Moz Crash Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_moz_crash_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -331,7 +331,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_process_type {
-    label: "Crash Process Type"
+    label: "Crash: Process Type"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_process_type ;;
     type: string
@@ -339,7 +339,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Process Type"
 
     link: {
-      label: "Glean Dictionary reference for Crash Process Type"
+      label: "Glean Dictionary reference for Crash: Process Type"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_process_type"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -349,7 +349,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_profiler_child_shutdown_phase {
-    label: "Crash Profiler Child Shutdown Phase"
+    label: "Crash: Profiler Child Shutdown Phase"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
     type: string
@@ -357,7 +357,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Profiler Child Shutdown Phase"
 
     link: {
-      label: "Glean Dictionary reference for Crash Profiler Child Shutdown Phase"
+      label: "Glean Dictionary reference for Crash: Profiler Child Shutdown Phase"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_profiler_child_shutdown_phase"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -367,7 +367,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_remote_type {
-    label: "Crash Remote Type"
+    label: "Crash: Remote Type"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_remote_type ;;
     type: string
@@ -375,7 +375,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Remote Type"
 
     link: {
-      label: "Glean Dictionary reference for Crash Remote Type"
+      label: "Glean Dictionary reference for Crash: Remote Type"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_remote_type"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -385,7 +385,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__crash_shutdown_progress {
-    label: "Crash Shutdown Progress"
+    label: "Crash: Shutdown Progress"
     hidden: no
     sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
     type: string
@@ -393,7 +393,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Shutdown Progress"
 
     link: {
-      label: "Glean Dictionary reference for Crash Shutdown Progress"
+      label: "Glean Dictionary reference for Crash: Shutdown Progress"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_shutdown_progress"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -403,7 +403,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__boolean__crash_startup {
-    label: "Crash Startup"
+    label: "Crash: Startup"
     hidden: no
     sql: ${TABLE}.metrics.boolean.crash_startup ;;
     type: yesno
@@ -411,7 +411,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Startup"
 
     link: {
-      label: "Glean Dictionary reference for Crash Startup"
+      label: "Glean Dictionary reference for Crash: Startup"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_startup"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -421,7 +421,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__timespan__crash_uptime__value {
-    label: "Crash Uptime Value"
+    label: "Crash: Uptime Value"
     hidden: yes
     sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
     type: number
@@ -429,7 +429,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Uptime Value"
 
     link: {
-      label: "Glean Dictionary reference for Crash Uptime Value"
+      label: "Glean Dictionary reference for Crash: Uptime Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_uptime"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -439,7 +439,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__boolean__environment_headless_mode {
-    label: "Environment Headless Mode"
+    label: "Environment: Headless Mode"
     hidden: no
     sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
     type: yesno
@@ -447,7 +447,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Headless Mode"
 
     link: {
-      label: "Glean Dictionary reference for Environment Headless Mode"
+      label: "Glean Dictionary reference for Environment: Headless Mode"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/environment_headless_mode"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -457,7 +457,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__timespan__environment_uptime__value {
-    label: "Environment Uptime Value"
+    label: "Environment: Uptime Value"
     hidden: no
     sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
     type: number
@@ -465,7 +465,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Uptime Value"
 
     link: {
-      label: "Glean Dictionary reference for Environment Uptime Value"
+      label: "Glean Dictionary reference for Environment: Uptime Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/environment_uptime"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -475,7 +475,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_available_commit {
-    label: "Memory Available Commit"
+    label: "Memory: Available Commit"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
     type: number
@@ -483,7 +483,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Available Commit"
 
     link: {
-      label: "Glean Dictionary reference for Memory Available Commit"
+      label: "Glean Dictionary reference for Memory: Available Commit"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_available_commit"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -493,7 +493,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_available_physical {
-    label: "Memory Available Physical"
+    label: "Memory: Available Physical"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
     type: number
@@ -501,7 +501,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Available Physical"
 
     link: {
-      label: "Glean Dictionary reference for Memory Available Physical"
+      label: "Glean Dictionary reference for Memory: Available Physical"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_available_physical"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -511,7 +511,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_available_swap {
-    label: "Memory Available Swap"
+    label: "Memory: Available Swap"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
     type: number
@@ -519,7 +519,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Available Swap"
 
     link: {
-      label: "Glean Dictionary reference for Memory Available Swap"
+      label: "Glean Dictionary reference for Memory: Available Swap"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_available_swap"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -529,7 +529,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_available_virtual {
-    label: "Memory Available Virtual"
+    label: "Memory: Available Virtual"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
     type: number
@@ -537,7 +537,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Available Virtual"
 
     link: {
-      label: "Glean Dictionary reference for Memory Available Virtual"
+      label: "Glean Dictionary reference for Memory: Available Virtual"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_available_virtual"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -547,7 +547,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__memory_js_large_allocation_failure {
-    label: "Memory Js Large Allocation Failure"
+    label: "Memory: Js Large Allocation Failure"
     hidden: no
     sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
     type: string
@@ -555,7 +555,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Js Large Allocation Failure"
 
     link: {
-      label: "Glean Dictionary reference for Memory Js Large Allocation Failure"
+      label: "Glean Dictionary reference for Memory: Js Large Allocation Failure"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_js_large_allocation_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -565,7 +565,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__memory_js_out_of_memory {
-    label: "Memory Js Out Of Memory"
+    label: "Memory: Js Out Of Memory"
     hidden: no
     sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
     type: string
@@ -573,7 +573,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Js Out Of Memory"
 
     link: {
-      label: "Glean Dictionary reference for Memory Js Out Of Memory"
+      label: "Glean Dictionary reference for Memory: Js Out Of Memory"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_js_out_of_memory"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -583,7 +583,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_low_physical {
-    label: "Memory Low Physical"
+    label: "Memory: Low Physical"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
     type: number
@@ -591,7 +591,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Low Physical"
 
     link: {
-      label: "Glean Dictionary reference for Memory Low Physical"
+      label: "Glean Dictionary reference for Memory: Low Physical"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_low_physical"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -601,7 +601,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_oom_allocation_size {
-    label: "Memory Oom Allocation Size"
+    label: "Memory: Oom Allocation Size"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
     type: number
@@ -609,7 +609,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Oom Allocation Size"
 
     link: {
-      label: "Glean Dictionary reference for Memory Oom Allocation Size"
+      label: "Glean Dictionary reference for Memory: Oom Allocation Size"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_oom_allocation_size"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -619,7 +619,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_purgeable_physical {
-    label: "Memory Purgeable Physical"
+    label: "Memory: Purgeable Physical"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
     type: number
@@ -627,7 +627,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Purgeable Physical"
 
     link: {
-      label: "Glean Dictionary reference for Memory Purgeable Physical"
+      label: "Glean Dictionary reference for Memory: Purgeable Physical"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_purgeable_physical"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -637,7 +637,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_system_use_percentage {
-    label: "Memory System Use Percentage"
+    label: "Memory: System Use Percentage"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
     type: number
@@ -645,7 +645,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "System Use Percentage"
 
     link: {
-      label: "Glean Dictionary reference for Memory System Use Percentage"
+      label: "Glean Dictionary reference for Memory: System Use Percentage"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_system_use_percentage"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -655,7 +655,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_texture {
-    label: "Memory Texture"
+    label: "Memory: Texture"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_texture ;;
     type: number
@@ -663,7 +663,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Texture"
 
     link: {
-      label: "Glean Dictionary reference for Memory Texture"
+      label: "Glean Dictionary reference for Memory: Texture"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_texture"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -673,7 +673,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_total_page_file {
-    label: "Memory Total Page File"
+    label: "Memory: Total Page File"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
     type: number
@@ -681,7 +681,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Total Page File"
 
     link: {
-      label: "Glean Dictionary reference for Memory Total Page File"
+      label: "Glean Dictionary reference for Memory: Total Page File"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_total_page_file"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -691,7 +691,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_total_physical {
-    label: "Memory Total Physical"
+    label: "Memory: Total Physical"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
     type: number
@@ -699,7 +699,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Total Physical"
 
     link: {
-      label: "Glean Dictionary reference for Memory Total Physical"
+      label: "Glean Dictionary reference for Memory: Total Physical"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_total_physical"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -709,7 +709,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__quantity__memory_total_virtual {
-    label: "Memory Total Virtual"
+    label: "Memory: Total Virtual"
     hidden: no
     sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
     type: number
@@ -717,7 +717,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Total Virtual"
 
     link: {
-      label: "Glean Dictionary reference for Memory Total Virtual"
+      label: "Glean Dictionary reference for Memory: Total Virtual"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/memory_total_virtual"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -799,7 +799,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -808,7 +808,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -822,7 +822,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -831,7 +831,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -840,7 +840,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -887,7 +887,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -986,7 +986,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -994,7 +994,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -1004,7 +1004,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -1013,7 +1013,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -1022,7 +1022,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -1031,7 +1031,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -1040,7 +1040,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -1049,7 +1049,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -1057,7 +1057,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -1070,7 +1070,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -1079,7 +1079,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -1088,7 +1088,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -1097,7 +1097,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -1106,7 +1106,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -1115,7 +1115,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -1124,7 +1124,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -1133,7 +1133,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -1142,7 +1142,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -1151,7 +1151,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -1159,7 +1159,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -1167,7 +1167,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -1260,7 +1260,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1270,13 +1269,12 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1292,7 +1290,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1308,7 +1305,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1334,7 +1330,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: crash__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1375,7 +1371,7 @@ view: crash__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: crash__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1416,7 +1412,7 @@ view: crash__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: crash__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1457,7 +1453,7 @@ view: crash__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: crash__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1555,7 +1551,7 @@ view: crash__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1563,7 +1559,7 @@ view: crash__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

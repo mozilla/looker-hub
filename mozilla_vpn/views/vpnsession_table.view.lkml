@@ -72,7 +72,7 @@ view: vpnsession_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -80,7 +80,7 @@ view: vpnsession_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -93,7 +93,7 @@ view: vpnsession_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -101,7 +101,7 @@ view: vpnsession_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -109,7 +109,7 @@ view: vpnsession_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -151,7 +151,7 @@ view: vpnsession_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -239,7 +239,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -247,7 +247,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -256,7 +256,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -264,7 +264,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -272,7 +272,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -280,7 +280,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -288,7 +288,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -296,7 +296,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -304,7 +304,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -317,7 +317,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -325,7 +325,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -333,7 +333,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -341,7 +341,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -349,7 +349,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -357,7 +357,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -365,7 +365,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -373,7 +373,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -381,7 +381,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -389,7 +389,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -397,7 +397,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -405,7 +405,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -413,7 +413,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.boolean.session_server_in_same_country ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Session Server In Same Country"
   }
 
@@ -421,7 +421,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.counter.connection_health_no_signal_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Connection Health No Signal Count"
   }
 
@@ -429,7 +429,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.counter.connection_health_stable_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Connection Health Stable Count"
   }
 
@@ -437,7 +437,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.counter.connection_health_unstable_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Connection Health Unstable Count"
   }
 
@@ -445,7 +445,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Counter"
+    group_label: "Metrics: Counter"
     group_item_label: "Session Connection Health Stable Count"
   }
 
@@ -453,7 +453,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Connection Health Data Transferred Rx"
+    group_label: "Metrics: Custom Distribution: Connection Health Data Transferred Rx"
     group_item_label: "Count"
   }
 
@@ -461,7 +461,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_rx.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Connection Health Data Transferred Rx"
+    group_label: "Metrics: Custom Distribution: Connection Health Data Transferred Rx"
     group_item_label: "Sum"
   }
 
@@ -474,7 +474,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Connection Health Data Transferred Tx"
+    group_label: "Metrics: Custom Distribution: Connection Health Data Transferred Tx"
     group_item_label: "Count"
   }
 
@@ -482,7 +482,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.custom_distribution.connection_health_data_transferred_tx.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Custom Distribution Connection Health Data Transferred Tx"
+    group_label: "Metrics: Custom Distribution: Connection Health Data Transferred Tx"
     group_item_label: "Sum"
   }
 
@@ -495,7 +495,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.datetime.raw_session_session_end ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw Session Session End"
   }
 
@@ -503,7 +503,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.datetime.raw_session_session_start ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Datetime"
+    group_label: "Metrics: Datetime"
     group_item_label: "Raw Session Session Start"
   }
 
@@ -531,7 +531,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.quantity.session_apps_excluded ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Session Apps Excluded"
   }
 
@@ -539,7 +539,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
@@ -547,7 +547,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.string.session_dns_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Session DNS Type"
   }
 
@@ -560,7 +560,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_label: "Metrics: Timing Distribution: Connection Health No Signal Time"
     group_item_label: "Bucket Count"
   }
 
@@ -568,7 +568,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_label: "Metrics: Timing Distribution: Connection Health No Signal Time"
     group_item_label: "Count"
   }
 
@@ -576,7 +576,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_label: "Metrics: Timing Distribution: Connection Health No Signal Time"
     group_item_label: "Histogram Type"
   }
 
@@ -584,7 +584,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_label: "Metrics: Timing Distribution: Connection Health No Signal Time"
     group_item_label: "Overflow"
   }
 
@@ -597,7 +597,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_label: "Metrics: Timing Distribution: Connection Health No Signal Time"
     group_item_label: "Sum"
   }
 
@@ -605,7 +605,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_label: "Metrics: Timing Distribution: Connection Health No Signal Time"
     group_item_label: "Time Unit"
   }
 
@@ -613,7 +613,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_label: "Metrics: Timing Distribution: Connection Health No Signal Time"
     group_item_label: "Underflow"
   }
 
@@ -626,7 +626,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Stable Time"
     group_item_label: "Bucket Count"
   }
 
@@ -634,7 +634,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Stable Time"
     group_item_label: "Count"
   }
 
@@ -642,7 +642,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Stable Time"
     group_item_label: "Histogram Type"
   }
 
@@ -650,7 +650,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Stable Time"
     group_item_label: "Overflow"
   }
 
@@ -663,7 +663,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Stable Time"
     group_item_label: "Sum"
   }
 
@@ -671,7 +671,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Stable Time"
     group_item_label: "Time Unit"
   }
 
@@ -679,7 +679,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Stable Time"
     group_item_label: "Underflow"
   }
 
@@ -692,7 +692,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.bucket_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Unstable Time"
     group_item_label: "Bucket Count"
   }
 
@@ -700,7 +700,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Unstable Time"
     group_item_label: "Count"
   }
 
@@ -708,7 +708,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.histogram_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Unstable Time"
     group_item_label: "Histogram Type"
   }
 
@@ -716,7 +716,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.overflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Unstable Time"
     group_item_label: "Overflow"
   }
 
@@ -729,7 +729,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.sum ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Unstable Time"
     group_item_label: "Sum"
   }
 
@@ -737,7 +737,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.time_unit ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Unstable Time"
     group_item_label: "Time Unit"
   }
 
@@ -745,7 +745,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.underflow ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_label: "Metrics: Timing Distribution: Connection Health Unstable Time"
     group_item_label: "Underflow"
   }
 
@@ -758,7 +758,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.uuid.session_installation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Session Installation ID"
   }
 
@@ -766,7 +766,7 @@ view: vpnsession_table {
     sql: ${TABLE}.metrics.uuid.session_session_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Session Session ID"
   }
 
@@ -862,7 +862,6 @@ view: vpnsession_table {
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -872,13 +871,12 @@ view: vpnsession_table {
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: metrics__datetime__session_session_end {
     sql: ${TABLE}.metrics.datetime.session_session_end ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -888,13 +886,12 @@ view: vpnsession_table {
       quarter,
       year,
     ]
-    label: "Metrics Datetime: Session Session End"
+    label: "Metrics: Datetime: Session Session End"
   }
 
   dimension_group: metrics__datetime__session_session_start {
     sql: ${TABLE}.metrics.datetime.session_session_start ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -904,13 +901,12 @@ view: vpnsession_table {
       quarter,
       year,
     ]
-    label: "Metrics Datetime: Session Session Start"
+    label: "Metrics: Datetime: Session Session Start"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -926,7 +922,6 @@ view: vpnsession_table {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -942,7 +937,6 @@ view: vpnsession_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1085,7 +1079,7 @@ view: vpnsession_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1093,7 +1087,7 @@ view: vpnsession_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

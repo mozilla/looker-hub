@@ -456,7 +456,6 @@ desktop_engagement_v1_wau,
   dimension_group: first_seen {
     sql: ${TABLE}.desktop_engagement_v1_first_seen ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

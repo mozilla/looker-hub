@@ -26,7 +26,6 @@ view: experiment_cumulative_ad_clicks {
   dimension_group: time {
     sql: ${TABLE}.time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

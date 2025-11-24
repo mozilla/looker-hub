@@ -127,7 +127,6 @@ view: bigquery_shared_prod_table_storage {
   dimension_group: creation {
     sql: ${TABLE}.creation_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -143,7 +142,6 @@ view: bigquery_shared_prod_table_storage {
   dimension_group: storage_last_modified {
     sql: ${TABLE}.storage_last_modified_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -159,7 +157,6 @@ view: bigquery_shared_prod_table_storage {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

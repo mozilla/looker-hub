@@ -20,7 +20,6 @@ view: recovery_phone_segments {
   dimension_group: as_of {
     sql: ${TABLE}.as_of_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

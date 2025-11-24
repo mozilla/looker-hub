@@ -32,7 +32,6 @@ view: waitlist_table {
   dimension_group: joined {
     sql: ${TABLE}.joined_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -48,7 +47,6 @@ view: waitlist_table {
   dimension_group: waitlist {
     sql: ${TABLE}.waitlist_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

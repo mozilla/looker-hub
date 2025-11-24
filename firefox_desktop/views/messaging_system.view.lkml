@@ -6,7 +6,7 @@
 
 view: messaging_system {
   dimension: metrics__string__messaging_system_action {
-    label: "Messaging System Action"
+    label: "Messaging System: Action"
     hidden: yes
     sql: ${TABLE}.metrics.string.messaging_system_action ;;
     type: string
@@ -14,7 +14,7 @@ view: messaging_system {
     group_item_label: "Action"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Action"
+      label: "Glean Dictionary reference for Messaging System: Action"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_action"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -24,7 +24,7 @@ view: messaging_system {
   }
 
   dimension: metrics__string__messaging_system_addon_version {
-    label: "Messaging System Addon Version"
+    label: "Messaging System: Addon Version"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_addon_version ;;
     type: string
@@ -32,7 +32,7 @@ view: messaging_system {
     group_item_label: "Addon Version"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Addon Version"
+      label: "Glean Dictionary reference for Messaging System: Addon Version"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_addon_version"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -42,7 +42,7 @@ view: messaging_system {
   }
 
   dimension: metrics__string__messaging_system_attribution_campaign {
-    label: "Messaging System Attribution Campaign"
+    label: "Messaging System Attribution: Campaign"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_campaign ;;
     type: string
@@ -50,7 +50,7 @@ view: messaging_system {
     group_item_label: "Campaign"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Campaign"
+      label: "Glean Dictionary reference for Messaging System Attribution: Campaign"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_campaign"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -61,7 +61,7 @@ same name.
   }
 
   dimension: metrics__string__messaging_system_attribution_content {
-    label: "Messaging System Attribution Content"
+    label: "Messaging System Attribution: Content"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_content ;;
     type: string
@@ -69,7 +69,7 @@ same name.
     group_item_label: "Content"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Content"
+      label: "Glean Dictionary reference for Messaging System Attribution: Content"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_content"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -80,7 +80,7 @@ same name.
   }
 
   dimension: metrics__string__messaging_system_attribution_dlsource {
-    label: "Messaging System Attribution Dlsource"
+    label: "Messaging System Attribution: Dlsource"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_dlsource ;;
     type: string
@@ -88,7 +88,7 @@ same name.
     group_item_label: "Dlsource"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Dlsource"
+      label: "Glean Dictionary reference for Messaging System Attribution: Dlsource"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_dlsource"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -100,7 +100,7 @@ same name.
   }
 
   dimension: metrics__string__messaging_system_attribution_dltoken {
-    label: "Messaging System Attribution Dltoken"
+    label: "Messaging System Attribution: Dltoken"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_dltoken ;;
     type: string
@@ -108,7 +108,7 @@ same name.
     group_item_label: "Dltoken"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Dltoken"
+      label: "Glean Dictionary reference for Messaging System Attribution: Dltoken"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_dltoken"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -120,7 +120,7 @@ Likely a UUID, if present.
   }
 
   dimension: metrics__string__messaging_system_attribution_experiment {
-    label: "Messaging System Attribution Experiment"
+    label: "Messaging System Attribution: Experiment"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_experiment ;;
     type: string
@@ -128,7 +128,7 @@ Likely a UUID, if present.
     group_item_label: "Experiment"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Experiment"
+      label: "Glean Dictionary reference for Messaging System Attribution: Experiment"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_experiment"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -138,7 +138,7 @@ Likely a UUID, if present.
   }
 
   dimension: metrics__string__messaging_system_attribution_medium {
-    label: "Messaging System Attribution Medium"
+    label: "Messaging System Attribution: Medium"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_medium ;;
     type: string
@@ -146,7 +146,7 @@ Likely a UUID, if present.
     group_item_label: "Medium"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Medium"
+      label: "Glean Dictionary reference for Messaging System Attribution: Medium"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_medium"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -157,7 +157,7 @@ name.
   }
 
   dimension: metrics__string__messaging_system_attribution_msstoresignedin {
-    label: "Messaging System Attribution Msstoresignedin"
+    label: "Messaging System Attribution: Msstoresignedin"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_msstoresignedin ;;
     type: string
@@ -165,7 +165,7 @@ name.
     group_item_label: "Msstoresignedin"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Msstoresignedin"
+      label: "Glean Dictionary reference for Messaging System Attribution: Msstoresignedin"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_msstoresignedin"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -177,7 +177,7 @@ user was signed in at the time.
   }
 
   dimension: metrics__string__messaging_system_attribution_source {
-    label: "Messaging System Attribution Source"
+    label: "Messaging System Attribution: Source"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_source ;;
     type: string
@@ -185,7 +185,7 @@ user was signed in at the time.
     group_item_label: "Source"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Source"
+      label: "Glean Dictionary reference for Messaging System Attribution: Source"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_source"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -196,7 +196,7 @@ name.
   }
 
   dimension: metrics__string__messaging_system_attribution_ua {
-    label: "Messaging System Attribution Ua"
+    label: "Messaging System Attribution: Ua"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_ua ;;
     type: string
@@ -204,7 +204,7 @@ name.
     group_item_label: "Ua"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Ua"
+      label: "Glean Dictionary reference for Messaging System Attribution: Ua"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_ua"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -214,14 +214,14 @@ name.
   }
 
   dimension: metrics__labeled_counter__messaging_system_attribution_unknown_keys {
-    label: "Messaging System Attribution Unknown Keys"
+    label: "Messaging System Attribution: Unknown Keys"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.messaging_system_attribution_unknown_keys ;;
     group_label: "Messaging System Attribution"
     group_item_label: "Unknown Keys"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Unknown Keys"
+      label: "Glean Dictionary reference for Messaging System Attribution: Unknown Keys"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_unknown_keys"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -236,7 +236,7 @@ Either add this key to a list of known attribution keys in
   }
 
   dimension: metrics__string__messaging_system_attribution_variation {
-    label: "Messaging System Attribution Variation"
+    label: "Messaging System Attribution: Variation"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_attribution_variation ;;
     type: string
@@ -244,7 +244,7 @@ Either add this key to a list of known attribution keys in
     group_item_label: "Variation"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Attribution Variation"
+      label: "Glean Dictionary reference for Messaging System Attribution: Variation"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_variation"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -254,7 +254,7 @@ Either add this key to a list of known attribution keys in
   }
 
   dimension: metrics__uuid__messaging_system_browser_session_id {
-    label: "Messaging System Browser Session ID"
+    label: "Messaging System: Browser Session ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.messaging_system_browser_session_id ;;
     type: string
@@ -262,7 +262,7 @@ Either add this key to a list of known attribution keys in
     group_item_label: "Browser Session ID"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Browser Session ID"
+      label: "Glean Dictionary reference for Messaging System: Browser Session ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_browser_session_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -272,7 +272,7 @@ Either add this key to a list of known attribution keys in
   }
 
   dimension: metrics__string__messaging_system_bucket_id {
-    label: "Messaging System Bucket ID"
+    label: "Messaging System: Bucket ID"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_bucket_id ;;
     type: string
@@ -280,7 +280,7 @@ Either add this key to a list of known attribution keys in
     group_item_label: "Bucket ID"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Bucket ID"
+      label: "Glean Dictionary reference for Messaging System: Bucket ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_bucket_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -290,7 +290,7 @@ Either add this key to a list of known attribution keys in
   }
 
   dimension: metrics__text2__messaging_system_cfr_action {
-    label: "Messaging System Cfr Action"
+    label: "Messaging System: Cfr Action"
     hidden: yes
     sql: ${TABLE}.metrics.text2.messaging_system_cfr_action ;;
     type: string
@@ -298,7 +298,7 @@ Either add this key to a list of known attribution keys in
     group_item_label: "Cfr Action"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Cfr Action"
+      label: "Glean Dictionary reference for Messaging System: Cfr Action"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_cfr_action"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -308,7 +308,7 @@ Either add this key to a list of known attribution keys in
   }
 
   dimension: metrics__uuid__messaging_system_client_id {
-    label: "Messaging System Client ID"
+    label: "Messaging System: Client ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.messaging_system_client_id ;;
     type: string
@@ -316,7 +316,7 @@ Either add this key to a list of known attribution keys in
     group_item_label: "Client ID"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Client ID"
+      label: "Glean Dictionary reference for Messaging System: Client ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_client_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -334,7 +334,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__string__messaging_system_event {
-    label: "Messaging System Event"
+    label: "Messaging System: Event"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_event ;;
     type: string
@@ -342,7 +342,7 @@ Present only in some circumstances (see
     group_item_label: "Event"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event"
+      label: "Glean Dictionary reference for Messaging System: Event"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -352,7 +352,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__text2__messaging_system_event_context {
-    label: "Messaging System Event Context"
+    label: "Messaging System: Event Context"
     hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_event_context ;;
     type: string
@@ -360,7 +360,7 @@ Present only in some circumstances (see
     group_item_label: "Event Context"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Context"
+      label: "Glean Dictionary reference for Messaging System: Event Context"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_context"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -370,7 +370,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__counter__messaging_system_event_context_parse_error {
-    label: "Messaging System Event Context Parse Error"
+    label: "Messaging System: Event Context Parse Error"
     hidden: no
     sql: ${TABLE}.metrics.counter.messaging_system_event_context_parse_error ;;
     type: number
@@ -378,7 +378,7 @@ Present only in some circumstances (see
     group_item_label: "Event Context Parse Error"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Context Parse Error"
+      label: "Glean Dictionary reference for Messaging System: Event Context Parse Error"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_context_parse_error"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -388,7 +388,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__string__messaging_system_event_page {
-    label: "Messaging System Event Page"
+    label: "Messaging System: Event Page"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_event_page ;;
     type: string
@@ -396,7 +396,7 @@ Present only in some circumstances (see
     group_item_label: "Event Page"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Page"
+      label: "Glean Dictionary reference for Messaging System: Event Page"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_page"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -406,7 +406,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__string__messaging_system_event_reason {
-    label: "Messaging System Event Reason"
+    label: "Messaging System: Event Reason"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_event_reason ;;
     type: string
@@ -414,7 +414,7 @@ Present only in some circumstances (see
     group_item_label: "Event Reason"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Reason"
+      label: "Glean Dictionary reference for Messaging System: Event Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -425,7 +425,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__text2__messaging_system_event_screen_family {
-    label: "Messaging System Event Screen Family"
+    label: "Messaging System: Event Screen Family"
     hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_family ;;
     type: string
@@ -433,7 +433,7 @@ Present only in some circumstances (see
     group_item_label: "Event Screen Family"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Screen Family"
+      label: "Glean Dictionary reference for Messaging System: Event Screen Family"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_family"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -444,7 +444,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__text2__messaging_system_event_screen_id {
-    label: "Messaging System Event Screen ID"
+    label: "Messaging System: Event Screen ID"
     hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_id ;;
     type: string
@@ -452,7 +452,7 @@ Present only in some circumstances (see
     group_item_label: "Event Screen ID"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Screen ID"
+      label: "Glean Dictionary reference for Messaging System: Event Screen ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -463,7 +463,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__quantity__messaging_system_event_screen_index {
-    label: "Messaging System Event Screen Index"
+    label: "Messaging System: Event Screen Index"
     hidden: no
     sql: ${TABLE}.metrics.quantity.messaging_system_event_screen_index ;;
     type: number
@@ -471,7 +471,7 @@ Present only in some circumstances (see
     group_item_label: "Event Screen Index"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Screen Index"
+      label: "Glean Dictionary reference for Messaging System: Event Screen Index"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_index"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -482,7 +482,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__text2__messaging_system_event_screen_initials {
-    label: "Messaging System Event Screen Initials"
+    label: "Messaging System: Event Screen Initials"
     hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_event_screen_initials ;;
     type: string
@@ -490,7 +490,7 @@ Present only in some circumstances (see
     group_item_label: "Event Screen Initials"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Screen Initials"
+      label: "Glean Dictionary reference for Messaging System: Event Screen Initials"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_initials"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -501,7 +501,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__string__messaging_system_event_source {
-    label: "Messaging System Event Source"
+    label: "Messaging System: Event Source"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_event_source ;;
     type: string
@@ -509,7 +509,7 @@ Present only in some circumstances (see
     group_item_label: "Event Source"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Event Source"
+      label: "Glean Dictionary reference for Messaging System: Event Source"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_source"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -519,7 +519,7 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__uuid__messaging_system_impression_id {
-    label: "Messaging System Impression ID"
+    label: "Messaging System: Impression ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.messaging_system_impression_id ;;
     type: string
@@ -527,7 +527,7 @@ Present only in some circumstances (see
     group_item_label: "Impression ID"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Impression ID"
+      label: "Glean Dictionary reference for Messaging System: Impression ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_impression_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -537,14 +537,14 @@ Present only in some circumstances (see
   }
 
   dimension: metrics__labeled_counter__messaging_system_invalid_nested_data {
-    label: "Messaging System Invalid Nested Data"
+    label: "Messaging System: Invalid Nested Data"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.messaging_system_invalid_nested_data ;;
     group_label: "Messaging System"
     group_item_label: "Invalid Nested Data"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Invalid Nested Data"
+      label: "Glean Dictionary reference for Messaging System: Invalid Nested Data"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_invalid_nested_data"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -561,7 +561,7 @@ If you're unsure, please ask in
   }
 
   dimension: metrics__string__messaging_system_locale {
-    label: "Messaging System Locale"
+    label: "Messaging System: Locale"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_locale ;;
     type: string
@@ -569,7 +569,7 @@ If you're unsure, please ask in
     group_item_label: "Locale"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Locale"
+      label: "Glean Dictionary reference for Messaging System: Locale"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_locale"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -579,7 +579,7 @@ If you're unsure, please ask in
   }
 
   dimension: metrics__text2__messaging_system_message_id {
-    label: "Messaging System Message ID"
+    label: "Messaging System: Message ID"
     hidden: no
     sql: ${TABLE}.metrics.text2.messaging_system_message_id ;;
     type: string
@@ -587,7 +587,7 @@ If you're unsure, please ask in
     group_item_label: "Message ID"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Message ID"
+      label: "Glean Dictionary reference for Messaging System: Message ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_message_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -597,7 +597,7 @@ If you're unsure, please ask in
   }
 
   dimension: metrics__string__messaging_system_page {
-    label: "Messaging System Page"
+    label: "Messaging System: Page"
     hidden: yes
     sql: ${TABLE}.metrics.string.messaging_system_page ;;
     type: string
@@ -605,7 +605,7 @@ If you're unsure, please ask in
     group_item_label: "Page"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Page"
+      label: "Glean Dictionary reference for Messaging System: Page"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_page"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -615,7 +615,7 @@ If you're unsure, please ask in
   }
 
   dimension: metrics__string__messaging_system_ping_type {
-    label: "Messaging System Ping Type"
+    label: "Messaging System: Ping Type"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_ping_type ;;
     type: string
@@ -623,7 +623,7 @@ If you're unsure, please ask in
     group_item_label: "Ping Type"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Ping Type"
+      label: "Glean Dictionary reference for Messaging System: Ping Type"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_ping_type"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -633,7 +633,7 @@ If you're unsure, please ask in
   }
 
   dimension: metrics__string__messaging_system_source {
-    label: "Messaging System Source"
+    label: "Messaging System: Source"
     hidden: no
     sql: ${TABLE}.metrics.string.messaging_system_source ;;
     type: string
@@ -641,7 +641,7 @@ If you're unsure, please ask in
     group_item_label: "Source"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Source"
+      label: "Glean Dictionary reference for Messaging System: Source"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_source"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -651,7 +651,7 @@ If you're unsure, please ask in
   }
 
   dimension: metrics__counter__messaging_system_unknown_key_count {
-    label: "Messaging System Unknown Key Count"
+    label: "Messaging System: Unknown Key Count"
     hidden: no
     sql: ${TABLE}.metrics.counter.messaging_system_unknown_key_count ;;
     type: number
@@ -659,7 +659,7 @@ If you're unsure, please ask in
     group_item_label: "Unknown Key Count"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Unknown Key Count"
+      label: "Glean Dictionary reference for Messaging System: Unknown Key Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_unknown_key_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -671,14 +671,14 @@ Can be removed after bug 1600008 is resolved.
   }
 
   dimension: metrics__labeled_counter__messaging_system_unknown_keys {
-    label: "Messaging System Unknown Keys"
+    label: "Messaging System: Unknown Keys"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.messaging_system_unknown_keys ;;
     group_label: "Messaging System"
     group_item_label: "Unknown Keys"
 
     link: {
-      label: "Glean Dictionary reference for Messaging System Unknown Keys"
+      label: "Glean Dictionary reference for Messaging System: Unknown Keys"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_unknown_keys"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -692,7 +692,7 @@ You may have forgotten to define an appropriate metric in
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -700,7 +700,7 @@ You may have forgotten to define an appropriate metric in
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -711,14 +711,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -729,14 +729,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -747,14 +747,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -765,14 +765,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -855,7 +855,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -864,7 +864,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -878,7 +878,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -887,7 +887,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -896,7 +896,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -943,7 +943,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -1042,7 +1042,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -1050,7 +1050,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -1060,7 +1060,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -1069,7 +1069,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -1078,7 +1078,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -1087,7 +1087,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -1096,7 +1096,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -1105,7 +1105,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -1113,7 +1113,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -1126,7 +1126,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -1135,7 +1135,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -1144,7 +1144,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -1153,7 +1153,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -1162,7 +1162,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -1171,7 +1171,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -1180,7 +1180,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -1189,7 +1189,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -1198,7 +1198,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -1207,7 +1207,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -1215,7 +1215,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -1223,7 +1223,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -1316,7 +1316,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1326,13 +1325,12 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1348,7 +1346,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1364,7 +1361,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1440,7 +1436,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: messaging_system__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1481,7 +1477,7 @@ view: messaging_system__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: messaging_system__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1522,7 +1518,7 @@ view: messaging_system__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: messaging_system__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1563,7 +1559,7 @@ view: messaging_system__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: messaging_system__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1604,7 +1600,7 @@ view: messaging_system__metrics__labeled_counter__glean_error_invalid_value {
 }
 
 view: messaging_system__metrics__labeled_counter__messaging_system_attribution_unknown_keys {
-  label: "Messaging System Attribution - Unknown Keys"
+  label: "Messaging System Attribution: Unknown Keys"
 
   dimension: document_id {
     type: string
@@ -1645,7 +1641,7 @@ view: messaging_system__metrics__labeled_counter__messaging_system_attribution_u
 }
 
 view: messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data {
-  label: "Messaging System - Invalid Nested Data"
+  label: "Messaging System: Invalid Nested Data"
 
   dimension: document_id {
     type: string
@@ -1686,7 +1682,7 @@ view: messaging_system__metrics__labeled_counter__messaging_system_invalid_neste
 }
 
 view: messaging_system__metrics__labeled_counter__messaging_system_unknown_keys {
-  label: "Messaging System - Unknown Keys"
+  label: "Messaging System: Unknown Keys"
 
   dimension: document_id {
     type: string
@@ -1784,7 +1780,7 @@ view: messaging_system__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1792,7 +1788,7 @@ view: messaging_system__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

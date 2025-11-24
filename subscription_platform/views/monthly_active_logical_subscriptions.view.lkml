@@ -209,7 +209,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.entrypoint ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint"
     description: "Last-touch attribution entrypoint."
   }
@@ -218,7 +218,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.entrypoint_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint Experiment"
     description: "Last-touch attribution entrypoint experiment."
   }
@@ -227,7 +227,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.entrypoint_variation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint Variation"
     description: "Last-touch attribution entrypoint experiment variation."
   }
@@ -236,7 +236,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Campaign"
     description: "Last-touch attribution UTM campaign."
   }
@@ -245,7 +245,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Content"
     description: "Last-touch attribution UTM content."
   }
@@ -254,7 +254,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Medium"
     description: "Last-touch attribution UTM medium."
   }
@@ -263,7 +263,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Source"
     description: "Last-touch attribution UTM source."
   }
@@ -272,7 +272,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Term"
     description: "Last-touch attribution UTM term."
   }
@@ -549,7 +549,6 @@ This will be null for Google and Apple subscriptions."
   dimension_group: month_end {
     sql: ${TABLE}.month_end_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -566,7 +565,6 @@ This will be null for Google and Apple subscriptions."
   dimension_group: month_start {
     sql: ${TABLE}.month_start_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -583,7 +581,6 @@ This will be null for Google and Apple subscriptions."
   dimension_group: subscription__auto_renew_disabled_at {
     sql: ${TABLE}.subscription.auto_renew_disabled_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -601,7 +598,6 @@ This will be null for subscriptions set to auto-renew."
   dimension_group: subscription__current_period_ends_at {
     sql: ${TABLE}.subscription.current_period_ends_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -619,7 +615,6 @@ This will be null for inactive subscriptions."
   dimension_group: subscription__current_period_started_at {
     sql: ${TABLE}.subscription.current_period_started_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -637,7 +632,6 @@ This will be null for inactive subscriptions and for all Google subcriptions."
   dimension_group: subscription__ended_at {
     sql: ${TABLE}.subscription.ended_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -655,7 +649,6 @@ This will be null for active subscriptions."
   dimension_group: subscription__last_touch_attribution__impression_at {
     sql: ${TABLE}.subscription.last_touch_attribution.impression_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -665,14 +658,13 @@ This will be null for active subscriptions."
       quarter,
       year,
     ]
-    label: "Subscription Last Touch Attribution: Impression At"
+    label: "Subscription: Last Touch Attribution: Impression At"
     description: "When the last-touch attribution impression occurred."
   }
 
   dimension_group: subscription__ongoing_discount_ends_at {
     sql: ${TABLE}.subscription.ongoing_discount_ends_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -690,7 +682,6 @@ This will be null for Apple subscriptions."
   dimension_group: subscription__provider_subscription_created_at {
     sql: ${TABLE}.subscription.provider_subscription_created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -707,7 +698,6 @@ This will be null for Apple subscriptions."
   dimension_group: subscription__provider_subscription_updated_at {
     sql: ${TABLE}.subscription.provider_subscription_updated_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -724,7 +714,6 @@ This will be null for Apple subscriptions."
   dimension_group: subscription__started_at {
     sql: ${TABLE}.subscription.started_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

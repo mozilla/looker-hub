@@ -6,7 +6,7 @@
 
 view: metrics {
   dimension: metrics__string__app_keyboard_type {
-    label: "App Keyboard Type"
+    label: "App: Keyboard Type"
     hidden: yes
     sql: ${TABLE}.metrics.string.app_keyboard_type ;;
     type: string
@@ -14,7 +14,7 @@ view: metrics {
     group_item_label: "Keyboard Type"
 
     link: {
-      label: "Glean Dictionary reference for App Keyboard Type"
+      label: "Glean Dictionary reference for App: Keyboard Type"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/app_keyboard_type"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -25,7 +25,7 @@ the keyboard appears on the screen.
   }
 
   dimension: metrics__counter__app_opened_as_default_browser {
-    label: "App Opened As Default Browser"
+    label: "App: Opened As Default Browser"
     hidden: yes
     sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
     type: number
@@ -33,7 +33,7 @@ the keyboard appears on the screen.
     group_item_label: "Opened As Default Browser"
 
     link: {
-      label: "Glean Dictionary reference for App Opened As Default Browser"
+      label: "Glean Dictionary reference for App: Opened As Default Browser"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/app_opened_as_default_browser"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -45,7 +45,7 @@ recorded in the extra keys.
   }
 
   dimension: metrics__counter__browser_pdf_viewer_used {
-    label: "Browser Pdf Viewer Used"
+    label: "Browser: Pdf Viewer Used"
     hidden: yes
     sql: ${TABLE}.metrics.counter.browser_pdf_viewer_used ;;
     type: number
@@ -53,7 +53,7 @@ recorded in the extra keys.
     group_item_label: "Pdf Viewer Used"
 
     link: {
-      label: "Glean Dictionary reference for Browser Pdf Viewer Used"
+      label: "Glean Dictionary reference for Browser: Pdf Viewer Used"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_pdf_viewer_used"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -63,7 +63,7 @@ recorded in the extra keys.
   }
 
   dimension: metrics__counter__browser_total_uri_count {
-    label: "Browser Total URI Count"
+    label: "Browser: Total URI Count"
     hidden: yes
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
@@ -71,7 +71,7 @@ recorded in the extra keys.
     group_item_label: "Total URI Count"
 
     link: {
-      label: "Glean Dictionary reference for Browser Total URI Count"
+      label: "Glean Dictionary reference for Browser: Total URI Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_total_uri_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -85,14 +85,14 @@ that programmatically redirect to a new location.
   }
 
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
-    label: "Browser Search Ad Clicks"
+    label: "Browser Search: Ad Clicks"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     group_label: "Browser Search"
     group_item_label: "Ad Clicks"
 
     link: {
-      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      label: "Glean Dictionary reference for Browser Search: Ad Clicks"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_search_ad_clicks"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -103,14 +103,14 @@ The key format is ‘<provider-name>’.
   }
 
   dimension: metrics__labeled_counter__browser_search_in_content {
-    label: "Browser Search In Content"
+    label: "Browser Search: In Content"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
     group_label: "Browser Search"
     group_item_label: "In Content"
 
     link: {
-      label: "Glean Dictionary reference for Browser Search In Content"
+      label: "Glean Dictionary reference for Browser Search: In Content"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_search_in_content"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -120,14 +120,14 @@ The key format is ‘<provider-name>’.
   }
 
   dimension: metrics__labeled_counter__browser_search_search_count {
-    label: "Browser Search Search Count"
+    label: "Browser Search: Search Count"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
     group_label: "Browser Search"
     group_item_label: "Search Count"
 
     link: {
-      label: "Glean Dictionary reference for Browser Search Search Count"
+      label: "Glean Dictionary reference for Browser Search: Search Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_search_search_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -144,14 +144,14 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
   }
 
   dimension: metrics__labeled_counter__browser_search_with_ads {
-    label: "Browser Search With Ads"
+    label: "Browser Search: With Ads"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     group_label: "Browser Search"
     group_item_label: "With Ads"
 
     link: {
-      label: "Glean Dictionary reference for Browser Search With Ads"
+      label: "Glean Dictionary reference for Browser Search: With Ads"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_search_with_ads"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -162,7 +162,7 @@ The key format is ‘<provider-name>’.
   }
 
   dimension: metrics__counter__default_browser_onboarding_dismiss_pressed {
-    label: "Default Browser Onboarding Dismiss Pressed"
+    label: "Default Browser Onboarding: Dismiss Pressed"
     hidden: yes
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
     type: number
@@ -170,7 +170,7 @@ The key format is ‘<provider-name>’.
     group_item_label: "Dismiss Pressed"
 
     link: {
-      label: "Glean Dictionary reference for Default Browser Onboarding Dismiss Pressed"
+      label: "Glean Dictionary reference for Default Browser Onboarding: Dismiss Pressed"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/default_browser_onboarding_dismiss_pressed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -180,7 +180,7 @@ The key format is ‘<provider-name>’.
   }
 
   dimension: metrics__counter__default_browser_onboarding_go_to_settings_pressed {
-    label: "Default Browser Onboarding Go To Settings Pressed"
+    label: "Default Browser Onboarding: Go To Settings Pressed"
     hidden: yes
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
     type: number
@@ -188,7 +188,7 @@ The key format is ‘<provider-name>’.
     group_item_label: "Go To Settings Pressed"
 
     link: {
-      label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
+      label: "Glean Dictionary reference for Default Browser Onboarding: Go To Settings Pressed"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -199,7 +199,7 @@ default browser onboarding is clicked.
   }
 
   dimension: metrics__boolean__mozilla_products_has_firefox_installed {
-    label: "Mozilla Products Has Firefox Installed"
+    label: "Mozilla Products: Has Firefox Installed"
     hidden: yes
     sql: ${TABLE}.metrics.boolean.mozilla_products_has_firefox_installed ;;
     type: yesno
@@ -207,7 +207,7 @@ default browser onboarding is clicked.
     group_item_label: "Has Firefox Installed"
 
     link: {
-      label: "Glean Dictionary reference for Mozilla Products Has Firefox Installed"
+      label: "Glean Dictionary reference for Mozilla Products: Has Firefox Installed"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/mozilla_products_has_firefox_installed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -217,7 +217,7 @@ default browser onboarding is clicked.
   }
 
   dimension: metrics__string__preferences_user_theme {
-    label: "Preferences User Theme"
+    label: "Preferences: User Theme"
     hidden: yes
     sql: ${TABLE}.metrics.string.preferences_user_theme ;;
     type: string
@@ -225,7 +225,7 @@ default browser onboarding is clicked.
     group_item_label: "User Theme"
 
     link: {
-      label: "Glean Dictionary reference for Preferences User Theme"
+      label: "Glean Dictionary reference for Preferences: User Theme"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/preferences_user_theme"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -235,7 +235,7 @@ default browser onboarding is clicked.
   }
 
   dimension: metrics__string__search_default_engine {
-    label: "Search Default Engine"
+    label: "Search: Default Engine"
     hidden: yes
     sql: ${TABLE}.metrics.string.search_default_engine ;;
     type: string
@@ -243,7 +243,7 @@ default browser onboarding is clicked.
     group_item_label: "Default Engine"
 
     link: {
-      label: "Glean Dictionary reference for Search Default Engine"
+      label: "Glean Dictionary reference for Search: Default Engine"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/search_default_engine"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -255,7 +255,7 @@ then the value will be 'custom'.
   }
 
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
-    label: "Settings Screen Autocomplete Domain Added"
+    label: "Settings Screen: Autocomplete Domain Added"
     hidden: yes
     sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
     type: number
@@ -263,7 +263,7 @@ then the value will be 'custom'.
     group_item_label: "Autocomplete Domain Added"
 
     link: {
-      label: "Glean Dictionary reference for Settings Screen Autocomplete Domain Added"
+      label: "Glean Dictionary reference for Settings Screen: Autocomplete Domain Added"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/settings_screen_autocomplete_domain_added"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -274,7 +274,7 @@ a website to the autocomplete list.
   }
 
   dimension: metrics__counter__settings_screen_set_as_default_browser_pressed {
-    label: "Settings Screen Set As Default Browser Pressed"
+    label: "Settings Screen: Set As Default Browser Pressed"
     hidden: yes
     sql: ${TABLE}.metrics.counter.settings_screen_set_as_default_browser_pressed ;;
     type: number
@@ -282,7 +282,7 @@ a website to the autocomplete list.
     group_item_label: "Set As Default Browser Pressed"
 
     link: {
-      label: "Glean Dictionary reference for Settings Screen Set As Default Browser Pressed"
+      label: "Glean Dictionary reference for Settings Screen: Set As Default Browser Pressed"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/settings_screen_set_as_default_browser_pressed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -293,7 +293,7 @@ browser menu option is tapped.
   }
 
   dimension: metrics__counter__shortcuts_shortcut_added_counter {
-    label: "Shortcuts Shortcut Added Counter"
+    label: "Shortcuts: Shortcut Added Counter"
     hidden: yes
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
     type: number
@@ -301,7 +301,7 @@ browser menu option is tapped.
     group_item_label: "Shortcut Added Counter"
 
     link: {
-      label: "Glean Dictionary reference for Shortcuts Shortcut Added Counter"
+      label: "Glean Dictionary reference for Shortcuts: Shortcut Added Counter"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/shortcuts_shortcut_added_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -312,7 +312,7 @@ a website to shortcuts.
   }
 
   dimension: metrics__counter__shortcuts_shortcut_opened_counter {
-    label: "Shortcuts Shortcut Opened Counter"
+    label: "Shortcuts: Shortcut Opened Counter"
     hidden: yes
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
     type: number
@@ -320,7 +320,7 @@ a website to shortcuts.
     group_item_label: "Shortcut Opened Counter"
 
     link: {
-      label: "Glean Dictionary reference for Shortcuts Shortcut Opened Counter"
+      label: "Glean Dictionary reference for Shortcuts: Shortcut Opened Counter"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/shortcuts_shortcut_opened_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -331,14 +331,14 @@ a website from a shortcut in the home screen.
   }
 
   dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
-    label: "Shortcuts Shortcut Removed Counter"
+    label: "Shortcuts: Shortcut Removed Counter"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
     group_label: "Shortcuts"
     group_item_label: "Shortcut Removed Counter"
 
     link: {
-      label: "Glean Dictionary reference for Shortcuts Shortcut Removed Counter"
+      label: "Glean Dictionary reference for Shortcuts: Shortcut Removed Counter"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/shortcuts_shortcut_removed_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -350,7 +350,7 @@ It also indicates the screen it was removed from, home or browser.
   }
 
   dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
-    label: "Shortcuts Shortcuts On Home Number"
+    label: "Shortcuts: Shortcuts On Home Number"
     hidden: yes
     sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
     type: number
@@ -358,7 +358,7 @@ It also indicates the screen it was removed from, home or browser.
     group_item_label: "Shortcuts On Home Number"
 
     link: {
-      label: "Glean Dictionary reference for Shortcuts Shortcuts On Home Number"
+      label: "Glean Dictionary reference for Shortcuts: Shortcuts On Home Number"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/shortcuts_shortcuts_on_home_number"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -369,7 +369,7 @@ It also indicates the screen it was removed from, home or browser.
   }
 
   dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
-    label: "Tracking Protection Has Advertising Blocked"
+    label: "Tracking Protection: Has Advertising Blocked"
     hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
     type: yesno
@@ -377,7 +377,7 @@ It also indicates the screen it was removed from, home or browser.
     group_item_label: "Has Advertising Blocked"
 
     link: {
-      label: "Glean Dictionary reference for Tracking Protection Has Advertising Blocked"
+      label: "Glean Dictionary reference for Tracking Protection: Has Advertising Blocked"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/tracking_protection_has_advertising_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -388,7 +388,7 @@ at least once.
   }
 
   dimension: metrics__boolean__tracking_protection_has_analytics_blocked {
-    label: "Tracking Protection Has Analytics Blocked"
+    label: "Tracking Protection: Has Analytics Blocked"
     hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_analytics_blocked ;;
     type: yesno
@@ -396,7 +396,7 @@ at least once.
     group_item_label: "Has Analytics Blocked"
 
     link: {
-      label: "Glean Dictionary reference for Tracking Protection Has Analytics Blocked"
+      label: "Glean Dictionary reference for Tracking Protection: Has Analytics Blocked"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/tracking_protection_has_analytics_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -407,7 +407,7 @@ at least once.
   }
 
   dimension: metrics__boolean__tracking_protection_has_content_blocked {
-    label: "Tracking Protection Has Content Blocked"
+    label: "Tracking Protection: Has Content Blocked"
     hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_content_blocked ;;
     type: yesno
@@ -415,7 +415,7 @@ at least once.
     group_item_label: "Has Content Blocked"
 
     link: {
-      label: "Glean Dictionary reference for Tracking Protection Has Content Blocked"
+      label: "Glean Dictionary reference for Tracking Protection: Has Content Blocked"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/tracking_protection_has_content_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -426,7 +426,7 @@ at least once.
   }
 
   dimension: metrics__boolean__tracking_protection_has_ever_changed_etp {
-    label: "Tracking Protection Has Ever Changed Etp"
+    label: "Tracking Protection: Has Ever Changed Etp"
     hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_ever_changed_etp ;;
     type: yesno
@@ -434,7 +434,7 @@ at least once.
     group_item_label: "Has Ever Changed Etp"
 
     link: {
-      label: "Glean Dictionary reference for Tracking Protection Has Ever Changed Etp"
+      label: "Glean Dictionary reference for Tracking Protection: Has Ever Changed Etp"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/tracking_protection_has_ever_changed_etp"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -445,7 +445,7 @@ at least once.
   }
 
   dimension: metrics__boolean__tracking_protection_has_social_blocked {
-    label: "Tracking Protection Has Social Blocked"
+    label: "Tracking Protection: Has Social Blocked"
     hidden: yes
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_social_blocked ;;
     type: yesno
@@ -453,7 +453,7 @@ at least once.
     group_item_label: "Has Social Blocked"
 
     link: {
-      label: "Glean Dictionary reference for Tracking Protection Has Social Blocked"
+      label: "Glean Dictionary reference for Tracking Protection: Has Social Blocked"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/tracking_protection_has_social_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -464,7 +464,7 @@ at least once.
   }
 
   dimension: metrics__counter__tracking_protection_toolbar_shield_clicked {
-    label: "Tracking Protection Toolbar Shield Clicked"
+    label: "Tracking Protection: Toolbar Shield Clicked"
     hidden: yes
     sql: ${TABLE}.metrics.counter.tracking_protection_toolbar_shield_clicked ;;
     type: number
@@ -472,7 +472,7 @@ at least once.
     group_item_label: "Toolbar Shield Clicked"
 
     link: {
-      label: "Glean Dictionary reference for Tracking Protection Toolbar Shield Clicked"
+      label: "Glean Dictionary reference for Tracking Protection: Toolbar Shield Clicked"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/tracking_protection_toolbar_shield_clicked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -483,7 +483,7 @@ the tracking protection settings panel from the toolbar.
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -491,7 +491,7 @@ the tracking protection settings panel from the toolbar.
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -502,7 +502,7 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__string__glean_database_rkv_load_error {
-    label: "Glean Database Rkv Load Error"
+    label: "Glean Database: Rkv Load Error"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
     type: string
@@ -510,7 +510,7 @@ for the purpose of experimentation enrollment.
     group_item_label: "Rkv Load Error"
 
     link: {
-      label: "Glean Dictionary reference for Glean Database Rkv Load Error"
+      label: "Glean Dictionary reference for Glean Database: Rkv Load Error"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_database_rkv_load_error"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -520,7 +520,7 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
-    label: "Glean Database Size Sum"
+    label: "Glean Database: Size Sum"
     hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
@@ -528,7 +528,7 @@ for the purpose of experimentation enrollment.
     group_item_label: "Size Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Database Size Sum"
+      label: "Glean Dictionary reference for Glean Database: Size Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_database_size"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -538,7 +538,7 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__timing_distribution__glean_database_write_time__sum {
-    label: "Glean Database Write Time Sum"
+    label: "Glean Database: Write Time Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
     type: number
@@ -546,7 +546,7 @@ for the purpose of experimentation enrollment.
     group_item_label: "Write Time Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Database Write Time Sum"
+      label: "Glean Dictionary reference for Glean Database: Write Time Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_database_write_time"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -556,14 +556,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -574,14 +574,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -592,14 +592,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -610,14 +610,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -628,7 +628,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__glean_error_io {
-    label: "Glean Error IO"
+    label: "Glean Error: IO"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -636,7 +636,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "IO"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error IO"
+      label: "Glean Dictionary reference for Glean Error: IO"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_error_io"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -647,7 +647,7 @@ when writing a pending ping to disk.
   }
 
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
-    label: "Glean Error Preinit Tasks Overflow"
+    label: "Glean Error: Preinit Tasks Overflow"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
@@ -655,7 +655,7 @@ when writing a pending ping to disk.
     group_item_label: "Preinit Tasks Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Preinit Tasks Overflow"
+      label: "Glean Dictionary reference for Glean Error: Preinit Tasks Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_error_preinit_tasks_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -668,7 +668,7 @@ In Version 0 this reported the total number of tasks enqueued.
   }
 
   dimension: metrics__boolean__glean_error_preinit_tasks_timeout {
-    label: "Glean Error Preinit Tasks Timeout"
+    label: "Glean Error: Preinit Tasks Timeout"
     hidden: yes
     sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
     type: yesno
@@ -676,7 +676,7 @@ In Version 0 this reported the total number of tasks enqueued.
     group_item_label: "Preinit Tasks Timeout"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Preinit Tasks Timeout"
+      label: "Glean Dictionary reference for Glean Error: Preinit Tasks Timeout"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_error_preinit_tasks_timeout"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -685,7 +685,7 @@ In Version 0 this reported the total number of tasks enqueued.
   }
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
-    label: "Glean Time Invalid Timezone Offset"
+    label: "Glean Time: Invalid Timezone Offset"
     hidden: yes
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
@@ -693,7 +693,7 @@ In Version 0 this reported the total number of tasks enqueued.
     group_item_label: "Invalid Timezone Offset"
 
     link: {
-      label: "Glean Dictionary reference for Glean Time Invalid Timezone Offset"
+      label: "Glean Dictionary reference for Glean Time: Invalid Timezone Offset"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_time_invalid_timezone_offset"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -706,7 +706,7 @@ If invalid a UTC offset is used (+0h).
   }
 
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
-    label: "Glean Upload Deleted Pings After Quota Hit"
+    label: "Glean Upload: Deleted Pings After Quota Hit"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
@@ -714,7 +714,7 @@ If invalid a UTC offset is used (+0h).
     group_item_label: "Deleted Pings After Quota Hit"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Deleted Pings After Quota Hit"
+      label: "Glean Dictionary reference for Glean Upload: Deleted Pings After Quota Hit"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_deleted_pings_after_quota_hit"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -728,7 +728,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
-    label: "Glean Upload Discarded Exceeding Pings Size Sum"
+    label: "Glean Upload: Discarded Exceeding Pings Size Sum"
     hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
@@ -736,7 +736,7 @@ deletion request pings are never deleted.
     group_item_label: "Discarded Exceeding Pings Size Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Discarded Exceeding Pings Size Sum"
+      label: "Glean Dictionary reference for Glean Upload: Discarded Exceeding Pings Size Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_discarded_exceeding_pings_size"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -746,7 +746,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__counter__glean_upload_in_flight_pings_dropped {
-    label: "Glean Upload In Flight Pings Dropped"
+    label: "Glean Upload: In Flight Pings Dropped"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
     type: number
@@ -754,7 +754,7 @@ deletion request pings are never deleted.
     group_item_label: "In Flight Pings Dropped"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload In Flight Pings Dropped"
+      label: "Glean Dictionary reference for Glean Upload: In Flight Pings Dropped"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_in_flight_pings_dropped"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -764,7 +764,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__counter__glean_upload_missing_send_ids {
-    label: "Glean Upload Missing Send Ids"
+    label: "Glean Upload: Missing Send Ids"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
     type: number
@@ -772,7 +772,7 @@ deletion request pings are never deleted.
     group_item_label: "Missing Send Ids"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Missing Send Ids"
+      label: "Glean Dictionary reference for Glean Upload: Missing Send Ids"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_missing_send_ids"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -784,7 +784,7 @@ respectively) due to an inconsistency in our internal bookkeeping?
   }
 
   dimension: metrics__counter__glean_upload_pending_pings {
-    label: "Glean Upload Pending Pings"
+    label: "Glean Upload: Pending Pings"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
@@ -792,7 +792,7 @@ respectively) due to an inconsistency in our internal bookkeeping?
     group_item_label: "Pending Pings"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Pending Pings"
+      label: "Glean Dictionary reference for Glean Upload: Pending Pings"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_pending_pings"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -803,7 +803,7 @@ This does not include deletion-request pings.
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
-    label: "Glean Upload Pending Pings Directory Size Sum"
+    label: "Glean Upload: Pending Pings Directory Size Sum"
     hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
@@ -811,7 +811,7 @@ This does not include deletion-request pings.
     group_item_label: "Pending Pings Directory Size Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Pending Pings Directory Size Sum"
+      label: "Glean Dictionary reference for Glean Upload: Pending Pings Directory Size Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_pending_pings_directory_size"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -822,14 +822,14 @@ This does not include the size of the deletion request pings directory.
   }
 
   dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
-    label: "Glean Upload Ping Upload Failure"
+    label: "Glean Upload: Ping Upload Failure"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
     group_label: "Glean Upload"
     group_item_label: "Ping Upload Failure"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Ping Upload Failure"
+      label: "Glean Dictionary reference for Glean Upload: Ping Upload Failure"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_ping_upload_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -841,7 +841,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
-    label: "Glean Upload Send Failure Sum"
+    label: "Glean Upload: Send Failure Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
     type: number
@@ -849,7 +849,7 @@ though the counts appear in the next successfully sent `metrics` ping.
     group_item_label: "Send Failure Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Send Failure Sum"
+      label: "Glean Dictionary reference for Glean Upload: Send Failure Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_send_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -859,7 +859,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_success__sum {
-    label: "Glean Upload Send Success Sum"
+    label: "Glean Upload: Send Success Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
     type: number
@@ -867,7 +867,7 @@ though the counts appear in the next successfully sent `metrics` ping.
     group_item_label: "Send Success Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Send Success Sum"
+      label: "Glean Dictionary reference for Glean Upload: Send Success Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_send_success"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -877,7 +877,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__counter__glean_validation_foreground_count {
-    label: "Glean Validation Foreground Count"
+    label: "Glean Validation: Foreground Count"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
     type: number
@@ -885,7 +885,7 @@ though the counts appear in the next successfully sent `metrics` ping.
     group_item_label: "Foreground Count"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Foreground Count"
+      label: "Glean Dictionary reference for Glean Validation: Foreground Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_validation_foreground_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -895,14 +895,14 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
-    label: "Glean Validation Pings Submitted"
+    label: "Glean Validation: Pings Submitted"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Pings Submitted"
+      label: "Glean Dictionary reference for Glean Validation: Pings Submitted"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_validation_pings_submitted"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -922,7 +922,7 @@ Now it only records counts for the Glean built-in pings.
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__sum {
-    label: "Glean Validation Shutdown Dispatcher Wait Sum"
+    label: "Glean Validation: Shutdown Dispatcher Wait Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
     type: number
@@ -930,7 +930,7 @@ Now it only records counts for the Glean built-in pings.
     group_item_label: "Shutdown Dispatcher Wait Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Shutdown Dispatcher Wait Sum"
+      label: "Glean Dictionary reference for Glean Validation: Shutdown Dispatcher Wait Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_validation_shutdown_dispatcher_wait"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -941,7 +941,7 @@ Most samples are expected to be below the 10s timeout used.
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
-    label: "Glean Validation Shutdown Wait Sum"
+    label: "Glean Validation: Shutdown Wait Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
     type: number
@@ -949,7 +949,7 @@ Most samples are expected to be below the 10s timeout used.
     group_item_label: "Shutdown Wait Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Shutdown Wait Sum"
+      label: "Glean Dictionary reference for Glean Validation: Shutdown Wait Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_validation_shutdown_wait"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -959,7 +959,7 @@ Most samples are expected to be below the 10s timeout used.
   }
 
   dimension: metrics__string__ping_reason {
-    label: "Glean Ping Reason"
+    label: "Glean: Ping Reason"
     hidden: yes
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
@@ -967,7 +967,7 @@ Most samples are expected to be below the 10s timeout used.
     group_item_label: "Ping Reason"
 
     link: {
-      label: "Glean Dictionary reference for Glean Ping Reason"
+      label: "Glean Dictionary reference for Glean: Ping Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/ping_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -979,7 +979,7 @@ documented in the ping's pings.yaml file.
   }
 
   dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__sum {
-    label: "Nimbus Health Apply Pending Experiments Time Sum"
+    label: "Nimbus Health: Apply Pending Experiments Time Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.sum ;;
     type: number
@@ -987,7 +987,7 @@ documented in the ping's pings.yaml file.
     group_item_label: "Apply Pending Experiments Time Sum"
 
     link: {
-      label: "Glean Dictionary reference for Nimbus Health Apply Pending Experiments Time Sum"
+      label: "Glean Dictionary reference for Nimbus Health: Apply Pending Experiments Time Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/nimbus_health_apply_pending_experiments_time"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -999,7 +999,7 @@ startup, as part of the initialization sequence.
   }
 
   dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__sum {
-    label: "Nimbus Health Fetch Experiments Time Sum"
+    label: "Nimbus Health: Fetch Experiments Time Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.sum ;;
     type: number
@@ -1007,7 +1007,7 @@ startup, as part of the initialization sequence.
     group_item_label: "Fetch Experiments Time Sum"
 
     link: {
-      label: "Glean Dictionary reference for Nimbus Health Fetch Experiments Time Sum"
+      label: "Glean Dictionary reference for Nimbus Health: Fetch Experiments Time Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/nimbus_health_fetch_experiments_time"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -1089,7 +1089,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -1098,7 +1098,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -1112,7 +1112,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -1121,7 +1121,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -1130,7 +1130,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -1177,7 +1177,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -1276,7 +1276,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -1284,7 +1284,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -1294,7 +1294,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -1303,7 +1303,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -1312,7 +1312,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -1321,7 +1321,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -1330,7 +1330,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -1339,7 +1339,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -1347,7 +1347,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -1360,7 +1360,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -1369,7 +1369,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -1378,7 +1378,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -1387,7 +1387,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -1396,7 +1396,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -1405,7 +1405,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -1414,7 +1414,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -1423,7 +1423,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -1432,7 +1432,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -1441,7 +1441,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -1449,7 +1449,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -1457,7 +1457,7 @@ startup, as part of the initialization sequence.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -1548,7 +1548,7 @@ startup, as part of the initialization sequence.
   }
 
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
+    label: "Glean Validation: First Run Hour"
     hidden: yes
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
@@ -1568,7 +1568,6 @@ startup, as part of the initialization sequence.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1578,13 +1577,12 @@ startup, as part of the initialization sequence.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1600,7 +1598,6 @@ startup, as part of the initialization sequence.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1616,7 +1613,6 @@ startup, as part of the initialization sequence.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -2092,7 +2088,7 @@ startup, as part of the initialization sequence.
 }
 
 view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
-  label: "Browser Search - Ad Clicks"
+  label: "Browser Search: Ad Clicks"
 
   dimension: document_id {
     type: string
@@ -2133,7 +2129,7 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
 }
 
 view: metrics__metrics__labeled_counter__browser_search_in_content {
-  label: "Browser Search - In Content"
+  label: "Browser Search: In Content"
 
   dimension: document_id {
     type: string
@@ -2174,7 +2170,7 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
 }
 
 view: metrics__metrics__labeled_counter__browser_search_search_count {
-  label: "Browser Search - Search Count"
+  label: "Browser Search: Search Count"
 
   dimension: document_id {
     type: string
@@ -2215,7 +2211,7 @@ view: metrics__metrics__labeled_counter__browser_search_search_count {
 }
 
 view: metrics__metrics__labeled_counter__browser_search_with_ads {
-  label: "Browser Search - With Ads"
+  label: "Browser Search: With Ads"
 
   dimension: document_id {
     type: string
@@ -2256,7 +2252,7 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
 }
 
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -2297,7 +2293,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -2338,7 +2334,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: metrics__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -2379,7 +2375,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: metrics__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -2420,7 +2416,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_value {
 }
 
 view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
-  label: "Glean Upload - Ping Upload Failure"
+  label: "Glean Upload: Ping Upload Failure"
 
   dimension: document_id {
     type: string
@@ -2461,7 +2457,7 @@ view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
 }
 
 view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
-  label: "Glean Validation - Pings Submitted"
+  label: "Glean Validation: Pings Submitted"
 
   dimension: document_id {
     type: string
@@ -2502,7 +2498,7 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
 }
 
 view: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
-  label: "Shortcuts - Shortcut Removed Counter"
+  label: "Shortcuts: Shortcut Removed Counter"
 
   dimension: document_id {
     type: string
@@ -2740,7 +2736,7 @@ view: metrics__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -2748,7 +2744,7 @@ view: metrics__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

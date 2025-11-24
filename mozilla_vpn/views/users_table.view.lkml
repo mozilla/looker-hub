@@ -20,7 +20,6 @@ view: users_table {
   dimension_group: created_at {
     sql: ${TABLE}.created_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

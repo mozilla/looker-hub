@@ -48,6 +48,12 @@ view: newtab_items_daily {
     map_layer_name: countries
   }
 
+  dimension: curator {
+    sql: ${TABLE}.curator ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: dismiss_count {
     sql: ${TABLE}.dismiss_count ;;
     type: number
@@ -141,7 +147,6 @@ view: newtab_items_daily {
   dimension_group: corpus_item_updated_at {
     sql: ${TABLE}.corpus_item_updated_at ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -156,7 +161,6 @@ view: newtab_items_daily {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

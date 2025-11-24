@@ -69,7 +69,7 @@ view: events_stream_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -77,7 +77,7 @@ view: events_stream_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -90,7 +90,7 @@ view: events_stream_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -98,7 +98,7 @@ view: events_stream_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -106,7 +106,7 @@ view: events_stream_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -143,7 +143,7 @@ view: events_stream_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -244,6 +244,246 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: extras__boolean__cg {
+    sql: ${TABLE}.extras.boolean.cg ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Cg"
+  }
+
+  dimension: extras__boolean__cpu_arm {
+    sql: ${TABLE}.extras.boolean.cpu_arm ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "CPU Arm"
+  }
+
+  dimension: extras__boolean__hyb {
+    sql: ${TABLE}.extras.boolean.hyb ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Hyb"
+  }
+
+  dimension: extras__boolean__ppa {
+    sql: ${TABLE}.extras.boolean.ppa ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Ppa"
+  }
+
+  dimension: extras__boolean__prf {
+    sql: ${TABLE}.extras.boolean.prf ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Prf"
+  }
+
+  dimension: extras__boolean__rel {
+    sql: ${TABLE}.extras.boolean.rel ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Rel"
+  }
+
+  dimension: extras__boolean__supported {
+    sql: ${TABLE}.extras.boolean.supported ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Supported"
+  }
+
+  dimension: extras__boolean__third_party_links {
+    sql: ${TABLE}.extras.boolean.third_party_links ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Third Party Links"
+  }
+
+  dimension: extras__boolean__uvpa {
+    sql: ${TABLE}.extras.boolean.uvpa ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Uvpa"
+  }
+
+  dimension: extras__string__browser_family {
+    sql: ${TABLE}.extras.string.browser_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Browser Family"
+  }
+
+  dimension: extras__string__browser_major {
+    sql: ${TABLE}.extras.string.browser_major ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Browser Major"
+  }
+
+  dimension: extras__string__cg {
+    sql: ${TABLE}.extras.string.cg ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Cg"
+  }
+
+  dimension: extras__string__choice {
+    sql: ${TABLE}.extras.string.choice ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Choice"
+  }
+
+  dimension: extras__string__error_reason {
+    sql: ${TABLE}.extras.string.error_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error Reason"
+  }
+
+  dimension: extras__string__hyb {
+    sql: ${TABLE}.extras.string.hyb ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Hyb"
+  }
+
+  dimension: extras__string__id {
+    sql: ${TABLE}.extras.string.id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "ID"
+  }
+
+  dimension: extras__string__label {
+    sql: ${TABLE}.extras.string.label ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Label"
+  }
+
+  dimension: extras__string__nimbus_user_id {
+    sql: ${TABLE}.extras.string.nimbus_user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus User ID"
+  }
+
+  dimension: extras__string__os_family {
+    sql: ${TABLE}.extras.string.os_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "OS Family"
+  }
+
+  dimension: extras__string__os_major {
+    sql: ${TABLE}.extras.string.os_major ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "OS Major"
+  }
+
+  dimension: extras__string__ppa {
+    sql: ${TABLE}.extras.string.ppa ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Ppa"
+  }
+
+  dimension: extras__string__prf {
+    sql: ${TABLE}.extras.string.prf ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Prf"
+  }
+
+  dimension: extras__string__reason {
+    sql: ${TABLE}.extras.string.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Reason"
+  }
+
+  dimension: extras__string__referrer {
+    sql: ${TABLE}.extras.string.referrer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Referrer"
+  }
+
+  dimension: extras__string__rel {
+    sql: ${TABLE}.extras.string.rel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Rel"
+  }
+
+  dimension: extras__string__supported {
+    sql: ${TABLE}.extras.string.supported ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Supported"
+  }
+
+  dimension: extras__string__title {
+    sql: ${TABLE}.extras.string.title ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Title"
+  }
+
+  dimension: extras__string__type {
+    sql: ${TABLE}.extras.string.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Type"
+  }
+
+  dimension: extras__string__url {
+    sql: ${TABLE}.extras.string.url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "URL"
+  }
+
+  dimension: extras__string__uvpa {
+    sql: ${TABLE}.extras.string.uvpa ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Uvpa"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
@@ -260,7 +500,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -268,7 +508,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -277,7 +517,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -285,7 +525,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -293,7 +533,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -301,7 +541,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -309,7 +549,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -317,7 +557,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -325,7 +565,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -338,7 +578,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -346,7 +586,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -354,7 +594,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -362,7 +602,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -370,7 +610,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -378,7 +618,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -386,7 +626,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -394,7 +634,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -402,7 +642,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -410,7 +650,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -418,7 +658,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -426,7 +666,7 @@ view: events_stream_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -469,7 +709,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.account_user_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Account User ID"
   }
 
@@ -477,7 +717,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Account User ID Sha256"
   }
 
@@ -485,7 +725,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Entrypoint Experiment"
   }
 
@@ -493,7 +733,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.entrypoint_variation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Entrypoint Variation"
   }
 
@@ -501,7 +741,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
   }
 
@@ -509,7 +749,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Relying Party Oauth Client ID"
   }
 
@@ -517,7 +757,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.relying_party_service ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Relying Party Service"
   }
 
@@ -525,7 +765,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.session_device_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Session Device Type"
   }
 
@@ -533,7 +773,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.session_entrypoint ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Session Entrypoint"
   }
 
@@ -541,7 +781,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.session_flow_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Session Flow ID"
   }
 
@@ -549,7 +789,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.utm_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Campaign"
   }
 
@@ -557,7 +797,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.utm_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Content"
   }
 
@@ -565,7 +805,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.utm_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Medium"
   }
 
@@ -573,7 +813,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.utm_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Source"
   }
 
@@ -581,7 +821,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.string.utm_term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Term"
   }
 
@@ -589,7 +829,7 @@ view: events_stream_table {
     sql: ${TABLE}.metrics.uuid.glean_page_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Glean Page ID"
   }
 
@@ -676,7 +916,6 @@ view: events_stream_table {
   dimension_group: event {
     sql: ${TABLE}.event_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -691,7 +930,6 @@ view: events_stream_table {
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -701,13 +939,12 @@ view: events_stream_table {
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -723,7 +960,6 @@ view: events_stream_table {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -739,7 +975,6 @@ view: events_stream_table {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

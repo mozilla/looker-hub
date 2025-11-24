@@ -37,7 +37,6 @@ view: event_types_table {
   dimension_group: first {
     sql: ${TABLE}.first_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

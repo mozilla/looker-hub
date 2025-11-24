@@ -98,7 +98,6 @@ view: subscription_events {
   dimension_group: event {
     sql: ${TABLE}.event_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

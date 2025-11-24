@@ -38,7 +38,6 @@ view: accounts_table {
   dimension_group: createdAt {
     sql: ${TABLE}.createdAt ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -53,7 +52,6 @@ view: accounts_table {
   dimension_group: disabledAt {
     sql: ${TABLE}.disabledAt ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -68,7 +66,6 @@ view: accounts_table {
   dimension_group: keysChangedAt {
     sql: ${TABLE}.keysChangedAt ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -83,7 +80,6 @@ view: accounts_table {
   dimension_group: lockedAt {
     sql: ${TABLE}.lockedAt ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -98,7 +94,6 @@ view: accounts_table {
   dimension_group: metricsOptOutAt {
     sql: ${TABLE}.metricsOptOutAt ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -113,7 +108,6 @@ view: accounts_table {
   dimension_group: profileChangedAt {
     sql: ${TABLE}.profileChangedAt ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -128,7 +122,6 @@ view: accounts_table {
   dimension_group: verifierSetAt {
     sql: ${TABLE}.verifierSetAt ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,

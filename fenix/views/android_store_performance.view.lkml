@@ -38,7 +38,6 @@ view: android_store_performance {
   dimension_group: Date {
     sql: ${TABLE}.Date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -54,7 +53,6 @@ view: android_store_performance {
   dimension_group: _DATA_DATE {
     sql: ${TABLE}._DATA_DATE ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,
@@ -70,7 +68,6 @@ view: android_store_performance {
   dimension_group: _LATEST_DATE {
     sql: ${TABLE}._LATEST_DATE ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

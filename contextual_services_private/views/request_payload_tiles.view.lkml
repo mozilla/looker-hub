@@ -56,7 +56,6 @@ view: request_payload_tiles {
   dimension_group: begin {
     sql: ${TABLE}.begin_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -71,7 +70,6 @@ view: request_payload_tiles {
   dimension_group: end {
     sql: ${TABLE}.end_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -86,7 +84,6 @@ view: request_payload_tiles {
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       date,

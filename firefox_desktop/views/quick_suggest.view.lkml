@@ -6,7 +6,7 @@
 
 view: quick_suggest {
   dimension: metrics__string__quick_suggest_advertiser {
-    label: "Quick Suggest Advertiser"
+    label: "Quick Suggest: Advertiser"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_advertiser ;;
     type: string
@@ -14,7 +14,7 @@ view: quick_suggest {
     group_item_label: "Advertiser"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Advertiser"
+      label: "Glean Dictionary reference for Quick Suggest: Advertiser"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_advertiser"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -24,7 +24,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__quick_suggest_block_id {
-    label: "Quick Suggest Block ID"
+    label: "Quick Suggest: Block ID"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_block_id ;;
     type: string
@@ -32,7 +32,7 @@ view: quick_suggest {
     group_item_label: "Block ID"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Block ID"
+      label: "Glean Dictionary reference for Quick Suggest: Block ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_block_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -42,7 +42,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__uuid__quick_suggest_context_id {
-    label: "Quick Suggest Context ID"
+    label: "Quick Suggest: Context ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.quick_suggest_context_id ;;
     type: string
@@ -50,7 +50,7 @@ view: quick_suggest {
     group_item_label: "Context ID"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Context ID"
+      label: "Glean Dictionary reference for Quick Suggest: Context ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_context_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -60,7 +60,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__quick_suggest_country {
-    label: "Quick Suggest Country"
+    label: "Quick Suggest: Country"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_country ;;
     type: string
@@ -68,7 +68,7 @@ view: quick_suggest {
     group_item_label: "Country"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Country"
+      label: "Glean Dictionary reference for Quick Suggest: Country"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_country"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -78,7 +78,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__quick_suggest_iab_category {
-    label: "Quick Suggest Iab Category"
+    label: "Quick Suggest: Iab Category"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_iab_category ;;
     type: string
@@ -86,7 +86,7 @@ view: quick_suggest {
     group_item_label: "Iab Category"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Iab Category"
+      label: "Glean Dictionary reference for Quick Suggest: Iab Category"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_iab_category"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -96,7 +96,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__boolean__quick_suggest_improve_suggest_experience {
-    label: "Quick Suggest Improve Suggest Experience"
+    label: "Quick Suggest: Improve Suggest Experience"
     hidden: no
     sql: ${TABLE}.metrics.boolean.quick_suggest_improve_suggest_experience ;;
     type: yesno
@@ -104,17 +104,17 @@ view: quick_suggest {
     group_item_label: "Improve Suggest Experience"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Improve Suggest Experience"
+      label: "Glean Dictionary reference for Quick Suggest: Improve Suggest Experience"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_improve_suggest_experience"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether the \"Improve Suggest Experience\" checkbox is checked.
+    description: "Whether online Suggest is available to the user and enabled.
 "
   }
 
   dimension: metrics__boolean__quick_suggest_is_clicked {
-    label: "Quick Suggest Is Clicked"
+    label: "Quick Suggest: Is Clicked"
     hidden: no
     sql: ${TABLE}.metrics.boolean.quick_suggest_is_clicked ;;
     type: yesno
@@ -122,7 +122,7 @@ view: quick_suggest {
     group_item_label: "Is Clicked"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Is Clicked"
+      label: "Glean Dictionary reference for Quick Suggest: Is Clicked"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_is_clicked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -132,7 +132,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__quick_suggest_match_type {
-    label: "Quick Suggest Match Type"
+    label: "Quick Suggest: Match Type"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_match_type ;;
     type: string
@@ -140,7 +140,7 @@ view: quick_suggest {
     group_item_label: "Match Type"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Match Type"
+      label: "Glean Dictionary reference for Quick Suggest: Match Type"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_match_type"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -150,7 +150,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__quick_suggest_ping_type {
-    label: "Quick Suggest Ping Type"
+    label: "Quick Suggest: Ping Type"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_ping_type ;;
     type: string
@@ -158,7 +158,7 @@ view: quick_suggest {
     group_item_label: "Ping Type"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Ping Type"
+      label: "Glean Dictionary reference for Quick Suggest: Ping Type"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_ping_type"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -168,7 +168,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__quantity__quick_suggest_position {
-    label: "Quick Suggest Position"
+    label: "Quick Suggest: Position"
     hidden: no
     sql: ${TABLE}.metrics.quantity.quick_suggest_position ;;
     type: number
@@ -176,7 +176,7 @@ view: quick_suggest {
     group_item_label: "Position"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Position"
+      label: "Glean Dictionary reference for Quick Suggest: Position"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_position"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -186,7 +186,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__url2__quick_suggest_reporting_url {
-    label: "Quick Suggest Reporting URL"
+    label: "Quick Suggest: Reporting URL"
     hidden: no
     sql: ${TABLE}.metrics.url2.quick_suggest_reporting_url ;;
     type: string
@@ -194,7 +194,7 @@ view: quick_suggest {
     group_item_label: "Reporting URL"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Reporting URL"
+      label: "Glean Dictionary reference for Quick Suggest: Reporting URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_reporting_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -204,7 +204,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__quick_suggest_request_id {
-    label: "Quick Suggest Request ID"
+    label: "Quick Suggest: Request ID"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_request_id ;;
     type: string
@@ -212,7 +212,7 @@ view: quick_suggest {
     group_item_label: "Request ID"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Request ID"
+      label: "Glean Dictionary reference for Quick Suggest: Request ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_request_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -222,7 +222,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__quick_suggest_source {
-    label: "Quick Suggest Source"
+    label: "Quick Suggest: Source"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_source ;;
     type: string
@@ -230,7 +230,7 @@ view: quick_suggest {
     group_item_label: "Source"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Source"
+      label: "Glean Dictionary reference for Quick Suggest: Source"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_source"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -240,7 +240,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__quick_suggest_suggested_index {
-    label: "Quick Suggest Suggested Index"
+    label: "Quick Suggest: Suggested Index"
     hidden: no
     sql: ${TABLE}.metrics.string.quick_suggest_suggested_index ;;
     type: string
@@ -248,7 +248,7 @@ view: quick_suggest {
     group_item_label: "Suggested Index"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Suggested Index"
+      label: "Glean Dictionary reference for Quick Suggest: Suggested Index"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_suggested_index"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -258,7 +258,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__boolean__quick_suggest_suggested_index_relative_to_group {
-    label: "Quick Suggest Suggested Index Relative To Group"
+    label: "Quick Suggest: Suggested Index Relative To Group"
     hidden: no
     sql: ${TABLE}.metrics.boolean.quick_suggest_suggested_index_relative_to_group ;;
     type: yesno
@@ -266,7 +266,7 @@ view: quick_suggest {
     group_item_label: "Suggested Index Relative To Group"
 
     link: {
-      label: "Glean Dictionary reference for Quick Suggest Suggested Index Relative To Group"
+      label: "Glean Dictionary reference for Quick Suggest: Suggested Index Relative To Group"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_suggested_index_relative_to_group"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -276,7 +276,7 @@ view: quick_suggest {
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -284,7 +284,7 @@ view: quick_suggest {
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -295,14 +295,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -313,14 +313,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -331,14 +331,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -349,14 +349,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -439,7 +439,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -448,7 +448,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -462,7 +462,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -471,7 +471,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -480,7 +480,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -527,7 +527,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -626,7 +626,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -634,7 +634,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -644,7 +644,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -653,7 +653,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -662,7 +662,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -671,7 +671,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -680,7 +680,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -689,7 +689,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -697,7 +697,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -710,7 +710,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -719,7 +719,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -728,7 +728,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -737,7 +737,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -746,7 +746,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -755,7 +755,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -764,7 +764,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -773,7 +773,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -782,7 +782,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -791,7 +791,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -799,7 +799,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -807,7 +807,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -900,7 +900,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -910,13 +909,12 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -932,7 +930,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -948,7 +945,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -974,7 +970,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: quick_suggest__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1015,7 +1011,7 @@ view: quick_suggest__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: quick_suggest__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1056,7 +1052,7 @@ view: quick_suggest__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: quick_suggest__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1097,7 +1093,7 @@ view: quick_suggest__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: quick_suggest__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1195,7 +1191,7 @@ view: quick_suggest__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1203,7 +1199,7 @@ view: quick_suggest__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

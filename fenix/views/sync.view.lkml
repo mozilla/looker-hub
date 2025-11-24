@@ -6,7 +6,7 @@
 
 view: sync {
   dimension: metrics__custom_distribution__pwmgr_login_page_safety__sum {
-    label: "Pwmgr Login Page Safety Sum"
+    label: "Pwmgr: Login Page Safety Sum"
     hidden: no
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_login_page_safety.sum ;;
     type: number
@@ -14,7 +14,7 @@ view: sync {
     group_item_label: "Login Page Safety Sum"
 
     link: {
-      label: "Glean Dictionary reference for Pwmgr Login Page Safety Sum"
+      label: "Glean Dictionary reference for Pwmgr: Login Page Safety Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pwmgr_login_page_safety"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -25,7 +25,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
   }
 
   dimension: metrics__custom_distribution__pwmgr_prompt_remember_action__sum {
-    label: "Pwmgr Prompt Remember Action Sum"
+    label: "Pwmgr: Prompt Remember Action Sum"
     hidden: no
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_remember_action.sum ;;
     type: number
@@ -33,7 +33,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     group_item_label: "Prompt Remember Action Sum"
 
     link: {
-      label: "Glean Dictionary reference for Pwmgr Prompt Remember Action Sum"
+      label: "Glean Dictionary reference for Pwmgr: Prompt Remember Action Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pwmgr_prompt_remember_action"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -44,7 +44,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
   }
 
   dimension: metrics__custom_distribution__pwmgr_prompt_update_action__sum {
-    label: "Pwmgr Prompt Update Action Sum"
+    label: "Pwmgr: Prompt Update Action Sum"
     hidden: no
     sql: ${TABLE}.metrics.custom_distribution.pwmgr_prompt_update_action.sum ;;
     type: number
@@ -52,7 +52,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     group_item_label: "Prompt Update Action Sum"
 
     link: {
-      label: "Glean Dictionary reference for Pwmgr Prompt Update Action Sum"
+      label: "Glean Dictionary reference for Pwmgr: Prompt Update Action Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pwmgr_prompt_update_action"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -63,7 +63,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
   }
 
   dimension: metrics__quantity__syncs_discarded {
-    label: "Syncs Discarded"
+    label: "Syncs: Discarded"
     hidden: no
     sql: ${TABLE}.metrics.quantity.syncs_discarded ;;
     type: number
@@ -71,7 +71,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     group_item_label: "Discarded"
 
     link: {
-      label: "Glean Dictionary reference for Syncs Discarded"
+      label: "Glean Dictionary reference for Syncs: Discarded"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_discarded"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -82,7 +82,7 @@ due to being over the number of syncs we report detailed information for.
   }
 
   dimension: metrics__string__syncs_hashed_device_id {
-    label: "Syncs Hashed Device ID"
+    label: "Syncs: Hashed Device ID"
     hidden: no
     sql: ${TABLE}.metrics.string.syncs_hashed_device_id ;;
     type: string
@@ -90,7 +90,7 @@ due to being over the number of syncs we report detailed information for.
     group_item_label: "Hashed Device ID"
 
     link: {
-      label: "Glean Dictionary reference for Syncs Hashed Device ID"
+      label: "Glean Dictionary reference for Syncs: Hashed Device ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_hashed_device_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -102,7 +102,7 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
   }
 
   dimension: metrics__string__syncs_hashed_fxa_uid {
-    label: "Syncs Hashed Fxa Uid"
+    label: "Syncs: Hashed Fxa Uid"
     hidden: no
     sql: ${TABLE}.metrics.string.syncs_hashed_fxa_uid ;;
     type: string
@@ -110,7 +110,7 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
     group_item_label: "Hashed Fxa Uid"
 
     link: {
-      label: "Glean Dictionary reference for Syncs Hashed Fxa Uid"
+      label: "Glean Dictionary reference for Syncs: Hashed Fxa Uid"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_hashed_fxa_uid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -121,7 +121,7 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
   }
 
   dimension: metrics__string__syncs_sync_node_type {
-    label: "Syncs Sync Node Type"
+    label: "Syncs: Sync Node Type"
     hidden: no
     sql: ${TABLE}.metrics.string.syncs_sync_node_type ;;
     type: string
@@ -129,7 +129,7 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
     group_item_label: "Sync Node Type"
 
     link: {
-      label: "Glean Dictionary reference for Syncs Sync Node Type"
+      label: "Glean Dictionary reference for Syncs: Sync Node Type"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/syncs_sync_node_type"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -141,7 +141,7 @@ May not be present if the token server omits this information.
   }
 
   dimension: metrics__string__system_os_distro {
-    label: "System OS Distro"
+    label: "System OS: Distro"
     hidden: no
     sql: ${TABLE}.metrics.string.system_os_distro ;;
     type: string
@@ -149,7 +149,7 @@ May not be present if the token server omits this information.
     group_item_label: "Distro"
 
     link: {
-      label: "Glean Dictionary reference for System OS Distro"
+      label: "Glean Dictionary reference for System OS: Distro"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_distro"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -161,7 +161,7 @@ e.g. \"Linuxmint\"
   }
 
   dimension: metrics__string__system_os_distro_version {
-    label: "System OS Distro Version"
+    label: "System OS: Distro Version"
     hidden: no
     sql: ${TABLE}.metrics.string.system_os_distro_version ;;
     type: string
@@ -169,7 +169,7 @@ e.g. \"Linuxmint\"
     group_item_label: "Distro Version"
 
     link: {
-      label: "Glean Dictionary reference for System OS Distro Version"
+      label: "Glean Dictionary reference for System OS: Distro Version"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_distro_version"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -181,7 +181,7 @@ e.g. \"22\"
   }
 
   dimension: metrics__string__system_os_locale {
-    label: "System OS Locale"
+    label: "System OS: Locale"
     hidden: no
     sql: ${TABLE}.metrics.string.system_os_locale ;;
     type: string
@@ -189,7 +189,7 @@ e.g. \"22\"
     group_item_label: "Locale"
 
     link: {
-      label: "Glean Dictionary reference for System OS Locale"
+      label: "Glean Dictionary reference for System OS: Locale"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_locale"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -200,7 +200,7 @@ e.g. \"en-US\"
   }
 
   dimension: metrics__string__system_os_name {
-    label: "System OS Name"
+    label: "System OS: Name"
     hidden: no
     sql: ${TABLE}.metrics.string.system_os_name ;;
     type: string
@@ -208,7 +208,7 @@ e.g. \"en-US\"
     group_item_label: "Name"
 
     link: {
-      label: "Glean Dictionary reference for System OS Name"
+      label: "Glean Dictionary reference for System OS: Name"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -220,7 +220,7 @@ Expected in most cases to be identical to `client_info.os`.
   }
 
   dimension: metrics__quantity__system_os_service_pack_major {
-    label: "System OS Service Pack Major"
+    label: "System OS: Service Pack Major"
     hidden: no
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
     type: number
@@ -228,7 +228,7 @@ Expected in most cases to be identical to `client_info.os`.
     group_item_label: "Service Pack Major"
 
     link: {
-      label: "Glean Dictionary reference for System OS Service Pack Major"
+      label: "Glean Dictionary reference for System OS: Service Pack Major"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_service_pack_major"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -240,7 +240,7 @@ e.g. 0
   }
 
   dimension: metrics__quantity__system_os_service_pack_minor {
-    label: "System OS Service Pack Minor"
+    label: "System OS: Service Pack Minor"
     hidden: no
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
     type: number
@@ -248,7 +248,7 @@ e.g. 0
     group_item_label: "Service Pack Minor"
 
     link: {
-      label: "Glean Dictionary reference for System OS Service Pack Minor"
+      label: "Glean Dictionary reference for System OS: Service Pack Minor"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_service_pack_minor"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -260,7 +260,7 @@ e.g. 0
   }
 
   dimension: metrics__string__system_os_version {
-    label: "System OS Version"
+    label: "System OS: Version"
     hidden: no
     sql: ${TABLE}.metrics.string.system_os_version ;;
     type: string
@@ -268,7 +268,7 @@ e.g. 0
     group_item_label: "Version"
 
     link: {
-      label: "Glean Dictionary reference for System OS Version"
+      label: "Glean Dictionary reference for System OS: Version"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_version"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -280,7 +280,7 @@ Expected in most cases to be identical to `client_info.os_version`.
   }
 
   dimension: metrics__quantity__system_os_windows_build_number {
-    label: "System OS Windows Build Number"
+    label: "System OS: Windows Build Number"
     hidden: no
     sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
     type: number
@@ -288,7 +288,7 @@ Expected in most cases to be identical to `client_info.os_version`.
     group_item_label: "Windows Build Number"
 
     link: {
-      label: "Glean Dictionary reference for System OS Windows Build Number"
+      label: "Glean Dictionary reference for System OS: Windows Build Number"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_windows_build_number"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -301,7 +301,7 @@ Expected in most cases to be identical to `client_info.windows_build_number`.
   }
 
   dimension: metrics__quantity__system_os_windows_ubr {
-    label: "System OS Windows Ubr"
+    label: "System OS: Windows Ubr"
     hidden: no
     sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
     type: number
@@ -309,7 +309,7 @@ Expected in most cases to be identical to `client_info.windows_build_number`.
     group_item_label: "Windows Ubr"
 
     link: {
-      label: "Glean Dictionary reference for System OS Windows Ubr"
+      label: "Glean Dictionary reference for System OS: Windows Ubr"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_windows_ubr"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -322,7 +322,7 @@ e.g. 3775
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -330,7 +330,7 @@ e.g. 3775
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -341,14 +341,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -359,14 +359,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -377,14 +377,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -395,14 +395,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -413,7 +413,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_string__sync_failure_reason {
-    label: "Sync Failure Reason"
+    label: "Sync: Failure Reason"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_string.sync_failure_reason ;;
     type: string
@@ -421,7 +421,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Failure Reason"
 
     link: {
-      label: "Glean Dictionary reference for Sync Failure Reason"
+      label: "Glean Dictionary reference for Sync: Failure Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/sync_failure_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -431,7 +431,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__uuid__sync_sync_uuid {
-    label: "Sync Sync UUID"
+    label: "Sync: Sync UUID"
     hidden: yes
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
@@ -439,7 +439,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Sync UUID"
 
     link: {
-      label: "Glean Dictionary reference for Sync Sync UUID"
+      label: "Glean Dictionary reference for Sync: Sync UUID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/sync_sync_uuid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -449,7 +449,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_string__sync_v2_failure_reason {
-    label: "Sync V2 Failure Reason"
+    label: "Sync V2: Failure Reason"
     hidden: no
     sql: ${TABLE}.metrics.labeled_string.sync_v2_failure_reason ;;
     type: string
@@ -457,7 +457,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Failure Reason"
 
     link: {
-      label: "Glean Dictionary reference for Sync V2 Failure Reason"
+      label: "Glean Dictionary reference for Sync V2: Failure Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/sync_v2_failure_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -467,7 +467,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__uuid__sync_v2_sync_uuid {
-    label: "Sync V2 Sync UUID"
+    label: "Sync V2: Sync UUID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.sync_v2_sync_uuid ;;
     type: string
@@ -475,7 +475,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Sync UUID"
 
     link: {
-      label: "Glean Dictionary reference for Sync V2 Sync UUID"
+      label: "Glean Dictionary reference for Sync V2: Sync UUID"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/sync_v2_sync_uuid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -551,7 +551,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
   }
 
@@ -559,7 +559,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
   }
 
@@ -572,7 +572,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
   }
 
@@ -580,7 +580,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
   }
 
@@ -588,7 +588,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
   }
 
@@ -630,7 +630,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
   }
 
@@ -719,7 +719,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -727,7 +727,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
   }
@@ -736,7 +736,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
   }
 
@@ -744,7 +744,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
   }
 
@@ -752,7 +752,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
   }
 
@@ -760,7 +760,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
   }
 
@@ -768,7 +768,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
   }
 
@@ -776,7 +776,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -784,7 +784,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -797,7 +797,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
   }
 
@@ -805,7 +805,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
   }
 
@@ -813,7 +813,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
   }
 
@@ -821,7 +821,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
   }
 
@@ -829,7 +829,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
   }
 
@@ -837,7 +837,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
   }
 
@@ -845,7 +845,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
   }
 
@@ -853,7 +853,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
   }
 
@@ -861,7 +861,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
   }
 
@@ -869,7 +869,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -877,7 +877,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -885,7 +885,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -981,7 +981,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -991,13 +990,12 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1013,7 +1011,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1029,7 +1026,6 @@ The labels are the `category.name` identifier of the metric.
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1062,7 +1058,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: sync__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1103,7 +1099,7 @@ view: sync__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1144,7 +1140,7 @@ view: sync__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: sync__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1185,7 +1181,7 @@ view: sync__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: sync__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1353,7 +1349,7 @@ view: sync__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1361,7 +1357,7 @@ view: sync__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

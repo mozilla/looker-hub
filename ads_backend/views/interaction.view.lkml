@@ -6,7 +6,7 @@
 
 view: interaction {
   dimension: metrics__string__ad_advertiser {
-    label: "Ad Advertiser"
+    label: "Ad: Advertiser"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_advertiser ;;
     type: string
@@ -14,7 +14,7 @@ view: interaction {
     group_item_label: "Advertiser"
 
     link: {
-      label: "Glean Dictionary reference for Ad Advertiser"
+      label: "Glean Dictionary reference for Ad: Advertiser"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_advertiser"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -24,7 +24,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_country_code {
-    label: "Ad Country Code"
+    label: "Ad: Country Code"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_country_code ;;
     type: string
@@ -32,7 +32,7 @@ view: interaction {
     group_item_label: "Country Code"
 
     link: {
-      label: "Glean Dictionary reference for Ad Country Code"
+      label: "Glean Dictionary reference for Ad: Country Code"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_country_code"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -42,7 +42,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_creative_id {
-    label: "Ad Creative ID"
+    label: "Ad: Creative ID"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_creative_id ;;
     type: string
@@ -50,7 +50,7 @@ view: interaction {
     group_item_label: "Creative ID"
 
     link: {
-      label: "Glean Dictionary reference for Ad Creative ID"
+      label: "Glean Dictionary reference for Ad: Creative ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_creative_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -60,7 +60,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_flight_id {
-    label: "Ad Flight ID"
+    label: "Ad: Flight ID"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_flight_id ;;
     type: string
@@ -68,7 +68,7 @@ view: interaction {
     group_item_label: "Flight ID"
 
     link: {
-      label: "Glean Dictionary reference for Ad Flight ID"
+      label: "Glean Dictionary reference for Ad: Flight ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_flight_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -78,7 +78,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_format {
-    label: "Ad Format"
+    label: "Ad: Format"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_format ;;
     type: string
@@ -86,7 +86,7 @@ view: interaction {
     group_item_label: "Format"
 
     link: {
-      label: "Glean Dictionary reference for Ad Format"
+      label: "Glean Dictionary reference for Ad: Format"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_format"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -96,7 +96,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_id {
-    label: "Ad ID"
+    label: "Ad: ID"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_id ;;
     type: string
@@ -104,7 +104,7 @@ view: interaction {
     group_item_label: "ID"
 
     link: {
-      label: "Glean Dictionary reference for Ad ID"
+      label: "Glean Dictionary reference for Ad: ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -114,7 +114,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_interaction {
-    label: "Ad Interaction"
+    label: "Ad: Interaction"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_interaction ;;
     type: string
@@ -122,7 +122,7 @@ view: interaction {
     group_item_label: "Interaction"
 
     link: {
-      label: "Glean Dictionary reference for Ad Interaction"
+      label: "Glean Dictionary reference for Ad: Interaction"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_interaction"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -132,7 +132,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_internal_line_item_id {
-    label: "Ad Internal Line Item ID"
+    label: "Ad: Internal Line Item ID"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_internal_line_item_id ;;
     type: string
@@ -140,7 +140,7 @@ view: interaction {
     group_item_label: "Internal Line Item ID"
 
     link: {
-      label: "Glean Dictionary reference for Ad Internal Line Item ID"
+      label: "Glean Dictionary reference for Ad: Internal Line Item ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_internal_line_item_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -150,7 +150,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_line_item_id {
-    label: "Ad Line Item ID"
+    label: "Ad: Line Item ID"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_line_item_id ;;
     type: string
@@ -158,7 +158,7 @@ view: interaction {
     group_item_label: "Line Item ID"
 
     link: {
-      label: "Glean Dictionary reference for Ad Line Item ID"
+      label: "Glean Dictionary reference for Ad: Line Item ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_line_item_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -168,7 +168,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_product {
-    label: "Ad Product"
+    label: "Ad: Product"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_product ;;
     type: string
@@ -176,7 +176,7 @@ view: interaction {
     group_item_label: "Product"
 
     link: {
-      label: "Glean Dictionary reference for Ad Product"
+      label: "Glean Dictionary reference for Ad: Product"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_product"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -186,7 +186,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_provider {
-    label: "Ad Provider"
+    label: "Ad: Provider"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_provider ;;
     type: string
@@ -194,7 +194,7 @@ view: interaction {
     group_item_label: "Provider"
 
     link: {
-      label: "Glean Dictionary reference for Ad Provider"
+      label: "Glean Dictionary reference for Ad: Provider"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_provider"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -204,7 +204,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_region_code {
-    label: "Ad Region Code"
+    label: "Ad: Region Code"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_region_code ;;
     type: string
@@ -212,7 +212,7 @@ view: interaction {
     group_item_label: "Region Code"
 
     link: {
-      label: "Glean Dictionary reference for Ad Region Code"
+      label: "Glean Dictionary reference for Ad: Region Code"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_region_code"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -222,7 +222,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_client_context_id {
-    label: "Ad Client Context ID"
+    label: "Ad Client: Context ID"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_client_context_id ;;
     type: string
@@ -230,7 +230,7 @@ view: interaction {
     group_item_label: "Context ID"
 
     link: {
-      label: "Glean Dictionary reference for Ad Client Context ID"
+      label: "Glean Dictionary reference for Ad Client: Context ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_context_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -240,7 +240,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_client_form_factor {
-    label: "Ad Client Form Factor"
+    label: "Ad Client: Form Factor"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_client_form_factor ;;
     type: string
@@ -248,7 +248,7 @@ view: interaction {
     group_item_label: "Form Factor"
 
     link: {
-      label: "Glean Dictionary reference for Ad Client Form Factor"
+      label: "Glean Dictionary reference for Ad Client: Form Factor"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_form_factor"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -258,7 +258,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_client_os {
-    label: "Ad Client OS"
+    label: "Ad Client: OS"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_client_os ;;
     type: string
@@ -266,7 +266,7 @@ view: interaction {
     group_item_label: "OS"
 
     link: {
-      label: "Glean Dictionary reference for Ad Client OS"
+      label: "Glean Dictionary reference for Ad Client: OS"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_os"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -276,7 +276,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_client_placement {
-    label: "Ad Client Placement"
+    label: "Ad Client: Placement"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_client_placement ;;
     type: string
@@ -284,7 +284,7 @@ view: interaction {
     group_item_label: "Placement"
 
     link: {
-      label: "Glean Dictionary reference for Ad Client Placement"
+      label: "Glean Dictionary reference for Ad Client: Placement"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_placement"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -294,7 +294,7 @@ view: interaction {
   }
 
   dimension: metrics__string__ad_client_position {
-    label: "Ad Client Position"
+    label: "Ad Client: Position"
     hidden: no
     sql: ${TABLE}.metrics.string.ad_client_position ;;
     type: string
@@ -302,7 +302,7 @@ view: interaction {
     group_item_label: "Position"
 
     link: {
-      label: "Glean Dictionary reference for Ad Client Position"
+      label: "Glean Dictionary reference for Ad Client: Position"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_position"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -312,7 +312,7 @@ view: interaction {
   }
 
   dimension: metrics__string__technical_operations_creative_id {
-    label: "Technical Operations Creative ID"
+    label: "Technical Operations: Creative ID"
     hidden: no
     sql: ${TABLE}.metrics.string.technical_operations_creative_id ;;
     type: string
@@ -320,7 +320,7 @@ view: interaction {
     group_item_label: "Creative ID"
 
     link: {
-      label: "Glean Dictionary reference for Technical Operations Creative ID"
+      label: "Glean Dictionary reference for Technical Operations: Creative ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_creative_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -330,7 +330,7 @@ view: interaction {
   }
 
   dimension: metrics__string__technical_operations_report_reason {
-    label: "Technical Operations Report Reason"
+    label: "Technical Operations: Report Reason"
     hidden: no
     sql: ${TABLE}.metrics.string.technical_operations_report_reason ;;
     type: string
@@ -338,7 +338,7 @@ view: interaction {
     group_item_label: "Report Reason"
 
     link: {
-      label: "Glean Dictionary reference for Technical Operations Report Reason"
+      label: "Glean Dictionary reference for Technical Operations: Report Reason"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_report_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -348,7 +348,7 @@ view: interaction {
   }
 
   dimension: metrics__string__technical_operations_request_id {
-    label: "Technical Operations Request ID"
+    label: "Technical Operations: Request ID"
     hidden: no
     sql: ${TABLE}.metrics.string.technical_operations_request_id ;;
     type: string
@@ -356,7 +356,7 @@ view: interaction {
     group_item_label: "Request ID"
 
     link: {
-      label: "Glean Dictionary reference for Technical Operations Request ID"
+      label: "Glean Dictionary reference for Technical Operations: Request ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_request_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -366,7 +366,7 @@ view: interaction {
   }
 
   dimension: metrics__string__technical_operations_user_agent {
-    label: "Technical Operations User Agent"
+    label: "Technical Operations: User Agent"
     hidden: no
     sql: ${TABLE}.metrics.string.technical_operations_user_agent ;;
     type: string
@@ -374,7 +374,7 @@ view: interaction {
     group_item_label: "User Agent"
 
     link: {
-      label: "Glean Dictionary reference for Technical Operations User Agent"
+      label: "Glean Dictionary reference for Technical Operations: User Agent"
       url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_user_agent"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -456,7 +456,7 @@ view: interaction {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -465,7 +465,7 @@ view: interaction {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -479,7 +479,7 @@ view: interaction {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -488,7 +488,7 @@ view: interaction {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -497,7 +497,7 @@ view: interaction {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -544,7 +544,7 @@ view: interaction {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -643,7 +643,7 @@ view: interaction {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -651,7 +651,7 @@ view: interaction {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -661,7 +661,7 @@ view: interaction {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -670,7 +670,7 @@ view: interaction {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -679,7 +679,7 @@ view: interaction {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -688,7 +688,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -697,7 +697,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -706,7 +706,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -714,7 +714,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -727,7 +727,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -736,7 +736,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -745,7 +745,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -754,7 +754,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -763,7 +763,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -772,7 +772,7 @@ view: interaction {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -781,7 +781,7 @@ view: interaction {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -790,7 +790,7 @@ view: interaction {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -799,7 +799,7 @@ view: interaction {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -808,7 +808,7 @@ view: interaction {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -816,7 +816,7 @@ view: interaction {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -824,7 +824,7 @@ view: interaction {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -917,7 +917,6 @@ view: interaction {
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -927,13 +926,12 @@ view: interaction {
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -949,7 +947,6 @@ view: interaction {
   dimension_group: ping_info__parsed_start {
     sql: ${TABLE}.ping_info.parsed_start_time ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -965,7 +962,6 @@ view: interaction {
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
-    suggest_persist_for: "24 hours"
     timeframes: [
       raw,
       time,
@@ -1048,7 +1044,7 @@ view: interaction__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1056,7 +1052,7 @@ view: interaction__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }
