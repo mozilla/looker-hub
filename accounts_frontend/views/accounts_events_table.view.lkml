@@ -78,7 +78,7 @@ view: accounts_events_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: accounts_events_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: accounts_events_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: accounts_events_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: accounts_events_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: accounts_events_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metrics.boolean.event_cms_customization_enrollment ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Event Cms Customization Enrollment"
     description: "Whether the user has been enrolled in a CMS customization.
 "
@@ -463,7 +463,7 @@ view: accounts_events_table {
     sql: ${TABLE}.metrics.boolean.event_third_party_links ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Event Third Party Links"
     description: "boolean, additional context-dependent (on event.name) info related to third party auth links"
   }
@@ -535,7 +535,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.account_user_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Account User ID"
     description: "The firefox/mozilla account id
 "
@@ -545,7 +545,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Account User ID Sha256"
     description: "A hex string of a sha256 hash of the account's uid
 "
@@ -555,7 +555,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Entrypoint Experiment"
     description: "The entrypoint experiment the user was assigned to. This value is specified
 by query parameter `entrypoint_experiment` in the URL.
@@ -566,7 +566,7 @@ by query parameter `entrypoint_experiment` in the URL.
     sql: ${TABLE}.metrics.string.entrypoint_variation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Entrypoint Variation"
     description: "The entrypoint variation the user was assigned to. This value is specified
 by query parameter `entrypoint_variation` in the URL.
@@ -577,7 +577,7 @@ by query parameter `entrypoint_variation` in the URL.
     sql: ${TABLE}.metrics.string.event_app_framework ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Event App Framework"
     description: "The name of the framework used by the app (ie React or Backbone).
 "
@@ -587,7 +587,7 @@ by query parameter `entrypoint_variation` in the URL.
     sql: ${TABLE}.metrics.string.event_choice ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Event Choice"
     description: "the choice made by the user in a given event"
   }
@@ -596,7 +596,7 @@ by query parameter `entrypoint_variation` in the URL.
     sql: ${TABLE}.metrics.string.event_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Event Name"
     description: "The name of the event
 "
@@ -606,7 +606,7 @@ by query parameter `entrypoint_variation` in the URL.
     sql: ${TABLE}.metrics.string.event_nimbus_user_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Event Nimbus User ID"
     description: "The name of the client ID for Nimbus experiments.
 "
@@ -616,7 +616,7 @@ by query parameter `entrypoint_variation` in the URL.
     sql: ${TABLE}.metrics.string.event_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Event Reason"
     description: "additional context-dependent (on event.name) info, e.g. the cause of an error"
   }
@@ -625,7 +625,7 @@ by query parameter `entrypoint_variation` in the URL.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -636,7 +636,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Relying Party Oauth Client ID"
     description: "The client id of the relying party
 "
@@ -646,7 +646,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.relying_party_service ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Relying Party Service"
     description: "The service name of the relying party
 "
@@ -656,7 +656,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.session_device_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Session Device Type"
     description: "one of 'mobile', 'tablet', or 'desktop'"
   }
@@ -665,7 +665,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.session_entrypoint ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Session Entrypoint"
     description: "entrypoint to the service"
   }
@@ -674,7 +674,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.session_flow_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Session Flow ID"
     description: "an ID generated by FxA for its flow metrics"
   }
@@ -683,7 +683,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.utm_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Campaign"
     description: "A marketing campaign.  For example, if a user signs into FxA from selecting a
 Mozilla VPN plan on Mozilla VPN's product site, then value of this metric could
@@ -698,7 +698,7 @@ special value of 'page+referral+-+not+part+of+a+campaign' is also allowed.
     sql: ${TABLE}.metrics.string.utm_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Content"
     description: "The content on which the user acted.  For example, if the user clicked on the
 (previously available) \"Get started here\" link in \"Looking for Firefox Sync? Get
@@ -713,7 +713,7 @@ in the allowed set of characters.
     sql: ${TABLE}.metrics.string.utm_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Medium"
     description: "The \"medium\" on which the user acted.  For example, if the user clicked on a
 link in an email, then the value of this metric would be 'email'.  The value
@@ -727,7 +727,7 @@ has a max length of 128 characters with the alphanumeric characters, _
     sql: ${TABLE}.metrics.string.utm_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Source"
     description: "The source from where the user started.  For example, if the user clicked on a
 link on the Firefox accounts web site, this value could be 'fx-website'.  The
@@ -741,7 +741,7 @@ value has a max length of 128 characters with the alphanumeric characters, _
     sql: ${TABLE}.metrics.string.utm_term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "UTM Term"
     description: "This metric is similar to the `utm.source`; it is used in the Firefox
 browser.  For example, if the user started from about:welcome, then the value
@@ -850,7 +850,7 @@ characters.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -987,7 +987,7 @@ view: accounts_events_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -995,7 +995,7 @@ view: accounts_events_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

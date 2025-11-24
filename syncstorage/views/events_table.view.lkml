@@ -78,7 +78,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: events_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: events_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: events_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: events_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: events_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: events_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: events_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: events_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: events_table {
     sql: ${TABLE}.metrics.string.syncstorage_device_family ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncstorage Device Family"
     description: "Device family from which sync action was initiated.
 Desktop PC, Tablet, Mobile, and Other.
@@ -464,7 +464,7 @@ Desktop PC, Tablet, Mobile, and Other.
     sql: ${TABLE}.metrics.string.syncstorage_hashed_device_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncstorage Hashed Device ID"
     description: "Hashed device id that is associated with a given account. This is used
 entirely to associate opt-out or removal requests, as they make use of 
@@ -476,7 +476,7 @@ the \"deletion-request\" ping associated with the client side of Sync.
     sql: ${TABLE}.metrics.string.syncstorage_hashed_fxa_uid ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncstorage Hashed Fxa Uid"
     description: "User identifier. Uses `hashed_fxa_uid` for accurate count of sync actions. Used to determine which user has initiated sync activity. This is the Firefox Accounts (FxA) User Identifier (UID) value passed through a SHA-256 hash to render a value that is unique, but ensures the privacy of the original UID. A single user could make numerous sync actions in a given time and this id is required to ensure only a single count of daily active use is made, given a number of actions. Sync_id is not used due to possibility of new keys being generated during resets or timeouts, whenever encryption keys change.
 "
@@ -486,7 +486,7 @@ the \"deletion-request\" ping associated with the client side of Sync.
     sql: ${TABLE}.metrics.string.syncstorage_platform ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Syncstorage Platform"
     description: "Platform from which sync action was initiated.
 Firefox Desktop, Fenix, or Firefox iOS.
@@ -591,7 +591,7 @@ Firefox Desktop, Fenix, or Firefox iOS.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -700,7 +700,7 @@ view: events_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -708,7 +708,7 @@ view: events_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

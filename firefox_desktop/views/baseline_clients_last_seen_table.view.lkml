@@ -473,7 +473,7 @@ view: baseline_clients_last_seen_table__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
     description: "Experiment Enrollment ID"
   }
@@ -482,7 +482,7 @@ view: baseline_clients_last_seen_table__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
     description: "Experiment Type"
   }

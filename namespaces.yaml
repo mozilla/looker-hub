@@ -394,6 +394,17 @@ bigeye:
       tables:
       - table: moz-fx-data-shared-prod.bigeye_derived.workspace_service_v1
       type: table_view
+braze:
+  glean_app: false
+  owners:
+  - lmcfall@mozilla.com
+  pretty_name: Braze Interactions
+  spoke: looker-spoke-default
+  views:
+    braze_sends_combined:
+      tables:
+      - table: moz-fx-data-shared-prod.braze_external.braze_sends_combined_v1
+      type: table_view
 combined_browser_metrics:
   glean_app: false
   owners:
@@ -5622,6 +5633,10 @@ monitoring:
       type: table_explore
       views:
         base_view: looker_usage_models
+    looker_user_reported_issues:
+      type: table_explore
+      views:
+        base_view: looker_user_reported_issues
     payload_bytes_error_all:
       type: ping_explore
       views:
@@ -5804,6 +5819,10 @@ monitoring:
     looker_usage_models:
       tables:
       - table: moz-fx-data-shared-prod.monitoring.looker_usage_models
+      type: table_view
+    looker_user_reported_issues:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring_derived.looker_user_reported_issues_v1
       type: table_view
     metadata_completeness:
       tables:

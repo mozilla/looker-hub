@@ -78,7 +78,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metrics.boolean.quick_suggest_improve_suggest_experience ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Quick Suggest Improve Suggest Experience"
     description: "Whether the \"Improve Suggest Experience\" checkbox is checked.
 "
@@ -463,7 +463,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metrics.boolean.quick_suggest_is_clicked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Quick Suggest Is Clicked"
     description: "Whether this quicksuggest-impression ping was for an item that was clicked.
 "
@@ -473,7 +473,7 @@ view: quick_suggest_table {
     sql: ${TABLE}.metrics.boolean.quick_suggest_suggested_index_relative_to_group ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Quick Suggest Suggested Index Relative To Group"
     description: "Whether `suggested_index` is relative to the \"Firefox Suggest\" group. If false, it is relative to the entire list of suggestions.
 "
@@ -515,7 +515,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.quick_suggest_position ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Quick Suggest Position"
     description: "The position (1-based) of the QuickSuggest item being interatcted with.
 "
@@ -525,7 +525,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -536,7 +536,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_advertiser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Advertiser"
     description: "The name of the advertiser providing the sponsored TopSite.
 "
@@ -546,7 +546,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_block_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Block ID"
     description: "A unique identifier for the suggestion (a.k.a. a keywords block).
 "
@@ -556,7 +556,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Country"
     description: "Records the home region of the user as determined by `Region.sys.mjs` and the `browser.search.region` pref.
 "
@@ -566,7 +566,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_iab_category ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Iab Category"
     description: "The suggestion's category. Either \"22 - Shopping\" or \"5 - Educational\".
 "
@@ -576,7 +576,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_match_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Match Type"
     description: "Whether this was a best/top match or not. Either \"best-match\" or \"firefox-suggest\".
 "
@@ -586,7 +586,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_ping_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Ping Type"
     description: "The ping's type. In other situations might be designated by an event's name or an interaction field. E.g. \"quicksuggest-impression\", \"quicksuggest-block\", \"quicksuggest-click\".
 "
@@ -596,7 +596,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_request_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Request ID"
     description: "A request identifier for each API request to [Merino](https://mozilla-services.github.io/merino/). Only present for suggestions provided by Merino.
 "
@@ -606,7 +606,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Source"
     description: "The source of the interaction. E.g. \"urlbar\".
 "
@@ -616,7 +616,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.quick_suggest_suggested_index ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Quick Suggest Suggested Index"
     description: "A stringified integer value that is the intended index of the suggestion being interacted with. If `suggested_index_relative_to_group` is true, the index is relative to the \"Firefox Suggest\" group; otherwise the index is relative to the entire list of suggestions. Non-negative values (starting at 0) are relative to the start/top of the group/list; negative values are relative to the end/bottom of the group/list.
 "
@@ -631,7 +631,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.url.quick_suggest_reporting_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics URL"
+    group_label: "Metrics: URL"
     group_item_label: "Quick Suggest Reporting URL"
   }
 
@@ -639,7 +639,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.url2.quick_suggest_reporting_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Url2"
+    group_label: "Metrics: Url2"
     group_item_label: "Quick Suggest Reporting URL"
     description: "The url to report this interaction to.
 "
@@ -649,7 +649,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.uuid.quick_suggest_context_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Quick Suggest Context ID"
     description: "An identifier to identify users for Contextual Services user interaction pings.
 "
@@ -753,7 +753,7 @@ for the purpose of experimentation enrollment.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -862,7 +862,7 @@ view: quick_suggest_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -870,7 +870,7 @@ view: quick_suggest_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

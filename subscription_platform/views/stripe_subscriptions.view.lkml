@@ -50,7 +50,7 @@ view: stripe_subscriptions {
     sql: ${TABLE}.customer.address.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Address"
+    group_label: "Customer: Address"
     group_item_label: "Country"
     description: "Two-letter country code (ISO 3166-1 alpha-2)."
   }
@@ -69,7 +69,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.coupon.amount_off ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount Coupon"
+    group_label: "Customer: Discount: Coupon"
     group_item_label: "Amount Off"
     description: "Amount (in the `currency` specified) that will be taken off the subtotal of any invoices for this customer."
   }
@@ -78,7 +78,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.coupon.currency ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount Coupon"
+    group_label: "Customer: Discount: Coupon"
     group_item_label: "Currency"
     description: "If `amount_off` has been set, the three-letter ISO code for the currency of the amount to take off."
   }
@@ -87,7 +87,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.coupon.duration ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount Coupon"
+    group_label: "Customer: Discount: Coupon"
     group_item_label: "Duration"
     description: "One of \"forever\", \"once\", and \"repeating\". Describes how long a customer who applies this coupon will get the discount.
 \"forever\" applies to all charges from a subscription with this coupon applied.
@@ -99,7 +99,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.coupon.duration_in_months ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount Coupon"
+    group_label: "Customer: Discount: Coupon"
     group_item_label: "Duration In Months"
     description: "If `duration` is \"repeating\", the number of months the coupon applies. Null if coupon `duration` is \"forever\" or \"once\"."
   }
@@ -108,7 +108,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.coupon.id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount Coupon"
+    group_label: "Customer: Discount: Coupon"
     group_item_label: "ID"
     description: "Coupon ID."
   }
@@ -123,7 +123,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.coupon.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount Coupon"
+    group_label: "Customer: Discount: Coupon"
     group_item_label: "Name"
     description: "Name of the coupon displayed to customers on invoices or receipts."
   }
@@ -132,7 +132,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.coupon.percent_off ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount Coupon"
+    group_label: "Customer: Discount: Coupon"
     group_item_label: "Percent Off"
     description: "Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon. For example, a coupon with `percent_off` of 50 will make a $100 invoice $50 instead."
   }
@@ -141,7 +141,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount"
+    group_label: "Customer: Discount"
     group_item_label: "ID"
     description: "Discount ID."
   }
@@ -150,7 +150,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.invoice_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount"
+    group_label: "Customer: Discount"
     group_item_label: "Invoice ID"
     description: "ID of the invoice that the discount's coupon was applied to, if it was applied directly to a particular invoice."
   }
@@ -159,7 +159,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.invoice_item_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount"
+    group_label: "Customer: Discount"
     group_item_label: "Invoice Item ID"
     description: "ID of the invoice item (or invoice line item for invoice line items of `type` = \"subscription\") that the discount's coupon was applied to, if it was applied directly to a particular invoice item or invoice line item."
   }
@@ -168,7 +168,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.promotion_code_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount"
+    group_label: "Customer: Discount"
     group_item_label: "Promotion Code ID"
     description: "ID of the promotion code applied to create this discount."
   }
@@ -177,7 +177,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.discount.subscription_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Discount"
+    group_label: "Customer: Discount"
     group_item_label: "Subscription ID"
     description: "ID of the subscription that this coupon is applied to, if it is applied to a particular subscription."
   }
@@ -195,7 +195,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.invoice_settings.default_payment_method_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Invoice Settings"
+    group_label: "Customer: Invoice Settings"
     group_item_label: "Default Payment Method ID"
     description: "ID of a payment method that's attached to the customer, to be used as the customer's default payment method for subscriptions and invoices."
   }
@@ -213,7 +213,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.metadata.paypalAgreementId ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Metadata"
+    group_label: "Customer: Metadata"
     group_item_label: "Paypalagreementid"
     description: "The customer's PayPal agreement ID (if any)."
   }
@@ -222,7 +222,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.metadata.userid ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Metadata"
+    group_label: "Customer: Metadata"
     group_item_label: "Userid"
     description: "The customer's Firefox Account user ID.
 This isn't available for customers that were deleted before the initial Fivetran Stripe sync."
@@ -232,7 +232,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.metadata.userid_sha256 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Metadata"
+    group_label: "Customer: Metadata"
     group_item_label: "Userid Sha256"
     description: "SHA256 hash of the customer's Firefox Account user ID."
   }
@@ -241,7 +241,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.customer.shipping.address.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Customer Shipping Address"
+    group_label: "Customer: Shipping: Address"
     group_item_label: "Country"
     description: "Two-letter country code (ISO 3166-1 alpha-2)."
   }
@@ -287,7 +287,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.discount.coupon.amount_off ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Discount Coupon"
+    group_label: "Discount: Coupon"
     group_item_label: "Amount Off"
     description: "Amount (in the `currency` specified) that will be taken off the subtotal of any invoices for this customer."
   }
@@ -296,7 +296,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.discount.coupon.currency ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Discount Coupon"
+    group_label: "Discount: Coupon"
     group_item_label: "Currency"
     description: "If `amount_off` has been set, the three-letter ISO code for the currency of the amount to take off."
   }
@@ -305,7 +305,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.discount.coupon.duration ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Discount Coupon"
+    group_label: "Discount: Coupon"
     group_item_label: "Duration"
     description: "One of \"forever\", \"once\", and \"repeating\". Describes how long a customer who applies this coupon will get the discount.
 \"forever\" applies to all charges from a subscription with this coupon applied.
@@ -317,7 +317,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.discount.coupon.duration_in_months ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Discount Coupon"
+    group_label: "Discount: Coupon"
     group_item_label: "Duration In Months"
     description: "If `duration` is \"repeating\", the number of months the coupon applies. Null if coupon `duration` is \"forever\" or \"once\"."
   }
@@ -326,7 +326,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.discount.coupon.id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Discount Coupon"
+    group_label: "Discount: Coupon"
     group_item_label: "ID"
     description: "Coupon ID."
   }
@@ -341,7 +341,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.discount.coupon.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Discount Coupon"
+    group_label: "Discount: Coupon"
     group_item_label: "Name"
     description: "Name of the coupon displayed to customers on invoices or receipts."
   }
@@ -350,7 +350,7 @@ This isn't available for customers that were deleted before the initial Fivetran
     sql: ${TABLE}.discount.coupon.percent_off ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Discount Coupon"
+    group_label: "Discount: Coupon"
     group_item_label: "Percent Off"
     description: "Percent that will be taken off the subtotal of any invoices for this customer for the duration of the coupon. For example, a coupon with `percent_off` of 50 will make a $100 invoice $50 instead."
   }
@@ -673,7 +673,7 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
       quarter,
       year,
     ]
-    label: "Customer Discount Coupon: Created"
+    label: "Customer: Discount: Coupon: Created"
     description: "Time at which the coupon was created."
   }
 
@@ -689,7 +689,7 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
       quarter,
       year,
     ]
-    label: "Customer Discount Coupon: Redeem By"
+    label: "Customer: Discount: Coupon: Redeem By"
     description: "Time after which the coupon can no longer be redeemed."
   }
 
@@ -705,7 +705,7 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
       quarter,
       year,
     ]
-    label: "Customer Discount: End"
+    label: "Customer: Discount: End"
     description: "If the coupon has a duration of \"repeating\", the time that this discount will end. If the coupon has a duration of \"once\" or \"forever\", this attribute will be null."
   }
 
@@ -721,7 +721,7 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
       quarter,
       year,
     ]
-    label: "Customer Discount: Start"
+    label: "Customer: Discount: Start"
     description: "Time at which the coupon was applied."
   }
 
@@ -737,7 +737,7 @@ If subscription `collection_method` = \"send_invoice\" it becomes \"past_due\" w
       quarter,
       year,
     ]
-    label: "Customer Metadata: Geoip Date"
+    label: "Customer: Metadata: Geoip Date"
     description: "Time at which IP address-based geo-location was done for the customer.
 This isn't available for customers that were deleted before the initial Fivetran Stripe sync."
   }
@@ -754,7 +754,7 @@ This isn't available for customers that were deleted before the initial Fivetran
       quarter,
       year,
     ]
-    label: "Discount Coupon: Created"
+    label: "Discount: Coupon: Created"
     description: "Time at which the coupon was created."
   }
 
@@ -770,7 +770,7 @@ This isn't available for customers that were deleted before the initial Fivetran
       quarter,
       year,
     ]
-    label: "Discount Coupon: Redeem By"
+    label: "Discount: Coupon: Redeem By"
     description: "Time after which the coupon can no longer be redeemed."
   }
 
@@ -1062,7 +1062,7 @@ view: stripe_subscriptions__items {
     sql: ${TABLE}.plan.product.description ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Plan Product"
+    group_label: "Plan: Product"
     group_item_label: "Description"
     description: "The product's description, meant to be displayable to the customer."
   }
@@ -1071,7 +1071,7 @@ view: stripe_subscriptions__items {
     sql: ${TABLE}.plan.product.id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Plan Product"
+    group_label: "Plan: Product"
     group_item_label: "ID"
     description: "Product ID."
   }
@@ -1086,7 +1086,7 @@ view: stripe_subscriptions__items {
     sql: ${TABLE}.plan.product.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Plan Product"
+    group_label: "Plan: Product"
     group_item_label: "Name"
     description: "The product's name, meant to be displayable to the customer."
   }
@@ -1095,7 +1095,7 @@ view: stripe_subscriptions__items {
     sql: ${TABLE}.plan.product.statement_descriptor ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Plan Product"
+    group_label: "Plan: Product"
     group_item_label: "Statement Descriptor"
     description: "Extra information about a product which will appear on your customer's credit card statement."
   }
@@ -1177,7 +1177,7 @@ view: stripe_subscriptions__items {
       quarter,
       year,
     ]
-    label: "Plan Product: Created"
+    label: "Plan: Product: Created"
     description: "Time at which the product was created."
   }
 
@@ -1193,7 +1193,7 @@ view: stripe_subscriptions__items {
       quarter,
       year,
     ]
-    label: "Plan Product: Updated"
+    label: "Plan: Product: Updated"
     description: "Time at which the product was last updated."
   }
 }

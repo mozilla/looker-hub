@@ -6,7 +6,7 @@
 
 view: health {
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -14,7 +14,7 @@ view: health {
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -25,7 +25,7 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__string__glean_database_rkv_load_error {
-    label: "Glean Database Rkv Load Error"
+    label: "Glean Database: Rkv Load Error"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
     type: string
@@ -33,7 +33,7 @@ for the purpose of experimentation enrollment.
     group_item_label: "Rkv Load Error"
 
     link: {
-      label: "Glean Dictionary reference for Glean Database Rkv Load Error"
+      label: "Glean Dictionary reference for Glean Database: Rkv Load Error"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_database_rkv_load_error"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -43,7 +43,7 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
-    label: "Glean Database Size Sum"
+    label: "Glean Database: Size Sum"
     hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
@@ -51,7 +51,7 @@ for the purpose of experimentation enrollment.
     group_item_label: "Size Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Database Size Sum"
+      label: "Glean Dictionary reference for Glean Database: Size Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_database_size"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -61,7 +61,7 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__timing_distribution__glean_database_write_time__sum {
-    label: "Glean Database Write Time Sum"
+    label: "Glean Database: Write Time Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.sum ;;
     type: number
@@ -69,7 +69,7 @@ for the purpose of experimentation enrollment.
     group_item_label: "Write Time Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Database Write Time Sum"
+      label: "Glean Dictionary reference for Glean Database: Write Time Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_database_write_time"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -79,14 +79,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -97,14 +97,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -115,14 +115,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -133,14 +133,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -151,7 +151,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__glean_error_io {
-    label: "Glean Error IO"
+    label: "Glean Error: IO"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -159,7 +159,7 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "IO"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error IO"
+      label: "Glean Dictionary reference for Glean Error: IO"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_io"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -170,7 +170,7 @@ when writing a pending ping to disk.
   }
 
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
-    label: "Glean Error Preinit Tasks Overflow"
+    label: "Glean Error: Preinit Tasks Overflow"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
@@ -178,7 +178,7 @@ when writing a pending ping to disk.
     group_item_label: "Preinit Tasks Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Preinit Tasks Overflow"
+      label: "Glean Dictionary reference for Glean Error: Preinit Tasks Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_error_preinit_tasks_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -191,7 +191,7 @@ In Version 0 this reported the total number of tasks enqueued.
   }
 
   dimension: metrics__string__glean_health_exception_state {
-    label: "Glean Health Exception State"
+    label: "Glean Health: Exception State"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_health_exception_state ;;
     type: string
@@ -199,7 +199,7 @@ In Version 0 this reported the total number of tasks enqueued.
     group_item_label: "Exception State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Health Exception State"
+      label: "Glean Dictionary reference for Glean Health: Exception State"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_health_exception_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -216,14 +216,14 @@ Valid options are:
   }
 
   dimension: metrics__labeled_counter__glean_health_file_read_error {
-    label: "Glean Health File Read Error"
+    label: "Glean Health: File Read Error"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_health_file_read_error ;;
     group_label: "Glean Health"
     group_item_label: "File Read Error"
 
     link: {
-      label: "Glean Dictionary reference for Glean Health File Read Error"
+      label: "Glean Dictionary reference for Glean Health: File Read Error"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_health_file_read_error"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -233,14 +233,14 @@ Valid options are:
   }
 
   dimension: metrics__labeled_counter__glean_health_file_write_error {
-    label: "Glean Health File Write Error"
+    label: "Glean Health: File Write Error"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_health_file_write_error ;;
     group_label: "Glean Health"
     group_item_label: "File Write Error"
 
     link: {
-      label: "Glean Dictionary reference for Glean Health File Write Error"
+      label: "Glean Dictionary reference for Glean Health: File Write Error"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_health_file_write_error"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -250,7 +250,7 @@ Valid options are:
   }
 
   dimension: metrics__counter__glean_health_init_count {
-    label: "Glean Health Init Count"
+    label: "Glean Health: Init Count"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_health_init_count ;;
     type: number
@@ -258,7 +258,7 @@ Valid options are:
     group_item_label: "Init Count"
 
     link: {
-      label: "Glean Dictionary reference for Glean Health Init Count"
+      label: "Glean Dictionary reference for Glean Health: Init Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_health_init_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -268,7 +268,7 @@ Valid options are:
   }
 
   dimension: metrics__uuid__glean_health_recovered_client_id {
-    label: "Glean Health Recovered Client ID"
+    label: "Glean Health: Recovered Client ID"
     hidden: no
     sql: ${TABLE}.metrics.uuid.glean_health_recovered_client_id ;;
     type: string
@@ -276,7 +276,7 @@ Valid options are:
     group_item_label: "Recovered Client ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Health Recovered Client ID"
+      label: "Glean Dictionary reference for Glean Health: Recovered Client ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_health_recovered_client_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -288,7 +288,7 @@ See `exception_state` for different exception states when this can happen.
   }
 
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
-    label: "Glean Upload Deleted Pings After Quota Hit"
+    label: "Glean Upload: Deleted Pings After Quota Hit"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
@@ -296,7 +296,7 @@ See `exception_state` for different exception states when this can happen.
     group_item_label: "Deleted Pings After Quota Hit"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Deleted Pings After Quota Hit"
+      label: "Glean Dictionary reference for Glean Upload: Deleted Pings After Quota Hit"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_deleted_pings_after_quota_hit"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -310,7 +310,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
-    label: "Glean Upload Discarded Exceeding Pings Size Sum"
+    label: "Glean Upload: Discarded Exceeding Pings Size Sum"
     hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
@@ -318,7 +318,7 @@ deletion request pings are never deleted.
     group_item_label: "Discarded Exceeding Pings Size Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Discarded Exceeding Pings Size Sum"
+      label: "Glean Dictionary reference for Glean Upload: Discarded Exceeding Pings Size Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_discarded_exceeding_pings_size"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -328,7 +328,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__counter__glean_upload_in_flight_pings_dropped {
-    label: "Glean Upload In Flight Pings Dropped"
+    label: "Glean Upload: In Flight Pings Dropped"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
     type: number
@@ -336,7 +336,7 @@ deletion request pings are never deleted.
     group_item_label: "In Flight Pings Dropped"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload In Flight Pings Dropped"
+      label: "Glean Dictionary reference for Glean Upload: In Flight Pings Dropped"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_in_flight_pings_dropped"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -346,7 +346,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__counter__glean_upload_missing_send_ids {
-    label: "Glean Upload Missing Send Ids"
+    label: "Glean Upload: Missing Send Ids"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
     type: number
@@ -354,7 +354,7 @@ deletion request pings are never deleted.
     group_item_label: "Missing Send Ids"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Missing Send Ids"
+      label: "Glean Dictionary reference for Glean Upload: Missing Send Ids"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_missing_send_ids"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -366,7 +366,7 @@ respectively) due to an inconsistency in our internal bookkeeping?
   }
 
   dimension: metrics__counter__glean_upload_pending_pings {
-    label: "Glean Upload Pending Pings"
+    label: "Glean Upload: Pending Pings"
     hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
@@ -374,7 +374,7 @@ respectively) due to an inconsistency in our internal bookkeeping?
     group_item_label: "Pending Pings"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Pending Pings"
+      label: "Glean Dictionary reference for Glean Upload: Pending Pings"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_pending_pings"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -385,7 +385,7 @@ This does not include deletion-request pings.
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
-    label: "Glean Upload Pending Pings Directory Size Sum"
+    label: "Glean Upload: Pending Pings Directory Size Sum"
     hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
@@ -393,7 +393,7 @@ This does not include deletion-request pings.
     group_item_label: "Pending Pings Directory Size Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Pending Pings Directory Size Sum"
+      label: "Glean Dictionary reference for Glean Upload: Pending Pings Directory Size Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_pending_pings_directory_size"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -404,14 +404,14 @@ This does not include the size of the deletion request pings directory.
   }
 
   dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
-    label: "Glean Upload Ping Upload Failure"
+    label: "Glean Upload: Ping Upload Failure"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
     group_label: "Glean Upload"
     group_item_label: "Ping Upload Failure"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Ping Upload Failure"
+      label: "Glean Dictionary reference for Glean Upload: Ping Upload Failure"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_ping_upload_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -423,7 +423,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
-    label: "Glean Upload Send Failure Sum"
+    label: "Glean Upload: Send Failure Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
     type: number
@@ -431,7 +431,7 @@ though the counts appear in the next successfully sent `metrics` ping.
     group_item_label: "Send Failure Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Send Failure Sum"
+      label: "Glean Dictionary reference for Glean Upload: Send Failure Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_send_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -441,7 +441,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_success__sum {
-    label: "Glean Upload Send Success Sum"
+    label: "Glean Upload: Send Success Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
     type: number
@@ -449,7 +449,7 @@ though the counts appear in the next successfully sent `metrics` ping.
     group_item_label: "Send Success Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Upload Send Success Sum"
+      label: "Glean Dictionary reference for Glean Upload: Send Success Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_send_success"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -459,14 +459,14 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
-    label: "Glean Validation Pings Submitted"
+    label: "Glean Validation: Pings Submitted"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Pings Submitted"
+      label: "Glean Dictionary reference for Glean Validation: Pings Submitted"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_validation_pings_submitted"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -486,7 +486,7 @@ Now it only records counts for the Glean built-in pings.
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__sum {
-    label: "Glean Validation Shutdown Dispatcher Wait Sum"
+    label: "Glean Validation: Shutdown Dispatcher Wait Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
     type: number
@@ -494,7 +494,7 @@ Now it only records counts for the Glean built-in pings.
     group_item_label: "Shutdown Dispatcher Wait Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Shutdown Dispatcher Wait Sum"
+      label: "Glean Dictionary reference for Glean Validation: Shutdown Dispatcher Wait Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_validation_shutdown_dispatcher_wait"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -505,7 +505,7 @@ Most samples are expected to be below the 10s timeout used.
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
-    label: "Glean Validation Shutdown Wait Sum"
+    label: "Glean Validation: Shutdown Wait Sum"
     hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
     type: number
@@ -513,7 +513,7 @@ Most samples are expected to be below the 10s timeout used.
     group_item_label: "Shutdown Wait Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Shutdown Wait Sum"
+      label: "Glean Dictionary reference for Glean Validation: Shutdown Wait Sum"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_validation_shutdown_wait"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -595,7 +595,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -604,7 +604,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -618,7 +618,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -627,7 +627,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -636,7 +636,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -683,7 +683,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -782,7 +782,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -790,7 +790,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -800,7 +800,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -809,7 +809,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -818,7 +818,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -827,7 +827,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -836,7 +836,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -845,7 +845,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -853,7 +853,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -866,7 +866,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -875,7 +875,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -884,7 +884,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -893,7 +893,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -902,7 +902,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -911,7 +911,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -920,7 +920,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -929,7 +929,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -938,7 +938,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -947,7 +947,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -955,7 +955,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -963,7 +963,7 @@ Most samples are expected to be below the 10s timeout used.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -1065,7 +1065,7 @@ Most samples are expected to be below the 10s timeout used.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -1301,7 +1301,7 @@ Most samples are expected to be below the 10s timeout used.
 }
 
 view: health__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1342,7 +1342,7 @@ view: health__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: health__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1383,7 +1383,7 @@ view: health__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: health__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1424,7 +1424,7 @@ view: health__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: health__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1465,7 +1465,7 @@ view: health__metrics__labeled_counter__glean_error_invalid_value {
 }
 
 view: health__metrics__labeled_counter__glean_health_file_read_error {
-  label: "Glean Health - File Read Error"
+  label: "Glean Health: File Read Error"
 
   dimension: document_id {
     type: string
@@ -1506,7 +1506,7 @@ view: health__metrics__labeled_counter__glean_health_file_read_error {
 }
 
 view: health__metrics__labeled_counter__glean_health_file_write_error {
-  label: "Glean Health - File Write Error"
+  label: "Glean Health: File Write Error"
 
   dimension: document_id {
     type: string
@@ -1547,7 +1547,7 @@ view: health__metrics__labeled_counter__glean_health_file_write_error {
 }
 
 view: health__metrics__labeled_counter__glean_upload_ping_upload_failure {
-  label: "Glean Upload - Ping Upload Failure"
+  label: "Glean Upload: Ping Upload Failure"
 
   dimension: document_id {
     type: string
@@ -1588,7 +1588,7 @@ view: health__metrics__labeled_counter__glean_upload_ping_upload_failure {
 }
 
 view: health__metrics__labeled_counter__glean_validation_pings_submitted {
-  label: "Glean Validation - Pings Submitted"
+  label: "Glean Validation: Pings Submitted"
 
   dimension: document_id {
     type: string
@@ -1798,7 +1798,7 @@ view: health__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1806,7 +1806,7 @@ view: health__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

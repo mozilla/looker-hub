@@ -78,7 +78,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_does_app_need_pin ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Does App Need Pin"
     description: "Does the app need pinning (i.e., is the app not pinned)."
   }
@@ -462,7 +462,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_has_active_enterprise_policies ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Has Active Enterprise Policies"
     description: "Whether the profile has any active enterprise policies."
   }
@@ -471,7 +471,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_has_pinned_tabs ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Has Pinned Tabs"
     description: "Whether the profile has any pinned tabs in any open window."
   }
@@ -480,7 +480,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Is Default Browser"
     description: "Whether the current browser is the default browser."
   }
@@ -489,7 +489,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_first_startup ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Is First Startup"
     description: "Is this the first startup of the browser on this install? (NB: Must have been explicitly launched with the --first-startup commandline flag.)
 "
@@ -499,7 +499,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_fx_a_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Is Fx A Enabled"
     description: "Whether Firefox Accounts and Sync are enabled."
   }
@@ -508,7 +508,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_fx_a_signed_in ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Is Fx A Signed In"
     description: "Whether the user is logged in to Firefox Accounts."
   }
@@ -517,7 +517,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_is_msix ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Is Msix"
     description: "Is this copy of Firefox installed from an MSIX installer?"
   }
@@ -526,7 +526,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_user_prefers_reduced_motion ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context User Prefers Reduced Motion"
     description: "Whether the user prefers reduced motion."
   }
@@ -535,7 +535,7 @@ view: nimbus_targeting_context_table {
     sql: ${TABLE}.metrics.boolean.nimbus_targeting_context_uses_firefox_sync ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Nimbus Targeting Context Uses Firefox Sync"
     description: "Whether the user uses Firefox Sync."
   }
@@ -678,7 +678,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_addresses_saved ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Addresses Saved"
     description: "The number of addresses the user has saved."
   }
@@ -687,7 +687,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_arch_bits ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Arch Bits"
     description: "The architecture of the user's CPU (32-bit or 64-bit)"
   }
@@ -696,7 +696,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_build_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Build ID"
     description: "The Build ID."
   }
@@ -705,7 +705,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_firefox_version ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Firefox Version"
     description: "The Firefox major version number."
   }
@@ -714,7 +714,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_memory_mb ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Memory Mb"
     description: "The amount of system memory, in mebibytes (MiB)."
   }
@@ -723,7 +723,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_profile_age_created ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Profile Age Created"
     description: "The UNIX timestamp of when the profile was created."
   }
@@ -732,7 +732,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_profile_group_profile_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Profile Group Profile Count"
     description: "The number of profiles in the current profile group or zero if either the feature is not enabled or the user has not created any profiles.
 "
@@ -742,7 +742,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.nimbus_targeting_context_total_bookmarks_count ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Nimbus Targeting Context Total Bookmarks Count"
     description: "The number of bookmarks."
   }
@@ -751,7 +751,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -762,7 +762,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.nimbus_targeting_context_current_date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Nimbus Targeting Context Current Date"
     description: "The current date, as an ISO-8601 string.
 "
@@ -772,7 +772,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.nimbus_targeting_context_distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Nimbus Targeting Context Distribution ID"
     description: "The installation's distribution ID.
 "
@@ -782,7 +782,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.nimbus_targeting_context_locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Nimbus Targeting Context Locale"
     description: "What is the active locale of the browser?"
   }
@@ -791,7 +791,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.nimbus_targeting_context_region ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Nimbus Targeting Context Region"
     description: "What region is the browser located in?"
   }
@@ -800,7 +800,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.nimbus_targeting_context_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Nimbus Targeting Context Version"
     description: "The full Firefox version string."
   }
@@ -814,7 +814,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text.nimbus_targeting_environment_targeting_context_value ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Nimbus Targeting Environment Targeting Context Value"
   }
 
@@ -822,7 +822,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text2.nimbus_targeting_environment_targeting_context_value ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Nimbus Targeting Environment Targeting Context Value"
     description: "The entirety of the Nimbus targeting context as a stringified JSON object.
 This is disabled by default and only intended to be enabled via server knobs to debug recording failures in individual nimbus_targeting_context metric values.
@@ -833,7 +833,7 @@ This is disabled by default and only intended to be enabled via server knobs to 
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Legacy Telemetry Client ID"
     description: "The client_id according to Telemetry.
 Might not always have a value due to being too early for it to have
@@ -850,7 +850,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics UUID"
+    group_label: "Metrics: UUID"
     group_item_label: "Legacy Telemetry Profile Group ID"
     description: "The profile_group_id according to Telemetry.
 Might not always have a value due to being too early for it to have
@@ -957,7 +957,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -1066,7 +1066,7 @@ view: nimbus_targeting_context_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1074,7 +1074,7 @@ view: nimbus_targeting_context_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

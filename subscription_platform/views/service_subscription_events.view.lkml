@@ -184,7 +184,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.last_touch_attribution.entrypoint ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Last Touch Attribution"
+    group_label: "Old Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint"
     description: "Last-touch attribution entrypoint."
   }
@@ -193,7 +193,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.last_touch_attribution.entrypoint_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Last Touch Attribution"
+    group_label: "Old Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint Experiment"
     description: "Last-touch attribution entrypoint experiment."
   }
@@ -202,7 +202,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.last_touch_attribution.entrypoint_variation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Last Touch Attribution"
+    group_label: "Old Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint Variation"
     description: "Last-touch attribution entrypoint experiment variation."
   }
@@ -211,7 +211,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.last_touch_attribution.utm_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Last Touch Attribution"
+    group_label: "Old Subscription: Last Touch Attribution"
     group_item_label: "UTM Campaign"
     description: "Last-touch attribution UTM campaign."
   }
@@ -220,7 +220,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.last_touch_attribution.utm_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Last Touch Attribution"
+    group_label: "Old Subscription: Last Touch Attribution"
     group_item_label: "UTM Content"
     description: "Last-touch attribution UTM content."
   }
@@ -229,7 +229,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.last_touch_attribution.utm_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Last Touch Attribution"
+    group_label: "Old Subscription: Last Touch Attribution"
     group_item_label: "UTM Medium"
     description: "Last-touch attribution UTM medium."
   }
@@ -238,7 +238,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.last_touch_attribution.utm_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Last Touch Attribution"
+    group_label: "Old Subscription: Last Touch Attribution"
     group_item_label: "UTM Source"
     description: "Last-touch attribution UTM source."
   }
@@ -247,7 +247,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.last_touch_attribution.utm_term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Last Touch Attribution"
+    group_label: "Old Subscription: Last Touch Attribution"
     group_item_label: "UTM Term"
     description: "Last-touch attribution UTM term."
   }
@@ -482,7 +482,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.service.id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Service"
+    group_label: "Old Subscription: Service"
     group_item_label: "ID"
     description: "Service ID."
   }
@@ -491,7 +491,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.service.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Service"
+    group_label: "Old Subscription: Service"
     group_item_label: "Name"
     description: "Service name."
   }
@@ -500,7 +500,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.service.tier ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Old Subscription Service"
+    group_label: "Old Subscription: Service"
     group_item_label: "Tier"
     description: "Service tier."
   }
@@ -698,7 +698,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.entrypoint ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint"
     description: "Last-touch attribution entrypoint."
   }
@@ -707,7 +707,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.entrypoint_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint Experiment"
     description: "Last-touch attribution entrypoint experiment."
   }
@@ -716,7 +716,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.entrypoint_variation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "Entrypoint Variation"
     description: "Last-touch attribution entrypoint experiment variation."
   }
@@ -725,7 +725,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Campaign"
     description: "Last-touch attribution UTM campaign."
   }
@@ -734,7 +734,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Content"
     description: "Last-touch attribution UTM content."
   }
@@ -743,7 +743,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Medium"
     description: "Last-touch attribution UTM medium."
   }
@@ -752,7 +752,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Source"
     description: "Last-touch attribution UTM source."
   }
@@ -761,7 +761,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.last_touch_attribution.utm_term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Last Touch Attribution"
+    group_label: "Subscription: Last Touch Attribution"
     group_item_label: "UTM Term"
     description: "Last-touch attribution UTM term."
   }
@@ -996,7 +996,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.service.id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Service"
+    group_label: "Subscription: Service"
     group_item_label: "ID"
     description: "Service ID."
   }
@@ -1005,7 +1005,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.service.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Service"
+    group_label: "Subscription: Service"
     group_item_label: "Name"
     description: "Service name."
   }
@@ -1014,7 +1014,7 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.service.tier ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Subscription Service"
+    group_label: "Subscription: Service"
     group_item_label: "Tier"
     description: "Service tier."
   }
@@ -1106,7 +1106,7 @@ This will be null for active subscriptions."
       quarter,
       year,
     ]
-    label: "Old Subscription Last Touch Attribution: Impression At"
+    label: "Old Subscription: Last Touch Attribution: Impression At"
     description: "When the last-touch attribution impression occurred."
   }
 
@@ -1271,7 +1271,7 @@ This will be null for active subscriptions."
       quarter,
       year,
     ]
-    label: "Subscription Last Touch Attribution: Impression At"
+    label: "Subscription: Last Touch Attribution: Impression At"
     description: "When the last-touch attribution impression occurred."
   }
 

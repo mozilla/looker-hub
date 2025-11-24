@@ -78,7 +78,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_app_fission_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info App Fission Enabled"
     description: "Whether Fission is enabled
 "
@@ -463,7 +463,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_graphics_has_touch_screen ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Graphics Has Touch Screen"
     description: "Whether a touch screen was detected
 "
@@ -473,7 +473,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
     description: "Value of `layers.acceleration_force.enabled`
 "
@@ -483,7 +483,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_global_privacy_control_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Global Privacy Control Enabled"
     description: "Value of `privacy.globalprivacycontrol.enabled`
 "
@@ -493,7 +493,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_installtrigger_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Installtrigger Enabled"
     description: "Value of `extensions.InstallTrigger.enabled`
 "
@@ -503,7 +503,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_opaque_response_blocking ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Opaque Response Blocking"
     description: "Value of `browser.opaqueResponseBlocking`
 "
@@ -513,7 +513,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_resist_fingerprinting_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Resist Fingerprinting Enabled"
     description: "Value of `privacy.resistFingerprinting`
 "
@@ -523,7 +523,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_software_webrender ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Software Webrender"
     description: "Value of `gfx.webrender.software`
 "
@@ -533,7 +533,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
     description: "Value of `network.cookie.cookieBehavior.optInPartitioning`
 "
@@ -543,7 +543,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
     description: "Value of `network.cookie.cookieBehavior.optInPartitioning.pbmode`
 "
@@ -553,7 +553,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Browser Info System Is Tablet"
     description: "Whether the device is a tablet
 "
@@ -563,7 +563,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
     description: "Whether the site in the current tab has recently been purged by Bounce Tracking Protection.
 "
@@ -573,7 +573,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Has Mixed Active Content Blocked"
     description: "Whether the reported tab has any blocked mixed active content
 "
@@ -583,7 +583,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_display_content_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Has Mixed Display Content Blocked"
     description: "Whether the reported tab has any blocked mixed display content
 "
@@ -593,7 +593,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_tracking_content_blocked ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Has Tracking Content Blocked"
     description: "Whether the reported tab has any blocked tracking content
 "
@@ -603,7 +603,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_is_private_browsing ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Antitracking Is Private Browsing"
     description: "Whether the tab the user was on when reporting is in private browsing mode
 "
@@ -613,7 +613,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_fastclick ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Frameworks Fastclick"
     description: "Whether the FastClick web library was detected on the original tab.
 "
@@ -623,7 +623,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_marfeel ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Frameworks Marfeel"
     description: "Whether the Marfeel web framework was detected on the original tab.
 "
@@ -633,7 +633,7 @@ view: broken_site_report_table {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_mobify ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Broken Site Report Tab Info Frameworks Mobify"
     description: "Whether the Mobify web framework was detected on the original tab.
 "
@@ -675,7 +675,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_prefs_cookie_behavior ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Broken Site Report Browser Info Prefs Cookie Behavior"
     description: "Value of `network.cookie.cookieBehavior`
 "
@@ -685,7 +685,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_system_memory ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Broken Site Report Browser Info System Memory"
     description: "How many mb of RAM is reported for the system
 "
@@ -695,7 +695,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.broken_site_report_breakage_category ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Broken Site Report Breakage Category"
     description: "An optional select-box choice (options may eventually change)
 "
@@ -705,7 +705,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.broken_site_report_browser_info_graphics_device_pixel_ratio ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Broken Site Report Browser Info Graphics Device Pixel Ratio"
     description: "A decimal number
 "
@@ -715,7 +715,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_block_list ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Broken Site Report Tab Info Antitracking Block List"
     description: "Currently either `basic` or `strict`, may change in the future.
 "
@@ -725,7 +725,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -766,7 +766,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_app_default_useragent_string ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info App Default Useragent String"
   }
 
@@ -774,7 +774,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_graphics_devices_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info Graphics Devices Json"
   }
 
@@ -782,7 +782,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_graphics_drivers_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info Graphics Drivers Json"
   }
 
@@ -790,7 +790,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_graphics_features_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info Graphics Features Json"
   }
 
@@ -798,7 +798,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text.broken_site_report_browser_info_graphics_monitors_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Browser Info Graphics Monitors Json"
   }
 
@@ -806,7 +806,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text.broken_site_report_description ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Description"
   }
 
@@ -814,7 +814,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text.broken_site_report_tab_info_useragent_string ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text"
+    group_label: "Metrics: Text"
     group_item_label: "Broken Site Report Tab Info Useragent String"
   }
 
@@ -822,7 +822,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_app_default_useragent_string ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info App Default Useragent String"
     description: "The default user-agent string of the browser
 "
@@ -832,7 +832,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_devices_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info Graphics Devices Json"
     description: "JSON array of objects with `vendorID` and `deviceID`. For instance, `[{\"vendorID\":\"0x000\", \"deviceID\":\"0x001\"}]`
 "
@@ -842,7 +842,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_drivers_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info Graphics Drivers Json"
     description: "JSON array of objects with `renderer` and `version`. For instance, `[{\"renderer\":\"demo\", \"version\":\"0.2\"}]`
 "
@@ -852,7 +852,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_features_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info Graphics Features Json"
     description: "JSON object. For instance, `{\"WEBRENDER\":\"available\",\"WEBRENDER_PARTIAL\":\"disabled (User disabled via pref)\"}`
 "
@@ -862,7 +862,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_monitors_json ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Browser Info Graphics Monitors Json"
     description: "JSON array of objects with `screenWidth`, 'screenHeight`, and `scale`. For instance, `[{\"screenWidth\":3584,\"screenHeight\":2240,\"scale\":2}]`
 "
@@ -872,7 +872,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text2.broken_site_report_description ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Description"
     description: "An optional description of the site issue the user is experiencing. May contain PII.
 "
@@ -882,7 +882,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.text2.broken_site_report_tab_info_useragent_string ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Text2"
+    group_label: "Metrics: Text2"
     group_item_label: "Broken Site Report Tab Info Useragent String"
     description: "The userAgent the site actually sees (may be overridden)
 "
@@ -892,7 +892,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.url.broken_site_report_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics URL"
+    group_label: "Metrics: URL"
     group_item_label: "Broken Site Report URL"
   }
 
@@ -900,7 +900,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.url2.broken_site_report_url ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Url2"
+    group_label: "Metrics: Url2"
     group_item_label: "Broken Site Report URL"
     description: "The URL of the site being reported. May contain PII.
 "
@@ -1004,7 +1004,7 @@ for the purpose of experimentation enrollment.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -1113,7 +1113,7 @@ view: broken_site_report_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1121,7 +1121,7 @@ view: broken_site_report_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

@@ -1013,7 +1013,7 @@ fenix_engagement_view_wau,
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
     group_label: "Base Fields"
   }
 

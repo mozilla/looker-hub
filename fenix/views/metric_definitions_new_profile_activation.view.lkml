@@ -803,7 +803,7 @@ looker_base_fields_sample_id,
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
     group_label: "Base Fields"
   }
 

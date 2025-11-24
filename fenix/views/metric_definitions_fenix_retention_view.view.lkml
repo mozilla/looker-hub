@@ -1065,7 +1065,7 @@ fenix_retention_view_retained_week_4_new_profiles,
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
     group_label: "Base Fields"
   }
 

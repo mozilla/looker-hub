@@ -1085,7 +1085,7 @@ fenix_active_users_aggregates_view_weekly_users,
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
     group_label: "Base Fields"
   }
 

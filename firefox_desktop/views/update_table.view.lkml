@@ -78,7 +78,7 @@ view: update_table {
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -87,7 +87,7 @@ view: update_table {
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -101,7 +101,7 @@ view: update_table {
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -110,7 +110,7 @@ view: update_table {
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -119,7 +119,7 @@ view: update_table {
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -166,7 +166,7 @@ view: update_table {
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -264,7 +264,7 @@ view: update_table {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -272,7 +272,7 @@ view: update_table {
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -282,7 +282,7 @@ view: update_table {
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -291,7 +291,7 @@ view: update_table {
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -300,7 +300,7 @@ view: update_table {
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -309,7 +309,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -318,7 +318,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -327,7 +327,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -335,7 +335,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -348,7 +348,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -357,7 +357,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -366,7 +366,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -375,7 +375,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -384,7 +384,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -393,7 +393,7 @@ view: update_table {
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -402,7 +402,7 @@ view: update_table {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -411,7 +411,7 @@ view: update_table {
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -420,7 +420,7 @@ view: update_table {
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -429,7 +429,7 @@ view: update_table {
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -437,7 +437,7 @@ view: update_table {
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -445,7 +445,7 @@ view: update_table {
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -453,7 +453,7 @@ view: update_table {
     sql: ${TABLE}.metrics.boolean.system_has_win_package_id ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "System Has Win Package ID"
     description: "Whether the app has a package identity.
 Windows only.
@@ -464,7 +464,7 @@ Windows only.
     sql: ${TABLE}.metrics.boolean.system_is_wow_64 ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "System Is Wow 64"
     description: "Whether we're in Windows32-on-Windows64 mode.
 Windows only.
@@ -475,7 +475,7 @@ Windows only.
     sql: ${TABLE}.metrics.boolean.system_is_wow_arm_64 ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "System Is Wow Arm 64"
     description: "Whether we're in Windows32-on-WindowsForArm64 mode.
 Windows only.
@@ -486,7 +486,7 @@ Windows only.
     sql: ${TABLE}.metrics.boolean.update_settings_auto_download ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Update Settings Auto Download"
     description: "Whether app updates are set to auto-download.
 "
@@ -496,7 +496,7 @@ Windows only.
     sql: ${TABLE}.metrics.boolean.update_settings_background ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Update Settings Background"
     description: "Whether updates can be delivered in the background.
 "
@@ -506,7 +506,7 @@ Windows only.
     sql: ${TABLE}.metrics.boolean.update_settings_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Update Settings Enabled"
     description: "Whether updates are available.
 "
@@ -516,7 +516,7 @@ Windows only.
     sql: ${TABLE}.metrics.boolean.updater_available ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Boolean"
+    group_label: "Metrics: Boolean"
     group_item_label: "Updater Available"
     description: "Whether the app was built with the updater binary.
 Corresponds to the value of the `MOZ_UPDATER` define.
@@ -637,7 +637,7 @@ See Environment.sys.mjs' `DEFAULT_ENVIRONMENT_PREFS`.
     sql: ${TABLE}.metrics.quantity.profiles_creation_date ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Profiles Creation Date"
     description: "The day the profile was created,
 as determined by checking various file metadata in the profile directory.
@@ -651,7 +651,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.profiles_first_use_date ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Profiles First Use Date"
     description: "Optional.
 The day the profile was first used,
@@ -665,7 +665,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.profiles_recovered_from_backup ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Profiles Recovered From Backup"
     description: "Optional.
 The day the profile was recovered from backup,
@@ -678,7 +678,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.profiles_reset_date ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "Profiles Reset Date"
     description: "Optional.
 The day the profile was most recently reset,
@@ -691,7 +691,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_big_cores ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Big Cores"
     description: "Big (or Performance) CPU cores.
 "
@@ -701,7 +701,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_family ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Family"
     description: "CPU family.
 "
@@ -711,7 +711,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_l2_cache ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU L2 Cache"
     description: "L2 cache size (only on Windows and Mac).
 "
@@ -721,7 +721,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_l3_cache ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU L3 Cache"
     description: "L3 cache size.
 "
@@ -731,7 +731,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_little_cores ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Little Cores"
     description: "Little (or Efficient) CPU cores.
 "
@@ -741,7 +741,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_logical_cores ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Logical Cores"
     description: "Logical CPU cores.
 "
@@ -751,7 +751,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_medium_cores ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Medium Cores"
     description: "Medium CPU cores.
 "
@@ -761,7 +761,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_model ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Model"
     description: "CPU model.
 "
@@ -771,7 +771,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_physical_cores ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Physical Cores"
     description: "Physical CPU cores.
 "
@@ -781,7 +781,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_speed ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Speed"
     description: "CPU speed in MHz.
 "
@@ -791,7 +791,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_cpu_stepping ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System CPU Stepping"
     description: "CPU stepping.
 "
@@ -801,7 +801,7 @@ e.g. 16446
     sql: ${TABLE}.metrics.quantity.system_memory ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System Memory"
     description: "The physical memory size in MB (2^20 bytes).
 e.g. 32211
@@ -812,7 +812,7 @@ e.g. 32211
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Service Pack Major"
     description: "The Windows service pack's major version, according to WindowsVersionInfo.
 Windows only.
@@ -824,7 +824,7 @@ e.g. 0
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Service Pack Minor"
     description: "The Windows service pack's minor version, according to WindowsVersionInfo.
 Windows only.
@@ -836,7 +836,7 @@ e.g. 0
     sql: ${TABLE}.metrics.quantity.system_os_windows_build_number ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Windows Build Number"
     description: "The Windows build number, according to WindowsVersionInfo.
 Windows only.
@@ -849,7 +849,7 @@ Expected in most cases to be identical to `client_info.windows_build_number`.
     sql: ${TABLE}.metrics.quantity.system_os_windows_ubr ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System OS Windows Ubr"
     description: "The Windows update build revision number, according to
 `SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion`.
@@ -862,7 +862,7 @@ e.g. 3775
     sql: ${TABLE}.metrics.quantity.system_virtual_memory ;;
     type: number
     suggest_persist_for: "24 hours"
-    group_label: "Metrics Quantity"
+    group_label: "Metrics: Quantity"
     group_item_label: "System Virtual Memory"
     description: "The size of the user-mode portion of the virtual address space of the parent process.
 Windows only.
@@ -874,7 +874,7 @@ e.g. 134217728
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
@@ -885,7 +885,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.system_cpu_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System CPU Name"
     description: "The user readable CPU name. (e.g. \"Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz\")
 "
@@ -895,7 +895,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.system_cpu_vendor ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System CPU Vendor"
     description: "The CPU vendor (e.g. \"GenuineIntel\").
 "
@@ -905,7 +905,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.metrics.string.system_os_distro ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Distro"
     description: "The Operating System's distribution, according to sysinfo.
 Linux only.
@@ -917,7 +917,7 @@ e.g. \"Linuxmint\"
     sql: ${TABLE}.metrics.string.system_os_distro_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Distro Version"
     description: "The Operating System's distribution's version, according to sysinfo.
 Linux only.
@@ -929,7 +929,7 @@ e.g. \"22\"
     sql: ${TABLE}.metrics.string.system_os_locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Locale"
     description: "The Operating System's local, according to ospreferences.
 e.g. \"en-US\"
@@ -940,7 +940,7 @@ e.g. \"en-US\"
     sql: ${TABLE}.metrics.string.system_os_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Name"
     description: "The Operating System's name, according to sysinfo.
 e.g. \"Windows_NT\"
@@ -952,7 +952,7 @@ Expected in most cases to be identical to `client_info.os`.
     sql: ${TABLE}.metrics.string.system_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System OS Version"
     description: "The Operating System's version, according to sysinfo.
 e.g. \"6.3\"
@@ -964,7 +964,7 @@ Expected in most cases to be identical to `client_info.os_version`.
     sql: ${TABLE}.metrics.string.system_win_package_family_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "System Win Package Family Name"
     description: "The full application package name without any of the components that might change
 during the life cycle of the app (such as the version number or the architecture).
@@ -979,7 +979,7 @@ e.g. \"Mozilla.Firefox_n80bbvh6b1yt2\"
     sql: ${TABLE}.metrics.string.update_previous_build_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Update Previous Build ID"
     description: "The Firefox build id the browser is updating from.
 Follows the same format as application.buildId.
@@ -991,7 +991,7 @@ Only valid for \"update\" pings with reason \"success\".
     sql: ${TABLE}.metrics.string.update_previous_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Update Previous Channel"
     description: "The Firefox channel the profile was on before the update was applied.
 Only valid for \"update\" pings with reason \"success\".
@@ -1002,7 +1002,7 @@ Only valid for \"update\" pings with reason \"success\".
     sql: ${TABLE}.metrics.string.update_previous_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Update Previous Version"
     description: "The Firefox version the browser is updating from.
 Follows the same format as application.version.
@@ -1014,7 +1014,7 @@ Only valid for \"update\" pings with reason \"success\".
     sql: ${TABLE}.metrics.string.update_settings_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Update Settings Channel"
     description: "The update channel according to defaults,
 including partner bits.
@@ -1026,7 +1026,7 @@ e.g. \"nightly-cck\"
     sql: ${TABLE}.metrics.string.update_target_build_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Update Target Build ID"
     description: "The Firefox build id the browser is updating to.
 Follows the same format as application.buildId.
@@ -1038,7 +1038,7 @@ Only valid for \"update\" pings with reason \"ready\".
     sql: ${TABLE}.metrics.string.update_target_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Update Target Channel"
     description: "The Firefox channel the update was fetched from.
 Only valid for \"update\" pings with reason \"ready\".
@@ -1049,7 +1049,7 @@ Only valid for \"update\" pings with reason \"ready\".
     sql: ${TABLE}.metrics.string.update_target_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Update Target Display Version"
     description: "The Firefox display version the browser is updating to.
 This may contain a different value than `update.target_version`,
@@ -1063,7 +1063,7 @@ Only valid for \"update\" pings with reason \"ready\".
     sql: ${TABLE}.metrics.string.update_target_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Update Target Version"
     description: "The Firefox version the browser is updating to.
 Follows the same format as application.version.
@@ -1075,7 +1075,7 @@ Only valid for \"update\" pings with reason \"ready\".
     sql: ${TABLE}.metrics.string.xpcom_abi ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metrics String"
+    group_label: "Metrics: String"
     group_item_label: "Xpcom Abi"
     description: "A string tag identifying the binary ABI of the current processor and
 compiler vtable. This is taken from the TARGET_XPCOM_ABI configure
@@ -1199,7 +1199,7 @@ operating system.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -1308,7 +1308,7 @@ view: update_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1316,7 +1316,7 @@ view: update_table__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }

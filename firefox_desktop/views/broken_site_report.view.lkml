@@ -6,7 +6,7 @@
 
 view: broken_site_report {
   dimension: metrics__string__broken_site_report_breakage_category {
-    label: "Broken Site Report Breakage Category"
+    label: "Broken Site Report: Breakage Category"
     hidden: no
     sql: ${TABLE}.metrics.string.broken_site_report_breakage_category ;;
     type: string
@@ -14,7 +14,7 @@ view: broken_site_report {
     group_item_label: "Breakage Category"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Breakage Category"
+      label: "Glean Dictionary reference for Broken Site Report: Breakage Category"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_breakage_category"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -24,7 +24,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__text2__broken_site_report_browser_info_app_default_useragent_string {
-    label: "Broken Site Report Browser Info App Default Useragent String"
+    label: "Broken Site Report Browser Info App: Default Useragent String"
     hidden: no
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_app_default_useragent_string ;;
     type: string
@@ -32,7 +32,7 @@ view: broken_site_report {
     group_item_label: "Default Useragent String"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info App Default Useragent String"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info App: Default Useragent String"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_app_default_useragent_string"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -42,7 +42,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_app_fission_enabled {
-    label: "Broken Site Report Browser Info App Fission Enabled"
+    label: "Broken Site Report Browser Info App: Fission Enabled"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_app_fission_enabled ;;
     type: yesno
@@ -50,7 +50,7 @@ view: broken_site_report {
     group_item_label: "Fission Enabled"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info App Fission Enabled"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info App: Fission Enabled"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_app_fission_enabled"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -60,7 +60,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__string__broken_site_report_browser_info_graphics_device_pixel_ratio {
-    label: "Broken Site Report Browser Info Graphics Device Pixel Ratio"
+    label: "Broken Site Report Browser Info Graphics: Device Pixel Ratio"
     hidden: no
     sql: ${TABLE}.metrics.string.broken_site_report_browser_info_graphics_device_pixel_ratio ;;
     type: string
@@ -68,7 +68,7 @@ view: broken_site_report {
     group_item_label: "Device Pixel Ratio"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics Device Pixel Ratio"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics: Device Pixel Ratio"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_graphics_device_pixel_ratio"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -78,7 +78,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__text2__broken_site_report_browser_info_graphics_devices_json {
-    label: "Broken Site Report Browser Info Graphics Devices Json"
+    label: "Broken Site Report Browser Info Graphics: Devices Json"
     hidden: no
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_devices_json ;;
     type: string
@@ -86,7 +86,7 @@ view: broken_site_report {
     group_item_label: "Devices Json"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics Devices Json"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics: Devices Json"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_graphics_devices_json"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -96,7 +96,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__text2__broken_site_report_browser_info_graphics_drivers_json {
-    label: "Broken Site Report Browser Info Graphics Drivers Json"
+    label: "Broken Site Report Browser Info Graphics: Drivers Json"
     hidden: no
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_drivers_json ;;
     type: string
@@ -104,7 +104,7 @@ view: broken_site_report {
     group_item_label: "Drivers Json"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics Drivers Json"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics: Drivers Json"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_graphics_drivers_json"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -114,7 +114,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__text2__broken_site_report_browser_info_graphics_features_json {
-    label: "Broken Site Report Browser Info Graphics Features Json"
+    label: "Broken Site Report Browser Info Graphics: Features Json"
     hidden: no
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_features_json ;;
     type: string
@@ -122,7 +122,7 @@ view: broken_site_report {
     group_item_label: "Features Json"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics Features Json"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics: Features Json"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_graphics_features_json"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -132,7 +132,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_graphics_has_touch_screen {
-    label: "Broken Site Report Browser Info Graphics Has Touch Screen"
+    label: "Broken Site Report Browser Info Graphics: Has Touch Screen"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_graphics_has_touch_screen ;;
     type: yesno
@@ -140,7 +140,7 @@ view: broken_site_report {
     group_item_label: "Has Touch Screen"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics Has Touch Screen"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics: Has Touch Screen"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_graphics_has_touch_screen"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -150,7 +150,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__text2__broken_site_report_browser_info_graphics_monitors_json {
-    label: "Broken Site Report Browser Info Graphics Monitors Json"
+    label: "Broken Site Report Browser Info Graphics: Monitors Json"
     hidden: no
     sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_graphics_monitors_json ;;
     type: string
@@ -158,7 +158,7 @@ view: broken_site_report {
     group_item_label: "Monitors Json"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics Monitors Json"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics: Monitors Json"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_graphics_monitors_json"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -168,7 +168,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__quantity__broken_site_report_browser_info_prefs_cookie_behavior {
-    label: "Broken Site Report Browser Info Prefs Cookie Behavior"
+    label: "Broken Site Report Browser Info Prefs: Cookie Behavior"
     hidden: no
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_prefs_cookie_behavior ;;
     type: number
@@ -176,7 +176,7 @@ view: broken_site_report {
     group_item_label: "Cookie Behavior"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Cookie Behavior"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Cookie Behavior"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_cookie_behavior"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -186,7 +186,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_forced_accelerated_layers {
-    label: "Broken Site Report Browser Info Prefs Forced Accelerated Layers"
+    label: "Broken Site Report Browser Info Prefs: Forced Accelerated Layers"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_forced_accelerated_layers ;;
     type: yesno
@@ -194,7 +194,7 @@ view: broken_site_report {
     group_item_label: "Forced Accelerated Layers"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Forced Accelerated Layers"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Forced Accelerated Layers"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_forced_accelerated_layers"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -204,7 +204,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_global_privacy_control_enabled {
-    label: "Broken Site Report Browser Info Prefs Global Privacy Control Enabled"
+    label: "Broken Site Report Browser Info Prefs: Global Privacy Control Enabled"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_global_privacy_control_enabled ;;
     type: yesno
@@ -212,7 +212,7 @@ view: broken_site_report {
     group_item_label: "Global Privacy Control Enabled"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Global Privacy Control Enabled"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Global Privacy Control Enabled"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_global_privacy_control_enabled"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -222,7 +222,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled {
-    label: "Broken Site Report Browser Info Prefs H1 In Section Useragent Styles Enabled"
+    label: "Broken Site Report Browser Info Prefs: H1 In Section Useragent Styles Enabled"
     hidden: yes
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled ;;
     type: yesno
@@ -230,7 +230,7 @@ view: broken_site_report {
     group_item_label: "H1 In Section Useragent Styles Enabled"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs H1 In Section Useragent Styles Enabled"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: H1 In Section Useragent Styles Enabled"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_h1_in_section_useragent_styles_enabled"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -240,7 +240,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_installtrigger_enabled {
-    label: "Broken Site Report Browser Info Prefs Installtrigger Enabled"
+    label: "Broken Site Report Browser Info Prefs: Installtrigger Enabled"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_installtrigger_enabled ;;
     type: yesno
@@ -248,7 +248,7 @@ view: broken_site_report {
     group_item_label: "Installtrigger Enabled"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Installtrigger Enabled"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Installtrigger Enabled"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_installtrigger_enabled"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -258,7 +258,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_opaque_response_blocking {
-    label: "Broken Site Report Browser Info Prefs Opaque Response Blocking"
+    label: "Broken Site Report Browser Info Prefs: Opaque Response Blocking"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_opaque_response_blocking ;;
     type: yesno
@@ -266,7 +266,7 @@ view: broken_site_report {
     group_item_label: "Opaque Response Blocking"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Opaque Response Blocking"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Opaque Response Blocking"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_opaque_response_blocking"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -276,7 +276,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_resist_fingerprinting_enabled {
-    label: "Broken Site Report Browser Info Prefs Resist Fingerprinting Enabled"
+    label: "Broken Site Report Browser Info Prefs: Resist Fingerprinting Enabled"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_resist_fingerprinting_enabled ;;
     type: yesno
@@ -284,7 +284,7 @@ view: broken_site_report {
     group_item_label: "Resist Fingerprinting Enabled"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Resist Fingerprinting Enabled"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Resist Fingerprinting Enabled"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_resist_fingerprinting_enabled"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -294,7 +294,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_software_webrender {
-    label: "Broken Site Report Browser Info Prefs Software Webrender"
+    label: "Broken Site Report Browser Info Prefs: Software Webrender"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_software_webrender ;;
     type: yesno
@@ -302,7 +302,7 @@ view: broken_site_report {
     group_item_label: "Software Webrender"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Software Webrender"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Software Webrender"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_software_webrender"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -312,7 +312,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled {
-    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+    label: "Broken Site Report Browser Info Prefs: Third Party Cookie Blocking Enabled"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled ;;
     type: yesno
@@ -320,7 +320,7 @@ view: broken_site_report {
     group_item_label: "Third Party Cookie Blocking Enabled"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Third Party Cookie Blocking Enabled"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -330,7 +330,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm {
-    label: "Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+    label: "Broken Site Report Browser Info Prefs: Third Party Cookie Blocking Enabled In Pbm"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm ;;
     type: yesno
@@ -338,7 +338,7 @@ view: broken_site_report {
     group_item_label: "Third Party Cookie Blocking Enabled In Pbm"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs Third Party Cookie Blocking Enabled In Pbm"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Prefs: Third Party Cookie Blocking Enabled In Pbm"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_prefs_third_party_cookie_blocking_enabled_in_pbm"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -348,7 +348,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
-    label: "Broken Site Report Browser Info System Is Tablet"
+    label: "Broken Site Report Browser Info System: Is Tablet"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
     type: yesno
@@ -356,7 +356,7 @@ view: broken_site_report {
     group_item_label: "Is Tablet"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info System Is Tablet"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info System: Is Tablet"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_system_is_tablet"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -366,7 +366,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__quantity__broken_site_report_browser_info_system_memory {
-    label: "Broken Site Report Browser Info System Memory"
+    label: "Broken Site Report Browser Info System: Memory"
     hidden: no
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_system_memory ;;
     type: number
@@ -374,7 +374,7 @@ view: broken_site_report {
     group_item_label: "Memory"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Browser Info System Memory"
+      label: "Glean Dictionary reference for Broken Site Report Browser Info System: Memory"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_browser_info_system_memory"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -384,7 +384,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__text2__broken_site_report_description {
-    label: "Broken Site Report Description"
+    label: "Broken Site Report: Description"
     hidden: no
     sql: ${TABLE}.metrics.text2.broken_site_report_description ;;
     type: string
@@ -392,7 +392,7 @@ view: broken_site_report {
     group_item_label: "Description"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Description"
+      label: "Glean Dictionary reference for Broken Site Report: Description"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_description"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -402,7 +402,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__string__broken_site_report_tab_info_antitracking_block_list {
-    label: "Broken Site Report Tab Info Antitracking Block List"
+    label: "Broken Site Report Tab Info Antitracking: Block List"
     hidden: no
     sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_block_list ;;
     type: string
@@ -410,7 +410,7 @@ view: broken_site_report {
     group_item_label: "Block List"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Block List"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Block List"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_antitracking_block_list"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -420,7 +420,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_btp_has_purged_site {
-    label: "Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+    label: "Broken Site Report Tab Info Antitracking: Btp Has Purged Site"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_btp_has_purged_site ;;
     type: yesno
@@ -428,7 +428,7 @@ view: broken_site_report {
     group_item_label: "Btp Has Purged Site"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Btp Has Purged Site"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Btp Has Purged Site"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_antitracking_btp_has_purged_site"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -438,7 +438,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__string__broken_site_report_tab_info_antitracking_etp_category {
-    label: "Broken Site Report Tab Info Antitracking Etp Category"
+    label: "Broken Site Report Tab Info Antitracking: Etp Category"
     hidden: no
     sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_etp_category ;;
     type: string
@@ -446,7 +446,7 @@ view: broken_site_report {
     group_item_label: "Etp Category"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Etp Category"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Etp Category"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_antitracking_etp_category"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -456,7 +456,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked {
-    label: "Broken Site Report Tab Info Antitracking Has Mixed Active Content Blocked"
+    label: "Broken Site Report Tab Info Antitracking: Has Mixed Active Content Blocked"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked ;;
     type: yesno
@@ -464,7 +464,7 @@ view: broken_site_report {
     group_item_label: "Has Mixed Active Content Blocked"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Has Mixed Active Content Blocked"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Has Mixed Active Content Blocked"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_antitracking_has_mixed_active_content_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -474,7 +474,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_mixed_display_content_blocked {
-    label: "Broken Site Report Tab Info Antitracking Has Mixed Display Content Blocked"
+    label: "Broken Site Report Tab Info Antitracking: Has Mixed Display Content Blocked"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_mixed_display_content_blocked ;;
     type: yesno
@@ -482,7 +482,7 @@ view: broken_site_report {
     group_item_label: "Has Mixed Display Content Blocked"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Has Mixed Display Content Blocked"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Has Mixed Display Content Blocked"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_antitracking_has_mixed_display_content_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -492,7 +492,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_tracking_content_blocked {
-    label: "Broken Site Report Tab Info Antitracking Has Tracking Content Blocked"
+    label: "Broken Site Report Tab Info Antitracking: Has Tracking Content Blocked"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_tracking_content_blocked ;;
     type: yesno
@@ -500,7 +500,7 @@ view: broken_site_report {
     group_item_label: "Has Tracking Content Blocked"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Has Tracking Content Blocked"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Has Tracking Content Blocked"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_antitracking_has_tracking_content_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -510,7 +510,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_is_private_browsing {
-    label: "Broken Site Report Tab Info Antitracking Is Private Browsing"
+    label: "Broken Site Report Tab Info Antitracking: Is Private Browsing"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_is_private_browsing ;;
     type: yesno
@@ -518,7 +518,7 @@ view: broken_site_report {
     group_item_label: "Is Private Browsing"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking Is Private Browsing"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Is Private Browsing"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_antitracking_is_private_browsing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -528,7 +528,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_frameworks_fastclick {
-    label: "Broken Site Report Tab Info Frameworks Fastclick"
+    label: "Broken Site Report Tab Info Frameworks: Fastclick"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_fastclick ;;
     type: yesno
@@ -536,7 +536,7 @@ view: broken_site_report {
     group_item_label: "Fastclick"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks Fastclick"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks: Fastclick"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_frameworks_fastclick"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -546,7 +546,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_frameworks_marfeel {
-    label: "Broken Site Report Tab Info Frameworks Marfeel"
+    label: "Broken Site Report Tab Info Frameworks: Marfeel"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_marfeel ;;
     type: yesno
@@ -554,7 +554,7 @@ view: broken_site_report {
     group_item_label: "Marfeel"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks Marfeel"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks: Marfeel"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_frameworks_marfeel"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -564,7 +564,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__boolean__broken_site_report_tab_info_frameworks_mobify {
-    label: "Broken Site Report Tab Info Frameworks Mobify"
+    label: "Broken Site Report Tab Info Frameworks: Mobify"
     hidden: no
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_mobify ;;
     type: yesno
@@ -572,7 +572,7 @@ view: broken_site_report {
     group_item_label: "Mobify"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks Mobify"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks: Mobify"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_frameworks_mobify"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -582,7 +582,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__text2__broken_site_report_tab_info_useragent_string {
-    label: "Broken Site Report Tab Info Useragent String"
+    label: "Broken Site Report Tab Info: Useragent String"
     hidden: no
     sql: ${TABLE}.metrics.text2.broken_site_report_tab_info_useragent_string ;;
     type: string
@@ -590,7 +590,7 @@ view: broken_site_report {
     group_item_label: "Useragent String"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report Tab Info Useragent String"
+      label: "Glean Dictionary reference for Broken Site Report Tab Info: Useragent String"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_tab_info_useragent_string"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -600,7 +600,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__url2__broken_site_report_url {
-    label: "Broken Site Report URL"
+    label: "Broken Site Report: URL"
     hidden: no
     sql: ${TABLE}.metrics.url2.broken_site_report_url ;;
     type: string
@@ -608,7 +608,7 @@ view: broken_site_report {
     group_item_label: "URL"
 
     link: {
-      label: "Glean Dictionary reference for Broken Site Report URL"
+      label: "Glean Dictionary reference for Broken Site Report: URL"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/broken_site_report_url"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -618,7 +618,7 @@ view: broken_site_report {
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation ID"
+    label: "Glean Client Annotation: Experimentation ID"
     hidden: no
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -626,7 +626,7 @@ view: broken_site_report {
     group_item_label: "Experimentation ID"
 
     link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation ID"
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -637,14 +637,14 @@ for the purpose of experimentation enrollment.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
+    label: "Glean Error: Invalid Label"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -655,14 +655,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
+    label: "Glean Error: Invalid Overflow"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -673,14 +673,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
+    label: "Glean Error: Invalid State"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -691,14 +691,14 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
+    label: "Glean Error: Invalid Value"
     hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
@@ -781,7 +781,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
     description: "The attribution campaign (e.g. 'mozilla-org')."
   }
@@ -790,7 +790,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.content ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Content"
     description: "The attribution content (e.g. 'firefoxview')."
   }
@@ -804,7 +804,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Medium"
     description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
@@ -813,7 +813,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.source ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Source"
     description: "The attribution source (e.g. 'google-play')."
   }
@@ -822,7 +822,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.attribution.term ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Attribution"
+    group_label: "Client Info: Attribution"
     group_item_label: "Term"
     description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
@@ -869,7 +869,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.client_info.distribution.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Client Info Distribution"
+    group_label: "Client Info: Distribution"
     group_item_label: "Name"
     description: "The distribution name (e.g. 'MozillaOnline')."
   }
@@ -968,7 +968,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "City"
   }
 
@@ -976,7 +976,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.country ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
     description: "An ISO 3166-1 alpha-2 country code"
@@ -986,7 +986,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "DB Version"
     description: "The specific geo database version used for this lookup"
   }
@@ -995,7 +995,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision1 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
     description: "First major country subdivision, typically a state, province, or county"
   }
@@ -1004,7 +1004,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.geo.subdivision2 ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Geo"
+    group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
     description: "Second major country subdivision; not applicable for most countries"
   }
@@ -1013,7 +1013,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.date ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "Date"
     description: "Date HTTP header"
   }
@@ -1022,7 +1022,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.dnt ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "DNT"
     description: "DNT (Do Not Track) HTTP header"
   }
@@ -1031,7 +1031,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Cipher Hex"
   }
 
@@ -1039,7 +1039,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header Parsed X LB Tags"
+    group_label: "Metadata: Header: Parsed X LB Tags"
     group_item_label: "TLS Version"
   }
 
@@ -1052,7 +1052,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_debug_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
     description: "X-Debug-Id HTTP header"
   }
@@ -1061,7 +1061,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
     description: "X-Foxsec-IP-Reputation header"
   }
@@ -1070,7 +1070,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_lb_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
     description: "X-LB-Tags HTTP header"
   }
@@ -1079,7 +1079,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
     description: "X-PingSender-Version HTTP header"
   }
@@ -1088,7 +1088,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_source_tags ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
     description: "X-Source-Tags HTTP header"
   }
@@ -1097,7 +1097,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata Header"
+    group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
     description: "X-Telemetry-Agent HTTP header"
   }
@@ -1106,7 +1106,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "DB Version"
     description: "The specific geo ISP database version used for this lookup"
   }
@@ -1115,7 +1115,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.name ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Name"
     description: "The name of the ISP associated with the client's IP address"
   }
@@ -1124,7 +1124,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.isp.organization ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata ISP"
+    group_label: "Metadata: ISP"
     group_item_label: "Organization"
     description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
@@ -1133,7 +1133,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.browser ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Browser"
   }
 
@@ -1141,7 +1141,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "OS"
   }
 
@@ -1149,7 +1149,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.metadata.user_agent.version ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Metadata User Agent"
+    group_label: "Metadata: User Agent"
     group_item_label: "Version"
   }
 
@@ -1251,7 +1251,7 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    label: "Metadata Header: Parsed Date"
+    label: "Metadata: Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -1312,7 +1312,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: broken_site_report__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
+  label: "Glean Error: Invalid Label"
 
   dimension: document_id {
     type: string
@@ -1353,7 +1353,7 @@ view: broken_site_report__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: broken_site_report__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
+  label: "Glean Error: Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -1394,7 +1394,7 @@ view: broken_site_report__metrics__labeled_counter__glean_error_invalid_overflow
 }
 
 view: broken_site_report__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
+  label: "Glean Error: Invalid State"
 
   dimension: document_id {
     type: string
@@ -1435,7 +1435,7 @@ view: broken_site_report__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: broken_site_report__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
+  label: "Glean Error: Invalid Value"
 
   dimension: document_id {
     type: string
@@ -1533,7 +1533,7 @@ view: broken_site_report__ping_info__experiments {
     sql: ${TABLE}.value.extra.enrollment_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
   }
 
@@ -1541,7 +1541,7 @@ view: broken_site_report__ping_info__experiments {
     sql: ${TABLE}.value.extra.type ;;
     type: string
     suggest_persist_for: "24 hours"
-    group_label: "Value Extra"
+    group_label: "Value: Extra"
     group_item_label: "Type"
   }
 }
