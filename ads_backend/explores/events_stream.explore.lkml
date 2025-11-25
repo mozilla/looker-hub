@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/fenix/views/events_stream.view.lkml"
-include: "/looker-hub/fenix/datagroups/events_stream_last_updated.datagroup.lkml"
+include: "/looker-hub/ads_backend/views/events_stream.view.lkml"
+include: "/looker-hub/ads_backend/datagroups/events_stream_last_updated.datagroup.lkml"
 
 explore: events_stream {
   sql_always_where: ${events_stream.submission_date} >= '2010-01-01' ;;

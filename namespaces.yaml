@@ -10,6 +10,10 @@ accounts_backend:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -40,6 +44,10 @@ accounts_backend:
       - base_table: mozdata.accounts_backend.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.accounts_backend.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -91,6 +99,10 @@ accounts_frontend:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -130,6 +142,10 @@ accounts_frontend:
       - base_table: mozdata.accounts_frontend.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.accounts_frontend.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -260,6 +276,10 @@ ads_backend:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -283,6 +303,10 @@ ads_backend:
       - base_table: mozdata.ads_backend.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.ads_backend.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -791,7 +815,7 @@ fenix:
         base_view: events
         extended_view: events_unnested_table
     events_stream:
-      type: glean_ping_explore
+      type: events_stream_explore
       views:
         base_view: events_stream
     events_stream_table:
@@ -1190,9 +1214,8 @@ fenix:
       type: table_view
     events_stream:
       tables:
-      - channel: release
-        table: mozdata.fenix.events_stream
-      type: glean_ping_view
+      - table: mozdata.fenix.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: release
@@ -2262,6 +2285,10 @@ firefox_desktop:
       views:
         base_view: events
         extended_view: desktop_events_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     first_startup:
       type: glean_ping_explore
       views:
@@ -2670,6 +2697,10 @@ firefox_desktop:
       - base_table: mozdata.telemetry.events
         events_table_view: desktop_events_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.firefox_desktop.events_stream
+      type: events_stream_view
     events_table:
       tables:
       - channel: null
@@ -3303,7 +3334,7 @@ firefox_ios:
         base_view: events
         extended_view: events_unnested_table
     events_stream:
-      type: glean_ping_explore
+      type: events_stream_explore
       views:
         base_view: events_stream
     events_stream_table:
@@ -3624,9 +3655,8 @@ firefox_ios:
       type: events_view
     events_stream:
       tables:
-      - channel: release
-        table: mozdata.firefox_ios.events_stream
-      type: glean_ping_view
+      - table: mozdata.firefox_ios.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: release
@@ -4065,7 +4095,7 @@ focus_android:
         base_view: events
         extended_view: events_unnested_table
     events_stream:
-      type: glean_ping_explore
+      type: events_stream_explore
       views:
         base_view: events_stream
     events_stream_table:
@@ -4310,9 +4340,8 @@ focus_android:
       type: events_view
     events_stream:
       tables:
-      - channel: release
-        table: mozdata.focus_android.events_stream
-      type: glean_ping_view
+      - table: mozdata.focus_android.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: release
@@ -4606,6 +4635,10 @@ focus_ios:
       type: glean_ping_explore
       views:
         base_view: deletion_request
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -4697,6 +4730,10 @@ focus_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_focus.deletion_request
       type: table_view
+    events_stream:
+      tables:
+      - table: mozdata.focus_ios.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -4796,6 +4833,10 @@ glam:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -4820,6 +4861,10 @@ glam:
       - base_table: mozdata.glam.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.glam.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -5003,6 +5048,10 @@ klar_android:
       type: glean_ping_explore
       views:
         base_view: deletion_request
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -5132,6 +5181,10 @@ klar_android:
       - channel: null
         table: mozdata.org_mozilla_klar.deletion_request
       type: table_view
+    events_stream:
+      tables:
+      - table: mozdata.klar_android.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -5263,6 +5316,10 @@ klar_ios:
       type: glean_ping_explore
       views:
         base_view: deletion_request
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -5346,6 +5403,10 @@ klar_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_klar.deletion_request
       type: table_view
+    events_stream:
+      tables:
+      - table: mozdata.klar_ios.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -5445,6 +5506,10 @@ mdn_fred:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -5470,6 +5535,10 @@ mdn_fred:
       - base_table: mozdata.mdn_fred.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.mdn_fred.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -5492,6 +5561,10 @@ mdn_yari:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     page:
       type: glean_ping_explore
       views:
@@ -5518,6 +5591,10 @@ mdn_yari:
       - base_table: mozdata.mdn_yari.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.mdn_yari.events_stream
+      type: events_stream_view
     events_table:
       tables:
       - channel: null
@@ -5544,6 +5621,10 @@ monitor_backend:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -5559,6 +5640,10 @@ monitor_backend:
       - base_table: mozdata.monitor_backend.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.monitor_backend.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -5585,6 +5670,10 @@ monitor_frontend:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
   glean_app: true
   owners:
   - rhelmer@mozilla.com
@@ -5601,6 +5690,10 @@ monitor_frontend:
       - base_table: mozdata.monitor_frontend.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.monitor_frontend.events_stream
+      type: events_stream_view
     events_table:
       tables:
       - channel: null
@@ -5933,7 +6026,7 @@ mozilla_vpn:
         base_view: events
         extended_view: events_unnested_table
     events_stream:
-      type: glean_ping_explore
+      type: events_stream_explore
       views:
         base_view: events_stream
     events_stream_table:
@@ -6078,9 +6171,8 @@ mozilla_vpn:
       type: table_view
     events_stream:
       tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.events_stream
-      type: glean_ping_view
+      - table: mozdata.mozilla_vpn.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: release
@@ -17504,6 +17596,10 @@ relay_backend:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -17520,6 +17616,10 @@ relay_backend:
       - base_table: mozdata.relay_backend.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.relay_backend.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -17792,6 +17892,10 @@ subscription_platform_backend:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -17807,6 +17911,10 @@ subscription_platform_backend:
       - base_table: mozdata.subscription_platform_backend.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.subscription_platform_backend.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null
@@ -17829,6 +17937,10 @@ syncstorage:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
     events_stream_table:
       type: table_explore
       views:
@@ -17845,6 +17957,10 @@ syncstorage:
       - base_table: mozdata.syncstorage.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.syncstorage.events_stream
+      type: events_stream_view
     events_stream_table:
       tables:
       - channel: null

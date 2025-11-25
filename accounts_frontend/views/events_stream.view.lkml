@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.accounts_frontend.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -246,6 +246,246 @@ view: events_stream {
     hidden: yes
   }
 
+  dimension: extras__boolean__cg {
+    sql: ${TABLE}.extras.boolean.cg ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Cg"
+  }
+
+  dimension: extras__boolean__cpu_arm {
+    sql: ${TABLE}.extras.boolean.cpu_arm ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "CPU Arm"
+  }
+
+  dimension: extras__boolean__hyb {
+    sql: ${TABLE}.extras.boolean.hyb ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Hyb"
+  }
+
+  dimension: extras__boolean__ppa {
+    sql: ${TABLE}.extras.boolean.ppa ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Ppa"
+  }
+
+  dimension: extras__boolean__prf {
+    sql: ${TABLE}.extras.boolean.prf ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Prf"
+  }
+
+  dimension: extras__boolean__rel {
+    sql: ${TABLE}.extras.boolean.rel ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Rel"
+  }
+
+  dimension: extras__boolean__supported {
+    sql: ${TABLE}.extras.boolean.supported ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Supported"
+  }
+
+  dimension: extras__boolean__third_party_links {
+    sql: ${TABLE}.extras.boolean.third_party_links ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Third Party Links"
+  }
+
+  dimension: extras__boolean__uvpa {
+    sql: ${TABLE}.extras.boolean.uvpa ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Uvpa"
+  }
+
+  dimension: extras__string__browser_family {
+    sql: ${TABLE}.extras.string.browser_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Browser Family"
+  }
+
+  dimension: extras__string__browser_major {
+    sql: ${TABLE}.extras.string.browser_major ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Browser Major"
+  }
+
+  dimension: extras__string__cg {
+    sql: ${TABLE}.extras.string.cg ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Cg"
+  }
+
+  dimension: extras__string__choice {
+    sql: ${TABLE}.extras.string.choice ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Choice"
+  }
+
+  dimension: extras__string__error_reason {
+    sql: ${TABLE}.extras.string.error_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error Reason"
+  }
+
+  dimension: extras__string__hyb {
+    sql: ${TABLE}.extras.string.hyb ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Hyb"
+  }
+
+  dimension: extras__string__id {
+    sql: ${TABLE}.extras.string.id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "ID"
+  }
+
+  dimension: extras__string__label {
+    sql: ${TABLE}.extras.string.label ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Label"
+  }
+
+  dimension: extras__string__nimbus_user_id {
+    sql: ${TABLE}.extras.string.nimbus_user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus User ID"
+  }
+
+  dimension: extras__string__os_family {
+    sql: ${TABLE}.extras.string.os_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "OS Family"
+  }
+
+  dimension: extras__string__os_major {
+    sql: ${TABLE}.extras.string.os_major ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "OS Major"
+  }
+
+  dimension: extras__string__ppa {
+    sql: ${TABLE}.extras.string.ppa ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Ppa"
+  }
+
+  dimension: extras__string__prf {
+    sql: ${TABLE}.extras.string.prf ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Prf"
+  }
+
+  dimension: extras__string__reason {
+    sql: ${TABLE}.extras.string.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Reason"
+  }
+
+  dimension: extras__string__referrer {
+    sql: ${TABLE}.extras.string.referrer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Referrer"
+  }
+
+  dimension: extras__string__rel {
+    sql: ${TABLE}.extras.string.rel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Rel"
+  }
+
+  dimension: extras__string__supported {
+    sql: ${TABLE}.extras.string.supported ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Supported"
+  }
+
+  dimension: extras__string__title {
+    sql: ${TABLE}.extras.string.title ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Title"
+  }
+
+  dimension: extras__string__type {
+    sql: ${TABLE}.extras.string.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Type"
+  }
+
+  dimension: extras__string__url {
+    sql: ${TABLE}.extras.string.url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "URL"
+  }
+
+  dimension: extras__string__uvpa {
+    sql: ${TABLE}.extras.string.uvpa ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Uvpa"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
@@ -432,15 +672,167 @@ view: events_stream {
     group_item_label: "Version"
   }
 
-  dimension: metrics {
-    sql: ${TABLE}.metrics ;;
+  dimension: metrics__labeled_boolean__standard_marketing {
+    sql: ${TABLE}.metrics.labeled_boolean.standard_marketing ;;
     hidden: yes
   }
 
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
+  dimension: metrics__labeled_boolean__sync_cwts {
+    sql: ${TABLE}.metrics.labeled_boolean.sync_cwts ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_type {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Account User ID"
+  }
+
+  dimension: metrics__string__account_user_id_sha256 {
+    sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Account User ID Sha256"
+  }
+
+  dimension: metrics__string__entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.entrypoint_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Entrypoint Experiment"
+  }
+
+  dimension: metrics__string__entrypoint_variation {
+    sql: ${TABLE}.metrics.string.entrypoint_variation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Entrypoint Variation"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Glean Client Annotation Experimentation ID"
+  }
+
+  dimension: metrics__string__relying_party_oauth_client_id {
+    sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Relying Party Oauth Client ID"
+  }
+
+  dimension: metrics__string__relying_party_service {
+    sql: ${TABLE}.metrics.string.relying_party_service ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Relying Party Service"
+  }
+
+  dimension: metrics__string__session_device_type {
+    sql: ${TABLE}.metrics.string.session_device_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Device Type"
+  }
+
+  dimension: metrics__string__session_entrypoint {
+    sql: ${TABLE}.metrics.string.session_entrypoint ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Entrypoint"
+  }
+
+  dimension: metrics__string__session_flow_id {
+    sql: ${TABLE}.metrics.string.session_flow_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Flow ID"
+  }
+
+  dimension: metrics__string__utm_campaign {
+    sql: ${TABLE}.metrics.string.utm_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Campaign"
+  }
+
+  dimension: metrics__string__utm_content {
+    sql: ${TABLE}.metrics.string.utm_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Content"
+  }
+
+  dimension: metrics__string__utm_medium {
+    sql: ${TABLE}.metrics.string.utm_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Medium"
+  }
+
+  dimension: metrics__string__utm_source {
+    sql: ${TABLE}.metrics.string.utm_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Source"
+  }
+
+  dimension: metrics__string__utm_term {
+    sql: ${TABLE}.metrics.string.utm_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Term"
+  }
+
+  dimension: metrics__uuid__glean_page_id {
+    sql: ${TABLE}.metrics.uuid.glean_page_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Glean Page ID"
   }
 
   dimension: normalized_app_name {

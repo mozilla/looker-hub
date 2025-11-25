@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.monitor_frontend.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -246,6 +246,302 @@ view: events_stream {
     hidden: yes
   }
 
+  dimension: extras__boolean__legacy_user {
+    sql: ${TABLE}.extras.boolean.legacy_user ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Legacy User"
+  }
+
+  dimension: extras__quantity__breach_count {
+    sql: ${TABLE}.extras.quantity.breach_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Breach Count"
+  }
+
+  dimension: extras__quantity__broker_count {
+    sql: ${TABLE}.extras.quantity.broker_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Broker Count"
+  }
+
+  dimension: extras__quantity__legacy_breach_count {
+    sql: ${TABLE}.extras.quantity.legacy_breach_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Legacy Breach Count"
+  }
+
+  dimension: extras__string__automated_removal_period {
+    sql: ${TABLE}.extras.string.automated_removal_period ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Automated Removal Period"
+  }
+
+  dimension: extras__string__banner_id {
+    sql: ${TABLE}.extras.string.banner_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Banner ID"
+  }
+
+  dimension: extras__string__button_id {
+    sql: ${TABLE}.extras.string.button_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Button ID"
+  }
+
+  dimension: extras__string__dashboard_tab {
+    sql: ${TABLE}.extras.string.dashboard_tab ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Dashboard Tab"
+  }
+
+  dimension: extras__string__experiment_branch {
+    sql: ${TABLE}.extras.string.experiment_branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Experiment Branch"
+  }
+
+  dimension: extras__string__field_id {
+    sql: ${TABLE}.extras.string.field_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Field ID"
+  }
+
+  dimension: extras__string__flow_id {
+    sql: ${TABLE}.extras.string.flow_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Flow ID"
+  }
+
+  dimension: extras__string__id {
+    sql: ${TABLE}.extras.string.id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "ID"
+  }
+
+  dimension: extras__string__label {
+    sql: ${TABLE}.extras.string.label ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Label"
+  }
+
+  dimension: extras__string__last_scan_date {
+    sql: ${TABLE}.extras.string.last_scan_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Last Scan Date"
+  }
+
+  dimension: extras__string__link_id {
+    sql: ${TABLE}.extras.string.link_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Link ID"
+  }
+
+  dimension: extras__string__nimbus_app_id {
+    sql: ${TABLE}.extras.string.nimbus_app_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus App ID"
+  }
+
+  dimension: extras__string__nimbus_branch {
+    sql: ${TABLE}.extras.string.nimbus_branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus Branch"
+  }
+
+  dimension: extras__string__nimbus_experiment {
+    sql: ${TABLE}.extras.string.nimbus_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus Experiment"
+  }
+
+  dimension: extras__string__nimbus_experiment_type {
+    sql: ${TABLE}.extras.string.nimbus_experiment_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus Experiment Type"
+  }
+
+  dimension: extras__string__nimbus_is_preview {
+    sql: ${TABLE}.extras.string.nimbus_is_preview ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus Is Preview"
+  }
+
+  dimension: extras__string__nimbus_user_id {
+    sql: ${TABLE}.extras.string.nimbus_user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus User ID"
+  }
+
+  dimension: extras__string__path {
+    sql: ${TABLE}.extras.string.path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Path"
+  }
+
+  dimension: extras__string__plan_tier {
+    sql: ${TABLE}.extras.string.plan_tier ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Plan Tier"
+  }
+
+  dimension: extras__string__popup_id {
+    sql: ${TABLE}.extras.string.popup_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Popup ID"
+  }
+
+  dimension: extras__string__referrer {
+    sql: ${TABLE}.extras.string.referrer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Referrer"
+  }
+
+  dimension: extras__string__response_id {
+    sql: ${TABLE}.extras.string.response_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Response ID"
+  }
+
+  dimension: extras__string__session_id {
+    sql: ${TABLE}.extras.string.session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Session ID"
+  }
+
+  dimension: extras__string__survey_id {
+    sql: ${TABLE}.extras.string.survey_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Survey ID"
+  }
+
+  dimension: extras__string__title {
+    sql: ${TABLE}.extras.string.title ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Title"
+  }
+
+  dimension: extras__string__type {
+    sql: ${TABLE}.extras.string.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Type"
+  }
+
+  dimension: extras__string__url {
+    sql: ${TABLE}.extras.string.url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "URL"
+  }
+
+  dimension: extras__string__user_id {
+    sql: ${TABLE}.extras.string.user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "User ID"
+  }
+
+  dimension: extras__string__utm_campaign {
+    sql: ${TABLE}.extras.string.utm_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Campaign"
+  }
+
+  dimension: extras__string__utm_content {
+    sql: ${TABLE}.extras.string.utm_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Content"
+  }
+
+  dimension: extras__string__utm_medium {
+    sql: ${TABLE}.extras.string.utm_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Medium"
+  }
+
+  dimension: extras__string__utm_source {
+    sql: ${TABLE}.extras.string.utm_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Source"
+  }
+
+  dimension: extras__string__utm_term {
+    sql: ${TABLE}.extras.string.utm_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Term"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
@@ -435,12 +731,6 @@ view: events_stream {
   dimension: metrics {
     sql: ${TABLE}.metrics ;;
     hidden: yes
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_app_name {

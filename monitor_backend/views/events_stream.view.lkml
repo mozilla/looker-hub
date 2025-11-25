@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.monitor_backend.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -246,6 +246,62 @@ view: events_stream {
     hidden: yes
   }
 
+  dimension: extras__string__path {
+    sql: ${TABLE}.extras.string.path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Path"
+  }
+
+  dimension: extras__string__referrer {
+    sql: ${TABLE}.extras.string.referrer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Referrer"
+  }
+
+  dimension: extras__string__utm_campaign {
+    sql: ${TABLE}.extras.string.utm_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Campaign"
+  }
+
+  dimension: extras__string__utm_content {
+    sql: ${TABLE}.extras.string.utm_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Content"
+  }
+
+  dimension: extras__string__utm_medium {
+    sql: ${TABLE}.extras.string.utm_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Medium"
+  }
+
+  dimension: extras__string__utm_source {
+    sql: ${TABLE}.extras.string.utm_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Source"
+  }
+
+  dimension: extras__string__utm_term {
+    sql: ${TABLE}.extras.string.utm_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "UTM Term"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
@@ -435,12 +491,6 @@ view: events_stream {
   dimension: metrics {
     sql: ${TABLE}.metrics ;;
     hidden: yes
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_app_name {

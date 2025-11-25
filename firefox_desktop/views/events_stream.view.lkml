@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.fenix.events_stream` ;;
+  sql_table_name: `mozdata.firefox_desktop.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -254,6 +254,14 @@ view: events_stream {
     group_item_label: "After Reset"
   }
 
+  dimension: extras__boolean__all_tabs_unloaded {
+    sql: ${TABLE}.extras.boolean.all_tabs_unloaded ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "All Tabs Unloaded"
+  }
+
   dimension: extras__boolean__alt_text_modal {
     sql: ${TABLE}.extras.boolean.alt_text_modal ;;
     type: yesno
@@ -262,12 +270,12 @@ view: events_stream {
     group_item_label: "Alt Text Modal"
   }
 
-  dimension: extras__boolean__app_foreground {
-    sql: ${TABLE}.extras.boolean.app_foreground ;;
+  dimension: extras__boolean__auto {
+    sql: ${TABLE}.extras.boolean.auto ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "App Foreground"
+    group_item_label: "Auto"
   }
 
   dimension: extras__boolean__auto_show {
@@ -284,14 +292,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Auto Translate"
-  }
-
-  dimension: extras__boolean__autocomplete {
-    sql: ${TABLE}.extras.boolean.autocomplete ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Autocomplete"
   }
 
   dimension: extras__boolean__blocked {
@@ -318,12 +318,36 @@ view: events_stream {
     group_item_label: "Cache"
   }
 
+  dimension: extras__boolean__cached {
+    sql: ${TABLE}.extras.boolean.cached ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Cached"
+  }
+
+  dimension: extras__boolean__callout {
+    sql: ${TABLE}.extras.boolean.callout ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Callout"
+  }
+
   dimension: extras__boolean__cancelled {
     sql: ${TABLE}.extras.boolean.cancelled ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Cancelled"
+  }
+
+  dimension: extras__boolean__ccEnabled {
+    sql: ${TABLE}.extras.boolean.ccEnabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Ccenabled"
   }
 
   dimension: extras__boolean__checked {
@@ -350,12 +374,12 @@ view: events_stream {
     group_item_label: "Cookies And Storage"
   }
 
-  dimension: extras__boolean__data_fetched {
-    sql: ${TABLE}.extras.boolean.data_fetched ;;
+  dimension: extras__boolean__description {
+    sql: ${TABLE}.extras.boolean.description ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Data Fetched"
+    group_item_label: "Description"
   }
 
   dimension: extras__boolean__description_changed {
@@ -364,6 +388,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Description Changed"
+  }
+
+  dimension: extras__boolean__did_confirm {
+    sql: ${TABLE}.extras.boolean.did_confirm ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Did Confirm"
   }
 
   dimension: extras__boolean__did_edit_pw {
@@ -398,6 +430,14 @@ view: events_stream {
     group_item_label: "Did Select Un"
   }
 
+  dimension: extras__boolean__disableDialog {
+    sql: ${TABLE}.extras.boolean.disableDialog ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Disabledialog"
+  }
+
   dimension: extras__boolean__enabled {
     sql: ${TABLE}.extras.boolean.enabled ;;
     type: yesno
@@ -406,12 +446,44 @@ view: events_stream {
     group_item_label: "Enabled"
   }
 
-  dimension: extras__boolean__engagement_abandoned {
-    sql: ${TABLE}.extras.boolean.engagement_abandoned ;;
+  dimension: extras__boolean__encrypted {
+    sql: ${TABLE}.extras.boolean.encrypted ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Engagement Abandoned"
+    group_item_label: "Encrypted"
+  }
+
+  dimension: extras__boolean__enter {
+    sql: ${TABLE}.extras.boolean.enter ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Enter"
+  }
+
+  dimension: extras__boolean__expand {
+    sql: ${TABLE}.extras.boolean.expand ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Expand"
+  }
+
+  dimension: extras__boolean__experiments_empty {
+    sql: ${TABLE}.extras.boolean.experiments_empty ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Experiments Empty"
+  }
+
+  dimension: extras__boolean__experiments_success {
+    sql: ${TABLE}.extras.boolean.experiments_success ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Experiments Success"
   }
 
   dimension: extras__boolean__filled {
@@ -422,6 +494,22 @@ view: events_stream {
     group_item_label: "Filled"
   }
 
+  dimension: extras__boolean__firstTime {
+    sql: ${TABLE}.extras.boolean.firstTime ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Firsttime"
+  }
+
+  dimension: extras__boolean__firstTimeToggle {
+    sql: ${TABLE}.extras.boolean.firstTimeToggle ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Firsttimetoggle"
+  }
+
   dimension: extras__boolean__first_interaction {
     sql: ${TABLE}.extras.boolean.first_interaction ;;
     type: yesno
@@ -430,12 +518,12 @@ view: events_stream {
     group_item_label: "First Interaction"
   }
 
-  dimension: extras__boolean__foreground_tab {
-    sql: ${TABLE}.extras.boolean.foreground_tab ;;
+  dimension: extras__boolean__force_sync {
+    sql: ${TABLE}.extras.boolean.force_sync ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Foreground Tab"
+    group_item_label: "Force Sync"
   }
 
   dimension: extras__boolean__form_data {
@@ -452,14 +540,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Had Errors"
-  }
-
-  dimension: extras__boolean__had_form_data {
-    sql: ${TABLE}.extras.boolean.had_form_data ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Had Form Data"
   }
 
   dimension: extras__boolean__has_been_saved {
@@ -492,6 +572,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Has Description"
+  }
+
+  dimension: extras__boolean__has_devices {
+    sql: ${TABLE}.extras.boolean.has_devices ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Devices"
   }
 
   dimension: extras__boolean__has_rtcp_mux {
@@ -558,6 +646,22 @@ view: events_stream {
     group_item_label: "Hyphen Compat"
   }
 
+  dimension: extras__boolean__image {
+    sql: ${TABLE}.extras.boolean.image ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Image"
+  }
+
+  dimension: extras__boolean__in_shutdown {
+    sql: ${TABLE}.extras.boolean.in_shutdown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "In Shutdown"
+  }
+
   dimension: extras__boolean__isBlock {
     sql: ${TABLE}.extras.boolean.isBlock ;;
     type: yesno
@@ -572,6 +676,54 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Isdecryptsuccess"
+  }
+
+  dimension: extras__boolean__isIntegratedSidebar {
+    sql: ${TABLE}.extras.boolean.isIntegratedSidebar ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Isintegratedsidebar"
+  }
+
+  dimension: extras__boolean__isProductPage {
+    sql: ${TABLE}.extras.boolean.isProductPage ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Isproductpage"
+  }
+
+  dimension: extras__boolean__isSupportedSite {
+    sql: ${TABLE}.extras.boolean.isSupportedSite ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Issupportedsite"
+  }
+
+  dimension: extras__boolean__is_customizing {
+    sql: ${TABLE}.extras.boolean.is_customizing ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Customizing"
+  }
+
+  dimension: extras__boolean__is_extensions_button_visible {
+    sql: ${TABLE}.extras.boolean.is_extensions_button_visible ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Extensions Button Visible"
+  }
+
+  dimension: extras__boolean__is_extensions_panel_empty {
+    sql: ${TABLE}.extras.boolean.is_extensions_panel_empty ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Extensions Panel Empty"
   }
 
   dimension: extras__boolean__is_frame {
@@ -622,22 +774,6 @@ view: events_stream {
     group_item_label: "Is Private"
   }
 
-  dimension: extras__boolean__is_recent_search {
-    sql: ${TABLE}.extras.boolean.is_recent_search ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Is Recent Search"
-  }
-
-  dimension: extras__boolean__is_remote {
-    sql: ${TABLE}.extras.boolean.is_remote ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Is Remote"
-  }
-
   dimension: extras__boolean__is_remote_ice_lite {
     sql: ${TABLE}.extras.boolean.is_remote_ice_lite ;;
     type: yesno
@@ -646,12 +782,28 @@ view: events_stream {
     group_item_label: "Is Remote Ice Lite"
   }
 
-  dimension: extras__boolean__is_selected {
-    sql: ${TABLE}.extras.boolean.is_selected ;;
+  dimension: extras__boolean__is_shopping_page {
+    sql: ${TABLE}.extras.boolean.is_shopping_page ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Is Selected"
+    group_item_label: "Is Shopping Page"
+  }
+
+  dimension: extras__boolean__is_signed_in {
+    sql: ${TABLE}.extras.boolean.is_signed_in ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Signed In"
+  }
+
+  dimension: extras__boolean__is_temporarily_shown {
+    sql: ${TABLE}.extras.boolean.is_temporarily_shown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Temporarily Shown"
   }
 
   dimension: extras__boolean__is_valid_section {
@@ -670,12 +822,28 @@ view: events_stream {
     group_item_label: "Issued By Cca"
   }
 
+  dimension: extras__boolean__key_points {
+    sql: ${TABLE}.extras.boolean.key_points ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Key Points"
+  }
+
   dimension: extras__boolean__lang_tags_match {
     sql: ${TABLE}.extras.boolean.lang_tags_match ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Lang Tags Match"
+  }
+
+  dimension: extras__boolean__next_to_active_tab {
+    sql: ${TABLE}.extras.boolean.next_to_active_tab ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Next To Active Tab"
   }
 
   dimension: extras__boolean__no_rule {
@@ -686,12 +854,20 @@ view: events_stream {
     group_item_label: "No Rule"
   }
 
-  dimension: extras__boolean__opt_in {
-    sql: ${TABLE}.extras.boolean.opt_in ;;
+  dimension: extras__boolean__opened {
+    sql: ${TABLE}.extras.boolean.opened ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Opt In"
+    group_item_label: "Opened"
+  }
+
+  dimension: extras__boolean__overridden_by_third_party {
+    sql: ${TABLE}.extras.boolean.overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Overridden By Third Party"
   }
 
   dimension: extras__boolean__poisoned {
@@ -702,12 +878,12 @@ view: events_stream {
     group_item_label: "Poisoned"
   }
 
-  dimension: extras__boolean__referrer_is_fenix {
-    sql: ${TABLE}.extras.boolean.referrer_is_fenix ;;
+  dimension: extras__boolean__reader_mode {
+    sql: ${TABLE}.extras.boolean.reader_mode ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Referrer Is Fenix"
+    group_item_label: "Reader Mode"
   }
 
   dimension: extras__boolean__reset_disabled {
@@ -726,12 +902,28 @@ view: events_stream {
     group_item_label: "Saved"
   }
 
-  dimension: extras__boolean__sent_from_firefox_enabled {
-    sql: ${TABLE}.extras.boolean.sent_from_firefox_enabled ;;
+  dimension: extras__boolean__say_hello {
+    sql: ${TABLE}.extras.boolean.say_hello ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Sent From Firefox Enabled"
+    group_item_label: "Say Hello"
+  }
+
+  dimension: extras__boolean__secure_experiments_empty {
+    sql: ${TABLE}.extras.boolean.secure_experiments_empty ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Secure Experiments Empty"
+  }
+
+  dimension: extras__boolean__secure_experiments_success {
+    sql: ${TABLE}.extras.boolean.secure_experiments_success ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Secure Experiments Success"
   }
 
   dimension: extras__boolean__sent_with_blocked_trackers {
@@ -742,12 +934,52 @@ view: events_stream {
     group_item_label: "Sent With Blocked Trackers"
   }
 
+  dimension: extras__boolean__shopping_tab_displayed {
+    sql: ${TABLE}.extras.boolean.shopping_tab_displayed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Shopping Tab Displayed"
+  }
+
+  dimension: extras__boolean__should_hide {
+    sql: ${TABLE}.extras.boolean.should_hide ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Should Hide"
+  }
+
+  dimension: extras__boolean__sidebar_open {
+    sql: ${TABLE}.extras.boolean.sidebar_open ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Sidebar Open"
+  }
+
   dimension: extras__boolean__site_settings {
     sql: ${TABLE}.extras.boolean.site_settings ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Site Settings"
+  }
+
+  dimension: extras__boolean__sitename {
+    sql: ${TABLE}.extras.boolean.sitename ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Sitename"
+  }
+
+  dimension: extras__boolean__skipped {
+    sql: ${TABLE}.extras.boolean.skipped ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Skipped"
   }
 
   dimension: extras__boolean__smartblockEmbedTogglesShown {
@@ -766,12 +998,28 @@ view: events_stream {
     group_item_label: "Smartblocktoggleclicked"
   }
 
+  dimension: extras__boolean__sponsored {
+    sql: ${TABLE}.extras.boolean.sponsored ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Sponsored"
+  }
+
   dimension: extras__boolean__status {
     sql: ${TABLE}.extras.boolean.status ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Status"
+  }
+
+  dimension: extras__boolean__succeeded {
+    sql: ${TABLE}.extras.boolean.succeeded ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Succeeded"
   }
 
   dimension: extras__boolean__success {
@@ -790,12 +1038,28 @@ view: events_stream {
     group_item_label: "Sync"
   }
 
-  dimension: extras__boolean__tab_selected {
-    sql: ${TABLE}.extras.boolean.tab_selected ;;
+  dimension: extras__boolean__synced_tabs_loaded {
+    sql: ${TABLE}.extras.boolean.synced_tabs_loaded ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Tab Selected"
+    group_item_label: "Synced Tabs Loaded"
+  }
+
+  dimension: extras__boolean__tagged {
+    sql: ${TABLE}.extras.boolean.tagged ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Tagged"
+  }
+
+  dimension: extras__boolean__title {
+    sql: ${TABLE}.extras.boolean.title ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Title"
   }
 
   dimension: extras__boolean__toggle_state {
@@ -814,6 +1078,14 @@ view: events_stream {
     group_item_label: "Toggled On"
   }
 
+  dimension: extras__boolean__top_position {
+    sql: ${TABLE}.extras.boolean.top_position ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Top Position"
+  }
+
   dimension: extras__boolean__triggered_externally {
     sql: ${TABLE}.extras.boolean.triggered_externally ;;
     type: yesno
@@ -822,12 +1094,28 @@ view: events_stream {
     group_item_label: "Triggered Externally"
   }
 
-  dimension: extras__boolean__value {
-    sql: ${TABLE}.extras.boolean.value ;;
+  dimension: extras__boolean__unload_selected_tab {
+    sql: ${TABLE}.extras.boolean.unload_selected_tab ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
-    group_item_label: "Value"
+    group_item_label: "Unload Selected Tab"
+  }
+
+  dimension: extras__boolean__userAction {
+    sql: ${TABLE}.extras.boolean.userAction ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Useraction"
+  }
+
+  dimension: extras__boolean__user_triggered {
+    sql: ${TABLE}.extras.boolean.user_triggered ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "User Triggered"
   }
 
   dimension: extras__boolean__vulnerable {
@@ -836,6 +1124,54 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Vulnerable"
+  }
+
+  dimension: extras__boolean__warning {
+    sql: ${TABLE}.extras.boolean.warning ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Warning"
+  }
+
+  dimension: extras__boolean__webVTTSubtitles {
+    sql: ${TABLE}.extras.boolean.webVTTSubtitles ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Webvttsubtitles"
+  }
+
+  dimension: extras__quantity__action_position {
+    sql: ${TABLE}.extras.quantity.action_position ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Action Position"
+  }
+
+  dimension: extras__quantity__ads_hidden {
+    sql: ${TABLE}.extras.quantity.ads_hidden ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Ads Hidden"
+  }
+
+  dimension: extras__quantity__ads_loaded {
+    sql: ${TABLE}.extras.quantity.ads_loaded ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Ads Loaded"
+  }
+
+  dimension: extras__quantity__ads_visible {
+    sql: ${TABLE}.extras.quantity.ads_visible ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Ads Visible"
   }
 
   dimension: extras__quantity__attemptCount {
@@ -910,20 +1246,20 @@ view: events_stream {
     group_item_label: "Comments Count"
   }
 
+  dimension: extras__quantity__containers {
+    sql: ${TABLE}.extras.quantity.containers ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Containers"
+  }
+
   dimension: extras__quantity__cores {
     sql: ${TABLE}.extras.quantity.cores ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Cores"
-  }
-
-  dimension: extras__quantity__count {
-    sql: ${TABLE}.extras.quantity.count ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Count"
   }
 
   dimension: extras__quantity__cpu_milliseconds {
@@ -942,6 +1278,30 @@ view: events_stream {
     group_item_label: "CPU Utilization"
   }
 
+  dimension: extras__quantity__current {
+    sql: ${TABLE}.extras.quantity.current ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Current"
+  }
+
+  dimension: extras__quantity__db_active_count {
+    sql: ${TABLE}.extras.quantity.db_active_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "DB Active Count"
+  }
+
+  dimension: extras__quantity__delay {
+    sql: ${TABLE}.extras.quantity.delay ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Delay"
+  }
+
   dimension: extras__quantity__deleted {
     sql: ${TABLE}.extras.quantity.deleted ;;
     type: number
@@ -950,12 +1310,28 @@ view: events_stream {
     group_item_label: "Deleted"
   }
 
+  dimension: extras__quantity__download {
+    sql: ${TABLE}.extras.quantity.download ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Download"
+  }
+
   dimension: extras__quantity__download_time {
     sql: ${TABLE}.extras.quantity.download_time ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Download Time"
+  }
+
+  dimension: extras__quantity__dropped_frames {
+    sql: ${TABLE}.extras.quantity.dropped_frames ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Dropped Frames"
   }
 
   dimension: extras__quantity__duration {
@@ -1030,6 +1406,14 @@ view: events_stream {
     group_item_label: "Has No Alt Text"
   }
 
+  dimension: extras__quantity__height {
+    sql: ${TABLE}.extras.quantity.height ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Height"
+  }
+
   dimension: extras__quantity__identification_time {
     sql: ${TABLE}.extras.quantity.identification_time ;;
     type: number
@@ -1046,20 +1430,60 @@ view: events_stream {
     group_item_label: "Iframe Count"
   }
 
-  dimension: extras__quantity__inactive_tabs_count {
-    sql: ${TABLE}.extras.quantity.inactive_tabs_count ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Inactive Tabs Count"
-  }
-
   dimension: extras__quantity__inference_time {
     sql: ${TABLE}.extras.quantity.inference_time ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Inference Time"
+  }
+
+  dimension: extras__quantity__input_classified_size {
+    sql: ${TABLE}.extras.quantity.input_classified_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Input Classified Size"
+  }
+
+  dimension: extras__quantity__input_inconclusive_size {
+    sql: ${TABLE}.extras.quantity.input_inconclusive_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Input Inconclusive Size"
+  }
+
+  dimension: extras__quantity__input_size {
+    sql: ${TABLE}.extras.quantity.input_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Input Size"
+  }
+
+  dimension: extras__quantity__interest_top_1_hits {
+    sql: ${TABLE}.extras.quantity.interest_top_1_hits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Interest Top 1 Hits"
+  }
+
+  dimension: extras__quantity__interest_top_2_hits {
+    sql: ${TABLE}.extras.quantity.interest_top_2_hits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Interest Top 2 Hits"
+  }
+
+  dimension: extras__quantity__interest_top_3_hits {
+    sql: ${TABLE}.extras.quantity.interest_top_3_hits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Interest Top 3 Hits"
   }
 
   dimension: extras__quantity__items_count {
@@ -1102,6 +1526,14 @@ view: events_stream {
     group_item_label: "Last Used"
   }
 
+  dimension: extras__quantity__latency {
+    sql: ${TABLE}.extras.quantity.latency ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Latency"
+  }
+
   dimension: extras__quantity__length {
     sql: ${TABLE}.extras.quantity.length ;;
     type: number
@@ -1110,12 +1542,36 @@ view: events_stream {
     group_item_label: "Length"
   }
 
+  dimension: extras__quantity__levenshtein_distance {
+    sql: ${TABLE}.extras.quantity.levenshtein_distance ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Levenshtein Distance"
+  }
+
   dimension: extras__quantity__linenumber {
     sql: ${TABLE}.extras.quantity.linenumber ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Linenumber"
+  }
+
+  dimension: extras__quantity__memory_after {
+    sql: ${TABLE}.extras.quantity.memory_after ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memory After"
+  }
+
+  dimension: extras__quantity__memory_before {
+    sql: ${TABLE}.extras.quantity.memory_before ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memory Before"
   }
 
   dimension: extras__quantity__memory_bytes {
@@ -1134,6 +1590,14 @@ view: events_stream {
     group_item_label: "Metadata Loaded Time"
   }
 
+  dimension: extras__quantity__ml_label_length {
+    sql: ${TABLE}.extras.quantity.ml_label_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Ml Label Length"
+  }
+
   dimension: extras__quantity__mode {
     sql: ${TABLE}.extras.quantity.mode ;;
     type: number
@@ -1150,12 +1614,36 @@ view: events_stream {
     group_item_label: "Models"
   }
 
+  dimension: extras__quantity__n_chars {
+    sql: ${TABLE}.extras.quantity.n_chars ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "N Chars"
+  }
+
+  dimension: extras__quantity__n_results {
+    sql: ${TABLE}.extras.quantity.n_results ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "N Results"
+  }
+
   dimension: extras__quantity__n_tab_deselect {
     sql: ${TABLE}.extras.quantity.n_tab_deselect ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "N Tab Deselect"
+  }
+
+  dimension: extras__quantity__n_words {
+    sql: ${TABLE}.extras.quantity.n_words ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "N Words"
   }
 
   dimension: extras__quantity__negotiation_count {
@@ -1238,20 +1726,52 @@ view: events_stream {
     group_item_label: "Num Strings"
   }
 
+  dimension: extras__quantity__num_tabs_approved {
+    sql: ${TABLE}.extras.quantity.num_tabs_approved ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Tabs Approved"
+  }
+
+  dimension: extras__quantity__num_tabs_in_group {
+    sql: ${TABLE}.extras.quantity.num_tabs_in_group ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Tabs In Group"
+  }
+
+  dimension: extras__quantity__num_tabs_in_window {
+    sql: ${TABLE}.extras.quantity.num_tabs_in_window ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Tabs In Window"
+  }
+
+  dimension: extras__quantity__num_tabs_removed {
+    sql: ${TABLE}.extras.quantity.num_tabs_removed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Tabs Removed"
+  }
+
+  dimension: extras__quantity__num_tabs_suggested {
+    sql: ${TABLE}.extras.quantity.num_tabs_suggested ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Tabs Suggested"
+  }
+
   dimension: extras__quantity__num_transports {
     sql: ${TABLE}.extras.quantity.num_transports ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Num Transports"
-  }
-
-  dimension: extras__quantity__number_of_app_launches {
-    sql: ${TABLE}.extras.quantity.number_of_app_launches ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Number Of App Launches"
   }
 
   dimension: extras__quantity__number_of_logins_migrated {
@@ -1270,12 +1790,52 @@ view: events_stream {
     group_item_label: "Number Of Logins To Migrate"
   }
 
+  dimension: extras__quantity__other {
+    sql: ${TABLE}.extras.quantity.other ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Other"
+  }
+
+  dimension: extras__quantity__output_interest_size {
+    sql: ${TABLE}.extras.quantity.output_interest_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Output Interest Size"
+  }
+
   dimension: extras__quantity__pc_negotiation_count {
     sql: ${TABLE}.extras.quantity.pc_negotiation_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Pc Negotiation Count"
+  }
+
+  dimension: extras__quantity__percentage {
+    sql: ${TABLE}.extras.quantity.percentage ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Percentage"
+  }
+
+  dimension: extras__quantity__platform_error {
+    sql: ${TABLE}.extras.quantity.platform_error ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Platform Error"
+  }
+
+  dimension: extras__quantity__platform_error_code {
+    sql: ${TABLE}.extras.quantity.platform_error_code ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Platform Error Code"
   }
 
   dimension: extras__quantity__played_time {
@@ -1294,20 +1854,20 @@ view: events_stream {
     group_item_label: "Position"
   }
 
-  dimension: extras__quantity__pss {
-    sql: ${TABLE}.extras.quantity.pss ;;
+  dimension: extras__quantity__previous {
+    sql: ${TABLE}.extras.quantity.previous ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
-    group_item_label: "Pss"
+    group_item_label: "Previous"
   }
 
-  dimension: extras__quantity__rss {
-    sql: ${TABLE}.extras.quantity.rss ;;
+  dimension: extras__quantity__rendered_frames {
+    sql: ${TABLE}.extras.quantity.rendered_frames ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
-    group_item_label: "Rss"
+    group_item_label: "Rendered Frames"
   }
 
   dimension: extras__quantity__saved_count {
@@ -1316,6 +1876,46 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Saved Count"
+  }
+
+  dimension: extras__quantity__screenX {
+    sql: ${TABLE}.extras.quantity.screenX ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Screenx"
+  }
+
+  dimension: extras__quantity__screenY {
+    sql: ${TABLE}.extras.quantity.screenY ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Screeny"
+  }
+
+  dimension: extras__quantity__selected_position {
+    sql: ${TABLE}.extras.quantity.selected_position ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Selected Position"
+  }
+
+  dimension: extras__quantity__selection {
+    sql: ${TABLE}.extras.quantity.selection ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Selection"
+  }
+
+  dimension: extras__quantity__sentences {
+    sql: ${TABLE}.extras.quantity.sentences ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Sentences"
   }
 
   dimension: extras__quantity__seq {
@@ -1358,12 +1958,132 @@ view: events_stream {
     group_item_label: "Source Text Word Count"
   }
 
-  dimension: extras__quantity__tab_count {
-    sql: ${TABLE}.extras.quantity.tab_count ;;
+  dimension: extras__quantity__step {
+    sql: ${TABLE}.extras.quantity.step ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
-    group_item_label: "Tab Count"
+    group_item_label: "Step"
+  }
+
+  dimension: extras__quantity__store_active_count {
+    sql: ${TABLE}.extras.quantity.store_active_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Store Active Count"
+  }
+
+  dimension: extras__quantity__tabs {
+    sql: ${TABLE}.extras.quantity.tabs ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs"
+  }
+
+  dimension: extras__quantity__tabs_approved {
+    sql: ${TABLE}.extras.quantity.tabs_approved ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Approved"
+  }
+
+  dimension: extras__quantity__tabs_in_group {
+    sql: ${TABLE}.extras.quantity.tabs_in_group ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs In Group"
+  }
+
+  dimension: extras__quantity__tabs_in_window {
+    sql: ${TABLE}.extras.quantity.tabs_in_window ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs In Window"
+  }
+
+  dimension: extras__quantity__tabs_inside_groups {
+    sql: ${TABLE}.extras.quantity.tabs_inside_groups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Inside Groups"
+  }
+
+  dimension: extras__quantity__tabs_outside_groups {
+    sql: ${TABLE}.extras.quantity.tabs_outside_groups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Outside Groups"
+  }
+
+  dimension: extras__quantity__tabs_per_active_group_average {
+    sql: ${TABLE}.extras.quantity.tabs_per_active_group_average ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Per Active Group Average"
+  }
+
+  dimension: extras__quantity__tabs_per_active_group_max {
+    sql: ${TABLE}.extras.quantity.tabs_per_active_group_max ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Per Active Group Max"
+  }
+
+  dimension: extras__quantity__tabs_per_active_group_median {
+    sql: ${TABLE}.extras.quantity.tabs_per_active_group_median ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Per Active Group Median"
+  }
+
+  dimension: extras__quantity__tabs_per_active_group_min {
+    sql: ${TABLE}.extras.quantity.tabs_per_active_group_min ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Per Active Group Min"
+  }
+
+  dimension: extras__quantity__tabs_removed {
+    sql: ${TABLE}.extras.quantity.tabs_removed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Removed"
+  }
+
+  dimension: extras__quantity__tabs_suggested {
+    sql: ${TABLE}.extras.quantity.tabs_suggested ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Suggested"
+  }
+
+  dimension: extras__quantity__tabs_unloaded {
+    sql: ${TABLE}.extras.quantity.tabs_unloaded ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Unloaded"
+  }
+
+  dimension: extras__quantity__threshold {
+    sql: ${TABLE}.extras.quantity.threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Threshold"
   }
 
   dimension: extras__quantity__time {
@@ -1374,6 +2094,30 @@ view: events_stream {
     group_item_label: "Time"
   }
 
+  dimension: extras__quantity__time_local {
+    sql: ${TABLE}.extras.quantity.time_local ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time Local"
+  }
+
+  dimension: extras__quantity__time_remote {
+    sql: ${TABLE}.extras.quantity.time_remote ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time Remote"
+  }
+
+  dimension: extras__quantity__time_to_unload_in_ms {
+    sql: ${TABLE}.extras.quantity.time_to_unload_in_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time To Unload In Ms"
+  }
+
   dimension: extras__quantity__tokenizing_time {
     sql: ${TABLE}.extras.quantity.tokenizing_time ;;
     type: number
@@ -1382,12 +2126,36 @@ view: events_stream {
     group_item_label: "Tokenizing Time"
   }
 
+  dimension: extras__quantity__total_collapsed {
+    sql: ${TABLE}.extras.quantity.total_collapsed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Collapsed"
+  }
+
   dimension: extras__quantity__total_completed_requests {
     sql: ${TABLE}.extras.quantity.total_completed_requests ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total Completed Requests"
+  }
+
+  dimension: extras__quantity__total_db_count {
+    sql: ${TABLE}.extras.quantity.total_db_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total DB Count"
+  }
+
+  dimension: extras__quantity__total_expanded {
+    sql: ${TABLE}.extras.quantity.total_expanded ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Expanded"
   }
 
   dimension: extras__quantity__total_inference_seconds {
@@ -1404,6 +2172,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total Size Bytes"
+  }
+
+  dimension: extras__quantity__total_store_count {
+    sql: ${TABLE}.extras.quantity.total_store_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Store Count"
   }
 
   dimension: extras__quantity__total_time {
@@ -1438,12 +2214,20 @@ view: events_stream {
     group_item_label: "Total Words"
   }
 
-  dimension: extras__quantity__tou_version {
-    sql: ${TABLE}.extras.quantity.tou_version ;;
+  dimension: extras__quantity__user_label_length {
+    sql: ${TABLE}.extras.quantity.user_label_length ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
-    group_item_label: "Tou Version"
+    group_item_label: "User Label Length"
+  }
+
+  dimension: extras__quantity__user_prefs {
+    sql: ${TABLE}.extras.quantity.user_prefs ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "User Prefs"
   }
 
   dimension: extras__quantity__value {
@@ -1452,6 +2236,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Value"
+  }
+
+  dimension: extras__quantity__view_time {
+    sql: ${TABLE}.extras.quantity.view_time ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "View Time"
   }
 
   dimension: extras__quantity__wait_count {
@@ -1478,6 +2270,14 @@ view: events_stream {
     group_item_label: "When"
   }
 
+  dimension: extras__quantity__width {
+    sql: ${TABLE}.extras.quantity.width ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Width"
+  }
+
   dimension: extras__quantity__words_added {
     sql: ${TABLE}.extras.quantity.words_added ;;
     type: number
@@ -1492,6 +2292,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Words Removed"
+  }
+
+  dimension: extras__string__abandonment_type {
+    sql: ${TABLE}.extras.string.abandonment_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Abandonment Type"
+  }
+
+  dimension: extras__string__about_config_change {
+    sql: ${TABLE}.extras.string.about_config_change ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "About Config Change"
   }
 
   dimension: extras__string__acFieldName {
@@ -1510,12 +2326,20 @@ view: events_stream {
     group_item_label: "Action"
   }
 
-  dimension: extras__string__action_uuid {
-    sql: ${TABLE}.extras.string.action_uuid ;;
+  dimension: extras__string__action_type {
+    sql: ${TABLE}.extras.string.action_type ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Action UUID"
+    group_item_label: "Action Type"
+  }
+
+  dimension: extras__string__actions {
+    sql: ${TABLE}.extras.string.actions ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Actions"
   }
 
   dimension: extras__string__active {
@@ -1524,14 +2348,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Active"
-  }
-
-  dimension: extras__string__add_on_id {
-    sql: ${TABLE}.extras.string.add_on_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Add On ID"
   }
 
   dimension: extras__string__additional_name {
@@ -1564,6 +2380,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Addon ID"
+  }
+
+  dimension: extras__string__addon_name {
+    sql: ${TABLE}.extras.string.addon_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Addon Name"
   }
 
   dimension: extras__string__addon_type {
@@ -1622,6 +2446,14 @@ view: events_stream {
     group_item_label: "Address Line3"
   }
 
+  dimension: extras__string__admin_user {
+    sql: ${TABLE}.extras.string.admin_user ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Admin User"
+  }
+
   dimension: extras__string__age {
     sql: ${TABLE}.extras.string.age ;;
     type: string
@@ -1638,12 +2470,12 @@ view: events_stream {
     group_item_label: "Alt Text Type"
   }
 
-  dimension: extras__string__app_package {
-    sql: ${TABLE}.extras.string.app_package ;;
+  dimension: extras__string__audio_codec {
+    sql: ${TABLE}.extras.string.audio_codec ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "App Package"
+    group_item_label: "Audio Codec"
   }
 
   dimension: extras__string__auto_admin {
@@ -1654,12 +2486,12 @@ view: events_stream {
     group_item_label: "Auto Admin"
   }
 
-  dimension: extras__string__autoplay_setting {
-    sql: ${TABLE}.extras.string.autoplay_setting ;;
+  dimension: extras__string__available_semantic_sources {
+    sql: ${TABLE}.extras.string.available_semantic_sources ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Autoplay Setting"
+    group_item_label: "Available Semantic Sources"
   }
 
   dimension: extras__string__backend {
@@ -1668,6 +2500,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Backend"
+  }
+
+  dimension: extras__string__backup_step {
+    sql: ${TABLE}.extras.string.backup_step ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Backup Step"
   }
 
   dimension: extras__string__blockeduridetails {
@@ -1694,6 +2534,14 @@ view: events_stream {
     group_item_label: "Blocklist State"
   }
 
+  dimension: extras__string__bookmarks {
+    sql: ${TABLE}.extras.string.bookmarks ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Bookmarks"
+  }
+
   dimension: extras__string__branch {
     sql: ${TABLE}.extras.string.branch ;;
     type: string
@@ -1702,12 +2550,28 @@ view: events_stream {
     group_item_label: "Branch"
   }
 
+  dimension: extras__string__branchSlug {
+    sql: ${TABLE}.extras.string.branchSlug ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Branchslug"
+  }
+
   dimension: extras__string__branches {
     sql: ${TABLE}.extras.string.branches ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Branches"
+  }
+
+  dimension: extras__string__build_id {
+    sql: ${TABLE}.extras.string.build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Build ID"
   }
 
   dimension: extras__string__bundle_policy {
@@ -1724,6 +2588,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Caller"
+  }
+
+  dimension: extras__string__can_load {
+    sql: ${TABLE}.extras.string.can_load ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Can Load"
   }
 
   dimension: extras__string__canaries {
@@ -1764,14 +2636,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Category"
-  }
-
-  dimension: extras__string__category_name {
-    sql: ${TABLE}.extras.string.category_name ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Category Name"
   }
 
   dimension: extras__string__caught_exceptio {
@@ -1830,12 +2694,44 @@ view: events_stream {
     group_item_label: "Cc Type"
   }
 
+  dimension: extras__string__change_reason {
+    sql: ${TABLE}.extras.string.change_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Change Reason"
+  }
+
+  dimension: extras__string__change_source {
+    sql: ${TABLE}.extras.string.change_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Change Source"
+  }
+
+  dimension: extras__string__change_type {
+    sql: ${TABLE}.extras.string.change_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Change Type"
+  }
+
   dimension: extras__string__changedPref {
     sql: ${TABLE}.extras.string.changedPref ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Changedpref"
+  }
+
+  dimension: extras__string__changed_pref {
+    sql: ${TABLE}.extras.string.changed_pref ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Changed Pref"
   }
 
   dimension: extras__string__choice {
@@ -1862,12 +2758,36 @@ view: events_stream {
     group_item_label: "Cold"
   }
 
-  dimension: extras__string__collection_name {
-    sql: ${TABLE}.extras.string.collection_name ;;
+  dimension: extras__string__collection {
+    sql: ${TABLE}.extras.string.collection ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Collection Name"
+    group_item_label: "Collection"
+  }
+
+  dimension: extras__string__component {
+    sql: ${TABLE}.extras.string.component ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Component"
+  }
+
+  dimension: extras__string__configuration {
+    sql: ${TABLE}.extras.string.configuration ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Configuration"
+  }
+
+  dimension: extras__string__configured {
+    sql: ${TABLE}.extras.string.configured ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Configured"
   }
 
   dimension: extras__string__conflict_slug {
@@ -1886,6 +2806,14 @@ view: events_stream {
     group_item_label: "Conflictingslug"
   }
 
+  dimension: extras__string__conflicting_slug {
+    sql: ${TABLE}.extras.string.conflicting_slug ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Conflicting Slug"
+  }
+
   dimension: extras__string__connection_id {
     sql: ${TABLE}.extras.string.connection_id ;;
     type: string
@@ -1900,6 +2828,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Connection Type"
+  }
+
+  dimension: extras__string__container_id {
+    sql: ${TABLE}.extras.string.container_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Container ID"
+  }
+
+  dimension: extras__string__content_type {
+    sql: ${TABLE}.extras.string.content_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Content Type"
   }
 
   dimension: extras__string__contenttype {
@@ -1926,14 +2870,6 @@ view: events_stream {
     group_item_label: "Contextreason"
   }
 
-  dimension: extras__string__cookie_banner_setting {
-    sql: ${TABLE}.extras.string.cookie_banner_setting ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Cookie Banner Setting"
-  }
-
   dimension: extras__string__country {
     sql: ${TABLE}.extras.string.country ;;
     type: string
@@ -1950,6 +2886,22 @@ view: events_stream {
     group_item_label: "Cross Origin"
   }
 
+  dimension: extras__string__current {
+    sql: ${TABLE}.extras.string.current ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Current"
+  }
+
+  dimension: extras__string__current_state {
+    sql: ${TABLE}.extras.string.current_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Current State"
+  }
+
   dimension: extras__string__data_migrated {
     sql: ${TABLE}.extras.string.data_migrated ;;
     type: string
@@ -1958,28 +2910,12 @@ view: events_stream {
     group_item_label: "Data Migrated"
   }
 
-  dimension: extras__string__date {
-    sql: ${TABLE}.extras.string.date ;;
+  dimension: extras__string__data_type {
+    sql: ${TABLE}.extras.string.data_type ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Date"
-  }
-
-  dimension: extras__string__deal_id {
-    sql: ${TABLE}.extras.string.deal_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Deal ID"
-  }
-
-  dimension: extras__string__death_description {
-    sql: ${TABLE}.extras.string.death_description ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Death Description"
+    group_item_label: "Data Type"
   }
 
   dimension: extras__string__decoder_name {
@@ -1990,12 +2926,28 @@ view: events_stream {
     group_item_label: "Decoder Name"
   }
 
+  dimension: extras__string__default_path {
+    sql: ${TABLE}.extras.string.default_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Default Path"
+  }
+
   dimension: extras__string__deletedBy {
     sql: ${TABLE}.extras.string.deletedBy ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Deletedby"
+  }
+
+  dimension: extras__string__delta {
+    sql: ${TABLE}.extras.string.delta ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Delta"
   }
 
   dimension: extras__string__destroyed {
@@ -2094,12 +3046,12 @@ view: events_stream {
     group_item_label: "Duration"
   }
 
-  dimension: extras__string__element_type {
-    sql: ${TABLE}.extras.string.element_type ;;
+  dimension: extras__string__element {
+    sql: ${TABLE}.extras.string.element ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Element Type"
+    group_item_label: "Element"
   }
 
   dimension: extras__string__email {
@@ -2126,12 +3078,12 @@ view: events_stream {
     group_item_label: "End Reason"
   }
 
-  dimension: extras__string__engine {
-    sql: ${TABLE}.extras.string.engine ;;
+  dimension: extras__string__engagement_type {
+    sql: ${TABLE}.extras.string.engagement_type ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Engine"
+    group_item_label: "Engagement Type"
   }
 
   dimension: extras__string__engineId {
@@ -2164,6 +3116,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Enrollment ID"
+  }
+
+  dimension: extras__string__enrollments {
+    sql: ${TABLE}.extras.string.enrollments ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Enrollments"
   }
 
   dimension: extras__string__enterprise {
@@ -2238,6 +3198,14 @@ view: events_stream {
     group_item_label: "Error Name"
   }
 
+  dimension: extras__string__error_reason {
+    sql: ${TABLE}.extras.string.error_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error Reason"
+  }
+
   dimension: extras__string__error_string {
     sql: ${TABLE}.extras.string.error_string ;;
     type: string
@@ -2252,14 +3220,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Error Type"
-  }
-
-  dimension: extras__string__etp_setting {
-    sql: ${TABLE}.extras.string.etp_setting ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Etp Setting"
   }
 
   dimension: extras__string__evaluateReason {
@@ -2310,12 +3270,12 @@ view: events_stream {
     group_item_label: "Extension Ids"
   }
 
-  dimension: extras__string__extra {
-    sql: ${TABLE}.extras.string.extra ;;
+  dimension: extras__string__extensions {
+    sql: ${TABLE}.extras.string.extensions ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Extra"
+    group_item_label: "Extensions"
   }
 
   dimension: extras__string__failedLookups {
@@ -2380,14 +3340,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Feature Ids"
-  }
-
-  dimension: extras__string__feature_name {
-    sql: ${TABLE}.extras.string.feature_name ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Feature Name"
   }
 
   dimension: extras__string__fieldType {
@@ -2478,12 +3430,36 @@ view: events_stream {
     group_item_label: "Flow ID"
   }
 
+  dimension: extras__string__formdata {
+    sql: ${TABLE}.extras.string.formdata ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Formdata"
+  }
+
   dimension: extras__string__frame_id {
     sql: ${TABLE}.extras.string.frame_id ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Frame ID"
+  }
+
+  dimension: extras__string__from {
+    sql: ${TABLE}.extras.string.from ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "From"
+  }
+
+  dimension: extras__string__from_container_id {
+    sql: ${TABLE}.extras.string.from_container_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "From Container ID"
   }
 
   dimension: extras__string__from_language {
@@ -2494,12 +3470,20 @@ view: events_stream {
     group_item_label: "From Language"
   }
 
-  dimension: extras__string__from_screen {
-    sql: ${TABLE}.extras.string.from_screen ;;
+  dimension: extras__string__from_msi {
+    sql: ${TABLE}.extras.string.from_msi ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "From Screen"
+    group_item_label: "From Msi"
+  }
+
+  dimension: extras__string__fullpage {
+    sql: ${TABLE}.extras.string.fullpage ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Fullpage"
   }
 
   dimension: extras__string__function {
@@ -2516,6 +3500,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Functionality"
+  }
+
+  dimension: extras__string__fxa {
+    sql: ${TABLE}.extras.string.fxa ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Fxa"
   }
 
   dimension: extras__string__fxa_avatar {
@@ -2558,6 +3550,30 @@ view: events_stream {
     group_item_label: "Given Name"
   }
 
+  dimension: extras__string__grade {
+    sql: ${TABLE}.extras.string.grade ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Grade"
+  }
+
+  dimension: extras__string__group_type {
+    sql: ${TABLE}.extras.string.group_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Group Type"
+  }
+
+  dimension: extras__string__groups {
+    sql: ${TABLE}.extras.string.groups ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Groups"
+  }
+
   dimension: extras__string__hadPrevious {
     sql: ${TABLE}.extras.string.hadPrevious ;;
     type: string
@@ -2598,6 +3614,14 @@ view: events_stream {
     group_item_label: "Hashed Addon ID"
   }
 
+  dimension: extras__string__history {
+    sql: ${TABLE}.extras.string.history ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "History"
+  }
+
   dimension: extras__string__host {
     sql: ${TABLE}.extras.string.host ;;
     type: string
@@ -2614,6 +3638,22 @@ view: events_stream {
     group_item_label: "Hours Since"
   }
 
+  dimension: extras__string__hresult_local {
+    sql: ${TABLE}.extras.string.hresult_local ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Hresult Local"
+  }
+
+  dimension: extras__string__hresult_remote {
+    sql: ${TABLE}.extras.string.hresult_remote ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Hresult Remote"
+  }
+
   dimension: extras__string__html_lang_attribute {
     sql: ${TABLE}.extras.string.html_lang_attribute ;;
     type: string
@@ -2628,6 +3668,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Ice Transport Policy"
+  }
+
+  dimension: extras__string__id {
+    sql: ${TABLE}.extras.string.id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "ID"
   }
 
   dimension: extras__string__identified_language {
@@ -2662,12 +3710,12 @@ view: events_stream {
     group_item_label: "Importablelogin"
   }
 
-  dimension: extras__string__importance {
-    sql: ${TABLE}.extras.string.importance ;;
+  dimension: extras__string__impression_id {
+    sql: ${TABLE}.extras.string.impression_id ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Importance"
+    group_item_label: "Impression ID"
   }
 
   dimension: extras__string__inactive {
@@ -2702,6 +3750,14 @@ view: events_stream {
     group_item_label: "Input"
   }
 
+  dimension: extras__string__inputType {
+    sql: ${TABLE}.extras.string.inputType ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Inputtype"
+  }
+
   dimension: extras__string__input_type {
     sql: ${TABLE}.extras.string.input_type ;;
     type: string
@@ -2716,6 +3772,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Insecurewarning"
+  }
+
+  dimension: extras__string__installId {
+    sql: ${TABLE}.extras.string.installId ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Installid"
+  }
+
+  dimension: extras__string__install_existed {
+    sql: ${TABLE}.extras.string.install_existed ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Install Existed"
   }
 
   dimension: extras__string__install_id {
@@ -2742,28 +3814,20 @@ view: events_stream {
     group_item_label: "Interaction"
   }
 
+  dimension: extras__string__interaction_type {
+    sql: ${TABLE}.extras.string.interaction_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Interaction Type"
+  }
+
   dimension: extras__string__issue {
     sql: ${TABLE}.extras.string.issue ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Issue"
-  }
-
-  dimension: extras__string__item {
-    sql: ${TABLE}.extras.string.item ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Item"
-  }
-
-  dimension: extras__string__item_preference_key {
-    sql: ${TABLE}.extras.string.item_preference_key ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Item Preference Key"
   }
 
   dimension: extras__string__key_system {
@@ -2790,6 +3854,14 @@ view: events_stream {
     group_item_label: "Label"
   }
 
+  dimension: extras__string__label_reason {
+    sql: ${TABLE}.extras.string.label_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Label Reason"
+  }
+
   dimension: extras__string__language {
     sql: ${TABLE}.extras.string.language ;;
     type: string
@@ -2804,6 +3876,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Last Line"
+  }
+
+  dimension: extras__string__layout {
+    sql: ${TABLE}.extras.string.layout ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Layout"
   }
 
   dimension: extras__string__lib_stacks {
@@ -2822,12 +3902,12 @@ view: events_stream {
     group_item_label: "Lines"
   }
 
-  dimension: extras__string__local_datetime {
-    sql: ${TABLE}.extras.string.local_datetime ;;
+  dimension: extras__string__loadfail_reason {
+    sql: ${TABLE}.extras.string.loadfail_reason ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Local Datetime"
+    group_item_label: "Loadfail Reason"
   }
 
   dimension: extras__string__locale {
@@ -2886,6 +3966,14 @@ view: events_stream {
     group_item_label: "Media Extension"
   }
 
+  dimension: extras__string__menu_action {
+    sql: ${TABLE}.extras.string.menu_action ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Menu Action"
+  }
+
   dimension: extras__string__message {
     sql: ${TABLE}.extras.string.message ;;
     type: string
@@ -2902,20 +3990,28 @@ view: events_stream {
     group_item_label: "Message Count"
   }
 
-  dimension: extras__string__message_key {
-    sql: ${TABLE}.extras.string.message_key ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Message Key"
-  }
-
   dimension: extras__string__method {
     sql: ${TABLE}.extras.string.method ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Method"
+  }
+
+  dimension: extras__string__migration_id {
+    sql: ${TABLE}.extras.string.migration_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Migration ID"
+  }
+
+  dimension: extras__string__migrator_key {
+    sql: ${TABLE}.extras.string.migrator_key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Migrator Key"
   }
 
   dimension: extras__string__mime_type {
@@ -3038,20 +4134,28 @@ view: events_stream {
     group_item_label: "Model ID"
   }
 
+  dimension: extras__string__model_revision {
+    sql: ${TABLE}.extras.string.model_revision ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Model Revision"
+  }
+
+  dimension: extras__string__move {
+    sql: ${TABLE}.extras.string.move ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Move"
+  }
+
   dimension: extras__string__name {
     sql: ${TABLE}.extras.string.name ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Name"
-  }
-
-  dimension: extras__string__named {
-    sql: ${TABLE}.extras.string.named ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Named"
   }
 
   dimension: extras__string__networkID {
@@ -3070,20 +4174,36 @@ view: events_stream {
     group_item_label: "Networkunstable"
   }
 
-  dimension: extras__string__new_icon {
-    sql: ${TABLE}.extras.string.new_icon ;;
+  dimension: extras__string__new_display_name {
+    sql: ${TABLE}.extras.string.new_display_name ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "New Icon"
+    group_item_label: "New Display Name"
   }
 
-  dimension: extras__string__new_state {
-    sql: ${TABLE}.extras.string.new_state ;;
+  dimension: extras__string__new_engine_id {
+    sql: ${TABLE}.extras.string.new_engine_id ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "New State"
+    group_item_label: "New Engine ID"
+  }
+
+  dimension: extras__string__new_load_path {
+    sql: ${TABLE}.extras.string.new_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "New Load Path"
+  }
+
+  dimension: extras__string__new_submission_url {
+    sql: ${TABLE}.extras.string.new_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "New Submission URL"
   }
 
   dimension: extras__string__newpanel {
@@ -3102,6 +4222,14 @@ view: events_stream {
     group_item_label: "Next Panel"
   }
 
+  dimension: extras__string__notification_detail {
+    sql: ${TABLE}.extras.string.notification_detail ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Notification Detail"
+  }
+
   dimension: extras__string__num_strings {
     sql: ${TABLE}.extras.string.num_strings ;;
     type: string
@@ -3116,14 +4244,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Object"
-  }
-
-  dimension: extras__string__old_icon {
-    sql: ${TABLE}.extras.string.old_icon ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Old Icon"
   }
 
   dimension: extras__string__oldpanel {
@@ -3158,6 +4278,14 @@ view: events_stream {
     group_item_label: "Operation"
   }
 
+  dimension: extras__string__option {
+    sql: ${TABLE}.extras.string.option ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Option"
+  }
+
   dimension: extras__string__option_clicked {
     sql: ${TABLE}.extras.string.option_clicked ;;
     type: string
@@ -3166,12 +4294,36 @@ view: events_stream {
     group_item_label: "Option Clicked"
   }
 
+  dimension: extras__string__option_name {
+    sql: ${TABLE}.extras.string.option_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Option Name"
+  }
+
   dimension: extras__string__organization {
     sql: ${TABLE}.extras.string.organization ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Organization"
+  }
+
+  dimension: extras__string__orientation {
+    sql: ${TABLE}.extras.string.orientation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Orientation"
+  }
+
+  dimension: extras__string__origin {
+    sql: ${TABLE}.extras.string.origin ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Origin"
   }
 
   dimension: extras__string__originalReason {
@@ -3190,20 +4342,36 @@ view: events_stream {
     group_item_label: "OS"
   }
 
+  dimension: extras__string__other_inst {
+    sql: ${TABLE}.extras.string.other_inst ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Other Inst"
+  }
+
+  dimension: extras__string__other_msix_inst {
+    sql: ${TABLE}.extras.string.other_msix_inst ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Other Msix Inst"
+  }
+
+  dimension: extras__string__outcome {
+    sql: ${TABLE}.extras.string.outcome ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Outcome"
+  }
+
   dimension: extras__string__page {
     sql: ${TABLE}.extras.string.page ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Page"
-  }
-
-  dimension: extras__string__page_number {
-    sql: ${TABLE}.extras.string.page_number ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Page Number"
   }
 
   dimension: extras__string__page_type {
@@ -3214,6 +4382,14 @@ view: events_stream {
     group_item_label: "Page Type"
   }
 
+  dimension: extras__string__panel {
+    sql: ${TABLE}.extras.string.panel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Panel"
+  }
+
   dimension: extras__string__panel_name {
     sql: ${TABLE}.extras.string.panel_name ;;
     type: string
@@ -3222,12 +4398,44 @@ view: events_stream {
     group_item_label: "Panel Name"
   }
 
-  dimension: extras__string__part_id {
-    sql: ${TABLE}.extras.string.part_id ;;
+  dimension: extras__string__paramChanged {
+    sql: ${TABLE}.extras.string.paramChanged ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Part ID"
+    group_item_label: "Paramchanged"
+  }
+
+  dimension: extras__string__partner_code {
+    sql: ${TABLE}.extras.string.partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Partner Code"
+  }
+
+  dimension: extras__string__passwords {
+    sql: ${TABLE}.extras.string.passwords ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Passwords"
+  }
+
+  dimension: extras__string__path_key {
+    sql: ${TABLE}.extras.string.path_key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Path Key"
+  }
+
+  dimension: extras__string__payment_methods {
+    sql: ${TABLE}.extras.string.payment_methods ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Payment Methods"
   }
 
   dimension: extras__string__pc_id {
@@ -3236,14 +4444,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Pc ID"
-  }
-
-  dimension: extras__string__permissions {
-    sql: ${TABLE}.extras.string.permissions ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Permissions"
   }
 
   dimension: extras__string__platform {
@@ -3278,6 +4478,14 @@ view: events_stream {
     group_item_label: "Postal Code"
   }
 
+  dimension: extras__string__pref {
+    sql: ${TABLE}.extras.string.pref ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Pref"
+  }
+
   dimension: extras__string__prefBranch {
     sql: ${TABLE}.extras.string.prefBranch ;;
     type: string
@@ -3302,6 +4510,22 @@ view: events_stream {
     group_item_label: "Preftype"
   }
 
+  dimension: extras__string__pref_name {
+    sql: ${TABLE}.extras.string.pref_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Pref Name"
+  }
+
+  dimension: extras__string__pref_type {
+    sql: ${TABLE}.extras.string.pref_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Pref Type"
+  }
+
   dimension: extras__string__preference {
     sql: ${TABLE}.extras.string.preference ;;
     type: string
@@ -3316,14 +4540,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Preferencename"
-  }
-
-  dimension: extras__string__preference_key {
-    sql: ${TABLE}.extras.string.preference_key ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Preference Key"
   }
 
   dimension: extras__string__preferred_recv_codec {
@@ -3342,6 +4558,14 @@ view: events_stream {
     group_item_label: "Preferred Send Codec"
   }
 
+  dimension: extras__string__previous {
+    sql: ${TABLE}.extras.string.previous ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Previous"
+  }
+
   dimension: extras__string__previousState {
     sql: ${TABLE}.extras.string.previousState ;;
     type: string
@@ -3350,12 +4574,28 @@ view: events_stream {
     group_item_label: "Previousstate"
   }
 
+  dimension: extras__string__previous_engine_id {
+    sql: ${TABLE}.extras.string.previous_engine_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Previous Engine ID"
+  }
+
   dimension: extras__string__previous_language {
     sql: ${TABLE}.extras.string.previous_language ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Previous Language"
+  }
+
+  dimension: extras__string__primary {
+    sql: ${TABLE}.extras.string.primary ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Primary"
   }
 
   dimension: extras__string__principalType {
@@ -3382,12 +4622,12 @@ view: events_stream {
     group_item_label: "Process ID"
   }
 
-  dimension: extras__string__process_type {
-    sql: ${TABLE}.extras.string.process_type ;;
+  dimension: extras__string__profdir_existed {
+    sql: ${TABLE}.extras.string.profdir_existed ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Process Type"
+    group_item_label: "Profdir Existed"
   }
 
   dimension: extras__string__profile_state {
@@ -3398,20 +4638,20 @@ view: events_stream {
     group_item_label: "Profile State"
   }
 
+  dimension: extras__string__prompt {
+    sql: ${TABLE}.extras.string.prompt ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Prompt"
+  }
+
   dimension: extras__string__prompt_enabled {
     sql: ${TABLE}.extras.string.prompt_enabled ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Prompt Enabled"
-  }
-
-  dimension: extras__string__prompt_was_displayed {
-    sql: ${TABLE}.extras.string.prompt_was_displayed ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Prompt Was Displayed"
   }
 
   dimension: extras__string__provider {
@@ -3422,12 +4662,36 @@ view: events_stream {
     group_item_label: "Provider"
   }
 
+  dimension: extras__string__provider_id {
+    sql: ${TABLE}.extras.string.provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Provider ID"
+  }
+
   dimension: extras__string__provider_key {
     sql: ${TABLE}.extras.string.provider_key ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Provider Key"
+  }
+
+  dimension: extras__string__provider_name {
+    sql: ${TABLE}.extras.string.provider_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Provider Name"
+  }
+
+  dimension: extras__string__rating {
+    sql: ${TABLE}.extras.string.rating ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Rating"
   }
 
   dimension: extras__string__reader_time {
@@ -3470,6 +4734,14 @@ view: events_stream {
     group_item_label: "Remotetype"
   }
 
+  dimension: extras__string__removal_result {
+    sql: ${TABLE}.extras.string.removal_result ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Removal Result"
+  }
+
   dimension: extras__string__request_target {
     sql: ${TABLE}.extras.string.request_target ;;
     type: string
@@ -3492,6 +4764,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Reset Error Name"
+  }
+
+  dimension: extras__string__resize {
+    sql: ${TABLE}.extras.string.resize ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Resize"
   }
 
   dimension: extras__string__resolution {
@@ -3590,6 +4870,14 @@ view: events_stream {
     group_item_label: "Sandboxed"
   }
 
+  dimension: extras__string__sap {
+    sql: ${TABLE}.extras.string.sap ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Sap"
+  }
+
   dimension: extras__string__scenario {
     sql: ${TABLE}.extras.string.scenario ;;
     type: string
@@ -3622,12 +4910,52 @@ view: events_stream {
     group_item_label: "Search Domain"
   }
 
-  dimension: extras__string__selected_total {
-    sql: ${TABLE}.extras.string.selected_total ;;
+  dimension: extras__string__search_engine_default_id {
+    sql: ${TABLE}.extras.string.search_engine_default_id ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Selected Total"
+    group_item_label: "Search Engine Default ID"
+  }
+
+  dimension: extras__string__search_mode {
+    sql: ${TABLE}.extras.string.search_mode ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Search Mode"
+  }
+
+  dimension: extras__string__search_start {
+    sql: ${TABLE}.extras.string.search_start ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Search Start"
+  }
+
+  dimension: extras__string__section {
+    sql: ${TABLE}.extras.string.section ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Section"
+  }
+
+  dimension: extras__string__selected_result {
+    sql: ${TABLE}.extras.string.selected_result ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Selected Result"
+  }
+
+  dimension: extras__string__selected_result_subtype {
+    sql: ${TABLE}.extras.string.selected_result_subtype ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Selected Result Subtype"
   }
 
   dimension: extras__string__selfdetails {
@@ -3644,22 +4972,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Selftype"
-  }
-
-  dimension: extras__string__sequence_id {
-    sql: ${TABLE}.extras.string.sequence_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Sequence ID"
-  }
-
-  dimension: extras__string__sequence_position {
-    sql: ${TABLE}.extras.string.sequence_position ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Sequence Position"
   }
 
   dimension: extras__string__session_id {
@@ -3694,6 +5006,38 @@ view: events_stream {
     group_item_label: "Shortcut"
   }
 
+  dimension: extras__string__shutdown_ok {
+    sql: ${TABLE}.extras.string.shutdown_ok ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Shutdown Ok"
+  }
+
+  dimension: extras__string__shutdown_reason {
+    sql: ${TABLE}.extras.string.shutdown_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Shutdown Reason"
+  }
+
+  dimension: extras__string__side_bar_state {
+    sql: ${TABLE}.extras.string.side_bar_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Side Bar State"
+  }
+
+  dimension: extras__string__sidebar {
+    sql: ${TABLE}.extras.string.sidebar ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Sidebar"
+  }
+
   dimension: extras__string__signature {
     sql: ${TABLE}.extras.string.signature ;;
     type: string
@@ -3708,6 +5052,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Signed Date"
+  }
+
+  dimension: extras__string__silent {
+    sql: ${TABLE}.extras.string.silent ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Silent"
   }
 
   dimension: extras__string__site_host {
@@ -3740,6 +5092,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Sort Key"
+  }
+
+  dimension: extras__string__sort_type {
+    sql: ${TABLE}.extras.string.sort_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Sort Type"
   }
 
   dimension: extras__string__source {
@@ -3788,14 +5148,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Splitconsole"
-  }
-
-  dimension: extras__string__spoc_id {
-    sql: ${TABLE}.extras.string.spoc_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Spoc ID"
   }
 
   dimension: extras__string__stack_id {
@@ -3862,28 +5214,12 @@ view: events_stream {
     group_item_label: "Subcategory"
   }
 
-  dimension: extras__string__support {
-    sql: ${TABLE}.extras.string.support ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Support"
-  }
-
   dimension: extras__string__surface {
     sql: ${TABLE}.extras.string.surface ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Surface"
-  }
-
-  dimension: extras__string__survey_id {
-    sql: ${TABLE}.extras.string.survey_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Survey ID"
   }
 
   dimension: extras__string__suspicious_site {
@@ -3894,12 +5230,28 @@ view: events_stream {
     group_item_label: "Suspicious Site"
   }
 
+  dimension: extras__string__sync {
+    sql: ${TABLE}.extras.string.sync ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Sync"
+  }
+
   dimension: extras__string__taar_based {
     sql: ${TABLE}.extras.string.taar_based ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Taar Based"
+  }
+
+  dimension: extras__string__tab {
+    sql: ${TABLE}.extras.string.tab ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Tab"
   }
 
   dimension: extras__string__tab_pos {
@@ -3918,20 +5270,12 @@ view: events_stream {
     group_item_label: "Table Name"
   }
 
-  dimension: extras__string__tabs_open {
-    sql: ${TABLE}.extras.string.tabs_open ;;
+  dimension: extras__string__target {
+    sql: ${TABLE}.extras.string.target ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
-    group_item_label: "Tabs Open"
-  }
-
-  dimension: extras__string__tabs_selected {
-    sql: ${TABLE}.extras.string.tabs_selected ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Tabs Selected"
+    group_item_label: "Target"
   }
 
   dimension: extras__string__target_type {
@@ -3950,20 +5294,28 @@ view: events_stream {
     group_item_label: "Taskname"
   }
 
-  dimension: extras__string__task_id {
-    sql: ${TABLE}.extras.string.task_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Task ID"
-  }
-
   dimension: extras__string__tel {
     sql: ${TABLE}.extras.string.tel ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Tel"
+  }
+
+  dimension: extras__string__terminal {
+    sql: ${TABLE}.extras.string.terminal ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Terminal"
+  }
+
+  dimension: extras__string__text {
+    sql: ${TABLE}.extras.string.text ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Text"
   }
 
   dimension: extras__string__text_source {
@@ -3974,36 +5326,12 @@ view: events_stream {
     group_item_label: "Text Source"
   }
 
-  dimension: extras__string__theme_collection {
-    sql: ${TABLE}.extras.string.theme_collection ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Theme Collection"
-  }
-
-  dimension: extras__string__theme_option {
-    sql: ${TABLE}.extras.string.theme_option ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Theme Option"
-  }
-
   dimension: extras__string__time {
     sql: ${TABLE}.extras.string.time ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Time"
-  }
-
-  dimension: extras__string__time_group {
-    sql: ${TABLE}.extras.string.time_group ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Time Group"
   }
 
   dimension: extras__string__time_open {
@@ -4022,14 +5350,6 @@ view: events_stream {
     group_item_label: "Time Span"
   }
 
-  dimension: extras__string__times_shown {
-    sql: ${TABLE}.extras.string.times_shown ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Times Shown"
-  }
-
   dimension: extras__string__timestamp {
     sql: ${TABLE}.extras.string.timestamp ;;
     type: string
@@ -4038,20 +5358,28 @@ view: events_stream {
     group_item_label: "Timestamp"
   }
 
+  dimension: extras__string__to {
+    sql: ${TABLE}.extras.string.to ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "To"
+  }
+
+  dimension: extras__string__to_container_id {
+    sql: ${TABLE}.extras.string.to_container_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "To Container ID"
+  }
+
   dimension: extras__string__to_language {
     sql: ${TABLE}.extras.string.to_language ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "To Language"
-  }
-
-  dimension: extras__string__toolbar_placement {
-    sql: ${TABLE}.extras.string.toolbar_placement ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Toolbar Placement"
   }
 
   dimension: extras__string__top_preferred_language {
@@ -4126,22 +5454,6 @@ view: events_stream {
     group_item_label: "URI Type"
   }
 
-  dimension: extras__string__url {
-    sql: ${TABLE}.extras.string.url ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "URL"
-  }
-
-  dimension: extras__string__user_selection {
-    sql: ${TABLE}.extras.string.user_selection ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "User Selection"
-  }
-
   dimension: extras__string__utm_campaign {
     sql: ${TABLE}.extras.string.utm_campaign ;;
     type: string
@@ -4206,14 +5518,6 @@ view: events_stream {
     group_item_label: "Video Codec"
   }
 
-  dimension: extras__string__view {
-    sql: ${TABLE}.extras.string.view ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "View"
-  }
-
   dimension: extras__string__view_name {
     sql: ${TABLE}.extras.string.view_name ;;
     type: string
@@ -4222,12 +5526,76 @@ view: events_stream {
     group_item_label: "View Name"
   }
 
+  dimension: extras__string__visible {
+    sql: ${TABLE}.extras.string.visible ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Visible"
+  }
+
+  dimension: extras__string__webExtensionId {
+    sql: ${TABLE}.extras.string.webExtensionId ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Webextensionid"
+  }
+
+  dimension: extras__string__where_local {
+    sql: ${TABLE}.extras.string.where_local ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Where Local"
+  }
+
+  dimension: extras__string__where_remote {
+    sql: ${TABLE}.extras.string.where_remote ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Where Remote"
+  }
+
+  dimension: extras__string__why {
+    sql: ${TABLE}.extras.string.why ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Why"
+  }
+
+  dimension: extras__string__why_local {
+    sql: ${TABLE}.extras.string.why_local ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Why Local"
+  }
+
+  dimension: extras__string__why_remote {
+    sql: ${TABLE}.extras.string.why_remote ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Why Remote"
+  }
+
   dimension: extras__string__width {
     sql: ${TABLE}.extras.string.width ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Width"
+  }
+
+  dimension: extras__string__window {
+    sql: ${TABLE}.extras.string.window ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Window"
   }
 
   dimension: is_bot_generated {
@@ -4419,12 +5787,6 @@ view: events_stream {
   dimension: metrics {
     sql: ${TABLE}.metrics ;;
     hidden: yes
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_app_name {
