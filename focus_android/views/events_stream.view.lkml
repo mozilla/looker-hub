@@ -5,6 +5,8 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
+  sql_table_name: `mozdata.focus_android.events_stream` ;;
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -214,7 +216,12 @@ view: events_stream {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    primary_key: yes
+  }
+
+  dimension: event {
+    sql: ${TABLE}.event ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_category {
@@ -4173,14 +4180,25 @@ view: events_stream {
     ]
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_id} ;;
+  measure: event_count {
+    type: count
+    description: "The number of times the event(s) occurred."
   }
 
   measure: ping_count {
     type: count
+    hidden: yes
   }
 
-  sql_table_name: `mozdata.focus_android.events_stream` ;;
+  measure: client_count {
+    type: count_distinct
+    sql: ${client_id} ;;
+    description: "The number of clients that completed the event(s)."
+  }
+
+  measure: clients {
+    type: count_distinct
+    sql: ${client_id} ;;
+    hidden: yes
+  }
 }

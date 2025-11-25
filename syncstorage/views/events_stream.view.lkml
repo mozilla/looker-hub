@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.syncstorage.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -435,12 +435,6 @@ view: events_stream {
   dimension: metrics {
     sql: ${TABLE}.metrics ;;
     hidden: yes
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_app_name {

@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.relay_backend.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -246,6 +246,150 @@ view: events_stream {
     hidden: yes
   }
 
+  dimension: extras__boolean__created_by_api {
+    sql: ${TABLE}.extras.boolean.created_by_api ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Created By Api"
+  }
+
+  dimension: extras__boolean__has_extension {
+    sql: ${TABLE}.extras.boolean.has_extension ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Extension"
+  }
+
+  dimension: extras__boolean__has_website {
+    sql: ${TABLE}.extras.boolean.has_website ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Website"
+  }
+
+  dimension: extras__boolean__is_random_mask {
+    sql: ${TABLE}.extras.boolean.is_random_mask ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Random Mask"
+  }
+
+  dimension: extras__boolean__is_reply {
+    sql: ${TABLE}.extras.boolean.is_reply ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Reply"
+  }
+
+  dimension: extras__quantity__date_got_extension {
+    sql: ${TABLE}.extras.quantity.date_got_extension ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Date Got Extension"
+  }
+
+  dimension: extras__quantity__date_joined_premium {
+    sql: ${TABLE}.extras.quantity.date_joined_premium ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Date Joined Premium"
+  }
+
+  dimension: extras__quantity__date_joined_relay {
+    sql: ${TABLE}.extras.quantity.date_joined_relay ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Date Joined Relay"
+  }
+
+  dimension: extras__quantity__n_deleted_domain_masks {
+    sql: ${TABLE}.extras.quantity.n_deleted_domain_masks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "N Deleted Domain Masks"
+  }
+
+  dimension: extras__quantity__n_deleted_random_masks {
+    sql: ${TABLE}.extras.quantity.n_deleted_random_masks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "N Deleted Random Masks"
+  }
+
+  dimension: extras__quantity__n_domain_masks {
+    sql: ${TABLE}.extras.quantity.n_domain_masks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "N Domain Masks"
+  }
+
+  dimension: extras__quantity__n_random_masks {
+    sql: ${TABLE}.extras.quantity.n_random_masks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "N Random Masks"
+  }
+
+  dimension: extras__string__endpoint {
+    sql: ${TABLE}.extras.string.endpoint ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Endpoint"
+  }
+
+  dimension: extras__string__fxa_id {
+    sql: ${TABLE}.extras.string.fxa_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Fxa ID"
+  }
+
+  dimension: extras__string__method {
+    sql: ${TABLE}.extras.string.method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Method"
+  }
+
+  dimension: extras__string__platform {
+    sql: ${TABLE}.extras.string.platform ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Platform"
+  }
+
+  dimension: extras__string__premium_status {
+    sql: ${TABLE}.extras.string.premium_status ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Premium Status"
+  }
+
+  dimension: extras__string__reason {
+    sql: ${TABLE}.extras.string.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Reason"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
@@ -435,12 +579,6 @@ view: events_stream {
   dimension: metrics {
     sql: ${TABLE}.metrics ;;
     hidden: yes
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_app_name {

@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.subscription_platform_backend.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -246,6 +246,30 @@ view: events_stream {
     hidden: yes
   }
 
+  dimension: extras__boolean__subscription_voluntary_cancellation {
+    sql: ${TABLE}.extras.boolean.subscription_voluntary_cancellation ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Subscription Voluntary Cancellation"
+  }
+
+  dimension: extras__string__nimbus_user_id {
+    sql: ${TABLE}.extras.string.nimbus_user_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Nimbus User ID"
+  }
+
+  dimension: extras__string__subscription_cancellation_reason {
+    sql: ${TABLE}.extras.string.subscription_cancellation_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Subscription Cancellation Reason"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
@@ -432,15 +456,188 @@ view: events_stream {
     group_item_label: "Version"
   }
 
-  dimension: metrics {
-    sql: ${TABLE}.metrics ;;
-    hidden: yes
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
+  dimension: metrics__string__relying_party_oauth_client_id {
+    sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Relying Party Oauth Client ID"
+  }
+
+  dimension: metrics__string__relying_party_service {
+    sql: ${TABLE}.metrics.string.relying_party_service ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Relying Party Service"
+  }
+
+  dimension: metrics__string__session_device_type {
+    sql: ${TABLE}.metrics.string.session_device_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Device Type"
+  }
+
+  dimension: metrics__string__session_entrypoint {
+    sql: ${TABLE}.metrics.string.session_entrypoint ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Entrypoint"
+  }
+
+  dimension: metrics__string__session_entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.session_entrypoint_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Entrypoint Experiment"
+  }
+
+  dimension: metrics__string__session_entrypoint_variation {
+    sql: ${TABLE}.metrics.string.session_entrypoint_variation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Entrypoint Variation"
+  }
+
+  dimension: metrics__string__session_flow_id {
+    sql: ${TABLE}.metrics.string.session_flow_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Flow ID"
+  }
+
+  dimension: metrics__string__subscription_checkout_type {
+    sql: ${TABLE}.metrics.string.subscription_checkout_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Checkout Type"
+  }
+
+  dimension: metrics__string__subscription_currency {
+    sql: ${TABLE}.metrics.string.subscription_currency ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Currency"
+  }
+
+  dimension: metrics__string__subscription_error_id {
+    sql: ${TABLE}.metrics.string.subscription_error_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Error ID"
+  }
+
+  dimension: metrics__string__subscription_interval {
+    sql: ${TABLE}.metrics.string.subscription_interval ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Interval"
+  }
+
+  dimension: metrics__string__subscription_offering_id {
+    sql: ${TABLE}.metrics.string.subscription_offering_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Offering ID"
+  }
+
+  dimension: metrics__string__subscription_payment_provider {
+    sql: ${TABLE}.metrics.string.subscription_payment_provider ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Payment Provider"
+  }
+
+  dimension: metrics__string__subscription_plan_id {
+    sql: ${TABLE}.metrics.string.subscription_plan_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Plan ID"
+  }
+
+  dimension: metrics__string__subscription_product_id {
+    sql: ${TABLE}.metrics.string.subscription_product_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Product ID"
+  }
+
+  dimension: metrics__string__subscription_promotion_code {
+    sql: ${TABLE}.metrics.string.subscription_promotion_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Promotion Code"
+  }
+
+  dimension: metrics__string__subscription_provider_event_id {
+    sql: ${TABLE}.metrics.string.subscription_provider_event_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Provider Event ID"
+  }
+
+  dimension: metrics__string__subscription_subscribed_plan_ids {
+    sql: ${TABLE}.metrics.string.subscription_subscribed_plan_ids ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Subscribed Plan Ids"
+  }
+
+  dimension: metrics__string__utm_campaign {
+    sql: ${TABLE}.metrics.string.utm_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Campaign"
+  }
+
+  dimension: metrics__string__utm_content {
+    sql: ${TABLE}.metrics.string.utm_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Content"
+  }
+
+  dimension: metrics__string__utm_medium {
+    sql: ${TABLE}.metrics.string.utm_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Medium"
+  }
+
+  dimension: metrics__string__utm_source {
+    sql: ${TABLE}.metrics.string.utm_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Source"
+  }
+
+  dimension: metrics__string__utm_term {
+    sql: ${TABLE}.metrics.string.utm_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Term"
   }
 
   dimension: normalized_app_name {

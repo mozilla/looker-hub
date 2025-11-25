@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.glam.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -246,6 +246,54 @@ view: events_stream {
     hidden: yes
   }
 
+  dimension: extras__string__id {
+    sql: ${TABLE}.extras.string.id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "ID"
+  }
+
+  dimension: extras__string__label {
+    sql: ${TABLE}.extras.string.label ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Label"
+  }
+
+  dimension: extras__string__referrer {
+    sql: ${TABLE}.extras.string.referrer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Referrer"
+  }
+
+  dimension: extras__string__title {
+    sql: ${TABLE}.extras.string.title ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Title"
+  }
+
+  dimension: extras__string__type {
+    sql: ${TABLE}.extras.string.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Type"
+  }
+
+  dimension: extras__string__url {
+    sql: ${TABLE}.extras.string.url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "URL"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
@@ -435,12 +483,6 @@ view: events_stream {
   dimension: metrics {
     sql: ${TABLE}.metrics ;;
     hidden: yes
-  }
-
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
   }
 
   dimension: normalized_app_name {

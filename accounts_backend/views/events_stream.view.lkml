@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.accounts_backend.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -246,6 +246,46 @@ view: events_stream {
     hidden: yes
   }
 
+  dimension: extras__boolean__linking {
+    sql: ${TABLE}.extras.boolean.linking ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Linking"
+  }
+
+  dimension: extras__string__error_code {
+    sql: ${TABLE}.extras.string.error_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error Code"
+  }
+
+  dimension: extras__string__reason {
+    sql: ${TABLE}.extras.string.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Reason"
+  }
+
+  dimension: extras__string__scopes {
+    sql: ${TABLE}.extras.string.scopes ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Scopes"
+  }
+
+  dimension: extras__string__type {
+    sql: ${TABLE}.extras.string.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Type"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
@@ -432,15 +472,144 @@ view: events_stream {
     group_item_label: "Version"
   }
 
-  dimension: metrics {
-    sql: ${TABLE}.metrics ;;
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
   }
 
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__account_user_id {
+    sql: ${TABLE}.metrics.string.account_user_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Account User ID"
+  }
+
+  dimension: metrics__string__account_user_id_sha256 {
+    sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Account User ID Sha256"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Glean Client Annotation Experimentation ID"
+  }
+
+  dimension: metrics__string__relying_party_oauth_client_id {
+    sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Relying Party Oauth Client ID"
+  }
+
+  dimension: metrics__string__relying_party_service {
+    sql: ${TABLE}.metrics.string.relying_party_service ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Relying Party Service"
+  }
+
+  dimension: metrics__string__session_device_type {
+    sql: ${TABLE}.metrics.string.session_device_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Device Type"
+  }
+
+  dimension: metrics__string__session_entrypoint {
+    sql: ${TABLE}.metrics.string.session_entrypoint ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Entrypoint"
+  }
+
+  dimension: metrics__string__session_entrypoint_experiment {
+    sql: ${TABLE}.metrics.string.session_entrypoint_experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Entrypoint Experiment"
+  }
+
+  dimension: metrics__string__session_entrypoint_variation {
+    sql: ${TABLE}.metrics.string.session_entrypoint_variation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Entrypoint Variation"
+  }
+
+  dimension: metrics__string__session_flow_id {
+    sql: ${TABLE}.metrics.string.session_flow_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Session Flow ID"
+  }
+
+  dimension: metrics__string__utm_campaign {
+    sql: ${TABLE}.metrics.string.utm_campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Campaign"
+  }
+
+  dimension: metrics__string__utm_content {
+    sql: ${TABLE}.metrics.string.utm_content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Content"
+  }
+
+  dimension: metrics__string__utm_medium {
+    sql: ${TABLE}.metrics.string.utm_medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Medium"
+  }
+
+  dimension: metrics__string__utm_source {
+    sql: ${TABLE}.metrics.string.utm_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Source"
+  }
+
+  dimension: metrics__string__utm_term {
+    sql: ${TABLE}.metrics.string.utm_term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "UTM Term"
   }
 
   dimension: normalized_app_name {

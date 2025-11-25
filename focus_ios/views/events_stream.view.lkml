@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
-  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
+  sql_table_name: `mozdata.focus_ios.events_stream` ;;
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -244,6 +244,142 @@ view: events_stream {
   dimension: experiments {
     sql: ${TABLE}.experiments ;;
     hidden: yes
+  }
+
+  dimension: extras__boolean__is_enabled {
+    sql: ${TABLE}.extras.boolean.is_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Enabled"
+  }
+
+  dimension: extras__quantity__current_item {
+    sql: ${TABLE}.extras.quantity.current_item ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Current Item"
+  }
+
+  dimension: extras__string__branch {
+    sql: ${TABLE}.extras.string.branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Branch"
+  }
+
+  dimension: extras__string__card_type {
+    sql: ${TABLE}.extras.string.card_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Card Type"
+  }
+
+  dimension: extras__string__conflict_slug {
+    sql: ${TABLE}.extras.string.conflict_slug ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Conflict Slug"
+  }
+
+  dimension: extras__string__engine_name {
+    sql: ${TABLE}.extras.string.engine_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Engine Name"
+  }
+
+  dimension: extras__string__error_string {
+    sql: ${TABLE}.extras.string.error_string ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error String"
+  }
+
+  dimension: extras__string__experiment {
+    sql: ${TABLE}.extras.string.experiment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Experiment"
+  }
+
+  dimension: extras__string__experiment_type {
+    sql: ${TABLE}.extras.string.experiment_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Experiment Type"
+  }
+
+  dimension: extras__string__feature_id {
+    sql: ${TABLE}.extras.string.feature_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Feature ID"
+  }
+
+  dimension: extras__string__item {
+    sql: ${TABLE}.extras.string.item ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Item"
+  }
+
+  dimension: extras__string__part_id {
+    sql: ${TABLE}.extras.string.part_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Part ID"
+  }
+
+  dimension: extras__string__reason {
+    sql: ${TABLE}.extras.string.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Reason"
+  }
+
+  dimension: extras__string__slug {
+    sql: ${TABLE}.extras.string.slug ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Slug"
+  }
+
+  dimension: extras__string__source_of_change {
+    sql: ${TABLE}.extras.string.source_of_change ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Source Of Change"
+  }
+
+  dimension: extras__string__status {
+    sql: ${TABLE}.extras.string.status ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Status"
+  }
+
+  dimension: extras__string__tracker_changed {
+    sql: ${TABLE}.extras.string.tracker_changed ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Tracker Changed"
   }
 
   dimension: is_bot_generated {
