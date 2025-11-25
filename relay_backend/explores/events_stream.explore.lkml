@@ -10,9 +10,12 @@ include: "/looker-hub/relay_backend/datagroups/events_stream_last_updated.datagr
 explore: events_stream {
   sql_always_where: ${events_stream.submission_date} >= '2010-01-01' ;;
   view_name: events_stream
-  always_filter: [
-    submission_date: 7 days,
-  ]
+
+  always_filter: {
+    filters: [
+      submission_date: "7 days",
+    ]
+  }
 
   query: recent_event_counts {
     description: "Event counts during the past week."
