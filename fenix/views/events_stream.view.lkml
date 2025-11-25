@@ -494,6 +494,30 @@ view: events_stream {
     group_item_label: "Has Description"
   }
 
+  dimension: extras__boolean__has_empty_password {
+    sql: ${TABLE}.extras.boolean.has_empty_password ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Empty Password"
+  }
+
+  dimension: extras__boolean__has_non_http_origin {
+    sql: ${TABLE}.extras.boolean.has_non_http_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Non HTTP Origin"
+  }
+
+  dimension: extras__boolean__has_punycode_origin {
+    sql: ${TABLE}.extras.boolean.has_punycode_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Punycode Origin"
+  }
+
   dimension: extras__boolean__has_rtcp_mux {
     sql: ${TABLE}.extras.boolean.has_rtcp_mux ;;
     type: yesno
@@ -502,12 +526,36 @@ view: events_stream {
     group_item_label: "Has Rtcp Mux"
   }
 
+  dimension: extras__boolean__has_single_dot_origin {
+    sql: ${TABLE}.extras.boolean.has_single_dot_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Single Dot Origin"
+  }
+
   dimension: extras__boolean__has_sts {
     sql: ${TABLE}.extras.boolean.has_sts ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Has Sts"
+  }
+
+  dimension: extras__boolean__has_username_line_break {
+    sql: ${TABLE}.extras.boolean.has_username_line_break ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Username Line Break"
+  }
+
+  dimension: extras__boolean__has_username_nul {
+    sql: ${TABLE}.extras.boolean.has_username_nul ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Username Nul"
   }
 
   dimension: extras__boolean__hidden {
@@ -572,6 +620,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Isdecryptsuccess"
+  }
+
+  dimension: extras__boolean__is_deleted {
+    sql: ${TABLE}.extras.boolean.is_deleted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Deleted"
   }
 
   dimension: extras__boolean__is_frame {
@@ -2916,6 +2972,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Method"
+  }
+
+  dimension: extras__string__metric_version {
+    sql: ${TABLE}.extras.string.metric_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Metric Version"
   }
 
   dimension: extras__string__mime_type {
