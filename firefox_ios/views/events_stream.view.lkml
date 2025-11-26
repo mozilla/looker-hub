@@ -846,6 +846,14 @@ view: events_stream {
     group_item_label: "Old Name"
   }
 
+  dimension: extras__string__onboarding_variant {
+    sql: ${TABLE}.extras.string.onboarding_variant ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Onboarding Variant"
+  }
+
   dimension: extras__string__option {
     sql: ${TABLE}.extras.string.option ;;
     type: string
