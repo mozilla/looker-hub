@@ -18,4 +18,5 @@ explore: events_stream_table {
   }
 
   persist_with: events_stream_table_last_updated
+  hidden: yes
 }
