@@ -6025,14 +6025,6 @@ mozilla_vpn:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_stream:
-      type: events_stream_explore
-      views:
-        base_view: events_stream
-    events_stream_table:
-      type: table_explore
-      views:
-        base_view: events_stream_table
     extensionsession:
       type: glean_ping_explore
       views:
@@ -6168,15 +6160,6 @@ mozilla_vpn:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.events_daily
-      type: table_view
-    events_stream:
-      tables:
-      - table: mozdata.mozilla_vpn.events_stream
-      type: events_stream_view
-    events_stream_table:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.events_stream
       type: table_view
     events_table:
       tables:
@@ -10025,9 +10008,9 @@ operational_monitoring:
             options:
             - release
             - beta
-            - nightly
-            - aurora
             - esr
+            - aurora
+            - nightly
             - default
             - nightly-pine
             - nightly-larch
@@ -10366,11 +10349,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id281
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
+            - nightly
             - aurora
             - beta
-            - nightly
             - release
             - esr
             - Other
@@ -10822,10 +10805,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id302
           os:
-            default: Linux
+            default: Windows
             options:
-            - Linux
             - Windows
+            - Linux
             - Mac
             - Other
         explore: garbage_collection
@@ -11533,12 +11516,12 @@ operational_monitoring:
             default: Darwin - vpn_session
             options:
             - Darwin - vpn_session
-            - Linux - vpn_session
-            - Windows - vpn_session
-            - iOS - daemon_session
-            - Android - vpn_session
             - iOS - vpn_session
+            - Android - vpn_session
+            - Windows - vpn_session
             - Android - daemon_session
+            - Linux - vpn_session
+            - iOS - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id369
@@ -12451,17 +12434,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id428
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
             - beta
+            - nightly
           os:
-            default: Darwin
+            default: Linux
             options:
-            - Darwin
             - Linux
             - Windows_NT
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id429
