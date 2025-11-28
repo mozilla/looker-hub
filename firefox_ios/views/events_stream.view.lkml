@@ -326,6 +326,14 @@ view: events_stream {
     group_item_label: "Is Homepage"
   }
 
+  dimension: extras__boolean__is_new_email_mask {
+    sql: ${TABLE}.extras.boolean.is_new_email_mask ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is New Email Mask"
+  }
+
   dimension: extras__boolean__is_opted_in_sent_from_firefox {
     sql: ${TABLE}.extras.boolean.is_opted_in_sent_from_firefox ;;
     type: yesno
@@ -644,6 +652,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Enrollment ID"
+  }
+
+  dimension: extras__string__error {
+    sql: ${TABLE}.extras.string.error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error"
   }
 
   dimension: extras__string__error_code {
