@@ -5423,7 +5423,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__memory_distribution__cert_storage_memory__sum {
     label: "Cert Storage: Memory Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
     type: number
     group_label: "Cert Storage"
@@ -20175,7 +20175,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types.
+    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types. Cross-site labels are used when the requesting origin differs from the top-level origin.
 "
   }
 
