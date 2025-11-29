@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: new_profile_clients_table_last_updated {
-  label: "new_profile_clients_table Last Updated"
+datagroup: us_billboard_rollout_nov_last_updated {
+  label: "us_billboard_rollout_nov Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_ios_derived' AND table_name = 'new_profile_clients_v1')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'us_billboard_rollout_nov_statistics')
 
     ) ;;
-  description: "Updates for new_profile_clients_table when referenced tables are modified."
+  description: "Updates for us_billboard_rollout_nov when referenced tables are modified."
   max_cache_age: "24 hours"
 }
