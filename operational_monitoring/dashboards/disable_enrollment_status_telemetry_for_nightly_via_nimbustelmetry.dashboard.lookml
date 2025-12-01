@@ -10,6 +10,43 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry
+    type: "ci-line-chart"
+    fields: [
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date,
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch,
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.upper,
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.lower,
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.point
+    ]
+    pivots: [
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch
+    ]
+    filters:
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'memory_total'
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: percentile
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
+    field_y: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.point
+    log_scale: false
+    ci_lower: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.lower
+    ci_upper: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.upper
+    show_grid: true
+    listen:
+      Date: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
+      Percentile: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -29,7 +66,7 @@
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'days_of_use'
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
@@ -62,8 +99,8 @@
     filters:
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'uri_count'
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
@@ -78,28 +115,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date,
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch,
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.upper,
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.lower,
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.point
     ]
     pivots: [
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'memory_total'
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: percentile
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'ad_clicks'
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
@@ -110,7 +145,6 @@
     show_grid: true
     listen:
       Date: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
-      Percentile: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -132,40 +166,6 @@
     ]
     filters:
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'search_count'
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
-    field_y: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.point
-    log_scale: false
-    ci_lower: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.lower
-    ci_upper: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.upper
-    show_grid: true
-    listen:
-      Date: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry
-    type: looker_line
-    fields: [
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.submission_date,
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch,
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.point
-    ]
-    pivots: [
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch
-    ]
-    filters:
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'qualified_cumulative_days_of_use'
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.branch
     ]
     filters:
-      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'ad_clicks'
+      disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.metric: 'qualified_cumulative_days_of_use'
       disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry.statistic: mean
     row: 30
     col: 0
