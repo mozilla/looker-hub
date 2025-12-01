@@ -146,40 +146,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fenix_beta_port_blocking
-    type: looker_line
-    fields: [
-      fenix_beta_port_blocking.submission_date,
-      fenix_beta_port_blocking.branch,
-      fenix_beta_port_blocking.point
-    ]
-    pivots: [
-      fenix_beta_port_blocking.branch
-    ]
-    filters:
-      fenix_beta_port_blocking.metric: 'days_of_use'
-      fenix_beta_port_blocking.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: fenix_beta_port_blocking.submission_date
-    field_y: fenix_beta_port_blocking.point
-    log_scale: false
-    ci_lower: fenix_beta_port_blocking.lower
-    ci_upper: fenix_beta_port_blocking.upper
-    show_grid: true
-    listen:
-      Date: fenix_beta_port_blocking.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -199,7 +165,7 @@
       fenix_beta_port_blocking.metric: 'retained'
       fenix_beta_port_blocking.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: fenix_beta_port_blocking.submission_date
@@ -231,6 +197,40 @@
     ]
     filters:
       fenix_beta_port_blocking.metric: 'ad_clicks'
+      fenix_beta_port_blocking.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: fenix_beta_port_blocking.submission_date
+    field_y: fenix_beta_port_blocking.point
+    log_scale: false
+    ci_lower: fenix_beta_port_blocking.lower
+    ci_upper: fenix_beta_port_blocking.upper
+    show_grid: true
+    listen:
+      Date: fenix_beta_port_blocking.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fenix_beta_port_blocking
+    type: looker_line
+    fields: [
+      fenix_beta_port_blocking.submission_date,
+      fenix_beta_port_blocking.branch,
+      fenix_beta_port_blocking.point
+    ]
+    pivots: [
+      fenix_beta_port_blocking.branch
+    ]
+    filters:
+      fenix_beta_port_blocking.metric: 'days_of_use'
       fenix_beta_port_blocking.statistic: mean
     row: 30
     col: 0
