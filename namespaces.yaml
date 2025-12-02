@@ -792,6 +792,10 @@ experimentation:
       type: table_view
 fenix:
   explores:
+    addons:
+      type: glean_ping_explore
+      views:
+        base_view: addons
     baseline:
       type: glean_ping_explore
       views:
@@ -874,6 +878,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: history_sync
+    local_network_access:
+      type: glean_ping_explore
+      views:
+        base_view: local_network_access
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -993,6 +1001,32 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.active_users
+      type: table_view
+    addons:
+      tables:
+      - channel: release
+        table: mozdata.fenix.addons
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.addons
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.addons
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.addons
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.addons
+      type: glean_ping_view
+    addons_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.addons
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.addons
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.addons
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.addons
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.addons
       type: table_view
     android_onboarding:
       tables:
@@ -1492,6 +1526,32 @@ fenix:
         table: mozdata.org_mozilla_fenix_nightly.history_sync
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.history_sync
+      type: table_view
+    local_network_access:
+      tables:
+      - channel: release
+        table: mozdata.fenix.local_network_access
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.local_network_access
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.local_network_access
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.local_network_access
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.local_network_access
+      type: glean_ping_view
+    local_network_access_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.local_network_access
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.local_network_access
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.local_network_access
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.local_network_access
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.local_network_access
       type: table_view
     locale_aggregates_table:
       tables:
@@ -2263,6 +2323,10 @@ firefox_accounts:
       type: table_view
 firefox_desktop:
   explores:
+    addons:
+      type: glean_ping_explore
+      views:
+        base_view: addons
     baseline:
       type: glean_ping_explore
       views:
@@ -2314,6 +2378,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: health
+    local_network_access:
+      type: glean_ping_explore
+      views:
+        base_view: local_network_access
     messaging_system:
       type: glean_ping_explore
       views:
@@ -2422,10 +2490,6 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_site_breakage_events
-    metric_definitions_sponsored_tiles_clients_daily:
-      type: metric_definitions_explore
-      views:
-        base_view: metric_definitions_sponsored_tiles_clients_daily
     metric_definitions_urlbar_events_daily_engagement_by_product_result_type_v1:
       type: metric_definitions_explore
       views:
@@ -2517,6 +2581,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.adclick_history
+      type: table_view
+    addons:
+      tables:
+      - table: mozdata.firefox_desktop.addons
+      type: glean_ping_view
+    addons_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.addons
       type: table_view
     baseline:
       tables:
@@ -2859,6 +2932,15 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.health
       type: table_view
+    local_network_access:
+      tables:
+      - table: mozdata.firefox_desktop.local_network_access
+      type: glean_ping_view
+    local_network_access_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.local_network_access
+      type: table_view
     locale_aggregates_table:
       tables:
       - channel: null
@@ -2929,8 +3011,6 @@ firefox_desktop:
     metric_definitions_serp_events:
       type: metric_definitions_view
     metric_definitions_site_breakage_events:
-      type: metric_definitions_view
-    metric_definitions_sponsored_tiles_clients_daily:
       type: metric_definitions_view
     metric_definitions_urlbar_events_daily_engagement_by_product_result_type_v1:
       type: metric_definitions_view
@@ -4072,6 +4152,10 @@ fivetran:
       type: table_view
 focus_android:
   explores:
+    addons:
+      type: glean_ping_explore
+      views:
+        base_view: addons
     baseline:
       type: glean_ping_explore
       views:
@@ -4122,6 +4206,10 @@ focus_android:
       type: glean_ping_explore
       views:
         base_view: health
+    local_network_access:
+      type: glean_ping_explore
+      views:
+        base_view: local_network_access
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -4202,6 +4290,24 @@ focus_android:
       tables:
       - channel: release
         table: mozdata.focus_android.active_users
+      type: table_view
+    addons:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.addons
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.addons
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.addons
+      type: glean_ping_view
+    addons_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.addons
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.addons
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.addons
       type: table_view
     attribution_clients_table:
       tables:
@@ -4413,6 +4519,24 @@ focus_android:
         table: mozdata.org_mozilla_focus_beta.health
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.health
+      type: table_view
+    local_network_access:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.local_network_access
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.local_network_access
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.local_network_access
+      type: glean_ping_view
+    local_network_access_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.local_network_access
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.local_network_access
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.local_network_access
       type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
@@ -5031,6 +5155,10 @@ jira_service_desk:
       type: table_view
 klar_android:
   explores:
+    addons:
+      type: glean_ping_explore
+      views:
+        base_view: addons
     baseline:
       type: glean_ping_explore
       views:
@@ -5072,6 +5200,10 @@ klar_android:
       type: glean_ping_explore
       views:
         base_view: health
+    local_network_access:
+      type: glean_ping_explore
+      views:
+        base_view: local_network_access
     metric_definitions_baseline:
       type: metric_definitions_explore
       views:
@@ -5135,6 +5267,15 @@ klar_android:
   pretty_name: Klar Android
   spoke: looker-spoke-default
   views:
+    addons:
+      tables:
+      - table: mozdata.org_mozilla_klar.addons
+      type: glean_ping_view
+    addons_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_klar.addons
+      type: table_view
     baseline:
       tables:
       - table: mozdata.org_mozilla_klar.baseline
@@ -5220,6 +5361,15 @@ klar_android:
       tables:
       - channel: null
         table: mozdata.org_mozilla_klar.health
+      type: table_view
+    local_network_access:
+      tables:
+      - table: mozdata.org_mozilla_klar.local_network_access
+      type: glean_ping_view
+    local_network_access_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_klar.local_network_access
       type: table_view
     metric_definitions_baseline:
       type: metric_definitions_view
