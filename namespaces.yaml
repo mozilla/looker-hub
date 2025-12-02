@@ -265,6 +265,10 @@ ads:
       type: metric_definitions_view
     metric_definitions_newtab_visit_duration:
       type: metric_definitions_view
+    native_advertiser_monthly_metrics:
+      tables:
+      - table: mozdata.ads.native_advertiser_monthly_metrics
+      type: table_view
     tiles_addressable_inventory_hourly:
       tables:
       - table: mozdata.ads.tiles_addressable_inventory_hourly
