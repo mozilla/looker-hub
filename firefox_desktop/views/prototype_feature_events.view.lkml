@@ -23,6 +23,12 @@ view: prototype_feature_events {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: feature_sum {
+    sql: ${TABLE}.feature_sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: feature_usage_bucket {
     sql: ${TABLE}.feature_usage_bucket ;;
     type: string
@@ -31,6 +37,18 @@ view: prototype_feature_events {
 
   dimension: legacy_client_id {
     sql: ${TABLE}.legacy_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: os {
+    sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
   }

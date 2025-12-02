@@ -151,6 +151,18 @@ If the value was not provided through configuration, this metric gets set to Unk
     description: "The distribution id associated with the install of Firefox."
   }
 
+  dimension: distribution_model {
+    sql: ${TABLE}.distribution_model ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: funnel_derived {
+    sql: ${TABLE}.funnel_derived ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: installation_first_seen_admin_user {
     sql: ${TABLE}.installation_first_seen_admin_user ;;
     type: yesno
@@ -228,6 +240,12 @@ If the value was not provided through configuration, this metric gets set to Unk
     description: "The application version installed by the installer (not necessarily the current version)"
   }
 
+  dimension: is_desktop {
+    sql: ${TABLE}.is_desktop ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: isp_name {
     sql: ${TABLE}.isp_name ;;
     type: string
@@ -289,6 +307,12 @@ If the value was not provided through configuration, this metric gets set to Unk
     type: string
     suggest_persist_for: "24 hours"
     description: "pref mozilla.partner.id, null on failure"
+  }
+
+  dimension: partner_org {
+    sql: ${TABLE}.partner_org ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: profile_group_id {
