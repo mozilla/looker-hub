@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       android_top_of_suggest_placement_rollout.branch
     ]
     filters:
-      android_top_of_suggest_placement_rollout.metric: 'ad_clicks'
+      android_top_of_suggest_placement_rollout.metric: 'days_of_use'
       android_top_of_suggest_placement_rollout.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       android_top_of_suggest_placement_rollout.branch
     ]
     filters:
-      android_top_of_suggest_placement_rollout.metric: 'days_of_use'
+      android_top_of_suggest_placement_rollout.metric: 'active_hours'
       android_top_of_suggest_placement_rollout.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       android_top_of_suggest_placement_rollout.branch
     ]
     filters:
-      android_top_of_suggest_placement_rollout.metric: 'active_hours'
+      android_top_of_suggest_placement_rollout.metric: 'ad_clicks'
       android_top_of_suggest_placement_rollout.statistic: mean
     row: 30
     col: 0

@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: homescreen_as_new_tab {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.homescreen_as_new_tab_statistics ;;
+view: japan_shortcuts {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.japan_shortcuts_statistics ;;
 
   dimension: submission_date {
     type: date
