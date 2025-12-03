@@ -39,6 +39,7 @@ view: ltv_android_aggregates_table {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: client_count {
@@ -70,6 +71,7 @@ view: ltv_android_aggregates_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: default_search_engine {
@@ -94,6 +96,7 @@ view: ltv_android_aggregates_table {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: organic_avg {
@@ -112,6 +115,7 @@ view: ltv_android_aggregates_table {
     sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: pocket_enabled {
@@ -262,6 +266,7 @@ view: ltv_android_aggregates_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.fenix.ltv_android_aggregates` ;;

@@ -380,6 +380,14 @@ view: events_stream_table {
     group_item_label: "First Interaction"
   }
 
+  dimension: extras__boolean__form_action_origin_fixable {
+    sql: ${TABLE}.extras.boolean.form_action_origin_fixable ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Form Action Origin Fixable"
+  }
+
   dimension: extras__boolean__form_data {
     sql: ${TABLE}.extras.boolean.form_data ;;
     type: yesno
@@ -450,6 +458,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Has Non HTTP Origin"
+  }
+
+  dimension: extras__boolean__has_punycode_form_action_origin {
+    sql: ${TABLE}.extras.boolean.has_punycode_form_action_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Punycode Form Action Origin"
   }
 
   dimension: extras__boolean__has_punycode_origin {
@@ -682,6 +698,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Open Successful"
+  }
+
+  dimension: extras__boolean__origin_fixable {
+    sql: ${TABLE}.extras.boolean.origin_fixable ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Origin Fixable"
   }
 
   dimension: extras__boolean__package_name {
@@ -2332,6 +2356,14 @@ view: events_stream_table {
     group_item_label: "Flow ID"
   }
 
+  dimension: extras__string__form_action_origin_error {
+    sql: ${TABLE}.extras.string.form_action_origin_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Form Action Origin Error"
+  }
+
   dimension: extras__string__frame_id {
     sql: ${TABLE}.extras.string.frame_id ;;
     type: string
@@ -2994,6 +3026,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Organization"
+  }
+
+  dimension: extras__string__origin_error {
+    sql: ${TABLE}.extras.string.origin_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Origin Error"
   }
 
   dimension: extras__string__originalReason {
