@@ -9,6 +9,7 @@ view: feature_usage_events {
     sql: ${TABLE}.adjust_network ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the Adjust Network that sourced this installation."
   }
 
   dimension: app_icon_private_tab_tapped {
@@ -682,6 +683,7 @@ view: feature_usage_events {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A flag indicating whether the browser is set as the default browser on the client side."
   }
 
   dimension: management_add_tapped_sum_address {

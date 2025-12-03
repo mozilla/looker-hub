@@ -1517,7 +1517,7 @@ Windows only.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Tab Strip Enabled"
-    description: "Whether or not the tab strip feature is enabled
+    description: "Whether or not Tab Strip is enabled by the user.
 "
   }
 
@@ -13668,7 +13668,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
   dimension: metrics__labeled_counter__networking_local_network_access_prompts_shown {
     sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access_prompts_shown ;;
     hidden: yes
-    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types.
+    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types. Cross-site labels are used when the requesting origin differs from the top-level origin.
 "
   }
 
@@ -16669,6 +16669,11 @@ This metric is an echo of the Legacy Telemetry Environment field
 addons.activeAddons. Like its counterpart, it will only have data in
 Firefox Desktop and at times and on platforms where the environment would
 have values.
+
+NOTE: this metric is available in both `metrics` and `addons` pings. However
+the `addons` ping is the preferred source of data for add-ons related analyses,
+whereas the `metrics` ping is better suited for analyses that correlates other
+metrics with the add-ons listed in the `active_addons` metric.
 "
   }
 
@@ -16720,6 +16725,11 @@ This metric is an echo of the Legacy Telemetry Environment field
 addons.theme. Like its counterpart, it will only have data in Firefox
 Desktop and at times and on platforms where the environment would have
 values.
+
+NOTE: this metric is available in both `metrics` and `addons` pings. However
+the `addons` ping is the preferred source of data for add-ons related analyses,
+whereas the `metrics` ping is better suited for analyses that correlates other
+metrics with the add-ons listed in the `theme` metric.
 "
   }
 

@@ -9,7 +9,7 @@ view: desktop_engagement {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "App Version"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: attribution_campaign {
@@ -66,7 +66,7 @@ view: desktop_engagement {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Country"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: dau {
@@ -80,7 +80,7 @@ view: desktop_engagement {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Distribution ID - Identifies the Firefox distribution"
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: is_desktop {
@@ -100,7 +100,7 @@ view: desktop_engagement {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Locale"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: mau {
@@ -114,14 +114,14 @@ view: desktop_engagement {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized Channel - The Firefox channel, set to Other for unrecognized channel names"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized Operating System"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {
@@ -180,7 +180,7 @@ view: desktop_engagement {
     ]
     convert_tz: no
     datatype: date
-    description: "Submission Date"
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `moz-fx-data-shared-prod.telemetry.desktop_engagement` ;;
