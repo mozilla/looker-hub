@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_new_onboarding_global_release_version
-    type: looker_line
-    fields: [
-      ios_new_onboarding_global_release_version.submission_date,
-      ios_new_onboarding_global_release_version.branch,
-      ios_new_onboarding_global_release_version.point
-    ]
-    pivots: [
-      ios_new_onboarding_global_release_version.branch
-    ]
-    filters:
-      ios_new_onboarding_global_release_version.metric: 'search_count'
-      ios_new_onboarding_global_release_version.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_new_onboarding_global_release_version.submission_date
-    field_y: ios_new_onboarding_global_release_version.point
-    log_scale: false
-    ci_lower: ios_new_onboarding_global_release_version.lower
-    ci_upper: ios_new_onboarding_global_release_version.upper
-    show_grid: true
-    listen:
-      Date: ios_new_onboarding_global_release_version.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       ios_new_onboarding_global_release_version.metric: 'active_hours'
+      ios_new_onboarding_global_release_version.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_new_onboarding_global_release_version.submission_date
+    field_y: ios_new_onboarding_global_release_version.point
+    log_scale: false
+    ci_lower: ios_new_onboarding_global_release_version.lower
+    ci_upper: ios_new_onboarding_global_release_version.upper
+    show_grid: true
+    listen:
+      Date: ios_new_onboarding_global_release_version.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_new_onboarding_global_release_version
+    type: looker_line
+    fields: [
+      ios_new_onboarding_global_release_version.submission_date,
+      ios_new_onboarding_global_release_version.branch,
+      ios_new_onboarding_global_release_version.point
+    ]
+    pivots: [
+      ios_new_onboarding_global_release_version.branch
+    ]
+    filters:
+      ios_new_onboarding_global_release_version.metric: 'search_count'
       ios_new_onboarding_global_release_version.statistic: mean
     row: 10
     col: 12
