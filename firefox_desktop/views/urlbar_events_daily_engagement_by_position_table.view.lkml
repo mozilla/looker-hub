@@ -9,36 +9,42 @@ view: urlbar_events_daily_engagement_by_position_table {
     sql: ${TABLE}.firefox_suggest_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Firefox Suggest Enabled"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: num_clicks {
     sql: ${TABLE}.num_clicks ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The number of clicks made on this result."
   }
 
   dimension: selected_position {
     sql: ${TABLE}.selected_position ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The ordinal position of the selection for this result."
   }
 
   dimension: sponsored_suggestions_enabled {
     sql: ${TABLE}.sponsored_suggestions_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Sponsored Suggestions Enabled"
   }
 
   dimension_group: submission {
@@ -54,6 +60,7 @@ view: urlbar_events_daily_engagement_by_position_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.urlbar_events_daily_engagement_by_position` ;;

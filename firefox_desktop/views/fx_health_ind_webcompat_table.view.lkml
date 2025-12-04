@@ -10,12 +10,14 @@ view: fx_health_ind_webcompat_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Country"
   }
 
   dimension: nbr_unique_clients_etp_disablement {
     sql: ${TABLE}.nbr_unique_clients_etp_disablement ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Count of Unique Clients Setting ETP Disablement"
   }
 
   dimension_group: submission {
@@ -31,6 +33,7 @@ view: fx_health_ind_webcompat_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Submission Date"
   }
 
   sql_table_name: `mozdata.firefox_desktop.fx_health_ind_webcompat` ;;
