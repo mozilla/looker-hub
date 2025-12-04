@@ -10,108 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_weather_opt_in_nightly_and_beta
-    type: looker_line
-    fields: [
-      hnt_weather_opt_in_nightly_and_beta.submission_date,
-      hnt_weather_opt_in_nightly_and_beta.branch,
-      hnt_weather_opt_in_nightly_and_beta.point
-    ]
-    pivots: [
-      hnt_weather_opt_in_nightly_and_beta.branch
-    ]
-    filters:
-      hnt_weather_opt_in_nightly_and_beta.metric: 'uri_count'
-      hnt_weather_opt_in_nightly_and_beta.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_weather_opt_in_nightly_and_beta.submission_date
-    field_y: hnt_weather_opt_in_nightly_and_beta.point
-    log_scale: false
-    ci_lower: hnt_weather_opt_in_nightly_and_beta.lower
-    ci_upper: hnt_weather_opt_in_nightly_and_beta.upper
-    show_grid: true
-    listen:
-      Date: hnt_weather_opt_in_nightly_and_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_weather_opt_in_nightly_and_beta
-    type: looker_line
-    fields: [
-      hnt_weather_opt_in_nightly_and_beta.submission_date,
-      hnt_weather_opt_in_nightly_and_beta.branch,
-      hnt_weather_opt_in_nightly_and_beta.point
-    ]
-    pivots: [
-      hnt_weather_opt_in_nightly_and_beta.branch
-    ]
-    filters:
-      hnt_weather_opt_in_nightly_and_beta.metric: 'days_of_use'
-      hnt_weather_opt_in_nightly_and_beta.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_weather_opt_in_nightly_and_beta.submission_date
-    field_y: hnt_weather_opt_in_nightly_and_beta.point
-    log_scale: false
-    ci_lower: hnt_weather_opt_in_nightly_and_beta.lower
-    ci_upper: hnt_weather_opt_in_nightly_and_beta.upper
-    show_grid: true
-    listen:
-      Date: hnt_weather_opt_in_nightly_and_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_weather_opt_in_nightly_and_beta
-    type: looker_line
-    fields: [
-      hnt_weather_opt_in_nightly_and_beta.submission_date,
-      hnt_weather_opt_in_nightly_and_beta.branch,
-      hnt_weather_opt_in_nightly_and_beta.point
-    ]
-    pivots: [
-      hnt_weather_opt_in_nightly_and_beta.branch
-    ]
-    filters:
-      hnt_weather_opt_in_nightly_and_beta.metric: 'ad_clicks'
-      hnt_weather_opt_in_nightly_and_beta.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_weather_opt_in_nightly_and_beta.submission_date
-    field_y: hnt_weather_opt_in_nightly_and_beta.point
-    log_scale: false
-    ci_lower: hnt_weather_opt_in_nightly_and_beta.lower
-    ci_upper: hnt_weather_opt_in_nightly_and_beta.upper
-    show_grid: true
-    listen:
-      Date: hnt_weather_opt_in_nightly_and_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -130,41 +28,7 @@
     filters:
       hnt_weather_opt_in_nightly_and_beta.metric: 'qualified_cumulative_days_of_use'
       hnt_weather_opt_in_nightly_and_beta.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_weather_opt_in_nightly_and_beta.submission_date
-    field_y: hnt_weather_opt_in_nightly_and_beta.point
-    log_scale: false
-    ci_lower: hnt_weather_opt_in_nightly_and_beta.lower
-    ci_upper: hnt_weather_opt_in_nightly_and_beta.upper
-    show_grid: true
-    listen:
-      Date: hnt_weather_opt_in_nightly_and_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_weather_opt_in_nightly_and_beta
-    type: looker_line
-    fields: [
-      hnt_weather_opt_in_nightly_and_beta.submission_date,
-      hnt_weather_opt_in_nightly_and_beta.branch,
-      hnt_weather_opt_in_nightly_and_beta.point
-    ]
-    pivots: [
-      hnt_weather_opt_in_nightly_and_beta.branch
-    ]
-    filters:
-      hnt_weather_opt_in_nightly_and_beta.metric: 'search_count'
-      hnt_weather_opt_in_nightly_and_beta.statistic: mean
-    row: 20
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -200,7 +64,7 @@
     filters:
       hnt_weather_opt_in_nightly_and_beta.metric: 'memory_total'
       hnt_weather_opt_in_nightly_and_beta.statistic: percentile
-    row: 20
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -217,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,9 +97,9 @@
       hnt_weather_opt_in_nightly_and_beta.branch
     ]
     filters:
-      hnt_weather_opt_in_nightly_and_beta.metric: 'active_hours'
+      hnt_weather_opt_in_nightly_and_beta.metric: 'days_of_use'
       hnt_weather_opt_in_nightly_and_beta.statistic: mean
-    row: 30
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -268,6 +132,142 @@
     ]
     filters:
       hnt_weather_opt_in_nightly_and_beta.metric: 'retained'
+      hnt_weather_opt_in_nightly_and_beta.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: hnt_weather_opt_in_nightly_and_beta.submission_date
+    field_y: hnt_weather_opt_in_nightly_and_beta.point
+    log_scale: false
+    ci_lower: hnt_weather_opt_in_nightly_and_beta.lower
+    ci_upper: hnt_weather_opt_in_nightly_and_beta.upper
+    show_grid: true
+    listen:
+      Date: hnt_weather_opt_in_nightly_and_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_weather_opt_in_nightly_and_beta
+    type: looker_line
+    fields: [
+      hnt_weather_opt_in_nightly_and_beta.submission_date,
+      hnt_weather_opt_in_nightly_and_beta.branch,
+      hnt_weather_opt_in_nightly_and_beta.point
+    ]
+    pivots: [
+      hnt_weather_opt_in_nightly_and_beta.branch
+    ]
+    filters:
+      hnt_weather_opt_in_nightly_and_beta.metric: 'active_hours'
+      hnt_weather_opt_in_nightly_and_beta.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_weather_opt_in_nightly_and_beta.submission_date
+    field_y: hnt_weather_opt_in_nightly_and_beta.point
+    log_scale: false
+    ci_lower: hnt_weather_opt_in_nightly_and_beta.lower
+    ci_upper: hnt_weather_opt_in_nightly_and_beta.upper
+    show_grid: true
+    listen:
+      Date: hnt_weather_opt_in_nightly_and_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_weather_opt_in_nightly_and_beta
+    type: looker_line
+    fields: [
+      hnt_weather_opt_in_nightly_and_beta.submission_date,
+      hnt_weather_opt_in_nightly_and_beta.branch,
+      hnt_weather_opt_in_nightly_and_beta.point
+    ]
+    pivots: [
+      hnt_weather_opt_in_nightly_and_beta.branch
+    ]
+    filters:
+      hnt_weather_opt_in_nightly_and_beta.metric: 'search_count'
+      hnt_weather_opt_in_nightly_and_beta.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: hnt_weather_opt_in_nightly_and_beta.submission_date
+    field_y: hnt_weather_opt_in_nightly_and_beta.point
+    log_scale: false
+    ci_lower: hnt_weather_opt_in_nightly_and_beta.lower
+    ci_upper: hnt_weather_opt_in_nightly_and_beta.upper
+    show_grid: true
+    listen:
+      Date: hnt_weather_opt_in_nightly_and_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_weather_opt_in_nightly_and_beta
+    type: looker_line
+    fields: [
+      hnt_weather_opt_in_nightly_and_beta.submission_date,
+      hnt_weather_opt_in_nightly_and_beta.branch,
+      hnt_weather_opt_in_nightly_and_beta.point
+    ]
+    pivots: [
+      hnt_weather_opt_in_nightly_and_beta.branch
+    ]
+    filters:
+      hnt_weather_opt_in_nightly_and_beta.metric: 'uri_count'
+      hnt_weather_opt_in_nightly_and_beta.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_weather_opt_in_nightly_and_beta.submission_date
+    field_y: hnt_weather_opt_in_nightly_and_beta.point
+    log_scale: false
+    ci_lower: hnt_weather_opt_in_nightly_and_beta.lower
+    ci_upper: hnt_weather_opt_in_nightly_and_beta.upper
+    show_grid: true
+    listen:
+      Date: hnt_weather_opt_in_nightly_and_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_weather_opt_in_nightly_and_beta
+    type: looker_line
+    fields: [
+      hnt_weather_opt_in_nightly_and_beta.submission_date,
+      hnt_weather_opt_in_nightly_and_beta.branch,
+      hnt_weather_opt_in_nightly_and_beta.point
+    ]
+    pivots: [
+      hnt_weather_opt_in_nightly_and_beta.branch
+    ]
+    filters:
+      hnt_weather_opt_in_nightly_and_beta.metric: 'ad_clicks'
       hnt_weather_opt_in_nightly_and_beta.statistic: mean
     row: 30
     col: 12

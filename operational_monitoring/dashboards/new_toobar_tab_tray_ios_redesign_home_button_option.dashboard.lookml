@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_toobar_tab_tray_ios_redesign_home_button_option
-    type: looker_line
-    fields: [
-      new_toobar_tab_tray_ios_redesign_home_button_option.submission_date,
-      new_toobar_tab_tray_ios_redesign_home_button_option.branch,
-      new_toobar_tab_tray_ios_redesign_home_button_option.point
-    ]
-    pivots: [
-      new_toobar_tab_tray_ios_redesign_home_button_option.branch
-    ]
-    filters:
-      new_toobar_tab_tray_ios_redesign_home_button_option.metric: 'search_count'
-      new_toobar_tab_tray_ios_redesign_home_button_option.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_toobar_tab_tray_ios_redesign_home_button_option.submission_date
-    field_y: new_toobar_tab_tray_ios_redesign_home_button_option.point
-    log_scale: false
-    ci_lower: new_toobar_tab_tray_ios_redesign_home_button_option.lower
-    ci_upper: new_toobar_tab_tray_ios_redesign_home_button_option.upper
-    show_grid: true
-    listen:
-      Date: new_toobar_tab_tray_ios_redesign_home_button_option.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       new_toobar_tab_tray_ios_redesign_home_button_option.metric: 'active_hours'
+      new_toobar_tab_tray_ios_redesign_home_button_option.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_toobar_tab_tray_ios_redesign_home_button_option.submission_date
+    field_y: new_toobar_tab_tray_ios_redesign_home_button_option.point
+    log_scale: false
+    ci_lower: new_toobar_tab_tray_ios_redesign_home_button_option.lower
+    ci_upper: new_toobar_tab_tray_ios_redesign_home_button_option.upper
+    show_grid: true
+    listen:
+      Date: new_toobar_tab_tray_ios_redesign_home_button_option.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_toobar_tab_tray_ios_redesign_home_button_option
+    type: looker_line
+    fields: [
+      new_toobar_tab_tray_ios_redesign_home_button_option.submission_date,
+      new_toobar_tab_tray_ios_redesign_home_button_option.branch,
+      new_toobar_tab_tray_ios_redesign_home_button_option.point
+    ]
+    pivots: [
+      new_toobar_tab_tray_ios_redesign_home_button_option.branch
+    ]
+    filters:
+      new_toobar_tab_tray_ios_redesign_home_button_option.metric: 'search_count'
       new_toobar_tab_tray_ios_redesign_home_button_option.statistic: mean
     row: 10
     col: 12
