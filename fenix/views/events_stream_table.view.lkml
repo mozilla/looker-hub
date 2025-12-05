@@ -2332,6 +2332,14 @@ view: events_stream_table {
     group_item_label: "Error Type"
   }
 
+  dimension: extras__string__etld {
+    sql: ${TABLE}.extras.string.etld ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Etld"
+  }
+
   dimension: extras__string__etp_setting {
     sql: ${TABLE}.extras.string.etp_setting ;;
     type: string
@@ -4010,6 +4018,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Tab Pos"
+  }
+
+  dimension: extras__string__table {
+    sql: ${TABLE}.extras.string.table ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Table"
   }
 
   dimension: extras__string__table_name {
