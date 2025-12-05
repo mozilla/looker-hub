@@ -4018,6 +4018,26 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__web_push_declarative {
+    sql: ${TABLE}.metrics.counter.web_push_declarative ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Web Push Declarative"
+    description: "Number of push messages in the Declarative Web Push format.
+"
+  }
+
+  dimension: metrics__counter__web_push_declarative_mutable {
+    sql: ${TABLE}.metrics.counter.web_push_declarative_mutable ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Web Push Declarative Mutable"
+    description: "Number of push messages in the Declarative Web Push format with mutable: true.
+"
+  }
+
   dimension: metrics__counter__web_push_detected_duplicated_message_ids {
     sql: ${TABLE}.metrics.counter.web_push_detected_duplicated_message_ids ;;
     type: number
