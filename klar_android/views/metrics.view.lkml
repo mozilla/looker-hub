@@ -26475,6 +26475,42 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__web_push_declarative {
+    label: "Web Push: Declarative"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.web_push_declarative ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Declarative"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push: Declarative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_declarative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of push messages in the Declarative Web Push format.
+"
+  }
+
+  dimension: metrics__counter__web_push_declarative_mutable {
+    label: "Web Push: Declarative Mutable"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.web_push_declarative_mutable ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Declarative Mutable"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push: Declarative Mutable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_declarative_mutable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of push messages in the Declarative Web Push format with mutable: true.
+"
+  }
+
   dimension: metrics__counter__web_push_detected_duplicated_message_ids {
     label: "Web Push: Detected Duplicated Message Ids"
     hidden: no
@@ -33938,6 +33974,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Web Push Api Notify"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_api_notify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_declarative {
+    type: sum
+    sql: ${metrics__counter__web_push_declarative} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Declarative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_declarative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_declarative_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_declarative: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Declarative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_declarative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_declarative_mutable {
+    type: sum
+    sql: ${metrics__counter__web_push_declarative_mutable} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Declarative Mutable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_declarative_mutable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_declarative_mutable_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_declarative_mutable: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Declarative Mutable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/web_push_declarative_mutable"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

@@ -192,6 +192,7 @@ view: glean_cohort_daily_statistics {
     sql: ${TABLE}.paid_vs_organic ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Flag indicating if the client is attributed to a paid vs an organic source."
   }
 
   dimension: play_store_attribution_campaign {
