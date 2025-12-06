@@ -26453,7 +26453,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker.
+    description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker when required.
 This metric was generated to correspond to the Legacy Telemetry count histogram PUSH_API_NOTIFY.
 "
   }
@@ -26477,7 +26477,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__counter__web_push_declarative {
     label: "Web Push: Declarative"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.web_push_declarative ;;
     type: number
     group_label: "Web Push"
@@ -26495,7 +26495,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__counter__web_push_declarative_mutable {
     label: "Web Push: Declarative Mutable"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.web_push_declarative_mutable ;;
     type: number
     group_label: "Web Push"

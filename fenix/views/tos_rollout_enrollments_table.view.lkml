@@ -9,17 +9,20 @@ view: tos_rollout_enrollments_table {
     sql: ${TABLE}.branch ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Experiment branch"
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "Client ID"
   }
 
   dimension: slug {
     sql: ${TABLE}.slug ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Experiment slug"
   }
 
   dimension_group: submission {
@@ -34,6 +37,7 @@ view: tos_rollout_enrollments_table {
       quarter,
       year,
     ]
+    description: "Enrollment timestamp"
   }
 
   sql_table_name: `mozdata.fenix.tos_rollout_enrollments` ;;
