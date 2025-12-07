@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: store_new_tab_content_interactions_locally
-    type: looker_line
-    fields: [
-      store_new_tab_content_interactions_locally.submission_date,
-      store_new_tab_content_interactions_locally.branch,
-      store_new_tab_content_interactions_locally.point
-    ]
-    pivots: [
-      store_new_tab_content_interactions_locally.branch
-    ]
-    filters:
-      store_new_tab_content_interactions_locally.metric: 'days_of_use'
-      store_new_tab_content_interactions_locally.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: store_new_tab_content_interactions_locally.submission_date
-    field_y: store_new_tab_content_interactions_locally.point
-    log_scale: false
-    ci_lower: store_new_tab_content_interactions_locally.lower
-    ci_upper: store_new_tab_content_interactions_locally.upper
-    show_grid: true
-    listen:
-      Date: store_new_tab_content_interactions_locally.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -63,6 +29,40 @@
       store_new_tab_content_interactions_locally.metric: 'active_hours'
       store_new_tab_content_interactions_locally.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: store_new_tab_content_interactions_locally.submission_date
+    field_y: store_new_tab_content_interactions_locally.point
+    log_scale: false
+    ci_lower: store_new_tab_content_interactions_locally.lower
+    ci_upper: store_new_tab_content_interactions_locally.upper
+    show_grid: true
+    listen:
+      Date: store_new_tab_content_interactions_locally.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: store_new_tab_content_interactions_locally
+    type: looker_line
+    fields: [
+      store_new_tab_content_interactions_locally.submission_date,
+      store_new_tab_content_interactions_locally.branch,
+      store_new_tab_content_interactions_locally.point
+    ]
+    pivots: [
+      store_new_tab_content_interactions_locally.branch
+    ]
+    filters:
+      store_new_tab_content_interactions_locally.metric: 'ad_clicks'
+      store_new_tab_content_interactions_locally.statistic: mean
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: store_new_tab_content_interactions_locally
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       store_new_tab_content_interactions_locally.submission_date,
       store_new_tab_content_interactions_locally.branch,
+      store_new_tab_content_interactions_locally.upper,
+      store_new_tab_content_interactions_locally.lower,
       store_new_tab_content_interactions_locally.point
     ]
     pivots: [
       store_new_tab_content_interactions_locally.branch
     ]
     filters:
-      store_new_tab_content_interactions_locally.metric: 'uri_count'
-      store_new_tab_content_interactions_locally.statistic: mean
+      store_new_tab_content_interactions_locally.metric: 'memory_total'
+      store_new_tab_content_interactions_locally.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: store_new_tab_content_interactions_locally.submission_date
+      Percentile: store_new_tab_content_interactions_locally.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,45 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: store_new_tab_content_interactions_locally
-    type: "ci-line-chart"
-    fields: [
-      store_new_tab_content_interactions_locally.submission_date,
-      store_new_tab_content_interactions_locally.branch,
-      store_new_tab_content_interactions_locally.upper,
-      store_new_tab_content_interactions_locally.lower,
-      store_new_tab_content_interactions_locally.point
-    ]
-    pivots: [
-      store_new_tab_content_interactions_locally.branch
-    ]
-    filters:
-      store_new_tab_content_interactions_locally.metric: 'memory_total'
-      store_new_tab_content_interactions_locally.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: store_new_tab_content_interactions_locally.submission_date
-    field_y: store_new_tab_content_interactions_locally.point
-    log_scale: false
-    ci_lower: store_new_tab_content_interactions_locally.lower
-    ci_upper: store_new_tab_content_interactions_locally.upper
-    show_grid: true
-    listen:
-      Date: store_new_tab_content_interactions_locally.submission_date
-      Percentile: store_new_tab_content_interactions_locally.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,10 +199,10 @@
       store_new_tab_content_interactions_locally.branch
     ]
     filters:
-      store_new_tab_content_interactions_locally.metric: 'ad_clicks'
+      store_new_tab_content_interactions_locally.metric: 'uri_count'
       store_new_tab_content_interactions_locally.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: store_new_tab_content_interactions_locally.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       store_new_tab_content_interactions_locally.metric: 'qualified_cumulative_days_of_use'
+      store_new_tab_content_interactions_locally.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: store_new_tab_content_interactions_locally.submission_date
+    field_y: store_new_tab_content_interactions_locally.point
+    log_scale: false
+    ci_lower: store_new_tab_content_interactions_locally.lower
+    ci_upper: store_new_tab_content_interactions_locally.upper
+    show_grid: true
+    listen:
+      Date: store_new_tab_content_interactions_locally.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: store_new_tab_content_interactions_locally
+    type: looker_line
+    fields: [
+      store_new_tab_content_interactions_locally.submission_date,
+      store_new_tab_content_interactions_locally.branch,
+      store_new_tab_content_interactions_locally.point
+    ]
+    pivots: [
+      store_new_tab_content_interactions_locally.branch
+    ]
+    filters:
+      store_new_tab_content_interactions_locally.metric: 'days_of_use'
       store_new_tab_content_interactions_locally.statistic: mean
     row: 30
     col: 12
