@@ -36,6 +36,9 @@ follows format: major.minor.patch (e.g. 99.3.3).
     sql: ${TABLE}.first_service_flow_entrypoint ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The entrypoint of the flow session.
+Typically a UI touchpoint like \"preferences\".
+"
   }
 
   dimension: first_service_flow_id {
@@ -48,30 +51,49 @@ follows format: major.minor.patch (e.g. 99.3.3).
     sql: ${TABLE}.first_service_flow_utm_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Marketing campaign identifier
+for the the first flow session.
+Not stored if the DNT request header was 1.
+"
   }
 
   dimension: first_service_flow_utm_content {
     sql: ${TABLE}.first_service_flow_utm_content ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Marketing campaign content identifier
+for the the first flow session.
+Not stored if the DNT request header was 1.
+"
   }
 
   dimension: first_service_flow_utm_medium {
     sql: ${TABLE}.first_service_flow_utm_medium ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Marketing campaign medium for the the first flow session.
+Not stored if the DNT request header was 1.
+"
   }
 
   dimension: first_service_flow_utm_source {
     sql: ${TABLE}.first_service_flow_utm_source ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Marketing campaign source for
+the flow session.
+Not stored if the DNT request header was 1.
+"
   }
 
   dimension: first_service_flow_utm_term {
     sql: ${TABLE}.first_service_flow_utm_term ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Marketing campaign search term
+for the the first flow session.
+Not stored if the DNT request header was 1.
+"
   }
 
   dimension: first_service_language {
@@ -146,6 +168,10 @@ is created.
       quarter,
       year,
     ]
+    description: "The flow identifier is a hash value representing
+the very first registration or login session
+for the specific user_id/service combination.
+"
   }
 
   dimension_group: submission {

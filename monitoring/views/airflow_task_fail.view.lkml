@@ -16,6 +16,7 @@ view: airflow_task_fail {
     sql: ${TABLE}.duration ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Time elapsed since start until end of task's exeuction (seconds)"
   }
 
   dimension: task_id {
