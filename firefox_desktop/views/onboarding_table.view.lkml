@@ -15,6 +15,7 @@ view: onboarding_table {
     sql: ${TABLE}.addon_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Addon Version"
   }
 
   dimension: attribution__campaign {
@@ -117,12 +118,13 @@ view: onboarding_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
+    description: "The document ID specified in the URI when the client sent this message."
   }
 
   dimension: event {
@@ -162,18 +164,21 @@ view: onboarding_table {
   dimension: experiments {
     sql: ${TABLE}.experiments ;;
     hidden: yes
+    description: "Experiment Information"
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: message_id {
     sql: ${TABLE}.message_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Message ID"
   }
 
   dimension: metadata__geo__city {
@@ -376,21 +381,21 @@ view: onboarding_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "An ISO 3166-1 alpha-2 country code"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {
@@ -409,12 +414,14 @@ view: onboarding_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: version {
     sql: ${TABLE}.version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension_group: metadata__header__parsed {
@@ -444,7 +451,7 @@ view: onboarding_table {
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
+    description: "Timestamp when the ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.onboarding` ;;

@@ -30,6 +30,7 @@ view: airflow_user {
       quarter,
       year,
     ]
+    description: "Datetime when a user was last modified"
   }
 
   dimension_group: created_on {
@@ -44,6 +45,7 @@ view: airflow_user {
       quarter,
       year,
     ]
+    description: "Datetime when a user was created"
   }
 
   dimension_group: last_login {
@@ -58,6 +60,7 @@ view: airflow_user {
       quarter,
       year,
     ]
+    description: "Datetime when a user last logged in"
   }
 
   sql_table_name: `mozdata.monitoring.airflow_user` ;;

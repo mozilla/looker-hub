@@ -22,7 +22,7 @@ view: client_ltv_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    description: "Unique ID for the client installation."
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: days_seen_bytes {
@@ -71,7 +71,7 @@ view: client_ltv_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Sample ID, a number 0-99 inclusive, that samples by client ID"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: total_historic_ad_clicks {
