@@ -10,7 +10,7 @@ include: "/looker-hub/firefox_ios/datagroups/health_last_updated.datagroup.lkml"
 explore: health {
   sql_always_where: ${health.submission_date} >= '2010-01-01' ;;
   view_label: " Health"
-  description: "Explore for the health ping. The purpose of the health ping is to transport all of the health metric information. The `health` ping is automatically sent when the application calls Glean initialize before any operations are done on the data path with a reason of `pre_init`, and once after Glean initialization with a reason of `post_init`."
+  description: "Explore for the health ping. The purpose of the health ping is to transport all of the health metric information. The `health` ping is automatically sent when the application calls Glean initialize before any operations are done on the data path with a reason of `pre_init`. Previously a second ping with reason `post_init` was sent. This reason has been removed in Glean v66.2.0."
   view_name: health
 
   join: health__metrics__labeled_counter__glean_error_invalid_label {
