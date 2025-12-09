@@ -9,12 +9,16 @@ view: accounts_aggregates {
     sql: ${TABLE}.active ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Whether the account is active. Account is considered active if it is not
+disabled and has a verified email address.
+"
   }
 
   dimension: recovery_keys_enabled {
     sql: ${TABLE}.recovery_keys_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Whether the account has a recovery key"
   }
 
   dimension: total_accounts {
@@ -27,6 +31,7 @@ view: accounts_aggregates {
     sql: ${TABLE}.two_factor_auth_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Whether the account has 2FA enabled"
   }
 
   dimension_group: submission {
@@ -42,6 +47,7 @@ view: accounts_aggregates {
     ]
     convert_tz: no
     datatype: date
+    description: "Date of aggregation"
   }
 
   sql_table_name: `moz-fx-data-shared-prod.accounts_db.accounts_aggregates` ;;

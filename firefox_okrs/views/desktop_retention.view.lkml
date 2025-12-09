@@ -208,7 +208,7 @@ view: desktop_retention {
     ]
     convert_tz: no
     datatype: date
-    description: "Metric DAte"
+    description: "Metric Date"
   }
 
   sql_table_name: `moz-fx-data-shared-prod.telemetry.desktop_retention` ;;

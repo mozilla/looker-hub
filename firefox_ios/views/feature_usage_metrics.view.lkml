@@ -23,7 +23,7 @@ view: feature_usage_metrics {
     sql: ${TABLE}.adjust_network ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Adjust Network"
+    description: "The name of the Adjust Network that sourced this installation."
   }
 
   dimension: app_menu_customize_homepage {
@@ -128,7 +128,7 @@ view: feature_usage_metrics {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Channel"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: clients {
@@ -262,7 +262,7 @@ view: feature_usage_metrics {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Is Default Browser"
+    description: "A flag indicating whether the browser is set as the default browser on the client side."
   }
 
   dimension: logins_deleted {
