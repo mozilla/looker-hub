@@ -14521,7 +14521,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__memory_distribution__network_race_cache_bandwidth_not_race__sum {
     label: "Network: Race Cache Bandwidth Not Race Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.network_race_cache_bandwidth_not_race.sum ;;
     type: number
     group_label: "Network"
@@ -44865,19 +44865,19 @@ view: metrics__metrics__labeled_counter__networking_speculative_connect_outcome 
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
