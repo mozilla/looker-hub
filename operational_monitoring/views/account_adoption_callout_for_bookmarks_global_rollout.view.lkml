@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: temp_new_tab_mobile_qr_code_campaign_weather_conflict {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.temp_new_tab_mobile_qr_code_campaign_weather_conflict_statistics ;;
+view: account_adoption_callout_for_bookmarks_global_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.account_adoption_callout_for_bookmarks_global_rollout_statistics ;;
 
   dimension: submission_date {
     type: date

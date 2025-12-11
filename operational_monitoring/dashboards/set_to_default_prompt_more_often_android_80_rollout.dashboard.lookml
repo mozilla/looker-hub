@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       set_to_default_prompt_more_often_android_80_rollout.branch
     ]
     filters:
-      set_to_default_prompt_more_often_android_80_rollout.metric: 'active_hours'
+      set_to_default_prompt_more_often_android_80_rollout.metric: 'days_of_use'
       set_to_default_prompt_more_often_android_80_rollout.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       set_to_default_prompt_more_often_android_80_rollout.branch
     ]
     filters:
-      set_to_default_prompt_more_often_android_80_rollout.metric: 'days_of_use'
+      set_to_default_prompt_more_often_android_80_rollout.metric: 'tagged_sap_searches'
       set_to_default_prompt_more_often_android_80_rollout.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       set_to_default_prompt_more_often_android_80_rollout.branch
     ]
     filters:
-      set_to_default_prompt_more_often_android_80_rollout.metric: 'search_count'
+      set_to_default_prompt_more_often_android_80_rollout.metric: 'active_hours'
       set_to_default_prompt_more_often_android_80_rollout.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       set_to_default_prompt_more_often_android_80_rollout.branch
     ]
     filters:
-      set_to_default_prompt_more_often_android_80_rollout.metric: 'tagged_sap_searches'
+      set_to_default_prompt_more_often_android_80_rollout.metric: 'search_count'
       set_to_default_prompt_more_often_android_80_rollout.statistic: mean
     row: 30
     col: 0

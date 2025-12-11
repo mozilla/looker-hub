@@ -950,6 +950,14 @@ view: events_stream {
     group_item_label: "Current Item"
   }
 
+  dimension: extras__quantity__decoding_time {
+    sql: ${TABLE}.extras.quantity.decoding_time ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Decoding Time"
+  }
+
   dimension: extras__quantity__deleted {
     sql: ${TABLE}.extras.quantity.deleted ;;
     type: number
@@ -1068,6 +1076,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Inference Time"
+  }
+
+  dimension: extras__quantity__input_tokens {
+    sql: ${TABLE}.extras.quantity.input_tokens ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Input Tokens"
   }
 
   dimension: extras__quantity__items_count {
@@ -1286,6 +1302,14 @@ view: events_stream {
     group_item_label: "Opened Tabs"
   }
 
+  dimension: extras__quantity__output_tokens {
+    sql: ${TABLE}.extras.quantity.output_tokens ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Output Tokens"
+  }
+
   dimension: extras__quantity__pc_negotiation_count {
     sql: ${TABLE}.extras.quantity.pc_negotiation_count ;;
     type: number
@@ -1358,12 +1382,36 @@ view: events_stream {
     group_item_label: "Time"
   }
 
+  dimension: extras__quantity__time_per_output_token {
+    sql: ${TABLE}.extras.quantity.time_per_output_token ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time Per Output Token"
+  }
+
+  dimension: extras__quantity__time_to_first_token {
+    sql: ${TABLE}.extras.quantity.time_to_first_token ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time To First Token"
+  }
+
   dimension: extras__quantity__tokenizing_time {
     sql: ${TABLE}.extras.quantity.tokenizing_time ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tokenizing Time"
+  }
+
+  dimension: extras__quantity__tokens_per_second {
+    sql: ${TABLE}.extras.quantity.tokens_per_second ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tokens Per Second"
   }
 
   dimension: extras__quantity__total_completed_requests {
