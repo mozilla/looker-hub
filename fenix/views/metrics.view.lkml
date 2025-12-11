@@ -19319,6 +19319,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__sum {
+    label: "Networking: HTTP 3 Spurious Congestion Event Ratio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Spurious Congestion Event Ratio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Spurious Congestion Event Ratio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_spurious_congestion_event_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: spurious congestion event to loss induced congestion event ratio (10000 scaling factor).
+"
+  }
+
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__sum {
     label: "Networking: HTTP 3 Udp Datagram Segment Size Received Sum"
     hidden: no
@@ -19478,6 +19496,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "The upload throughput for http/3 request size between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_1_10__sum {
+    label: "Networking: HTTP 3 Upload Throughput 1 10 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_1_10.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Upload Throughput 1 10 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Upload Throughput 1 10 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_upload_throughput_1_10"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 request size between 1MB and 10MB. Measured in megabits per second, Mbps.
 "
   }
 
@@ -57490,6 +57526,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio__value
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -57547,6 +57597,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_1_10__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

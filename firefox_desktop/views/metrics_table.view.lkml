@@ -4107,7 +4107,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Web Push Api Notify"
-    description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker.
+    description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker when required.
 This metric was generated to correspond to the Legacy Telemetry count histogram PUSH_API_NOTIFY.
 "
   }
@@ -8408,6 +8408,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Spurious Congestion Event Ratio"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Spurious Congestion Event Ratio"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.count ;;
     type: number
@@ -8515,6 +8537,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_1_10__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_1_10.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Upload Throughput 1 10"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_1_10__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_1_10.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Upload Throughput 1 10"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_1_10__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_1_10.values ;;
     hidden: yes
   }
 
@@ -55742,6 +55786,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -55799,6 +55857,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_upload_thro
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_1_10__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
