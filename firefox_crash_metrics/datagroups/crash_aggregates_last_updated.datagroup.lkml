@@ -5,8 +5,8 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: crash_aggregations_last_updated {
-  label: "crash_aggregations Last Updated"
+datagroup: crash_aggregates_last_updated {
+  label: "crash_aggregates Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
@@ -15,6 +15,6 @@ datagroup: crash_aggregations_last_updated {
     WHERE (table_schema = 'telemetry_derived' AND table_name = 'crash_aggregates_v1')
 
     ) ;;
-  description: "Updates for crash_aggregations when referenced tables are modified."
+  description: "Updates for crash_aggregates when referenced tables are modified."
   max_cache_age: "24 hours"
 }

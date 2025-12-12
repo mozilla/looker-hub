@@ -2328,7 +2328,7 @@ firefox_crash_metrics:
   pretty_name: Firefox Crash Metrics
   spoke: looker-spoke-default
   views:
-    crash_aggregations:
+    crash_aggregates:
       tables:
       - table: moz-fx-data-shared-prod.telemetry_derived.crash_aggregates_v1
       type: table_view
