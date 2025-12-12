@@ -35,6 +35,13 @@ view: shredder_per_job_stats {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: job_type {
+    sql: ${TABLE}.job_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "BigQuery job type, should be one of 'QUERY' or 'COPY'"
+  }
+
   dimension: parent_task_id {
     sql: ${TABLE}.parent_task_id ;;
     type: string
