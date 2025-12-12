@@ -11480,6 +11480,19 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 {
+    sql: ${TABLE}.metrics.dual_labeled_counter.contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 ;;
+    hidden: yes
+    description: "Fingerprinting detection hits by fingerprinter alias (key) and the source(s) used (category). An alias using multiple sources will increment each source individually once, and increment the combination once as well.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2 {
+    sql: ${TABLE}.metrics.dual_labeled_counter.contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2 ;;
+    hidden: yes
+    description: "Fingerprinting detection hits by known fingerprinting string (key) and source (category)."
+  }
+
   dimension: metrics__dual_labeled_counter__dns_lookup_disposition {
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_lookup_disposition ;;
     hidden: yes
@@ -12155,6 +12168,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.codec_stats_video_preferred_codec ;;
     hidden: yes
     description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_canvas_fingerprinting_per_tab2 ;;
+    hidden: yes
+    description: "Whether any canvas fingerprinting attempt was detected, as identified by either a known fingerprinting text or a known behavior (alias)
 "
   }
 
@@ -18891,6 +18911,17 @@ default: \"never\"
 "
   }
 
+  dimension: metrics__string__preferences_toolbar_expanded_shortcut {
+    sql: ${TABLE}.metrics.string.preferences_toolbar_expanded_shortcut ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Preferences Toolbar Expanded Shortcut"
+    description: "The toolbar shortcut used in expanded toolbar.
+Possible values are: bookmark, translate, homepage or back.
+"
+  }
+
   dimension: metrics__string__preferences_toolbar_mode_setting {
     sql: ${TABLE}.metrics.string.preferences_toolbar_mode_setting ;;
     type: string
@@ -18909,6 +18940,17 @@ default: \"never\"
     group_item_label: "Preferences Toolbar Position Setting"
     description: "The position of the toolbar
 default: bottom (defaults to top if the user has accessibility services)
+"
+  }
+
+  dimension: metrics__string__preferences_toolbar_simple_shortcut {
+    sql: ${TABLE}.metrics.string.preferences_toolbar_simple_shortcut ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Preferences Toolbar Simple Shortcut"
+    description: "The toolbar shortcut used in simple toolbar.
+Possible values are: new_tab, share, bookmark, translate, homepage or back.
 "
   }
 
@@ -53663,6 +53705,60 @@ view: metrics_table__metrics__dual_labeled_counter__application_reputation_serve
 }
 
 view: metrics_table__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
