@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/fr_billboard_rollout.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/fr_billboard_rollout_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/shortcuts_and_stories_v2_beta.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/shortcuts_and_stories_v2_beta_last_updated.datagroup.lkml"
 
-explore: fr_billboard_rollout {
+explore: shortcuts_and_stories_v2_beta {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: fr_billboard_rollout {
   }
 
   hidden: yes
-  persist_with: fr_billboard_rollout_last_updated
+  persist_with: shortcuts_and_stories_v2_beta_last_updated
 }
