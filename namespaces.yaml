@@ -507,14 +507,6 @@ contextual_services_private:
       type: ping_explore
       views:
         base_view: event_aggregates_spons_tiles
-    event_aggregates_suggest:
-      type: ping_explore
-      views:
-        base_view: event_aggregates_suggest
-    quicksuggest_clicks:
-      type: ping_explore
-      views:
-        base_view: quicksuggest_click
     quicksuggest_impressions:
       type: ping_explore
       views:
@@ -523,10 +515,6 @@ contextual_services_private:
       type: ping_explore
       views:
         base_view: search_terms_daily
-    topsites_clicks:
-      type: ping_explore
-      views:
-        base_view: topsites_click
     topsites_impressions:
       type: ping_explore
       views:
@@ -562,18 +550,10 @@ contextual_services_private:
       tables:
       - table: moz-fx-data-shared-prod.revenue_derived.final_adm_revenue_forecast
       type: table_view
-    quicksuggest_click:
-      tables:
-      - table: mozdata.contextual_services.quicksuggest_click
-      type: ping_view
     quicksuggest_impression:
       tables:
       - table: mozdata.contextual_services.quicksuggest_impression
       type: ping_view
-    request_payload_suggest:
-      tables:
-      - table: mozdata.contextual_services.request_payload_suggest
-      type: table_view
     request_payload_tiles:
       tables:
       - table: mozdata.contextual_services.request_payload_tiles
@@ -586,10 +566,6 @@ contextual_services_private:
       tables:
       - table: mozdata.contextual_services.suggest_revenue_levers_daily
       type: table_view
-    topsites_click:
-      tables:
-      - table: mozdata.contextual_services.topsites_click
-      type: ping_view
     topsites_impression:
       tables:
       - table: mozdata.contextual_services.topsites_impression
