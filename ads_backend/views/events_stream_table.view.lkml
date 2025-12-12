@@ -244,14 +244,6 @@ view: events_stream_table {
     hidden: yes
   }
 
-  dimension: extras__string__flight_id {
-    sql: ${TABLE}.extras.string.flight_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Flight ID"
-  }
-
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno

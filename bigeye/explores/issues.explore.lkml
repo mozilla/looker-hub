@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/firefox_crash_metrics/views/issues.view.lkml"
-include: "/looker-hub/firefox_crash_metrics/datagroups/issues_last_updated.datagroup.lkml"
+include: "/looker-hub/bigeye/views/issues.view.lkml"
+include: "/looker-hub/bigeye/datagroups/issues_last_updated.datagroup.lkml"
 
 explore: issues {
   view_name: issues
