@@ -2951,6 +2951,25 @@ default: true
 "
   }
 
+  dimension: metrics__string__preferences_toolbar_expanded_shortcut {
+    label: "Preferences: Toolbar Expanded Shortcut"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_toolbar_expanded_shortcut ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Toolbar Expanded Shortcut"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences: Toolbar Expanded Shortcut"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_toolbar_expanded_shortcut"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The toolbar shortcut used in expanded toolbar.
+Possible values are: bookmark, translate, homepage or back.
+"
+  }
+
   dimension: metrics__string__preferences_toolbar_mode_setting {
     label: "Preferences: Toolbar Mode Setting"
     hidden: no
@@ -2985,6 +3004,25 @@ default: true
 
     description: "The position of the toolbar
 default: bottom (defaults to top if the user has accessibility services)
+"
+  }
+
+  dimension: metrics__string__preferences_toolbar_simple_shortcut {
+    label: "Preferences: Toolbar Simple Shortcut"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_toolbar_simple_shortcut ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Toolbar Simple Shortcut"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences: Toolbar Simple Shortcut"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_toolbar_simple_shortcut"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The toolbar shortcut used in simple toolbar.
+Possible values are: new_tab, share, bookmark, translate, homepage or back.
 "
   }
 
@@ -5681,6 +5719,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
+    label: "Contentblocking: Canvas Fingerprinting Per Tab2"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_canvas_fingerprinting_per_tab2 ;;
+    group_label: "Contentblocking"
+    group_item_label: "Canvas Fingerprinting Per Tab2"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking: Canvas Fingerprinting Per Tab2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/contentblocking_canvas_fingerprinting_per_tab2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether any canvas fingerprinting attempt was detected, as identified by either a known fingerprinting text or a known behavior (alias)
 "
   }
 
@@ -41861,6 +41916,47 @@ view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
   }
 }
 
+view: metrics__metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
+  label: "Contentblocking: Canvas Fingerprinting Per Tab2"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__contentblocking_cryptominers_blocked_count {
   label: "Contentblocking: Cryptominers Blocked Count"
 
@@ -59640,6 +59736,60 @@ view: metrics__metrics__dual_labeled_counter__application_reputation_server_verd
 }
 
 view: metrics__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

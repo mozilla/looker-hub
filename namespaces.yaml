@@ -370,58 +370,6 @@ ads_monitoring:
       type: metric_definitions_view
     metric_definitions_monitoring_equativ_geo_targeting:
       type: metric_definitions_view
-bigeye:
-  explores:
-    dashboards:
-      type: table_explore
-      views:
-        base_view: dashboards
-    issues:
-      type: table_explore
-      views:
-        base_view: issues
-    metrics:
-      type: table_explore
-      views:
-        base_view: metrics
-  glean_app: false
-  owners:
-  - phlee@mozilla.com
-  pretty_name: Bigeye
-  spoke: looker-spoke-default
-  views:
-    collections:
-      tables:
-      - table: moz-fx-data-shared-prod.bigeye_derived.collection_service_v1
-      type: table_view
-    dashboards:
-      tables:
-      - table: moz-fx-data-shared-prod.bigeye_derived.dashboard_service_v1
-      type: table_view
-    groups:
-      tables:
-      - table: moz-fx-data-shared-prod.bigeye_derived.group_service_v1
-      type: table_view
-    issues:
-      tables:
-      - table: moz-fx-data-shared-prod.bigeye_derived.issue_service_v1
-      type: table_view
-    metrics:
-      tables:
-      - table: moz-fx-data-shared-prod.bigeye_derived.metric_service_v1
-      type: table_view
-    users:
-      tables:
-      - table: moz-fx-data-shared-prod.bigeye_derived.user_service_v1
-      type: table_view
-    virtual_tables:
-      tables:
-      - table: moz-fx-data-shared-prod.bigeye_derived.virtual_table_service_v1
-      type: table_view
-    workspaces:
-      tables:
-      - table: moz-fx-data-shared-prod.bigeye_derived.workspace_service_v1
-      type: table_view
 braze:
   glean_app: false
   owners:
@@ -2320,6 +2268,59 @@ firefox_accounts:
     registration_funnels_legacy_events:
       tables:
       - table: moz-fx-data-shared-prod.firefox_accounts_derived.registration_funnels_legacy_events_v1
+      type: table_view
+firefox_crash_metrics:
+  bigeye: null
+  explores:
+    dashboards:
+      type: table_explore
+      views:
+        base_view: dashboards
+    issues:
+      type: table_explore
+      views:
+        base_view: issues
+    metrics:
+      type: table_explore
+      views:
+        base_view: metrics
+  glean_app: false
+  owners:
+  - phlee@mozilla.com
+  pretty_name: Bigeye
+  spoke: looker-spoke-default
+  views:
+    collections:
+      tables:
+      - table: moz-fx-data-shared-prod.bigeye_derived.collection_service_v1
+      type: table_view
+    dashboards:
+      tables:
+      - table: moz-fx-data-shared-prod.bigeye_derived.dashboard_service_v1
+      type: table_view
+    groups:
+      tables:
+      - table: moz-fx-data-shared-prod.bigeye_derived.group_service_v1
+      type: table_view
+    issues:
+      tables:
+      - table: moz-fx-data-shared-prod.bigeye_derived.issue_service_v1
+      type: table_view
+    metrics:
+      tables:
+      - table: moz-fx-data-shared-prod.bigeye_derived.metric_service_v1
+      type: table_view
+    users:
+      tables:
+      - table: moz-fx-data-shared-prod.bigeye_derived.user_service_v1
+      type: table_view
+    virtual_tables:
+      tables:
+      - table: moz-fx-data-shared-prod.bigeye_derived.virtual_table_service_v1
+      type: table_view
+    workspaces:
+      tables:
+      - table: moz-fx-data-shared-prod.bigeye_derived.workspace_service_v1
       type: table_view
 firefox_desktop:
   explores:

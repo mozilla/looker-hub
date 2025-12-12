@@ -449,6 +449,17 @@ view: health_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__fog_inits_during_shutdown {
+    sql: ${TABLE}.metrics.counter.fog_inits_during_shutdown ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Fog Inits During Shutdown"
+    description: "Counts the number of times init had to be called during shutdown.
+Should never have a value for any session long enough to grow idle.
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -723,13 +734,14 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Glean Health Exception State"
-    description: "An exceptional state was detected upon trying to laod the database.
+    description: "An exceptional state was detected upon trying to load the database.
 
 Valid options are:
-  - empty-db
-  - regen-db
-  - c0ffee-in-db
-  - client-id-mismatch
+
+- `empty-db`
+- `regen-db`
+- `c0ffee-in-db`
+- `client-id-mismatch`
 "
   }
 
