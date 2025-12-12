@@ -211,6 +211,12 @@ view: events_stream_table {
     group_item_label: "Windows Build Number"
   }
 
+  dimension: document_event_number {
+    sql: ${TABLE}.document_event_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -231,6 +237,12 @@ view: events_stream_table {
   dimension: event_extra {
     sql: ${TABLE}.event_extra ;;
     hidden: yes
+  }
+
+  dimension: event_id {
+    sql: ${TABLE}.event_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_name {

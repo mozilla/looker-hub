@@ -242,7 +242,7 @@ view: events_stream {
   }
 
   dimension: event_id {
-    sql: ${TABLE}.event_id ;;
+    sql: COALESCE(${TABLE}.event_id, GENERATE_UUID()) ;;
     type: string
     suggest_persist_for: "24 hours"
     primary_key: yes
