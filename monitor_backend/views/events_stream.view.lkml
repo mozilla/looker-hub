@@ -213,6 +213,12 @@ view: events_stream {
     group_item_label: "Windows Build Number"
   }
 
+  dimension: document_event_number {
+    sql: ${TABLE}.document_event_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -233,6 +239,13 @@ view: events_stream {
   dimension: event_extra {
     sql: ${TABLE}.event_extra ;;
     hidden: yes
+  }
+
+  dimension: event_id {
+    sql: COALESCE(${TABLE}.event_id, GENERATE_UUID()) ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    primary_key: yes
   }
 
   dimension: event_name {
