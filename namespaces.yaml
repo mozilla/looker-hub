@@ -10190,10 +10190,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -10650,10 +10650,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id293
           normalized_channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
+            - beta
             - aurora
             - release
             - esr
@@ -11097,10 +11097,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id314
           os:
-            default: Windows
+            default: Mac
             options:
-            - Windows
             - Mac
+            - Windows
             - Linux
             - Other
         explore: garbage_collection
@@ -12055,15 +12055,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id404
           app:
-            default: Linux - vpn_session
+            default: iOS - vpn_session
             options:
-            - Linux - vpn_session
-            - Android - vpn_session
             - iOS - vpn_session
+            - iOS - daemon_session
+            - Android - vpn_session
+            - Windows - vpn_session
+            - Linux - vpn_session
             - Android - daemon_session
             - Darwin - vpn_session
-            - Windows - vpn_session
-            - iOS - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id405
@@ -13058,11 +13058,11 @@ operational_monitoring:
             - release
             - beta
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
             - Darwin
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id471
