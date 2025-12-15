@@ -283,6 +283,24 @@ view: issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_configuration_metric_type_template_metric_aggregation_type {
+    sql: ${TABLE}.metric_configuration_metric_type_template_metric_aggregation_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: metric_configuration_metric_type_template_metric_template_id {
+    sql: ${TABLE}.metric_configuration_metric_type_template_metric_template_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: metric_configuration_metric_type_template_metric_template_name {
+    sql: ${TABLE}.metric_configuration_metric_type_template_metric_template_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_configuration_monitor_type {
     sql: ${TABLE}.metric_configuration_monitor_type ;;
     type: string

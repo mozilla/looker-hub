@@ -53,6 +53,19 @@ view: metric_definitions_metrics {
     (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.os_environment_invoked_to_handle, '.pdf')) > 0, FALSE) OR
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.os_environment_launched_to_handle, '.pdf')) > 0, FALSE))
 ) AS pdf_launched_or_invoked_to_handle,
+COALESCE(COUNT(DISTINCT metrics.uuid.legacy_telemetry_session_id), 0) AS number_of_sessions,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'Autostart'), 0) AS number_of_autostart_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'DesktopLauncher'), 0) AS number_of_desktoplauncher_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'Desktop'), 0) AS number_of_desktop_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'DesktopPrivate'), 0) AS number_of_desktopprivate_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'Other'), 0) AS number_of_other_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'OtherShortcut'), 0) AS number_of_othershortcut_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'StartMenu'), 0) AS number_of_startmenu_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'StartMenuPrivate'), 0) AS number_of_startmenuprivate_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'Taskbar'), 0) AS number_of_taskbar_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'TaskbarPrivate'), 0) AS number_of_taskbarprivate_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method = 'TaskbarTab'), 0) AS number_of_taskbartab_launches,
+COALESCE(COUNTIF(metrics.string.os_environment_launch_method != 'TaskbarTab'), 0) AS number_of_non_taskbartab_launches,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -362,6 +375,110 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.pdf_launched_or_invoked_to_handle ;;
   }
 
+  dimension: number_of_sessions {
+    group_label: "Metrics"
+    label: "Number of Cold Starts (Based on Legacy Session IDs)"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_sessions ;;
+  }
+
+  dimension: number_of_autostart_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using Autostart"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_autostart_launches ;;
+  }
+
+  dimension: number_of_desktoplauncher_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using the Desktop Launcher"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_desktoplauncher_launches ;;
+  }
+
+  dimension: number_of_desktop_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using an Desktop Shortcut (Normal Mode)"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_desktop_launches ;;
+  }
+
+  dimension: number_of_desktopprivate_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using an Desktop Shortcut (Private Mode)"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_desktopprivate_launches ;;
+  }
+
+  dimension: number_of_other_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using an Unknown Method"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_other_launches ;;
+  }
+
+  dimension: number_of_othershortcut_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using Another Shortcut"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_othershortcut_launches ;;
+  }
+
+  dimension: number_of_startmenu_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using Start Menu (Normal Mode)"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_startmenu_launches ;;
+  }
+
+  dimension: number_of_startmenuprivate_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using Start Menu (Private Mode)"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_startmenuprivate_launches ;;
+  }
+
+  dimension: number_of_taskbar_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using Taskbar (Normal Mode)"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_taskbar_launches ;;
+  }
+
+  dimension: number_of_taskbarprivate_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using Taskbar (Private Mode)"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_taskbarprivate_launches ;;
+  }
+
+  dimension: number_of_taskbartab_launches {
+    group_label: "Metrics"
+    label: "Number of Launches Using Taskbar Tabs"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_taskbartab_launches ;;
+  }
+
+  dimension: number_of_non_taskbartab_launches {
+    group_label: "Metrics"
+    label: "Number of Launches without Using Taskbar Tabs"
+    description: ""
+    type: number
+    sql: ${TABLE}.number_of_non_taskbartab_launches ;;
+  }
+
   dimension: app_name {
     sql: ${TABLE}.looker_base_fields_app_name ;;
     type: string
@@ -485,6 +602,19 @@ looker_base_fields_sample_id,
       pdf_invoked_to_handle,
       pdf_launched_to_handle,
       pdf_launched_or_invoked_to_handle,
+      number_of_sessions,
+      number_of_autostart_launches,
+      number_of_desktoplauncher_launches,
+      number_of_desktop_launches,
+      number_of_desktopprivate_launches,
+      number_of_other_launches,
+      number_of_othershortcut_launches,
+      number_of_startmenu_launches,
+      number_of_startmenuprivate_launches,
+      number_of_taskbar_launches,
+      number_of_taskbarprivate_launches,
+      number_of_taskbartab_launches,
+      number_of_non_taskbartab_launches,
     ]
   }
 

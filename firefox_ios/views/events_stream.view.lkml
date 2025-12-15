@@ -5,6 +5,8 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
+  sql_table_name: `mozdata.firefox_ios.events_stream` ;;
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -211,10 +213,21 @@ view: events_stream {
     group_item_label: "Windows Build Number"
   }
 
+  dimension: document_event_number {
+    sql: ${TABLE}.document_event_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    primary_key: yes
+  }
+
+  dimension: event {
+    sql: ${TABLE}.event ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_category {
@@ -226,6 +239,13 @@ view: events_stream {
   dimension: event_extra {
     sql: ${TABLE}.event_extra ;;
     hidden: yes
+  }
+
+  dimension: event_id {
+    sql: COALESCE(${TABLE}.event_id, GENERATE_UUID()) ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    primary_key: yes
   }
 
   dimension: event_name {
@@ -317,6 +337,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Is Homepage"
+  }
+
+  dimension: extras__boolean__is_new_email_mask {
+    sql: ${TABLE}.extras.boolean.is_new_email_mask ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is New Email Mask"
   }
 
   dimension: extras__boolean__is_opted_in_sent_from_firefox {
@@ -639,6 +667,14 @@ view: events_stream {
     group_item_label: "Enrollment ID"
   }
 
+  dimension: extras__string__error {
+    sql: ${TABLE}.extras.string.error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error"
+  }
+
   dimension: extras__string__error_code {
     sql: ${TABLE}.extras.string.error_code ;;
     type: string
@@ -837,6 +873,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Old Name"
+  }
+
+  dimension: extras__string__onboarding_variant {
+    sql: ${TABLE}.extras.string.onboarding_variant ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Onboarding Variant"
   }
 
   dimension: extras__string__option {
@@ -1485,14 +1529,25 @@ view: events_stream {
     ]
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_id} ;;
+  measure: event_count {
+    type: count
+    description: "The number of times the event(s) occurred."
   }
 
   measure: ping_count {
     type: count
+    hidden: yes
   }
 
-  sql_table_name: `mozdata.firefox_ios.events_stream` ;;
+  measure: client_count {
+    type: count_distinct
+    sql: ${client_id} ;;
+    description: "The number of clients that completed the event(s)."
+  }
+
+  measure: clients {
+    type: count_distinct
+    sql: ${client_id} ;;
+    hidden: yes
+  }
 }

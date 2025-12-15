@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       android_ui_redesign_release.branch
     ]
     filters:
-      android_ui_redesign_release.metric: 'retained'
+      android_ui_redesign_release.metric: 'ad_clicks'
       android_ui_redesign_release.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       android_ui_redesign_release.branch
     ]
     filters:
-      android_ui_redesign_release.metric: 'uri_count'
+      android_ui_redesign_release.metric: 'search_count'
       android_ui_redesign_release.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: android_ui_redesign_release.submission_date
+    field_y: android_ui_redesign_release.point
+    log_scale: false
+    ci_lower: android_ui_redesign_release.lower
+    ci_upper: android_ui_redesign_release.upper
+    show_grid: true
+    listen:
+      Date: android_ui_redesign_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_ui_redesign_release
+    type: looker_line
+    fields: [
+      android_ui_redesign_release.submission_date,
+      android_ui_redesign_release.branch,
+      android_ui_redesign_release.point
+    ]
+    pivots: [
+      android_ui_redesign_release.branch
+    ]
+    filters:
+      android_ui_redesign_release.metric: 'active_hours'
+      android_ui_redesign_release.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: android_ui_redesign_release.submission_date
@@ -95,40 +129,6 @@
     ]
     filters:
       android_ui_redesign_release.metric: 'tagged_sap_searches'
-      android_ui_redesign_release.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: android_ui_redesign_release.submission_date
-    field_y: android_ui_redesign_release.point
-    log_scale: false
-    ci_lower: android_ui_redesign_release.lower
-    ci_upper: android_ui_redesign_release.upper
-    show_grid: true
-    listen:
-      Date: android_ui_redesign_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_ui_redesign_release
-    type: looker_line
-    fields: [
-      android_ui_redesign_release.submission_date,
-      android_ui_redesign_release.branch,
-      android_ui_redesign_release.point
-    ]
-    pivots: [
-      android_ui_redesign_release.branch
-    ]
-    filters:
-      android_ui_redesign_release.metric: 'ad_clicks'
       android_ui_redesign_release.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       android_ui_redesign_release.branch
     ]
     filters:
-      android_ui_redesign_release.metric: 'search_count'
+      android_ui_redesign_release.metric: 'retained'
       android_ui_redesign_release.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       android_ui_redesign_release.branch
     ]
     filters:
-      android_ui_redesign_release.metric: 'active_hours'
+      android_ui_redesign_release.metric: 'uri_count'
       android_ui_redesign_release.statistic: mean
     row: 30
     col: 0

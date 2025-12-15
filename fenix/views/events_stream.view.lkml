@@ -5,6 +5,8 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: events_stream {
+  sql_table_name: `mozdata.fenix.events_stream` ;;
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -211,10 +213,21 @@ view: events_stream {
     group_item_label: "Windows Build Number"
   }
 
+  dimension: document_event_number {
+    sql: ${TABLE}.document_event_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    primary_key: yes
+  }
+
+  dimension: event {
+    sql: ${TABLE}.event ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_category {
@@ -226,6 +239,13 @@ view: events_stream {
   dimension: event_extra {
     sql: ${TABLE}.event_extra ;;
     hidden: yes
+  }
+
+  dimension: event_id {
+    sql: COALESCE(${TABLE}.event_id, GENERATE_UUID()) ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    primary_key: yes
   }
 
   dimension: event_name {
@@ -431,6 +451,14 @@ view: events_stream {
     group_item_label: "Foreground Tab"
   }
 
+  dimension: extras__boolean__form_action_origin_fixable {
+    sql: ${TABLE}.extras.boolean.form_action_origin_fixable ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Form Action Origin Fixable"
+  }
+
   dimension: extras__boolean__form_data {
     sql: ${TABLE}.extras.boolean.form_data ;;
     type: yesno
@@ -487,6 +515,38 @@ view: events_stream {
     group_item_label: "Has Description"
   }
 
+  dimension: extras__boolean__has_empty_password {
+    sql: ${TABLE}.extras.boolean.has_empty_password ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Empty Password"
+  }
+
+  dimension: extras__boolean__has_non_http_origin {
+    sql: ${TABLE}.extras.boolean.has_non_http_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Non HTTP Origin"
+  }
+
+  dimension: extras__boolean__has_punycode_form_action_origin {
+    sql: ${TABLE}.extras.boolean.has_punycode_form_action_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Punycode Form Action Origin"
+  }
+
+  dimension: extras__boolean__has_punycode_origin {
+    sql: ${TABLE}.extras.boolean.has_punycode_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Punycode Origin"
+  }
+
   dimension: extras__boolean__has_rtcp_mux {
     sql: ${TABLE}.extras.boolean.has_rtcp_mux ;;
     type: yesno
@@ -495,12 +555,36 @@ view: events_stream {
     group_item_label: "Has Rtcp Mux"
   }
 
+  dimension: extras__boolean__has_single_dot_origin {
+    sql: ${TABLE}.extras.boolean.has_single_dot_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Single Dot Origin"
+  }
+
   dimension: extras__boolean__has_sts {
     sql: ${TABLE}.extras.boolean.has_sts ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Has Sts"
+  }
+
+  dimension: extras__boolean__has_username_line_break {
+    sql: ${TABLE}.extras.boolean.has_username_line_break ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Username Line Break"
+  }
+
+  dimension: extras__boolean__has_username_nul {
+    sql: ${TABLE}.extras.boolean.has_username_nul ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Username Nul"
   }
 
   dimension: extras__boolean__hidden {
@@ -565,6 +649,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Isdecryptsuccess"
+  }
+
+  dimension: extras__boolean__is_deleted {
+    sql: ${TABLE}.extras.boolean.is_deleted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Deleted"
   }
 
   dimension: extras__boolean__is_frame {
@@ -685,6 +777,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Opt In"
+  }
+
+  dimension: extras__boolean__origin_fixable {
+    sql: ${TABLE}.extras.boolean.origin_fixable ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Origin Fixable"
   }
 
   dimension: extras__boolean__poisoned {
@@ -935,6 +1035,14 @@ view: events_stream {
     group_item_label: "CPU Utilization"
   }
 
+  dimension: extras__quantity__decoding_time {
+    sql: ${TABLE}.extras.quantity.decoding_time ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Decoding Time"
+  }
+
   dimension: extras__quantity__deleted {
     sql: ${TABLE}.extras.quantity.deleted ;;
     type: number
@@ -1053,6 +1161,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Inference Time"
+  }
+
+  dimension: extras__quantity__input_tokens {
+    sql: ${TABLE}.extras.quantity.input_tokens ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Input Tokens"
   }
 
   dimension: extras__quantity__items_count {
@@ -1263,6 +1379,14 @@ view: events_stream {
     group_item_label: "Number Of Logins To Migrate"
   }
 
+  dimension: extras__quantity__output_tokens {
+    sql: ${TABLE}.extras.quantity.output_tokens ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Output Tokens"
+  }
+
   dimension: extras__quantity__pc_negotiation_count {
     sql: ${TABLE}.extras.quantity.pc_negotiation_count ;;
     type: number
@@ -1367,12 +1491,36 @@ view: events_stream {
     group_item_label: "Time"
   }
 
+  dimension: extras__quantity__time_per_output_token {
+    sql: ${TABLE}.extras.quantity.time_per_output_token ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time Per Output Token"
+  }
+
+  dimension: extras__quantity__time_to_first_token {
+    sql: ${TABLE}.extras.quantity.time_to_first_token ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time To First Token"
+  }
+
   dimension: extras__quantity__tokenizing_time {
     sql: ${TABLE}.extras.quantity.tokenizing_time ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tokenizing Time"
+  }
+
+  dimension: extras__quantity__tokens_per_second {
+    sql: ${TABLE}.extras.quantity.tokens_per_second ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tokens Per Second"
   }
 
   dimension: extras__quantity__total_completed_requests {
@@ -2247,6 +2395,14 @@ view: events_stream {
     group_item_label: "Error Type"
   }
 
+  dimension: extras__string__etld {
+    sql: ${TABLE}.extras.string.etld ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Etld"
+  }
+
   dimension: extras__string__etp_setting {
     sql: ${TABLE}.extras.string.etp_setting ;;
     type: string
@@ -2469,6 +2625,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Flow ID"
+  }
+
+  dimension: extras__string__form_action_origin_error {
+    sql: ${TABLE}.extras.string.form_action_origin_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Form Action Origin Error"
   }
 
   dimension: extras__string__frame_id {
@@ -2911,6 +3075,14 @@ view: events_stream {
     group_item_label: "Method"
   }
 
+  dimension: extras__string__metric_version {
+    sql: ${TABLE}.extras.string.metric_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Metric Version"
+  }
+
   dimension: extras__string__mime_type {
     sql: ${TABLE}.extras.string.mime_type ;;
     type: string
@@ -3167,6 +3339,14 @@ view: events_stream {
     group_item_label: "Organization"
   }
 
+  dimension: extras__string__origin_error {
+    sql: ${TABLE}.extras.string.origin_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Origin Error"
+  }
+
   dimension: extras__string__originalReason {
     sql: ${TABLE}.extras.string.originalReason ;;
     type: string
@@ -3421,6 +3601,38 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Provider Key"
+  }
+
+  dimension: extras__string__psi_full_avg10 {
+    sql: ${TABLE}.extras.string.psi_full_avg10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Psi Full Avg10"
+  }
+
+  dimension: extras__string__psi_full_avg60 {
+    sql: ${TABLE}.extras.string.psi_full_avg60 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Psi Full Avg60"
+  }
+
+  dimension: extras__string__psi_some_avg10 {
+    sql: ${TABLE}.extras.string.psi_some_avg10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Psi Some Avg10"
+  }
+
+  dimension: extras__string__psi_some_avg60 {
+    sql: ${TABLE}.extras.string.psi_some_avg60 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Psi Some Avg60"
   }
 
   dimension: extras__string__reader_time {
@@ -3903,6 +4115,14 @@ view: events_stream {
     group_item_label: "Tab Pos"
   }
 
+  dimension: extras__string__table {
+    sql: ${TABLE}.extras.string.table ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Table"
+  }
+
   dimension: extras__string__table_name {
     sql: ${TABLE}.extras.string.table_name ;;
     type: string
@@ -4045,6 +4265,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Toolbar Placement"
+  }
+
+  dimension: extras__string__toolbar_type {
+    sql: ${TABLE}.extras.string.toolbar_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Toolbar Type"
   }
 
   dimension: extras__string__top_preferred_language {
@@ -4573,14 +4801,25 @@ view: events_stream {
     ]
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_id} ;;
+  measure: event_count {
+    type: count
+    description: "The number of times the event(s) occurred."
   }
 
   measure: ping_count {
     type: count
+    hidden: yes
   }
 
-  sql_table_name: `mozdata.fenix.events_stream` ;;
+  measure: client_count {
+    type: count_distinct
+    sql: ${client_id} ;;
+    description: "The number of clients that completed the event(s)."
+  }
+
+  measure: clients {
+    type: count_distinct
+    sql: ${client_id} ;;
+    hidden: yes
+  }
 }

@@ -1516,7 +1516,7 @@ items that appear inside a group, and those that do not.
 
   dimension: metrics__counter__inactive_tabs_tray_inactive_tab_shown {
     label: "Inactive Tabs Tray: Inactive Tab Shown"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_shown ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -1534,7 +1534,7 @@ items that appear inside a group, and those that do not.
 
   dimension: metrics__counter__inactive_tabs_tray_inactive_tab_swipe_close {
     label: "Inactive Tabs Tray: Inactive Tab Swipe Close"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_swipe_close ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -1552,7 +1552,7 @@ items that appear inside a group, and those that do not.
 
   dimension: metrics__counter__inactive_tabs_tray_inactive_tabs_close_all_btn {
     label: "Inactive Tabs Tray: Inactive Tabs Close All Btn"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tabs_close_all_btn ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -1570,7 +1570,7 @@ items that appear inside a group, and those that do not.
 
   dimension: metrics__counter__inactive_tabs_tray_open_inactive_tab {
     label: "Inactive Tabs Tray: Open Inactive Tab"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_inactive_tab ;;
     type: number
     group_label: "Inactive Tabs Tray"

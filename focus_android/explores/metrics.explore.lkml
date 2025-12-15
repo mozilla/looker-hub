@@ -283,6 +283,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_video_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_video_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_video_preferred_codec.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2}) AS metrics__metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__contentblocking_cryptominers_blocked_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__contentblocking_cryptominers_blocked_count}) AS metrics__metrics__labeled_counter__contentblocking_cryptominers_blocked_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__contentblocking_cryptominers_blocked_count.document_id} ;;

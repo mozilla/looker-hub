@@ -9,18 +9,21 @@ view: search_revenue_levers_daily {
     sql: ${TABLE}.ad_click ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Ad Click"
   }
 
   dimension: ad_click_organic {
     sql: ${TABLE}.ad_click_organic ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Ad Click Organic"
   }
 
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Channel"
   }
 
   dimension: country {
@@ -28,156 +31,182 @@ view: search_revenue_levers_daily {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Country"
   }
 
   dimension: dau {
     sql: ${TABLE}.dau ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "DAU"
   }
 
   dimension: dau_engaged_w_sap {
     sql: ${TABLE}.dau_engaged_w_sap ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "DAU Engaged with SAP"
   }
 
   dimension: dau_w_engine_as_default {
     sql: ${TABLE}.dau_w_engine_as_default ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "DAU with Engine as Default"
   }
 
   dimension: device {
     sql: ${TABLE}.device ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Device"
   }
 
   dimension: monetizable_sap {
     sql: ${TABLE}.monetizable_sap ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Monetizable SAP"
   }
 
   dimension: organic {
     sql: ${TABLE}.organic ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Organic"
   }
 
   dimension: partner {
     sql: ${TABLE}.partner ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Partner"
   }
 
   dimension: sap {
     sql: ${TABLE}.sap ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SAP"
   }
 
   dimension: search_with_ads {
     sql: ${TABLE}.search_with_ads ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Search with Ads"
   }
 
   dimension: search_with_ads_organic {
     sql: ${TABLE}.search_with_ads_organic ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of Organic Searches with Ads"
   }
 
   dimension: serp_events_ad_click {
     sql: ${TABLE}.serp_events_ad_click ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Ad Click"
   }
 
   dimension: serp_events_ad_click_organic {
     sql: ${TABLE}.serp_events_ad_click_organic ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Ad Click Organic"
   }
 
   dimension: serp_events_client_count {
     sql: ${TABLE}.serp_events_client_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Client Count"
   }
 
   dimension: serp_events_clients_with_ad_blocker_inferred {
     sql: ${TABLE}.serp_events_clients_with_ad_blocker_inferred ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Clients with Ad Blocker Inferred"
   }
 
   dimension: serp_events_num_ads_blocked {
     sql: ${TABLE}.serp_events_num_ads_blocked ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Number of Ads Blocked"
   }
 
   dimension: serp_events_num_ads_visible {
     sql: ${TABLE}.serp_events_num_ads_visible ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Number of Ads Visible"
   }
 
   dimension: serp_events_organic {
     sql: ${TABLE}.serp_events_organic ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Organic"
   }
 
   dimension: serp_events_sap {
     sql: ${TABLE}.serp_events_sap ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events SAP"
   }
 
   dimension: serp_events_sap_with_ad_blocker_inferred {
     sql: ${TABLE}.serp_events_sap_with_ad_blocker_inferred ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events SAP with Inferred Ad Blocker"
   }
 
   dimension: serp_events_search_with_ads {
     sql: ${TABLE}.serp_events_search_with_ads ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Search with Ads"
   }
 
   dimension: serp_events_search_with_ads_organic {
     sql: ${TABLE}.serp_events_search_with_ads_organic ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Search with Ads Organic"
   }
 
   dimension: serp_events_tagged_follow_on {
     sql: ${TABLE}.serp_events_tagged_follow_on ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Tagged Follow On"
   }
 
   dimension: serp_events_tagged_sap {
     sql: ${TABLE}.serp_events_tagged_sap ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "SERP Events Tagged SAP"
   }
 
   dimension: tagged_follow_on {
     sql: ${TABLE}.tagged_follow_on ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Tagged Follow On"
   }
 
   dimension: tagged_sap {
     sql: ${TABLE}.tagged_sap ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Tagged SAP"
   }
 
   dimension_group: submission {
@@ -193,6 +222,7 @@ view: search_revenue_levers_daily {
     ]
     convert_tz: no
     datatype: date
+    description: "Submission Date"
   }
 
   sql_table_name: `mozdata.search.search_revenue_levers_daily` ;;

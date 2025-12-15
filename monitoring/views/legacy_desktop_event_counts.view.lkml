@@ -222,7 +222,7 @@ view: legacy_desktop_event_counts {
     ]
     convert_tz: no
     datatype: date
-    description: "Submission Date"
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.telemetry.event_aggregates` ;;

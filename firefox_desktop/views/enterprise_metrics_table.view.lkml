@@ -9,24 +9,32 @@ view: enterprise_metrics_table {
     sql: ${TABLE}.client_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Client count.
+"
   }
 
   dimension: enterprise_classification {
     sql: ${TABLE}.enterprise_classification ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Enterprise classification.
+"
   }
 
   dimension: is_dau {
     sql: ${TABLE}.is_dau ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether the client met our definition of dau on the day.
+"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Normalized channel the application is being distributed on. For enterprise this should be either \"esr\" or \"release\".
+"
   }
 
   dimension_group: submission {
@@ -42,6 +50,9 @@ view: enterprise_metrics_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Logical date corresponding to the partition (date when our server received the ping)
+that was processed for generating the metrics.
+"
   }
 
   sql_table_name: `mozdata.firefox_desktop.enterprise_metrics` ;;

@@ -97,7 +97,7 @@ due to being over the number of syncs we report detailed information for.
 
     description: "Hashed FxA device ID, hex string of 64 characters.
 Not included if the user is not logged in.
-If this changes between syncs, the \"sync\" ping is submitted with reason \"idchanged\".
+If this changes between syncs, the \"sync\" ping is submitted with reason \"idchange\".
 "
   }
 
@@ -116,7 +116,7 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
     }
 
     description: "Hashed FxA unique ID, or string of 32 zeroes.
-If this changes between syncs, the \"sync\" ping is submitted with reason \"idchanged\".
+If this changes between syncs, the \"sync\" ping is submitted with reason \"idchange\".
 "
   }
 

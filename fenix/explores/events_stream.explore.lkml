@@ -9,14 +9,32 @@ include: "/looker-hub/fenix/datagroups/events_stream_last_updated.datagroup.lkml
 
 explore: events_stream {
   sql_always_where: ${events_stream.submission_date} >= '2010-01-01' ;;
-  view_label: " Events_Stream"
-  description: "Explore for the events_stream ping. "
   view_name: events_stream
-  persist_with: events_stream_last_updated
 
   always_filter: {
     filters: [
-      submission_date: "28 days",
+      submission_date: "7 days",
     ]
   }
+
+  query: recent_event_counts {
+    description: "Event counts during the past week."
+    dimensions: [event]
+    measures: [event_count]
+    filters: [
+      submission_date: "7 days",
+    ]
+  }
+
+  query: sampled_recent_event_counts {
+    description: "A 1% sample of event counts during the past week."
+    dimensions: [event]
+    measures: [event_count]
+    filters: [
+      submission_date: "7 days",
+      sample_id: "[0, 0]",
+    ]
+  }
+
+  persist_with: events_stream_last_updated
 }

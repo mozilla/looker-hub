@@ -8,6 +8,7 @@ view: urlbar_events_daily_engagement_by_product_result_type_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: experiments {
@@ -25,12 +26,14 @@ view: urlbar_events_daily_engagement_by_product_result_type_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: product_result_type {
@@ -43,6 +46,7 @@ view: urlbar_events_daily_engagement_by_product_result_type_table {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
   dimension: sponsored_suggestions_enabled {
@@ -82,6 +86,7 @@ view: urlbar_events_daily_engagement_by_product_result_type_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.urlbar_events_daily_engagement_by_product_result_type` ;;

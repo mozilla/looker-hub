@@ -3047,8 +3047,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Web Push Api Notify"
-    description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker.
+    description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker when required.
 This metric was generated to correspond to the Legacy Telemetry count histogram PUSH_API_NOTIFY.
+"
+  }
+
+  dimension: metrics__counter__web_push_declarative {
+    sql: ${TABLE}.metrics.counter.web_push_declarative ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Web Push Declarative"
+    description: "Number of push messages in the Declarative Web Push format.
+"
+  }
+
+  dimension: metrics__counter__web_push_declarative_mutable {
+    sql: ${TABLE}.metrics.counter.web_push_declarative_mutable ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Web Push Declarative Mutable"
+    description: "Number of push messages in the Declarative Web Push format with mutable: true.
 "
   }
 
@@ -7042,6 +7062,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Spurious Congestion Event Ratio"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Spurious Congestion Event Ratio"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_udp_datagram_segments_received.count ;;
     type: number
@@ -7149,6 +7191,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_1_10__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_1_10.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Upload Throughput 1 10"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_1_10__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_1_10.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Upload Throughput 1 10"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_1_10__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_1_10.values ;;
     hidden: yes
   }
 
@@ -10354,6 +10418,19 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 {
+    sql: ${TABLE}.metrics.dual_labeled_counter.contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 ;;
+    hidden: yes
+    description: "Fingerprinting detection hits by fingerprinter alias (key) and the source(s) used (category). An alias using multiple sources will increment each source individually once, and increment the combination once as well.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2 {
+    sql: ${TABLE}.metrics.dual_labeled_counter.contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2 ;;
+    hidden: yes
+    description: "Fingerprinting detection hits by known fingerprinting string (key) and source (category)."
+  }
+
   dimension: metrics__dual_labeled_counter__dns_lookup_disposition {
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_lookup_disposition ;;
     hidden: yes
@@ -11043,6 +11120,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.codec_stats_video_preferred_codec ;;
     hidden: yes
     description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_canvas_fingerprinting_per_tab2 ;;
+    hidden: yes
+    description: "Whether any canvas fingerprinting attempt was detected, as identified by either a known fingerprinting text or a known behavior (alias)
 "
   }
 
@@ -12514,7 +12598,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
   dimension: metrics__labeled_counter__networking_local_network_access_prompts_shown {
     sql: ${TABLE}.metrics.labeled_counter.networking_local_network_access_prompts_shown ;;
     hidden: yes
-    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types.
+    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types. Cross-site labels are used when the requesting origin differs from the top-level origin.
 "
   }
 
@@ -15392,6 +15476,11 @@ This metric is an echo of the Legacy Telemetry Environment field
 addons.activeAddons. Like its counterpart, it will only have data in
 Firefox Desktop and at times and on platforms where the environment would
 have values.
+
+NOTE: this metric is available in both `metrics` and `addons` pings. However
+the `addons` ping is the preferred source of data for add-ons related analyses,
+whereas the `metrics` ping is better suited for analyses that correlates other
+metrics with the add-ons listed in the `active_addons` metric.
 "
   }
 
@@ -15443,6 +15532,11 @@ This metric is an echo of the Legacy Telemetry Environment field
 addons.theme. Like its counterpart, it will only have data in Firefox
 Desktop and at times and on platforms where the environment would have
 values.
+
+NOTE: this metric is available in both `metrics` and `addons` pings. However
+the `addons` ping is the preferred source of data for add-ons related analyses,
+whereas the `metrics` ping is better suited for analyses that correlates other
+metrics with the add-ons listed in the `theme` metric.
 "
   }
 
@@ -45949,6 +46043,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -46006,6 +46114,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_upload_thro
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_1_10__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -48035,6 +48157,60 @@ view: metrics_table__metrics__dual_labeled_counter__application_reputation_serve
 }
 
 view: metrics_table__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

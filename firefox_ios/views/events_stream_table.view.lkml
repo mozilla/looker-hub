@@ -211,6 +211,12 @@ view: events_stream_table {
     group_item_label: "Windows Build Number"
   }
 
+  dimension: document_event_number {
+    sql: ${TABLE}.document_event_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -231,6 +237,12 @@ view: events_stream_table {
   dimension: event_extra {
     sql: ${TABLE}.event_extra ;;
     hidden: yes
+  }
+
+  dimension: event_id {
+    sql: ${TABLE}.event_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: event_name {
@@ -322,6 +334,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Is Homepage"
+  }
+
+  dimension: extras__boolean__is_new_email_mask {
+    sql: ${TABLE}.extras.boolean.is_new_email_mask ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is New Email Mask"
   }
 
   dimension: extras__boolean__is_opted_in_sent_from_firefox {
@@ -644,6 +664,14 @@ view: events_stream_table {
     group_item_label: "Enrollment ID"
   }
 
+  dimension: extras__string__error {
+    sql: ${TABLE}.extras.string.error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error"
+  }
+
   dimension: extras__string__error_code {
     sql: ${TABLE}.extras.string.error_code ;;
     type: string
@@ -842,6 +870,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Old Name"
+  }
+
+  dimension: extras__string__onboarding_variant {
+    sql: ${TABLE}.extras.string.onboarding_variant ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Onboarding Variant"
   }
 
   dimension: extras__string__option {

@@ -12571,7 +12571,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__memory_distribution__cert_storage_memory__sum {
     label: "Cert Storage: Memory Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
     type: number
     group_label: "Cert Storage"
@@ -12829,6 +12829,23 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
+    label: "Contentblocking: Canvas Fingerprinting Per Tab2"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.contentblocking_canvas_fingerprinting_per_tab2 ;;
+    group_label: "Contentblocking"
+    group_item_label: "Canvas Fingerprinting Per Tab2"
+
+    link: {
+      label: "Glean Dictionary reference for Contentblocking: Canvas Fingerprinting Per Tab2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/contentblocking_canvas_fingerprinting_per_tab2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether any canvas fingerprinting attempt was detected, as identified by either a known fingerprinting text or a known behavior (alias)
 "
   }
 
@@ -24423,7 +24440,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__memory_distribution__network_race_cache_bandwidth_not_race__sum {
     label: "Network: Race Cache Bandwidth Not Race Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.network_race_cache_bandwidth_not_race.sum ;;
     type: number
     group_label: "Network"
@@ -26179,6 +26196,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__sum {
+    label: "Networking: HTTP 3 Spurious Congestion Event Ratio Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Spurious Congestion Event Ratio Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Spurious Congestion Event Ratio Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_spurious_congestion_event_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: spurious congestion event to loss induced congestion event ratio (10000 scaling factor).
+"
+  }
+
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__sum {
     label: "Networking: HTTP 3 Udp Datagram Segment Size Received Sum"
     hidden: no
@@ -26338,6 +26373,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "The upload throughput for http/3 request size between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_1_10__sum {
+    label: "Networking: HTTP 3 Upload Throughput 1 10 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_1_10.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Upload Throughput 1 10 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Upload Throughput 1 10 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_upload_throughput_1_10"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 request size between 1MB and 10MB. Measured in megabits per second, Mbps.
 "
   }
 
@@ -27035,7 +27088,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types.
+    description: "Count of permission prompts shown to users for local network access, separated by localhost vs local network access types. Cross-site labels are used when the requesting origin differs from the top-level origin.
 "
   }
 
@@ -36245,7 +36298,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker.
+    description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker when required.
 This metric was generated to correspond to the Legacy Telemetry count histogram PUSH_API_NOTIFY.
 "
   }
@@ -36264,6 +36317,42 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Which content encoding is being used for push.
+"
+  }
+
+  dimension: metrics__counter__web_push_declarative {
+    label: "Web Push: Declarative"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_push_declarative ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Declarative"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push: Declarative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_declarative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of push messages in the Declarative Web Push format.
+"
+  }
+
+  dimension: metrics__counter__web_push_declarative_mutable {
+    label: "Web Push: Declarative Mutable"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.web_push_declarative_mutable ;;
+    type: number
+    group_label: "Web Push"
+    group_item_label: "Declarative Mutable"
+
+    link: {
+      label: "Glean Dictionary reference for Web Push: Declarative Mutable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_declarative_mutable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of push messages in the Declarative Web Push format with mutable: true.
 "
   }
 
@@ -44835,6 +44924,56 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: web_push_declarative {
+    type: sum
+    sql: ${metrics__counter__web_push_declarative} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Declarative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_declarative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_declarative_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_declarative: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Declarative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_declarative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_declarative_mutable {
+    type: sum
+    sql: ${metrics__counter__web_push_declarative_mutable} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Declarative Mutable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_declarative_mutable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: web_push_declarative_mutable_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__web_push_declarative_mutable: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Web Push Declarative Mutable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_push_declarative_mutable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: web_push_detected_duplicated_message_ids {
     type: sum
     sql: ${metrics__counter__web_push_detected_duplicated_message_ids} ;;
@@ -51303,6 +51442,47 @@ view: metrics__metrics__labeled_counter__content_analysis_request_sent_by_reason
 
 view: metrics__metrics__labeled_counter__content_analysis_response_action {
   label: "Content Analysis: Response Action"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
+  label: "Contentblocking: Canvas Fingerprinting Per Tab2"
 
   dimension: document_id {
     type: string
@@ -59895,19 +60075,19 @@ view: metrics__metrics__labeled_counter__networking_speculative_connect_outcome 
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -71602,6 +71782,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio__value
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_3_udp_datagram_segments_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -71659,6 +71853,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_1_10__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -73954,6 +74162,60 @@ view: metrics__metrics__dual_labeled_counter__application_reputation_server_verd
 }
 
 view: metrics__metrics__dual_labeled_counter__application_reputation_server_verdict_2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_alias_by_source_per_tab2__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2 {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__contentblocking_canvas_fingerprinting_type_text_by_source_per_tab2__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

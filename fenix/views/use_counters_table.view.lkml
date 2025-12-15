@@ -14869,6 +14869,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_ckeditor4_compat_hack {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_ckeditor4_compat_hack ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Ckeditor4 Compat Hack"
+    description: "Whether a document used CKEditor4CompatHack. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_components {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_components ;;
     type: number
@@ -15299,6 +15309,46 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_mozlockorientation_deprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_mozlockorientation_deprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Mozlockorientation Deprecated"
+    description: "Whether a document used MozlockorientationDeprecated. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_mozorientation_deprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_mozorientation_deprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Mozorientation Deprecated"
+    description: "Whether a document used MozorientationDeprecated. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_mozorientationchange_deprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_mozorientationchange_deprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Mozorientationchange Deprecated"
+    description: "Whether a document used MozorientationchangeDeprecated. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_mozunlockorientation_deprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_mozunlockorientation_deprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Mozunlockorientation Deprecated"
+    description: "Whether a document used MozunlockorientationDeprecated. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_mutation_event {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_mutation_event ;;
     type: number
@@ -15516,6 +15566,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Before Script Execute Event"
     description: "Whether a page used BeforeScriptExecuteEvent. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_ckeditor4_compat_hack {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_ckeditor4_compat_hack ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Ckeditor4 Compat Hack"
+    description: "Whether a page used CKEditor4CompatHack. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -15946,6 +16006,46 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Mozfullscreenerror Deprecated Prefix"
     description: "Whether a page used MozfullscreenerrorDeprecatedPrefix. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_mozlockorientation_deprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_mozlockorientation_deprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Mozlockorientation Deprecated"
+    description: "Whether a page used MozlockorientationDeprecated. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_mozorientation_deprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_mozorientation_deprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Mozorientation Deprecated"
+    description: "Whether a page used Mozorientationdeprecated. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_mozorientationchange_deprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_mozorientationchange_deprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Mozorientationchange Deprecated"
+    description: "Whether a page used MozorientationchangeDeprecated. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_mozunlockorientation_deprecated {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_mozunlockorientation_deprecated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Mozunlockorientation Deprecated"
+    description: "Whether a page used MozunlockorientationDeprecated. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18656,6 +18756,86 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Navigator Wakelock"
     description: "Whether a document called called Navigator.wakeLock. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_notificationoptions_actions {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_notificationoptions_actions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Notificationoptions Actions"
+    description: "Whether a document called called NotificationOptions.actions. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_notificationoptions_badge {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_notificationoptions_badge ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Notificationoptions Badge"
+    description: "Whether a document called called NotificationOptions.badge. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_notificationoptions_image {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_notificationoptions_image ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Notificationoptions Image"
+    description: "Whether a document called called NotificationOptions.image. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_notificationoptions_navigate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_notificationoptions_navigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Notificationoptions Navigate"
+    description: "Whether a document called called NotificationOptions.navigate. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_notificationoptions_renotify {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_notificationoptions_renotify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Notificationoptions Renotify"
+    description: "Whether a document called called NotificationOptions.renotify. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_notificationoptions_requireinteraction {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_notificationoptions_requireinteraction ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Notificationoptions Requireinteraction"
+    description: "Whether a document called called NotificationOptions.requireInteraction. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_notificationoptions_timestamp {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_notificationoptions_timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Notificationoptions Timestamp"
+    description: "Whether a document called called NotificationOptions.timestamp. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_notificationoptions_vibrate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_notificationoptions_vibrate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Notificationoptions Vibrate"
+    description: "Whether a document called called NotificationOptions.vibrate. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -23189,6 +23369,86 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_notificationoptions_actions {
+    sql: ${TABLE}.metrics.counter.use_counter_page_notificationoptions_actions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Notificationoptions Actions"
+    description: "Whether a page called called NotificationOptions.actions. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_notificationoptions_badge {
+    sql: ${TABLE}.metrics.counter.use_counter_page_notificationoptions_badge ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Notificationoptions Badge"
+    description: "Whether a page called called NotificationOptions.badge. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_notificationoptions_image {
+    sql: ${TABLE}.metrics.counter.use_counter_page_notificationoptions_image ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Notificationoptions Image"
+    description: "Whether a page called called NotificationOptions.image. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_notificationoptions_navigate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_notificationoptions_navigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Notificationoptions Navigate"
+    description: "Whether a page called called NotificationOptions.navigate. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_notificationoptions_renotify {
+    sql: ${TABLE}.metrics.counter.use_counter_page_notificationoptions_renotify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Notificationoptions Renotify"
+    description: "Whether a page called called NotificationOptions.renotify. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_notificationoptions_requireinteraction {
+    sql: ${TABLE}.metrics.counter.use_counter_page_notificationoptions_requireinteraction ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Notificationoptions Requireinteraction"
+    description: "Whether a page called called NotificationOptions.requireInteraction. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_notificationoptions_timestamp {
+    sql: ${TABLE}.metrics.counter.use_counter_page_notificationoptions_timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Notificationoptions Timestamp"
+    description: "Whether a page called called NotificationOptions.timestamp. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_notificationoptions_vibrate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_notificationoptions_vibrate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Notificationoptions Vibrate"
+    description: "Whether a page called called NotificationOptions.vibrate. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_onbounce {
     sql: ${TABLE}.metrics.counter.use_counter_page_onbounce ;;
     type: number
@@ -25649,6 +25909,86 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_notificationoptions_actions {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_notificationoptions_actions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Notificationoptions Actions"
+    description: "Whether a dedicated worker called called NotificationOptions.actions. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_notificationoptions_badge {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_notificationoptions_badge ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Notificationoptions Badge"
+    description: "Whether a dedicated worker called called NotificationOptions.badge. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_notificationoptions_image {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_notificationoptions_image ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Notificationoptions Image"
+    description: "Whether a dedicated worker called called NotificationOptions.image. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_notificationoptions_navigate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_notificationoptions_navigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Notificationoptions Navigate"
+    description: "Whether a dedicated worker called called NotificationOptions.navigate. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_notificationoptions_renotify {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_notificationoptions_renotify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Notificationoptions Renotify"
+    description: "Whether a dedicated worker called called NotificationOptions.renotify. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_notificationoptions_requireinteraction {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_notificationoptions_requireinteraction ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Notificationoptions Requireinteraction"
+    description: "Whether a dedicated worker called called NotificationOptions.requireInteraction. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_notificationoptions_timestamp {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_notificationoptions_timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Notificationoptions Timestamp"
+    description: "Whether a dedicated worker called called NotificationOptions.timestamp. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_notificationoptions_vibrate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_notificationoptions_vibrate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Notificationoptions Vibrate"
+    description: "Whether a dedicated worker called called NotificationOptions.vibrate. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_private_browsing_caches_delete {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_private_browsing_caches_delete ;;
     type: number
@@ -26189,6 +26529,86 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_notificationoptions_actions {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_notificationoptions_actions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Notificationoptions Actions"
+    description: "Whether a service worker called called NotificationOptions.actions. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_notificationoptions_badge {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_notificationoptions_badge ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Notificationoptions Badge"
+    description: "Whether a service worker called called NotificationOptions.badge. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_notificationoptions_image {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_notificationoptions_image ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Notificationoptions Image"
+    description: "Whether a service worker called called NotificationOptions.image. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_notificationoptions_navigate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_notificationoptions_navigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Notificationoptions Navigate"
+    description: "Whether a service worker called called NotificationOptions.navigate. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_notificationoptions_renotify {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_notificationoptions_renotify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Notificationoptions Renotify"
+    description: "Whether a service worker called called NotificationOptions.renotify. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_notificationoptions_requireinteraction {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_notificationoptions_requireinteraction ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Notificationoptions Requireinteraction"
+    description: "Whether a service worker called called NotificationOptions.requireInteraction. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_notificationoptions_timestamp {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_notificationoptions_timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Notificationoptions Timestamp"
+    description: "Whether a service worker called called NotificationOptions.timestamp. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_notificationoptions_vibrate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_notificationoptions_vibrate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Notificationoptions Vibrate"
+    description: "Whether a service worker called called NotificationOptions.vibrate. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_private_browsing_caches_delete {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_private_browsing_caches_delete ;;
     type: number
@@ -26726,6 +27146,86 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Shared Mls Statedeletegroup"
     description: "Whether a shared worker called called MLS.stateDeleteGroup. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_notificationoptions_actions {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_notificationoptions_actions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Notificationoptions Actions"
+    description: "Whether a shared worker called called NotificationOptions.actions. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_notificationoptions_badge {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_notificationoptions_badge ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Notificationoptions Badge"
+    description: "Whether a shared worker called called NotificationOptions.badge. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_notificationoptions_image {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_notificationoptions_image ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Notificationoptions Image"
+    description: "Whether a shared worker called called NotificationOptions.image. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_notificationoptions_navigate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_notificationoptions_navigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Notificationoptions Navigate"
+    description: "Whether a shared worker called called NotificationOptions.navigate. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_notificationoptions_renotify {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_notificationoptions_renotify ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Notificationoptions Renotify"
+    description: "Whether a shared worker called called NotificationOptions.renotify. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_notificationoptions_requireinteraction {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_notificationoptions_requireinteraction ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Notificationoptions Requireinteraction"
+    description: "Whether a shared worker called called NotificationOptions.requireInteraction. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_notificationoptions_timestamp {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_notificationoptions_timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Notificationoptions Timestamp"
+    description: "Whether a shared worker called called NotificationOptions.timestamp. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_notificationoptions_vibrate {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_notificationoptions_vibrate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Notificationoptions Vibrate"
+    description: "Whether a shared worker called called NotificationOptions.vibrate. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 

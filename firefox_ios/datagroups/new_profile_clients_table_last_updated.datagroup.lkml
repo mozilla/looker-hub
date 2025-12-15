@@ -12,19 +12,7 @@ datagroup: new_profile_clients_table_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_fennec_derived' AND table_name = 'baseline_clients_last_seen_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_firefox_derived' AND table_name = 'baseline_clients_last_seen_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_firefoxbeta_derived' AND table_name = 'baseline_clients_last_seen_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_ios_derived' AND table_name = 'attribution_clients_v1')
+    WHERE (table_schema = 'firefox_ios_derived' AND table_name = 'new_profile_clients_v1')
 
     ) ;;
   description: "Updates for new_profile_clients_table when referenced tables are modified."
