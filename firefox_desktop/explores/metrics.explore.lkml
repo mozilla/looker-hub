@@ -518,6 +518,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_keyboard}) AS metrics__metrics__labeled_counter__browser_ui_interaction_keyboard ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_keyboard.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action}) AS metrics__metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_ui_interaction_menu_bar {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_menu_bar}) AS metrics__metrics__labeled_counter__browser_ui_interaction_menu_bar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_menu_bar.document_id} ;;
