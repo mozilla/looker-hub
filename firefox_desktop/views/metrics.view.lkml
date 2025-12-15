@@ -2822,6 +2822,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
+    label: "Browser UI Interaction: List All Tabs Action"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_list_all_tabs_action ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "List All Tabs Action"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: List All Tabs Action"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_list_all_tabs_action"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how often users interact with any top-level menu option in the \"List All Tabs\" menu.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_menu_bar {
     label: "Browser UI Interaction: Menu Bar"
     hidden: yes
@@ -49715,6 +49732,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
+  label: "Browser UI Interaction: List All Tabs Action"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 

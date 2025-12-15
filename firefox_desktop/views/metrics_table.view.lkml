@@ -13306,6 +13306,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_list_all_tabs_action ;;
+    hidden: yes
+    description: "Records how often users interact with any top-level menu option in the \"List All Tabs\" menu.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_menu_bar {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_menu_bar ;;
     hidden: yes
