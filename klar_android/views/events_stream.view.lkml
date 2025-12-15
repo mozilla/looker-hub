@@ -3299,6 +3299,38 @@ view: events_stream {
     group_item_label: "Provider Key"
   }
 
+  dimension: extras__string__psi_full_avg10 {
+    sql: ${TABLE}.extras.string.psi_full_avg10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Psi Full Avg10"
+  }
+
+  dimension: extras__string__psi_full_avg60 {
+    sql: ${TABLE}.extras.string.psi_full_avg60 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Psi Full Avg60"
+  }
+
+  dimension: extras__string__psi_some_avg10 {
+    sql: ${TABLE}.extras.string.psi_some_avg10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Psi Some Avg10"
+  }
+
+  dimension: extras__string__psi_some_avg60 {
+    sql: ${TABLE}.extras.string.psi_some_avg60 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Psi Some Avg60"
+  }
+
   dimension: extras__string__reader_time {
     sql: ${TABLE}.extras.string.reader_time ;;
     type: string
