@@ -365,10 +365,10 @@
       display: inline
       options:
       - 'release'
-      - 'esr'
-      - 'beta'
       - 'nightly'
+      - 'esr'
       - 'aurora'
+      - 'beta'
       - 'default'
       - 'nightly-pine'
       - 'nightly-larch'
