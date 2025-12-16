@@ -12,6 +12,13 @@ view: metrics_clients_daily_table {
     description: "Number of ad clicks on client's last seen date in last 28 days."
   }
 
+  dimension: addons_theme_id {
+    sql: ${TABLE}.addons_theme_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The ID of the currently active theme."
+  }
+
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string
