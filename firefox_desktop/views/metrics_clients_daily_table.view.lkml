@@ -12,6 +12,13 @@ view: metrics_clients_daily_table {
     description: "Number of ad clicks on client's last seen date in last 28 days."
   }
 
+  dimension: app_display_version {
+    sql: ${TABLE}.app_display_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
+  }
+
   dimension: apple_model_id {
     sql: ${TABLE}.apple_model_id ;;
     type: string
@@ -43,12 +50,14 @@ view: metrics_clients_daily_table {
     sql: ${TABLE}.days_sent_metrics_ping_bits ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Value of 1 if the client ID sent a metric ping on this date."
   }
 
   dimension: default_search_engine {
     sql: ${TABLE}.default_search_engine ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The telemetry id of the search engine."
   }
 
   dimension: installation_first_seen_admin_user {
@@ -133,12 +142,14 @@ Can have value \"NotFoundError\" if file not found or other values depending on 
     sql: ${TABLE}.n_metrics_ping ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Number of metrics pings we received from this client on this submission date."
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: profile_group_id {
