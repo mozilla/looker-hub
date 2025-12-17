@@ -723,6 +723,14 @@ view: events_stream {
     group_item_label: "Experiment Type"
   }
 
+  dimension: extras__string__extension_source {
+    sql: ${TABLE}.extras.string.extension_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Extension Source"
+  }
+
   dimension: extras__string__feature_id {
     sql: ${TABLE}.extras.string.feature_id ;;
     type: string

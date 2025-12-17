@@ -13602,6 +13602,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exited {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exited ;;
+    hidden: yes
+    description: "Counts whether an HTTP3 connections exited slow start.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_channel_disposition {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_disposition ;;
     hidden: yes
