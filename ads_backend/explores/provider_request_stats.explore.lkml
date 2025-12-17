@@ -10,7 +10,7 @@ include: "/looker-hub/ads_backend/datagroups/provider_request_stats_last_updated
 explore: provider_request_stats {
   sql_always_where: ${provider_request_stats.submission_date} >= '2010-01-01' ;;
   view_label: " Provider_Request_Stats"
-  description: "Explore for the provider_request_stats ping. "
+  description: "Explore for the provider_request_stats ping. Request stats for MARS interactions with third party services that provide ads."
   view_name: provider_request_stats
 
   join: provider_request_stats__events {

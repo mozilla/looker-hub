@@ -5,6 +5,150 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: provider_request_stats {
+  dimension: metrics__string__ad_client_country_code {
+    label: "Ad Client: Country Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_client_country_code ;;
+    type: string
+    group_label: "Ad Client"
+    group_item_label: "Country Code"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Client: Country Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_country_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Country code (ISO 3166-1 alpha-2 format) associated with the client when the ad was requested. Should not be null.
+"
+  }
+
+  dimension: metrics__string__ad_client_dma_code {
+    label: "Ad Client: Dma Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_client_dma_code ;;
+    type: string
+    group_label: "Ad Client"
+    group_item_label: "Dma Code"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Client: Dma Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_dma_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Designated Marketing Area code (US only) associated with the client when the ad was requested. DMAs are a pre-defined set of city or metro-level regions. May be null.
+"
+  }
+
+  dimension: metrics__string__ad_client_form_factor {
+    label: "Ad Client: Form Factor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_client_form_factor ;;
+    type: string
+    group_label: "Ad Client"
+    group_item_label: "Form Factor"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Client: Form Factor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_form_factor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Form factor of the device displaying the ad (e.g. desktop, mobile). Should not be null.
+"
+  }
+
+  dimension: metrics__string__ad_client_os {
+    label: "Ad Client: OS"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_client_os ;;
+    type: string
+    group_label: "Ad Client"
+    group_item_label: "OS"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Client: OS"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_os"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "OS of the device displaying the ad.  May be null.
+"
+  }
+
+  dimension: metrics__string__ad_client_region_code {
+    label: "Ad Client: Region Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_client_region_code ;;
+    type: string
+    group_label: "Ad Client"
+    group_item_label: "Region Code"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Client: Region Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_region_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Region code (ISO 3166-2 format) associated with the client when the ad was requested. May be null.
+"
+  }
+
+  dimension: metrics__quantity__provider_request_count_requested {
+    label: "Provider Request: Count Requested"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.provider_request_count_requested ;;
+    type: number
+    group_label: "Provider Request"
+    group_item_label: "Count Requested"
+
+    link: {
+      label: "Glean Dictionary reference for Provider Request: Count Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/provider_request_count_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of ads requested from the provider. Should not be null.
+"
+  }
+
+  dimension: metrics__quantity__provider_request_count_returned {
+    label: "Provider Request: Count Returned"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.provider_request_count_returned ;;
+    type: number
+    group_label: "Provider Request"
+    group_item_label: "Count Returned"
+
+    link: {
+      label: "Glean Dictionary reference for Provider Request: Count Returned"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/provider_request_count_returned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of ads returned by the provider. Should not be null.
+"
+  }
+
+  dimension: metrics__string__provider_request_provider {
+    label: "Provider Request: Provider"
+    hidden: no
+    sql: ${TABLE}.metrics.string.provider_request_provider ;;
+    type: string
+    group_label: "Provider Request"
+    group_item_label: "Provider"
+
+    link: {
+      label: "Glean Dictionary reference for Provider Request: Provider"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/provider_request_provider"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The external service providing the ad. Should not be null.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
