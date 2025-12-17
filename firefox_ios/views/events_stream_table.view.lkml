@@ -656,14 +656,6 @@ view: events_stream_table {
     group_item_label: "Engagement Type"
   }
 
-  dimension: extras__string__enrollment_id {
-    sql: ${TABLE}.extras.string.enrollment_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Enrollment ID"
-  }
-
   dimension: extras__string__error {
     sql: ${TABLE}.extras.string.error ;;
     type: string
