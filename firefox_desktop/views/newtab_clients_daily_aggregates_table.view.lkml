@@ -12,6 +12,13 @@ view: newtab_clients_daily_aggregates_table {
     description: "Count of newtab open visits"
   }
 
+  dimension: any_content_click_clients {
+    sql: ${TABLE}.any_content_click_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of unique clients with at least one content click (organic or sponsored) on the newtab in the default UI"
+  }
+
   dimension: any_content_click_count {
     sql: ${TABLE}.any_content_click_count ;;
     type: number
@@ -31,6 +38,13 @@ view: newtab_clients_daily_aggregates_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Count of any content engagement visits with newtab opened in default ui"
+  }
+
+  dimension: any_content_impression_clients {
+    sql: ${TABLE}.any_content_impression_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of unique clients with at least one content impression (organic or sponsored) on the newtab in the default UI"
   }
 
   dimension: any_content_impression_count {
@@ -215,6 +229,13 @@ view: newtab_clients_daily_aggregates_table {
     description: "Count of visits with any nonsearch engagement that day with newtab opened in default UI"
   }
 
+  dimension: organic_content_click_clients {
+    sql: ${TABLE}.organic_content_click_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of unique clients with at least one organic content click on the newtab in the default UI"
+  }
+
   dimension: organic_content_click_count {
     sql: ${TABLE}.organic_content_click_count ;;
     type: number
@@ -262,6 +283,13 @@ view: newtab_clients_daily_aggregates_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Count of organic content engagement visits with newtab opened in default ui"
+  }
+
+  dimension: organic_content_impression_clients {
+    sql: ${TABLE}.organic_content_impression_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of unique clients with at least one organic content impression on the newtab in the default UI"
   }
 
   dimension: organic_content_impression_count {
@@ -418,6 +446,13 @@ view: newtab_clients_daily_aggregates_table {
     description: "Total number of search interactions on the newtab in the default UI"
   }
 
+  dimension: sponsored_content_click_clients {
+    sql: ${TABLE}.sponsored_content_click_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of unique clients with at least one sponsored content click on the newtab in the default UI"
+  }
+
   dimension: sponsored_content_click_count {
     sql: ${TABLE}.sponsored_content_click_count ;;
     type: number
@@ -465,6 +500,13 @@ view: newtab_clients_daily_aggregates_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "Count of sponsored content engagement visits with newtab opened in default ui"
+  }
+
+  dimension: sponsored_content_impression_clients {
+    sql: ${TABLE}.sponsored_content_impression_clients ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Count of unique clients with at least one sponsored content impression on the newtab in the default UI"
   }
 
   dimension: sponsored_content_impression_count {
