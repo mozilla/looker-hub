@@ -10238,7 +10238,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__boolean__urlbar_pref_switch_tabs_search_all_containers {
     label: "Urlbar: Pref Switch Tabs Search All Containers"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.urlbar_pref_switch_tabs_search_all_containers ;;
     type: yesno
     group_label: "Urlbar"

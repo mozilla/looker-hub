@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/shortcuts_library_v2.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/shortcuts_library_v2_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/viewpoint_ios_dec_2025.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/viewpoint_ios_dec_2025_last_updated.datagroup.lkml"
 
-explore: shortcuts_library_v2 {
+explore: viewpoint_ios_dec_2025 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: shortcuts_library_v2 {
   }
 
   hidden: yes
-  persist_with: shortcuts_library_v2_last_updated
+  persist_with: viewpoint_ios_dec_2025_last_updated
 }
