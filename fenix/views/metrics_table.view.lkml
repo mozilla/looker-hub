@@ -11464,6 +11464,14 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
+  dimension: metrics__datetime__raw_privacy_notice_banner_displayed_date {
+    sql: ${TABLE}.metrics.datetime.raw_privacy_notice_banner_displayed_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Raw Privacy Notice Banner Displayed Date"
+  }
+
   dimension: metrics__datetime__raw_terms_of_use_date {
     sql: ${TABLE}.metrics.datetime.raw_terms_of_use_date ;;
     type: string
@@ -13076,7 +13084,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -48957,6 +48965,22 @@ Shared Preferences.
     label: "Metrics: Datetime: Glean Validation First Run Hour"
     description: "The hour of the first run of the application.
 "
+  }
+
+  dimension_group: metrics__datetime__privacy_notice_banner_displayed {
+    sql: ${TABLE}.metrics.datetime.privacy_notice_banner_displayed_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics: Datetime: Privacy Notice Banner Displayed Date"
+    description: "The timestamp when the user was shown the privacy notice banner."
   }
 
   dimension_group: metrics__datetime__terms_of_use {
