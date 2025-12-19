@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: new_tab_147020251114194929_to_beta {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_tab_147020251114194929_to_beta_statistics ;;
+view: shortcuts_and_stories_v2 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.shortcuts_and_stories_v2_statistics ;;
 
   dimension: submission_date {
     type: date

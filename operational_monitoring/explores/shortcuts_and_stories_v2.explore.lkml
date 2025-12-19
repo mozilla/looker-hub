@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/traffic_impact_study_14_2.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/traffic_impact_study_14_2_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/shortcuts_and_stories_v2.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/shortcuts_and_stories_v2_last_updated.datagroup.lkml"
 
-explore: traffic_impact_study_14_2 {
+explore: shortcuts_and_stories_v2 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: traffic_impact_study_14_2 {
   }
 
   hidden: yes
-  persist_with: traffic_impact_study_14_2_last_updated
+  persist_with: shortcuts_and_stories_v2_last_updated
 }
