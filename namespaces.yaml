@@ -2317,9 +2317,9 @@ firefox_crash_metrics:
   pretty_name: Firefox Crash Metrics
   spoke: looker-spoke-default
   views:
-    crash_aggregates:
+    crash_counts_aggregates:
       tables:
-      - table: moz-fx-data-shared-prod.telemetry_derived.crash_aggregates_v1
+      - table: moz-fx-data-shared-prod.telemetry_derived.crash_counts_aggregates_v1
       type: table_view
     crashing_users_aggregates:
       tables:
@@ -2778,6 +2778,11 @@ firefox_desktop:
       - base_table: mozdata.telemetry.events
         events_table_view: desktop_events_table
       type: events_view
+    events_first_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.events_first_seen
+      type: table_view
     events_stream:
       tables:
       - table: mozdata.firefox_desktop.events_stream
