@@ -239,6 +239,30 @@ view: growth_accounting {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: distribution_partner_id {
+    sql: ${TABLE}.distribution_partner_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: distribution_version {
+    sql: ${TABLE}.distribution_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: distributor {
+    sql: ${TABLE}.distributor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: distributor_channel {
+    sql: ${TABLE}.distributor_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number

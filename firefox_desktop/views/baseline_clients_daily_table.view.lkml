@@ -211,6 +211,34 @@ Migrated from Telemetry's `browser.engagement.total_uri_count_normal_and_private
     description: "The distribution id associated with the install of Firefox."
   }
 
+  dimension: distribution_partner_id {
+    sql: ${TABLE}.distribution_partner_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "pref mozilla.partner.id, null on failure"
+  }
+
+  dimension: distribution_version {
+    sql: ${TABLE}.distribution_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "pref distribution.version, null on failure"
+  }
+
+  dimension: distributor {
+    sql: ${TABLE}.distributor ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "pref app.distributor, null on failure"
+  }
+
+  dimension: distributor_channel {
+    sql: ${TABLE}.distributor_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "pref app.distributor.channel, null on failure"
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
