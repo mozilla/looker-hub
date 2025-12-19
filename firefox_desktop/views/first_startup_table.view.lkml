@@ -491,6 +491,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__first_startup_category_tasks_time {
+    sql: ${TABLE}.metrics.quantity.first_startup_category_tasks_time ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "First Startup Category Tasks Time"
+    description: "Number of milliseconds until the tasks registered for first-startup-new-profile-task have resolved.
+"
+  }
+
   dimension: metrics__quantity__first_startup_delete_tasks_time {
     sql: ${TABLE}.metrics.quantity.first_startup_delete_tasks_time ;;
     type: number
