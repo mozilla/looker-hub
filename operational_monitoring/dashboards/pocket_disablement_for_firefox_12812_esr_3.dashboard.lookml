@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       pocket_disablement_for_firefox_12812_esr_3.branch
     ]
     filters:
-      pocket_disablement_for_firefox_12812_esr_3.metric: 'uri_count'
+      pocket_disablement_for_firefox_12812_esr_3.metric: 'days_of_use'
       pocket_disablement_for_firefox_12812_esr_3.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       pocket_disablement_for_firefox_12812_esr_3.branch
     ]
     filters:
-      pocket_disablement_for_firefox_12812_esr_3.metric: 'qualified_cumulative_days_of_use'
+      pocket_disablement_for_firefox_12812_esr_3.metric: 'uri_count'
       pocket_disablement_for_firefox_12812_esr_3.statistic: mean
     row: 0
     col: 12
@@ -112,26 +112,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: pocket_disablement_for_firefox_12812_esr_3
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       pocket_disablement_for_firefox_12812_esr_3.submission_date,
       pocket_disablement_for_firefox_12812_esr_3.branch,
-      pocket_disablement_for_firefox_12812_esr_3.upper,
-      pocket_disablement_for_firefox_12812_esr_3.lower,
       pocket_disablement_for_firefox_12812_esr_3.point
     ]
     pivots: [
       pocket_disablement_for_firefox_12812_esr_3.branch
     ]
     filters:
-      pocket_disablement_for_firefox_12812_esr_3.metric: 'memory_total'
-      pocket_disablement_for_firefox_12812_esr_3.statistic: percentile
+      pocket_disablement_for_firefox_12812_esr_3.metric: 'active_hours'
+      pocket_disablement_for_firefox_12812_esr_3.statistic: mean
     row: 10
     col: 12
     width: 12
@@ -144,7 +142,6 @@
     show_grid: true
     listen:
       Date: pocket_disablement_for_firefox_12812_esr_3.submission_date
-      Percentile: pocket_disablement_for_firefox_12812_esr_3.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +180,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: pocket_disablement_for_firefox_12812_esr_3
+    type: "ci-line-chart"
+    fields: [
+      pocket_disablement_for_firefox_12812_esr_3.submission_date,
+      pocket_disablement_for_firefox_12812_esr_3.branch,
+      pocket_disablement_for_firefox_12812_esr_3.upper,
+      pocket_disablement_for_firefox_12812_esr_3.lower,
+      pocket_disablement_for_firefox_12812_esr_3.point
+    ]
+    pivots: [
+      pocket_disablement_for_firefox_12812_esr_3.branch
+    ]
+    filters:
+      pocket_disablement_for_firefox_12812_esr_3.metric: 'memory_total'
+      pocket_disablement_for_firefox_12812_esr_3.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: pocket_disablement_for_firefox_12812_esr_3.submission_date
+    field_y: pocket_disablement_for_firefox_12812_esr_3.point
+    log_scale: false
+    ci_lower: pocket_disablement_for_firefox_12812_esr_3.lower
+    ci_upper: pocket_disablement_for_firefox_12812_esr_3.upper
+    show_grid: true
+    listen:
+      Date: pocket_disablement_for_firefox_12812_esr_3.submission_date
+      Percentile: pocket_disablement_for_firefox_12812_esr_3.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,10 +233,10 @@
       pocket_disablement_for_firefox_12812_esr_3.branch
     ]
     filters:
-      pocket_disablement_for_firefox_12812_esr_3.metric: 'active_hours'
+      pocket_disablement_for_firefox_12812_esr_3.metric: 'qualified_cumulative_days_of_use'
       pocket_disablement_for_firefox_12812_esr_3.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: pocket_disablement_for_firefox_12812_esr_3.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       pocket_disablement_for_firefox_12812_esr_3.metric: 'ad_clicks'
-      pocket_disablement_for_firefox_12812_esr_3.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: pocket_disablement_for_firefox_12812_esr_3.submission_date
-    field_y: pocket_disablement_for_firefox_12812_esr_3.point
-    log_scale: false
-    ci_lower: pocket_disablement_for_firefox_12812_esr_3.lower
-    ci_upper: pocket_disablement_for_firefox_12812_esr_3.upper
-    show_grid: true
-    listen:
-      Date: pocket_disablement_for_firefox_12812_esr_3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pocket_disablement_for_firefox_12812_esr_3
-    type: looker_line
-    fields: [
-      pocket_disablement_for_firefox_12812_esr_3.submission_date,
-      pocket_disablement_for_firefox_12812_esr_3.branch,
-      pocket_disablement_for_firefox_12812_esr_3.point
-    ]
-    pivots: [
-      pocket_disablement_for_firefox_12812_esr_3.branch
-    ]
-    filters:
-      pocket_disablement_for_firefox_12812_esr_3.metric: 'days_of_use'
       pocket_disablement_for_firefox_12812_esr_3.statistic: mean
     row: 30
     col: 12
