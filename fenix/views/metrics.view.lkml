@@ -21913,7 +21913,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
     label: "Perf: Js Exec Asm Js Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.sum ;;
     type: number
     group_label: "Perf"
@@ -23122,7 +23122,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__predictor_base_confidence__sum {
     label: "Predictor: Base Confidence Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_base_confidence.sum ;;
     type: number
     group_label: "Predictor"
@@ -23141,7 +23141,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_confidence__sum {
     label: "Predictor: Confidence Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_confidence.sum ;;
     type: number
     group_label: "Predictor"
@@ -23160,7 +23160,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_global_degradation__sum {
     label: "Predictor: Global Degradation Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_global_degradation.sum ;;
     type: number
     group_label: "Predictor"
@@ -23179,7 +23179,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_learn_attempts__sum {
     label: "Predictor: Learn Attempts Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_learn_attempts.sum ;;
     type: number
     group_label: "Predictor"
@@ -23198,7 +23198,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_learn_work_time__sum {
     label: "Predictor: Learn Work Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -23217,7 +23217,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_time_to_action__sum {
     label: "Predictor: Predict Time To Action Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.sum ;;
     type: number
     group_label: "Predictor"
@@ -23236,7 +23236,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__sum {
     label: "Predictor: Predict Time To Inaction Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.sum ;;
     type: number
     group_label: "Predictor"
@@ -23255,7 +23255,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_work_time__sum {
     label: "Predictor: Predict Work Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -23274,7 +23274,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_predictions_calculated__sum {
     label: "Predictor: Predictions Calculated Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_predictions_calculated.sum ;;
     type: number
     group_label: "Predictor"
@@ -23293,7 +23293,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_prefetch_decision_reason__sum {
     label: "Predictor: Prefetch Decision Reason Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_decision_reason.sum ;;
     type: number
     group_label: "Predictor"
@@ -23312,7 +23312,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__predictor_prefetch_ignore_reason__sum {
     label: "Predictor: Prefetch Ignore Reason Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_ignore_reason.sum ;;
     type: number
     group_label: "Predictor"
@@ -23331,7 +23331,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__predictor_prefetch_time__sum {
     label: "Predictor: Prefetch Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -23368,7 +23368,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__custom_distribution__predictor_subresource_degradation__sum {
     label: "Predictor: Subresource Degradation Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_subresource_degradation.sum ;;
     type: number
     group_label: "Predictor"
@@ -23387,7 +23387,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_total_preconnects__sum {
     label: "Predictor: Total Preconnects Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_preconnects.sum ;;
     type: number
     group_label: "Predictor"
@@ -23406,7 +23406,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_predictions__sum {
     label: "Predictor: Total Predictions Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_predictions.sum ;;
     type: number
     group_label: "Predictor"
@@ -23425,7 +23425,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_prefetches__sum {
     label: "Predictor: Total Prefetches Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_prefetches.sum ;;
     type: number
     group_label: "Predictor"
@@ -23444,7 +23444,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_preresolves__sum {
     label: "Predictor: Total Preresolves Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_preresolves.sum ;;
     type: number
     group_label: "Predictor"
@@ -23463,7 +23463,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_wait_time__sum {
     label: "Predictor: Wait Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -52167,19 +52167,19 @@ view: metrics__metrics__labeled_counter__predictor_prefetch_use_status {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
