@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       update_spoc_positions_135_137_rollout.branch
     ]
     filters:
-      update_spoc_positions_135_137_rollout.metric: 'ad_clicks'
+      update_spoc_positions_135_137_rollout.metric: 'days_of_use'
       update_spoc_positions_135_137_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,26 +44,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: update_spoc_positions_135_137_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       update_spoc_positions_135_137_rollout.submission_date,
       update_spoc_positions_135_137_rollout.branch,
-      update_spoc_positions_135_137_rollout.upper,
-      update_spoc_positions_135_137_rollout.lower,
       update_spoc_positions_135_137_rollout.point
     ]
     pivots: [
       update_spoc_positions_135_137_rollout.branch
     ]
     filters:
-      update_spoc_positions_135_137_rollout.metric: 'memory_total'
-      update_spoc_positions_135_137_rollout.statistic: percentile
+      update_spoc_positions_135_137_rollout.metric: 'uri_count'
+      update_spoc_positions_135_137_rollout.statistic: mean
     row: 0
     col: 12
     width: 12
@@ -76,7 +74,6 @@
     show_grid: true
     listen:
       Date: update_spoc_positions_135_137_rollout.submission_date
-      Percentile: update_spoc_positions_135_137_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -115,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +128,7 @@
       update_spoc_positions_135_137_rollout.branch
     ]
     filters:
-      update_spoc_positions_135_137_rollout.metric: 'days_of_use'
+      update_spoc_positions_135_137_rollout.metric: 'retained'
       update_spoc_positions_135_137_rollout.statistic: mean
     row: 10
     col: 12
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: update_spoc_positions_135_137_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       update_spoc_positions_135_137_rollout.submission_date,
       update_spoc_positions_135_137_rollout.branch,
+      update_spoc_positions_135_137_rollout.upper,
+      update_spoc_positions_135_137_rollout.lower,
       update_spoc_positions_135_137_rollout.point
     ]
     pivots: [
       update_spoc_positions_135_137_rollout.branch
     ]
     filters:
-      update_spoc_positions_135_137_rollout.metric: 'uri_count'
-      update_spoc_positions_135_137_rollout.statistic: mean
+      update_spoc_positions_135_137_rollout.metric: 'memory_total'
+      update_spoc_positions_135_137_rollout.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,12 +246,13 @@
     show_grid: true
     listen:
       Date: update_spoc_positions_135_137_rollout.submission_date
+      Percentile: update_spoc_positions_135_137_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       update_spoc_positions_135_137_rollout.branch
     ]
     filters:
-      update_spoc_positions_135_137_rollout.metric: 'retained'
+      update_spoc_positions_135_137_rollout.metric: 'ad_clicks'
       update_spoc_positions_135_137_rollout.statistic: mean
     row: 30
     col: 12

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       sidebar_14402_rollout.branch
     ]
     filters:
-      sidebar_14402_rollout.metric: 'ad_clicks'
+      sidebar_14402_rollout.metric: 'days_of_use'
       sidebar_14402_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,26 +44,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: sidebar_14402_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       sidebar_14402_rollout.submission_date,
       sidebar_14402_rollout.branch,
-      sidebar_14402_rollout.upper,
-      sidebar_14402_rollout.lower,
       sidebar_14402_rollout.point
     ]
     pivots: [
       sidebar_14402_rollout.branch
     ]
     filters:
-      sidebar_14402_rollout.metric: 'memory_total'
-      sidebar_14402_rollout.statistic: percentile
+      sidebar_14402_rollout.metric: 'uri_count'
+      sidebar_14402_rollout.statistic: mean
     row: 0
     col: 12
     width: 12
@@ -76,7 +74,6 @@
     show_grid: true
     listen:
       Date: sidebar_14402_rollout.submission_date
-      Percentile: sidebar_14402_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -115,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +128,7 @@
       sidebar_14402_rollout.branch
     ]
     filters:
-      sidebar_14402_rollout.metric: 'days_of_use'
+      sidebar_14402_rollout.metric: 'retained'
       sidebar_14402_rollout.statistic: mean
     row: 10
     col: 12
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: sidebar_14402_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       sidebar_14402_rollout.submission_date,
       sidebar_14402_rollout.branch,
+      sidebar_14402_rollout.upper,
+      sidebar_14402_rollout.lower,
       sidebar_14402_rollout.point
     ]
     pivots: [
       sidebar_14402_rollout.branch
     ]
     filters:
-      sidebar_14402_rollout.metric: 'uri_count'
-      sidebar_14402_rollout.statistic: mean
+      sidebar_14402_rollout.metric: 'memory_total'
+      sidebar_14402_rollout.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,12 +246,13 @@
     show_grid: true
     listen:
       Date: sidebar_14402_rollout.submission_date
+      Percentile: sidebar_14402_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       sidebar_14402_rollout.branch
     ]
     filters:
-      sidebar_14402_rollout.metric: 'retained'
+      sidebar_14402_rollout.metric: 'ad_clicks'
       sidebar_14402_rollout.statistic: mean
     row: 30
     col: 12
