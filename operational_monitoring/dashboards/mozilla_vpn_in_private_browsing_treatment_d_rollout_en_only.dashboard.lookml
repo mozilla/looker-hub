@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
     ]
     filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'ad_clicks'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'days_of_use'
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
     row: 0
     col: 0
@@ -44,26 +44,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date,
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch,
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.upper,
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.lower,
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.point
     ]
     pivots: [
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
     ]
     filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'memory_total'
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: percentile
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'uri_count'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
     row: 0
     col: 12
     width: 12
@@ -76,7 +74,6 @@
     show_grid: true
     listen:
       Date: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date
-      Percentile: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -115,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +128,7 @@
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
     ]
     filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'days_of_use'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'retained'
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
     row: 10
     col: 12
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date,
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch,
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.upper,
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.lower,
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.point
     ]
     pivots: [
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
     ]
     filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'uri_count'
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'memory_total'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,12 +246,13 @@
     show_grid: true
     listen:
       Date: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.submission_date
+      Percentile: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.branch
     ]
     filters:
-      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'retained'
+      mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.metric: 'ad_clicks'
       mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only.statistic: mean
     row: 30
     col: 12
