@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       japan_onboarding.branch
     ]
     filters:
-      japan_onboarding.metric: 'days_of_use'
+      japan_onboarding.metric: 'ad_clicks'
       japan_onboarding.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: japan_onboarding.submission_date
-    field_y: japan_onboarding.point
-    log_scale: false
-    ci_lower: japan_onboarding.lower
-    ci_upper: japan_onboarding.upper
-    show_grid: true
-    listen:
-      Date: japan_onboarding.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: japan_onboarding
-    type: looker_line
-    fields: [
-      japan_onboarding.submission_date,
-      japan_onboarding.branch,
-      japan_onboarding.point
-    ]
-    pivots: [
-      japan_onboarding.branch
-    ]
-    filters:
-      japan_onboarding.metric: 'active_hours'
-      japan_onboarding.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: japan_onboarding.submission_date
@@ -95,6 +61,40 @@
     ]
     filters:
       japan_onboarding.metric: 'retained'
+      japan_onboarding.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: japan_onboarding.submission_date
+    field_y: japan_onboarding.point
+    log_scale: false
+    ci_lower: japan_onboarding.lower
+    ci_upper: japan_onboarding.upper
+    show_grid: true
+    listen:
+      Date: japan_onboarding.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: japan_onboarding
+    type: looker_line
+    fields: [
+      japan_onboarding.submission_date,
+      japan_onboarding.branch,
+      japan_onboarding.point
+    ]
+    pivots: [
+      japan_onboarding.branch
+    ]
+    filters:
+      japan_onboarding.metric: 'active_hours'
       japan_onboarding.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       japan_onboarding.branch
     ]
     filters:
-      japan_onboarding.metric: 'ad_clicks'
+      japan_onboarding.metric: 'days_of_use'
       japan_onboarding.statistic: mean
     row: 20
     col: 0
