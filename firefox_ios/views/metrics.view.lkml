@@ -799,7 +799,7 @@ sync settings are enabled
 
   dimension: metrics__counter__default_browser_card_dismiss_pressed {
     label: "Default Browser Card: Dismiss Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.default_browser_card_dismiss_pressed ;;
     type: number
     group_label: "Default Browser Card"
@@ -817,7 +817,7 @@ sync settings are enabled
 
   dimension: metrics__counter__default_browser_card_go_to_settings_pressed {
     label: "Default Browser Card: Go To Settings Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.default_browser_card_go_to_settings_pressed ;;
     type: number
     group_label: "Default Browser Card"
@@ -836,7 +836,7 @@ default browser card is clicked.
 
   dimension: metrics__counter__default_browser_onboarding_dismiss_pressed {
     label: "Default Browser Onboarding: Dismiss Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
     type: number
     group_label: "Default Browser Onboarding"
@@ -854,7 +854,7 @@ default browser card is clicked.
 
   dimension: metrics__counter__default_browser_onboarding_go_to_settings_pressed {
     label: "Default Browser Onboarding: Go To Settings Pressed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
     type: number
     group_label: "Default Browser Onboarding"
