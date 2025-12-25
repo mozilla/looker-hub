@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       android_ui_redesign_beta.branch
     ]
     filters:
-      android_ui_redesign_beta.metric: 'ad_clicks'
+      android_ui_redesign_beta.metric: 'days_of_use'
       android_ui_redesign_beta.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       android_ui_redesign_beta.branch
     ]
     filters:
-      android_ui_redesign_beta.metric: 'days_of_use'
+      android_ui_redesign_beta.metric: 'search_count'
       android_ui_redesign_beta.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       android_ui_redesign_beta.branch
     ]
     filters:
-      android_ui_redesign_beta.metric: 'search_count'
+      android_ui_redesign_beta.metric: 'ad_clicks'
       android_ui_redesign_beta.statistic: mean
     row: 30
     col: 0

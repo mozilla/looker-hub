@@ -696,6 +696,14 @@ view: events_stream_table {
     group_item_label: "Is Lang Attribute Valid"
   }
 
+  dimension: extras__boolean__is_new_email_mask {
+    sql: ${TABLE}.extras.boolean.is_new_email_mask ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is New Email Mask"
+  }
+
   dimension: extras__boolean__is_private {
     sql: ${TABLE}.extras.boolean.is_private ;;
     type: yesno
