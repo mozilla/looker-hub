@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Cnt Negative Session Lengths - By app
+    name: Cnt Negative Session Lengths - By app_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: mozilla_vpn
+    type: looker_line
+    fields: [
+      mozilla_vpn.submission_date,
+      mozilla_vpn.branch,
+      mozilla_vpn.point
+    ]
+    pivots: [
+      mozilla_vpn.branch, mozilla_vpn.app
+    ]
+    filters:
+      mozilla_vpn.metric: 'cnt_negative_session_lengths'
+      mozilla_vpn.statistic: sum
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: mozilla_vpn.submission_date
+    field_y: mozilla_vpn.point
+    log_scale: false
+    ci_lower: mozilla_vpn.lower
+    ci_upper: mozilla_vpn.upper
+    show_grid: true
+    listen:
+      Date: mozilla_vpn.submission_date
+      App: mozilla_vpn.app
+      
+    active: "#3FE1B0"
+    defaults_version: 0
   - title: Avg Session Duration - By app
     name: Avg Session Duration - By app_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       mozilla_vpn.metric: 'avg_session_duration'
       mozilla_vpn.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: mozilla_vpn.submission_date
@@ -64,41 +98,6 @@
     filters:
       mozilla_vpn.metric: 'avg_session_duration'
       mozilla_vpn.statistic: percentile
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: mozilla_vpn.submission_date
-    field_y: mozilla_vpn.point
-    log_scale: false
-    ci_lower: mozilla_vpn.lower
-    ci_upper: mozilla_vpn.upper
-    show_grid: true
-    listen:
-      Date: mozilla_vpn.submission_date
-      Percentile: mozilla_vpn.parameter
-      App: mozilla_vpn.app
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Avg Sum Session Duration - By app
-    name: Avg Sum Session Duration - By app_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mozilla_vpn
-    type: looker_line
-    fields: [
-      mozilla_vpn.submission_date,
-      mozilla_vpn.branch,
-      mozilla_vpn.point
-    ]
-    pivots: [
-      mozilla_vpn.branch, mozilla_vpn.app
-    ]
-    filters:
-      mozilla_vpn.metric: 'avg_sum_session_duration'
-      mozilla_vpn.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -111,30 +110,29 @@
     show_grid: true
     listen:
       Date: mozilla_vpn.submission_date
+      Percentile: mozilla_vpn.parameter
       App: mozilla_vpn.app
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Avg Sum Session Duration - By app
-    name: Avg Sum Session Duration - By app_percentile
+  - title: Cnt Sessions Start And End - By app
+    name: Cnt Sessions Start And End - By app_sum
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Sum
     explore: mozilla_vpn
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       mozilla_vpn.submission_date,
       mozilla_vpn.branch,
-      mozilla_vpn.upper,
-      mozilla_vpn.lower,
       mozilla_vpn.point
     ]
     pivots: [
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'avg_sum_session_duration'
-      mozilla_vpn.statistic: percentile
+      mozilla_vpn.metric: 'cnt_sessions_start_and_end'
+      mozilla_vpn.statistic: sum
     row: 10
     col: 12
     width: 12
@@ -147,7 +145,6 @@
     show_grid: true
     listen:
       Date: mozilla_vpn.submission_date
-      Percentile: mozilla_vpn.parameter
       App: mozilla_vpn.app
       
     active: "#3FE1B0"
@@ -220,11 +217,11 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Cnt Sessions Start And End - By app
-    name: Cnt Sessions Start And End - By app_sum
+  - title: Avg Sum Session Duration - By app
+    name: Avg Sum Session Duration - By app_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: mozilla_vpn
     type: looker_line
     fields: [
@@ -236,8 +233,8 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'cnt_sessions_start_and_end'
-      mozilla_vpn.statistic: sum
+      mozilla_vpn.metric: 'avg_sum_session_duration'
+      mozilla_vpn.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -254,24 +251,26 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Cnt Negative Session Lengths - By app
-    name: Cnt Negative Session Lengths - By app_sum
+  - title: Avg Sum Session Duration - By app
+    name: Avg Sum Session Duration - By app_percentile
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Percentile
     explore: mozilla_vpn
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       mozilla_vpn.submission_date,
       mozilla_vpn.branch,
+      mozilla_vpn.upper,
+      mozilla_vpn.lower,
       mozilla_vpn.point
     ]
     pivots: [
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'cnt_negative_session_lengths'
-      mozilla_vpn.statistic: sum
+      mozilla_vpn.metric: 'avg_sum_session_duration'
+      mozilla_vpn.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -284,6 +283,7 @@
     show_grid: true
     listen:
       Date: mozilla_vpn.submission_date
+      Percentile: mozilla_vpn.parameter
       App: mozilla_vpn.app
       
     active: "#3FE1B0"
