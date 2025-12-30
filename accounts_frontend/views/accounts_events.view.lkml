@@ -291,7 +291,7 @@ by query parameter `entrypoint_variation` in the URL.
 
   dimension: metrics__labeled_boolean__standard_marketing {
     label: "Standard: Marketing"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.standard_marketing ;;
     type: string
     group_label: "Standard"
@@ -311,7 +311,7 @@ marked as true
 
   dimension: metrics__labeled_boolean__sync_cwts {
     label: "Sync: Cwts"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.sync_cwts ;;
     type: string
     group_label: "Sync"
