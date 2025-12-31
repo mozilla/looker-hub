@@ -1239,6 +1239,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_timezone_offset_web {
+    sql: ${TABLE}.metrics.quantity.characteristics_timezone_offset_web ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Characteristics Timezone Offset Web"
+    description: "The timezone offset in minutes exposed to web content via getTimezoneOffset()
+"
+  }
+
   dimension: metrics__quantity__characteristics_voices_count {
     sql: ${TABLE}.metrics.quantity.characteristics_voices_count ;;
     type: number
@@ -1979,6 +1989,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_firefox_binary_arch {
+    sql: ${TABLE}.metrics.string.characteristics_firefox_binary_arch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Firefox Binary Arch"
+    description: "Architecture of the Firefox binary itself (not the CPU). This can differ from cpu_arch when running under emulation (e.g., x86-64 Firefox via Rosetta 2 on ARM64 Mac) or when running 32-bit Firefox on 64-bit CPU. Format: \"xpcomabi:<abi>|is64bit:<bool>\" where abi is from XPCOMABI (e.g., \"Darwin_x86_64-gcc3\") and is64bit indicates 64-bit build.
+"
+  }
+
   dimension: metrics__string__characteristics_font_default_default_group {
     sql: ${TABLE}.metrics.string.characteristics_font_default_default_group ;;
     type: string
@@ -2176,6 +2196,18 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fonts Variant B Nonallowlisted"
     description: "SHA256 of non-allowlisted fonts queried of variant B
+"
+  }
+
+  dimension: metrics__string__characteristics_fpu_control_state {
+    sql: ${TABLE}.metrics.string.characteristics_fpu_control_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fpu Control State"
+    description: "The current FPU (Floating-Point Unit) rounding mode and precision settings. Format depends on architecture: - x86/x86-64: \"std:X;x87:Y;sse:Z;prec:P\" where X,Y,Z are rounding modes (0-3)
+  and P is precision (single/double/extended)
+- ARM: \"std:X;arm:Y\" where X,Y are rounding modes (0-3) Rounding modes: 0=nearest, 1=down/negative, 2=up/positive, 3=toward-zero This helps identify unusual FPU configurations that may cause math variations.
 "
   }
 
@@ -2639,6 +2671,36 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_os_distro {
+    sql: ${TABLE}.metrics.string.characteristics_os_distro ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics OS Distro"
+    description: "User's OS distribution, as reported by lsb_release (Linux only, blank otherwise)
+"
+  }
+
+  dimension: metrics__string__characteristics_os_distro_id {
+    sql: ${TABLE}.metrics.string.characteristics_os_distro_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics OS Distro ID"
+    description: "User's OS distribution, as reported by MOZ_DISTRIBUTION_ID
+"
+  }
+
+  dimension: metrics__string__characteristics_os_distro_version {
+    sql: ${TABLE}.metrics.string.characteristics_os_distro_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics OS Distro Version"
+    description: "User's OS distribution version, as reported by lsb_release (Linux only, blank otherwise)
+"
+  }
+
   dimension: metrics__string__characteristics_os_name {
     sql: ${TABLE}.metrics.string.characteristics_os_name ;;
     type: string
@@ -2756,6 +2818,16 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: String"
     group_item_label: "Characteristics Timezone"
     description: "The the current timezone of the system
+"
+  }
+
+  dimension: metrics__string__characteristics_timezone_web {
+    sql: ${TABLE}.metrics.string.characteristics_timezone_web ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Timezone Web"
+    description: "The timezone string reported via the web using Intl API (e.g. America/New_York)
 "
   }
 
@@ -3357,6 +3429,16 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Math Ops Fdlibm"
     description: "Windows only fdlibm math operation results
+"
+  }
+
+  dimension: metrics__text2__characteristics_math_ops_fdlibm_2 {
+    sql: ${TABLE}.metrics.text2.characteristics_math_ops_fdlibm_2 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Math Ops Fdlibm 2"
+    description: "Result of additional fingerprintable math operations, with fdlibm enabled
 "
   }
 

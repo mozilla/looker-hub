@@ -1139,6 +1139,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_firefox_binary_arch {
+    label: "Characteristics: Firefox Binary Arch"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_firefox_binary_arch ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Firefox Binary Arch"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Firefox Binary Arch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_firefox_binary_arch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Architecture of the Firefox binary itself (not the CPU). This can differ from cpu_arch when running under emulation (e.g., x86-64 Firefox via Rosetta 2 on ARM64 Mac) or when running 32-bit Firefox on 64-bit CPU. Format: \"xpcomabi:<abi>|is64bit:<bool>\" where abi is from XPCOMABI (e.g., \"Darwin_x86_64-gcc3\") and is64bit indicates 64-bit build.
+"
+  }
+
   dimension: metrics__string__characteristics_font_default_default_group {
     label: "Characteristics: Font Default Default Group"
     hidden: no
@@ -1712,6 +1730,26 @@ view: user_characteristics {
     }
 
     description: "SHA256 of non-allowlisted fonts queried of variant B
+"
+  }
+
+  dimension: metrics__string__characteristics_fpu_control_state {
+    label: "Characteristics: Fpu Control State"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fpu_control_state ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fpu Control State"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fpu Control State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fpu_control_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The current FPU (Floating-Point Unit) rounding mode and precision settings. Format depends on architecture: - x86/x86-64: \"std:X;x87:Y;sse:Z;prec:P\" where X,Y,Z are rounding modes (0-3)
+  and P is precision (single/double/extended)
+- ARM: \"std:X;arm:Y\" where X,Y are rounding modes (0-3) Rounding modes: 0=nearest, 1=down/negative, 2=up/positive, 3=toward-zero This helps identify unusual FPU configurations that may cause math variations.
 "
   }
 
@@ -3191,6 +3229,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_math_ops_fdlibm_2 {
+    label: "Characteristics: Math Ops Fdlibm 2"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_math_ops_fdlibm_2 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Math Ops Fdlibm 2"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Math Ops Fdlibm 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_math_ops_fdlibm_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of additional fingerprintable math operations, with fdlibm enabled
+"
+  }
+
   dimension: metrics__string__characteristics_mathml1 {
     label: "Characteristics: Mathml1"
     hidden: no
@@ -3674,6 +3730,60 @@ view: user_characteristics {
     }
 
     description: "deviceorientationabsolute event's frequency
+"
+  }
+
+  dimension: metrics__string__characteristics_os_distro {
+    label: "Characteristics: OS Distro"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_os_distro ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "OS Distro"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: OS Distro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_os_distro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User's OS distribution, as reported by lsb_release (Linux only, blank otherwise)
+"
+  }
+
+  dimension: metrics__string__characteristics_os_distro_id {
+    label: "Characteristics: OS Distro ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_os_distro_id ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "OS Distro ID"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: OS Distro ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_os_distro_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User's OS distribution, as reported by MOZ_DISTRIBUTION_ID
+"
+  }
+
+  dimension: metrics__string__characteristics_os_distro_version {
+    label: "Characteristics: OS Distro Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_os_distro_version ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "OS Distro Version"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: OS Distro Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_os_distro_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User's OS distribution version, as reported by lsb_release (Linux only, blank otherwise)
 "
   }
 
@@ -4502,6 +4612,42 @@ view: user_characteristics {
     }
 
     description: "The the current timezone of the system
+"
+  }
+
+  dimension: metrics__quantity__characteristics_timezone_offset_web {
+    label: "Characteristics: Timezone Offset Web"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_timezone_offset_web ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Timezone Offset Web"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Timezone Offset Web"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_timezone_offset_web"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The timezone offset in minutes exposed to web content via getTimezoneOffset()
+"
+  }
+
+  dimension: metrics__string__characteristics_timezone_web {
+    label: "Characteristics: Timezone Web"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_timezone_web ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Timezone Web"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Timezone Web"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_timezone_web"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The timezone string reported via the web using Intl API (e.g. America/New_York)
 "
   }
 
@@ -5481,11 +5627,13 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -5515,6 +5663,7 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -5523,6 +5672,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -5531,6 +5681,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -5539,6 +5690,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -5547,6 +5699,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -5555,6 +5708,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -5584,6 +5738,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -5592,6 +5747,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -5600,6 +5756,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -5608,6 +5765,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -5616,6 +5774,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -5624,6 +5783,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -5632,6 +5792,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -5640,6 +5801,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -5648,6 +5810,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -5685,6 +5848,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
@@ -5698,12 +5862,14 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -5716,6 +5882,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -5745,6 +5912,7 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: ping_count {
