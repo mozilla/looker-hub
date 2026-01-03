@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       refactor_new_tab_telemetry_rollout.branch
     ]
     filters:
-      refactor_new_tab_telemetry_rollout.metric: 'active_hours'
+      refactor_new_tab_telemetry_rollout.metric: 'qualified_cumulative_days_of_use'
       refactor_new_tab_telemetry_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       refactor_new_tab_telemetry_rollout.branch
     ]
     filters:
-      refactor_new_tab_telemetry_rollout.metric: 'ad_clicks'
+      refactor_new_tab_telemetry_rollout.metric: 'search_count'
       refactor_new_tab_telemetry_rollout.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: refactor_new_tab_telemetry_rollout.submission_date
+    field_y: refactor_new_tab_telemetry_rollout.point
+    log_scale: false
+    ci_lower: refactor_new_tab_telemetry_rollout.lower
+    ci_upper: refactor_new_tab_telemetry_rollout.upper
+    show_grid: true
+    listen:
+      Date: refactor_new_tab_telemetry_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: refactor_new_tab_telemetry_rollout
+    type: looker_line
+    fields: [
+      refactor_new_tab_telemetry_rollout.submission_date,
+      refactor_new_tab_telemetry_rollout.branch,
+      refactor_new_tab_telemetry_rollout.point
+    ]
+    pivots: [
+      refactor_new_tab_telemetry_rollout.branch
+    ]
+    filters:
+      refactor_new_tab_telemetry_rollout.metric: 'days_of_use'
+      refactor_new_tab_telemetry_rollout.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: refactor_new_tab_telemetry_rollout.submission_date
@@ -99,41 +133,6 @@
       refactor_new_tab_telemetry_rollout.metric: 'memory_total'
       refactor_new_tab_telemetry_rollout.statistic: percentile
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: refactor_new_tab_telemetry_rollout.submission_date
-    field_y: refactor_new_tab_telemetry_rollout.point
-    log_scale: false
-    ci_lower: refactor_new_tab_telemetry_rollout.lower
-    ci_upper: refactor_new_tab_telemetry_rollout.upper
-    show_grid: true
-    listen:
-      Date: refactor_new_tab_telemetry_rollout.submission_date
-      Percentile: refactor_new_tab_telemetry_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: refactor_new_tab_telemetry_rollout
-    type: looker_line
-    fields: [
-      refactor_new_tab_telemetry_rollout.submission_date,
-      refactor_new_tab_telemetry_rollout.branch,
-      refactor_new_tab_telemetry_rollout.point
-    ]
-    pivots: [
-      refactor_new_tab_telemetry_rollout.branch
-    ]
-    filters:
-      refactor_new_tab_telemetry_rollout.metric: 'days_of_use'
-      refactor_new_tab_telemetry_rollout.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -145,6 +144,7 @@
     show_grid: true
     listen:
       Date: refactor_new_tab_telemetry_rollout.submission_date
+      Percentile: refactor_new_tab_telemetry_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       refactor_new_tab_telemetry_rollout.branch
     ]
     filters:
-      refactor_new_tab_telemetry_rollout.metric: 'search_count'
+      refactor_new_tab_telemetry_rollout.metric: 'active_hours'
       refactor_new_tab_telemetry_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       refactor_new_tab_telemetry_rollout.branch
     ]
     filters:
-      refactor_new_tab_telemetry_rollout.metric: 'qualified_cumulative_days_of_use'
+      refactor_new_tab_telemetry_rollout.metric: 'ad_clicks'
       refactor_new_tab_telemetry_rollout.statistic: mean
     row: 30
     col: 12
