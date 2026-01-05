@@ -53,6 +53,13 @@ view: metrics_clients_daily_table {
     description: "A unique identifier (UUID) for the client."
   }
 
+  dimension: country_code {
+    sql: ${TABLE}.country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation."
+  }
+
   dimension: days_sent_metrics_ping_bits {
     sql: ${TABLE}.days_sent_metrics_ping_bits ;;
     type: number
