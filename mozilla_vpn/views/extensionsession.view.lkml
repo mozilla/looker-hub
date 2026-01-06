@@ -7,7 +7,7 @@
 view: extensionsession {
   dimension: metrics__quantity__extension_count_excluded {
     label: "Extension: Count Excluded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.extension_count_excluded ;;
     type: number
     group_label: "Extension"
@@ -25,7 +25,7 @@ view: extensionsession {
 
   dimension: metrics__quantity__extension_count_geoprefed {
     label: "Extension: Count Geoprefed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.extension_count_geoprefed ;;
     type: number
     group_label: "Extension"
@@ -43,7 +43,7 @@ view: extensionsession {
 
   dimension: metrics__boolean__extension_has_completed_onboarding {
     label: "Extension: Has Completed Onboarding"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.extension_has_completed_onboarding ;;
     type: yesno
     group_label: "Extension"
@@ -61,7 +61,7 @@ view: extensionsession {
 
   dimension: metrics__boolean__extension_used_feature_disable_firefox_protection {
     label: "Extension: Used Feature Disable Firefox Protection"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.extension_used_feature_disable_firefox_protection ;;
     type: yesno
     group_label: "Extension"
@@ -79,7 +79,7 @@ view: extensionsession {
 
   dimension: metrics__boolean__extension_used_feature_page_action_revoke_exclude {
     label: "Extension: Used Feature Page Action Revoke Exclude"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.extension_used_feature_page_action_revoke_exclude ;;
     type: yesno
     group_label: "Extension"
@@ -97,7 +97,7 @@ view: extensionsession {
 
   dimension: metrics__boolean__extension_used_feature_page_action_revoke_geopref {
     label: "Extension: Used Feature Page Action Revoke Geopref"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.extension_used_feature_page_action_revoke_geopref ;;
     type: yesno
     group_label: "Extension"
@@ -115,7 +115,7 @@ view: extensionsession {
 
   dimension: metrics__boolean__extension_used_feature_settings_page {
     label: "Extension: Used Feature Settings Page"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.extension_used_feature_settings_page ;;
     type: yesno
     group_label: "Extension"
