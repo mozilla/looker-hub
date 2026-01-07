@@ -1355,6 +1355,14 @@ view: events_stream {
     group_item_label: "Cores"
   }
 
+  dimension: extras__quantity__count {
+    sql: ${TABLE}.extras.quantity.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Count"
+  }
+
   dimension: extras__quantity__cpu_milliseconds {
     sql: ${TABLE}.extras.quantity.cpu_milliseconds ;;
     type: number
