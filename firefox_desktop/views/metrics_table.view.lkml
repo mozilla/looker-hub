@@ -15021,6 +15021,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_congestion_event_reason ;;
+    hidden: yes
+    description: "The type of signal that caused a congestion event in Firefox's QUIC stack.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
     hidden: yes

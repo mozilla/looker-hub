@@ -1648,6 +1648,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_fetch_keepalive_request_count}) AS metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_congestion_event_reason}) AS metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_connection_close_reason}) AS metrics__metrics__labeled_counter__networking_http_3_connection_close_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_connection_close_reason.document_id} ;;

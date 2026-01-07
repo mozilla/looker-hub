@@ -13084,7 +13084,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -13586,6 +13586,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     sql: ${TABLE}.metrics.labeled_counter.networking_fetch_keepalive_request_count ;;
     hidden: yes
     description: "Counts how many fetch keepalive requests are made. This counter helps us to understand the adoption of fetch keepalive for firefox.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_congestion_event_reason ;;
+    hidden: yes
+    description: "The type of signal that caused a congestion event in Firefox's QUIC stack.
 "
   }
 

@@ -19197,6 +19197,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    label: "Networking: HTTP 3 Congestion Event Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_congestion_event_reason ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Congestion Event Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Congestion Event Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_congestion_event_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of signal that caused a congestion event in Firefox's QUIC stack.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
     label: "Networking: HTTP 3 Connection Close Reason"
     hidden: yes
@@ -49310,6 +49327,47 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_coun
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason {
+  label: "Networking: HTTP 3 Congestion Event Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
