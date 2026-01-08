@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fxa_keychain_refactor_ios_rollout_copy.branch
     ]
     filters:
-      fxa_keychain_refactor_ios_rollout_copy.metric: 'retained'
+      fxa_keychain_refactor_ios_rollout_copy.metric: 'active_hours'
       fxa_keychain_refactor_ios_rollout_copy.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       fxa_keychain_refactor_ios_rollout_copy.branch
     ]
     filters:
-      fxa_keychain_refactor_ios_rollout_copy.metric: 'active_hours'
+      fxa_keychain_refactor_ios_rollout_copy.metric: 'retained'
       fxa_keychain_refactor_ios_rollout_copy.statistic: mean
     row: 10
     col: 12
