@@ -139,6 +139,12 @@ view: new_profile_clients_table {
     description: "Client's os version on the first seen date."
   }
 
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.paid_vs_organic_gclid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: adjust_attribution {
     sql: ${TABLE}.adjust_attribution_timestamp ;;
     type: time
