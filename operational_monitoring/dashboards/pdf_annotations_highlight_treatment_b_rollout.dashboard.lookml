@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pdf_annotations_highlight_treatment_b_rollout
+    type: looker_line
+    fields: [
+      pdf_annotations_highlight_treatment_b_rollout.submission_date,
+      pdf_annotations_highlight_treatment_b_rollout.branch,
+      pdf_annotations_highlight_treatment_b_rollout.point
+    ]
+    pivots: [
+      pdf_annotations_highlight_treatment_b_rollout.branch
+    ]
+    filters:
+      pdf_annotations_highlight_treatment_b_rollout.metric: 'qualified_cumulative_days_of_use'
+      pdf_annotations_highlight_treatment_b_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: pdf_annotations_highlight_treatment_b_rollout.submission_date
+    field_y: pdf_annotations_highlight_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: pdf_annotations_highlight_treatment_b_rollout.lower
+    ci_upper: pdf_annotations_highlight_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: pdf_annotations_highlight_treatment_b_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -64,41 +98,6 @@
     filters:
       pdf_annotations_highlight_treatment_b_rollout.metric: 'memory_total'
       pdf_annotations_highlight_treatment_b_rollout.statistic: percentile
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: pdf_annotations_highlight_treatment_b_rollout.submission_date
-    field_y: pdf_annotations_highlight_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: pdf_annotations_highlight_treatment_b_rollout.lower
-    ci_upper: pdf_annotations_highlight_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: pdf_annotations_highlight_treatment_b_rollout.submission_date
-      Percentile: pdf_annotations_highlight_treatment_b_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pdf_annotations_highlight_treatment_b_rollout
-    type: looker_line
-    fields: [
-      pdf_annotations_highlight_treatment_b_rollout.submission_date,
-      pdf_annotations_highlight_treatment_b_rollout.branch,
-      pdf_annotations_highlight_treatment_b_rollout.point
-    ]
-    pivots: [
-      pdf_annotations_highlight_treatment_b_rollout.branch
-    ]
-    filters:
-      pdf_annotations_highlight_treatment_b_rollout.metric: 'uri_count'
-      pdf_annotations_highlight_treatment_b_rollout.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -111,6 +110,7 @@
     show_grid: true
     listen:
       Date: pdf_annotations_highlight_treatment_b_rollout.submission_date
+      Percentile: pdf_annotations_highlight_treatment_b_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,44 +199,10 @@
       pdf_annotations_highlight_treatment_b_rollout.branch
     ]
     filters:
-      pdf_annotations_highlight_treatment_b_rollout.metric: 'qualified_cumulative_days_of_use'
+      pdf_annotations_highlight_treatment_b_rollout.metric: 'uri_count'
       pdf_annotations_highlight_treatment_b_rollout.statistic: mean
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: pdf_annotations_highlight_treatment_b_rollout.submission_date
-    field_y: pdf_annotations_highlight_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: pdf_annotations_highlight_treatment_b_rollout.lower
-    ci_upper: pdf_annotations_highlight_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: pdf_annotations_highlight_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pdf_annotations_highlight_treatment_b_rollout
-    type: looker_line
-    fields: [
-      pdf_annotations_highlight_treatment_b_rollout.submission_date,
-      pdf_annotations_highlight_treatment_b_rollout.branch,
-      pdf_annotations_highlight_treatment_b_rollout.point
-    ]
-    pivots: [
-      pdf_annotations_highlight_treatment_b_rollout.branch
-    ]
-    filters:
-      pdf_annotations_highlight_treatment_b_rollout.metric: 'retained'
-      pdf_annotations_highlight_treatment_b_rollout.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: pdf_annotations_highlight_treatment_b_rollout.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       pdf_annotations_highlight_treatment_b_rollout.metric: 'days_of_use'
+      pdf_annotations_highlight_treatment_b_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: pdf_annotations_highlight_treatment_b_rollout.submission_date
+    field_y: pdf_annotations_highlight_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: pdf_annotations_highlight_treatment_b_rollout.lower
+    ci_upper: pdf_annotations_highlight_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: pdf_annotations_highlight_treatment_b_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pdf_annotations_highlight_treatment_b_rollout
+    type: looker_line
+    fields: [
+      pdf_annotations_highlight_treatment_b_rollout.submission_date,
+      pdf_annotations_highlight_treatment_b_rollout.branch,
+      pdf_annotations_highlight_treatment_b_rollout.point
+    ]
+    pivots: [
+      pdf_annotations_highlight_treatment_b_rollout.branch
+    ]
+    filters:
+      pdf_annotations_highlight_treatment_b_rollout.metric: 'retained'
       pdf_annotations_highlight_treatment_b_rollout.statistic: mean
     row: 30
     col: 12

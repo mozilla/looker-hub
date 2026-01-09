@@ -12835,6 +12835,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_aiwindow_assistant ;;
+    hidden: yes
+    description: "The count URI loads triggered in a subsession from the AI window assistant search handoff button.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu ;;
     hidden: yes
@@ -12944,6 +12951,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_aiwindow_assistant ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu ;;
     hidden: yes
@@ -13042,6 +13056,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_content_aiwindow_assistant {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_aiwindow_assistant ;;
+    hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the AI window assistant. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_content_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu ;;
     hidden: yes
@@ -13137,6 +13158,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_about_newtab ;;
     hidden: yes
     description: "Records counts of SERP pages with adverts displayed where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_aiwindow_assistant {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_aiwindow_assistant ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content.
 "
   }
 

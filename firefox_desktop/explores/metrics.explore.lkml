@@ -188,6 +188,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_about_newtab}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_about_newtab.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_contextmenu}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu.document_id} ;;
@@ -263,6 +268,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_contextmenu}) AS metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu.document_id} ;;
@@ -333,6 +343,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_content_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_about_newtab.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_search_content_aiwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_aiwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_content_aiwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_aiwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_search_content_contextmenu {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_contextmenu}) AS metrics__metrics__labeled_counter__browser_search_content_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_contextmenu.document_id} ;;
@@ -401,6 +416,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__browser_search_withads_about_newtab {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_withads_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_about_newtab.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_aiwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assistant.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__browser_search_withads_contextmenu {

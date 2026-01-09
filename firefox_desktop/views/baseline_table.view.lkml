@@ -449,6 +449,16 @@ view: baseline_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__policies_is_enterprise {
+    sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Policies Is Enterprise"
+    description: "Attempt to determine if the user is an enterprise user based on various signals. This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise.
+"
+  }
+
   dimension: metrics__boolean__usage_is_default_browser {
     sql: ${TABLE}.metrics.boolean.usage_is_default_browser ;;
     type: yesno

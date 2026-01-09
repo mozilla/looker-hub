@@ -885,6 +885,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant {
+    label: "Browser Engagement Navigation: Aiwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_aiwindow_assistant ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Aiwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Aiwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_navigation_aiwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count URI loads triggered in a subsession from the AI window assistant search handoff button.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     label: "Browser Engagement Navigation: Contextmenu"
     hidden: yes
@@ -1633,6 +1650,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant {
+    label: "Browser Search Adclicks: Aiwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_aiwindow_assistant ;;
+    group_label: "Browser Search Adclicks"
+    group_item_label: "Aiwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Adclicks: Aiwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_adclicks_aiwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on SERP pages where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu {
     label: "Browser Search Adclicks: Contextmenu"
     hidden: yes
@@ -1871,6 +1905,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_content_aiwindow_assistant {
+    label: "Browser Search Content: Aiwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_aiwindow_assistant ;;
+    group_label: "Browser Search Content"
+    group_item_label: "Aiwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Content: Aiwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_content_aiwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts for in-content searches where the search was most likely started from the AI window assistant. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_content_contextmenu {
     label: "Browser Search Content: Contextmenu"
     hidden: yes
@@ -2106,6 +2157,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records counts of SERP pages with adverts displayed where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_aiwindow_assistant {
+    label: "Browser Search Withads: Aiwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_aiwindow_assistant ;;
+    group_label: "Browser Search Withads"
+    group_item_label: "Aiwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Withads: Aiwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_withads_aiwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content.
 "
   }
 
@@ -47063,6 +47131,47 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_about_new
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant {
+  label: "Browser Engagement Navigation: Aiwindow Assistant"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu {
   label: "Browser Engagement Navigation: Contextmenu"
 
@@ -47678,6 +47787,47 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant {
+  label: "Browser Search Adclicks: Aiwindow Assistant"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu {
   label: "Browser Search Adclicks: Contextmenu"
 
@@ -48252,6 +48402,47 @@ view: metrics__metrics__labeled_counter__browser_search_content_about_newtab {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_search_content_aiwindow_assistant {
+  label: "Browser Search Content: Aiwindow Assistant"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_content_contextmenu {
   label: "Browser Search Content: Contextmenu"
 
@@ -48787,6 +48978,47 @@ view: metrics__metrics__labeled_counter__browser_search_withads_about_home {
 
 view: metrics__metrics__labeled_counter__browser_search_withads_about_newtab {
   label: "Browser Search Withads: About Newtab"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assistant {
+  label: "Browser Search Withads: Aiwindow Assistant"
 
   dimension: document_id {
     type: string

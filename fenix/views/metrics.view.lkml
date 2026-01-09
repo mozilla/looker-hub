@@ -31932,6 +31932,95 @@ startup, as part of the initialization sequence.
 "
   }
 
+  dimension: metrics__labeled_string__ads_client_build_cache_error {
+    label: "Ads Client: Build Cache Error"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.ads_client_build_cache_error ;;
+    type: string
+    group_label: "Ads Client"
+    group_item_label: "Build Cache Error"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: Build Cache Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_build_cache_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Errors encountered when building the HTTP cache, labeled by error type. The string value contains the error message or error type.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_client_error {
+    label: "Ads Client: Client Error"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.ads_client_client_error ;;
+    type: string
+    group_label: "Ads Client"
+    group_item_label: "Client Error"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: Client Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_client_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Errors encountered when using the ads client, labeled by operation type. The string value contains the error message or error type. Errors are recorded even if they are propagated to the consumer.
+"
+  }
+
+  dimension: metrics__labeled_counter__ads_client_client_operation_total {
+    label: "Ads Client: Client Operation Total"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ads_client_client_operation_total ;;
+    group_label: "Ads Client"
+    group_item_label: "Client Operation Total"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: Client Operation Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_client_operation_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of operations attempted by the ads client, labeled by operation type. Used as the denominator for client_operation_success_rate.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_deserialization_error {
+    label: "Ads Client: Deserialization Error"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.ads_client_deserialization_error ;;
+    type: string
+    group_label: "Ads Client"
+    group_item_label: "Deserialization Error"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: Deserialization Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_deserialization_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Deserialization errors encountered when parsing AdResponse data, labeled by error type. The string value contains the error message or details. Invalid ad items are skipped but these errors are tracked for monitoring data quality issues.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_http_cache_outcome {
+    label: "Ads Client: HTTP Cache Outcome"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.ads_client_http_cache_outcome ;;
+    type: string
+    group_label: "Ads Client"
+    group_item_label: "HTTP Cache Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: HTTP Cache Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_http_cache_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of outcomes encountered during read operations on the http cache, labeled by type. The string value contains the error message or error type.
+"
+  }
+
   dimension: metrics__labeled_counter__fxa_client_error_count {
     label: "Fxa Client: Error Count"
     hidden: yes
@@ -39775,6 +39864,47 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   }
 
   sql_table_name: `mozdata.fenix.metrics` ;;
+}
+
+view: metrics__metrics__labeled_counter__ads_client_client_operation_total {
+  label: "Ads Client: Client Operation Total"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
 }
 
 view: metrics__metrics__labeled_counter__application_reputation_binary_archive {
@@ -63081,6 +63211,62 @@ view: metrics__metrics__labeled_quantity__timestamps_startup_timeline {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_string__ads_client_build_cache_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_string__ads_client_client_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_string__ads_client_deserialization_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_string__ads_client_http_cache_outcome {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 }

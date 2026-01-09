@@ -2285,6 +2285,13 @@ widget opens firefox for regular search
     group_item_label: "Raw User Terms Of Use Date Accepted"
   }
 
+  dimension: metrics__labeled_counter__ads_client_client_operation_total {
+    sql: ${TABLE}.metrics.labeled_counter.ads_client_client_operation_total ;;
+    hidden: yes
+    description: "The total number of operations attempted by the ads client, labeled by operation type. Used as the denominator for client_operation_success_rate.
+"
+  }
+
   dimension: metrics__labeled_counter__bookmarks_add {
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_add ;;
     hidden: yes
@@ -2670,6 +2677,34 @@ with a home page origin.
     hidden: yes
     description: "Recorded when the user enters the background. This reports
 the currently selected wallpaper if it's not the default.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_build_cache_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_build_cache_error ;;
+    hidden: yes
+    description: "Errors encountered when building the HTTP cache, labeled by error type. The string value contains the error message or error type.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_client_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_client_error ;;
+    hidden: yes
+    description: "Errors encountered when using the ads client, labeled by operation type. The string value contains the error message or error type. Errors are recorded even if they are propagated to the consumer.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_deserialization_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_deserialization_error ;;
+    hidden: yes
+    description: "Deserialization errors encountered when parsing AdResponse data, labeled by error type. The string value contains the error message or details. Invalid ad items are skipped but these errors are tracked for monitoring data quality issues.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_http_cache_outcome {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_http_cache_outcome ;;
+    hidden: yes
+    description: "The total number of outcomes encountered during read operations on the http cache, labeled by type. The string value contains the error message or error type.
 "
   }
 
@@ -4509,6 +4544,62 @@ view: metrics_table__events {
 }
 
 view: metrics_table__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_build_cache_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_client_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_deserialization_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_http_cache_outcome {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
