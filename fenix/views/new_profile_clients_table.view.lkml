@@ -153,6 +153,12 @@ view: new_profile_clients_table {
     description: "Client's os version on the first seen date."
   }
 
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.paid_vs_organic_gclid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: play_store_attribution_campaign {
     sql: ${TABLE}.play_store_attribution_campaign ;;
     type: string
