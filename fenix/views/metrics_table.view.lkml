@@ -11774,6 +11774,13 @@ either %AppData% or %LocalAppData%.
 "
   }
 
+  dimension: metrics__labeled_counter__ads_client_client_operation_total {
+    sql: ${TABLE}.metrics.labeled_counter.ads_client_client_operation_total ;;
+    hidden: yes
+    description: "The total number of operations attempted by the ads client, labeled by operation type. Used as the denominator for client_operation_success_rate.
+"
+  }
+
   dimension: metrics__labeled_counter__application_reputation_binary_archive {
     sql: ${TABLE}.metrics.labeled_counter.application_reputation_binary_archive ;;
     hidden: yes
@@ -13084,7 +13091,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -15117,6 +15124,34 @@ Previously instrumented in \"main\" ping `simpleMeasurements`.
     hidden: yes
     description: "Events on the startup timeline, in millis since process creation.
 See `StartupTimeline.h`
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_build_cache_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_build_cache_error ;;
+    hidden: yes
+    description: "Errors encountered when building the HTTP cache, labeled by error type. The string value contains the error message or error type.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_client_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_client_error ;;
+    hidden: yes
+    description: "Errors encountered when using the ads client, labeled by operation type. The string value contains the error message or error type. Errors are recorded even if they are propagated to the consumer.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_deserialization_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_deserialization_error ;;
+    hidden: yes
+    description: "Deserialization errors encountered when parsing AdResponse data, labeled by error type. The string value contains the error message or details. Invalid ad items are skipped but these errors are tracked for monitoring data quality issues.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_http_cache_outcome {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_http_cache_outcome ;;
+    hidden: yes
+    description: "The total number of outcomes encountered during read operations on the http cache, labeled by type. The string value contains the error message or error type.
 "
   }
 
@@ -56972,6 +57007,62 @@ view: metrics_table__metrics__labeled_quantity__timestamps_startup_timeline {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_build_cache_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_client_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_deserialization_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_http_cache_outcome {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 }

@@ -26,45 +26,10 @@
       print_background_task_times_by_build.branch, print_background_task_times_by_build.metric
     ]
     filters:
-      print_background_task_times_by_build.metric: '"oom", "unexpected", "name_not_found", "not_available", "startdoc", "enddoc", "abort", "notimplemented", "print_failure", "gfx_printer_doc_is_busy", "cannot_open_file", "no_printer", "start_page"'
+      print_background_task_times_by_build.metric: '"no_printer", "oom", "unexpected", "start_page", "notimplemented", "cannot_open_file", "startdoc", "print_failure", "abort", "gfx_printer_doc_is_busy", "enddoc", "name_not_found", "not_available"'
       print_background_task_times_by_build.statistic: sum
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: print_background_task_times_by_build.build_id
-    field_y: print_background_task_times_by_build.point
-    log_scale: false
-    ci_lower: print_background_task_times_by_build.lower
-    ci_upper: print_background_task_times_by_build.upper
-    show_grid: true
-    listen:
-      Date: print_background_task_times_by_build.build_id
-      Channel: print_background_task_times_by_build.channel
-      OS: print_background_task_times_by_build.os
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Total Printing Errors
-    name: Total Printing Errors_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: print_background_task_times_by_build
-    type: looker_line
-    fields: [
-      print_background_task_times_by_build.build_id,
-      print_background_task_times_by_build.branch,
-      print_background_task_times_by_build.point
-    ]
-    pivots: [
-      print_background_task_times_by_build.branch
-    ]
-    filters:
-      print_background_task_times_by_build.metric: 'total_printing_errors'
-      print_background_task_times_by_build.statistic: sum
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: print_background_task_times_by_build.build_id
@@ -97,6 +62,41 @@
     ]
     filters:
       print_background_task_times_by_build.metric: '"total_printing_errors_old_ui", "total_printing_errors_new_ui"'
+      print_background_task_times_by_build.statistic: sum
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: print_background_task_times_by_build.build_id
+    field_y: print_background_task_times_by_build.point
+    log_scale: false
+    ci_lower: print_background_task_times_by_build.lower
+    ci_upper: print_background_task_times_by_build.upper
+    show_grid: true
+    listen:
+      Date: print_background_task_times_by_build.build_id
+      Channel: print_background_task_times_by_build.channel
+      OS: print_background_task_times_by_build.os
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Total Printing Errors
+    name: Total Printing Errors_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: print_background_task_times_by_build
+    type: looker_line
+    fields: [
+      print_background_task_times_by_build.build_id,
+      print_background_task_times_by_build.branch,
+      print_background_task_times_by_build.point
+    ]
+    pivots: [
+      print_background_task_times_by_build.branch
+    ]
+    filters:
+      print_background_task_times_by_build.metric: 'total_printing_errors'
       print_background_task_times_by_build.statistic: sum
     row: 10
     col: 0

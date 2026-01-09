@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: es_billboard_rollout
+    type: looker_line
+    fields: [
+      es_billboard_rollout.submission_date,
+      es_billboard_rollout.branch,
+      es_billboard_rollout.point
+    ]
+    pivots: [
+      es_billboard_rollout.branch
+    ]
+    filters:
+      es_billboard_rollout.metric: 'qualified_cumulative_days_of_use'
+      es_billboard_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: es_billboard_rollout.submission_date
+    field_y: es_billboard_rollout.point
+    log_scale: false
+    ci_lower: es_billboard_rollout.lower
+    ci_upper: es_billboard_rollout.upper
+    show_grid: true
+    listen:
+      Date: es_billboard_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -64,41 +98,6 @@
     filters:
       es_billboard_rollout.metric: 'memory_total'
       es_billboard_rollout.statistic: percentile
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: es_billboard_rollout.submission_date
-    field_y: es_billboard_rollout.point
-    log_scale: false
-    ci_lower: es_billboard_rollout.lower
-    ci_upper: es_billboard_rollout.upper
-    show_grid: true
-    listen:
-      Date: es_billboard_rollout.submission_date
-      Percentile: es_billboard_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: es_billboard_rollout
-    type: looker_line
-    fields: [
-      es_billboard_rollout.submission_date,
-      es_billboard_rollout.branch,
-      es_billboard_rollout.point
-    ]
-    pivots: [
-      es_billboard_rollout.branch
-    ]
-    filters:
-      es_billboard_rollout.metric: 'uri_count'
-      es_billboard_rollout.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -111,6 +110,7 @@
     show_grid: true
     listen:
       Date: es_billboard_rollout.submission_date
+      Percentile: es_billboard_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,44 +199,10 @@
       es_billboard_rollout.branch
     ]
     filters:
-      es_billboard_rollout.metric: 'qualified_cumulative_days_of_use'
+      es_billboard_rollout.metric: 'uri_count'
       es_billboard_rollout.statistic: mean
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: es_billboard_rollout.submission_date
-    field_y: es_billboard_rollout.point
-    log_scale: false
-    ci_lower: es_billboard_rollout.lower
-    ci_upper: es_billboard_rollout.upper
-    show_grid: true
-    listen:
-      Date: es_billboard_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: es_billboard_rollout
-    type: looker_line
-    fields: [
-      es_billboard_rollout.submission_date,
-      es_billboard_rollout.branch,
-      es_billboard_rollout.point
-    ]
-    pivots: [
-      es_billboard_rollout.branch
-    ]
-    filters:
-      es_billboard_rollout.metric: 'retained'
-      es_billboard_rollout.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: es_billboard_rollout.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       es_billboard_rollout.metric: 'days_of_use'
+      es_billboard_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: es_billboard_rollout.submission_date
+    field_y: es_billboard_rollout.point
+    log_scale: false
+    ci_lower: es_billboard_rollout.lower
+    ci_upper: es_billboard_rollout.upper
+    show_grid: true
+    listen:
+      Date: es_billboard_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: es_billboard_rollout
+    type: looker_line
+    fields: [
+      es_billboard_rollout.submission_date,
+      es_billboard_rollout.branch,
+      es_billboard_rollout.point
+    ]
+    pivots: [
+      es_billboard_rollout.branch
+    ]
+    filters:
+      es_billboard_rollout.metric: 'retained'
       es_billboard_rollout.statistic: mean
     row: 30
     col: 12
