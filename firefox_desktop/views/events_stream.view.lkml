@@ -1771,6 +1771,14 @@ view: events_stream {
     group_item_label: "Negotiation Count"
   }
 
+  dimension: extras__quantity__note_age_hours {
+    sql: ${TABLE}.extras.quantity.note_age_hours ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Note Age Hours"
+  }
+
   dimension: extras__quantity__num_msections_audio_recvonly {
     sql: ${TABLE}.extras.quantity.num_msections_audio_recvonly ;;
     type: number
