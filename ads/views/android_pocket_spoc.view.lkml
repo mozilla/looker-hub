@@ -9,34 +9,34 @@ view: android_pocket_spoc {
     sql: ${TABLE}.app_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The user visible version string (e.g. \"1.0.3\")."
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    description: "A UUID uniquely identifying the client."
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: interaction_type {
     sql: ${TABLE}.interaction_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The type of ad interaction (e.g. \"impression\", \"click\")."
+    description: "The type of ad interaction. One of 'impression', 'click'. Should not be null."
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized release channel (e.g. \"release\", \"nightly\")."
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Country associated with user's IP address, represented as a two letter code."
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: spoc_id {
@@ -58,7 +58,7 @@ view: android_pocket_spoc {
       quarter,
       year,
     ]
-    description: "A combination of date and time, to the microsecond, that represents when the record was ingested."
+    description: "Timestamp when the ping is received on the server side."
   }
 
   sql_table_name: `mozdata.ads.android_pocket_spocs` ;;

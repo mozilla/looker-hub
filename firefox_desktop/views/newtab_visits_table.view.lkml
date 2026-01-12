@@ -9,6 +9,7 @@ view: newtab_visits_table {
     sql: ${TABLE}.activity_segment ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Classification of users based on their browsing activity. E.g., infrequent, casual, regular."
   }
 
   dimension: browser_name {
@@ -27,17 +28,20 @@ view: newtab_visits_table {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: country_code {
     sql: ${TABLE}.country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: default_private_search_engine {
@@ -85,6 +89,7 @@ view: newtab_visits_table {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: newtab_blocked_sponsors {
@@ -167,6 +172,7 @@ view: newtab_visits_table {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {
@@ -202,7 +208,7 @@ view: newtab_visits_table {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+    description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
   dimension: search_interactions {
@@ -268,6 +274,7 @@ view: newtab_visits_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.telemetry.newtab_visits` ;;

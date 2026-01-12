@@ -33,6 +33,7 @@ view: amp_search_with {
     sql: ${TABLE}.revenue ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total revenue calculated at the grain of the table."
   }
 
   dimension: source_file {

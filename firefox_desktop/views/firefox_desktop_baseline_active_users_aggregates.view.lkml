@@ -16,10 +16,7 @@ view: firefox_desktop_baseline_active_users_aggregates {
     sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "App name (Firefox Desktop), if client comes from MozillaOnline distribution
-then the distribution_id is appended to the app_name. If client comes from BrowserStack (isp)
-this is appended to the app_name.
-"
+    description: "App name (Firefox Desktop), if client comes from MozillaOnline distribution then the distribution_id is appended to the app_name. If client comes from BrowserStack (isp) this is appended to the app_name."
   }
 
   dimension: app_version {
@@ -61,16 +58,14 @@ this is appended to the app_name.
     sql: ${TABLE}.attribution_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Medium to which the ping should be attributed e.g. referral, firefox desktop.
-"
+    description: "Medium to which the ping should be attributed e.g. referral, firefox desktop."
   }
 
   dimension: attribution_source {
     sql: ${TABLE}.attribution_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Source to which the ping should be attributed e.g. firefox browser, search fox.
-"
+    description: "Source to which the ping should be attributed e.g. firefox browser, search fox."
   }
 
   dimension: channel {
@@ -99,16 +94,14 @@ this is appended to the app_name.
     sql: ${TABLE}.daily_users ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of daily users on the submission_date (based on sending the ping).
-"
+    description: "Number of daily users on the submission_date (based on sending the ping)."
   }
 
   dimension: dau {
     sql: ${TABLE}.dau ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of DAU (Daily Active Users) users on the submission_date (based on activity).
-"
+    description: "Number of DAU (Daily Active Users) users on the submission_date (based on activity)."
   }
 
   dimension: distribution_id {
@@ -143,16 +136,14 @@ this is appended to the app_name.
     sql: ${TABLE}.mau ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of MAU (Monthly Active Users) users on the submission_date (based on activity).
-"
+    description: "Number of MAU (Monthly Active Users) users on the submission_date (based on activity)."
   }
 
   dimension: monthly_users {
     sql: ${TABLE}.monthly_users ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of monthly users on the submission_date (based on sending the ping).
-"
+    description: "Number of monthly users on the submission_date (based on sending the ping)."
   }
 
   dimension: os {
@@ -201,16 +192,14 @@ this is appended to the app_name.
     sql: ${TABLE}.wau ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of WAU (Weekly Active Users) users on the submission_date (based on activity).
-"
+    description: "Number of WAU (Weekly Active Users) users on the submission_date (based on activity)."
   }
 
   dimension: weekly_users {
     sql: ${TABLE}.weekly_users ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of weekly users on the submission_date (based on sending the ping).
-"
+    description: "Number of weekly users on the submission_date (based on sending the ping)."
   }
 
   dimension: windows_build_number {

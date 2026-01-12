@@ -10,18 +10,21 @@ view: meta_attribution_country_counts_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Country corresponding to the unique client"
   }
 
   dimension: meta_attribution_app {
     sql: ${TABLE}.meta_attribution_app ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A string representing the app the client activity occurred on"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Attributable channel"
   }
 
   dimension: ping_count {
@@ -43,6 +46,7 @@ view: meta_attribution_country_counts_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Date corresponding to the unique client count"
   }
 
   sql_table_name: `mozdata.fenix.meta_attribution_country_counts` ;;
