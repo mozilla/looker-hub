@@ -645,6 +645,16 @@ view: interaction_table {
 "
   }
 
+  dimension: metrics__string__technical_operations_firefox_version {
+    sql: ${TABLE}.metrics.string.technical_operations_firefox_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Technical Operations Firefox Version"
+    description: "Version of the Firefox browser being used by the client. Used for error investigation only, no analytics value.
+"
+  }
+
   dimension: metrics__string__technical_operations_report_reason {
     sql: ${TABLE}.metrics.string.technical_operations_report_reason ;;
     type: string

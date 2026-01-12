@@ -329,6 +329,24 @@ view: interaction {
 "
   }
 
+  dimension: metrics__string__technical_operations_firefox_version {
+    label: "Technical Operations: Firefox Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.technical_operations_firefox_version ;;
+    type: string
+    group_label: "Technical Operations"
+    group_item_label: "Firefox Version"
+
+    link: {
+      label: "Glean Dictionary reference for Technical Operations: Firefox Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/technical_operations_firefox_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Version of the Firefox browser being used by the client. Used for error investigation only, no analytics value.
+"
+  }
+
   dimension: metrics__string__technical_operations_report_reason {
     label: "Technical Operations: Report Reason"
     hidden: no
