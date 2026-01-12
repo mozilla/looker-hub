@@ -9,6 +9,7 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: app_build {
@@ -27,12 +28,14 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.app_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: architecture {
     sql: ${TABLE}.architecture ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: city {
@@ -44,6 +47,7 @@ view: baseline_clients_yearly_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: consecutive_days_active {
@@ -63,6 +67,7 @@ view: baseline_clients_yearly_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: day_of_week {
@@ -75,6 +80,7 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.days_active_bytes ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Days Active Bytes"
   }
 
   dimension: days_active_in_past_year {
@@ -87,6 +93,7 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.days_seen_bytes ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Days Seen Bytes"
   }
 
   dimension: days_seen_in_past_year {
@@ -129,24 +136,28 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The manufacturer of the device the application is running on."
   }
 
   dimension: device_model {
     sql: ${TABLE}.device_model ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The model of the device the application is running on."
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Durations"
   }
 
   dimension: geo_subdivision {
@@ -165,30 +176,35 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.isp ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the internet service provider associated with the client's IP address."
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Normalized App ID"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {
@@ -201,12 +217,14 @@ view: baseline_clients_yearly_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: telemetry_sdk_build {
     sql: ${TABLE}.telemetry_sdk_build ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The version of the Glean SDK at the time the ping was collected (e.g. 25.0.0)."
   }
 
   dimension_group: first_run {
@@ -222,6 +240,7 @@ view: baseline_clients_yearly_table {
     ]
     convert_tz: no
     datatype: date
+    description: "First Run Date"
   }
 
   dimension_group: first_seen {
@@ -252,6 +271,7 @@ view: baseline_clients_yearly_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_ios.baseline_clients_yearly` ;;

@@ -21,69 +21,59 @@ view: ltv_states_table {
     sql: ${TABLE}.ad_clicks_on_date ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of ad clicks by this client on this submission date."
   }
 
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "First Adjust Network reported by this client."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: consecutive_days_seen {
     sql: ${TABLE}.consecutive_days_seen ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of consecutive days this client has been seen. For example, if they were missing two days ago but present yesterday & today, consecutive_days_seen would be 2."
   }
 
   dimension: days_seen_bytes {
     sql: ${TABLE}.days_seen_bytes ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Days seen over the past year, represented as bytes."
   }
 
   dimension: days_since_first_seen {
     sql: ${TABLE}.days_since_first_seen ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of days since this client was first seen."
   }
 
   dimension: days_since_seen {
     sql: ${TABLE}.days_since_seen ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Number of days since this client was last seen. For example, if they were seen yesterday, days_since_seen would be 1."
   }
 
   dimension: first_reported_country {
     sql: ${TABLE}.first_reported_country ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "First country reported by this client."
   }
 
   dimension: first_reported_isp {
     sql: ${TABLE}.first_reported_isp ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "First ISP reported by this client."
   }
 
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "First install source reported by this client."
   }
 
   dimension: markov_states__android_states_v1 {
@@ -122,14 +112,12 @@ view: ltv_states_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: total_historic_ad_clicks {
     sql: ${TABLE}.total_historic_ad_clicks ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Total historic ad clicks by this client up to this date (inclusive of this date)."
   }
 
   dimension_group: first_seen {
@@ -145,7 +133,6 @@ view: ltv_states_table {
     ]
     convert_tz: no
     datatype: date
-    description: "First submission date that this client was seen on."
   }
 
   dimension_group: submission {
@@ -161,7 +148,6 @@ view: ltv_states_table {
     ]
     convert_tz: no
     datatype: date
-    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.fenix.ltv_states` ;;

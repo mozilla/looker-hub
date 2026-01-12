@@ -559,7 +559,6 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.normalized_app_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -572,7 +571,6 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {

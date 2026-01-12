@@ -510,7 +510,6 @@ view: play_store_attribution_table {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -523,7 +522,6 @@ view: play_store_attribution_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {

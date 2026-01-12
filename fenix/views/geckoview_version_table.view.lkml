@@ -9,7 +9,6 @@ view: geckoview_version_table {
     sql: ${TABLE}.geckoview_major_version ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Gecko View Major Version"
   }
 
   dimension: n_pings {
@@ -30,7 +29,6 @@ view: geckoview_version_table {
       quarter,
       year,
     ]
-    description: "Build Hour"
   }
 
   sql_table_name: `mozdata.org_mozilla_fenix.geckoview_version` ;;
