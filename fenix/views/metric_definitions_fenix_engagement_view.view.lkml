@@ -83,6 +83,7 @@ fenix_engagement_view_locale,
 fenix_engagement_view_mau,
 fenix_engagement_view_meta_attribution_app,
 fenix_engagement_view_paid_vs_organic,
+fenix_engagement_view_paid_vs_organic_gclid,
 fenix_engagement_view_play_store_attribution_campaign,
 fenix_engagement_view_play_store_attribution_medium,
 fenix_engagement_view_play_store_attribution_source,
@@ -193,6 +194,7 @@ fenix_engagement_view.locale AS fenix_engagement_view_locale,
 fenix_engagement_view.mau AS fenix_engagement_view_mau,
 fenix_engagement_view.meta_attribution_app AS fenix_engagement_view_meta_attribution_app,
 fenix_engagement_view.paid_vs_organic AS fenix_engagement_view_paid_vs_organic,
+fenix_engagement_view.paid_vs_organic_gclid AS fenix_engagement_view_paid_vs_organic_gclid,
 fenix_engagement_view.play_store_attribution_campaign AS fenix_engagement_view_play_store_attribution_campaign,
 fenix_engagement_view.play_store_attribution_medium AS fenix_engagement_view_play_store_attribution_medium,
 fenix_engagement_view.play_store_attribution_source AS fenix_engagement_view_play_store_attribution_source,
@@ -348,6 +350,7 @@ fenix_engagement_view_locale,
 fenix_engagement_view_mau,
 fenix_engagement_view_meta_attribution_app,
 fenix_engagement_view_paid_vs_organic,
+fenix_engagement_view_paid_vs_organic_gclid,
 fenix_engagement_view_play_store_attribution_campaign,
 fenix_engagement_view_play_store_attribution_medium,
 fenix_engagement_view_play_store_attribution_source,
@@ -952,6 +955,13 @@ fenix_engagement_view_wau,
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.fenix_engagement_view_paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.fenix_engagement_view_paid_vs_organic_gclid ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

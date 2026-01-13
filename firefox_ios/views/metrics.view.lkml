@@ -2710,7 +2710,7 @@ is enabled to be displayed.
 
   dimension: metrics__counter__qr_code_scanned {
     label: "Qr Code: Scanned"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.qr_code_scanned ;;
     type: number
     group_label: "Qr Code"

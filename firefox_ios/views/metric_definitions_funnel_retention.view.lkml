@@ -70,6 +70,7 @@ funnel_retention_locale,
 funnel_retention_metric,
 funnel_retention_new_profiles_metric_date,
 funnel_retention_paid_vs_organic,
+funnel_retention_paid_vs_organic_gclid,
 funnel_retention_ping_sent_metric_date,
 funnel_retention_ping_sent_week_4,
 funnel_retention_repeat_profiles,
@@ -166,6 +167,7 @@ funnel_retention.locale AS funnel_retention_locale,
 funnel_retention.metric_date AS funnel_retention_metric,
 funnel_retention.new_profiles_metric_date AS funnel_retention_new_profiles_metric_date,
 funnel_retention.paid_vs_organic AS funnel_retention_paid_vs_organic,
+funnel_retention.paid_vs_organic_gclid AS funnel_retention_paid_vs_organic_gclid,
 funnel_retention.ping_sent_metric_date AS funnel_retention_ping_sent_metric_date,
 funnel_retention.ping_sent_week_4 AS funnel_retention_ping_sent_week_4,
 funnel_retention.repeat_profiles AS funnel_retention_repeat_profiles,
@@ -307,6 +309,7 @@ funnel_retention_locale,
 funnel_retention_metric,
 funnel_retention_new_profiles_metric_date,
 funnel_retention_paid_vs_organic,
+funnel_retention_paid_vs_organic_gclid,
 funnel_retention_ping_sent_metric_date,
 funnel_retention_ping_sent_week_4,
 funnel_retention_repeat_profiles,
@@ -811,6 +814,13 @@ funnel_retention_retained_week_4_new_profiles,
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.funnel_retention_paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.funnel_retention_paid_vs_organic_gclid ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

@@ -67,6 +67,7 @@ firefox_ios_engagement_view_lifecycle_stage,
 firefox_ios_engagement_view_locale,
 firefox_ios_engagement_view_mau,
 firefox_ios_engagement_view_paid_vs_organic,
+firefox_ios_engagement_view_paid_vs_organic_gclid,
 firefox_ios_engagement_view_wau,
 
                 NULL AS client_id,
@@ -158,6 +159,7 @@ firefox_ios_engagement_view.lifecycle_stage AS firefox_ios_engagement_view_lifec
 firefox_ios_engagement_view.locale AS firefox_ios_engagement_view_locale,
 firefox_ios_engagement_view.mau AS firefox_ios_engagement_view_mau,
 firefox_ios_engagement_view.paid_vs_organic AS firefox_ios_engagement_view_paid_vs_organic,
+firefox_ios_engagement_view.paid_vs_organic_gclid AS firefox_ios_engagement_view_paid_vs_organic_gclid,
 firefox_ios_engagement_view.wau AS firefox_ios_engagement_view_wau,
 
                     FROM
@@ -294,6 +296,7 @@ firefox_ios_engagement_view_lifecycle_stage,
 firefox_ios_engagement_view_locale,
 firefox_ios_engagement_view_mau,
 firefox_ios_engagement_view_paid_vs_organic,
+firefox_ios_engagement_view_paid_vs_organic_gclid,
 firefox_ios_engagement_view_wau,
 
                 client_id,
@@ -770,6 +773,13 @@ firefox_ios_engagement_view_wau,
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.firefox_ios_engagement_view_paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.firefox_ios_engagement_view_paid_vs_organic_gclid ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
