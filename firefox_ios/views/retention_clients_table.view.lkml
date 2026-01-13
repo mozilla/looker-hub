@@ -161,6 +161,12 @@ view: retention_clients_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.paid_vs_organic_gclid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: ping_sent_metric_date {
     sql: ${TABLE}.ping_sent_metric_date ;;
     type: yesno
