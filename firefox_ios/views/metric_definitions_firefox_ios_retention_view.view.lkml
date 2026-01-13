@@ -69,6 +69,7 @@ firefox_ios_retention_view_locale,
 firefox_ios_retention_view_metric,
 firefox_ios_retention_view_new_profiles_metric_date,
 firefox_ios_retention_view_paid_vs_organic,
+firefox_ios_retention_view_paid_vs_organic_gclid,
 firefox_ios_retention_view_ping_sent_metric_date,
 firefox_ios_retention_view_ping_sent_week_4,
 firefox_ios_retention_view_repeat_profiles,
@@ -165,6 +166,7 @@ firefox_ios_retention_view.locale AS firefox_ios_retention_view_locale,
 firefox_ios_retention_view.metric_date AS firefox_ios_retention_view_metric,
 firefox_ios_retention_view.new_profiles_metric_date AS firefox_ios_retention_view_new_profiles_metric_date,
 firefox_ios_retention_view.paid_vs_organic AS firefox_ios_retention_view_paid_vs_organic,
+firefox_ios_retention_view.paid_vs_organic_gclid AS firefox_ios_retention_view_paid_vs_organic_gclid,
 firefox_ios_retention_view.ping_sent_metric_date AS firefox_ios_retention_view_ping_sent_metric_date,
 firefox_ios_retention_view.ping_sent_week_4 AS firefox_ios_retention_view_ping_sent_week_4,
 firefox_ios_retention_view.repeat_profiles AS firefox_ios_retention_view_repeat_profiles,
@@ -306,6 +308,7 @@ firefox_ios_retention_view_locale,
 firefox_ios_retention_view_metric,
 firefox_ios_retention_view_new_profiles_metric_date,
 firefox_ios_retention_view_paid_vs_organic,
+firefox_ios_retention_view_paid_vs_organic_gclid,
 firefox_ios_retention_view_ping_sent_metric_date,
 firefox_ios_retention_view_ping_sent_week_4,
 firefox_ios_retention_view_repeat_profiles,
@@ -794,6 +797,13 @@ firefox_ios_retention_view_retained_week_4_new_profiles,
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.firefox_ios_retention_view_paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.firefox_ios_retention_view_paid_vs_organic_gclid ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

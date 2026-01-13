@@ -85,6 +85,7 @@ fenix_retention_view_meta_attribution_app,
 fenix_retention_view_metric,
 fenix_retention_view_new_profiles_metric_date,
 fenix_retention_view_paid_vs_organic,
+fenix_retention_view_paid_vs_organic_gclid,
 fenix_retention_view_ping_sent_metric_date,
 fenix_retention_view_ping_sent_week_4,
 fenix_retention_view_play_store_attribution_campaign,
@@ -200,6 +201,7 @@ fenix_retention_view.meta_attribution_app AS fenix_retention_view_meta_attributi
 fenix_retention_view.metric_date AS fenix_retention_view_metric,
 fenix_retention_view.new_profiles_metric_date AS fenix_retention_view_new_profiles_metric_date,
 fenix_retention_view.paid_vs_organic AS fenix_retention_view_paid_vs_organic,
+fenix_retention_view.paid_vs_organic_gclid AS fenix_retention_view_paid_vs_organic_gclid,
 fenix_retention_view.ping_sent_metric_date AS fenix_retention_view_ping_sent_metric_date,
 fenix_retention_view.ping_sent_week_4 AS fenix_retention_view_ping_sent_week_4,
 fenix_retention_view.play_store_attribution_campaign AS fenix_retention_view_play_store_attribution_campaign,
@@ -360,6 +362,7 @@ fenix_retention_view_meta_attribution_app,
 fenix_retention_view_metric,
 fenix_retention_view_new_profiles_metric_date,
 fenix_retention_view_paid_vs_organic,
+fenix_retention_view_paid_vs_organic_gclid,
 fenix_retention_view_ping_sent_metric_date,
 fenix_retention_view_ping_sent_week_4,
 fenix_retention_view_play_store_attribution_campaign,
@@ -976,6 +979,13 @@ fenix_retention_view_retained_week_4_new_profiles,
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.fenix_retention_view_paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.fenix_retention_view_paid_vs_organic_gclid ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

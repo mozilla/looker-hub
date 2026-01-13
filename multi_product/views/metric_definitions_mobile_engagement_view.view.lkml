@@ -30,6 +30,7 @@ mobile_engagement_view_mau,
 mobile_engagement_view_meta_attribution_app,
 mobile_engagement_view_normalized_channel,
 mobile_engagement_view_paid_vs_organic,
+mobile_engagement_view_paid_vs_organic_gclid,
 mobile_engagement_view_play_store_attribution_campaign,
 mobile_engagement_view_play_store_attribution_medium,
 mobile_engagement_view_play_store_attribution_source,
@@ -88,6 +89,7 @@ mobile_engagement_view.mau AS mobile_engagement_view_mau,
 mobile_engagement_view.meta_attribution_app AS mobile_engagement_view_meta_attribution_app,
 mobile_engagement_view.normalized_channel AS mobile_engagement_view_normalized_channel,
 mobile_engagement_view.paid_vs_organic AS mobile_engagement_view_paid_vs_organic,
+mobile_engagement_view.paid_vs_organic_gclid AS mobile_engagement_view_paid_vs_organic_gclid,
 mobile_engagement_view.play_store_attribution_campaign AS mobile_engagement_view_play_store_attribution_campaign,
 mobile_engagement_view.play_store_attribution_medium AS mobile_engagement_view_play_store_attribution_medium,
 mobile_engagement_view.play_store_attribution_source AS mobile_engagement_view_play_store_attribution_source,
@@ -159,6 +161,7 @@ mobile_engagement_view_mau,
 mobile_engagement_view_meta_attribution_app,
 mobile_engagement_view_normalized_channel,
 mobile_engagement_view_paid_vs_organic,
+mobile_engagement_view_paid_vs_organic_gclid,
 mobile_engagement_view_play_store_attribution_campaign,
 mobile_engagement_view_play_store_attribution_medium,
 mobile_engagement_view_play_store_attribution_source,
@@ -326,6 +329,13 @@ mobile_engagement_view_wau,
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.mobile_engagement_view_paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.mobile_engagement_view_paid_vs_organic_gclid ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
