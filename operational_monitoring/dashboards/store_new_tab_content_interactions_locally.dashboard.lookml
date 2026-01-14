@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       store_new_tab_content_interactions_locally.branch
     ]
     filters:
-      store_new_tab_content_interactions_locally.metric: 'days_of_use'
+      store_new_tab_content_interactions_locally.metric: 'qualified_cumulative_days_of_use'
       store_new_tab_content_interactions_locally.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       store_new_tab_content_interactions_locally.branch
     ]
     filters:
-      store_new_tab_content_interactions_locally.metric: 'ad_clicks'
+      store_new_tab_content_interactions_locally.metric: 'days_of_use'
       store_new_tab_content_interactions_locally.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       store_new_tab_content_interactions_locally.branch
     ]
     filters:
-      store_new_tab_content_interactions_locally.metric: 'qualified_cumulative_days_of_use'
+      store_new_tab_content_interactions_locally.metric: 'active_hours'
       store_new_tab_content_interactions_locally.statistic: mean
     row: 10
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       store_new_tab_content_interactions_locally.branch
     ]
     filters:
-      store_new_tab_content_interactions_locally.metric: 'retained'
+      store_new_tab_content_interactions_locally.metric: 'ad_clicks'
       store_new_tab_content_interactions_locally.statistic: mean
     row: 20
     col: 0
@@ -214,6 +214,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: store_new_tab_content_interactions_locally
+    type: looker_line
+    fields: [
+      store_new_tab_content_interactions_locally.submission_date,
+      store_new_tab_content_interactions_locally.branch,
+      store_new_tab_content_interactions_locally.point
+    ]
+    pivots: [
+      store_new_tab_content_interactions_locally.branch
+    ]
+    filters:
+      store_new_tab_content_interactions_locally.metric: 'retained'
+      store_new_tab_content_interactions_locally.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: store_new_tab_content_interactions_locally.submission_date
+    field_y: store_new_tab_content_interactions_locally.point
+    log_scale: false
+    ci_lower: store_new_tab_content_interactions_locally.lower
+    ci_upper: store_new_tab_content_interactions_locally.upper
+    show_grid: true
+    listen:
+      Date: store_new_tab_content_interactions_locally.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -235,41 +269,6 @@
       store_new_tab_content_interactions_locally.metric: 'memory_total'
       store_new_tab_content_interactions_locally.statistic: percentile
     row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: store_new_tab_content_interactions_locally.submission_date
-    field_y: store_new_tab_content_interactions_locally.point
-    log_scale: false
-    ci_lower: store_new_tab_content_interactions_locally.lower
-    ci_upper: store_new_tab_content_interactions_locally.upper
-    show_grid: true
-    listen:
-      Date: store_new_tab_content_interactions_locally.submission_date
-      Percentile: store_new_tab_content_interactions_locally.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: store_new_tab_content_interactions_locally
-    type: looker_line
-    fields: [
-      store_new_tab_content_interactions_locally.submission_date,
-      store_new_tab_content_interactions_locally.branch,
-      store_new_tab_content_interactions_locally.point
-    ]
-    pivots: [
-      store_new_tab_content_interactions_locally.branch
-    ]
-    filters:
-      store_new_tab_content_interactions_locally.metric: 'active_hours'
-      store_new_tab_content_interactions_locally.statistic: mean
-    row: 30
     col: 12
     width: 12
     height: 8
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: store_new_tab_content_interactions_locally.submission_date
+      Percentile: store_new_tab_content_interactions_locally.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
