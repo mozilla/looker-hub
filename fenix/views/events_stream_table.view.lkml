@@ -2072,6 +2072,14 @@ view: events_stream_table {
     group_item_label: "Contextreason"
   }
 
+  dimension: extras__string__context_type {
+    sql: ${TABLE}.extras.string.context_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Context Type"
+  }
+
   dimension: extras__string__cookie_banner_setting {
     sql: ${TABLE}.extras.string.cookie_banner_setting ;;
     type: string
@@ -2166,6 +2174,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Detected Language"
+  }
+
+  dimension: extras__string__device_count {
+    sql: ${TABLE}.extras.string.device_count ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Device Count"
   }
 
   dimension: extras__string__device_name {
