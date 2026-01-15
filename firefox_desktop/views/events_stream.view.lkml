@@ -851,6 +851,14 @@ view: events_stream {
     group_item_label: "Is Lang Attribute Valid"
   }
 
+  dimension: extras__boolean__is_persistent {
+    sql: ${TABLE}.extras.boolean.is_persistent ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Persistent"
+  }
+
   dimension: extras__boolean__is_private {
     sql: ${TABLE}.extras.boolean.is_private ;;
     type: yesno
@@ -5297,6 +5305,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Silent"
+  }
+
+  dimension: extras__string__site_category {
+    sql: ${TABLE}.extras.string.site_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Site Category"
   }
 
   dimension: extras__string__site_host {
