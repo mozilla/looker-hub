@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.branch
     ]
     filters:
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'days_of_use'
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'retained'
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.branch
     ]
     filters:
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'uri_count'
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'search_count'
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.statistic: mean
     row: 10
     col: 0
@@ -112,24 +112,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: heartbeat_survey_audience_segments_in_firefox_2025_q4_germany
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.submission_date,
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.branch,
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.upper,
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.lower,
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.point
     ]
     pivots: [
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.branch
     ]
     filters:
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'active_hours'
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.statistic: mean
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'memory_total'
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -142,6 +144,7 @@
     show_grid: true
     listen:
       Date: heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.submission_date
+      Percentile: heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.branch
     ]
     filters:
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'search_count'
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'uri_count'
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.statistic: mean
     row: 20
     col: 12
@@ -214,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +233,7 @@
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.branch
     ]
     filters:
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'retained'
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'days_of_use'
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.statistic: mean
     row: 30
     col: 0
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: heartbeat_survey_audience_segments_in_firefox_2025_q4_germany
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.submission_date,
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.branch,
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.upper,
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.lower,
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.point
     ]
     pivots: [
       heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.branch
     ]
     filters:
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'memory_total'
-      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.statistic: percentile
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.metric: 'active_hours'
+      heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.submission_date
-      Percentile: heartbeat_survey_audience_segments_in_firefox_2025_q4_germany.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

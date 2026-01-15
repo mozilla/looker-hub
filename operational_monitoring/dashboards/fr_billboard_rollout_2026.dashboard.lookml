@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       fr_billboard_rollout_2026.branch
     ]
     filters:
-      fr_billboard_rollout_2026.metric: 'days_of_use'
+      fr_billboard_rollout_2026.metric: 'retained'
       fr_billboard_rollout_2026.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       fr_billboard_rollout_2026.branch
     ]
     filters:
-      fr_billboard_rollout_2026.metric: 'uri_count'
+      fr_billboard_rollout_2026.metric: 'search_count'
       fr_billboard_rollout_2026.statistic: mean
     row: 10
     col: 0
@@ -112,24 +112,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: fr_billboard_rollout_2026
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       fr_billboard_rollout_2026.submission_date,
       fr_billboard_rollout_2026.branch,
+      fr_billboard_rollout_2026.upper,
+      fr_billboard_rollout_2026.lower,
       fr_billboard_rollout_2026.point
     ]
     pivots: [
       fr_billboard_rollout_2026.branch
     ]
     filters:
-      fr_billboard_rollout_2026.metric: 'active_hours'
-      fr_billboard_rollout_2026.statistic: mean
+      fr_billboard_rollout_2026.metric: 'memory_total'
+      fr_billboard_rollout_2026.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -142,6 +144,7 @@
     show_grid: true
     listen:
       Date: fr_billboard_rollout_2026.submission_date
+      Percentile: fr_billboard_rollout_2026.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       fr_billboard_rollout_2026.branch
     ]
     filters:
-      fr_billboard_rollout_2026.metric: 'search_count'
+      fr_billboard_rollout_2026.metric: 'uri_count'
       fr_billboard_rollout_2026.statistic: mean
     row: 20
     col: 12
@@ -214,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +233,7 @@
       fr_billboard_rollout_2026.branch
     ]
     filters:
-      fr_billboard_rollout_2026.metric: 'retained'
+      fr_billboard_rollout_2026.metric: 'days_of_use'
       fr_billboard_rollout_2026.statistic: mean
     row: 30
     col: 0
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: fr_billboard_rollout_2026
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       fr_billboard_rollout_2026.submission_date,
       fr_billboard_rollout_2026.branch,
-      fr_billboard_rollout_2026.upper,
-      fr_billboard_rollout_2026.lower,
       fr_billboard_rollout_2026.point
     ]
     pivots: [
       fr_billboard_rollout_2026.branch
     ]
     filters:
-      fr_billboard_rollout_2026.metric: 'memory_total'
-      fr_billboard_rollout_2026.statistic: percentile
+      fr_billboard_rollout_2026.metric: 'active_hours'
+      fr_billboard_rollout_2026.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: fr_billboard_rollout_2026.submission_date
-      Percentile: fr_billboard_rollout_2026.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

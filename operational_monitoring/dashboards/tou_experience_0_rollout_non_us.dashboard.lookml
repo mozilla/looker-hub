@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'days_of_use'
+      tou_experience_0_rollout_non_us.metric: 'retained'
       tou_experience_0_rollout_non_us.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'uri_count'
+      tou_experience_0_rollout_non_us.metric: 'search_count'
       tou_experience_0_rollout_non_us.statistic: mean
     row: 10
     col: 0
@@ -112,24 +112,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: tou_experience_0_rollout_non_us
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       tou_experience_0_rollout_non_us.submission_date,
       tou_experience_0_rollout_non_us.branch,
+      tou_experience_0_rollout_non_us.upper,
+      tou_experience_0_rollout_non_us.lower,
       tou_experience_0_rollout_non_us.point
     ]
     pivots: [
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'active_hours'
-      tou_experience_0_rollout_non_us.statistic: mean
+      tou_experience_0_rollout_non_us.metric: 'memory_total'
+      tou_experience_0_rollout_non_us.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -142,6 +144,7 @@
     show_grid: true
     listen:
       Date: tou_experience_0_rollout_non_us.submission_date
+      Percentile: tou_experience_0_rollout_non_us.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'search_count'
+      tou_experience_0_rollout_non_us.metric: 'uri_count'
       tou_experience_0_rollout_non_us.statistic: mean
     row: 20
     col: 12
@@ -214,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +233,7 @@
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'retained'
+      tou_experience_0_rollout_non_us.metric: 'days_of_use'
       tou_experience_0_rollout_non_us.statistic: mean
     row: 30
     col: 0
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: tou_experience_0_rollout_non_us
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       tou_experience_0_rollout_non_us.submission_date,
       tou_experience_0_rollout_non_us.branch,
-      tou_experience_0_rollout_non_us.upper,
-      tou_experience_0_rollout_non_us.lower,
       tou_experience_0_rollout_non_us.point
     ]
     pivots: [
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'memory_total'
-      tou_experience_0_rollout_non_us.statistic: percentile
+      tou_experience_0_rollout_non_us.metric: 'active_hours'
+      tou_experience_0_rollout_non_us.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: tou_experience_0_rollout_non_us.submission_date
-      Percentile: tou_experience_0_rollout_non_us.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
