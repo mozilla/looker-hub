@@ -12503,7 +12503,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 2 different data points: success or failure of the request, and the reason for failure, if the request failed.
 "
   }
 
