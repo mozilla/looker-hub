@@ -12761,7 +12761,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: metrics__labeled_counter__gmp_update_xml_fetch_result {
     sql: ${TABLE}.metrics.labeled_counter.gmp_update_xml_fetch_result ;;
     hidden: yes
-    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 2 different data points: success or failure of the request, and the reason for failure, if the request failed.
 "
   }
 
@@ -13108,7 +13108,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
