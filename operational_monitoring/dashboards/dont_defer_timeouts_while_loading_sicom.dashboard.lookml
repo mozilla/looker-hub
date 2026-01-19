@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: dont_defer_timeouts_while_loading_sicom
-    type: looker_line
-    fields: [
-      dont_defer_timeouts_while_loading_sicom.submission_date,
-      dont_defer_timeouts_while_loading_sicom.branch,
-      dont_defer_timeouts_while_loading_sicom.point
-    ]
-    pivots: [
-      dont_defer_timeouts_while_loading_sicom.branch
-    ]
-    filters:
-      dont_defer_timeouts_while_loading_sicom.metric: 'qualified_cumulative_days_of_use'
-      dont_defer_timeouts_while_loading_sicom.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: dont_defer_timeouts_while_loading_sicom.submission_date
-    field_y: dont_defer_timeouts_while_loading_sicom.point
-    log_scale: false
-    ci_lower: dont_defer_timeouts_while_loading_sicom.lower
-    ci_upper: dont_defer_timeouts_while_loading_sicom.upper
-    show_grid: true
-    listen:
-      Date: dont_defer_timeouts_while_loading_sicom.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       dont_defer_timeouts_while_loading_sicom.metric: 'active_hours'
       dont_defer_timeouts_while_loading_sicom.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: dont_defer_timeouts_while_loading_sicom.submission_date
@@ -112,28 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: dont_defer_timeouts_while_loading_sicom
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       dont_defer_timeouts_while_loading_sicom.submission_date,
       dont_defer_timeouts_while_loading_sicom.branch,
-      dont_defer_timeouts_while_loading_sicom.upper,
-      dont_defer_timeouts_while_loading_sicom.lower,
       dont_defer_timeouts_while_loading_sicom.point
     ]
     pivots: [
       dont_defer_timeouts_while_loading_sicom.branch
     ]
     filters:
-      dont_defer_timeouts_while_loading_sicom.metric: 'memory_total'
-      dont_defer_timeouts_while_loading_sicom.statistic: percentile
+      dont_defer_timeouts_while_loading_sicom.metric: 'retained'
+      dont_defer_timeouts_while_loading_sicom.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: dont_defer_timeouts_while_loading_sicom.submission_date
@@ -144,7 +108,6 @@
     show_grid: true
     listen:
       Date: dont_defer_timeouts_while_loading_sicom.submission_date
-      Percentile: dont_defer_timeouts_while_loading_sicom.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -166,6 +129,40 @@
     ]
     filters:
       dont_defer_timeouts_while_loading_sicom.metric: 'search_count'
+      dont_defer_timeouts_while_loading_sicom.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: dont_defer_timeouts_while_loading_sicom.submission_date
+    field_y: dont_defer_timeouts_while_loading_sicom.point
+    log_scale: false
+    ci_lower: dont_defer_timeouts_while_loading_sicom.lower
+    ci_upper: dont_defer_timeouts_while_loading_sicom.upper
+    show_grid: true
+    listen:
+      Date: dont_defer_timeouts_while_loading_sicom.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: dont_defer_timeouts_while_loading_sicom
+    type: looker_line
+    fields: [
+      dont_defer_timeouts_while_loading_sicom.submission_date,
+      dont_defer_timeouts_while_loading_sicom.branch,
+      dont_defer_timeouts_while_loading_sicom.point
+    ]
+    pivots: [
+      dont_defer_timeouts_while_loading_sicom.branch
+    ]
+    filters:
+      dont_defer_timeouts_while_loading_sicom.metric: 'qualified_cumulative_days_of_use'
       dont_defer_timeouts_while_loading_sicom.statistic: mean
     row: 20
     col: 0
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: dont_defer_timeouts_while_loading_sicom
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       dont_defer_timeouts_while_loading_sicom.submission_date,
       dont_defer_timeouts_while_loading_sicom.branch,
+      dont_defer_timeouts_while_loading_sicom.upper,
+      dont_defer_timeouts_while_loading_sicom.lower,
       dont_defer_timeouts_while_loading_sicom.point
     ]
     pivots: [
       dont_defer_timeouts_while_loading_sicom.branch
     ]
     filters:
-      dont_defer_timeouts_while_loading_sicom.metric: 'retained'
-      dont_defer_timeouts_while_loading_sicom.statistic: mean
+      dont_defer_timeouts_while_loading_sicom.metric: 'memory_total'
+      dont_defer_timeouts_while_loading_sicom.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,6 +246,7 @@
     show_grid: true
     listen:
       Date: dont_defer_timeouts_while_loading_sicom.submission_date
+      Percentile: dont_defer_timeouts_while_loading_sicom.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
