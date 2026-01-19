@@ -878,6 +878,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_init_failure}) AS metrics__metrics__labeled_counter__media_audio_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_init_failure.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__media_capture_stream_usage {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_capture_stream_usage}) AS metrics__metrics__labeled_counter__media_capture_stream_usage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_capture_stream_usage.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__media_codec_used {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_codec_used}) AS metrics__metrics__labeled_counter__media_codec_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_codec_used.document_id} ;;
