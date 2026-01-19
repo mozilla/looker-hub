@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sections_rollout_us_beta_and_nightly
-    type: looker_line
-    fields: [
-      sections_rollout_us_beta_and_nightly.submission_date,
-      sections_rollout_us_beta_and_nightly.branch,
-      sections_rollout_us_beta_and_nightly.point
-    ]
-    pivots: [
-      sections_rollout_us_beta_and_nightly.branch
-    ]
-    filters:
-      sections_rollout_us_beta_and_nightly.metric: 'qualified_cumulative_days_of_use'
-      sections_rollout_us_beta_and_nightly.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: sections_rollout_us_beta_and_nightly.submission_date
-    field_y: sections_rollout_us_beta_and_nightly.point
-    log_scale: false
-    ci_lower: sections_rollout_us_beta_and_nightly.lower
-    ci_upper: sections_rollout_us_beta_and_nightly.upper
-    show_grid: true
-    listen:
-      Date: sections_rollout_us_beta_and_nightly.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       sections_rollout_us_beta_and_nightly.metric: 'active_hours'
       sections_rollout_us_beta_and_nightly.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: sections_rollout_us_beta_and_nightly.submission_date
@@ -112,28 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: sections_rollout_us_beta_and_nightly
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       sections_rollout_us_beta_and_nightly.submission_date,
       sections_rollout_us_beta_and_nightly.branch,
-      sections_rollout_us_beta_and_nightly.upper,
-      sections_rollout_us_beta_and_nightly.lower,
       sections_rollout_us_beta_and_nightly.point
     ]
     pivots: [
       sections_rollout_us_beta_and_nightly.branch
     ]
     filters:
-      sections_rollout_us_beta_and_nightly.metric: 'memory_total'
-      sections_rollout_us_beta_and_nightly.statistic: percentile
+      sections_rollout_us_beta_and_nightly.metric: 'retained'
+      sections_rollout_us_beta_and_nightly.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: sections_rollout_us_beta_and_nightly.submission_date
@@ -144,7 +108,6 @@
     show_grid: true
     listen:
       Date: sections_rollout_us_beta_and_nightly.submission_date
-      Percentile: sections_rollout_us_beta_and_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -166,6 +129,40 @@
     ]
     filters:
       sections_rollout_us_beta_and_nightly.metric: 'search_count'
+      sections_rollout_us_beta_and_nightly.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: sections_rollout_us_beta_and_nightly.submission_date
+    field_y: sections_rollout_us_beta_and_nightly.point
+    log_scale: false
+    ci_lower: sections_rollout_us_beta_and_nightly.lower
+    ci_upper: sections_rollout_us_beta_and_nightly.upper
+    show_grid: true
+    listen:
+      Date: sections_rollout_us_beta_and_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sections_rollout_us_beta_and_nightly
+    type: looker_line
+    fields: [
+      sections_rollout_us_beta_and_nightly.submission_date,
+      sections_rollout_us_beta_and_nightly.branch,
+      sections_rollout_us_beta_and_nightly.point
+    ]
+    pivots: [
+      sections_rollout_us_beta_and_nightly.branch
+    ]
+    filters:
+      sections_rollout_us_beta_and_nightly.metric: 'qualified_cumulative_days_of_use'
       sections_rollout_us_beta_and_nightly.statistic: mean
     row: 20
     col: 0
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: sections_rollout_us_beta_and_nightly
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       sections_rollout_us_beta_and_nightly.submission_date,
       sections_rollout_us_beta_and_nightly.branch,
+      sections_rollout_us_beta_and_nightly.upper,
+      sections_rollout_us_beta_and_nightly.lower,
       sections_rollout_us_beta_and_nightly.point
     ]
     pivots: [
       sections_rollout_us_beta_and_nightly.branch
     ]
     filters:
-      sections_rollout_us_beta_and_nightly.metric: 'retained'
-      sections_rollout_us_beta_and_nightly.statistic: mean
+      sections_rollout_us_beta_and_nightly.metric: 'memory_total'
+      sections_rollout_us_beta_and_nightly.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,6 +246,7 @@
     show_grid: true
     listen:
       Date: sections_rollout_us_beta_and_nightly.submission_date
+      Percentile: sections_rollout_us_beta_and_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
