@@ -892,7 +892,7 @@ with either biometrics or a passcode.
 
   dimension: metrics__counter__firefox_home_page_customize_homepage_button {
     label: "Firefox Home Page: Customize Homepage Button"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_customize_homepage_button ;;
     type: number
     group_label: "Firefox Home Page"
@@ -949,7 +949,7 @@ with a home page origin.
 
   dimension: metrics__counter__firefox_home_page_firefox_homepage_view {
     label: "Firefox Home Page: Firefox Homepage View"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_firefox_homepage_view ;;
     type: number
     group_label: "Firefox Home Page"
