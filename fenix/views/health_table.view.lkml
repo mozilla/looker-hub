@@ -1279,16 +1279,6 @@ See `exception_state` for different exception states when this can happen.
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.health"
     }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix_nightly.health"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fennec_aurora.health"
-    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
