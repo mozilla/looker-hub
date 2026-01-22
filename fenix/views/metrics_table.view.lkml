@@ -49128,6 +49128,16 @@ Shared Preferences.
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.metrics"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.metrics"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.metrics"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

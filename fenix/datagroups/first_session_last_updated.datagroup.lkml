@@ -16,11 +16,11 @@ datagroup: first_session_last_updated {
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_fenix_nightly' AND table_name = 'first_session')
+    WHERE (table_schema = 'org_mozilla_fenix_nightly_stable' AND table_name = 'first_session_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_fennec_aurora' AND table_name = 'first_session')
+    WHERE (table_schema = 'org_mozilla_fennec_aurora_stable' AND table_name = 'first_session_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE

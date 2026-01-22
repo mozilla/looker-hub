@@ -1319,6 +1319,10 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.first_session
       - channel: nightly
         table: mozdata.org_mozilla_fenix.first_session
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.first_session
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.first_session
       type: glean_ping_view
     first_session_table:
       tables:
@@ -1328,6 +1332,10 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.first_session
       - channel: nightly
         table: mozdata.org_mozilla_fenix.first_session
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.first_session
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.first_session
       type: table_view
     funnel_analysis:
       tables:
@@ -1464,6 +1472,10 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.health
       - channel: nightly
         table: mozdata.org_mozilla_fenix.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.health
       type: glean_ping_view
     health_table:
       tables:
@@ -1473,6 +1485,10 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.health
       - channel: nightly
         table: mozdata.org_mozilla_fenix.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.health
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.health
       type: table_view
     history_sync:
       tables:
@@ -1588,6 +1604,10 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.metrics
       - channel: nightly
         table: mozdata.org_mozilla_fenix.metrics
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.metrics
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.metrics
       type: glean_ping_view
     metrics_clients_daily_table:
       tables:
@@ -1607,6 +1627,10 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.metrics
       - channel: nightly
         table: mozdata.org_mozilla_fenix.metrics
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.metrics
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.metrics
       type: table_view
     migrated_clients_table:
       tables:
@@ -1844,6 +1868,10 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.sync
       - channel: nightly
         table: mozdata.org_mozilla_fenix.sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.sync
       type: glean_ping_view
     sync_table:
       tables:
@@ -1853,6 +1881,10 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.sync
       - channel: nightly
         table: mozdata.org_mozilla_fenix.sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.sync
       type: table_view
     temp_fog_initial_state:
       tables:

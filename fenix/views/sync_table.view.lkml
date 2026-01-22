@@ -998,6 +998,16 @@ Typically useful for ordering \"sync\" pings.
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.sync"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.sync"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
