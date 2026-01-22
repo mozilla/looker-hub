@@ -582,8 +582,9 @@ Mapped to client_info.attribution.ext in datasets.
                      and was able to retrieve the \"campaign ID\" it was first installed with.
                      This value is \"true\" if the user was signed into the Microsoft Store
                      when they first installed, and false otherwise.
-* `dlsource`: identifier that indicate where installations of Firefox originate
-"
+* `msclkid`: only present if the installation was done through the Microsoft Store, and the
+             install is attributable to a Microsoft Store Ads Campaign ID. This differs
+             from a Campaign ID originating "
   }
 
   dimension: metrics__object__glean_distribution_ext {

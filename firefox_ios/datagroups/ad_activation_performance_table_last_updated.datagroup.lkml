@@ -12,7 +12,7 @@ datagroup: ad_activation_performance_table_last_updated {
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'apple_ads_external' AND table_name = 'campaign_report_v1')
+    WHERE (table_schema = 'apple_ads_syndicate' AND table_name = 'apple_search_ads__campaign_report')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
