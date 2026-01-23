@@ -254,6 +254,7 @@ view: usage_reporting_table {
     group_label: "Metrics: Datetime"
     group_item_label: "User Terms Of Use Date Accepted"
     description: "The timestamp when the user accepted the Terms of Use.
+
 **Developer Note**: This replaces the old `termsofuse.date` metric.
 "
   }
@@ -307,6 +308,7 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: Quantity"
     group_item_label: "User Terms Of Use Version Accepted"
     description: "The version of the Terms of Use the user accepted.
+
 **Developer Note**: This replaces the old `termsofuse.version` metric.
 "
   }

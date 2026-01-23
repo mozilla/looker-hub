@@ -135,6 +135,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__boolean__policies_is_enterprise {
+    label: "Policies: Is Enterprise"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
+    type: yesno
+    group_label: "Policies"
+    group_item_label: "Is Enterprise"
+
+    link: {
+      label: "Glean Dictionary reference for Policies: Is Enterprise"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/policies_is_enterprise"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Attempt to determine if the user is an enterprise user based on various signals. This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise.
+"
+  }
+
   dimension: metrics__string__startup_profile_selection_reason {
     label: "Startup: Profile Selection Reason"
     hidden: no

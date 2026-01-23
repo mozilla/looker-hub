@@ -455,7 +455,7 @@ view: quick_suggest_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Quick Suggest Improve Suggest Experience"
-    description: "Whether the \"Improve Suggest Experience\" checkbox is checked.
+    description: "Whether online Suggest is available to the user and enabled.
 "
   }
 

@@ -96,6 +96,20 @@ view: clients_first_seen_v2 {
     description: "Client's user agent, which corresponds to the web browser used to download the Firefox installer."
   }
 
+  dimension: browser_backup_archive_enabled {
+    sql: ${TABLE}.browser_backup_archive_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "True if the user can create backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible."
+  }
+
+  dimension: browser_backup_scheduler_enabled {
+    sql: ${TABLE}.browser_backup_scheduler_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "The value of payload.processes.parent.scalars.browser_backup_scheduler_enabled most frequently seen on the submission date. If there is a tie, the value seen last according to submission_timestamp. True if the BackupService is configured to automatically create backups in the background."
+  }
+
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string

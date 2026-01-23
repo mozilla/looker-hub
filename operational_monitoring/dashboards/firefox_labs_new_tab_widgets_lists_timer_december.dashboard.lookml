@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: firefox_labs_new_tab_widgets_lists_timer_december
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       firefox_labs_new_tab_widgets_lists_timer_december.submission_date,
       firefox_labs_new_tab_widgets_lists_timer_december.branch,
+      firefox_labs_new_tab_widgets_lists_timer_december.upper,
+      firefox_labs_new_tab_widgets_lists_timer_december.lower,
       firefox_labs_new_tab_widgets_lists_timer_december.point
     ]
     pivots: [
       firefox_labs_new_tab_widgets_lists_timer_december.branch
     ]
     filters:
-      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'ad_clicks'
-      firefox_labs_new_tab_widgets_lists_timer_december.statistic: mean
+      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'memory_total'
+      firefox_labs_new_tab_widgets_lists_timer_december.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,12 +76,13 @@
     show_grid: true
     listen:
       Date: firefox_labs_new_tab_widgets_lists_timer_december.submission_date
+      Percentile: firefox_labs_new_tab_widgets_lists_timer_december.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +97,7 @@
       firefox_labs_new_tab_widgets_lists_timer_december.branch
     ]
     filters:
-      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'search_count'
+      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'retained'
       firefox_labs_new_tab_widgets_lists_timer_december.statistic: mean
     row: 10
     col: 0
@@ -146,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +165,7 @@
       firefox_labs_new_tab_widgets_lists_timer_december.branch
     ]
     filters:
-      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'days_of_use'
+      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'ad_clicks'
       firefox_labs_new_tab_widgets_lists_timer_december.statistic: mean
     row: 20
     col: 0
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       firefox_labs_new_tab_widgets_lists_timer_december.branch
     ]
     filters:
-      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'retained'
+      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'days_of_use'
       firefox_labs_new_tab_widgets_lists_timer_december.statistic: mean
     row: 20
     col: 12
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: firefox_labs_new_tab_widgets_lists_timer_december
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       firefox_labs_new_tab_widgets_lists_timer_december.submission_date,
       firefox_labs_new_tab_widgets_lists_timer_december.branch,
-      firefox_labs_new_tab_widgets_lists_timer_december.upper,
-      firefox_labs_new_tab_widgets_lists_timer_december.lower,
       firefox_labs_new_tab_widgets_lists_timer_december.point
     ]
     pivots: [
       firefox_labs_new_tab_widgets_lists_timer_december.branch
     ]
     filters:
-      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'memory_total'
-      firefox_labs_new_tab_widgets_lists_timer_december.statistic: percentile
+      firefox_labs_new_tab_widgets_lists_timer_december.metric: 'search_count'
+      firefox_labs_new_tab_widgets_lists_timer_december.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: firefox_labs_new_tab_widgets_lists_timer_december.submission_date
-      Percentile: firefox_labs_new_tab_widgets_lists_timer_december.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

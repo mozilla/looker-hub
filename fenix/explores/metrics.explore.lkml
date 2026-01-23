@@ -13,6 +13,11 @@ explore: metrics {
   description: "Explore for the metrics ping. The `metrics` ping is intended for all of the metrics that are explicitly set by the application or are included in the application's `metrics.yaml` file (except events). The reported data is tied to the ping's *measurement window*, which is the time between the collection of two `metrics` ping. Ideally, this window is expected to be about 24 hours, given that the collection is scheduled daily at 4AM. Data in the `ping_info` section of the ping can be used to infer the length of this window."
   view_name: metrics
 
+  join: metrics__metrics__labeled_counter__ads_client_client_operation_total {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ads_client_client_operation_total}) AS metrics__metrics__labeled_counter__ads_client_client_operation_total ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ads_client_client_operation_total.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__application_reputation_binary_archive {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__application_reputation_binary_archive}) AS metrics__metrics__labeled_counter__application_reputation_binary_archive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__application_reputation_binary_archive.document_id} ;;
@@ -873,6 +878,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_init_failure}) AS metrics__metrics__labeled_counter__media_audio_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_init_failure.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__media_capture_stream_usage {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_capture_stream_usage}) AS metrics__metrics__labeled_counter__media_capture_stream_usage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_capture_stream_usage.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__media_codec_used {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_codec_used}) AS metrics__metrics__labeled_counter__media_codec_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_codec_used.document_id} ;;
@@ -1178,6 +1188,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_fetch_keepalive_request_count}) AS metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_congestion_event_reason}) AS metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_connection_close_reason}) AS metrics__metrics__labeled_counter__networking_http_3_connection_close_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_connection_close_reason.document_id} ;;
@@ -1191,6 +1206,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_quic_frame_count}) AS metrics__metrics__labeled_counter__networking_http_3_quic_frame_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_quic_frame_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exited}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exited ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exited.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_http_channel_disposition {

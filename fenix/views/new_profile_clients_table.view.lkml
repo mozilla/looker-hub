@@ -153,6 +153,14 @@ view: new_profile_clients_table {
     description: "Client's os version on the first seen date."
   }
 
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.paid_vs_organic_gclid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Categorised as \"Paid\" if play_store_attribution_install_referrer_response value contained gclid (Google click id).
+"
+  }
+
   dimension: play_store_attribution_campaign {
     sql: ${TABLE}.play_store_attribution_campaign ;;
     type: string
@@ -164,6 +172,7 @@ view: new_profile_clients_table {
     sql: ${TABLE}.play_store_attribution_content ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the utm_content that is responsible for this installation."
   }
 
   dimension: play_store_attribution_install_referrer_response {
@@ -191,6 +200,7 @@ view: new_profile_clients_table {
     sql: ${TABLE}.play_store_attribution_term ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the utm_term that is responsible for this installation."
   }
 
   dimension_group: adjust_attribution {

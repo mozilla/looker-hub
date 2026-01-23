@@ -520,8 +520,7 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Subscription Checkout Type"
-    description: "Whether the checkout flow is for new users or existing users.
-One of “with-account” or “without-account\"
+    description: "Account status at time of checkout
 "
   }
 

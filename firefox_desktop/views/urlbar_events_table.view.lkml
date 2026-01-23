@@ -63,6 +63,7 @@ view: urlbar_events_table {
     sql: ${TABLE}.glean_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: interaction {
@@ -83,18 +84,21 @@ view: urlbar_events_table {
     sql: ${TABLE}.legacy_telemetry_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A unique identifier (UUID) for the client based on legacy telemetry data."
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation. Unknown or NULL values are normally stored as '??'."
   }
 
   dimension: normalized_engine {
@@ -157,7 +161,7 @@ view: urlbar_events_table {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+    description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
   dimension: results {
@@ -170,6 +174,7 @@ view: urlbar_events_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: selected_position {
@@ -206,6 +211,7 @@ view: urlbar_events_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.urlbar_events` ;;

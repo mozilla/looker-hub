@@ -7,42 +7,42 @@
 view: metric_definitions_newtab_clients_daily {
   derived_table: {
     sql: SELECT
-                COALESCE(SUM(searches), 0) AS newtab_searches,
-COALESCE(LOGICAL_OR(searches > 0), FALSE) AS newtab_any_searches,
-COALESCE(CASE WHEN SUM(searches) > 4 THEN 1 ELSE 0 END, 0) AS newtab_gt4_searches,
-COALESCE(SUM(tagged_search_ad_impressions), 0) AS newtab_searches_with_ads,
-COALESCE(SUM(tagged_search_ad_clicks), 0) AS newtab_ad_clicks,
-SAFE_DIVIDE(COALESCE(SUM(tagged_search_ad_clicks), 0),  COALESCE(SUM(tagged_search_ad_impressions), 0)) AS newtab_ad_click_rate,
-COALESCE(SUM(organic_pocket_clicks), 0) AS organic_pocket_clicks,
-COALESCE(LOGICAL_OR(organic_pocket_clicks > 0), FALSE) AS any_organic_pocket_clicks,
-COALESCE(SUM(sponsored_pocket_clicks), 0) AS sponsored_pocket_clicks,
-COALESCE(SUM(organic_pocket_impressions), 0) AS organic_pocket_impressions,
-COALESCE(SUM(sponsored_pocket_impressions), 0) AS sponsored_pocket_impressions,
-COALESCE(SUM(sponsored_topsite_tile_impressions), 0) AS sponsored_tile_impressions,
-COALESCE(SUM(sponsored_topsite_tile_clicks), 0) AS sponsored_tile_clicks,
-COALESCE(MAX(IF(newtab_newtab_category = 'enabled', 1, 0)), 0) AS newtab_newtab_enabled,
-COALESCE(MAX(IF(newtab_homepage_category = 'enabled', 1, 0)), 0) AS newtab_homepage_enabled,
-COALESCE(MAX(CAST(topsites_enabled AS INT)), 0) AS newtab_tiles_enabled,
-COALESCE(MAX(CAST(topsites_sponsored_enabled AS INT)), 0) AS newtab_sponsored_tiles_enabled,
-COALESCE(MAX(CAST(pocket_enabled AS INT)), 0) AS newtab_pocket_enabled,
-COALESCE(MAX(CAST(pocket_sponsored_stories_enabled AS INT)), 0) AS newtab_sponsored_pocket_stories_enabled,
-COALESCE(MAX(CASE WHEN visits_with_non_impression_engagement > 0 THEN 1 ELSE 0 END), 0) AS newtab_engagement,
-COALESCE(SUM(newtab_visit_count), 0) AS newtab_visits,
-COALESCE(SUM(visits_with_non_impression_engagement), 0) AS newtab_engaged_visits,
-COALESCE(SUM(visits_with_non_search_engagement), 0) AS newtab_non_search_engagement,
-COALESCE(SUM(organic_topsite_tile_clicks), 0) AS newtab_organic_topsite_clicks_v2,
-COALESCE(SUM(organic_topsite_tile_impressions), 0) AS newtab_organic_topsite_impressions_v2,
-COALESCE(MAX(CAST(newtab_weather_widget_enabled AS INT)), 0) AS newtab_weather_widget_enabled,
-COALESCE(SUM(sponsored_topsite_tile_dismissals), 0) AS sponsored_tiles_dismissals,
+                COALESCE(SUM(search_interaction_count), 0) AS newtab_searches,
+COALESCE(LOGICAL_OR(search_interaction_count > 0), FALSE) AS newtab_any_searches,
+COALESCE(CASE WHEN SUM(search_interaction_count) > 4 THEN 1 ELSE 0 END, 0) AS newtab_gt4_searches,
+COALESCE(SUM(search_ad_impression_count), 0) AS newtab_searches_with_ads,
+COALESCE(SUM(search_ad_click_count), 0) AS newtab_ad_clicks,
+SAFE_DIVIDE(COALESCE(SUM(search_ad_click_count), 0),  COALESCE(SUM(search_ad_impression_count), 0)) AS newtab_ad_click_rate,
+COALESCE(SUM(organic_content_click_count), 0) AS organic_content_clicks,
+COALESCE(LOGICAL_OR(organic_content_click_count > 0), FALSE) AS any_organic_content_clicks,
+COALESCE(SUM(sponsored_content_click_count), 0) AS sponsored_content_clicks,
+COALESCE(SUM(sponsored_content_click_count), 0) AS organic_content_impressions,
+COALESCE(SUM(sponsored_content_impression_count), 0) AS sponsored_content_impressions,
+COALESCE(SUM(sponsored_topsite_impression_count), 0) AS sponsored_tile_impressions,
+COALESCE(SUM(sponsored_topsite_click_count), 0) AS sponsored_tile_clicks,
+COALESCE(MAX(IF(newtab_category = 'enabled', 1, 0)), 0) AS newtab_newtab_enabled,
+COALESCE(MAX(IF(homepage_category = 'enabled', 1, 0)), 0) AS newtab_homepage_enabled,
+COALESCE(MAX(CAST(organic_topsites_enabled AS INT)), 0) AS newtab_tiles_enabled,
+COALESCE(MAX(CAST(sponsored_topsites_enabled AS INT)), 0) AS newtab_sponsored_tiles_enabled,
+COALESCE(MAX(CAST(organic_content_enabled AS INT)), 0) AS newtab_content_enabled,
+COALESCE(MAX(CAST(sponsored_content_enabled AS INT)), 0) AS newtab_sponsored_content_stories_enabled,
+COALESCE(MAX(CASE WHEN any_engagement_visits > 0 THEN 1 ELSE 0 END), 0) AS newtab_engagement,
+COALESCE(SUM(all_visits), 0) AS newtab_visits,
+COALESCE(SUM(any_engagement_visits), 0) AS newtab_engaged_visits,
+COALESCE(SUM(nonsearch_engagement_visits), 0) AS newtab_non_search_engagement,
+COALESCE(SUM(organic_topsite_click_count), 0) AS newtab_organic_topsite_clicks_v2,
+COALESCE(SUM(organic_topsite_impression_count), 0) AS newtab_organic_topsite_impressions_v2,
+COALESCE(MAX(CAST(newtab_weather_enabled AS INT)), 0) AS newtab_weather_widget_enabled,
+COALESCE(SUM(sponsored_topsite_dismissal_count), 0) AS sponsored_tiles_dismissals,
 COALESCE(LOGICAL_OR(
-        sponsored_topsite_tile_dismissals > 0
+        sponsored_topsite_dismissal_count > 0
       ), FALSE) AS any_sponsored_tiles_dismissals,
-COALESCE(SUM(organic_topsite_tile_dismissals),0) AS organic_tiles_dismissals,
+COALESCE(SUM(organic_topsite_dismissal_count),0) AS organic_tiles_dismissals,
 COALESCE(LOGICAL_OR(
-        organic_topsite_tile_dismissals > 0
+        organic_topsite_dismissal_count > 0
       ), FALSE) AS any_organic_tiles_dismissals,
-SUM(sponsored_pocket_impressions) + SUM(sponsored_topsite_tile_impressions) AS sponsored_impressions,
-SUM(1) AS sponsored_pocket_impressions_per_client,
+SUM(sponsored_content_impression_count) + SUM(sponsored_topsite_impression_count) AS sponsored_impressions,
+SUM(1) AS sponsored_content_impressions_per_client,
 SUM(1) AS sponsored_tile_impressions_per_client,
 SUM(1) AS sponsored_impressions_per_client,
 
@@ -55,94 +55,84 @@ countries_pocket_available_on_newtab,
 countries_region_name,
 countries_sponsored_tiles_available_on_newtab,
 countries_subregion_name,
-newtab_clients_daily_activity_segment,
-newtab_clients_daily_browser_name,
-newtab_clients_daily_browser_version,
+newtab_clients_daily_all_visits,
+newtab_clients_daily_any_content_click_count,
+newtab_clients_daily_any_content_engagement_visits,
+newtab_clients_daily_any_content_impression_count,
+newtab_clients_daily_any_content_interaction_count,
+newtab_clients_daily_any_engagement_visits,
+newtab_clients_daily_any_interaction_count,
+newtab_clients_daily_any_topsite_click_count,
+newtab_clients_daily_any_topsite_engagement_visits,
+newtab_clients_daily_any_topsite_impression_count,
+newtab_clients_daily_any_topsite_interaction_count,
+newtab_clients_daily_app_name,
+newtab_clients_daily_app_version,
+newtab_clients_daily_avg_newtab_visit_duration,
 newtab_clients_daily_channel,
-newtab_clients_daily_country_code,
+newtab_clients_daily_content_thumbs_down_count,
+newtab_clients_daily_content_thumbs_down_visits,
+newtab_clients_daily_content_thumbs_up_count,
+newtab_clients_daily_content_thumbs_up_visits,
+newtab_clients_daily_country,
+newtab_clients_daily_cumulative_newtab_visit_duration,
 newtab_clients_daily_default_private_search_engine,
 newtab_clients_daily_default_search_engine,
-newtab_clients_daily_follow_on_search_ad_clicks,
-newtab_clients_daily_follow_on_search_ad_impressions,
-newtab_clients_daily_is_new_profile,
-newtab_clients_daily_legacy_telemetry_client_id,
-newtab_clients_daily_list_card_clicks,
-newtab_clients_daily_list_card_dismissals,
-newtab_clients_daily_list_card_impressions,
-newtab_clients_daily_list_card_saves,
+newtab_clients_daily_default_ui_visits,
+newtab_clients_daily_geo_subdivision,
+newtab_clients_daily_homepage_category,
 newtab_clients_daily_locale,
-newtab_clients_daily_newtab_dismissal_count,
-newtab_clients_daily_newtab_homepage_category,
-newtab_clients_daily_newtab_newtab_category,
-newtab_clients_daily_newtab_visit_count,
-newtab_clients_daily_non_search_engagement_count,
-newtab_clients_daily_normalized_os,
-newtab_clients_daily_normalized_os_version,
-newtab_clients_daily_organic_list_card_clicks,
-newtab_clients_daily_organic_list_card_dismissals,
-newtab_clients_daily_organic_list_card_impressions,
-newtab_clients_daily_organic_list_card_saves,
-newtab_clients_daily_organic_pocket_dismissals,
-newtab_clients_daily_organic_pocket_saves,
-newtab_clients_daily_organic_topsite_tile_clicks,
-newtab_clients_daily_organic_topsite_tile_dismissals,
-newtab_clients_daily_organic_topsite_tile_impressions,
-newtab_clients_daily_pocket_clicks,
-newtab_clients_daily_pocket_enabled,
-newtab_clients_daily_pocket_impressions,
-newtab_clients_daily_pocket_is_signed_in,
-newtab_clients_daily_pocket_saves,
-newtab_clients_daily_pocket_sponsored_stories_enabled,
-newtab_clients_daily_pocket_thumb_voting_events,
-newtab_clients_daily_pocket_thumbs_down,
-newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily_newtab_category,
+newtab_clients_daily_newtab_search_enabled,
+newtab_clients_daily_newtab_weather_enabled,
+newtab_clients_daily_nonsearch_engagement_visits,
+newtab_clients_daily_nonsearch_interaction_count,
+newtab_clients_daily_organic_content_click_count,
+newtab_clients_daily_organic_content_dismissal_count,
+newtab_clients_daily_organic_content_dismissal_visits,
+newtab_clients_daily_organic_content_enabled,
+newtab_clients_daily_organic_content_engagement_visits,
+newtab_clients_daily_organic_content_impression_count,
+newtab_clients_daily_organic_content_interaction_count,
+newtab_clients_daily_organic_topsite_click_count,
+newtab_clients_daily_organic_topsite_dismissal_count,
+newtab_clients_daily_organic_topsite_dismissal_visits,
+newtab_clients_daily_organic_topsite_engagement_visits,
+newtab_clients_daily_organic_topsite_impression_count,
+newtab_clients_daily_organic_topsite_interaction_count,
+newtab_clients_daily_organic_topsites_enabled,
+newtab_clients_daily_os,
+newtab_clients_daily_other_impression_count,
+newtab_clients_daily_other_interaction_count,
+newtab_clients_daily_others_engagement_visits,
 newtab_clients_daily_profile_group_id,
-newtab_clients_daily_searches,
-newtab_clients_daily_sponsored_list_card_clicks,
-newtab_clients_daily_sponsored_list_card_dismissals,
-newtab_clients_daily_sponsored_list_card_impressions,
-newtab_clients_daily_sponsored_list_card_saves,
-newtab_clients_daily_sponsored_pocket_dismissals,
-newtab_clients_daily_sponsored_pocket_saves,
-newtab_clients_daily_sponsored_topsite_tile_clicks,
-newtab_clients_daily_sponsored_topsite_tile_dismissals,
-newtab_clients_daily_sponsored_topsite_tile_impressions,
-newtab_clients_daily_tagged_follow_on_search_ad_clicks,
-newtab_clients_daily_tagged_follow_on_search_ad_impressions,
-newtab_clients_daily_tagged_search_ad_clicks,
-newtab_clients_daily_tagged_search_ad_impressions,
-newtab_clients_daily_topic_preferences_set,
-newtab_clients_daily_topic_selection_dismissals,
-newtab_clients_daily_topic_selection_opened,
-newtab_clients_daily_topic_selection_selected_topics_first_time,
-newtab_clients_daily_topic_selection_updates,
-newtab_clients_daily_topsite_tile_clicks,
-newtab_clients_daily_topsite_tile_dismissals,
-newtab_clients_daily_topsite_tile_impressions,
-newtab_clients_daily_topsites_enabled,
-newtab_clients_daily_topsites_rows,
-newtab_clients_daily_topsites_sponsored_enabled,
-newtab_clients_daily_topsites_sponsored_tiles_configured,
-newtab_clients_daily_visits_with_default_ui,
-newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
-newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
-newtab_clients_daily_visits_with_non_default_ui,
-newtab_clients_daily_visits_with_non_impression_engagement,
-newtab_clients_daily_visits_with_non_search_engagement,
-newtab_clients_daily_wallpaper_category_clicks,
-newtab_clients_daily_wallpaper_clicks,
-newtab_clients_daily_wallpaper_clicks_first_selected_wallpaper,
-newtab_clients_daily_wallpaper_clicks_had_previous_wallpaper,
-newtab_clients_daily_wallpaper_highlight_cta_clicks,
-newtab_clients_daily_wallpaper_highlight_dismissals,
-newtab_clients_daily_weather_widget_change_display_to_detailed,
-newtab_clients_daily_weather_widget_change_display_to_simple,
-newtab_clients_daily_weather_widget_clicks,
-newtab_clients_daily_weather_widget_impressions,
-newtab_clients_daily_weather_widget_load_errors,
-newtab_clients_daily_weather_widget_location_selected,
+newtab_clients_daily_sample_id,
+newtab_clients_daily_search_ad_click_count,
+newtab_clients_daily_search_ad_click_visits,
+newtab_clients_daily_search_ad_impression_count,
+newtab_clients_daily_search_engagement_visits,
+newtab_clients_daily_search_interaction_count,
+newtab_clients_daily_sponsored_content_click_count,
+newtab_clients_daily_sponsored_content_dismissal_count,
+newtab_clients_daily_sponsored_content_dismissal_visits,
+newtab_clients_daily_sponsored_content_enabled,
+newtab_clients_daily_sponsored_content_engagement_visits,
+newtab_clients_daily_sponsored_content_impression_count,
+newtab_clients_daily_sponsored_content_interaction_count,
+newtab_clients_daily_sponsored_topsite_click_count,
+newtab_clients_daily_sponsored_topsite_dismissal_count,
+newtab_clients_daily_sponsored_topsite_dismissal_visits,
+newtab_clients_daily_sponsored_topsite_engagement_visits,
+newtab_clients_daily_sponsored_topsite_impression_count,
+newtab_clients_daily_sponsored_topsite_interaction_count,
+newtab_clients_daily_sponsored_topsites_enabled,
+newtab_clients_daily_topsite_rows,
+newtab_clients_daily_topsite_sponsored_tiles_configured,
+newtab_clients_daily_widget_engagement_visits,
+newtab_clients_daily_widget_impression_count,
+newtab_clients_daily_widget_interaction_count,
 
-                legacy_telemetry_client_id AS client_id,
+                client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
                 submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
@@ -182,99 +172,89 @@ countries.pocket_available_on_newtab AS countries_pocket_available_on_newtab,
 countries.region_name AS countries_region_name,
 countries.sponsored_tiles_available_on_newtab AS countries_sponsored_tiles_available_on_newtab,
 countries.subregion_name AS countries_subregion_name,
-newtab_clients_daily.activity_segment AS newtab_clients_daily_activity_segment,
-newtab_clients_daily.browser_name AS newtab_clients_daily_browser_name,
-newtab_clients_daily.browser_version AS newtab_clients_daily_browser_version,
+newtab_clients_daily.all_visits AS newtab_clients_daily_all_visits,
+newtab_clients_daily.any_content_click_count AS newtab_clients_daily_any_content_click_count,
+newtab_clients_daily.any_content_engagement_visits AS newtab_clients_daily_any_content_engagement_visits,
+newtab_clients_daily.any_content_impression_count AS newtab_clients_daily_any_content_impression_count,
+newtab_clients_daily.any_content_interaction_count AS newtab_clients_daily_any_content_interaction_count,
+newtab_clients_daily.any_engagement_visits AS newtab_clients_daily_any_engagement_visits,
+newtab_clients_daily.any_interaction_count AS newtab_clients_daily_any_interaction_count,
+newtab_clients_daily.any_topsite_click_count AS newtab_clients_daily_any_topsite_click_count,
+newtab_clients_daily.any_topsite_engagement_visits AS newtab_clients_daily_any_topsite_engagement_visits,
+newtab_clients_daily.any_topsite_impression_count AS newtab_clients_daily_any_topsite_impression_count,
+newtab_clients_daily.any_topsite_interaction_count AS newtab_clients_daily_any_topsite_interaction_count,
+newtab_clients_daily.app_name AS newtab_clients_daily_app_name,
+newtab_clients_daily.app_version AS newtab_clients_daily_app_version,
+newtab_clients_daily.avg_newtab_visit_duration AS newtab_clients_daily_avg_newtab_visit_duration,
 newtab_clients_daily.channel AS newtab_clients_daily_channel,
-newtab_clients_daily.country_code AS newtab_clients_daily_country_code,
+newtab_clients_daily.content_thumbs_down_count AS newtab_clients_daily_content_thumbs_down_count,
+newtab_clients_daily.content_thumbs_down_visits AS newtab_clients_daily_content_thumbs_down_visits,
+newtab_clients_daily.content_thumbs_up_count AS newtab_clients_daily_content_thumbs_up_count,
+newtab_clients_daily.content_thumbs_up_visits AS newtab_clients_daily_content_thumbs_up_visits,
+newtab_clients_daily.country AS newtab_clients_daily_country,
+newtab_clients_daily.cumulative_newtab_visit_duration AS newtab_clients_daily_cumulative_newtab_visit_duration,
 newtab_clients_daily.default_private_search_engine AS newtab_clients_daily_default_private_search_engine,
 newtab_clients_daily.default_search_engine AS newtab_clients_daily_default_search_engine,
-newtab_clients_daily.follow_on_search_ad_clicks AS newtab_clients_daily_follow_on_search_ad_clicks,
-newtab_clients_daily.follow_on_search_ad_impressions AS newtab_clients_daily_follow_on_search_ad_impressions,
-newtab_clients_daily.is_new_profile AS newtab_clients_daily_is_new_profile,
-newtab_clients_daily.legacy_telemetry_client_id AS newtab_clients_daily_legacy_telemetry_client_id,
-newtab_clients_daily.list_card_clicks AS newtab_clients_daily_list_card_clicks,
-newtab_clients_daily.list_card_dismissals AS newtab_clients_daily_list_card_dismissals,
-newtab_clients_daily.list_card_impressions AS newtab_clients_daily_list_card_impressions,
-newtab_clients_daily.list_card_saves AS newtab_clients_daily_list_card_saves,
+newtab_clients_daily.default_ui_visits AS newtab_clients_daily_default_ui_visits,
+newtab_clients_daily.geo_subdivision AS newtab_clients_daily_geo_subdivision,
+newtab_clients_daily.homepage_category AS newtab_clients_daily_homepage_category,
 newtab_clients_daily.locale AS newtab_clients_daily_locale,
-newtab_clients_daily.newtab_dismissal_count AS newtab_clients_daily_newtab_dismissal_count,
-newtab_clients_daily.newtab_homepage_category AS newtab_clients_daily_newtab_homepage_category,
-newtab_clients_daily.newtab_newtab_category AS newtab_clients_daily_newtab_newtab_category,
-newtab_clients_daily.newtab_visit_count AS newtab_clients_daily_newtab_visit_count,
-newtab_clients_daily.non_search_engagement_count AS newtab_clients_daily_non_search_engagement_count,
-newtab_clients_daily.normalized_os AS newtab_clients_daily_normalized_os,
-newtab_clients_daily.normalized_os_version AS newtab_clients_daily_normalized_os_version,
-newtab_clients_daily.organic_list_card_clicks AS newtab_clients_daily_organic_list_card_clicks,
-newtab_clients_daily.organic_list_card_dismissals AS newtab_clients_daily_organic_list_card_dismissals,
-newtab_clients_daily.organic_list_card_impressions AS newtab_clients_daily_organic_list_card_impressions,
-newtab_clients_daily.organic_list_card_saves AS newtab_clients_daily_organic_list_card_saves,
-newtab_clients_daily.organic_pocket_dismissals AS newtab_clients_daily_organic_pocket_dismissals,
-newtab_clients_daily.organic_pocket_saves AS newtab_clients_daily_organic_pocket_saves,
-newtab_clients_daily.organic_topsite_tile_clicks AS newtab_clients_daily_organic_topsite_tile_clicks,
-newtab_clients_daily.organic_topsite_tile_dismissals AS newtab_clients_daily_organic_topsite_tile_dismissals,
-newtab_clients_daily.organic_topsite_tile_impressions AS newtab_clients_daily_organic_topsite_tile_impressions,
-newtab_clients_daily.pocket_clicks AS newtab_clients_daily_pocket_clicks,
-newtab_clients_daily.pocket_enabled AS newtab_clients_daily_pocket_enabled,
-newtab_clients_daily.pocket_impressions AS newtab_clients_daily_pocket_impressions,
-newtab_clients_daily.pocket_is_signed_in AS newtab_clients_daily_pocket_is_signed_in,
-newtab_clients_daily.pocket_saves AS newtab_clients_daily_pocket_saves,
-newtab_clients_daily.pocket_sponsored_stories_enabled AS newtab_clients_daily_pocket_sponsored_stories_enabled,
-newtab_clients_daily.pocket_thumb_voting_events AS newtab_clients_daily_pocket_thumb_voting_events,
-newtab_clients_daily.pocket_thumbs_down AS newtab_clients_daily_pocket_thumbs_down,
-newtab_clients_daily.pocket_thumbs_up AS newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily.newtab_category AS newtab_clients_daily_newtab_category,
+newtab_clients_daily.newtab_search_enabled AS newtab_clients_daily_newtab_search_enabled,
+newtab_clients_daily.newtab_weather_enabled AS newtab_clients_daily_newtab_weather_enabled,
+newtab_clients_daily.nonsearch_engagement_visits AS newtab_clients_daily_nonsearch_engagement_visits,
+newtab_clients_daily.nonsearch_interaction_count AS newtab_clients_daily_nonsearch_interaction_count,
+newtab_clients_daily.organic_content_click_count AS newtab_clients_daily_organic_content_click_count,
+newtab_clients_daily.organic_content_dismissal_count AS newtab_clients_daily_organic_content_dismissal_count,
+newtab_clients_daily.organic_content_dismissal_visits AS newtab_clients_daily_organic_content_dismissal_visits,
+newtab_clients_daily.organic_content_enabled AS newtab_clients_daily_organic_content_enabled,
+newtab_clients_daily.organic_content_engagement_visits AS newtab_clients_daily_organic_content_engagement_visits,
+newtab_clients_daily.organic_content_impression_count AS newtab_clients_daily_organic_content_impression_count,
+newtab_clients_daily.organic_content_interaction_count AS newtab_clients_daily_organic_content_interaction_count,
+newtab_clients_daily.organic_topsite_click_count AS newtab_clients_daily_organic_topsite_click_count,
+newtab_clients_daily.organic_topsite_dismissal_count AS newtab_clients_daily_organic_topsite_dismissal_count,
+newtab_clients_daily.organic_topsite_dismissal_visits AS newtab_clients_daily_organic_topsite_dismissal_visits,
+newtab_clients_daily.organic_topsite_engagement_visits AS newtab_clients_daily_organic_topsite_engagement_visits,
+newtab_clients_daily.organic_topsite_impression_count AS newtab_clients_daily_organic_topsite_impression_count,
+newtab_clients_daily.organic_topsite_interaction_count AS newtab_clients_daily_organic_topsite_interaction_count,
+newtab_clients_daily.organic_topsites_enabled AS newtab_clients_daily_organic_topsites_enabled,
+newtab_clients_daily.os AS newtab_clients_daily_os,
+newtab_clients_daily.other_impression_count AS newtab_clients_daily_other_impression_count,
+newtab_clients_daily.other_interaction_count AS newtab_clients_daily_other_interaction_count,
+newtab_clients_daily.others_engagement_visits AS newtab_clients_daily_others_engagement_visits,
 newtab_clients_daily.profile_group_id AS newtab_clients_daily_profile_group_id,
-newtab_clients_daily.searches AS newtab_clients_daily_searches,
-newtab_clients_daily.sponsored_list_card_clicks AS newtab_clients_daily_sponsored_list_card_clicks,
-newtab_clients_daily.sponsored_list_card_dismissals AS newtab_clients_daily_sponsored_list_card_dismissals,
-newtab_clients_daily.sponsored_list_card_impressions AS newtab_clients_daily_sponsored_list_card_impressions,
-newtab_clients_daily.sponsored_list_card_saves AS newtab_clients_daily_sponsored_list_card_saves,
-newtab_clients_daily.sponsored_pocket_dismissals AS newtab_clients_daily_sponsored_pocket_dismissals,
-newtab_clients_daily.sponsored_pocket_saves AS newtab_clients_daily_sponsored_pocket_saves,
-newtab_clients_daily.sponsored_topsite_tile_clicks AS newtab_clients_daily_sponsored_topsite_tile_clicks,
-newtab_clients_daily.sponsored_topsite_tile_dismissals AS newtab_clients_daily_sponsored_topsite_tile_dismissals,
-newtab_clients_daily.sponsored_topsite_tile_impressions AS newtab_clients_daily_sponsored_topsite_tile_impressions,
-newtab_clients_daily.tagged_follow_on_search_ad_clicks AS newtab_clients_daily_tagged_follow_on_search_ad_clicks,
-newtab_clients_daily.tagged_follow_on_search_ad_impressions AS newtab_clients_daily_tagged_follow_on_search_ad_impressions,
-newtab_clients_daily.tagged_search_ad_clicks AS newtab_clients_daily_tagged_search_ad_clicks,
-newtab_clients_daily.tagged_search_ad_impressions AS newtab_clients_daily_tagged_search_ad_impressions,
-newtab_clients_daily.topic_preferences_set AS newtab_clients_daily_topic_preferences_set,
-newtab_clients_daily.topic_selection_dismissals AS newtab_clients_daily_topic_selection_dismissals,
-newtab_clients_daily.topic_selection_opened AS newtab_clients_daily_topic_selection_opened,
-newtab_clients_daily.topic_selection_selected_topics_first_time AS newtab_clients_daily_topic_selection_selected_topics_first_time,
-newtab_clients_daily.topic_selection_updates AS newtab_clients_daily_topic_selection_updates,
-newtab_clients_daily.topsite_tile_clicks AS newtab_clients_daily_topsite_tile_clicks,
-newtab_clients_daily.topsite_tile_dismissals AS newtab_clients_daily_topsite_tile_dismissals,
-newtab_clients_daily.topsite_tile_impressions AS newtab_clients_daily_topsite_tile_impressions,
-newtab_clients_daily.topsites_enabled AS newtab_clients_daily_topsites_enabled,
-newtab_clients_daily.topsites_rows AS newtab_clients_daily_topsites_rows,
-newtab_clients_daily.topsites_sponsored_enabled AS newtab_clients_daily_topsites_sponsored_enabled,
-newtab_clients_daily.topsites_sponsored_tiles_configured AS newtab_clients_daily_topsites_sponsored_tiles_configured,
-newtab_clients_daily.visits_with_default_ui AS newtab_clients_daily_visits_with_default_ui,
-newtab_clients_daily.visits_with_default_ui_with_non_impression_engagement AS newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
-newtab_clients_daily.visits_with_default_ui_with_non_search_engagement AS newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
-newtab_clients_daily.visits_with_non_default_ui AS newtab_clients_daily_visits_with_non_default_ui,
-newtab_clients_daily.visits_with_non_impression_engagement AS newtab_clients_daily_visits_with_non_impression_engagement,
-newtab_clients_daily.visits_with_non_search_engagement AS newtab_clients_daily_visits_with_non_search_engagement,
-newtab_clients_daily.wallpaper_category_clicks AS newtab_clients_daily_wallpaper_category_clicks,
-newtab_clients_daily.wallpaper_clicks AS newtab_clients_daily_wallpaper_clicks,
-newtab_clients_daily.wallpaper_clicks_first_selected_wallpaper AS newtab_clients_daily_wallpaper_clicks_first_selected_wallpaper,
-newtab_clients_daily.wallpaper_clicks_had_previous_wallpaper AS newtab_clients_daily_wallpaper_clicks_had_previous_wallpaper,
-newtab_clients_daily.wallpaper_highlight_cta_clicks AS newtab_clients_daily_wallpaper_highlight_cta_clicks,
-newtab_clients_daily.wallpaper_highlight_dismissals AS newtab_clients_daily_wallpaper_highlight_dismissals,
-newtab_clients_daily.weather_widget_change_display_to_detailed AS newtab_clients_daily_weather_widget_change_display_to_detailed,
-newtab_clients_daily.weather_widget_change_display_to_simple AS newtab_clients_daily_weather_widget_change_display_to_simple,
-newtab_clients_daily.weather_widget_clicks AS newtab_clients_daily_weather_widget_clicks,
-newtab_clients_daily.weather_widget_impressions AS newtab_clients_daily_weather_widget_impressions,
-newtab_clients_daily.weather_widget_load_errors AS newtab_clients_daily_weather_widget_load_errors,
-newtab_clients_daily.weather_widget_location_selected AS newtab_clients_daily_weather_widget_location_selected,
+newtab_clients_daily.sample_id AS newtab_clients_daily_sample_id,
+newtab_clients_daily.search_ad_click_count AS newtab_clients_daily_search_ad_click_count,
+newtab_clients_daily.search_ad_click_visits AS newtab_clients_daily_search_ad_click_visits,
+newtab_clients_daily.search_ad_impression_count AS newtab_clients_daily_search_ad_impression_count,
+newtab_clients_daily.search_engagement_visits AS newtab_clients_daily_search_engagement_visits,
+newtab_clients_daily.search_interaction_count AS newtab_clients_daily_search_interaction_count,
+newtab_clients_daily.sponsored_content_click_count AS newtab_clients_daily_sponsored_content_click_count,
+newtab_clients_daily.sponsored_content_dismissal_count AS newtab_clients_daily_sponsored_content_dismissal_count,
+newtab_clients_daily.sponsored_content_dismissal_visits AS newtab_clients_daily_sponsored_content_dismissal_visits,
+newtab_clients_daily.sponsored_content_enabled AS newtab_clients_daily_sponsored_content_enabled,
+newtab_clients_daily.sponsored_content_engagement_visits AS newtab_clients_daily_sponsored_content_engagement_visits,
+newtab_clients_daily.sponsored_content_impression_count AS newtab_clients_daily_sponsored_content_impression_count,
+newtab_clients_daily.sponsored_content_interaction_count AS newtab_clients_daily_sponsored_content_interaction_count,
+newtab_clients_daily.sponsored_topsite_click_count AS newtab_clients_daily_sponsored_topsite_click_count,
+newtab_clients_daily.sponsored_topsite_dismissal_count AS newtab_clients_daily_sponsored_topsite_dismissal_count,
+newtab_clients_daily.sponsored_topsite_dismissal_visits AS newtab_clients_daily_sponsored_topsite_dismissal_visits,
+newtab_clients_daily.sponsored_topsite_engagement_visits AS newtab_clients_daily_sponsored_topsite_engagement_visits,
+newtab_clients_daily.sponsored_topsite_impression_count AS newtab_clients_daily_sponsored_topsite_impression_count,
+newtab_clients_daily.sponsored_topsite_interaction_count AS newtab_clients_daily_sponsored_topsite_interaction_count,
+newtab_clients_daily.sponsored_topsites_enabled AS newtab_clients_daily_sponsored_topsites_enabled,
+newtab_clients_daily.topsite_rows AS newtab_clients_daily_topsite_rows,
+newtab_clients_daily.topsite_sponsored_tiles_configured AS newtab_clients_daily_topsite_sponsored_tiles_configured,
+newtab_clients_daily.widget_engagement_visits AS newtab_clients_daily_widget_engagement_visits,
+newtab_clients_daily.widget_impression_count AS newtab_clients_daily_widget_impression_count,
+newtab_clients_daily.widget_interaction_count AS newtab_clients_daily_widget_interaction_count,
 
                     FROM
                     (
             SELECT
                 *
             FROM
-                moz-fx-data-shared-prod.telemetry.newtab_clients_daily
+                moz-fx-data-shared-prod.firefox_desktop.newtab_clients_daily
             ) AS newtab_clients_daily
         LEFT JOIN
     (
@@ -318,6 +298,9 @@ newtab_clients_daily.weather_widget_location_selected AS newtab_clients_daily_we
                         ), CURRENT_DATE())
                     {% endif %}
                 
+                    AND
+                        newtab_clients_daily.sample_id < {% parameter sampling %}
+                
                 )
             GROUP BY
                 countries_ads_value_tier,
@@ -329,92 +312,82 @@ countries_pocket_available_on_newtab,
 countries_region_name,
 countries_sponsored_tiles_available_on_newtab,
 countries_subregion_name,
-newtab_clients_daily_activity_segment,
-newtab_clients_daily_browser_name,
-newtab_clients_daily_browser_version,
+newtab_clients_daily_all_visits,
+newtab_clients_daily_any_content_click_count,
+newtab_clients_daily_any_content_engagement_visits,
+newtab_clients_daily_any_content_impression_count,
+newtab_clients_daily_any_content_interaction_count,
+newtab_clients_daily_any_engagement_visits,
+newtab_clients_daily_any_interaction_count,
+newtab_clients_daily_any_topsite_click_count,
+newtab_clients_daily_any_topsite_engagement_visits,
+newtab_clients_daily_any_topsite_impression_count,
+newtab_clients_daily_any_topsite_interaction_count,
+newtab_clients_daily_app_name,
+newtab_clients_daily_app_version,
+newtab_clients_daily_avg_newtab_visit_duration,
 newtab_clients_daily_channel,
-newtab_clients_daily_country_code,
+newtab_clients_daily_content_thumbs_down_count,
+newtab_clients_daily_content_thumbs_down_visits,
+newtab_clients_daily_content_thumbs_up_count,
+newtab_clients_daily_content_thumbs_up_visits,
+newtab_clients_daily_country,
+newtab_clients_daily_cumulative_newtab_visit_duration,
 newtab_clients_daily_default_private_search_engine,
 newtab_clients_daily_default_search_engine,
-newtab_clients_daily_follow_on_search_ad_clicks,
-newtab_clients_daily_follow_on_search_ad_impressions,
-newtab_clients_daily_is_new_profile,
-newtab_clients_daily_legacy_telemetry_client_id,
-newtab_clients_daily_list_card_clicks,
-newtab_clients_daily_list_card_dismissals,
-newtab_clients_daily_list_card_impressions,
-newtab_clients_daily_list_card_saves,
+newtab_clients_daily_default_ui_visits,
+newtab_clients_daily_geo_subdivision,
+newtab_clients_daily_homepage_category,
 newtab_clients_daily_locale,
-newtab_clients_daily_newtab_dismissal_count,
-newtab_clients_daily_newtab_homepage_category,
-newtab_clients_daily_newtab_newtab_category,
-newtab_clients_daily_newtab_visit_count,
-newtab_clients_daily_non_search_engagement_count,
-newtab_clients_daily_normalized_os,
-newtab_clients_daily_normalized_os_version,
-newtab_clients_daily_organic_list_card_clicks,
-newtab_clients_daily_organic_list_card_dismissals,
-newtab_clients_daily_organic_list_card_impressions,
-newtab_clients_daily_organic_list_card_saves,
-newtab_clients_daily_organic_pocket_dismissals,
-newtab_clients_daily_organic_pocket_saves,
-newtab_clients_daily_organic_topsite_tile_clicks,
-newtab_clients_daily_organic_topsite_tile_dismissals,
-newtab_clients_daily_organic_topsite_tile_impressions,
-newtab_clients_daily_pocket_clicks,
-newtab_clients_daily_pocket_enabled,
-newtab_clients_daily_pocket_impressions,
-newtab_clients_daily_pocket_is_signed_in,
-newtab_clients_daily_pocket_saves,
-newtab_clients_daily_pocket_sponsored_stories_enabled,
-newtab_clients_daily_pocket_thumb_voting_events,
-newtab_clients_daily_pocket_thumbs_down,
-newtab_clients_daily_pocket_thumbs_up,
+newtab_clients_daily_newtab_category,
+newtab_clients_daily_newtab_search_enabled,
+newtab_clients_daily_newtab_weather_enabled,
+newtab_clients_daily_nonsearch_engagement_visits,
+newtab_clients_daily_nonsearch_interaction_count,
+newtab_clients_daily_organic_content_click_count,
+newtab_clients_daily_organic_content_dismissal_count,
+newtab_clients_daily_organic_content_dismissal_visits,
+newtab_clients_daily_organic_content_enabled,
+newtab_clients_daily_organic_content_engagement_visits,
+newtab_clients_daily_organic_content_impression_count,
+newtab_clients_daily_organic_content_interaction_count,
+newtab_clients_daily_organic_topsite_click_count,
+newtab_clients_daily_organic_topsite_dismissal_count,
+newtab_clients_daily_organic_topsite_dismissal_visits,
+newtab_clients_daily_organic_topsite_engagement_visits,
+newtab_clients_daily_organic_topsite_impression_count,
+newtab_clients_daily_organic_topsite_interaction_count,
+newtab_clients_daily_organic_topsites_enabled,
+newtab_clients_daily_os,
+newtab_clients_daily_other_impression_count,
+newtab_clients_daily_other_interaction_count,
+newtab_clients_daily_others_engagement_visits,
 newtab_clients_daily_profile_group_id,
-newtab_clients_daily_searches,
-newtab_clients_daily_sponsored_list_card_clicks,
-newtab_clients_daily_sponsored_list_card_dismissals,
-newtab_clients_daily_sponsored_list_card_impressions,
-newtab_clients_daily_sponsored_list_card_saves,
-newtab_clients_daily_sponsored_pocket_dismissals,
-newtab_clients_daily_sponsored_pocket_saves,
-newtab_clients_daily_sponsored_topsite_tile_clicks,
-newtab_clients_daily_sponsored_topsite_tile_dismissals,
-newtab_clients_daily_sponsored_topsite_tile_impressions,
-newtab_clients_daily_tagged_follow_on_search_ad_clicks,
-newtab_clients_daily_tagged_follow_on_search_ad_impressions,
-newtab_clients_daily_tagged_search_ad_clicks,
-newtab_clients_daily_tagged_search_ad_impressions,
-newtab_clients_daily_topic_preferences_set,
-newtab_clients_daily_topic_selection_dismissals,
-newtab_clients_daily_topic_selection_opened,
-newtab_clients_daily_topic_selection_selected_topics_first_time,
-newtab_clients_daily_topic_selection_updates,
-newtab_clients_daily_topsite_tile_clicks,
-newtab_clients_daily_topsite_tile_dismissals,
-newtab_clients_daily_topsite_tile_impressions,
-newtab_clients_daily_topsites_enabled,
-newtab_clients_daily_topsites_rows,
-newtab_clients_daily_topsites_sponsored_enabled,
-newtab_clients_daily_topsites_sponsored_tiles_configured,
-newtab_clients_daily_visits_with_default_ui,
-newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement,
-newtab_clients_daily_visits_with_default_ui_with_non_search_engagement,
-newtab_clients_daily_visits_with_non_default_ui,
-newtab_clients_daily_visits_with_non_impression_engagement,
-newtab_clients_daily_visits_with_non_search_engagement,
-newtab_clients_daily_wallpaper_category_clicks,
-newtab_clients_daily_wallpaper_clicks,
-newtab_clients_daily_wallpaper_clicks_first_selected_wallpaper,
-newtab_clients_daily_wallpaper_clicks_had_previous_wallpaper,
-newtab_clients_daily_wallpaper_highlight_cta_clicks,
-newtab_clients_daily_wallpaper_highlight_dismissals,
-newtab_clients_daily_weather_widget_change_display_to_detailed,
-newtab_clients_daily_weather_widget_change_display_to_simple,
-newtab_clients_daily_weather_widget_clicks,
-newtab_clients_daily_weather_widget_impressions,
-newtab_clients_daily_weather_widget_load_errors,
-newtab_clients_daily_weather_widget_location_selected,
+newtab_clients_daily_sample_id,
+newtab_clients_daily_search_ad_click_count,
+newtab_clients_daily_search_ad_click_visits,
+newtab_clients_daily_search_ad_impression_count,
+newtab_clients_daily_search_engagement_visits,
+newtab_clients_daily_search_interaction_count,
+newtab_clients_daily_sponsored_content_click_count,
+newtab_clients_daily_sponsored_content_dismissal_count,
+newtab_clients_daily_sponsored_content_dismissal_visits,
+newtab_clients_daily_sponsored_content_enabled,
+newtab_clients_daily_sponsored_content_engagement_visits,
+newtab_clients_daily_sponsored_content_impression_count,
+newtab_clients_daily_sponsored_content_interaction_count,
+newtab_clients_daily_sponsored_topsite_click_count,
+newtab_clients_daily_sponsored_topsite_dismissal_count,
+newtab_clients_daily_sponsored_topsite_dismissal_visits,
+newtab_clients_daily_sponsored_topsite_engagement_visits,
+newtab_clients_daily_sponsored_topsite_impression_count,
+newtab_clients_daily_sponsored_topsite_interaction_count,
+newtab_clients_daily_sponsored_topsites_enabled,
+newtab_clients_daily_topsite_rows,
+newtab_clients_daily_topsite_sponsored_tiles_configured,
+newtab_clients_daily_widget_engagement_visits,
+newtab_clients_daily_widget_impression_count,
+newtab_clients_daily_widget_interaction_count,
 
                 client_id,
                 analysis_basis ;;
@@ -483,49 +456,49 @@ newtab_clients_daily_weather_widget_location_selected,
     sql: ${TABLE}.newtab_ad_click_rate ;;
   }
 
-  dimension: organic_pocket_clicks {
+  dimension: organic_content_clicks {
     group_label: "Metrics"
-    label: "Organic Pocket Clicks"
-    description: "Count of clicks on Organic Pocket content.
+    label: "Organic Content Clicks"
+    description: "Count of clicks on Organic content.
 "
     type: number
-    sql: ${TABLE}.organic_pocket_clicks ;;
+    sql: ${TABLE}.organic_content_clicks ;;
   }
 
-  dimension: any_organic_pocket_clicks {
+  dimension: any_organic_content_clicks {
     group_label: "Metrics"
-    label: "Any organic Pocket Clicks"
-    description: "Client had any Pocket clicks during the experiment.
+    label: "Any organic Content Clicks"
+    description: "Client had any Content clicks during the experiment.
 "
     type: number
-    sql: ${TABLE}.any_organic_pocket_clicks ;;
+    sql: ${TABLE}.any_organic_content_clicks ;;
   }
 
-  dimension: sponsored_pocket_clicks {
+  dimension: sponsored_content_clicks {
     group_label: "Metrics"
-    label: "Sponsored Pocket Clicks"
-    description: "Count of clicks on Sponsored Pocket content.
+    label: "Sponsored Content Clicks"
+    description: "Count of clicks on Sponsored content.
 "
     type: number
-    sql: ${TABLE}.sponsored_pocket_clicks ;;
+    sql: ${TABLE}.sponsored_content_clicks ;;
   }
 
-  dimension: organic_pocket_impressions {
+  dimension: organic_content_impressions {
     group_label: "Metrics"
-    label: "Organic Pocket Impressions"
-    description: "Count of impressions on Organic Pocket content.
+    label: "Organic Content Impressions"
+    description: "Count of impressions on Organic content.
 "
     type: number
-    sql: ${TABLE}.organic_pocket_impressions ;;
+    sql: ${TABLE}.organic_content_impressions ;;
   }
 
-  dimension: sponsored_pocket_impressions {
+  dimension: sponsored_content_impressions {
     group_label: "Metrics"
-    label: "Sponsored Pocket Impressions"
-    description: "Count of impressions of Sponsored Pocket content.
+    label: "Sponsored Content Impressions"
+    description: "Count of impressions of Sponsored Content.
 "
     type: number
-    sql: ${TABLE}.sponsored_pocket_impressions ;;
+    sql: ${TABLE}.sponsored_content_impressions ;;
   }
 
   dimension: sponsored_tile_impressions {
@@ -582,28 +555,28 @@ newtab_clients_daily_weather_widget_location_selected,
     sql: ${TABLE}.newtab_sponsored_tiles_enabled ;;
   }
 
-  dimension: newtab_pocket_enabled {
+  dimension: newtab_content_enabled {
     group_label: "Metrics"
-    label: "Newtab Pocket Enabled"
-    description: "Whether or not Pocket is enabled on the New Tab.
+    label: "Newtab Content Enabled"
+    description: "Whether or not Content is enabled on the New Tab.
 "
     type: number
-    sql: ${TABLE}.newtab_pocket_enabled ;;
+    sql: ${TABLE}.newtab_content_enabled ;;
   }
 
-  dimension: newtab_sponsored_pocket_stories_enabled {
+  dimension: newtab_sponsored_content_stories_enabled {
     group_label: "Metrics"
-    label: "Newtab Sponsored Pocket Stories Enabled"
-    description: "Whether or not Pocket Sponsored Stories is enabled on the New Tab.
+    label: "Newtab Sponsored Content Stories Enabled"
+    description: "Whether or not Content Sponsored Stories is enabled on the New Tab.
 "
     type: number
-    sql: ${TABLE}.newtab_sponsored_pocket_stories_enabled ;;
+    sql: ${TABLE}.newtab_sponsored_content_stories_enabled ;;
   }
 
   dimension: newtab_engagement {
     group_label: "Metrics"
     label: "Newtab Engagement"
-    description: "Whether or not the client had a newtab search OR a pocket click OR a tile click.
+    description: "Whether or not the client had a newtab search OR a content click OR a tile click.
 "
     type: number
     sql: ${TABLE}.newtab_engagement ;;
@@ -704,13 +677,13 @@ newtab_clients_daily_weather_widget_location_selected,
     sql: ${TABLE}.sponsored_impressions ;;
   }
 
-  dimension: sponsored_pocket_impressions_per_client {
+  dimension: sponsored_content_impressions_per_client {
     group_label: "Metrics"
-    label: "Sponsored Pocket Impressions Per Client"
+    label: "Sponsored content Impressions Per Client"
     description: "Number of sponsored content impressions divided by number of clients
 "
     type: number
-    sql: ${TABLE}.sponsored_pocket_impressions_per_client ;;
+    sql: ${TABLE}.sponsored_content_impressions_per_client ;;
   }
 
   dimension: sponsored_tile_impressions_per_client {
@@ -794,23 +767,100 @@ newtab_clients_daily_weather_widget_location_selected,
     group_label: "Base Fields"
   }
 
-  dimension: activity_segment {
-    sql: ${TABLE}.newtab_clients_daily_activity_segment ;;
+  dimension: all_visits {
+    sql: ${TABLE}.newtab_clients_daily_all_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_content_click_count {
+    sql: ${TABLE}.newtab_clients_daily_any_content_click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_content_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_any_content_engagement_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_content_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_any_content_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_content_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_any_content_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_any_engagement_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_any_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_topsite_click_count {
+    sql: ${TABLE}.newtab_clients_daily_any_topsite_click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_topsite_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_any_topsite_engagement_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_topsite_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_any_topsite_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: any_topsite_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_any_topsite_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: app_name {
+    sql: ${TABLE}.newtab_clients_daily_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: browser_name {
-    sql: ${TABLE}.newtab_clients_daily_browser_name ;;
-    type: string
+  dimension: app_version {
+    sql: ${TABLE}.newtab_clients_daily_app_version ;;
+    type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: browser_version {
-    sql: ${TABLE}.newtab_clients_daily_browser_version ;;
-    type: string
+  dimension: avg_newtab_visit_duration {
+    sql: ${TABLE}.newtab_clients_daily_avg_newtab_visit_duration ;;
+    type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
@@ -822,9 +872,45 @@ newtab_clients_daily_weather_widget_location_selected,
     group_label: "Base Fields"
   }
 
-  dimension: country_code {
-    sql: ${TABLE}.newtab_clients_daily_country_code ;;
+  dimension: content_thumbs_down_count {
+    sql: ${TABLE}.newtab_clients_daily_content_thumbs_down_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: content_thumbs_down_visits {
+    sql: ${TABLE}.newtab_clients_daily_content_thumbs_down_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: content_thumbs_up_count {
+    sql: ${TABLE}.newtab_clients_daily_content_thumbs_up_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: content_thumbs_up_visits {
+    sql: ${TABLE}.newtab_clients_daily_content_thumbs_up_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: country {
+    sql: ${TABLE}.newtab_clients_daily_country ;;
     type: string
+    suggest_persist_for: "24 hours"
+    map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: cumulative_newtab_visit_duration {
+    sql: ${TABLE}.newtab_clients_daily_cumulative_newtab_visit_duration ;;
+    type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
@@ -843,64 +929,29 @@ newtab_clients_daily_weather_widget_location_selected,
     group_label: "Base Fields"
   }
 
+  dimension: default_ui_visits {
+    sql: ${TABLE}.newtab_clients_daily_default_ui_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
   dimension: experiments {
     sql: ${TABLE}.newtab_clients_daily_experiments ;;
     hidden: yes
     group_label: "Base Fields"
   }
 
-  dimension: follow_on_search_ad_clicks {
-    sql: ${TABLE}.newtab_clients_daily_follow_on_search_ad_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: follow_on_search_ad_impressions {
-    sql: ${TABLE}.newtab_clients_daily_follow_on_search_ad_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: is_new_profile {
-    sql: ${TABLE}.newtab_clients_daily_is_new_profile ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: legacy_telemetry_client_id {
-    sql: ${TABLE}.newtab_clients_daily_legacy_telemetry_client_id ;;
+  dimension: geo_subdivision {
+    sql: ${TABLE}.newtab_clients_daily_geo_subdivision ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: list_card_clicks {
-    sql: ${TABLE}.newtab_clients_daily_list_card_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: list_card_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_list_card_dismissals ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: list_card_impressions {
-    sql: ${TABLE}.newtab_clients_daily_list_card_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: list_card_saves {
-    sql: ${TABLE}.newtab_clients_daily_list_card_saves ;;
-    type: number
+  dimension: homepage_category {
+    sql: ${TABLE}.newtab_clients_daily_homepage_category ;;
+    type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
@@ -912,176 +963,168 @@ newtab_clients_daily_weather_widget_location_selected,
     group_label: "Base Fields"
   }
 
-  dimension: newtab_dismissal_count {
-    sql: ${TABLE}.newtab_clients_daily_newtab_dismissal_count ;;
-    type: number
-    suggest_persist_for: "24 hours"
+  dimension: newtab_blocked_sponsors {
+    sql: ${TABLE}.newtab_clients_daily_newtab_blocked_sponsors ;;
+    hidden: yes
     group_label: "Base Fields"
   }
 
-  dimension: newtab_homepage_category {
-    sql: ${TABLE}.newtab_clients_daily_newtab_homepage_category ;;
+  dimension: newtab_category {
+    sql: ${TABLE}.newtab_clients_daily_newtab_category ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: newtab_newtab_category {
-    sql: ${TABLE}.newtab_clients_daily_newtab_newtab_category ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: newtab_visit_count {
-    sql: ${TABLE}.newtab_clients_daily_newtab_visit_count ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: non_search_engagement_count {
-    sql: ${TABLE}.newtab_clients_daily_non_search_engagement_count ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: normalized_os {
-    sql: ${TABLE}.newtab_clients_daily_normalized_os ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: normalized_os_version {
-    sql: ${TABLE}.newtab_clients_daily_normalized_os_version ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_list_card_clicks {
-    sql: ${TABLE}.newtab_clients_daily_organic_list_card_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_list_card_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_organic_list_card_dismissals ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_list_card_impressions {
-    sql: ${TABLE}.newtab_clients_daily_organic_list_card_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_list_card_saves {
-    sql: ${TABLE}.newtab_clients_daily_organic_list_card_saves ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_pocket_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_organic_pocket_dismissals ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_pocket_saves {
-    sql: ${TABLE}.newtab_clients_daily_organic_pocket_saves ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_topsite_tile_clicks {
-    sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_topsite_tile_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_dismissals ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: organic_topsite_tile_impressions {
-    sql: ${TABLE}.newtab_clients_daily_organic_topsite_tile_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: pocket_clicks {
-    sql: ${TABLE}.newtab_clients_daily_pocket_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: pocket_enabled {
-    sql: ${TABLE}.newtab_clients_daily_pocket_enabled ;;
+  dimension: newtab_search_enabled {
+    sql: ${TABLE}.newtab_clients_daily_newtab_search_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: pocket_impressions {
-    sql: ${TABLE}.newtab_clients_daily_pocket_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: pocket_is_signed_in {
-    sql: ${TABLE}.newtab_clients_daily_pocket_is_signed_in ;;
+  dimension: newtab_weather_enabled {
+    sql: ${TABLE}.newtab_clients_daily_newtab_weather_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: pocket_saves {
-    sql: ${TABLE}.newtab_clients_daily_pocket_saves ;;
+  dimension: nonsearch_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_nonsearch_engagement_visits ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: pocket_sponsored_stories_enabled {
-    sql: ${TABLE}.newtab_clients_daily_pocket_sponsored_stories_enabled ;;
+  dimension: nonsearch_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_nonsearch_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_content_click_count {
+    sql: ${TABLE}.newtab_clients_daily_organic_content_click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_content_dismissal_count {
+    sql: ${TABLE}.newtab_clients_daily_organic_content_dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_content_dismissal_visits {
+    sql: ${TABLE}.newtab_clients_daily_organic_content_dismissal_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_content_enabled {
+    sql: ${TABLE}.newtab_clients_daily_organic_content_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: pocket_thumb_voting_events {
-    sql: ${TABLE}.newtab_clients_daily_pocket_thumb_voting_events ;;
+  dimension: organic_content_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_organic_content_engagement_visits ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: pocket_thumbs_down {
-    sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_down ;;
+  dimension: organic_content_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_organic_content_impression_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: pocket_thumbs_up {
-    sql: ${TABLE}.newtab_clients_daily_pocket_thumbs_up ;;
+  dimension: organic_content_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_organic_content_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_topsite_click_count {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_topsite_dismissal_count {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_topsite_dismissal_visits {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_dismissal_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_topsite_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_engagement_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_topsite_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_topsite_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsite_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: organic_topsites_enabled {
+    sql: ${TABLE}.newtab_clients_daily_organic_topsites_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: os {
+    sql: ${TABLE}.newtab_clients_daily_os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: other_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_other_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: other_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_other_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: others_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_others_engagement_visits ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
@@ -1094,309 +1137,176 @@ newtab_clients_daily_weather_widget_location_selected,
     group_label: "Base Fields"
   }
 
-  dimension: searches {
-    sql: ${TABLE}.newtab_clients_daily_searches ;;
+  dimension: sample_id {
+    sql: ${TABLE}.newtab_clients_daily_sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_list_card_clicks {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_clicks ;;
+  dimension: search_ad_click_count {
+    sql: ${TABLE}.newtab_clients_daily_search_ad_click_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_list_card_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_dismissals ;;
+  dimension: search_ad_click_visits {
+    sql: ${TABLE}.newtab_clients_daily_search_ad_click_visits ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_list_card_impressions {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_impressions ;;
+  dimension: search_ad_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_search_ad_impression_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_list_card_saves {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_list_card_saves ;;
+  dimension: search_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_search_engagement_visits ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_pocket_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_pocket_dismissals ;;
+  dimension: search_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_search_interaction_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_pocket_saves {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_pocket_saves ;;
+  dimension: sponsored_content_click_count {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_content_click_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_topsite_tile_clicks {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_clicks ;;
+  dimension: sponsored_content_dismissal_count {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_content_dismissal_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_topsite_tile_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_dismissals ;;
+  dimension: sponsored_content_dismissal_visits {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_content_dismissal_visits ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: sponsored_topsite_tile_impressions {
-    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_tile_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: tagged_follow_on_search_ad_clicks {
-    sql: ${TABLE}.newtab_clients_daily_tagged_follow_on_search_ad_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: tagged_follow_on_search_ad_impressions {
-    sql: ${TABLE}.newtab_clients_daily_tagged_follow_on_search_ad_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: tagged_search_ad_clicks {
-    sql: ${TABLE}.newtab_clients_daily_tagged_search_ad_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: tagged_search_ad_impressions {
-    sql: ${TABLE}.newtab_clients_daily_tagged_search_ad_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: topic_preferences_set {
-    sql: ${TABLE}.newtab_clients_daily_topic_preferences_set ;;
+  dimension: sponsored_content_enabled {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_content_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: topic_selection_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_topic_selection_dismissals ;;
+  dimension: sponsored_content_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_content_engagement_visits ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: topic_selection_opened {
-    sql: ${TABLE}.newtab_clients_daily_topic_selection_opened ;;
+  dimension: sponsored_content_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_content_impression_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: topic_selection_selected_topics_first_time {
-    sql: ${TABLE}.newtab_clients_daily_topic_selection_selected_topics_first_time ;;
+  dimension: sponsored_content_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_content_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_click_count {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_click_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_dismissal_count {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_dismissal_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_dismissal_visits {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_dismissal_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_engagement_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_impression_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsite_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsite_interaction_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: sponsored_topsites_enabled {
+    sql: ${TABLE}.newtab_clients_daily_sponsored_topsites_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: topic_selection_updates {
-    sql: ${TABLE}.newtab_clients_daily_topic_selection_updates ;;
+  dimension: topsite_rows {
+    sql: ${TABLE}.newtab_clients_daily_topsite_rows ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: topsite_tile_clicks {
-    sql: ${TABLE}.newtab_clients_daily_topsite_tile_clicks ;;
+  dimension: topsite_sponsored_tiles_configured {
+    sql: ${TABLE}.newtab_clients_daily_topsite_sponsored_tiles_configured ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: topsite_tile_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_topsite_tile_dismissals ;;
+  dimension: widget_engagement_visits {
+    sql: ${TABLE}.newtab_clients_daily_widget_engagement_visits ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: topsite_tile_impressions {
-    sql: ${TABLE}.newtab_clients_daily_topsite_tile_impressions ;;
+  dimension: widget_impression_count {
+    sql: ${TABLE}.newtab_clients_daily_widget_impression_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
   }
 
-  dimension: topsites_enabled {
-    sql: ${TABLE}.newtab_clients_daily_topsites_enabled ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: topsites_rows {
-    sql: ${TABLE}.newtab_clients_daily_topsites_rows ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: topsites_sponsored_enabled {
-    sql: ${TABLE}.newtab_clients_daily_topsites_sponsored_enabled ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: topsites_sponsored_tiles_configured {
-    sql: ${TABLE}.newtab_clients_daily_topsites_sponsored_tiles_configured ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: visits_with_default_ui {
-    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: visits_with_default_ui_with_non_impression_engagement {
-    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui_with_non_impression_engagement ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: visits_with_default_ui_with_non_search_engagement {
-    sql: ${TABLE}.newtab_clients_daily_visits_with_default_ui_with_non_search_engagement ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: visits_with_non_default_ui {
-    sql: ${TABLE}.newtab_clients_daily_visits_with_non_default_ui ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: visits_with_non_impression_engagement {
-    sql: ${TABLE}.newtab_clients_daily_visits_with_non_impression_engagement ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: visits_with_non_search_engagement {
-    sql: ${TABLE}.newtab_clients_daily_visits_with_non_search_engagement ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: wallpaper_category_clicks {
-    sql: ${TABLE}.newtab_clients_daily_wallpaper_category_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: wallpaper_clicks {
-    sql: ${TABLE}.newtab_clients_daily_wallpaper_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: wallpaper_clicks_first_selected_wallpaper {
-    sql: ${TABLE}.newtab_clients_daily_wallpaper_clicks_first_selected_wallpaper ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: wallpaper_clicks_had_previous_wallpaper {
-    sql: ${TABLE}.newtab_clients_daily_wallpaper_clicks_had_previous_wallpaper ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: wallpaper_highlight_cta_clicks {
-    sql: ${TABLE}.newtab_clients_daily_wallpaper_highlight_cta_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: wallpaper_highlight_dismissals {
-    sql: ${TABLE}.newtab_clients_daily_wallpaper_highlight_dismissals ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: weather_widget_change_display_to_detailed {
-    sql: ${TABLE}.newtab_clients_daily_weather_widget_change_display_to_detailed ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: weather_widget_change_display_to_simple {
-    sql: ${TABLE}.newtab_clients_daily_weather_widget_change_display_to_simple ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: weather_widget_clicks {
-    sql: ${TABLE}.newtab_clients_daily_weather_widget_clicks ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: weather_widget_impressions {
-    sql: ${TABLE}.newtab_clients_daily_weather_widget_impressions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: weather_widget_load_errors {
-    sql: ${TABLE}.newtab_clients_daily_weather_widget_load_errors ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Base Fields"
-  }
-
-  dimension: weather_widget_location_selected {
-    sql: ${TABLE}.newtab_clients_daily_weather_widget_location_selected ;;
+  dimension: widget_interaction_count {
+    sql: ${TABLE}.newtab_clients_daily_widget_interaction_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
@@ -1426,69 +1336,69 @@ newtab_clients_daily_weather_widget_location_selected,
     description: "Average of Newtab Ad Click Rate"
   }
 
-  measure: sponsored_pocket_clicks_sum {
+  measure: sponsored_content_clicks_sum {
     type: sum
-    sql: ${TABLE}.sponsored_pocket_clicks*1 ;;
-    label: "Sponsored Pocket Clicks Sum"
+    sql: ${TABLE}.sponsored_content_clicks*100 / {% parameter sampling %} ;;
+    label: "Sponsored Content Clicks Sum"
     group_label: "Statistics"
-    description: "Sum of Sponsored Pocket Clicks"
+    description: "Sum of Sponsored Content Clicks"
   }
 
-  measure: sponsored_pocket_clicks_client_count_sampled {
+  measure: sponsored_content_clicks_client_count_sampled {
     type: count_distinct
-    label: "Sponsored Pocket Clicks Client Count"
+    label: "Sponsored Content Clicks Client Count"
     group_label: "Statistics"
-    sql: IF(${TABLE}.sponsored_pocket_clicks > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
-    description: "Number of clients with Sponsored Pocket Clicks"
+    sql: IF(${TABLE}.sponsored_content_clicks > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Content Clicks"
     hidden: yes
   }
 
-  measure: sponsored_pocket_clicks_client_count {
+  measure: sponsored_content_clicks_client_count {
     type: number
-    label: "Sponsored Pocket Clicks Client Count"
+    label: "Sponsored Content Clicks Client Count"
     group_label: "Statistics"
-    sql: ${sponsored_pocket_clicks_client_count_sampled} *1 ;;
-    description: "Number of clients with Sponsored Pocket Clicks"
+    sql: ${sponsored_content_clicks_client_count_sampled} *100 / {% parameter sampling %} ;;
+    description: "Number of clients with Sponsored Content Clicks"
   }
 
-  measure: sponsored_pocket_clicks_ratio {
+  measure: sponsored_content_clicks_ratio {
     type: number
-    label: "Sponsored Pocket Clicks Ratio"
-    sql: SAFE_DIVIDE(${sponsored_pocket_clicks_sum}, ${sponsored_pocket_impressions_sum}) ;;
+    label: "Sponsored Content Clicks Ratio"
+    sql: SAFE_DIVIDE(${sponsored_content_clicks_sum}, ${sponsored_content_impressions_sum}) ;;
     group_label: "Statistics"
     description: "\"
-                                        Ratio between sponsored_pocket_clicks.sum and
-                                        sponsored_pocket_impressions.sum"
+                                        Ratio between sponsored_content_clicks.sum and
+                                        sponsored_content_impressions.sum"
   }
 
-  measure: sponsored_pocket_impressions_sum {
+  measure: sponsored_content_impressions_sum {
     type: sum
-    sql: ${TABLE}.sponsored_pocket_impressions*1 ;;
-    label: "Sponsored Pocket Impressions Sum"
+    sql: ${TABLE}.sponsored_content_impressions*100 / {% parameter sampling %} ;;
+    label: "Sponsored Content Impressions Sum"
     group_label: "Statistics"
-    description: "Sum of Sponsored Pocket Impressions"
+    description: "Sum of Sponsored Content Impressions"
   }
 
-  measure: sponsored_pocket_impressions_client_count_sampled {
+  measure: sponsored_content_impressions_client_count_sampled {
     type: count_distinct
-    label: "Sponsored Pocket Impressions Client Count"
+    label: "Sponsored Content Impressions Client Count"
     group_label: "Statistics"
-    sql: IF(${TABLE}.sponsored_pocket_impressions > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
-    description: "Number of clients with Sponsored Pocket Impressions"
+    sql: IF(${TABLE}.sponsored_content_impressions > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Sponsored Content Impressions"
     hidden: yes
   }
 
-  measure: sponsored_pocket_impressions_client_count {
+  measure: sponsored_content_impressions_client_count {
     type: number
-    label: "Sponsored Pocket Impressions Client Count"
+    label: "Sponsored Content Impressions Client Count"
     group_label: "Statistics"
-    sql: ${sponsored_pocket_impressions_client_count_sampled} *1 ;;
-    description: "Number of clients with Sponsored Pocket Impressions"
+    sql: ${sponsored_content_impressions_client_count_sampled} *100 / {% parameter sampling %} ;;
+    description: "Number of clients with Sponsored Content Impressions"
   }
 
   measure: sponsored_tile_impressions_sum {
     type: sum
-    sql: ${TABLE}.sponsored_tile_impressions*1 ;;
+    sql: ${TABLE}.sponsored_tile_impressions*100 / {% parameter sampling %} ;;
     label: "Sponsored Tile Impressions Sum"
     group_label: "Statistics"
     description: "Sum of Sponsored Tile Impressions"
@@ -1507,13 +1417,13 @@ newtab_clients_daily_weather_widget_location_selected,
     type: number
     label: "Sponsored Tile Impressions Client Count"
     group_label: "Statistics"
-    sql: ${sponsored_tile_impressions_client_count_sampled} *1 ;;
+    sql: ${sponsored_tile_impressions_client_count_sampled} *100 / {% parameter sampling %} ;;
     description: "Number of clients with Sponsored Tile Impressions"
   }
 
   measure: sponsored_tile_clicks_sum {
     type: sum
-    sql: ${TABLE}.sponsored_tile_clicks*1 ;;
+    sql: ${TABLE}.sponsored_tile_clicks*100 / {% parameter sampling %} ;;
     label: "Sponsored Tile Clicks Sum"
     group_label: "Statistics"
     description: "Sum of Sponsored Tile Clicks"
@@ -1532,7 +1442,7 @@ newtab_clients_daily_weather_widget_location_selected,
     type: number
     label: "Sponsored Tile Clicks Client Count"
     group_label: "Statistics"
-    sql: ${sponsored_tile_clicks_client_count_sampled} *1 ;;
+    sql: ${sponsored_tile_clicks_client_count_sampled} *100 / {% parameter sampling %} ;;
     description: "Number of clients with Sponsored Tile Clicks"
   }
 
@@ -1559,30 +1469,30 @@ newtab_clients_daily_weather_widget_location_selected,
     type: number
     label: "Newtab Sponsored Tiles Enabled Client Count"
     group_label: "Statistics"
-    sql: ${newtab_sponsored_tiles_enabled_client_count_sampled} *1 ;;
+    sql: ${newtab_sponsored_tiles_enabled_client_count_sampled} *100 / {% parameter sampling %} ;;
     description: "Number of clients with Newtab Sponsored Tiles Enabled"
   }
 
-  measure: newtab_sponsored_pocket_stories_enabled_client_count_sampled {
+  measure: newtab_sponsored_content_stories_enabled_client_count_sampled {
     type: count_distinct
-    label: "Newtab Sponsored Pocket Stories Enabled Client Count"
+    label: "Newtab Sponsored Content Stories Enabled Client Count"
     group_label: "Statistics"
-    sql: IF(${TABLE}.newtab_sponsored_pocket_stories_enabled > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
-    description: "Number of clients with Newtab Sponsored Pocket Stories Enabled"
+    sql: IF(${TABLE}.newtab_sponsored_content_stories_enabled > 0, ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Newtab Sponsored Content Stories Enabled"
     hidden: yes
   }
 
-  measure: newtab_sponsored_pocket_stories_enabled_client_count {
+  measure: newtab_sponsored_content_stories_enabled_client_count {
     type: number
-    label: "Newtab Sponsored Pocket Stories Enabled Client Count"
+    label: "Newtab Sponsored Content Stories Enabled Client Count"
     group_label: "Statistics"
-    sql: ${newtab_sponsored_pocket_stories_enabled_client_count_sampled} *1 ;;
-    description: "Number of clients with Newtab Sponsored Pocket Stories Enabled"
+    sql: ${newtab_sponsored_content_stories_enabled_client_count_sampled} *100 / {% parameter sampling %} ;;
+    description: "Number of clients with Newtab Sponsored Content Stories Enabled"
   }
 
   measure: newtab_visits_sum {
     type: sum
-    sql: ${TABLE}.newtab_visits*1 ;;
+    sql: ${TABLE}.newtab_visits*100 / {% parameter sampling %} ;;
     label: "Newtab Visit Count Sum"
     group_label: "Statistics"
     description: "Sum of Newtab Visit Count"
@@ -1601,13 +1511,13 @@ newtab_clients_daily_weather_widget_location_selected,
     type: number
     label: "Newtab Visit Count Client Count"
     group_label: "Statistics"
-    sql: ${newtab_visits_client_count_sampled} *1 ;;
+    sql: ${newtab_visits_client_count_sampled} *100 / {% parameter sampling %} ;;
     description: "Number of clients with Newtab Visit Count"
   }
 
   measure: newtab_engaged_visits_sum {
     type: sum
-    sql: ${TABLE}.newtab_engaged_visits*1 ;;
+    sql: ${TABLE}.newtab_engaged_visits*100 / {% parameter sampling %} ;;
     label: "Newtab Engaged Visit Count Sum"
     group_label: "Statistics"
     description: "Sum of Newtab Engaged Visit Count"
@@ -1615,7 +1525,7 @@ newtab_clients_daily_weather_widget_location_selected,
 
   measure: sponsored_impressions_sum {
     type: sum
-    sql: ${TABLE}.sponsored_impressions*1 ;;
+    sql: ${TABLE}.sponsored_impressions*100 / {% parameter sampling %} ;;
     label: "Sponsored Impressions Sum"
     group_label: "Statistics"
     description: "Sum of Sponsored Impressions"
@@ -1634,17 +1544,17 @@ newtab_clients_daily_weather_widget_location_selected,
     type: number
     label: "Sponsored Impressions Client Count"
     group_label: "Statistics"
-    sql: ${sponsored_impressions_client_count_sampled} *1 ;;
+    sql: ${sponsored_impressions_client_count_sampled} *100 / {% parameter sampling %} ;;
     description: "Number of clients with Sponsored Impressions"
   }
 
-  measure: sponsored_pocket_impressions_per_client_ratio {
+  measure: sponsored_content_impressions_per_client_ratio {
     type: number
-    label: "Sponsored Pocket Impressions Per Client Ratio"
-    sql: SAFE_DIVIDE(${sponsored_pocket_impressions_sum}, ${sponsored_impressions_client_count}) ;;
+    label: "Sponsored content Impressions Per Client Ratio"
+    sql: SAFE_DIVIDE(${sponsored_content_impressions_sum}, ${sponsored_impressions_client_count}) ;;
     group_label: "Statistics"
     description: "\"
-                                        Ratio between sponsored_pocket_impressions.sum and
+                                        Ratio between sponsored_content_impressions.sum and
                                         sponsored_impressions.client_count"
   }
 
@@ -1668,6 +1578,938 @@ newtab_clients_daily_weather_widget_location_selected,
                                         sponsored_impressions.client_count"
   }
 
+  measure: any_content_click_count_sum {
+    type: sum
+    sql: ${TABLE}.any_content_click_count*100 / {% parameter sampling %} ;;
+    label: "any_content_click_count Sum"
+    group_label: "Statistics"
+    description: "Sum of any_content_click_count"
+  }
+
+  measure: any_content_click_count_ratio {
+    type: number
+    label: "any_content_click_count Ratio"
+    sql: SAFE_DIVIDE(${any_content_click_count_sum}, ${any_content_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between any_content_click_count.sum and
+                                        any_content_impression_count.sum"
+  }
+
+  measure: any_content_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.any_content_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "any_content_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of any_content_engagement_visits"
+  }
+
+  measure: any_content_engagement_visits_ratio {
+    type: number
+    label: "any_content_engagement_visits Ratio"
+    sql: SAFE_DIVIDE(${any_content_engagement_visits_sum}, ${default_ui_visits_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between any_content_engagement_visits.sum and
+                                        default_ui_visits.sum"
+  }
+
+  measure: any_content_engagement_visits_rolling_average_ratio_28_day {
+    type: number
+    label: "any_content_engagement_visits Ratio 28 Day Rolling Average"
+    sql: {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ) ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of any_content_engagement_visits"
+  }
+
+  measure: any_content_engagement_visits_rolling_average_sum_28_day {
+    type: number
+    label: "any_content_engagement_visits Sum 28 Day Rolling Average"
+    sql: {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ) ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of any_content_engagement_visits"
+  }
+
+  measure: any_content_engagement_visits_rolling_average_ratio_28_day_365_day_period_over_period_previous {
+    type: number
+    label: "any_content_engagement_visits Ratio 28 Day Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of any_content_engagement_visits Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %} ;;
+  }
+
+  measure: any_content_engagement_visits_rolling_average_ratio_28_day_365_day_period_over_period_relative_change {
+    type: number
+    label: "any_content_engagement_visits Ratio 28 Day Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of any_content_engagement_visits Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )), NULLIF(({% if metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %}), 0)) - 1 ;;
+  }
+
+  measure: any_content_engagement_visits_rolling_average_sum_28_day_365_day_period_over_period_previous {
+    type: number
+    label: "any_content_engagement_visits Sum 28 Day Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of any_content_engagement_visits Sum 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %} ;;
+  }
+
+  measure: any_content_engagement_visits_rolling_average_sum_28_day_365_day_period_over_period_relative_change {
+    type: number
+    label: "any_content_engagement_visits Sum 28 Day Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of any_content_engagement_visits Sum 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )), NULLIF(({% if metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% elsif metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% else %}
+
+                                                    {% if metric_definitions_newtab_clients_daily.submission_date._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_week._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_month._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_quarter._is_selected or
+                                                        metric_definitions_newtab_clients_daily.submission_year._is_selected %}
+                                                    AVG(${any_content_engagement_visits_sum}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_newtab_clients_daily.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                )
+{% endif %}), 0)) - 1 ;;
+  }
+
+  measure: any_content_impression_count_sum {
+    type: sum
+    sql: ${TABLE}.any_content_impression_count*100 / {% parameter sampling %} ;;
+    label: "any_content_impression_count Sum"
+    group_label: "Statistics"
+    description: "Sum of any_content_impression_count"
+  }
+
+  measure: any_topsite_click_count_sum {
+    type: sum
+    sql: ${TABLE}.any_topsite_click_count*100 / {% parameter sampling %} ;;
+    label: "any_topsite_click_count Sum"
+    group_label: "Statistics"
+    description: "Sum of any_topsite_click_count"
+  }
+
+  measure: any_topsite_click_count_ratio {
+    type: number
+    label: "any_topsite_click_count Ratio"
+    sql: SAFE_DIVIDE(${any_topsite_click_count_sum}, ${any_topsite_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between any_topsite_click_count.sum and
+                                        any_topsite_impression_count.sum"
+  }
+
+  measure: any_topsite_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.any_topsite_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "any_topsite_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of any_topsite_engagement_visits"
+  }
+
+  measure: any_topsite_engagement_visits_ratio {
+    type: number
+    label: "any_topsite_engagement_visits Ratio"
+    sql: SAFE_DIVIDE(${any_topsite_engagement_visits_sum}, ${default_ui_visits_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between any_topsite_engagement_visits.sum and
+                                        default_ui_visits.sum"
+  }
+
+  measure: any_topsite_impression_count_sum {
+    type: sum
+    sql: ${TABLE}.any_topsite_impression_count*100 / {% parameter sampling %} ;;
+    label: "any_topsite_impression_count Sum"
+    group_label: "Statistics"
+    description: "Sum of any_topsite_impression_count"
+  }
+
+  measure: default_ui_visits_sum {
+    type: sum
+    sql: ${TABLE}.default_ui_visits*100 / {% parameter sampling %} ;;
+    label: "default_ui_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of default_ui_visits"
+  }
+
+  measure: nonsearch_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.nonsearch_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "nonsearch_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of nonsearch_engagement_visits"
+  }
+
+  measure: nonsearch_engagement_visits_ratio {
+    type: number
+    label: "nonsearch_engagement_visits Ratio"
+    sql: SAFE_DIVIDE(${nonsearch_engagement_visits_sum}, ${default_ui_visits_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between nonsearch_engagement_visits.sum and
+                                        default_ui_visits.sum"
+  }
+
+  measure: organic_content_click_count_sum {
+    type: sum
+    sql: ${TABLE}.organic_content_click_count*100 / {% parameter sampling %} ;;
+    label: "organic_content_click_count Sum"
+    group_label: "Statistics"
+    description: "Sum of organic_content_click_count"
+  }
+
+  measure: organic_content_click_count_ratio {
+    type: number
+    label: "organic_content_click_count Ratio"
+    sql: SAFE_DIVIDE(${organic_content_click_count_sum}, ${organic_content_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between organic_content_click_count.sum and
+                                        organic_content_impression_count.sum"
+  }
+
+  measure: organic_content_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.organic_content_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "organic_content_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of organic_content_engagement_visits"
+  }
+
+  measure: organic_content_engagement_visits_ratio {
+    type: number
+    label: "organic_content_engagement_visits Ratio"
+    sql: SAFE_DIVIDE(${organic_content_engagement_visits_sum}, ${default_ui_visits_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between organic_content_engagement_visits.sum and
+                                        default_ui_visits.sum"
+  }
+
+  measure: organic_content_impression_count_sum {
+    type: sum
+    sql: ${TABLE}.organic_content_impression_count*100 / {% parameter sampling %} ;;
+    label: "organic_content_impression_count Sum"
+    group_label: "Statistics"
+    description: "Sum of organic_content_impression_count"
+  }
+
+  measure: organic_topsite_click_count_sum {
+    type: sum
+    sql: ${TABLE}.organic_topsite_click_count*100 / {% parameter sampling %} ;;
+    label: "organic_topsite_click_count Sum"
+    group_label: "Statistics"
+    description: "Sum of organic_topsite_click_count"
+  }
+
+  measure: organic_topsite_click_count_ratio {
+    type: number
+    label: "organic_topsite_click_count Ratio"
+    sql: SAFE_DIVIDE(${organic_topsite_click_count_sum}, ${organic_topsite_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between organic_topsite_click_count.sum and
+                                        organic_topsite_impression_count.sum"
+  }
+
+  measure: organic_topsite_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.organic_topsite_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "organic_topsite_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of organic_topsite_engagement_visits"
+  }
+
+  measure: organic_topsite_engagement_visits_ratio {
+    type: number
+    label: "organic_topsite_engagement_visits Ratio"
+    sql: SAFE_DIVIDE(${organic_topsite_engagement_visits_sum}, ${default_ui_visits_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between organic_topsite_engagement_visits.sum and
+                                        default_ui_visits.sum"
+  }
+
+  measure: organic_topsite_impression_count_sum {
+    type: sum
+    sql: ${TABLE}.organic_topsite_impression_count*100 / {% parameter sampling %} ;;
+    label: "organic_topsite_impression_count Sum"
+    group_label: "Statistics"
+    description: "Sum of organic_topsite_impression_count"
+  }
+
+  measure: others_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.others_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "others_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of others_engagement_visits"
+  }
+
+  measure: sponsored_content_click_count_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_content_click_count*100 / {% parameter sampling %} ;;
+    label: "sponsored_content_click_count Sum"
+    group_label: "Statistics"
+    description: "Sum of sponsored_content_click_count"
+  }
+
+  measure: sponsored_content_click_count_ratio {
+    type: number
+    label: "sponsored_content_click_count Ratio"
+    sql: SAFE_DIVIDE(${sponsored_content_click_count_sum}, ${sponsored_content_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between sponsored_content_click_count.sum and
+                                        sponsored_content_impression_count.sum"
+  }
+
+  measure: sponsored_content_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_content_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "sponsored_content_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of sponsored_content_engagement_visits"
+  }
+
+  measure: sponsored_content_engagement_visits_ratio {
+    type: number
+    label: "sponsored_content_engagement_visits Ratio"
+    sql: SAFE_DIVIDE(${sponsored_content_engagement_visits_sum}, ${default_ui_visits_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between sponsored_content_engagement_visits.sum and
+                                        default_ui_visits.sum"
+  }
+
+  measure: sponsored_content_impression_count_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_content_impression_count*100 / {% parameter sampling %} ;;
+    label: "sponsored_content_impression_count Sum"
+    group_label: "Statistics"
+    description: "Sum of sponsored_content_impression_count"
+  }
+
+  measure: sponsored_topsite_click_count_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_topsite_click_count*100 / {% parameter sampling %} ;;
+    label: "sponsored_topsite_click_count Sum"
+    group_label: "Statistics"
+    description: "Sum of sponsored_topsite_click_count"
+  }
+
+  measure: sponsored_topsite_click_count_ratio {
+    type: number
+    label: "sponsored_topsite_click_count Ratio"
+    sql: SAFE_DIVIDE(${sponsored_topsite_click_count_sum}, ${sponsored_topsite_impression_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between sponsored_topsite_click_count.sum and
+                                        sponsored_topsite_impression_count.sum"
+  }
+
+  measure: sponsored_topsite_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_topsite_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "sponsored_topsite_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of sponsored_topsite_engagement_visits"
+  }
+
+  measure: sponsored_topsite_engagement_visits_ratio {
+    type: number
+    label: "sponsored_topsite_engagement_visits Ratio"
+    sql: SAFE_DIVIDE(${sponsored_topsite_engagement_visits_sum}, ${default_ui_visits_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between sponsored_topsite_engagement_visits.sum and
+                                        default_ui_visits.sum"
+  }
+
+  measure: sponsored_topsite_impression_count_sum {
+    type: sum
+    sql: ${TABLE}.sponsored_topsite_impression_count*100 / {% parameter sampling %} ;;
+    label: "sponsored_topsite_impression_count Sum"
+    group_label: "Statistics"
+    description: "Sum of sponsored_topsite_impression_count"
+  }
+
+  measure: widget_engagement_visits_sum {
+    type: sum
+    sql: ${TABLE}.widget_engagement_visits*100 / {% parameter sampling %} ;;
+    label: "widget_engagement_visits Sum"
+    group_label: "Statistics"
+    description: "Sum of widget_engagement_visits"
+  }
+
   set: metrics {
     fields: [
       newtab_searches,
@@ -1676,19 +2518,19 @@ newtab_clients_daily_weather_widget_location_selected,
       newtab_searches_with_ads,
       newtab_ad_clicks,
       newtab_ad_click_rate,
-      organic_pocket_clicks,
-      any_organic_pocket_clicks,
-      sponsored_pocket_clicks,
-      organic_pocket_impressions,
-      sponsored_pocket_impressions,
+      organic_content_clicks,
+      any_organic_content_clicks,
+      sponsored_content_clicks,
+      organic_content_impressions,
+      sponsored_content_impressions,
       sponsored_tile_impressions,
       sponsored_tile_clicks,
       newtab_newtab_enabled,
       newtab_homepage_enabled,
       newtab_tiles_enabled,
       newtab_sponsored_tiles_enabled,
-      newtab_pocket_enabled,
-      newtab_sponsored_pocket_stories_enabled,
+      newtab_content_enabled,
+      newtab_sponsored_content_stories_enabled,
       newtab_engagement,
       newtab_visits,
       newtab_engaged_visits,
@@ -1701,17 +2543,17 @@ newtab_clients_daily_weather_widget_location_selected,
       organic_tiles_dismissals,
       any_organic_tiles_dismissals,
       sponsored_impressions,
-      sponsored_pocket_impressions_per_client,
+      sponsored_content_impressions_per_client,
       sponsored_tile_impressions_per_client,
       sponsored_impressions_per_client,
       newtab_ad_click_rate_average,
-      sponsored_pocket_clicks_sum,
-      sponsored_pocket_clicks_client_count_sampled,
-      sponsored_pocket_clicks_client_count,
-      sponsored_pocket_clicks_ratio,
-      sponsored_pocket_impressions_sum,
-      sponsored_pocket_impressions_client_count_sampled,
-      sponsored_pocket_impressions_client_count,
+      sponsored_content_clicks_sum,
+      sponsored_content_clicks_client_count_sampled,
+      sponsored_content_clicks_client_count,
+      sponsored_content_clicks_ratio,
+      sponsored_content_impressions_sum,
+      sponsored_content_impressions_client_count_sampled,
+      sponsored_content_impressions_client_count,
       sponsored_tile_impressions_sum,
       sponsored_tile_impressions_client_count_sampled,
       sponsored_tile_impressions_client_count,
@@ -1721,8 +2563,8 @@ newtab_clients_daily_weather_widget_location_selected,
       sponsored_tile_clicks_ratio,
       newtab_sponsored_tiles_enabled_client_count_sampled,
       newtab_sponsored_tiles_enabled_client_count,
-      newtab_sponsored_pocket_stories_enabled_client_count_sampled,
-      newtab_sponsored_pocket_stories_enabled_client_count,
+      newtab_sponsored_content_stories_enabled_client_count_sampled,
+      newtab_sponsored_content_stories_enabled_client_count,
       newtab_visits_sum,
       newtab_visits_client_count_sampled,
       newtab_visits_client_count,
@@ -1730,7 +2572,7 @@ newtab_clients_daily_weather_widget_location_selected,
       sponsored_impressions_sum,
       sponsored_impressions_client_count_sampled,
       sponsored_impressions_client_count,
-      sponsored_pocket_impressions_per_client_ratio,
+      sponsored_content_impressions_per_client_ratio,
       sponsored_tile_impressions_per_client_ratio,
       sponsored_impressions_per_client_ratio,
     ]
@@ -1776,7 +2618,7 @@ newtab_clients_daily_weather_widget_location_selected,
     label: "Sample of source data in %"
     type: unquoted
     default_value: "100"
-    hidden: yes
+    hidden: no
   }
 
   parameter: lookback_days {

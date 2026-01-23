@@ -155,6 +155,7 @@ view: newtab_clients_daily_table {
     sql: ${TABLE}.cumulative_newtab_visit_duration ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total duration of newtab visits on this day (ms)"
   }
 
   dimension: default_private_search_engine {

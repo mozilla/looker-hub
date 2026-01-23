@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: visual_card_updates
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       visual_card_updates.submission_date,
       visual_card_updates.branch,
+      visual_card_updates.upper,
+      visual_card_updates.lower,
       visual_card_updates.point
     ]
     pivots: [
       visual_card_updates.branch
     ]
     filters:
-      visual_card_updates.metric: 'ad_clicks'
-      visual_card_updates.statistic: mean
+      visual_card_updates.metric: 'memory_total'
+      visual_card_updates.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,12 +76,13 @@
     show_grid: true
     listen:
       Date: visual_card_updates.submission_date
+      Percentile: visual_card_updates.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +97,7 @@
       visual_card_updates.branch
     ]
     filters:
-      visual_card_updates.metric: 'search_count'
+      visual_card_updates.metric: 'retained'
       visual_card_updates.statistic: mean
     row: 10
     col: 0
@@ -146,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +165,7 @@
       visual_card_updates.branch
     ]
     filters:
-      visual_card_updates.metric: 'days_of_use'
+      visual_card_updates.metric: 'ad_clicks'
       visual_card_updates.statistic: mean
     row: 20
     col: 0
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       visual_card_updates.branch
     ]
     filters:
-      visual_card_updates.metric: 'retained'
+      visual_card_updates.metric: 'days_of_use'
       visual_card_updates.statistic: mean
     row: 20
     col: 12
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: visual_card_updates
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       visual_card_updates.submission_date,
       visual_card_updates.branch,
-      visual_card_updates.upper,
-      visual_card_updates.lower,
       visual_card_updates.point
     ]
     pivots: [
       visual_card_updates.branch
     ]
     filters:
-      visual_card_updates.metric: 'memory_total'
-      visual_card_updates.statistic: percentile
+      visual_card_updates.metric: 'search_count'
+      visual_card_updates.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: visual_card_updates.submission_date
-      Percentile: visual_card_updates.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

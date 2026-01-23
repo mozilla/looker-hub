@@ -32,6 +32,7 @@ mobile_retention_view_metric,
 mobile_retention_view_new_profiles_metric_date,
 mobile_retention_view_normalized_channel,
 mobile_retention_view_paid_vs_organic,
+mobile_retention_view_paid_vs_organic_gclid,
 mobile_retention_view_ping_sent_metric_date,
 mobile_retention_view_ping_sent_week_4,
 mobile_retention_view_play_store_attribution_campaign,
@@ -95,6 +96,7 @@ mobile_retention_view.metric_date AS mobile_retention_view_metric,
 mobile_retention_view.new_profiles_metric_date AS mobile_retention_view_new_profiles_metric_date,
 mobile_retention_view.normalized_channel AS mobile_retention_view_normalized_channel,
 mobile_retention_view.paid_vs_organic AS mobile_retention_view_paid_vs_organic,
+mobile_retention_view.paid_vs_organic_gclid AS mobile_retention_view_paid_vs_organic_gclid,
 mobile_retention_view.ping_sent_metric_date AS mobile_retention_view_ping_sent_metric_date,
 mobile_retention_view.ping_sent_week_4 AS mobile_retention_view_ping_sent_week_4,
 mobile_retention_view.play_store_attribution_campaign AS mobile_retention_view_play_store_attribution_campaign,
@@ -171,6 +173,7 @@ mobile_retention_view_metric,
 mobile_retention_view_new_profiles_metric_date,
 mobile_retention_view_normalized_channel,
 mobile_retention_view_paid_vs_organic,
+mobile_retention_view_paid_vs_organic_gclid,
 mobile_retention_view_ping_sent_metric_date,
 mobile_retention_view_ping_sent_week_4,
 mobile_retention_view_play_store_attribution_campaign,
@@ -350,6 +353,13 @@ mobile_retention_view_retained_week_4_new_profiles,
 
   dimension: paid_vs_organic {
     sql: ${TABLE}.mobile_retention_view_paid_vs_organic ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.mobile_retention_view_paid_vs_organic_gclid ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"

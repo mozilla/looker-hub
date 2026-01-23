@@ -699,6 +699,14 @@ view: events_stream {
     group_item_label: "Is Lang Attribute Valid"
   }
 
+  dimension: extras__boolean__is_new_email_mask {
+    sql: ${TABLE}.extras.boolean.is_new_email_mask ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is New Email Mask"
+  }
+
   dimension: extras__boolean__is_private {
     sql: ${TABLE}.extras.boolean.is_private ;;
     type: yesno
@@ -2067,6 +2075,14 @@ view: events_stream {
     group_item_label: "Contextreason"
   }
 
+  dimension: extras__string__context_type {
+    sql: ${TABLE}.extras.string.context_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Context Type"
+  }
+
   dimension: extras__string__cookie_banner_setting {
     sql: ${TABLE}.extras.string.cookie_banner_setting ;;
     type: string
@@ -2161,6 +2177,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Detected Language"
+  }
+
+  dimension: extras__string__device_count {
+    sql: ${TABLE}.extras.string.device_count ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Device Count"
   }
 
   dimension: extras__string__device_name {
@@ -2297,14 +2321,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Enrollmentid"
-  }
-
-  dimension: extras__string__enrollment_id {
-    sql: ${TABLE}.extras.string.enrollment_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Enrollment ID"
   }
 
   dimension: extras__string__enterprise {
@@ -3243,6 +3259,14 @@ view: events_stream {
     group_item_label: "New Icon"
   }
 
+  dimension: extras__string__new_region {
+    sql: ${TABLE}.extras.string.new_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "New Region"
+  }
+
   dimension: extras__string__new_state {
     sql: ${TABLE}.extras.string.new_state ;;
     type: string
@@ -3289,6 +3313,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Old Icon"
+  }
+
+  dimension: extras__string__old_region {
+    sql: ${TABLE}.extras.string.old_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Old Region"
   }
 
   dimension: extras__string__oldpanel {

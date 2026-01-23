@@ -9,13 +9,13 @@ view: tiles_addressable_inventory_hourly {
     sql: ${TABLE}.advertiser ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Name for advertiser to whom the ad creative belongs"
+    description: "Name of the advertiser or entity that creates the ad campaign to promote its product or service. In Kevel data, it corresponds to the campaign sponsor, which may be the same advertiser or a third party."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    description: "Client identifier"
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: country {
@@ -23,14 +23,14 @@ view: tiles_addressable_inventory_hourly {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Two-letter code corresponding to country. Only contains countries where Sponsored Tiles are live--these countries are maintained in a static table."
+    description: "Name of the country in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: display_fail_reason {
     sql: ${TABLE}.display_fail_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "String reason for why a certain ad failed to be displayed, e.g., \"oversold,\" \"dismissed,\" etc.
+    description: "String reason for why a certain ad failed to be displayed. Possible values: \"dismissed\", \"oversold\".
 display_fail_reason = \"dismissed\" corresponds to tiles we fail to display as advertiser is in client blocklist.
 display_fail_reason = \"oversold\" corresponds to tiles we fail to display as all eligible positions have already been filled."
   }
@@ -46,35 +46,35 @@ display_fail_reason = \"oversold\" corresponds to tiles we fail to display as al
     sql: ${TABLE}.legacy_telemetry_client_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Legacy client identifier"
+    description: "Legacy client identifier."
   }
 
   dimension: newtab_visit_id {
     sql: ${TABLE}.newtab_visit_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Identifier for the corresponding Newtab visit"
+    description: "Identifier for the corresponding Newtab visit."
   }
 
   dimension: profile_group_id {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data"
+    description: "A UUID identifying the profile's group on a single device and allowing user-oriented correlation of data."
   }
 
   dimension: provider {
     sql: ${TABLE}.provider ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Name of provider of ad creative, e.g., AMP, mozsales, etc."
+    description: "Ad partner who provided the ad. Either \"kevel\" or \"amp\" (adMarketplace)."
   }
 
   dimension: surface {
     sql: ${TABLE}.surface ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Surface where event was recorded, e.g., \"desktop,\" \"mobile,\" etc."
+    description: "Surface in which the client operating system runs, e.g. Desktop, Mobile."
   }
 
   dimension: topsites_rows {
@@ -103,7 +103,7 @@ display_fail_reason = \"oversold\" corresponds to tiles we fail to display as al
       quarter,
       year,
     ]
-    description: "Submission timestamp"
+    description: "Timestamp when the ping is received on the server side."
   }
 
   sql_table_name: `mozdata.ads.tiles_addressable_inventory_hourly` ;;

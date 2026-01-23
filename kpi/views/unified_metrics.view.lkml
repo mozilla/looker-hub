@@ -15,6 +15,7 @@ view: unified_metrics {
     sql: ${TABLE}.activity_segment ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Classification of users based on their browsing activity. E.g., infrequent, casual, regular."
   }
 
   dimension: ad_click {
@@ -27,6 +28,7 @@ view: unified_metrics {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: attribution_campaign {
@@ -114,6 +116,7 @@ view: unified_metrics {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: country {
@@ -121,6 +124,7 @@ view: unified_metrics {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: days_created_profile_bits {
@@ -157,6 +161,7 @@ view: unified_metrics {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: durations {
@@ -169,6 +174,7 @@ view: unified_metrics {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A flag indicating whether the browser is set as the default browser on the client side."
   }
 
   dimension: is_new_profile {
@@ -181,12 +187,14 @@ view: unified_metrics {
     sql: ${TABLE}.isp ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the internet service provider associated with the client's IP address."
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: normalized_app_name {
@@ -199,12 +207,14 @@ view: unified_metrics {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: normalized_os_version {
@@ -223,12 +233,14 @@ view: unified_metrics {
     sql: ${TABLE}.os_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Major or first part of the operating system version running at the client. E.g. for version \"100.9.11\", the major is 100."
   }
 
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Minor part of the operating system version running at the client. E.g. for version \"100.9.11\", the minor is 9."
   }
 
   dimension: os_version_patch {
@@ -241,6 +253,7 @@ view: unified_metrics {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: search_count {
@@ -289,6 +302,7 @@ view: unified_metrics {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   measure: clients {

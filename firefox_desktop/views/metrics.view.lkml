@@ -885,6 +885,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant {
+    label: "Browser Engagement Navigation: Aiwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_aiwindow_assistant ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Aiwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Aiwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_navigation_aiwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count URI loads triggered in a subsession from the AI window assistant search handoff button.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     label: "Browser Engagement Navigation: Contextmenu"
     hidden: yes
@@ -1633,6 +1650,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant {
+    label: "Browser Search Adclicks: Aiwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_aiwindow_assistant ;;
+    group_label: "Browser Search Adclicks"
+    group_item_label: "Aiwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Adclicks: Aiwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_adclicks_aiwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on SERP pages where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu {
     label: "Browser Search Adclicks: Contextmenu"
     hidden: yes
@@ -1871,6 +1905,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_content_aiwindow_assistant {
+    label: "Browser Search Content: Aiwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_aiwindow_assistant ;;
+    group_label: "Browser Search Content"
+    group_item_label: "Aiwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Content: Aiwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_content_aiwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts for in-content searches where the search was most likely started from the AI window assistant. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_content_contextmenu {
     label: "Browser Search Content: Contextmenu"
     hidden: yes
@@ -2106,6 +2157,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records counts of SERP pages with adverts displayed where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_newtab.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_aiwindow_assistant {
+    label: "Browser Search Withads: Aiwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_aiwindow_assistant ;;
+    group_label: "Browser Search Withads"
+    group_item_label: "Aiwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Withads: Aiwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_withads_aiwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content.
 "
   }
 
@@ -2819,6 +2887,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records a count of interactions with items in the content context menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.content_context.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
+    label: "Browser UI Interaction: List All Tabs Action"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_list_all_tabs_action ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "List All Tabs Action"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: List All Tabs Action"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_list_all_tabs_action"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how often users interact with any top-level menu option in the \"List All Tabs\" menu.
 "
   }
 
@@ -5319,7 +5404,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__boolean__newtab_handoff_preference_enabled {
     label: "Newtab Handoff Preference: Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.newtab_handoff_preference_enabled ;;
     type: yesno
     group_label: "Newtab Handoff Preference"
@@ -10221,7 +10306,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__boolean__urlbar_pref_switch_tabs_search_all_containers {
     label: "Urlbar: Pref Switch Tabs Search All Containers"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.urlbar_pref_switch_tabs_search_all_containers ;;
     type: yesno
     group_label: "Urlbar"
@@ -19414,7 +19499,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 2 different data points: success or failure of the request, and the reason for failure, if the request failed.
 "
   }
 
@@ -26019,6 +26104,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    label: "Networking: HTTP 3 Congestion Event Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_congestion_event_reason ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Congestion Event Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Congestion Event Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_congestion_event_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of signal that caused a congestion event in Firefox's QUIC stack.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
     label: "Networking: HTTP 3 Connection Close Reason"
     hidden: yes
@@ -26193,6 +26295,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Number of QUIC frames send and received by type.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exited {
+    label: "Networking: HTTP 3 Slow Start Exited"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exited ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Slow Start Exited"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Slow Start Exited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_slow_start_exited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts whether an HTTP3 connections exited slow start.
 "
   }
 
@@ -28718,7 +28837,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
     label: "Perf: Js Exec Asm Js Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.sum ;;
     type: number
     group_label: "Perf"
@@ -29927,7 +30046,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__predictor_base_confidence__sum {
     label: "Predictor: Base Confidence Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_base_confidence.sum ;;
     type: number
     group_label: "Predictor"
@@ -29946,7 +30065,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_confidence__sum {
     label: "Predictor: Confidence Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_confidence.sum ;;
     type: number
     group_label: "Predictor"
@@ -29965,7 +30084,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_global_degradation__sum {
     label: "Predictor: Global Degradation Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_global_degradation.sum ;;
     type: number
     group_label: "Predictor"
@@ -29984,7 +30103,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_learn_attempts__sum {
     label: "Predictor: Learn Attempts Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_learn_attempts.sum ;;
     type: number
     group_label: "Predictor"
@@ -30003,7 +30122,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_learn_work_time__sum {
     label: "Predictor: Learn Work Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -30022,7 +30141,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_time_to_action__sum {
     label: "Predictor: Predict Time To Action Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.sum ;;
     type: number
     group_label: "Predictor"
@@ -30041,7 +30160,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__sum {
     label: "Predictor: Predict Time To Inaction Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.sum ;;
     type: number
     group_label: "Predictor"
@@ -30060,7 +30179,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_work_time__sum {
     label: "Predictor: Predict Work Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -30079,7 +30198,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_predictions_calculated__sum {
     label: "Predictor: Predictions Calculated Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_predictions_calculated.sum ;;
     type: number
     group_label: "Predictor"
@@ -30098,7 +30217,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_prefetch_decision_reason__sum {
     label: "Predictor: Prefetch Decision Reason Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_decision_reason.sum ;;
     type: number
     group_label: "Predictor"
@@ -30117,7 +30236,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__predictor_prefetch_ignore_reason__sum {
     label: "Predictor: Prefetch Ignore Reason Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_ignore_reason.sum ;;
     type: number
     group_label: "Predictor"
@@ -30136,7 +30255,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__predictor_prefetch_time__sum {
     label: "Predictor: Prefetch Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -30173,7 +30292,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__custom_distribution__predictor_subresource_degradation__sum {
     label: "Predictor: Subresource Degradation Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_subresource_degradation.sum ;;
     type: number
     group_label: "Predictor"
@@ -30192,7 +30311,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_total_preconnects__sum {
     label: "Predictor: Total Preconnects Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_preconnects.sum ;;
     type: number
     group_label: "Predictor"
@@ -30211,7 +30330,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_predictions__sum {
     label: "Predictor: Total Predictions Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_predictions.sum ;;
     type: number
     group_label: "Predictor"
@@ -30230,7 +30349,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_prefetches__sum {
     label: "Predictor: Total Prefetches Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_prefetches.sum ;;
     type: number
     group_label: "Predictor"
@@ -30249,7 +30368,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_preresolves__sum {
     label: "Predictor: Total Preresolves Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_preresolves.sum ;;
     type: number
     group_label: "Predictor"
@@ -30268,7 +30387,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_wait_time__sum {
     label: "Predictor: Wait Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -47012,6 +47131,47 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_about_new
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant {
+  label: "Browser Engagement Navigation: Aiwindow Assistant"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu {
   label: "Browser Engagement Navigation: Contextmenu"
 
@@ -47627,6 +47787,47 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant {
+  label: "Browser Search Adclicks: Aiwindow Assistant"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu {
   label: "Browser Search Adclicks: Contextmenu"
 
@@ -48201,6 +48402,47 @@ view: metrics__metrics__labeled_counter__browser_search_content_about_newtab {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_search_content_aiwindow_assistant {
+  label: "Browser Search Content: Aiwindow Assistant"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_content_contextmenu {
   label: "Browser Search Content: Contextmenu"
 
@@ -48736,6 +48978,47 @@ view: metrics__metrics__labeled_counter__browser_search_withads_about_home {
 
 view: metrics__metrics__labeled_counter__browser_search_withads_about_newtab {
   label: "Browser Search Withads: About Newtab"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assistant {
+  label: "Browser Search Withads: Aiwindow Assistant"
 
   dimension: document_id {
     type: string
@@ -49679,6 +49962,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_content_context 
 
 view: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
   label: "Browser UI Interaction: Keyboard"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
+  label: "Browser UI Interaction: List All Tabs Action"
 
   dimension: document_id {
     type: string
@@ -51137,19 +51461,19 @@ view: metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -58943,6 +59267,47 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_coun
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason {
+  label: "Networking: HTTP 3 Congestion Event Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
   label: "Networking: HTTP 3 Connection Close Reason"
 
@@ -59027,6 +59392,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
 
 view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
   label: "Networking: HTTP 3 Quic Frame Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited {
+  label: "Networking: HTTP 3 Slow Start Exited"
 
   dimension: document_id {
     type: string
@@ -61838,19 +62244,19 @@ view: metrics__metrics__labeled_counter__predictor_prefetch_use_status {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

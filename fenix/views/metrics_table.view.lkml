@@ -3334,6 +3334,16 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 "
   }
 
+  dimension: metrics__counter__pdfjs_tagged {
+    sql: ${TABLE}.metrics.counter.pdfjs_tagged ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Pdfjs Tagged"
+    description: "How many times PDF Viewer was used for tagged pdf.
+"
+  }
+
   dimension: metrics__counter__pdfjs_used {
     sql: ${TABLE}.metrics.counter.pdfjs_used ;;
     type: number
@@ -11464,6 +11474,14 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
+  dimension: metrics__datetime__raw_privacy_notice_banner_displayed_date {
+    sql: ${TABLE}.metrics.datetime.raw_privacy_notice_banner_displayed_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Raw Privacy Notice Banner Displayed Date"
+  }
+
   dimension: metrics__datetime__raw_terms_of_use_date {
     sql: ${TABLE}.metrics.datetime.raw_terms_of_use_date ;;
     type: string
@@ -11654,6 +11672,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__dual_labeled_counter__webgpu_expose_adapter {
+    sql: ${TABLE}.metrics.dual_labeled_counter.webgpu_expose_adapter ;;
+    hidden: yes
+    description: "The number of times wgpu-hal tried to expose an adapter. Note that a call to `requestAdapter` might result in multiple calls to expose adapter.
+"
+  }
+
   dimension: metrics__labeled_boolean__a11y_theme {
     sql: ${TABLE}.metrics.labeled_boolean.a11y_theme ;;
     hidden: yes
@@ -11763,6 +11788,13 @@ either %AppData% or %LocalAppData%.
     sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
     hidden: yes
     description: "Whether the system has any matching pointing device for each label.
+"
+  }
+
+  dimension: metrics__labeled_counter__ads_client_client_operation_total {
+    sql: ${TABLE}.metrics.labeled_counter.ads_client_client_operation_total ;;
+    hidden: yes
+    description: "The total number of operations attempted by the ads client, labeled by operation type. Used as the denominator for client_operation_success_rate.
 "
   }
 
@@ -12729,7 +12761,7 @@ Now it only records counts for the Glean built-in pings.
   dimension: metrics__labeled_counter__gmp_update_xml_fetch_result {
     sql: ${TABLE}.metrics.labeled_counter.gmp_update_xml_fetch_result ;;
     hidden: yes
-    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 2 different data points: success or failure of the request, and the reason for failure, if the request failed.
 "
   }
 
@@ -13076,7 +13108,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_capture_stream_usage {
+    sql: ${TABLE}.metrics.labeled_counter.media_capture_stream_usage ;;
+    hidden: yes
+    description: "Count the usage of MediaStream captured from HTMLMediaElement by different capture methods.
 "
   }
 
@@ -13581,6 +13620,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_congestion_event_reason ;;
+    hidden: yes
+    description: "The type of signal that caused a congestion event in Firefox's QUIC stack.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
     hidden: yes
@@ -13599,6 +13645,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_frame_count ;;
     hidden: yes
     description: "Number of QUIC frames send and received by type.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exited {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exited ;;
+    hidden: yes
+    description: "Counts whether an HTTP3 connections exited slow start.
 "
   }
 
@@ -15095,6 +15148,34 @@ Previously instrumented in \"main\" ping `simpleMeasurements`.
     hidden: yes
     description: "Events on the startup timeline, in millis since process creation.
 See `StartupTimeline.h`
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_build_cache_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_build_cache_error ;;
+    hidden: yes
+    description: "Errors encountered when building the HTTP cache, labeled by error type. The string value contains the error message or error type.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_client_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_client_error ;;
+    hidden: yes
+    description: "Errors encountered when using the ads client, labeled by operation type. The string value contains the error message or error type. Errors are recorded even if they are propagated to the consumer.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_deserialization_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_deserialization_error ;;
+    hidden: yes
+    description: "Deserialization errors encountered when parsing AdResponse data, labeled by error type. The string value contains the error message or details. Invalid ad items are skipped but these errors are tracked for monitoring data quality issues.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_http_cache_outcome {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_http_cache_outcome ;;
+    hidden: yes
+    description: "The total number of outcomes encountered during read operations on the http cache, labeled by type. The string value contains the error message or error type.
 "
   }
 
@@ -48952,6 +49033,22 @@ Shared Preferences.
 "
   }
 
+  dimension_group: metrics__datetime__privacy_notice_banner_displayed {
+    sql: ${TABLE}.metrics.datetime.privacy_notice_banner_displayed_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics: Datetime: Privacy Notice Banner Displayed Date"
+    description: "The timestamp when the user was shown the privacy notice banner."
+  }
+
   dimension_group: metrics__datetime__terms_of_use {
     sql: ${TABLE}.metrics.datetime.terms_of_use_date ;;
     type: time
@@ -54312,6 +54409,33 @@ view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeo
   }
 }
 
+view: metrics_table__metrics__dual_labeled_counter__webgpu_expose_adapter {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__webgpu_expose_adapter__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__a11y_theme {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -56934,6 +57058,62 @@ view: metrics_table__metrics__labeled_quantity__timestamps_startup_timeline {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_build_cache_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_client_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_deserialization_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_http_cache_outcome {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 }

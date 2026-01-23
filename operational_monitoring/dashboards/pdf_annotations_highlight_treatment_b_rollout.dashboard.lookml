@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: pdf_annotations_highlight_treatment_b_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       pdf_annotations_highlight_treatment_b_rollout.submission_date,
       pdf_annotations_highlight_treatment_b_rollout.branch,
+      pdf_annotations_highlight_treatment_b_rollout.upper,
+      pdf_annotations_highlight_treatment_b_rollout.lower,
       pdf_annotations_highlight_treatment_b_rollout.point
     ]
     pivots: [
       pdf_annotations_highlight_treatment_b_rollout.branch
     ]
     filters:
-      pdf_annotations_highlight_treatment_b_rollout.metric: 'ad_clicks'
-      pdf_annotations_highlight_treatment_b_rollout.statistic: mean
+      pdf_annotations_highlight_treatment_b_rollout.metric: 'memory_total'
+      pdf_annotations_highlight_treatment_b_rollout.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,12 +76,13 @@
     show_grid: true
     listen:
       Date: pdf_annotations_highlight_treatment_b_rollout.submission_date
+      Percentile: pdf_annotations_highlight_treatment_b_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +97,7 @@
       pdf_annotations_highlight_treatment_b_rollout.branch
     ]
     filters:
-      pdf_annotations_highlight_treatment_b_rollout.metric: 'search_count'
+      pdf_annotations_highlight_treatment_b_rollout.metric: 'retained'
       pdf_annotations_highlight_treatment_b_rollout.statistic: mean
     row: 10
     col: 0
@@ -146,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +165,7 @@
       pdf_annotations_highlight_treatment_b_rollout.branch
     ]
     filters:
-      pdf_annotations_highlight_treatment_b_rollout.metric: 'days_of_use'
+      pdf_annotations_highlight_treatment_b_rollout.metric: 'ad_clicks'
       pdf_annotations_highlight_treatment_b_rollout.statistic: mean
     row: 20
     col: 0
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       pdf_annotations_highlight_treatment_b_rollout.branch
     ]
     filters:
-      pdf_annotations_highlight_treatment_b_rollout.metric: 'retained'
+      pdf_annotations_highlight_treatment_b_rollout.metric: 'days_of_use'
       pdf_annotations_highlight_treatment_b_rollout.statistic: mean
     row: 20
     col: 12
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: pdf_annotations_highlight_treatment_b_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       pdf_annotations_highlight_treatment_b_rollout.submission_date,
       pdf_annotations_highlight_treatment_b_rollout.branch,
-      pdf_annotations_highlight_treatment_b_rollout.upper,
-      pdf_annotations_highlight_treatment_b_rollout.lower,
       pdf_annotations_highlight_treatment_b_rollout.point
     ]
     pivots: [
       pdf_annotations_highlight_treatment_b_rollout.branch
     ]
     filters:
-      pdf_annotations_highlight_treatment_b_rollout.metric: 'memory_total'
-      pdf_annotations_highlight_treatment_b_rollout.statistic: percentile
+      pdf_annotations_highlight_treatment_b_rollout.metric: 'search_count'
+      pdf_annotations_highlight_treatment_b_rollout.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: pdf_annotations_highlight_treatment_b_rollout.submission_date
-      Percentile: pdf_annotations_highlight_treatment_b_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

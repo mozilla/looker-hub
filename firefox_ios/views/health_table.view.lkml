@@ -449,6 +449,17 @@ view: health_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__glean_error_event_timestamp_clamped {
+    sql: ${TABLE}.metrics.counter.glean_error_event_timestamp_clamped ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Error Event Timestamp Clamped"
+    description: "The number of times we had to clamp an event timestamp
+for exceeding the range of a signed 64-bit integer (9223372036854775807).
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -723,13 +734,14 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Glean Health Exception State"
-    description: "An exceptional state was detected upon trying to laod the database.
+    description: "An exceptional state was detected upon trying to load the database.
 
 Valid options are:
-  - empty-db
-  - regen-db
-  - c0ffee-in-db
-  - client-id-mismatch
+
+- `empty-db`
+- `regen-db`
+- `c0ffee-in-db`
+- `client-id-mismatch`
 "
   }
 

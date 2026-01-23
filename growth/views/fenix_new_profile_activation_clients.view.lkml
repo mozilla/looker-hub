@@ -194,6 +194,12 @@ view: fenix_new_profile_activation_clients {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.paid_vs_organic_gclid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: paid_vs_organic_via_gclid_attribution {
     sql: ${TABLE}.paid_vs_organic_via_gclid_attribution ;;
     type: string
@@ -211,6 +217,7 @@ view: fenix_new_profile_activation_clients {
     sql: ${TABLE}.play_store_attribution_content ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the utm_content that is responsible for this installation."
   }
 
   dimension: play_store_attribution_install_referrer_response {
@@ -238,6 +245,7 @@ view: fenix_new_profile_activation_clients {
     sql: ${TABLE}.play_store_attribution_term ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the utm_term that is responsible for this installation."
   }
 
   dimension: search_count {

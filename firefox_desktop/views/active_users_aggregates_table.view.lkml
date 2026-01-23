@@ -9,14 +9,14 @@ view: active_users_aggregates_table {
     sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Browser name."
+    description: "The name of the browser."
   }
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Browser version installed on the client."
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: app_version_is_major_release {
@@ -29,12 +29,14 @@ view: active_users_aggregates_table {
     sql: ${TABLE}.app_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The major version of the user visible app version string for the browser, e.g. \"142.1.3\", has major version 142"
   }
 
   dimension: app_version_minor {
     sql: ${TABLE}.app_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The minor version of the user visible app version string for the browser, e.g. \"142.1.3\" has minor version 1"
   }
 
   dimension: app_version_patch_revision {
@@ -47,21 +49,21 @@ view: active_users_aggregates_table {
     sql: ${TABLE}.attribution_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The utm_medium this install is attributed to. Reported by the install referrer service, not Adjust."
+    description: "The attribution medium; similar or the same as UTM medium."
   }
 
   dimension: attribution_source {
     sql: ${TABLE}.attribution_source ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The utm_term this install is attributed to. Reported by the install referrer service, not Adjust."
+    description: "The attribution source; similar or the same as UTM source."
   }
 
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Browser installation channel installed on the client."
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: city {
@@ -76,7 +78,7 @@ view: active_users_aggregates_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Country reported by the client."
+    description: "Name of the country in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: daily_users {
@@ -90,14 +92,14 @@ view: active_users_aggregates_table {
     sql: ${TABLE}.dau ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of users who reported a ping on the submission_date that qualify as active."
+    description: "The number of daily active users, corresponding to the count of clients that reported at least one ping on the submission_date and qualify as active."
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "The id of the browser distribution made available in installation sources."
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: first_seen_year_new {
@@ -111,21 +113,21 @@ view: active_users_aggregates_table {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Whether the browser is set as the default browser on the client side."
+    description: "A flag indicating whether the browser is set as the default browser on the client side."
   }
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Locale reported by the client, which is a combination of language and regional settings."
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: mau {
     sql: ${TABLE}.mau ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of users who have reported a ping over the last 28 days and qualify as active."
+    description: "The number of monthly active users, corresponding to the count of clients that reported at least one ping on the previous 28 days from the submission_date and qualify as active."
   }
 
   dimension: monthly_users {
@@ -139,7 +141,7 @@ view: active_users_aggregates_table {
     sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Operating System reported by the client."
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: os_grouped {
@@ -159,14 +161,14 @@ view: active_users_aggregates_table {
     sql: ${TABLE}.os_version_major ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Major or first part of the OS version reported by the client."
+    description: "Major or first part of the operating system version running at the client. E.g. for version \"100.9.11\", the major is 100."
   }
 
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Minor or second part of the OS version reported by the client."
+    description: "Minor part of the operating system version running at the client. E.g. for version \"100.9.11\", the minor is 9."
   }
 
   dimension: segment_dau {
@@ -180,7 +182,7 @@ view: active_users_aggregates_table {
     sql: ${TABLE}.wau ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of users who have reported a ping over the last 7 days and qualify as active."
+    description: "The number of weekly active users, corresponding to the count of clients that reported at least one ping on the previous 7 days from the submission_date and qualify as active."
   }
 
   dimension: weekly_users {
@@ -203,7 +205,7 @@ view: active_users_aggregates_table {
     ]
     convert_tz: no
     datatype: date
-    description: "Date when ping is received on the server side."
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_desktop.active_users_aggregates` ;;

@@ -851,6 +851,14 @@ view: events_stream {
     group_item_label: "Is Lang Attribute Valid"
   }
 
+  dimension: extras__boolean__is_persistent {
+    sql: ${TABLE}.extras.boolean.is_persistent ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Persistent"
+  }
+
   dimension: extras__boolean__is_private {
     sql: ${TABLE}.extras.boolean.is_private ;;
     type: yesno
@@ -1355,6 +1363,14 @@ view: events_stream {
     group_item_label: "Cores"
   }
 
+  dimension: extras__quantity__count {
+    sql: ${TABLE}.extras.quantity.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Count"
+  }
+
   dimension: extras__quantity__cpu_milliseconds {
     sql: ${TABLE}.extras.quantity.cpu_milliseconds ;;
     type: number
@@ -1761,6 +1777,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Negotiation Count"
+  }
+
+  dimension: extras__quantity__note_age_hours {
+    sql: ${TABLE}.extras.quantity.note_age_hours ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Note Age Hours"
   }
 
   dimension: extras__quantity__num_msections_audio_recvonly {
@@ -3011,6 +3035,14 @@ view: events_stream {
     group_item_label: "Contextreason"
   }
 
+  dimension: extras__string__context_type {
+    sql: ${TABLE}.extras.string.context_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Context Type"
+  }
+
   dimension: extras__string__country {
     sql: ${TABLE}.extras.string.country ;;
     type: string
@@ -3113,6 +3145,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Detected Language"
+  }
+
+  dimension: extras__string__device_count {
+    sql: ${TABLE}.extras.string.device_count ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Device Count"
   }
 
   dimension: extras__string__device_name {
@@ -3249,14 +3289,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Enrollmentid"
-  }
-
-  dimension: extras__string__enrollment_id {
-    sql: ${TABLE}.extras.string.enrollment_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Enrollment ID"
   }
 
   dimension: extras__string__enrollments {
@@ -4371,6 +4403,14 @@ view: events_stream {
     group_item_label: "New Load Path"
   }
 
+  dimension: extras__string__new_region {
+    sql: ${TABLE}.extras.string.new_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "New Region"
+  }
+
   dimension: extras__string__new_submission_url {
     sql: ${TABLE}.extras.string.new_submission_url ;;
     type: string
@@ -4417,6 +4457,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Object"
+  }
+
+  dimension: extras__string__old_region {
+    sql: ${TABLE}.extras.string.old_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Old Region"
   }
 
   dimension: extras__string__oldpanel {
@@ -5273,6 +5321,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Silent"
+  }
+
+  dimension: extras__string__site_category {
+    sql: ${TABLE}.extras.string.site_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Site Category"
   }
 
   dimension: extras__string__site_host {

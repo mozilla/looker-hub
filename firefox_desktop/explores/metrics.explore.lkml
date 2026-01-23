@@ -188,6 +188,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_about_newtab}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_about_newtab.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_contextmenu}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu.document_id} ;;
@@ -263,6 +268,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_about_newtab.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_contextmenu}) AS metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_contextmenu.document_id} ;;
@@ -333,6 +343,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_content_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_about_newtab.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_search_content_aiwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_aiwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_content_aiwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_aiwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_search_content_contextmenu {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_contextmenu}) AS metrics__metrics__labeled_counter__browser_search_content_contextmenu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_contextmenu.document_id} ;;
@@ -401,6 +416,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__browser_search_withads_about_newtab {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_about_newtab}) AS metrics__metrics__labeled_counter__browser_search_withads_about_newtab ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_about_newtab.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_aiwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assistant.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__browser_search_withads_contextmenu {
@@ -516,6 +536,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_keyboard}) AS metrics__metrics__labeled_counter__browser_ui_interaction_keyboard ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_keyboard.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action}) AS metrics__metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__browser_ui_interaction_menu_bar {
@@ -1643,6 +1668,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_fetch_keepalive_request_count}) AS metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_fetch_keepalive_request_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_congestion_event_reason}) AS metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_connection_close_reason}) AS metrics__metrics__labeled_counter__networking_http_3_connection_close_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_connection_close_reason.document_id} ;;
@@ -1656,6 +1686,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_quic_frame_count}) AS metrics__metrics__labeled_counter__networking_http_3_quic_frame_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_quic_frame_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exited}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exited ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exited.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_http_channel_disposition {

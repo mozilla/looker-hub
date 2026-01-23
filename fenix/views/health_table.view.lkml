@@ -460,6 +460,17 @@ Should never have a value for any session long enough to grow idle.
 "
   }
 
+  dimension: metrics__counter__glean_error_event_timestamp_clamped {
+    sql: ${TABLE}.metrics.counter.glean_error_event_timestamp_clamped ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Error Event Timestamp Clamped"
+    description: "The number of times we had to clamp an event timestamp
+for exceeding the range of a signed 64-bit integer (9223372036854775807).
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number

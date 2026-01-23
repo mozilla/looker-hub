@@ -32,18 +32,22 @@ view: attribution_clients_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: is_suspicious_device_client {
     sql: ${TABLE}.is_suspicious_device_client ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Flag to identify suspicious device users, see bug-1846554 for more info.
+"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: paid_vs_organic {
@@ -52,10 +56,17 @@ view: attribution_clients_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.paid_vs_organic_gclid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension_group: adjust_attribution {
@@ -85,6 +96,7 @@ view: attribution_clients_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.firefox_ios.attribution_clients` ;;

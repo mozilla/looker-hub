@@ -12503,7 +12503,7 @@ Intended for the purpose of testing client side sampling of data. This metric is
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 2 different data points: success or failure of the request, and the reason for failure, if the request failed.
 "
   }
 
@@ -15749,6 +15749,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Failure occurs when initializing the audio stream.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_capture_stream_usage {
+    label: "Media: Capture Stream Usage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_capture_stream_usage ;;
+    group_label: "Media"
+    group_item_label: "Capture Stream Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Media: Capture Stream Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_capture_stream_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the usage of MediaStream captured from HTMLMediaElement by different capture methods.
 "
   }
 
@@ -19197,6 +19214,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_congestion_event_reason {
+    label: "Networking: HTTP 3 Congestion Event Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_congestion_event_reason ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Congestion Event Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Congestion Event Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_congestion_event_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of signal that caused a congestion event in Firefox's QUIC stack.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
     label: "Networking: HTTP 3 Connection Close Reason"
     hidden: yes
@@ -19371,6 +19405,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Number of QUIC frames send and received by type.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exited {
+    label: "Networking: HTTP 3 Slow Start Exited"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exited ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Slow Start Exited"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Slow Start Exited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_slow_start_exited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts whether an HTTP3 connections exited slow start.
 "
   }
 
@@ -21822,6 +21873,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__counter__pdfjs_tagged {
+    label: "Pdfjs: Tagged"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_tagged ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Tagged"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs: Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times PDF Viewer was used for tagged pdf.
+"
+  }
+
   dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
     label: "Pdfjs: Time To View Sum"
     hidden: no
@@ -21896,7 +21965,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__perf_js_exec_asm_js__sum {
     label: "Perf: Js Exec Asm Js Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_js_exec_asm_js.sum ;;
     type: number
     group_label: "Perf"
@@ -23105,7 +23174,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__predictor_base_confidence__sum {
     label: "Predictor: Base Confidence Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_base_confidence.sum ;;
     type: number
     group_label: "Predictor"
@@ -23124,7 +23193,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_confidence__sum {
     label: "Predictor: Confidence Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_confidence.sum ;;
     type: number
     group_label: "Predictor"
@@ -23143,7 +23212,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_global_degradation__sum {
     label: "Predictor: Global Degradation Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_global_degradation.sum ;;
     type: number
     group_label: "Predictor"
@@ -23162,7 +23231,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_learn_attempts__sum {
     label: "Predictor: Learn Attempts Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_learn_attempts.sum ;;
     type: number
     group_label: "Predictor"
@@ -23181,7 +23250,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_learn_work_time__sum {
     label: "Predictor: Learn Work Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -23200,7 +23269,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_time_to_action__sum {
     label: "Predictor: Predict Time To Action Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_action.sum ;;
     type: number
     group_label: "Predictor"
@@ -23219,7 +23288,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_time_to_inaction__sum {
     label: "Predictor: Predict Time To Inaction Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_time_to_inaction.sum ;;
     type: number
     group_label: "Predictor"
@@ -23238,7 +23307,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_predict_work_time__sum {
     label: "Predictor: Predict Work Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_predict_work_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -23257,7 +23326,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_predictions_calculated__sum {
     label: "Predictor: Predictions Calculated Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_predictions_calculated.sum ;;
     type: number
     group_label: "Predictor"
@@ -23276,7 +23345,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_prefetch_decision_reason__sum {
     label: "Predictor: Prefetch Decision Reason Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_decision_reason.sum ;;
     type: number
     group_label: "Predictor"
@@ -23295,7 +23364,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__predictor_prefetch_ignore_reason__sum {
     label: "Predictor: Prefetch Ignore Reason Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_prefetch_ignore_reason.sum ;;
     type: number
     group_label: "Predictor"
@@ -23314,7 +23383,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__predictor_prefetch_time__sum {
     label: "Predictor: Prefetch Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_prefetch_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -23351,7 +23420,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__custom_distribution__predictor_subresource_degradation__sum {
     label: "Predictor: Subresource Degradation Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_subresource_degradation.sum ;;
     type: number
     group_label: "Predictor"
@@ -23370,7 +23439,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__custom_distribution__predictor_total_preconnects__sum {
     label: "Predictor: Total Preconnects Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_preconnects.sum ;;
     type: number
     group_label: "Predictor"
@@ -23389,7 +23458,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_predictions__sum {
     label: "Predictor: Total Predictions Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_predictions.sum ;;
     type: number
     group_label: "Predictor"
@@ -23408,7 +23477,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_prefetches__sum {
     label: "Predictor: Total Prefetches Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_prefetches.sum ;;
     type: number
     group_label: "Predictor"
@@ -23427,7 +23496,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__predictor_total_preresolves__sum {
     label: "Predictor: Total Preresolves Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.predictor_total_preresolves.sum ;;
     type: number
     group_label: "Predictor"
@@ -23446,7 +23515,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__predictor_wait_time__sum {
     label: "Predictor: Wait Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.predictor_wait_time.sum ;;
     type: number
     group_label: "Predictor"
@@ -31898,6 +31967,95 @@ startup, as part of the initialization sequence.
 "
   }
 
+  dimension: metrics__labeled_string__ads_client_build_cache_error {
+    label: "Ads Client: Build Cache Error"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.ads_client_build_cache_error ;;
+    type: string
+    group_label: "Ads Client"
+    group_item_label: "Build Cache Error"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: Build Cache Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_build_cache_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Errors encountered when building the HTTP cache, labeled by error type. The string value contains the error message or error type.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_client_error {
+    label: "Ads Client: Client Error"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.ads_client_client_error ;;
+    type: string
+    group_label: "Ads Client"
+    group_item_label: "Client Error"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: Client Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_client_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Errors encountered when using the ads client, labeled by operation type. The string value contains the error message or error type. Errors are recorded even if they are propagated to the consumer.
+"
+  }
+
+  dimension: metrics__labeled_counter__ads_client_client_operation_total {
+    label: "Ads Client: Client Operation Total"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ads_client_client_operation_total ;;
+    group_label: "Ads Client"
+    group_item_label: "Client Operation Total"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: Client Operation Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_client_operation_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of operations attempted by the ads client, labeled by operation type. Used as the denominator for client_operation_success_rate.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_deserialization_error {
+    label: "Ads Client: Deserialization Error"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.ads_client_deserialization_error ;;
+    type: string
+    group_label: "Ads Client"
+    group_item_label: "Deserialization Error"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: Deserialization Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_deserialization_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Deserialization errors encountered when parsing AdResponse data, labeled by error type. The string value contains the error message or details. Invalid ad items are skipped but these errors are tracked for monitoring data quality issues.
+"
+  }
+
+  dimension: metrics__labeled_string__ads_client_http_cache_outcome {
+    label: "Ads Client: HTTP Cache Outcome"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.ads_client_http_cache_outcome ;;
+    type: string
+    group_label: "Ads Client"
+    group_item_label: "HTTP Cache Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Ads Client: HTTP Cache Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ads_client_http_cache_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of outcomes encountered during read operations on the http cache, labeled by type. The string value contains the error message or error type.
+"
+  }
+
   dimension: metrics__labeled_counter__fxa_client_error_count {
     label: "Fxa Client: Error Count"
     hidden: yes
@@ -37507,6 +37665,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: pdfjs_tagged {
+    type: sum
+    sql: ${metrics__counter__pdfjs_tagged} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_tagged_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_tagged: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: pdfjs_used {
     type: sum
     sql: ${metrics__counter__pdfjs_used} ;;
@@ -39743,6 +39926,47 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   sql_table_name: `mozdata.fenix.metrics` ;;
 }
 
+view: metrics__metrics__labeled_counter__ads_client_client_operation_total {
+  label: "Ads Client: Client Operation Total"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__application_reputation_binary_archive {
   label: "Application Reputation: Binary Archive"
 
@@ -41736,19 +41960,19 @@ view: metrics__metrics__labeled_counter__cert_verifier_crlite_vs_ocsp_result {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -46795,6 +47019,47 @@ view: metrics__metrics__labeled_counter__media_audio_init_failure {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_capture_stream_usage {
+  label: "Media: Capture Stream Usage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_codec_used {
   label: "Media: Codec Used"
 
@@ -49296,6 +49561,47 @@ view: metrics__metrics__labeled_counter__networking_fetch_keepalive_request_coun
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason {
+  label: "Networking: HTTP 3 Congestion Event Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
   label: "Networking: HTTP 3 Connection Close Reason"
 
@@ -49380,6 +49686,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
 
 view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
   label: "Networking: HTTP 3 Quic Frame Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited {
+  label: "Networking: HTTP 3 Slow Start Exited"
 
   dimension: document_id {
     type: string
@@ -52109,19 +52456,19 @@ view: metrics__metrics__labeled_counter__predictor_prefetch_use_status {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -60343,6 +60690,33 @@ view: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout__va
   }
 }
 
+view: metrics__metrics__dual_labeled_counter__webgpu_expose_adapter {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__webgpu_expose_adapter__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_boolean__a11y_theme {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -62965,6 +63339,62 @@ view: metrics__metrics__labeled_quantity__timestamps_startup_timeline {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_string__ads_client_build_cache_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_string__ads_client_client_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_string__ads_client_deserialization_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_string__ads_client_http_cache_outcome {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 }

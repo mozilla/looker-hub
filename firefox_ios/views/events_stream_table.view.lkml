@@ -384,6 +384,14 @@ view: events_stream_table {
     group_item_label: "Outcome"
   }
 
+  dimension: extras__quantity__api_query_count {
+    sql: ${TABLE}.extras.quantity.api_query_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Api Query Count"
+  }
+
   dimension: extras__quantity__average_tabs_in_all_groups {
     sql: ${TABLE}.extras.quantity.average_tabs_in_all_groups ;;
     type: number
@@ -656,14 +664,6 @@ view: events_stream_table {
     group_item_label: "Engagement Type"
   }
 
-  dimension: extras__string__enrollment_id {
-    sql: ${TABLE}.extras.string.enrollment_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Enrollment ID"
-  }
-
   dimension: extras__string__error {
     sql: ${TABLE}.extras.string.error ;;
     type: string
@@ -678,6 +678,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Error Code"
+  }
+
+  dimension: extras__string__error_description {
+    sql: ${TABLE}.extras.string.error_description ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Error Description"
   }
 
   dimension: extras__string__error_message {
@@ -726,6 +734,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Experiment Type"
+  }
+
+  dimension: extras__string__extension_source {
+    sql: ${TABLE}.extras.string.extension_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Extension Source"
   }
 
   dimension: extras__string__feature_id {
@@ -806,6 +822,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Is Running"
+  }
+
+  dimension: extras__string__last_provided_date {
+    sql: ${TABLE}.extras.string.last_provided_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Last Provided Date"
   }
 
   dimension: extras__string__location {
@@ -974,6 +998,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Results"
+  }
+
+  dimension: extras__string__retry_date {
+    sql: ${TABLE}.extras.string.retry_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Retry Date"
   }
 
   dimension: extras__string__sap {

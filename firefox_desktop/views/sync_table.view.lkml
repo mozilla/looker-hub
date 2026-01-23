@@ -683,7 +683,7 @@ for the purpose of experimentation enrollment.
     group_item_label: "Syncs Hashed Device ID"
     description: "Hashed FxA device ID, hex string of 64 characters.
 Not included if the user is not logged in.
-If this changes between syncs, the \"sync\" ping is submitted with reason \"idchanged\".
+If this changes between syncs, the \"sync\" ping is submitted with reason \"idchange\".
 "
   }
 
@@ -694,7 +694,7 @@ If this changes between syncs, the \"sync\" ping is submitted with reason \"idch
     group_label: "Metrics: String"
     group_item_label: "Syncs Hashed Fxa Uid"
     description: "Hashed FxA unique ID, or string of 32 zeroes.
-If this changes between syncs, the \"sync\" ping is submitted with reason \"idchanged\".
+If this changes between syncs, the \"sync\" ping is submitted with reason \"idchange\".
 "
   }
 

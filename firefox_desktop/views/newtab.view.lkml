@@ -213,6 +213,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__timing_distribution__pocket_spoc_placeholder_duration__sum {
+    label: "Pocket: Spoc Placeholder Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.pocket_spoc_placeholder_duration.sum ;;
+    type: number
+    group_label: "Pocket"
+    group_item_label: "Spoc Placeholder Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pocket: Spoc Placeholder Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pocket_spoc_placeholder_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds that a placeholder for a sponsored story (spoc) is visible to the user before being replaced with actual sponsored content. This measures how long users see loading placeholders when spocs need to be fetched, which can happen during startup, cache expiration, or other loading scenarios.
+"
+  }
+
   dimension: metrics__boolean__pocket_sponsored_stories_enabled {
     label: "Pocket: Sponsored Stories Enabled"
     hidden: no
@@ -1396,6 +1414,20 @@ view: newtab__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: newtab__metrics__timing_distribution__pocket_spoc_placeholder_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

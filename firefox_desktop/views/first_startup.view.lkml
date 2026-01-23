@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: first_startup {
+  dimension: metrics__quantity__first_startup_category_tasks_time {
+    label: "First Startup: Category Tasks Time"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.first_startup_category_tasks_time ;;
+    type: number
+    group_label: "First Startup"
+    group_item_label: "Category Tasks Time"
+
+    link: {
+      label: "Glean Dictionary reference for First Startup: Category Tasks Time"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/first_startup_category_tasks_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of milliseconds until the tasks registered for first-startup-new-profile-task have resolved.
+"
+  }
+
   dimension: metrics__quantity__first_startup_delete_tasks_time {
     label: "First Startup: Delete Tasks Time"
     hidden: no

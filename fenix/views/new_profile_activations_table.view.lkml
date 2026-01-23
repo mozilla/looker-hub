@@ -54,12 +54,6 @@ view: new_profile_activations_table {
     description: "Client's app version on the first seen date."
   }
 
-  dimension: channel {
-    sql: ${TABLE}.channel ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string

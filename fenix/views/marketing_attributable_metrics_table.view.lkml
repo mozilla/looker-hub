@@ -45,11 +45,13 @@ view: marketing_attributable_metrics_table {
     sql: ${TABLE}.adjust_network ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the Adjust Network that sourced the installation."
   }
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: country {
@@ -57,6 +59,7 @@ view: marketing_attributable_metrics_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Name of the country in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: dau {
@@ -93,6 +96,7 @@ view: marketing_attributable_metrics_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
   }
 
   dimension: search_count {
@@ -135,6 +139,7 @@ view: marketing_attributable_metrics_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   sql_table_name: `mozdata.fenix.marketing_attributable_metrics` ;;
