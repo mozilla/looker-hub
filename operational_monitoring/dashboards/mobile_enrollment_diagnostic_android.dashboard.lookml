@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       mobile_enrollment_diagnostic_android.branch
     ]
     filters:
-      mobile_enrollment_diagnostic_android.metric: 'ad_clicks'
+      mobile_enrollment_diagnostic_android.metric: 'tagged_sap_searches'
       mobile_enrollment_diagnostic_android.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       mobile_enrollment_diagnostic_android.branch
     ]
     filters:
-      mobile_enrollment_diagnostic_android.metric: 'uri_count'
+      mobile_enrollment_diagnostic_android.metric: 'ad_clicks'
       mobile_enrollment_diagnostic_android.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       mobile_enrollment_diagnostic_android.branch
     ]
     filters:
-      mobile_enrollment_diagnostic_android.metric: 'search_count'
+      mobile_enrollment_diagnostic_android.metric: 'uri_count'
       mobile_enrollment_diagnostic_android.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       mobile_enrollment_diagnostic_android.branch
     ]
     filters:
-      mobile_enrollment_diagnostic_android.metric: 'tagged_sap_searches'
+      mobile_enrollment_diagnostic_android.metric: 'search_count'
       mobile_enrollment_diagnostic_android.statistic: mean
     row: 30
     col: 0
