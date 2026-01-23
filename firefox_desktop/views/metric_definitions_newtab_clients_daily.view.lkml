@@ -83,6 +83,7 @@ newtab_clients_daily_geo_subdivision,
 newtab_clients_daily_homepage_category,
 newtab_clients_daily_locale,
 newtab_clients_daily_newtab_category,
+newtab_clients_daily_newtab_content_surface_id,
 newtab_clients_daily_newtab_search_enabled,
 newtab_clients_daily_newtab_weather_enabled,
 newtab_clients_daily_nonsearch_engagement_visits,
@@ -200,6 +201,7 @@ newtab_clients_daily.geo_subdivision AS newtab_clients_daily_geo_subdivision,
 newtab_clients_daily.homepage_category AS newtab_clients_daily_homepage_category,
 newtab_clients_daily.locale AS newtab_clients_daily_locale,
 newtab_clients_daily.newtab_category AS newtab_clients_daily_newtab_category,
+newtab_clients_daily.newtab_content_surface_id AS newtab_clients_daily_newtab_content_surface_id,
 newtab_clients_daily.newtab_search_enabled AS newtab_clients_daily_newtab_search_enabled,
 newtab_clients_daily.newtab_weather_enabled AS newtab_clients_daily_newtab_weather_enabled,
 newtab_clients_daily.nonsearch_engagement_visits AS newtab_clients_daily_nonsearch_engagement_visits,
@@ -340,6 +342,7 @@ newtab_clients_daily_geo_subdivision,
 newtab_clients_daily_homepage_category,
 newtab_clients_daily_locale,
 newtab_clients_daily_newtab_category,
+newtab_clients_daily_newtab_content_surface_id,
 newtab_clients_daily_newtab_search_enabled,
 newtab_clients_daily_newtab_weather_enabled,
 newtab_clients_daily_nonsearch_engagement_visits,
@@ -971,6 +974,13 @@ newtab_clients_daily_widget_interaction_count,
 
   dimension: newtab_category {
     sql: ${TABLE}.newtab_clients_daily_newtab_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Base Fields"
+  }
+
+  dimension: newtab_content_surface_id {
+    sql: ${TABLE}.newtab_clients_daily_newtab_content_surface_id ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Base Fields"
