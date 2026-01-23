@@ -3256,6 +3256,14 @@ view: events_stream_table {
     group_item_label: "New Icon"
   }
 
+  dimension: extras__string__new_region {
+    sql: ${TABLE}.extras.string.new_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "New Region"
+  }
+
   dimension: extras__string__new_state {
     sql: ${TABLE}.extras.string.new_state ;;
     type: string
@@ -3302,6 +3310,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Old Icon"
+  }
+
+  dimension: extras__string__old_region {
+    sql: ${TABLE}.extras.string.old_region ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Old Region"
   }
 
   dimension: extras__string__oldpanel {
