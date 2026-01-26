@@ -959,6 +959,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: traces
+    url_classifier_harmful_addon:
+      type: glean_ping_explore
+      views:
+        base_view: url_classifier_harmful_addon
     usage_reporting:
       type: glean_ping_explore
       views:
@@ -1953,6 +1957,32 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.traces
       type: table_view
+    url_classifier_harmful_addon:
+      tables:
+      - channel: release
+        table: mozdata.fenix.url_classifier_harmful_addon
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.url_classifier_harmful_addon
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.url_classifier_harmful_addon
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.url_classifier_harmful_addon
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.url_classifier_harmful_addon
+      type: glean_ping_view
+    url_classifier_harmful_addon_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.url_classifier_harmful_addon
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.url_classifier_harmful_addon
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.url_classifier_harmful_addon
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.url_classifier_harmful_addon
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.url_classifier_harmful_addon
+      type: table_view
     usage_reporting:
       tables:
       - channel: release
@@ -2558,6 +2588,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: unexpected_script_load
+    url_classifier_harmful_addon:
+      type: glean_ping_explore
+      views:
+        base_view: url_classifier_harmful_addon
     urlbar_events_daily:
       type: table_explore
       views:
@@ -3256,6 +3290,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.update
+      type: table_view
+    url_classifier_harmful_addon:
+      tables:
+      - table: mozdata.firefox_desktop.url_classifier_harmful_addon
+      type: glean_ping_view
+    url_classifier_harmful_addon_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.url_classifier_harmful_addon
       type: table_view
     urlbar_events:
       tables:
