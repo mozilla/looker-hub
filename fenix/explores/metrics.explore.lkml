@@ -463,6 +463,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dns_lookup_algorithm}) AS metrics__metrics__labeled_counter__dns_lookup_algorithm ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dns_lookup_algorithm.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dns_trr_http3_0rtt_state}) AS metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__dom_blink_filesystem_used {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_blink_filesystem_used}) AS metrics__metrics__labeled_counter__dom_blink_filesystem_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_blink_filesystem_used.document_id} ;;
