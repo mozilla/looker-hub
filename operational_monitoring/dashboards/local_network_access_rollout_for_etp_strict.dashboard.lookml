@@ -78,6 +78,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_rollout_for_etp_strict
+    type: looker_line
+    fields: [
+      local_network_access_rollout_for_etp_strict.submission_date,
+      local_network_access_rollout_for_etp_strict.branch,
+      local_network_access_rollout_for_etp_strict.point
+    ]
+    pivots: [
+      local_network_access_rollout_for_etp_strict.branch
+    ]
+    filters:
+      local_network_access_rollout_for_etp_strict.metric: 'active_hours'
+      local_network_access_rollout_for_etp_strict.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_for_etp_strict.submission_date
+    field_y: local_network_access_rollout_for_etp_strict.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_for_etp_strict.lower
+    ci_upper: local_network_access_rollout_for_etp_strict.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_for_etp_strict.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -97,7 +131,7 @@
       local_network_access_rollout_for_etp_strict.metric: 'search_count'
       local_network_access_rollout_for_etp_strict.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: local_network_access_rollout_for_etp_strict.submission_date
@@ -132,8 +166,8 @@
     filters:
       local_network_access_rollout_for_etp_strict.metric: 'memory_total'
       local_network_access_rollout_for_etp_strict.statistic: percentile
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: local_network_access_rollout_for_etp_strict.submission_date
@@ -149,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,41 +199,7 @@
       local_network_access_rollout_for_etp_strict.branch
     ]
     filters:
-      local_network_access_rollout_for_etp_strict.metric: 'qualified_cumulative_days_of_use'
-      local_network_access_rollout_for_etp_strict.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_for_etp_strict.submission_date
-    field_y: local_network_access_rollout_for_etp_strict.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_for_etp_strict.lower
-    ci_upper: local_network_access_rollout_for_etp_strict.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_for_etp_strict.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_rollout_for_etp_strict
-    type: looker_line
-    fields: [
-      local_network_access_rollout_for_etp_strict.submission_date,
-      local_network_access_rollout_for_etp_strict.branch,
-      local_network_access_rollout_for_etp_strict.point
-    ]
-    pivots: [
-      local_network_access_rollout_for_etp_strict.branch
-    ]
-    filters:
-      local_network_access_rollout_for_etp_strict.metric: 'active_hours'
+      local_network_access_rollout_for_etp_strict.metric: 'days_of_use'
       local_network_access_rollout_for_etp_strict.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       local_network_access_rollout_for_etp_strict.branch
     ]
     filters:
-      local_network_access_rollout_for_etp_strict.metric: 'days_of_use'
+      local_network_access_rollout_for_etp_strict.metric: 'qualified_cumulative_days_of_use'
       local_network_access_rollout_for_etp_strict.statistic: mean
     row: 30
     col: 12

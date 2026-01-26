@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_fission_site_isolation_switch_off
-    type: looker_line
-    fields: [
-      android_fission_site_isolation_switch_off.submission_date,
-      android_fission_site_isolation_switch_off.branch,
-      android_fission_site_isolation_switch_off.point
-    ]
-    pivots: [
-      android_fission_site_isolation_switch_off.branch
-    ]
-    filters:
-      android_fission_site_isolation_switch_off.metric: 'search_count'
-      android_fission_site_isolation_switch_off.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: android_fission_site_isolation_switch_off.submission_date
-    field_y: android_fission_site_isolation_switch_off.point
-    log_scale: false
-    ci_lower: android_fission_site_isolation_switch_off.lower
-    ci_upper: android_fission_site_isolation_switch_off.upper
-    show_grid: true
-    listen:
-      Date: android_fission_site_isolation_switch_off.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -131,7 +97,7 @@
       android_fission_site_isolation_switch_off.metric: 'active_hours'
       android_fission_site_isolation_switch_off.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: android_fission_site_isolation_switch_off.submission_date
@@ -146,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +128,10 @@
       android_fission_site_isolation_switch_off.branch
     ]
     filters:
-      android_fission_site_isolation_switch_off.metric: 'retained'
+      android_fission_site_isolation_switch_off.metric: 'search_count'
       android_fission_site_isolation_switch_off.statistic: mean
-    row: 20
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: android_fission_site_isolation_switch_off.submission_date
@@ -199,7 +165,7 @@
       android_fission_site_isolation_switch_off.metric: 'tagged_sap_searches'
       android_fission_site_isolation_switch_off.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: android_fission_site_isolation_switch_off.submission_date
@@ -231,6 +197,40 @@
     ]
     filters:
       android_fission_site_isolation_switch_off.metric: 'days_of_use'
+      android_fission_site_isolation_switch_off.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: android_fission_site_isolation_switch_off.submission_date
+    field_y: android_fission_site_isolation_switch_off.point
+    log_scale: false
+    ci_lower: android_fission_site_isolation_switch_off.lower
+    ci_upper: android_fission_site_isolation_switch_off.upper
+    show_grid: true
+    listen:
+      Date: android_fission_site_isolation_switch_off.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_fission_site_isolation_switch_off
+    type: looker_line
+    fields: [
+      android_fission_site_isolation_switch_off.submission_date,
+      android_fission_site_isolation_switch_off.branch,
+      android_fission_site_isolation_switch_off.point
+    ]
+    pivots: [
+      android_fission_site_isolation_switch_off.branch
+    ]
+    filters:
+      android_fission_site_isolation_switch_off.metric: 'retained'
       android_fission_site_isolation_switch_off.statistic: mean
     row: 30
     col: 0
