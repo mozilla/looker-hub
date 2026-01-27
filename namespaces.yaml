@@ -811,6 +811,10 @@ fenix:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_first_seen:
+      type: glean_ping_explore
+      views:
+        base_view: events_first_seen
     events_stream:
       type: events_stream_explore
       views:
@@ -1242,6 +1246,24 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.events_daily
+      type: table_view
+    events_first_seen:
+      tables:
+      - channel: release
+        table: mozdata.fenix.events_first_seen
+      type: glean_ping_view
+    events_first_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.events_first_seen
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.events_first_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.events_first_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.events_first_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.events_first_seen
       type: table_view
     events_stream:
       tables:
@@ -3394,6 +3416,10 @@ firefox_ios:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_first_seen:
+      type: glean_ping_explore
+      views:
+        base_view: events_first_seen
     events_stream:
       type: events_stream_explore
       views:
@@ -3714,6 +3740,20 @@ firefox_ios:
       - base_table: mozdata.firefox_ios.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_first_seen:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.events_first_seen
+      type: glean_ping_view
+    events_first_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.events_first_seen
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.events_first_seen
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.events_first_seen
+      type: table_view
     events_stream:
       tables:
       - table: mozdata.firefox_ios.events_stream
