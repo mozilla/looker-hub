@@ -72,6 +72,7 @@ view: clients_daily_table {
     sql: ${TABLE}.app_display_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: app_name {
@@ -84,6 +85,7 @@ view: clients_daily_table {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "User visible version string (e.g. \"1.0.3\") for the browser."
   }
 
   dimension: apple_model_id {
@@ -198,12 +200,16 @@ view: clients_daily_table {
     sql: ${TABLE}.browser_backup_archive_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "True if the user can create backups, i.e. it has not been disabled by a pref or otherwise deemed incompatible."
   }
 
   dimension: browser_backup_scheduler_enabled {
     sql: ${TABLE}.browser_backup_scheduler_enabled ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "The value of payload.processes.parent.scalars.browser_backup_scheduler_enabled most frequently seen on the submission date.
+If there is a tie, the value seen last according to submission_timestamp.
+True if the BackupService is configured to automatically create backups in the background."
   }
 
   dimension: browser_version_info__is_major_release {
@@ -250,6 +256,7 @@ view: clients_daily_table {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: city {
@@ -267,6 +274,7 @@ view: clients_daily_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "A unique identifier (UUID) for the client."
   }
 
   dimension: client_submission_latency_mean {
@@ -457,6 +465,7 @@ view: clients_daily_table {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
+    description: "Name of the country in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: cpu_cores {
@@ -637,6 +646,7 @@ view: clients_daily_table {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The distribution id associated with the install of Firefox."
   }
 
   dimension: distribution_version {
@@ -1026,6 +1036,7 @@ view: clients_daily_table {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "A flag indicating whether the browser is set as the default browser on the client side."
   }
 
   dimension: is_wow64 {
@@ -1050,6 +1061,7 @@ view: clients_daily_table {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set of language- and/or country-based preferences for a user interface."
   }
 
   dimension: logins_migrations_quantity_all {
@@ -1134,6 +1146,7 @@ view: clients_daily_table {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized channel the application is being distributed on."
   }
 
   dimension: normalized_os_version {
@@ -1146,6 +1159,7 @@ view: clients_daily_table {
     sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The normalized name of the operating system running at the client."
   }
 
   dimension: os_environment_is_taskbar_pinned_any {
@@ -1296,6 +1310,7 @@ view: clients_daily_table {
     sql: ${TABLE}.profile_group_id ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
   dimension: push_api_notify_sum {
@@ -1314,6 +1329,7 @@ view: clients_daily_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id."
   }
 
   dimension: sandbox_effective_content_process_level {
@@ -2470,6 +2486,7 @@ view: clients_daily_table {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the telemetry ping is received on the server side."
   }
 
   dimension_group: submission_date_s3 {
