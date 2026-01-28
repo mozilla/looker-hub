@@ -491,7 +491,7 @@ view: provider_request_stats_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Client Country Code"
-    description: "Country code (ISO 3166-1 alpha-2 format) associated with the client when the ad was requested. Should not be null.
+    description: "Country code (ISO 3166-1 alpha-2) associated with the client when the ad was requested. Should not be null.
 "
   }
 
@@ -501,7 +501,7 @@ view: provider_request_stats_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Client Dma Code"
-    description: "Designated Marketing Area code (US only) associated with the client when the ad was requested. DMAs are a pre-defined set of city or metro-level regions. May be null.
+    description: "Designated Marketing Area code (US only) associated with the client when the ad was requested. DMAs are a set of 210 city or metro-level US regions pre-defined by Nielsen. DMAs are provided to MARS via MaxMind IP geolocation lookup. May be null.
 "
   }
 
@@ -531,7 +531,7 @@ view: provider_request_stats_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Client Region Code"
-    description: "Region code (ISO 3166-2 format) associated with the client when the ad was requested. May be null.
+    description: "Region code (ISO 3166-2 alpha-2) associated with the client when the ad was requested. Region is also known as Subdivision 1. May be null.
 "
   }
 

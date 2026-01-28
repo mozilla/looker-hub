@@ -1378,6 +1378,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__orb_did_ever_block_response}) AS metrics__metrics__labeled_counter__orb_did_ever_block_response ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__orb_did_ever_block_response.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__oskeystore_dummy_storage {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__oskeystore_dummy_storage}) AS metrics__metrics__labeled_counter__oskeystore_dummy_storage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__oskeystore_dummy_storage.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_buttons {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_buttons}) AS metrics__metrics__labeled_counter__pdfjs_buttons ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_buttons.document_id} ;;

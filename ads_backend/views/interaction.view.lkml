@@ -37,7 +37,7 @@ view: interaction {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Country code associated with the client when the ad was requested. Should not be null.
+    description: "Country code (ISO 3166-1 alpha-2) associated with the client when the ad was requested. Should not be null.
 "
   }
 
@@ -217,7 +217,7 @@ view: interaction {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Region code associated with the client when the ad was requested.  May be null.
+    description: "Region code (ISO 3166-2 alpha-2) associated with the client when the ad was requested. Region is also known as Subdivision 1. May be null.
 "
   }
 

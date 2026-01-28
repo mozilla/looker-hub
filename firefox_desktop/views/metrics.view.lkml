@@ -28346,7 +28346,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__rate__parsing_svg_unusual_pcdata__numerator {
     label: "Parsing: Svg Unusual Pcdata Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.numerator ;;
     type: number
     group_label: "Parsing"
@@ -28364,7 +28364,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__rate__parsing_svg_unusual_pcdata__denominator {
     label: "Parsing: Svg Unusual Pcdata Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.denominator ;;
     type: number
     group_label: "Parsing"
