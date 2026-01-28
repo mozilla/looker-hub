@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: heartbeat_survey_audience_segments_in_firefox_2025_q4_france_last_updated {
-  label: "heartbeat_survey_audience_segments_in_firefox_2025_q4_france Last Updated"
+datagroup: android_fission_site_isolation_switch_off_last_updated {
+  label: "android_fission_site_isolation_switch_off Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'heartbeat_survey_audience_segments_in_firefox_2025_q4_france_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'android_fission_site_isolation_switch_off_statistics')
 
     ) ;;
-  description: "Updates for heartbeat_survey_audience_segments_in_firefox_2025_q4_france when referenced tables are modified."
+  description: "Updates for android_fission_site_isolation_switch_off when referenced tables are modified."
   max_cache_age: "24 hours"
 }

@@ -8892,6 +8892,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__dns_trr_http3_0rtt_state {
+    label: "DNS: Trr Http3 0Rtt State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dns_trr_http3_0rtt_state ;;
+    group_label: "DNS"
+    group_item_label: "Trr Http3 0Rtt State"
+
+    link: {
+      label: "Glean Dictionary reference for DNS: Trr Http3 0Rtt State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dns_trr_http3_0rtt_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Outcome of 0-RTT usage for TRR HTTP/3 connections: - \"not_used\": 0RTT was not used - \"succeeded\": 0RTT was used and succeeded - \"rejected\": 0RTT was used but rejected by the server - \"conn_error\": 0RTT was used but connection error occurred - \"conn_closed_by_necko\": 0RTT was used but connection was closed by necko
+"
+  }
+
   dimension: metrics__timing_distribution__dns_trr_processing_time__sum {
     label: "DNS: Trr Processing Time Sum"
     hidden: no
@@ -21419,6 +21436,22 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__oskeystore_dummy_storage {
+    label: "Oskeystore: Dummy Storage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.oskeystore_dummy_storage ;;
+    group_label: "Oskeystore"
+    group_item_label: "Dummy Storage"
+
+    link: {
+      label: "Glean Dictionary reference for Oskeystore: Dummy Storage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/oskeystore_dummy_storage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     label: "Oskeystore: Self Test"
     hidden: yes
@@ -21456,7 +21489,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__rate__parsing_svg_unusual_pcdata__numerator {
     label: "Parsing: Svg Unusual Pcdata Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.numerator ;;
     type: number
     group_label: "Parsing"
@@ -21474,7 +21507,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__rate__parsing_svg_unusual_pcdata__denominator {
     label: "Parsing: Svg Unusual Pcdata Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.parsing_svg_unusual_pcdata.denominator ;;
     type: number
     group_label: "Parsing"
@@ -43616,6 +43649,47 @@ view: metrics__metrics__labeled_counter__dns_lookup_algorithm {
   }
 }
 
+view: metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state {
+  label: "DNS: Trr Http3 0Rtt State"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__dom_blink_filesystem_used {
   label: "DOM: Blink Filesystem Used"
 
@@ -51075,6 +51149,47 @@ view: metrics__metrics__labeled_counter__orb_did_ever_block_response {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__oskeystore_dummy_storage {
+  label: "Oskeystore: Dummy Storage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -63667,6 +63782,95 @@ view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_
 }
 
 view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

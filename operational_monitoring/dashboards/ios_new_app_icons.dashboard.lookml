@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ios_new_app_icons.branch
     ]
     filters:
-      ios_new_app_icons.metric: 'retained'
+      ios_new_app_icons.metric: 'days_of_use'
       ios_new_app_icons.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_new_app_icons.branch
     ]
     filters:
-      ios_new_app_icons.metric: 'days_of_use'
+      ios_new_app_icons.metric: 'retained'
       ios_new_app_icons.statistic: mean
     row: 10
     col: 12

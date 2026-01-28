@@ -12473,6 +12473,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__dns_trr_http3_0rtt_state {
+    sql: ${TABLE}.metrics.labeled_counter.dns_trr_http3_0rtt_state ;;
+    hidden: yes
+    description: "Outcome of 0-RTT usage for TRR HTTP/3 connections: - \"not_used\": 0RTT was not used - \"succeeded\": 0RTT was used and succeeded - \"rejected\": 0RTT was used but rejected by the server - \"conn_error\": 0RTT was used but connection error occurred - \"conn_closed_by_necko\": 0RTT was used but connection was closed by necko
+"
+  }
+
   dimension: metrics__labeled_counter__dom_blink_filesystem_used {
     sql: ${TABLE}.metrics.labeled_counter.dom_blink_filesystem_used ;;
     hidden: yes
@@ -13108,7 +13115,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -13880,6 +13887,12 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     description: "If any opaque response was blocked for a given top-level window context.
 This metric was generated to correspond to the Legacy Telemetry boolean histogram ORB_DID_EVER_BLOCK_RESPONSE.
 "
+  }
+
+  dimension: metrics__labeled_counter__oskeystore_dummy_storage {
+    sql: ${TABLE}.metrics.labeled_counter.oskeystore_dummy_storage ;;
+    hidden: yes
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
   }
 
   dimension: metrics__labeled_counter__pdfjs_buttons {
@@ -15207,6 +15220,13 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     hidden: yes
     description: "Time taken (in ms) to open all but first DevTools toolbox. This is keyed by tool ID being opened [inspector, webconsole, jsdebugger, styleeditor, performance, memory, netmonitor, storage, dom].
 This metric was generated to correspond to the Legacy Telemetry exponential histogram DEVTOOLS_WARM_TOOLBOX_OPEN_DELAY_MS.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.dns_trr_http3_0rtt_state_duration ;;
+    hidden: yes
+    description: "The time a TRR HTTP/3 connection was in the 0-RTT state before transitioning to a final outcome.
 "
   }
 
@@ -57386,6 +57406,95 @@ view: metrics_table__metrics__labeled_timing_distribution__devtools_warm_toolbox
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

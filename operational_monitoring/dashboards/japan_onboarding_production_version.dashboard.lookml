@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       japan_onboarding_production_version.branch
     ]
     filters:
-      japan_onboarding_production_version.metric: 'retained'
+      japan_onboarding_production_version.metric: 'days_of_use'
       japan_onboarding_production_version.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       japan_onboarding_production_version.branch
     ]
     filters:
-      japan_onboarding_production_version.metric: 'days_of_use'
+      japan_onboarding_production_version.metric: 'retained'
       japan_onboarding_production_version.statistic: mean
     row: 10
     col: 12

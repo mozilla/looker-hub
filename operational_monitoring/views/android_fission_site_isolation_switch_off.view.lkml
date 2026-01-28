@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: local_network_access_rollout_for_etp_strict {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.local_network_access_rollout_for_etp_strict_statistics ;;
+view: android_fission_site_isolation_switch_off {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.android_fission_site_isolation_switch_off_statistics ;;
 
   dimension: submission_date {
     type: date

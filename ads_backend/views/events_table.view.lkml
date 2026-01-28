@@ -541,7 +541,7 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Country Code"
-    description: "Country code associated with the client when the ad was requested. Should not be null.
+    description: "Country code (ISO 3166-1 alpha-2) associated with the client when the ad was requested. Should not be null.
 "
   }
 
@@ -601,7 +601,7 @@ view: events_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Ad Region Code"
-    description: "Region code associated with the client when the ad was requested.  May be null.
+    description: "Region code (ISO 3166-2 alpha-2) associated with the client when the ad was requested. Region is also known as Subdivision 1. May be null.
 "
   }
 
