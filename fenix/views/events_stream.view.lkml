@@ -803,6 +803,14 @@ view: events_stream {
     group_item_label: "Poisoned"
   }
 
+  dimension: extras__boolean__psi_available {
+    sql: ${TABLE}.extras.boolean.psi_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Psi Available"
+  }
+
   dimension: extras__boolean__referrer_is_fenix {
     sql: ${TABLE}.extras.boolean.referrer_is_fenix ;;
     type: yesno
