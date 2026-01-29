@@ -98,7 +98,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_app_build {
     label: "Crash: App Build"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_app_build ;;
     type: string
     group_label: "Crash"
@@ -116,7 +116,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_app_channel {
     label: "Crash: App Channel"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_app_channel ;;
     type: string
     group_label: "Crash"
@@ -134,7 +134,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_app_display_version {
     label: "Crash: App Display Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_app_display_version ;;
     type: string
     group_label: "Crash"
@@ -152,7 +152,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_background_task_name {
     label: "Crash: Background Task Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_background_task_name ;;
     type: string
     group_label: "Crash"
@@ -170,7 +170,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_cause {
     label: "Crash: Cause"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_cause ;;
     type: string
     group_label: "Crash"
@@ -188,7 +188,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__crash_event_loop_nesting_level {
     label: "Crash: Event Loop Nesting Level"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number
     group_label: "Crash"
@@ -206,7 +206,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_font_name {
     label: "Crash: Font Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_font_name ;;
     type: string
     group_label: "Crash"
@@ -224,7 +224,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__crash_gpu_process_launch {
     label: "Crash: GPU Process Launch"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
     type: number
     group_label: "Crash"
@@ -242,7 +242,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_ipc_channel_error {
     label: "Crash: Ipc Channel Error"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
     type: string
     group_label: "Crash"
@@ -260,7 +260,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__crash_is_garbage_collecting {
     label: "Crash: Is Garbage Collecting"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
     type: yesno
     group_label: "Crash"
@@ -278,7 +278,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_main_thread_runnable_name {
     label: "Crash: Main Thread Runnable Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
     type: string
     group_label: "Crash"
@@ -296,7 +296,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_minidump_sha256_hash {
     label: "Crash: Minidump Sha256 Hash"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
     type: string
     group_label: "Crash"
@@ -314,7 +314,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_moz_crash_reason {
     label: "Crash: Moz Crash Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
     type: string
     group_label: "Crash"
@@ -332,7 +332,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_process_type {
     label: "Crash: Process Type"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_process_type ;;
     type: string
     group_label: "Crash"
@@ -350,7 +350,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_profiler_child_shutdown_phase {
     label: "Crash: Profiler Child Shutdown Phase"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
     type: string
     group_label: "Crash"
@@ -368,7 +368,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_remote_type {
     label: "Crash: Remote Type"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_remote_type ;;
     type: string
     group_label: "Crash"
@@ -386,7 +386,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__crash_shutdown_progress {
     label: "Crash: Shutdown Progress"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
     type: string
     group_label: "Crash"
@@ -404,7 +404,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__crash_startup {
     label: "Crash: Startup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.crash_startup ;;
     type: yesno
     group_label: "Crash"
@@ -440,7 +440,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__environment_headless_mode {
     label: "Environment: Headless Mode"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
     type: yesno
     group_label: "Environment"
@@ -458,7 +458,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__environment_uptime__value {
     label: "Environment: Uptime Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
     type: number
     group_label: "Environment"
@@ -476,7 +476,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_available_commit {
     label: "Memory: Available Commit"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
     type: number
     group_label: "Memory"
@@ -494,7 +494,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_available_physical {
     label: "Memory: Available Physical"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
     type: number
     group_label: "Memory"
@@ -512,7 +512,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_available_swap {
     label: "Memory: Available Swap"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
     type: number
     group_label: "Memory"
@@ -530,7 +530,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_available_virtual {
     label: "Memory: Available Virtual"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
     type: number
     group_label: "Memory"
@@ -548,7 +548,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__memory_js_large_allocation_failure {
     label: "Memory: Js Large Allocation Failure"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
     type: string
     group_label: "Memory"
@@ -566,7 +566,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__memory_js_out_of_memory {
     label: "Memory: Js Out Of Memory"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
     type: string
     group_label: "Memory"
@@ -584,7 +584,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_low_physical {
     label: "Memory: Low Physical"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
     type: number
     group_label: "Memory"
@@ -602,7 +602,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_oom_allocation_size {
     label: "Memory: Oom Allocation Size"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
     type: number
     group_label: "Memory"
@@ -620,7 +620,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_purgeable_physical {
     label: "Memory: Purgeable Physical"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
     type: number
     group_label: "Memory"
@@ -638,7 +638,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_system_use_percentage {
     label: "Memory: System Use Percentage"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
     type: number
     group_label: "Memory"
@@ -656,7 +656,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_texture {
     label: "Memory: Texture"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_texture ;;
     type: number
     group_label: "Memory"
@@ -674,7 +674,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_total_page_file {
     label: "Memory: Total Page File"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
     type: number
     group_label: "Memory"
@@ -692,7 +692,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_total_physical {
     label: "Memory: Total Physical"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
     type: number
     group_label: "Memory"
@@ -710,7 +710,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__quantity__memory_total_virtual {
     label: "Memory: Total Virtual"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
     type: number
     group_label: "Memory"

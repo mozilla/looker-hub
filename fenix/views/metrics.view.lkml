@@ -15538,7 +15538,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__localdomstorage_shutdown_database__sum {
     label: "Localdomstorage: Shutdown Database Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.localdomstorage_shutdown_database.sum ;;
     type: number
     group_label: "Localdomstorage"
@@ -17286,7 +17286,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__network_disk_cache_shutdown_v2__sum {
     label: "Network: Disk Cache Shutdown V2 Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.network_disk_cache_shutdown_v2.sum ;;
     type: number
     group_label: "Network"
@@ -46872,19 +46872,19 @@ view: metrics__metrics__labeled_counter__localdomstorage_preload_pending_on_firs
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
