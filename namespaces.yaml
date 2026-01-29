@@ -206,6 +206,14 @@ activity_stream:
 ads:
   connection: bigquery-oauth
   explores:
+    ads_finance_revenue_targets:
+      type: table_explore
+      views:
+        base_view: ads_finance_revenue_targets
+    campaigns_monthly:
+      type: table_explore
+      views:
+        base_view: campaigns_monthly
     metric_definitions_ad_metrics_daily:
       type: metric_definitions_explore
       views:
