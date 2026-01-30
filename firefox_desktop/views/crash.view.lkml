@@ -707,6 +707,193 @@ view: crash {
 "
   }
 
+  dimension: metrics__string__crash_build_id {
+    label: "Crash: Build ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_build_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application build ID, the format is YYYYMMDDHHMMSS."
+  }
+
+  dimension: metrics__string__crash_crash_type {
+    label: "Crash: Crash Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_crash_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Crash Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Crash Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_crash_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of crash that occurred (Android-only)."
+  }
+
+  dimension: metrics__boolean__crash_dom_fission_enabled {
+    label: "Crash: DOM Fission Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_dom_fission_enabled ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "DOM Fission Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: DOM Fission Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_dom_fission_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 when DOM fission is enabled, and subframes are potentially loaded in a separate process."
+  }
+
+  dimension: metrics__string__crash_hang {
+    label: "Crash: Hang"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_hang ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Hang"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Hang"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_hang"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set if the crash was the result of a hang, with a value which describes the type of hang (e.g. \"ui\" or \"shutdown\")."
+  }
+
+  dimension: metrics__timespan__crash_last_interaction_duration__value {
+    label: "Crash: Last Interaction Duration Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Last Interaction Duration Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Last Interaction Duration Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_last_interaction_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long the user had been inactive in seconds if the user was inactive at crash.  The value is not set if the user state was active."
+  }
+
+  dimension: metrics__string__crash_linux_memory_psi {
+    label: "Crash: Linux Memory Psi"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_linux_memory_psi ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Linux Memory Psi"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Linux Memory Psi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_linux_memory_psi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory PSI (Pressure Stall Information) values from /proc/pressure/memory as comma-separated list: some_avg10,some_avg60,some_avg300,some_total,full_avg10,full_avg60,full_avg300,full_total"
+  }
+
+  dimension: metrics__string__crash_minidump_sha_256_hash {
+    label: "Crash: Minidump Sha 256 Hash"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_minidump_sha_256_hash ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Minidump Sha 256 Hash"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Minidump Sha 256 Hash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_minidump_sha_256_hash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha256 hash of the minidump file, if available."
+  }
+
+  dimension: metrics__string__crash_product_id {
+    label: "Crash: Product ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_product_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Product ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Product ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_product_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application UUID (e.g. ec8030f7-c20a-464f-9b0e-13a3a9e97384)."
+  }
+
+  dimension: metrics__string__crash_product_name {
+    label: "Crash: Product Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_product_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Product Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Product Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_product_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application name (e.g. Firefox)."
+  }
+
+  dimension: metrics__string__crash_shutdown_reason {
+    label: "Crash: Shutdown Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_shutdown_reason ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Shutdown Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Shutdown Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_shutdown_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "One out of \"Unknown\", \"AppClose\", \"AppRestart\", \"OSForceClose\", \"OSSessionEnd\" or \"OSShutdown\"."
+  }
+
+  dimension: metrics__timespan__crash_time_since_last_crash__value {
+    label: "Crash: Time Since Last Crash Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_time_since_last_crash.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Time Since Last Crash Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Time Since Last Crash Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_time_since_last_crash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in seconds since the last crash occurred."
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation: Experimentation ID"
     hidden: no
