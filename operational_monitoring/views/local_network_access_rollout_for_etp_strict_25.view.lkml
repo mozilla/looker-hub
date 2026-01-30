@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: firefox_labs_auto_pip {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.firefox_labs_auto_pip_statistics ;;
+view: local_network_access_rollout_for_etp_strict_25 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.local_network_access_rollout_for_etp_strict_25_statistics ;;
 
   dimension: submission_date {
     type: date

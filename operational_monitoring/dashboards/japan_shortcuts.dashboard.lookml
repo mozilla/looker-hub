@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       japan_shortcuts.branch
     ]
     filters:
-      japan_shortcuts.metric: 'ad_clicks'
+      japan_shortcuts.metric: 'retained'
       japan_shortcuts.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: japan_shortcuts.submission_date
-    field_y: japan_shortcuts.point
-    log_scale: false
-    ci_lower: japan_shortcuts.lower
-    ci_upper: japan_shortcuts.upper
-    show_grid: true
-    listen:
-      Date: japan_shortcuts.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: japan_shortcuts
-    type: looker_line
-    fields: [
-      japan_shortcuts.submission_date,
-      japan_shortcuts.branch,
-      japan_shortcuts.point
-    ]
-    pivots: [
-      japan_shortcuts.branch
-    ]
-    filters:
-      japan_shortcuts.metric: 'search_count'
-      japan_shortcuts.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: japan_shortcuts.submission_date
@@ -96,6 +62,40 @@
     filters:
       japan_shortcuts.metric: 'active_hours'
       japan_shortcuts.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: japan_shortcuts.submission_date
+    field_y: japan_shortcuts.point
+    log_scale: false
+    ci_lower: japan_shortcuts.lower
+    ci_upper: japan_shortcuts.upper
+    show_grid: true
+    listen:
+      Date: japan_shortcuts.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: japan_shortcuts
+    type: looker_line
+    fields: [
+      japan_shortcuts.submission_date,
+      japan_shortcuts.branch,
+      japan_shortcuts.point
+    ]
+    pivots: [
+      japan_shortcuts.branch
+    ]
+    filters:
+      japan_shortcuts.metric: 'ad_clicks'
+      japan_shortcuts.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       japan_shortcuts.branch
     ]
     filters:
-      japan_shortcuts.metric: 'retained'
+      japan_shortcuts.metric: 'search_count'
       japan_shortcuts.statistic: mean
     row: 10
     col: 12
