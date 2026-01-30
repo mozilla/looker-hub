@@ -16065,7 +16065,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Mozorientation Deprecated"
-    description: "Whether a page used Mozorientationdeprecated. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a page used MozorientationDeprecated. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
