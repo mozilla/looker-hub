@@ -32174,40 +32174,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__labeled_counter__fxa_client_error_count {
-    label: "Fxa Client: Error Count"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.fxa_client_error_count ;;
-    group_label: "Fxa Client"
-    group_item_label: "Error Count"
-
-    link: {
-      label: "Glean Dictionary reference for Fxa Client: Error Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_error_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total number of errors encountered during FxA operations, labeled by type. It is intended to be used together with `operation_count` to measure the overall error rate of FxA operations operations.
-"
-  }
-
-  dimension: metrics__counter__fxa_client_operation_count {
-    label: "Fxa Client: Operation Count"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.fxa_client_operation_count ;;
-    type: number
-    group_label: "Fxa Client"
-    group_item_label: "Operation Count"
-
-    link: {
-      label: "Glean Dictionary reference for Fxa Client: Operation Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total number of operations performed by the FxA client."
-  }
-
   dimension: metrics__counter__logins_store_local_undecryptable_deleted {
     label: "Logins Store: Local Undecryptable Deleted"
     hidden: no
@@ -39708,31 +39674,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
-  measure: fxa_client_operation_count {
-    type: sum
-    sql: ${metrics__counter__fxa_client_operation_count} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Fxa Client Operation Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: fxa_client_operation_count_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__fxa_client_operation_count: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Fxa Client Operation Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
   measure: logins_store_local_undecryptable_deleted {
     type: sum
     sql: ${metrics__counter__logins_store_local_undecryptable_deleted} ;;
@@ -44720,47 +44661,6 @@ view: metrics__metrics__labeled_counter__fontlist_font_cache_hit {
 
 view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
   label: "Formautofill: Form Submission Heuristic"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    hidden: no
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: metrics__metrics__labeled_counter__fxa_client_error_count {
-  label: "Fxa Client: Error Count"
 
   dimension: document_id {
     type: string
