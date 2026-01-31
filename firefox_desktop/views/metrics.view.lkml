@@ -1354,6 +1354,25 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__boolean__browser_global_ai_control_is_blocking {
+    label: "Browser: Global Ai Control Is Blocking"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_global_ai_control_is_blocking ;;
+    type: yesno
+    group_label: "Browser"
+    group_item_label: "Global Ai Control Is Blocking"
+
+    link: {
+      label: "Glean Dictionary reference for Browser: Global Ai Control Is Blocking"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_global_ai_control_is_blocking"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of the global AI enhancements setting.
+When true, enhancements are blocked.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_is_user_default {
     label: "Browser: Is User Default"
     hidden: yes
@@ -3006,6 +3025,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records a count of interactions with items in the pinned area of the overflow menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pinned_overflow_menu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai {
+    label: "Browser UI Interaction: Preferences Pane Ai"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_ai ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Preferences Pane Ai"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Preferences Pane Ai"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_preferences_pane_ai"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the items interacted with in the AI Controls section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
 "
   }
 
@@ -16087,6 +16123,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__dns_trr_http3_0rtt_state {
+    label: "DNS: Trr Http3 0Rtt State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dns_trr_http3_0rtt_state ;;
+    group_label: "DNS"
+    group_item_label: "Trr Http3 0Rtt State"
+
+    link: {
+      label: "Glean Dictionary reference for DNS: Trr Http3 0Rtt State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_trr_http3_0rtt_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Outcome of 0-RTT usage for TRR HTTP/3 connections: - \"not_used\": 0RTT was not used - \"succeeded\": 0RTT was used and succeeded - \"rejected\": 0RTT was used but rejected by the server - \"conn_error\": 0RTT was used but connection error occurred - \"conn_closed_by_necko\": 0RTT was used but connection was closed by necko
+"
+  }
+
   dimension: metrics__timing_distribution__dns_trr_processing_time__sum {
     label: "DNS: Trr Processing Time Sum"
     hidden: no
@@ -18277,6 +18330,74 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_geoclue_error_code {
+    label: "Geolocation: Geoclue Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geoclue_error_code ;;
+    group_label: "Geolocation"
+    group_item_label: "Geoclue Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geoclue Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_geoclue_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the error code when Linux GeoClue geolocation fails. The GeoClue DBUS error domain is G_DBUS_ERROR and can usually be used to get a human readable error for these values.  Records up to 16 codes. Note that errors G_DBUS_ERROR_LIMITS_EXCEEDED (8), G_DBUS_ERROR_ACCESS_DENIED(9), and G_DBUS_ERROR_AUTH_FAILED (10) are considered by Firefox to mean that permission is not granted, as opposed to an internal error.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_geolocation_cache_hit {
+    label: "Geolocation: Geolocation Cache Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geolocation_cache_hit ;;
+    group_label: "Geolocation"
+    group_item_label: "Geolocation Cache Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geolocation Cache Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_geolocation_cache_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times was a geolocation request serviced by the given cache.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_geolocation_service {
+    label: "Geolocation: Geolocation Service"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geolocation_service ;;
+    group_label: "Geolocation"
+    group_item_label: "Geolocation Service"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geolocation Service"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_geolocation_service"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many geolocation requests were issued to the system provider, the network wifi-lookup provider, the network ip-lookup provider, and the Linux GeoClue service?  Wifi and IP currently use the same provider.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_linux_portal_error {
+    label: "Geolocation: Linux Portal Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_linux_portal_error ;;
+    group_label: "Geolocation"
+    group_item_label: "Linux Portal Error"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Linux Portal Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_linux_portal_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the reason for failures in the PortalLocationProvider.
+"
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     label: "Geolocation: Linux Provider"
     hidden: no
@@ -18292,6 +18413,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Which system provider are we using on Linux
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_macos_error_code {
+    label: "Geolocation: Macos Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_macos_error_code ;;
+    group_label: "Geolocation"
+    group_item_label: "Macos Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Macos Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_macos_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the error code when MacOS CoreLocation geolocation fails. The CoreLocation error domain is kCLErrorDomain and can usually be used to get a human readable error for these values.  Records up to 16 codes.
 "
   }
 
@@ -22745,6 +22883,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_capture_stream_usage {
+    label: "Media: Capture Stream Usage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_capture_stream_usage ;;
+    group_label: "Media"
+    group_item_label: "Capture Stream Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Media: Capture Stream Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_capture_stream_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the usage of MediaStream captured from HTMLMediaElement by different capture methods.
 "
   }
 
@@ -28309,6 +28464,22 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__oskeystore_dummy_storage {
+    label: "Oskeystore: Dummy Storage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.oskeystore_dummy_storage ;;
+    group_label: "Oskeystore"
+    group_item_label: "Dummy Storage"
+
+    link: {
+      label: "Glean Dictionary reference for Oskeystore: Dummy Storage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/oskeystore_dummy_storage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     label: "Oskeystore: Self Test"
     hidden: yes
@@ -28760,6 +28931,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_tagged {
+    label: "Pdfjs: Tagged"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_tagged ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Tagged"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs: Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times PDF Viewer was used for tagged pdf.
 "
   }
 
@@ -36403,6 +36592,42 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__rate__web_notification_show_safe_browsing_block__numerator {
+    label: "Web Notification: Show Safe Browsing Block Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.numerator ;;
+    type: number
+    group_label: "Web Notification"
+    group_item_label: "Show Safe Browsing Block Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification: Show Safe Browsing Block Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_notification_show_safe_browsing_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of notification show attempts that are blocked because the origin is on the Safe Browsing blocklist (phishing, malware, etc.). The numerator is the number of blocked attempts, and the denominator is the total number of show attempts that passed the initial permission check.
+"
+  }
+
+  dimension: metrics__rate__web_notification_show_safe_browsing_block__denominator {
+    label: "Web Notification: Show Safe Browsing Block Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.denominator ;;
+    type: number
+    group_label: "Web Notification"
+    group_item_label: "Show Safe Browsing Block Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification: Show Safe Browsing Block Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_notification_show_safe_browsing_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of notification show attempts that are blocked because the origin is on the Safe Browsing blocklist (phishing, malware, etc.). The numerator is the number of blocked attempts, and the denominator is the total number of show attempts that passed the initial permission check.
+"
+  }
+
   dimension: metrics__counter__web_push_api_notify {
     label: "Web Push: Api Notify"
     hidden: no
@@ -43743,6 +43968,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: pdfjs_tagged {
+    type: sum
+    sql: ${metrics__counter__pdfjs_tagged} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_tagged_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_tagged: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: pdfjs_used {
     type: sum
     sql: ${metrics__counter__pdfjs_used} ;;
@@ -50288,6 +50538,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_pinned_overflow_
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai {
+  label: "Browser UI Interaction: Preferences Pane Ai"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
   label: "Browser UI Interaction: Preferences Pane Containers"
 
@@ -53527,6 +53818,47 @@ view: metrics__metrics__labeled_counter__dns_lookup_algorithm {
   }
 }
 
+view: metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state {
+  label: "DNS: Trr Http3 0Rtt State"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__dom_blink_filesystem_used {
   label: "DOM: Blink Filesystem Used"
 
@@ -54472,6 +54804,211 @@ view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic 
 
 view: metrics__metrics__labeled_counter__geolocation_fallback {
   label: "Geolocation: Fallback"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_geoclue_error_code {
+  label: "Geolocation: Geoclue Error Code"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit {
+  label: "Geolocation: Geolocation Cache Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_geolocation_service {
+  label: "Geolocation: Geolocation Service"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_linux_portal_error {
+  label: "Geolocation: Linux Portal Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_macos_error_code {
+  label: "Geolocation: Macos Error Code"
 
   dimension: document_id {
     type: string
@@ -56850,6 +57387,47 @@ view: metrics__metrics__labeled_counter__media_audio_backend {
 
 view: metrics__metrics__labeled_counter__media_audio_init_failure {
   label: "Media Audio: Init Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_capture_stream_usage {
+  label: "Media: Capture Stream Usage"
 
   dimension: document_id {
     type: string
@@ -60863,6 +61441,47 @@ view: metrics__metrics__labeled_counter__os_environment_launched_to_handle {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__oskeystore_dummy_storage {
+  label: "Oskeystore: Dummy Storage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -74932,6 +75551,33 @@ view: metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idl
   }
 }
 
+view: metrics__metrics__dual_labeled_counter__geolocation_windows_failure {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__geolocation_windows_failure__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__dual_labeled_counter__http_cache_disposition {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -75243,6 +75889,33 @@ view: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout {
 }
 
 view: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__webgpu_expose_adapter {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__webgpu_expose_adapter__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -78901,6 +79574,95 @@ view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_
 }
 
 view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

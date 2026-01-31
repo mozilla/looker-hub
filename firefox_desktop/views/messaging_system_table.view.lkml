@@ -649,6 +649,18 @@ name.
 "
   }
 
+  dimension: metrics__string__messaging_system_attribution_msclkid {
+    sql: ${TABLE}.metrics.string.messaging_system_attribution_msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Messaging System Attribution Msclkid"
+    description: "A string containing the attribution for a Microsoft Store Ads Campaign ID.
+This differs from a Campaign ID originating from a Microsoft Store URL
+containing attribution.
+"
+  }
+
   dimension: metrics__string__messaging_system_attribution_msstoresignedin {
     sql: ${TABLE}.metrics.string.messaging_system_attribution_msstoresignedin ;;
     type: string

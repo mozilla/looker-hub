@@ -409,6 +409,14 @@ view: desktop_crashes_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__crash_dom_fission_enabled {
+    sql: ${TABLE}.metrics.boolean.crash_dom_fission_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Crash DOM Fission Enabled"
+  }
+
   dimension: metrics__boolean__crash_is_garbage_collecting {
     sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
     type: yesno
@@ -487,6 +495,11 @@ view: desktop_crashes_table {
 
   dimension: metrics__object__crash_async_shutdown_timeout {
     sql: ${TABLE}.metrics.object.crash_async_shutdown_timeout ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__crash_java_exception {
+    sql: ${TABLE}.metrics.object.crash_java_exception ;;
     hidden: yes
   }
 
@@ -644,6 +657,22 @@ view: desktop_crashes_table {
     group_item_label: "Crash Background Task Name"
   }
 
+  dimension: metrics__string__crash_build_id {
+    sql: ${TABLE}.metrics.string.crash_build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Build ID"
+  }
+
+  dimension: metrics__string__crash_crash_type {
+    sql: ${TABLE}.metrics.string.crash_crash_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Crash Type"
+  }
+
   dimension: metrics__string__crash_font_name {
     sql: ${TABLE}.metrics.string.crash_font_name ;;
     type: string
@@ -652,12 +681,28 @@ view: desktop_crashes_table {
     group_item_label: "Crash Font Name"
   }
 
+  dimension: metrics__string__crash_hang {
+    sql: ${TABLE}.metrics.string.crash_hang ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Hang"
+  }
+
   dimension: metrics__string__crash_ipc_channel_error {
     sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Ipc Channel Error"
+  }
+
+  dimension: metrics__string__crash_linux_memory_psi {
+    sql: ${TABLE}.metrics.string.crash_linux_memory_psi ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Linux Memory Psi"
   }
 
   dimension: metrics__string__crash_main_thread_runnable_name {
@@ -676,6 +721,14 @@ view: desktop_crashes_table {
     group_item_label: "Crash Minidump Sha256 Hash"
   }
 
+  dimension: metrics__string__crash_minidump_sha_256_hash {
+    sql: ${TABLE}.metrics.string.crash_minidump_sha_256_hash ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Minidump Sha 256 Hash"
+  }
+
   dimension: metrics__string__crash_moz_crash_reason {
     sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
     type: string
@@ -690,6 +743,22 @@ view: desktop_crashes_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Process Type"
+  }
+
+  dimension: metrics__string__crash_product_id {
+    sql: ${TABLE}.metrics.string.crash_product_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Product ID"
+  }
+
+  dimension: metrics__string__crash_product_name {
+    sql: ${TABLE}.metrics.string.crash_product_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Product Name"
   }
 
   dimension: metrics__string__crash_profiler_child_shutdown_phase {
@@ -714,6 +783,14 @@ view: desktop_crashes_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Shutdown Progress"
+  }
+
+  dimension: metrics__string__crash_shutdown_reason {
+    sql: ${TABLE}.metrics.string.crash_shutdown_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Shutdown Reason"
   }
 
   dimension: metrics__string__crash_windows_file_dialog_error_code {
@@ -779,6 +856,38 @@ view: desktop_crashes_table {
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+  }
+
+  dimension: metrics__timespan__crash_last_interaction_duration__time_unit {
+    sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Last Interaction Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__crash_last_interaction_duration__value {
+    sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Last Interaction Duration"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__crash_time_since_last_crash__time_unit {
+    sql: ${TABLE}.metrics.timespan.crash_time_since_last_crash.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Time Since Last Crash"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__crash_time_since_last_crash__value {
+    sql: ${TABLE}.metrics.timespan.crash_time_since_last_crash.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Time Since Last Crash"
+    group_item_label: "Value"
   }
 
   dimension: metrics__timespan__crash_uptime__time_unit {

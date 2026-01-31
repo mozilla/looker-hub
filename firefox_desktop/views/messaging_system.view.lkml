@@ -156,6 +156,26 @@ name.
 "
   }
 
+  dimension: metrics__string__messaging_system_attribution_msclkid {
+    label: "Messaging System Attribution: Msclkid"
+    hidden: no
+    sql: ${TABLE}.metrics.string.messaging_system_attribution_msclkid ;;
+    type: string
+    group_label: "Messaging System Attribution"
+    group_item_label: "Msclkid"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Attribution: Msclkid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_msclkid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string containing the attribution for a Microsoft Store Ads Campaign ID.
+This differs from a Campaign ID originating from a Microsoft Store URL
+containing attribution.
+"
+  }
+
   dimension: metrics__string__messaging_system_attribution_msstoresignedin {
     label: "Messaging System Attribution: Msstoresignedin"
     hidden: no

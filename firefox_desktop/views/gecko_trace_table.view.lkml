@@ -481,6 +481,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__object__gecko_trace_traces_data {
+    sql: ${TABLE}.metrics.object.gecko_trace_traces_data ;;
+    hidden: yes
+    description: "Represents the telemetry traces data collected during browser operation. This data provides insights into errors that occur in Firefox during runtime.
+Based on the [TracesData OTLP](1) protobuf definition which provides a standardized format for collecting and transmitting trace information.
+[1]: https://github.com/open-telemetry/opentelemetry-proto/blob/c0a98a1847d3124ac5f9ecd02d0e2d2732bbb590/opentelemetry/proto/trace/v1/trace.proto#L38
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string

@@ -573,6 +573,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu}) AS metrics__metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers.document_id} ;;
@@ -968,6 +973,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dns_lookup_algorithm}) AS metrics__metrics__labeled_counter__dns_lookup_algorithm ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dns_lookup_algorithm.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dns_trr_http3_0rtt_state}) AS metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__dom_blink_filesystem_used {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dom_blink_filesystem_used}) AS metrics__metrics__labeled_counter__dom_blink_filesystem_used ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dom_blink_filesystem_used.document_id} ;;
@@ -1086,6 +1096,31 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__geolocation_fallback {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_fallback}) AS metrics__metrics__labeled_counter__geolocation_fallback ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_fallback.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_geoclue_error_code {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_geoclue_error_code}) AS metrics__metrics__labeled_counter__geolocation_geoclue_error_code ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_geoclue_error_code.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_geolocation_cache_hit}) AS metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_geolocation_service {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_geolocation_service}) AS metrics__metrics__labeled_counter__geolocation_geolocation_service ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_geolocation_service.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_linux_portal_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_linux_portal_error}) AS metrics__metrics__labeled_counter__geolocation_linux_portal_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_linux_portal_error.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_macos_error_code {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_macos_error_code}) AS metrics__metrics__labeled_counter__geolocation_macos_error_code ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_macos_error_code.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__geolocation_request_result {
@@ -1376,6 +1411,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__media_audio_init_failure {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_init_failure}) AS metrics__metrics__labeled_counter__media_audio_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_init_failure.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_capture_stream_usage {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_capture_stream_usage}) AS metrics__metrics__labeled_counter__media_capture_stream_usage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_capture_stream_usage.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__media_codec_used {
@@ -1861,6 +1901,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__os_environment_launched_to_handle {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__os_environment_launched_to_handle}) AS metrics__metrics__labeled_counter__os_environment_launched_to_handle ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__os_environment_launched_to_handle.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__oskeystore_dummy_storage {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__oskeystore_dummy_storage}) AS metrics__metrics__labeled_counter__oskeystore_dummy_storage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__oskeystore_dummy_storage.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__pdfjs_buttons {

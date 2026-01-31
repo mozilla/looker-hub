@@ -449,14 +449,22 @@ view: crash_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__crash_dom_fission_enabled {
+    sql: ${TABLE}.metrics.boolean.crash_dom_fission_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Crash DOM Fission Enabled"
+    description: "Set to 1 when DOM fission is enabled, and subframes are potentially loaded in a separate process."
+  }
+
   dimension: metrics__boolean__crash_is_garbage_collecting {
     sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Crash Is Garbage Collecting"
-    description: "Indicates that the crash occurred while the garbage collector was running.
-"
+    description: "If true then the JavaScript garbage collector was running when the crash occurred."
   }
 
   dimension: metrics__boolean__crash_startup {
@@ -465,8 +473,7 @@ view: crash_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Crash Startup"
-    description: "If true, the crash occurred during process startup.
-"
+    description: "If set to 1 then this crash occurred during startup."
   }
 
   dimension: metrics__boolean__crash_windows_error_reporting {
@@ -475,8 +482,7 @@ view: crash_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Crash Windows Error Reporting"
-    description: "Indicates if the crash was intercepted by the Windows Error Reporting runtime exception module.
-"
+    description: "Set to 1 if this crash was intercepted via the Windows Error Reporting runtime exception module."
   }
 
   dimension: metrics__boolean__dll_blocklist_init_failed {
@@ -485,8 +491,7 @@ view: crash_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Dll Blocklist Init Failed"
-    description: "Indicates whether initialization of the DLL blocklist failed.
-"
+    description: "Set to 1 if the DLL blocklist could not be initialized."
   }
 
   dimension: metrics__boolean__dll_blocklist_user32_loaded_before {
@@ -495,8 +500,7 @@ view: crash_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Dll Blocklist User32 Loaded Before"
-    description: "Indicates whether `user32.dll` was loaded before the DLL blocklist was initialized.
-"
+    description: "Set to 1 if user32.dll was loaded before we could install the DLL blocklist."
   }
 
   dimension: metrics__boolean__environment_headless_mode {
@@ -505,8 +509,7 @@ view: crash_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Environment Headless Mode"
-    description: "Whether the app was invoked in headless mode via `--headless` or `--backgroundtask`.
-"
+    description: "True if the app was invoked in headless mode via `--headless ...` or `--backgroundtask ...`, false otherwise."
   }
 
   dimension: metrics__datetime__raw_crash_time {
@@ -552,22 +555,30 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__object__crash_async_shutdown_timeout {
     sql: ${TABLE}.metrics.object.crash_async_shutdown_timeout ;;
     hidden: yes
-    description: "Present when a shutdown blocker failed to respond within a reasonable amount of time.
-"
+    description: "This annotation is present if a shutdown blocker was not released in time and the browser was crashed instead of waiting for shutdown to finish. The condition that caused the hang is contained in the annotation."
+  }
+
+  dimension: metrics__object__crash_java_exception {
+    sql: ${TABLE}.metrics.object.crash_java_exception ;;
+    hidden: yes
+    description: "JSON structured Java stack trace, only present on Firefox for Android if we encounter an uncaught Java exception."
   }
 
   dimension: metrics__object__crash_quota_manager_shutdown_timeout {
     sql: ${TABLE}.metrics.object.crash_quota_manager_shutdown_timeout ;;
     hidden: yes
-    description: "Contains a list of shutdown steps and status of the quota manager clients.
-"
+    description: "This annotation is present if the quota manager shutdown (resp. the shutdown of the quota manager clients) was not finished in time and the browser was crashed instead of waiting for the shutdown to finish. The status of objects which were blocking completion of the shutdown when reaching the timeout is contained in the annotation.
+In the case of IndexedDB, objects are divided into three groups: FactoryOperations, LiveDatabases and DatabaseMaintenances.
+In the case of LocalStorage, objects are divided into three groups: PrepareDatastoreOperations, Datastores and LiveDatabases.
+In the case of Cache API, objects are in one group only: Managers.
+Each group is reported separately and contains the number of objects in the group and the status of individual objects in the group (duplicate entries are removed): \"GroupName: N (objectStatus1, objectStatus2, ...)\" where N is the number of objects in the group.
+The status of individual objects is constructed by taking selected object properties. Properties which contain"
   }
 
   dimension: metrics__object__crash_stack_traces {
     sql: ${TABLE}.metrics.object.crash_stack_traces ;;
     hidden: yes
-    description: "Stack trace and module information of the crashing process.
-"
+    description: "Stack traces extracted from the crash minidump, if available. These are sent in pings, however they are extracted and transformed into a different format. The field in the extra file is meant only for client use."
   }
 
   dimension: metrics__quantity__crash_event_loop_nesting_level {
@@ -576,8 +587,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Crash Event Loop Nesting Level"
-    description: "Indicates the nesting level of the event loop.
-"
+    description: "Present only if higher than 0, indicates that we're running in a nested event loop and indicates the nesting level."
   }
 
   dimension: metrics__quantity__crash_gpu_process_launch {
@@ -586,8 +596,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Crash GPU Process Launch"
-    description: "The number of times that the GPU process was launched.
-"
+    description: "Number of times the GPU process was launched."
   }
 
   dimension: metrics__quantity__memory_available_commit {
@@ -596,8 +605,12 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Available Commit"
-    description: "Available commit size.
-"
+    description: "Available commit-space in bytes. - Under Windows, computed from the PERFORMANCE_INFORMATION structure by substracting
+  the CommitTotal field from the CommitLimit field.
+- Under Linux, computed from /proc/meminfo's CommitLimit - Committed_AS. Note that
+  the kernel is not guaranteed to enforce that CommittedLimit >= Committed_AS. If
+  Committed_AS > CommittedLimit, this value is set to 0.
+- Not available on other platforms."
   }
 
   dimension: metrics__quantity__memory_available_physical {
@@ -606,8 +619,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Available Physical"
-    description: "Available physical memory.
-"
+    description: "Amount of free physical memory in bytes. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullAvailPhys field. - Under macOS, populated with vm_statistics64_data_t::free_count. - Under Linux, populated with /proc/meminfo's MemFree. - Not available on other platforms."
   }
 
   dimension: metrics__quantity__memory_available_swap {
@@ -616,8 +628,9 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Available Swap"
-    description: "Available swap memory.
-"
+    description: "Amount of free swap space in bytes. - Under macOS, populated with the contents of
+  sysctl \"vm.swapusage\" :: xsu_avail.
+- Under Linux, populated with /proc/meminfo's SwapFree. - Not available on other platforms."
   }
 
   dimension: metrics__quantity__memory_available_virtual {
@@ -626,8 +639,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Available Virtual"
-    description: "Available virtual memory.
-"
+    description: "Amount of free virtual memory in bytes - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullAvailVirtual field. - Under Linux, populated with /proc/meminfo's MemAvailable. - Not available on other platforms. - For macOS, see AvailableSwapMemory, AvailablePhysicalMemory and PurgeablePhysicalMemory."
   }
 
   dimension: metrics__quantity__memory_low_physical {
@@ -636,8 +648,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Low Physical"
-    description: "The number of times the available memory tracker has detected that free physical memory is running low.
-"
+    description: "Number of times the available memory tracker has detected that free physical memory is running low. This is a Windows-specific annotation."
   }
 
   dimension: metrics__quantity__memory_oom_allocation_size {
@@ -646,8 +657,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Oom Allocation Size"
-    description: "The size of the allocation that caused on OOM crash.
-"
+    description: "Size of the allocation that caused an out-of-memory condition."
   }
 
   dimension: metrics__quantity__memory_purgeable_physical {
@@ -656,8 +666,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Purgeable Physical"
-    description: "The amount of memory that can be deallocated by the OS in case of memory pressure.
-"
+    description: "macOS only. Amount of physical memory currently allocated but which may be deallocated by the system in case of memory pressure. Populated from vm_statistics64_data_t::purgeable_count * vm_page_size."
   }
 
   dimension: metrics__quantity__memory_system_use_percentage {
@@ -666,8 +675,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory System Use Percentage"
-    description: "The percentage of memory in use.
-"
+    description: "Windows-only, percentage of physical memory in use. This annotation is populated with the contents of the MEMORYSTATUSEX's structure dwMemoryLoad field."
   }
 
   dimension: metrics__quantity__memory_texture {
@@ -676,8 +684,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Texture"
-    description: "The amount of memory used in textures.
-"
+    description: "Amount of memory in bytes consumed by textures."
   }
 
   dimension: metrics__quantity__memory_total_page_file {
@@ -686,8 +693,11 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Total Page File"
-    description: "The total page file size.
-"
+    description: "Maximum amount of memory that can be committed without extending the swap/page file. - Under Windows, populated with the contents of the PERFORMANCE_INFORMATION's
+  structure CommitLimit field.
+- Under Linux, populated with /proc/meminfo MemTotal + SwapTotal. The swap file
+  typically cannot be extended, so that's a hard limit.
+- Not available on other systems."
   }
 
   dimension: metrics__quantity__memory_total_physical {
@@ -696,8 +706,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Total Physical"
-    description: "The total physical memory.
-"
+    description: "Amount of physical memory in bytes. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullTotalPhys field. - Under macOS, populated with sysctl \"hw.memsize\". - Under Linux, populated with /proc/meminfo's \"MemTotal\". - Not available on other systems."
   }
 
   dimension: metrics__quantity__memory_total_virtual {
@@ -706,8 +715,9 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Memory Total Virtual"
-    description: "The total virtual memory.
-"
+    description: "Size of the virtual address space. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure
+  ullTotalVirtual field.
+- Not available on other platforms."
   }
 
   dimension: metrics__string__crash_app_build {
@@ -716,8 +726,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash App Build"
-    description: "The build id of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
-"
+    description: "Product application's build ID."
   }
 
   dimension: metrics__string__crash_app_channel {
@@ -726,8 +735,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash App Channel"
-    description: "The release channel of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
-"
+    description: "Application release channel (e.g. default, beta, ...)"
   }
 
   dimension: metrics__string__crash_app_display_version {
@@ -736,8 +744,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash App Display Version"
-    description: "The version of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
-"
+    description: "Product version."
   }
 
   dimension: metrics__string__crash_background_task_name {
@@ -746,8 +753,25 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Background Task Name"
-    description: "The name of the background task if launched as one.
-"
+    description: "If the app was invoked in background task mode via `--backgroundtask <task name>`, the string \"task name\"."
+  }
+
+  dimension: metrics__string__crash_build_id {
+    sql: ${TABLE}.metrics.string.crash_build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Build ID"
+    description: "Application build ID, the format is YYYYMMDDHHMMSS."
+  }
+
+  dimension: metrics__string__crash_crash_type {
+    sql: ${TABLE}.metrics.string.crash_crash_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Crash Type"
+    description: "The type of crash that occurred (Android-only)."
   }
 
   dimension: metrics__string__crash_font_name {
@@ -756,8 +780,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Font Name"
-    description: "The font family name that is being loaded when the crash occurred.
-"
+    description: "Set before attempting to load a font to help diagnose crashes during loading."
+  }
+
+  dimension: metrics__string__crash_hang {
+    sql: ${TABLE}.metrics.string.crash_hang ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Hang"
+    description: "Set if the crash was the result of a hang, with a value which describes the type of hang (e.g. \"ui\" or \"shutdown\")."
   }
 
   dimension: metrics__string__crash_ipc_channel_error {
@@ -766,8 +798,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Ipc Channel Error"
-    description: "The error reason for an ipc-based content crash.
-"
+    description: "Set before a content process crashes because of an IPC channel error. Holds a description of the error."
+  }
+
+  dimension: metrics__string__crash_linux_memory_psi {
+    sql: ${TABLE}.metrics.string.crash_linux_memory_psi ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Linux Memory Psi"
+    description: "Memory PSI (Pressure Stall Information) values from /proc/pressure/memory as comma-separated list: some_avg10,some_avg60,some_avg300,some_total,full_avg10,full_avg60,full_avg300,full_total"
   }
 
   dimension: metrics__string__crash_main_thread_runnable_name {
@@ -776,8 +816,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Main Thread Runnable Name"
-    description: "Name of the currently executing `nsIRunnable` on the main thread. Nightly-only.
-"
+    description: "Name of the currently executing nsIRunnable on the main thread."
   }
 
   dimension: metrics__string__crash_minidump_sha256_hash {
@@ -790,14 +829,22 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__crash_minidump_sha_256_hash {
+    sql: ${TABLE}.metrics.string.crash_minidump_sha_256_hash ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Minidump Sha 256 Hash"
+    description: "The sha256 hash of the minidump file, if available."
+  }
+
   dimension: metrics__string__crash_moz_crash_reason {
     sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Moz Crash Reason"
-    description: "Contains the string passed to `MOZ_CRASH()`.
-"
+    description: "Plaintext description of why Firefox crashed, this is usually set by assertions and the like."
   }
 
   dimension: metrics__string__crash_process_type {
@@ -806,8 +853,25 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Process Type"
-    description: "The type of process that experienced a crash. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#process-types).
-"
+    description: "Type of the process that crashed, the possible values are defined in GeckoProcessTypes.h."
+  }
+
+  dimension: metrics__string__crash_product_id {
+    sql: ${TABLE}.metrics.string.crash_product_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Product ID"
+    description: "Application UUID (e.g. ec8030f7-c20a-464f-9b0e-13a3a9e97384)."
+  }
+
+  dimension: metrics__string__crash_product_name {
+    sql: ${TABLE}.metrics.string.crash_product_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Product Name"
+    description: "Application name (e.g. Firefox)."
   }
 
   dimension: metrics__string__crash_profiler_child_shutdown_phase {
@@ -816,8 +880,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Profiler Child Shutdown Phase"
-    description: "The shutdown phase of the profiler.
-"
+    description: "When a child process shuts down, this describes if the profiler is running, and the point the profiler shutdown sequence has reached."
   }
 
   dimension: metrics__string__crash_remote_type {
@@ -826,8 +889,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Remote Type"
-    description: "The type of the content process. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#remote-process-types).
-"
+    description: "Type of the content process, can be set to \"web\", \"file\" or \"extension\"."
   }
 
   dimension: metrics__string__crash_shutdown_progress {
@@ -836,8 +898,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Shutdown Progress"
-    description: "The shutdown phase in which the crash occurred.
-"
+    description: "Shutdown step at which the browser crashed, can be set to \"quit-application\", \"profile-change-teardown\", \"profile-before-change\", \"xpcom-will-shutdown\" or \"xpcom-shutdown\"."
+  }
+
+  dimension: metrics__string__crash_shutdown_reason {
+    sql: ${TABLE}.metrics.string.crash_shutdown_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Shutdown Reason"
+    description: "One out of \"Unknown\", \"AppClose\", \"AppRestart\", \"OSForceClose\", \"OSSessionEnd\" or \"OSShutdown\"."
   }
 
   dimension: metrics__string__crash_windows_file_dialog_error_code {
@@ -846,8 +916,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Windows File Dialog Error Code"
-    description: "The HRESULT returned from a Win32 system call leading to termination of the file-dialog utility process. MozCrashReason is expected to provide context for the value.
-"
+    description: "The HRESULT returned from a Win32 system call leading to termination of the file-dialog utility process. MozCrashReason is expected to provide context for the value."
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -867,8 +936,7 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Memory Js Large Allocation Failure"
-    description: "A large allocation couldn't be satisfied: What was its state when the crash happened.
-"
+    description: "A large allocation couldn't be satisfied, check the JSOutOfMemory description for the possible values of this annotation."
   }
 
   dimension: metrics__string__memory_js_out_of_memory {
@@ -877,8 +945,7 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Memory Js Out Of Memory"
-    description: "A small allocation couldn't be satisfied: What was its state when the crash happened.
-"
+    description: "A small allocation couldn't be satisfied, the annotation may contain the \"Reporting\", \"Reported\" or \"Recovered\" value. The first one means that we crashed while responding to the OOM condition (possibly while running a memory-pressure observers), the second that we crashed after having tried to free some memory, and the last that the GC had managed to free enough memory to satisfy the allocation."
   }
 
   dimension: metrics__string__windows_package_family_name {
@@ -887,8 +954,8 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Windows Package Family Name"
-    description: "The Package Family Name of Firefox, if installed through an MSIX package.
-"
+    description: "If running in a Windows package context, the package family name, per https://docs.microsoft.com/en-us/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefamilyname.
+The package family name is only included when it is likely to have been produced by Mozilla: it starts \"Mozilla.\" or \"MozillaCorporation.\"."
   }
 
   dimension: metrics__string_list__crash_utility_actors_name {
@@ -914,6 +981,38 @@ for the purpose of experimentation enrollment.
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+  }
+
+  dimension: metrics__timespan__crash_last_interaction_duration__time_unit {
+    sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Last Interaction Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__crash_last_interaction_duration__value {
+    sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Last Interaction Duration"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__crash_time_since_last_crash__time_unit {
+    sql: ${TABLE}.metrics.timespan.crash_time_since_last_crash.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Time Since Last Crash"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__crash_time_since_last_crash__value {
+    sql: ${TABLE}.metrics.timespan.crash_time_since_last_crash.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Time Since Last Crash"
+    group_item_label: "Value"
   }
 
   dimension: metrics__timespan__crash_uptime__time_unit {
@@ -1062,8 +1161,7 @@ for the purpose of experimentation enrollment.
       year,
     ]
     label: "Metrics: Datetime: Crash Time"
-    description: "The time at which the crash occurred.
-"
+    description: "Crash time in seconds since the Epoch."
   }
 
   dimension_group: ping_info__parsed_end {

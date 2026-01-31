@@ -146,6 +146,14 @@ view: new_profile_activations_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: paid_vs_organic_gclid {
+    sql: ${TABLE}.paid_vs_organic_gclid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Categorised as \"Paid\" if play_store_attribution_install_referrer_response value contained gclid (Google click id).
+"
+  }
+
   dimension: play_store_attribution_campaign {
     sql: ${TABLE}.play_store_attribution_campaign ;;
     type: string
