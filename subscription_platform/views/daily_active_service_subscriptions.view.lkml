@@ -586,6 +586,20 @@ This will be null for Google and Apple subscriptions."
     description: "Service tier."
   }
 
+  dimension: subscription__started_reason {
+    sql: ${TABLE}.subscription.started_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Started Reason"
+    description: "Reason why the subscription started.
+Possible values:
+  * `New Customer` - A new customer started their first subscription to this service.
+  * `New Customer Trial` - A new customer started their first subscription to this service and it is a trial plan.
+  * `Returning Customer` - A customer started a subsequent subscription to this service.
+  * `Returning Customer Trial` - A customer started a subsequent subscription to this service and it is a trial plan."
+  }
+
   dimension: was_active_at_day_end {
     sql: ${TABLE}.was_active_at_day_end ;;
     type: yesno

@@ -479,6 +479,18 @@ This will be null for Google and Apple subscriptions."
     description: "ID of the service provided by the subscription, as defined in the `services_v1` ETL."
   }
 
+  dimension: started_reason {
+    sql: ${TABLE}.started_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Reason why the subscription started.
+Possible values:
+  * `New Customer` - A new customer started their first subscription to this service.
+  * `New Customer Trial` - A new customer started their first subscription to this service and it is a trial plan.
+  * `Returning Customer` - A customer started a subsequent subscription to this service.
+  * `Returning Customer Trial` - A customer started a subsequent subscription to this service and it is a trial plan."
+  }
+
   dimension_group: auto_renew_disabled_at {
     sql: ${TABLE}.auto_renew_disabled_at ;;
     type: time

@@ -208,6 +208,13 @@ view: newtab_clients_daily_aggregates_table {
     description: "Count of newtab open clients"
   }
 
+  dimension: newtab_content_surface_id {
+    sql: ${TABLE}.newtab_content_surface_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Scheduled surface identifier based on locale and region, with fallback to computed value from country and locale"
+  }
+
   dimension: newtab_search_enabled {
     sql: ${TABLE}.newtab_search_enabled ;;
     type: yesno
