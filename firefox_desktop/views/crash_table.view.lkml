@@ -825,8 +825,7 @@ The status of individual objects is constructed by taking selected object proper
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Minidump Sha256 Hash"
-    description: "The SHA256 hash of the associated minidump file, if any.
-"
+    description: "The sha256 hash of the minidump file, if available."
   }
 
   dimension: metrics__string__crash_minidump_sha_256_hash {
