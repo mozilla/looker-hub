@@ -277,9 +277,26 @@ view: crash {
     description: "Name of the currently executing nsIRunnable on the main thread."
   }
 
+  dimension: metrics__string__crash_minidump_sha256_hash {
+    label: "Crash: Minidump Sha256 Hash"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Minidump Sha256 Hash"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Minidump Sha256 Hash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_minidump_sha256_hash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha256 hash of the minidump file, if available."
+  }
+
   dimension: metrics__string__crash_minidump_sha_256_hash {
     label: "Crash: Minidump Sha 256 Hash"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_minidump_sha_256_hash ;;
     type: string
     group_label: "Crash"
@@ -941,24 +958,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "The cause of the crash. May be one of `os_fault` or `java_exception`.
-"
-  }
-
-  dimension: metrics__string__crash_minidump_sha256_hash {
-    label: "Crash: Minidump Sha256 Hash"
-    hidden: yes
-    sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Minidump Sha256 Hash"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Minidump Sha256 Hash"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_minidump_sha256_hash"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The SHA256 hash of the associated minidump file, if any.
 "
   }
 

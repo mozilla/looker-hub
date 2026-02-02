@@ -187,7 +187,7 @@ view: crash {
 
   dimension: metrics__string__crash_minidump_sha256_hash {
     label: "Crash: Minidump Sha256 Hash"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
     type: string
     group_label: "Crash"
@@ -811,7 +811,7 @@ view: crash {
 
   dimension: metrics__string__crash_minidump_sha_256_hash {
     label: "Crash: Minidump Sha 256 Hash"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_minidump_sha_256_hash ;;
     type: string
     group_label: "Crash"
