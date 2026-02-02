@@ -1864,6 +1864,14 @@ view: events_stream_table {
     group_item_label: "Branches"
   }
 
+  dimension: extras__string__breach_name {
+    sql: ${TABLE}.extras.string.breach_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Breach Name"
+  }
+
   dimension: extras__string__bundle_policy {
     sql: ${TABLE}.extras.string.bundle_policy ;;
     type: string
