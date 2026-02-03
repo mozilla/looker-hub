@@ -297,6 +297,15 @@ This will be null for Google and Apple subscriptions."
     description: "Ongoing discount promotion code (if any)."
   }
 
+  dimension: old_subscription__payment_method {
+    sql: ${TABLE}.old_subscription.payment_method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Old Subscription"
+    group_item_label: "Payment Method"
+    description: "The type of payment method used for the subscription (e.g. \"Card\", \"PayPal\", \"Apple Pay\", \"Google Pay\")."
+  }
+
   dimension: old_subscription__payment_provider {
     sql: ${TABLE}.old_subscription.payment_provider ;;
     type: string
@@ -762,6 +771,15 @@ This will be null for Google and Apple subscriptions."
     group_label: "Subscription"
     group_item_label: "Ongoing Discount Promotion Code"
     description: "Ongoing discount promotion code (if any)."
+  }
+
+  dimension: subscription__payment_method {
+    sql: ${TABLE}.subscription.payment_method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Payment Method"
+    description: "The type of payment method used for the subscription (e.g. \"Card\", \"PayPal\", \"Apple Pay\", \"Google Pay\")."
   }
 
   dimension: subscription__payment_provider {

@@ -278,6 +278,13 @@ This will be null for Google and Apple subscriptions."
     description: "Ongoing discount promotion code (if any)."
   }
 
+  dimension: payment_method {
+    sql: ${TABLE}.payment_method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The type of payment method used for the subscription (e.g. \"Card\", \"PayPal\", \"Apple Pay\", \"Google Pay\")."
+  }
+
   dimension: payment_provider {
     sql: ${TABLE}.payment_provider ;;
     type: string
