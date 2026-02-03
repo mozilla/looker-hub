@@ -214,6 +214,10 @@ ads:
       type: table_explore
       views:
         base_view: campaigns_monthly
+    forecast_suggest_monthly:
+      type: table_explore
+      views:
+        base_view: forecast_suggest_monthly
     metric_definitions_ad_metrics_daily:
       type: metric_definitions_explore
       views:
@@ -268,6 +272,10 @@ ads:
     campaigns_monthly:
       tables:
       - table: mozdata.ads.campaigns_monthly
+      type: table_view
+    forecast_suggest_monthly:
+      tables:
+      - table: mozdata.ads.forecast_suggest_monthly
       type: table_view
     metric_definitions_ad_metrics_daily:
       type: metric_definitions_view
