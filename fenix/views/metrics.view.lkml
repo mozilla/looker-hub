@@ -32982,7 +32982,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
   dimension: metrics__counter__places_manager_read_query_count {
     label: "Places Manager: Read Query Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.places_manager_read_query_count ;;
     type: number
     group_label: "Places Manager"
@@ -33138,7 +33138,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
   dimension: metrics__counter__places_manager_write_query_count {
     label: "Places Manager: Write Query Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.places_manager_write_query_count ;;
     type: number
     group_label: "Places Manager"
@@ -52118,19 +52118,19 @@ view: metrics__metrics__labeled_counter__places_manager_read_query_error_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -52159,19 +52159,19 @@ view: metrics__metrics__labeled_counter__places_manager_write_query_error_count 
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
