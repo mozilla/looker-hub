@@ -23,6 +23,12 @@ view: experiment_crash_rates {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: crash_signature {
+    sql: ${TABLE}.crash_signature ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: experiment {
     sql: ${TABLE}.experiment ;;
     type: string
