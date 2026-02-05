@@ -17908,6 +17908,10 @@ websites:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_www_site_landing_page_metrics
+    site_engagement_events:
+      type: table_explore
+      views:
+        base_view: site_engagement_events
   glean_app: false
   owners:
   - kik@mozilla.com
@@ -18003,6 +18007,10 @@ websites:
     moz_org_page_metrics:
       tables:
       - table: moz-fx-data-shared-prod.mozilla_org.www_site_page_metrics
+      type: table_view
+    site_engagement_events:
+      tables:
+      - table: moz-fx-data-shared-prod.firefoxdotcom.site_engagement_events
       type: table_view
     www_site_events_metrics:
       tables:
