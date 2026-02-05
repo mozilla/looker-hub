@@ -8002,6 +8002,23 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__splitview_uri_count {
+    label: "Splitview: URI Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.splitview_uri_count ;;
+    group_label: "Splitview"
+    group_item_label: "URI Count"
+
+    link: {
+      label: "Glean Dictionary reference for Splitview: URI Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/splitview_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how many URIs were loaded on each side of the splitview.
+"
+  }
+
   dimension: metrics__boolean__sslkeylogging_enabled {
     label: "Sslkeylogging: Enabled"
     hidden: no
@@ -10337,6 +10354,114 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.weather.
+"
+  }
+
+  dimension: metrics__quantity__urlbar_pref_max_results {
+    label: "Urlbar: Pref Max Results"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
+    type: number
+    group_label: "Urlbar"
+    group_item_label: "Pref Max Results"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Max Results"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_max_results"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum results to show in the Address Bar. Corresponds to the value of the `browser.urlbar.maxRichResults` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_all {
+    label: "Urlbar: Pref Suggest All"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_all ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest All"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether Suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.all` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_online_available {
+    label: "Urlbar: Pref Suggest Online Available"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_available ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest Online Available"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest Online Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_online_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether online Suggest is available to the user. Corresponds to the Nimbus variable `quickSuggestOnlineAvailable` and its fallback pref `browser.urlbar.quicksuggest.online.available`. NOTE: \"Online Suggest\" in this context means the new version of online Suggest introduced in 146 with Terms of Use and OHTTP.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_online_enabled {
+    label: "Urlbar: Pref Suggest Online Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_enabled ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest Online Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest Online Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_online_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This pref is true for all users by default! You probably want to use this in conjunction with pref_suggest_online_available and/or restrict your analysis to user populations where you know online Suggest is available. Corresponds to `browser.urlbar.quicksuggest.online.enabled`. NOTE: \"Online Suggest\" in this context means the new version of online Suggest introduced in 146 with Terms of Use and OHTTP.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_sponsored {
+    label: "Urlbar: Pref Suggest Sponsored"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_sponsored ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest Sponsored"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest Sponsored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_sponsored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.sponsored` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_topsites {
+    label: "Urlbar: Pref Suggest Topsites"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_topsites ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest Topsites"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest Topsites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_topsites"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether topsite results are enabled in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.topsites` pref.
 "
   }
 
@@ -64480,6 +64605,47 @@ view: metrics__metrics__labeled_counter__sidebar_link {
 
 view: metrics__metrics__labeled_counter__sidebar_search {
   label: "Sidebar: Search"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__splitview_uri_count {
+  label: "Splitview: URI Count"
 
   dimension: document_id {
     type: string

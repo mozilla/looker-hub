@@ -1629,6 +1629,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata10_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata10_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata10 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata10software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata10software ;;
     type: string
@@ -1645,6 +1655,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata11 Webgl"
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata11_webgl_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webgl_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata11 Webgl Software"
     description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
 "
   }
@@ -1669,6 +1689,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Software"
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1software ;;
     type: string
@@ -1689,6 +1719,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Software"
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2software ;;
     type: string
@@ -1696,6 +1736,16 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2Software"
     description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata1_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata1_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata1 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
 "
   }
 
@@ -1719,6 +1769,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata2_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata2_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata2 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata2software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata2software ;;
     type: string
@@ -1735,6 +1795,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata3 Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
 "
   }
@@ -1839,6 +1909,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata4_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata4_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata4 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata4software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata4software ;;
     type: string
@@ -1855,6 +1935,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata5"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata5_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata5_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata5 Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
 "
   }
@@ -1879,6 +1969,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata6_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata6_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata6 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata6software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata6software ;;
     type: string
@@ -1895,6 +1995,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata7"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata7_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata7_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata7 Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
 "
   }
@@ -1919,6 +2029,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata8_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata8_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata8 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata8software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata8software ;;
     type: string
@@ -1935,6 +2055,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata9"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata9_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata9_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata9 Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
 "
   }
@@ -2952,6 +3082,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata10_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata10 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata10_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata10 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata11_webgl {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl ;;
     type: string
@@ -2959,6 +3109,26 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata11 Webgl"
     description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata11_webgl_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata11 Webgl Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata11_webgl_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata11 Webgl Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl software rendering
 "
   }
 
@@ -2972,6 +3142,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2 ;;
     type: string
@@ -2979,6 +3169,46 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2"
     description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 software rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata1_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata1 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata1_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata1 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 software rendering
 "
   }
 
@@ -2992,6 +3222,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata2_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata2 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata2_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata2 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata3 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata3 ;;
     type: string
@@ -2999,6 +3249,26 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata3"
     description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata3 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata3 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 software rendering
 "
   }
 
@@ -3012,6 +3282,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata4_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata4 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata4_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata4 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata5 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata5 ;;
     type: string
@@ -3019,6 +3309,26 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata5"
     description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata5_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata5 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata5_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata5 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 software rendering
 "
   }
 
@@ -3032,6 +3342,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata6_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata6 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata6_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata6 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata7 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata7 ;;
     type: string
@@ -3039,6 +3369,26 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata7"
     description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata7_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata7 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata7_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata7 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 software rendering
 "
   }
 
@@ -3052,6 +3402,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata8_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata8 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata8_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata8 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata9 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata9 ;;
     type: string
@@ -3059,6 +3429,46 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata9"
     description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata9_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata9 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata9_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata9 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 software rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_css_system_colors {
+    sql: ${TABLE}.metrics.text2.characteristics_css_system_colors ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Css System Colors"
+    description: "JSON array containing CSS system color keywords and their computed values as uppercase hex (without # prefix). System colors (like Canvas, ButtonFace, LinkText, etc.) are CSS keywords that resolve to theme/OS-specific colors and can be used for fingerprinting. This metric collects the computed backgroundColor for each system color keyword. Data format: [{\"Canvas\": \"FFFFFF\"}, {\"ButtonFace\": \"F0F0F0\"}, ...].
+"
+  }
+
+  dimension: metrics__text2__characteristics_css_system_fonts {
+    sql: ${TABLE}.metrics.text2.characteristics_css_system_fonts ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Css System Fonts"
+    description: "JSON array containing CSS system font keywords and their computed font properties. System fonts (like caption, icon, menu, etc.) and common font families are tested to determine their rendered fontSize and fontFamily values, which can vary by OS and be used for fingerprinting. This metric collects computed fontSize + fontFamily for each font keyword/name tested. Data format: [{\"caption\": \"11px system-ui\"}, {\"Arial\": \"16px Arial\"}, ...].
 "
   }
 
