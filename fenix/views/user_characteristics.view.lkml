@@ -257,9 +257,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata10_raw {
+    label: "Characteristics: Canvasdata10 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata10 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata10 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata10_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata10_software {
+    label: "Characteristics: Canvasdata10 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata10_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata10 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata10 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata10_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata10_software_raw {
+    label: "Characteristics: Canvasdata10 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata10 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata10 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata10_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata10software {
     label: "Characteristics: Canvasdata10Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata10software ;;
     type: string
     group_label: "Characteristics"
@@ -293,9 +347,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata11_webgl_raw {
+    label: "Characteristics: Canvasdata11 Webgl Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata11 Webgl Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata11 Webgl Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata11_webgl_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata11_webgl_software {
+    label: "Characteristics: Canvasdata11 Webgl Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webgl_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata11 Webgl Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata11 Webgl Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata11_webgl_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata11_webgl_software_raw {
+    label: "Characteristics: Canvasdata11 Webgl Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata11 Webgl Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata11 Webgl Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata11_webgl_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata11_webglsoftware {
     label: "Characteristics: Canvasdata11 Webglsoftware"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webglsoftware ;;
     type: string
     group_label: "Characteristics"
@@ -329,9 +437,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_raw {
+    label: "Characteristics: Canvasdata12 Fingerprintjs1 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata12 Fingerprintjs1 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata12 Fingerprintjs1 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata12_fingerprintjs1_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1_software {
+    label: "Characteristics: Canvasdata12 Fingerprintjs1 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata12 Fingerprintjs1 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata12 Fingerprintjs1 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata12_fingerprintjs1_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_software_raw {
+    label: "Characteristics: Canvasdata12 Fingerprintjs1 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata12 Fingerprintjs1 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata12 Fingerprintjs1 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata12_fingerprintjs1_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1software {
     label: "Characteristics: Canvasdata12 Fingerprintjs1Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1software ;;
     type: string
     group_label: "Characteristics"
@@ -365,9 +527,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_raw {
+    label: "Characteristics: Canvasdata13 Fingerprintjs2 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata13 Fingerprintjs2 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata13 Fingerprintjs2 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata13_fingerprintjs2_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2_software {
+    label: "Characteristics: Canvasdata13 Fingerprintjs2 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata13 Fingerprintjs2 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata13 Fingerprintjs2 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata13_fingerprintjs2_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_software_raw {
+    label: "Characteristics: Canvasdata13 Fingerprintjs2 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata13 Fingerprintjs2 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata13 Fingerprintjs2 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata13_fingerprintjs2_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2software {
     label: "Characteristics: Canvasdata13 Fingerprintjs2Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2software ;;
     type: string
     group_label: "Characteristics"
@@ -383,9 +599,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata1_raw {
+    label: "Characteristics: Canvasdata1 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata1 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata1 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata1_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata1_software {
+    label: "Characteristics: Canvasdata1 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata1_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata1 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata1 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata1_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata1_software_raw {
+    label: "Characteristics: Canvasdata1 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata1 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata1 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata1_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata1software {
     label: "Characteristics: Canvasdata1Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata1software ;;
     type: string
     group_label: "Characteristics"
@@ -419,9 +689,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata2_raw {
+    label: "Characteristics: Canvasdata2 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata2 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata2 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata2_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata2_software {
+    label: "Characteristics: Canvasdata2 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata2_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata2 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata2 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata2_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata2_software_raw {
+    label: "Characteristics: Canvasdata2 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata2 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata2 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata2_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata2software {
     label: "Characteristics: Canvasdata2Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata2software ;;
     type: string
     group_label: "Characteristics"
@@ -452,6 +776,60 @@ view: user_characteristics {
     }
 
     description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3_raw {
+    label: "Characteristics: Canvasdata3 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata3 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata3_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3_software {
+    label: "Characteristics: Canvasdata3 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata3 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata3_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3_software_raw {
+    label: "Characteristics: Canvasdata3 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata3 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata3_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 software rendering
 "
   }
 
@@ -565,7 +943,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3software {
     label: "Characteristics: Canvasdata3Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3software ;;
     type: string
     group_label: "Characteristics"
@@ -635,9 +1013,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata4_raw {
+    label: "Characteristics: Canvasdata4 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata4 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata4 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata4_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata4_software {
+    label: "Characteristics: Canvasdata4 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata4_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata4 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata4 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata4_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata4_software_raw {
+    label: "Characteristics: Canvasdata4 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata4 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata4 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata4_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata4software {
     label: "Characteristics: Canvasdata4Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata4software ;;
     type: string
     group_label: "Characteristics"
@@ -671,9 +1103,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata5_raw {
+    label: "Characteristics: Canvasdata5 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata5 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata5 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata5_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata5_software {
+    label: "Characteristics: Canvasdata5 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata5_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata5 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata5 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata5_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata5_software_raw {
+    label: "Characteristics: Canvasdata5 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata5 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata5 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata5_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata5software {
     label: "Characteristics: Canvasdata5Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata5software ;;
     type: string
     group_label: "Characteristics"
@@ -707,9 +1193,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata6_raw {
+    label: "Characteristics: Canvasdata6 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata6 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata6 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata6_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata6_software {
+    label: "Characteristics: Canvasdata6 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata6_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata6 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata6 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata6_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata6_software_raw {
+    label: "Characteristics: Canvasdata6 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata6 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata6 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata6_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata6software {
     label: "Characteristics: Canvasdata6Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata6software ;;
     type: string
     group_label: "Characteristics"
@@ -743,9 +1283,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata7_raw {
+    label: "Characteristics: Canvasdata7 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata7 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata7 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata7_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata7_software {
+    label: "Characteristics: Canvasdata7 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata7_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata7 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata7 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata7_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata7_software_raw {
+    label: "Characteristics: Canvasdata7 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata7 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata7 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata7_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata7software {
     label: "Characteristics: Canvasdata7Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata7software ;;
     type: string
     group_label: "Characteristics"
@@ -779,9 +1373,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata8_raw {
+    label: "Characteristics: Canvasdata8 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata8 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata8 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata8_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata8_software {
+    label: "Characteristics: Canvasdata8 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata8_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata8 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata8 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata8_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata8_software_raw {
+    label: "Characteristics: Canvasdata8 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata8 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata8 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata8_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata8software {
     label: "Characteristics: Canvasdata8Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata8software ;;
     type: string
     group_label: "Characteristics"
@@ -815,9 +1463,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata9_raw {
+    label: "Characteristics: Canvasdata9 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata9 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata9 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata9_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata9_software {
+    label: "Characteristics: Canvasdata9 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata9_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata9 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata9 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata9_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata9_software_raw {
+    label: "Characteristics: Canvasdata9 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata9 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata9 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata9_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata9software {
     label: "Characteristics: Canvasdata9Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata9software ;;
     type: string
     group_label: "Characteristics"
@@ -1118,6 +1820,42 @@ view: user_characteristics {
     }
 
     description: "CPU model of the user's device
+"
+  }
+
+  dimension: metrics__text2__characteristics_css_system_colors {
+    label: "Characteristics: Css System Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_css_system_colors ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Css System Colors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Css System Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_css_system_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON array containing CSS system color keywords and their computed values as uppercase hex (without # prefix). System colors (like Canvas, ButtonFace, LinkText, etc.) are CSS keywords that resolve to theme/OS-specific colors and can be used for fingerprinting. This metric collects the computed backgroundColor for each system color keyword. Data format: [{\"Canvas\": \"FFFFFF\"}, {\"ButtonFace\": \"F0F0F0\"}, ...].
+"
+  }
+
+  dimension: metrics__text2__characteristics_css_system_fonts {
+    label: "Characteristics: Css System Fonts"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_css_system_fonts ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Css System Fonts"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Css System Fonts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_css_system_fonts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON array containing CSS system font keywords and their computed font properties. System fonts (like caption, icon, menu, etc.) and common font families are tested to determine their rendered fontSize and fontFamily values, which can vary by OS and be used for fingerprinting. This metric collects computed fontSize + fontFamily for each font keyword/name tested. Data format: [{\"caption\": \"11px system-ui\"}, {\"Arial\": \"16px Arial\"}, ...].
 "
   }
 

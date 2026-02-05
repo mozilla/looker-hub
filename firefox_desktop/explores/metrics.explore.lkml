@@ -2278,6 +2278,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sidebar_search}) AS metrics__metrics__labeled_counter__sidebar_search ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sidebar_search.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__splitview_uri_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__splitview_uri_count}) AS metrics__metrics__labeled_counter__splitview_uri_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__splitview_uri_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__ssl_resumed_session {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ssl_resumed_session}) AS metrics__metrics__labeled_counter__ssl_resumed_session ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ssl_resumed_session.document_id} ;;

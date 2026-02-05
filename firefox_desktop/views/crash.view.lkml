@@ -707,9 +707,26 @@ view: crash {
 "
   }
 
+  dimension: metrics__string__crash_application_build_id {
+    label: "Crash: Application Build ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_application_build_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Application Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Application Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_application_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Android application's build ID."
+  }
+
   dimension: metrics__string__crash_build_id {
     label: "Crash: Build ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_build_id ;;
     type: string
     group_label: "Crash"

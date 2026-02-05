@@ -733,7 +733,7 @@ The status of individual objects is constructed by taking selected object proper
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash App Build"
-    description: "Product application's build ID."
+    description: "Application build ID, the format is YYYYMMDDHHMMSS."
   }
 
   dimension: metrics__string__crash_app_channel {
@@ -752,6 +752,15 @@ The status of individual objects is constructed by taking selected object proper
     group_label: "Metrics: String"
     group_item_label: "Crash App Display Version"
     description: "Product version."
+  }
+
+  dimension: metrics__string__crash_application_build_id {
+    sql: ${TABLE}.metrics.string.crash_application_build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Application Build ID"
+    description: "The Android application's build ID."
   }
 
   dimension: metrics__string__crash_background_task_name {
@@ -842,8 +851,7 @@ The status of individual objects is constructed by taking selected object proper
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Minidump Sha256 Hash"
-    description: "The SHA256 hash of the associated minidump file, if any.
-"
+    description: "The sha256 hash of the minidump file, if available."
   }
 
   dimension: metrics__string__crash_minidump_sha_256_hash {

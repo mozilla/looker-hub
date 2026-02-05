@@ -649,6 +649,14 @@ view: desktop_crashes_table {
     group_item_label: "Crash App Display Version"
   }
 
+  dimension: metrics__string__crash_application_build_id {
+    sql: ${TABLE}.metrics.string.crash_application_build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Application Build ID"
+  }
+
   dimension: metrics__string__crash_background_task_name {
     sql: ${TABLE}.metrics.string.crash_background_task_name ;;
     type: string
