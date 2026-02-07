@@ -51,6 +51,12 @@ view: metrics {
     hidden: yes
   }
 
+  dimension: metric_configuration_alert_on_absent_groups {
+    sql: ${TABLE}.metric_configuration_alert_on_absent_groups ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_configuration_bigconfig_namespace {
     sql: ${TABLE}.metric_configuration_bigconfig_namespace ;;
     type: string
