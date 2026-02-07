@@ -9245,10 +9245,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - aurora
+            - nightly
             - beta
             - esr
-            - nightly
+            - aurora
             - default
             - nightly-pine
             - nightly-larch
@@ -11208,14 +11208,14 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id431
           app:
-            default: Android - daemon_session
+            default: iOS - vpn_session
             options:
-            - Android - daemon_session
-            - Windows - vpn_session
-            - Android - vpn_session
-            - Linux - vpn_session
             - iOS - vpn_session
+            - Android - vpn_session
             - iOS - daemon_session
+            - Android - daemon_session
+            - Linux - vpn_session
+            - Windows - vpn_session
             - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app

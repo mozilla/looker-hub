@@ -8,13 +8,11 @@ view: user_characteristics_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
-    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
   }
 
   dimension: events {
@@ -43,7 +41,6 @@ view: user_characteristics_table {
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -52,7 +49,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -61,7 +57,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -70,7 +65,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -79,7 +73,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -88,7 +81,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -118,7 +110,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -127,7 +118,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
-    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -136,7 +126,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -145,7 +134,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -154,7 +142,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -163,7 +150,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -172,7 +158,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -181,7 +166,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -190,7 +174,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -223,8 +206,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Font Name List Emoji Modified"
-    description: "Whether the pref font.name-list.emoji was modified.
-"
   }
 
   dimension: metrics__boolean__characteristics_inverted_colors {
@@ -233,8 +214,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Inverted Colors"
-    description: "What LookAndFeel(InvertedColors) reports.
-"
   }
 
   dimension: metrics__boolean__characteristics_monochrome {
@@ -243,8 +222,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Monochrome"
-    description: "Whether the user's device is monochrome
-"
   }
 
   dimension: metrics__boolean__characteristics_pdf_viewer {
@@ -253,8 +230,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Pdf Viewer"
-    description: "PDF viewer support reported by the navigator
-"
   }
 
   dimension: metrics__boolean__characteristics_prefers_reduced_motion {
@@ -263,8 +238,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefers Reduced Motion"
-    description: "What LookAndFeel(PrefersReducedMotion) reports.
-"
   }
 
   dimension: metrics__boolean__characteristics_prefers_reduced_transparency {
@@ -273,8 +246,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefers Reduced Transparency"
-    description: "What LookAndFeel(PrefersReducedTransparency) reports.
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_block_popups {
@@ -283,8 +254,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs Block Popups"
-    description: "Block pop-up windows (The dom.disable_open_during_load pref)
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_browser_display_use_document_fonts {
@@ -293,8 +262,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs Browser Display Use Document Fonts"
-    description: "Allow pages to choose their own fonts.
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_general_autoscroll {
@@ -303,8 +270,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs General Autoscroll"
-    description: "Use autoscrolling
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_general_smoothscroll {
@@ -313,8 +278,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs General Smoothscroll"
-    description: "Use smooth scrolling
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_media_eme_enabled {
@@ -323,8 +286,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs Media Eme Enabled"
-    description: "Value of the media.eme.enabled pref.
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_overlay_scrollbars {
@@ -333,8 +294,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs Overlay Scrollbars"
-    description: "Use overlay scrollbars (or otherwise \"Always show scrollbars\")
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_privacy_donottrackheader_enabled {
@@ -343,8 +302,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs Privacy Donottrackheader Enabled"
-    description: "Sending \"do not track\" HTTP header
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_privacy_globalprivacycontrol_enabled {
@@ -353,8 +310,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs Privacy Globalprivacycontrol Enabled"
-    description: "Sending \"global privacy control\" HTTP header
-"
   }
 
   dimension: metrics__boolean__characteristics_prefs_zoom_text_only {
@@ -363,8 +318,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Prefs Zoom Text Only"
-    description: "Text-only zoom enabled (vs. full-zoom)
-"
   }
 
   dimension: metrics__boolean__characteristics_use_document_colors {
@@ -373,8 +326,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Use Document Colors"
-    description: "This is the derived PreferenceSheet::Prefs::mUseDocumentColors value.
-"
   }
 
   dimension: metrics__boolean__characteristics_using_accelerated_canvas {
@@ -383,8 +334,6 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Using Accelerated Canvas"
-    description: "Whether the user's device is using accelerated canvas
-"
   }
 
   dimension: metrics__boolean__characteristics_video_dynamic_range {
@@ -393,40 +342,34 @@ view: user_characteristics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Characteristics Video Dynamic Range"
-    description: "What LookAndFeel(VideoDynamicRange) reports. Note that CSSVideoDynamicRange has an additional dependency on Color Depth.
-"
+  }
+
+  dimension: metrics__boolean__characteristics_wgpu_is_fallback_adapter {
+    sql: ${TABLE}.metrics.boolean.characteristics_wgpu_is_fallback_adapter ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Characteristics Wgpu Is Fallback Adapter"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
-"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     hidden: yes
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     hidden: yes
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
-"
   }
 
   dimension: metrics__quantity__characteristics_any_pointer_type {
@@ -435,8 +378,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Any Pointer Type"
-    description: "Union of pointers available. We apply union to determine if the user have both coarse and fine pointer.
-"
   }
 
   dimension: metrics__quantity__characteristics_audio_channels {
@@ -445,8 +386,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Audio Channels"
-    description: "Audio sampling rate
-"
   }
 
   dimension: metrics__quantity__characteristics_audio_fingerprint {
@@ -455,8 +394,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Audio Fingerprint"
-    description: "Audio fingerprint of the user. A float number multiplied by 10e7.
-"
   }
 
   dimension: metrics__quantity__characteristics_audio_frames {
@@ -465,8 +402,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Audio Frames"
-    description: "Audio frames
-"
   }
 
   dimension: metrics__quantity__characteristics_audio_rate {
@@ -475,8 +410,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Audio Rate"
-    description: "Audio sampling rate
-"
   }
 
   dimension: metrics__quantity__characteristics_avail_height {
@@ -485,8 +418,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Avail Height"
-    description: "Available height property
-"
   }
 
   dimension: metrics__quantity__characteristics_avail_width {
@@ -495,8 +426,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Avail Width"
-    description: "Available width property
-"
   }
 
   dimension: metrics__quantity__characteristics_build_date {
@@ -505,8 +434,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Build Date"
-    description: "Firefox build's build date in unix time
-"
   }
 
   dimension: metrics__quantity__characteristics_camera_count {
@@ -515,8 +442,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Camera Count"
-    description: "Number of cameras available on the device.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_accentcolor {
@@ -525,8 +450,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Accentcolor"
-    description: "The CSS system-color Accentcolor.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_accentcolortext {
@@ -535,8 +458,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Accentcolortext"
-    description: "The CSS system-color Accentcolortext.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_canvas {
@@ -545,8 +466,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Canvas"
-    description: "The CSS system-color Canvas.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_canvastext {
@@ -555,8 +474,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Canvastext"
-    description: "The CSS system-color Canvastext.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_depth {
@@ -565,8 +482,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Depth"
-    description: "The Color Depth reported by CSS
-"
   }
 
   dimension: metrics__quantity__characteristics_color_gamut {
@@ -575,8 +490,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Gamut"
-    description: "The Color Gamut reported by CSS
-"
   }
 
   dimension: metrics__quantity__characteristics_color_highlight {
@@ -585,8 +498,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Highlight"
-    description: "The CSS system-color Highlight.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_highlighttext {
@@ -595,8 +506,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Highlighttext"
-    description: "The CSS system-color Highlighttext.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_scheme {
@@ -605,8 +514,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Scheme"
-    description: "The Color Scheme used for Content, from ContentPrefs() Preference Sheet.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_selecteditem {
@@ -615,8 +522,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Selecteditem"
-    description: "The CSS system-color Selecteditem.
-"
   }
 
   dimension: metrics__quantity__characteristics_color_selecteditemtext {
@@ -625,8 +530,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Selecteditemtext"
-    description: "The CSS system-color Selecteditemtext.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_default_modified {
@@ -635,8 +538,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Default Modified"
-    description: "The number of other modified font.default prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_minimum_size_modified {
@@ -645,8 +546,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Minimum Size Modified"
-    description: "The number of other modified font.minimum-size prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_name_list_cursive_modified {
@@ -655,8 +554,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Name List Cursive Modified"
-    description: "The number of modified font.name-list.cursive. prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_name_list_monospace_modified {
@@ -665,8 +562,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Name List Monospace Modified"
-    description: "The number of modified font.name-list.monospace. prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_name_list_sans_serif_modified {
@@ -675,8 +570,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Name List Sans Serif Modified"
-    description: "The number of modified font.name-list.sans-serif. prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_name_list_serif_modified {
@@ -685,8 +578,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Name List Serif Modified"
-    description: "The number of modified font.name-list.serif. prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_name_monospace_modified {
@@ -695,8 +586,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Name Monospace Modified"
-    description: "The number of other modified font.name.monospace prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_name_sans_serif_modified {
@@ -705,8 +594,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Name Sans Serif Modified"
-    description: "The number of other modified font.name.sans-serif prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_name_serif_modified {
@@ -715,8 +602,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Name Serif Modified"
-    description: "The number of other modified font.name.serif prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_size_monospace_modified {
@@ -725,8 +610,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Size Monospace Modified"
-    description: "The number of other modified font.size.monospace prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_font_size_variable_modified {
@@ -735,8 +618,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Font Size Variable Modified"
-    description: "The number of other modified font.size.variable prefs.
-"
   }
 
   dimension: metrics__quantity__characteristics_gl2_version_software {
@@ -745,8 +626,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Gl2 Version Software"
-    description: "The version of OpenGL supported by the user's system.
-"
   }
 
   dimension: metrics__quantity__characteristics_gl_version {
@@ -755,8 +634,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Gl Version"
-    description: "The version of OpenGL supported by the user's system.
-"
   }
 
   dimension: metrics__quantity__characteristics_gl_version_software {
@@ -765,8 +642,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Gl Version Software"
-    description: "The version of OpenGL supported by the user's system.
-"
   }
 
   dimension: metrics__quantity__characteristics_group_count {
@@ -775,8 +650,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Group Count"
-    description: "Number of device groups reported by the device.
-"
   }
 
   dimension: metrics__quantity__characteristics_group_count_wo_speakers {
@@ -785,8 +658,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Group Count Wo Speakers"
-    description: "Number of device groups without speakers reported by the device.
-"
   }
 
   dimension: metrics__quantity__characteristics_ice_order {
@@ -795,8 +666,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Ice Order"
-    description: "Unique ICE foundations occurrence count
-"
   }
 
   dimension: metrics__quantity__characteristics_ice_sd {
@@ -805,8 +674,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Ice Sd"
-    description: "ICE foundation discovery latency standard deviation sum multiplied by 1000
-"
   }
 
   dimension: metrics__quantity__characteristics_inner_height {
@@ -815,8 +682,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Inner Height"
-    description: "Inner height of user's browser.
-"
   }
 
   dimension: metrics__quantity__characteristics_inner_width {
@@ -825,8 +690,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Inner Width"
-    description: "Inner width of user's browser.
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml1 {
@@ -835,8 +698,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml1"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml10 {
@@ -845,8 +706,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml10"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml2 {
@@ -855,8 +714,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml2"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml3 {
@@ -865,8 +722,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml3"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml4 {
@@ -875,8 +730,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml4"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml5 {
@@ -885,8 +738,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml5"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml6 {
@@ -895,8 +746,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml6"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml7 {
@@ -905,8 +754,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml7"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml8 {
@@ -915,8 +762,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml8"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_mathml9 {
@@ -925,8 +770,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Mathml9"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__quantity__characteristics_max_touch_points {
@@ -935,8 +778,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Max Touch Points"
-    description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
-"
   }
 
   dimension: metrics__quantity__characteristics_microphone_count {
@@ -945,8 +786,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Microphone Count"
-    description: "Number of microphones available on the device.
-"
   }
 
   dimension: metrics__quantity__characteristics_motion_decimals {
@@ -955,8 +794,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Motion Decimals"
-    description: "devicemotion event's decimal places count
-"
   }
 
   dimension: metrics__quantity__characteristics_motion_freq {
@@ -965,8 +802,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Motion Freq"
-    description: "devicemotion event's frequency
-"
   }
 
   dimension: metrics__quantity__characteristics_orientation_angle {
@@ -975,8 +810,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Orientation Angle"
-    description: "Orientation angle of the screen
-"
   }
 
   dimension: metrics__quantity__characteristics_orientation_decimals {
@@ -985,8 +818,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Orientation Decimals"
-    description: "deviceorientation event's decimal places count
-"
   }
 
   dimension: metrics__quantity__characteristics_orientation_freq {
@@ -995,8 +826,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Orientation Freq"
-    description: "deviceorientation event's frequency
-"
   }
 
   dimension: metrics__quantity__characteristics_orientationabs_decimals {
@@ -1005,8 +834,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Orientationabs Decimals"
-    description: "deviceorientationabsolute event's decimal places count
-"
   }
 
   dimension: metrics__quantity__characteristics_orientationabs_freq {
@@ -1015,8 +842,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Orientationabs Freq"
-    description: "deviceorientationabsolute event's frequency
-"
   }
 
   dimension: metrics__quantity__characteristics_outer_height {
@@ -1025,8 +850,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Outer Height"
-    description: "Outer height of user's browser.
-"
   }
 
   dimension: metrics__quantity__characteristics_outer_width {
@@ -1035,8 +858,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Outer Width"
-    description: "Outer width of user's browser.
-"
   }
 
   dimension: metrics__quantity__characteristics_pixel_depth {
@@ -1045,8 +866,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Pixel Depth"
-    description: "Screen pixel depth property
-"
   }
 
   dimension: metrics__quantity__characteristics_pixel_ratio {
@@ -1055,8 +874,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Pixel Ratio"
-    description: "The value of window.devicePixelRatio
-"
   }
 
   dimension: metrics__quantity__characteristics_pointer_height {
@@ -1065,8 +882,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Pointer Height"
-    description: "Height of user's pointer
-"
   }
 
   dimension: metrics__quantity__characteristics_pointer_tiltx {
@@ -1075,8 +890,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Pointer Tiltx"
-    description: "TiltX of user's pointer
-"
   }
 
   dimension: metrics__quantity__characteristics_pointer_tilty {
@@ -1085,8 +898,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Pointer Tilty"
-    description: "TiltY of user's pointer
-"
   }
 
   dimension: metrics__quantity__characteristics_pointer_twist {
@@ -1095,8 +906,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Pointer Twist"
-    description: "Twist of user's pointer
-"
   }
 
   dimension: metrics__quantity__characteristics_pointer_type {
@@ -1105,8 +914,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Pointer Type"
-    description: "Pointer type of the user's primary pointer device.
-"
   }
 
   dimension: metrics__quantity__characteristics_pointer_width {
@@ -1115,8 +922,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Pointer Width"
-    description: "Width of user's pointer
-"
   }
 
   dimension: metrics__quantity__characteristics_posx {
@@ -1125,8 +930,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Posx"
-    description: "window.screen.left value. Provides us the position of the browser and the width of any possible task/menu bar
-"
   }
 
   dimension: metrics__quantity__characteristics_posy {
@@ -1135,8 +938,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Posy"
-    description: "window.screen.top value. Provides us the position of the browser and the height of any possible task/menu bar
-"
   }
 
   dimension: metrics__quantity__characteristics_prefers_contrast {
@@ -1145,8 +946,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Prefers Contrast"
-    description: "What Gecko_MediaFeatures_PrefersContrast reports for a ContentDocument
-"
   }
 
   dimension: metrics__quantity__characteristics_prefs_network_cookie_cookiebehavior {
@@ -1155,8 +954,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Prefs Network Cookie Cookiebehavior"
-    description: "Value of the network.cookie.cookieBehavior pref.
-"
   }
 
   dimension: metrics__quantity__characteristics_processor_count {
@@ -1165,8 +962,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Processor Count"
-    description: "Number of processors.
-"
   }
 
   dimension: metrics__quantity__characteristics_screen_height {
@@ -1175,8 +970,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Screen Height"
-    description: "Screen height from a window.
-"
   }
 
   dimension: metrics__quantity__characteristics_screen_orientation {
@@ -1185,8 +978,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Screen Orientation"
-    description: "Orientation of the primary screen.
-"
   }
 
   dimension: metrics__quantity__characteristics_screen_width {
@@ -1195,8 +986,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Screen Width"
-    description: "Screen width from a window.
-"
   }
 
   dimension: metrics__quantity__characteristics_size_mode {
@@ -1205,8 +994,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Size Mode"
-    description: "Whether window is maximized, minimized, normal or fullscreen
-"
   }
 
   dimension: metrics__quantity__characteristics_speaker_count {
@@ -1215,8 +1002,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Speaker Count"
-    description: "Number of speakers available on the device.
-"
   }
 
   dimension: metrics__quantity__characteristics_submission_schema {
@@ -1225,8 +1010,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Submission Schema"
-    description: "An incrementing constant that represents the current schema/source of the data present in a ping. By referring to this value in a ping, one can know for certain the provenance of other data present in the ping, and what data may or may not be present.
-"
   }
 
   dimension: metrics__quantity__characteristics_target_frame_rate {
@@ -1235,8 +1018,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Target Frame Rate"
-    description: "The target frame rate in frames-per-second.
-"
   }
 
   dimension: metrics__quantity__characteristics_timezone_offset_web {
@@ -1245,8 +1026,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Timezone Offset Web"
-    description: "The timezone offset in minutes exposed to web content via getTimezoneOffset()
-"
   }
 
   dimension: metrics__quantity__characteristics_voices_count {
@@ -1255,8 +1034,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Voices Count"
-    description: "Number of speechSynthesis voices available to the user.
-"
   }
 
   dimension: metrics__quantity__characteristics_voices_local_count {
@@ -1265,8 +1042,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Voices Local Count"
-    description: "Number of local speechSynthesis voices available to the user.
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxbindgroups {
@@ -1275,8 +1050,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxbindgroups"
-    description: "WebGPU limit maxBindGroups
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxbindgroupsplusvertexbuffers {
@@ -1285,8 +1058,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxbindgroupsplusvertexbuffers"
-    description: "WebGPU limit maxBindGroupsPlusVertexBuffers
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxbindingsperbindgroup {
@@ -1295,8 +1066,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxbindingsperbindgroup"
-    description: "WebGPU limit maxBindingsPerBindGroup
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxbuffersize {
@@ -1305,8 +1074,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxbuffersize"
-    description: "WebGPU limit maxBufferSize
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxcolorattachmentbytespersample {
@@ -1315,8 +1082,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxcolorattachmentbytespersample"
-    description: "WebGPU limit maxColorAttachmentBytesPerSample
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxcolorattachments {
@@ -1325,8 +1090,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxcolorattachments"
-    description: "WebGPU limit maxColorAttachments
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxcomputeinvocationsperworkgroup {
@@ -1335,8 +1098,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxcomputeinvocationsperworkgroup"
-    description: "WebGPU limit maxComputeInvocationsPerWorkgroup
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizex {
@@ -1345,8 +1106,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizex"
-    description: "WebGPU limit maxComputeWorkgroupSizeX
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizey {
@@ -1355,8 +1114,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizey"
-    description: "WebGPU limit maxComputeWorkgroupSizeY
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsizez {
@@ -1365,8 +1122,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsizez"
-    description: "WebGPU limit maxComputeWorkgroupSizeZ
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupsperdimension {
@@ -1375,8 +1130,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxcomputeworkgroupsperdimension"
-    description: "WebGPU limit maxComputeWorkgroupsPerDimension
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxcomputeworkgroupstoragesize {
@@ -1385,8 +1138,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxcomputeworkgroupstoragesize"
-    description: "WebGPU limit maxComputeWorkgroupStorageSize
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxdynamicstoragebuffersperpipelinelayout {
@@ -1395,8 +1146,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxdynamicstoragebuffersperpipelinelayout"
-    description: "WebGPU limit maxDynamicStorageBuffersPerPipelineLayout
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxdynamicuniformbuffersperpipelinelayout {
@@ -1405,8 +1154,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxdynamicuniformbuffersperpipelinelayout"
-    description: "WebGPU limit maxDynamicUniformBuffersPerPipelineLayout
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxinterstageshadervariables {
@@ -1415,8 +1162,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxinterstageshadervariables"
-    description: "WebGPU limit maxInterStageShaderVariables
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxsampledtexturespershaderstage {
@@ -1425,8 +1170,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxsampledtexturespershaderstage"
-    description: "WebGPU limit maxSampledTexturesPerShaderStage
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxsamplerspershaderstage {
@@ -1435,8 +1178,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxsamplerspershaderstage"
-    description: "WebGPU limit maxSamplersPerShaderStage
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxstoragebufferbindingsize {
@@ -1445,8 +1186,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxstoragebufferbindingsize"
-    description: "WebGPU limit maxStorageBufferBindingSize
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxstoragebufferspershaderstage {
@@ -1455,8 +1194,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxstoragebufferspershaderstage"
-    description: "WebGPU limit maxStorageBuffersPerShaderStage
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxstoragetexturespershaderstage {
@@ -1465,8 +1202,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxstoragetexturespershaderstage"
-    description: "WebGPU limit maxStorageTexturesPerShaderStage
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxtexturearraylayers {
@@ -1475,8 +1210,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxtexturearraylayers"
-    description: "WebGPU limit maxTextureArrayLayers
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension1d {
@@ -1485,8 +1218,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxtexturedimension1D"
-    description: "WebGPU limit maxTextureDimension1D
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension2d {
@@ -1495,8 +1226,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxtexturedimension2D"
-    description: "WebGPU limit maxTextureDimension2D
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxtexturedimension3d {
@@ -1505,8 +1234,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxtexturedimension3D"
-    description: "WebGPU limit maxTextureDimension3D
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxuniformbufferbindingsize {
@@ -1515,8 +1242,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxuniformbufferbindingsize"
-    description: "WebGPU limit maxUniformBufferBindingSize
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxuniformbufferspershaderstage {
@@ -1525,8 +1250,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxuniformbufferspershaderstage"
-    description: "WebGPU limit maxUniformBuffersPerShaderStage
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxvertexattributes {
@@ -1535,8 +1258,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxvertexattributes"
-    description: "WebGPU limit maxVertexAttributes
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxvertexbufferarraystride {
@@ -1545,8 +1266,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxvertexbufferarraystride"
-    description: "WebGPU limit maxVertexBufferArrayStride
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_maxvertexbuffers {
@@ -1555,8 +1274,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Maxvertexbuffers"
-    description: "WebGPU limit maxVertexBuffers
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_minstoragebufferoffsetalignment {
@@ -1565,8 +1282,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Minstoragebufferoffsetalignment"
-    description: "WebGPU limit minStorageBufferOffsetAlignment
-"
   }
 
   dimension: metrics__quantity__characteristics_wgpu_minuniformbufferoffsetalignment {
@@ -1575,8 +1290,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Wgpu Minuniformbufferoffsetalignment"
-    description: "WebGPU limit minUniformBufferOffsetAlignment
-"
   }
 
   dimension: metrics__quantity__characteristics_zoom_count {
@@ -1585,8 +1298,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Zoom Count"
-    description: "Number of domains the users has a non-default zoom level.
-"
   }
 
   dimension: metrics__string__characteristics_canvas_dpr {
@@ -1595,8 +1306,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvas Dpr"
-    description: "The device pixel ratio of the canvas rendering context
-"
   }
 
   dimension: metrics__string__characteristics_canvas_feature_status {
@@ -1605,8 +1314,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvas Feature Status"
-    description: "Status of and failure id (if failed) of ACCELERATED_CANVAS2D feature
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata1 {
@@ -1615,8 +1322,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata1"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata10 {
@@ -1625,8 +1330,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata10"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata10_software {
@@ -1635,8 +1338,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata10 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata10software {
@@ -1645,8 +1346,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata10Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata11_webgl {
@@ -1655,8 +1354,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata11 Webgl"
-    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata11_webgl_software {
@@ -1665,8 +1362,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata11 Webgl Software"
-    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata11_webglsoftware {
@@ -1675,8 +1370,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata11 Webglsoftware"
-    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1 {
@@ -1685,8 +1378,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata12 Fingerprintjs1"
-    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1_software {
@@ -1695,8 +1386,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Software"
-    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1software {
@@ -1705,8 +1394,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata12 Fingerprintjs1Software"
-    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2 {
@@ -1715,8 +1402,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2"
-    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2_software {
@@ -1725,8 +1410,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Software"
-    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2software {
@@ -1735,8 +1418,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2Software"
-    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata1_software {
@@ -1745,8 +1426,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata1 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata1software {
@@ -1755,8 +1434,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata1Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata2 {
@@ -1765,8 +1442,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata2"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata2_software {
@@ -1775,8 +1450,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata2 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata2software {
@@ -1785,8 +1458,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata2Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3 {
@@ -1795,8 +1466,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3_software {
@@ -1805,8 +1474,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3avif {
@@ -1815,8 +1482,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Avif"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3avifsoftware {
@@ -1825,8 +1490,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Avifsoftware"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3cspsafe {
@@ -1835,8 +1498,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Cspsafe"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3cspsafesoftware {
@@ -1845,8 +1506,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Cspsafesoftware"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3png {
@@ -1855,8 +1514,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Png"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3pngsoftware {
@@ -1865,8 +1522,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Pngsoftware"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3software {
@@ -1875,8 +1530,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3webp {
@@ -1885,8 +1538,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Webp"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata3webpsoftware {
@@ -1895,8 +1546,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3Webpsoftware"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata4 {
@@ -1905,8 +1554,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata4"
-    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata4_software {
@@ -1915,8 +1562,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata4 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata4software {
@@ -1925,8 +1570,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata4Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata5 {
@@ -1935,8 +1578,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata5"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata5_software {
@@ -1945,8 +1586,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata5 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata5software {
@@ -1955,8 +1594,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata5Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata6 {
@@ -1965,8 +1602,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata6"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata6_software {
@@ -1975,8 +1610,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata6 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata6software {
@@ -1985,8 +1618,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata6Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata7 {
@@ -1995,8 +1626,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata7"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata7_software {
@@ -2005,8 +1634,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata7 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata7software {
@@ -2015,8 +1642,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata7Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata8 {
@@ -2025,8 +1650,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata8"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata8_software {
@@ -2035,8 +1658,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata8 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata8software {
@@ -2045,8 +1666,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata8Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata9 {
@@ -2055,8 +1674,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata9"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata9_software {
@@ -2065,8 +1682,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata9 Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_canvasdata9software {
@@ -2075,8 +1690,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata9Software"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
-"
   }
 
   dimension: metrics__string__characteristics_changed_media_prefs {
@@ -2085,8 +1698,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Changed Media Prefs"
-    description: "Changed media prefs and their values.
-"
   }
 
   dimension: metrics__string__characteristics_channel {
@@ -2095,8 +1706,470 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Channel"
-    description: "Firefox build channel
-"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 01"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 02"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 03"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 04"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 05"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 06"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_07 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_07 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 07"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_08 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_08 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 08"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_09 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_09 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 09"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_10 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 10"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_11 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_11 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 11"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_12 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_12 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 12"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 01"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 02"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 03"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 04"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 05"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 06"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_07 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_07 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 07"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_08 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_08 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 08"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_09 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_09 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 09"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_10 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 10"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_11 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_11 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 11"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_12 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_12 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 12"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 01"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 02"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 03"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 04"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 05"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 06"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_font_family {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_font_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji Font Family"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_ghost_dimensions {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_ghost_dimensions ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Ghost Dimensions"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_known_dimensions {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_known_dimensions ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Known Dimensions"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 01"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 02"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 03"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 04"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 05"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 06"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_07 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_07 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 07"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_08 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_08 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 08"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_09 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_09 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 09"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_10 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 10"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_11 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_11 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 11"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_12 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_12 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 12"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 01"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 02"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 03"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 04"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 05"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 06"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_07 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_07 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 07"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_08 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_08 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 08"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_09 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_09 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 09"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_10 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 10"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_11 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_11 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 11"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_12 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_12 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 12"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_text_font_family {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_text_font_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Text Font Family"
   }
 
   dimension: metrics__string__characteristics_cpu_arch {
@@ -2105,8 +2178,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics CPU Arch"
-    description: "Arch of the user's device
-"
   }
 
   dimension: metrics__string__characteristics_cpu_model {
@@ -2115,8 +2186,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics CPU Model"
-    description: "CPU model of the user's device
-"
   }
 
   dimension: metrics__string__characteristics_firefox_binary_arch {
@@ -2125,8 +2194,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Firefox Binary Arch"
-    description: "Architecture of the Firefox binary itself (not the CPU). This can differ from cpu_arch when running under emulation (e.g., x86-64 Firefox via Rosetta 2 on ARM64 Mac) or when running 32-bit Firefox on 64-bit CPU. Format: \"xpcomabi:<abi>|is64bit:<bool>\" where abi is from XPCOMABI (e.g., \"Darwin_x86_64-gcc3\") and is64bit indicates 64-bit build.
-"
   }
 
   dimension: metrics__string__characteristics_font_default_default_group {
@@ -2135,8 +2202,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Default Default Group"
-    description: "The value of the font.default.<default language group> pref
-"
   }
 
   dimension: metrics__string__characteristics_font_default_western {
@@ -2145,8 +2210,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Default Western"
-    description: "The value of the font.default.x-western pref
-"
   }
 
   dimension: metrics__string__characteristics_font_minimum_size_default_group {
@@ -2155,8 +2218,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Minimum Size Default Group"
-    description: "The value of the font.minimum-size.<default language group> pref
-"
   }
 
   dimension: metrics__string__characteristics_font_minimum_size_western {
@@ -2165,8 +2226,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Minimum Size Western"
-    description: "The value of the font.minimum-size.x-western pref
-"
   }
 
   dimension: metrics__string__characteristics_font_name_monospace_default_group {
@@ -2175,8 +2234,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Name Monospace Default Group"
-    description: "The value of the font.name.monospace.<default language group> pref
-"
   }
 
   dimension: metrics__string__characteristics_font_name_monospace_western {
@@ -2185,8 +2242,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Name Monospace Western"
-    description: "The value of the font.name.monospace.x-western pref
-"
   }
 
   dimension: metrics__string__characteristics_font_name_sans_serif_default_group {
@@ -2195,8 +2250,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Name Sans Serif Default Group"
-    description: "The value of the font.name.sans-serif.<default language group> pref
-"
   }
 
   dimension: metrics__string__characteristics_font_name_sans_serif_western {
@@ -2205,8 +2258,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Name Sans Serif Western"
-    description: "The value of the font.name.sans-serif.x-western pref
-"
   }
 
   dimension: metrics__string__characteristics_font_name_serif_default_group {
@@ -2215,8 +2266,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Name Serif Default Group"
-    description: "The value of the font.name.serif.<default language group> pref
-"
   }
 
   dimension: metrics__string__characteristics_font_name_serif_western {
@@ -2225,8 +2274,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Name Serif Western"
-    description: "The value of the font.name.serif.x-western pref
-"
   }
 
   dimension: metrics__string__characteristics_font_size_monospace_default_group {
@@ -2235,8 +2282,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Size Monospace Default Group"
-    description: "The value of the font.size.monospace.<default language group> pref
-"
   }
 
   dimension: metrics__string__characteristics_font_size_monospace_western {
@@ -2245,8 +2290,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Size Monospace Western"
-    description: "The value of the font.size.monospace.x-western pref
-"
   }
 
   dimension: metrics__string__characteristics_font_size_variable_default_group {
@@ -2255,8 +2298,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Size Variable Default Group"
-    description: "The value of the font.size.variable.<default language group> pref
-"
   }
 
   dimension: metrics__string__characteristics_font_size_variable_western {
@@ -2265,8 +2306,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Size Variable Western"
-    description: "The value of the font.size.variable.x-western pref
-"
   }
 
   dimension: metrics__string__characteristics_fonts_fpjs_allowlisted {
@@ -2275,8 +2314,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fonts Fpjs Allowlisted"
-    description: "SHA256 of allowlisted fonts queried by FPJS
-"
   }
 
   dimension: metrics__string__characteristics_fonts_fpjs_nonallowlisted {
@@ -2285,8 +2322,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fonts Fpjs Nonallowlisted"
-    description: "SHA256 of non-allowlisted fonts queried by FPJS
-"
   }
 
   dimension: metrics__string__characteristics_fonts_variant_a_allowlisted {
@@ -2295,8 +2330,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fonts Variant A Allowlisted"
-    description: "SHA256 of allowlisted fonts queried of variant A
-"
   }
 
   dimension: metrics__string__characteristics_fonts_variant_a_nonallowlisted {
@@ -2305,8 +2338,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fonts Variant A Nonallowlisted"
-    description: "SHA256 of non-allowlisted fonts queried of variant A
-"
   }
 
   dimension: metrics__string__characteristics_fonts_variant_b_allowlisted {
@@ -2315,8 +2346,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fonts Variant B Allowlisted"
-    description: "SHA256 of allowlisted fonts queried of variant B
-"
   }
 
   dimension: metrics__string__characteristics_fonts_variant_b_nonallowlisted {
@@ -2325,8 +2354,54 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fonts Variant B Nonallowlisted"
-    description: "SHA256 of non-allowlisted fonts queried of variant B
-"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_c_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_c_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant C Allowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_c_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_c_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant C Nonallowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_d_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_d_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant D Allowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_d_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_d_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant D Nonallowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_e_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_e_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant E Allowlisted"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_e_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_e_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant E Nonallowlisted"
   }
 
   dimension: metrics__string__characteristics_fpu_control_state {
@@ -2335,10 +2410,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fpu Control State"
-    description: "The current FPU (Floating-Point Unit) rounding mode and precision settings. Format depends on architecture: - x86/x86-64: \"std:X;x87:Y;sse:Z;prec:P\" where X,Y,Z are rounding modes (0-3)
-  and P is precision (single/double/extended)
-- ARM: \"std:X;arm:Y\" where X,Y are rounding modes (0-3) Rounding modes: 0=nearest, 1=down/negative, 2=up/positive, 3=toward-zero This helps identify unusual FPU configurations that may cause math variations.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_context_type {
@@ -2347,8 +2418,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Context Type"
-    description: "The type of the GL context (EGL, GLX, WGL, etc).
-"
   }
 
   dimension: metrics__string__characteristics_gl2_context_type_software {
@@ -2357,8 +2426,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Context Type Software"
-    description: "The type of the GL context (EGL, GLX, WGL, etc).
-"
   }
 
   dimension: metrics__string__characteristics_gl2_fragment_shader {
@@ -2367,8 +2434,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Fragment Shader"
-    description: "Hash of the transformed source of the fragment shader.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_fragment_shader_software {
@@ -2377,8 +2442,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Fragment Shader Software"
-    description: "Hash of the transformed source of the fragment shader.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_renderer {
@@ -2387,8 +2450,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Renderer"
-    description: "The OpenGL renderer string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_renderer_raw {
@@ -2397,8 +2458,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Renderer Raw"
-    description: "The raw OpenGL renderer string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_renderer_raw_software {
@@ -2407,8 +2466,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Renderer Raw Software"
-    description: "The raw OpenGL renderer string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_renderer_software {
@@ -2417,8 +2474,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Renderer Software"
-    description: "The OpenGL renderer string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_vendor {
@@ -2427,8 +2482,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Vendor"
-    description: "The OpenGL vendor string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_vendor_raw {
@@ -2437,8 +2490,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Vendor Raw"
-    description: "The raw OpenGL vendor string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_vendor_raw_software {
@@ -2447,8 +2498,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Vendor Raw Software"
-    description: "The raw OpenGL vendor string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_vendor_software {
@@ -2457,8 +2506,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Vendor Software"
-    description: "The OpenGL vendor string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_version_raw {
@@ -2467,8 +2514,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Version Raw"
-    description: "The raw OpenGL version string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_version_raw_software {
@@ -2477,8 +2522,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Version Raw Software"
-    description: "The raw OpenGL version string.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_vertex_shader {
@@ -2487,8 +2530,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Vertex Shader"
-    description: "Hash of the transformed source of the vertex shader.
-"
   }
 
   dimension: metrics__string__characteristics_gl2_vertex_shader_software {
@@ -2497,8 +2538,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Vertex Shader Software"
-    description: "Hash of the transformed source of the vertex shader.
-"
   }
 
   dimension: metrics__string__characteristics_gl_context_type {
@@ -2507,8 +2546,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Context Type"
-    description: "The type of the GL context (EGL, GLX, WGL, etc).
-"
   }
 
   dimension: metrics__string__characteristics_gl_context_type_software {
@@ -2517,8 +2554,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Context Type Software"
-    description: "The type of the GL context (EGL, GLX, WGL, etc).
-"
   }
 
   dimension: metrics__string__characteristics_gl_fragment_shader {
@@ -2527,8 +2562,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Fragment Shader"
-    description: "Hash of the transformed source of the fragment shader.
-"
   }
 
   dimension: metrics__string__characteristics_gl_fragment_shader_software {
@@ -2537,8 +2570,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Fragment Shader Software"
-    description: "Hash of the transformed source of the fragment shader.
-"
   }
 
   dimension: metrics__string__characteristics_gl_renderer {
@@ -2547,8 +2578,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Renderer"
-    description: "The OpenGL renderer string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_renderer_raw {
@@ -2557,8 +2586,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Renderer Raw"
-    description: "The raw OpenGL renderer string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_renderer_raw_software {
@@ -2567,8 +2594,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Renderer Raw Software"
-    description: "The raw OpenGL renderer string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_renderer_software {
@@ -2577,8 +2602,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Renderer Software"
-    description: "The OpenGL renderer string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_vendor {
@@ -2587,8 +2610,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Vendor"
-    description: "The OpenGL vendor string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_vendor_raw {
@@ -2597,8 +2618,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Vendor Raw"
-    description: "The raw OpenGL vendor string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_vendor_raw_software {
@@ -2607,8 +2626,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Vendor Raw Software"
-    description: "The raw OpenGL vendor string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_vendor_software {
@@ -2617,8 +2634,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Vendor Software"
-    description: "The OpenGL vendor string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_version_raw {
@@ -2627,8 +2642,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Version Raw"
-    description: "The raw OpenGL version string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_version_raw_software {
@@ -2637,8 +2650,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Version Raw Software"
-    description: "The raw OpenGL version string.
-"
   }
 
   dimension: metrics__string__characteristics_gl_vertex_shader {
@@ -2647,8 +2658,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Vertex Shader"
-    description: "Hash of the transformed source of the vertex shader.
-"
   }
 
   dimension: metrics__string__characteristics_gl_vertex_shader_software {
@@ -2657,8 +2666,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl Vertex Shader Software"
-    description: "Hash of the transformed source of the vertex shader.
-"
   }
 
   dimension: metrics__string__characteristics_intl_locale {
@@ -2667,8 +2674,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Intl Locale"
-    description: "Locale information provided by Intl
-"
   }
 
   dimension: metrics__string__characteristics_keyboard_layout {
@@ -2677,8 +2682,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Keyboard Layout"
-    description: "Name of the current keyboard layout.
-"
   }
 
   dimension: metrics__string__characteristics_languages {
@@ -2687,8 +2690,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Languages"
-    description: "Languages the user set. Returns intl.accept_languages pref, if it is empty, returns the first matched OS's language or the default language.
-"
   }
 
   dimension: metrics__string__characteristics_machine_model_name {
@@ -2697,8 +2698,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Machine Model Name"
-    description: "Machine model name
-"
   }
 
   dimension: metrics__string__characteristics_mathml1 {
@@ -2707,8 +2706,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml1"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml10 {
@@ -2717,8 +2714,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml10"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml2 {
@@ -2727,8 +2722,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml2"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml3 {
@@ -2737,8 +2730,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml3"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml4 {
@@ -2747,8 +2738,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml4"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml5 {
@@ -2757,8 +2746,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml5"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml6 {
@@ -2767,8 +2754,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml6"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml7 {
@@ -2777,8 +2762,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml7"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml8 {
@@ -2787,8 +2770,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml8"
-    description: "Width of the drawn MathML element
-"
   }
 
   dimension: metrics__string__characteristics_mathml9 {
@@ -2797,8 +2778,22 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Mathml9"
-    description: "Width of the drawn MathML element
-"
+  }
+
+  dimension: metrics__string__characteristics_mathml_diag_font_family {
+    sql: ${TABLE}.metrics.string.characteristics_mathml_diag_font_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Mathml Diag Font Family"
+  }
+
+  dimension: metrics__string__characteristics_mathml_diag_prefs_modified {
+    sql: ${TABLE}.metrics.string.characteristics_mathml_diag_prefs_modified ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Mathml Diag Prefs Modified"
   }
 
   dimension: metrics__string__characteristics_os_distro {
@@ -2807,8 +2802,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics OS Distro"
-    description: "User's OS distribution, as reported by lsb_release (Linux only, blank otherwise)
-"
   }
 
   dimension: metrics__string__characteristics_os_distro_id {
@@ -2817,8 +2810,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics OS Distro ID"
-    description: "User's OS distribution, as reported by MOZ_DISTRIBUTION_ID
-"
   }
 
   dimension: metrics__string__characteristics_os_distro_version {
@@ -2827,8 +2818,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics OS Distro Version"
-    description: "User's OS distribution version, as reported by lsb_release (Linux only, blank otherwise)
-"
   }
 
   dimension: metrics__string__characteristics_os_name {
@@ -2837,8 +2826,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics OS Name"
-    description: "User's OS name
-"
   }
 
   dimension: metrics__string__characteristics_os_version {
@@ -2847,8 +2834,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics OS Version"
-    description: "User's OS version
-"
   }
 
   dimension: metrics__string__characteristics_oscpu {
@@ -2857,8 +2842,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Oscpu"
-    description: "User's OS CPU reported by the navigator
-"
   }
 
   dimension: metrics__string__characteristics_pixel_ratio {
@@ -2867,8 +2850,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Pixel Ratio"
-    description: "The value of window.devicePixelRatio
-"
   }
 
   dimension: metrics__string__characteristics_platform {
@@ -2877,8 +2858,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Platform"
-    description: "Platform reported by the navigator
-"
   }
 
   dimension: metrics__string__characteristics_pointer_pressure {
@@ -2887,8 +2866,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Pointer Pressure"
-    description: "Pressure of user's pointer
-"
   }
 
   dimension: metrics__string__characteristics_pointer_tangentinal_pressure {
@@ -2897,8 +2874,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Pointer Tangentinal Pressure"
-    description: "Tangential Pressure of user's pointer
-"
   }
 
   dimension: metrics__string__characteristics_prefs_intl_accept_languages {
@@ -2907,8 +2882,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Prefs Intl Accept Languages"
-    description: "Value of the intl.accept_languages pref.
-"
   }
 
   dimension: metrics__string__characteristics_scalings {
@@ -2917,8 +2890,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Scalings"
-    description: "Screen(s) scaling/zoom level
-"
   }
 
   dimension: metrics__string__characteristics_system_locale {
@@ -2927,8 +2898,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics System Locale"
-    description: "The locale used by the host OS for localization.
-"
   }
 
   dimension: metrics__string__characteristics_text_anti_aliasing {
@@ -2937,8 +2906,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Text Anti Aliasing"
-    description: "Font anti aliasing level
-"
   }
 
   dimension: metrics__string__characteristics_timezone {
@@ -2947,8 +2914,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Timezone"
-    description: "The the current timezone of the system
-"
   }
 
   dimension: metrics__string__characteristics_timezone_web {
@@ -2957,8 +2922,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Timezone Web"
-    description: "The timezone string reported via the web using Intl API (e.g. America/New_York)
-"
   }
 
   dimension: metrics__string__characteristics_touch_rotation_angle {
@@ -2967,8 +2930,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Touch Rotation Angle"
-    description: "Rotation angle of user's touch
-"
   }
 
   dimension: metrics__string__characteristics_version {
@@ -2977,8 +2938,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Version"
-    description: "Firefox build version
-"
   }
 
   dimension: metrics__string__characteristics_voices_all_ssdeep {
@@ -2987,8 +2946,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Voices All Ssdeep"
-    description: "ssdeep hash of all speechSynthesis voices.
-"
   }
 
   dimension: metrics__string__characteristics_voices_default {
@@ -2997,8 +2954,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Voices Default"
-    description: "The default speechSynthesis voice.
-"
   }
 
   dimension: metrics__string__characteristics_voices_local_ssdeep {
@@ -3007,8 +2962,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Voices Local Ssdeep"
-    description: "ssdeep hash of local speechSynthesis voices.
-"
   }
 
   dimension: metrics__string__characteristics_voices_nonlocal_ssdeep {
@@ -3017,8 +2970,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Voices Nonlocal Ssdeep"
-    description: "ssdeep hash of non-local speechSynthesis voices.
-"
   }
 
   dimension: metrics__string__characteristics_wgpu_missing_features {
@@ -3027,8 +2978,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Wgpu Missing Features"
-    description: "Missing features of WebGPU as a bitset
-"
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {
@@ -3037,9 +2986,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
-    description: "An experimentation identifier derived and provided by the application
-for the purpose of experimentation enrollment.
-"
   }
 
   dimension: metrics__string_list__characteristics_gamepads {
@@ -3058,8 +3004,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Audio Devices"
-    description: "A JSON object containing sample rate and max channel count of every audio device, and output latency of default device
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata1 {
@@ -3068,8 +3012,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata1"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata10 {
@@ -3078,8 +3020,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata10"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata10_raw {
@@ -3088,8 +3028,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata10 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata10_software_raw {
@@ -3098,8 +3036,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata10 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata11_webgl {
@@ -3108,8 +3044,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata11 Webgl"
-    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata11_webgl_raw {
@@ -3118,8 +3052,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata11 Webgl Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata11_webgl_software_raw {
@@ -3128,8 +3060,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata11 Webgl Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1 {
@@ -3138,8 +3068,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata12 Fingerprintjs1"
-    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_raw {
@@ -3148,8 +3076,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_software_raw {
@@ -3158,8 +3084,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2 {
@@ -3168,8 +3092,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2"
-    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_raw {
@@ -3178,8 +3100,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_software_raw {
@@ -3188,8 +3108,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata1_raw {
@@ -3198,8 +3116,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata1 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata1_software_raw {
@@ -3208,8 +3124,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata1 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata2 {
@@ -3218,8 +3132,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata2"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata2_raw {
@@ -3228,8 +3140,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata2 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata2_software_raw {
@@ -3238,8 +3148,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata2 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata3 {
@@ -3248,8 +3156,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata3"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata3_raw {
@@ -3258,8 +3164,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata3 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata3_software_raw {
@@ -3268,8 +3172,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata3 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata4 {
@@ -3278,8 +3180,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata4"
-    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata4_raw {
@@ -3288,8 +3188,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata4 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata4_software_raw {
@@ -3298,8 +3196,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata4 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata5 {
@@ -3308,8 +3204,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata5"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata5_raw {
@@ -3318,8 +3212,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata5 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata5_software_raw {
@@ -3328,8 +3220,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata5 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata6 {
@@ -3338,8 +3228,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata6"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata6_raw {
@@ -3348,8 +3236,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata6 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata6_software_raw {
@@ -3358,8 +3244,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata6 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata7 {
@@ -3368,8 +3252,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata7"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata7_raw {
@@ -3378,8 +3260,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata7 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata7_software_raw {
@@ -3388,8 +3268,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata7 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata8 {
@@ -3398,8 +3276,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata8"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata8_raw {
@@ -3408,8 +3284,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata8 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata8_software_raw {
@@ -3418,8 +3292,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata8 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata9 {
@@ -3428,8 +3300,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata9"
-    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata9_raw {
@@ -3438,8 +3308,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata9 Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 rendering
-"
   }
 
   dimension: metrics__text2__characteristics_canvasdata9_software_raw {
@@ -3448,8 +3316,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata9 Software Raw"
-    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 software rendering
-"
   }
 
   dimension: metrics__text2__characteristics_css_system_colors {
@@ -3458,8 +3324,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Css System Colors"
-    description: "JSON array containing CSS system color keywords and their computed values as uppercase hex (without # prefix). System colors (like Canvas, ButtonFace, LinkText, etc.) are CSS keywords that resolve to theme/OS-specific colors and can be used for fingerprinting. This metric collects the computed backgroundColor for each system color keyword. Data format: [{\"Canvas\": \"FFFFFF\"}, {\"ButtonFace\": \"F0F0F0\"}, ...].
-"
   }
 
   dimension: metrics__text2__characteristics_css_system_fonts {
@@ -3468,8 +3332,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Css System Fonts"
-    description: "JSON array containing CSS system font keywords and their computed font properties. System fonts (like caption, icon, menu, etc.) and common font families are tested to determine their rendered fontSize and fontFamily values, which can vary by OS and be used for fingerprinting. This metric collects computed fontSize + fontFamily for each font keyword/name tested. Data format: [{\"caption\": \"11px system-ui\"}, {\"Arial\": \"16px Arial\"}, ...].
-"
   }
 
   dimension: metrics__text2__characteristics_errors {
@@ -3478,8 +3340,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Errors"
-    description: "Errors occured on C++ side of data collection
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_extensions {
@@ -3488,8 +3348,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Extensions"
-    description: "The list of OpenGL extensions supported by the user's system.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_extensions_raw {
@@ -3498,8 +3356,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Extensions Raw"
-    description: "The raw list of OpenGL extensions supported by the user's system.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_extensions_raw_software {
@@ -3508,8 +3364,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Extensions Raw Software"
-    description: "The raw list of OpenGL extensions supported by the user's system.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_extensions_software {
@@ -3518,8 +3372,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Extensions Software"
-    description: "The list of OpenGL extensions supported by the user's system.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_minimal_source {
@@ -3528,8 +3380,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Minimal Source"
-    description: "Transformed source of the minimal shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_minimal_source_software {
@@ -3538,8 +3388,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Minimal Source Software"
-    description: "Transformed source of the minimal shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_params {
@@ -3548,8 +3396,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Params"
-    description: "The list of GL parameters of GL2.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_params_extensions {
@@ -3558,8 +3404,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Params Extensions"
-    description: "The list of GL parameters of the extensions.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_params_extensions_software {
@@ -3568,8 +3412,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Params Extensions Software"
-    description: "The list of GL parameters of the extensions.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_params_software {
@@ -3578,8 +3420,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Params Software"
-    description: "The list of GL parameters of GL2.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_precision_fragment {
@@ -3588,8 +3428,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Precision Fragment"
-    description: "Precisions of the fragment shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_precision_fragment_software {
@@ -3598,8 +3436,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Precision Fragment Software"
-    description: "Precisions of the fragment shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_precision_vertex {
@@ -3608,8 +3444,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Precision Vertex"
-    description: "Precisions of the vertex shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl2_precision_vertex_software {
@@ -3618,8 +3452,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl2 Precision Vertex Software"
-    description: "Precisions of the vertex shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_extensions {
@@ -3628,8 +3460,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Extensions"
-    description: "The list of OpenGL extensions supported by the user's system.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_extensions_raw {
@@ -3638,8 +3468,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Extensions Raw"
-    description: "The raw list of OpenGL extensions supported by the user's system.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_extensions_raw_software {
@@ -3648,8 +3476,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Extensions Raw Software"
-    description: "The raw list of OpenGL extensions supported by the user's system.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_extensions_software {
@@ -3658,8 +3484,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Extensions Software"
-    description: "The list of OpenGL extensions supported by the user's system.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_minimal_source {
@@ -3668,8 +3492,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Minimal Source"
-    description: "Transformed source of the minimal shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_minimal_source_software {
@@ -3678,8 +3500,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Minimal Source Software"
-    description: "Transformed source of the minimal shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_params {
@@ -3688,8 +3508,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params"
-    description: "The list of GL parameters of GL1.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_params_extensions {
@@ -3698,8 +3516,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params Extensions"
-    description: "The list of GL parameters of the extensions.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_params_extensions_software {
@@ -3708,8 +3524,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params Extensions Software"
-    description: "The list of GL parameters of the extensions.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_params_software {
@@ -3718,8 +3532,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params Software"
-    description: "The list of GL parameters of GL1.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_params_v1 {
@@ -3728,8 +3540,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params V1"
-    description: "The list of GL parameters of GL1.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_params_v1_software {
@@ -3738,8 +3548,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params V1 Software"
-    description: "The list of GL parameters of GL1.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_params_v2 {
@@ -3748,8 +3556,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params V2"
-    description: "The list of GL parameters of GL2.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_params_v2_software {
@@ -3758,8 +3564,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params V2 Software"
-    description: "The list of GL parameters of GL2.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_precision_fragment {
@@ -3768,8 +3572,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Precision Fragment"
-    description: "Precisions of the fragment shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_precision_fragment_software {
@@ -3778,8 +3580,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Precision Fragment Software"
-    description: "Precisions of the fragment shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_precision_vertex {
@@ -3788,8 +3588,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Precision Vertex"
-    description: "Precisions of the vertex shader.
-"
   }
 
   dimension: metrics__text2__characteristics_gl_precision_vertex_software {
@@ -3798,8 +3596,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Precision Vertex Software"
-    description: "Precisions of the vertex shader.
-"
   }
 
   dimension: metrics__text2__characteristics_ice_foundations {
@@ -3808,8 +3604,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Ice Foundations"
-    description: "Unique ICE foundations occurance count and the standard deviation of latencies
-"
   }
 
   dimension: metrics__text2__characteristics_js_errors {
@@ -3818,8 +3612,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Js Errors"
-    description: "Errors occured on JavaScript side of data collection
-"
   }
 
   dimension: metrics__text2__characteristics_math_ops {
@@ -3828,8 +3620,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Math Ops"
-    description: "Result of fingerprintable math operations
-"
   }
 
   dimension: metrics__text2__characteristics_math_ops_fdlibm {
@@ -3838,8 +3628,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Math Ops Fdlibm"
-    description: "Windows only fdlibm math operation results
-"
   }
 
   dimension: metrics__text2__characteristics_math_ops_fdlibm_2 {
@@ -3848,8 +3636,14 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Math Ops Fdlibm 2"
-    description: "Result of additional fingerprintable math operations, with fdlibm enabled
-"
+  }
+
+  dimension: metrics__text2__characteristics_mathml_diag_values {
+    sql: ${TABLE}.metrics.text2.characteristics_mathml_diag_values ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Mathml Diag Values"
   }
 
   dimension: metrics__text2__characteristics_media_capabilities {
@@ -3858,8 +3652,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Media Capabilities"
-    description: "Which, if any, media types are not supported, and whether they can be run smoothly and power-efficiently.
-"
   }
 
   dimension: metrics__text2__characteristics_media_capabilities_h264 {
@@ -3868,8 +3660,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Media Capabilities H264"
-    description: "Levels of support for H264 codec.
-"
   }
 
   dimension: metrics__text2__characteristics_media_capabilities_not_efficient {
@@ -3878,8 +3668,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Media Capabilities Not Efficient"
-    description: "Which, if any, media types are not power efficient.
-"
   }
 
   dimension: metrics__text2__characteristics_media_capabilities_not_smooth {
@@ -3888,8 +3676,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Media Capabilities Not Smooth"
-    description: "Which, if any, media types are not smooth.
-"
   }
 
   dimension: metrics__text2__characteristics_media_capabilities_unsupported {
@@ -3898,8 +3684,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Media Capabilities Unsupported"
-    description: "Which, if any, media types are not supported.
-"
   }
 
   dimension: metrics__text2__characteristics_media_devices {
@@ -3908,8 +3692,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Media Devices"
-    description: "A JSON object containing the number of audio input/output, video input and the number of unique group ids.
-"
   }
 
   dimension: metrics__text2__characteristics_missing_fonts {
@@ -3918,8 +3700,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Missing Fonts"
-    description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
-"
   }
 
   dimension: metrics__text2__characteristics_screens {
@@ -3928,8 +3708,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Screens"
-    description: "JSON string of screen properties
-"
   }
 
   dimension: metrics__text2__characteristics_user_agent {
@@ -3938,8 +3716,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics User Agent"
-    description: "User agent string
-"
   }
 
   dimension: metrics__text2__characteristics_voices {
@@ -3948,8 +3724,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Voices"
-    description: "Available speechSynthesis voices.
-"
   }
 
   dimension: metrics__text2__characteristics_voices_sample {
@@ -3958,8 +3732,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Voices Sample"
-    description: "Names of 5 sample speechSynthesis voices.
-"
   }
 
   dimension: metrics__text2__characteristics_voices_sha1 {
@@ -3968,8 +3740,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Voices Sha1"
-    description: "SHA1 hash of all the voices.
-"
   }
 
   dimension: metrics__text2__characteristics_webglinfo {
@@ -3978,8 +3748,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Webglinfo"
-    description: "A JSON blob that contains information about the graphics hardware exposed by WebGL.
-"
   }
 
   dimension: metrics__uuid__characteristics_client_identifier {
@@ -3988,36 +3756,30 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: UUID"
     group_item_label: "Characteristics Client Identifier"
-    description: "A unique identifier for a user, not the same as the normal Telemetry client_id, but needed so we can deduplicate reports and only take the most recent one per user.
-"
   }
 
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -4030,7 +3792,6 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -4060,7 +3821,6 @@ for the purpose of experimentation enrollment.
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
   }
 
   sql_table_name: `mozdata.firefox_desktop.user_characteristics` ;;
