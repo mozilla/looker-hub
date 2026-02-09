@@ -76,11 +76,36 @@ view: campaigns_monthly {
 "
   }
 
+  dimension: ecpc {
+    sql: ${TABLE}.ecpc ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ecpm {
+    sql: ${TABLE}.ecpm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_fakespot_campaign {
     sql: ${TABLE}.is_fakespot_campaign ;;
     type: yesno
     suggest_persist_for: "24 hours"
     description: "Whether the campaign is a Fakespot campaign, used to exclude after 2025"
+  }
+
+  dimension: rate {
+    sql: ${TABLE}.rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: rate_type {
+    sql: ${TABLE}.rate_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Pricing model indicator (CPM for cost per thousand impressions, CPC for cost per click, flat for fixed fee), determines revenue recognition method"
   }
 
   dimension: sold_quantity {
