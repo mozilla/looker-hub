@@ -15376,6 +15376,60 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__numerator {
+    label: "Javascript Self Hosted Cache: Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.numerator ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of self-hosted cache accesses that found an existing entry.
+"
+  }
+
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__denominator {
+    label: "Javascript Self Hosted Cache: Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.denominator ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of self-hosted cache accesses that found an existing entry.
+"
+  }
+
+  dimension: metrics__counter__javascript_self_hosted_cache_total {
+    label: "Javascript Self Hosted Cache: Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.javascript_self_hosted_cache_total ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many self-hosted cache accesses are performed.
+"
+  }
+
   dimension: metrics__quantity__launcher_process_state {
     label: "Launcher Process: State"
     hidden: no
@@ -27734,6 +27788,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__counter__update_blocked {
+    label: "Update: Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_blocked ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Update: Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of downloads blocked by the WAF.
+"
+  }
+
   dimension: metrics__labeled_counter__update_can_use_bits_external {
     label: "Update: Can Use Bits External"
     hidden: yes
@@ -37144,6 +37216,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: javascript_self_hosted_cache_total {
+    type: sum
+    sql: ${metrics__counter__javascript_self_hosted_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: javascript_self_hosted_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__javascript_self_hosted_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: localstorage_request_recv_cancel_counter {
     type: sum
     sql: ${metrics__counter__localstorage_request_recv_cancel_counter} ;;
@@ -38365,6 +38462,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Translations Requests Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_blocked {
+    type: sum
+    sql: ${metrics__counter__update_blocked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_blocked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_blocked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
