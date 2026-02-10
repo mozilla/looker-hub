@@ -3031,6 +3031,16 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__javascript_self_hosted_cache_total {
+    sql: ${TABLE}.metrics.counter.javascript_self_hosted_cache_total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Javascript Self Hosted Cache Total"
+    description: "How many self-hosted cache accesses are performed.
+"
+  }
+
   dimension: metrics__counter__localstorage_request_recv_cancel_counter {
     sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
     type: number
@@ -3682,6 +3692,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_label: "Metrics: Counter"
     group_item_label: "Translations Requests Count"
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__counter__update_blocked {
+    sql: ${TABLE}.metrics.counter.update_blocked ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Update Blocked"
+    description: "Number of downloads blocked by the WAF.
 "
   }
 
@@ -18069,8 +18089,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
+This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 
@@ -21256,6 +21277,22 @@ e.g. 134217728
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Rate: Httpsfirst Downgraded On Timer Schemeless"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.denominator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Javascript Self Hosted Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.numerator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Javascript Self Hosted Cache Hits"
     group_item_label: "Numerator"
   }
 
