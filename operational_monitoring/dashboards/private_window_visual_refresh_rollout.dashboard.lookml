@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: private_window_visual_refresh_rollout
-    type: looker_line
-    fields: [
-      private_window_visual_refresh_rollout.submission_date,
-      private_window_visual_refresh_rollout.branch,
-      private_window_visual_refresh_rollout.point
-    ]
-    pivots: [
-      private_window_visual_refresh_rollout.branch
-    ]
-    filters:
-      private_window_visual_refresh_rollout.metric: 'search_count'
-      private_window_visual_refresh_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: private_window_visual_refresh_rollout.submission_date
-    field_y: private_window_visual_refresh_rollout.point
-    log_scale: false
-    ci_lower: private_window_visual_refresh_rollout.lower
-    ci_upper: private_window_visual_refresh_rollout.upper
-    show_grid: true
-    listen:
-      Date: private_window_visual_refresh_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       private_window_visual_refresh_rollout.metric: 'ad_clicks'
       private_window_visual_refresh_rollout.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: private_window_visual_refresh_rollout.submission_date
@@ -133,7 +99,7 @@
       private_window_visual_refresh_rollout.metric: 'memory_total'
       private_window_visual_refresh_rollout.statistic: percentile
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: private_window_visual_refresh_rollout.submission_date
@@ -145,6 +111,40 @@
     listen:
       Date: private_window_visual_refresh_rollout.submission_date
       Percentile: private_window_visual_refresh_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: private_window_visual_refresh_rollout
+    type: looker_line
+    fields: [
+      private_window_visual_refresh_rollout.submission_date,
+      private_window_visual_refresh_rollout.branch,
+      private_window_visual_refresh_rollout.point
+    ]
+    pivots: [
+      private_window_visual_refresh_rollout.branch
+    ]
+    filters:
+      private_window_visual_refresh_rollout.metric: 'qualified_cumulative_days_of_use'
+      private_window_visual_refresh_rollout.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: private_window_visual_refresh_rollout.submission_date
+    field_y: private_window_visual_refresh_rollout.point
+    log_scale: false
+    ci_lower: private_window_visual_refresh_rollout.lower
+    ci_upper: private_window_visual_refresh_rollout.upper
+    show_grid: true
+    listen:
+      Date: private_window_visual_refresh_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       private_window_visual_refresh_rollout.branch
     ]
     filters:
-      private_window_visual_refresh_rollout.metric: 'qualified_cumulative_days_of_use'
+      private_window_visual_refresh_rollout.metric: 'search_count'
       private_window_visual_refresh_rollout.statistic: mean
     row: 20
     col: 12

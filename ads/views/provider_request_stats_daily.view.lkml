@@ -96,7 +96,7 @@ indicating how often the provider fulfilled ad requests
   }
 
   measure: fill_rate_measure {
-    sql: SAFE_DIVIDE(${total_ads_requested}, ${total_ads_returned}) ;;
+    sql: SAFE_DIVIDE(${total_ads_requested_sum}, ${total_ads_returned_sum}) ;;
     type: number
   }
 
