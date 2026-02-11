@@ -279,19 +279,19 @@ ads:
       type: table_view
     campaigns_monthly:
       measures:
-        budget:
+        booked_budget:
           sql: ${budget}
           type: sum
-        budgeted_clicks:
+        booked_clicks:
           sql: ${budgeted_clicks}
           type: sum
-        budgeted_impressions:
+        booked_impressions:
           sql: ${budgeted_impressions}
           type: sum
-        delivered_revenue:
+        total_delivered_revenue:
           sql: ${delivered_revenue}
           type: sum
-        sold_quantity:
+        total_sold_quantity:
           sql: ${sold_quantity}
           type: sum
       tables:
