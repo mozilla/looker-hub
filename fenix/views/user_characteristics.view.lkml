@@ -41,6 +41,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_audio_compressor_gain_reduction {
+    label: "Characteristics: Audio Compressor Gain Reduction"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_audio_compressor_gain_reduction ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Compressor Gain Reduction"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Compressor Gain Reduction"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_compressor_gain_reduction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebAudio DynamicsCompressorNode gain reduction value from OfflineAudioContext rendering. This is most likely consistent for all/most users but we wish to verify that experimentally.
+"
+  }
+
   dimension: metrics__text2__characteristics_audio_devices {
     label: "Characteristics: Audio Devices"
     hidden: yes
@@ -77,6 +95,60 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_audio_fingerprint2 {
+    label: "Characteristics: Audio Fingerprint2"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_audio_fingerprint2 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Fingerprint2"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Fingerprint2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_fingerprint2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A second method to calculate an audio fingerprint, used by a different fingerprinter. Hash of audio buffer sample snapshot (100 samples from 4500-4600 range) from OfflineAudioContext rendering.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_float_frequency_sum {
+    label: "Characteristics: Audio Float Frequency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_audio_float_frequency_sum ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Float Frequency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Float Frequency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_float_frequency_sum"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sum of float frequency data from AnalyserNode.getFloatFrequencyData() during OfflineAudioContext rendering. Collected as string to preserve floating-point precision.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_float_time_domain_sum {
+    label: "Characteristics: Audio Float Time Domain Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_audio_float_time_domain_sum ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Float Time Domain Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Float Time Domain Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_float_time_domain_sum"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sum of float time domain data from AnalyserNode.getFloatTimeDomainData() during OfflineAudioContext rendering. Collected as string to preserve floating-point precision.
+"
+  }
+
   dimension: metrics__quantity__characteristics_audio_frames {
     label: "Characteristics: Audio Frames"
     hidden: no
@@ -110,6 +182,24 @@ view: user_characteristics {
     }
 
     description: "Audio sampling rate
+"
+  }
+
+  dimension: metrics__quantity__characteristics_audio_unique_samples {
+    label: "Characteristics: Audio Unique Samples"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_unique_samples ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Audio Unique Samples"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Unique Samples"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_unique_samples"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of unique sample values in the OfflineAudioContext audio buffer. This is used by fingerprinting scripts to detect anamolies - they expect 1-3k unique samples, not 5000. We are collecting it to ensure we are behaving as they generally expect non-anomalous browsers to behave.
 "
   }
 

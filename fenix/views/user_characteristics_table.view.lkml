@@ -489,6 +489,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_audio_unique_samples {
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_unique_samples ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Characteristics Audio Unique Samples"
+    description: "Count of unique sample values in the OfflineAudioContext audio buffer. This is used by fingerprinting scripts to detect anamolies - they expect 1-3k unique samples, not 5000. We are collecting it to ensure we are behaving as they generally expect non-anomalous browsers to behave.
+"
+  }
+
   dimension: metrics__quantity__characteristics_avail_height {
     sql: ${TABLE}.metrics.quantity.characteristics_avail_height ;;
     type: number
@@ -1596,6 +1606,46 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Zoom Count"
     description: "Number of domains the users has a non-default zoom level.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_compressor_gain_reduction {
+    sql: ${TABLE}.metrics.string.characteristics_audio_compressor_gain_reduction ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Audio Compressor Gain Reduction"
+    description: "WebAudio DynamicsCompressorNode gain reduction value from OfflineAudioContext rendering. This is most likely consistent for all/most users but we wish to verify that experimentally.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_fingerprint2 {
+    sql: ${TABLE}.metrics.string.characteristics_audio_fingerprint2 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Audio Fingerprint2"
+    description: "A second method to calculate an audio fingerprint, used by a different fingerprinter. Hash of audio buffer sample snapshot (100 samples from 4500-4600 range) from OfflineAudioContext rendering.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_float_frequency_sum {
+    sql: ${TABLE}.metrics.string.characteristics_audio_float_frequency_sum ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Audio Float Frequency Sum"
+    description: "Sum of float frequency data from AnalyserNode.getFloatFrequencyData() during OfflineAudioContext rendering. Collected as string to preserve floating-point precision.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_float_time_domain_sum {
+    sql: ${TABLE}.metrics.string.characteristics_audio_float_time_domain_sum ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Audio Float Time Domain Sum"
+    description: "Sum of float time domain data from AnalyserNode.getFloatTimeDomainData() during OfflineAudioContext rendering. Collected as string to preserve floating-point precision.
 "
   }
 
@@ -4302,7 +4352,7 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params"
-    description: "The list of GL parameters of GL1.
+    description: "The list of GL parameters of GL1. Parameters: ALIASED_LINE_WIDTH_RANGE, ALIASED_POINT_SIZE_RANGE, MAX_COMBINED_TEXTURE_IMAGE_UNITS, MAX_CUBE_MAP_TEXTURE_SIZE, MAX_FRAGMENT_UNIFORM_VECTORS, MAX_RENDERBUFFER_SIZE, MAX_TEXTURE_IMAGE_UNITS, MAX_TEXTURE_SIZE, MAX_VARYING_VECTORS, MAX_VERTEX_ATTRIBS, MAX_VERTEX_TEXTURE_IMAGE_UNITS, MAX_VERTEX_UNIFORM_VECTORS, MAX_VIEWPORT_DIMS, SHADING_LANGUAGE_VERSION, STENCIL_BACK_VALUE_MASK, STENCIL_BACK_WRITEMASK, STENCIL_VALUE_MASK, STENCIL_WRITEMASK, SUBPIXEL_BITS.
 "
   }
 

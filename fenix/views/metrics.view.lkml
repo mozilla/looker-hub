@@ -23704,6 +23704,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__string__preferences_prefs_file_first_parse_error {
+    label: "Preferences: Prefs File First Parse Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_prefs_file_first_parse_error ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Prefs File First Parse Error"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences: Prefs File First Parse Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_prefs_file_first_parse_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The first error message encountered when parsing a prefs file.
+"
+  }
+
   dimension: metrics__boolean__preferences_prefs_file_was_invalid {
     label: "Preferences: Prefs File Was Invalid"
     hidden: no

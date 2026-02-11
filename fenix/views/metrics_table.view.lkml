@@ -13177,7 +13177,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -19103,6 +19103,16 @@ Example values include: \"DISABLED\", \"ENABLED_PRIVATE_ONLY\", \"ENABLED\".
     description: "The user has the open links in apps feature enabled.
 \"ask_before_opening\", \"always\" or \"never\".
 default: \"never\"
+"
+  }
+
+  dimension: metrics__string__preferences_prefs_file_first_parse_error {
+    sql: ${TABLE}.metrics.string.preferences_prefs_file_first_parse_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Preferences Prefs File First Parse Error"
+    description: "The first error message encountered when parsing a prefs file.
 "
   }
 
