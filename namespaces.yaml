@@ -9183,10 +9183,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -9264,9 +9264,9 @@ operational_monitoring:
             options:
             - release
             - beta
+            - esr
             - nightly
             - aurora
-            - esr
             - default
             - nightly-pine
             - nightly-larch
@@ -11226,15 +11226,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id431
           app:
-            default: Linux - vpn_session
+            default: iOS - vpn_session
             options:
-            - Linux - vpn_session
-            - Windows - vpn_session
             - iOS - vpn_session
+            - Windows - vpn_session
             - Android - vpn_session
-            - iOS - daemon_session
-            - Darwin - vpn_session
             - Android - daemon_session
+            - Linux - vpn_session
+            - Darwin - vpn_session
+            - iOS - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id432
