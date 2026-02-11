@@ -5,6 +5,13 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: desktop_retention_clients_table {
+  dimension: active_in_last_3_days {
+    sql: ${TABLE}.active_in_last_3_days ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Active in Last 3 Days"
+  }
+
   dimension: active_metric_date {
     sql: ${TABLE}.active_metric_date ;;
     type: yesno
