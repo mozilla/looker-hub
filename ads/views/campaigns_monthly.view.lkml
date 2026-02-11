@@ -170,27 +170,27 @@ view: campaigns_monthly {
     description: "Scheduled start date for the overall campaign period, used for calendar-based reporting and revenue recognition timing. Originates from Boostr"
   }
 
-  measure: budget {
+  measure: booked_budget {
     sql: ${budget} ;;
     type: sum
   }
 
-  measure: budgeted_clicks {
+  measure: booked_clicks {
     sql: ${budgeted_clicks} ;;
     type: sum
   }
 
-  measure: budgeted_impressions {
+  measure: booked_impressions {
     sql: ${budgeted_impressions} ;;
     type: sum
   }
 
-  measure: delivered_revenue {
+  measure: total_delivered_revenue {
     sql: ${delivered_revenue} ;;
     type: sum
   }
 
-  measure: sold_quantity {
+  measure: total_sold_quantity {
     sql: ${sold_quantity} ;;
     type: sum
   }
