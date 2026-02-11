@@ -320,7 +320,7 @@ ads:
     provider_request_stats_daily:
       measures:
         fill_rate_measure:
-          sql: SAFE_DIVIDE(${total_ads_requested_sum}, ${total_ads_returned_sum})
+          sql: SAFE_DIVIDE(${total_ads_returned_sum}, ${total_ads_requested_sum})
           type: number
         total_ads_requested_sum:
           sql: ${total_ads_requested}
