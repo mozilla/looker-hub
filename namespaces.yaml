@@ -258,6 +258,10 @@ ads:
   spoke: looker-spoke-private
   views:
     ads_finance_revenue_targets:
+      dimensions:
+        month_country_pk:
+          primary_key: true
+          sql: CONCAT(${month} ${country_code})
       tables:
       - table: mozdata.static.ads_finance_revenue_targets
       type: table_view
@@ -274,6 +278,22 @@ ads:
       - table: mozdata.ads.campaign_metrics_daily
       type: table_view
     campaigns_monthly:
+      measures:
+        budget:
+          sql: ${budget}
+          type: sum
+        budgeted_clicks:
+          sql: ${budgeted_clicks}
+          type: sum
+        budgeted_impressions:
+          sql: ${budgeted_impressions}
+          type: sum
+        delivered_revenue:
+          sql: ${delivered_revenue}
+          type: sum
+        sold_quantity:
+          sql: ${sold_quantity}
+          type: sum
       tables:
       - table: mozdata.ads.campaigns_monthly
       type: table_view

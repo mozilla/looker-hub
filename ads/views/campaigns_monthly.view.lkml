@@ -170,5 +170,30 @@ view: campaigns_monthly {
     description: "Scheduled start date for the overall campaign period, used for calendar-based reporting and revenue recognition timing. Originates from Boostr"
   }
 
+  measure: budget {
+    sql: ${budget} ;;
+    type: sum
+  }
+
+  measure: budgeted_clicks {
+    sql: ${budgeted_clicks} ;;
+    type: sum
+  }
+
+  measure: budgeted_impressions {
+    sql: ${budgeted_impressions} ;;
+    type: sum
+  }
+
+  measure: delivered_revenue {
+    sql: ${delivered_revenue} ;;
+    type: sum
+  }
+
+  measure: sold_quantity {
+    sql: ${sold_quantity} ;;
+    type: sum
+  }
+
   sql_table_name: `mozdata.ads.campaigns_monthly` ;;
 }
