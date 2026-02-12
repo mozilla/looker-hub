@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: new_tab_14802025121163751_to_release {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_tab_14802025121163751_to_release_statistics ;;
+view: disable_custom_review_prompt_ui_nightly {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.disable_custom_review_prompt_ui_nightly_statistics ;;
 
   dimension: submission_date {
     type: date

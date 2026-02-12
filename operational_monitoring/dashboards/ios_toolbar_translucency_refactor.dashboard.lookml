@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_toolbar_translucency_refactor
-    type: looker_line
-    fields: [
-      ios_toolbar_translucency_refactor.submission_date,
-      ios_toolbar_translucency_refactor.branch,
-      ios_toolbar_translucency_refactor.point
-    ]
-    pivots: [
-      ios_toolbar_translucency_refactor.branch
-    ]
-    filters:
-      ios_toolbar_translucency_refactor.metric: 'active_hours'
-      ios_toolbar_translucency_refactor.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_toolbar_translucency_refactor.submission_date
-    field_y: ios_toolbar_translucency_refactor.point
-    log_scale: false
-    ci_lower: ios_toolbar_translucency_refactor.lower
-    ci_upper: ios_toolbar_translucency_refactor.upper
-    show_grid: true
-    listen:
-      Date: ios_toolbar_translucency_refactor.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       ios_toolbar_translucency_refactor.metric: 'ad_clicks'
       ios_toolbar_translucency_refactor.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: ios_toolbar_translucency_refactor.submission_date
@@ -96,8 +62,8 @@
     filters:
       ios_toolbar_translucency_refactor.metric: 'days_of_use'
       ios_toolbar_translucency_refactor.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: ios_toolbar_translucency_refactor.submission_date
@@ -129,6 +95,40 @@
     ]
     filters:
       ios_toolbar_translucency_refactor.metric: 'search_count'
+      ios_toolbar_translucency_refactor.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_toolbar_translucency_refactor.submission_date
+    field_y: ios_toolbar_translucency_refactor.point
+    log_scale: false
+    ci_lower: ios_toolbar_translucency_refactor.lower
+    ci_upper: ios_toolbar_translucency_refactor.upper
+    show_grid: true
+    listen:
+      Date: ios_toolbar_translucency_refactor.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_toolbar_translucency_refactor
+    type: looker_line
+    fields: [
+      ios_toolbar_translucency_refactor.submission_date,
+      ios_toolbar_translucency_refactor.branch,
+      ios_toolbar_translucency_refactor.point
+    ]
+    pivots: [
+      ios_toolbar_translucency_refactor.branch
+    ]
+    filters:
+      ios_toolbar_translucency_refactor.metric: 'active_hours'
       ios_toolbar_translucency_refactor.statistic: mean
     row: 10
     col: 12

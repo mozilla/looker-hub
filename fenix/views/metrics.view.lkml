@@ -9515,6 +9515,24 @@ See `nsIXULRuntime.maxWebProcessCount`
 "
   }
 
+  dimension: metrics__boolean__extensions_allow_execute_script_in_moz_extension {
+    label: "Extensions: Allow Execute Script In Moz Extension"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extensions_allow_execute_script_in_moz_extension ;;
+    type: yesno
+    group_label: "Extensions"
+    group_item_label: "Allow Execute Script In Moz Extension"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions: Allow Execute Script In Moz Extension"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_allow_execute_script_in_moz_extension"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Corresponds to the value of `extensions.webextensions.allow_executeScript_in_moz_extension` pref.
+"
+  }
+
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
     label: "Extensions Apis Dnr: Evaluate Rules Count Max"
     hidden: no
