@@ -744,6 +744,14 @@ view: events_stream_table {
     group_item_label: "Is Selected"
   }
 
+  dimension: extras__boolean__is_top_level_frame {
+    sql: ${TABLE}.extras.boolean.is_top_level_frame ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Top Level Frame"
+  }
+
   dimension: extras__boolean__is_valid_section {
     sql: ${TABLE}.extras.boolean.is_valid_section ;;
     type: yesno
@@ -822,6 +830,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Reset Disabled"
+  }
+
+  dimension: extras__boolean__restricted {
+    sql: ${TABLE}.extras.boolean.restricted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Restricted"
   }
 
   dimension: extras__boolean__saved {

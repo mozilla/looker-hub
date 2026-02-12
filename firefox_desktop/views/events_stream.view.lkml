@@ -899,6 +899,14 @@ view: events_stream {
     group_item_label: "Is Temporarily Shown"
   }
 
+  dimension: extras__boolean__is_top_level_frame {
+    sql: ${TABLE}.extras.boolean.is_top_level_frame ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Top Level Frame"
+  }
+
   dimension: extras__boolean__is_valid_section {
     sql: ${TABLE}.extras.boolean.is_valid_section ;;
     type: yesno
@@ -1001,6 +1009,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Reset Disabled"
+  }
+
+  dimension: extras__boolean__restricted {
+    sql: ${TABLE}.extras.boolean.restricted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Restricted"
   }
 
   dimension: extras__boolean__saved {
@@ -1793,6 +1809,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Note Age Hours"
+  }
+
+  dimension: extras__quantity__note_length {
+    sql: ${TABLE}.extras.quantity.note_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Note Length"
   }
 
   dimension: extras__quantity__num_msections_audio_recvonly {
