@@ -289,13 +289,13 @@ ads:
           sql: ${budgeted_impressions}
           type: sum
         booked_rate:
-          sql: SAFE_DIVIDE(${booked_budget}, ${sold_quantity})
+          sql: SAFE_DIVIDE(${booked_budget}, ${total_sold_quantity})
           type: number
         cpc:
-          sql: SAFE_DIVIDE(${booked_budget}, ${budgeted_clicks})
+          sql: SAFE_DIVIDE(${booked_budget}, ${booked_clicks})
           type: number
         cpm:
-          sql: SAFE_DIVIDE(${booked_budget}, ${budgeted_impressions}) * 1000
+          sql: SAFE_DIVIDE(${booked_budget}, ${booked_impressions}) * 1000
           type: number
         total_delivered_revenue:
           sql: ${delivered_revenue}
