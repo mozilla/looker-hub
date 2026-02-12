@@ -186,17 +186,17 @@ view: campaigns_monthly {
   }
 
   measure: booked_rate {
-    sql: SAFE_DIVIDE(${booked_budget}, ${sold_quantity}) ;;
+    sql: SAFE_DIVIDE(${booked_budget}, ${total_sold_quantity}) ;;
     type: number
   }
 
   measure: cpc {
-    sql: SAFE_DIVIDE(${booked_budget}, ${budgeted_clicks}) ;;
+    sql: SAFE_DIVIDE(${booked_budget}, ${booked_clicks}) ;;
     type: number
   }
 
   measure: cpm {
-    sql: SAFE_DIVIDE(${booked_budget}, ${budgeted_impressions}) * 1000 ;;
+    sql: SAFE_DIVIDE(${booked_budget}, ${booked_impressions}) * 1000 ;;
     type: number
   }
 
