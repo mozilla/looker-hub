@@ -3221,6 +3221,11 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.profile_restore
       type: glean_ping_view
+    profile_restore_clients_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.profile_restore_clients
+      type: table_view
     profile_restore_table:
       tables:
       - channel: null
