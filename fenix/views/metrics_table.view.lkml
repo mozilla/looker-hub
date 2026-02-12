@@ -810,6 +810,16 @@ See `nsIXULRuntime.browserTabsRemoteAutostart`
 "
   }
 
+  dimension: metrics__boolean__extensions_allow_execute_script_in_moz_extension {
+    sql: ${TABLE}.metrics.boolean.extensions_allow_execute_script_in_moz_extension ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Extensions Allow Execute Script In Moz Extension"
+    description: "Corresponds to the value of `extensions.webextensions.allow_executeScript_in_moz_extension` pref.
+"
+  }
+
   dimension: metrics__boolean__extensions_use_remote_policy {
     sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
     type: yesno

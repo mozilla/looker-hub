@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: dont_defer_timeouts_while_loading_sicom {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.dont_defer_timeouts_while_loading_sicom_statistics ;;
+view: new_tab_14912026012151415_to_beta {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_tab_14912026012151415_to_beta_statistics ;;
 
   dimension: submission_date {
     type: date
