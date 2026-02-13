@@ -17896,6 +17896,10 @@ revenue:
       tables:
       - table: mozdata.revenue.firefox_ltv
       type: table_view
+    revenue_forecasts:
+      tables:
+      - table: mozdata.revenue_cat2_analysis.revenue_forecasts
+      type: table_view
     revenue_google_top10_row_data:
       tables:
       - table: mozdata.revenue.revenue_google_top10_row_data
