@@ -563,6 +563,14 @@ view: events_stream {
     group_item_label: "Had Errors"
   }
 
+  dimension: extras__boolean__has_ai_summary {
+    sql: ${TABLE}.extras.boolean.has_ai_summary ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Ai Summary"
+  }
+
   dimension: extras__boolean__has_been_saved {
     sql: ${TABLE}.extras.boolean.has_been_saved ;;
     type: yesno
@@ -609,6 +617,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Has Empty Password"
+  }
+
+  dimension: extras__boolean__has_ftp_origin {
+    sql: ${TABLE}.extras.boolean.has_ftp_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Ftp Origin"
   }
 
   dimension: extras__boolean__has_non_http_origin {
@@ -5649,6 +5665,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Time"
+  }
+
+  dimension: extras__string__time_created {
+    sql: ${TABLE}.extras.string.time_created ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Time Created"
+  }
+
+  dimension: extras__string__time_last_used {
+    sql: ${TABLE}.extras.string.time_last_used ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Time Last Used"
   }
 
   dimension: extras__string__time_open {

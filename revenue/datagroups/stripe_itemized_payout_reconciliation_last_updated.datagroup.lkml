@@ -16,6 +16,10 @@ datagroup: stripe_itemized_payout_reconciliation_last_updated {
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'stripe_external' AND table_name = 'itemized_tax_transactions_v2')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'stripe_external' AND table_name = 'card_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time

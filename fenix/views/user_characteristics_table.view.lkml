@@ -2973,6 +2973,86 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_fonts_variant_f_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant F Allowlisted"
+    description: "SHA256 of allowlisted fonts used to render \"A\" with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_f_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant F Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts used to render \"A\" with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_g_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant G Allowlisted"
+    description: "SHA256 of allowlisted fonts used to render emoji (U+1F47E) with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_g_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant G Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts used to render emoji (U+1F47E) with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_h_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant H Allowlisted"
+    description: "SHA256 of allowlisted fonts used to render 89 emojis with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_h_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant H Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts used to render 89 emojis with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_i_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant I Allowlisted"
+    description: "SHA256 of allowlisted fonts used to render SVG emojis with emoji-specific font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_i_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant I Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts used to render SVG emojis with emoji-specific font list
+"
+  }
+
   dimension: metrics__string__characteristics_fpu_control_state {
     sql: ${TABLE}.metrics.string.characteristics_fpu_control_state ;;
     type: string
@@ -3583,6 +3663,51 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Characteristics Scalings"
     description: "Screen(s) scaling/zoom level
 "
+  }
+
+  dimension: metrics__string__characteristics_svg_bbox {
+    sql: ${TABLE}.metrics.string.characteristics_svg_bbox ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Bbox"
+    description: "JSON object from SVGGraphicsElement.getBBox(). Format: {\"x\":N,\"y\":N,\"w\":N,\"h\":N}. Varies by browser rendering engine."
+  }
+
+  dimension: metrics__string__characteristics_svg_computed_text_length {
+    sql: ${TABLE}.metrics.string.characteristics_svg_computed_text_length ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Computed Text Length"
+    description: "SVGTextContentElement.getComputedTextLength() for emoji text element. Returns the total length of rendered text, varies by font rendering."
+  }
+
+  dimension: metrics__string__characteristics_svg_emoji_set {
+    sql: ${TABLE}.metrics.string.characteristics_svg_emoji_set ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Emoji Set"
+    description: "JSON array of emojis with unique rendering dimensions. Tests which emojis render at distinct sizes, varies by OS/font support."
+  }
+
+  dimension: metrics__string__characteristics_svg_extent_of_char {
+    sql: ${TABLE}.metrics.string.characteristics_svg_extent_of_char ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Extent Of Char"
+    description: "JSON object from SVGTextContentElement.getExtentOfChar(0). Format: {\"x\":N,\"y\":N,\"w\":N,\"h\":N}. Varies by emoji rendering."
+  }
+
+  dimension: metrics__string__characteristics_svg_substring_length {
+    sql: ${TABLE}.metrics.string.characteristics_svg_substring_length ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Substring Length"
+    description: "SVGTextContentElement.getSubStringLength(0, 10) for first 10 characters. Varies by font metrics and text shaping."
   }
 
   dimension: metrics__string__characteristics_system_locale {

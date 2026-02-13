@@ -3657,6 +3657,150 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_fonts_variant_f_allowlisted {
+    label: "Characteristics: Fonts Variant F Allowlisted"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant F Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant F Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_f_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts used to render \"A\" with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_f_nonallowlisted {
+    label: "Characteristics: Fonts Variant F Nonallowlisted"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant F Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant F Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_f_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts used to render \"A\" with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_g_allowlisted {
+    label: "Characteristics: Fonts Variant G Allowlisted"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant G Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant G Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_g_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts used to render emoji (U+1F47E) with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_g_nonallowlisted {
+    label: "Characteristics: Fonts Variant G Nonallowlisted"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant G Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant G Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_g_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts used to render emoji (U+1F47E) with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_h_allowlisted {
+    label: "Characteristics: Fonts Variant H Allowlisted"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant H Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant H Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_h_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts used to render 89 emojis with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_h_nonallowlisted {
+    label: "Characteristics: Fonts Variant H Nonallowlisted"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant H Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant H Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_h_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts used to render 89 emojis with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_i_allowlisted {
+    label: "Characteristics: Fonts Variant I Allowlisted"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant I Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant I Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_i_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts used to render SVG emojis with emoji-specific font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_i_nonallowlisted {
+    label: "Characteristics: Fonts Variant I Nonallowlisted"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant I Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant I Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_i_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts used to render SVG emojis with emoji-specific font list
+"
+  }
+
   dimension: metrics__string__characteristics_fpu_control_state {
     label: "Characteristics: Fpu Control State"
     hidden: no
@@ -6519,6 +6663,91 @@ view: user_characteristics {
 
     description: "An incrementing constant that represents the current schema/source of the data present in a ping. By referring to this value in a ping, one can know for certain the provenance of other data present in the ping, and what data may or may not be present.
 "
+  }
+
+  dimension: metrics__string__characteristics_svg_bbox {
+    label: "Characteristics: Svg Bbox"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_svg_bbox ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Bbox"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Bbox"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_bbox"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON object from SVGGraphicsElement.getBBox(). Format: {\"x\":N,\"y\":N,\"w\":N,\"h\":N}. Varies by browser rendering engine."
+  }
+
+  dimension: metrics__string__characteristics_svg_computed_text_length {
+    label: "Characteristics: Svg Computed Text Length"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_svg_computed_text_length ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Computed Text Length"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Computed Text Length"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_computed_text_length"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SVGTextContentElement.getComputedTextLength() for emoji text element. Returns the total length of rendered text, varies by font rendering."
+  }
+
+  dimension: metrics__string__characteristics_svg_emoji_set {
+    label: "Characteristics: Svg Emoji Set"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_svg_emoji_set ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Emoji Set"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Emoji Set"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_emoji_set"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON array of emojis with unique rendering dimensions. Tests which emojis render at distinct sizes, varies by OS/font support."
+  }
+
+  dimension: metrics__string__characteristics_svg_extent_of_char {
+    label: "Characteristics: Svg Extent Of Char"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_svg_extent_of_char ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Extent Of Char"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Extent Of Char"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_extent_of_char"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON object from SVGTextContentElement.getExtentOfChar(0). Format: {\"x\":N,\"y\":N,\"w\":N,\"h\":N}. Varies by emoji rendering."
+  }
+
+  dimension: metrics__string__characteristics_svg_substring_length {
+    label: "Characteristics: Svg Substring Length"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.characteristics_svg_substring_length ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Substring Length"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Substring Length"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_substring_length"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SVGTextContentElement.getSubStringLength(0, 10) for first 10 characters. Varies by font metrics and text shaping."
   }
 
   dimension: metrics__string__characteristics_system_locale {
