@@ -9214,10 +9214,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -9294,10 +9294,10 @@ operational_monitoring:
             default: release
             options:
             - release
-            - aurora
-            - beta
             - nightly
+            - aurora
             - esr
+            - beta
             - default
             - nightly-pine
             - nightly-larch
@@ -11257,15 +11257,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id431
           app:
-            default: Android - daemon_session
+            default: iOS - daemon_session
             options:
-            - Android - daemon_session
-            - Windows - vpn_session
-            - Darwin - vpn_session
-            - Linux - vpn_session
-            - iOS - vpn_session
-            - Android - vpn_session
             - iOS - daemon_session
+            - Linux - vpn_session
+            - Windows - vpn_session
+            - iOS - vpn_session
+            - Darwin - vpn_session
+            - Android - daemon_session
+            - Android - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id432
@@ -12187,17 +12187,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id491
           channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
-            - release
             - beta
+            - release
+            - nightly
           os:
             default: Darwin
             options:
             - Darwin
-            - Windows_NT
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id492

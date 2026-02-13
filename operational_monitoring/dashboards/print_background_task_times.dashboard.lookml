@@ -185,16 +185,16 @@
   - title: Channel
     name: Channel
     type: string_filter
-    default_value: 'nightly'
+    default_value: 'beta'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'nightly'
-      - 'release'
       - 'beta'
+      - 'release'
+      - 'nightly'
       
   
   
@@ -209,8 +209,8 @@
       display: inline
       options:
       - 'Darwin'
-      - 'Windows_NT'
       - 'Linux'
+      - 'Windows_NT'
       
   
   
