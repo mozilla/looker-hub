@@ -520,6 +520,14 @@ view: events_stream_table {
     group_item_label: "Has Empty Password"
   }
 
+  dimension: extras__boolean__has_ftp_origin {
+    sql: ${TABLE}.extras.boolean.has_ftp_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Ftp Origin"
+  }
+
   dimension: extras__boolean__has_non_http_origin {
     sql: ${TABLE}.extras.boolean.has_non_http_origin ;;
     type: yesno
@@ -4272,12 +4280,28 @@ view: events_stream_table {
     group_item_label: "Time"
   }
 
+  dimension: extras__string__time_created {
+    sql: ${TABLE}.extras.string.time_created ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Time Created"
+  }
+
   dimension: extras__string__time_group {
     sql: ${TABLE}.extras.string.time_group ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Time Group"
+  }
+
+  dimension: extras__string__time_last_used {
+    sql: ${TABLE}.extras.string.time_last_used ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Time Last Used"
   }
 
   dimension: extras__string__time_open {
