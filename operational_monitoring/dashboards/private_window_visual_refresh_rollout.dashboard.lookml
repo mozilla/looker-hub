@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: private_window_visual_refresh_rollout
-    type: looker_line
-    fields: [
-      private_window_visual_refresh_rollout.submission_date,
-      private_window_visual_refresh_rollout.branch,
-      private_window_visual_refresh_rollout.point
-    ]
-    pivots: [
-      private_window_visual_refresh_rollout.branch
-    ]
-    filters:
-      private_window_visual_refresh_rollout.metric: 'qualified_cumulative_days_of_use'
-      private_window_visual_refresh_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: private_window_visual_refresh_rollout.submission_date
-    field_y: private_window_visual_refresh_rollout.point
-    log_scale: false
-    ci_lower: private_window_visual_refresh_rollout.lower
-    ci_upper: private_window_visual_refresh_rollout.upper
-    show_grid: true
-    listen:
-      Date: private_window_visual_refresh_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -63,6 +29,40 @@
       private_window_visual_refresh_rollout.metric: 'ad_clicks'
       private_window_visual_refresh_rollout.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: private_window_visual_refresh_rollout.submission_date
+    field_y: private_window_visual_refresh_rollout.point
+    log_scale: false
+    ci_lower: private_window_visual_refresh_rollout.lower
+    ci_upper: private_window_visual_refresh_rollout.upper
+    show_grid: true
+    listen:
+      Date: private_window_visual_refresh_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: private_window_visual_refresh_rollout
+    type: looker_line
+    fields: [
+      private_window_visual_refresh_rollout.submission_date,
+      private_window_visual_refresh_rollout.branch,
+      private_window_visual_refresh_rollout.point
+    ]
+    pivots: [
+      private_window_visual_refresh_rollout.branch
+    ]
+    filters:
+      private_window_visual_refresh_rollout.metric: 'active_hours'
+      private_window_visual_refresh_rollout.statistic: mean
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       private_window_visual_refresh_rollout.branch
     ]
     filters:
-      private_window_visual_refresh_rollout.metric: 'days_of_use'
+      private_window_visual_refresh_rollout.metric: 'uri_count'
       private_window_visual_refresh_rollout.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       private_window_visual_refresh_rollout.branch
     ]
     filters:
-      private_window_visual_refresh_rollout.metric: 'search_count'
+      private_window_visual_refresh_rollout.metric: 'retained'
       private_window_visual_refresh_rollout.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       private_window_visual_refresh_rollout.branch
     ]
     filters:
-      private_window_visual_refresh_rollout.metric: 'active_hours'
+      private_window_visual_refresh_rollout.metric: 'qualified_cumulative_days_of_use'
       private_window_visual_refresh_rollout.statistic: mean
     row: 20
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       private_window_visual_refresh_rollout.branch
     ]
     filters:
-      private_window_visual_refresh_rollout.metric: 'retained'
+      private_window_visual_refresh_rollout.metric: 'days_of_use'
       private_window_visual_refresh_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       private_window_visual_refresh_rollout.branch
     ]
     filters:
-      private_window_visual_refresh_rollout.metric: 'uri_count'
+      private_window_visual_refresh_rollout.metric: 'search_count'
       private_window_visual_refresh_rollout.statistic: mean
     row: 30
     col: 12

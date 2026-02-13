@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sections_rollout_us_re_enable_customize_buttons
-    type: looker_line
-    fields: [
-      sections_rollout_us_re_enable_customize_buttons.submission_date,
-      sections_rollout_us_re_enable_customize_buttons.branch,
-      sections_rollout_us_re_enable_customize_buttons.point
-    ]
-    pivots: [
-      sections_rollout_us_re_enable_customize_buttons.branch
-    ]
-    filters:
-      sections_rollout_us_re_enable_customize_buttons.metric: 'qualified_cumulative_days_of_use'
-      sections_rollout_us_re_enable_customize_buttons.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: sections_rollout_us_re_enable_customize_buttons.submission_date
-    field_y: sections_rollout_us_re_enable_customize_buttons.point
-    log_scale: false
-    ci_lower: sections_rollout_us_re_enable_customize_buttons.lower
-    ci_upper: sections_rollout_us_re_enable_customize_buttons.upper
-    show_grid: true
-    listen:
-      Date: sections_rollout_us_re_enable_customize_buttons.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -63,6 +29,40 @@
       sections_rollout_us_re_enable_customize_buttons.metric: 'ad_clicks'
       sections_rollout_us_re_enable_customize_buttons.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: sections_rollout_us_re_enable_customize_buttons.submission_date
+    field_y: sections_rollout_us_re_enable_customize_buttons.point
+    log_scale: false
+    ci_lower: sections_rollout_us_re_enable_customize_buttons.lower
+    ci_upper: sections_rollout_us_re_enable_customize_buttons.upper
+    show_grid: true
+    listen:
+      Date: sections_rollout_us_re_enable_customize_buttons.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sections_rollout_us_re_enable_customize_buttons
+    type: looker_line
+    fields: [
+      sections_rollout_us_re_enable_customize_buttons.submission_date,
+      sections_rollout_us_re_enable_customize_buttons.branch,
+      sections_rollout_us_re_enable_customize_buttons.point
+    ]
+    pivots: [
+      sections_rollout_us_re_enable_customize_buttons.branch
+    ]
+    filters:
+      sections_rollout_us_re_enable_customize_buttons.metric: 'active_hours'
+      sections_rollout_us_re_enable_customize_buttons.statistic: mean
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       sections_rollout_us_re_enable_customize_buttons.branch
     ]
     filters:
-      sections_rollout_us_re_enable_customize_buttons.metric: 'days_of_use'
+      sections_rollout_us_re_enable_customize_buttons.metric: 'uri_count'
       sections_rollout_us_re_enable_customize_buttons.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       sections_rollout_us_re_enable_customize_buttons.branch
     ]
     filters:
-      sections_rollout_us_re_enable_customize_buttons.metric: 'search_count'
+      sections_rollout_us_re_enable_customize_buttons.metric: 'retained'
       sections_rollout_us_re_enable_customize_buttons.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       sections_rollout_us_re_enable_customize_buttons.branch
     ]
     filters:
-      sections_rollout_us_re_enable_customize_buttons.metric: 'active_hours'
+      sections_rollout_us_re_enable_customize_buttons.metric: 'qualified_cumulative_days_of_use'
       sections_rollout_us_re_enable_customize_buttons.statistic: mean
     row: 20
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       sections_rollout_us_re_enable_customize_buttons.branch
     ]
     filters:
-      sections_rollout_us_re_enable_customize_buttons.metric: 'retained'
+      sections_rollout_us_re_enable_customize_buttons.metric: 'days_of_use'
       sections_rollout_us_re_enable_customize_buttons.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       sections_rollout_us_re_enable_customize_buttons.branch
     ]
     filters:
-      sections_rollout_us_re_enable_customize_buttons.metric: 'uri_count'
+      sections_rollout_us_re_enable_customize_buttons.metric: 'search_count'
       sections_rollout_us_re_enable_customize_buttons.statistic: mean
     row: 30
     col: 12
