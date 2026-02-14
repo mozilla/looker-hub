@@ -3659,7 +3659,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_fonts_variant_f_allowlisted {
     label: "Characteristics: Fonts Variant F Allowlisted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_allowlisted ;;
     type: string
     group_label: "Characteristics"
@@ -3677,7 +3677,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_fonts_variant_f_nonallowlisted {
     label: "Characteristics: Fonts Variant F Nonallowlisted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_nonallowlisted ;;
     type: string
     group_label: "Characteristics"
@@ -3695,7 +3695,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_fonts_variant_g_allowlisted {
     label: "Characteristics: Fonts Variant G Allowlisted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_allowlisted ;;
     type: string
     group_label: "Characteristics"
@@ -3713,7 +3713,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_fonts_variant_g_nonallowlisted {
     label: "Characteristics: Fonts Variant G Nonallowlisted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_nonallowlisted ;;
     type: string
     group_label: "Characteristics"
@@ -3731,7 +3731,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_fonts_variant_h_allowlisted {
     label: "Characteristics: Fonts Variant H Allowlisted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_allowlisted ;;
     type: string
     group_label: "Characteristics"
@@ -3749,7 +3749,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_fonts_variant_h_nonallowlisted {
     label: "Characteristics: Fonts Variant H Nonallowlisted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_nonallowlisted ;;
     type: string
     group_label: "Characteristics"
@@ -3767,7 +3767,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_fonts_variant_i_allowlisted {
     label: "Characteristics: Fonts Variant I Allowlisted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_allowlisted ;;
     type: string
     group_label: "Characteristics"
@@ -3785,7 +3785,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_fonts_variant_i_nonallowlisted {
     label: "Characteristics: Fonts Variant I Nonallowlisted"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_nonallowlisted ;;
     type: string
     group_label: "Characteristics"
@@ -6667,7 +6667,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_svg_bbox {
     label: "Characteristics: Svg Bbox"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_svg_bbox ;;
     type: string
     group_label: "Characteristics"
@@ -6684,7 +6684,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_svg_computed_text_length {
     label: "Characteristics: Svg Computed Text Length"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_svg_computed_text_length ;;
     type: string
     group_label: "Characteristics"
@@ -6701,7 +6701,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_svg_emoji_set {
     label: "Characteristics: Svg Emoji Set"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_svg_emoji_set ;;
     type: string
     group_label: "Characteristics"
@@ -6718,7 +6718,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_svg_extent_of_char {
     label: "Characteristics: Svg Extent Of Char"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_svg_extent_of_char ;;
     type: string
     group_label: "Characteristics"
@@ -6735,7 +6735,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_svg_substring_length {
     label: "Characteristics: Svg Substring Length"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.characteristics_svg_substring_length ;;
     type: string
     group_label: "Characteristics"

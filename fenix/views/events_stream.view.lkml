@@ -2947,6 +2947,14 @@ view: events_stream {
     group_item_label: "Install Origins"
   }
 
+  dimension: extras__string__install_source {
+    sql: ${TABLE}.extras.string.install_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Install Source"
+  }
+
   dimension: extras__string__interaction {
     sql: ${TABLE}.extras.string.interaction ;;
     type: string
@@ -3369,6 +3377,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Oldpanel"
+  }
+
+  dimension: extras__string__onboarding_reason {
+    sql: ${TABLE}.extras.string.onboarding_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Onboarding Reason"
   }
 
   dimension: extras__string__opened_from {

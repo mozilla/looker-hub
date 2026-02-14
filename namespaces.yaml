@@ -9257,9 +9257,9 @@ operational_monitoring:
             options:
             - release
             - nightly
-            - aurora
-            - esr
             - beta
+            - esr
+            - aurora
             - default
             - nightly-pine
             - nightly-larch
@@ -12111,17 +12111,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id485
           channel:
-            default: beta
+            default: nightly
             options:
+            - nightly
             - beta
             - release
-            - nightly
           os:
-            default: Darwin
+            default: Windows_NT
             options:
+            - Windows_NT
             - Darwin
             - Linux
-            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id486

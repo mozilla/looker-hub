@@ -208,6 +208,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_searchbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_smartbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_smartbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_smartbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_smartbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_urlbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_urlbar.document_id} ;;
@@ -293,6 +303,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_searchbar}) AS metrics__metrics__labeled_counter__browser_search_adclicks_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_searchbar.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_smartbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_smartbar}) AS metrics__metrics__labeled_counter__browser_search_adclicks_smartbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_smartbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_adclicks_smartwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_smartwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_adclicks_smartwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_smartwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_search_adclicks_system {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_adclicks_system}) AS metrics__metrics__labeled_counter__browser_search_adclicks_system ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_adclicks_system.document_id} ;;
@@ -368,6 +388,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_searchbar}) AS metrics__metrics__labeled_counter__browser_search_content_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_searchbar.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_search_content_smartbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_smartbar}) AS metrics__metrics__labeled_counter__browser_search_content_smartbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_smartbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_content_smartwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_smartwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_content_smartwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_smartwindow_assistant.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_search_content_system {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_content_system}) AS metrics__metrics__labeled_counter__browser_search_content_system ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_content_system.document_id} ;;
@@ -441,6 +471,16 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__browser_search_withads_searchbar {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_searchbar}) AS metrics__metrics__labeled_counter__browser_search_withads_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_searchbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_smartbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_smartbar}) AS metrics__metrics__labeled_counter__browser_search_withads_smartbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_smartbar.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_withads_smartwindow_assistant {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_withads_smartwindow_assistant}) AS metrics__metrics__labeled_counter__browser_search_withads_smartwindow_assistant ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_withads_smartwindow_assistant.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__browser_search_withads_system {
