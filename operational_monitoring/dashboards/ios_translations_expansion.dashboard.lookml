@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       ios_translations_expansion.branch
     ]
     filters:
-      ios_translations_expansion.metric: 'days_of_use'
+      ios_translations_expansion.metric: 'retained'
       ios_translations_expansion.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: ios_translations_expansion.submission_date
-    field_y: ios_translations_expansion.point
-    log_scale: false
-    ci_lower: ios_translations_expansion.lower
-    ci_upper: ios_translations_expansion.upper
-    show_grid: true
-    listen:
-      Date: ios_translations_expansion.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_translations_expansion
-    type: looker_line
-    fields: [
-      ios_translations_expansion.submission_date,
-      ios_translations_expansion.branch,
-      ios_translations_expansion.point
-    ]
-    pivots: [
-      ios_translations_expansion.branch
-    ]
-    filters:
-      ios_translations_expansion.metric: 'search_count'
-      ios_translations_expansion.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: ios_translations_expansion.submission_date
@@ -96,41 +62,7 @@
     filters:
       ios_translations_expansion.metric: 'ad_clicks'
       ios_translations_expansion.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_translations_expansion.submission_date
-    field_y: ios_translations_expansion.point
-    log_scale: false
-    ci_lower: ios_translations_expansion.lower
-    ci_upper: ios_translations_expansion.upper
-    show_grid: true
-    listen:
-      Date: ios_translations_expansion.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_translations_expansion
-    type: looker_line
-    fields: [
-      ios_translations_expansion.submission_date,
-      ios_translations_expansion.branch,
-      ios_translations_expansion.point
-    ]
-    pivots: [
-      ios_translations_expansion.branch
-    ]
-    filters:
-      ios_translations_expansion.metric: 'retained'
-      ios_translations_expansion.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -163,6 +95,74 @@
     ]
     filters:
       ios_translations_expansion.metric: 'active_hours'
+      ios_translations_expansion.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_translations_expansion.submission_date
+    field_y: ios_translations_expansion.point
+    log_scale: false
+    ci_lower: ios_translations_expansion.lower
+    ci_upper: ios_translations_expansion.upper
+    show_grid: true
+    listen:
+      Date: ios_translations_expansion.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_translations_expansion
+    type: looker_line
+    fields: [
+      ios_translations_expansion.submission_date,
+      ios_translations_expansion.branch,
+      ios_translations_expansion.point
+    ]
+    pivots: [
+      ios_translations_expansion.branch
+    ]
+    filters:
+      ios_translations_expansion.metric: 'days_of_use'
+      ios_translations_expansion.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_translations_expansion.submission_date
+    field_y: ios_translations_expansion.point
+    log_scale: false
+    ci_lower: ios_translations_expansion.lower
+    ci_upper: ios_translations_expansion.upper
+    show_grid: true
+    listen:
+      Date: ios_translations_expansion.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_translations_expansion
+    type: looker_line
+    fields: [
+      ios_translations_expansion.submission_date,
+      ios_translations_expansion.branch,
+      ios_translations_expansion.point
+    ]
+    pivots: [
+      ios_translations_expansion.branch
+    ]
+    filters:
+      ios_translations_expansion.metric: 'search_count'
       ios_translations_expansion.statistic: mean
     row: 20
     col: 0
