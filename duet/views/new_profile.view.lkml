@@ -1429,6 +1429,15 @@ view: new_profile {
     description: "The kernel version of Android. This is Android only. `null` on failure."
   }
 
+  dimension: environment__system__os__libstdcxx_version {
+    sql: ${TABLE}.environment.system.os.libstdcxx_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Environment: System: OS"
+    group_item_label: "Libstdcxx Version"
+    description: "The highest GLIBCXX version available in libstdc++.so.6. This is Linux only. `null` on failure."
+  }
+
   dimension: environment__system__os__locale {
     sql: ${TABLE}.environment.system.os.locale ;;
     type: string
