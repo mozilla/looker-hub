@@ -10,26 +10,24 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: new_tab_14802025121163751_to_release_146
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       new_tab_14802025121163751_to_release_146.submission_date,
       new_tab_14802025121163751_to_release_146.branch,
-      new_tab_14802025121163751_to_release_146.upper,
-      new_tab_14802025121163751_to_release_146.lower,
       new_tab_14802025121163751_to_release_146.point
     ]
     pivots: [
       new_tab_14802025121163751_to_release_146.branch
     ]
     filters:
-      new_tab_14802025121163751_to_release_146.metric: 'memory_total'
-      new_tab_14802025121163751_to_release_146.statistic: percentile
+      new_tab_14802025121163751_to_release_146.metric: 'uri_count'
+      new_tab_14802025121163751_to_release_146.statistic: mean
     row: 0
     col: 0
     width: 12
@@ -42,7 +40,74 @@
     show_grid: true
     listen:
       Date: new_tab_14802025121163751_to_release_146.submission_date
-      Percentile: new_tab_14802025121163751_to_release_146.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_14802025121163751_to_release_146
+    type: looker_line
+    fields: [
+      new_tab_14802025121163751_to_release_146.submission_date,
+      new_tab_14802025121163751_to_release_146.branch,
+      new_tab_14802025121163751_to_release_146.point
+    ]
+    pivots: [
+      new_tab_14802025121163751_to_release_146.branch
+    ]
+    filters:
+      new_tab_14802025121163751_to_release_146.metric: 'search_count'
+      new_tab_14802025121163751_to_release_146.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: new_tab_14802025121163751_to_release_146.submission_date
+    field_y: new_tab_14802025121163751_to_release_146.point
+    log_scale: false
+    ci_lower: new_tab_14802025121163751_to_release_146.lower
+    ci_upper: new_tab_14802025121163751_to_release_146.upper
+    show_grid: true
+    listen:
+      Date: new_tab_14802025121163751_to_release_146.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_14802025121163751_to_release_146
+    type: looker_line
+    fields: [
+      new_tab_14802025121163751_to_release_146.submission_date,
+      new_tab_14802025121163751_to_release_146.branch,
+      new_tab_14802025121163751_to_release_146.point
+    ]
+    pivots: [
+      new_tab_14802025121163751_to_release_146.branch
+    ]
+    filters:
+      new_tab_14802025121163751_to_release_146.metric: 'active_hours'
+      new_tab_14802025121163751_to_release_146.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_tab_14802025121163751_to_release_146.submission_date
+    field_y: new_tab_14802025121163751_to_release_146.point
+    log_scale: false
+    ci_lower: new_tab_14802025121163751_to_release_146.lower
+    ci_upper: new_tab_14802025121163751_to_release_146.upper
+    show_grid: true
+    listen:
+      Date: new_tab_14802025121163751_to_release_146.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -65,7 +130,7 @@
     filters:
       new_tab_14802025121163751_to_release_146.metric: 'retained'
       new_tab_14802025121163751_to_release_146.statistic: mean
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -99,7 +164,78 @@
     filters:
       new_tab_14802025121163751_to_release_146.metric: 'qualified_cumulative_days_of_use'
       new_tab_14802025121163751_to_release_146.statistic: mean
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_tab_14802025121163751_to_release_146.submission_date
+    field_y: new_tab_14802025121163751_to_release_146.point
+    log_scale: false
+    ci_lower: new_tab_14802025121163751_to_release_146.lower
+    ci_upper: new_tab_14802025121163751_to_release_146.upper
+    show_grid: true
+    listen:
+      Date: new_tab_14802025121163751_to_release_146.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: new_tab_14802025121163751_to_release_146
+    type: "ci-line-chart"
+    fields: [
+      new_tab_14802025121163751_to_release_146.submission_date,
+      new_tab_14802025121163751_to_release_146.branch,
+      new_tab_14802025121163751_to_release_146.upper,
+      new_tab_14802025121163751_to_release_146.lower,
+      new_tab_14802025121163751_to_release_146.point
+    ]
+    pivots: [
+      new_tab_14802025121163751_to_release_146.branch
+    ]
+    filters:
+      new_tab_14802025121163751_to_release_146.metric: 'memory_total'
+      new_tab_14802025121163751_to_release_146.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: new_tab_14802025121163751_to_release_146.submission_date
+    field_y: new_tab_14802025121163751_to_release_146.point
+    log_scale: false
+    ci_lower: new_tab_14802025121163751_to_release_146.lower
+    ci_upper: new_tab_14802025121163751_to_release_146.upper
+    show_grid: true
+    listen:
+      Date: new_tab_14802025121163751_to_release_146.submission_date
+      Percentile: new_tab_14802025121163751_to_release_146.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_14802025121163751_to_release_146
+    type: looker_line
+    fields: [
+      new_tab_14802025121163751_to_release_146.submission_date,
+      new_tab_14802025121163751_to_release_146.branch,
+      new_tab_14802025121163751_to_release_146.point
+    ]
+    pivots: [
+      new_tab_14802025121163751_to_release_146.branch
+    ]
+    filters:
+      new_tab_14802025121163751_to_release_146.metric: 'days_of_use'
+      new_tab_14802025121163751_to_release_146.statistic: mean
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -132,142 +268,6 @@
     ]
     filters:
       new_tab_14802025121163751_to_release_146.metric: 'ad_clicks'
-      new_tab_14802025121163751_to_release_146.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: new_tab_14802025121163751_to_release_146.submission_date
-    field_y: new_tab_14802025121163751_to_release_146.point
-    log_scale: false
-    ci_lower: new_tab_14802025121163751_to_release_146.lower
-    ci_upper: new_tab_14802025121163751_to_release_146.upper
-    show_grid: true
-    listen:
-      Date: new_tab_14802025121163751_to_release_146.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_14802025121163751_to_release_146
-    type: looker_line
-    fields: [
-      new_tab_14802025121163751_to_release_146.submission_date,
-      new_tab_14802025121163751_to_release_146.branch,
-      new_tab_14802025121163751_to_release_146.point
-    ]
-    pivots: [
-      new_tab_14802025121163751_to_release_146.branch
-    ]
-    filters:
-      new_tab_14802025121163751_to_release_146.metric: 'days_of_use'
-      new_tab_14802025121163751_to_release_146.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_tab_14802025121163751_to_release_146.submission_date
-    field_y: new_tab_14802025121163751_to_release_146.point
-    log_scale: false
-    ci_lower: new_tab_14802025121163751_to_release_146.lower
-    ci_upper: new_tab_14802025121163751_to_release_146.upper
-    show_grid: true
-    listen:
-      Date: new_tab_14802025121163751_to_release_146.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_14802025121163751_to_release_146
-    type: looker_line
-    fields: [
-      new_tab_14802025121163751_to_release_146.submission_date,
-      new_tab_14802025121163751_to_release_146.branch,
-      new_tab_14802025121163751_to_release_146.point
-    ]
-    pivots: [
-      new_tab_14802025121163751_to_release_146.branch
-    ]
-    filters:
-      new_tab_14802025121163751_to_release_146.metric: 'uri_count'
-      new_tab_14802025121163751_to_release_146.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: new_tab_14802025121163751_to_release_146.submission_date
-    field_y: new_tab_14802025121163751_to_release_146.point
-    log_scale: false
-    ci_lower: new_tab_14802025121163751_to_release_146.lower
-    ci_upper: new_tab_14802025121163751_to_release_146.upper
-    show_grid: true
-    listen:
-      Date: new_tab_14802025121163751_to_release_146.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_14802025121163751_to_release_146
-    type: looker_line
-    fields: [
-      new_tab_14802025121163751_to_release_146.submission_date,
-      new_tab_14802025121163751_to_release_146.branch,
-      new_tab_14802025121163751_to_release_146.point
-    ]
-    pivots: [
-      new_tab_14802025121163751_to_release_146.branch
-    ]
-    filters:
-      new_tab_14802025121163751_to_release_146.metric: 'search_count'
-      new_tab_14802025121163751_to_release_146.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_tab_14802025121163751_to_release_146.submission_date
-    field_y: new_tab_14802025121163751_to_release_146.point
-    log_scale: false
-    ci_lower: new_tab_14802025121163751_to_release_146.lower
-    ci_upper: new_tab_14802025121163751_to_release_146.upper
-    show_grid: true
-    listen:
-      Date: new_tab_14802025121163751_to_release_146.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_14802025121163751_to_release_146
-    type: looker_line
-    fields: [
-      new_tab_14802025121163751_to_release_146.submission_date,
-      new_tab_14802025121163751_to_release_146.branch,
-      new_tab_14802025121163751_to_release_146.point
-    ]
-    pivots: [
-      new_tab_14802025121163751_to_release_146.branch
-    ]
-    filters:
-      new_tab_14802025121163751_to_release_146.metric: 'active_hours'
       new_tab_14802025121163751_to_release_146.statistic: mean
     row: 30
     col: 12

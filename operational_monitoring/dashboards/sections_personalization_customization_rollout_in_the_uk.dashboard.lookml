@@ -10,26 +10,24 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: sections_personalization_customization_rollout_in_the_uk
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       sections_personalization_customization_rollout_in_the_uk.submission_date,
       sections_personalization_customization_rollout_in_the_uk.branch,
-      sections_personalization_customization_rollout_in_the_uk.upper,
-      sections_personalization_customization_rollout_in_the_uk.lower,
       sections_personalization_customization_rollout_in_the_uk.point
     ]
     pivots: [
       sections_personalization_customization_rollout_in_the_uk.branch
     ]
     filters:
-      sections_personalization_customization_rollout_in_the_uk.metric: 'memory_total'
-      sections_personalization_customization_rollout_in_the_uk.statistic: percentile
+      sections_personalization_customization_rollout_in_the_uk.metric: 'uri_count'
+      sections_personalization_customization_rollout_in_the_uk.statistic: mean
     row: 0
     col: 0
     width: 12
@@ -42,7 +40,74 @@
     show_grid: true
     listen:
       Date: sections_personalization_customization_rollout_in_the_uk.submission_date
-      Percentile: sections_personalization_customization_rollout_in_the_uk.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sections_personalization_customization_rollout_in_the_uk
+    type: looker_line
+    fields: [
+      sections_personalization_customization_rollout_in_the_uk.submission_date,
+      sections_personalization_customization_rollout_in_the_uk.branch,
+      sections_personalization_customization_rollout_in_the_uk.point
+    ]
+    pivots: [
+      sections_personalization_customization_rollout_in_the_uk.branch
+    ]
+    filters:
+      sections_personalization_customization_rollout_in_the_uk.metric: 'search_count'
+      sections_personalization_customization_rollout_in_the_uk.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: sections_personalization_customization_rollout_in_the_uk.submission_date
+    field_y: sections_personalization_customization_rollout_in_the_uk.point
+    log_scale: false
+    ci_lower: sections_personalization_customization_rollout_in_the_uk.lower
+    ci_upper: sections_personalization_customization_rollout_in_the_uk.upper
+    show_grid: true
+    listen:
+      Date: sections_personalization_customization_rollout_in_the_uk.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sections_personalization_customization_rollout_in_the_uk
+    type: looker_line
+    fields: [
+      sections_personalization_customization_rollout_in_the_uk.submission_date,
+      sections_personalization_customization_rollout_in_the_uk.branch,
+      sections_personalization_customization_rollout_in_the_uk.point
+    ]
+    pivots: [
+      sections_personalization_customization_rollout_in_the_uk.branch
+    ]
+    filters:
+      sections_personalization_customization_rollout_in_the_uk.metric: 'active_hours'
+      sections_personalization_customization_rollout_in_the_uk.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: sections_personalization_customization_rollout_in_the_uk.submission_date
+    field_y: sections_personalization_customization_rollout_in_the_uk.point
+    log_scale: false
+    ci_lower: sections_personalization_customization_rollout_in_the_uk.lower
+    ci_upper: sections_personalization_customization_rollout_in_the_uk.upper
+    show_grid: true
+    listen:
+      Date: sections_personalization_customization_rollout_in_the_uk.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -65,7 +130,7 @@
     filters:
       sections_personalization_customization_rollout_in_the_uk.metric: 'retained'
       sections_personalization_customization_rollout_in_the_uk.statistic: mean
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -99,7 +164,78 @@
     filters:
       sections_personalization_customization_rollout_in_the_uk.metric: 'qualified_cumulative_days_of_use'
       sections_personalization_customization_rollout_in_the_uk.statistic: mean
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: sections_personalization_customization_rollout_in_the_uk.submission_date
+    field_y: sections_personalization_customization_rollout_in_the_uk.point
+    log_scale: false
+    ci_lower: sections_personalization_customization_rollout_in_the_uk.lower
+    ci_upper: sections_personalization_customization_rollout_in_the_uk.upper
+    show_grid: true
+    listen:
+      Date: sections_personalization_customization_rollout_in_the_uk.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: sections_personalization_customization_rollout_in_the_uk
+    type: "ci-line-chart"
+    fields: [
+      sections_personalization_customization_rollout_in_the_uk.submission_date,
+      sections_personalization_customization_rollout_in_the_uk.branch,
+      sections_personalization_customization_rollout_in_the_uk.upper,
+      sections_personalization_customization_rollout_in_the_uk.lower,
+      sections_personalization_customization_rollout_in_the_uk.point
+    ]
+    pivots: [
+      sections_personalization_customization_rollout_in_the_uk.branch
+    ]
+    filters:
+      sections_personalization_customization_rollout_in_the_uk.metric: 'memory_total'
+      sections_personalization_customization_rollout_in_the_uk.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: sections_personalization_customization_rollout_in_the_uk.submission_date
+    field_y: sections_personalization_customization_rollout_in_the_uk.point
+    log_scale: false
+    ci_lower: sections_personalization_customization_rollout_in_the_uk.lower
+    ci_upper: sections_personalization_customization_rollout_in_the_uk.upper
+    show_grid: true
+    listen:
+      Date: sections_personalization_customization_rollout_in_the_uk.submission_date
+      Percentile: sections_personalization_customization_rollout_in_the_uk.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sections_personalization_customization_rollout_in_the_uk
+    type: looker_line
+    fields: [
+      sections_personalization_customization_rollout_in_the_uk.submission_date,
+      sections_personalization_customization_rollout_in_the_uk.branch,
+      sections_personalization_customization_rollout_in_the_uk.point
+    ]
+    pivots: [
+      sections_personalization_customization_rollout_in_the_uk.branch
+    ]
+    filters:
+      sections_personalization_customization_rollout_in_the_uk.metric: 'days_of_use'
+      sections_personalization_customization_rollout_in_the_uk.statistic: mean
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -132,142 +268,6 @@
     ]
     filters:
       sections_personalization_customization_rollout_in_the_uk.metric: 'ad_clicks'
-      sections_personalization_customization_rollout_in_the_uk.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: sections_personalization_customization_rollout_in_the_uk.submission_date
-    field_y: sections_personalization_customization_rollout_in_the_uk.point
-    log_scale: false
-    ci_lower: sections_personalization_customization_rollout_in_the_uk.lower
-    ci_upper: sections_personalization_customization_rollout_in_the_uk.upper
-    show_grid: true
-    listen:
-      Date: sections_personalization_customization_rollout_in_the_uk.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sections_personalization_customization_rollout_in_the_uk
-    type: looker_line
-    fields: [
-      sections_personalization_customization_rollout_in_the_uk.submission_date,
-      sections_personalization_customization_rollout_in_the_uk.branch,
-      sections_personalization_customization_rollout_in_the_uk.point
-    ]
-    pivots: [
-      sections_personalization_customization_rollout_in_the_uk.branch
-    ]
-    filters:
-      sections_personalization_customization_rollout_in_the_uk.metric: 'days_of_use'
-      sections_personalization_customization_rollout_in_the_uk.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: sections_personalization_customization_rollout_in_the_uk.submission_date
-    field_y: sections_personalization_customization_rollout_in_the_uk.point
-    log_scale: false
-    ci_lower: sections_personalization_customization_rollout_in_the_uk.lower
-    ci_upper: sections_personalization_customization_rollout_in_the_uk.upper
-    show_grid: true
-    listen:
-      Date: sections_personalization_customization_rollout_in_the_uk.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sections_personalization_customization_rollout_in_the_uk
-    type: looker_line
-    fields: [
-      sections_personalization_customization_rollout_in_the_uk.submission_date,
-      sections_personalization_customization_rollout_in_the_uk.branch,
-      sections_personalization_customization_rollout_in_the_uk.point
-    ]
-    pivots: [
-      sections_personalization_customization_rollout_in_the_uk.branch
-    ]
-    filters:
-      sections_personalization_customization_rollout_in_the_uk.metric: 'uri_count'
-      sections_personalization_customization_rollout_in_the_uk.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: sections_personalization_customization_rollout_in_the_uk.submission_date
-    field_y: sections_personalization_customization_rollout_in_the_uk.point
-    log_scale: false
-    ci_lower: sections_personalization_customization_rollout_in_the_uk.lower
-    ci_upper: sections_personalization_customization_rollout_in_the_uk.upper
-    show_grid: true
-    listen:
-      Date: sections_personalization_customization_rollout_in_the_uk.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sections_personalization_customization_rollout_in_the_uk
-    type: looker_line
-    fields: [
-      sections_personalization_customization_rollout_in_the_uk.submission_date,
-      sections_personalization_customization_rollout_in_the_uk.branch,
-      sections_personalization_customization_rollout_in_the_uk.point
-    ]
-    pivots: [
-      sections_personalization_customization_rollout_in_the_uk.branch
-    ]
-    filters:
-      sections_personalization_customization_rollout_in_the_uk.metric: 'search_count'
-      sections_personalization_customization_rollout_in_the_uk.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: sections_personalization_customization_rollout_in_the_uk.submission_date
-    field_y: sections_personalization_customization_rollout_in_the_uk.point
-    log_scale: false
-    ci_lower: sections_personalization_customization_rollout_in_the_uk.lower
-    ci_upper: sections_personalization_customization_rollout_in_the_uk.upper
-    show_grid: true
-    listen:
-      Date: sections_personalization_customization_rollout_in_the_uk.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sections_personalization_customization_rollout_in_the_uk
-    type: looker_line
-    fields: [
-      sections_personalization_customization_rollout_in_the_uk.submission_date,
-      sections_personalization_customization_rollout_in_the_uk.branch,
-      sections_personalization_customization_rollout_in_the_uk.point
-    ]
-    pivots: [
-      sections_personalization_customization_rollout_in_the_uk.branch
-    ]
-    filters:
-      sections_personalization_customization_rollout_in_the_uk.metric: 'active_hours'
       sections_personalization_customization_rollout_in_the_uk.statistic: mean
     row: 30
     col: 12
