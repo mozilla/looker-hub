@@ -397,6 +397,16 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_wgpu_is_fallback_adapter {
+    sql: ${TABLE}.metrics.boolean.characteristics_wgpu_is_fallback_adapter ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Characteristics Wgpu Is Fallback Adapter"
+    description: "WebGPU adapter isFallbackAdapter property. Indicates whether the adapter is a software renderer (true) or hardware GPU (false).
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -476,6 +486,16 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Audio Rate"
     description: "Audio sampling rate
+"
+  }
+
+  dimension: metrics__quantity__characteristics_audio_unique_samples {
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_unique_samples ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Characteristics Audio Unique Samples"
+    description: "Count of unique sample values in the OfflineAudioContext audio buffer. This is used by fingerprinting scripts to detect anamolies - they expect 1-3k unique samples, not 5000. We are collecting it to ensure we are behaving as they generally expect non-anomalous browsers to behave.
 "
   }
 
@@ -1589,6 +1609,46 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_audio_compressor_gain_reduction {
+    sql: ${TABLE}.metrics.string.characteristics_audio_compressor_gain_reduction ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Audio Compressor Gain Reduction"
+    description: "WebAudio DynamicsCompressorNode gain reduction value from OfflineAudioContext rendering. This is most likely consistent for all/most users but we wish to verify that experimentally.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_fingerprint2 {
+    sql: ${TABLE}.metrics.string.characteristics_audio_fingerprint2 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Audio Fingerprint2"
+    description: "A second method to calculate an audio fingerprint, used by a different fingerprinter. Hash of audio buffer sample snapshot (100 samples from 4500-4600 range) from OfflineAudioContext rendering.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_float_frequency_sum {
+    sql: ${TABLE}.metrics.string.characteristics_audio_float_frequency_sum ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Audio Float Frequency Sum"
+    description: "Sum of float frequency data from AnalyserNode.getFloatFrequencyData() during OfflineAudioContext rendering. Collected as string to preserve floating-point precision.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_float_time_domain_sum {
+    sql: ${TABLE}.metrics.string.characteristics_audio_float_time_domain_sum ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Audio Float Time Domain Sum"
+    description: "Sum of float time domain data from AnalyserNode.getFloatTimeDomainData() during OfflineAudioContext rendering. Collected as string to preserve floating-point precision.
+"
+  }
+
   dimension: metrics__string__characteristics_canvas_dpr {
     sql: ${TABLE}.metrics.string.characteristics_canvas_dpr ;;
     type: string
@@ -1629,6 +1689,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata10_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata10_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata10 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata10software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata10software ;;
     type: string
@@ -1645,6 +1715,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata11 Webgl"
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata11_webgl_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webgl_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata11 Webgl Software"
     description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
 "
   }
@@ -1669,6 +1749,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Software"
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1software ;;
     type: string
@@ -1689,6 +1779,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Software"
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2software ;;
     type: string
@@ -1696,6 +1796,16 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2Software"
     description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata1_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata1_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata1 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
 "
   }
 
@@ -1719,6 +1829,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata2_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata2_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata2 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata2software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata2software ;;
     type: string
@@ -1735,6 +1855,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata3"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata3 Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
 "
   }
@@ -1839,6 +1969,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata4_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata4_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata4 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata4software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata4software ;;
     type: string
@@ -1855,6 +1995,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata5"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata5_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata5_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata5 Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
 "
   }
@@ -1879,6 +2029,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata6_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata6_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata6 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata6software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata6software ;;
     type: string
@@ -1895,6 +2055,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata7"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata7_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata7_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata7 Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
 "
   }
@@ -1919,6 +2089,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_canvasdata8_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata8_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata8 Software"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata8software {
     sql: ${TABLE}.metrics.string.characteristics_canvasdata8software ;;
     type: string
@@ -1935,6 +2115,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Characteristics Canvasdata9"
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata9_software {
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata9_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Canvasdata9 Software"
     description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
 "
   }
@@ -1966,6 +2156,530 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: String"
     group_item_label: "Characteristics Channel"
     description: "Firefox build channel
+"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 01"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 1. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 02"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 2. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 03"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 3. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 04"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 4. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 05"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 5. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 06"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 6. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_07 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_07 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 07"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 7. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_08 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_08 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 08"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 8. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_09 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_09 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 09"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 9. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_10 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 10"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 10. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_11 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_11 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 11"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 11. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_12 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_12 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gbcr 12"
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 12. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 01"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 1. Element style: border 2.715px, padding 3.98px, margin-left 12.12px. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 02"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 2. Element style: transform skewY(23.1753218deg) rotate3d(10.00099, 90, 0.100000000100009, 60000000000008.00000009deg). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 03"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 3. Element style: transform skewY(-23.1753218deg) scale(1099.0000000099, 1.89) matrix(1.11, 2.0001, -1.0001, 1.009, 150, 94.4). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 04"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 4. Element style: transform matrix(1.11, 2.0001, -1.0001, 1.009, 150, 94.4), position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 05"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 5. Element style: margin-left 42.395pt (point units). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 06"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 6. Element style: transform perspective(12890px) translateZ(101.5px). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_07 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_07 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 07"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 7. Element style: margin-top -350.552px, margin-left 0.9099rem, position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_08 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_08 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 08"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 8. Element style: margin-top -150.552px, margin-left 15.9099rem, position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_09 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_09 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 09"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 9. Element style: margin-top -110.552px, margin-left 15.9099rem, position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_10 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 10"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 10. Element style: margin-top -315.552px, margin-left 15.9099rem, position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_11 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_11 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 11"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 11. Element style: width 10px, height 10px, margin-left 15.0000009099rem. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_12 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_12 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Element Gcr 12"
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 12. Element style: identical to element 11 (for equal-element consistency check). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 01"
+    description: "Bounding rect dimensions for emoji 👾 (alien monster). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 02"
+    description: "Bounding rect dimensions for emoji 🤖 (robot). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 03"
+    description: "Bounding rect dimensions for emoji 🦄 (unicorn). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 04"
+    description: "Bounding rect dimensions for emoji 🎃 (jack-o-lantern). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 05"
+    description: "Bounding rect dimensions for emoji 🎨 (artist palette). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji 06"
+    description: "Bounding rect dimensions for emoji 🌈 (rainbow). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_font_family {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_font_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Emoji Font Family"
+    description: "The computed font-family used for emoji elements in clientrects measurements.
+"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_ghost_dimensions {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_ghost_dimensions ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Ghost Dimensions"
+    description: "DOMRect JSON for .rect-ghost element (0x0px, should be all zeros). Non-zero values indicate API tampering or lie detection failure. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_known_dimensions {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_known_dimensions ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Known Dimensions"
+    description: "Full DOMRect JSON for .rect-known element (100x100px, transform rotate(45deg)). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 01"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 1. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 02"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 2. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 03"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 3. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 04"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 4. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 05"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 5. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 06"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 6. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_07 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_07 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 07"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 7. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_08 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_08 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 08"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 8. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_09 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_09 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 09"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 9. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_10 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 10"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 10. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_11 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_11 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 11"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 11. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_12 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_12 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gbcr 12"
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 12. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_01 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_01 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 01"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 1. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_02 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_02 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 02"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 2. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_03 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_03 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 03"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 3. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_04 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_04 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 04"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 4. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_05 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_05 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 05"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 5. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_06 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_06 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 06"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 6. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_07 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_07 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 07"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 7. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_08 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_08 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 08"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 8. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_09 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_09 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 09"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 9. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_10 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_10 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 10"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 10. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_11 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_11 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 11"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 11. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_12 {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_12 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Range Gcr 12"
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 12. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_text_font_family {
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_text_font_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Clientrects Text Font Family"
+    description: "The computed font-family used for text elements in clientrects measurements.
 "
   }
 
@@ -2196,6 +2910,146 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: String"
     group_item_label: "Characteristics Fonts Variant B Nonallowlisted"
     description: "SHA256 of non-allowlisted fonts queried of variant B
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_c_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_c_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant C Allowlisted"
+    description: "SHA256 of allowlisted fonts queried of variant C
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_c_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_c_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant C Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts queried of variant C
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_d_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_d_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant D Allowlisted"
+    description: "SHA256 of allowlisted fonts queried of variant D
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_d_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_d_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant D Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts queried of variant D
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_e_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_e_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant E Allowlisted"
+    description: "SHA256 of allowlisted fonts queried of variant E
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_e_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_e_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant E Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts queried of variant E
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_f_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant F Allowlisted"
+    description: "SHA256 of allowlisted fonts used to render \"A\" with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_f_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant F Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts used to render \"A\" with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_g_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant G Allowlisted"
+    description: "SHA256 of allowlisted fonts used to render emoji (U+1F47E) with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_g_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant G Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts used to render emoji (U+1F47E) with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_h_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant H Allowlisted"
+    description: "SHA256 of allowlisted fonts used to render 89 emojis with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_h_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant H Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts used to render 89 emojis with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_i_allowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_allowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant I Allowlisted"
+    description: "SHA256 of allowlisted fonts used to render SVG emojis with emoji-specific font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_i_nonallowlisted {
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_nonallowlisted ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Fonts Variant I Nonallowlisted"
+    description: "SHA256 of non-allowlisted fonts used to render SVG emojis with emoji-specific font list
 "
   }
 
@@ -2671,6 +3525,26 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_mathml_diag_font_family {
+    sql: ${TABLE}.metrics.string.characteristics_mathml_diag_font_family ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Mathml Diag Font Family"
+    description: "The computed font-family value from a MathML element on the page. Shows what font is actually being used for MathML rendering.
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml_diag_prefs_modified {
+    sql: ${TABLE}.metrics.string.characteristics_mathml_diag_prefs_modified ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Mathml Diag Prefs Modified"
+    description: "MathML prefs that have been modified from defaults. Format is \"shortname=val,...\" (e.g. \"dis=1,fnt=0\"). Empty if no prefs modified. Shortnames: dis=disabled, str=scale_stretchy_operators, spc=mathspace_names, rtl=rtl_operator_mirroring, var=mathvariant_styling_fallback, shf=math_shift, acc=operator_dictionary_accent, leg=legacy_mathvariant_attribute, fnt=font_family_math. Values are 1 (true) or 0 (false).
+"
+  }
+
   dimension: metrics__string__characteristics_os_distro {
     sql: ${TABLE}.metrics.string.characteristics_os_distro ;;
     type: string
@@ -2789,6 +3663,51 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Characteristics Scalings"
     description: "Screen(s) scaling/zoom level
 "
+  }
+
+  dimension: metrics__string__characteristics_svg_bbox {
+    sql: ${TABLE}.metrics.string.characteristics_svg_bbox ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Bbox"
+    description: "JSON object from SVGGraphicsElement.getBBox(). Format: {\"x\":N,\"y\":N,\"w\":N,\"h\":N}. Varies by browser rendering engine."
+  }
+
+  dimension: metrics__string__characteristics_svg_computed_text_length {
+    sql: ${TABLE}.metrics.string.characteristics_svg_computed_text_length ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Computed Text Length"
+    description: "SVGTextContentElement.getComputedTextLength() for emoji text element. Returns the total length of rendered text, varies by font rendering."
+  }
+
+  dimension: metrics__string__characteristics_svg_emoji_set {
+    sql: ${TABLE}.metrics.string.characteristics_svg_emoji_set ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Emoji Set"
+    description: "JSON array of emojis with unique rendering dimensions. Tests which emojis render at distinct sizes, varies by OS/font support."
+  }
+
+  dimension: metrics__string__characteristics_svg_extent_of_char {
+    sql: ${TABLE}.metrics.string.characteristics_svg_extent_of_char ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Extent Of Char"
+    description: "JSON object from SVGTextContentElement.getExtentOfChar(0). Format: {\"x\":N,\"y\":N,\"w\":N,\"h\":N}. Varies by emoji rendering."
+  }
+
+  dimension: metrics__string__characteristics_svg_substring_length {
+    sql: ${TABLE}.metrics.string.characteristics_svg_substring_length ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Svg Substring Length"
+    description: "SVGTextContentElement.getSubStringLength(0, 10) for first 10 characters. Varies by font metrics and text shaping."
   }
 
   dimension: metrics__string__characteristics_system_locale {
@@ -2952,6 +3871,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata10_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata10 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata10_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata10 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata11_webgl {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl ;;
     type: string
@@ -2959,6 +3898,26 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata11 Webgl"
     description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata11_webgl_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata11 Webgl Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata11_webgl_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata11 Webgl Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl software rendering
 "
   }
 
@@ -2972,6 +3931,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata12 Fingerprintjs1 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2 ;;
     type: string
@@ -2979,6 +3958,46 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata13 Fingerprintjs2"
     description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata13 Fingerprintjs2 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 software rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata1_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata1 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata1_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata1 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 software rendering
 "
   }
 
@@ -2992,6 +4011,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata2_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata2 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata2_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata2 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata3 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata3 ;;
     type: string
@@ -2999,6 +4038,26 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata3"
     description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata3 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata3 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 software rendering
 "
   }
 
@@ -3012,6 +4071,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata4_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata4 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata4_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata4 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata5 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata5 ;;
     type: string
@@ -3019,6 +4098,26 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata5"
     description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata5_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata5 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata5_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata5 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 software rendering
 "
   }
 
@@ -3032,6 +4131,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata6_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata6 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata6_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata6 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata7 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata7 ;;
     type: string
@@ -3039,6 +4158,26 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata7"
     description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata7_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata7 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata7_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata7 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 software rendering
 "
   }
 
@@ -3052,6 +4191,26 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata8_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata8 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata8_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata8 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 software rendering
+"
+  }
+
   dimension: metrics__text2__characteristics_canvasdata9 {
     sql: ${TABLE}.metrics.text2.characteristics_canvasdata9 ;;
     type: string
@@ -3059,6 +4218,46 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Canvasdata9"
     description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata9_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata9 Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata9_software_raw {
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9_software_raw ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Canvasdata9 Software Raw"
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 software rendering
+"
+  }
+
+  dimension: metrics__text2__characteristics_css_system_colors {
+    sql: ${TABLE}.metrics.text2.characteristics_css_system_colors ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Css System Colors"
+    description: "JSON array containing CSS system color keywords and their computed values as uppercase hex (without # prefix). System colors (like Canvas, ButtonFace, LinkText, etc.) are CSS keywords that resolve to theme/OS-specific colors and can be used for fingerprinting. This metric collects the computed backgroundColor for each system color keyword. Data format: [{\"Canvas\": \"FFFFFF\"}, {\"ButtonFace\": \"F0F0F0\"}, ...].
+"
+  }
+
+  dimension: metrics__text2__characteristics_css_system_fonts {
+    sql: ${TABLE}.metrics.text2.characteristics_css_system_fonts ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Css System Fonts"
+    description: "JSON array containing CSS system font keywords and their computed font properties. System fonts (like caption, icon, menu, etc.) and common font families are tested to determine their rendered fontSize and fontFamily values, which can vary by OS and be used for fingerprinting. This metric collects computed fontSize + fontFamily for each font keyword/name tested. Data format: [{\"caption\": \"11px system-ui\"}, {\"Arial\": \"16px Arial\"}, ...].
 "
   }
 
@@ -3278,7 +4477,7 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params"
-    description: "The list of GL parameters of GL1.
+    description: "The list of GL parameters of GL1. Parameters: ALIASED_LINE_WIDTH_RANGE, ALIASED_POINT_SIZE_RANGE, MAX_COMBINED_TEXTURE_IMAGE_UNITS, MAX_CUBE_MAP_TEXTURE_SIZE, MAX_FRAGMENT_UNIFORM_VECTORS, MAX_RENDERBUFFER_SIZE, MAX_TEXTURE_IMAGE_UNITS, MAX_TEXTURE_SIZE, MAX_VARYING_VECTORS, MAX_VERTEX_ATTRIBS, MAX_VERTEX_TEXTURE_IMAGE_UNITS, MAX_VERTEX_UNIFORM_VECTORS, MAX_VIEWPORT_DIMS, SHADING_LANGUAGE_VERSION, STENCIL_BACK_VALUE_MASK, STENCIL_BACK_WRITEMASK, STENCIL_VALUE_MASK, STENCIL_WRITEMASK, SUBPIXEL_BITS.
 "
   }
 
@@ -3439,6 +4638,16 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Math Ops Fdlibm 2"
     description: "Result of additional fingerprintable math operations, with fdlibm enabled
+"
+  }
+
+  dimension: metrics__text2__characteristics_mathml_diag_values {
+    sql: ${TABLE}.metrics.text2.characteristics_mathml_diag_values ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Mathml Diag Values"
+    description: "Array of widths from all MathML elements, collected similar to math_ops. Each element represents the getBoundingClientRect().width of a rendered MathML element. The array index corresponds to the element's id number. Format is a JSON stringified array like: [\"123.456\", \"789.012\", ...]
 "
   }
 

@@ -156,6 +156,26 @@ name.
 "
   }
 
+  dimension: metrics__string__messaging_system_attribution_msclkid {
+    label: "Messaging System Attribution: Msclkid"
+    hidden: no
+    sql: ${TABLE}.metrics.string.messaging_system_attribution_msclkid ;;
+    type: string
+    group_label: "Messaging System Attribution"
+    group_item_label: "Msclkid"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Attribution: Msclkid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_attribution_msclkid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string containing the attribution for a Microsoft Store Ads Campaign ID.
+This differs from a Campaign ID originating from a Microsoft Store URL
+containing attribution_
+"
+  }
+
   dimension: metrics__string__messaging_system_attribution_msstoresignedin {
     label: "Messaging System Attribution: Msstoresignedin"
     hidden: no
@@ -285,7 +305,7 @@ Either add this key to a list of known attribution keys in
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A name shared between multiple messages that may individually be too targetted. e.g. a message that gets shown on specific websites or a message asking about personal information.
+    description: "A name shared between multiple messages that may individually be too targeted. e.g. a message that gets shown on specific websites or a message asking about personal information.
 "
   }
 

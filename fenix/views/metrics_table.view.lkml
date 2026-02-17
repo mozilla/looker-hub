@@ -810,6 +810,16 @@ See `nsIXULRuntime.browserTabsRemoteAutostart`
 "
   }
 
+  dimension: metrics__boolean__extensions_allow_execute_script_in_moz_extension {
+    sql: ${TABLE}.metrics.boolean.extensions_allow_execute_script_in_moz_extension ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Extensions Allow Execute Script In Moz Extension"
+    description: "Corresponds to the value of `extensions.webextensions.allow_executeScript_in_moz_extension` pref.
+"
+  }
+
   dimension: metrics__boolean__extensions_use_remote_policy {
     sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
     type: yesno
@@ -2833,6 +2843,16 @@ displayed to the user. (for tile counts)
 "
   }
 
+  dimension: metrics__counter__javascript_self_hosted_cache_total {
+    sql: ${TABLE}.metrics.counter.javascript_self_hosted_cache_total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Javascript Self Hosted Cache Total"
+    description: "How many self-hosted cache accesses are performed.
+"
+  }
+
   dimension: metrics__counter__localstorage_request_recv_cancel_counter {
     sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
     type: number
@@ -3687,6 +3707,16 @@ of the shopping experiment.
     group_label: "Metrics: Counter"
     group_item_label: "Translations Requests Count"
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__counter__update_blocked {
+    sql: ${TABLE}.metrics.counter.update_blocked ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Update Blocked"
+    description: "Number of downloads blocked by the WAF.
 "
   }
 
@@ -11591,6 +11621,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__geolocation_windows_failure {
+    sql: ${TABLE}.metrics.dual_labeled_counter.geolocation_windows_failure ;;
+    hidden: yes
+    description: "Records the reason the WindowsLocationChild reported failure to get location.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__http_cache_disposition {
     sql: ${TABLE}.metrics.dual_labeled_counter.http_cache_disposition ;;
     hidden: yes
@@ -12685,6 +12722,41 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_geoclue_error_code {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geoclue_error_code ;;
+    hidden: yes
+    description: "Records the error code when Linux GeoClue geolocation fails. The GeoClue DBUS error domain is G_DBUS_ERROR and can usually be used to get a human readable error for these values.  Records up to 16 codes. Note that errors G_DBUS_ERROR_LIMITS_EXCEEDED (8), G_DBUS_ERROR_ACCESS_DENIED(9), and G_DBUS_ERROR_AUTH_FAILED (10) are considered by Firefox to mean that permission is not granted, as opposed to an internal error.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_geolocation_cache_hit {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geolocation_cache_hit ;;
+    hidden: yes
+    description: "How many times was a geolocation request serviced by the given cache.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_geolocation_service {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geolocation_service ;;
+    hidden: yes
+    description: "How many geolocation requests were issued to the system provider, the network wifi-lookup provider, the network ip-lookup provider, and the Linux GeoClue service?  Wifi and IP currently use the same provider.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_linux_portal_error {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_linux_portal_error ;;
+    hidden: yes
+    description: "Records the reason for failures in the PortalLocationProvider.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_macos_error_code {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_macos_error_code ;;
+    hidden: yes
+    description: "Records the error code when MacOS CoreLocation geolocation fails. The CoreLocation error domain is kCLErrorDomain and can usually be used to get a human readable error for these values.  Records up to 16 codes.
+"
+  }
+
   dimension: metrics__labeled_counter__geolocation_request_result {
     sql: ${TABLE}.metrics.labeled_counter.geolocation_request_result ;;
     hidden: yes
@@ -13115,7 +13187,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -18025,6 +18097,22 @@ e.g. 134217728
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__denominator {
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.denominator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Javascript Self Hosted Cache Hits"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__numerator {
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.numerator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Javascript Self Hosted Cache Hits"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__networking_set_cookie_expired_without_server_time__denominator {
     sql: ${TABLE}.metrics.rate.networking_set_cookie_expired_without_server_time.denominator ;;
     type: number
@@ -18454,6 +18542,22 @@ e.g. 134217728
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Rate: Verification Used Cert From TLS Handshake"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__web_notification_show_safe_browsing_block__denominator {
+    sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.denominator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Web Notification Show Safe Browsing Block"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__web_notification_show_safe_browsing_block__numerator {
+    sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.numerator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Web Notification Show Safe Browsing Block"
     group_item_label: "Numerator"
   }
 
@@ -19009,6 +19113,16 @@ Example values include: \"DISABLED\", \"ENABLED_PRIVATE_ONLY\", \"ENABLED\".
     description: "The user has the open links in apps feature enabled.
 \"ask_before_opening\", \"always\" or \"never\".
 default: \"never\"
+"
+  }
+
+  dimension: metrics__string__preferences_prefs_file_first_parse_error {
+    sql: ${TABLE}.metrics.string.preferences_prefs_file_first_parse_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Preferences Prefs File First Parse Error"
+    description: "The first error message encountered when parsing a prefs file.
 "
   }
 
@@ -54146,6 +54260,33 @@ view: metrics_table__metrics__dual_labeled_counter__extensions_counters_event_pa
 }
 
 view: metrics_table__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__geolocation_windows_failure {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__geolocation_windows_failure__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

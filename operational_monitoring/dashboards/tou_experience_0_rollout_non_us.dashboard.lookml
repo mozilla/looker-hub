@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'days_of_use'
+      tou_experience_0_rollout_non_us.metric: 'search_count'
       tou_experience_0_rollout_non_us.statistic: mean
     row: 0
     col: 12
@@ -112,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: tou_experience_0_rollout_non_us
-    type: looker_line
-    fields: [
-      tou_experience_0_rollout_non_us.submission_date,
-      tou_experience_0_rollout_non_us.branch,
-      tou_experience_0_rollout_non_us.point
-    ]
-    pivots: [
-      tou_experience_0_rollout_non_us.branch
-    ]
-    filters:
-      tou_experience_0_rollout_non_us.metric: 'ad_clicks'
-      tou_experience_0_rollout_non_us.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tou_experience_0_rollout_non_us.submission_date
-    field_y: tou_experience_0_rollout_non_us.point
-    log_scale: false
-    ci_lower: tou_experience_0_rollout_non_us.lower
-    ci_upper: tou_experience_0_rollout_non_us.upper
-    show_grid: true
-    listen:
-      Date: tou_experience_0_rollout_non_us.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -163,6 +129,40 @@
     ]
     filters:
       tou_experience_0_rollout_non_us.metric: 'retained'
+      tou_experience_0_rollout_non_us.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: tou_experience_0_rollout_non_us.submission_date
+    field_y: tou_experience_0_rollout_non_us.point
+    log_scale: false
+    ci_lower: tou_experience_0_rollout_non_us.lower
+    ci_upper: tou_experience_0_rollout_non_us.upper
+    show_grid: true
+    listen:
+      Date: tou_experience_0_rollout_non_us.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: tou_experience_0_rollout_non_us
+    type: looker_line
+    fields: [
+      tou_experience_0_rollout_non_us.submission_date,
+      tou_experience_0_rollout_non_us.branch,
+      tou_experience_0_rollout_non_us.point
+    ]
+    pivots: [
+      tou_experience_0_rollout_non_us.branch
+    ]
+    filters:
+      tou_experience_0_rollout_non_us.metric: 'qualified_cumulative_days_of_use'
       tou_experience_0_rollout_non_us.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'qualified_cumulative_days_of_use'
+      tou_experience_0_rollout_non_us.metric: 'days_of_use'
       tou_experience_0_rollout_non_us.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       tou_experience_0_rollout_non_us.branch
     ]
     filters:
-      tou_experience_0_rollout_non_us.metric: 'search_count'
+      tou_experience_0_rollout_non_us.metric: 'ad_clicks'
       tou_experience_0_rollout_non_us.statistic: mean
     row: 30
     col: 12

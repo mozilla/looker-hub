@@ -4808,7 +4808,7 @@ startup, as part of the initialization sequence.
 
   dimension: metrics__counter__logins_store_read_query_count {
     label: "Logins Store: Read Query Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_read_query_count ;;
     type: number
     group_label: "Logins Store"
@@ -4914,7 +4914,7 @@ startup, as part of the initialization sequence.
 
   dimension: metrics__counter__logins_store_write_query_count {
     label: "Logins Store: Write Query Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_write_query_count ;;
     type: number
     group_label: "Logins Store"
@@ -10097,19 +10097,19 @@ view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -10179,19 +10179,19 @@ view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

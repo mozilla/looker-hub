@@ -649,6 +649,18 @@ name.
 "
   }
 
+  dimension: metrics__string__messaging_system_attribution_msclkid {
+    sql: ${TABLE}.metrics.string.messaging_system_attribution_msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Messaging System Attribution Msclkid"
+    description: "A string containing the attribution for a Microsoft Store Ads Campaign ID.
+This differs from a Campaign ID originating from a Microsoft Store URL
+containing attribution_
+"
+  }
+
   dimension: metrics__string__messaging_system_attribution_msstoresignedin {
     sql: ${TABLE}.metrics.string.messaging_system_attribution_msstoresignedin ;;
     type: string
@@ -698,7 +710,7 @@ name.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Messaging System Bucket ID"
-    description: "A name shared between multiple messages that may individually be too targetted. e.g. a message that gets shown on specific websites or a message asking about personal information.
+    description: "A name shared between multiple messages that may individually be too targeted. e.g. a message that gets shown on specific websites or a message asking about personal information.
 "
   }
 

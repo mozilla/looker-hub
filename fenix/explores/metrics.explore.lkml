@@ -598,6 +598,31 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_fallback}) AS metrics__metrics__labeled_counter__geolocation_fallback ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_fallback.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__geolocation_geoclue_error_code {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_geoclue_error_code}) AS metrics__metrics__labeled_counter__geolocation_geoclue_error_code ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_geoclue_error_code.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_geolocation_cache_hit}) AS metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_geolocation_service {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_geolocation_service}) AS metrics__metrics__labeled_counter__geolocation_geolocation_service ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_geolocation_service.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_linux_portal_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_linux_portal_error}) AS metrics__metrics__labeled_counter__geolocation_linux_portal_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_linux_portal_error.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__geolocation_macos_error_code {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_macos_error_code}) AS metrics__metrics__labeled_counter__geolocation_macos_error_code ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_macos_error_code.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__geolocation_request_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__geolocation_request_result}) AS metrics__metrics__labeled_counter__geolocation_request_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__geolocation_request_result.document_id} ;;

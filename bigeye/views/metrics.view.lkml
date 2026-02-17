@@ -51,6 +51,12 @@ view: metrics {
     hidden: yes
   }
 
+  dimension: metric_configuration_alert_on_absent_groups {
+    sql: ${TABLE}.metric_configuration_alert_on_absent_groups ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_configuration_bigconfig_namespace {
     sql: ${TABLE}.metric_configuration_bigconfig_namespace ;;
     type: string
@@ -782,6 +788,38 @@ view: metrics__metric_configuration_thresholds {
     suggest_persist_for: "24 hours"
     group_label: "Freshnessschedulethreshold"
     group_item_label: "Timezone"
+  }
+
+  dimension: relativeThreshold__bound__boundType {
+    sql: ${TABLE}.relativeThreshold.bound.boundType ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Relativethreshold: Bound"
+    group_item_label: "Boundtype"
+  }
+
+  dimension: relativeThreshold__bound__value {
+    sql: ${TABLE}.relativeThreshold.bound.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Relativethreshold: Bound"
+    group_item_label: "Value"
+  }
+
+  dimension: relativeThreshold__lookback__intervalType {
+    sql: ${TABLE}.relativeThreshold.lookback.intervalType ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Relativethreshold: Lookback"
+    group_item_label: "Intervaltype"
+  }
+
+  dimension: relativeThreshold__lookback__intervalValue {
+    sql: ${TABLE}.relativeThreshold.lookback.intervalValue ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Relativethreshold: Lookback"
+    group_item_label: "Intervalvalue"
   }
 }
 

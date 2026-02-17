@@ -41,6 +41,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_audio_compressor_gain_reduction {
+    label: "Characteristics: Audio Compressor Gain Reduction"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_audio_compressor_gain_reduction ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Compressor Gain Reduction"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Compressor Gain Reduction"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_compressor_gain_reduction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebAudio DynamicsCompressorNode gain reduction value from OfflineAudioContext rendering. This is most likely consistent for all/most users but we wish to verify that experimentally.
+"
+  }
+
   dimension: metrics__text2__characteristics_audio_devices {
     label: "Characteristics: Audio Devices"
     hidden: yes
@@ -77,6 +95,60 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_audio_fingerprint2 {
+    label: "Characteristics: Audio Fingerprint2"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_audio_fingerprint2 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Fingerprint2"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Fingerprint2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_fingerprint2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A second method to calculate an audio fingerprint, used by a different fingerprinter. Hash of audio buffer sample snapshot (100 samples from 4500-4600 range) from OfflineAudioContext rendering.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_float_frequency_sum {
+    label: "Characteristics: Audio Float Frequency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_audio_float_frequency_sum ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Float Frequency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Float Frequency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_float_frequency_sum"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sum of float frequency data from AnalyserNode.getFloatFrequencyData() during OfflineAudioContext rendering. Collected as string to preserve floating-point precision.
+"
+  }
+
+  dimension: metrics__string__characteristics_audio_float_time_domain_sum {
+    label: "Characteristics: Audio Float Time Domain Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_audio_float_time_domain_sum ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Audio Float Time Domain Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Float Time Domain Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_float_time_domain_sum"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sum of float time domain data from AnalyserNode.getFloatTimeDomainData() during OfflineAudioContext rendering. Collected as string to preserve floating-point precision.
+"
+  }
+
   dimension: metrics__quantity__characteristics_audio_frames {
     label: "Characteristics: Audio Frames"
     hidden: no
@@ -110,6 +182,24 @@ view: user_characteristics {
     }
 
     description: "Audio sampling rate
+"
+  }
+
+  dimension: metrics__quantity__characteristics_audio_unique_samples {
+    label: "Characteristics: Audio Unique Samples"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_audio_unique_samples ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Audio Unique Samples"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Audio Unique Samples"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_audio_unique_samples"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of unique sample values in the OfflineAudioContext audio buffer. This is used by fingerprinting scripts to detect anamolies - they expect 1-3k unique samples, not 5000. We are collecting it to ensure we are behaving as they generally expect non-anomalous browsers to behave.
 "
   }
 
@@ -257,9 +347,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata10_raw {
+    label: "Characteristics: Canvasdata10 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata10 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata10 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata10_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata10_software {
+    label: "Characteristics: Canvasdata10 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata10_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata10 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata10 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata10_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata10_software_raw {
+    label: "Characteristics: Canvasdata10 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata10_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata10 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata10 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata10_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata10 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata10software {
     label: "Characteristics: Canvasdata10Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata10software ;;
     type: string
     group_label: "Characteristics"
@@ -293,9 +437,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata11_webgl_raw {
+    label: "Characteristics: Canvasdata11 Webgl Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata11 Webgl Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata11 Webgl Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata11_webgl_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata11_webgl_software {
+    label: "Characteristics: Canvasdata11 Webgl Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webgl_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata11 Webgl Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata11 Webgl Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata11_webgl_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a WebGL canvas (instead of Canvas2D). IT is a RGB gradient cube.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata11_webgl_software_raw {
+    label: "Characteristics: Canvasdata11 Webgl Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata11_webgl_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata11 Webgl Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata11 Webgl Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata11_webgl_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata11_webgl software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata11_webglsoftware {
     label: "Characteristics: Canvasdata11 Webglsoftware"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata11_webglsoftware ;;
     type: string
     group_label: "Characteristics"
@@ -329,9 +527,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_raw {
+    label: "Characteristics: Canvasdata12 Fingerprintjs1 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata12 Fingerprintjs1 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata12 Fingerprintjs1 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata12_fingerprintjs1_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1_software {
+    label: "Characteristics: Canvasdata12 Fingerprintjs1 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata12 Fingerprintjs1 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata12 Fingerprintjs1 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata12_fingerprintjs1_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' text canvas
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata12_fingerprintjs1_software_raw {
+    label: "Characteristics: Canvasdata12 Fingerprintjs1 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata12_fingerprintjs1_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata12 Fingerprintjs1 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata12 Fingerprintjs1 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata12_fingerprintjs1_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata12_fingerprintjs1 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata12_fingerprintjs1software {
     label: "Characteristics: Canvasdata12 Fingerprintjs1Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata12_fingerprintjs1software ;;
     type: string
     group_label: "Characteristics"
@@ -365,9 +617,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_raw {
+    label: "Characteristics: Canvasdata13 Fingerprintjs2 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata13 Fingerprintjs2 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata13 Fingerprintjs2 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata13_fingerprintjs2_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2_software {
+    label: "Characteristics: Canvasdata13 Fingerprintjs2 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata13 Fingerprintjs2 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata13 Fingerprintjs2 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata13_fingerprintjs2_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas, it is a copy of fingerprintjs' geometry canvas
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata13_fingerprintjs2_software_raw {
+    label: "Characteristics: Canvasdata13 Fingerprintjs2 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata13_fingerprintjs2_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata13 Fingerprintjs2 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata13 Fingerprintjs2 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata13_fingerprintjs2_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata13_fingerprintjs2 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata13_fingerprintjs2software {
     label: "Characteristics: Canvasdata13 Fingerprintjs2Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata13_fingerprintjs2software ;;
     type: string
     group_label: "Characteristics"
@@ -383,9 +689,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata1_raw {
+    label: "Characteristics: Canvasdata1 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata1 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata1 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata1_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata1_software {
+    label: "Characteristics: Canvasdata1 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata1_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata1 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata1 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata1_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a simple organge box and used as a control image
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata1_software_raw {
+    label: "Characteristics: Canvasdata1 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata1_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata1 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata1 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata1_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata1 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata1software {
     label: "Characteristics: Canvasdata1Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata1software ;;
     type: string
     group_label: "Characteristics"
@@ -419,9 +779,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata2_raw {
+    label: "Characteristics: Canvasdata2 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata2 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata2 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata2_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata2_software {
+    label: "Characteristics: Canvasdata2 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata2_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata2 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata2 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata2_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a bordered triage, and used to test point interpolation
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata2_software_raw {
+    label: "Characteristics: Canvasdata2 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata2_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata2 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata2 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata2_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata2 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata2software {
     label: "Characteristics: Canvasdata2Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata2software ;;
     type: string
     group_label: "Characteristics"
@@ -452,6 +866,60 @@ view: user_characteristics {
     }
 
     description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3_raw {
+    label: "Characteristics: Canvasdata3 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata3 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata3_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata3_software {
+    label: "Characteristics: Canvasdata3 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata3_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata3 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata3_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a stretched photographic image, used to test image operations.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata3_software_raw {
+    label: "Characteristics: Canvasdata3 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata3_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata3 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata3 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata3_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata3 software rendering
 "
   }
 
@@ -565,7 +1033,7 @@ view: user_characteristics {
 
   dimension: metrics__string__characteristics_canvasdata3software {
     label: "Characteristics: Canvasdata3Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata3software ;;
     type: string
     group_label: "Characteristics"
@@ -635,9 +1103,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata4_raw {
+    label: "Characteristics: Canvasdata4 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata4 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata4 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata4_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata4_software {
+    label: "Characteristics: Canvasdata4 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata4_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata4 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata4 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata4_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is two rotated, semi-transparenct overlapping squares, used to test transparency and point interpolation.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata4_software_raw {
+    label: "Characteristics: Canvasdata4 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata4_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata4 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata4 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata4_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata4 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata4software {
     label: "Characteristics: Canvasdata4Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata4software ;;
     type: string
     group_label: "Characteristics"
@@ -671,9 +1193,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata5_raw {
+    label: "Characteristics: Canvasdata5 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata5 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata5 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata5_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata5_software {
+    label: "Characteristics: Canvasdata5 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata5_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata5 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata5 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata5_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata5_software_raw {
+    label: "Characteristics: Canvasdata5 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata5_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata5 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata5 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata5_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata5 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata5software {
     label: "Characteristics: Canvasdata5Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata5software ;;
     type: string
     group_label: "Characteristics"
@@ -707,9 +1283,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata6_raw {
+    label: "Characteristics: Canvasdata6 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata6 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata6 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata6_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata6_software {
+    label: "Characteristics: Canvasdata6 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata6_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata6 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata6 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata6_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a local font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata6_software_raw {
+    label: "Characteristics: Canvasdata6 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata6_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata6 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata6 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata6_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata6 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata6software {
     label: "Characteristics: Canvasdata6Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata6software ;;
     type: string
     group_label: "Characteristics"
@@ -743,9 +1373,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata7_raw {
+    label: "Characteristics: Canvasdata7 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata7 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata7 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata7_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata7_software {
+    label: "Characteristics: Canvasdata7 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata7_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata7 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata7 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata7_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata7_software_raw {
+    label: "Characteristics: Canvasdata7 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata7_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata7 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata7 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata7_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata7 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata7software {
     label: "Characteristics: Canvasdata7Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata7software ;;
     type: string
     group_label: "Characteristics"
@@ -779,9 +1463,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata8_raw {
+    label: "Characteristics: Canvasdata8 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata8 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata8 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata8_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata8_software {
+    label: "Characteristics: Canvasdata8 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata8_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata8 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata8 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata8_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a system-ui font rendered with italics, rotation, and shadow-blur.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata8_software_raw {
+    label: "Characteristics: Canvasdata8 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata8_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata8 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata8 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata8_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata8 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata8software {
     label: "Characteristics: Canvasdata8Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata8software ;;
     type: string
     group_label: "Characteristics"
@@ -815,9 +1553,63 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_canvasdata9_raw {
+    label: "Characteristics: Canvasdata9 Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata9 Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata9 Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata9_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 rendering
+"
+  }
+
+  dimension: metrics__string__characteristics_canvasdata9_software {
+    label: "Characteristics: Canvasdata9 Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_canvasdata9_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata9 Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata9 Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata9_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha1 hash of an image rendered on a canvas. The image is a font shipped with Firefox rendered normally.
+"
+  }
+
+  dimension: metrics__text2__characteristics_canvasdata9_software_raw {
+    label: "Characteristics: Canvasdata9 Software Raw"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_canvasdata9_software_raw ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Canvasdata9 Software Raw"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Canvasdata9 Software Raw"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_canvasdata9_software_raw"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Gzip-compressed, base64-encoded raw pixel data from canvasdata9 software rendering
+"
+  }
+
   dimension: metrics__string__characteristics_canvasdata9software {
     label: "Characteristics: Canvasdata9Software"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.characteristics_canvasdata9software ;;
     type: string
     group_label: "Characteristics"
@@ -884,6 +1676,994 @@ view: user_characteristics {
     }
 
     description: "A unique identifier for a user, not the same as the normal Telemetry client_id, but needed so we can deduplicate reports and only take the most recent one per user.
+"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_01 {
+    label: "Characteristics: Clientrects Element Gbcr 01"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_01 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 01"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 01"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_01"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 1. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_02 {
+    label: "Characteristics: Clientrects Element Gbcr 02"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_02 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 02"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 02"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_02"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 2. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_03 {
+    label: "Characteristics: Clientrects Element Gbcr 03"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_03 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 03"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 03"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_03"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 3. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_04 {
+    label: "Characteristics: Clientrects Element Gbcr 04"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_04 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 04"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 04"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_04"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 4. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_05 {
+    label: "Characteristics: Clientrects Element Gbcr 05"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_05 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 05"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 05"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_05"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 5. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_06 {
+    label: "Characteristics: Clientrects Element Gbcr 06"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_06 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 06"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 06"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_06"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 6. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_07 {
+    label: "Characteristics: Clientrects Element Gbcr 07"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_07 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 07"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 07"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_07"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 7. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_08 {
+    label: "Characteristics: Clientrects Element Gbcr 08"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_08 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 08"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 08"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_08"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 8. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_09 {
+    label: "Characteristics: Clientrects Element Gbcr 09"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_09 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 09"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 09"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_09"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 9. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_10 {
+    label: "Characteristics: Clientrects Element Gbcr 10"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_10 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 10"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 10"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_10"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 10. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_11 {
+    label: "Characteristics: Clientrects Element Gbcr 11"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_11 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 11"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 11"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_11"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 11. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gbcr_12 {
+    label: "Characteristics: Clientrects Element Gbcr 12"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gbcr_12 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gbcr 12"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gbcr 12"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gbcr_12"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() for test element 12. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_01 {
+    label: "Characteristics: Clientrects Element Gcr 01"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_01 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 01"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 01"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_01"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 1. Element style: border 2.715px, padding 3.98px, margin-left 12.12px. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_02 {
+    label: "Characteristics: Clientrects Element Gcr 02"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_02 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 02"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 02"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_02"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 2. Element style: transform skewY(23.1753218deg) rotate3d(10.00099, 90, 0.100000000100009, 60000000000008.00000009deg). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_03 {
+    label: "Characteristics: Clientrects Element Gcr 03"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_03 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 03"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 03"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_03"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 3. Element style: transform skewY(-23.1753218deg) scale(1099.0000000099, 1.89) matrix(1.11, 2.0001, -1.0001, 1.009, 150, 94.4). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_04 {
+    label: "Characteristics: Clientrects Element Gcr 04"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_04 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 04"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 04"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_04"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 4. Element style: transform matrix(1.11, 2.0001, -1.0001, 1.009, 150, 94.4), position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_05 {
+    label: "Characteristics: Clientrects Element Gcr 05"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_05 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 05"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 05"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_05"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 5. Element style: margin-left 42.395pt (point units). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_06 {
+    label: "Characteristics: Clientrects Element Gcr 06"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_06 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 06"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 06"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_06"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 6. Element style: transform perspective(12890px) translateZ(101.5px). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_07 {
+    label: "Characteristics: Clientrects Element Gcr 07"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_07 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 07"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 07"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_07"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 7. Element style: margin-top -350.552px, margin-left 0.9099rem, position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_08 {
+    label: "Characteristics: Clientrects Element Gcr 08"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_08 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 08"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 08"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_08"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 8. Element style: margin-top -150.552px, margin-left 15.9099rem, position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_09 {
+    label: "Characteristics: Clientrects Element Gcr 09"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_09 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 09"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 09"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_09"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 9. Element style: margin-top -110.552px, margin-left 15.9099rem, position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_10 {
+    label: "Characteristics: Clientrects Element Gcr 10"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_10 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 10"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 10"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_10"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 10. Element style: margin-top -315.552px, margin-left 15.9099rem, position absolute. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_11 {
+    label: "Characteristics: Clientrects Element Gcr 11"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_11 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 11"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 11"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_11"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 11. Element style: width 10px, height 10px, margin-left 15.0000009099rem. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_element_gcr_12 {
+    label: "Characteristics: Clientrects Element Gcr 12"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_element_gcr_12 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Element Gcr 12"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Element Gcr 12"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_element_gcr_12"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getClientRects()[0] for test element 12. Element style: identical to element 11 (for equal-element consistency check). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_01 {
+    label: "Characteristics: Clientrects Emoji 01"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_01 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Emoji 01"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Emoji 01"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_emoji_01"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bounding rect dimensions for emoji 👾 (alien monster). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_02 {
+    label: "Characteristics: Clientrects Emoji 02"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_02 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Emoji 02"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Emoji 02"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_emoji_02"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bounding rect dimensions for emoji 🤖 (robot). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_03 {
+    label: "Characteristics: Clientrects Emoji 03"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_03 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Emoji 03"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Emoji 03"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_emoji_03"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bounding rect dimensions for emoji 🦄 (unicorn). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_04 {
+    label: "Characteristics: Clientrects Emoji 04"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_04 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Emoji 04"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Emoji 04"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_emoji_04"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bounding rect dimensions for emoji 🎃 (jack-o-lantern). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_05 {
+    label: "Characteristics: Clientrects Emoji 05"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_05 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Emoji 05"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Emoji 05"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_emoji_05"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bounding rect dimensions for emoji 🎨 (artist palette). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_06 {
+    label: "Characteristics: Clientrects Emoji 06"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_06 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Emoji 06"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Emoji 06"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_emoji_06"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bounding rect dimensions for emoji 🌈 (rainbow). Format: JSON object with w,h keys."
+  }
+
+  dimension: metrics__string__characteristics_clientrects_emoji_font_family {
+    label: "Characteristics: Clientrects Emoji Font Family"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_emoji_font_family ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Emoji Font Family"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Emoji Font Family"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_emoji_font_family"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The computed font-family used for emoji elements in clientrects measurements.
+"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_ghost_dimensions {
+    label: "Characteristics: Clientrects Ghost Dimensions"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_ghost_dimensions ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Ghost Dimensions"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Ghost Dimensions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_ghost_dimensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON for .rect-ghost element (0x0px, should be all zeros). Non-zero values indicate API tampering or lie detection failure. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_known_dimensions {
+    label: "Characteristics: Clientrects Known Dimensions"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_known_dimensions ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Known Dimensions"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Known Dimensions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_known_dimensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Full DOMRect JSON for .rect-known element (100x100px, transform rotate(45deg)). Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_01 {
+    label: "Characteristics: Clientrects Range Gbcr 01"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_01 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 01"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 01"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_01"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 1. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_02 {
+    label: "Characteristics: Clientrects Range Gbcr 02"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_02 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 02"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 02"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_02"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 2. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_03 {
+    label: "Characteristics: Clientrects Range Gbcr 03"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_03 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 03"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 03"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_03"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 3. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_04 {
+    label: "Characteristics: Clientrects Range Gbcr 04"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_04 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 04"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 04"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_04"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 4. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_05 {
+    label: "Characteristics: Clientrects Range Gbcr 05"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_05 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 05"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 05"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_05"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 5. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_06 {
+    label: "Characteristics: Clientrects Range Gbcr 06"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_06 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 06"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 06"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_06"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 6. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_07 {
+    label: "Characteristics: Clientrects Range Gbcr 07"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_07 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 07"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 07"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_07"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 7. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_08 {
+    label: "Characteristics: Clientrects Range Gbcr 08"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_08 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 08"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 08"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_08"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 8. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_09 {
+    label: "Characteristics: Clientrects Range Gbcr 09"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_09 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 09"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 09"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_09"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 9. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_10 {
+    label: "Characteristics: Clientrects Range Gbcr 10"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_10 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 10"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 10"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_10"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 10. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_11 {
+    label: "Characteristics: Clientrects Range Gbcr 11"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_11 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 11"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 11"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_11"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 11. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gbcr_12 {
+    label: "Characteristics: Clientrects Range Gbcr 12"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gbcr_12 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gbcr 12"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gbcr 12"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gbcr_12"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Element.getBoundingClientRect() after Range.selectNode() for test element 12. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_01 {
+    label: "Characteristics: Clientrects Range Gcr 01"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_01 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 01"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 01"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_01"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 1. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_02 {
+    label: "Characteristics: Clientrects Range Gcr 02"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_02 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 02"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 02"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_02"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 2. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_03 {
+    label: "Characteristics: Clientrects Range Gcr 03"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_03 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 03"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 03"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_03"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 3. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_04 {
+    label: "Characteristics: Clientrects Range Gcr 04"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_04 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 04"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 04"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_04"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 4. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_05 {
+    label: "Characteristics: Clientrects Range Gcr 05"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_05 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 05"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 05"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_05"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 5. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_06 {
+    label: "Characteristics: Clientrects Range Gcr 06"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_06 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 06"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 06"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_06"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 6. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_07 {
+    label: "Characteristics: Clientrects Range Gcr 07"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_07 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 07"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 07"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_07"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 7. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_08 {
+    label: "Characteristics: Clientrects Range Gcr 08"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_08 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 08"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 08"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_08"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 8. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_09 {
+    label: "Characteristics: Clientrects Range Gcr 09"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_09 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 09"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 09"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_09"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 9. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_10 {
+    label: "Characteristics: Clientrects Range Gcr 10"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_10 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 10"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 10"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_10"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 10. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_11 {
+    label: "Characteristics: Clientrects Range Gcr 11"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_11 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 11"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 11"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_11"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 11. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_range_gcr_12 {
+    label: "Characteristics: Clientrects Range Gcr 12"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_range_gcr_12 ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Range Gcr 12"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Range Gcr 12"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_range_gcr_12"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "DOMRect JSON from Range.getClientRects()[0] after Range.selectNode() for test element 12. Format: {\"b\":N,\"h\":N,\"l\":N,\"r\":N,\"t\":N,\"w\":N,\"x\":N,\"y\":N}"
+  }
+
+  dimension: metrics__string__characteristics_clientrects_text_font_family {
+    label: "Characteristics: Clientrects Text Font Family"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_clientrects_text_font_family ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Clientrects Text Font Family"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Clientrects Text Font Family"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_clientrects_text_font_family"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The computed font-family used for text elements in clientrects measurements.
 "
   }
 
@@ -1118,6 +2898,42 @@ view: user_characteristics {
     }
 
     description: "CPU model of the user's device
+"
+  }
+
+  dimension: metrics__text2__characteristics_css_system_colors {
+    label: "Characteristics: Css System Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_css_system_colors ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Css System Colors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Css System Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_css_system_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON array containing CSS system color keywords and their computed values as uppercase hex (without # prefix). System colors (like Canvas, ButtonFace, LinkText, etc.) are CSS keywords that resolve to theme/OS-specific colors and can be used for fingerprinting. This metric collects the computed backgroundColor for each system color keyword. Data format: [{\"Canvas\": \"FFFFFF\"}, {\"ButtonFace\": \"F0F0F0\"}, ...].
+"
+  }
+
+  dimension: metrics__text2__characteristics_css_system_fonts {
+    label: "Characteristics: Css System Fonts"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_css_system_fonts ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Css System Fonts"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Css System Fonts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_css_system_fonts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON array containing CSS system font keywords and their computed font properties. System fonts (like caption, icon, menu, etc.) and common font families are tested to determine their rendered fontSize and fontFamily values, which can vary by OS and be used for fingerprinting. This metric collects computed fontSize + fontFamily for each font keyword/name tested. Data format: [{\"caption\": \"11px system-ui\"}, {\"Arial\": \"16px Arial\"}, ...].
 "
   }
 
@@ -1730,6 +3546,258 @@ view: user_characteristics {
     }
 
     description: "SHA256 of non-allowlisted fonts queried of variant B
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_c_allowlisted {
+    label: "Characteristics: Fonts Variant C Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_c_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant C Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant C Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_c_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried of variant C
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_c_nonallowlisted {
+    label: "Characteristics: Fonts Variant C Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_c_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant C Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant C Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_c_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried of variant C
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_d_allowlisted {
+    label: "Characteristics: Fonts Variant D Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_d_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant D Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant D Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_d_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried of variant D
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_d_nonallowlisted {
+    label: "Characteristics: Fonts Variant D Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_d_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant D Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant D Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_d_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried of variant D
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_e_allowlisted {
+    label: "Characteristics: Fonts Variant E Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_e_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant E Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant E Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_e_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts queried of variant E
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_e_nonallowlisted {
+    label: "Characteristics: Fonts Variant E Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_e_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant E Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant E Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_e_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts queried of variant E
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_f_allowlisted {
+    label: "Characteristics: Fonts Variant F Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant F Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant F Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_f_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts used to render \"A\" with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_f_nonallowlisted {
+    label: "Characteristics: Fonts Variant F Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_f_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant F Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant F Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_f_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts used to render \"A\" with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_g_allowlisted {
+    label: "Characteristics: Fonts Variant G Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant G Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant G Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_g_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts used to render emoji (U+1F47E) with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_g_nonallowlisted {
+    label: "Characteristics: Fonts Variant G Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_g_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant G Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant G Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_g_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts used to render emoji (U+1F47E) with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_h_allowlisted {
+    label: "Characteristics: Fonts Variant H Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant H Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant H Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_h_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts used to render 89 emojis with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_h_nonallowlisted {
+    label: "Characteristics: Fonts Variant H Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_h_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant H Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant H Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_h_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts used to render 89 emojis with variant F font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_i_allowlisted {
+    label: "Characteristics: Fonts Variant I Allowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_allowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant I Allowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant I Allowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_i_allowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of allowlisted fonts used to render SVG emojis with emoji-specific font list
+"
+  }
+
+  dimension: metrics__string__characteristics_fonts_variant_i_nonallowlisted {
+    label: "Characteristics: Fonts Variant I Nonallowlisted"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_fonts_variant_i_nonallowlisted ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Fonts Variant I Nonallowlisted"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Fonts Variant I Nonallowlisted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_fonts_variant_i_nonallowlisted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA256 of non-allowlisted fonts used to render SVG emojis with emoji-specific font list
 "
   }
 
@@ -2505,7 +4573,7 @@ view: user_characteristics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The list of GL parameters of GL1.
+    description: "The list of GL parameters of GL1. Parameters: ALIASED_LINE_WIDTH_RANGE, ALIASED_POINT_SIZE_RANGE, MAX_COMBINED_TEXTURE_IMAGE_UNITS, MAX_CUBE_MAP_TEXTURE_SIZE, MAX_FRAGMENT_UNIFORM_VECTORS, MAX_RENDERBUFFER_SIZE, MAX_TEXTURE_IMAGE_UNITS, MAX_TEXTURE_SIZE, MAX_VARYING_VECTORS, MAX_VERTEX_ATTRIBS, MAX_VERTEX_TEXTURE_IMAGE_UNITS, MAX_VERTEX_UNIFORM_VECTORS, MAX_VIEWPORT_DIMS, SHADING_LANGUAGE_VERSION, STENCIL_BACK_VALUE_MASK, STENCIL_BACK_WRITEMASK, STENCIL_VALUE_MASK, STENCIL_WRITEMASK, SUBPIXEL_BITS.
 "
   }
 
@@ -3424,6 +5492,60 @@ view: user_characteristics {
     }
 
     description: "Width of the drawn MathML element
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml_diag_font_family {
+    label: "Characteristics: Mathml Diag Font Family"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_mathml_diag_font_family ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Mathml Diag Font Family"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Mathml Diag Font Family"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_mathml_diag_font_family"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The computed font-family value from a MathML element on the page. Shows what font is actually being used for MathML rendering.
+"
+  }
+
+  dimension: metrics__string__characteristics_mathml_diag_prefs_modified {
+    label: "Characteristics: Mathml Diag Prefs Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_mathml_diag_prefs_modified ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Mathml Diag Prefs Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Mathml Diag Prefs Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_mathml_diag_prefs_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "MathML prefs that have been modified from defaults. Format is \"shortname=val,...\" (e.g. \"dis=1,fnt=0\"). Empty if no prefs modified. Shortnames: dis=disabled, str=scale_stretchy_operators, spc=mathspace_names, rtl=rtl_operator_mirroring, var=mathvariant_styling_fallback, shf=math_shift, acc=operator_dictionary_accent, leg=legacy_mathvariant_attribute, fnt=font_family_math. Values are 1 (true) or 0 (false).
+"
+  }
+
+  dimension: metrics__text2__characteristics_mathml_diag_values {
+    label: "Characteristics: Mathml Diag Values"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_mathml_diag_values ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Mathml Diag Values"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Mathml Diag Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_mathml_diag_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Array of widths from all MathML elements, collected similar to math_ops. Each element represents the getBoundingClientRect().width of a rendered MathML element. The array index corresponds to the element's id number. Format is a JSON stringified array like: [\"123.456\", \"789.012\", ...]
 "
   }
 
@@ -4543,6 +6665,91 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_svg_bbox {
+    label: "Characteristics: Svg Bbox"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_svg_bbox ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Bbox"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Bbox"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_bbox"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON object from SVGGraphicsElement.getBBox(). Format: {\"x\":N,\"y\":N,\"w\":N,\"h\":N}. Varies by browser rendering engine."
+  }
+
+  dimension: metrics__string__characteristics_svg_computed_text_length {
+    label: "Characteristics: Svg Computed Text Length"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_svg_computed_text_length ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Computed Text Length"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Computed Text Length"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_computed_text_length"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SVGTextContentElement.getComputedTextLength() for emoji text element. Returns the total length of rendered text, varies by font rendering."
+  }
+
+  dimension: metrics__string__characteristics_svg_emoji_set {
+    label: "Characteristics: Svg Emoji Set"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_svg_emoji_set ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Emoji Set"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Emoji Set"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_emoji_set"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON array of emojis with unique rendering dimensions. Tests which emojis render at distinct sizes, varies by OS/font support."
+  }
+
+  dimension: metrics__string__characteristics_svg_extent_of_char {
+    label: "Characteristics: Svg Extent Of Char"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_svg_extent_of_char ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Extent Of Char"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Extent Of Char"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_extent_of_char"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON object from SVGTextContentElement.getExtentOfChar(0). Format: {\"x\":N,\"y\":N,\"w\":N,\"h\":N}. Varies by emoji rendering."
+  }
+
+  dimension: metrics__string__characteristics_svg_substring_length {
+    label: "Characteristics: Svg Substring Length"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_svg_substring_length ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Svg Substring Length"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Svg Substring Length"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_svg_substring_length"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SVGTextContentElement.getSubStringLength(0, 10) for first 10 characters. Varies by font metrics and text shaping."
+  }
+
   dimension: metrics__string__characteristics_system_locale {
     label: "Characteristics: System Locale"
     hidden: no
@@ -4936,6 +7143,24 @@ view: user_characteristics {
     }
 
     description: "A JSON blob that contains information about the graphics hardware exposed by WebGL.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_wgpu_is_fallback_adapter {
+    label: "Characteristics: Wgpu Is Fallback Adapter"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_wgpu_is_fallback_adapter ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Wgpu Is Fallback Adapter"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Wgpu Is Fallback Adapter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_wgpu_is_fallback_adapter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebGPU adapter isFallbackAdapter property. Indicates whether the adapter is a software renderer (true) or hardware GPU (false).
 "
   }
 

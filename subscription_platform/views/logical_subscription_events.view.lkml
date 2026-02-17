@@ -297,6 +297,15 @@ This will be null for Google and Apple subscriptions."
     description: "Ongoing discount promotion code (if any)."
   }
 
+  dimension: old_subscription__payment_method {
+    sql: ${TABLE}.old_subscription.payment_method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Old Subscription"
+    group_item_label: "Payment Method"
+    description: "The type of payment method used for the subscription (e.g. \"Card\", \"PayPal\", \"Apple Pay\", \"Google Pay\")."
+  }
+
   dimension: old_subscription__payment_provider {
     sql: ${TABLE}.old_subscription.payment_provider ;;
     type: string
@@ -463,6 +472,20 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.old_subscription.services ;;
     hidden: yes
     description: "Array of one or more services provided by the subscription, as defined in the `services_v1` ETL."
+  }
+
+  dimension: old_subscription__started_reason {
+    sql: ${TABLE}.old_subscription.started_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Old Subscription"
+    group_item_label: "Started Reason"
+    description: "Reason why the subscription started.
+Possible values:
+  * `New Customer` - A new customer started their first subscription.
+  * `New Customer Trial` - A new customer started their first subscription and it is a trial plan.
+  * `Returning Customer` - A customer started a subsequent subscription.
+  * `Returning Customer Trial` - A customer started a subsequent subscription and it is a trial plan."
   }
 
   dimension: reason {
@@ -750,6 +773,15 @@ This will be null for Google and Apple subscriptions."
     description: "Ongoing discount promotion code (if any)."
   }
 
+  dimension: subscription__payment_method {
+    sql: ${TABLE}.subscription.payment_method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Payment Method"
+    description: "The type of payment method used for the subscription (e.g. \"Card\", \"PayPal\", \"Apple Pay\", \"Google Pay\")."
+  }
+
   dimension: subscription__payment_provider {
     sql: ${TABLE}.subscription.payment_provider ;;
     type: string
@@ -916,6 +948,20 @@ This will be null for Google and Apple subscriptions."
     sql: ${TABLE}.subscription.services ;;
     hidden: yes
     description: "Array of one or more services provided by the subscription, as defined in the `services_v1` ETL."
+  }
+
+  dimension: subscription__started_reason {
+    sql: ${TABLE}.subscription.started_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription"
+    group_item_label: "Started Reason"
+    description: "Reason why the subscription started.
+Possible values:
+  * `New Customer` - A new customer started their first subscription.
+  * `New Customer Trial` - A new customer started their first subscription and it is a trial plan.
+  * `Returning Customer` - A customer started a subsequent subscription.
+  * `Returning Customer Trial` - A customer started a subsequent subscription and it is a trial plan."
   }
 
   dimension: type {
