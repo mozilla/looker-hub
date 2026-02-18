@@ -214,6 +214,10 @@ ads:
       type: table_explore
       views:
         base_view: campaigns_monthly
+    equativ_line_item_delivery:
+      type: table_explore
+      views:
+        base_view: equativ_line_item_delivery
     forecast_suggest_monthly:
       type: table_explore
       views:
@@ -305,6 +309,50 @@ ads:
           type: sum
       tables:
       - table: mozdata.ads.campaigns_monthly
+      type: table_view
+    equativ_line_item_delivery:
+      measures:
+        booked_budget:
+          sql: ${budget}
+          type: sum
+        booked_clicks:
+          sql: ${budgeted_clicks}
+          type: sum
+        booked_impressions:
+          sql: ${budgeted_impressions}
+          type: sum
+        booked_rate_measure:
+          sql: SAFE_DIVIDE(${booked_budget}, ${total_sold_quantity})
+          type: number
+        total_click_derived_actual_revenue_sum:
+          sql: ${total_click_derived_actual_revenue}
+          type: sum
+        total_clicks_after_contract_end:
+          sql: ${clicks_after_contract_end}
+          type: sum
+        total_impression_derived_actual_revenue_sum:
+          sql: ${total_impression_derived_actual_revenue}
+          type: sum
+        total_impressions_after_contract_end:
+          sql: ${impressions_after_contract_end}
+          type: sum
+        total_oversold_clicks:
+          sql: ${oversold_clicks}
+          type: sum
+        total_oversold_impressions:
+          sql: ${oversold_impressions}
+          type: sum
+        total_sold_quantity:
+          sql: ${sold_quantity}
+          type: sum
+        total_underdelivered_clicks:
+          sql: ${underdelivered_clicks}
+          type: sum
+        total_underdelivered_impressions:
+          sql: ${underdelivered_impressions}
+          type: sum
+      tables:
+      - table: moz-fx-data-shared-prod.ads.equativ_line_item_delivery
       type: table_view
     forecast_suggest_monthly:
       tables:
