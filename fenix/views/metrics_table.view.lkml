@@ -13187,7 +13187,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -14553,6 +14553,20 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_hit ;;
+    hidden: yes
+    description: "Count of top-level navigations that hit the Global Cache table. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_global_cache_miss {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_miss ;;
+    hidden: yes
+    description: "Count of top-level navigations that miss the Global Cache table. Keyed by ETP mode and window type.
+"
+  }
+
   dimension: metrics__labeled_counter__urlclassifier_lookup_hit {
     sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_hit ;;
     hidden: yes
@@ -14564,6 +14578,27 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.urlclassifier_lookup_miss ;;
     hidden: yes
     description: "Counts the number of times that a lookup misses a table. Keyed by table name.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_request_count ;;
+    hidden: yes
+    description: "Count of simulated real-time Safe Browsing lookup requests. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_request_size {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_request_size ;;
+    hidden: yes
+    description: "Total estimated data usage of simulated real-time Safe Browsing lookup requests in bytes. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_response_size {
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_response_size ;;
+    hidden: yes
+    description: "Total estimated data usage of simulated real-time Safe Browsing lookup responses in bytes. Keyed by ETP mode and window type.
 "
   }
 
