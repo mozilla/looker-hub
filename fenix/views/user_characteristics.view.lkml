@@ -6611,6 +6611,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_sdp_codec_list {
+    label: "Characteristics: Sdp Codec List"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_sdp_codec_list ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Sdp Codec List"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Sdp Codec List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_sdp_codec_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON-stringified SDP codec section from RTCPeerConnection.createOffer(). Contains m-lines, a=rtpmap, a=fmtp, and a=rtcp-fb lines with session-specific values (ICE credentials, DTLS fingerprint) stripped.
+"
+  }
+
   dimension: metrics__quantity__characteristics_size_mode {
     label: "Characteristics: Size Mode"
     hidden: no
@@ -6644,6 +6662,24 @@ view: user_characteristics {
     }
 
     description: "Number of speakers available on the device.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_storage_quota {
+    label: "Characteristics: Storage Quota"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_storage_quota ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Storage Quota"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Storage Quota"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_storage_quota"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Storage quota in MB from StorageManager.estimate(), rounded to integer. Acts as a disk-size proxy for fingerprinting entropy analysis.
 "
   }
 
@@ -7125,6 +7161,24 @@ view: user_characteristics {
     }
 
     description: "SHA1 hash of all the voices.
+"
+  }
+
+  dimension: metrics__text2__characteristics_webauthn_capabilities {
+    label: "Characteristics: Webauthn Capabilities"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_webauthn_capabilities ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Webauthn Capabilities"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Webauthn Capabilities"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_webauthn_capabilities"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JSON-stringified dictionary from PublicKeyCredential.getClientCapabilities(). Contains boolean values indicating passkey and authenticator support.
 "
   }
 

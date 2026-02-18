@@ -1788,6 +1788,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_service_installed_subsequent}) AS metrics__metrics__labeled_counter__update_service_installed_subsequent ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_service_installed_subsequent.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__urlclassifier_global_cache_hit {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_global_cache_hit}) AS metrics__metrics__labeled_counter__urlclassifier_global_cache_hit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_global_cache_hit.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlclassifier_global_cache_miss {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_global_cache_miss}) AS metrics__metrics__labeled_counter__urlclassifier_global_cache_miss ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_global_cache_miss.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__urlclassifier_lookup_hit {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_lookup_hit}) AS metrics__metrics__labeled_counter__urlclassifier_lookup_hit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_lookup_hit.document_id} ;;
@@ -1796,6 +1806,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__urlclassifier_lookup_miss {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_lookup_miss}) AS metrics__metrics__labeled_counter__urlclassifier_lookup_miss ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_lookup_miss.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_realtime_simulation_request_count}) AS metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_size {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_realtime_simulation_request_size}) AS metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_size ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_size.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_response_size {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_realtime_simulation_response_size}) AS metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_response_size ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_response_size.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__urlclassifier_vlps_metadata_corrupt {

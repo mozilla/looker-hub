@@ -122,6 +122,13 @@ view: install {
     description: "Seconds between sending the full installer download request and receiving the first response data"
   }
 
+  dimension: download_requests_blocked_by_server {
+    sql: ${TABLE}.download_requests_blocked_by_server ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of download requests blocked by the server"
+  }
+
   dimension: download_retries {
     sql: ${TABLE}.download_retries ;;
     type: number

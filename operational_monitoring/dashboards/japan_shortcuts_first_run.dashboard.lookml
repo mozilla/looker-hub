@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: japan_shortcuts_first_run
+    type: looker_line
+    fields: [
+      japan_shortcuts_first_run.submission_date,
+      japan_shortcuts_first_run.branch,
+      japan_shortcuts_first_run.point
+    ]
+    pivots: [
+      japan_shortcuts_first_run.branch
+    ]
+    filters:
+      japan_shortcuts_first_run.metric: 'retained'
+      japan_shortcuts_first_run.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: japan_shortcuts_first_run.submission_date
+    field_y: japan_shortcuts_first_run.point
+    log_scale: false
+    ci_lower: japan_shortcuts_first_run.lower
+    ci_upper: japan_shortcuts_first_run.upper
+    show_grid: true
+    listen:
+      Date: japan_shortcuts_first_run.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -29,75 +63,7 @@
       japan_shortcuts_first_run.metric: 'search_count'
       japan_shortcuts_first_run.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: japan_shortcuts_first_run.submission_date
-    field_y: japan_shortcuts_first_run.point
-    log_scale: false
-    ci_lower: japan_shortcuts_first_run.lower
-    ci_upper: japan_shortcuts_first_run.upper
-    show_grid: true
-    listen:
-      Date: japan_shortcuts_first_run.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: japan_shortcuts_first_run
-    type: looker_line
-    fields: [
-      japan_shortcuts_first_run.submission_date,
-      japan_shortcuts_first_run.branch,
-      japan_shortcuts_first_run.point
-    ]
-    pivots: [
-      japan_shortcuts_first_run.branch
-    ]
-    filters:
-      japan_shortcuts_first_run.metric: 'active_hours'
-      japan_shortcuts_first_run.statistic: mean
-    row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: japan_shortcuts_first_run.submission_date
-    field_y: japan_shortcuts_first_run.point
-    log_scale: false
-    ci_lower: japan_shortcuts_first_run.lower
-    ci_upper: japan_shortcuts_first_run.upper
-    show_grid: true
-    listen:
-      Date: japan_shortcuts_first_run.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: japan_shortcuts_first_run
-    type: looker_line
-    fields: [
-      japan_shortcuts_first_run.submission_date,
-      japan_shortcuts_first_run.branch,
-      japan_shortcuts_first_run.point
-    ]
-    pivots: [
-      japan_shortcuts_first_run.branch
-    ]
-    filters:
-      japan_shortcuts_first_run.metric: 'retained'
-      japan_shortcuts_first_run.statistic: mean
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: japan_shortcuts_first_run.submission_date
@@ -131,7 +97,7 @@
       japan_shortcuts_first_run.metric: 'days_of_use'
       japan_shortcuts_first_run.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: japan_shortcuts_first_run.submission_date
@@ -163,6 +129,40 @@
     ]
     filters:
       japan_shortcuts_first_run.metric: 'ad_clicks'
+      japan_shortcuts_first_run.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: japan_shortcuts_first_run.submission_date
+    field_y: japan_shortcuts_first_run.point
+    log_scale: false
+    ci_lower: japan_shortcuts_first_run.lower
+    ci_upper: japan_shortcuts_first_run.upper
+    show_grid: true
+    listen:
+      Date: japan_shortcuts_first_run.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: japan_shortcuts_first_run
+    type: looker_line
+    fields: [
+      japan_shortcuts_first_run.submission_date,
+      japan_shortcuts_first_run.branch,
+      japan_shortcuts_first_run.point
+    ]
+    pivots: [
+      japan_shortcuts_first_run.branch
+    ]
+    filters:
+      japan_shortcuts_first_run.metric: 'active_hours'
       japan_shortcuts_first_run.statistic: mean
     row: 20
     col: 0

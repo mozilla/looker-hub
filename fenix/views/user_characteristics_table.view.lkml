@@ -1239,6 +1239,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_storage_quota {
+    sql: ${TABLE}.metrics.quantity.characteristics_storage_quota ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Characteristics Storage Quota"
+    description: "Storage quota in MB from StorageManager.estimate(), rounded to integer. Acts as a disk-size proxy for fingerprinting entropy analysis.
+"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     sql: ${TABLE}.metrics.quantity.characteristics_submission_schema ;;
     type: number
@@ -4731,6 +4741,16 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__text2__characteristics_sdp_codec_list {
+    sql: ${TABLE}.metrics.text2.characteristics_sdp_codec_list ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Sdp Codec List"
+    description: "JSON-stringified SDP codec section from RTCPeerConnection.createOffer(). Contains m-lines, a=rtpmap, a=fmtp, and a=rtcp-fb lines with session-specific values (ICE credentials, DTLS fingerprint) stripped.
+"
+  }
+
   dimension: metrics__text2__characteristics_user_agent {
     sql: ${TABLE}.metrics.text2.characteristics_user_agent ;;
     type: string
@@ -4768,6 +4788,16 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Voices Sha1"
     description: "SHA1 hash of all the voices.
+"
+  }
+
+  dimension: metrics__text2__characteristics_webauthn_capabilities {
+    sql: ${TABLE}.metrics.text2.characteristics_webauthn_capabilities ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Characteristics Webauthn Capabilities"
+    description: "JSON-stringified dictionary from PublicKeyCredential.getClientCapabilities(). Contains boolean values indicating passkey and authenticator support.
 "
   }
 

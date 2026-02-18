@@ -29307,6 +29307,40 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {
+    label: "Urlclassifier: Global Cache Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_hit ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Global Cache Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Global Cache Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_global_cache_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of top-level navigations that hit the Global Cache table. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_global_cache_miss {
+    label: "Urlclassifier: Global Cache Miss"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_miss ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Global Cache Miss"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Global Cache Miss"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_global_cache_miss"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of top-level navigations that miss the Global Cache table. Keyed by ETP mode and window type.
+"
+  }
+
   dimension: metrics__labeled_counter__urlclassifier_lookup_hit {
     label: "Urlclassifier: Lookup Hit"
     hidden: yes
@@ -29357,6 +29391,57 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Time spent per dbservice lookup (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_LOOKUP_TIME_2.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_request_count {
+    label: "Urlclassifier: Realtime Simulation Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_request_count ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_realtime_simulation_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of simulated real-time Safe Browsing lookup requests. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_request_size {
+    label: "Urlclassifier: Realtime Simulation Request Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_request_size ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Request Size"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Request Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_realtime_simulation_request_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total estimated data usage of simulated real-time Safe Browsing lookup requests in bytes. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_response_size {
+    label: "Urlclassifier: Realtime Simulation Response Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_response_size ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Response Size"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Response Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_realtime_simulation_response_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total estimated data usage of simulated real-time Safe Browsing lookup responses in bytes. Keyed by ETP mode and window type.
 "
   }
 
@@ -54793,6 +54878,88 @@ view: metrics__metrics__labeled_counter__update_service_installed_subsequent {
   }
 }
 
+view: metrics__metrics__labeled_counter__urlclassifier_global_cache_hit {
+  label: "Urlclassifier: Global Cache Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_global_cache_miss {
+  label: "Urlclassifier: Global Cache Miss"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__urlclassifier_lookup_hit {
   label: "Urlclassifier: Lookup Hit"
 
@@ -54872,6 +55039,129 @@ view: metrics__metrics__labeled_counter__urlclassifier_lookup_miss {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_count {
+  label: "Urlclassifier: Realtime Simulation Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_size {
+  label: "Urlclassifier: Realtime Simulation Request Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_response_size {
+  label: "Urlclassifier: Realtime Simulation Response Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
