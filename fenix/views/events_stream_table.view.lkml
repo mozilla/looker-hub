@@ -520,6 +520,14 @@ view: events_stream_table {
     group_item_label: "Has Empty Password"
   }
 
+  dimension: extras__boolean__has_ftp_origin {
+    sql: ${TABLE}.extras.boolean.has_ftp_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Ftp Origin"
+  }
+
   dimension: extras__boolean__has_non_http_origin {
     sql: ${TABLE}.extras.boolean.has_non_http_origin ;;
     type: yesno
@@ -744,6 +752,14 @@ view: events_stream_table {
     group_item_label: "Is Selected"
   }
 
+  dimension: extras__boolean__is_top_level_frame {
+    sql: ${TABLE}.extras.boolean.is_top_level_frame ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Top Level Frame"
+  }
+
   dimension: extras__boolean__is_valid_section {
     sql: ${TABLE}.extras.boolean.is_valid_section ;;
     type: yesno
@@ -800,6 +816,14 @@ view: events_stream_table {
     group_item_label: "Poisoned"
   }
 
+  dimension: extras__boolean__psi_available {
+    sql: ${TABLE}.extras.boolean.psi_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Psi Available"
+  }
+
   dimension: extras__boolean__referrer_is_fenix {
     sql: ${TABLE}.extras.boolean.referrer_is_fenix ;;
     type: yesno
@@ -814,6 +838,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Reset Disabled"
+  }
+
+  dimension: extras__boolean__restricted {
+    sql: ${TABLE}.extras.boolean.restricted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Restricted"
   }
 
   dimension: extras__boolean__saved {
@@ -1854,6 +1886,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Branches"
+  }
+
+  dimension: extras__string__breach_name {
+    sql: ${TABLE}.extras.string.breach_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Breach Name"
   }
 
   dimension: extras__string__bundle_policy {
@@ -2904,6 +2944,14 @@ view: events_stream_table {
     group_item_label: "Install Origins"
   }
 
+  dimension: extras__string__install_source {
+    sql: ${TABLE}.extras.string.install_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Install Source"
+  }
+
   dimension: extras__string__interaction {
     sql: ${TABLE}.extras.string.interaction ;;
     type: string
@@ -3326,6 +3374,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Oldpanel"
+  }
+
+  dimension: extras__string__onboarding_reason {
+    sql: ${TABLE}.extras.string.onboarding_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Onboarding Reason"
   }
 
   dimension: extras__string__opened_from {
@@ -4240,12 +4296,28 @@ view: events_stream_table {
     group_item_label: "Time"
   }
 
+  dimension: extras__string__time_created {
+    sql: ${TABLE}.extras.string.time_created ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Time Created"
+  }
+
   dimension: extras__string__time_group {
     sql: ${TABLE}.extras.string.time_group ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Time Group"
+  }
+
+  dimension: extras__string__time_last_used {
+    sql: ${TABLE}.extras.string.time_last_used ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Time Last Used"
   }
 
   dimension: extras__string__time_open {

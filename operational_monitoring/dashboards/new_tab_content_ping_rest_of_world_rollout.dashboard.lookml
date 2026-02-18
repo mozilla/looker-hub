@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,112 +26,10 @@
       new_tab_content_ping_rest_of_world_rollout.branch
     ]
     filters:
-      new_tab_content_ping_rest_of_world_rollout.metric: 'uri_count'
+      new_tab_content_ping_rest_of_world_rollout.metric: 'qualified_cumulative_days_of_use'
       new_tab_content_ping_rest_of_world_rollout.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
-    field_y: new_tab_content_ping_rest_of_world_rollout.point
-    log_scale: false
-    ci_lower: new_tab_content_ping_rest_of_world_rollout.lower
-    ci_upper: new_tab_content_ping_rest_of_world_rollout.upper
-    show_grid: true
-    listen:
-      Date: new_tab_content_ping_rest_of_world_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_content_ping_rest_of_world_rollout
-    type: looker_line
-    fields: [
-      new_tab_content_ping_rest_of_world_rollout.submission_date,
-      new_tab_content_ping_rest_of_world_rollout.branch,
-      new_tab_content_ping_rest_of_world_rollout.point
-    ]
-    pivots: [
-      new_tab_content_ping_rest_of_world_rollout.branch
-    ]
-    filters:
-      new_tab_content_ping_rest_of_world_rollout.metric: 'days_of_use'
-      new_tab_content_ping_rest_of_world_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
-    field_y: new_tab_content_ping_rest_of_world_rollout.point
-    log_scale: false
-    ci_lower: new_tab_content_ping_rest_of_world_rollout.lower
-    ci_upper: new_tab_content_ping_rest_of_world_rollout.upper
-    show_grid: true
-    listen:
-      Date: new_tab_content_ping_rest_of_world_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_content_ping_rest_of_world_rollout
-    type: looker_line
-    fields: [
-      new_tab_content_ping_rest_of_world_rollout.submission_date,
-      new_tab_content_ping_rest_of_world_rollout.branch,
-      new_tab_content_ping_rest_of_world_rollout.point
-    ]
-    pivots: [
-      new_tab_content_ping_rest_of_world_rollout.branch
-    ]
-    filters:
-      new_tab_content_ping_rest_of_world_rollout.metric: 'active_hours'
-      new_tab_content_ping_rest_of_world_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
-    field_y: new_tab_content_ping_rest_of_world_rollout.point
-    log_scale: false
-    ci_lower: new_tab_content_ping_rest_of_world_rollout.lower
-    ci_upper: new_tab_content_ping_rest_of_world_rollout.upper
-    show_grid: true
-    listen:
-      Date: new_tab_content_ping_rest_of_world_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_content_ping_rest_of_world_rollout
-    type: looker_line
-    fields: [
-      new_tab_content_ping_rest_of_world_rollout.submission_date,
-      new_tab_content_ping_rest_of_world_rollout.branch,
-      new_tab_content_ping_rest_of_world_rollout.point
-    ]
-    pivots: [
-      new_tab_content_ping_rest_of_world_rollout.branch
-    ]
-    filters:
-      new_tab_content_ping_rest_of_world_rollout.metric: 'ad_clicks'
-      new_tab_content_ping_rest_of_world_rollout.statistic: mean
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
@@ -164,7 +62,41 @@
     filters:
       new_tab_content_ping_rest_of_world_rollout.metric: 'retained'
       new_tab_content_ping_rest_of_world_rollout.statistic: mean
-    row: 20
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
+    field_y: new_tab_content_ping_rest_of_world_rollout.point
+    log_scale: false
+    ci_lower: new_tab_content_ping_rest_of_world_rollout.lower
+    ci_upper: new_tab_content_ping_rest_of_world_rollout.upper
+    show_grid: true
+    listen:
+      Date: new_tab_content_ping_rest_of_world_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_content_ping_rest_of_world_rollout
+    type: looker_line
+    fields: [
+      new_tab_content_ping_rest_of_world_rollout.submission_date,
+      new_tab_content_ping_rest_of_world_rollout.branch,
+      new_tab_content_ping_rest_of_world_rollout.point
+    ]
+    pivots: [
+      new_tab_content_ping_rest_of_world_rollout.branch
+    ]
+    filters:
+      new_tab_content_ping_rest_of_world_rollout.metric: 'uri_count'
+      new_tab_content_ping_rest_of_world_rollout.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -200,7 +132,7 @@
     filters:
       new_tab_content_ping_rest_of_world_rollout.metric: 'memory_total'
       new_tab_content_ping_rest_of_world_rollout.statistic: percentile
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -213,40 +145,6 @@
     listen:
       Date: new_tab_content_ping_rest_of_world_rollout.submission_date
       Percentile: new_tab_content_ping_rest_of_world_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_content_ping_rest_of_world_rollout
-    type: looker_line
-    fields: [
-      new_tab_content_ping_rest_of_world_rollout.submission_date,
-      new_tab_content_ping_rest_of_world_rollout.branch,
-      new_tab_content_ping_rest_of_world_rollout.point
-    ]
-    pivots: [
-      new_tab_content_ping_rest_of_world_rollout.branch
-    ]
-    filters:
-      new_tab_content_ping_rest_of_world_rollout.metric: 'qualified_cumulative_days_of_use'
-      new_tab_content_ping_rest_of_world_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
-    field_y: new_tab_content_ping_rest_of_world_rollout.point
-    log_scale: false
-    ci_lower: new_tab_content_ping_rest_of_world_rollout.lower
-    ci_upper: new_tab_content_ping_rest_of_world_rollout.upper
-    show_grid: true
-    listen:
-      Date: new_tab_content_ping_rest_of_world_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +166,108 @@
     ]
     filters:
       new_tab_content_ping_rest_of_world_rollout.metric: 'search_count'
+      new_tab_content_ping_rest_of_world_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
+    field_y: new_tab_content_ping_rest_of_world_rollout.point
+    log_scale: false
+    ci_lower: new_tab_content_ping_rest_of_world_rollout.lower
+    ci_upper: new_tab_content_ping_rest_of_world_rollout.upper
+    show_grid: true
+    listen:
+      Date: new_tab_content_ping_rest_of_world_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_content_ping_rest_of_world_rollout
+    type: looker_line
+    fields: [
+      new_tab_content_ping_rest_of_world_rollout.submission_date,
+      new_tab_content_ping_rest_of_world_rollout.branch,
+      new_tab_content_ping_rest_of_world_rollout.point
+    ]
+    pivots: [
+      new_tab_content_ping_rest_of_world_rollout.branch
+    ]
+    filters:
+      new_tab_content_ping_rest_of_world_rollout.metric: 'days_of_use'
+      new_tab_content_ping_rest_of_world_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
+    field_y: new_tab_content_ping_rest_of_world_rollout.point
+    log_scale: false
+    ci_lower: new_tab_content_ping_rest_of_world_rollout.lower
+    ci_upper: new_tab_content_ping_rest_of_world_rollout.upper
+    show_grid: true
+    listen:
+      Date: new_tab_content_ping_rest_of_world_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_content_ping_rest_of_world_rollout
+    type: looker_line
+    fields: [
+      new_tab_content_ping_rest_of_world_rollout.submission_date,
+      new_tab_content_ping_rest_of_world_rollout.branch,
+      new_tab_content_ping_rest_of_world_rollout.point
+    ]
+    pivots: [
+      new_tab_content_ping_rest_of_world_rollout.branch
+    ]
+    filters:
+      new_tab_content_ping_rest_of_world_rollout.metric: 'ad_clicks'
+      new_tab_content_ping_rest_of_world_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_tab_content_ping_rest_of_world_rollout.submission_date
+    field_y: new_tab_content_ping_rest_of_world_rollout.point
+    log_scale: false
+    ci_lower: new_tab_content_ping_rest_of_world_rollout.lower
+    ci_upper: new_tab_content_ping_rest_of_world_rollout.upper
+    show_grid: true
+    listen:
+      Date: new_tab_content_ping_rest_of_world_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_content_ping_rest_of_world_rollout
+    type: looker_line
+    fields: [
+      new_tab_content_ping_rest_of_world_rollout.submission_date,
+      new_tab_content_ping_rest_of_world_rollout.branch,
+      new_tab_content_ping_rest_of_world_rollout.point
+    ]
+    pivots: [
+      new_tab_content_ping_rest_of_world_rollout.branch
+    ]
+    filters:
+      new_tab_content_ping_rest_of_world_rollout.metric: 'active_hours'
       new_tab_content_ping_rest_of_world_rollout.statistic: mean
     row: 30
     col: 12

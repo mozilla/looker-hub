@@ -41,6 +41,24 @@ view: request_stats {
 "
   }
 
+  dimension: metrics__string__ad_client_dma_code {
+    label: "Ad Client: Dma Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_client_dma_code ;;
+    type: string
+    group_label: "Ad Client"
+    group_item_label: "Dma Code"
+
+    link: {
+      label: "Glean Dictionary reference for Ad Client: Dma Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_client_dma_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Designated Marketing Area code (US only) associated with the client when the ad was requested. DMAs are a set of 210 city or metro-level US regions pre-defined by Nielsen. DMAs are provided to MARS via MaxMind IP geolocation lookup. May be null.
+"
+  }
+
   dimension: metrics__string__ad_client_form_factor {
     label: "Ad Client: Form Factor"
     hidden: no

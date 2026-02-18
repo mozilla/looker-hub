@@ -8,6 +8,7 @@ view: metric_definitions_firefox_desktop_baseline_active_users_view {
   derived_table: {
     sql: SELECT
                 COUNTIF(is_dau) AS client_level_daily_active_users_v2_glean,
+COALESCE(MIN(days_since_desktop_active), 30) < 3 AS active_in_last_3_days,
 
                 looker_base_fields_app_name,
 looker_base_fields_app_version,
@@ -215,6 +216,14 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.client_level_daily_active_users_v2_glean ;;
   }
 
+  dimension: active_in_last_3_days {
+    group_label: "Metrics"
+    label: "3 Days Retention"
+    description: "Records whether a client submitted any pings (i.e. used Firefox) on any of the last 3 days."
+    type: number
+    sql: ${TABLE}.active_in_last_3_days ;;
+  }
+
   dimension: app_name {
     sql: ${TABLE}.looker_base_fields_app_name ;;
     type: string
@@ -323,7 +332,7 @@ looker_base_fields_sample_id,
   }
 
   set: metrics {
-    fields: [client_level_daily_active_users_v2_glean]
+    fields: [client_level_daily_active_users_v2_glean, active_in_last_3_days]
   }
 
   parameter: aggregate_metrics_by {

@@ -9515,6 +9515,24 @@ See `nsIXULRuntime.maxWebProcessCount`
 "
   }
 
+  dimension: metrics__boolean__extensions_allow_execute_script_in_moz_extension {
+    label: "Extensions: Allow Execute Script In Moz Extension"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extensions_allow_execute_script_in_moz_extension ;;
+    type: yesno
+    group_label: "Extensions"
+    group_item_label: "Allow Execute Script In Moz Extension"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions: Allow Execute Script In Moz Extension"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_allow_execute_script_in_moz_extension"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Corresponds to the value of `extensions.webextensions.allow_executeScript_in_moz_extension` pref.
+"
+  }
+
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
     label: "Extensions Apis Dnr: Evaluate Rules Count Max"
     hidden: no
@@ -11298,6 +11316,74 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_geoclue_error_code {
+    label: "Geolocation: Geoclue Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geoclue_error_code ;;
+    group_label: "Geolocation"
+    group_item_label: "Geoclue Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geoclue Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geolocation_geoclue_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the error code when Linux GeoClue geolocation fails. The GeoClue DBUS error domain is G_DBUS_ERROR and can usually be used to get a human readable error for these values.  Records up to 16 codes. Note that errors G_DBUS_ERROR_LIMITS_EXCEEDED (8), G_DBUS_ERROR_ACCESS_DENIED(9), and G_DBUS_ERROR_AUTH_FAILED (10) are considered by Firefox to mean that permission is not granted, as opposed to an internal error.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_geolocation_cache_hit {
+    label: "Geolocation: Geolocation Cache Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geolocation_cache_hit ;;
+    group_label: "Geolocation"
+    group_item_label: "Geolocation Cache Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geolocation Cache Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geolocation_geolocation_cache_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times was a geolocation request serviced by the given cache.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_geolocation_service {
+    label: "Geolocation: Geolocation Service"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geolocation_service ;;
+    group_label: "Geolocation"
+    group_item_label: "Geolocation Service"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geolocation Service"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geolocation_geolocation_service"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many geolocation requests were issued to the system provider, the network wifi-lookup provider, the network ip-lookup provider, and the Linux GeoClue service?  Wifi and IP currently use the same provider.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_linux_portal_error {
+    label: "Geolocation: Linux Portal Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_linux_portal_error ;;
+    group_label: "Geolocation"
+    group_item_label: "Linux Portal Error"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Linux Portal Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geolocation_linux_portal_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the reason for failures in the PortalLocationProvider.
+"
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     label: "Geolocation: Linux Provider"
     hidden: no
@@ -11313,6 +11399,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Which system provider are we using on Linux
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_macos_error_code {
+    label: "Geolocation: Macos Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_macos_error_code ;;
+    group_label: "Geolocation"
+    group_item_label: "Macos Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Macos Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geolocation_macos_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the error code when MacOS CoreLocation geolocation fails. The CoreLocation error domain is kCLErrorDomain and can usually be used to get a human readable error for these values.  Records up to 16 codes.
 "
   }
 
@@ -15291,6 +15394,60 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__numerator {
+    label: "Javascript Self Hosted Cache: Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.numerator ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of self-hosted cache accesses that found an existing entry.
+"
+  }
+
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__denominator {
+    label: "Javascript Self Hosted Cache: Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.denominator ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of self-hosted cache accesses that found an existing entry.
+"
+  }
+
+  dimension: metrics__counter__javascript_self_hosted_cache_total {
+    label: "Javascript Self Hosted Cache: Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.javascript_self_hosted_cache_total ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many self-hosted cache accesses are performed.
+"
+  }
+
   dimension: metrics__quantity__launcher_process_state {
     label: "Launcher Process: State"
     hidden: no
@@ -15538,7 +15695,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__localdomstorage_shutdown_database__sum {
     label: "Localdomstorage: Shutdown Database Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.localdomstorage_shutdown_database.sum ;;
     type: number
     group_label: "Localdomstorage"
@@ -17286,7 +17443,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__network_disk_cache_shutdown_v2__sum {
     label: "Network: Disk Cache Shutdown V2 Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.network_disk_cache_shutdown_v2.sum ;;
     type: number
     group_label: "Network"
@@ -23565,6 +23722,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__string__preferences_prefs_file_first_parse_error {
+    label: "Preferences: Prefs File First Parse Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_prefs_file_first_parse_error ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Prefs File First Parse Error"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences: Prefs File First Parse Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_prefs_file_first_parse_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The first error message encountered when parsing a prefs file.
+"
+  }
+
   dimension: metrics__boolean__preferences_prefs_file_was_invalid {
     label: "Preferences: Prefs File Was Invalid"
     hidden: no
@@ -27649,6 +27824,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__counter__update_blocked {
+    label: "Update: Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_blocked ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Update: Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of downloads blocked by the WAF.
+"
+  }
+
   dimension: metrics__labeled_counter__update_can_use_bits_external {
     label: "Update: Can Use Bits External"
     hidden: yes
@@ -29114,6 +29307,40 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {
+    label: "Urlclassifier: Global Cache Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_hit ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Global Cache Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Global Cache Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_global_cache_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of top-level navigations that hit the Global Cache table. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_global_cache_miss {
+    label: "Urlclassifier: Global Cache Miss"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_miss ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Global Cache Miss"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Global Cache Miss"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_global_cache_miss"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of top-level navigations that miss the Global Cache table. Keyed by ETP mode and window type.
+"
+  }
+
   dimension: metrics__labeled_counter__urlclassifier_lookup_hit {
     label: "Urlclassifier: Lookup Hit"
     hidden: yes
@@ -29164,6 +29391,57 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Time spent per dbservice lookup (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_LOOKUP_TIME_2.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_request_count {
+    label: "Urlclassifier: Realtime Simulation Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_request_count ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_realtime_simulation_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of simulated real-time Safe Browsing lookup requests. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_request_size {
+    label: "Urlclassifier: Realtime Simulation Request Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_request_size ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Request Size"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Request Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_realtime_simulation_request_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total estimated data usage of simulated real-time Safe Browsing lookup requests in bytes. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_response_size {
+    label: "Urlclassifier: Realtime Simulation Response Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_response_size ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Response Size"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Response Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_realtime_simulation_response_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total estimated data usage of simulated real-time Safe Browsing lookup responses in bytes. Keyed by ETP mode and window type.
 "
   }
 
@@ -29599,6 +29877,42 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "The category of the origin that calls new Notification/showNotification().
+"
+  }
+
+  dimension: metrics__rate__web_notification_show_safe_browsing_block__numerator {
+    label: "Web Notification: Show Safe Browsing Block Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.numerator ;;
+    type: number
+    group_label: "Web Notification"
+    group_item_label: "Show Safe Browsing Block Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification: Show Safe Browsing Block Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_notification_show_safe_browsing_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of notification show attempts that are blocked because the origin is on the Safe Browsing blocklist (phishing, malware, etc.). The numerator is the number of blocked attempts, and the denominator is the total number of show attempts that passed the initial permission check.
+"
+  }
+
+  dimension: metrics__rate__web_notification_show_safe_browsing_block__denominator {
+    label: "Web Notification: Show Safe Browsing Block Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.denominator ;;
+    type: number
+    group_label: "Web Notification"
+    group_item_label: "Show Safe Browsing Block Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification: Show Safe Browsing Block Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/web_notification_show_safe_browsing_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of notification show attempts that are blocked because the origin is on the Safe Browsing blocklist (phishing, malware, etc.). The numerator is the number of blocked attempts, and the denominator is the total number of show attempts that passed the initial permission check.
 "
   }
 
@@ -32108,7 +32422,7 @@ startup, as part of the initialization sequence.
 
   dimension: metrics__counter__fxa_client_operation_count {
     label: "Fxa Client: Operation Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.fxa_client_operation_count ;;
     type: number
     group_label: "Fxa Client"
@@ -32233,7 +32547,7 @@ startup, as part of the initialization sequence.
 
   dimension: metrics__counter__logins_store_read_query_count {
     label: "Logins Store: Read Query Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_read_query_count ;;
     type: number
     group_label: "Logins Store"
@@ -32339,7 +32653,7 @@ startup, as part of the initialization sequence.
 
   dimension: metrics__counter__logins_store_write_query_count {
     label: "Logins Store: Write Query Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_write_query_count ;;
     type: number
     group_label: "Logins Store"
@@ -32861,7 +33175,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
   dimension: metrics__counter__places_manager_read_query_count {
     label: "Places Manager: Read Query Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.places_manager_read_query_count ;;
     type: number
     group_label: "Places Manager"
@@ -33017,7 +33331,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
   dimension: metrics__counter__places_manager_write_query_count {
     label: "Places Manager: Write Query Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.places_manager_write_query_count ;;
     type: number
     group_label: "Places Manager"
@@ -37023,6 +37337,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: javascript_self_hosted_cache_total {
+    type: sum
+    sql: ${metrics__counter__javascript_self_hosted_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: javascript_self_hosted_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__javascript_self_hosted_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: localstorage_request_recv_cancel_counter {
     type: sum
     sql: ${metrics__counter__localstorage_request_recv_cancel_counter} ;;
@@ -38244,6 +38583,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Translations Requests Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_blocked {
+    type: sum
+    sql: ${metrics__counter__update_blocked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_blocked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_blocked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/update_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -44699,6 +45063,47 @@ view: metrics__metrics__labeled_counter__fxa_client_error_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_fallback {
+  label: "Geolocation: Fallback"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: no
   }
 
@@ -44715,8 +45120,172 @@ view: metrics__metrics__labeled_counter__fxa_client_error_count {
   }
 }
 
-view: metrics__metrics__labeled_counter__geolocation_fallback {
-  label: "Geolocation: Fallback"
+view: metrics__metrics__labeled_counter__geolocation_geoclue_error_code {
+  label: "Geolocation: Geoclue Error Code"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit {
+  label: "Geolocation: Geolocation Cache Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_geolocation_service {
+  label: "Geolocation: Geolocation Service"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_linux_portal_error {
+  label: "Geolocation: Linux Portal Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_macos_error_code {
+  label: "Geolocation: Macos Error Code"
 
   dimension: document_id {
     type: string
@@ -46872,19 +47441,19 @@ view: metrics__metrics__labeled_counter__localdomstorage_preload_pending_on_firs
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -46913,19 +47482,19 @@ view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -46995,19 +47564,19 @@ view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -51792,19 +52361,19 @@ view: metrics__metrics__labeled_counter__places_manager_read_query_error_count {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -51833,19 +52402,19 @@ view: metrics__metrics__labeled_counter__places_manager_write_query_error_count 
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -54309,6 +54878,88 @@ view: metrics__metrics__labeled_counter__update_service_installed_subsequent {
   }
 }
 
+view: metrics__metrics__labeled_counter__urlclassifier_global_cache_hit {
+  label: "Urlclassifier: Global Cache Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_global_cache_miss {
+  label: "Urlclassifier: Global Cache Miss"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__urlclassifier_lookup_hit {
   label: "Urlclassifier: Lookup Hit"
 
@@ -54388,6 +55039,129 @@ view: metrics__metrics__labeled_counter__urlclassifier_lookup_miss {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_count {
+  label: "Urlclassifier: Realtime Simulation Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_size {
+  label: "Urlclassifier: Realtime Simulation Request Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_response_size {
+  label: "Urlclassifier: Realtime Simulation Response Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -60522,6 +61296,33 @@ view: metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idl
 }
 
 view: metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idle_result_by_addonid__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__geolocation_windows_failure {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__geolocation_windows_failure__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

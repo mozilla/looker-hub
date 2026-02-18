@@ -7,7 +7,7 @@
 view: crash {
   dimension: metrics__string__crash_app_build {
     label: "Crash: App Build"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_app_build ;;
     type: string
     group_label: "Crash"
@@ -25,7 +25,7 @@ view: crash {
 
   dimension: metrics__string__crash_app_channel {
     label: "Crash: App Channel"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_app_channel ;;
     type: string
     group_label: "Crash"
@@ -43,7 +43,7 @@ view: crash {
 
   dimension: metrics__string__crash_app_display_version {
     label: "Crash: App Display Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_app_display_version ;;
     type: string
     group_label: "Crash"
@@ -61,7 +61,7 @@ view: crash {
 
   dimension: metrics__string__crash_background_task_name {
     label: "Crash: Background Task Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_background_task_name ;;
     type: string
     group_label: "Crash"
@@ -79,7 +79,7 @@ view: crash {
 
   dimension: metrics__quantity__crash_event_loop_nesting_level {
     label: "Crash: Event Loop Nesting Level"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number
     group_label: "Crash"
@@ -97,7 +97,7 @@ view: crash {
 
   dimension: metrics__string__crash_font_name {
     label: "Crash: Font Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_font_name ;;
     type: string
     group_label: "Crash"
@@ -115,7 +115,7 @@ view: crash {
 
   dimension: metrics__quantity__crash_gpu_process_launch {
     label: "Crash: GPU Process Launch"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
     type: number
     group_label: "Crash"
@@ -133,7 +133,7 @@ view: crash {
 
   dimension: metrics__string__crash_ipc_channel_error {
     label: "Crash: Ipc Channel Error"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
     type: string
     group_label: "Crash"
@@ -151,7 +151,7 @@ view: crash {
 
   dimension: metrics__boolean__crash_is_garbage_collecting {
     label: "Crash: Is Garbage Collecting"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
     type: yesno
     group_label: "Crash"
@@ -169,7 +169,7 @@ view: crash {
 
   dimension: metrics__string__crash_main_thread_runnable_name {
     label: "Crash: Main Thread Runnable Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
     type: string
     group_label: "Crash"
@@ -187,7 +187,7 @@ view: crash {
 
   dimension: metrics__string__crash_minidump_sha256_hash {
     label: "Crash: Minidump Sha256 Hash"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
     type: string
     group_label: "Crash"
@@ -205,7 +205,7 @@ view: crash {
 
   dimension: metrics__string__crash_moz_crash_reason {
     label: "Crash: Moz Crash Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
     type: string
     group_label: "Crash"
@@ -223,7 +223,7 @@ view: crash {
 
   dimension: metrics__string__crash_process_type {
     label: "Crash: Process Type"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_process_type ;;
     type: string
     group_label: "Crash"
@@ -241,7 +241,7 @@ view: crash {
 
   dimension: metrics__string__crash_profiler_child_shutdown_phase {
     label: "Crash: Profiler Child Shutdown Phase"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
     type: string
     group_label: "Crash"
@@ -259,7 +259,7 @@ view: crash {
 
   dimension: metrics__string__crash_remote_type {
     label: "Crash: Remote Type"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_remote_type ;;
     type: string
     group_label: "Crash"
@@ -277,7 +277,7 @@ view: crash {
 
   dimension: metrics__string__crash_shutdown_progress {
     label: "Crash: Shutdown Progress"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
     type: string
     group_label: "Crash"
@@ -295,7 +295,7 @@ view: crash {
 
   dimension: metrics__boolean__crash_startup {
     label: "Crash: Startup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.crash_startup ;;
     type: yesno
     group_label: "Crash"
@@ -331,7 +331,7 @@ view: crash {
 
   dimension: metrics__boolean__crash_windows_error_reporting {
     label: "Crash Windows: Error Reporting"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.crash_windows_error_reporting ;;
     type: yesno
     group_label: "Crash Windows"
@@ -349,7 +349,7 @@ view: crash {
 
   dimension: metrics__string__crash_windows_file_dialog_error_code {
     label: "Crash Windows: File Dialog Error Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_windows_file_dialog_error_code ;;
     type: string
     group_label: "Crash Windows"
@@ -367,7 +367,7 @@ view: crash {
 
   dimension: metrics__boolean__dll_blocklist_init_failed {
     label: "Dll Blocklist: Init Failed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.dll_blocklist_init_failed ;;
     type: yesno
     group_label: "Dll Blocklist"
@@ -385,7 +385,7 @@ view: crash {
 
   dimension: metrics__boolean__dll_blocklist_user32_loaded_before {
     label: "Dll Blocklist: User32 Loaded Before"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.dll_blocklist_user32_loaded_before ;;
     type: yesno
     group_label: "Dll Blocklist"
@@ -403,7 +403,7 @@ view: crash {
 
   dimension: metrics__boolean__environment_headless_mode {
     label: "Environment: Headless Mode"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
     type: yesno
     group_label: "Environment"
@@ -421,7 +421,7 @@ view: crash {
 
   dimension: metrics__timespan__environment_uptime__value {
     label: "Environment: Uptime Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
     type: number
     group_label: "Environment"
@@ -439,7 +439,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_available_commit {
     label: "Memory: Available Commit"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
     type: number
     group_label: "Memory"
@@ -457,7 +457,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_available_physical {
     label: "Memory: Available Physical"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
     type: number
     group_label: "Memory"
@@ -475,7 +475,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_available_swap {
     label: "Memory: Available Swap"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
     type: number
     group_label: "Memory"
@@ -493,7 +493,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_available_virtual {
     label: "Memory: Available Virtual"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
     type: number
     group_label: "Memory"
@@ -511,7 +511,7 @@ view: crash {
 
   dimension: metrics__string__memory_js_large_allocation_failure {
     label: "Memory: Js Large Allocation Failure"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
     type: string
     group_label: "Memory"
@@ -529,7 +529,7 @@ view: crash {
 
   dimension: metrics__string__memory_js_out_of_memory {
     label: "Memory: Js Out Of Memory"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
     type: string
     group_label: "Memory"
@@ -547,7 +547,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_low_physical {
     label: "Memory: Low Physical"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
     type: number
     group_label: "Memory"
@@ -565,7 +565,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_oom_allocation_size {
     label: "Memory: Oom Allocation Size"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
     type: number
     group_label: "Memory"
@@ -583,7 +583,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_purgeable_physical {
     label: "Memory: Purgeable Physical"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
     type: number
     group_label: "Memory"
@@ -601,7 +601,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_system_use_percentage {
     label: "Memory: System Use Percentage"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
     type: number
     group_label: "Memory"
@@ -619,7 +619,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_texture {
     label: "Memory: Texture"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_texture ;;
     type: number
     group_label: "Memory"
@@ -637,7 +637,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_total_page_file {
     label: "Memory: Total Page File"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
     type: number
     group_label: "Memory"
@@ -655,7 +655,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_total_physical {
     label: "Memory: Total Physical"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
     type: number
     group_label: "Memory"
@@ -673,7 +673,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_total_virtual {
     label: "Memory: Total Virtual"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
     type: number
     group_label: "Memory"
@@ -691,7 +691,7 @@ view: crash {
 
   dimension: metrics__string__windows_package_family_name {
     label: "Windows: Package Family Name"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.windows_package_family_name ;;
     type: string
     group_label: "Windows"
@@ -705,6 +705,210 @@ view: crash {
 
     description: "The Package Family Name of Firefox, if installed through an MSIX package.
 "
+  }
+
+  dimension: metrics__string__crash_application_build_id {
+    label: "Crash: Application Build ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_application_build_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Application Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Application Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_application_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Android application's build ID."
+  }
+
+  dimension: metrics__string__crash_build_id {
+    label: "Crash: Build ID"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.crash_build_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application build ID, the format is YYYYMMDDHHMMSS."
+  }
+
+  dimension: metrics__string__crash_crash_type {
+    label: "Crash: Crash Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_crash_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Crash Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Crash Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_crash_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of crash that occurred (Android-only)."
+  }
+
+  dimension: metrics__boolean__crash_dom_fission_enabled {
+    label: "Crash: DOM Fission Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_dom_fission_enabled ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "DOM Fission Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: DOM Fission Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_dom_fission_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 when DOM fission is enabled, and subframes are potentially loaded in a separate process."
+  }
+
+  dimension: metrics__string__crash_hang {
+    label: "Crash: Hang"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_hang ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Hang"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Hang"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_hang"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set if the crash was the result of a hang, with a value which describes the type of hang (e.g. \"ui\" or \"shutdown\")."
+  }
+
+  dimension: metrics__timespan__crash_last_interaction_duration__value {
+    label: "Crash: Last Interaction Duration Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Last Interaction Duration Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Last Interaction Duration Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_last_interaction_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long the user had been inactive in seconds if the user was inactive at crash.  The value is not set if the user state was active."
+  }
+
+  dimension: metrics__string__crash_linux_memory_psi {
+    label: "Crash: Linux Memory Psi"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_linux_memory_psi ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Linux Memory Psi"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Linux Memory Psi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_linux_memory_psi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory PSI (Pressure Stall Information) values from /proc/pressure/memory as comma-separated list: some_avg10,some_avg60,some_avg300,some_total,full_avg10,full_avg60,full_avg300,full_total"
+  }
+
+  dimension: metrics__string__crash_minidump_sha_256_hash {
+    label: "Crash: Minidump Sha 256 Hash"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.crash_minidump_sha_256_hash ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Minidump Sha 256 Hash"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Minidump Sha 256 Hash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_minidump_sha_256_hash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha256 hash of the minidump file, if available."
+  }
+
+  dimension: metrics__string__crash_product_id {
+    label: "Crash: Product ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_product_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Product ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Product ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_product_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application UUID (e.g. ec8030f7-c20a-464f-9b0e-13a3a9e97384)."
+  }
+
+  dimension: metrics__string__crash_product_name {
+    label: "Crash: Product Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_product_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Product Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Product Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_product_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application name (e.g. Firefox)."
+  }
+
+  dimension: metrics__string__crash_shutdown_reason {
+    label: "Crash: Shutdown Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_shutdown_reason ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Shutdown Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Shutdown Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_shutdown_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "One out of \"Unknown\", \"AppClose\", \"AppRestart\", \"OSForceClose\", \"OSSessionEnd\" or \"OSShutdown\"."
+  }
+
+  dimension: metrics__timespan__crash_time_since_last_crash__value {
+    label: "Crash: Time Since Last Crash Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_time_since_last_crash.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Time Since Last Crash Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Time Since Last Crash Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_time_since_last_crash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in seconds since the last crash occurred."
   }
 
   dimension: metrics__string__glean_client_annotation_experimentation_id {

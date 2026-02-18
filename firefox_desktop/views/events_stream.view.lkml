@@ -563,6 +563,14 @@ view: events_stream {
     group_item_label: "Had Errors"
   }
 
+  dimension: extras__boolean__has_ai_summary {
+    sql: ${TABLE}.extras.boolean.has_ai_summary ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Ai Summary"
+  }
+
   dimension: extras__boolean__has_been_saved {
     sql: ${TABLE}.extras.boolean.has_been_saved ;;
     type: yesno
@@ -609,6 +617,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Has Empty Password"
+  }
+
+  dimension: extras__boolean__has_ftp_origin {
+    sql: ${TABLE}.extras.boolean.has_ftp_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Ftp Origin"
   }
 
   dimension: extras__boolean__has_non_http_origin {
@@ -899,6 +915,14 @@ view: events_stream {
     group_item_label: "Is Temporarily Shown"
   }
 
+  dimension: extras__boolean__is_top_level_frame {
+    sql: ${TABLE}.extras.boolean.is_top_level_frame ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Top Level Frame"
+  }
+
   dimension: extras__boolean__is_valid_section {
     sql: ${TABLE}.extras.boolean.is_valid_section ;;
     type: yesno
@@ -979,6 +1003,14 @@ view: events_stream {
     group_item_label: "Poisoned"
   }
 
+  dimension: extras__boolean__psi_available {
+    sql: ${TABLE}.extras.boolean.psi_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Psi Available"
+  }
+
   dimension: extras__boolean__reader_mode {
     sql: ${TABLE}.extras.boolean.reader_mode ;;
     type: yesno
@@ -993,6 +1025,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Reset Disabled"
+  }
+
+  dimension: extras__boolean__restricted {
+    sql: ${TABLE}.extras.boolean.restricted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Restricted"
   }
 
   dimension: extras__boolean__saved {
@@ -1785,6 +1825,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Note Age Hours"
+  }
+
+  dimension: extras__quantity__note_length {
+    sql: ${TABLE}.extras.quantity.note_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Note Length"
   }
 
   dimension: extras__quantity__num_msections_audio_recvonly {
@@ -2729,6 +2777,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Branches"
+  }
+
+  dimension: extras__string__breach_name {
+    sql: ${TABLE}.extras.string.breach_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Breach Name"
   }
 
   dimension: extras__string__build_id {
@@ -5609,6 +5665,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Time"
+  }
+
+  dimension: extras__string__time_created {
+    sql: ${TABLE}.extras.string.time_created ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Time Created"
+  }
+
+  dimension: extras__string__time_last_used {
+    sql: ${TABLE}.extras.string.time_last_used ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Time Last Used"
   }
 
   dimension: extras__string__time_open {

@@ -953,6 +953,40 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_smartbar {
+    label: "Browser Engagement Navigation: Smartbar"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartbar ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Smartbar"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Smartbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_navigation_smartbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count URI loads triggered in a subsession from the smartbar, broken down by the originating action.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant {
+    label: "Browser Engagement Navigation: Smartwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartwindow_assistant ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Smartwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Smartwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_navigation_smartwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count URI loads triggered in a subsession from the AI window assistant search handoff button.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
     label: "Browser Engagement Navigation: Urlbar"
     hidden: yes
@@ -1354,6 +1388,25 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__boolean__browser_global_ai_control_is_blocking {
+    label: "Browser: Global Ai Control Is Blocking"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.browser_global_ai_control_is_blocking ;;
+    type: yesno
+    group_label: "Browser"
+    group_item_label: "Global Ai Control Is Blocking"
+
+    link: {
+      label: "Glean Dictionary reference for Browser: Global Ai Control Is Blocking"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_global_ai_control_is_blocking"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of the global AI enhancements setting.
+When true, enhancements are blocked.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_is_user_default {
     label: "Browser: Is User Default"
     hidden: yes
@@ -1629,7 +1682,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from about:home. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.about_home.
+    description: "Records clicks of adverts on SERP pages where the search was started from about:home. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.about_home.
 "
   }
 
@@ -1680,7 +1733,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.contextmenu.
+    description: "Records clicks of adverts on SERP pages where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.contextmenu.
 "
   }
 
@@ -1732,6 +1785,40 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records clicks of adverts on SERP pages where the search was started from the search bar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.searchbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_smartbar {
+    label: "Browser Search Adclicks: Smartbar"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_smartbar ;;
+    group_label: "Browser Search Adclicks"
+    group_item_label: "Smartbar"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Adclicks: Smartbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_adclicks_smartbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on SERP pages where the search was started from the smartbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_smartwindow_assistant {
+    label: "Browser Search Adclicks: Smartwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_smartwindow_assistant ;;
+    group_label: "Browser Search Adclicks"
+    group_item_label: "Smartwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Adclicks: Smartwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_adclicks_smartwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on SERP pages where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
 "
   }
 
@@ -1799,7 +1886,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar.
+    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar.
 "
   }
 
@@ -1990,6 +2077,40 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_content_smartbar {
+    label: "Browser Search Content: Smartbar"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_smartbar ;;
+    group_label: "Browser Search Content"
+    group_item_label: "Smartbar"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Content: Smartbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_content_smartbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts for in-content searches where the search was most likely started from the smartbar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_smartwindow_assistant {
+    label: "Browser Search Content: Smartwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_smartwindow_assistant ;;
+    group_label: "Browser Search Content"
+    group_item_label: "Smartwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Content: Smartwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_content_smartwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts for in-content searches where the search was most likely started from the AI window assistant. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_content_system {
     label: "Browser Search Content: System"
     hidden: yes
@@ -2173,7 +2294,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content.
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
 "
   }
 
@@ -2245,6 +2366,40 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_withads_smartbar {
+    label: "Browser Search Withads: Smartbar"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_smartbar ;;
+    group_label: "Browser Search Withads"
+    group_item_label: "Smartbar"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Withads: Smartbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_withads_smartbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the smartbar. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_smartwindow_assistant {
+    label: "Browser Search Withads: Smartwindow Assistant"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_smartwindow_assistant ;;
+    group_label: "Browser Search Withads"
+    group_item_label: "Smartwindow Assistant"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Withads: Smartwindow Assistant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_search_withads_smartwindow_assistant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_withads_system {
     label: "Browser Search Withads: System"
     hidden: yes
@@ -2258,7 +2413,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from the system, e.g. command line. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.system.
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the system, e.g. command line. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.system.
 "
   }
 
@@ -2292,7 +2447,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from a place not categorized by the other scalars. The key format is ‘<provider>:<tagged|organic>’ See https://firefox- source-docs.mozilla.org/browser/search/telemetry.html#browser- search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.unknown.
+    description: "Records counts of SERP pages with adverts displayed where the search was started from a place not categorized by the other scalars. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.unknown.
 "
   }
 
@@ -2377,7 +2532,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records counts of SERP pages with adverts displayed where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source- docs.mozilla.org/browser/search/telemetry.html#browser-search- content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.webextension.
+    description: "Records counts of SERP pages with adverts displayed where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.webextension.
 "
   }
 
@@ -2800,7 +2955,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records when widgets are added, removed or moved in the UI. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.customized_widgets.
+    description: "Records when widgets are added, removed or moved in the UI. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.customized_widgets.
 "
   }
 
@@ -2852,7 +3007,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the app menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.app_menu.
+    description: "Records a count of interactions with items in the app menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.app_menu.
 "
   }
 
@@ -2869,7 +3024,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the bookmarks bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.bookmarks_bar.
+    description: "Records a count of interactions with items in the bookmarks bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.bookmarks_bar.
 "
   }
 
@@ -2886,7 +3041,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the content context menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.content_context.
+    description: "Records a count of interactions with items in the content context menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.content_context.
 "
   }
 
@@ -2920,7 +3075,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the menu bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.menu_bar.
+    description: "Records a count of interactions with items in the menu bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.menu_bar.
 "
   }
 
@@ -2937,7 +3092,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the nav bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.nav_bar.
+    description: "Records a count of interactions with items in the nav bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.nav_bar.
 "
   }
 
@@ -2954,7 +3109,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the overflow menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.overflow_menu.
+    description: "Records a count of interactions with items in the overflow menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.overflow_menu.
 "
   }
 
@@ -2971,7 +3126,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with page action items in the panel. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pageaction_panel.
+    description: "Records a count of interactions with page action items in the panel. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pageaction_panel.
 "
   }
 
@@ -2988,7 +3143,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with page action items in the url bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pageaction_urlbar.
+    description: "Records a count of interactions with page action items in the url bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pageaction_urlbar.
 "
   }
 
@@ -3005,7 +3160,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the pinned area of the overflow menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pinned_overflow_menu.
+    description: "Records a count of interactions with items in the pinned area of the overflow menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pinned_overflow_menu.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai {
+    label: "Browser UI Interaction: Preferences Pane Ai"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_ai ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Preferences Pane Ai"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Preferences Pane Ai"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_preferences_pane_ai"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the items interacted with in the AI Controls section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
 "
   }
 
@@ -3022,7 +3194,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the Containers section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneContainers.
+    description: "Records the items interacted with in the Containers section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneContainers.
 "
   }
 
@@ -3039,7 +3211,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the Experimental section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneExperimental.
+    description: "Records the items interacted with in the Experimental section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneExperimental.
 "
   }
 
@@ -3056,7 +3228,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the General section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneGeneral.
+    description: "Records the items interacted with in the General section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneGeneral.
 "
   }
 
@@ -3073,7 +3245,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the Home section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneHome.
+    description: "Records the items interacted with in the Home section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneHome.
 "
   }
 
@@ -3090,7 +3262,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the More From Mozilla section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneMoreFromMozilla.
+    description: "Records the items interacted with in the More From Mozilla section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneMoreFromMozilla.
 "
   }
 
@@ -3107,7 +3279,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the Privacy section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_panePrivacy.
+    description: "Records the items interacted with in the Privacy section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_panePrivacy.
 "
   }
 
@@ -3124,7 +3296,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the Search section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSearch.
+    description: "Records the items interacted with in the Search section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSearch.
 "
   }
 
@@ -3141,7 +3313,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the Search results section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSearchResults.
+    description: "Records the items interacted with in the Search results section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSearchResults.
 "
   }
 
@@ -3158,7 +3330,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in the Sync section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSync.
+    description: "Records the items interacted with in the Sync section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSync.
 "
   }
 
@@ -3175,7 +3347,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the items interacted with in any other section of preferences. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneUnknown.
+    description: "Records the items interacted with in any other section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneUnknown.
 "
   }
 
@@ -3209,7 +3381,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the tab bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_bar.
+    description: "Records a count of interactions with items in the tab bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_bar.
 "
   }
 
@@ -3226,7 +3398,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the tab context menu. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_context.
+    description: "Records a count of interactions with items in the tab context menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_context.
 "
   }
 
@@ -3243,7 +3415,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count for each entrypoint (the container of the trigger node) when an item from the tabs context menu is selected. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_context_entrypoint.
+    description: "Records a count for each entrypoint (the container of the trigger node) when an item from the tabs context menu is selected. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_context_entrypoint.
 "
   }
 
@@ -3278,7 +3450,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the Unified Extensions area. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.unified_extensions_area.
+    description: "Records a count of interactions with items in the Unified Extensions area. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.unified_extensions_area.
 "
   }
 
@@ -3295,7 +3467,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records a count of interactions with items in the vertical tab bar. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.vertical_tabs_container.
+    description: "Records a count of interactions with items in the vertical tab bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.vertical_tabs_container.
 "
   }
 
@@ -3313,7 +3485,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The widgets in the toolbars. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.toolbar_widgets.
+    description: "The widgets in the toolbars. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.toolbar_widgets.
 "
   }
 
@@ -7966,6 +8138,23 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__splitview_uri_count {
+    label: "Splitview: URI Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.splitview_uri_count ;;
+    group_label: "Splitview"
+    group_item_label: "URI Count"
+
+    link: {
+      label: "Glean Dictionary reference for Splitview: URI Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/splitview_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how many URIs were loaded on each side of the splitview.
+"
+  }
+
   dimension: metrics__boolean__sslkeylogging_enabled {
     label: "Sslkeylogging: Enabled"
     hidden: no
@@ -10301,6 +10490,114 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Counts how many times this result type was picked at a given index. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.picked.weather.
+"
+  }
+
+  dimension: metrics__quantity__urlbar_pref_max_results {
+    label: "Urlbar: Pref Max Results"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
+    type: number
+    group_label: "Urlbar"
+    group_item_label: "Pref Max Results"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Max Results"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_max_results"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum results to show in the Address Bar. Corresponds to the value of the `browser.urlbar.maxRichResults` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_all {
+    label: "Urlbar: Pref Suggest All"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_all ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest All"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether Suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.all` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_online_available {
+    label: "Urlbar: Pref Suggest Online Available"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_available ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest Online Available"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest Online Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_online_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether online Suggest is available to the user. Corresponds to the Nimbus variable `quickSuggestOnlineAvailable` and its fallback pref `browser.urlbar.quicksuggest.online.available`. NOTE: \"Online Suggest\" in this context means the new version of online Suggest introduced in 146 with Terms of Use and OHTTP.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_online_enabled {
+    label: "Urlbar: Pref Suggest Online Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_enabled ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest Online Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest Online Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_online_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This pref is true for all users by default! You probably want to use this in conjunction with pref_suggest_online_available and/or restrict your analysis to user populations where you know online Suggest is available. Corresponds to `browser.urlbar.quicksuggest.online.enabled`. NOTE: \"Online Suggest\" in this context means the new version of online Suggest introduced in 146 with Terms of Use and OHTTP.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_sponsored {
+    label: "Urlbar: Pref Suggest Sponsored"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_sponsored ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest Sponsored"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest Sponsored"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_sponsored"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.sponsored` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_topsites {
+    label: "Urlbar: Pref Suggest Topsites"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_topsites ;;
+    type: yesno
+    group_label: "Urlbar"
+    group_item_label: "Pref Suggest Topsites"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar: Pref Suggest Topsites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_pref_suggest_topsites"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether topsite results are enabled in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.topsites` pref.
 "
   }
 
@@ -16087,6 +16384,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__dns_trr_http3_0rtt_state {
+    label: "DNS: Trr Http3 0Rtt State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dns_trr_http3_0rtt_state ;;
+    group_label: "DNS"
+    group_item_label: "Trr Http3 0Rtt State"
+
+    link: {
+      label: "Glean Dictionary reference for DNS: Trr Http3 0Rtt State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dns_trr_http3_0rtt_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Outcome of 0-RTT usage for TRR HTTP/3 connections: - \"not_used\": 0RTT was not used - \"succeeded\": 0RTT was used and succeeded - \"rejected\": 0RTT was used but rejected by the server - \"conn_error\": 0RTT was used but connection error occurred - \"conn_closed_by_necko\": 0RTT was used but connection was closed by necko
+"
+  }
+
   dimension: metrics__timing_distribution__dns_trr_processing_time__sum {
     label: "DNS: Trr Processing Time Sum"
     hidden: no
@@ -16690,6 +17004,24 @@ See `nsIXULRuntime.browserTabsRemoteAutostart`
 
     description: "Maximum number of processes that will be launched for regular web content.
 See `nsIXULRuntime.maxWebProcessCount`
+"
+  }
+
+  dimension: metrics__boolean__extensions_allow_execute_script_in_moz_extension {
+    label: "Extensions: Allow Execute Script In Moz Extension"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extensions_allow_execute_script_in_moz_extension ;;
+    type: yesno
+    group_label: "Extensions"
+    group_item_label: "Allow Execute Script In Moz Extension"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions: Allow Execute Script In Moz Extension"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_allow_execute_script_in_moz_extension"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Corresponds to the value of `extensions.webextensions.allow_executeScript_in_moz_extension` pref.
 "
   }
 
@@ -18277,6 +18609,74 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__geolocation_geoclue_error_code {
+    label: "Geolocation: Geoclue Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geoclue_error_code ;;
+    group_label: "Geolocation"
+    group_item_label: "Geoclue Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geoclue Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_geoclue_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the error code when Linux GeoClue geolocation fails. The GeoClue DBUS error domain is G_DBUS_ERROR and can usually be used to get a human readable error for these values.  Records up to 16 codes. Note that errors G_DBUS_ERROR_LIMITS_EXCEEDED (8), G_DBUS_ERROR_ACCESS_DENIED(9), and G_DBUS_ERROR_AUTH_FAILED (10) are considered by Firefox to mean that permission is not granted, as opposed to an internal error.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_geolocation_cache_hit {
+    label: "Geolocation: Geolocation Cache Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geolocation_cache_hit ;;
+    group_label: "Geolocation"
+    group_item_label: "Geolocation Cache Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geolocation Cache Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_geolocation_cache_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times was a geolocation request serviced by the given cache.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_geolocation_service {
+    label: "Geolocation: Geolocation Service"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_geolocation_service ;;
+    group_label: "Geolocation"
+    group_item_label: "Geolocation Service"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Geolocation Service"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_geolocation_service"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many geolocation requests were issued to the system provider, the network wifi-lookup provider, the network ip-lookup provider, and the Linux GeoClue service?  Wifi and IP currently use the same provider.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_linux_portal_error {
+    label: "Geolocation: Linux Portal Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_linux_portal_error ;;
+    group_label: "Geolocation"
+    group_item_label: "Linux Portal Error"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Linux Portal Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_linux_portal_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the reason for failures in the PortalLocationProvider.
+"
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     label: "Geolocation: Linux Provider"
     hidden: no
@@ -18292,6 +18692,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Which system provider are we using on Linux
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_macos_error_code {
+    label: "Geolocation: Macos Error Code"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_macos_error_code ;;
+    group_label: "Geolocation"
+    group_item_label: "Macos Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Geolocation: Macos Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/geolocation_macos_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the error code when MacOS CoreLocation geolocation fails. The CoreLocation error domain is kCLErrorDomain and can usually be used to get a human readable error for these values.  Records up to 16 codes.
 "
   }
 
@@ -22270,6 +22687,60 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__numerator {
+    label: "Javascript Self Hosted Cache: Hits Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.numerator ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Hits Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Hits Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_self_hosted_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of self-hosted cache accesses that found an existing entry.
+"
+  }
+
+  dimension: metrics__rate__javascript_self_hosted_cache_hits__denominator {
+    label: "Javascript Self Hosted Cache: Hits Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.javascript_self_hosted_cache_hits.denominator ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Hits Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Hits Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_self_hosted_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of self-hosted cache accesses that found an existing entry.
+"
+  }
+
+  dimension: metrics__counter__javascript_self_hosted_cache_total {
+    label: "Javascript Self Hosted Cache: Total"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.javascript_self_hosted_cache_total ;;
+    type: number
+    group_label: "Javascript Self Hosted Cache"
+    group_item_label: "Total"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache: Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many self-hosted cache accesses are performed.
+"
+  }
+
   dimension: metrics__quantity__launcher_process_state {
     label: "Launcher Process: State"
     hidden: no
@@ -22517,7 +22988,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__localdomstorage_shutdown_database__sum {
     label: "Localdomstorage: Shutdown Database Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.localdomstorage_shutdown_database.sum ;;
     type: number
     group_label: "Localdomstorage"
@@ -22745,6 +23216,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_capture_stream_usage {
+    label: "Media: Capture Stream Usage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_capture_stream_usage ;;
+    group_label: "Media"
+    group_item_label: "Capture Stream Usage"
+
+    link: {
+      label: "Glean Dictionary reference for Media: Capture Stream Usage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/media_capture_stream_usage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the usage of MediaStream captured from HTMLMediaElement by different capture methods.
 "
   }
 
@@ -24231,7 +24719,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__network_disk_cache_shutdown_v2__sum {
     label: "Network: Disk Cache Shutdown V2 Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.network_disk_cache_shutdown_v2.sum ;;
     type: number
     group_label: "Network"
@@ -28309,6 +28797,22 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__oskeystore_dummy_storage {
+    label: "Oskeystore: Dummy Storage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.oskeystore_dummy_storage ;;
+    group_label: "Oskeystore"
+    group_item_label: "Dummy Storage"
+
+    link: {
+      label: "Glean Dictionary reference for Oskeystore: Dummy Storage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/oskeystore_dummy_storage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     label: "Oskeystore: Self Test"
     hidden: yes
@@ -28760,6 +29264,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_tagged {
+    label: "Pdfjs: Tagged"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_tagged ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Tagged"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs: Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times PDF Viewer was used for tagged pdf.
 "
   }
 
@@ -30401,6 +30923,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Amount of time a predictor event waits in the queue (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram PREDICTOR_WAIT_TIME.
+"
+  }
+
+  dimension: metrics__string__preferences_prefs_file_first_parse_error {
+    label: "Preferences: Prefs File First Parse Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_prefs_file_first_parse_error ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Prefs File First Parse Error"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences: Prefs File First Parse Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/preferences_prefs_file_first_parse_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The first error message encountered when parsing a prefs file.
 "
   }
 
@@ -34450,6 +34990,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__counter__update_blocked {
+    label: "Update: Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.update_blocked ;;
+    type: number
+    group_label: "Update"
+    group_item_label: "Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Update: Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of downloads blocked by the WAF.
+"
+  }
+
   dimension: metrics__labeled_counter__update_can_use_bits_external {
     label: "Update: Can Use Bits External"
     hidden: yes
@@ -35915,6 +36473,40 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {
+    label: "Urlclassifier: Global Cache Hit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_hit ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Global Cache Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Global Cache Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlclassifier_global_cache_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of top-level navigations that hit the Global Cache table. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_global_cache_miss {
+    label: "Urlclassifier: Global Cache Miss"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_miss ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Global Cache Miss"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Global Cache Miss"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlclassifier_global_cache_miss"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of top-level navigations that miss the Global Cache table. Keyed by ETP mode and window type.
+"
+  }
+
   dimension: metrics__labeled_counter__urlclassifier_lookup_hit {
     label: "Urlclassifier: Lookup Hit"
     hidden: yes
@@ -35965,6 +36557,57 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Time spent per dbservice lookup (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram URLCLASSIFIER_LOOKUP_TIME_2.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_request_count {
+    label: "Urlclassifier: Realtime Simulation Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_request_count ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlclassifier_realtime_simulation_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of simulated real-time Safe Browsing lookup requests. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_request_size {
+    label: "Urlclassifier: Realtime Simulation Request Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_request_size ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Request Size"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Request Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlclassifier_realtime_simulation_request_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total estimated data usage of simulated real-time Safe Browsing lookup requests in bytes. Keyed by ETP mode and window type.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlclassifier_realtime_simulation_response_size {
+    label: "Urlclassifier: Realtime Simulation Response Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlclassifier_realtime_simulation_response_size ;;
+    group_label: "Urlclassifier"
+    group_item_label: "Realtime Simulation Response Size"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Realtime Simulation Response Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlclassifier_realtime_simulation_response_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total estimated data usage of simulated real-time Safe Browsing lookup responses in bytes. Keyed by ETP mode and window type.
 "
   }
 
@@ -36400,6 +37043,42 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "The category of the origin that calls new Notification/showNotification().
+"
+  }
+
+  dimension: metrics__rate__web_notification_show_safe_browsing_block__numerator {
+    label: "Web Notification: Show Safe Browsing Block Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.numerator ;;
+    type: number
+    group_label: "Web Notification"
+    group_item_label: "Show Safe Browsing Block Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification: Show Safe Browsing Block Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_notification_show_safe_browsing_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of notification show attempts that are blocked because the origin is on the Safe Browsing blocklist (phishing, malware, etc.). The numerator is the number of blocked attempts, and the denominator is the total number of show attempts that passed the initial permission check.
+"
+  }
+
+  dimension: metrics__rate__web_notification_show_safe_browsing_block__denominator {
+    label: "Web Notification: Show Safe Browsing Block Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.denominator ;;
+    type: number
+    group_label: "Web Notification"
+    group_item_label: "Show Safe Browsing Block Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Web Notification: Show Safe Browsing Block Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/web_notification_show_safe_browsing_block"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of notification show attempts that are blocked because the origin is on the Safe Browsing blocklist (phishing, malware, etc.). The numerator is the number of blocked attempts, and the denominator is the total number of show attempts that passed the initial permission check.
 "
   }
 
@@ -43118,6 +43797,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: javascript_self_hosted_cache_total {
+    type: sum
+    sql: ${metrics__counter__javascript_self_hosted_cache_total} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: javascript_self_hosted_cache_total_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__javascript_self_hosted_cache_total: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Self Hosted Cache Total"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: localstorage_request_recv_cancel_counter {
     type: sum
     sql: ${metrics__counter__localstorage_request_recv_cancel_counter} ;;
@@ -43743,6 +44447,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: pdfjs_tagged {
+    type: sum
+    sql: ${metrics__counter__pdfjs_tagged} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_tagged_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_tagged: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Tagged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_tagged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: pdfjs_used {
     type: sum
     sql: ${metrics__counter__pdfjs_used} ;;
@@ -44264,6 +44993,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Translations Requests Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_blocked {
+    type: sum
+    sql: ${metrics__counter__update_blocked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: update_blocked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__update_blocked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Update Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/update_blocked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -47156,19 +47910,19 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_aiwindow_
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -47256,6 +48010,88 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextme
 
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar {
   label: "Browser Engagement Navigation: Searchbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_smartbar {
+  label: "Browser Engagement Navigation: Smartbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant {
+  label: "Browser Engagement Navigation: Smartwindow Assistant"
 
   dimension: document_id {
     type: string
@@ -47812,19 +48648,19 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_aiwindow_assist
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -47953,6 +48789,88 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_reload {
 
 view: metrics__metrics__labeled_counter__browser_search_adclicks_searchbar {
   label: "Browser Search Adclicks: Searchbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_adclicks_smartbar {
+  label: "Browser Search Adclicks: Smartbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_adclicks_smartwindow_assistant {
+  label: "Browser Search Adclicks: Smartwindow Assistant"
 
   dimension: document_id {
     type: string
@@ -48427,19 +49345,19 @@ view: metrics__metrics__labeled_counter__browser_search_content_aiwindow_assista
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -48568,6 +49486,88 @@ view: metrics__metrics__labeled_counter__browser_search_content_reload {
 
 view: metrics__metrics__labeled_counter__browser_search_content_searchbar {
   label: "Browser Search Content: Searchbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_content_smartbar {
+  label: "Browser Search Content: Smartbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_content_smartwindow_assistant {
+  label: "Browser Search Content: Smartwindow Assistant"
 
   dimension: document_id {
     type: string
@@ -49042,19 +50042,19 @@ view: metrics__metrics__labeled_counter__browser_search_withads_aiwindow_assista
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -49183,6 +50183,88 @@ view: metrics__metrics__labeled_counter__browser_search_withads_reload {
 
 view: metrics__metrics__labeled_counter__browser_search_withads_searchbar {
   label: "Browser Search Withads: Searchbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_withads_smartbar {
+  label: "Browser Search Withads: Smartbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_withads_smartwindow_assistant {
+  label: "Browser Search Withads: Smartwindow Assistant"
 
   dimension: document_id {
     type: string
@@ -50249,6 +51331,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_pageaction_urlba
 
 view: metrics__metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu {
   label: "Browser UI Interaction: Pinned Overflow Menu"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai {
+  label: "Browser UI Interaction: Preferences Pane Ai"
 
   dimension: document_id {
     type: string
@@ -53527,6 +54650,47 @@ view: metrics__metrics__labeled_counter__dns_lookup_algorithm {
   }
 }
 
+view: metrics__metrics__labeled_counter__dns_trr_http3_0rtt_state {
+  label: "DNS: Trr Http3 0Rtt State"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__dom_blink_filesystem_used {
   label: "DOM: Blink Filesystem Used"
 
@@ -54472,6 +55636,211 @@ view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic 
 
 view: metrics__metrics__labeled_counter__geolocation_fallback {
   label: "Geolocation: Fallback"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_geoclue_error_code {
+  label: "Geolocation: Geoclue Error Code"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_geolocation_cache_hit {
+  label: "Geolocation: Geolocation Cache Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_geolocation_service {
+  label: "Geolocation: Geolocation Service"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_linux_portal_error {
+  label: "Geolocation: Linux Portal Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__geolocation_macos_error_code {
+  label: "Geolocation: Macos Error Code"
 
   dimension: document_id {
     type: string
@@ -56791,19 +58160,19 @@ view: metrics__metrics__labeled_counter__localdomstorage_preload_pending_on_firs
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -56850,6 +58219,47 @@ view: metrics__metrics__labeled_counter__media_audio_backend {
 
 view: metrics__metrics__labeled_counter__media_audio_init_failure {
   label: "Media Audio: Init Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_capture_stream_usage {
+  label: "Media: Capture Stream Usage"
 
   dimension: document_id {
     type: string
@@ -60866,6 +62276,47 @@ view: metrics__metrics__labeled_counter__os_environment_launched_to_handle {
   }
 }
 
+view: metrics__metrics__labeled_counter__oskeystore_dummy_storage {
+  label: "Oskeystore: Dummy Storage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs: Buttons"
 
@@ -63861,6 +65312,47 @@ view: metrics__metrics__labeled_counter__sidebar_link {
 
 view: metrics__metrics__labeled_counter__sidebar_search {
   label: "Sidebar: Search"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__splitview_uri_count {
+  label: "Splitview: URI Count"
 
   dimension: document_id {
     type: string
@@ -68287,6 +69779,88 @@ view: metrics__metrics__labeled_counter__urlbar_unifiedsearchbutton_picked {
   }
 }
 
+view: metrics__metrics__labeled_counter__urlclassifier_global_cache_hit {
+  label: "Urlclassifier: Global Cache Hit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_global_cache_miss {
+  label: "Urlclassifier: Global Cache Miss"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__urlclassifier_lookup_hit {
   label: "Urlclassifier: Lookup Hit"
 
@@ -68366,6 +69940,129 @@ view: metrics__metrics__labeled_counter__urlclassifier_lookup_miss {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_count {
+  label: "Urlclassifier: Realtime Simulation Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_request_size {
+  label: "Urlclassifier: Realtime Simulation Request Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_response_size {
+  label: "Urlclassifier: Realtime Simulation Response Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -74932,6 +76629,33 @@ view: metrics__metrics__dual_labeled_counter__extensions_counters_event_page_idl
   }
 }
 
+view: metrics__metrics__dual_labeled_counter__geolocation_windows_failure {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__geolocation_windows_failure__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__dual_labeled_counter__http_cache_disposition {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -75243,6 +76967,33 @@ view: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout {
 }
 
 view: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__webgpu_expose_adapter {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__webgpu_expose_adapter__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -78901,6 +80652,95 @@ view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_
 }
 
 view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_duration__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

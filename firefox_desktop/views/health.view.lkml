@@ -143,6 +143,25 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__counter__glean_error_event_timestamp_clamped {
+    label: "Glean Error: Event Timestamp Clamped"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_error_event_timestamp_clamped ;;
+    type: number
+    group_label: "Glean Error"
+    group_item_label: "Event Timestamp Clamped"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Event Timestamp Clamped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_event_timestamp_clamped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we had to clamp an event timestamp
+for exceeding the range of a signed 64-bit integer (9223372036854775807).
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error: Invalid Label"
     hidden: yes
@@ -1208,6 +1227,31 @@ Most samples are expected to be below the 10s timeout used.
     link: {
       label: "Glean Dictionary reference for Fog Inits During Shutdown"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_inits_during_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_error_event_timestamp_clamped {
+    type: sum
+    sql: ${metrics__counter__glean_error_event_timestamp_clamped} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Event Timestamp Clamped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_event_timestamp_clamped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_error_event_timestamp_clamped_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_error_event_timestamp_clamped: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Event Timestamp Clamped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_event_timestamp_clamped"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

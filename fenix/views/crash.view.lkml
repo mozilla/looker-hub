@@ -5,6 +5,870 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: crash {
+  dimension: metrics__string__crash_app_build {
+    label: "Crash: App Build"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_build ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Build"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: App Build"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_app_build"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application build ID, the format is YYYYMMDDHHMMSS."
+  }
+
+  dimension: metrics__string__crash_app_channel {
+    label: "Crash: App Channel"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_channel ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Channel"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: App Channel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_app_channel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application release channel (e.g. default, beta, ...)"
+  }
+
+  dimension: metrics__string__crash_app_display_version {
+    label: "Crash: App Display Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_display_version ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Display Version"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: App Display Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_app_display_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Product version."
+  }
+
+  dimension: metrics__string__crash_application_build_id {
+    label: "Crash: Application Build ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_application_build_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Application Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Application Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_application_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Android application's build ID."
+  }
+
+  dimension: metrics__string__crash_background_task_name {
+    label: "Crash: Background Task Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_background_task_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Background Task Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Background Task Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_background_task_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the app was invoked in background task mode via `--backgroundtask <task name>`, the string \"task name\"."
+  }
+
+  dimension: metrics__string__crash_build_id {
+    label: "Crash: Build ID"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.crash_build_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application build ID, the format is YYYYMMDDHHMMSS."
+  }
+
+  dimension: metrics__string__crash_crash_type {
+    label: "Crash: Crash Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_crash_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Crash Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Crash Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_crash_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of crash that occurred (Android-only)."
+  }
+
+  dimension: metrics__boolean__crash_dom_fission_enabled {
+    label: "Crash: DOM Fission Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_dom_fission_enabled ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "DOM Fission Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: DOM Fission Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_dom_fission_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 when DOM fission is enabled, and subframes are potentially loaded in a separate process."
+  }
+
+  dimension: metrics__quantity__crash_event_loop_nesting_level {
+    label: "Crash: Event Loop Nesting Level"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Event Loop Nesting Level"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Event Loop Nesting Level"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_event_loop_nesting_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Present only if higher than 0, indicates that we're running in a nested event loop and indicates the nesting level."
+  }
+
+  dimension: metrics__string__crash_font_name {
+    label: "Crash: Font Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_font_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Font Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Font Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_font_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set before attempting to load a font to help diagnose crashes during loading."
+  }
+
+  dimension: metrics__quantity__crash_gpu_process_launch {
+    label: "Crash: GPU Process Launch"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "GPU Process Launch"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: GPU Process Launch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_gpu_process_launch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the GPU process was launched."
+  }
+
+  dimension: metrics__string__crash_hang {
+    label: "Crash: Hang"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_hang ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Hang"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Hang"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_hang"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set if the crash was the result of a hang, with a value which describes the type of hang (e.g. \"ui\" or \"shutdown\")."
+  }
+
+  dimension: metrics__string__crash_ipc_channel_error {
+    label: "Crash: Ipc Channel Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Ipc Channel Error"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Ipc Channel Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_ipc_channel_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set before a content process crashes because of an IPC channel error. Holds a description of the error."
+  }
+
+  dimension: metrics__boolean__crash_is_garbage_collecting {
+    label: "Crash: Is Garbage Collecting"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "Is Garbage Collecting"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Is Garbage Collecting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_is_garbage_collecting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If true then the JavaScript garbage collector was running when the crash occurred."
+  }
+
+  dimension: metrics__timespan__crash_last_interaction_duration__value {
+    label: "Crash: Last Interaction Duration Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Last Interaction Duration Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Last Interaction Duration Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_last_interaction_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long the user had been inactive in seconds if the user was inactive at crash.  The value is not set if the user state was active."
+  }
+
+  dimension: metrics__string__crash_linux_memory_psi {
+    label: "Crash: Linux Memory Psi"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_linux_memory_psi ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Linux Memory Psi"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Linux Memory Psi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_linux_memory_psi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory PSI (Pressure Stall Information) values from /proc/pressure/memory as comma-separated list: some_avg10,some_avg60,some_avg300,some_total,full_avg10,full_avg60,full_avg300,full_total"
+  }
+
+  dimension: metrics__string__crash_main_thread_runnable_name {
+    label: "Crash: Main Thread Runnable Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Main Thread Runnable Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Main Thread Runnable Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_main_thread_runnable_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the currently executing nsIRunnable on the main thread."
+  }
+
+  dimension: metrics__string__crash_minidump_sha256_hash {
+    label: "Crash: Minidump Sha256 Hash"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Minidump Sha256 Hash"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Minidump Sha256 Hash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_minidump_sha256_hash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha256 hash of the minidump file, if available."
+  }
+
+  dimension: metrics__string__crash_minidump_sha_256_hash {
+    label: "Crash: Minidump Sha 256 Hash"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.crash_minidump_sha_256_hash ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Minidump Sha 256 Hash"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Minidump Sha 256 Hash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_minidump_sha_256_hash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha256 hash of the minidump file, if available."
+  }
+
+  dimension: metrics__string__crash_moz_crash_reason {
+    label: "Crash: Moz Crash Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Moz Crash Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Moz Crash Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_moz_crash_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Plaintext description of why Firefox crashed, this is usually set by assertions and the like."
+  }
+
+  dimension: metrics__string__crash_process_type {
+    label: "Crash: Process Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_process_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of the process that crashed, the possible values are defined in GeckoProcessTypes.h."
+  }
+
+  dimension: metrics__string__crash_product_id {
+    label: "Crash: Product ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_product_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Product ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Product ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_product_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application UUID (e.g. ec8030f7-c20a-464f-9b0e-13a3a9e97384)."
+  }
+
+  dimension: metrics__string__crash_product_name {
+    label: "Crash: Product Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_product_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Product Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Product Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_product_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application name (e.g. Firefox)."
+  }
+
+  dimension: metrics__string__crash_profiler_child_shutdown_phase {
+    label: "Crash: Profiler Child Shutdown Phase"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Profiler Child Shutdown Phase"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Profiler Child Shutdown Phase"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_profiler_child_shutdown_phase"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When a child process shuts down, this describes if the profiler is running, and the point the profiler shutdown sequence has reached."
+  }
+
+  dimension: metrics__string__crash_remote_type {
+    label: "Crash: Remote Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_remote_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Remote Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Remote Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_remote_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of the content process, can be set to \"web\", \"file\" or \"extension\"."
+  }
+
+  dimension: metrics__string__crash_shutdown_progress {
+    label: "Crash: Shutdown Progress"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Shutdown Progress"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Shutdown Progress"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_shutdown_progress"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Shutdown step at which the browser crashed, can be set to \"quit-application\", \"profile-change-teardown\", \"profile-before-change\", \"xpcom-will-shutdown\" or \"xpcom-shutdown\"."
+  }
+
+  dimension: metrics__string__crash_shutdown_reason {
+    label: "Crash: Shutdown Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_shutdown_reason ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Shutdown Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Shutdown Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_shutdown_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "One out of \"Unknown\", \"AppClose\", \"AppRestart\", \"OSForceClose\", \"OSSessionEnd\" or \"OSShutdown\"."
+  }
+
+  dimension: metrics__boolean__crash_startup {
+    label: "Crash: Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_startup ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If set to 1 then this crash occurred during startup."
+  }
+
+  dimension: metrics__timespan__crash_time_since_last_crash__value {
+    label: "Crash: Time Since Last Crash Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_time_since_last_crash.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Time Since Last Crash Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Time Since Last Crash Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_time_since_last_crash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in seconds since the last crash occurred."
+  }
+
+  dimension: metrics__boolean__crash_windows_error_reporting {
+    label: "Crash Windows: Error Reporting"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_windows_error_reporting ;;
+    type: yesno
+    group_label: "Crash Windows"
+    group_item_label: "Error Reporting"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Windows: Error Reporting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_windows_error_reporting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 if this crash was intercepted via the Windows Error Reporting runtime exception module."
+  }
+
+  dimension: metrics__string__crash_windows_file_dialog_error_code {
+    label: "Crash Windows: File Dialog Error Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_windows_file_dialog_error_code ;;
+    type: string
+    group_label: "Crash Windows"
+    group_item_label: "File Dialog Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Windows: File Dialog Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_windows_file_dialog_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The HRESULT returned from a Win32 system call leading to termination of the file-dialog utility process. MozCrashReason is expected to provide context for the value."
+  }
+
+  dimension: metrics__boolean__dll_blocklist_init_failed {
+    label: "Dll Blocklist: Init Failed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.dll_blocklist_init_failed ;;
+    type: yesno
+    group_label: "Dll Blocklist"
+    group_item_label: "Init Failed"
+
+    link: {
+      label: "Glean Dictionary reference for Dll Blocklist: Init Failed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dll_blocklist_init_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 if the DLL blocklist could not be initialized."
+  }
+
+  dimension: metrics__boolean__dll_blocklist_user32_loaded_before {
+    label: "Dll Blocklist: User32 Loaded Before"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.dll_blocklist_user32_loaded_before ;;
+    type: yesno
+    group_label: "Dll Blocklist"
+    group_item_label: "User32 Loaded Before"
+
+    link: {
+      label: "Glean Dictionary reference for Dll Blocklist: User32 Loaded Before"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dll_blocklist_user32_loaded_before"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 if user32.dll was loaded before we could install the DLL blocklist."
+  }
+
+  dimension: metrics__boolean__environment_headless_mode {
+    label: "Environment: Headless Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
+    type: yesno
+    group_label: "Environment"
+    group_item_label: "Headless Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Environment: Headless Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/environment_headless_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the app was invoked in headless mode via `--headless ...` or `--backgroundtask ...`, false otherwise."
+  }
+
+  dimension: metrics__timespan__environment_uptime__value {
+    label: "Environment: Uptime Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
+    type: number
+    group_label: "Environment"
+    group_item_label: "Uptime Value"
+
+    link: {
+      label: "Glean Dictionary reference for Environment: Uptime Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/environment_uptime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Uptime in seconds. This annotation uses a string instead of an integer because it has a fractional component."
+  }
+
+  dimension: metrics__quantity__memory_available_commit {
+    label: "Memory: Available Commit"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Commit"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Available Commit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_available_commit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available commit-space in bytes. - Under Windows, computed from the PERFORMANCE_INFORMATION structure by substracting
+  the CommitTotal field from the CommitLimit field.
+- Under Linux, computed from /proc/meminfo's CommitLimit - Committed_AS. Note that
+  the kernel is not guaranteed to enforce that CommittedLimit >= Committed_AS. If
+  Committed_AS > CommittedLimit, this value is set to 0.
+- Not available on other platforms."
+  }
+
+  dimension: metrics__quantity__memory_available_physical {
+    label: "Memory: Available Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Available Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_available_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of free physical memory in bytes. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullAvailPhys field. - Under macOS, populated with vm_statistics64_data_t::free_count. - Under Linux, populated with /proc/meminfo's MemFree. - Not available on other platforms."
+  }
+
+  dimension: metrics__quantity__memory_available_swap {
+    label: "Memory: Available Swap"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Swap"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Available Swap"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_available_swap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of free swap space in bytes. - Under macOS, populated with the contents of
+  sysctl \"vm.swapusage\" :: xsu_avail.
+- Under Linux, populated with /proc/meminfo's SwapFree. - Not available on other platforms."
+  }
+
+  dimension: metrics__quantity__memory_available_virtual {
+    label: "Memory: Available Virtual"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Virtual"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Available Virtual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_available_virtual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of free virtual memory in bytes - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullAvailVirtual field. - Under Linux, populated with /proc/meminfo's MemAvailable. - Not available on other platforms. - For macOS, see AvailableSwapMemory, AvailablePhysicalMemory and PurgeablePhysicalMemory."
+  }
+
+  dimension: metrics__string__memory_js_large_allocation_failure {
+    label: "Memory: Js Large Allocation Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
+    type: string
+    group_label: "Memory"
+    group_item_label: "Js Large Allocation Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Js Large Allocation Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_large_allocation_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A large allocation couldn't be satisfied, check the JSOutOfMemory description for the possible values of this annotation."
+  }
+
+  dimension: metrics__string__memory_js_out_of_memory {
+    label: "Memory: Js Out Of Memory"
+    hidden: no
+    sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
+    type: string
+    group_label: "Memory"
+    group_item_label: "Js Out Of Memory"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Js Out Of Memory"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_out_of_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A small allocation couldn't be satisfied, the annotation may contain the \"Reporting\", \"Reported\" or \"Recovered\" value. The first one means that we crashed while responding to the OOM condition (possibly while running a memory-pressure observers), the second that we crashed after having tried to free some memory, and the last that the GC had managed to free enough memory to satisfy the allocation."
+  }
+
+  dimension: metrics__quantity__memory_low_physical {
+    label: "Memory: Low Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Low Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Low Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_low_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the available memory tracker has detected that free physical memory is running low. This is a Windows-specific annotation."
+  }
+
+  dimension: metrics__quantity__memory_oom_allocation_size {
+    label: "Memory: Oom Allocation Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Oom Allocation Size"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Oom Allocation Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_oom_allocation_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the allocation that caused an out-of-memory condition."
+  }
+
+  dimension: metrics__quantity__memory_purgeable_physical {
+    label: "Memory: Purgeable Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Purgeable Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Purgeable Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_purgeable_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "macOS only. Amount of physical memory currently allocated but which may be deallocated by the system in case of memory pressure. Populated from vm_statistics64_data_t::purgeable_count * vm_page_size."
+  }
+
+  dimension: metrics__quantity__memory_system_use_percentage {
+    label: "Memory: System Use Percentage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "System Use Percentage"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: System Use Percentage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_system_use_percentage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Windows-only, percentage of physical memory in use. This annotation is populated with the contents of the MEMORYSTATUSEX's structure dwMemoryLoad field."
+  }
+
+  dimension: metrics__quantity__memory_texture {
+    label: "Memory: Texture"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_texture ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Texture"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Texture"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_texture"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of memory in bytes consumed by textures."
+  }
+
+  dimension: metrics__quantity__memory_total_page_file {
+    label: "Memory: Total Page File"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Page File"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Total Page File"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_total_page_file"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum amount of memory that can be committed without extending the swap/page file. - Under Windows, populated with the contents of the PERFORMANCE_INFORMATION's
+  structure CommitLimit field.
+- Under Linux, populated with /proc/meminfo MemTotal + SwapTotal. The swap file
+  typically cannot be extended, so that's a hard limit.
+- Not available on other systems."
+  }
+
+  dimension: metrics__quantity__memory_total_physical {
+    label: "Memory: Total Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Total Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_total_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of physical memory in bytes. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullTotalPhys field. - Under macOS, populated with sysctl \"hw.memsize\". - Under Linux, populated with /proc/meminfo's \"MemTotal\". - Not available on other systems."
+  }
+
+  dimension: metrics__quantity__memory_total_virtual {
+    label: "Memory: Total Virtual"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Virtual"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Total Virtual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_total_virtual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the virtual address space. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure
+  ullTotalVirtual field.
+- Not available on other platforms."
+  }
+
+  dimension: metrics__string__windows_package_family_name {
+    label: "Windows: Package Family Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.windows_package_family_name ;;
+    type: string
+    group_label: "Windows"
+    group_item_label: "Package Family Name"
+
+    link: {
+      label: "Glean Dictionary reference for Windows: Package Family Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/windows_package_family_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If running in a Windows package context, the package family name, per https://docs.microsoft.com/en-us/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefamilyname.
+The package family name is only included when it is likely to have been produced by Mozilla: it starts \"Mozilla.\" or \"MozillaCorporation.\"."
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation: Experimentation ID"
     hidden: no
@@ -96,81 +960,9 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__string__crash_app_build {
-    label: "Crash: App Build"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_app_build ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "App Build"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: App Build"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_app_build"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The build id of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
-"
-  }
-
-  dimension: metrics__string__crash_app_channel {
-    label: "Crash: App Channel"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_app_channel ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "App Channel"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: App Channel"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_app_channel"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The release channel of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
-"
-  }
-
-  dimension: metrics__string__crash_app_display_version {
-    label: "Crash: App Display Version"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_app_display_version ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "App Display Version"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: App Display Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_app_display_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The version of the application. This may differ from `client_info` because a main process crash may be reported later by a different (e.g. updated) client.
-"
-  }
-
-  dimension: metrics__string__crash_background_task_name {
-    label: "Crash: Background Task Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_background_task_name ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Background Task Name"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Background Task Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_background_task_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The name of the background task if launched as one.
-"
-  }
-
   dimension: metrics__string__crash_cause {
     label: "Crash: Cause"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_cause ;;
     type: string
     group_label: "Crash"
@@ -183,240 +975,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "The cause of the crash. May be one of `os_fault` or `java_exception`.
-"
-  }
-
-  dimension: metrics__quantity__crash_event_loop_nesting_level {
-    label: "Crash: Event Loop Nesting Level"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
-    type: number
-    group_label: "Crash"
-    group_item_label: "Event Loop Nesting Level"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Event Loop Nesting Level"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_event_loop_nesting_level"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Indicates the nesting level of the event loop.
-"
-  }
-
-  dimension: metrics__string__crash_font_name {
-    label: "Crash: Font Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_font_name ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Font Name"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Font Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_font_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The font family name that is being loaded when the crash occurred.
-"
-  }
-
-  dimension: metrics__quantity__crash_gpu_process_launch {
-    label: "Crash: GPU Process Launch"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
-    type: number
-    group_label: "Crash"
-    group_item_label: "GPU Process Launch"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: GPU Process Launch"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_gpu_process_launch"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The number of times that the GPU process was launched.
-"
-  }
-
-  dimension: metrics__string__crash_ipc_channel_error {
-    label: "Crash: Ipc Channel Error"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Ipc Channel Error"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Ipc Channel Error"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_ipc_channel_error"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The error reason for an ipc-based content crash.
-"
-  }
-
-  dimension: metrics__boolean__crash_is_garbage_collecting {
-    label: "Crash: Is Garbage Collecting"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
-    type: yesno
-    group_label: "Crash"
-    group_item_label: "Is Garbage Collecting"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Is Garbage Collecting"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_is_garbage_collecting"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Indicates that the crash occurred while the garbage collector was running.
-"
-  }
-
-  dimension: metrics__string__crash_main_thread_runnable_name {
-    label: "Crash: Main Thread Runnable Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Main Thread Runnable Name"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Main Thread Runnable Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_main_thread_runnable_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Name of the currently executing `nsIRunnable` on the main thread. Nightly-only.
-"
-  }
-
-  dimension: metrics__string__crash_minidump_sha256_hash {
-    label: "Crash: Minidump Sha256 Hash"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Minidump Sha256 Hash"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Minidump Sha256 Hash"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_minidump_sha256_hash"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The SHA256 hash of the associated minidump file, if any.
-"
-  }
-
-  dimension: metrics__string__crash_moz_crash_reason {
-    label: "Crash: Moz Crash Reason"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Moz Crash Reason"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Moz Crash Reason"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_moz_crash_reason"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Contains the string passed to `MOZ_CRASH()`.
-"
-  }
-
-  dimension: metrics__string__crash_process_type {
-    label: "Crash: Process Type"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_process_type ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Process Type"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Process Type"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_process_type"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The type of process that experienced a crash. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#process-types).
-"
-  }
-
-  dimension: metrics__string__crash_profiler_child_shutdown_phase {
-    label: "Crash: Profiler Child Shutdown Phase"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Profiler Child Shutdown Phase"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Profiler Child Shutdown Phase"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_profiler_child_shutdown_phase"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The shutdown phase of the profiler.
-"
-  }
-
-  dimension: metrics__string__crash_remote_type {
-    label: "Crash: Remote Type"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_remote_type ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Remote Type"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Remote Type"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_remote_type"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
-"
-  }
-
-  dimension: metrics__string__crash_shutdown_progress {
-    label: "Crash: Shutdown Progress"
-    hidden: no
-    sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
-    type: string
-    group_label: "Crash"
-    group_item_label: "Shutdown Progress"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Shutdown Progress"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_shutdown_progress"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The shutdown phase in which the crash occurred.
-"
-  }
-
-  dimension: metrics__boolean__crash_startup {
-    label: "Crash: Startup"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.crash_startup ;;
-    type: yesno
-    group_label: "Crash"
-    group_item_label: "Startup"
-
-    link: {
-      label: "Glean Dictionary reference for Crash: Startup"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_startup"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "If true, the crash occurred during process startup.
 "
   }
 
@@ -435,294 +993,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "The application uptime. This is equivalent to the legacy crash ping's `UptimeTS` field.
-"
-  }
-
-  dimension: metrics__boolean__environment_headless_mode {
-    label: "Environment: Headless Mode"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
-    type: yesno
-    group_label: "Environment"
-    group_item_label: "Headless Mode"
-
-    link: {
-      label: "Glean Dictionary reference for Environment: Headless Mode"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/environment_headless_mode"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether the app was invoked in headless mode via `--headless` or `--backgroundtask`.
-"
-  }
-
-  dimension: metrics__timespan__environment_uptime__value {
-    label: "Environment: Uptime Value"
-    hidden: no
-    sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
-    type: number
-    group_label: "Environment"
-    group_item_label: "Uptime Value"
-
-    link: {
-      label: "Glean Dictionary reference for Environment: Uptime Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/environment_uptime"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The start time of the application.
-"
-  }
-
-  dimension: metrics__quantity__memory_available_commit {
-    label: "Memory: Available Commit"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Available Commit"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Available Commit"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_available_commit"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Available commit space.
-"
-  }
-
-  dimension: metrics__quantity__memory_available_physical {
-    label: "Memory: Available Physical"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Available Physical"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Available Physical"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_available_physical"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Available physical memory.
-"
-  }
-
-  dimension: metrics__quantity__memory_available_swap {
-    label: "Memory: Available Swap"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Available Swap"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Available Swap"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_available_swap"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Available swap memory.
-"
-  }
-
-  dimension: metrics__quantity__memory_available_virtual {
-    label: "Memory: Available Virtual"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Available Virtual"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Available Virtual"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_available_virtual"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Available virtual memory.
-"
-  }
-
-  dimension: metrics__string__memory_js_large_allocation_failure {
-    label: "Memory: Js Large Allocation Failure"
-    hidden: no
-    sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
-    type: string
-    group_label: "Memory"
-    group_item_label: "Js Large Allocation Failure"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Js Large Allocation Failure"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_large_allocation_failure"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "A large allocation couldn't be satisfied: What was its state when the crash happened.
-"
-  }
-
-  dimension: metrics__string__memory_js_out_of_memory {
-    label: "Memory: Js Out Of Memory"
-    hidden: no
-    sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
-    type: string
-    group_label: "Memory"
-    group_item_label: "Js Out Of Memory"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Js Out Of Memory"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_js_out_of_memory"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "A small allocation couldn't be satisfied: What was its state when the crash happened.
-"
-  }
-
-  dimension: metrics__quantity__memory_low_physical {
-    label: "Memory: Low Physical"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Low Physical"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Low Physical"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_low_physical"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The number of times the available memory tracker has detected that free physical memory is running low.
-"
-  }
-
-  dimension: metrics__quantity__memory_oom_allocation_size {
-    label: "Memory: Oom Allocation Size"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Oom Allocation Size"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Oom Allocation Size"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_oom_allocation_size"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The size of the allocation that caused on OOM crash.
-"
-  }
-
-  dimension: metrics__quantity__memory_purgeable_physical {
-    label: "Memory: Purgeable Physical"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Purgeable Physical"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Purgeable Physical"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_purgeable_physical"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The amount of memory that can be deallocated by the OS in case of memory pressure.
-"
-  }
-
-  dimension: metrics__quantity__memory_system_use_percentage {
-    label: "Memory: System Use Percentage"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "System Use Percentage"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: System Use Percentage"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_system_use_percentage"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The percentage of memory in use.
-"
-  }
-
-  dimension: metrics__quantity__memory_texture {
-    label: "Memory: Texture"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_texture ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Texture"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Texture"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_texture"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The amount of memory used in textures.
-"
-  }
-
-  dimension: metrics__quantity__memory_total_page_file {
-    label: "Memory: Total Page File"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Total Page File"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Total Page File"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_total_page_file"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total page file size.
-"
-  }
-
-  dimension: metrics__quantity__memory_total_physical {
-    label: "Memory: Total Physical"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Total Physical"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Total Physical"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_total_physical"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total physical memory.
-"
-  }
-
-  dimension: metrics__quantity__memory_total_virtual {
-    label: "Memory: Total Virtual"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
-    type: number
-    group_label: "Memory"
-    group_item_label: "Total Virtual"
-
-    link: {
-      label: "Glean Dictionary reference for Memory: Total Virtual"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/memory_total_virtual"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total virtual memory.
 "
   }
 
