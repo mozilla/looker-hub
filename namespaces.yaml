@@ -261,7 +261,7 @@ ads:
       dimensions:
         month_country_pk:
           primary_key: true
-          sql: CONCAT(${month} ${country_code})
+          sql: CONCAT(${month}, ${country})
       tables:
       - table: mozdata.static.ads_finance_revenue_targets
       type: table_view
