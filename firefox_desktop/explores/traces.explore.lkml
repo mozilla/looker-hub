@@ -48,6 +48,16 @@ explore: traces {
     sql: LEFT JOIN UNNEST(${traces.ping_info__experiments}) AS traces__ping_info__experiments ;;
   }
 
+  join: traces__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${traces.ping_info__server_knobs_config__metrics_enabled}) AS traces__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: traces__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${traces.ping_info__server_knobs_config__pings_enabled}) AS traces__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: traces_last_updated
 
   always_filter: {

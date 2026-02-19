@@ -25262,6 +25262,41 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__counter__network_ssl_token_cache_expired {
+    label: "Network: SSL Token Cache Expired"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_expired ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Expired"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Expired"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_expired"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of expired session resumption tokens encountered during cache lookups. High values may indicate token lifetime issues or long delays between connections to the same host.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_cache_hits {
+    label: "Network: SSL Token Cache Hits"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_hits ;;
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Hits"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Hits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
+"
+  }
+
   dimension: metrics__labeled_counter__network_sso_entra_success {
     label: "Network Sso: Entra Success"
     hidden: yes
@@ -39973,6 +40008,27 @@ documented in the ping's pings.yaml file.
     group_item_label: "Seq"
   }
 
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -44018,6 +44074,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_parent_connect_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_expired {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_expired} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Expired"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_expired"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_expired_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_expired: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Expired"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_expired"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -59859,6 +59940,47 @@ view: metrics__metrics__labeled_counter__network_retried_system_channel_telemetr
 
 view: metrics__metrics__labeled_counter__network_retried_system_channel_update_status {
   label: "Network: Retried System Channel Update Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_ssl_token_cache_hits {
+  label: "Network: SSL Token Cache Hits"
 
   dimension: document_id {
     type: string
@@ -94120,5 +94242,33 @@ view: metrics__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: metrics__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

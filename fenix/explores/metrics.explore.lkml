@@ -1123,6 +1123,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_retried_system_channel_update_status}) AS metrics__metrics__labeled_counter__network_retried_system_channel_update_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_retried_system_channel_update_status.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_ssl_token_cache_hits {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_ssl_token_cache_hits}) AS metrics__metrics__labeled_counter__network_ssl_token_cache_hits ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_ssl_token_cache_hits.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_sso_entra_success {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_sso_entra_success}) AS metrics__metrics__labeled_counter__network_sso_entra_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_sso_entra_success.document_id} ;;
@@ -1976,6 +1981,16 @@ explore: metrics {
   join: metrics__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
+  }
+
+  join: metrics__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.ping_info__server_knobs_config__metrics_enabled}) AS metrics__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: metrics__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.ping_info__server_knobs_config__pings_enabled}) AS metrics__ping_info__server_knobs_config__pings_enabled ;;
   }
 
   persist_with: metrics_last_updated

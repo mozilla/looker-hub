@@ -36,5 +36,17 @@ explore: topsites_impressions_firefox_ios {
     sql: LEFT JOIN UNNEST(${topsites_impression_firefox_ios.ping_info__experiments}) AS topsites_impression_firefox_ios__ping_info__experiments ;;
   }
 
+  join: topsites_impression_firefox_ios__ping_info__server_knobs_config__metrics_enabled {
+    view_label: "Topsites Impression Firefox Ios: Ping Info: Server Knobs Config: Metrics Enabled"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression_firefox_ios.ping_info__server_knobs_config__metrics_enabled}) AS topsites_impression_firefox_ios__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: topsites_impression_firefox_ios__ping_info__server_knobs_config__pings_enabled {
+    view_label: "Topsites Impression Firefox Ios: Ping Info: Server Knobs Config: Pings Enabled"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression_firefox_ios.ping_info__server_knobs_config__pings_enabled}) AS topsites_impression_firefox_ios__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: topsites_impression_firefox_ios_last_updated
 }

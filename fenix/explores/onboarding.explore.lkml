@@ -48,6 +48,16 @@ explore: onboarding {
     sql: LEFT JOIN UNNEST(${onboarding.ping_info__experiments}) AS onboarding__ping_info__experiments ;;
   }
 
+  join: onboarding__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${onboarding.ping_info__server_knobs_config__metrics_enabled}) AS onboarding__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: onboarding__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${onboarding.ping_info__server_knobs_config__pings_enabled}) AS onboarding__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: onboarding_last_updated
 
   always_filter: {

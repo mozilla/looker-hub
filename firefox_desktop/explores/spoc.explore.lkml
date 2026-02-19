@@ -48,6 +48,16 @@ explore: spoc {
     sql: LEFT JOIN UNNEST(${spoc.ping_info__experiments}) AS spoc__ping_info__experiments ;;
   }
 
+  join: spoc__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${spoc.ping_info__server_knobs_config__metrics_enabled}) AS spoc__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: spoc__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${spoc.ping_info__server_knobs_config__pings_enabled}) AS spoc__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: spoc_last_updated
 
   always_filter: {
