@@ -48,6 +48,16 @@ explore: quick_suggest {
     sql: LEFT JOIN UNNEST(${quick_suggest.ping_info__experiments}) AS quick_suggest__ping_info__experiments ;;
   }
 
+  join: quick_suggest__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${quick_suggest.ping_info__server_knobs_config__metrics_enabled}) AS quick_suggest__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: quick_suggest__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${quick_suggest.ping_info__server_knobs_config__pings_enabled}) AS quick_suggest__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: quick_suggest_last_updated
 
   always_filter: {

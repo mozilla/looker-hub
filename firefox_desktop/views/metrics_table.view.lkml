@@ -3142,6 +3142,16 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__network_ssl_token_cache_expired {
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_expired ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network SSL Token Cache Expired"
+    description: "Counts the number of expired session resumption tokens encountered during cache lookups. High values may indicate token lifetime issues or long delays between connections to the same host.
+"
+  }
+
   dimension: metrics__counter__network_sso_total_entra_uses {
     sql: ${TABLE}.metrics.counter.network_sso_total_entra_uses ;;
     type: number
@@ -15104,6 +15114,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_update_status ;;
     hidden: yes
     description: "Counts the status of fallback requests to aus5.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_cache_hits {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_hits ;;
+    hidden: yes
+    description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
 "
   }
 
@@ -53285,6 +53302,27 @@ Set near startup and stable until shutdown.
     group_item_label: "Seq"
   }
 
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -76424,5 +76462,33 @@ view: metrics_table__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: metrics_table__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

@@ -48,6 +48,16 @@ explore: data_leak_blocker {
     sql: LEFT JOIN UNNEST(${data_leak_blocker.ping_info__experiments}) AS data_leak_blocker__ping_info__experiments ;;
   }
 
+  join: data_leak_blocker__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${data_leak_blocker.ping_info__server_knobs_config__metrics_enabled}) AS data_leak_blocker__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: data_leak_blocker__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${data_leak_blocker.ping_info__server_knobs_config__pings_enabled}) AS data_leak_blocker__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: data_leak_blocker_last_updated
 
   always_filter: {

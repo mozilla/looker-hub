@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: set_to_default_hamburger_menu_rollout
-    type: looker_line
-    fields: [
-      set_to_default_hamburger_menu_rollout.submission_date,
-      set_to_default_hamburger_menu_rollout.branch,
-      set_to_default_hamburger_menu_rollout.point
-    ]
-    pivots: [
-      set_to_default_hamburger_menu_rollout.branch
-    ]
-    filters:
-      set_to_default_hamburger_menu_rollout.metric: 'retained'
-      set_to_default_hamburger_menu_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: set_to_default_hamburger_menu_rollout.submission_date
-    field_y: set_to_default_hamburger_menu_rollout.point
-    log_scale: false
-    ci_lower: set_to_default_hamburger_menu_rollout.lower
-    ci_upper: set_to_default_hamburger_menu_rollout.upper
-    show_grid: true
-    listen:
-      Date: set_to_default_hamburger_menu_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -96,7 +62,109 @@
     filters:
       set_to_default_hamburger_menu_rollout.metric: 'uri_count'
       set_to_default_hamburger_menu_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: set_to_default_hamburger_menu_rollout.submission_date
+    field_y: set_to_default_hamburger_menu_rollout.point
+    log_scale: false
+    ci_lower: set_to_default_hamburger_menu_rollout.lower
+    ci_upper: set_to_default_hamburger_menu_rollout.upper
+    show_grid: true
+    listen:
+      Date: set_to_default_hamburger_menu_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: set_to_default_hamburger_menu_rollout
+    type: looker_line
+    fields: [
+      set_to_default_hamburger_menu_rollout.submission_date,
+      set_to_default_hamburger_menu_rollout.branch,
+      set_to_default_hamburger_menu_rollout.point
+    ]
+    pivots: [
+      set_to_default_hamburger_menu_rollout.branch
+    ]
+    filters:
+      set_to_default_hamburger_menu_rollout.metric: 'search_count'
+      set_to_default_hamburger_menu_rollout.statistic: mean
     row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: set_to_default_hamburger_menu_rollout.submission_date
+    field_y: set_to_default_hamburger_menu_rollout.point
+    log_scale: false
+    ci_lower: set_to_default_hamburger_menu_rollout.lower
+    ci_upper: set_to_default_hamburger_menu_rollout.upper
+    show_grid: true
+    listen:
+      Date: set_to_default_hamburger_menu_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: set_to_default_hamburger_menu_rollout
+    type: looker_line
+    fields: [
+      set_to_default_hamburger_menu_rollout.submission_date,
+      set_to_default_hamburger_menu_rollout.branch,
+      set_to_default_hamburger_menu_rollout.point
+    ]
+    pivots: [
+      set_to_default_hamburger_menu_rollout.branch
+    ]
+    filters:
+      set_to_default_hamburger_menu_rollout.metric: 'ad_clicks'
+      set_to_default_hamburger_menu_rollout.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: set_to_default_hamburger_menu_rollout.submission_date
+    field_y: set_to_default_hamburger_menu_rollout.point
+    log_scale: false
+    ci_lower: set_to_default_hamburger_menu_rollout.lower
+    ci_upper: set_to_default_hamburger_menu_rollout.upper
+    show_grid: true
+    listen:
+      Date: set_to_default_hamburger_menu_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: set_to_default_hamburger_menu_rollout
+    type: looker_line
+    fields: [
+      set_to_default_hamburger_menu_rollout.submission_date,
+      set_to_default_hamburger_menu_rollout.branch,
+      set_to_default_hamburger_menu_rollout.point
+    ]
+    pivots: [
+      set_to_default_hamburger_menu_rollout.branch
+    ]
+    filters:
+      set_to_default_hamburger_menu_rollout.metric: 'active_hours'
+      set_to_default_hamburger_menu_rollout.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -132,7 +200,7 @@
     filters:
       set_to_default_hamburger_menu_rollout.metric: 'memory_total'
       set_to_default_hamburger_menu_rollout.statistic: percentile
-    row: 10
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -145,40 +213,6 @@
     listen:
       Date: set_to_default_hamburger_menu_rollout.submission_date
       Percentile: set_to_default_hamburger_menu_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: set_to_default_hamburger_menu_rollout
-    type: looker_line
-    fields: [
-      set_to_default_hamburger_menu_rollout.submission_date,
-      set_to_default_hamburger_menu_rollout.branch,
-      set_to_default_hamburger_menu_rollout.point
-    ]
-    pivots: [
-      set_to_default_hamburger_menu_rollout.branch
-    ]
-    filters:
-      set_to_default_hamburger_menu_rollout.metric: 'search_count'
-      set_to_default_hamburger_menu_rollout.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: set_to_default_hamburger_menu_rollout.submission_date
-    field_y: set_to_default_hamburger_menu_rollout.point
-    log_scale: false
-    ci_lower: set_to_default_hamburger_menu_rollout.lower
-    ci_upper: set_to_default_hamburger_menu_rollout.upper
-    show_grid: true
-    listen:
-      Date: set_to_default_hamburger_menu_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -201,40 +235,6 @@
     filters:
       set_to_default_hamburger_menu_rollout.metric: 'days_of_use'
       set_to_default_hamburger_menu_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: set_to_default_hamburger_menu_rollout.submission_date
-    field_y: set_to_default_hamburger_menu_rollout.point
-    log_scale: false
-    ci_lower: set_to_default_hamburger_menu_rollout.lower
-    ci_upper: set_to_default_hamburger_menu_rollout.upper
-    show_grid: true
-    listen:
-      Date: set_to_default_hamburger_menu_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: set_to_default_hamburger_menu_rollout
-    type: looker_line
-    fields: [
-      set_to_default_hamburger_menu_rollout.submission_date,
-      set_to_default_hamburger_menu_rollout.branch,
-      set_to_default_hamburger_menu_rollout.point
-    ]
-    pivots: [
-      set_to_default_hamburger_menu_rollout.branch
-    ]
-    filters:
-      set_to_default_hamburger_menu_rollout.metric: 'ad_clicks'
-      set_to_default_hamburger_menu_rollout.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       set_to_default_hamburger_menu_rollout.branch
     ]
     filters:
-      set_to_default_hamburger_menu_rollout.metric: 'active_hours'
+      set_to_default_hamburger_menu_rollout.metric: 'retained'
       set_to_default_hamburger_menu_rollout.statistic: mean
     row: 30
     col: 12
