@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       disable_fenix_enrollment_status_v137_v145_release.branch
     ]
     filters:
-      disable_fenix_enrollment_status_v137_v145_release.metric: 'uri_count'
+      disable_fenix_enrollment_status_v137_v145_release.metric: 'days_of_use'
       disable_fenix_enrollment_status_v137_v145_release.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: disable_fenix_enrollment_status_v137_v145_release.submission_date
-    field_y: disable_fenix_enrollment_status_v137_v145_release.point
-    log_scale: false
-    ci_lower: disable_fenix_enrollment_status_v137_v145_release.lower
-    ci_upper: disable_fenix_enrollment_status_v137_v145_release.upper
-    show_grid: true
-    listen:
-      Date: disable_fenix_enrollment_status_v137_v145_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_fenix_enrollment_status_v137_v145_release
-    type: looker_line
-    fields: [
-      disable_fenix_enrollment_status_v137_v145_release.submission_date,
-      disable_fenix_enrollment_status_v137_v145_release.branch,
-      disable_fenix_enrollment_status_v137_v145_release.point
-    ]
-    pivots: [
-      disable_fenix_enrollment_status_v137_v145_release.branch
-    ]
-    filters:
-      disable_fenix_enrollment_status_v137_v145_release.metric: 'search_count'
-      disable_fenix_enrollment_status_v137_v145_release.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: disable_fenix_enrollment_status_v137_v145_release.submission_date
@@ -96,41 +62,7 @@
     filters:
       disable_fenix_enrollment_status_v137_v145_release.metric: 'ad_clicks'
       disable_fenix_enrollment_status_v137_v145_release.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: disable_fenix_enrollment_status_v137_v145_release.submission_date
-    field_y: disable_fenix_enrollment_status_v137_v145_release.point
-    log_scale: false
-    ci_lower: disable_fenix_enrollment_status_v137_v145_release.lower
-    ci_upper: disable_fenix_enrollment_status_v137_v145_release.upper
-    show_grid: true
-    listen:
-      Date: disable_fenix_enrollment_status_v137_v145_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_fenix_enrollment_status_v137_v145_release
-    type: looker_line
-    fields: [
-      disable_fenix_enrollment_status_v137_v145_release.submission_date,
-      disable_fenix_enrollment_status_v137_v145_release.branch,
-      disable_fenix_enrollment_status_v137_v145_release.point
-    ]
-    pivots: [
-      disable_fenix_enrollment_status_v137_v145_release.branch
-    ]
-    filters:
-      disable_fenix_enrollment_status_v137_v145_release.metric: 'active_hours'
-      disable_fenix_enrollment_status_v137_v145_release.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -164,7 +96,7 @@
     filters:
       disable_fenix_enrollment_status_v137_v145_release.metric: 'tagged_sap_searches'
       disable_fenix_enrollment_status_v137_v145_release.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -180,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,10 +128,44 @@
       disable_fenix_enrollment_status_v137_v145_release.branch
     ]
     filters:
-      disable_fenix_enrollment_status_v137_v145_release.metric: 'days_of_use'
+      disable_fenix_enrollment_status_v137_v145_release.metric: 'search_count'
+      disable_fenix_enrollment_status_v137_v145_release.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: disable_fenix_enrollment_status_v137_v145_release.submission_date
+    field_y: disable_fenix_enrollment_status_v137_v145_release.point
+    log_scale: false
+    ci_lower: disable_fenix_enrollment_status_v137_v145_release.lower
+    ci_upper: disable_fenix_enrollment_status_v137_v145_release.upper
+    show_grid: true
+    listen:
+      Date: disable_fenix_enrollment_status_v137_v145_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_fenix_enrollment_status_v137_v145_release
+    type: looker_line
+    fields: [
+      disable_fenix_enrollment_status_v137_v145_release.submission_date,
+      disable_fenix_enrollment_status_v137_v145_release.branch,
+      disable_fenix_enrollment_status_v137_v145_release.point
+    ]
+    pivots: [
+      disable_fenix_enrollment_status_v137_v145_release.branch
+    ]
+    filters:
+      disable_fenix_enrollment_status_v137_v145_release.metric: 'active_hours'
       disable_fenix_enrollment_status_v137_v145_release.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: disable_fenix_enrollment_status_v137_v145_release.submission_date
@@ -231,6 +197,40 @@
     ]
     filters:
       disable_fenix_enrollment_status_v137_v145_release.metric: 'retained'
+      disable_fenix_enrollment_status_v137_v145_release.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: disable_fenix_enrollment_status_v137_v145_release.submission_date
+    field_y: disable_fenix_enrollment_status_v137_v145_release.point
+    log_scale: false
+    ci_lower: disable_fenix_enrollment_status_v137_v145_release.lower
+    ci_upper: disable_fenix_enrollment_status_v137_v145_release.upper
+    show_grid: true
+    listen:
+      Date: disable_fenix_enrollment_status_v137_v145_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_fenix_enrollment_status_v137_v145_release
+    type: looker_line
+    fields: [
+      disable_fenix_enrollment_status_v137_v145_release.submission_date,
+      disable_fenix_enrollment_status_v137_v145_release.branch,
+      disable_fenix_enrollment_status_v137_v145_release.point
+    ]
+    pivots: [
+      disable_fenix_enrollment_status_v137_v145_release.branch
+    ]
+    filters:
+      disable_fenix_enrollment_status_v137_v145_release.metric: 'uri_count'
       disable_fenix_enrollment_status_v137_v145_release.statistic: mean
     row: 30
     col: 0
