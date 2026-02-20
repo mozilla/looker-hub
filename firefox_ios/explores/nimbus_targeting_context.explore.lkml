@@ -62,7 +62,7 @@ explore: nimbus_targeting_context {
 
   always_filter: {
     filters: [
-      channel: "release",
+      channel: "beta",
       submission_date: "28 days",
     ]
   }
