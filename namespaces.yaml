@@ -1046,6 +1046,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: metrics
+    nimbus_targeting_context:
+      type: glean_ping_explore
+      views:
+        base_view: nimbus_targeting_context
     onboarding:
       type: glean_ping_explore
       views:
@@ -1822,6 +1826,32 @@ fenix:
         table: mozdata.fenix.nimbus_recorded_targeting_context
       - channel: nightly
         table: mozdata.org_mozilla_fenix.nimbus_recorded_targeting_context
+      type: table_view
+    nimbus_targeting_context:
+      tables:
+      - channel: release
+        table: mozdata.fenix.nimbus_targeting_context
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.nimbus_targeting_context
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.nimbus_targeting_context
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.nimbus_targeting_context
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.nimbus_targeting_context
+      type: glean_ping_view
+    nimbus_targeting_context_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.nimbus_targeting_context
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.nimbus_targeting_context
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.nimbus_targeting_context
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.nimbus_targeting_context
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.nimbus_targeting_context
       type: table_view
     onboarding:
       tables:
@@ -3687,6 +3717,10 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: metrics
+    nimbus_targeting_context:
+      type: glean_ping_explore
+      views:
+        base_view: nimbus_targeting_context
     onboarding_opt_out:
       type: glean_ping_explore
       views:
@@ -4167,6 +4201,24 @@ firefox_ios:
       tables:
       - channel: release
         table: mozdata.firefox_ios.new_profiles
+      type: table_view
+    nimbus_targeting_context:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.nimbus_targeting_context
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.nimbus_targeting_context
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.nimbus_targeting_context
+      type: glean_ping_view
+    nimbus_targeting_context_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.nimbus_targeting_context
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.nimbus_targeting_context
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.nimbus_targeting_context
       type: table_view
     onboarding_opt_out:
       tables:
