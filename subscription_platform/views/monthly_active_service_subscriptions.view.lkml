@@ -223,6 +223,14 @@ This will be null for Google and Apple subscriptions."
     description: "Whether the subscription is a free trial."
   }
 
+  dimension: subscription__last_touch_attribution__channel_group {
+    sql: ${TABLE}.subscription.last_touch_attribution.channel_group ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Subscription: Last Touch Attribution"
+    group_item_label: "Channel Group"
+  }
+
   dimension: subscription__last_touch_attribution__entrypoint {
     sql: ${TABLE}.subscription.last_touch_attribution.entrypoint ;;
     type: string
