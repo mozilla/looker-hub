@@ -541,13 +541,6 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Version"
   }
 
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "App ID of the channel data was received from"
-  }
-
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -559,7 +552,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized channel name"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
@@ -728,11 +721,11 @@ The labels are the `category.name` identifier of the metric.
     type: string
     description: "Filter by the app's channel"
     sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
-    default_value: "release"
-    suggestions: ["release", "beta", "nightly"]
+    default_value: "beta"
+    suggestions: ["beta", "nightly"]
   }
 
-  sql_table_name: `mozdata.firefox_ios.nimbus_targeting_context` ;;
+  sql_table_name: `mozdata.org_mozilla_ios_firefoxbeta.nimbus_targeting_context` ;;
 }
 
 view: nimbus_targeting_context__metrics__labeled_counter__glean_error_invalid_label {

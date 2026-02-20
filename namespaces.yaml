@@ -1829,8 +1829,6 @@ fenix:
       type: table_view
     nimbus_targeting_context:
       tables:
-      - channel: release
-        table: mozdata.fenix.nimbus_targeting_context
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.nimbus_targeting_context
       - channel: nightly
@@ -1842,8 +1840,6 @@ fenix:
       type: glean_ping_view
     nimbus_targeting_context_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.nimbus_targeting_context
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.nimbus_targeting_context
       - channel: nightly
@@ -4204,8 +4200,6 @@ firefox_ios:
       type: table_view
     nimbus_targeting_context:
       tables:
-      - channel: release
-        table: mozdata.firefox_ios.nimbus_targeting_context
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.nimbus_targeting_context
       - channel: nightly
@@ -4213,8 +4207,6 @@ firefox_ios:
       type: glean_ping_view
     nimbus_targeting_context_table:
       tables:
-      - channel: release
-        table: mozdata.firefox_ios.nimbus_targeting_context
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.nimbus_targeting_context
       - channel: nightly
