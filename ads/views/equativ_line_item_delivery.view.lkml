@@ -131,6 +131,12 @@ view: equativ_line_item_delivery {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: stage_category {
+    sql: ${TABLE}.stage_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: total_click_derived_actual_revenue {
     sql: ${TABLE}.total_click_derived_actual_revenue ;;
     type: number
