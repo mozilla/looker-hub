@@ -497,6 +497,13 @@ for the purpose of experimentation enrollment.
     hidden: yes
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "App ID of the channel data was received from"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -508,7 +515,7 @@ for the purpose of experimentation enrollment.
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -666,7 +673,12 @@ for the purpose of experimentation enrollment.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_ios_firefoxbeta.nimbus_targeting_context"
+    default_value: "mozdata.firefox_ios.nimbus_targeting_context"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.firefox_ios.nimbus_targeting_context"
+    }
 
     allowed_value: {
       label: "Beta"
