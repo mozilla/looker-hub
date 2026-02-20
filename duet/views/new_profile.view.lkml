@@ -1435,7 +1435,7 @@ view: new_profile {
     suggest_persist_for: "24 hours"
     group_label: "Environment: System: OS"
     group_item_label: "Libstdcxx Version"
-    description: "The highest GLIBCXX version available in libstdc++.so.6. This is Linux only. `null` on failure."
+    description: "This field was added to the schema in error and is not populated in these pings. See https://bugzilla.mozilla.org/show_bug.cgi?id=2016621"
   }
 
   dimension: environment__system__os__locale {

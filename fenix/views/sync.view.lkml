@@ -180,6 +180,26 @@ e.g. \"22\"
 "
   }
 
+  dimension: metrics__string__system_os_libstdcxx_version {
+    label: "System OS: Libstdcxx Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_libstdcxx_version ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Libstdcxx Version"
+
+    link: {
+      label: "Glean Dictionary reference for System OS: Libstdcxx Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_libstdcxx_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's libstdc++ highest GLIBCXX version.
+Linux only.
+e.g. \"3.4.33\"
+"
+  }
+
   dimension: metrics__string__system_os_locale {
     label: "System OS: Locale"
     hidden: no
