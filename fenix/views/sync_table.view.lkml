@@ -748,6 +748,18 @@ e.g. \"22\"
 "
   }
 
+  dimension: metrics__string__system_os_libstdcxx_version {
+    sql: ${TABLE}.metrics.string.system_os_libstdcxx_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "System OS Libstdcxx Version"
+    description: "The Operating System's libstdc++ highest GLIBCXX version.
+Linux only.
+e.g. \"3.4.33\"
+"
+  }
+
   dimension: metrics__string__system_os_locale {
     sql: ${TABLE}.metrics.string.system_os_locale ;;
     type: string

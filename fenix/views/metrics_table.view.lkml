@@ -11719,6 +11719,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__dual_labeled_counter__urlfixup_suffix {
+    sql: ${TABLE}.metrics.dual_labeled_counter.urlfixup_suffix ;;
+    hidden: yes
+    description: "Counts how often a .com or other localized suffix is appended to a URL as a result of pressing ctrl/cmd + enter in the URL bar.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__webgpu_expose_adapter {
     sql: ${TABLE}.metrics.dual_labeled_counter.webgpu_expose_adapter ;;
     hidden: yes
@@ -13197,7 +13204,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -19380,6 +19387,18 @@ e.g. \"Linuxmint\"
     description: "The Operating System's distribution's version, according to sysinfo.
 Linux only.
 e.g. \"22\"
+"
+  }
+
+  dimension: metrics__string__system_os_libstdcxx_version {
+    sql: ${TABLE}.metrics.string.system_os_libstdcxx_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "System OS Libstdcxx Version"
+    description: "The Operating System's libstdc++ highest GLIBCXX version.
+Linux only.
+e.g. \"3.4.33\"
 "
   }
 
@@ -54630,6 +54649,33 @@ view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeo
 }
 
 view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlfixup_suffix {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlfixup_suffix__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
