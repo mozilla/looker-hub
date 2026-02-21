@@ -11568,15 +11568,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id446
           app:
-            default: iOS - vpn_session
+            default: Android - vpn_session
             options:
+            - Android - vpn_session
             - iOS - vpn_session
             - Windows - vpn_session
-            - iOS - daemon_session
-            - Android - daemon_session
-            - Android - vpn_session
             - Linux - vpn_session
+            - iOS - daemon_session
             - Darwin - vpn_session
+            - Android - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id447
