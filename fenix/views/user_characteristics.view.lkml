@@ -6858,24 +6858,6 @@ view: user_characteristics {
 "
   }
 
-  dimension: metrics__quantity__characteristics_timezone_offset_web {
-    label: "Characteristics: Timezone Offset Web"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.characteristics_timezone_offset_web ;;
-    type: number
-    group_label: "Characteristics"
-    group_item_label: "Timezone Offset Web"
-
-    link: {
-      label: "Glean Dictionary reference for Characteristics: Timezone Offset Web"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_timezone_offset_web"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The timezone offset in minutes exposed to web content via getTimezoneOffset()
-"
-  }
-
   dimension: metrics__string__characteristics_timezone_web {
     label: "Characteristics: Timezone Web"
     hidden: no
