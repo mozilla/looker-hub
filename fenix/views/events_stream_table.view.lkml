@@ -1024,6 +1024,14 @@ view: events_stream_table {
     group_item_label: "Channel Status"
   }
 
+  dimension: extras__quantity__character_count {
+    sql: ${TABLE}.extras.quantity.character_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Character Count"
+  }
+
   dimension: extras__quantity__columnnumber {
     sql: ${TABLE}.extras.quantity.columnnumber ;;
     type: number
@@ -1544,6 +1552,14 @@ view: events_stream_table {
     group_item_label: "Time To First Token"
   }
 
+  dimension: extras__quantity__token_count {
+    sql: ${TABLE}.extras.quantity.token_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Token Count"
+  }
+
   dimension: extras__quantity__tokenizing_time {
     sql: ${TABLE}.extras.quantity.tokenizing_time ;;
     type: number
@@ -2054,6 +2070,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Collection Name"
+  }
+
+  dimension: extras__string__component_stack {
+    sql: ${TABLE}.extras.string.component_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Component Stack"
   }
 
   dimension: extras__string__conflict_slug {
@@ -3448,6 +3472,30 @@ view: events_stream_table {
     group_item_label: "OS"
   }
 
+  dimension: extras__string__packet_error {
+    sql: ${TABLE}.extras.string.packet_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Packet Error"
+  }
+
+  dimension: extras__string__packet_target {
+    sql: ${TABLE}.extras.string.packet_target ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Packet Target"
+  }
+
+  dimension: extras__string__packet_type {
+    sql: ${TABLE}.extras.string.packet_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Packet Type"
+  }
+
   dimension: extras__string__page {
     sql: ${TABLE}.extras.string.page ;;
     type: string
@@ -3952,6 +4000,14 @@ view: events_stream_table {
     group_item_label: "Sequence Position"
   }
 
+  dimension: extras__string__server_stack {
+    sql: ${TABLE}.extras.string.server_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Server Stack"
+  }
+
   dimension: extras__string__session_id {
     sql: ${TABLE}.extras.string.session_id ;;
     type: string
@@ -4086,6 +4142,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Spoc ID"
+  }
+
+  dimension: extras__string__stack {
+    sql: ${TABLE}.extras.string.stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Stack"
   }
 
   dimension: extras__string__stack_id {
