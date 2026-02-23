@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: semantic_history_search_lab_experiment
-    type: looker_line
-    fields: [
-      semantic_history_search_lab_experiment.submission_date,
-      semantic_history_search_lab_experiment.branch,
-      semantic_history_search_lab_experiment.point
-    ]
-    pivots: [
-      semantic_history_search_lab_experiment.branch
-    ]
-    filters:
-      semantic_history_search_lab_experiment.metric: 'active_hours'
-      semantic_history_search_lab_experiment.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: semantic_history_search_lab_experiment.submission_date
-    field_y: semantic_history_search_lab_experiment.point
-    log_scale: false
-    ci_lower: semantic_history_search_lab_experiment.lower
-    ci_upper: semantic_history_search_lab_experiment.upper
-    show_grid: true
-    listen:
-      Date: semantic_history_search_lab_experiment.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       semantic_history_search_lab_experiment.metric: 'ad_clicks'
+      semantic_history_search_lab_experiment.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: semantic_history_search_lab_experiment.submission_date
+    field_y: semantic_history_search_lab_experiment.point
+    log_scale: false
+    ci_lower: semantic_history_search_lab_experiment.lower
+    ci_upper: semantic_history_search_lab_experiment.upper
+    show_grid: true
+    listen:
+      Date: semantic_history_search_lab_experiment.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: semantic_history_search_lab_experiment
+    type: looker_line
+    fields: [
+      semantic_history_search_lab_experiment.submission_date,
+      semantic_history_search_lab_experiment.branch,
+      semantic_history_search_lab_experiment.point
+    ]
+    pivots: [
+      semantic_history_search_lab_experiment.branch
+    ]
+    filters:
+      semantic_history_search_lab_experiment.metric: 'uri_count'
       semantic_history_search_lab_experiment.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,44 +128,10 @@
       semantic_history_search_lab_experiment.branch
     ]
     filters:
-      semantic_history_search_lab_experiment.metric: 'qualified_cumulative_days_of_use'
+      semantic_history_search_lab_experiment.metric: 'active_hours'
       semantic_history_search_lab_experiment.statistic: mean
     row: 10
     col: 12
-    width: 12
-    height: 8
-    field_x: semantic_history_search_lab_experiment.submission_date
-    field_y: semantic_history_search_lab_experiment.point
-    log_scale: false
-    ci_lower: semantic_history_search_lab_experiment.lower
-    ci_upper: semantic_history_search_lab_experiment.upper
-    show_grid: true
-    listen:
-      Date: semantic_history_search_lab_experiment.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: semantic_history_search_lab_experiment
-    type: looker_line
-    fields: [
-      semantic_history_search_lab_experiment.submission_date,
-      semantic_history_search_lab_experiment.branch,
-      semantic_history_search_lab_experiment.point
-    ]
-    pivots: [
-      semantic_history_search_lab_experiment.branch
-    ]
-    filters:
-      semantic_history_search_lab_experiment.metric: 'uri_count'
-      semantic_history_search_lab_experiment.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: semantic_history_search_lab_experiment.submission_date
@@ -199,7 +165,7 @@
       semantic_history_search_lab_experiment.metric: 'retained'
       semantic_history_search_lab_experiment.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: semantic_history_search_lab_experiment.submission_date
@@ -214,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,10 +196,10 @@
       semantic_history_search_lab_experiment.branch
     ]
     filters:
-      semantic_history_search_lab_experiment.metric: 'days_of_use'
+      semantic_history_search_lab_experiment.metric: 'qualified_cumulative_days_of_use'
       semantic_history_search_lab_experiment.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: semantic_history_search_lab_experiment.submission_date
@@ -269,7 +235,7 @@
       semantic_history_search_lab_experiment.metric: 'memory_total'
       semantic_history_search_lab_experiment.statistic: percentile
     row: 30
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: semantic_history_search_lab_experiment.submission_date
@@ -281,6 +247,40 @@
     listen:
       Date: semantic_history_search_lab_experiment.submission_date
       Percentile: semantic_history_search_lab_experiment.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: semantic_history_search_lab_experiment
+    type: looker_line
+    fields: [
+      semantic_history_search_lab_experiment.submission_date,
+      semantic_history_search_lab_experiment.branch,
+      semantic_history_search_lab_experiment.point
+    ]
+    pivots: [
+      semantic_history_search_lab_experiment.branch
+    ]
+    filters:
+      semantic_history_search_lab_experiment.metric: 'days_of_use'
+      semantic_history_search_lab_experiment.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: semantic_history_search_lab_experiment.submission_date
+    field_y: semantic_history_search_lab_experiment.point
+    log_scale: false
+    ci_lower: semantic_history_search_lab_experiment.lower
+    ci_upper: semantic_history_search_lab_experiment.upper
+    show_grid: true
+    listen:
+      Date: semantic_history_search_lab_experiment.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

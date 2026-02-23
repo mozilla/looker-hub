@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_eos_sync_and_reminder_messaging_rollout
-    type: looker_line
-    fields: [
-      windows_10_eos_sync_and_reminder_messaging_rollout.submission_date,
-      windows_10_eos_sync_and_reminder_messaging_rollout.branch,
-      windows_10_eos_sync_and_reminder_messaging_rollout.point
-    ]
-    pivots: [
-      windows_10_eos_sync_and_reminder_messaging_rollout.branch
-    ]
-    filters:
-      windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'active_hours'
-      windows_10_eos_sync_and_reminder_messaging_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
-    field_y: windows_10_eos_sync_and_reminder_messaging_rollout.point
-    log_scale: false
-    ci_lower: windows_10_eos_sync_and_reminder_messaging_rollout.lower
-    ci_upper: windows_10_eos_sync_and_reminder_messaging_rollout.upper
-    show_grid: true
-    listen:
-      Date: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'ad_clicks'
+      windows_10_eos_sync_and_reminder_messaging_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
+    field_y: windows_10_eos_sync_and_reminder_messaging_rollout.point
+    log_scale: false
+    ci_lower: windows_10_eos_sync_and_reminder_messaging_rollout.lower
+    ci_upper: windows_10_eos_sync_and_reminder_messaging_rollout.upper
+    show_grid: true
+    listen:
+      Date: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_eos_sync_and_reminder_messaging_rollout
+    type: looker_line
+    fields: [
+      windows_10_eos_sync_and_reminder_messaging_rollout.submission_date,
+      windows_10_eos_sync_and_reminder_messaging_rollout.branch,
+      windows_10_eos_sync_and_reminder_messaging_rollout.point
+    ]
+    pivots: [
+      windows_10_eos_sync_and_reminder_messaging_rollout.branch
+    ]
+    filters:
+      windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'uri_count'
       windows_10_eos_sync_and_reminder_messaging_rollout.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,44 +128,10 @@
       windows_10_eos_sync_and_reminder_messaging_rollout.branch
     ]
     filters:
-      windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'qualified_cumulative_days_of_use'
+      windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'active_hours'
       windows_10_eos_sync_and_reminder_messaging_rollout.statistic: mean
     row: 10
     col: 12
-    width: 12
-    height: 8
-    field_x: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
-    field_y: windows_10_eos_sync_and_reminder_messaging_rollout.point
-    log_scale: false
-    ci_lower: windows_10_eos_sync_and_reminder_messaging_rollout.lower
-    ci_upper: windows_10_eos_sync_and_reminder_messaging_rollout.upper
-    show_grid: true
-    listen:
-      Date: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_eos_sync_and_reminder_messaging_rollout
-    type: looker_line
-    fields: [
-      windows_10_eos_sync_and_reminder_messaging_rollout.submission_date,
-      windows_10_eos_sync_and_reminder_messaging_rollout.branch,
-      windows_10_eos_sync_and_reminder_messaging_rollout.point
-    ]
-    pivots: [
-      windows_10_eos_sync_and_reminder_messaging_rollout.branch
-    ]
-    filters:
-      windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'uri_count'
-      windows_10_eos_sync_and_reminder_messaging_rollout.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
@@ -199,7 +165,7 @@
       windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'retained'
       windows_10_eos_sync_and_reminder_messaging_rollout.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
@@ -214,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,10 +196,10 @@
       windows_10_eos_sync_and_reminder_messaging_rollout.branch
     ]
     filters:
-      windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'days_of_use'
+      windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'qualified_cumulative_days_of_use'
       windows_10_eos_sync_and_reminder_messaging_rollout.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
@@ -269,7 +235,7 @@
       windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'memory_total'
       windows_10_eos_sync_and_reminder_messaging_rollout.statistic: percentile
     row: 30
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
@@ -281,6 +247,40 @@
     listen:
       Date: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
       Percentile: windows_10_eos_sync_and_reminder_messaging_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_eos_sync_and_reminder_messaging_rollout
+    type: looker_line
+    fields: [
+      windows_10_eos_sync_and_reminder_messaging_rollout.submission_date,
+      windows_10_eos_sync_and_reminder_messaging_rollout.branch,
+      windows_10_eos_sync_and_reminder_messaging_rollout.point
+    ]
+    pivots: [
+      windows_10_eos_sync_and_reminder_messaging_rollout.branch
+    ]
+    filters:
+      windows_10_eos_sync_and_reminder_messaging_rollout.metric: 'days_of_use'
+      windows_10_eos_sync_and_reminder_messaging_rollout.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
+    field_y: windows_10_eos_sync_and_reminder_messaging_rollout.point
+    log_scale: false
+    ci_lower: windows_10_eos_sync_and_reminder_messaging_rollout.lower
+    ci_upper: windows_10_eos_sync_and_reminder_messaging_rollout.upper
+    show_grid: true
+    listen:
+      Date: windows_10_eos_sync_and_reminder_messaging_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

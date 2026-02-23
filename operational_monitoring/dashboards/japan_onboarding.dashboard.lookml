@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       japan_onboarding.branch
     ]
     filters:
-      japan_onboarding.metric: 'active_hours'
+      japan_onboarding.metric: 'ad_clicks'
       japan_onboarding.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       japan_onboarding.branch
     ]
     filters:
-      japan_onboarding.metric: 'ad_clicks'
+      japan_onboarding.metric: 'active_hours'
       japan_onboarding.statistic: mean
     row: 10
     col: 0
