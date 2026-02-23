@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       summarizer_mistral_model_rollout_existing_users_us_target_all.branch
     ]
     filters:
-      summarizer_mistral_model_rollout_existing_users_us_target_all.metric: 'active_hours'
+      summarizer_mistral_model_rollout_existing_users_us_target_all.metric: 'ad_clicks'
       summarizer_mistral_model_rollout_existing_users_us_target_all.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       summarizer_mistral_model_rollout_existing_users_us_target_all.branch
     ]
     filters:
-      summarizer_mistral_model_rollout_existing_users_us_target_all.metric: 'ad_clicks'
+      summarizer_mistral_model_rollout_existing_users_us_target_all.metric: 'active_hours'
       summarizer_mistral_model_rollout_existing_users_us_target_all.statistic: mean
     row: 10
     col: 0
