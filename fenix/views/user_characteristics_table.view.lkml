@@ -3750,6 +3750,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_timezone_offset_web {
+    sql: ${TABLE}.metrics.string.characteristics_timezone_offset_web ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Timezone Offset Web"
+    description: "The timezone offset in minutes exposed to web content via getTimezoneOffset()
+"
+  }
+
   dimension: metrics__string__characteristics_timezone_web {
     sql: ${TABLE}.metrics.string.characteristics_timezone_web ;;
     type: string
