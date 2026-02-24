@@ -86,6 +86,13 @@ If the value was not provided through configuration, this metric gets set to Unk
     description: "The attribution medium; similar or the same as UTM medium."
   }
 
+  dimension: attribution_msclkid {
+    sql: ${TABLE}.attribution_msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Unique token created at Firefox download time using the Microsoft Store."
+  }
+
   dimension: attribution_source {
     sql: ${TABLE}.attribution_source ;;
     type: string
