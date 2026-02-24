@@ -72,6 +72,15 @@ view: onboarding_hourly_table {
     description: "Category of the source, such as 'organic' for a search engine."
   }
 
+  dimension: attribution__msclkid {
+    sql: ${TABLE}.attribution.msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Msclkid"
+    description: "Unique token created at Firefox download time using the Microsoft Store."
+  }
+
   dimension: attribution__msstoresignedin {
     sql: ${TABLE}.attribution.msstoresignedin ;;
     type: string

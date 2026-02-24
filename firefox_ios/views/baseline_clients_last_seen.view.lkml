@@ -99,6 +99,12 @@ view: baseline_clients_last_seen {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: attribution_msclkid {
+    sql: ${TABLE}.attribution_msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: attribution_ua {
     sql: ${TABLE}.attribution_ua ;;
     type: string

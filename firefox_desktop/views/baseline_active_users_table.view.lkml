@@ -121,6 +121,12 @@ view: baseline_active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: attribution_msclkid {
+    sql: ${TABLE}.attribution_msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: attribution_source {
     sql: ${TABLE}.attribution_source ;;
     type: string
