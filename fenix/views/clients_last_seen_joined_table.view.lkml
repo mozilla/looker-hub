@@ -93,6 +93,12 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: attribution_msclkid {
+    sql: ${TABLE}.attribution_msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: attribution_ua {
     sql: ${TABLE}.attribution_ua ;;
     type: string
