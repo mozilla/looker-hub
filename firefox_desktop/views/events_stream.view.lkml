@@ -1203,6 +1203,14 @@ view: events_stream {
     group_item_label: "Title"
   }
 
+  dimension: extras__boolean__toggle {
+    sql: ${TABLE}.extras.boolean.toggle ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Toggle"
+  }
+
   dimension: extras__boolean__toggle_state {
     sql: ${TABLE}.extras.boolean.toggle_state ;;
     type: yesno
@@ -2969,6 +2977,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Changed Pref"
+  }
+
+  dimension: extras__string__chat_id {
+    sql: ${TABLE}.extras.string.chat_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Chat ID"
   }
 
   dimension: extras__string__choice {
@@ -5643,12 +5659,28 @@ view: events_stream {
     group_item_label: "Tab"
   }
 
+  dimension: extras__string__tab_layout {
+    sql: ${TABLE}.extras.string.tab_layout ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Tab Layout"
+  }
+
   dimension: extras__string__tab_pos {
     sql: ${TABLE}.extras.string.tab_pos ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Tab Pos"
+  }
+
+  dimension: extras__string__tabgroup {
+    sql: ${TABLE}.extras.string.tabgroup ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Tabgroup"
   }
 
   dimension: extras__string__table {
