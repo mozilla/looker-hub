@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: pin_frequently_used_websites_en_promo_rollout_no_min_version {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.pin_frequently_used_websites_en_promo_rollout_no_min_version_statistics ;;
+view: sidebar_customization_message_day_3_users_all_locales {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.sidebar_customization_message_day_3_users_all_locales_statistics ;;
 
   dimension: submission_date {
     type: date
