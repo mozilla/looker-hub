@@ -78,26 +78,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: enable_ohttp_for_mars_communications_on_release
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       enable_ohttp_for_mars_communications_on_release.submission_date,
       enable_ohttp_for_mars_communications_on_release.branch,
-      enable_ohttp_for_mars_communications_on_release.upper,
-      enable_ohttp_for_mars_communications_on_release.lower,
       enable_ohttp_for_mars_communications_on_release.point
     ]
     pivots: [
       enable_ohttp_for_mars_communications_on_release.branch
     ]
     filters:
-      enable_ohttp_for_mars_communications_on_release.metric: 'memory_total'
-      enable_ohttp_for_mars_communications_on_release.statistic: percentile
+      enable_ohttp_for_mars_communications_on_release.metric: 'search_count'
+      enable_ohttp_for_mars_communications_on_release.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -110,7 +108,6 @@
     show_grid: true
     listen:
       Date: enable_ohttp_for_mars_communications_on_release.submission_date
-      Percentile: enable_ohttp_for_mars_communications_on_release.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -149,40 +146,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_ohttp_for_mars_communications_on_release
-    type: looker_line
-    fields: [
-      enable_ohttp_for_mars_communications_on_release.submission_date,
-      enable_ohttp_for_mars_communications_on_release.branch,
-      enable_ohttp_for_mars_communications_on_release.point
-    ]
-    pivots: [
-      enable_ohttp_for_mars_communications_on_release.branch
-    ]
-    filters:
-      enable_ohttp_for_mars_communications_on_release.metric: 'search_count'
-      enable_ohttp_for_mars_communications_on_release.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: enable_ohttp_for_mars_communications_on_release.submission_date
-    field_y: enable_ohttp_for_mars_communications_on_release.point
-    log_scale: false
-    ci_lower: enable_ohttp_for_mars_communications_on_release.lower
-    ci_upper: enable_ohttp_for_mars_communications_on_release.upper
-    show_grid: true
-    listen:
-      Date: enable_ohttp_for_mars_communications_on_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -202,6 +165,42 @@
       enable_ohttp_for_mars_communications_on_release.metric: 'days_of_use'
       enable_ohttp_for_mars_communications_on_release.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_ohttp_for_mars_communications_on_release.submission_date
+    field_y: enable_ohttp_for_mars_communications_on_release.point
+    log_scale: false
+    ci_lower: enable_ohttp_for_mars_communications_on_release.lower
+    ci_upper: enable_ohttp_for_mars_communications_on_release.upper
+    show_grid: true
+    listen:
+      Date: enable_ohttp_for_mars_communications_on_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: enable_ohttp_for_mars_communications_on_release
+    type: "ci-line-chart"
+    fields: [
+      enable_ohttp_for_mars_communications_on_release.submission_date,
+      enable_ohttp_for_mars_communications_on_release.branch,
+      enable_ohttp_for_mars_communications_on_release.upper,
+      enable_ohttp_for_mars_communications_on_release.lower,
+      enable_ohttp_for_mars_communications_on_release.point
+    ]
+    pivots: [
+      enable_ohttp_for_mars_communications_on_release.branch
+    ]
+    filters:
+      enable_ohttp_for_mars_communications_on_release.metric: 'memory_total'
+      enable_ohttp_for_mars_communications_on_release.statistic: percentile
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: enable_ohttp_for_mars_communications_on_release.submission_date
+      Percentile: enable_ohttp_for_mars_communications_on_release.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

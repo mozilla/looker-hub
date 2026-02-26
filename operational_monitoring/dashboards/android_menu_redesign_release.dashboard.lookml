@@ -78,6 +78,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_menu_redesign_release
+    type: looker_line
+    fields: [
+      android_menu_redesign_release.submission_date,
+      android_menu_redesign_release.branch,
+      android_menu_redesign_release.point
+    ]
+    pivots: [
+      android_menu_redesign_release.branch
+    ]
+    filters:
+      android_menu_redesign_release.metric: 'search_count'
+      android_menu_redesign_release.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: android_menu_redesign_release.submission_date
+    field_y: android_menu_redesign_release.point
+    log_scale: false
+    ci_lower: android_menu_redesign_release.lower
+    ci_upper: android_menu_redesign_release.upper
+    show_grid: true
+    listen:
+      Date: android_menu_redesign_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Tagged Sap Searches
     name: Tagged Sap Searches_mean
     note_state: expanded
@@ -97,7 +131,7 @@
       android_menu_redesign_release.metric: 'tagged_sap_searches'
       android_menu_redesign_release.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: android_menu_redesign_release.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       android_menu_redesign_release.metric: 'uri_count'
-      android_menu_redesign_release.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_menu_redesign_release.submission_date
-    field_y: android_menu_redesign_release.point
-    log_scale: false
-    ci_lower: android_menu_redesign_release.lower
-    ci_upper: android_menu_redesign_release.upper
-    show_grid: true
-    listen:
-      Date: android_menu_redesign_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_menu_redesign_release
-    type: looker_line
-    fields: [
-      android_menu_redesign_release.submission_date,
-      android_menu_redesign_release.branch,
-      android_menu_redesign_release.point
-    ]
-    pivots: [
-      android_menu_redesign_release.branch
-    ]
-    filters:
-      android_menu_redesign_release.metric: 'search_count'
       android_menu_redesign_release.statistic: mean
     row: 20
     col: 0

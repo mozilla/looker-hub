@@ -23952,6 +23952,60 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__sum {
+    label: "Private Browsing Cleanup: Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.sum ;;
+    type: number
+    group_label: "Private Browsing Cleanup"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Private Browsing Cleanup: Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/private_browsing_cleanup_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Wall-clock time from clearPrivateBrowsingData() call start to callback invocation. This currently does not keep track of regular PBM teardown (last PBM window exited).
+"
+  }
+
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__numerator {
+    label: "Private Browsing Cleanup: Error Rate Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.numerator ;;
+    type: number
+    group_label: "Private Browsing Cleanup"
+    group_item_label: "Error Rate Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Private Browsing Cleanup: Error Rate Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/private_browsing_cleanup_error_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Rate of clearPrivateBrowsingData() calls that reported at least one observer failure. Denominator is incremented on every call; numerator is incremented when hadFailures is true or the promise rejects. This currently does not keep track of regular PBM teardown (last PBM window exited).
+"
+  }
+
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__denominator {
+    label: "Private Browsing Cleanup: Error Rate Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.denominator ;;
+    type: number
+    group_label: "Private Browsing Cleanup"
+    group_item_label: "Error Rate Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Private Browsing Cleanup: Error Rate Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/private_browsing_cleanup_error_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Rate of clearPrivateBrowsingData() calls that reported at least one observer failure. Denominator is incremented on every call; numerator is incremented when hadFailures is true or the promise rejects. This currently does not keep track of regular PBM teardown (last PBM window exited).
+"
+  }
+
   dimension: metrics__timing_distribution__process_child_launch__sum {
     label: "Process: Child Launch Sum"
     hidden: no
@@ -76206,6 +76260,20 @@ view: metrics__metrics__timing_distribution__predictor_wait_time__values {
 }
 
 view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__private_browsing_cleanup_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

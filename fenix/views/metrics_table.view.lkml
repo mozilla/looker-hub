@@ -18284,6 +18284,22 @@ e.g. 134217728
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__denominator {
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.denominator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Private Browsing Cleanup Error Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__numerator {
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.numerator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Private Browsing Cleanup Error Rate"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
     type: number
@@ -44840,6 +44856,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__process_child_launch__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.process_child_launch.bucket_count ;;
     type: number
@@ -69120,6 +69203,20 @@ view: metrics_table__metrics__timing_distribution__predictor_wait_time__values {
 }
 
 view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__private_browsing_cleanup_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

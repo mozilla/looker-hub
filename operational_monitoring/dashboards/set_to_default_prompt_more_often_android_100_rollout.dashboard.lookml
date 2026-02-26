@@ -78,6 +78,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: set_to_default_prompt_more_often_android_100_rollout
+    type: looker_line
+    fields: [
+      set_to_default_prompt_more_often_android_100_rollout.submission_date,
+      set_to_default_prompt_more_often_android_100_rollout.branch,
+      set_to_default_prompt_more_often_android_100_rollout.point
+    ]
+    pivots: [
+      set_to_default_prompt_more_often_android_100_rollout.branch
+    ]
+    filters:
+      set_to_default_prompt_more_often_android_100_rollout.metric: 'search_count'
+      set_to_default_prompt_more_often_android_100_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: set_to_default_prompt_more_often_android_100_rollout.submission_date
+    field_y: set_to_default_prompt_more_often_android_100_rollout.point
+    log_scale: false
+    ci_lower: set_to_default_prompt_more_often_android_100_rollout.lower
+    ci_upper: set_to_default_prompt_more_often_android_100_rollout.upper
+    show_grid: true
+    listen:
+      Date: set_to_default_prompt_more_often_android_100_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Tagged Sap Searches
     name: Tagged Sap Searches_mean
     note_state: expanded
@@ -97,7 +131,7 @@
       set_to_default_prompt_more_often_android_100_rollout.metric: 'tagged_sap_searches'
       set_to_default_prompt_more_often_android_100_rollout.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: set_to_default_prompt_more_often_android_100_rollout.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       set_to_default_prompt_more_often_android_100_rollout.metric: 'uri_count'
-      set_to_default_prompt_more_often_android_100_rollout.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: set_to_default_prompt_more_often_android_100_rollout.submission_date
-    field_y: set_to_default_prompt_more_often_android_100_rollout.point
-    log_scale: false
-    ci_lower: set_to_default_prompt_more_often_android_100_rollout.lower
-    ci_upper: set_to_default_prompt_more_often_android_100_rollout.upper
-    show_grid: true
-    listen:
-      Date: set_to_default_prompt_more_often_android_100_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: set_to_default_prompt_more_often_android_100_rollout
-    type: looker_line
-    fields: [
-      set_to_default_prompt_more_often_android_100_rollout.submission_date,
-      set_to_default_prompt_more_often_android_100_rollout.branch,
-      set_to_default_prompt_more_often_android_100_rollout.point
-    ]
-    pivots: [
-      set_to_default_prompt_more_often_android_100_rollout.branch
-    ]
-    filters:
-      set_to_default_prompt_more_often_android_100_rollout.metric: 'search_count'
       set_to_default_prompt_more_often_android_100_rollout.statistic: mean
     row: 20
     col: 0
