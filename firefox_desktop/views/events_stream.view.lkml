@@ -475,6 +475,14 @@ view: events_stream {
     group_item_label: "Enter"
   }
 
+  dimension: extras__boolean__excluded {
+    sql: ${TABLE}.extras.boolean.excluded ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Excluded"
+  }
+
   dimension: extras__boolean__expand {
     sql: ${TABLE}.extras.boolean.expand ;;
     type: yesno
