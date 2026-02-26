@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/viewpoint_android_february_2026.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/viewpoint_android_february_2026_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/measurement_insights_test.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/measurement_insights_test_last_updated.datagroup.lkml"
 
-explore: viewpoint_android_february_2026 {
+explore: measurement_insights_test {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: viewpoint_android_february_2026 {
   }
 
   hidden: yes
-  persist_with: viewpoint_android_february_2026_last_updated
+  persist_with: measurement_insights_test_last_updated
 }

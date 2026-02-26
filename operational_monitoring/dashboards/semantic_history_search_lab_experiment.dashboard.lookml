@@ -78,26 +78,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: semantic_history_search_lab_experiment
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       semantic_history_search_lab_experiment.submission_date,
       semantic_history_search_lab_experiment.branch,
-      semantic_history_search_lab_experiment.upper,
-      semantic_history_search_lab_experiment.lower,
       semantic_history_search_lab_experiment.point
     ]
     pivots: [
       semantic_history_search_lab_experiment.branch
     ]
     filters:
-      semantic_history_search_lab_experiment.metric: 'memory_total'
-      semantic_history_search_lab_experiment.statistic: percentile
+      semantic_history_search_lab_experiment.metric: 'search_count'
+      semantic_history_search_lab_experiment.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -110,7 +108,6 @@
     show_grid: true
     listen:
       Date: semantic_history_search_lab_experiment.submission_date
-      Percentile: semantic_history_search_lab_experiment.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -149,40 +146,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: semantic_history_search_lab_experiment
-    type: looker_line
-    fields: [
-      semantic_history_search_lab_experiment.submission_date,
-      semantic_history_search_lab_experiment.branch,
-      semantic_history_search_lab_experiment.point
-    ]
-    pivots: [
-      semantic_history_search_lab_experiment.branch
-    ]
-    filters:
-      semantic_history_search_lab_experiment.metric: 'search_count'
-      semantic_history_search_lab_experiment.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: semantic_history_search_lab_experiment.submission_date
-    field_y: semantic_history_search_lab_experiment.point
-    log_scale: false
-    ci_lower: semantic_history_search_lab_experiment.lower
-    ci_upper: semantic_history_search_lab_experiment.upper
-    show_grid: true
-    listen:
-      Date: semantic_history_search_lab_experiment.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -202,6 +165,42 @@
       semantic_history_search_lab_experiment.metric: 'days_of_use'
       semantic_history_search_lab_experiment.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: semantic_history_search_lab_experiment.submission_date
+    field_y: semantic_history_search_lab_experiment.point
+    log_scale: false
+    ci_lower: semantic_history_search_lab_experiment.lower
+    ci_upper: semantic_history_search_lab_experiment.upper
+    show_grid: true
+    listen:
+      Date: semantic_history_search_lab_experiment.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: semantic_history_search_lab_experiment
+    type: "ci-line-chart"
+    fields: [
+      semantic_history_search_lab_experiment.submission_date,
+      semantic_history_search_lab_experiment.branch,
+      semantic_history_search_lab_experiment.upper,
+      semantic_history_search_lab_experiment.lower,
+      semantic_history_search_lab_experiment.point
+    ]
+    pivots: [
+      semantic_history_search_lab_experiment.branch
+    ]
+    filters:
+      semantic_history_search_lab_experiment.metric: 'memory_total'
+      semantic_history_search_lab_experiment.statistic: percentile
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: semantic_history_search_lab_experiment.submission_date
+      Percentile: semantic_history_search_lab_experiment.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

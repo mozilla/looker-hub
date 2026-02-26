@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: vertical_tabs_feature_callout_experiment_v20_treatment_a_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.vertical_tabs_feature_callout_experiment_v20_treatment_a_rollout_statistics ;;
+view: vertical_tabs_promo_rollout_day_3_profiles_all_locales {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.vertical_tabs_promo_rollout_day_3_profiles_all_locales_statistics ;;
 
   dimension: submission_date {
     type: date
