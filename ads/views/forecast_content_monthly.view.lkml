@@ -134,7 +134,7 @@ view: forecast_content_monthly {
   }
 
   measure: actual_uapi_impressions_excluding_house_ads_sum {
-    sql: ${actual_uapi_impressions_excluding_house_ads} ;;
+    sql: ${actual_uapi_impressions_excluding_house} ;;
     type: sum
   }
 
