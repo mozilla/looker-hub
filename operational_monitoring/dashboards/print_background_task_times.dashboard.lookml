@@ -185,32 +185,32 @@
   - title: Channel
     name: Channel
     type: string_filter
-    default_value: 'nightly'
+    default_value: 'release'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'nightly'
       - 'release'
       - 'beta'
+      - 'nightly'
       
   
   
   - title: OS
     name: OS
     type: string_filter
-    default_value: 'Linux'
+    default_value: 'Darwin'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Linux'
-      - 'Windows_NT'
       - 'Darwin'
+      - 'Windows_NT'
+      - 'Linux'
       
   
   

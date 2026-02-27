@@ -11502,12 +11502,12 @@ operational_monitoring:
             default: Android - vpn_session
             options:
             - Android - vpn_session
-            - Darwin - vpn_session
             - iOS - daemon_session
+            - Windows - vpn_session
+            - Android - daemon_session
             - iOS - vpn_session
             - Linux - vpn_session
-            - Android - daemon_session
-            - Windows - vpn_session
+            - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id444
@@ -12467,17 +12467,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id506
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
             - beta
+            - nightly
           os:
-            default: Linux
+            default: Darwin
             options:
-            - Linux
-            - Windows_NT
             - Darwin
+            - Windows_NT
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id507
