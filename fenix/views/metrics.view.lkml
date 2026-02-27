@@ -850,7 +850,7 @@ location.
 
   dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
     label: "First Session: Adjust Attribution Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
     type: number
     group_label: "First Session"
