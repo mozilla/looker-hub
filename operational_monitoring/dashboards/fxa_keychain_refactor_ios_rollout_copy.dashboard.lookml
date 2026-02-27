@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fxa_keychain_refactor_ios_rollout_copy.branch
     ]
     filters:
-      fxa_keychain_refactor_ios_rollout_copy.metric: 'retained'
+      fxa_keychain_refactor_ios_rollout_copy.metric: 'active_hours'
       fxa_keychain_refactor_ios_rollout_copy.statistic: mean
     row: 0
     col: 0
@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fxa_keychain_refactor_ios_rollout_copy
-    type: looker_line
-    fields: [
-      fxa_keychain_refactor_ios_rollout_copy.submission_date,
-      fxa_keychain_refactor_ios_rollout_copy.branch,
-      fxa_keychain_refactor_ios_rollout_copy.point
-    ]
-    pivots: [
-      fxa_keychain_refactor_ios_rollout_copy.branch
-    ]
-    filters:
-      fxa_keychain_refactor_ios_rollout_copy.metric: 'search_count'
-      fxa_keychain_refactor_ios_rollout_copy.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: fxa_keychain_refactor_ios_rollout_copy.submission_date
-    field_y: fxa_keychain_refactor_ios_rollout_copy.point
-    log_scale: false
-    ci_lower: fxa_keychain_refactor_ios_rollout_copy.lower
-    ci_upper: fxa_keychain_refactor_ios_rollout_copy.upper
-    show_grid: true
-    listen:
-      Date: fxa_keychain_refactor_ios_rollout_copy.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -131,6 +97,40 @@
       fxa_keychain_refactor_ios_rollout_copy.metric: 'days_of_use'
       fxa_keychain_refactor_ios_rollout_copy.statistic: mean
     row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: fxa_keychain_refactor_ios_rollout_copy.submission_date
+    field_y: fxa_keychain_refactor_ios_rollout_copy.point
+    log_scale: false
+    ci_lower: fxa_keychain_refactor_ios_rollout_copy.lower
+    ci_upper: fxa_keychain_refactor_ios_rollout_copy.upper
+    show_grid: true
+    listen:
+      Date: fxa_keychain_refactor_ios_rollout_copy.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fxa_keychain_refactor_ios_rollout_copy
+    type: looker_line
+    fields: [
+      fxa_keychain_refactor_ios_rollout_copy.submission_date,
+      fxa_keychain_refactor_ios_rollout_copy.branch,
+      fxa_keychain_refactor_ios_rollout_copy.point
+    ]
+    pivots: [
+      fxa_keychain_refactor_ios_rollout_copy.branch
+    ]
+    filters:
+      fxa_keychain_refactor_ios_rollout_copy.metric: 'search_count'
+      fxa_keychain_refactor_ios_rollout_copy.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       fxa_keychain_refactor_ios_rollout_copy.branch
     ]
     filters:
-      fxa_keychain_refactor_ios_rollout_copy.metric: 'active_hours'
+      fxa_keychain_refactor_ios_rollout_copy.metric: 'retained'
       fxa_keychain_refactor_ios_rollout_copy.statistic: mean
     row: 20
     col: 0

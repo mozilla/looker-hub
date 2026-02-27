@@ -7,7 +7,7 @@
 view: first_session {
   dimension: metrics__string__first_session_adgroup {
     label: "First Session: Adgroup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.first_session_adgroup ;;
     type: string
     group_label: "First Session"
@@ -25,7 +25,7 @@ view: first_session {
 
   dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
     label: "First Session: Adjust Attribution Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
     type: number
     group_label: "First Session"
@@ -61,7 +61,7 @@ view: first_session {
 
   dimension: metrics__string__first_session_campaign {
     label: "First Session: Campaign"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.first_session_campaign ;;
     type: string
     group_label: "First Session"
@@ -79,7 +79,7 @@ view: first_session {
 
   dimension: metrics__string__first_session_creative {
     label: "First Session: Creative"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.first_session_creative ;;
     type: string
     group_label: "First Session"
@@ -135,7 +135,7 @@ partnership deal distributions
 
   dimension: metrics__string__first_session_network {
     label: "First Session: Network"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.first_session_network ;;
     type: string
     group_label: "First Session"
