@@ -11502,12 +11502,12 @@ operational_monitoring:
             default: Android - vpn_session
             options:
             - Android - vpn_session
-            - Darwin - vpn_session
             - iOS - daemon_session
+            - Windows - vpn_session
+            - Android - daemon_session
             - iOS - vpn_session
             - Linux - vpn_session
-            - Android - daemon_session
-            - Windows - vpn_session
+            - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id444
