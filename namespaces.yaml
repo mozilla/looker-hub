@@ -373,7 +373,7 @@ ads:
           sql: ${actual_revenue}
           type: sum
         actual_uapi_impressions_excluding_house_ads_sum:
-          sql: ${actual_uapi_impressions_excluding_house_ads}
+          sql: ${actual_uapi_impressions_excluding_house}
           type: sum
         fill_rate:
           sql: SAFE_DIVIDE(${actual_uapi_impressions_excluding_house_ads_sum},${forecast_native_inventory_sum})
