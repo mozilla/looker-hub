@@ -18871,6 +18871,10 @@ websites:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_www_site_landing_page_metrics
+    semrush_domain_overview:
+      type: table_explore
+      views:
+        base_view: semrush_domain_overview
     site_engagement_events:
       type: table_explore
       views:
@@ -18970,6 +18974,10 @@ websites:
     moz_org_page_metrics:
       tables:
       - table: moz-fx-data-shared-prod.mozilla_org.www_site_page_metrics
+      type: table_view
+    semrush_domain_overview:
+      tables:
+      - table: moz-fx-data-shared-prod.semrush.domain_overview
       type: table_view
     site_engagement_events:
       tables:
