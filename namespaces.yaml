@@ -361,7 +361,7 @@ ads:
     forecast_content_monthly:
       measures:
         actual_ecpm_avg:
-          sql: SAFE_DIVIDE(${actual_revenue_sum},${actual_uapi_impressions_excluding_house_ads})*1000
+          sql: SAFE_DIVIDE(${actual_revenue_sum},${actual_uapi_impressions_excluding_house_ads_sum})*1000
           type: number
         actual_native_glean_inventory_sum:
           sql: ${actual_native_glean_inventory}
@@ -376,7 +376,7 @@ ads:
           sql: ${actual_uapi_impressions_excluding_house_ads}
           type: sum
         fill_rate:
-          sql: SAFE_DIVIDE(${actual_uapi_impressions_excluding_house_ads},${forecast_native_inventory})
+          sql: SAFE_DIVIDE(${actual_uapi_impressions_excluding_house_ads_sum},${forecast_native_inventory_sum})
           type: number
         forecast_ecpm_avg:
           sql: SAFE_DIVIDE(${forecast_revenue_sum},${forecast_uapi_impressions_excluding_house_ads})*1000
