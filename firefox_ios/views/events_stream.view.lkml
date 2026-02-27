@@ -867,6 +867,14 @@ view: events_stream {
     group_item_label: "Message Surface"
   }
 
+  dimension: extras__string__method {
+    sql: ${TABLE}.extras.string.method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Method"
+  }
+
   dimension: extras__string__mode {
     sql: ${TABLE}.extras.string.mode ;;
     type: string
@@ -897,6 +905,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Old Name"
+  }
+
+  dimension: extras__string__onboarding_reason {
+    sql: ${TABLE}.extras.string.onboarding_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Onboarding Reason"
   }
 
   dimension: extras__string__onboarding_variant {
