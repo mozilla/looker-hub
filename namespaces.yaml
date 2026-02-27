@@ -3748,6 +3748,10 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: nimbus_targeting_context
+    onboarding:
+      type: glean_ping_explore
+      views:
+        base_view: onboarding
     onboarding_opt_out:
       type: glean_ping_explore
       views:
@@ -4247,6 +4251,15 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.nimbus_targeting_context
       type: table_view
+    onboarding:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.onboarding
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.onboarding
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.onboarding
+      type: glean_ping_view
     onboarding_opt_out:
       tables:
       - channel: release
@@ -4264,6 +4277,15 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.onboarding_opt_out
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.onboarding_opt_out
+      type: table_view
+    onboarding_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.onboarding
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.onboarding
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.onboarding
       type: table_view
     profile_dau_metrics_marketing_geo_testing_table:
       tables:
