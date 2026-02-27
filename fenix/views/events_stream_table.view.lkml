@@ -360,6 +360,14 @@ view: events_stream_table {
     group_item_label: "Cookies And Storage"
   }
 
+  dimension: extras__boolean__corrupt {
+    sql: ${TABLE}.extras.boolean.corrupt ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Corrupt"
+  }
+
   dimension: extras__boolean__data_fetched {
     sql: ${TABLE}.extras.boolean.data_fetched ;;
     type: yesno
@@ -1160,6 +1168,14 @@ view: events_stream_table {
     group_item_label: "First Frame Loaded Time"
   }
 
+  dimension: extras__quantity__from_version {
+    sql: ${TABLE}.extras.quantity.from_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "From Version"
+  }
+
   dimension: extras__quantity__has_alt_text {
     sql: ${TABLE}.extras.quantity.has_alt_text ;;
     type: number
@@ -1206,6 +1222,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Inference Time"
+  }
+
+  dimension: extras__quantity__initial_version {
+    sql: ${TABLE}.extras.quantity.initial_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Initial Version"
   }
 
   dimension: extras__quantity__input_tokens {
@@ -1286,6 +1310,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Metadata Loaded Time"
+  }
+
+  dimension: extras__quantity__migrated_version {
+    sql: ${TABLE}.extras.quantity.migrated_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Migrated Version"
   }
 
   dimension: extras__quantity__mode {
@@ -1550,6 +1582,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Time To First Token"
+  }
+
+  dimension: extras__quantity__to_version {
+    sql: ${TABLE}.extras.quantity.to_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "To Version"
   }
 
   dimension: extras__quantity__token_count {
@@ -3166,6 +3206,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Metric Version"
+  }
+
+  dimension: extras__string__migration_error {
+    sql: ${TABLE}.extras.string.migration_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Migration Error"
   }
 
   dimension: extras__string__mime_type {
