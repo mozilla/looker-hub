@@ -612,6 +612,11 @@ then the value will be 'custom'.
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__timespan__glean_baseline_duration__time_unit {

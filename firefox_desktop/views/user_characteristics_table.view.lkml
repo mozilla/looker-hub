@@ -3854,11 +3854,25 @@ for the purpose of experimentation enrollment.
   dimension: metrics__string_list__characteristics_gamepads {
     sql: ${TABLE}.metrics.string_list.characteristics_gamepads ;;
     hidden: yes
+    description: "The information of the gamepads inserted on the user device. Each string represents one gamepad. We use a JSON array to describe a gamepad, every value represents one property of the gamepad. Following are the details:
+  index 0: The ID of the game pad
+  index 1: Which hand for the gamepad.
+  index 2: Number of buttons
+  index 3: Number of axes
+  index 4: Number of haptics
+  index 5: Number of lights
+  index 6: Number of touches
+"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__text2__characteristics_audio_devices {

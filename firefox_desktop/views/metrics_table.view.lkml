@@ -22816,86 +22816,127 @@ Previously reported in \"main\" ping `simpleMeasurements`.
   dimension: metrics__string_list__background_update_reasons_to_not_update {
     sql: ${TABLE}.metrics.string_list.background_update_reasons_to_not_update ;;
     hidden: yes
+    description: "Records which error was causing the background updater to fail. This list supercedes the `background-update.reason` in `mozapps/update/metrics.yaml`
+"
   }
 
   dimension: metrics__string_list__browser_migration_matched_extensions {
     sql: ${TABLE}.metrics.string_list.browser_migration_matched_extensions ;;
     hidden: yes
+    description: "Records a list of the Chrome extension IDs that were successfully matched to Firefox equivalents from the list downloaded from AMO.
+"
   }
 
   dimension: metrics__string_list__browser_migration_unmatched_extensions {
     sql: ${TABLE}.metrics.string_list.browser_migration_unmatched_extensions ;;
     hidden: yes
+    description: "Records a list of the Chrome extension IDs that were unsuccessfully matched to Firefox equivalents from the list downloaded from AMO.
+"
   }
 
   dimension: metrics__string_list__content_analysis_interception_points_turned_off {
     sql: ${TABLE}.metrics.string_list.content_analysis_interception_points_turned_off ;;
     hidden: yes
+    description: "The interception points that are turned off via enterprise policy."
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__string_list__intl_accept_languages {
     sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
     hidden: yes
+    description: "The languages for the Accept-Languages header.
+"
   }
 
   dimension: metrics__string_list__intl_app_locales {
     sql: ${TABLE}.metrics.string_list.intl_app_locales ;;
     hidden: yes
+    description: "The negotiated Locales that are being used.
+"
   }
 
   dimension: metrics__string_list__intl_available_locales {
     sql: ${TABLE}.metrics.string_list.intl_available_locales ;;
     hidden: yes
+    description: "The Locales that are available for use.
+"
   }
 
   dimension: metrics__string_list__intl_regional_prefs_locales {
     sql: ${TABLE}.metrics.string_list.intl_regional_prefs_locales ;;
     hidden: yes
+    description: "The regional preferences for the OS.
+"
   }
 
   dimension: metrics__string_list__intl_requested_locales {
     sql: ${TABLE}.metrics.string_list.intl_requested_locales ;;
     hidden: yes
+    description: "The Locales that are being requested.
+"
   }
 
   dimension: metrics__string_list__intl_system_locales {
     sql: ${TABLE}.metrics.string_list.intl_system_locales ;;
     hidden: yes
+    description: "The Locales for the OS.
+"
   }
 
   dimension: metrics__string_list__pkcs11_third_party_module_profile_entries {
     sql: ${TABLE}.metrics.string_list.pkcs11_third_party_module_profile_entries ;;
     hidden: yes
+    description: "A list of PKCS#11 module filenames (leaf names only) that are in the profile at launch time.
+"
   }
 
   dimension: metrics__string_list__system_cpu_extensions {
     sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes
+    description: "Recognized CPU extensions.
+"
   }
 
   dimension: metrics__string_list__windows_security_antispyware {
     sql: ${TABLE}.metrics.string_list.windows_security_antispyware ;;
     hidden: yes
+    description: "Product names of registered antispyware programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__windows_security_antivirus {
     sql: ${TABLE}.metrics.string_list.windows_security_antivirus ;;
     hidden: yes
+    description: "Product names of registered antivirus programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__windows_security_firewall {
     sql: ${TABLE}.metrics.string_list.windows_security_firewall ;;
     hidden: yes
+    description: "Product names of registered firewall programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__xpi_database_startup_load_reasons {
     sql: ${TABLE}.metrics.string_list.xpi_database_startup_load_reasons ;;
     hidden: yes
+    description: "List of reasons the XPI Database was updated.
+Examples include \"appChanged\", \"directoryState\".
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
   }
 
   dimension: metrics__text__xpi_database_late_load {

@@ -19524,161 +19524,238 @@ Previously reported in \"main\" ping `simpleMeasurements`.
   dimension: metrics__string_list__addons_enabled_addons {
     sql: ${TABLE}.metrics.string_list.addons_enabled_addons ;;
     hidden: yes
+    description: "A list of all enabled add-ons on the device.
+"
   }
 
   dimension: metrics__string_list__addons_installed_addons {
     sql: ${TABLE}.metrics.string_list.addons_installed_addons ;;
     hidden: yes
+    description: "A list of all installed add-ons on the device.
+"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__string_list__intl_accept_languages {
     sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
     hidden: yes
+    description: "The languages for the Accept-Languages header.
+"
   }
 
   dimension: metrics__string_list__intl_app_locales {
     sql: ${TABLE}.metrics.string_list.intl_app_locales ;;
     hidden: yes
+    description: "The negotiated Locales that are being used.
+"
   }
 
   dimension: metrics__string_list__intl_available_locales {
     sql: ${TABLE}.metrics.string_list.intl_available_locales ;;
     hidden: yes
+    description: "The Locales that are available for use.
+"
   }
 
   dimension: metrics__string_list__intl_regional_prefs_locales {
     sql: ${TABLE}.metrics.string_list.intl_regional_prefs_locales ;;
     hidden: yes
+    description: "The regional preferences for the OS.
+"
   }
 
   dimension: metrics__string_list__intl_requested_locales {
     sql: ${TABLE}.metrics.string_list.intl_requested_locales ;;
     hidden: yes
+    description: "The Locales that are being requested.
+"
   }
 
   dimension: metrics__string_list__intl_system_locales {
     sql: ${TABLE}.metrics.string_list.intl_system_locales ;;
     hidden: yes
+    description: "The Locales for the OS.
+"
   }
 
   dimension: metrics__string_list__logins_store_migration_errors {
     sql: ${TABLE}.metrics.string_list.logins_store_migration_errors ;;
     hidden: yes
+    description: "Errors discovered in the migration.
+"
   }
 
   dimension: metrics__string_list__metrics_mozilla_products {
     sql: ${TABLE}.metrics.string_list.metrics_mozilla_products ;;
     hidden: yes
+    description: "A list of all the Mozilla products installed on device. We currently scan
+for: Firefox, Firefox Beta, Firefox Aurora, Firefox Nightly, Firefox
+Fdroid, Firefox Lite, Reference Browser, Reference Browser Debug, Fenix,
+Focus, and Lockwise.
+"
   }
 
   dimension: metrics__string_list__metrics_syncing_items {
     sql: ${TABLE}.metrics.string_list.metrics_syncing_items ;;
     hidden: yes
+    description: "The preference keys for the switch preferences the user has enabled to sync with FxA. We currently track: Bookmarks and History.
+"
   }
 
   dimension: metrics__string_list__pkcs11_third_party_module_profile_entries {
     sql: ${TABLE}.metrics.string_list.pkcs11_third_party_module_profile_entries ;;
     hidden: yes
+    description: "A list of PKCS#11 module filenames (leaf names only) that are in the profile at launch time.
+"
   }
 
   dimension: metrics__string_list__preferences_accessibility_services {
     sql: ${TABLE}.metrics.string_list.preferences_accessibility_services ;;
     hidden: yes
+    description: "Whether or not the user has touch exploration or switch services enabled.
+These are built into the Android OS, not Fenix prefs.
+default: \"\"
+"
   }
 
   dimension: metrics__string_list__preferences_open_links_in_a_private_tab {
     sql: ${TABLE}.metrics.string_list.preferences_open_links_in_a_private_tab ;;
     hidden: yes
+    description: "Whether or not the user has enabled open links in a private tab. default: false
+"
   }
 
   dimension: metrics__string_list__preferences_open_links_in_app {
     sql: ${TABLE}.metrics.string_list.preferences_open_links_in_app ;;
     hidden: yes
+    description: "Whether or not the user has the open links in apps feature enabled. default: false
+"
   }
 
   dimension: metrics__string_list__preferences_remote_debugging {
     sql: ${TABLE}.metrics.string_list.preferences_remote_debugging ;;
     hidden: yes
+    description: "Whether or not the user has remote debugging enabled default: false
+"
   }
 
   dimension: metrics__string_list__preferences_search_bookmarks {
     sql: ${TABLE}.metrics.string_list.preferences_search_bookmarks ;;
     hidden: yes
+    description: "Whether or not the user has enabled bookmark search suggestions default: true
+"
   }
 
   dimension: metrics__string_list__preferences_search_browsing_history {
     sql: ${TABLE}.metrics.string_list.preferences_search_browsing_history ;;
     hidden: yes
+    description: "Whether or not the user has enabled browsing history suggestions. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_search_suggestions_private {
     sql: ${TABLE}.metrics.string_list.preferences_search_suggestions_private ;;
     hidden: yes
+    description: "Whether or not the user has enabled showing search suggestions in private mode. default: false (we prompt the user, asking them to make a selection)
+"
   }
 
   dimension: metrics__string_list__preferences_show_clipboard_suggestions {
     sql: ${TABLE}.metrics.string_list.preferences_show_clipboard_suggestions ;;
     hidden: yes
+    description: "Whether or not the user has enabled clipboard search suggestions. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_show_search_shortcuts {
     sql: ${TABLE}.metrics.string_list.preferences_show_search_shortcuts ;;
     hidden: yes
+    description: "Whether or not the user has enabled search shortcuts. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_show_search_suggestions {
     sql: ${TABLE}.metrics.string_list.preferences_show_search_suggestions ;;
     hidden: yes
+    description: "Whether or not the user has search suggestions enabled default: true
+"
   }
 
   dimension: metrics__string_list__preferences_show_voice_search {
     sql: ${TABLE}.metrics.string_list.preferences_show_voice_search ;;
     hidden: yes
+    description: "Whether or not the user has enabled the voice search button. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_sync {
     sql: ${TABLE}.metrics.string_list.preferences_sync ;;
     hidden: yes
+    description: "Whether or not the user is signed into FxA default: false
+"
   }
 
   dimension: metrics__string_list__preferences_sync_items {
     sql: ${TABLE}.metrics.string_list.preferences_sync_items ;;
     hidden: yes
+    description: "The list of items the user has chosen to sync with FxA.
+default: \"\" if the user is signed out. Otherwise defaults to
+whatever is set in their FxA account. New accounts set:
+[bookmarks, history, passwords, tabs]
+"
   }
 
   dimension: metrics__string_list__preferences_telemetry {
     sql: ${TABLE}.metrics.string_list.preferences_telemetry ;;
     hidden: yes
+    description: "Whether or not the user has telemetry enabled. Note we should never receive a \"false\" value for this since telemetry would not send in that case. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_theme {
     sql: ${TABLE}.metrics.string_list.preferences_theme ;;
     hidden: yes
+    description: "The theme the user has enabled. \"light,\" \"dark,\" \"system,\" or \"battery\" default: \"system\" for API 28+, else \"light\"
+"
   }
 
   dimension: metrics__string_list__preferences_toolbar_position {
     sql: ${TABLE}.metrics.string_list.preferences_toolbar_position ;;
     hidden: yes
+    description: "The position of the toolbar default: bottom (defaults to top if the user has accessibility services)
+"
   }
 
   dimension: metrics__string_list__preferences_tracking_protection {
     sql: ${TABLE}.metrics.string_list.preferences_tracking_protection ;;
     hidden: yes
+    description: "What type of enhanced tracking protection the user has enabled. \"standard,\" \"strict,\" \"custom,\" or \"\" (if disabled) default: \"standard\"
+"
   }
 
   dimension: metrics__string_list__system_cpu_extensions {
     sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes
+    description: "Recognized CPU extensions.
+"
   }
 
   dimension: metrics__string_list__xpi_database_startup_load_reasons {
     sql: ${TABLE}.metrics.string_list.xpi_database_startup_load_reasons ;;
     hidden: yes
+    description: "List of reasons the XPI Database was updated.
+Examples include \"appChanged\", \"directoryState\".
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
   }
 
   dimension: metrics__text__xpi_database_late_load {

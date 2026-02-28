@@ -272,6 +272,14 @@ view: events_stream_table {
     group_item_label: "Changed To"
   }
 
+  dimension: extras__boolean__corrupt {
+    sql: ${TABLE}.extras.boolean.corrupt ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Corrupt"
+  }
+
   dimension: extras__boolean__did_confirm {
     sql: ${TABLE}.extras.boolean.did_confirm ;;
     type: yesno
@@ -416,6 +424,14 @@ view: events_stream_table {
     group_item_label: "Count"
   }
 
+  dimension: extras__quantity__from_version {
+    sql: ${TABLE}.extras.quantity.from_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "From Version"
+  }
+
   dimension: extras__quantity__groups_two_tabs_only {
     sql: ${TABLE}.extras.quantity.groups_two_tabs_only ;;
     type: number
@@ -440,6 +456,14 @@ view: events_stream_table {
     group_item_label: "Index"
   }
 
+  dimension: extras__quantity__initial_version {
+    sql: ${TABLE}.extras.quantity.initial_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Initial Version"
+  }
+
   dimension: extras__quantity__length_chars {
     sql: ${TABLE}.extras.quantity.length_chars ;;
     type: number
@@ -462,6 +486,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Level"
+  }
+
+  dimension: extras__quantity__migrated_version {
+    sql: ${TABLE}.extras.quantity.migrated_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Migrated Version"
   }
 
   dimension: extras__quantity__n_chars {
@@ -510,6 +542,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Size"
+  }
+
+  dimension: extras__quantity__to_version {
+    sql: ${TABLE}.extras.quantity.to_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "To Version"
   }
 
   dimension: extras__quantity__total_num_of_groups {
@@ -870,6 +910,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Method"
+  }
+
+  dimension: extras__string__migration_error {
+    sql: ${TABLE}.extras.string.migration_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Migration Error"
   }
 
   dimension: extras__string__mode {

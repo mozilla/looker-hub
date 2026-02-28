@@ -548,6 +548,8 @@ view: provider_request_stats_table {
   dimension: metrics__string_list__provider_request_ids_returned {
     sql: ${TABLE}.metrics.string_list.provider_request_ids_returned ;;
     hidden: yes
+    description: "The ids of the ads returned by the provider. Should not be null.
+"
   }
 
   dimension: normalized_app_name {
