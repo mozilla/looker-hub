@@ -674,26 +674,42 @@ Expected in most cases to be identical to `client_info.os_version`.
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__string_list__third_party_modules_blocked_modules {
     sql: ${TABLE}.metrics.string_list.third_party_modules_blocked_modules ;;
     hidden: yes
+    description: "List of all DLL filenames that are on the dynamic blocklist.
+"
   }
 
   dimension: metrics__string_list__windows_security_antispyware {
     sql: ${TABLE}.metrics.string_list.windows_security_antispyware ;;
     hidden: yes
+    description: "Product names of registered antispyware programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__windows_security_antivirus {
     sql: ${TABLE}.metrics.string_list.windows_security_antivirus ;;
     hidden: yes
+    description: "Product names of registered antivirus programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__windows_security_firewall {
     sql: ${TABLE}.metrics.string_list.windows_security_firewall ;;
     hidden: yes
+    description: "Product names of registered firewall programs.
+Windows only.
+"
   }
 
   dimension: metrics__uuid__legacy_telemetry_client_id {

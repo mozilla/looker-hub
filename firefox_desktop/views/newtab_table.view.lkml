@@ -753,21 +753,32 @@ be `other`.
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__string_list__newtab_blocked_sponsors {
     sql: ${TABLE}.metrics.string_list.newtab_blocked_sponsors ;;
     hidden: yes
+    description: "The advertiser names that have been dismissed by the user.
+"
   }
 
   dimension: metrics__string_list__newtab_selected_topics {
     sql: ${TABLE}.metrics.string_list.newtab_selected_topics ;;
     hidden: yes
+    description: "The list of topics the user selected
+"
   }
 
   dimension: metrics__string_list__newtab_sov_allocation {
     sql: ${TABLE}.metrics.string_list.newtab_sov_allocation ;;
     hidden: yes
+    description: "The partner group assignment for sov
+"
   }
 
   dimension: metrics__text__topsites_sponsored_tiles_received {

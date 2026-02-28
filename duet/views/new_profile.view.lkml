@@ -425,6 +425,7 @@ view: new_profile {
   dimension: environment__partner__partner_names {
     sql: ${TABLE}.environment.partner.partner_names ;;
     hidden: yes
+    description: "The list of names from the `app.partner` children prefs, as `app.partner.<name>=<name>`."
   }
 
   dimension: environment__profile__creation_date {
@@ -894,6 +895,7 @@ view: new_profile {
   dimension: environment__system__cpu__extensions {
     sql: ${TABLE}.environment.system.cpu.extensions ;;
     hidden: yes
+    description: "This lists the avaible CPU extensions as strings. E.g.: 'hasMMX', 'hasSSE', 'hasSSE2', 'hasSSE3', 'hasSSSE3', 'hasSSE4A', 'hasSSE4_1', 'hasSSE4_2', 'hasAVX', 'hasAVX2', 'hasAES', 'hasEDSP', 'hasARMv6', 'hasARMv7', 'hasNEON'."
   }
 
   dimension: environment__system__cpu__family {

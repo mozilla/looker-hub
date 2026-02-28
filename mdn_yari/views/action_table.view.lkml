@@ -616,6 +616,8 @@ null: the page has no baseline status
   dimension: metrics__string_list__navigator_user_languages {
     sql: ${TABLE}.metrics.string_list.navigator_user_languages ;;
     hidden: yes
+    description: "The user's preferred languages.
+"
   }
 
   dimension: metrics__url__page_path {
