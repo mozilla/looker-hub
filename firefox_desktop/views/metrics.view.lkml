@@ -4997,7 +4997,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__boolean__ipprotection_enabled {
     label: "Ipprotection: Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.ipprotection_enabled ;;
     type: yesno
     group_label: "Ipprotection"
