@@ -969,26 +969,36 @@ The package family name is only included when it is likely to have been produced
   dimension: metrics__string_list__crash_utility_actors_name {
     sql: ${TABLE}.metrics.string_list.crash_utility_actors_name ;;
     hidden: yes
+    description: "Comma-separated list of IPC actors name running on this Utility process instance"
   }
 
   dimension: metrics__string_list__dll_blocklist_list {
     sql: ${TABLE}.metrics.string_list.dll_blocklist_list ;;
     hidden: yes
+    description: "Semicolon-separated list of blocked DLLS, Windows-only"
   }
 
   dimension: metrics__string_list__environment_experimental_features {
     sql: ${TABLE}.metrics.string_list.environment_experimental_features ;;
     hidden: yes
+    description: "Specifies the enabled experimental features from about:preferences#experimental.
+"
   }
 
   dimension: metrics__string_list__environment_nimbus_enrollments {
     sql: ${TABLE}.metrics.string_list.environment_nimbus_enrollments ;;
     hidden: yes
+    description: "A comma-separated string that specifies the active Nimbus experiments and rollouts, as well as their branches."
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__timespan__crash_last_interaction_duration__time_unit {
