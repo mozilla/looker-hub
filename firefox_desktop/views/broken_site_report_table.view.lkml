@@ -769,36 +769,53 @@ for the purpose of experimentation enrollment.
   dimension: metrics__string_list__broken_site_report_browser_info_app_default_locales {
     sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_app_default_locales ;;
     hidden: yes
+    description: "Locale strings, ie `[\"en-US\", \"en\"]`
+"
   }
 
   dimension: metrics__string_list__broken_site_report_browser_info_security_antispyware {
     sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_security_antispyware ;;
     hidden: yes
+    description: "Which antispyware software was reported on this system.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_browser_info_security_antivirus {
     sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_security_antivirus ;;
     hidden: yes
+    description: "Which antivirus software was reported on this system.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_browser_info_security_firewall {
     sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_security_firewall ;;
     hidden: yes
+    description: "Which firewall software was reported on this system.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_tab_info_antitracking_blocked_origins {
     sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_antitracking_blocked_origins ;;
     hidden: yes
+    description: "List of origins which were blocked by antitracking.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_tab_info_languages {
     sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_languages ;;
     hidden: yes
+    description: "The languages the site actually sees (may be overridden)
+"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__text__broken_site_report_browser_info_app_default_useragent_string {
