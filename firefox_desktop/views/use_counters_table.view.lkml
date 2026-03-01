@@ -609,6 +609,30 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Animation Play State"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range_end {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range_end ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range End"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range_start {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range Start"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_animation_timeline {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_timeline ;;
     type: number
@@ -6399,6 +6423,30 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Animation Play State"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range_end {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range_end ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range End"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range_start {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range Start"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_animation_timeline {
