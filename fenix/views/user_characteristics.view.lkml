@@ -221,6 +221,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_avail_left {
+    label: "Characteristics: Avail Left"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_left ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Avail Left"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Avail Left"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_avail_left"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available left property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_avail_top {
+    label: "Characteristics: Avail Top"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_top ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Avail Top"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Avail Top"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_avail_top"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available top property
+"
+  }
+
   dimension: metrics__quantity__characteristics_avail_width {
     label: "Characteristics: Avail Width"
     hidden: no
@@ -3821,6 +3857,78 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_gl2_alpha {
+    label: "Characteristics: Gl2 Alpha"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_alpha ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Alpha"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Gl2 Alpha"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_alpha"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether alpha was granted for the default WebGL2 context.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_alpha_software {
+    label: "Characteristics: Gl2 Alpha Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_alpha_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Alpha Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Gl2 Alpha Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_alpha_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether alpha was granted for the default WebGL2 context (software rendering).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_antialias {
+    label: "Characteristics: Gl2 Antialias"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_antialias ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Antialias"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Gl2 Antialias"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_antialias"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether antialias was granted for the default WebGL2 context.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_antialias_software {
+    label: "Characteristics: Gl2 Antialias Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl2_antialias_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl2 Antialias Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Gl2 Antialias Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl2_antialias_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether antialias was granted for the default WebGL2 context (software rendering).
+"
+  }
+
   dimension: metrics__string__characteristics_gl2_context_type {
     label: "Characteristics: Gl2 Context Type"
     hidden: no
@@ -4376,6 +4484,78 @@ view: user_characteristics {
     }
 
     description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_alpha {
+    label: "Characteristics: Gl Alpha"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_alpha ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Alpha"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Gl Alpha"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl_alpha"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether alpha was granted for the default WebGL context.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_alpha_software {
+    label: "Characteristics: Gl Alpha Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_alpha_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Alpha Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Gl Alpha Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl_alpha_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether alpha was granted for the default WebGL context (software rendering).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_antialias {
+    label: "Characteristics: Gl Antialias"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_antialias ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Antialias"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Gl Antialias"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl_antialias"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether antialias was granted for the default WebGL context.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_antialias_software {
+    label: "Characteristics: Gl Antialias Software"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_gl_antialias_software ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Gl Antialias Software"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics: Gl Antialias Software"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_gl_antialias_software"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether antialias was granted for the default WebGL context (software rendering).
 "
   }
 

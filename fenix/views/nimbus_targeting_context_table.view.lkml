@@ -481,6 +481,13 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__object__nimbus_system_recorded_nimbus_context {
+    sql: ${TABLE}.metrics.object.nimbus_system_recorded_nimbus_context ;;
+    hidden: yes
+    description: "The Nimbus context object that is recorded to Glean
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string

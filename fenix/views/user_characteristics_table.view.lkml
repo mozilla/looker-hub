@@ -509,6 +509,26 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_avail_left {
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_left ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Characteristics Avail Left"
+    description: "Available left property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_avail_top {
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_top ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Characteristics Avail Top"
+    description: "Available top property
+"
+  }
+
   dimension: metrics__quantity__characteristics_avail_width {
     sql: ${TABLE}.metrics.quantity.characteristics_avail_width ;;
     type: number
@@ -3075,6 +3095,46 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_gl2_alpha {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_alpha ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Gl2 Alpha"
+    description: "Whether alpha was granted for the default WebGL2 context.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_alpha_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_alpha_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Gl2 Alpha Software"
+    description: "Whether alpha was granted for the default WebGL2 context (software rendering).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_antialias {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_antialias ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Gl2 Antialias"
+    description: "Whether antialias was granted for the default WebGL2 context.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl2_antialias_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl2_antialias_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Gl2 Antialias Software"
+    description: "Whether antialias was granted for the default WebGL2 context (software rendering).
+"
+  }
+
   dimension: metrics__string__characteristics_gl2_context_type {
     sql: ${TABLE}.metrics.string.characteristics_gl2_context_type ;;
     type: string
@@ -3232,6 +3292,46 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: String"
     group_item_label: "Characteristics Gl2 Vertex Shader Software"
     description: "Hash of the transformed source of the vertex shader.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_alpha {
+    sql: ${TABLE}.metrics.string.characteristics_gl_alpha ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Gl Alpha"
+    description: "Whether alpha was granted for the default WebGL context.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_alpha_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_alpha_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Gl Alpha Software"
+    description: "Whether alpha was granted for the default WebGL context (software rendering).
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_antialias {
+    sql: ${TABLE}.metrics.string.characteristics_gl_antialias ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Gl Antialias"
+    description: "Whether antialias was granted for the default WebGL context.
+"
+  }
+
+  dimension: metrics__string__characteristics_gl_antialias_software {
+    sql: ${TABLE}.metrics.string.characteristics_gl_antialias_software ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Gl Antialias Software"
+    description: "Whether antialias was granted for the default WebGL context (software rendering).
 "
   }
 
@@ -4511,7 +4611,7 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Gl Params"
-    description: "The list of GL parameters of GL1. Parameters: ALIASED_LINE_WIDTH_RANGE, ALIASED_POINT_SIZE_RANGE, MAX_COMBINED_TEXTURE_IMAGE_UNITS, MAX_CUBE_MAP_TEXTURE_SIZE, MAX_FRAGMENT_UNIFORM_VECTORS, MAX_RENDERBUFFER_SIZE, MAX_TEXTURE_IMAGE_UNITS, MAX_TEXTURE_SIZE, MAX_VARYING_VECTORS, MAX_VERTEX_ATTRIBS, MAX_VERTEX_TEXTURE_IMAGE_UNITS, MAX_VERTEX_UNIFORM_VECTORS, MAX_VIEWPORT_DIMS, SHADING_LANGUAGE_VERSION, STENCIL_BACK_VALUE_MASK, STENCIL_BACK_WRITEMASK, STENCIL_VALUE_MASK, STENCIL_WRITEMASK, SUBPIXEL_BITS.
+    description: "The list of GL parameters of GL1. Parameters: ALIASED_LINE_WIDTH_RANGE, ALIASED_POINT_SIZE_RANGE, IMPLEMENTATION_COLOR_READ_FORMAT, IMPLEMENTATION_COLOR_READ_TYPE, MAX_COMBINED_TEXTURE_IMAGE_UNITS, MAX_CUBE_MAP_TEXTURE_SIZE, MAX_FRAGMENT_UNIFORM_VECTORS, MAX_RENDERBUFFER_SIZE, MAX_TEXTURE_IMAGE_UNITS, MAX_TEXTURE_SIZE, MAX_VARYING_VECTORS, MAX_VERTEX_ATTRIBS, MAX_VERTEX_TEXTURE_IMAGE_UNITS, MAX_VERTEX_UNIFORM_VECTORS, MAX_VIEWPORT_DIMS, SHADING_LANGUAGE_VERSION, STENCIL_BACK_VALUE_MASK, STENCIL_BACK_WRITEMASK, STENCIL_VALUE_MASK, STENCIL_WRITEMASK, SUBPIXEL_BITS.
 "
   }
 

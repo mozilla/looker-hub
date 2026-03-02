@@ -755,6 +755,14 @@ view: events_stream {
     group_item_label: "Image"
   }
 
+  dimension: extras__boolean__inPrivateBrowsing {
+    sql: ${TABLE}.extras.boolean.inPrivateBrowsing ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Inprivatebrowsing"
+  }
+
   dimension: extras__boolean__in_shutdown {
     sql: ${TABLE}.extras.boolean.in_shutdown ;;
     type: yesno
@@ -801,6 +809,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Issupportedsite"
+  }
+
+  dimension: extras__boolean__is_addon_active {
+    sql: ${TABLE}.extras.boolean.is_addon_active ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Addon Active"
   }
 
   dimension: extras__boolean__is_customizing {
