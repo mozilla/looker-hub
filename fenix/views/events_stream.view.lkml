@@ -667,14 +667,6 @@ view: events_stream {
     group_item_label: "Isdecryptsuccess"
   }
 
-  dimension: extras__boolean__is_addon_active {
-    sql: ${TABLE}.extras.boolean.is_addon_active ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Is Addon Active"
-  }
-
   dimension: extras__boolean__is_deleted {
     sql: ${TABLE}.extras.boolean.is_deleted ;;
     type: yesno
