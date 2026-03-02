@@ -699,6 +699,36 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range"
+    description: "Whether a document used the CSS property animation-range. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range_end {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range_end ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range End"
+    description: "Whether a document used the CSS property animation-range-end. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range_start {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range Start"
+    description: "Whether a document used the CSS property animation-range-start. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_animation_timeline {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_timeline ;;
     type: number
@@ -7936,6 +7966,36 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Animation Play State"
     description: "Whether a page used the CSS property animation-play-state. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range"
+    description: "Whether a page used the CSS property animation-range. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range_end {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range_end ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range End"
+    description: "Whether a page used the CSS property animation-range-end. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range_start {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range Start"
+    description: "Whether a page used the CSS property animation-range-start. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18479,6 +18539,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_location_ancestororigins_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_location_ancestororigins_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Location Ancestororigins Getter"
+    description: "Whether a document got Location.ancestorOrigins. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_location_ancestororigins_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_location_ancestororigins_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Location Ancestororigins Setter"
+    description: "Whether a document set Location.ancestorOrigins. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_math_mlused {
     sql: ${TABLE}.metrics.counter.use_counter_doc_math_mlused ;;
     type: number
@@ -18839,6 +18919,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_navigator_requestmidiaccess {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigator_requestmidiaccess ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigator Requestmidiaccess"
+    description: "Whether a document called called Navigator.requestMIDIAccess. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_navigator_setappbadge {
     sql: ${TABLE}.metrics.counter.use_counter_doc_navigator_setappbadge ;;
     type: number
@@ -19159,6 +19249,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Reportingobserver Constructor"
+    description: "Whether a document called called ReportingObserver.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_sanitizer_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_constructor ;;
     type: number
@@ -19256,6 +19356,36 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Text Directive Pages"
     description: "Whether a document used text fragments. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Videodecoder Constructor"
+    description: "Whether a document called called VideoDecoder.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Videoencoder Constructor"
+    description: "Whether a document called called VideoEncoder.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_wakelock_request {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_wakelock_request ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Wakelock Request"
+    description: "Whether a document called called WakeLock.request. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -20096,6 +20226,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Window Orientation"
     description: "Whether a document called called Window.orientation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_window_orientation_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_window_orientation_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Window Orientation Getter"
+    description: "Whether a document got Window.orientation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_window_orientation_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_window_orientation_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Window Orientation Setter"
+    description: "Whether a document set Window.orientation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -23089,6 +23239,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_location_ancestororigins_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_location_ancestororigins_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Location Ancestororigins Getter"
+    description: "Whether a page got Location.ancestorOrigins. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_location_ancestororigins_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_location_ancestororigins_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Location Ancestororigins Setter"
+    description: "Whether a page set Location.ancestorOrigins. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_math_mlused {
     sql: ${TABLE}.metrics.counter.use_counter_page_math_mlused ;;
     type: number
@@ -23449,6 +23619,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_navigator_requestmidiaccess {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigator_requestmidiaccess ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigator Requestmidiaccess"
+    description: "Whether a page called called Navigator.requestMIDIAccess. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_navigator_setappbadge {
     sql: ${TABLE}.metrics.counter.use_counter_page_navigator_setappbadge ;;
     type: number
@@ -23769,6 +23949,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Reportingobserver Constructor"
+    description: "Whether a page called called ReportingObserver.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_sanitizer_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_constructor ;;
     type: number
@@ -23866,6 +24056,36 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Text Directive Pages"
     description: "Whether a page used text fragments. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Videodecoder Constructor"
+    description: "Whether a page called called VideoDecoder.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Videoencoder Constructor"
+    description: "Whether a page called called VideoEncoder.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_wakelock_request {
+    sql: ${TABLE}.metrics.counter.use_counter_page_wakelock_request ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Wakelock Request"
+    description: "Whether a page called called WakeLock.request. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -24706,6 +24926,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Window Orientation"
     description: "Whether a page called called Window.orientation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_window_orientation_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_window_orientation_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Window Orientation Getter"
+    description: "Whether a page got Window.orientation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_window_orientation_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_window_orientation_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Window Orientation Setter"
+    description: "Whether a page set Window.orientation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -26199,6 +26439,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Reportingobserver Constructor"
+    description: "Whether a dedicated worker called called ReportingObserver.constructor. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_scheduler_posttask {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_scheduler_posttask ;;
     type: number
@@ -26206,6 +26456,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Dedicated Scheduler Posttask"
     description: "Whether a dedicated worker called called Scheduler.postTask. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Videodecoder Constructor"
+    description: "Whether a dedicated worker called called VideoDecoder.constructor. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Videoencoder Constructor"
+    description: "Whether a dedicated worker called called VideoEncoder.constructor. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
 "
   }
 
@@ -26819,6 +27089,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Reportingobserver Constructor"
+    description: "Whether a service worker called called ReportingObserver.constructor. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_scheduler_posttask {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_scheduler_posttask ;;
     type: number
@@ -26826,6 +27106,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Service Scheduler Posttask"
     description: "Whether a service worker called called Scheduler.postTask. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Videodecoder Constructor"
+    description: "Whether a service worker called called VideoDecoder.constructor. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Videoencoder Constructor"
+    description: "Whether a service worker called called VideoEncoder.constructor. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
 "
   }
 
@@ -27439,6 +27739,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_shared_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Reportingobserver Constructor"
+    description: "Whether a shared worker called called ReportingObserver.constructor. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_shared_scheduler_posttask {
     sql: ${TABLE}.metrics.counter.use_counter_worker_shared_scheduler_posttask ;;
     type: number
@@ -27446,6 +27756,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Shared Scheduler Posttask"
     description: "Whether a shared worker called called Scheduler.postTask. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Videodecoder Constructor"
+    description: "Whether a shared worker called called VideoDecoder.constructor. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Videoencoder Constructor"
+    description: "Whether a shared worker called called VideoEncoder.constructor. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 

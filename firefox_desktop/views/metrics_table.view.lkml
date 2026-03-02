@@ -18224,9 +18224,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
-This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 
@@ -21963,7 +21962,7 @@ e.g. 134217728
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Browser Backup Archive Disabled Reason"
-    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\", \"os version\".
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"os version\".
 "
   }
 
@@ -21983,7 +21982,7 @@ e.g. 134217728
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Browser Backup Restore Disabled Reason"
-    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\".
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\".
 "
   }
 
