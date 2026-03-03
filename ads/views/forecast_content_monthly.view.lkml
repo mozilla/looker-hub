@@ -118,6 +118,24 @@ view: forecast_content_monthly {
     type: number
   }
 
+  measure: actual_ecpm_difference_from_last_month {
+    based_on: actual_ecpm_avg
+    based_on_time: submission_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: actual_ecpm_perc_difference_from_last_month {
+    based_on: actual_ecpm_avg
+    based_on_time: submission_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
   measure: actual_native_glean_inventory_sum {
     sql: ${actual_native_glean_inventory} ;;
     type: sum
@@ -128,9 +146,45 @@ view: forecast_content_monthly {
     type: sum
   }
 
+  measure: actual_revenue_difference_from_last_month {
+    based_on: actual_revenue_sum
+    based_on_time: submission_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: actual_revenue_perc_difference_from_last_month {
+    based_on: actual_revenue_sum
+    based_on_time: submission_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
   measure: actual_revenue_sum {
     sql: ${actual_revenue} ;;
     type: sum
+  }
+
+  measure: actual_sponsored_impressions_difference_from_last_month {
+    based_on: actual_uapi_impressions_excluding_house_ads_sum
+    based_on_time: submission_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: actual_sponsored_impressions_perc_difference_from_last_month {
+    based_on: actual_uapi_impressions_excluding_house_ads_sum
+    based_on_time: submission_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
   }
 
   measure: actual_uapi_impressions_excluding_house_ads_sum {
@@ -148,6 +202,24 @@ view: forecast_content_monthly {
     type: number
   }
 
+  measure: forecast_ecpm_difference_from_previous_forecast {
+    based_on: forecast_ecpm_avg
+    based_on_time: forecast_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: forecast_ecpm_perc_difference_from_previous_forecast {
+    based_on: forecast_ecpm_avg
+    based_on_time: forecast_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
   measure: forecast_native_glean_inventory_sum {
     sql: ${forecast_native_glean_inventory} ;;
     type: sum
@@ -163,9 +235,45 @@ view: forecast_content_monthly {
     type: sum
   }
 
+  measure: forecast_revenue_difference_from_previous_forecast {
+    based_on: forecast_revenue_sum
+    based_on_time: forecast_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: forecast_revenue_perc_difference_from_previous_forecast {
+    based_on: forecast_revenue_sum
+    based_on_time: forecast_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
   measure: forecast_revenue_sum {
     sql: ${forecast_revenue} ;;
     type: sum
+  }
+
+  measure: forecast_sponsored_impressions_nonhouse_difference_from_previous_forecast {
+    based_on: forecast_uapi_impressions_excluding_house_ads_sum
+    based_on_time: forecast_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: forecast_sponsored_impressions_nonhouse_perc_difference_from_previous_forecast {
+    based_on: forecast_uapi_impressions_excluding_house_ads_sum
+    based_on_time: forecast_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
   }
 
   measure: forecast_uapi_impressions_excluding_house_ads_sum {
