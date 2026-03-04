@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: local_network_access_andorid_nightly_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.local_network_access_andorid_nightly_rollout_statistics ;;
+view: downsample_uptakeremotecontent_events_glean_feature {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.downsample_uptakeremotecontent_events_glean_feature_statistics ;;
 
   dimension: submission_date {
     type: date
