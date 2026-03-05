@@ -11657,10 +11657,10 @@ operational_monitoring:
             - Windows - vpn_session
             - Linux - vpn_session
             - Android - vpn_session
-            - Darwin - vpn_session
             - iOS - vpn_session
-            - Android - daemon_session
             - iOS - daemon_session
+            - Darwin - vpn_session
+            - Android - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id444
@@ -12658,11 +12658,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id509
           channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
-            - release
             - beta
+            - release
+            - nightly
           os:
             default: Windows_NT
             options:

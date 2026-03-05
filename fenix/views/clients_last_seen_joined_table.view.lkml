@@ -347,6 +347,12 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: policies_is_enterprise {
+    sql: ${TABLE}.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number

@@ -6978,6 +6978,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
   }
 
+  dimension: metrics__quantity__data_storage_site_integrity_service_state {
+    label: "Data Storage: Site Integrity Service State"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_site_integrity_service_state ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Site Integrity Service State"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage: Site Integrity Service State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_site_integrity_service_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the SiteIntegrityServiceState nsIDataStorage"
+  }
+
   dimension: metrics__quantity__data_storage_site_security_service_state {
     label: "Data Storage: Site Security Service State"
     hidden: no
@@ -10407,6 +10424,25 @@ IPC buffers and all of them being received by the parent.
 throwing even partial results into the trash.
 If this number is high, we might consider writing custom `MozPromise`-
 handling code instead of using `MozPromise::All`.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_flush_rejections {
+    label: "Fog Ipc: Flush Rejections"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_rejections ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Rejections"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc: Flush Rejections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_rejections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we failed to flush individual instances of
+non-parent-process data.
 "
   }
 
@@ -36963,6 +36999,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Fog Ipc Flush Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_rejections {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_flush_rejections} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Rejections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_rejections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_rejections_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_flush_rejections: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Rejections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_rejections"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
