@@ -1307,6 +1307,14 @@ view: events_stream {
     group_item_label: "Warning"
   }
 
+  dimension: extras__boolean__wasActive {
+    sql: ${TABLE}.extras.boolean.wasActive ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Wasactive"
+  }
+
   dimension: extras__boolean__webVTTSubtitles {
     sql: ${TABLE}.extras.boolean.webVTTSubtitles ;;
     type: yesno

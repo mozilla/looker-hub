@@ -41,6 +41,24 @@ view: request_stats {
 "
   }
 
+  dimension: metrics__string__ad_taxonomy {
+    label: "Ad: Taxonomy"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_taxonomy ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Taxonomy"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Taxonomy"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_taxonomy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Taxonomy identifier for the contextual categories (e.g. \"IAB-3.0\"). May be null if no contextual information was provided.
+"
+  }
+
   dimension: metrics__string__ad_client_dma_code {
     label: "Ad Client: Dma Code"
     hidden: no
