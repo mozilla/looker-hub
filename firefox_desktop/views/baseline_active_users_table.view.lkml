@@ -125,6 +125,7 @@ view: baseline_active_users_table {
     sql: ${TABLE}.attribution_msclkid ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Unique token created at Firefox download time using the Microsoft Store."
   }
 
   dimension: attribution_source {
@@ -497,6 +498,14 @@ view: baseline_active_users_table {
     sql: ${TABLE}.os_version_minor ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: policies_is_enterprise {
+    sql: ${TABLE}.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Attempt to determine if the user is an enterprise user based on various signals.
+This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise."
   }
 
   dimension: profile_group_id {

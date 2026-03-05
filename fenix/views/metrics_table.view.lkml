@@ -2465,6 +2465,17 @@ handling code instead of using `MozPromise::All`.
 "
   }
 
+  dimension: metrics__counter__fog_ipc_flush_rejections {
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_rejections ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Fog Ipc Flush Rejections"
+    description: "The number of times we failed to flush individual instances of
+non-parent-process data.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_replay_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
     type: number
@@ -17447,6 +17458,15 @@ See Environment.sys.mjs' `DEFAULT_ENVIRONMENT_PREFS`.
     group_label: "Metrics: Quantity"
     group_item_label: "Data Storage Client Auth Remember List"
     description: "The number of entries stored in the ClientAuthRememberList nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__data_storage_site_integrity_service_state {
+    sql: ${TABLE}.metrics.quantity.data_storage_site_integrity_service_state ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Data Storage Site Integrity Service State"
+    description: "The number of entries stored in the SiteIntegrityServiceState nsIDataStorage"
   }
 
   dimension: metrics__quantity__data_storage_site_security_service_state {

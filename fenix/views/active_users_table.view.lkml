@@ -472,6 +472,12 @@ view: active_users_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: policies_is_enterprise {
+    sql: ${TABLE}.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: profile_group_id {
     sql: ${TABLE}.profile_group_id ;;
     type: string
