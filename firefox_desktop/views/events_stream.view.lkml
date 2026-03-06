@@ -467,6 +467,14 @@ view: events_stream {
     group_item_label: "Encrypted"
   }
 
+  dimension: extras__boolean__enrolled {
+    sql: ${TABLE}.extras.boolean.enrolled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Enrolled"
+  }
+
   dimension: extras__boolean__enter {
     sql: ${TABLE}.extras.boolean.enter ;;
     type: yesno
