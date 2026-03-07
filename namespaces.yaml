@@ -9576,10 +9576,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -9656,9 +9656,9 @@ operational_monitoring:
             default: release
             options:
             - release
-            - beta
-            - nightly
             - esr
+            - nightly
+            - beta
             - aurora
             - default
             - nightly-pine
@@ -11502,12 +11502,12 @@ operational_monitoring:
             default: Linux - vpn_session
             options:
             - Linux - vpn_session
-            - iOS - daemon_session
-            - Android - daemon_session
+            - Windows - vpn_session
             - Darwin - vpn_session
             - iOS - vpn_session
+            - Android - daemon_session
+            - iOS - daemon_session
             - Android - vpn_session
-            - Windows - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id432
@@ -12467,17 +12467,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id494
           channel:
-            default: beta
+            default: release
             options:
-            - beta
             - release
+            - beta
             - nightly
           os:
             default: Darwin
             options:
             - Darwin
-            - Windows_NT
             - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id495

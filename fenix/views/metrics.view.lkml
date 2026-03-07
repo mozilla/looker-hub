@@ -20533,7 +20533,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__custom_distribution__networking_local_network_access_port__sum {
     label: "Networking: Local Network Access Port Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.sum ;;
     type: number
     group_label: "Networking"

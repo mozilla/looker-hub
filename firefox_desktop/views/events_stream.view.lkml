@@ -1403,6 +1403,14 @@ view: events_stream {
     group_item_label: "Buffering Time"
   }
 
+  dimension: extras__quantity__buttonType {
+    sql: ${TABLE}.extras.quantity.buttonType ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Buttontype"
+  }
+
   dimension: extras__quantity__cc_number_multi_parts {
     sql: ${TABLE}.extras.quantity.cc_number_multi_parts ;;
     type: number
@@ -5377,6 +5385,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Selected Result Subtype"
+  }
+
+  dimension: extras__string__selection {
+    sql: ${TABLE}.extras.string.selection ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Selection"
   }
 
   dimension: extras__string__selfdetails {
