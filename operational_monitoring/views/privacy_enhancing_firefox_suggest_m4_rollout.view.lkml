@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.disable_enrollment_status_telemetry_for_nightly_via_nimbustelmetry_statistics ;;
+view: privacy_enhancing_firefox_suggest_m4_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.privacy_enhancing_firefox_suggest_m4_rollout_statistics ;;
 
   dimension: submission_date {
     type: date

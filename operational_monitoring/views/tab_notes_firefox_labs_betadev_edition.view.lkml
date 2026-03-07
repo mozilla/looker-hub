@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: desktop_enrollment_status_server_knobs {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.desktop_enrollment_status_server_knobs_statistics ;;
+view: tab_notes_firefox_labs_betadev_edition {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.tab_notes_firefox_labs_betadev_edition_statistics ;;
 
   dimension: submission_date {
     type: date
