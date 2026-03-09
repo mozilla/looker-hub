@@ -5251,6 +5251,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__count {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ever Hit"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__sum {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ever Hit"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__values {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ref Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ref Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__count {
     sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.count ;;
     type: number
@@ -50219,6 +50263,34 @@ view: metrics_table__metrics__custom_distribution__dom_forget_skippable_frequenc
 }
 
 view: metrics_table__metrics__custom_distribution__dom_gc_slice_during_idle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__dom_script_memory_cache_ever_hit__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__dom_script_memory_cache_ref_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

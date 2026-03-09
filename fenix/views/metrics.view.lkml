@@ -9294,6 +9294,42 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__sum {
+    label: "DOM: Script Memory Cache Ever Hit Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.sum ;;
+    type: number
+    group_label: "DOM"
+    group_item_label: "Script Memory Cache Ever Hit Sum"
+
+    link: {
+      label: "Glean Dictionary reference for DOM: Script Memory Cache Ever Hit Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dom_script_memory_cache_ever_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The percentage of the stencil navigation cache entries that are ever hit in the process.
+"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__sum {
+    label: "DOM: Script Memory Cache Ref Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.sum ;;
+    type: number
+    group_label: "DOM"
+    group_item_label: "Script Memory Cache Ref Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for DOM: Script Memory Cache Ref Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dom_script_memory_cache_ref_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Distribution of the refCount of scripts in the stencil navigation cache.
+"
+  }
+
   dimension: metrics__counter__dom_slow_script_notice_count {
     label: "DOM: Slow Script Notice Count"
     hidden: no
@@ -57240,6 +57276,34 @@ view: metrics__metrics__custom_distribution__dom_forget_skippable_frequency__val
 }
 
 view: metrics__metrics__custom_distribution__dom_gc_slice_during_idle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__dom_script_memory_cache_ever_hit__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__dom_script_memory_cache_ref_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
