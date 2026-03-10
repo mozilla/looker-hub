@@ -28781,7 +28781,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__labeled_quantity__normandy_recipe_freshness {
     label: "Normandy: Recipe Freshness"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
     type: string
     group_label: "Normandy"
