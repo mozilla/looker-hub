@@ -65,6 +65,12 @@ view: forecast_content_monthly {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: forecast_native_uapi_inventory {
+    sql: ${TABLE}.forecast_native_uapi_inventory ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: forecast_revenue {
     sql: ${TABLE}.forecast_revenue ;;
     type: number
@@ -79,6 +85,18 @@ view: forecast_content_monthly {
 
   dimension: forecast_uapi_impressions_excluding_house_ads {
     sql: ${TABLE}.forecast_uapi_impressions_excluding_house_ads ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: forecast_uapi_sponsored_impressions {
+    sql: ${TABLE}.forecast_uapi_sponsored_impressions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: inferred_actual_native_uapi_inventory {
+    sql: ${TABLE}.inferred_actual_native_uapi_inventory ;;
     type: number
     suggest_persist_for: "24 hours"
   }

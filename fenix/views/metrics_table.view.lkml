@@ -12441,6 +12441,12 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 "
   }
 
+  dimension: metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts {
+    sql: ${TABLE}.metrics.labeled_counter.custom_review_prompt_record_nimbus_event_attempts ;;
+    hidden: yes
+    description: "Counts Nimbus event recording attempts after the custom review prompt is shown, labeled by result."
+  }
+
   dimension: metrics__labeled_counter__cycle_collector_finish_igc {
     sql: ${TABLE}.metrics.labeled_counter.cycle_collector_finish_igc ;;
     hidden: yes
@@ -13259,7 +13265,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 

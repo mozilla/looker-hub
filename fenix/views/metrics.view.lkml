@@ -411,6 +411,22 @@ manually by the user.
 "
   }
 
+  dimension: metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts {
+    label: "Custom Review Prompt: Record Nimbus Event Attempts"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.custom_review_prompt_record_nimbus_event_attempts ;;
+    group_label: "Custom Review Prompt"
+    group_item_label: "Record Nimbus Event Attempts"
+
+    link: {
+      label: "Glean Dictionary reference for Custom Review Prompt: Record Nimbus Event Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/custom_review_prompt_record_nimbus_event_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts Nimbus event recording attempts after the custom review prompt is shown, labeled by result."
+  }
+
   dimension: metrics__boolean__customization_settings_dynamic_toolbar {
     label: "Customization Settings: Dynamic Toolbar"
     hidden: no
@@ -43447,6 +43463,47 @@ view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
 
 view: metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
   label: "Creditcard: Detected Cc Number Fields Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts {
+  label: "Custom Review Prompt: Record Nimbus Event Attempts"
 
   dimension: document_id {
     type: string
