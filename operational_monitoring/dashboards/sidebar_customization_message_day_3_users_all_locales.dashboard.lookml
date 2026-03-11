@@ -44,6 +44,111 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: sidebar_customization_message_day_3_users_all_locales
+    type: "ci-line-chart"
+    fields: [
+      sidebar_customization_message_day_3_users_all_locales.submission_date,
+      sidebar_customization_message_day_3_users_all_locales.branch,
+      sidebar_customization_message_day_3_users_all_locales.upper,
+      sidebar_customization_message_day_3_users_all_locales.lower,
+      sidebar_customization_message_day_3_users_all_locales.point
+    ]
+    pivots: [
+      sidebar_customization_message_day_3_users_all_locales.branch
+    ]
+    filters:
+      sidebar_customization_message_day_3_users_all_locales.metric: 'memory_total'
+      sidebar_customization_message_day_3_users_all_locales.statistic: percentile
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: sidebar_customization_message_day_3_users_all_locales.submission_date
+    field_y: sidebar_customization_message_day_3_users_all_locales.point
+    log_scale: false
+    ci_lower: sidebar_customization_message_day_3_users_all_locales.lower
+    ci_upper: sidebar_customization_message_day_3_users_all_locales.upper
+    show_grid: true
+    listen:
+      Date: sidebar_customization_message_day_3_users_all_locales.submission_date
+      Percentile: sidebar_customization_message_day_3_users_all_locales.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sidebar_customization_message_day_3_users_all_locales
+    type: looker_line
+    fields: [
+      sidebar_customization_message_day_3_users_all_locales.submission_date,
+      sidebar_customization_message_day_3_users_all_locales.branch,
+      sidebar_customization_message_day_3_users_all_locales.point
+    ]
+    pivots: [
+      sidebar_customization_message_day_3_users_all_locales.branch
+    ]
+    filters:
+      sidebar_customization_message_day_3_users_all_locales.metric: 'days_of_use'
+      sidebar_customization_message_day_3_users_all_locales.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: sidebar_customization_message_day_3_users_all_locales.submission_date
+    field_y: sidebar_customization_message_day_3_users_all_locales.point
+    log_scale: false
+    ci_lower: sidebar_customization_message_day_3_users_all_locales.lower
+    ci_upper: sidebar_customization_message_day_3_users_all_locales.upper
+    show_grid: true
+    listen:
+      Date: sidebar_customization_message_day_3_users_all_locales.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sidebar_customization_message_day_3_users_all_locales
+    type: looker_line
+    fields: [
+      sidebar_customization_message_day_3_users_all_locales.submission_date,
+      sidebar_customization_message_day_3_users_all_locales.branch,
+      sidebar_customization_message_day_3_users_all_locales.point
+    ]
+    pivots: [
+      sidebar_customization_message_day_3_users_all_locales.branch
+    ]
+    filters:
+      sidebar_customization_message_day_3_users_all_locales.metric: 'retained'
+      sidebar_customization_message_day_3_users_all_locales.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: sidebar_customization_message_day_3_users_all_locales.submission_date
+    field_y: sidebar_customization_message_day_3_users_all_locales.point
+    log_scale: false
+    ci_lower: sidebar_customization_message_day_3_users_all_locales.lower
+    ci_upper: sidebar_customization_message_day_3_users_all_locales.upper
+    show_grid: true
+    listen:
+      Date: sidebar_customization_message_day_3_users_all_locales.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -62,41 +167,7 @@
     filters:
       sidebar_customization_message_day_3_users_all_locales.metric: 'qualified_cumulative_days_of_use'
       sidebar_customization_message_day_3_users_all_locales.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: sidebar_customization_message_day_3_users_all_locales.submission_date
-    field_y: sidebar_customization_message_day_3_users_all_locales.point
-    log_scale: false
-    ci_lower: sidebar_customization_message_day_3_users_all_locales.lower
-    ci_upper: sidebar_customization_message_day_3_users_all_locales.upper
-    show_grid: true
-    listen:
-      Date: sidebar_customization_message_day_3_users_all_locales.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sidebar_customization_message_day_3_users_all_locales
-    type: looker_line
-    fields: [
-      sidebar_customization_message_day_3_users_all_locales.submission_date,
-      sidebar_customization_message_day_3_users_all_locales.branch,
-      sidebar_customization_message_day_3_users_all_locales.point
-    ]
-    pivots: [
-      sidebar_customization_message_day_3_users_all_locales.branch
-    ]
-    filters:
-      sidebar_customization_message_day_3_users_all_locales.metric: 'search_count'
-      sidebar_customization_message_day_3_users_all_locales.statistic: mean
-    row: 10
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -130,77 +201,6 @@
     filters:
       sidebar_customization_message_day_3_users_all_locales.metric: 'uri_count'
       sidebar_customization_message_day_3_users_all_locales.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: sidebar_customization_message_day_3_users_all_locales.submission_date
-    field_y: sidebar_customization_message_day_3_users_all_locales.point
-    log_scale: false
-    ci_lower: sidebar_customization_message_day_3_users_all_locales.lower
-    ci_upper: sidebar_customization_message_day_3_users_all_locales.upper
-    show_grid: true
-    listen:
-      Date: sidebar_customization_message_day_3_users_all_locales.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: sidebar_customization_message_day_3_users_all_locales
-    type: "ci-line-chart"
-    fields: [
-      sidebar_customization_message_day_3_users_all_locales.submission_date,
-      sidebar_customization_message_day_3_users_all_locales.branch,
-      sidebar_customization_message_day_3_users_all_locales.upper,
-      sidebar_customization_message_day_3_users_all_locales.lower,
-      sidebar_customization_message_day_3_users_all_locales.point
-    ]
-    pivots: [
-      sidebar_customization_message_day_3_users_all_locales.branch
-    ]
-    filters:
-      sidebar_customization_message_day_3_users_all_locales.metric: 'memory_total'
-      sidebar_customization_message_day_3_users_all_locales.statistic: percentile
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: sidebar_customization_message_day_3_users_all_locales.submission_date
-    field_y: sidebar_customization_message_day_3_users_all_locales.point
-    log_scale: false
-    ci_lower: sidebar_customization_message_day_3_users_all_locales.lower
-    ci_upper: sidebar_customization_message_day_3_users_all_locales.upper
-    show_grid: true
-    listen:
-      Date: sidebar_customization_message_day_3_users_all_locales.submission_date
-      Percentile: sidebar_customization_message_day_3_users_all_locales.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sidebar_customization_message_day_3_users_all_locales
-    type: looker_line
-    fields: [
-      sidebar_customization_message_day_3_users_all_locales.submission_date,
-      sidebar_customization_message_day_3_users_all_locales.branch,
-      sidebar_customization_message_day_3_users_all_locales.point
-    ]
-    pivots: [
-      sidebar_customization_message_day_3_users_all_locales.branch
-    ]
-    filters:
-      sidebar_customization_message_day_3_users_all_locales.metric: 'retained'
-      sidebar_customization_message_day_3_users_all_locales.statistic: mean
     row: 20
     col: 12
     width: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       sidebar_customization_message_day_3_users_all_locales.branch
     ]
     filters:
-      sidebar_customization_message_day_3_users_all_locales.metric: 'days_of_use'
+      sidebar_customization_message_day_3_users_all_locales.metric: 'search_count'
       sidebar_customization_message_day_3_users_all_locales.statistic: mean
     row: 30
     col: 0
