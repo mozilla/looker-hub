@@ -8685,7 +8685,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__dns_blocklist_count__sum {
     label: "DNS: Blocklist Count Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.dns_blocklist_count.sum ;;
     type: number
     group_label: "DNS"
