@@ -35,8 +35,8 @@ view: forecast_content_monthly {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: actual_uapi_impressions_excluding_house {
-    sql: ${TABLE}.actual_uapi_impressions_excluding_house ;;
+  dimension: actual_uapi_impressions_excluding_house_ads {
+    sql: ${TABLE}.actual_uapi_impressions_excluding_house_ads ;;
     type: number
     suggest_persist_for: "24 hours"
   }
