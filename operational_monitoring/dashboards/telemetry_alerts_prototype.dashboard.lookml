@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'perf_first_contentful_paint_ms'
+    default_value: 'js_pageload_execution_ms'
     allow_multiple_values: false
     required: true
     ui_config:

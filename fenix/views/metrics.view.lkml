@@ -5618,6 +5618,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__sum {
+    label: "Cert Verifier: Crlite Not Covered Cert Age Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.sum ;;
+    type: number
+    group_label: "Cert Verifier"
+    group_item_label: "Crlite Not Covered Cert Age Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier: Crlite Not Covered Cert Age Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cert_verifier_crlite_not_covered_cert_age"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The age of a certificate (in milliseconds) when it is not covered by CRLite, measured as the time between the most recent SCT timestamp and the validation time.
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     label: "Cert Verifier: Crlite Status"
     hidden: yes
@@ -19670,6 +19688,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__sum {
+    label: "Networking: HTTP 3 Final Cwnd Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Final Cwnd Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Final Cwnd Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_final_cwnd"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: final congestion window size in bytes at connection close.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_loss_ratio__sum {
     label: "Networking: HTTP 3 Loss Ratio Sum"
     hidden: no
@@ -19688,6 +19724,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__sum {
+    label: "Networking: HTTP 3 Peer Max Udp Payload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Peer Max Udp Payload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Peer Max Udp Payload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_peer_max_udp_payload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: peer's max_udp_payload_size transport parameter in bytes. Only recorded when the peer advertises this parameter.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
     label: "Networking: HTTP 3 Quic Frame Count"
     hidden: yes
@@ -19702,6 +19756,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Number of QUIC frames send and received by type.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__sum {
+    label: "Networking: HTTP 3 Slow Start Exit Cwnd Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Slow Start Exit Cwnd Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Slow Start Exit Cwnd Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_slow_start_exit_cwnd"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: congestion window size in bytes when exiting slow start. Only recorded for connections that exited slow start.
 "
   }
 
@@ -59236,6 +59308,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio__value
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -70995,6 +71081,34 @@ view: metrics__metrics__memory_distribution__networking_cache_metadata_size__val
   }
 }
 
+view: metrics__metrics__memory_distribution__networking_http_3_final_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -71388,6 +71502,20 @@ view: metrics__metrics__timing_distribution__cert_verification_time_success__val
 }
 
 view: metrics__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

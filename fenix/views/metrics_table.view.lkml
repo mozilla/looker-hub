@@ -8221,6 +8221,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Peer Max Udp Payload"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Peer Max Udp Payload"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.count ;;
     type: number
@@ -13265,7 +13287,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -16632,6 +16654,50 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__memory_distribution__networking_cache_metadata_size__values {
     sql: ${TABLE}.metrics.memory_distribution.networking_cache_metadata_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Final Cwnd"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Final Cwnd"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Slow Start Exit Cwnd"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Slow Start Exit Cwnd"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.values ;;
     hidden: yes
   }
 
@@ -20813,6 +20879,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
     sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.values ;;
     hidden: yes
   }
 
@@ -52172,6 +52305,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -63931,6 +64078,34 @@ view: metrics_table__metrics__memory_distribution__networking_cache_metadata_siz
   }
 }
 
+view: metrics_table__metrics__memory_distribution__networking_http_3_final_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -64324,6 +64499,20 @@ view: metrics_table__metrics__timing_distribution__cert_verification_time_succes
 }
 
 view: metrics_table__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

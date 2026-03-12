@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: local_network_access_enablement_etp_stricr_147_148 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.local_network_access_enablement_etp_stricr_147_148_statistics ;;
+view: pdf_annotations_signatures_treatment_a_already_default_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.pdf_annotations_signatures_treatment_a_already_default_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
