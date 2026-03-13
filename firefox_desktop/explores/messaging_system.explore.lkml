@@ -63,6 +63,16 @@ explore: messaging_system {
     sql: LEFT JOIN UNNEST(${messaging_system.ping_info__experiments}) AS messaging_system__ping_info__experiments ;;
   }
 
+  join: messaging_system__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${messaging_system.ping_info__server_knobs_config__metrics_enabled}) AS messaging_system__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: messaging_system__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${messaging_system.ping_info__server_knobs_config__pings_enabled}) AS messaging_system__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: messaging_system_last_updated
 
   always_filter: {

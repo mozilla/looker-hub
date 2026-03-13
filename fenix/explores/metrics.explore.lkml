@@ -368,6 +368,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__creditcard_detected_cc_number_fields_count}) AS metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts}) AS metrics__metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cycle_collector_finish_igc {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cycle_collector_finish_igc}) AS metrics__metrics__labeled_counter__cycle_collector_finish_igc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cycle_collector_finish_igc.document_id} ;;
@@ -1123,6 +1128,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_retried_system_channel_update_status}) AS metrics__metrics__labeled_counter__network_retried_system_channel_update_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_retried_system_channel_update_status.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_ssl_token_cache_hits {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_ssl_token_cache_hits}) AS metrics__metrics__labeled_counter__network_ssl_token_cache_hits ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_ssl_token_cache_hits.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_sso_entra_success {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_sso_entra_success}) AS metrics__metrics__labeled_counter__network_sso_entra_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_sso_entra_success.document_id} ;;
@@ -1386,6 +1396,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__networking_trr_request_count_per_conn {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_trr_request_count_per_conn}) AS metrics__metrics__labeled_counter__networking_trr_request_count_per_conn ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_trr_request_count_per_conn.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__nss_initialization_fallbacks {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__nss_initialization_fallbacks}) AS metrics__metrics__labeled_counter__nss_initialization_fallbacks ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__nss_initialization_fallbacks.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__orb_block_initiator {
@@ -1976,6 +1991,16 @@ explore: metrics {
   join: metrics__ping_info__experiments {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
+  }
+
+  join: metrics__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.ping_info__server_knobs_config__metrics_enabled}) AS metrics__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: metrics__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.ping_info__server_knobs_config__pings_enabled}) AS metrics__ping_info__server_knobs_config__pings_enabled ;;
   }
 
   persist_with: metrics_last_updated

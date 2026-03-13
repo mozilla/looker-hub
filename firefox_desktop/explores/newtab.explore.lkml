@@ -48,6 +48,16 @@ explore: newtab {
     sql: LEFT JOIN UNNEST(${newtab.ping_info__experiments}) AS newtab__ping_info__experiments ;;
   }
 
+  join: newtab__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${newtab.ping_info__server_knobs_config__metrics_enabled}) AS newtab__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: newtab__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${newtab.ping_info__server_knobs_config__pings_enabled}) AS newtab__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: newtab_last_updated
 
   always_filter: {

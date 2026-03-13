@@ -48,6 +48,16 @@ explore: gecko_trace {
     sql: LEFT JOIN UNNEST(${gecko_trace.ping_info__experiments}) AS gecko_trace__ping_info__experiments ;;
   }
 
+  join: gecko_trace__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${gecko_trace.ping_info__server_knobs_config__metrics_enabled}) AS gecko_trace__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: gecko_trace__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${gecko_trace.ping_info__server_knobs_config__pings_enabled}) AS gecko_trace__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: gecko_trace_last_updated
 
   always_filter: {

@@ -2465,6 +2465,17 @@ handling code instead of using `MozPromise::All`.
 "
   }
 
+  dimension: metrics__counter__fog_ipc_flush_rejections {
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_rejections ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Fog Ipc Flush Rejections"
+    description: "The number of times we failed to flush individual instances of
+non-parent-process data.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_replay_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
     type: number
@@ -3161,6 +3172,16 @@ between a failed `top_sites_count` ping and 0 top sites, please see
     group_label: "Metrics: Counter"
     group_item_label: "Netwerk Parent Connect Timeout"
     description: "Counts how often the parent-connect-timeout timer is necessary to clear up EarlyHintPreloader
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_expired {
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_expired ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network SSL Token Cache Expired"
+    description: "Counts the number of expired session resumption tokens encountered during cache lookups. High values may indicate token lifetime issues or long delays between connections to the same host.
 "
   }
 
@@ -5227,6 +5248,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__dom_gc_slice_during_idle__values {
     sql: ${TABLE}.metrics.custom_distribution.dom_gc_slice_during_idle.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__count {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ever Hit"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__sum {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ever Hit"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__values {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ref Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ref Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.values ;;
     hidden: yes
   }
 
@@ -8153,6 +8218,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__networking_http_3_loss_ratio__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Peer Max Udp Payload"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Peer Max Udp Payload"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.values ;;
     hidden: yes
   }
 
@@ -11709,6 +11796,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__dual_labeled_counter__urlfixup_suffix {
+    sql: ${TABLE}.metrics.dual_labeled_counter.urlfixup_suffix ;;
+    hidden: yes
+    description: "Counts how often a .com or other localized suffix is appended to a URL as a result of pressing ctrl/cmd + enter in the URL bar.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__webgpu_expose_adapter {
     sql: ${TABLE}.metrics.dual_labeled_counter.webgpu_expose_adapter ;;
     hidden: yes
@@ -12367,6 +12461,12 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     hidden: yes
     description: "The count of detected input fields that a website plans on splitting the cc number digits across
 "
+  }
+
+  dimension: metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts {
+    sql: ${TABLE}.metrics.labeled_counter.custom_review_prompt_record_nimbus_event_attempts ;;
+    hidden: yes
+    description: "Counts Nimbus event recording attempts after the custom review prompt is shown, labeled by result."
   }
 
   dimension: metrics__labeled_counter__cycle_collector_finish_igc {
@@ -13530,6 +13630,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_ssl_token_cache_hits {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_hits ;;
+    hidden: yes
+    description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
+"
+  }
+
   dimension: metrics__labeled_counter__network_sso_entra_success {
     sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
     hidden: yes
@@ -13935,6 +14042,12 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     hidden: yes
     description: "Number of DOH requests per connection keyed by HTTP version
 "
+  }
+
+  dimension: metrics__labeled_counter__nss_initialization_fallbacks {
+    sql: ${TABLE}.metrics.labeled_counter.nss_initialization_fallbacks ;;
+    hidden: yes
+    description: "Count of how often various NSS initialization fallback methods are used."
   }
 
   dimension: metrics__labeled_counter__orb_block_initiator {
@@ -16550,6 +16663,50 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Final Cwnd"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Final Cwnd"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Slow Start Exit Cwnd"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Slow Start Exit Cwnd"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__count {
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.count ;;
     type: number
@@ -17425,6 +17582,15 @@ See Environment.sys.mjs' `DEFAULT_ENVIRONMENT_PREFS`.
     description: "The number of entries stored in the ClientAuthRememberList nsIDataStorage"
   }
 
+  dimension: metrics__quantity__data_storage_site_integrity_service_state {
+    sql: ${TABLE}.metrics.quantity.data_storage_site_integrity_service_state ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Data Storage Site Integrity Service State"
+    description: "The number of entries stored in the SiteIntegrityServiceState nsIDataStorage"
+  }
+
   dimension: metrics__quantity__data_storage_site_security_service_state {
     sql: ${TABLE}.metrics.quantity.data_storage_site_security_service_state ;;
     type: number
@@ -18257,6 +18423,22 @@ e.g. 134217728
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Rate: Pkcs11 Nss Cert DB"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__denominator {
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.denominator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Private Browsing Cleanup Error Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__numerator {
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.numerator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Private Browsing Cleanup Error Rate"
     group_item_label: "Numerator"
   }
 
@@ -19366,6 +19548,18 @@ e.g. \"22\"
 "
   }
 
+  dimension: metrics__string__system_os_libstdcxx_version {
+    sql: ${TABLE}.metrics.string.system_os_libstdcxx_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "System OS Libstdcxx Version"
+    description: "The Operating System's libstdc++ highest GLIBCXX version.
+Linux only.
+e.g. \"3.4.33\"
+"
+  }
+
   dimension: metrics__string__system_os_locale {
     sql: ${TABLE}.metrics.string.system_os_locale ;;
     type: string
@@ -19472,161 +19666,238 @@ Previously reported in \"main\" ping `simpleMeasurements`.
   dimension: metrics__string_list__addons_enabled_addons {
     sql: ${TABLE}.metrics.string_list.addons_enabled_addons ;;
     hidden: yes
+    description: "A list of all enabled add-ons on the device.
+"
   }
 
   dimension: metrics__string_list__addons_installed_addons {
     sql: ${TABLE}.metrics.string_list.addons_installed_addons ;;
     hidden: yes
+    description: "A list of all installed add-ons on the device.
+"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__string_list__intl_accept_languages {
     sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
     hidden: yes
+    description: "The languages for the Accept-Languages header.
+"
   }
 
   dimension: metrics__string_list__intl_app_locales {
     sql: ${TABLE}.metrics.string_list.intl_app_locales ;;
     hidden: yes
+    description: "The negotiated Locales that are being used.
+"
   }
 
   dimension: metrics__string_list__intl_available_locales {
     sql: ${TABLE}.metrics.string_list.intl_available_locales ;;
     hidden: yes
+    description: "The Locales that are available for use.
+"
   }
 
   dimension: metrics__string_list__intl_regional_prefs_locales {
     sql: ${TABLE}.metrics.string_list.intl_regional_prefs_locales ;;
     hidden: yes
+    description: "The regional preferences for the OS.
+"
   }
 
   dimension: metrics__string_list__intl_requested_locales {
     sql: ${TABLE}.metrics.string_list.intl_requested_locales ;;
     hidden: yes
+    description: "The Locales that are being requested.
+"
   }
 
   dimension: metrics__string_list__intl_system_locales {
     sql: ${TABLE}.metrics.string_list.intl_system_locales ;;
     hidden: yes
+    description: "The Locales for the OS.
+"
   }
 
   dimension: metrics__string_list__logins_store_migration_errors {
     sql: ${TABLE}.metrics.string_list.logins_store_migration_errors ;;
     hidden: yes
+    description: "Errors discovered in the migration.
+"
   }
 
   dimension: metrics__string_list__metrics_mozilla_products {
     sql: ${TABLE}.metrics.string_list.metrics_mozilla_products ;;
     hidden: yes
+    description: "A list of all the Mozilla products installed on device. We currently scan
+for: Firefox, Firefox Beta, Firefox Aurora, Firefox Nightly, Firefox
+Fdroid, Firefox Lite, Reference Browser, Reference Browser Debug, Fenix,
+Focus, and Lockwise.
+"
   }
 
   dimension: metrics__string_list__metrics_syncing_items {
     sql: ${TABLE}.metrics.string_list.metrics_syncing_items ;;
     hidden: yes
+    description: "The preference keys for the switch preferences the user has enabled to sync with FxA. We currently track: Bookmarks and History.
+"
   }
 
   dimension: metrics__string_list__pkcs11_third_party_module_profile_entries {
     sql: ${TABLE}.metrics.string_list.pkcs11_third_party_module_profile_entries ;;
     hidden: yes
+    description: "A list of PKCS#11 module filenames (leaf names only) that are in the profile at launch time.
+"
   }
 
   dimension: metrics__string_list__preferences_accessibility_services {
     sql: ${TABLE}.metrics.string_list.preferences_accessibility_services ;;
     hidden: yes
+    description: "Whether or not the user has touch exploration or switch services enabled.
+These are built into the Android OS, not Fenix prefs.
+default: \"\"
+"
   }
 
   dimension: metrics__string_list__preferences_open_links_in_a_private_tab {
     sql: ${TABLE}.metrics.string_list.preferences_open_links_in_a_private_tab ;;
     hidden: yes
+    description: "Whether or not the user has enabled open links in a private tab. default: false
+"
   }
 
   dimension: metrics__string_list__preferences_open_links_in_app {
     sql: ${TABLE}.metrics.string_list.preferences_open_links_in_app ;;
     hidden: yes
+    description: "Whether or not the user has the open links in apps feature enabled. default: false
+"
   }
 
   dimension: metrics__string_list__preferences_remote_debugging {
     sql: ${TABLE}.metrics.string_list.preferences_remote_debugging ;;
     hidden: yes
+    description: "Whether or not the user has remote debugging enabled default: false
+"
   }
 
   dimension: metrics__string_list__preferences_search_bookmarks {
     sql: ${TABLE}.metrics.string_list.preferences_search_bookmarks ;;
     hidden: yes
+    description: "Whether or not the user has enabled bookmark search suggestions default: true
+"
   }
 
   dimension: metrics__string_list__preferences_search_browsing_history {
     sql: ${TABLE}.metrics.string_list.preferences_search_browsing_history ;;
     hidden: yes
+    description: "Whether or not the user has enabled browsing history suggestions. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_search_suggestions_private {
     sql: ${TABLE}.metrics.string_list.preferences_search_suggestions_private ;;
     hidden: yes
+    description: "Whether or not the user has enabled showing search suggestions in private mode. default: false (we prompt the user, asking them to make a selection)
+"
   }
 
   dimension: metrics__string_list__preferences_show_clipboard_suggestions {
     sql: ${TABLE}.metrics.string_list.preferences_show_clipboard_suggestions ;;
     hidden: yes
+    description: "Whether or not the user has enabled clipboard search suggestions. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_show_search_shortcuts {
     sql: ${TABLE}.metrics.string_list.preferences_show_search_shortcuts ;;
     hidden: yes
+    description: "Whether or not the user has enabled search shortcuts. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_show_search_suggestions {
     sql: ${TABLE}.metrics.string_list.preferences_show_search_suggestions ;;
     hidden: yes
+    description: "Whether or not the user has search suggestions enabled default: true
+"
   }
 
   dimension: metrics__string_list__preferences_show_voice_search {
     sql: ${TABLE}.metrics.string_list.preferences_show_voice_search ;;
     hidden: yes
+    description: "Whether or not the user has enabled the voice search button. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_sync {
     sql: ${TABLE}.metrics.string_list.preferences_sync ;;
     hidden: yes
+    description: "Whether or not the user is signed into FxA default: false
+"
   }
 
   dimension: metrics__string_list__preferences_sync_items {
     sql: ${TABLE}.metrics.string_list.preferences_sync_items ;;
     hidden: yes
+    description: "The list of items the user has chosen to sync with FxA.
+default: \"\" if the user is signed out. Otherwise defaults to
+whatever is set in their FxA account. New accounts set:
+[bookmarks, history, passwords, tabs]
+"
   }
 
   dimension: metrics__string_list__preferences_telemetry {
     sql: ${TABLE}.metrics.string_list.preferences_telemetry ;;
     hidden: yes
+    description: "Whether or not the user has telemetry enabled. Note we should never receive a \"false\" value for this since telemetry would not send in that case. default: true
+"
   }
 
   dimension: metrics__string_list__preferences_theme {
     sql: ${TABLE}.metrics.string_list.preferences_theme ;;
     hidden: yes
+    description: "The theme the user has enabled. \"light,\" \"dark,\" \"system,\" or \"battery\" default: \"system\" for API 28+, else \"light\"
+"
   }
 
   dimension: metrics__string_list__preferences_toolbar_position {
     sql: ${TABLE}.metrics.string_list.preferences_toolbar_position ;;
     hidden: yes
+    description: "The position of the toolbar default: bottom (defaults to top if the user has accessibility services)
+"
   }
 
   dimension: metrics__string_list__preferences_tracking_protection {
     sql: ${TABLE}.metrics.string_list.preferences_tracking_protection ;;
     hidden: yes
+    description: "What type of enhanced tracking protection the user has enabled. \"standard,\" \"strict,\" \"custom,\" or \"\" (if disabled) default: \"standard\"
+"
   }
 
   dimension: metrics__string_list__system_cpu_extensions {
     sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes
+    description: "Recognized CPU extensions.
+"
   }
 
   dimension: metrics__string_list__xpi_database_startup_load_reasons {
     sql: ${TABLE}.metrics.string_list.xpi_database_startup_load_reasons ;;
     hidden: yes
+    description: "List of reasons the XPI Database was updated.
+Examples include \"appChanged\", \"directoryState\".
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
   }
 
   dimension: metrics__text__xpi_database_late_load {
@@ -20614,6 +20885,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
     sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.values ;;
     hidden: yes
   }
 
@@ -44804,6 +45142,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__process_child_launch__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.process_child_launch.bucket_count ;;
     type: number
@@ -49070,6 +49475,27 @@ Shared Preferences.
     group_item_label: "Seq"
   }
 
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -49982,6 +50408,34 @@ view: metrics_table__metrics__custom_distribution__dom_forget_skippable_frequenc
 }
 
 view: metrics_table__metrics__custom_distribution__dom_gc_slice_during_idle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__dom_script_memory_cache_ever_hit__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__dom_script_memory_cache_ref_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -51844,6 +52298,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_ecn_ce_ect0
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -54592,6 +55060,33 @@ view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeo
 }
 
 view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlfixup_suffix {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlfixup_suffix__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -63589,6 +64084,34 @@ view: metrics_table__metrics__memory_distribution__networking_cache_metadata_siz
   }
 }
 
+view: metrics_table__metrics__memory_distribution__networking_http_3_final_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -63982,6 +64505,20 @@ view: metrics_table__metrics__timing_distribution__cert_verification_time_succes
 }
 
 view: metrics_table__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -69049,6 +69586,20 @@ view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__v
   }
 }
 
+view: metrics_table__metrics__timing_distribution__private_browsing_cleanup_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__process_child_launch__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -69946,5 +70497,33 @@ view: metrics_table__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: metrics_table__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

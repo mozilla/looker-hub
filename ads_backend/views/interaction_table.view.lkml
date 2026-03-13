@@ -465,6 +465,13 @@ view: interaction_table {
     group_item_label: "Raw Technical Operations Served Timestamp"
   }
 
+  dimension: metrics__labeled_boolean__ad_flags {
+    sql: ${TABLE}.metrics.labeled_boolean.ad_flags ;;
+    hidden: yes
+    description: "The boolean state of all MARS experiment-backed feature flags at the time this ping was recorded.
+"
+  }
+
   dimension: metrics__string__ad_advertiser {
     sql: ${TABLE}.metrics.string.ad_advertiser ;;
     type: string
@@ -645,6 +652,16 @@ view: interaction_table {
 "
   }
 
+  dimension: metrics__string__ad_taxonomy {
+    sql: ${TABLE}.metrics.string.ad_taxonomy ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Ad Taxonomy"
+    description: "Taxonomy identifier for the contextual categories (e.g. \"IAB-3.0\"). May be null if no contextual information was provided.
+"
+  }
+
   dimension: metrics__string__technical_operations_creative_id {
     sql: ${TABLE}.metrics.string.technical_operations_creative_id ;;
     type: string
@@ -692,6 +709,13 @@ view: interaction_table {
     group_label: "Metrics: String"
     group_item_label: "Technical Operations User Agent"
     description: "User agent of the client.  Used for error investigation only, no analytics value.
+"
+  }
+
+  dimension: metrics__string_list__ad_categories {
+    sql: ${TABLE}.metrics.string_list.ad_categories ;;
+    hidden: yes
+    description: "Comma-separated list of contextual category identifiers from the taxonomy (e.g. \"210,315\"). May be null if no contextual information was provided.
 "
   }
 
@@ -764,6 +788,27 @@ view: interaction_table {
     suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
+  }
+
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
   }
 
   dimension: ping_info__start_time {
@@ -917,6 +962,20 @@ view: interaction_table__events__extra {
   }
 }
 
+view: interaction_table__metrics__labeled_boolean__ad_flags {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: interaction_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -946,5 +1005,33 @@ view: interaction_table__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: interaction_table__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: interaction_table__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

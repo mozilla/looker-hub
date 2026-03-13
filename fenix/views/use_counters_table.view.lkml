@@ -699,6 +699,36 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range"
+    description: "Whether a document used the CSS property animation-range. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range_end {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range_end ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range End"
+    description: "Whether a document used the CSS property animation-range-end. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_animation_range_start {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_range_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Animation Range Start"
+    description: "Whether a document used the CSS property animation-range-start. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_animation_timeline {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation_timeline ;;
     type: number
@@ -5589,6 +5619,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_timeline_scope {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_timeline_scope ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Timeline Scope"
+    description: "Whether a document used the CSS property timeline-scope. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_top {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_top ;;
     type: number
@@ -7926,6 +7966,36 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Animation Play State"
     description: "Whether a page used the CSS property animation-play-state. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range"
+    description: "Whether a page used the CSS property animation-range. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range_end {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range_end ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range End"
+    description: "Whether a page used the CSS property animation-range-end. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_animation_range_start {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_animation_range_start ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Animation Range Start"
+    description: "Whether a page used the CSS property animation-range-start. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -12819,6 +12889,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_timeline_scope {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_timeline_scope ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Timeline Scope"
+    description: "Whether a page used the CSS property timeline-scope. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_top {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_top ;;
     type: number
@@ -15179,6 +15259,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_gwtrich_text_area_compat_hack ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Gwtrich Text Area Compat Hack"
+    description: "Whether a document used GWTRichTextAreaCompatHack. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbobject_store_create_index_locale ;;
     type: number
@@ -15876,6 +15966,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Fullscreen Attribute"
     description: "Whether a page used FullscreenAttribute. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_gwtrich_text_area_compat_hack {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_gwtrich_text_area_compat_hack ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Gwtrich Text Area Compat Hack"
+    description: "Whether a page used GWTRichTextAreaCompatHack. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -18459,6 +18559,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_location_ancestororigins_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_location_ancestororigins_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Location Ancestororigins Getter"
+    description: "Whether a document got Location.ancestorOrigins. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_location_ancestororigins_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_location_ancestororigins_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Location Ancestororigins Setter"
+    description: "Whether a document set Location.ancestorOrigins. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_math_mlused {
     sql: ${TABLE}.metrics.counter.use_counter_doc_math_mlused ;;
     type: number
@@ -18789,6 +18909,396 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_navigate_event_intercept_with_precommit_handler {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigate_event_intercept_with_precommit_handler ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigate Event Intercept With Precommit Handler"
+    description: "Whether a document calls NavigateEvent.intercept() with a precommitHandler. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_downloadrequest_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_downloadrequest_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Downloadrequest Getter"
+    description: "Whether a document got NavigateEvent.downloadRequest. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_downloadrequest_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_downloadrequest_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Downloadrequest Setter"
+    description: "Whether a document set NavigateEvent.downloadRequest. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_formdata_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_formdata_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Formdata Getter"
+    description: "Whether a document got NavigateEvent.formData. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_formdata_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_formdata_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Formdata Setter"
+    description: "Whether a document set NavigateEvent.formData. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_hasuavisualtransition_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_hasuavisualtransition_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Hasuavisualtransition Getter"
+    description: "Whether a document got NavigateEvent.hasUAVisualTransition. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_hasuavisualtransition_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_hasuavisualtransition_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Hasuavisualtransition Setter"
+    description: "Whether a document set NavigateEvent.hasUAVisualTransition. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_intercept {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_intercept ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Intercept"
+    description: "Whether a document called called NavigateEvent.intercept. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_scroll {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_scroll ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Scroll"
+    description: "Whether a document called called NavigateEvent.scroll. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_sourceelement_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_sourceelement_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Sourceelement Getter"
+    description: "Whether a document got NavigateEvent.sourceElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigateevent_sourceelement_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigateevent_sourceelement_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigateevent Sourceelement Setter"
+    description: "Whether a document set NavigateEvent.sourceElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_back {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_back ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Back"
+    description: "Whether a document called called Navigation.back. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_entries {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_entries ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Entries"
+    description: "Whether a document called called Navigation.entries. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_forward {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_forward ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Forward"
+    description: "Whether a document called called Navigation.forward. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_navigate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_navigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Navigate"
+    description: "Whether a document called called Navigation.navigate. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_oncurrententrychange {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_oncurrententrychange ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Oncurrententrychange"
+    description: "Whether a document adds an event listener for currententrychange on Navigation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_onnavigate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_onnavigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Onnavigate"
+    description: "Whether a document adds an event listener for navigate on Navigation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_onnavigateerror {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_onnavigateerror ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Onnavigateerror"
+    description: "Whether a document adds an event listener for navigateerror on Navigation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_onnavigatesuccess {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_onnavigatesuccess ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Onnavigatesuccess"
+    description: "Whether a document adds an event listener for navigatesuccess on Navigation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_reload {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_reload ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Reload"
+    description: "Whether a document called called Navigation.reload. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_traverseto {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_traverseto ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Traverseto"
+    description: "Whether a document called called Navigation.traverseTo. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigation_updatecurrententry {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigation_updatecurrententry ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigation Updatecurrententry"
+    description: "Whether a document called called Navigation.updateCurrentEntry. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationactivation_entry_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationactivation_entry_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationactivation Entry Getter"
+    description: "Whether a document got NavigationActivation.entry. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationactivation_entry_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationactivation_entry_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationactivation Entry Setter"
+    description: "Whether a document set NavigationActivation.entry. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationactivation_from_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationactivation_from_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationactivation From Getter"
+    description: "Whether a document got NavigationActivation.from. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationactivation_from_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationactivation_from_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationactivation From Setter"
+    description: "Whether a document set NavigationActivation.from. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationactivation_navigationtype_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationactivation_navigationtype_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationactivation Navigationtype Getter"
+    description: "Whether a document got NavigationActivation.navigationType. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationactivation_navigationtype_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationactivation_navigationtype_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationactivation Navigationtype Setter"
+    description: "Whether a document set NavigationActivation.navigationType. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationhistoryentry_getstate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationhistoryentry_getstate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationhistoryentry Getstate"
+    description: "Whether a document called called NavigationHistoryEntry.getState. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationprecommitcontroller_addhandler {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationprecommitcontroller_addhandler ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationprecommitcontroller Addhandler"
+    description: "Whether a document called called NavigationPrecommitController.addHandler. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationprecommitcontroller_redirect {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationprecommitcontroller_redirect ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationprecommitcontroller Redirect"
+    description: "Whether a document called called NavigationPrecommitController.redirect. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_committed_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_committed_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition Committed Getter"
+    description: "Whether a document got NavigationTransition.committed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_committed_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_committed_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition Committed Setter"
+    description: "Whether a document set NavigationTransition.committed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_finished_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_finished_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition Finished Getter"
+    description: "Whether a document got NavigationTransition.finished. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_finished_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_finished_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition Finished Setter"
+    description: "Whether a document set NavigationTransition.finished. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_from_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_from_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition From Getter"
+    description: "Whether a document got NavigationTransition.from. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_from_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_from_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition From Setter"
+    description: "Whether a document set NavigationTransition.from. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_navigationtype_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_navigationtype_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition Navigationtype Getter"
+    description: "Whether a document got NavigationTransition.navigationType. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigationtransition_navigationtype_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigationtransition_navigationtype_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigationtransition Navigationtype Setter"
+    description: "Whether a document set NavigationTransition.navigationType. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_navigator_canshare {
     sql: ${TABLE}.metrics.counter.use_counter_doc_navigator_canshare ;;
     type: number
@@ -18816,6 +19326,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Navigator Mozgetusermedia"
     description: "Whether a document called called Navigator.mozGetUserMedia. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_navigator_requestmidiaccess {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_navigator_requestmidiaccess ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Navigator Requestmidiaccess"
+    description: "Whether a document called called Navigator.requestMIDIAccess. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -19139,6 +19659,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Reportingobserver Constructor"
+    description: "Whether a document called called ReportingObserver.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_sanitizer_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_constructor ;;
     type: number
@@ -19236,6 +19766,36 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Text Directive Pages"
     description: "Whether a document used text fragments. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Videodecoder Constructor"
+    description: "Whether a document called called VideoDecoder.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Videoencoder Constructor"
+    description: "Whether a document called called VideoEncoder.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_wakelock_request {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_wakelock_request ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Wakelock Request"
+    description: "Whether a document called called WakeLock.request. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -20076,6 +20636,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Window Orientation"
     description: "Whether a document called called Window.orientation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_window_orientation_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_window_orientation_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Window Orientation Getter"
+    description: "Whether a document got Window.orientation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_window_orientation_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_window_orientation_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Window Orientation Setter"
+    description: "Whether a document set Window.orientation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -23069,6 +23649,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_location_ancestororigins_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_location_ancestororigins_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Location Ancestororigins Getter"
+    description: "Whether a page got Location.ancestorOrigins. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_location_ancestororigins_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_location_ancestororigins_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Location Ancestororigins Setter"
+    description: "Whether a page set Location.ancestorOrigins. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_math_mlused {
     sql: ${TABLE}.metrics.counter.use_counter_page_math_mlused ;;
     type: number
@@ -23399,6 +23999,396 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_navigate_event_intercept_with_precommit_handler {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigate_event_intercept_with_precommit_handler ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigate Event Intercept With Precommit Handler"
+    description: "Whether a page calls NavigateEvent.intercept() with a precommitHandler. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_downloadrequest_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_downloadrequest_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Downloadrequest Getter"
+    description: "Whether a page got NavigateEvent.downloadRequest. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_downloadrequest_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_downloadrequest_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Downloadrequest Setter"
+    description: "Whether a page set NavigateEvent.downloadRequest. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_formdata_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_formdata_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Formdata Getter"
+    description: "Whether a page got NavigateEvent.formData. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_formdata_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_formdata_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Formdata Setter"
+    description: "Whether a page set NavigateEvent.formData. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_hasuavisualtransition_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_hasuavisualtransition_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Hasuavisualtransition Getter"
+    description: "Whether a page got NavigateEvent.hasUAVisualTransition. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_hasuavisualtransition_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_hasuavisualtransition_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Hasuavisualtransition Setter"
+    description: "Whether a page set NavigateEvent.hasUAVisualTransition. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_intercept {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_intercept ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Intercept"
+    description: "Whether a page called called NavigateEvent.intercept. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_scroll {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_scroll ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Scroll"
+    description: "Whether a page called called NavigateEvent.scroll. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_sourceelement_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_sourceelement_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Sourceelement Getter"
+    description: "Whether a page got NavigateEvent.sourceElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigateevent_sourceelement_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigateevent_sourceelement_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigateevent Sourceelement Setter"
+    description: "Whether a page set NavigateEvent.sourceElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_back {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_back ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Back"
+    description: "Whether a page called called Navigation.back. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_entries {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_entries ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Entries"
+    description: "Whether a page called called Navigation.entries. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_forward {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_forward ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Forward"
+    description: "Whether a page called called Navigation.forward. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_navigate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_navigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Navigate"
+    description: "Whether a page called called Navigation.navigate. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_oncurrententrychange {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_oncurrententrychange ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Oncurrententrychange"
+    description: "Whether a page adds an event listener for currententrychange on Navigation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_onnavigate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_onnavigate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Onnavigate"
+    description: "Whether a page adds an event listener for navigate on Navigation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_onnavigateerror {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_onnavigateerror ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Onnavigateerror"
+    description: "Whether a page adds an event listener for navigateerror on Navigation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_onnavigatesuccess {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_onnavigatesuccess ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Onnavigatesuccess"
+    description: "Whether a page adds an event listener for navigatesuccess on Navigation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_reload {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_reload ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Reload"
+    description: "Whether a page called called Navigation.reload. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_traverseto {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_traverseto ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Traverseto"
+    description: "Whether a page called called Navigation.traverseTo. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigation_updatecurrententry {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigation_updatecurrententry ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigation Updatecurrententry"
+    description: "Whether a page called called Navigation.updateCurrentEntry. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationactivation_entry_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationactivation_entry_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationactivation Entry Getter"
+    description: "Whether a page got NavigationActivation.entry. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationactivation_entry_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationactivation_entry_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationactivation Entry Setter"
+    description: "Whether a page set NavigationActivation.entry. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationactivation_from_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationactivation_from_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationactivation From Getter"
+    description: "Whether a page got NavigationActivation.from. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationactivation_from_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationactivation_from_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationactivation From Setter"
+    description: "Whether a page set NavigationActivation.from. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationactivation_navigationtype_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationactivation_navigationtype_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationactivation Navigationtype Getter"
+    description: "Whether a page got NavigationActivation.navigationType. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationactivation_navigationtype_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationactivation_navigationtype_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationactivation Navigationtype Setter"
+    description: "Whether a page set NavigationActivation.navigationType. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationhistoryentry_getstate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationhistoryentry_getstate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationhistoryentry Getstate"
+    description: "Whether a page called called NavigationHistoryEntry.getState. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationprecommitcontroller_addhandler {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationprecommitcontroller_addhandler ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationprecommitcontroller Addhandler"
+    description: "Whether a page called called NavigationPrecommitController.addHandler. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationprecommitcontroller_redirect {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationprecommitcontroller_redirect ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationprecommitcontroller Redirect"
+    description: "Whether a page called called NavigationPrecommitController.redirect. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_committed_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_committed_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition Committed Getter"
+    description: "Whether a page got NavigationTransition.committed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_committed_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_committed_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition Committed Setter"
+    description: "Whether a page set NavigationTransition.committed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_finished_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_finished_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition Finished Getter"
+    description: "Whether a page got NavigationTransition.finished. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_finished_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_finished_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition Finished Setter"
+    description: "Whether a page set NavigationTransition.finished. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_from_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_from_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition From Getter"
+    description: "Whether a page got NavigationTransition.from. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_from_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_from_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition From Setter"
+    description: "Whether a page set NavigationTransition.from. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_navigationtype_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_navigationtype_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition Navigationtype Getter"
+    description: "Whether a page got NavigationTransition.navigationType. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigationtransition_navigationtype_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigationtransition_navigationtype_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigationtransition Navigationtype Setter"
+    description: "Whether a page set NavigationTransition.navigationType. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_navigator_canshare {
     sql: ${TABLE}.metrics.counter.use_counter_page_navigator_canshare ;;
     type: number
@@ -23426,6 +24416,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Navigator Mozgetusermedia"
     description: "Whether a page called called Navigator.mozGetUserMedia. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_navigator_requestmidiaccess {
+    sql: ${TABLE}.metrics.counter.use_counter_page_navigator_requestmidiaccess ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Navigator Requestmidiaccess"
+    description: "Whether a page called called Navigator.requestMIDIAccess. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -23749,6 +24749,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Reportingobserver Constructor"
+    description: "Whether a page called called ReportingObserver.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_sanitizer_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_constructor ;;
     type: number
@@ -23846,6 +24856,36 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Text Directive Pages"
     description: "Whether a page used text fragments. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Videodecoder Constructor"
+    description: "Whether a page called called VideoDecoder.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Videoencoder Constructor"
+    description: "Whether a page called called VideoEncoder.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_wakelock_request {
+    sql: ${TABLE}.metrics.counter.use_counter_page_wakelock_request ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Wakelock Request"
+    description: "Whether a page called called WakeLock.request. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -24686,6 +25726,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Window Orientation"
     description: "Whether a page called called Window.orientation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_window_orientation_getter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_window_orientation_getter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Window Orientation Getter"
+    description: "Whether a page got Window.orientation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_window_orientation_setter {
+    sql: ${TABLE}.metrics.counter.use_counter_page_window_orientation_setter ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Window Orientation Setter"
+    description: "Whether a page set Window.orientation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -26179,6 +27239,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Reportingobserver Constructor"
+    description: "Whether a dedicated worker called called ReportingObserver.constructor. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_scheduler_posttask {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_scheduler_posttask ;;
     type: number
@@ -26186,6 +27256,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Dedicated Scheduler Posttask"
     description: "Whether a dedicated worker called called Scheduler.postTask. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Videodecoder Constructor"
+    description: "Whether a dedicated worker called called VideoDecoder.constructor. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Videoencoder Constructor"
+    description: "Whether a dedicated worker called called VideoEncoder.constructor. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
 "
   }
 
@@ -26799,6 +27889,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Reportingobserver Constructor"
+    description: "Whether a service worker called called ReportingObserver.constructor. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_scheduler_posttask {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_scheduler_posttask ;;
     type: number
@@ -26806,6 +27906,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Service Scheduler Posttask"
     description: "Whether a service worker called called Scheduler.postTask. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Videodecoder Constructor"
+    description: "Whether a service worker called called VideoDecoder.constructor. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Videoencoder Constructor"
+    description: "Whether a service worker called called VideoEncoder.constructor. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
 "
   }
 
@@ -27419,6 +28539,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_shared_reportingobserver_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_reportingobserver_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Reportingobserver Constructor"
+    description: "Whether a shared worker called called ReportingObserver.constructor. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_shared_scheduler_posttask {
     sql: ${TABLE}.metrics.counter.use_counter_worker_shared_scheduler_posttask ;;
     type: number
@@ -27426,6 +28556,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Shared Scheduler Posttask"
     description: "Whether a shared worker called called Scheduler.postTask. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_videodecoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_videodecoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Videodecoder Constructor"
+    description: "Whether a shared worker called called VideoDecoder.constructor. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_videoencoder_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_videoencoder_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Videoencoder Constructor"
+    description: "Whether a shared worker called called VideoEncoder.constructor. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 
@@ -27492,6 +28642,11 @@ for the purpose of experimentation enrollment.
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: normalized_app_id {
@@ -27570,6 +28725,27 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Ping Info"
     group_item_label: "Seq"
+  }
+
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
   }
 
   dimension: ping_info__start_time {
@@ -27748,5 +28924,33 @@ view: use_counters_table__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: use_counters_table__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: use_counters_table__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

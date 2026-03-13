@@ -411,6 +411,22 @@ manually by the user.
 "
   }
 
+  dimension: metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts {
+    label: "Custom Review Prompt: Record Nimbus Event Attempts"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.custom_review_prompt_record_nimbus_event_attempts ;;
+    group_label: "Custom Review Prompt"
+    group_item_label: "Record Nimbus Event Attempts"
+
+    link: {
+      label: "Glean Dictionary reference for Custom Review Prompt: Record Nimbus Event Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/custom_review_prompt_record_nimbus_event_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts Nimbus event recording attempts after the custom review prompt is shown, labeled by result."
+  }
+
   dimension: metrics__boolean__customization_settings_dynamic_toolbar {
     label: "Customization Settings: Dynamic Toolbar"
     hidden: no
@@ -850,7 +866,7 @@ location.
 
   dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
     label: "First Session: Adjust Attribution Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
     type: number
     group_label: "First Session"
@@ -5602,6 +5618,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__sum {
+    label: "Cert Verifier: Crlite Not Covered Cert Age Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.sum ;;
+    type: number
+    group_label: "Cert Verifier"
+    group_item_label: "Crlite Not Covered Cert Age Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier: Crlite Not Covered Cert Age Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cert_verifier_crlite_not_covered_cert_age"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The age of a certificate (in milliseconds) when it is not covered by CRLite, measured as the time between the most recent SCT timestamp and the validation time.
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     label: "Cert Verifier: Crlite Status"
     hidden: yes
@@ -6976,6 +7010,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
+  }
+
+  dimension: metrics__quantity__data_storage_site_integrity_service_state {
+    label: "Data Storage: Site Integrity Service State"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_site_integrity_service_state ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Site Integrity Service State"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage: Site Integrity Service State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_site_integrity_service_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the SiteIntegrityServiceState nsIDataStorage"
   }
 
   dimension: metrics__quantity__data_storage_site_security_service_state {
@@ -8668,7 +8719,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__dns_blocklist_count__sum {
     label: "DNS: Blocklist Count Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.dns_blocklist_count.sum ;;
     type: number
     group_label: "DNS"
@@ -9274,6 +9325,42 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
     description: "Record the input from which the bytes are coming from, for each script in a document.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram DOM_SCRIPT_LOADING_SOURCE.
+"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__sum {
+    label: "DOM: Script Memory Cache Ever Hit Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.sum ;;
+    type: number
+    group_label: "DOM"
+    group_item_label: "Script Memory Cache Ever Hit Sum"
+
+    link: {
+      label: "Glean Dictionary reference for DOM: Script Memory Cache Ever Hit Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dom_script_memory_cache_ever_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The percentage of the stencil navigation cache entries that are ever hit in the process.
+"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__sum {
+    label: "DOM: Script Memory Cache Ref Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.sum ;;
+    type: number
+    group_label: "DOM"
+    group_item_label: "Script Memory Cache Ref Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for DOM: Script Memory Cache Ref Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dom_script_memory_cache_ref_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Distribution of the refCount of scripts in the stencil navigation cache.
 "
   }
 
@@ -10407,6 +10494,25 @@ IPC buffers and all of them being received by the parent.
 throwing even partial results into the trash.
 If this number is high, we might consider writing custom `MozPromise`-
 handling code instead of using `MozPromise::All`.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_flush_rejections {
+    label: "Fog Ipc: Flush Rejections"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_rejections ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Rejections"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc: Flush Rejections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_rejections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we failed to flush individual instances of
+non-parent-process data.
 "
   }
 
@@ -17986,6 +18092,41 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__counter__network_ssl_token_cache_expired {
+    label: "Network: SSL Token Cache Expired"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_expired ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Expired"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Expired"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_expired"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of expired session resumption tokens encountered during cache lookups. High values may indicate token lifetime issues or long delays between connections to the same host.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_cache_hits {
+    label: "Network: SSL Token Cache Hits"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_hits ;;
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Hits"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Hits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_hits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
+"
+  }
+
   dimension: metrics__labeled_counter__network_sso_entra_success {
     label: "Network Sso: Entra Success"
     hidden: yes
@@ -19547,6 +19688,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__sum {
+    label: "Networking: HTTP 3 Final Cwnd Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Final Cwnd Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Final Cwnd Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_final_cwnd"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: final congestion window size in bytes at connection close.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_loss_ratio__sum {
     label: "Networking: HTTP 3 Loss Ratio Sum"
     hidden: no
@@ -19565,6 +19724,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__sum {
+    label: "Networking: HTTP 3 Peer Max Udp Payload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Peer Max Udp Payload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Peer Max Udp Payload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_peer_max_udp_payload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: peer's max_udp_payload_size transport parameter in bytes. Only recorded when the peer advertises this parameter.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
     label: "Networking: HTTP 3 Quic Frame Count"
     hidden: yes
@@ -19579,6 +19756,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Number of QUIC frames send and received by type.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__sum {
+    label: "Networking: HTTP 3 Slow Start Exit Cwnd Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Slow Start Exit Cwnd Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Slow Start Exit Cwnd Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_slow_start_exit_cwnd"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: congestion window size in bytes when exiting slow start. Only recorded for connections that exited slow start.
 "
   }
 
@@ -20462,7 +20657,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__custom_distribution__networking_local_network_access_port__sum {
     label: "Networking: Local Network Access Port Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.networking_local_network_access_port.sum ;;
     type: number
     group_label: "Networking"
@@ -21415,7 +21610,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__labeled_quantity__normandy_recipe_freshness {
     label: "Normandy: Recipe Freshness"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_quantity.normandy_recipe_freshness ;;
     type: string
     group_label: "Normandy"
@@ -21429,6 +21624,22 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "For each recipe ID seen by the Normandy client, its last_modified. This metric was generated to correspond to the Legacy Telemetry scalar normandy.recipe_freshness.
 "
+  }
+
+  dimension: metrics__labeled_counter__nss_initialization_fallbacks {
+    label: "Nss: Initialization Fallbacks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.nss_initialization_fallbacks ;;
+    group_label: "Nss"
+    group_item_label: "Initialization Fallbacks"
+
+    link: {
+      label: "Glean Dictionary reference for Nss: Initialization Fallbacks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nss_initialization_fallbacks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of how often various NSS initialization fallback methods are used."
   }
 
   dimension: metrics__timing_distribution__ocsp_request_time_cancel__sum {
@@ -23914,6 +24125,60 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "How much time was spent to open the dialog, including loading data sizes
+"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__sum {
+    label: "Private Browsing Cleanup: Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.sum ;;
+    type: number
+    group_label: "Private Browsing Cleanup"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Private Browsing Cleanup: Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/private_browsing_cleanup_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Wall-clock time from clearPrivateBrowsingData() call start to callback invocation. This currently does not keep track of regular PBM teardown (last PBM window exited).
+"
+  }
+
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__numerator {
+    label: "Private Browsing Cleanup: Error Rate Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.numerator ;;
+    type: number
+    group_label: "Private Browsing Cleanup"
+    group_item_label: "Error Rate Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Private Browsing Cleanup: Error Rate Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/private_browsing_cleanup_error_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Rate of clearPrivateBrowsingData() calls that reported at least one observer failure. Denominator is incremented on every call; numerator is incremented when hadFailures is true or the promise rejects. This currently does not keep track of regular PBM teardown (last PBM window exited).
+"
+  }
+
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__denominator {
+    label: "Private Browsing Cleanup: Error Rate Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.denominator ;;
+    type: number
+    group_label: "Private Browsing Cleanup"
+    group_item_label: "Error Rate Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Private Browsing Cleanup: Error Rate Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/private_browsing_cleanup_error_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Rate of clearPrivateBrowsingData() calls that reported at least one observer failure. Denominator is incremented on every call; numerator is incremented when hadFailures is true or the promise rejects. This currently does not keep track of regular PBM teardown (last PBM window exited).
 "
   }
 
@@ -27224,6 +27489,26 @@ e.g. \"Linuxmint\"
     description: "The Operating System's distribution's version, according to sysinfo.
 Linux only.
 e.g. \"22\"
+"
+  }
+
+  dimension: metrics__string__system_os_libstdcxx_version {
+    label: "System OS: Libstdcxx Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_libstdcxx_version ;;
+    type: string
+    group_label: "System OS"
+    group_item_label: "Libstdcxx Version"
+
+    link: {
+      label: "Glean Dictionary reference for System OS: Libstdcxx Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/system_os_libstdcxx_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Operating System's libstdc++ highest GLIBCXX version.
+Linux only.
+e.g. \"3.4.33\"
 "
   }
 
@@ -33956,6 +34241,27 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     group_item_label: "Seq"
   }
 
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -36837,6 +37143,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: fog_ipc_flush_rejections {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_flush_rejections} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Rejections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_rejections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_rejections_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_flush_rejections: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Rejections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_rejections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: fog_ipc_replay_failures {
     type: sum
     sql: ${metrics__counter__fog_ipc_replay_failures} ;;
@@ -37558,6 +37889,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_parent_connect_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_expired {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_expired} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Expired"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_expired"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_expired_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_expired: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Expired"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_expired"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -43195,6 +43551,47 @@ view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
 
 view: metrics__metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
   label: "Creditcard: Detected Cc Number Fields Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__custom_review_prompt_record_nimbus_event_attempts {
+  label: "Custom Review Prompt: Record Nimbus Event Attempts"
 
   dimension: document_id {
     type: string
@@ -49425,6 +49822,47 @@ view: metrics__metrics__labeled_counter__network_retried_system_channel_update_s
   }
 }
 
+view: metrics__metrics__labeled_counter__network_ssl_token_cache_hits {
+  label: "Network: SSL Token Cache Hits"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_sso_entra_success {
   label: "Network Sso: Entra Success"
 
@@ -51559,6 +51997,47 @@ view: metrics__metrics__labeled_counter__networking_trr_request_count {
 
 view: metrics__metrics__labeled_counter__networking_trr_request_count_per_conn {
   label: "Networking: Trr Request Count Per Conn"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__nss_initialization_fallbacks {
+  label: "Nss: Initialization Fallbacks"
 
   dimension: document_id {
     type: string
@@ -54903,19 +55382,19 @@ view: metrics__metrics__labeled_counter__urlclassifier_global_cache_hit {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -54944,19 +55423,19 @@ view: metrics__metrics__labeled_counter__urlclassifier_global_cache_miss {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -55067,19 +55546,19 @@ view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_reque
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -55108,19 +55587,19 @@ view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_reque
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -55149,19 +55628,19 @@ view: metrics__metrics__labeled_counter__urlclassifier_realtime_simulation_respo
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -56983,6 +57462,34 @@ view: metrics__metrics__custom_distribution__dom_forget_skippable_frequency__val
 }
 
 view: metrics__metrics__custom_distribution__dom_gc_slice_during_idle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__dom_script_memory_cache_ever_hit__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__dom_script_memory_cache_ref_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -58845,6 +59352,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_ecn_ce_ect0_ratio
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -61593,6 +62114,33 @@ view: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout {
 }
 
 view: metrics__metrics__dual_labeled_counter__urlclassifier_complete_timeout__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__urlfixup_suffix {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__urlfixup_suffix__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -70590,6 +71138,34 @@ view: metrics__metrics__memory_distribution__networking_cache_metadata_size__val
   }
 }
 
+view: metrics__metrics__memory_distribution__networking_http_3_final_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -70983,6 +71559,20 @@ view: metrics__metrics__timing_distribution__cert_verification_time_success__val
 }
 
 view: metrics__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -76050,6 +76640,20 @@ view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values 
   }
 }
 
+view: metrics__metrics__timing_distribution__private_browsing_cleanup_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__process_child_launch__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -76947,5 +77551,33 @@ view: metrics__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: metrics__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

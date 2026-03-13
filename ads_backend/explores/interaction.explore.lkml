@@ -28,6 +28,16 @@ explore: interaction {
     sql: LEFT JOIN UNNEST(${interaction.ping_info__experiments}) AS interaction__ping_info__experiments ;;
   }
 
+  join: interaction__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${interaction.ping_info__server_knobs_config__metrics_enabled}) AS interaction__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: interaction__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${interaction.ping_info__server_knobs_config__pings_enabled}) AS interaction__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: interaction_last_updated
 
   always_filter: {

@@ -188,6 +188,14 @@ view: baseline_active_users_aggregates_table {
     description: "Minor part of the operating system version running at the client. E.g. for version \"100.9.11\", the minor is 9."
   }
 
+  dimension: policies_is_enterprise {
+    sql: ${TABLE}.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Attempt to determine if the user is an enterprise user based on various signals.
+This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise."
+  }
+
   dimension: wau {
     sql: ${TABLE}.wau ;;
     type: number

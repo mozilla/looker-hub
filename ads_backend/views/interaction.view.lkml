@@ -59,6 +59,24 @@ view: interaction {
 "
   }
 
+  dimension: metrics__labeled_boolean__ad_flags {
+    label: "Ad: Flags"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.ad_flags ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Flags"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Flags"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_flags"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The boolean state of all MARS experiment-backed feature flags at the time this ping was recorded.
+"
+  }
+
   dimension: metrics__string__ad_flight_id {
     label: "Ad: Flight ID"
     hidden: no
@@ -218,6 +236,24 @@ view: interaction {
     }
 
     description: "Region code (ISO 3166-2 alpha-2) associated with the client when the ad was requested. Region is also known as Subdivision 1. May be null.
+"
+  }
+
+  dimension: metrics__string__ad_taxonomy {
+    label: "Ad: Taxonomy"
+    hidden: no
+    sql: ${TABLE}.metrics.string.ad_taxonomy ;;
+    type: string
+    group_label: "Ad"
+    group_item_label: "Taxonomy"
+
+    link: {
+      label: "Glean Dictionary reference for Ad: Taxonomy"
+      url: "https://dictionary.telemetry.mozilla.org/apps/ads_backend/metrics/ad_taxonomy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Taxonomy identifier for the contextual categories (e.g. \"IAB-3.0\"). May be null if no contextual information was provided.
 "
   }
 
@@ -935,6 +971,27 @@ view: interaction {
     group_item_label: "Seq"
   }
 
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -1061,6 +1118,20 @@ view: interaction__events__extra {
   }
 }
 
+view: interaction__metrics__labeled_boolean__ad_flags {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: interaction__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1090,5 +1161,33 @@ view: interaction__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: interaction__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: interaction__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

@@ -68,6 +68,16 @@ explore: creditcards_sync {
     sql: LEFT JOIN UNNEST(${creditcards_sync.ping_info__experiments}) AS creditcards_sync__ping_info__experiments ;;
   }
 
+  join: creditcards_sync__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${creditcards_sync.ping_info__server_knobs_config__metrics_enabled}) AS creditcards_sync__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: creditcards_sync__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${creditcards_sync.ping_info__server_knobs_config__pings_enabled}) AS creditcards_sync__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: creditcards_sync_last_updated
 
   always_filter: {

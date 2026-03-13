@@ -254,7 +254,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__quantity__user_terms_of_use_version_accepted {
     label: "User Terms Of Use: Version Accepted"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.user_terms_of_use_version_accepted ;;
     type: number
     group_label: "User Terms Of Use"

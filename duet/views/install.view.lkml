@@ -67,6 +67,13 @@ view: install {
     description: "True if the user did not customize the installation path"
   }
 
+  dimension: desktop_launcher_status {
+    sql: ${TABLE}.desktop_launcher_status ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Desktop Launcher status: 0 (Unknown), 1 (Not enabled), 2 (Not checked), 3 (Not installed), 4 (Installed), 5 (Reinstalled), 6 (Removed)"
+  }
+
   dimension: disk_space_error {
     sql: ${TABLE}.disk_space_error ;;
     type: yesno
@@ -182,6 +189,13 @@ view: install {
     type: string
     suggest_persist_for: "24 hours"
     description: "Funnelcake ID"
+  }
+
+  dimension: had_existing_profile {
+    sql: ${TABLE}.had_existing_profile ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "True if at least one existing Firefox profile was found on the system prior to this installation"
   }
 
   dimension: had_old_install {

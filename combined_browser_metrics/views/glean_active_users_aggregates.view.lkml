@@ -199,6 +199,12 @@ view: glean_active_users_aggregates {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: policies_is_enterprise {
+    sql: ${TABLE}.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: segment {
     sql: ${TABLE}.segment ;;
     type: string

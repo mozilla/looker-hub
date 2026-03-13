@@ -7,7 +7,7 @@
 view: first_session {
   dimension: metrics__string__first_session_adgroup {
     label: "First Session: Adgroup"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.first_session_adgroup ;;
     type: string
     group_label: "First Session"
@@ -25,7 +25,7 @@ view: first_session {
 
   dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
     label: "First Session: Adjust Attribution Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
     type: number
     group_label: "First Session"
@@ -61,7 +61,7 @@ view: first_session {
 
   dimension: metrics__string__first_session_campaign {
     label: "First Session: Campaign"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.first_session_campaign ;;
     type: string
     group_label: "First Session"
@@ -79,7 +79,7 @@ view: first_session {
 
   dimension: metrics__string__first_session_creative {
     label: "First Session: Creative"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.first_session_creative ;;
     type: string
     group_label: "First Session"
@@ -135,7 +135,7 @@ partnership deal distributions
 
   dimension: metrics__string__first_session_network {
     label: "First Session: Network"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.first_session_network ;;
     type: string
     group_label: "First Session"
@@ -945,6 +945,27 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Seq"
   }
 
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -1286,5 +1307,33 @@ view: first_session__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: first_session__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: first_session__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

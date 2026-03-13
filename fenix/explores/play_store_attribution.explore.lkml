@@ -48,6 +48,16 @@ explore: play_store_attribution {
     sql: LEFT JOIN UNNEST(${play_store_attribution.ping_info__experiments}) AS play_store_attribution__ping_info__experiments ;;
   }
 
+  join: play_store_attribution__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${play_store_attribution.ping_info__server_knobs_config__metrics_enabled}) AS play_store_attribution__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: play_store_attribution__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${play_store_attribution.ping_info__server_knobs_config__pings_enabled}) AS play_store_attribution__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: play_store_attribution_last_updated
 
   always_filter: {

@@ -360,6 +360,14 @@ view: events_stream_table {
     group_item_label: "Cookies And Storage"
   }
 
+  dimension: extras__boolean__corrupt {
+    sql: ${TABLE}.extras.boolean.corrupt ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Corrupt"
+  }
+
   dimension: extras__boolean__data_fetched {
     sql: ${TABLE}.extras.boolean.data_fetched ;;
     type: yesno
@@ -654,6 +662,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Isdecryptsuccess"
+  }
+
+  dimension: extras__boolean__is_addon_active {
+    sql: ${TABLE}.extras.boolean.is_addon_active ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Addon Active"
   }
 
   dimension: extras__boolean__is_deleted {
@@ -1024,6 +1040,14 @@ view: events_stream_table {
     group_item_label: "Channel Status"
   }
 
+  dimension: extras__quantity__character_count {
+    sql: ${TABLE}.extras.quantity.character_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Character Count"
+  }
+
   dimension: extras__quantity__columnnumber {
     sql: ${TABLE}.extras.quantity.columnnumber ;;
     type: number
@@ -1152,6 +1176,14 @@ view: events_stream_table {
     group_item_label: "First Frame Loaded Time"
   }
 
+  dimension: extras__quantity__from_version {
+    sql: ${TABLE}.extras.quantity.from_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "From Version"
+  }
+
   dimension: extras__quantity__has_alt_text {
     sql: ${TABLE}.extras.quantity.has_alt_text ;;
     type: number
@@ -1198,6 +1230,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Inference Time"
+  }
+
+  dimension: extras__quantity__initial_version {
+    sql: ${TABLE}.extras.quantity.initial_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Initial Version"
   }
 
   dimension: extras__quantity__input_tokens {
@@ -1278,6 +1318,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Metadata Loaded Time"
+  }
+
+  dimension: extras__quantity__migrated_version {
+    sql: ${TABLE}.extras.quantity.migrated_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Migrated Version"
   }
 
   dimension: extras__quantity__mode {
@@ -1542,6 +1590,22 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Time To First Token"
+  }
+
+  dimension: extras__quantity__to_version {
+    sql: ${TABLE}.extras.quantity.to_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "To Version"
+  }
+
+  dimension: extras__quantity__token_count {
+    sql: ${TABLE}.extras.quantity.token_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Token Count"
   }
 
   dimension: extras__quantity__tokenizing_time {
@@ -2054,6 +2118,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Collection Name"
+  }
+
+  dimension: extras__string__component_stack {
+    sql: ${TABLE}.extras.string.component_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Component Stack"
   }
 
   dimension: extras__string__conflict_slug {
@@ -3144,6 +3216,14 @@ view: events_stream_table {
     group_item_label: "Metric Version"
   }
 
+  dimension: extras__string__migration_error {
+    sql: ${TABLE}.extras.string.migration_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Migration Error"
+  }
+
   dimension: extras__string__mime_type {
     sql: ${TABLE}.extras.string.mime_type ;;
     type: string
@@ -3446,6 +3526,30 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "OS"
+  }
+
+  dimension: extras__string__packet_error {
+    sql: ${TABLE}.extras.string.packet_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Packet Error"
+  }
+
+  dimension: extras__string__packet_target {
+    sql: ${TABLE}.extras.string.packet_target ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Packet Target"
+  }
+
+  dimension: extras__string__packet_type {
+    sql: ${TABLE}.extras.string.packet_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Packet Type"
   }
 
   dimension: extras__string__page {
@@ -3952,6 +4056,14 @@ view: events_stream_table {
     group_item_label: "Sequence Position"
   }
 
+  dimension: extras__string__server_stack {
+    sql: ${TABLE}.extras.string.server_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Server Stack"
+  }
+
   dimension: extras__string__session_id {
     sql: ${TABLE}.extras.string.session_id ;;
     type: string
@@ -4086,6 +4198,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Spoc ID"
+  }
+
+  dimension: extras__string__stack {
+    sql: ${TABLE}.extras.string.stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Stack"
   }
 
   dimension: extras__string__stack_id {

@@ -86,6 +86,12 @@ view: clients_first_seen_table {
     hidden: yes
   }
 
+  dimension: baseline_attribution_msclkid {
+    sql: ${TABLE}.baseline_attribution_msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: baseline_attribution_ua {
     sql: ${TABLE}.baseline_attribution_ua ;;
     type: string

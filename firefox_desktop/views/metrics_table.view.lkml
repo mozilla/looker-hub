@@ -2691,6 +2691,17 @@ handling code instead of using `MozPromise::All`.
 "
   }
 
+  dimension: metrics__counter__fog_ipc_flush_rejections {
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_rejections ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Fog Ipc Flush Rejections"
+    description: "The number of times we failed to flush individual instances of
+non-parent-process data.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_replay_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
     type: number
@@ -3041,6 +3052,16 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__ipprotection_exclusion_added {
+    sql: ${TABLE}.metrics.counter.ipprotection_exclusion_added ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Ipprotection Exclusion Added"
+    description: "Recorded when a site exclusion is added.
+"
+  }
+
   dimension: metrics__counter__javascript_self_hosted_cache_total {
     sql: ${TABLE}.metrics.counter.javascript_self_hosted_cache_total ;;
     type: number
@@ -3139,6 +3160,16 @@ This does not include deletion-request pings.
     group_label: "Metrics: Counter"
     group_item_label: "Netwerk Parent Connect Timeout"
     description: "Counts how often the parent-connect-timeout timer is necessary to clear up EarlyHintPreloader
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_expired {
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_expired ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network SSL Token Cache Expired"
+    description: "Counts the number of expired session resumption tokens encountered during cache lookups. High values may indicate token lifetime issues or long delays between connections to the same host.
 "
   }
 
@@ -3511,6 +3542,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_label: "Metrics: Counter"
     group_item_label: "Printing Silent Print"
     description: "A counter incremented every time a silent print (a print without a print settings dialog being opened) is initiated.  This happens when extensions invoke ExtensionAPI.tabs.saveAsPDF, for example, or when the print.always_print_silent pref is set. This metric was generated to correspond to the Legacy Telemetry scalar printing.silent_print.
+"
+  }
+
+  dimension: metrics__counter__qrcode_opened {
+    sql: ${TABLE}.metrics.counter.qrcode_opened ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Qrcode Opened"
+    description: "Records how often the QR code dialog is opened from the Share menu.
 "
   }
 
@@ -4337,6 +4378,16 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     group_label: "Metrics: Counter"
     group_item_label: "Webrtcdtls Server Handshake Started Counter"
     description: "The number of webrtc transports that have started a DTLS handshake as the server.
+"
+  }
+
+  dimension: metrics__counter__widget_mac_application_menu_opened {
+    sql: ${TABLE}.metrics.counter.widget_mac_application_menu_opened ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Widget Mac Application Menu Opened"
+    description: "Counts how often the macOS Firefox application menu is opened
 "
   }
 
@@ -5514,6 +5565,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__dom_gc_slice_during_idle__values {
     sql: ${TABLE}.metrics.custom_distribution.dom_gc_slice_during_idle.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__count {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ever Hit"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__sum {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ever Hit"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ever_hit__values {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ever_hit.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ref Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: DOM Script Memory Cache Ref Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__dom_script_memory_cache_ref_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.dom_script_memory_cache_ref_count.values ;;
     hidden: yes
   }
 
@@ -8506,6 +8601,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__networking_http_3_loss_ratio__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Peer Max Udp Payload"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Peer Max Udp Payload"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.values ;;
     hidden: yes
   }
 
@@ -12511,6 +12628,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__dual_labeled_counter__urlfixup_suffix {
+    sql: ${TABLE}.metrics.dual_labeled_counter.urlfixup_suffix ;;
+    hidden: yes
+    description: "Counts how often a .com or other localized suffix is appended to a URL as a result of pressing ctrl/cmd + enter in the URL bar.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__webgpu_expose_adapter {
     sql: ${TABLE}.metrics.dual_labeled_counter.webgpu_expose_adapter ;;
     hidden: yes
@@ -12522,6 +12646,14 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_boolean.a11y_theme ;;
     hidden: yes
     description: "OS high contrast or other accessibility theme is enabled. The result is split into keys which represent the values of browser.display.document_color_use: \"default\", \"always\", or \"never\". This metric was generated to correspond to the Legacy Telemetry scalar a11y.theme.
+"
+  }
+
+  dimension: metrics__labeled_boolean__browser_ai_control_is_blocking {
+    sql: ${TABLE}.metrics.labeled_boolean.browser_ai_control_is_blocking ;;
+    hidden: yes
+    description: "Status of the AI controls per feature setting.
+When true, the feature enhancement is blocked.
 "
   }
 
@@ -12592,6 +12724,13 @@ while reporting fog.data_diretory_info.
     sql: ${TABLE}.metrics.labeled_boolean.media_video_hd_hardware_decoding_support ;;
     hidden: yes
     description: "Record whether hardware decoding is supported for the specific video codec, this only records video in HD (1280*720) or higher resultion. The key is the type of video codec, eg. video/vp9. This metric was generated to correspond to the Legacy Telemetry scalar media.video_hd_hardware_decoding_support.
+"
+  }
+
+  dimension: metrics__labeled_boolean__media_wmf_codec_no_extension {
+    sql: ${TABLE}.metrics.labeled_boolean.media_wmf_codec_no_extension ;;
+    hidden: yes
+    description: "Set to true for a given codec when its required Windows Store extension is not installed (WINCODEC_ERR_COMPONENTNOTFOUND during WMF decoder initialization). Recorded once per session. Not recorded when the codec is disabled by pref or DXVA is unavailable.
 "
   }
 
@@ -15107,6 +15246,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_ssl_token_cache_hits {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_hits ;;
+    hidden: yes
+    description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
+"
+  }
+
   dimension: metrics__labeled_counter__network_sso_entra_success {
     sql: ${TABLE}.metrics.labeled_counter.network_sso_entra_success ;;
     hidden: yes
@@ -15512,6 +15658,12 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     hidden: yes
     description: "Number of DOH requests per connection keyed by HTTP version
 "
+  }
+
+  dimension: metrics__labeled_counter__nss_initialization_fallbacks {
+    sql: ${TABLE}.metrics.labeled_counter.nss_initialization_fallbacks ;;
+    hidden: yes
+    description: "Count of how often various NSS initialization fallback methods are used."
   }
 
   dimension: metrics__labeled_counter__orb_block_initiator {
@@ -19174,6 +19326,50 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Final Cwnd"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Final Cwnd"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_cwnd__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Slow Start Exit Cwnd"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Slow Start Exit Cwnd"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_slow_start_exit_cwnd.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__count {
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_udp_datagram_segment_size_received.count ;;
     type: number
@@ -20564,6 +20760,15 @@ This metric was generated to correspond to the Legacy Telemetry scalar browser.s
     description: "The number of entries stored in the ClientAuthRememberList nsIDataStorage"
   }
 
+  dimension: metrics__quantity__data_storage_site_integrity_service_state {
+    sql: ${TABLE}.metrics.quantity.data_storage_site_integrity_service_state ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Data Storage Site Integrity Service State"
+    description: "The number of entries stored in the SiteIntegrityServiceState nsIDataStorage"
+  }
+
   dimension: metrics__quantity__data_storage_site_security_service_state {
     sql: ${TABLE}.metrics.quantity.data_storage_site_security_service_state ;;
     type: number
@@ -21508,6 +21713,22 @@ e.g. 134217728
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__denominator {
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.denominator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Private Browsing Cleanup Error Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__private_browsing_cleanup_error_rate__numerator {
+    sql: ${TABLE}.metrics.rate.private_browsing_cleanup_error_rate.numerator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Private Browsing Cleanup Error Rate"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__private_browsing_window_open_during_teardown__denominator {
     sql: ${TABLE}.metrics.rate.private_browsing_window_open_during_teardown.denominator ;;
     type: number
@@ -21912,7 +22133,7 @@ e.g. 134217728
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Browser Backup Archive Disabled Reason"
-    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\", \"os version\".
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"os version\".
 "
   }
 
@@ -21932,7 +22153,7 @@ e.g. 134217728
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Browser Backup Restore Disabled Reason"
-    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\", \"selectable profiles\".
+    description: "Only set if `browser.backup.enabled` is `false`. Possible reasons are \"nimbus\", \"pref\" (non-Nimbus), \"policy\", \"sanitizeOnShutdown\".
 "
   }
 
@@ -22637,6 +22858,18 @@ e.g. \"22\"
 "
   }
 
+  dimension: metrics__string__system_os_libstdcxx_version {
+    sql: ${TABLE}.metrics.string.system_os_libstdcxx_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "System OS Libstdcxx Version"
+    description: "The Operating System's libstdc++ highest GLIBCXX version.
+Linux only.
+e.g. \"3.4.33\"
+"
+  }
+
   dimension: metrics__string__system_os_locale {
     sql: ${TABLE}.metrics.string.system_os_locale ;;
     type: string
@@ -22753,86 +22986,127 @@ Previously reported in \"main\" ping `simpleMeasurements`.
   dimension: metrics__string_list__background_update_reasons_to_not_update {
     sql: ${TABLE}.metrics.string_list.background_update_reasons_to_not_update ;;
     hidden: yes
+    description: "Records which error was causing the background updater to fail. This list supercedes the `background-update.reason` in `mozapps/update/metrics.yaml`
+"
   }
 
   dimension: metrics__string_list__browser_migration_matched_extensions {
     sql: ${TABLE}.metrics.string_list.browser_migration_matched_extensions ;;
     hidden: yes
+    description: "Records a list of the Chrome extension IDs that were successfully matched to Firefox equivalents from the list downloaded from AMO.
+"
   }
 
   dimension: metrics__string_list__browser_migration_unmatched_extensions {
     sql: ${TABLE}.metrics.string_list.browser_migration_unmatched_extensions ;;
     hidden: yes
+    description: "Records a list of the Chrome extension IDs that were unsuccessfully matched to Firefox equivalents from the list downloaded from AMO.
+"
   }
 
   dimension: metrics__string_list__content_analysis_interception_points_turned_off {
     sql: ${TABLE}.metrics.string_list.content_analysis_interception_points_turned_off ;;
     hidden: yes
+    description: "The interception points that are turned off via enterprise policy."
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__string_list__intl_accept_languages {
     sql: ${TABLE}.metrics.string_list.intl_accept_languages ;;
     hidden: yes
+    description: "The languages for the Accept-Languages header.
+"
   }
 
   dimension: metrics__string_list__intl_app_locales {
     sql: ${TABLE}.metrics.string_list.intl_app_locales ;;
     hidden: yes
+    description: "The negotiated Locales that are being used.
+"
   }
 
   dimension: metrics__string_list__intl_available_locales {
     sql: ${TABLE}.metrics.string_list.intl_available_locales ;;
     hidden: yes
+    description: "The Locales that are available for use.
+"
   }
 
   dimension: metrics__string_list__intl_regional_prefs_locales {
     sql: ${TABLE}.metrics.string_list.intl_regional_prefs_locales ;;
     hidden: yes
+    description: "The regional preferences for the OS.
+"
   }
 
   dimension: metrics__string_list__intl_requested_locales {
     sql: ${TABLE}.metrics.string_list.intl_requested_locales ;;
     hidden: yes
+    description: "The Locales that are being requested.
+"
   }
 
   dimension: metrics__string_list__intl_system_locales {
     sql: ${TABLE}.metrics.string_list.intl_system_locales ;;
     hidden: yes
+    description: "The Locales for the OS.
+"
   }
 
   dimension: metrics__string_list__pkcs11_third_party_module_profile_entries {
     sql: ${TABLE}.metrics.string_list.pkcs11_third_party_module_profile_entries ;;
     hidden: yes
+    description: "A list of PKCS#11 module filenames (leaf names only) that are in the profile at launch time.
+"
   }
 
   dimension: metrics__string_list__system_cpu_extensions {
     sql: ${TABLE}.metrics.string_list.system_cpu_extensions ;;
     hidden: yes
+    description: "Recognized CPU extensions.
+"
   }
 
   dimension: metrics__string_list__windows_security_antispyware {
     sql: ${TABLE}.metrics.string_list.windows_security_antispyware ;;
     hidden: yes
+    description: "Product names of registered antispyware programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__windows_security_antivirus {
     sql: ${TABLE}.metrics.string_list.windows_security_antivirus ;;
     hidden: yes
+    description: "Product names of registered antivirus programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__windows_security_firewall {
     sql: ${TABLE}.metrics.string_list.windows_security_firewall ;;
     hidden: yes
+    description: "Product names of registered firewall programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__xpi_database_startup_load_reasons {
     sql: ${TABLE}.metrics.string_list.xpi_database_startup_load_reasons ;;
     hidden: yes
+    description: "List of reasons the XPI Database was updated.
+Examples include \"appChanged\", \"directoryState\".
+Previously reported in \"main\" ping `simpleMeasurements`.
+"
   }
 
   dimension: metrics__text__xpi_database_late_load {
@@ -25048,6 +25322,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
     sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Cert Verifier Crlite Not Covered Cert Age"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_crlite_not_covered_cert_age.values ;;
     hidden: yes
   }
 
@@ -47161,6 +47502,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Private Browsing Cleanup Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__private_browsing_cleanup_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.private_browsing_cleanup_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__process_child_launch__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.process_child_launch.bucket_count ;;
     type: number
@@ -53285,6 +53693,27 @@ Set near startup and stable until shutdown.
     group_item_label: "Seq"
   }
 
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -54272,6 +54701,34 @@ view: metrics_table__metrics__custom_distribution__dom_forget_skippable_frequenc
 }
 
 view: metrics_table__metrics__custom_distribution__dom_gc_slice_during_idle__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__dom_script_memory_cache_ever_hit__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__dom_script_memory_cache_ref_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -56176,6 +56633,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_ecn_ce_ect0
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -59284,6 +59755,33 @@ view: metrics_table__metrics__dual_labeled_counter__urlclassifier_complete_timeo
   }
 }
 
+view: metrics_table__metrics__dual_labeled_counter__urlfixup_suffix {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__urlfixup_suffix__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__dual_labeled_counter__webgpu_expose_adapter {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -59312,6 +59810,20 @@ view: metrics_table__metrics__dual_labeled_counter__webgpu_expose_adapter__value
 }
 
 view: metrics_table__metrics__labeled_boolean__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__browser_ai_control_is_blocking {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -59452,6 +59964,20 @@ view: metrics_table__metrics__labeled_boolean__media_video_hardware_decoding_sup
 }
 
 view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__media_wmf_codec_no_extension {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -69745,6 +70271,34 @@ view: metrics_table__metrics__memory_distribution__networking_cache_metadata_siz
   }
 }
 
+view: metrics_table__metrics__memory_distribution__networking_http_3_final_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagram_segment_size_received__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -70516,6 +71070,20 @@ view: metrics_table__metrics__timing_distribution__cert_verification_time_succes
 }
 
 view: metrics_table__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verifier_crlite_not_covered_cert_age__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -75149,6 +75717,20 @@ view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__v
   }
 }
 
+view: metrics_table__metrics__timing_distribution__private_browsing_cleanup_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__process_child_launch__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -76424,5 +77006,33 @@ view: metrics_table__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: metrics_table__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

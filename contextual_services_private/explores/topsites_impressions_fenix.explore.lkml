@@ -36,5 +36,17 @@ explore: topsites_impressions_fenix {
     sql: LEFT JOIN UNNEST(${topsites_impression_fenix.ping_info__experiments}) AS topsites_impression_fenix__ping_info__experiments ;;
   }
 
+  join: topsites_impression_fenix__ping_info__server_knobs_config__metrics_enabled {
+    view_label: "Topsites Impression Fenix: Ping Info: Server Knobs Config: Metrics Enabled"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression_fenix.ping_info__server_knobs_config__metrics_enabled}) AS topsites_impression_fenix__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: topsites_impression_fenix__ping_info__server_knobs_config__pings_enabled {
+    view_label: "Topsites Impression Fenix: Ping Info: Server Knobs Config: Pings Enabled"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression_fenix.ping_info__server_knobs_config__pings_enabled}) AS topsites_impression_fenix__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: topsites_impression_fenix_last_updated
 }

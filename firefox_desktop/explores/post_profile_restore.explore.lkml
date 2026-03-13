@@ -48,6 +48,16 @@ explore: post_profile_restore {
     sql: LEFT JOIN UNNEST(${post_profile_restore.ping_info__experiments}) AS post_profile_restore__ping_info__experiments ;;
   }
 
+  join: post_profile_restore__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${post_profile_restore.ping_info__server_knobs_config__metrics_enabled}) AS post_profile_restore__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: post_profile_restore__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${post_profile_restore.ping_info__server_knobs_config__pings_enabled}) AS post_profile_restore__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: post_profile_restore_last_updated
 
   always_filter: {

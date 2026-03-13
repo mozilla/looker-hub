@@ -48,6 +48,16 @@ explore: first_session {
     sql: LEFT JOIN UNNEST(${first_session.ping_info__experiments}) AS first_session__ping_info__experiments ;;
   }
 
+  join: first_session__ping_info__server_knobs_config__metrics_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${first_session.ping_info__server_knobs_config__metrics_enabled}) AS first_session__ping_info__server_knobs_config__metrics_enabled ;;
+  }
+
+  join: first_session__ping_info__server_knobs_config__pings_enabled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${first_session.ping_info__server_knobs_config__pings_enabled}) AS first_session__ping_info__server_knobs_config__pings_enabled ;;
+  }
+
   persist_with: first_session_last_updated
 
   always_filter: {

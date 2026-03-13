@@ -769,36 +769,53 @@ for the purpose of experimentation enrollment.
   dimension: metrics__string_list__broken_site_report_browser_info_app_default_locales {
     sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_app_default_locales ;;
     hidden: yes
+    description: "Locale strings, ie `[\"en-US\", \"en\"]`
+"
   }
 
   dimension: metrics__string_list__broken_site_report_browser_info_security_antispyware {
     sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_security_antispyware ;;
     hidden: yes
+    description: "Which antispyware software was reported on this system.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_browser_info_security_antivirus {
     sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_security_antivirus ;;
     hidden: yes
+    description: "Which antivirus software was reported on this system.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_browser_info_security_firewall {
     sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_security_firewall ;;
     hidden: yes
+    description: "Which firewall software was reported on this system.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_tab_info_antitracking_blocked_origins {
     sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_antitracking_blocked_origins ;;
     hidden: yes
+    description: "List of origins which were blocked by antitracking.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_tab_info_languages {
     sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_languages ;;
     hidden: yes
+    description: "The languages the site actually sees (may be overridden)
+"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__text__broken_site_report_browser_info_app_default_useragent_string {
@@ -1016,6 +1033,27 @@ for the purpose of experimentation enrollment.
     group_item_label: "Seq"
   }
 
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+    description: "Optional threshold for event buffering before an events ping is collected and submitted"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -1162,5 +1200,33 @@ view: broken_site_report_table__ping_info__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+  }
+}
+
+view: broken_site_report_table__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: broken_site_report_table__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
   }
 }

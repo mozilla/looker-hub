@@ -116,6 +116,13 @@ If the value was not provided through configuration, this metric gets set to Unk
     description: "Name/id of the enrolled funnel experiment."
   }
 
+  dimension: attribution_msclkid {
+    sql: ${TABLE}.attribution_msclkid ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Unique token created at Firefox download time using the Microsoft Store."
+  }
+
   dimension: attribution_ua {
     sql: ${TABLE}.attribution_ua ;;
     type: string
@@ -319,6 +326,14 @@ received on this submission date."
     sql: ${TABLE}.normalized_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: policies_is_enterprise {
+    sql: ${TABLE}.policies_is_enterprise ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Attempt to determine if the user is an enterprise user based on various signals.
+This metric was generated to correspond to the Legacy Telemetry scalar policies.is_enterprise."
   }
 
   dimension: profile_group_id {
