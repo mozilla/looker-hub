@@ -511,62 +511,6 @@ view: metrics__latest_metric_runs {
     suggest_persist_for: "24 hours"
   }
 
-  dimension: metricRunAnnotation__entityInfo__createdBy {
-    sql: ${TABLE}.metricRunAnnotation.entityInfo.createdBy ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation: Entityinfo"
-    group_item_label: "Createdby"
-  }
-
-  dimension: metricRunAnnotation__entityInfo__createdEpochSeconds {
-    sql: ${TABLE}.metricRunAnnotation.entityInfo.createdEpochSeconds ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation: Entityinfo"
-    group_item_label: "Createdepochseconds"
-  }
-
-  dimension: metricRunAnnotation__entityInfo__updatedBy {
-    sql: ${TABLE}.metricRunAnnotation.entityInfo.updatedBy ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation: Entityinfo"
-    group_item_label: "Updatedby"
-  }
-
-  dimension: metricRunAnnotation__entityInfo__updatedEpochSeconds {
-    sql: ${TABLE}.metricRunAnnotation.entityInfo.updatedEpochSeconds ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation: Entityinfo"
-    group_item_label: "Updatedepochseconds"
-  }
-
-  dimension: metricRunAnnotation__id {
-    sql: ${TABLE}.metricRunAnnotation.id ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation"
-    group_item_label: "ID"
-  }
-
-  dimension: metricRunAnnotation__metricRunId {
-    sql: ${TABLE}.metricRunAnnotation.metricRunId ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation"
-    group_item_label: "Metricrunid"
-  }
-
-  dimension: metricRunAnnotation__metricRunLabel {
-    sql: ${TABLE}.metricRunAnnotation.metricRunLabel ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Metricrunannotation"
-    group_item_label: "Metricrunlabel"
-  }
-
   dimension: observedValue {
     sql: ${TABLE}.observedValue ;;
     type: number
