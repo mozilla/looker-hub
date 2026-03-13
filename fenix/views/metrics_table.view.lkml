@@ -14044,6 +14044,12 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__nss_initialization_fallbacks {
+    sql: ${TABLE}.metrics.labeled_counter.nss_initialization_fallbacks ;;
+    hidden: yes
+    description: "Count of how often various NSS initialization fallback methods are used."
+  }
+
   dimension: metrics__labeled_counter__orb_block_initiator {
     sql: ${TABLE}.metrics.labeled_counter.orb_block_initiator ;;
     hidden: yes
