@@ -2882,6 +2882,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: microsurvey
+    microsurvey_redacted:
+      type: glean_ping_explore
+      views:
+        base_view: microsurvey_redacted
     newtab:
       type: glean_ping_explore
       views:
@@ -3353,6 +3357,10 @@ firefox_desktop:
     microsurvey:
       tables:
       - table: mozdata.firefox_desktop.microsurvey
+      type: glean_ping_view
+    microsurvey_redacted:
+      tables:
+      - table: mozdata.firefox_desktop.microsurvey_redacted
       type: glean_ping_view
     microsurvey_redacted_table:
       tables:
