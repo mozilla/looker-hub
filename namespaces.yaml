@@ -2810,6 +2810,18 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_desktop_engagement_view
+    metric_definitions_desktop_new_profiles:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_desktop_new_profiles
+    metric_definitions_desktop_retention_by_first_seen_date:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_desktop_retention_by_first_seen_date
+    metric_definitions_desktop_retention_by_metric_date:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_desktop_retention_by_metric_date
     metric_definitions_desktop_retention_view:
       type: metric_definitions_explore
       views:
@@ -3299,6 +3311,12 @@ firefox_desktop:
     metric_definitions_desktop_engagement_v1:
       type: metric_definitions_view
     metric_definitions_desktop_engagement_view:
+      type: metric_definitions_view
+    metric_definitions_desktop_new_profiles:
+      type: metric_definitions_view
+    metric_definitions_desktop_retention_by_first_seen_date:
+      type: metric_definitions_view
+    metric_definitions_desktop_retention_by_metric_date:
       type: metric_definitions_view
     metric_definitions_desktop_retention_view:
       type: metric_definitions_view
