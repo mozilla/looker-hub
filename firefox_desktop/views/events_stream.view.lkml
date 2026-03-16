@@ -1179,6 +1179,14 @@ view: events_stream {
     group_item_label: "Sponsored"
   }
 
+  dimension: extras__boolean__starter {
+    sql: ${TABLE}.extras.boolean.starter ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Starter"
+  }
+
   dimension: extras__boolean__status {
     sql: ${TABLE}.extras.boolean.status ;;
     type: yesno
@@ -1787,6 +1795,14 @@ view: events_stream {
     group_item_label: "Linenumber"
   }
 
+  dimension: extras__quantity__memories {
+    sql: ${TABLE}.extras.quantity.memories ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories"
+  }
+
   dimension: extras__quantity__memory_after {
     sql: ${TABLE}.extras.quantity.memory_after ;;
     type: number
@@ -1809,6 +1825,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Memory Bytes"
+  }
+
+  dimension: extras__quantity__message_seq {
+    sql: ${TABLE}.extras.quantity.message_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Message Seq"
   }
 
   dimension: extras__quantity__metadata_loaded_time {
@@ -1897,6 +1921,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Note Length"
+  }
+
+  dimension: extras__quantity__num_messages {
+    sql: ${TABLE}.extras.quantity.num_messages ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Num Messages"
   }
 
   dimension: extras__quantity__num_msections_audio_recvonly {
@@ -2113,6 +2145,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Previous"
+  }
+
+  dimension: extras__quantity__prompts {
+    sql: ${TABLE}.extras.quantity.prompts ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Prompts"
   }
 
   dimension: extras__quantity__rendered_frames {
@@ -2347,6 +2387,14 @@ view: events_stream {
     group_item_label: "Time"
   }
 
+  dimension: extras__quantity__time_delta {
+    sql: ${TABLE}.extras.quantity.time_delta ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time Delta"
+  }
+
   dimension: extras__quantity__time_local {
     sql: ${TABLE}.extras.quantity.time_local ;;
     type: number
@@ -2409,6 +2457,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tokens Per Second"
+  }
+
+  dimension: extras__quantity__total {
+    sql: ${TABLE}.extras.quantity.total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total"
   }
 
   dimension: extras__quantity__total_collapsed {
@@ -3339,6 +3395,14 @@ view: events_stream {
     group_item_label: "Disabled Engines"
   }
 
+  dimension: extras__string__display {
+    sql: ${TABLE}.extras.string.display ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Display"
+  }
+
   dimension: extras__string__document_language {
     sql: ${TABLE}.extras.string.document_language ;;
     type: string
@@ -4233,6 +4297,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Lines"
+  }
+
+  dimension: extras__string__link_type {
+    sql: ${TABLE}.extras.string.link_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Link Type"
   }
 
   dimension: extras__string__loadfail_reason {

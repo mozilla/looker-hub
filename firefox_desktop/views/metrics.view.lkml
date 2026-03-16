@@ -26808,6 +26808,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_congestion_event_count__sum {
+    label: "Networking: HTTP 3 Congestion Event Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_congestion_event_count.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Congestion Event Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Congestion Event Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_congestion_event_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Records how many congestion events a connection has, with spurious congestion events filtered out. A max range of 180 still gives high granularity in the lower buckets while letting us confirm if we ever actually see connections having very high congestion event counts.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_congestion_event_reason {
     label: "Networking: HTTP 3 Congestion Event Reason"
     hidden: yes
@@ -27053,6 +27071,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "HTTP3: congestion window size in bytes when exiting slow start. Only recorded for connections that exited slow start.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss {
+    label: "Networking: HTTP 3 Slow Start Exit Direction Loss"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exit_direction_loss ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Slow Start Exit Direction Loss"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Slow Start Exit Direction Loss"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_slow_start_exit_direction_loss"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Records if a loss-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. This mostly exists to confirm the expected assumption that loss-based exit almost always overshoots.
 "
   }
 
@@ -30310,6 +30345,59 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
     description: "Record the permissions.sqlite init failure
 This metric was generated to correspond to the Legacy Telemetry count histogram PERMISSIONS_SQL_CORRUPTED.
+"
+  }
+
+  dimension: metrics__custom_distribution__permissions_unused_permission_age_at_expiry__sum {
+    label: "Permissions: Unused Permission Age At Expiry Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_age_at_expiry.sum ;;
+    type: number
+    group_label: "Permissions"
+    group_item_label: "Unused Permission Age At Expiry Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Permissions: Unused Permission Age At Expiry Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/permissions_unused_permission_age_at_expiry"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Distribution of how long after the last site interaction a permission was expired (currentTime - lastInteractionTime). Helps understand typical permission lifetimes before expiration.
+"
+  }
+
+  dimension: metrics__custom_distribution__permissions_unused_permission_modified_age_at_expiry__sum {
+    label: "Permissions: Unused Permission Modified Age At Expiry Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_modified_age_at_expiry.sum ;;
+    type: number
+    group_label: "Permissions"
+    group_item_label: "Unused Permission Modified Age At Expiry Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Permissions: Unused Permission Modified Age At Expiry Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/permissions_unused_permission_modified_age_at_expiry"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Distribution of how long after the permission was last modified it was expired (currentTime - modificationTime). Helps understand how old permissions are when they get cleaned up.
+"
+  }
+
+  dimension: metrics__labeled_counter__permissions_unused_permissions_expired_by_type {
+    label: "Permissions: Unused Permissions Expired By Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.permissions_unused_permissions_expired_by_type ;;
+    group_label: "Permissions"
+    group_item_label: "Unused Permissions Expired By Type"
+
+    link: {
+      label: "Glean Dictionary reference for Permissions: Unused Permissions Expired By Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/permissions_unused_permissions_expired_by_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of permissions expired due to inactivity, broken down by permission type (e.g. \"desktop-notification\", \"geo\"). Helps identify which permission types are expired most often.
 "
   }
 
@@ -61388,6 +61476,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss {
+  label: "Networking: HTTP 3 Slow Start Exit Direction Loss"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited {
   label: "Networking: HTTP 3 Slow Start Exited"
 
@@ -63399,6 +63528,47 @@ view: metrics__metrics__labeled_counter__pdfjs_signature_edit_description {
 
 view: metrics__metrics__labeled_counter__pdfjs_stamp {
   label: "Pdfjs: Stamp"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__permissions_unused_permissions_expired_by_type {
+  label: "Permissions: Unused Permissions Expired By Type"
 
   dimension: document_id {
     type: string
@@ -74403,6 +74573,20 @@ view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_3_congestion_event_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_3_download_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -74698,6 +74882,34 @@ view: metrics__metrics__custom_distribution__pdfjs_time_to_view__values {
 }
 
 view: metrics__metrics__custom_distribution__performance_clone_deserialize_items__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__permissions_unused_permission_age_at_expiry__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__permissions_unused_permission_modified_age_at_expiry__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -80009,6 +80221,50 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ec
 }
 
 view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

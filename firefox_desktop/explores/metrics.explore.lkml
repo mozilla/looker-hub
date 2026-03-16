@@ -1773,6 +1773,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_quic_frame_count}) AS metrics__metrics__labeled_counter__networking_http_3_quic_frame_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_quic_frame_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exited}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exited ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exited.document_id} ;;
@@ -2021,6 +2026,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__pdfjs_stamp {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_stamp}) AS metrics__metrics__labeled_counter__pdfjs_stamp ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_stamp.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__permissions_unused_permissions_expired_by_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__permissions_unused_permissions_expired_by_type}) AS metrics__metrics__labeled_counter__permissions_unused_permissions_expired_by_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__permissions_unused_permissions_expired_by_type.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace {
