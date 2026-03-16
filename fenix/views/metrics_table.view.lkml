@@ -8067,6 +8067,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_congestion_event_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_congestion_event_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Congestion Event Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_congestion_event_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_congestion_event_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Congestion Event Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_congestion_event_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_congestion_event_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.count ;;
     type: number
@@ -8504,6 +8526,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__performance_clone_deserialize_items__values {
     sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__permissions_unused_permission_age_at_expiry__count {
+    sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_age_at_expiry.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Permissions Unused Permission Age At Expiry"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__permissions_unused_permission_age_at_expiry__sum {
+    sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_age_at_expiry.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Permissions Unused Permission Age At Expiry"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__permissions_unused_permission_age_at_expiry__values {
+    sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_age_at_expiry.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__permissions_unused_permission_modified_age_at_expiry__count {
+    sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_modified_age_at_expiry.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Permissions Unused Permission Modified Age At Expiry"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__permissions_unused_permission_modified_age_at_expiry__sum {
+    sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_modified_age_at_expiry.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Permissions Unused Permission Modified Age At Expiry"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__permissions_unused_permission_modified_age_at_expiry__values {
+    sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_modified_age_at_expiry.values ;;
     hidden: yes
   }
 
@@ -13287,7 +13353,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -13834,6 +13900,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exit_direction_loss ;;
+    hidden: yes
+    description: "HTTP3: Records if a loss-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. This mostly exists to confirm the expected assumption that loss-based exit almost always overshoots.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_slow_start_exited {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exited ;;
     hidden: yes
@@ -14198,6 +14271,13 @@ previous launch
 <br><br>
 These ways of opening the app undesirably do not add their events to our
 pr"
+  }
+
+  dimension: metrics__labeled_counter__permissions_unused_permissions_expired_by_type {
+    sql: ${TABLE}.metrics.labeled_counter.permissions_unused_permissions_expired_by_type ;;
+    hidden: yes
+    description: "Count of permissions expired due to inactivity, broken down by permission type (e.g. \"desktop-notification\", \"geo\"). Helps identify which permission types are expired most often.
+"
   }
 
   dimension: metrics__labeled_counter__places_manager_read_query_error_count {
@@ -15212,6 +15292,13 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_ecn_ce_ect0_ratio ;;
     hidden: yes
     description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000).
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_slow_start_exit_accuracy ;;
+    hidden: yes
+    description: "HTTP3: Absolute congestion window size difference between exiting slow start and closing the connection, as a percentage of the window size when closing the connection. Only recorded for connections that exited slow start. Is used to approximate accuracy of slow start exit per connection. The labels separate slow start exit reasons, because congestion event and heuristic based exits are fundamentally different cases that would obscure each other if mixed. For now only records for congestion event exits while heuristics for exiting slow start are still being implemented.
 "
   }
 
@@ -52213,6 +52300,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_2_upload_thro
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_congestion_event_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -52480,6 +52581,34 @@ view: metrics_table__metrics__custom_distribution__pdfjs_time_to_view__values {
 }
 
 view: metrics_table__metrics__custom_distribution__performance_clone_deserialize_items__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__permissions_unused_permission_age_at_expiry__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__permissions_unused_permission_modified_age_at_expiry__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -56966,6 +57095,50 @@ view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ect0_ratio__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
