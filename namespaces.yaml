@@ -218,6 +218,10 @@ ads:
       type: table_explore
       views:
         base_view: equativ_line_item_delivery
+    equativ_monthly_with_line_item:
+      type: table_explore
+      views:
+        base_view: equativ_monthly_with_line_item
     forecast_content_monthly:
       type: table_explore
       views:
