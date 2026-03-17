@@ -358,6 +358,44 @@ ads:
       tables:
       - table: moz-fx-data-shared-prod.ads.equativ_line_item_delivery
       type: table_view
+    equativ_monthly_with_line_item:
+      measures:
+        budget_sum:
+          sql: ${budget}
+          type: sum
+        budgeted_clicks_sum:
+          sql: ${budgeted_clicks}
+          type: sum
+        budgeted_impressions_sum:
+          sql: ${budgeted_impressions}
+          type: sum
+        clicks_during_campaign_sum:
+          sql: ${clicks_during_campaign}
+          type: sum
+        impressions_during_campaign_sum:
+          sql: ${impressions_during_campaign}
+          type: sum
+        max_clicks_sum:
+          sql: ${max_clicks}
+          type: sum
+        max_impressions_sum:
+          sql: ${max_impressions}
+          type: sum
+        total_click_derived_actual_revenue_sum:
+          sql: ${total_click_derived_actual_revenue}
+          type: sum
+        total_clicks_sum:
+          sql: ${total_clicks}
+          type: sum
+        total_impression_derived_actual_revenue_sum:
+          sql: ${total_impression_derived_actual_revenue}
+          type: sum
+        total_impressions_sum:
+          sql: ${total_impressions}
+          type: sum
+      tables:
+      - table: mozdata.ads.equativ_monthly_with_line_item
+      type: table_view
     forecast_content_monthly:
       measures:
         actual_ecpm_avg:
