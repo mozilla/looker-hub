@@ -451,11 +451,11 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "28 day rolling average of New Profile Retention Count"
   }
@@ -477,11 +477,11 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "28 day rolling average of New Profile Retention Count"
   }
@@ -507,11 +507,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -528,11 +529,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -549,11 +551,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -570,11 +573,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -591,11 +595,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -612,11 +617,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -640,11 +646,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
                                                         metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected or
@@ -660,11 +667,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -681,11 +689,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -702,11 +711,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -723,11 +733,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -744,11 +755,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -765,11 +777,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -793,11 +806,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
                                                         metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected or
@@ -813,11 +827,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -834,11 +849,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -855,11 +871,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -876,11 +893,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -897,11 +915,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -918,11 +937,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -947,11 +967,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -968,11 +989,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -989,11 +1011,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1010,11 +1033,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1031,11 +1055,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1052,11 +1077,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -1080,11 +1106,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
                                                         metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected or
@@ -1100,11 +1127,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1121,11 +1149,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1142,11 +1171,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1163,11 +1193,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1184,11 +1215,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1205,11 +1237,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -1233,11 +1266,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
                                                         metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected or
@@ -1253,11 +1287,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1274,11 +1309,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1295,11 +1331,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1316,11 +1353,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_retention_by_first_seen_date.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1337,11 +1375,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_retention_by_first_seen_date.submission_date._is_selected or
@@ -1358,11 +1397,12 @@ desktop_retention_by_first_seen_date_startup_profile_selection_reason,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 

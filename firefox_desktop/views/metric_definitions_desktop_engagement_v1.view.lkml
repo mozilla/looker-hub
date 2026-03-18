@@ -512,11 +512,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "1 day rolling average of (non-official) DAU"
   }
@@ -538,11 +538,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "7 day rolling average of (non-official) DAU"
   }
@@ -564,11 +564,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "28 day rolling average of (non-official) DAU"
   }
@@ -590,11 +590,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "1 day rolling average of (non-official) DAU"
   }
@@ -616,11 +616,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "7 day rolling average of (non-official) DAU"
   }
@@ -642,11 +642,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "28 day rolling average of (non-official) DAU"
   }
@@ -668,11 +668,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "1 day rolling average of (non-official) DAU"
   }
@@ -694,11 +694,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "7 day rolling average of (non-official) DAU"
   }
@@ -720,11 +720,11 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
-                                                    {% endif %}
-                                                ) ;;
+                                                    {% endif %} ;;
     group_label: "Statistics"
     description: "28 day rolling average of (non-official) DAU"
   }
@@ -750,11 +750,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -771,11 +772,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -792,11 +794,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -813,11 +816,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -834,11 +838,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -855,11 +860,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -883,11 +889,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -903,11 +910,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -924,11 +932,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -945,11 +954,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -966,11 +976,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -987,11 +998,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1008,11 +1020,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -1036,11 +1049,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -1056,11 +1070,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1077,11 +1092,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1098,11 +1114,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1119,11 +1136,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1140,11 +1158,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1161,11 +1180,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -1190,11 +1210,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1211,11 +1232,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1232,11 +1254,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1253,11 +1276,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1274,11 +1298,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1295,11 +1320,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -1323,11 +1349,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -1343,11 +1370,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1364,11 +1392,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1385,11 +1414,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1406,11 +1436,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1427,11 +1458,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1448,11 +1480,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -1476,11 +1509,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -1496,11 +1530,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1517,11 +1552,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1538,11 +1574,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1559,11 +1596,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1580,11 +1618,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1601,11 +1640,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -1630,11 +1670,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1651,11 +1692,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1672,11 +1714,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1693,11 +1736,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1714,11 +1758,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1735,11 +1780,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -1763,11 +1809,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -1783,11 +1830,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1804,11 +1852,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1825,11 +1874,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1846,11 +1896,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1867,11 +1918,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1888,11 +1940,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -1916,11 +1969,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -1936,11 +1990,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1957,11 +2012,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1978,11 +2034,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -1999,11 +2056,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2020,11 +2078,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2041,11 +2100,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -2070,11 +2130,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2091,11 +2152,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2112,11 +2174,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2133,11 +2196,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2154,11 +2218,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2175,11 +2240,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -2203,11 +2269,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -2223,11 +2290,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2244,11 +2312,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2265,11 +2334,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2286,11 +2356,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2307,11 +2378,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2328,11 +2400,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -2356,11 +2429,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -2376,11 +2450,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2397,11 +2472,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2418,11 +2494,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2439,11 +2516,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2460,11 +2538,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2481,11 +2560,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -2510,11 +2590,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2531,11 +2612,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2552,11 +2634,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2573,11 +2656,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2594,11 +2678,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2615,11 +2700,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -2643,11 +2729,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -2663,11 +2750,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2684,11 +2772,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2705,11 +2794,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2726,11 +2816,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2747,11 +2838,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2768,11 +2860,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -2796,11 +2889,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -2816,11 +2910,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2837,11 +2932,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2858,11 +2954,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2879,11 +2976,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2900,11 +2998,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2921,11 +3020,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -2950,11 +3050,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2971,11 +3072,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -2992,11 +3094,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3013,11 +3116,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3034,11 +3138,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3055,11 +3160,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -3083,11 +3189,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -3103,11 +3210,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3124,11 +3232,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3145,11 +3254,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3166,11 +3276,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3187,11 +3298,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3208,11 +3320,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -3236,11 +3349,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -3256,11 +3370,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3277,11 +3392,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3298,11 +3414,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3319,11 +3436,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3340,11 +3458,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3361,11 +3480,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -3390,11 +3510,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3411,11 +3532,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3432,11 +3554,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3453,11 +3576,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3474,11 +3598,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3495,11 +3620,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -3523,11 +3649,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -3543,11 +3670,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3564,11 +3692,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3585,11 +3714,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3606,11 +3736,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3627,11 +3758,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3648,11 +3780,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -3676,11 +3809,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -3696,11 +3830,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 366 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 365 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3717,11 +3852,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 52 PRECEDING AND 51 PRECEDING
+                                                        ROWS BETWEEN 52 PRECEDING AND 52 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3738,11 +3874,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 11 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 12 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3759,11 +3896,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND 3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND 4 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3780,11 +3918,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND 0 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND 1 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3801,11 +3940,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 0 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -3830,11 +3970,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3851,11 +3992,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3872,11 +4014,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3893,11 +4036,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3914,11 +4058,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -3935,11 +4080,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -3963,11 +4109,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -3983,11 +4130,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4004,11 +4152,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4025,11 +4174,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4046,11 +4196,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4067,11 +4218,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4088,11 +4240,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -4116,11 +4269,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -4136,11 +4290,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 372 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 371 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4157,11 +4312,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 53 PRECEDING AND 46 PRECEDING
+                                                        ROWS BETWEEN 53 PRECEDING AND 47 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4178,11 +4334,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 12 PRECEDING AND 5 PRECEDING
+                                                        ROWS BETWEEN 12 PRECEDING AND 6 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4199,11 +4356,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -3 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -2 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4220,11 +4378,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -6 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -5 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4241,11 +4400,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 7 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
@@ -4270,11 +4430,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4291,11 +4452,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4312,11 +4474,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4333,11 +4496,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4354,11 +4518,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4375,11 +4540,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %} ;;
   }
 
@@ -4403,11 +4569,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ), NULLIF(({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -4423,11 +4590,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4444,11 +4612,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4465,11 +4634,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4486,11 +4656,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4507,11 +4678,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4528,11 +4700,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}), 0)) - 1 ;;
   }
 
@@ -4556,11 +4729,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ) - ({% if metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
                                                         metric_definitions_desktop_engagement_v1.submission_week._is_selected or
@@ -4576,11 +4750,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 393 PRECEDING AND 365 PRECEDING
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_week._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4597,11 +4772,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 56 PRECEDING AND 28 PRECEDING
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_month._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4618,11 +4794,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 13 PRECEDING AND -15 PRECEDING
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_quarter._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4639,11 +4816,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 4 PRECEDING AND -24 PRECEDING
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% elsif metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4660,11 +4838,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 1 PRECEDING AND -27 PRECEDING
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% else %}
 
                                                     {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
@@ -4681,11 +4860,12 @@ desktop_engagement_v1_wau,
                                                         ERROR("date_groupby_position needs to be set when using submission_week,
                                                         submission_month, submission_quarter, or submission_year")
                                                         {% endif %}
-                                                        ROWS BETWEEN 28 PRECEDING AND CURRENT ROW
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
                                                     {% else %}
                                                     ERROR('Please select a "submission_*" field to compute the rolling average')
                                                     {% endif %}
-                                                )
+                                                
 {% endif %}) ;;
   }
 
