@@ -22725,7 +22725,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_pageload_h3p_fcp_with_priority__sum {
     label: "Performance Pageload: H3P Fcp With Priority Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_h3p_fcp_with_priority.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -22743,7 +22743,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_pageload_http3_fcp_http3__sum {
     label: "Performance Pageload: Http3 Fcp Http3 Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_http3.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -22761,7 +22761,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_pageload_http3_fcp_supports_http3__sum {
     label: "Performance Pageload: Http3 Fcp Supports Http3 Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_supports_http3.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -22779,7 +22779,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__timing_distribution__performance_pageload_http3_fcp_without_priority__sum {
     label: "Performance Pageload: Http3 Fcp Without Priority Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_http3_fcp_without_priority.sum ;;
     type: number
     group_label: "Performance Pageload"
