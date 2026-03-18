@@ -9930,9 +9930,9 @@ operational_monitoring:
             default: release
             options:
             - release
+            - aurora
             - beta
             - esr
-            - aurora
             - nightly
             - default
             - nightly-pine
@@ -10757,10 +10757,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id347
           os:
-            default: Windows
+            default: Linux
             options:
-            - Windows
             - Linux
+            - Windows
             - Mac
             - Other
         explore: garbage_collection
