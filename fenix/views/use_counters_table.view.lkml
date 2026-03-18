@@ -15579,6 +15579,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_old_zecompat_hack {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_old_zecompat_hack ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Old Zecompat Hack"
+    description: "Whether a document used OldZECompatHack. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_orientation_event {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_orientation_event ;;
     type: number
@@ -16286,6 +16296,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Offscreen Canvas To Blob"
     description: "Whether a page used OffscreenCanvasToBlob. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_old_zecompat_hack {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_old_zecompat_hack ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Old Zecompat Hack"
+    description: "Whether a page used OldZECompatHack. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
