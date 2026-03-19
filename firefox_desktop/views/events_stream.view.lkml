@@ -571,6 +571,14 @@ view: events_stream {
     group_item_label: "Form Data"
   }
 
+  dimension: extras__boolean__fxa {
+    sql: ${TABLE}.extras.boolean.fxa ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Fxa"
+  }
+
   dimension: extras__boolean__had_errors {
     sql: ${TABLE}.extras.boolean.had_errors ;;
     type: yesno
@@ -1001,6 +1009,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "No Rule"
+  }
+
+  dimension: extras__boolean__onboarding {
+    sql: ${TABLE}.extras.boolean.onboarding ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Onboarding"
   }
 
   dimension: extras__boolean__opened {
@@ -4393,6 +4409,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Message Count"
+  }
+
+  dimension: extras__string__message_id {
+    sql: ${TABLE}.extras.string.message_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Message ID"
   }
 
   dimension: extras__string__method {
