@@ -3609,6 +3609,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.quick_suggest
       type: table_view
+    resurrection_week_2_retention_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.resurrection_week_2_retention
+      type: table_view
     review_checker_clients_table:
       tables:
       - channel: null
