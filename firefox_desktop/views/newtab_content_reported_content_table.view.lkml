@@ -19,6 +19,13 @@ view: newtab_content_reported_content_table {
     description: "content identifier"
   }
 
+  dimension: newtab_content_surface_id {
+    sql: ${TABLE}.newtab_content_surface_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The surface identifier for the newtab content ping."
+  }
+
   dimension: report_reason {
     sql: ${TABLE}.report_reason ;;
     type: string
