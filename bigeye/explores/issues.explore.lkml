@@ -40,5 +40,11 @@ explore: issues {
     sql: LEFT JOIN UNNEST(${issues.metric_metadata_companion_metrics}) AS issues__metric_metadata_companion_metrics ;;
   }
 
+  join: issues__metric_metadata_monitored_objects {
+    view_label: "Issues: Metric Metadata Monitored Objects"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${issues.metric_metadata_monitored_objects}) AS issues__metric_metadata_monitored_objects ;;
+  }
+
   persist_with: issues_last_updated
 }

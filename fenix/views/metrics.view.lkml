@@ -13271,7 +13271,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__http_dns_httpssvc_connection_failed_reason__sum {
     label: "HTTP: DNS Httpssvc Connection Failed Reason Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_dns_httpssvc_connection_failed_reason.sum ;;
     type: number
     group_label: "HTTP"
@@ -13702,7 +13702,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__custom_distribution__http_transaction_restart_reason__sum {
     label: "HTTP: Transaction Restart Reason Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.http_transaction_restart_reason.sum ;;
     type: number
     group_label: "HTTP"
@@ -13758,7 +13758,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__http_transaction_wait_time_http2_sup_http3__sum {
     label: "HTTP: Transaction Wait Time Http2 Sup Http3 Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.http_transaction_wait_time_http2_sup_http3.sum ;;
     type: number
     group_label: "HTTP"
@@ -21558,7 +21558,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
     label: "Networking: Transaction Wait Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.sum ;;
     type: number
     group_label: "Networking"
@@ -21576,7 +21576,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__sum {
     label: "Networking: Transaction Wait Time Https Rr Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.sum ;;
     type: number
     group_label: "Networking"

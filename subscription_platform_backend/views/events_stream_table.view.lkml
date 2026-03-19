@@ -280,12 +280,28 @@ view: events_stream_table {
     group_item_label: "Nimbus User ID"
   }
 
+  dimension: extras__string__subscription_billing_country {
+    sql: ${TABLE}.extras.string.subscription_billing_country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Subscription Billing Country"
+  }
+
   dimension: extras__string__subscription_cancellation_reason {
     sql: ${TABLE}.extras.string.subscription_cancellation_reason ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Subscription Cancellation Reason"
+  }
+
+  dimension: extras__string__trial_conversion_status {
+    sql: ${TABLE}.extras.string.trial_conversion_status ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Trial Conversion Status"
   }
 
   dimension: is_bot_generated {
@@ -560,6 +576,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Subscription Interval"
+  }
+
+  dimension: metrics__string__subscription_is_free_trial {
+    sql: ${TABLE}.metrics.string.subscription_is_free_trial ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Is Free Trial"
   }
 
   dimension: metrics__string__subscription_offering_id {

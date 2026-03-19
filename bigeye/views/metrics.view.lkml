@@ -337,6 +337,11 @@ view: metrics {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_metadata_monitored_objects {
+    sql: ${TABLE}.metric_metadata_monitored_objects ;;
+    hidden: yes
+  }
+
   dimension: metric_metadata_run_at {
     sql: ${TABLE}.metric_metadata_run_at ;;
     type: number
@@ -848,6 +853,30 @@ view: metrics__metric_metadata_companion_metrics {
 
   dimension: type {
     sql: ${TABLE}.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metric_metadata_monitored_objects {
+  dimension: entityInfo__displayName {
+    sql: ${TABLE}.entityInfo.displayName ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Entityinfo"
+    group_item_label: "Displayname"
+  }
+
+  dimension: entityInfo__id {
+    sql: ${TABLE}.entityInfo.id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Entityinfo"
+    group_item_label: "ID"
+  }
+
+  dimension: entityType {
+    sql: ${TABLE}.entityType ;;
     type: string
     suggest_persist_for: "24 hours"
   }
