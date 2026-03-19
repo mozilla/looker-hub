@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       stories_vertical_scroll.branch
     ]
     filters:
-      stories_vertical_scroll.metric: 'retained'
+      stories_vertical_scroll.metric: 'search_count'
       stories_vertical_scroll.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       stories_vertical_scroll.branch
     ]
     filters:
-      stories_vertical_scroll.metric: 'search_count'
+      stories_vertical_scroll.metric: 'retained'
       stories_vertical_scroll.statistic: mean
     row: 20
     col: 0

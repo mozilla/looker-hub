@@ -62123,6 +62123,114 @@ view: metrics__metrics__dual_labeled_counter__http_traffic_analysis__value {
   }
 }
 
+view: metrics__metrics__dual_labeled_counter__media_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__media_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__media_playback_encrypted_decode_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__media_playback_encrypted_decode_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__media_playback_unencrypted_hw_decode_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__media_playback_unencrypted_hw_decode_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__media_playback_unencrypted_sw_decode_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__media_playback_unencrypted_sw_decode_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
   dimension: key {
     sql: ${TABLE}.key ;;
