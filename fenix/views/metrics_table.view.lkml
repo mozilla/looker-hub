@@ -11797,6 +11797,34 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__media_error {
+    sql: ${TABLE}.metrics.dual_labeled_counter.media_error ;;
+    hidden: yes
+    description: "Count of errors surfaced on a media element, keyed by error type and whether the playback is encrypted. Serves as a high-level signal for all media error categories.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__media_playback_encrypted_decode_error {
+    sql: ${TABLE}.metrics.dual_labeled_counter.media_playback_encrypted_decode_error ;;
+    hidden: yes
+    description: "Count of fatal decode errors for encrypted (EME) media playback, keyed by codec and key system. Only fires when the decoder gives up after exhausting retries.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__media_playback_unencrypted_hw_decode_error {
+    sql: ${TABLE}.metrics.dual_labeled_counter.media_playback_unencrypted_hw_decode_error ;;
+    hidden: yes
+    description: "Count of decode errors for unencrypted hardware-accelerated media playback, keyed by codec and error name. Only fires when the decoder gives up after exhausting retries. Tracked separately from software errors to measure hw decoder failure rates and inform decisions on whether to retain this probe long-term.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__media_playback_unencrypted_sw_decode_error {
+    sql: ${TABLE}.metrics.dual_labeled_counter.media_playback_unencrypted_sw_decode_error ;;
+    hidden: yes
+    description: "Count of decode errors for unencrypted software media playback, keyed by codec and error name. Only fires when the decoder gives up after exhausting retries. Does not cover encrypted (EME) playback; see media.playback.encrypted_decode_error for that.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__networking_http3_channel_onstart_success {
     sql: ${TABLE}.metrics.dual_labeled_counter.networking_http3_channel_onstart_success ;;
     hidden: yes
@@ -54973,6 +55001,114 @@ view: metrics_table__metrics__dual_labeled_counter__http_traffic_analysis {
 }
 
 view: metrics_table__metrics__dual_labeled_counter__http_traffic_analysis__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__media_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__media_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__media_playback_encrypted_decode_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__media_playback_encrypted_decode_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__media_playback_unencrypted_hw_decode_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__media_playback_unencrypted_hw_decode_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__media_playback_unencrypted_sw_decode_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__media_playback_unencrypted_sw_decode_error__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

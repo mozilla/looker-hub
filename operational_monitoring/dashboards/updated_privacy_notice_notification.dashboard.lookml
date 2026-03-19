@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,77 +60,9 @@
       updated_privacy_notice_notification.branch
     ]
     filters:
-      updated_privacy_notice_notification.metric: 'retained'
+      updated_privacy_notice_notification.metric: 'search_count'
       updated_privacy_notice_notification.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: updated_privacy_notice_notification.submission_date
-    field_y: updated_privacy_notice_notification.point
-    log_scale: false
-    ci_lower: updated_privacy_notice_notification.lower
-    ci_upper: updated_privacy_notice_notification.upper
-    show_grid: true
-    listen:
-      Date: updated_privacy_notice_notification.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: updated_privacy_notice_notification
-    type: looker_line
-    fields: [
-      updated_privacy_notice_notification.submission_date,
-      updated_privacy_notice_notification.branch,
-      updated_privacy_notice_notification.point
-    ]
-    pivots: [
-      updated_privacy_notice_notification.branch
-    ]
-    filters:
-      updated_privacy_notice_notification.metric: 'qualified_cumulative_days_of_use'
-      updated_privacy_notice_notification.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: updated_privacy_notice_notification.submission_date
-    field_y: updated_privacy_notice_notification.point
-    log_scale: false
-    ci_lower: updated_privacy_notice_notification.lower
-    ci_upper: updated_privacy_notice_notification.upper
-    show_grid: true
-    listen:
-      Date: updated_privacy_notice_notification.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: updated_privacy_notice_notification
-    type: looker_line
-    fields: [
-      updated_privacy_notice_notification.submission_date,
-      updated_privacy_notice_notification.branch,
-      updated_privacy_notice_notification.point
-    ]
-    pivots: [
-      updated_privacy_notice_notification.branch
-    ]
-    filters:
-      updated_privacy_notice_notification.metric: 'uri_count'
-      updated_privacy_notice_notification.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -164,7 +96,7 @@
     filters:
       updated_privacy_notice_notification.metric: 'ad_clicks'
       updated_privacy_notice_notification.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -198,7 +130,7 @@
     filters:
       updated_privacy_notice_notification.metric: 'days_of_use'
       updated_privacy_notice_notification.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -214,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,10 +162,44 @@
       updated_privacy_notice_notification.branch
     ]
     filters:
-      updated_privacy_notice_notification.metric: 'search_count'
+      updated_privacy_notice_notification.metric: 'qualified_cumulative_days_of_use'
       updated_privacy_notice_notification.statistic: mean
-    row: 30
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: updated_privacy_notice_notification.submission_date
+    field_y: updated_privacy_notice_notification.point
+    log_scale: false
+    ci_lower: updated_privacy_notice_notification.lower
+    ci_upper: updated_privacy_notice_notification.upper
+    show_grid: true
+    listen:
+      Date: updated_privacy_notice_notification.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: updated_privacy_notice_notification
+    type: looker_line
+    fields: [
+      updated_privacy_notice_notification.submission_date,
+      updated_privacy_notice_notification.branch,
+      updated_privacy_notice_notification.point
+    ]
+    pivots: [
+      updated_privacy_notice_notification.branch
+    ]
+    filters:
+      updated_privacy_notice_notification.metric: 'uri_count'
+      updated_privacy_notice_notification.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: updated_privacy_notice_notification.submission_date
@@ -269,7 +235,7 @@
       updated_privacy_notice_notification.metric: 'memory_total'
       updated_privacy_notice_notification.statistic: percentile
     row: 30
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: updated_privacy_notice_notification.submission_date
@@ -281,6 +247,40 @@
     listen:
       Date: updated_privacy_notice_notification.submission_date
       Percentile: updated_privacy_notice_notification.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: updated_privacy_notice_notification
+    type: looker_line
+    fields: [
+      updated_privacy_notice_notification.submission_date,
+      updated_privacy_notice_notification.branch,
+      updated_privacy_notice_notification.point
+    ]
+    pivots: [
+      updated_privacy_notice_notification.branch
+    ]
+    filters:
+      updated_privacy_notice_notification.metric: 'retained'
+      updated_privacy_notice_notification.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: updated_privacy_notice_notification.submission_date
+    field_y: updated_privacy_notice_notification.point
+    log_scale: false
+    ci_lower: updated_privacy_notice_notification.lower
+    ci_upper: updated_privacy_notice_notification.upper
+    show_grid: true
+    listen:
+      Date: updated_privacy_notice_notification.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
