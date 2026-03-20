@@ -271,15 +271,15 @@
   - title: Windows Version
     name: Windows Version
     type: string_filter
-    default_value: 'Windows 10'
+    default_value: 'Windows 7'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Windows 10'
       - 'Windows 7'
+      - 'Windows 10'
       - 'Windows 8.1'
       - 'Windows 8'
       - 'Windows 11'
