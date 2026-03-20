@@ -20781,7 +20781,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 
   dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_connectivity_change__sum {
     label: "Networking: Prclose Tcp Blocking Time Connectivity Change Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_connectivity_change.sum ;;
     type: number
     group_label: "Networking"
@@ -20800,7 +20800,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_link_change__sum {
     label: "Networking: Prclose Tcp Blocking Time Link Change Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_link_change.sum ;;
     type: number
     group_label: "Networking"
@@ -20819,7 +20819,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_normal__sum {
     label: "Networking: Prclose Tcp Blocking Time Normal Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_normal.sum ;;
     type: number
     group_label: "Networking"
@@ -20838,7 +20838,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_offline__sum {
     label: "Networking: Prclose Tcp Blocking Time Offline Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_offline.sum ;;
     type: number
     group_label: "Networking"
@@ -20857,7 +20857,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prclose_tcp_blocking_time_shutdown__sum {
     label: "Networking: Prclose Tcp Blocking Time Shutdown Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prclose_tcp_blocking_time_shutdown.sum ;;
     type: number
     group_label: "Networking"
@@ -20971,7 +20971,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_blocking_time_connectivity_change__sum {
     label: "Networking: Prconnect Blocking Time Connectivity Change Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_connectivity_change.sum ;;
     type: number
     group_label: "Networking"
@@ -20990,7 +20990,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_blocking_time_link_change__sum {
     label: "Networking: Prconnect Blocking Time Link Change Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_link_change.sum ;;
     type: number
     group_label: "Networking"
@@ -21009,7 +21009,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_blocking_time_normal__sum {
     label: "Networking: Prconnect Blocking Time Normal Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_normal.sum ;;
     type: number
     group_label: "Networking"
@@ -21028,7 +21028,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_blocking_time_offline__sum {
     label: "Networking: Prconnect Blocking Time Offline Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_offline.sum ;;
     type: number
     group_label: "Networking"
@@ -21047,7 +21047,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_blocking_time_shutdown__sum {
     label: "Networking: Prconnect Blocking Time Shutdown Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_blocking_time_shutdown.sum ;;
     type: number
     group_label: "Networking"
@@ -21066,7 +21066,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_connectivity_change__sum {
     label: "Networking: Prconnect Fail Blocking Time Connectivity Change Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_connectivity_change.sum ;;
     type: number
     group_label: "Networking"
@@ -21085,7 +21085,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_link_change__sum {
     label: "Networking: Prconnect Fail Blocking Time Link Change Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_link_change.sum ;;
     type: number
     group_label: "Networking"
@@ -21104,7 +21104,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_normal__sum {
     label: "Networking: Prconnect Fail Blocking Time Normal Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_normal.sum ;;
     type: number
     group_label: "Networking"
@@ -21123,7 +21123,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_offline__sum {
     label: "Networking: Prconnect Fail Blocking Time Offline Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_offline.sum ;;
     type: number
     group_label: "Networking"
@@ -21142,7 +21142,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnect_fail_blocking_time_shutdown__sum {
     label: "Networking: Prconnect Fail Blocking Time Shutdown Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnect_fail_blocking_time_shutdown.sum ;;
     type: number
     group_label: "Networking"
@@ -21161,7 +21161,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_connectivity_change__sum {
     label: "Networking: Prconnectcontinue Blocking Time Connectivity Change Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_connectivity_change.sum ;;
     type: number
     group_label: "Networking"
@@ -21180,7 +21180,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_link_change__sum {
     label: "Networking: Prconnectcontinue Blocking Time Link Change Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_link_change.sum ;;
     type: number
     group_label: "Networking"
@@ -21199,7 +21199,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_normal__sum {
     label: "Networking: Prconnectcontinue Blocking Time Normal Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_normal.sum ;;
     type: number
     group_label: "Networking"
@@ -21218,7 +21218,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_offline__sum {
     label: "Networking: Prconnectcontinue Blocking Time Offline Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_offline.sum ;;
     type: number
     group_label: "Networking"
@@ -21237,7 +21237,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__networking_prconnectcontinue_blocking_time_shutdown__sum {
     label: "Networking: Prconnectcontinue Blocking Time Shutdown Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_prconnectcontinue_blocking_time_shutdown.sum ;;
     type: number
     group_label: "Networking"

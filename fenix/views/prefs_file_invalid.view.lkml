@@ -7,7 +7,7 @@
 view: prefs_file_invalid {
   dimension: metrics__text2__preferences_prefs_file_that_failed_to_parse {
     label: "Preferences: Prefs File That Failed To Parse"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.preferences_prefs_file_that_failed_to_parse ;;
     type: string
     group_label: "Preferences"
