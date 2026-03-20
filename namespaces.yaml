@@ -667,6 +667,33 @@ ads_monitoring:
       type: metric_definitions_view
     metric_definitions_monitoring_equativ_geo_targeting:
       type: metric_definitions_view
+ai_usage:
+  glean_app: false
+  owners:
+  - phlee@mozilla.com
+  pretty_name: AI Usage
+  spoke: looker-spoke-default
+  views:
+    claude_api_keys:
+      tables:
+      - table: moz-fx-data-shared-prod.ai_usage_derived.claude_api_keys_v1
+      type: table_view
+    claude_costs:
+      tables:
+      - table: moz-fx-data-shared-prod.ai_usage_derived.claude_costs_v1
+      type: table_view
+    claude_usage:
+      tables:
+      - table: moz-fx-data-shared-prod.ai_usage_derived.claude_usage_v1
+      type: table_view
+    openai_completions:
+      tables:
+      - table: moz-fx-data-shared-prod.ai_usage_derived.openai_completions_v1
+      type: table_view
+    openai_costs:
+      tables:
+      - table: moz-fx-data-shared-prod.ai_usage_derived.openai_costs_v1
+      type: table_view
 bigeye:
   explores:
     dashboards:
@@ -1086,6 +1113,10 @@ fenix:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
+    content_decoding_error:
+      type: glean_ping_explore
+      views:
+        base_view: content_decoding_error
     crash:
       type: glean_ping_explore
       views:
@@ -1443,6 +1474,32 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.composite_active_users
+      type: table_view
+    content_decoding_error:
+      tables:
+      - channel: release
+        table: mozdata.fenix.content_decoding_error
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.content_decoding_error
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.content_decoding_error
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.content_decoding_error
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.content_decoding_error
+      type: glean_ping_view
+    content_decoding_error_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.content_decoding_error
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.content_decoding_error
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.content_decoding_error
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix_nightly.content_decoding_error
+      - channel: nightly
+        table: mozdata.org_mozilla_fennec_aurora.content_decoding_error
       type: table_view
     crash:
       tables:
@@ -2760,6 +2817,10 @@ firefox_desktop:
       views:
         base_view: client_counts
         extended_view: clients_daily_table
+    content_decoding_error:
+      type: glean_ping_explore
+      views:
+        base_view: content_decoding_error
     crash:
       type: glean_ping_explore
       views:
@@ -3132,6 +3193,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.composite_active_users
+      type: table_view
+    content_decoding_error:
+      tables:
+      - table: mozdata.firefox_desktop.content_decoding_error
+      type: glean_ping_view
+    content_decoding_error_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.content_decoding_error
       type: table_view
     crash:
       tables:
