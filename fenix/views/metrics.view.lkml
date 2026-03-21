@@ -19720,7 +19720,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "HTTP3: final congestion window size in bytes at connection close.
+    description: "HTTP3: Final congestion window size in bytes at connection close. Only records connections that grew past the initial congestion window (new as of Bug 2024352).
 "
   }
 
@@ -19791,7 +19791,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "HTTP3: congestion window size in bytes when exiting slow start. Only recorded for connections that exited slow start.
+    description: "HTTP3: congestion window size in bytes when exiting slow start. Only recorded for connections that exited slow start. Also only records connections that grew past the initial congestion window size (new as of Bug 2024352).
 "
   }
 
@@ -19808,7 +19808,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "HTTP3: Records if a loss-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. This mostly exists to confirm the expected assumption that loss-based exit almost always overshoots.
+    description: "HTTP3: Records if a congestion-event-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. This mostly exists to confirm the expected assumption that loss- or ecn-based exit almost always overshoots. Only records for connections that saw congestion window growth (new as of Bug 2024352).
 "
   }
 

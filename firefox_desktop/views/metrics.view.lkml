@@ -5034,7 +5034,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__ipprotection_exclusion_added {
     label: "Ipprotection: Exclusion Added"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.ipprotection_exclusion_added ;;
     type: number
     group_label: "Ipprotection"
@@ -26879,6 +26879,30 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_congestion_window_growth {
+    label: "Networking: HTTP 3 Congestion Window Growth"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_congestion_window_growth ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Congestion Window Growth"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Congestion Window Growth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_congestion_window_growth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if a connection ended with a congestion window higher than the initial window size and if it saw slow start exit (in this case because of a congestion event) before ever growing the congestion window.
+Label explanation:
+  - had_growth: Connection saw congestion window growth
+  - no_growth: Connection never surpassed the initial window size
+  - no_growth_but_exit: Connection never surpassed the initial window size but slow start was exited
+  - no_growth_then_exit_then_growth: Connection exited slow start before then later growing the congestion window past the initial window size
+
+This metric can be used to judge how HTTP3 connections behave in regard to their congestion window and keep an eye on the phenomeon that prompted the filtering on most other congestion control metrics, where we only record connections that had congestion window growth past the initial window.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
     label: "Networking: HTTP 3 Connection Close Reason"
     hidden: yes
@@ -27035,7 +27059,25 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "HTTP3: final congestion window size in bytes at connection close.
+    description: "HTTP3: Final congestion window size in bytes at connection close. Only records connections that grew past the initial congestion window (new as of Bug 2024352).
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_w_max__sum {
+    label: "Networking: HTTP 3 Final W Max Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_w_max.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Final W Max Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Final W Max Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_final_w_max"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Cubic's w_max parameter value in bytes at connection close. Only records connections that grew past the initial congestion window and set w_max. The parameter stores the congestion window prior to the last congestion event, i.e. the window size at which congestion occurred. Can be used to approximate a path's capacity.
 "
   }
 
@@ -27054,6 +27096,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "HTTP3: packet loss ratio (multiply by 10000).
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio_filtered__sum {
+    label: "Networking: HTTP 3 Loss Ratio Filtered Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio_filtered.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Loss Ratio Filtered Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Loss Ratio Filtered Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_loss_ratio_filtered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: packet loss ratio (multiply by 10000). Is filtered to only record connections that saw congestion window growth. Co-exists with http_3_loss_ratio to measure the impact congestion control changes have on packet loss.
 "
   }
 
@@ -27106,7 +27166,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "HTTP3: congestion window size in bytes when exiting slow start. Only recorded for connections that exited slow start.
+    description: "HTTP3: congestion window size in bytes when exiting slow start. Only recorded for connections that exited slow start. Also only records connections that grew past the initial congestion window size (new as of Bug 2024352).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic {
+    label: "Networking: HTTP 3 Slow Start Exit Direction Heuristic"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exit_direction_heuristic ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Slow Start Exit Direction Heuristic"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Slow Start Exit Direction Heuristic"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_slow_start_exit_direction_heuristic"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Records if a heuristic-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. Is used to look for systematic tendencies in slow start exit algorithm accuracy direction. Only records for connections that saw congestion window growth.
 "
   }
 
@@ -27123,7 +27200,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "HTTP3: Records if a loss-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. This mostly exists to confirm the expected assumption that loss-based exit almost always overshoots.
+    description: "HTTP3: Records if a congestion-event-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. This mostly exists to confirm the expected assumption that loss- or ecn-based exit almost always overshoots. Only records for connections that saw congestion window growth (new as of Bug 2024352).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exit_reason {
+    label: "Networking: HTTP 3 Slow Start Exit Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exit_reason ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Slow Start Exit Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Slow Start Exit Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_slow_start_exit_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if slow start was exited heuristically or because of a congestion event. Can be used to measure how good an algorithm is at detecting slow start exit before loss occurs. Only records for connections that ever saw congestion window growth.
 "
   }
 
@@ -27141,6 +27235,23 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Counts whether an HTTP3 connections exited slow start.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exited_filtered {
+    label: "Networking: HTTP 3 Slow Start Exited Filtered"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exited_filtered ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Slow Start Exited Filtered"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Slow Start Exited Filtered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_slow_start_exited_filtered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts whether an HTTP3 connections exited slow start. Is filtered against connections that never grew past the initial congestion window, i.e. only records those that did see growth. Co-exists with http_3_slow_start_exited which is not filtered and also records for connections that never grew the congestion window or never sent data.
 "
   }
 
@@ -61365,6 +61476,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_congestion_event_reas
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_congestion_window_growth {
+  label: "Networking: HTTP 3 Congestion Window Growth"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
   label: "Networking: HTTP 3 Connection Close Reason"
 
@@ -61488,6 +61640,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic {
+  label: "Networking: HTTP 3 Slow Start Exit Direction Heuristic"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss {
   label: "Networking: HTTP 3 Slow Start Exit Direction Loss"
 
@@ -61529,8 +61722,90 @@ view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direc
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_reason {
+  label: "Networking: HTTP 3 Slow Start Exit Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited {
   label: "Networking: HTTP 3 Slow Start Exited"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited_filtered {
+  label: "Networking: HTTP 3 Slow Start Exited Filtered"
 
   dimension: document_id {
     type: string
