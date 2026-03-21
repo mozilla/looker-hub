@@ -10825,8 +10825,8 @@ operational_monitoring:
             default: Mac
             options:
             - Mac
-            - Linux
             - Windows
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
