@@ -2033,6 +2033,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_image_added}) AS metrics__metrics__labeled_counter__pdfjs_image_added ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_image_added.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pdfjs_organize_action {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_organize_action}) AS metrics__metrics__labeled_counter__pdfjs_organize_action ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_organize_action.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_signature_clear {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_signature_clear}) AS metrics__metrics__labeled_counter__pdfjs_signature_clear ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_signature_clear.document_id} ;;
@@ -2821,6 +2826,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__urlbar_searchmode_keywordoffer {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_keywordoffer}) AS metrics__metrics__labeled_counter__urlbar_searchmode_keywordoffer ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_keywordoffer.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_searchmode_messaging_system {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_searchmode_messaging_system}) AS metrics__metrics__labeled_counter__urlbar_searchmode_messaging_system ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_searchmode_messaging_system.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__urlbar_searchmode_oneoff {
