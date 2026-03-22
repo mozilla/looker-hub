@@ -13525,6 +13525,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__pdfjs_organize_action {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_organize_action ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__pdfjs_signature_clear {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_signature_clear ;;
     hidden: yes
@@ -14312,6 +14317,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__urlbar_searchmode_keywordoffer {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_keywordoffer ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_messaging_system {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_messaging_system ;;
     hidden: yes
   }
 

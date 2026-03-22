@@ -2467,6 +2467,14 @@ view: events_stream {
     group_item_label: "Tokenizing Time"
   }
 
+  dimension: extras__quantity__tokens {
+    sql: ${TABLE}.extras.quantity.tokens ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tokens"
+  }
+
   dimension: extras__quantity__tokens_per_second {
     sql: ${TABLE}.extras.quantity.tokens_per_second ;;
     type: number
@@ -3355,6 +3363,14 @@ view: events_stream {
     group_item_label: "Detail"
   }
 
+  dimension: extras__string__detected_intent {
+    sql: ${TABLE}.extras.string.detected_intent ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Detected Intent"
+  }
+
   dimension: extras__string__detected_language {
     sql: ${TABLE}.extras.string.detected_language ;;
     type: string
@@ -4217,6 +4233,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Install Origins"
+  }
+
+  dimension: extras__string__intent {
+    sql: ${TABLE}.extras.string.intent ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Intent"
   }
 
   dimension: extras__string__interaction {
@@ -5265,6 +5289,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Removal Result"
+  }
+
+  dimension: extras__string__request_id {
+    sql: ${TABLE}.extras.string.request_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Request ID"
   }
 
   dimension: extras__string__request_target {
