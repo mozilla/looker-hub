@@ -452,6 +452,16 @@ desktop_retention_by_metric_date_startup_profile_selection_reason,
     description: "Average of New Profile Retention Count"
   }
 
+  measure: new_profile_retention_count_ratio {
+    type: number
+    label: "New Profile Retention Count Ratio"
+    sql: SAFE_DIVIDE(${new_profile_retention_count_sum}, ${new_profile_active_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between new_profile_retention_count.sum and
+                                        new_profile_active_count.sum"
+  }
+
   measure: new_profile_retention_count_rolling_average_sum_28_day {
     type: number
     label: "New Profile Retention Count Sum 28 Day Rolling Average"
@@ -2446,6 +2456,7 @@ desktop_retention_by_metric_date_startup_profile_selection_reason,
       active_count,
       new_profile_retention_count_sum,
       new_profile_retention_count_average,
+      new_profile_retention_count_ratio,
       new_profile_retention_count_rolling_average_sum_28_day,
       new_profile_retention_count_rolling_average_average_28_day,
       new_profile_retention_count_rolling_average_sum_28_day_365_day_period_over_period_previous,
