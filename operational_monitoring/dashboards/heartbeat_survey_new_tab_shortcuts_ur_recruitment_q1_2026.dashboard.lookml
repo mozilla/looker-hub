@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.branch
     ]
     filters:
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'uri_count'
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'search_count'
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +94,44 @@
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.branch
     ]
     filters:
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'days_of_use'
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'ad_clicks'
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.statistic: mean
     row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.submission_date
+    field_y: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.point
+    log_scale: false
+    ci_lower: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.lower
+    ci_upper: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.upper
+    show_grid: true
+    listen:
+      Date: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026
+    type: looker_line
+    fields: [
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.submission_date,
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.branch,
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.point
+    ]
+    pivots: [
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.branch
+    ]
+    filters:
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'uri_count'
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.submission_date
@@ -130,40 +164,6 @@
     filters:
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'qualified_cumulative_days_of_use'
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.submission_date
-    field_y: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.point
-    log_scale: false
-    ci_lower: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.lower
-    ci_upper: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.upper
-    show_grid: true
-    listen:
-      Date: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026
-    type: looker_line
-    fields: [
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.submission_date,
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.branch,
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.point
-    ]
-    pivots: [
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.branch
-    ]
-    filters:
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'ad_clicks'
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.branch
     ]
     filters:
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'active_hours'
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'days_of_use'
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.branch
     ]
     filters:
-      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'search_count'
+      heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.metric: 'active_hours'
       heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026.statistic: mean
     row: 30
     col: 12

@@ -55,6 +55,22 @@ view: resurrection_week_2_retention_table {
     description: "Count of resurrected users who remained active in week 2 (days 8-14) following their return."
   }
 
+  dimension_group: metric {
+    sql: ${TABLE}.metric_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "Metric Date - 13 days before the submission date."
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
@@ -68,7 +84,7 @@ view: resurrection_week_2_retention_table {
     ]
     convert_tz: no
     datatype: date
-    description: "The date when the telemetry ping is received on the server side."
+    description: "The date the query was run and the partition date for this table."
   }
 
   sql_table_name: `mozdata.firefox_desktop.resurrection_week_2_retention` ;;

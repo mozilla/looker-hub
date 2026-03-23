@@ -570,6 +570,16 @@ view: events_table {
     description: "The API ID of the offering a customer subscribed to"
   }
 
+  dimension: metrics__string__subscription_payment_method {
+    sql: ${TABLE}.metrics.string.subscription_payment_method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Subscription Payment Method"
+    description: "The payment method selected by the customer during checkout (e.g. ‘card’, ‘apple_pay’)
+"
+  }
+
   dimension: metrics__string__subscription_payment_provider {
     sql: ${TABLE}.metrics.string.subscription_payment_provider ;;
     type: string

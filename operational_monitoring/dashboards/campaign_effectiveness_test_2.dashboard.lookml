@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       campaign_effectiveness_test_2.branch
     ]
     filters:
-      campaign_effectiveness_test_2.metric: 'uri_count'
+      campaign_effectiveness_test_2.metric: 'search_count'
       campaign_effectiveness_test_2.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +94,44 @@
       campaign_effectiveness_test_2.branch
     ]
     filters:
-      campaign_effectiveness_test_2.metric: 'days_of_use'
+      campaign_effectiveness_test_2.metric: 'ad_clicks'
       campaign_effectiveness_test_2.statistic: mean
     row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: campaign_effectiveness_test_2.submission_date
+    field_y: campaign_effectiveness_test_2.point
+    log_scale: false
+    ci_lower: campaign_effectiveness_test_2.lower
+    ci_upper: campaign_effectiveness_test_2.upper
+    show_grid: true
+    listen:
+      Date: campaign_effectiveness_test_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: campaign_effectiveness_test_2
+    type: looker_line
+    fields: [
+      campaign_effectiveness_test_2.submission_date,
+      campaign_effectiveness_test_2.branch,
+      campaign_effectiveness_test_2.point
+    ]
+    pivots: [
+      campaign_effectiveness_test_2.branch
+    ]
+    filters:
+      campaign_effectiveness_test_2.metric: 'uri_count'
+      campaign_effectiveness_test_2.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: campaign_effectiveness_test_2.submission_date
@@ -130,40 +164,6 @@
     filters:
       campaign_effectiveness_test_2.metric: 'qualified_cumulative_days_of_use'
       campaign_effectiveness_test_2.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: campaign_effectiveness_test_2.submission_date
-    field_y: campaign_effectiveness_test_2.point
-    log_scale: false
-    ci_lower: campaign_effectiveness_test_2.lower
-    ci_upper: campaign_effectiveness_test_2.upper
-    show_grid: true
-    listen:
-      Date: campaign_effectiveness_test_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: campaign_effectiveness_test_2
-    type: looker_line
-    fields: [
-      campaign_effectiveness_test_2.submission_date,
-      campaign_effectiveness_test_2.branch,
-      campaign_effectiveness_test_2.point
-    ]
-    pivots: [
-      campaign_effectiveness_test_2.branch
-    ]
-    filters:
-      campaign_effectiveness_test_2.metric: 'ad_clicks'
-      campaign_effectiveness_test_2.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       campaign_effectiveness_test_2.branch
     ]
     filters:
-      campaign_effectiveness_test_2.metric: 'active_hours'
+      campaign_effectiveness_test_2.metric: 'days_of_use'
       campaign_effectiveness_test_2.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       campaign_effectiveness_test_2.branch
     ]
     filters:
-      campaign_effectiveness_test_2.metric: 'search_count'
+      campaign_effectiveness_test_2.metric: 'active_hours'
       campaign_effectiveness_test_2.statistic: mean
     row: 30
     col: 12

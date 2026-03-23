@@ -8636,6 +8636,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio_filtered__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio_filtered.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Loss Ratio Filtered"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio_filtered__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio_filtered.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Loss Ratio Filtered"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_loss_ratio_filtered__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_loss_ratio_filtered.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.count ;;
     type: number
@@ -15533,6 +15555,20 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_congestion_window_growth {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_congestion_window_growth ;;
+    hidden: yes
+    description: "Records if a connection ended with a congestion window higher than the initial window size and if it saw slow start exit (in this case because of a congestion event) before ever growing the congestion window.
+Label explanation:
+  - had_growth: Connection saw congestion window growth
+  - no_growth: Connection never surpassed the initial window size
+  - no_growth_but_exit: Connection never surpassed the initial window size but slow start was exited
+  - no_growth_then_exit_then_growth: Connection exited slow start before then later growing the congestion window past the initial window size
+
+This metric can be used to judge how HTTP3 connections behave in regard to their congestion window and keep an eye on the phenomeon that prompted the filtering on most other congestion control metrics, where we only record connections that had congestion window growth past the initial window.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_connection_close_reason {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_connection_close_reason ;;
     hidden: yes
@@ -15554,10 +15590,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exit_direction_heuristic ;;
+    hidden: yes
+    description: "HTTP3: Records if a heuristic-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. Is used to look for systematic tendencies in slow start exit algorithm accuracy direction. Only records for connections that saw congestion window growth.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exit_direction_loss ;;
     hidden: yes
-    description: "HTTP3: Records if a loss-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. This mostly exists to confirm the expected assumption that loss-based exit almost always overshoots.
+    description: "HTTP3: Records if a congestion-event-based slow start exit undershot, overshot or exactly matches the congestion window size when closing the connection. This mostly exists to confirm the expected assumption that loss- or ecn-based exit almost always overshoots. Only records for connections that saw congestion window growth (new as of Bug 2024352).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exit_reason {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exit_reason ;;
+    hidden: yes
+    description: "Records if slow start was exited heuristically or because of a congestion event. Can be used to measure how good an algorithm is at detecting slow start exit before loss occurs. Only records for connections that ever saw congestion window growth.
 "
   }
 
@@ -15565,6 +15615,13 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exited ;;
     hidden: yes
     description: "Counts whether an HTTP3 connections exited slow start.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_slow_start_exited_filtered {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_slow_start_exited_filtered ;;
+    hidden: yes
+    description: "Counts whether an HTTP3 connections exited slow start. Is filtered against connections that never grew past the initial congestion window, i.e. only records those that did see growth. Co-exists with http_3_slow_start_exited which is not filtered and also records for connections that never grew the congestion window or never sent data.
 "
   }
 
@@ -15888,6 +15945,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_image_added ;;
     hidden: yes
     description: "Number of images added with/without alt text.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_organize_action {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_organize_action ;;
+    hidden: yes
+    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, move, paste), exports selected pages, or saves a PDF modified through page organization.
 "
   }
 
@@ -17050,6 +17114,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__urlbar_searchmode_messaging_system {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_messaging_system ;;
+    hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode through the messaging system.
+"
+  }
+
   dimension: metrics__labeled_counter__urlbar_searchmode_oneoff {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_oneoff ;;
     hidden: yes
@@ -17769,10 +17840,31 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_custom_distribution__networking_http_3_hystart_css_entries {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_hystart_css_entries ;;
+    hidden: yes
+    description: "Measures how often CSS (Conservative Slow Start) was entered when using HyStart++. Only records for connections that saw congestion window growth. A jitter-free connection should only see 1 CSS entry. A high value points at spurious CSS entries mid-round, i.e. CSS is entered and exited within 1 RTT, which results time spent throttling congestion window growth rate during those extra ACKs where CSS was active.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_hystart_css_rounds_finished {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_hystart_css_rounds_finished ;;
+    hidden: yes
+    description: "Measures how many CSS (Conservative Slow Start) rounds were finished when using HyStart++. Only records for connections that saw congestion window growth. A count that is higher than the RFC threshold value of 5 rounds that are completed by design points at spurious CSS entries and time spent throttling congestion window growth rate during those extra CSS rounds. Values below 5 mean that slow start was not exited (heuristically) on that connection.
+"
+  }
+
   dimension: metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy {
     sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_slow_start_exit_accuracy ;;
     hidden: yes
-    description: "HTTP3: Absolute congestion window size difference between exiting slow start and closing the connection, as a percentage of the window size when closing the connection. Only recorded for connections that exited slow start. Is used to approximate accuracy of slow start exit per connection. The labels separate slow start exit reasons, because congestion event and heuristic based exits are fundamentally different cases that would obscure each other if mixed. For now only records for congestion event exits while heuristics for exiting slow start are still being implemented.
+    description: "HTTP3: Absolute congestion window size difference between exiting slow start and closing the connection, as a percentage of the window size when closing the connection. Only recorded for connections that exited slow start and saw congestion window growth. Is used to approximate accuracy of slow start exit per connection. The labels separate slow start exit reasons, because congestion event and heuristic based exits are fundamentally different cases that would obscure each other if mixed.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy_w_max {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_slow_start_exit_accuracy_w_max ;;
+    hidden: yes
+    description: "HTTP3: Absolute congestion window size difference between exiting slow start and Cubic's w_max parameter value when closing the connection, as a percentage of the w_max parameter value. Only recorded for connections that exited slow start and saw congestion window growth. Is used to approximate accuracy of slow start exit per connection. The labels separate slow start exit reasons, because congestion event and heuristic based exits are fundamentally different cases that would obscure each other if mixed. Acts as an alternative measure to http_3_slow_start_exit_accuracy, which uses the final congestion window instead of w_max.
 "
   }
 
@@ -18467,8 +18559,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
+This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 
@@ -19470,6 +19563,28 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__memory_distribution__networking_http_3_final_cwnd__values {
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_cwnd.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_w_max__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_w_max.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Final W Max"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_w_max__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_w_max.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Final W Max"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_final_w_max__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_w_max.values ;;
     hidden: yes
   }
 
@@ -56795,6 +56910,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_filtered__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -62452,6 +62581,94 @@ view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_ecn
   }
 }
 
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_hystart_css_entries {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_hystart_css_entries__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_hystart_css_rounds_finished {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_hystart_css_rounds_finished__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -62483,6 +62700,50 @@ view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_slo
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy_w_max {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_slow_start_exit_accuracy_w_max__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -70601,6 +70862,20 @@ view: metrics_table__metrics__memory_distribution__networking_cache_metadata_siz
 }
 
 view: metrics_table__metrics__memory_distribution__networking_http_3_final_cwnd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_final_w_max__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
