@@ -1233,6 +1233,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_congestion_event_reason}) AS metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_congestion_event_reason.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_congestion_window_growth {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_congestion_window_growth}) AS metrics__metrics__labeled_counter__networking_http_3_congestion_window_growth ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_congestion_window_growth.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_connection_close_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_connection_close_reason}) AS metrics__metrics__labeled_counter__networking_http_3_connection_close_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_connection_close_reason.document_id} ;;
@@ -1248,14 +1253,29 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_quic_frame_count}) AS metrics__metrics__labeled_counter__networking_http_3_quic_frame_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_quic_frame_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_loss.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exit_reason}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_reason.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exited}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exited ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exited.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exited_filtered {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exited_filtered}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exited_filtered ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exited_filtered.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_http_channel_disposition {
@@ -1476,6 +1496,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__pdfjs_image_added {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_image_added}) AS metrics__metrics__labeled_counter__pdfjs_image_added ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_image_added.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_organize_action {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_organize_action}) AS metrics__metrics__labeled_counter__pdfjs_organize_action ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_organize_action.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__pdfjs_signature_clear {
