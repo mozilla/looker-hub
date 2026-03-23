@@ -427,14 +427,6 @@ view: events_stream {
     group_item_label: "Enabled"
   }
 
-  dimension: extras__boolean__engagement_abandoned {
-    sql: ${TABLE}.extras.boolean.engagement_abandoned ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Engagement Abandoned"
-  }
-
   dimension: extras__boolean__filled {
     sql: ${TABLE}.extras.boolean.filled ;;
     type: yesno
