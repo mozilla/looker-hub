@@ -514,6 +514,32 @@ desktop_retention_by_metric_date_startup_profile_selection_reason,
     description: "28 day rolling average of New Profile Retention Count"
   }
 
+  measure: new_profile_retention_count_rolling_average_ratio_28_day {
+    type: number
+    label: "New Profile Retention Count Ratio 28 Day Rolling Average"
+    sql: {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %} ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of New Profile Retention Count"
+  }
+
   measure: new_profile_retention_count_rolling_average_sum_28_day_365_day_period_over_period_previous {
     type: number
     label: "New Profile Retention Count Sum 28 Day Rolling Average 365 Day Period Over Period Previous"
@@ -1434,6 +1460,466 @@ desktop_retention_by_metric_date_startup_profile_selection_reason,
 {% endif %}) ;;
   }
 
+  measure: new_profile_retention_count_rolling_average_ratio_28_day_365_day_period_over_period_previous {
+    type: number
+    label: "New Profile Retention Count Ratio 28 Day Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of New Profile Retention Count Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% else %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% endif %} ;;
+  }
+
+  measure: new_profile_retention_count_rolling_average_ratio_28_day_365_day_period_over_period_relative_change {
+    type: number
+    label: "New Profile Retention Count Ratio 28 Day Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of New Profile Retention Count Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ), NULLIF(({% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% else %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% endif %}), 0)) - 1 ;;
+  }
+
+  measure: new_profile_retention_count_rolling_average_ratio_28_day_365_day_period_over_period_difference {
+    type: number
+    label: "New Profile Retention Count Ratio 28 Day Rolling Average 365 Day Period Over Period Difference"
+    description: "Period over period Difference of New Profile Retention Count Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: (
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ) - ({% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% else %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${new_profile_retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% endif %}) ;;
+  }
+
   measure: new_profile_active_count_sum {
     type: sum
     sql: ${TABLE}.new_profile_active_count*1 ;;
@@ -1456,6 +1942,16 @@ desktop_retention_by_metric_date_startup_profile_selection_reason,
     label: "Retention Count Average"
     group_label: "Statistics"
     description: "Average of Retention Count"
+  }
+
+  measure: retention_count_ratio {
+    type: number
+    label: "Retention Count Ratio"
+    sql: SAFE_DIVIDE(${retention_count_sum}, ${active_count_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between retention_count.sum and
+                                        active_count.sum"
   }
 
   measure: retention_count_rolling_average_sum_28_day {
@@ -1493,6 +1989,32 @@ desktop_retention_by_metric_date_startup_profile_selection_reason,
                                                         metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
                                                         metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
                                                     AVG(${retention_count_average}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %} ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of Retention Count"
+  }
+
+  measure: retention_count_rolling_average_ratio_28_day {
+    type: number
+    label: "Retention Count Ratio 28 Day Rolling Average"
+    sql: {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
                                                         {% if date_groupby_position._parameter_value != "" %}
                                                         ORDER BY {% parameter date_groupby_position %}
                                                         {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
@@ -2430,14 +2952,464 @@ desktop_retention_by_metric_date_startup_profile_selection_reason,
 {% endif %}) ;;
   }
 
-  measure: retention_count_ratio {
+  measure: retention_count_rolling_average_ratio_28_day_365_day_period_over_period_previous {
     type: number
-    label: "Retention Count Ratio"
-    sql: SAFE_DIVIDE(${retention_count_sum}, ${active_count_sum}) ;;
+    label: "Retention Count Ratio 28 Day Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of Retention Count Ratio 28 Day Rolling Average over 365 days"
     group_label: "Statistics"
-    description: "\"
-                                        Ratio between retention_count.sum and
-                                        active_count.sum"
+    sql: {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% else %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% endif %} ;;
+  }
+
+  measure: retention_count_rolling_average_ratio_28_day_365_day_period_over_period_relative_change {
+    type: number
+    label: "Retention Count Ratio 28 Day Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of Retention Count Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ), NULLIF(({% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% else %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% endif %}), 0)) - 1 ;;
+  }
+
+  measure: retention_count_rolling_average_ratio_28_day_365_day_period_over_period_difference {
+    type: number
+    label: "Retention Count Ratio 28 Day Rolling Average 365 Day Period Over Period Difference"
+    description: "Period over period Difference of Retention Count Ratio 28 Day Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: (
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                ) - ({% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 392 PRECEDING AND 365 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 56 PRECEDING AND 29 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 13 PRECEDING AND -14 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 4 PRECEDING AND -23 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% elsif metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 1 PRECEDING AND -26 PRECEDING
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% else %}
+
+                                                    {% if metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_week._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_month._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_quarter._is_selected or
+                                                        metric_definitions_desktop_retention_by_metric_date.submission_year._is_selected %}
+                                                    AVG(${retention_count_ratio}) OVER (
+                                                        {% if date_groupby_position._parameter_value != "" %}
+                                                        ORDER BY {% parameter date_groupby_position %}
+                                                        {% elsif metric_definitions_desktop_retention_by_metric_date.submission_date._is_selected %}
+                                                        ORDER BY ${TABLE}.analysis_basis
+                                                        {% else %}
+                                                        ERROR("date_groupby_position needs to be set when using submission_week,
+                                                        submission_month, submission_quarter, or submission_year")
+                                                        {% endif %}
+                                                        ROWS BETWEEN 27 PRECEDING AND CURRENT ROW
+                                                    )
+                                                    {% else %}
+                                                    ERROR('Please select a "submission_*" field to compute the rolling average')
+                                                    {% endif %}
+                                                
+{% endif %}) ;;
   }
 
   measure: active_count_sum {
@@ -2459,24 +3431,32 @@ desktop_retention_by_metric_date_startup_profile_selection_reason,
       new_profile_retention_count_ratio,
       new_profile_retention_count_rolling_average_sum_28_day,
       new_profile_retention_count_rolling_average_average_28_day,
+      new_profile_retention_count_rolling_average_ratio_28_day,
       new_profile_retention_count_rolling_average_sum_28_day_365_day_period_over_period_previous,
       new_profile_retention_count_rolling_average_sum_28_day_365_day_period_over_period_relative_change,
       new_profile_retention_count_rolling_average_sum_28_day_365_day_period_over_period_difference,
       new_profile_retention_count_rolling_average_average_28_day_365_day_period_over_period_previous,
       new_profile_retention_count_rolling_average_average_28_day_365_day_period_over_period_relative_change,
       new_profile_retention_count_rolling_average_average_28_day_365_day_period_over_period_difference,
+      new_profile_retention_count_rolling_average_ratio_28_day_365_day_period_over_period_previous,
+      new_profile_retention_count_rolling_average_ratio_28_day_365_day_period_over_period_relative_change,
+      new_profile_retention_count_rolling_average_ratio_28_day_365_day_period_over_period_difference,
       new_profile_active_count_sum,
       retention_count_sum,
       retention_count_average,
+      retention_count_ratio,
       retention_count_rolling_average_sum_28_day,
       retention_count_rolling_average_average_28_day,
+      retention_count_rolling_average_ratio_28_day,
       retention_count_rolling_average_sum_28_day_365_day_period_over_period_previous,
       retention_count_rolling_average_sum_28_day_365_day_period_over_period_relative_change,
       retention_count_rolling_average_sum_28_day_365_day_period_over_period_difference,
       retention_count_rolling_average_average_28_day_365_day_period_over_period_previous,
       retention_count_rolling_average_average_28_day_365_day_period_over_period_relative_change,
       retention_count_rolling_average_average_28_day_365_day_period_over_period_difference,
-      retention_count_ratio,
+      retention_count_rolling_average_ratio_28_day_365_day_period_over_period_previous,
+      retention_count_rolling_average_ratio_28_day_365_day_period_over_period_relative_change,
+      retention_count_rolling_average_ratio_28_day_365_day_period_over_period_difference,
       active_count_sum,
     ]
   }

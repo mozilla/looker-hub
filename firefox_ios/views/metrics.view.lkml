@@ -217,7 +217,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_customize_homepage {
     label: "App Menu: Customize Homepage"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_customize_homepage ;;
     type: number
     group_label: "App Menu"
@@ -236,7 +236,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_help {
     label: "App Menu: Help"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_help ;;
     type: number
     group_label: "App Menu"
@@ -272,7 +272,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_homepage_menu {
     label: "App Menu: Homepage Menu"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_homepage_menu ;;
     type: number
     group_label: "App Menu"
@@ -328,7 +328,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_night_mode_disabled {
     label: "App Menu: Night Mode Disabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_night_mode_disabled ;;
     type: number
     group_label: "App Menu"
@@ -347,7 +347,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_night_mode_enabled {
     label: "App Menu: Night Mode Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_night_mode_enabled ;;
     type: number
     group_label: "App Menu"
@@ -366,7 +366,7 @@ in the app menu
 
   dimension: metrics__counter__app_menu_settings {
     label: "App Menu: Settings"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_settings ;;
     type: number
     group_label: "App Menu"
@@ -422,7 +422,7 @@ from a website
 
   dimension: metrics__counter__app_menu_whats_new {
     label: "App Menu: Whats New"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_whats_new ;;
     type: number
     group_label: "App Menu"
