@@ -30,6 +30,12 @@ view: revenue_forecasts {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: forecast_year {
+    sql: ${TABLE}.forecast_year ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: future_fx_rate {
     sql: ${TABLE}.future_fx_rate ;;
     type: number
