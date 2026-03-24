@@ -2854,6 +2854,16 @@ displayed to the user. (for tile counts)
 "
   }
 
+  dimension: metrics__counter__ipprotection_exclusion_added {
+    sql: ${TABLE}.metrics.counter.ipprotection_exclusion_added ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Ipprotection Exclusion Added"
+    description: "Recorded when a site exclusion is added.
+"
+  }
+
   dimension: metrics__counter__javascript_self_hosted_cache_total {
     sql: ${TABLE}.metrics.counter.javascript_self_hosted_cache_total ;;
     type: number
@@ -13403,7 +13413,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 

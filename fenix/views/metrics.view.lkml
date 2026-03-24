@@ -14577,6 +14577,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__counter__ipprotection_exclusion_added {
+    label: "Ipprotection: Exclusion Added"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ipprotection_exclusion_added ;;
+    type: number
+    group_label: "Ipprotection"
+    group_item_label: "Exclusion Added"
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection: Exclusion Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ipprotection_exclusion_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a site exclusion is added.
+"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_animation__sum {
     label: "Javascript GC: Animation Sum"
     hidden: no
@@ -37880,6 +37898,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Idb Maintenance Unknown Metadata"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/idb_maintenance_unknown_metadata"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_exclusion_added {
+    type: sum
+    sql: ${metrics__counter__ipprotection_exclusion_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusion Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ipprotection_exclusion_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ipprotection_exclusion_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ipprotection_exclusion_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ipprotection Exclusion Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ipprotection_exclusion_added"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
