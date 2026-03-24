@@ -643,6 +643,14 @@ view: events_stream {
     group_item_label: "Hyphen Compat"
   }
 
+  dimension: extras__boolean__inPrivateBrowsing {
+    sql: ${TABLE}.extras.boolean.inPrivateBrowsing ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Inprivatebrowsing"
+  }
+
   dimension: extras__boolean__isBlock {
     sql: ${TABLE}.extras.boolean.isBlock ;;
     type: yesno
@@ -963,6 +971,14 @@ view: events_stream {
     group_item_label: "Triggered Externally"
   }
 
+  dimension: extras__boolean__userAction {
+    sql: ${TABLE}.extras.boolean.userAction ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Useraction"
+  }
+
   dimension: extras__boolean__value {
     sql: ${TABLE}.extras.boolean.value ;;
     type: yesno
@@ -977,6 +993,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Vulnerable"
+  }
+
+  dimension: extras__boolean__wasActive {
+    sql: ${TABLE}.extras.boolean.wasActive ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Wasactive"
   }
 
   dimension: extras__quantity__attemptCount {
