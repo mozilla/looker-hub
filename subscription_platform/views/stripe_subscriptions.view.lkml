@@ -417,7 +417,8 @@ This isn't available for customers that were deleted before the initial Fivetran
     suggest_persist_for: "24 hours"
     group_label: "Metadata"
     group_item_label: "Amount"
-    description: "The actual plan amount in whole cents to be charged. This may differ from `subscription.items[0].plan.amount` if multi-currency prices are being used."
+    description: "The actual plan amount in whole cents to be charged.
+This may differ from `subscription.items[0].plan.amount` if multi-currency prices are being used."
   }
 
   dimension: metadata__appliedPromotionCode {
@@ -444,7 +445,8 @@ This isn't available for customers that were deleted before the initial Fivetran
     suggest_persist_for: "24 hours"
     group_label: "Metadata"
     group_item_label: "Currency"
-    description: "ISO 4217 code for the actual plan currency, possibly in lowercase. This may differ from `subscription.items[0].plan.currency` if multi-currency prices are being used."
+    description: "ISO 4217 code for the actual plan currency, possibly in lowercase.
+This may differ from `subscription.items[0].plan.currency` if multi-currency prices are being used."
   }
 
   dimension: metadata__previous_plan_id {
