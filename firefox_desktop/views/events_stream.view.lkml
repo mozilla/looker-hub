@@ -4667,6 +4667,14 @@ view: events_stream {
     group_item_label: "New Load Path"
   }
 
+  dimension: extras__string__new_model {
+    sql: ${TABLE}.extras.string.new_model ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "New Model"
+  }
+
   dimension: extras__string__new_region {
     sql: ${TABLE}.extras.string.new_region ;;
     type: string
@@ -5105,6 +5113,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Previous Language"
+  }
+
+  dimension: extras__string__previous_model {
+    sql: ${TABLE}.extras.string.previous_model ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Previous Model"
   }
 
   dimension: extras__string__primary {
