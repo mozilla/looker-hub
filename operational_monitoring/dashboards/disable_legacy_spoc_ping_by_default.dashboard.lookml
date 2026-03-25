@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_legacy_spoc_ping_by_default
-    type: looker_line
-    fields: [
-      disable_legacy_spoc_ping_by_default.submission_date,
-      disable_legacy_spoc_ping_by_default.branch,
-      disable_legacy_spoc_ping_by_default.point
-    ]
-    pivots: [
-      disable_legacy_spoc_ping_by_default.branch
-    ]
-    filters:
-      disable_legacy_spoc_ping_by_default.metric: 'uri_count'
-      disable_legacy_spoc_ping_by_default.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: disable_legacy_spoc_ping_by_default.submission_date
-    field_y: disable_legacy_spoc_ping_by_default.point
-    log_scale: false
-    ci_lower: disable_legacy_spoc_ping_by_default.lower
-    ci_upper: disable_legacy_spoc_ping_by_default.upper
-    show_grid: true
-    listen:
-      Date: disable_legacy_spoc_ping_by_default.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       disable_legacy_spoc_ping_by_default.metric: 'retained'
       disable_legacy_spoc_ping_by_default.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: disable_legacy_spoc_ping_by_default.submission_date
@@ -78,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +60,10 @@
       disable_legacy_spoc_ping_by_default.branch
     ]
     filters:
-      disable_legacy_spoc_ping_by_default.metric: 'days_of_use'
+      disable_legacy_spoc_ping_by_default.metric: 'qualified_cumulative_days_of_use'
       disable_legacy_spoc_ping_by_default.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: disable_legacy_spoc_ping_by_default.submission_date
@@ -133,7 +99,7 @@
       disable_legacy_spoc_ping_by_default.metric: 'memory_total'
       disable_legacy_spoc_ping_by_default.statistic: percentile
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: disable_legacy_spoc_ping_by_default.submission_date
@@ -145,6 +111,40 @@
     listen:
       Date: disable_legacy_spoc_ping_by_default.submission_date
       Percentile: disable_legacy_spoc_ping_by_default.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_legacy_spoc_ping_by_default
+    type: looker_line
+    fields: [
+      disable_legacy_spoc_ping_by_default.submission_date,
+      disable_legacy_spoc_ping_by_default.branch,
+      disable_legacy_spoc_ping_by_default.point
+    ]
+    pivots: [
+      disable_legacy_spoc_ping_by_default.branch
+    ]
+    filters:
+      disable_legacy_spoc_ping_by_default.metric: 'active_hours'
+      disable_legacy_spoc_ping_by_default.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: disable_legacy_spoc_ping_by_default.submission_date
+    field_y: disable_legacy_spoc_ping_by_default.point
+    log_scale: false
+    ci_lower: disable_legacy_spoc_ping_by_default.lower
+    ci_upper: disable_legacy_spoc_ping_by_default.upper
+    show_grid: true
+    listen:
+      Date: disable_legacy_spoc_ping_by_default.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,44 +199,10 @@
       disable_legacy_spoc_ping_by_default.branch
     ]
     filters:
-      disable_legacy_spoc_ping_by_default.metric: 'qualified_cumulative_days_of_use'
+      disable_legacy_spoc_ping_by_default.metric: 'uri_count'
       disable_legacy_spoc_ping_by_default.statistic: mean
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: disable_legacy_spoc_ping_by_default.submission_date
-    field_y: disable_legacy_spoc_ping_by_default.point
-    log_scale: false
-    ci_lower: disable_legacy_spoc_ping_by_default.lower
-    ci_upper: disable_legacy_spoc_ping_by_default.upper
-    show_grid: true
-    listen:
-      Date: disable_legacy_spoc_ping_by_default.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_legacy_spoc_ping_by_default
-    type: looker_line
-    fields: [
-      disable_legacy_spoc_ping_by_default.submission_date,
-      disable_legacy_spoc_ping_by_default.branch,
-      disable_legacy_spoc_ping_by_default.point
-    ]
-    pivots: [
-      disable_legacy_spoc_ping_by_default.branch
-    ]
-    filters:
-      disable_legacy_spoc_ping_by_default.metric: 'active_hours'
-      disable_legacy_spoc_ping_by_default.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: disable_legacy_spoc_ping_by_default.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       disable_legacy_spoc_ping_by_default.metric: 'ad_clicks'
+      disable_legacy_spoc_ping_by_default.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: disable_legacy_spoc_ping_by_default.submission_date
+    field_y: disable_legacy_spoc_ping_by_default.point
+    log_scale: false
+    ci_lower: disable_legacy_spoc_ping_by_default.lower
+    ci_upper: disable_legacy_spoc_ping_by_default.upper
+    show_grid: true
+    listen:
+      Date: disable_legacy_spoc_ping_by_default.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_legacy_spoc_ping_by_default
+    type: looker_line
+    fields: [
+      disable_legacy_spoc_ping_by_default.submission_date,
+      disable_legacy_spoc_ping_by_default.branch,
+      disable_legacy_spoc_ping_by_default.point
+    ]
+    pivots: [
+      disable_legacy_spoc_ping_by_default.branch
+    ]
+    filters:
+      disable_legacy_spoc_ping_by_default.metric: 'days_of_use'
       disable_legacy_spoc_ping_by_default.statistic: mean
     row: 30
     col: 12
