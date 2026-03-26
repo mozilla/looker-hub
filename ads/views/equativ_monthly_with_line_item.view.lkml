@@ -172,13 +172,29 @@ view: equativ_monthly_with_line_item {
     type: sum
   }
 
+  measure: delivered_revenue_sum {
+    sql: ${delivered_revenue} ;;
+    type: sum
+    value_format: "$0.00"
+  }
+
   measure: impressions_during_campaign_sum {
     sql: ${impressions_during_campaign} ;;
     type: sum
   }
 
+  measure: max_clicks_during_campaign_sum {
+    sql: ${max_clicks_during_campaign} ;;
+    type: sum
+  }
+
   measure: max_clicks_sum {
     sql: ${max_clicks} ;;
+    type: sum
+  }
+
+  measure: max_impressions_during_campaign_sum {
+    sql: ${max_impressions_during_campaign} ;;
     type: sum
   }
 
@@ -200,6 +216,7 @@ view: equativ_monthly_with_line_item {
   measure: total_impression_derived_actual_revenue_sum {
     sql: ${total_impression_derived_actual_revenue} ;;
     type: sum
+    value_format: "$0.00"
   }
 
   measure: total_impressions_sum {
