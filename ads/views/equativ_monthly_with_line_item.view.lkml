@@ -41,6 +41,12 @@ view: equativ_monthly_with_line_item {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: delivered_revenue {
+    sql: ${TABLE}.delivered_revenue ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: impressions_during_campaign {
     sql: ${TABLE}.impressions_during_campaign ;;
     type: number
@@ -59,8 +65,20 @@ view: equativ_monthly_with_line_item {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: max_clicks_during_campaign {
+    sql: ${TABLE}.max_clicks_during_campaign ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: max_impressions {
     sql: ${TABLE}.max_impressions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: max_impressions_during_campaign {
+    sql: ${TABLE}.max_impressions_during_campaign ;;
     type: number
     suggest_persist_for: "24 hours"
   }
