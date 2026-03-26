@@ -3556,6 +3556,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.newtab_visits
       type: table_view
+    nimbus_feature_monitoring_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.nimbus_feature_monitoring
+      type: table_view
     nimbus_targeting_context_table:
       tables:
       - channel: null
