@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       account_adoption_callout_credit_cards_treatment_c_rollout.branch
     ]
     filters:
-      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'retained'
+      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'ad_clicks'
       account_adoption_callout_credit_cards_treatment_c_rollout.statistic: mean
     row: 0
     col: 0
@@ -78,26 +78,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: account_adoption_callout_credit_cards_treatment_c_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       account_adoption_callout_credit_cards_treatment_c_rollout.submission_date,
       account_adoption_callout_credit_cards_treatment_c_rollout.branch,
-      account_adoption_callout_credit_cards_treatment_c_rollout.upper,
-      account_adoption_callout_credit_cards_treatment_c_rollout.lower,
       account_adoption_callout_credit_cards_treatment_c_rollout.point
     ]
     pivots: [
       account_adoption_callout_credit_cards_treatment_c_rollout.branch
     ]
     filters:
-      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'memory_total'
-      account_adoption_callout_credit_cards_treatment_c_rollout.statistic: percentile
+      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'search_count'
+      account_adoption_callout_credit_cards_treatment_c_rollout.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -110,7 +108,40 @@
     show_grid: true
     listen:
       Date: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
-      Percentile: account_adoption_callout_credit_cards_treatment_c_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: account_adoption_callout_credit_cards_treatment_c_rollout
+    type: looker_line
+    fields: [
+      account_adoption_callout_credit_cards_treatment_c_rollout.submission_date,
+      account_adoption_callout_credit_cards_treatment_c_rollout.branch,
+      account_adoption_callout_credit_cards_treatment_c_rollout.point
+    ]
+    pivots: [
+      account_adoption_callout_credit_cards_treatment_c_rollout.branch
+    ]
+    filters:
+      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'retained'
+      account_adoption_callout_credit_cards_treatment_c_rollout.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
+    field_y: account_adoption_callout_credit_cards_treatment_c_rollout.point
+    log_scale: false
+    ci_lower: account_adoption_callout_credit_cards_treatment_c_rollout.lower
+    ci_upper: account_adoption_callout_credit_cards_treatment_c_rollout.upper
+    show_grid: true
+    listen:
+      Date: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -133,8 +164,8 @@
     filters:
       account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'active_hours'
       account_adoption_callout_credit_cards_treatment_c_rollout.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
@@ -149,8 +180,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: account_adoption_callout_credit_cards_treatment_c_rollout
+    type: "ci-line-chart"
+    fields: [
+      account_adoption_callout_credit_cards_treatment_c_rollout.submission_date,
+      account_adoption_callout_credit_cards_treatment_c_rollout.branch,
+      account_adoption_callout_credit_cards_treatment_c_rollout.upper,
+      account_adoption_callout_credit_cards_treatment_c_rollout.lower,
+      account_adoption_callout_credit_cards_treatment_c_rollout.point
+    ]
+    pivots: [
+      account_adoption_callout_credit_cards_treatment_c_rollout.branch
+    ]
+    filters:
+      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'memory_total'
+      account_adoption_callout_credit_cards_treatment_c_rollout.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
+    field_y: account_adoption_callout_credit_cards_treatment_c_rollout.point
+    log_scale: false
+    ci_lower: account_adoption_callout_credit_cards_treatment_c_rollout.lower
+    ci_upper: account_adoption_callout_credit_cards_treatment_c_rollout.upper
+    show_grid: true
+    listen:
+      Date: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
+      Percentile: account_adoption_callout_credit_cards_treatment_c_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,9 +233,9 @@
       account_adoption_callout_credit_cards_treatment_c_rollout.branch
     ]
     filters:
-      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'search_count'
+      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'days_of_use'
       account_adoption_callout_credit_cards_treatment_c_rollout.statistic: mean
-    row: 20
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -200,74 +268,6 @@
     ]
     filters:
       account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'uri_count'
-      account_adoption_callout_credit_cards_treatment_c_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
-    field_y: account_adoption_callout_credit_cards_treatment_c_rollout.point
-    log_scale: false
-    ci_lower: account_adoption_callout_credit_cards_treatment_c_rollout.lower
-    ci_upper: account_adoption_callout_credit_cards_treatment_c_rollout.upper
-    show_grid: true
-    listen:
-      Date: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: account_adoption_callout_credit_cards_treatment_c_rollout
-    type: looker_line
-    fields: [
-      account_adoption_callout_credit_cards_treatment_c_rollout.submission_date,
-      account_adoption_callout_credit_cards_treatment_c_rollout.branch,
-      account_adoption_callout_credit_cards_treatment_c_rollout.point
-    ]
-    pivots: [
-      account_adoption_callout_credit_cards_treatment_c_rollout.branch
-    ]
-    filters:
-      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'ad_clicks'
-      account_adoption_callout_credit_cards_treatment_c_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
-    field_y: account_adoption_callout_credit_cards_treatment_c_rollout.point
-    log_scale: false
-    ci_lower: account_adoption_callout_credit_cards_treatment_c_rollout.lower
-    ci_upper: account_adoption_callout_credit_cards_treatment_c_rollout.upper
-    show_grid: true
-    listen:
-      Date: account_adoption_callout_credit_cards_treatment_c_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: account_adoption_callout_credit_cards_treatment_c_rollout
-    type: looker_line
-    fields: [
-      account_adoption_callout_credit_cards_treatment_c_rollout.submission_date,
-      account_adoption_callout_credit_cards_treatment_c_rollout.branch,
-      account_adoption_callout_credit_cards_treatment_c_rollout.point
-    ]
-    pivots: [
-      account_adoption_callout_credit_cards_treatment_c_rollout.branch
-    ]
-    filters:
-      account_adoption_callout_credit_cards_treatment_c_rollout.metric: 'days_of_use'
       account_adoption_callout_credit_cards_treatment_c_rollout.statistic: mean
     row: 30
     col: 12
