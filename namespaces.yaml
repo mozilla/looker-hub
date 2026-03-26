@@ -674,6 +674,10 @@ ai_usage:
   pretty_name: AI Usage
   spoke: looker-spoke-default
   views:
+    ai_costs_combined:
+      tables:
+      - table: moz-fx-data-shared-prod.ai_usage_derived.ai_costs_combined_v1
+      type: table_view
     claude_api_keys:
       tables:
       - table: moz-fx-data-shared-prod.ai_usage_derived.claude_api_keys_v1
