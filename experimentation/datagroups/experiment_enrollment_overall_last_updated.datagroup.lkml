@@ -16,6 +16,10 @@ datagroup: experiment_enrollment_overall_last_updated {
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'experimenter_cirrus_derived' AND table_name = 'experiment_events_live_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'monitor_cirrus_derived' AND table_name = 'experiment_events_live_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
@@ -65,6 +69,10 @@ datagroup: experiment_enrollment_overall_last_updated {
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'org_mozilla_klar_derived' AND table_name = 'experiment_events_live_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'subscription_platform_backend_cirrus_derived' AND table_name = 'experiment_events_live_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE

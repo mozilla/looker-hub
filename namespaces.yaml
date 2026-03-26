@@ -290,6 +290,7 @@ ads:
         booked_budget:
           sql: ${budget}
           type: sum
+          value_format: $0.00
         booked_clicks:
           sql: ${budgeted_clicks}
           type: sum
@@ -299,15 +300,19 @@ ads:
         booked_rate:
           sql: SAFE_DIVIDE(${booked_budget}, ${total_sold_quantity})
           type: number
+          value_format: $0.00
         cpc:
           sql: SAFE_DIVIDE(${booked_budget}, ${booked_clicks})
           type: number
+          value_format: $0.00
         cpm:
           sql: SAFE_DIVIDE(${booked_budget}, ${booked_impressions}) * 1000
           type: number
+          value_format: $0.00
         total_delivered_revenue:
           sql: ${delivered_revenue}
           type: sum
+          value_format: $0.00
         total_sold_quantity:
           sql: ${sold_quantity}
           type: sum
@@ -372,11 +377,21 @@ ads:
         clicks_during_campaign_sum:
           sql: ${clicks_during_campaign}
           type: sum
+        delivered_revenue_sum:
+          sql: ${delivered_revenue}
+          type: sum
+          value_format: $0.00
         impressions_during_campaign_sum:
           sql: ${impressions_during_campaign}
           type: sum
+        max_clicks_during_campaign_sum:
+          sql: ${max_clicks_during_campaign}
+          type: sum
         max_clicks_sum:
           sql: ${max_clicks}
+          type: sum
+        max_impressions_during_campaign_sum:
+          sql: ${max_impressions_during_campaign}
           type: sum
         max_impressions_sum:
           sql: ${max_impressions}
@@ -390,6 +405,7 @@ ads:
         total_impression_derived_actual_revenue_sum:
           sql: ${total_impression_derived_actual_revenue}
           type: sum
+          value_format: $0.00
         total_impressions_sum:
           sql: ${total_impressions}
           type: sum
