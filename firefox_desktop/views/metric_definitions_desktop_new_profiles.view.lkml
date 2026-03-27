@@ -459,6 +459,35 @@ desktop_new_profiles_windows_version,
     description: "28 day rolling average of New Profile Count"
   }
 
+  measure: new_profile_count_rolling_average_sum_custom_window {
+    type: number
+    label: "New Profile Count Sum Custom Window Rolling Average"
+    sql: {% if metric_definitions_desktop_new_profiles.submission_date._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_week._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_month._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_year._is_selected %}
+                                            AVG(${new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_new_profiles.app_version._is_selected %}${TABLE}.desktop_new_profiles_app_version,{% endif %}{% if metric_definitions_desktop_new_profiles.attributed._is_selected %}${TABLE}.desktop_new_profiles_attributed,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_campaign._is_selected %}${TABLE}.desktop_new_profiles_attribution_campaign,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_content._is_selected %}${TABLE}.desktop_new_profiles_attribution_content,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_dlsource._is_selected %}${TABLE}.desktop_new_profiles_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_medium._is_selected %}${TABLE}.desktop_new_profiles_attribution_medium,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_source._is_selected %}${TABLE}.desktop_new_profiles_attribution_source,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_ua._is_selected %}${TABLE}.desktop_new_profiles_attribution_ua,{% endif %}{% if metric_definitions_desktop_new_profiles.channel._is_selected %}${TABLE}.desktop_new_profiles_channel,{% endif %}{% if metric_definitions_desktop_new_profiles.city._is_selected %}${TABLE}.desktop_new_profiles_city,{% endif %}{% if metric_definitions_desktop_new_profiles.country._is_selected %}${TABLE}.desktop_new_profiles_country,{% endif %}{% if metric_definitions_desktop_new_profiles.distribution_id._is_selected %}${TABLE}.desktop_new_profiles_distribution_id,{% endif %}{% if metric_definitions_desktop_new_profiles.is_dau._is_selected %}${TABLE}.desktop_new_profiles_is_dau,{% endif %}{% if metric_definitions_desktop_new_profiles.is_desktop._is_selected %}${TABLE}.desktop_new_profiles_is_desktop,{% endif %}{% if metric_definitions_desktop_new_profiles.locale._is_selected %}${TABLE}.desktop_new_profiles_locale,{% endif %}{% if metric_definitions_desktop_new_profiles.new_profiles._is_selected %}${TABLE}.desktop_new_profiles_new_profiles,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os._is_selected %}${TABLE}.desktop_new_profiles_normalized_os,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os_version._is_selected %}${TABLE}.desktop_new_profiles_normalized_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.os._is_selected %}${TABLE}.desktop_new_profiles_os,{% endif %}{% if metric_definitions_desktop_new_profiles.os_version._is_selected %}${TABLE}.desktop_new_profiles_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.paid_vs_organic._is_selected %}${TABLE}.desktop_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_build_number._is_selected %}${TABLE}.desktop_new_profiles_windows_build_number,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_version._is_selected %}${TABLE}.desktop_new_profiles_windows_version,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %} ;;
+    group_label: "Statistics"
+    description: "Rolling average of New Profile Count using a window size controlled by the 'Rolling Average Custom Window Size' parameter."
+  }
+
   measure: new_profile_count_rolling_average_sum_1_day_365_day_period_over_period_previous {
     type: number
     label: "New Profile Count Sum 1 Day Rolling Average 365 Day Period Over Period Previous"
@@ -1899,6 +1928,143 @@ desktop_new_profiles_windows_version,
 {% endif %}) ;;
   }
 
+  measure: new_profile_count_rolling_average_sum_custom_window_365_day_period_over_period_previous {
+    type: number
+    label: "New Profile Count Sum Custom Window Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of New Profile Count Sum Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_desktop_new_profiles.submission_date._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_week._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_month._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_year._is_selected %}
+                                            AVG(${new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_new_profiles.app_version._is_selected %}${TABLE}.desktop_new_profiles_app_version,{% endif %}{% if metric_definitions_desktop_new_profiles.attributed._is_selected %}${TABLE}.desktop_new_profiles_attributed,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_campaign._is_selected %}${TABLE}.desktop_new_profiles_attribution_campaign,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_content._is_selected %}${TABLE}.desktop_new_profiles_attribution_content,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_dlsource._is_selected %}${TABLE}.desktop_new_profiles_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_medium._is_selected %}${TABLE}.desktop_new_profiles_attribution_medium,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_source._is_selected %}${TABLE}.desktop_new_profiles_attribution_source,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_ua._is_selected %}${TABLE}.desktop_new_profiles_attribution_ua,{% endif %}{% if metric_definitions_desktop_new_profiles.channel._is_selected %}${TABLE}.desktop_new_profiles_channel,{% endif %}{% if metric_definitions_desktop_new_profiles.city._is_selected %}${TABLE}.desktop_new_profiles_city,{% endif %}{% if metric_definitions_desktop_new_profiles.country._is_selected %}${TABLE}.desktop_new_profiles_country,{% endif %}{% if metric_definitions_desktop_new_profiles.distribution_id._is_selected %}${TABLE}.desktop_new_profiles_distribution_id,{% endif %}{% if metric_definitions_desktop_new_profiles.is_dau._is_selected %}${TABLE}.desktop_new_profiles_is_dau,{% endif %}{% if metric_definitions_desktop_new_profiles.is_desktop._is_selected %}${TABLE}.desktop_new_profiles_is_desktop,{% endif %}{% if metric_definitions_desktop_new_profiles.locale._is_selected %}${TABLE}.desktop_new_profiles_locale,{% endif %}{% if metric_definitions_desktop_new_profiles.new_profiles._is_selected %}${TABLE}.desktop_new_profiles_new_profiles,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os._is_selected %}${TABLE}.desktop_new_profiles_normalized_os,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os_version._is_selected %}${TABLE}.desktop_new_profiles_normalized_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.os._is_selected %}${TABLE}.desktop_new_profiles_os,{% endif %}{% if metric_definitions_desktop_new_profiles.os_version._is_selected %}${TABLE}.desktop_new_profiles_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.paid_vs_organic._is_selected %}${TABLE}.desktop_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_build_number._is_selected %}${TABLE}.desktop_new_profiles_windows_build_number,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_version._is_selected %}${TABLE}.desktop_new_profiles_windows_version,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %} ;;
+  }
+
+  measure: new_profile_count_rolling_average_sum_custom_window_365_day_period_over_period_relative_change {
+    type: number
+    label: "New Profile Count Sum Custom Window Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of New Profile Count Sum Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                            {% if metric_definitions_desktop_new_profiles.submission_date._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_week._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_month._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_year._is_selected %}
+                                            AVG(${new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_new_profiles.app_version._is_selected %}${TABLE}.desktop_new_profiles_app_version,{% endif %}{% if metric_definitions_desktop_new_profiles.attributed._is_selected %}${TABLE}.desktop_new_profiles_attributed,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_campaign._is_selected %}${TABLE}.desktop_new_profiles_attribution_campaign,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_content._is_selected %}${TABLE}.desktop_new_profiles_attribution_content,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_dlsource._is_selected %}${TABLE}.desktop_new_profiles_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_medium._is_selected %}${TABLE}.desktop_new_profiles_attribution_medium,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_source._is_selected %}${TABLE}.desktop_new_profiles_attribution_source,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_ua._is_selected %}${TABLE}.desktop_new_profiles_attribution_ua,{% endif %}{% if metric_definitions_desktop_new_profiles.channel._is_selected %}${TABLE}.desktop_new_profiles_channel,{% endif %}{% if metric_definitions_desktop_new_profiles.city._is_selected %}${TABLE}.desktop_new_profiles_city,{% endif %}{% if metric_definitions_desktop_new_profiles.country._is_selected %}${TABLE}.desktop_new_profiles_country,{% endif %}{% if metric_definitions_desktop_new_profiles.distribution_id._is_selected %}${TABLE}.desktop_new_profiles_distribution_id,{% endif %}{% if metric_definitions_desktop_new_profiles.is_dau._is_selected %}${TABLE}.desktop_new_profiles_is_dau,{% endif %}{% if metric_definitions_desktop_new_profiles.is_desktop._is_selected %}${TABLE}.desktop_new_profiles_is_desktop,{% endif %}{% if metric_definitions_desktop_new_profiles.locale._is_selected %}${TABLE}.desktop_new_profiles_locale,{% endif %}{% if metric_definitions_desktop_new_profiles.new_profiles._is_selected %}${TABLE}.desktop_new_profiles_new_profiles,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os._is_selected %}${TABLE}.desktop_new_profiles_normalized_os,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os_version._is_selected %}${TABLE}.desktop_new_profiles_normalized_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.os._is_selected %}${TABLE}.desktop_new_profiles_os,{% endif %}{% if metric_definitions_desktop_new_profiles.os_version._is_selected %}${TABLE}.desktop_new_profiles_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.paid_vs_organic._is_selected %}${TABLE}.desktop_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_build_number._is_selected %}${TABLE}.desktop_new_profiles_windows_build_number,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_version._is_selected %}${TABLE}.desktop_new_profiles_windows_version,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ), NULLIF((
+                                            {% if metric_definitions_desktop_new_profiles.submission_date._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_week._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_month._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_year._is_selected %}
+                                            AVG(${new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_new_profiles.app_version._is_selected %}${TABLE}.desktop_new_profiles_app_version,{% endif %}{% if metric_definitions_desktop_new_profiles.attributed._is_selected %}${TABLE}.desktop_new_profiles_attributed,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_campaign._is_selected %}${TABLE}.desktop_new_profiles_attribution_campaign,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_content._is_selected %}${TABLE}.desktop_new_profiles_attribution_content,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_dlsource._is_selected %}${TABLE}.desktop_new_profiles_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_medium._is_selected %}${TABLE}.desktop_new_profiles_attribution_medium,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_source._is_selected %}${TABLE}.desktop_new_profiles_attribution_source,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_ua._is_selected %}${TABLE}.desktop_new_profiles_attribution_ua,{% endif %}{% if metric_definitions_desktop_new_profiles.channel._is_selected %}${TABLE}.desktop_new_profiles_channel,{% endif %}{% if metric_definitions_desktop_new_profiles.city._is_selected %}${TABLE}.desktop_new_profiles_city,{% endif %}{% if metric_definitions_desktop_new_profiles.country._is_selected %}${TABLE}.desktop_new_profiles_country,{% endif %}{% if metric_definitions_desktop_new_profiles.distribution_id._is_selected %}${TABLE}.desktop_new_profiles_distribution_id,{% endif %}{% if metric_definitions_desktop_new_profiles.is_dau._is_selected %}${TABLE}.desktop_new_profiles_is_dau,{% endif %}{% if metric_definitions_desktop_new_profiles.is_desktop._is_selected %}${TABLE}.desktop_new_profiles_is_desktop,{% endif %}{% if metric_definitions_desktop_new_profiles.locale._is_selected %}${TABLE}.desktop_new_profiles_locale,{% endif %}{% if metric_definitions_desktop_new_profiles.new_profiles._is_selected %}${TABLE}.desktop_new_profiles_new_profiles,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os._is_selected %}${TABLE}.desktop_new_profiles_normalized_os,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os_version._is_selected %}${TABLE}.desktop_new_profiles_normalized_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.os._is_selected %}${TABLE}.desktop_new_profiles_os,{% endif %}{% if metric_definitions_desktop_new_profiles.os_version._is_selected %}${TABLE}.desktop_new_profiles_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.paid_vs_organic._is_selected %}${TABLE}.desktop_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_build_number._is_selected %}${TABLE}.desktop_new_profiles_windows_build_number,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_version._is_selected %}${TABLE}.desktop_new_profiles_windows_version,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ), 0)) - 1 ;;
+  }
+
+  measure: new_profile_count_rolling_average_sum_custom_window_365_day_period_over_period_difference {
+    type: number
+    label: "New Profile Count Sum Custom Window Rolling Average 365 Day Period Over Period Difference"
+    description: "Period over period Difference of New Profile Count Sum Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: (
+                                            {% if metric_definitions_desktop_new_profiles.submission_date._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_week._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_month._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_year._is_selected %}
+                                            AVG(${new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_new_profiles.app_version._is_selected %}${TABLE}.desktop_new_profiles_app_version,{% endif %}{% if metric_definitions_desktop_new_profiles.attributed._is_selected %}${TABLE}.desktop_new_profiles_attributed,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_campaign._is_selected %}${TABLE}.desktop_new_profiles_attribution_campaign,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_content._is_selected %}${TABLE}.desktop_new_profiles_attribution_content,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_dlsource._is_selected %}${TABLE}.desktop_new_profiles_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_medium._is_selected %}${TABLE}.desktop_new_profiles_attribution_medium,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_source._is_selected %}${TABLE}.desktop_new_profiles_attribution_source,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_ua._is_selected %}${TABLE}.desktop_new_profiles_attribution_ua,{% endif %}{% if metric_definitions_desktop_new_profiles.channel._is_selected %}${TABLE}.desktop_new_profiles_channel,{% endif %}{% if metric_definitions_desktop_new_profiles.city._is_selected %}${TABLE}.desktop_new_profiles_city,{% endif %}{% if metric_definitions_desktop_new_profiles.country._is_selected %}${TABLE}.desktop_new_profiles_country,{% endif %}{% if metric_definitions_desktop_new_profiles.distribution_id._is_selected %}${TABLE}.desktop_new_profiles_distribution_id,{% endif %}{% if metric_definitions_desktop_new_profiles.is_dau._is_selected %}${TABLE}.desktop_new_profiles_is_dau,{% endif %}{% if metric_definitions_desktop_new_profiles.is_desktop._is_selected %}${TABLE}.desktop_new_profiles_is_desktop,{% endif %}{% if metric_definitions_desktop_new_profiles.locale._is_selected %}${TABLE}.desktop_new_profiles_locale,{% endif %}{% if metric_definitions_desktop_new_profiles.new_profiles._is_selected %}${TABLE}.desktop_new_profiles_new_profiles,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os._is_selected %}${TABLE}.desktop_new_profiles_normalized_os,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os_version._is_selected %}${TABLE}.desktop_new_profiles_normalized_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.os._is_selected %}${TABLE}.desktop_new_profiles_os,{% endif %}{% if metric_definitions_desktop_new_profiles.os_version._is_selected %}${TABLE}.desktop_new_profiles_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.paid_vs_organic._is_selected %}${TABLE}.desktop_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_build_number._is_selected %}${TABLE}.desktop_new_profiles_windows_build_number,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_version._is_selected %}${TABLE}.desktop_new_profiles_windows_version,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ) - (
+                                            {% if metric_definitions_desktop_new_profiles.submission_date._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_week._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_month._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_desktop_new_profiles.submission_year._is_selected %}
+                                            AVG(${new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_new_profiles.app_version._is_selected %}${TABLE}.desktop_new_profiles_app_version,{% endif %}{% if metric_definitions_desktop_new_profiles.attributed._is_selected %}${TABLE}.desktop_new_profiles_attributed,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_campaign._is_selected %}${TABLE}.desktop_new_profiles_attribution_campaign,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_content._is_selected %}${TABLE}.desktop_new_profiles_attribution_content,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_dlsource._is_selected %}${TABLE}.desktop_new_profiles_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_medium._is_selected %}${TABLE}.desktop_new_profiles_attribution_medium,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_source._is_selected %}${TABLE}.desktop_new_profiles_attribution_source,{% endif %}{% if metric_definitions_desktop_new_profiles.attribution_ua._is_selected %}${TABLE}.desktop_new_profiles_attribution_ua,{% endif %}{% if metric_definitions_desktop_new_profiles.channel._is_selected %}${TABLE}.desktop_new_profiles_channel,{% endif %}{% if metric_definitions_desktop_new_profiles.city._is_selected %}${TABLE}.desktop_new_profiles_city,{% endif %}{% if metric_definitions_desktop_new_profiles.country._is_selected %}${TABLE}.desktop_new_profiles_country,{% endif %}{% if metric_definitions_desktop_new_profiles.distribution_id._is_selected %}${TABLE}.desktop_new_profiles_distribution_id,{% endif %}{% if metric_definitions_desktop_new_profiles.is_dau._is_selected %}${TABLE}.desktop_new_profiles_is_dau,{% endif %}{% if metric_definitions_desktop_new_profiles.is_desktop._is_selected %}${TABLE}.desktop_new_profiles_is_desktop,{% endif %}{% if metric_definitions_desktop_new_profiles.locale._is_selected %}${TABLE}.desktop_new_profiles_locale,{% endif %}{% if metric_definitions_desktop_new_profiles.new_profiles._is_selected %}${TABLE}.desktop_new_profiles_new_profiles,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os._is_selected %}${TABLE}.desktop_new_profiles_normalized_os,{% endif %}{% if metric_definitions_desktop_new_profiles.normalized_os_version._is_selected %}${TABLE}.desktop_new_profiles_normalized_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.os._is_selected %}${TABLE}.desktop_new_profiles_os,{% endif %}{% if metric_definitions_desktop_new_profiles.os_version._is_selected %}${TABLE}.desktop_new_profiles_os_version,{% endif %}{% if metric_definitions_desktop_new_profiles.paid_vs_organic._is_selected %}${TABLE}.desktop_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_build_number._is_selected %}${TABLE}.desktop_new_profiles_windows_build_number,{% endif %}{% if metric_definitions_desktop_new_profiles.windows_version._is_selected %}${TABLE}.desktop_new_profiles_windows_version,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ) ;;
+  }
+
   set: metrics {
     fields: [
       new_profile_count,
@@ -1906,6 +2072,7 @@ desktop_new_profiles_windows_version,
       new_profile_count_rolling_average_sum_1_day,
       new_profile_count_rolling_average_sum_7_day,
       new_profile_count_rolling_average_sum_28_day,
+      new_profile_count_rolling_average_sum_custom_window,
       new_profile_count_rolling_average_sum_1_day_365_day_period_over_period_previous,
       new_profile_count_rolling_average_sum_1_day_365_day_period_over_period_relative_change,
       new_profile_count_rolling_average_sum_1_day_365_day_period_over_period_difference,
@@ -1915,6 +2082,9 @@ desktop_new_profiles_windows_version,
       new_profile_count_rolling_average_sum_28_day_365_day_period_over_period_previous,
       new_profile_count_rolling_average_sum_28_day_365_day_period_over_period_relative_change,
       new_profile_count_rolling_average_sum_28_day_365_day_period_over_period_difference,
+      new_profile_count_rolling_average_sum_custom_window_365_day_period_over_period_previous,
+      new_profile_count_rolling_average_sum_custom_window_365_day_period_over_period_relative_change,
+      new_profile_count_rolling_average_sum_custom_window_365_day_period_over_period_difference,
     ]
   }
 
@@ -1973,6 +2143,28 @@ desktop_new_profiles_windows_version,
     type: unquoted
     description: "Position of the date field in the group by clause. Required when submission_week, submission_month, submission_quarter, submission_year is selected as BigQuery can't correctly resolve the GROUP BY otherwise"
     default_value: ""
+  }
+
+  parameter: rolling_average_window_size {
+    label: "Rolling Average Custom Window Size (days)"
+    type: unquoted
+    description: "Number of days for the custom rolling average window."
+    default_value: "1"
+
+    allowed_value: {
+      label: "1 days"
+      value: "1"
+    }
+
+    allowed_value: {
+      label: "7 days"
+      value: "7"
+    }
+
+    allowed_value: {
+      label: "28 days"
+      value: "28"
+    }
   }
 
   filter: analysis_period {

@@ -17880,7 +17880,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__network_race_cache_bandwidth_race_cache_win__sum {
     label: "Network: Race Cache Bandwidth Race Cache Win Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.network_race_cache_bandwidth_race_cache_win.sum ;;
     type: number
     group_label: "Network"
@@ -17899,7 +17899,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__memory_distribution__network_race_cache_bandwidth_race_network_win__sum {
     label: "Network: Race Cache Bandwidth Race Network Win Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.network_race_cache_bandwidth_race_network_win.sum ;;
     type: number
     group_label: "Network"
@@ -17936,7 +17936,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__timing_distribution__network_race_cache_with_network_ocec_on_start_diff__sum {
     label: "Network: Race Cache With Network Ocec On Start Diff Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.network_race_cache_with_network_ocec_on_start_diff.sum ;;
     type: number
     group_label: "Network"
@@ -17955,7 +17955,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
   dimension: metrics__timing_distribution__network_race_cache_with_network_saved_time__sum {
     label: "Network: Race Cache With Network Saved Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.network_race_cache_with_network_saved_time.sum ;;
     type: number
     group_label: "Network"
