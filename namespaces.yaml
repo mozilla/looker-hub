@@ -5871,10 +5871,22 @@ multi_product:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_mobile_active_users_aggregates_view
+    metric_definitions_mobile_engagement:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_engagement
     metric_definitions_mobile_engagement_view:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_mobile_engagement_view
+    metric_definitions_mobile_new_profiles:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_new_profiles
+    metric_definitions_mobile_retention_by_metric_date:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_retention_by_metric_date
     metric_definitions_mobile_retention_view:
       type: metric_definitions_explore
       views:
@@ -5893,7 +5905,13 @@ multi_product:
   views:
     metric_definitions_mobile_active_users_aggregates_view:
       type: metric_definitions_view
+    metric_definitions_mobile_engagement:
+      type: metric_definitions_view
     metric_definitions_mobile_engagement_view:
+      type: metric_definitions_view
+    metric_definitions_mobile_new_profiles:
+      type: metric_definitions_view
+    metric_definitions_mobile_retention_by_metric_date:
       type: metric_definitions_view
     metric_definitions_mobile_retention_view:
       type: metric_definitions_view
