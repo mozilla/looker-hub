@@ -1953,7 +1953,137 @@ mobile_new_profiles_product_name,
     label: "Mobile New Profile Count Sum Custom Window Rolling Average 365 Day Period Over Period Previous"
     description: "Period over period Previous of Mobile New Profile Count Sum Custom Window Rolling Average over 365 days"
     group_label: "Statistics"
-    sql: {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+    sql: {% if metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
                                                 metric_definitions_mobile_new_profiles.submission_week._is_selected or
                                                 metric_definitions_mobile_new_profiles.submission_month._is_selected or
                                                 metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
@@ -1974,7 +2104,9 @@ mobile_new_profiles_product_name,
                                             )
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
-                                            {% endif %} ;;
+                                            {% endif %}
+                                        
+{% endif %} ;;
   }
 
   measure: mobile_new_profile_count_rolling_average_sum_custom_window_365_day_period_over_period_relative_change {
@@ -2005,7 +2137,136 @@ mobile_new_profiles_product_name,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ), NULLIF((
+                                        ), NULLIF(({% if metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
                                             {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
                                                 metric_definitions_mobile_new_profiles.submission_week._is_selected or
                                                 metric_definitions_mobile_new_profiles.submission_month._is_selected or
@@ -2028,7 +2289,8 @@ mobile_new_profiles_product_name,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ), 0)) - 1 ;;
+                                        
+{% endif %}), 0)) - 1 ;;
   }
 
   measure: mobile_new_profile_count_rolling_average_sum_custom_window_365_day_period_over_period_difference {
@@ -2059,7 +2321,136 @@ mobile_new_profiles_product_name,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ) - (
+                                        ) - ({% if metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_week._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_month._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_quarter._is_selected or
+                                                metric_definitions_mobile_new_profiles.submission_year._is_selected %}
+                                            AVG(${mobile_new_profile_count_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_new_profiles.adjust_ad_group._is_selected %}${TABLE}.mobile_new_profiles_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_campaign._is_selected %}${TABLE}.mobile_new_profiles_adjust_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_creative._is_selected %}${TABLE}.mobile_new_profiles_adjust_creative,{% endif %}{% if metric_definitions_mobile_new_profiles.adjust_network._is_selected %}${TABLE}.mobile_new_profiles_adjust_network,{% endif %}{% if metric_definitions_mobile_new_profiles.app_name._is_selected %}${TABLE}.mobile_new_profiles_app_name,{% endif %}{% if metric_definitions_mobile_new_profiles.app_version._is_selected %}${TABLE}.mobile_new_profiles_app_version,{% endif %}{% if metric_definitions_mobile_new_profiles.country._is_selected %}${TABLE}.mobile_new_profiles_country,{% endif %}{% if metric_definitions_mobile_new_profiles.device_manufacturer._is_selected %}${TABLE}.mobile_new_profiles_device_manufacturer,{% endif %}{% if metric_definitions_mobile_new_profiles.device_type._is_selected %}${TABLE}.mobile_new_profiles_device_type,{% endif %}{% if metric_definitions_mobile_new_profiles.distribution_id._is_selected %}${TABLE}.mobile_new_profiles_distribution_id,{% endif %}{% if metric_definitions_mobile_new_profiles.install_source._is_selected %}${TABLE}.mobile_new_profiles_install_source,{% endif %}{% if metric_definitions_mobile_new_profiles.is_mobile._is_selected %}${TABLE}.mobile_new_profiles_is_mobile,{% endif %}{% if metric_definitions_mobile_new_profiles.is_suspicious_device_client._is_selected %}${TABLE}.mobile_new_profiles_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_new_profiles.locale._is_selected %}${TABLE}.mobile_new_profiles_locale,{% endif %}{% if metric_definitions_mobile_new_profiles.meta_attribution_app._is_selected %}${TABLE}.mobile_new_profiles_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_new_profiles.new_profiles._is_selected %}${TABLE}.mobile_new_profiles_new_profiles,{% endif %}{% if metric_definitions_mobile_new_profiles.normalized_channel._is_selected %}${TABLE}.mobile_new_profiles_normalized_channel,{% endif %}{% if metric_definitions_mobile_new_profiles.os._is_selected %}${TABLE}.mobile_new_profiles_os,{% endif %}{% if metric_definitions_mobile_new_profiles.os_version._is_selected %}${TABLE}.mobile_new_profiles_os_version,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_new_profiles.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_new_profiles_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_medium._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_new_profiles.play_store_attribution_source._is_selected %}${TABLE}.mobile_new_profiles_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_new_profiles.product_name._is_selected %}${TABLE}.mobile_new_profiles_product_name,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_new_profiles.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
                                             {% if metric_definitions_mobile_new_profiles.submission_date._is_selected or
                                                 metric_definitions_mobile_new_profiles.submission_week._is_selected or
                                                 metric_definitions_mobile_new_profiles.submission_month._is_selected or
@@ -2082,7 +2473,8 @@ mobile_new_profiles_product_name,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ) ;;
+                                        
+{% endif %}) ;;
   }
 
   set: metrics {

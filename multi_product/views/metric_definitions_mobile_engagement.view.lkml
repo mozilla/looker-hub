@@ -2219,7 +2219,137 @@ mobile_engagement_wau,
     label: "Mobile DAU Sum Custom Window Rolling Average 365 Day Period Over Period Previous"
     description: "Period over period Previous of Mobile DAU Sum Custom Window Rolling Average over 365 days"
     group_label: "Statistics"
-    sql: {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+    sql: {% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
                                                 metric_definitions_mobile_engagement.submission_quarter._is_selected or
@@ -2240,7 +2370,9 @@ mobile_engagement_wau,
                                             )
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
-                                            {% endif %} ;;
+                                            {% endif %}
+                                        
+{% endif %} ;;
   }
 
   measure: mobile_engagement_dau_rolling_average_sum_custom_window_365_day_period_over_period_relative_change {
@@ -2271,7 +2403,136 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ), NULLIF((
+                                        ), NULLIF(({% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
                                             {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
@@ -2294,7 +2555,8 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ), 0)) - 1 ;;
+                                        
+{% endif %}), 0)) - 1 ;;
   }
 
   measure: mobile_engagement_dau_rolling_average_sum_custom_window_365_day_period_over_period_difference {
@@ -2325,7 +2587,136 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ) - (
+                                        ) - ({% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
                                             {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
@@ -2348,7 +2739,8 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ) ;;
+                                        
+{% endif %}) ;;
   }
 
   measure: mobile_engagement_dau_rolling_average_average_1_day_365_day_period_over_period_previous {
@@ -3796,7 +4188,137 @@ mobile_engagement_wau,
     label: "Mobile DAU Average Custom Window Rolling Average 365 Day Period Over Period Previous"
     description: "Period over period Previous of Mobile DAU Average Custom Window Rolling Average over 365 days"
     group_label: "Statistics"
-    sql: {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+    sql: {% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
                                                 metric_definitions_mobile_engagement.submission_quarter._is_selected or
@@ -3817,7 +4339,9 @@ mobile_engagement_wau,
                                             )
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
-                                            {% endif %} ;;
+                                            {% endif %}
+                                        
+{% endif %} ;;
   }
 
   measure: mobile_engagement_dau_rolling_average_average_custom_window_365_day_period_over_period_relative_change {
@@ -3848,7 +4372,136 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ), NULLIF((
+                                        ), NULLIF(({% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
                                             {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
@@ -3871,7 +4524,8 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ), 0)) - 1 ;;
+                                        
+{% endif %}), 0)) - 1 ;;
   }
 
   measure: mobile_engagement_dau_rolling_average_average_custom_window_365_day_period_over_period_difference {
@@ -3902,7 +4556,136 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ) - (
+                                        ) - ({% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
                                             {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
@@ -3925,7 +4708,8 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ) ;;
+                                        
+{% endif %}) ;;
   }
 
   measure: mobile_engagement_dau_rolling_average_ratio_1_day_365_day_period_over_period_previous {
@@ -5373,7 +6157,137 @@ mobile_engagement_wau,
     label: "Mobile DAU Ratio Custom Window Rolling Average 365 Day Period Over Period Previous"
     description: "Period over period Previous of Mobile DAU Ratio Custom Window Rolling Average over 365 days"
     group_label: "Statistics"
-    sql: {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+    sql: {% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
                                                 metric_definitions_mobile_engagement.submission_quarter._is_selected or
@@ -5394,7 +6308,9 @@ mobile_engagement_wau,
                                             )
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
-                                            {% endif %} ;;
+                                            {% endif %}
+                                        
+{% endif %} ;;
   }
 
   measure: mobile_engagement_dau_rolling_average_ratio_custom_window_365_day_period_over_period_relative_change {
@@ -5425,7 +6341,136 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ), NULLIF((
+                                        ), NULLIF(({% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
                                             {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
@@ -5448,7 +6493,8 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ), 0)) - 1 ;;
+                                        
+{% endif %}), 0)) - 1 ;;
   }
 
   measure: mobile_engagement_dau_rolling_average_ratio_custom_window_365_day_period_over_period_difference {
@@ -5479,7 +6525,136 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ) - (
+                                        ) - ({% if metric_definitions_mobile_engagement.submission_date._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+ROWS BETWEEN {{ preceding | plus: 365 }} PRECEDING AND 365 PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_week._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 7 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_month._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 30 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_quarter._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 90 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% elsif metric_definitions_mobile_engagement.submission_year._is_selected %}
+
+                                            {% if metric_definitions_mobile_engagement.submission_date._is_selected or
+                                                metric_definitions_mobile_engagement.submission_week._is_selected or
+                                                metric_definitions_mobile_engagement.submission_month._is_selected or
+                                                metric_definitions_mobile_engagement.submission_quarter._is_selected or
+                                                metric_definitions_mobile_engagement.submission_year._is_selected %}
+                                            AVG(${mobile_engagement_dau_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_mobile_engagement.adjust_ad_group._is_selected %}${TABLE}.mobile_engagement_adjust_ad_group,{% endif %}{% if metric_definitions_mobile_engagement.adjust_campaign._is_selected %}${TABLE}.mobile_engagement_adjust_campaign,{% endif %}{% if metric_definitions_mobile_engagement.adjust_creative._is_selected %}${TABLE}.mobile_engagement_adjust_creative,{% endif %}{% if metric_definitions_mobile_engagement.adjust_network._is_selected %}${TABLE}.mobile_engagement_adjust_network,{% endif %}{% if metric_definitions_mobile_engagement.app_name._is_selected %}${TABLE}.mobile_engagement_app_name,{% endif %}{% if metric_definitions_mobile_engagement.app_version._is_selected %}${TABLE}.mobile_engagement_app_version,{% endif %}{% if metric_definitions_mobile_engagement.country._is_selected %}${TABLE}.mobile_engagement_country,{% endif %}{% if metric_definitions_mobile_engagement.dau._is_selected %}${TABLE}.mobile_engagement_dau,{% endif %}{% if metric_definitions_mobile_engagement.device_manufacturer._is_selected %}${TABLE}.mobile_engagement_device_manufacturer,{% endif %}{% if metric_definitions_mobile_engagement.device_type._is_selected %}${TABLE}.mobile_engagement_device_type,{% endif %}{% if metric_definitions_mobile_engagement.distribution_id._is_selected %}${TABLE}.mobile_engagement_distribution_id,{% endif %}{% if metric_definitions_mobile_engagement.install_source._is_selected %}${TABLE}.mobile_engagement_install_source,{% endif %}{% if metric_definitions_mobile_engagement.is_mobile._is_selected %}${TABLE}.mobile_engagement_is_mobile,{% endif %}{% if metric_definitions_mobile_engagement.is_suspicious_device_client._is_selected %}${TABLE}.mobile_engagement_is_suspicious_device_client,{% endif %}{% if metric_definitions_mobile_engagement.lifecycle_stage._is_selected %}${TABLE}.mobile_engagement_lifecycle_stage,{% endif %}{% if metric_definitions_mobile_engagement.locale._is_selected %}${TABLE}.mobile_engagement_locale,{% endif %}{% if metric_definitions_mobile_engagement.mau._is_selected %}${TABLE}.mobile_engagement_mau,{% endif %}{% if metric_definitions_mobile_engagement.meta_attribution_app._is_selected %}${TABLE}.mobile_engagement_meta_attribution_app,{% endif %}{% if metric_definitions_mobile_engagement.normalized_channel._is_selected %}${TABLE}.mobile_engagement_normalized_channel,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic,{% endif %}{% if metric_definitions_mobile_engagement.paid_vs_organic_gclid._is_selected %}${TABLE}.mobile_engagement_paid_vs_organic_gclid,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_campaign._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_campaign,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_medium._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_medium,{% endif %}{% if metric_definitions_mobile_engagement.play_store_attribution_source._is_selected %}${TABLE}.mobile_engagement_play_store_attribution_source,{% endif %}{% if metric_definitions_mobile_engagement.product_name._is_selected %}${TABLE}.mobile_engagement_product_name,{% endif %}{% if metric_definitions_mobile_engagement.wau._is_selected %}${TABLE}.mobile_engagement_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_mobile_engagement.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                {% assign preceding = rolling_average_window_size._parameter_value | minus: 1 %}
+{% assign adjusted = preceding | plus: 365 | divided_by: 365 %}
+{% assign adjusted_end = adjusted | minus: preceding %}
+ROWS BETWEEN {{ adjusted }} PRECEDING AND {{ adjusted_end }} PRECEDING
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        
+{% else %}
+
                                             {% if metric_definitions_mobile_engagement.submission_date._is_selected or
                                                 metric_definitions_mobile_engagement.submission_week._is_selected or
                                                 metric_definitions_mobile_engagement.submission_month._is_selected or
@@ -5502,7 +6677,8 @@ mobile_engagement_wau,
                                             {% else %}
                                             ERROR('Please select a "submission_*" field to compute the rolling average')
                                             {% endif %}
-                                        ) ;;
+                                        
+{% endif %}) ;;
   }
 
   measure: mobile_engagement_wau_sum {
