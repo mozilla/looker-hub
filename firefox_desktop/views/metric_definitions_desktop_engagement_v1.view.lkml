@@ -576,6 +576,35 @@ desktop_engagement_v1_wau,
     description: "28 day rolling average of (non-official) DAU"
   }
 
+  measure: desktop_engagement_dau_v1_rolling_average_sum_custom_window {
+    type: number
+    label: "(non-official) DAU Sum Custom Window Rolling Average"
+    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %} ;;
+    group_label: "Statistics"
+    description: "Rolling average of (non-official) DAU using a window size controlled by the 'Rolling Average Custom Window Size' parameter."
+  }
+
   measure: desktop_engagement_dau_v1_rolling_average_average_1_day {
     type: number
     label: "(non-official) DAU Average 1 Day Rolling Average"
@@ -657,6 +686,35 @@ desktop_engagement_v1_wau,
     description: "28 day rolling average of (non-official) DAU"
   }
 
+  measure: desktop_engagement_dau_v1_rolling_average_average_custom_window {
+    type: number
+    label: "(non-official) DAU Average Custom Window Rolling Average"
+    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %} ;;
+    group_label: "Statistics"
+    description: "Rolling average of (non-official) DAU using a window size controlled by the 'Rolling Average Custom Window Size' parameter."
+  }
+
   measure: desktop_engagement_dau_v1_rolling_average_ratio_1_day {
     type: number
     label: "(non-official) DAU Ratio 1 Day Rolling Average"
@@ -736,6 +794,35 @@ desktop_engagement_v1_wau,
                                                     {% endif %} ;;
     group_label: "Statistics"
     description: "28 day rolling average of (non-official) DAU"
+  }
+
+  measure: desktop_engagement_dau_v1_rolling_average_ratio_custom_window {
+    type: number
+    label: "(non-official) DAU Ratio Custom Window Rolling Average"
+    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %} ;;
+    group_label: "Statistics"
+    description: "Rolling average of (non-official) DAU using a window size controlled by the 'Rolling Average Custom Window Size' parameter."
   }
 
   measure: desktop_engagement_dau_v1_rolling_average_sum_1_day_365_day_period_over_period_previous {
@@ -2178,6 +2265,143 @@ desktop_engagement_v1_wau,
 {% endif %}) ;;
   }
 
+  measure: desktop_engagement_dau_v1_rolling_average_sum_custom_window_365_day_period_over_period_previous {
+    type: number
+    label: "(non-official) DAU Sum Custom Window Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of (non-official) DAU Sum Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %} ;;
+  }
+
+  measure: desktop_engagement_dau_v1_rolling_average_sum_custom_window_365_day_period_over_period_relative_change {
+    type: number
+    label: "(non-official) DAU Sum Custom Window Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of (non-official) DAU Sum Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ), NULLIF((
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ), 0)) - 1 ;;
+  }
+
+  measure: desktop_engagement_dau_v1_rolling_average_sum_custom_window_365_day_period_over_period_difference {
+    type: number
+    label: "(non-official) DAU Sum Custom Window Rolling Average 365 Day Period Over Period Difference"
+    description: "Period over period Difference of (non-official) DAU Sum Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: (
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ) - (
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_sum}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ) ;;
+  }
+
   measure: desktop_engagement_dau_v1_rolling_average_average_1_day_365_day_period_over_period_previous {
     type: number
     label: "(non-official) DAU Average 1 Day Rolling Average 365 Day Period Over Period Previous"
@@ -3616,6 +3840,143 @@ desktop_engagement_v1_wau,
                                                     {% endif %}
                                                 
 {% endif %}) ;;
+  }
+
+  measure: desktop_engagement_dau_v1_rolling_average_average_custom_window_365_day_period_over_period_previous {
+    type: number
+    label: "(non-official) DAU Average Custom Window Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of (non-official) DAU Average Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %} ;;
+  }
+
+  measure: desktop_engagement_dau_v1_rolling_average_average_custom_window_365_day_period_over_period_relative_change {
+    type: number
+    label: "(non-official) DAU Average Custom Window Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of (non-official) DAU Average Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ), NULLIF((
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ), 0)) - 1 ;;
+  }
+
+  measure: desktop_engagement_dau_v1_rolling_average_average_custom_window_365_day_period_over_period_difference {
+    type: number
+    label: "(non-official) DAU Average Custom Window Rolling Average 365 Day Period Over Period Difference"
+    description: "Period over period Difference of (non-official) DAU Average Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: (
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ) - (
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_average}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ) ;;
   }
 
   measure: desktop_engagement_dau_v1_rolling_average_ratio_1_day_365_day_period_over_period_previous {
@@ -5058,6 +5419,143 @@ desktop_engagement_v1_wau,
 {% endif %}) ;;
   }
 
+  measure: desktop_engagement_dau_v1_rolling_average_ratio_custom_window_365_day_period_over_period_previous {
+    type: number
+    label: "(non-official) DAU Ratio Custom Window Rolling Average 365 Day Period Over Period Previous"
+    description: "Period over period Previous of (non-official) DAU Ratio Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %} ;;
+  }
+
+  measure: desktop_engagement_dau_v1_rolling_average_ratio_custom_window_365_day_period_over_period_relative_change {
+    type: number
+    label: "(non-official) DAU Ratio Custom Window Rolling Average 365 Day Period Over Period Relative_change"
+    description: "Period over period Relative_change of (non-official) DAU Ratio Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: SAFE_DIVIDE((
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ), NULLIF((
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ), 0)) - 1 ;;
+  }
+
+  measure: desktop_engagement_dau_v1_rolling_average_ratio_custom_window_365_day_period_over_period_difference {
+    type: number
+    label: "(non-official) DAU Ratio Custom Window Rolling Average 365 Day Period Over Period Difference"
+    description: "Period over period Difference of (non-official) DAU Ratio Custom Window Rolling Average over 365 days"
+    group_label: "Statistics"
+    sql: (
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ) - (
+                                            {% if metric_definitions_desktop_engagement_v1.submission_date._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_week._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_month._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_quarter._is_selected or
+                                                metric_definitions_desktop_engagement_v1.submission_year._is_selected %}
+                                            AVG(${desktop_engagement_dau_v1_ratio}) OVER (
+                                                PARTITION BY {% if metric_definitions_desktop_engagement_v1.ads_value_tier._is_selected %}${TABLE}.countries_ads_value_tier,{% endif %}{% if metric_definitions_desktop_engagement_v1.code._is_selected %}${TABLE}.countries_code,{% endif %}{% if metric_definitions_desktop_engagement_v1.code_3._is_selected %}${TABLE}.countries_code_3,{% endif %}{% if metric_definitions_desktop_engagement_v1.mozilla_vpn_available._is_selected %}${TABLE}.countries_mozilla_vpn_available,{% endif %}{% if metric_definitions_desktop_engagement_v1.name._is_selected %}${TABLE}.countries_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.pocket_available_on_newtab._is_selected %}${TABLE}.countries_pocket_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.region_name._is_selected %}${TABLE}.countries_region_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.sponsored_tiles_available_on_newtab._is_selected %}${TABLE}.countries_sponsored_tiles_available_on_newtab,{% endif %}{% if metric_definitions_desktop_engagement_v1.subregion_name._is_selected %}${TABLE}.countries_subregion_name,{% endif %}{% if metric_definitions_desktop_engagement_v1.app_version._is_selected %}${TABLE}.desktop_engagement_v1_app_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_campaign._is_selected %}${TABLE}.desktop_engagement_v1_attribution_campaign,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_content._is_selected %}${TABLE}.desktop_engagement_v1_attribution_content,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_dlsource._is_selected %}${TABLE}.desktop_engagement_v1_attribution_dlsource,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_experiment._is_selected %}${TABLE}.desktop_engagement_v1_attribution_experiment,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_medium._is_selected %}${TABLE}.desktop_engagement_v1_attribution_medium,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_ua._is_selected %}${TABLE}.desktop_engagement_v1_attribution_ua,{% endif %}{% if metric_definitions_desktop_engagement_v1.attribution_variation._is_selected %}${TABLE}.desktop_engagement_v1_attribution_variation,{% endif %}{% if metric_definitions_desktop_engagement_v1.country._is_selected %}${TABLE}.desktop_engagement_v1_country,{% endif %}{% if metric_definitions_desktop_engagement_v1.dau._is_selected %}${TABLE}.desktop_engagement_v1_dau,{% endif %}{% if metric_definitions_desktop_engagement_v1.distribution_id._is_selected %}${TABLE}.desktop_engagement_v1_distribution_id,{% endif %}{% if metric_definitions_desktop_engagement_v1.is_desktop._is_selected %}${TABLE}.desktop_engagement_v1_is_desktop,{% endif %}{% if metric_definitions_desktop_engagement_v1.lifecycle_stage._is_selected %}${TABLE}.desktop_engagement_v1_lifecycle_stage,{% endif %}{% if metric_definitions_desktop_engagement_v1.locale._is_selected %}${TABLE}.desktop_engagement_v1_locale,{% endif %}{% if metric_definitions_desktop_engagement_v1.mau._is_selected %}${TABLE}.desktop_engagement_v1_mau,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_channel._is_selected %}${TABLE}.desktop_engagement_v1_normalized_channel,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os,{% endif %}{% if metric_definitions_desktop_engagement_v1.normalized_os_version._is_selected %}${TABLE}.desktop_engagement_v1_normalized_os_version,{% endif %}{% if metric_definitions_desktop_engagement_v1.paid_vs_organic._is_selected %}${TABLE}.desktop_engagement_v1_paid_vs_organic,{% endif %}{% if metric_definitions_desktop_engagement_v1.startup_profile_selection_reason._is_selected %}${TABLE}.desktop_engagement_v1_startup_profile_selection_reason,{% endif %}{% if metric_definitions_desktop_engagement_v1.wau._is_selected %}${TABLE}.desktop_engagement_v1_wau,{% endif %} 1
+                                                {% if date_groupby_position._parameter_value != "" %}
+                                                ORDER BY {% parameter date_groupby_position %}
+                                                {% elsif metric_definitions_desktop_engagement_v1.submission_date._is_selected %}
+                                                ORDER BY ${TABLE}.analysis_basis
+                                                {% else %}
+                                                ERROR("date_groupby_position needs to be set when using submission_week,
+                                                submission_month, submission_quarter, or submission_year")
+                                                {% endif %}
+                                                ROWS BETWEEN
+                                                {{ rolling_average_window_size._parameter_value | minus: 1 }}
+                                                PRECEDING AND CURRENT ROW
+                                            )
+                                            {% else %}
+                                            ERROR('Please select a "submission_*" field to compute the rolling average')
+                                            {% endif %}
+                                        ) ;;
+  }
+
   measure: desktop_engagement_wau_v1_sum {
     type: sum
     sql: ${TABLE}.desktop_engagement_wau_v1*1 ;;
@@ -5085,12 +5583,15 @@ desktop_engagement_v1_wau,
       desktop_engagement_dau_v1_rolling_average_sum_1_day,
       desktop_engagement_dau_v1_rolling_average_sum_7_day,
       desktop_engagement_dau_v1_rolling_average_sum_28_day,
+      desktop_engagement_dau_v1_rolling_average_sum_custom_window,
       desktop_engagement_dau_v1_rolling_average_average_1_day,
       desktop_engagement_dau_v1_rolling_average_average_7_day,
       desktop_engagement_dau_v1_rolling_average_average_28_day,
+      desktop_engagement_dau_v1_rolling_average_average_custom_window,
       desktop_engagement_dau_v1_rolling_average_ratio_1_day,
       desktop_engagement_dau_v1_rolling_average_ratio_7_day,
       desktop_engagement_dau_v1_rolling_average_ratio_28_day,
+      desktop_engagement_dau_v1_rolling_average_ratio_custom_window,
       desktop_engagement_dau_v1_rolling_average_sum_1_day_365_day_period_over_period_previous,
       desktop_engagement_dau_v1_rolling_average_sum_1_day_365_day_period_over_period_relative_change,
       desktop_engagement_dau_v1_rolling_average_sum_1_day_365_day_period_over_period_difference,
@@ -5100,6 +5601,9 @@ desktop_engagement_v1_wau,
       desktop_engagement_dau_v1_rolling_average_sum_28_day_365_day_period_over_period_previous,
       desktop_engagement_dau_v1_rolling_average_sum_28_day_365_day_period_over_period_relative_change,
       desktop_engagement_dau_v1_rolling_average_sum_28_day_365_day_period_over_period_difference,
+      desktop_engagement_dau_v1_rolling_average_sum_custom_window_365_day_period_over_period_previous,
+      desktop_engagement_dau_v1_rolling_average_sum_custom_window_365_day_period_over_period_relative_change,
+      desktop_engagement_dau_v1_rolling_average_sum_custom_window_365_day_period_over_period_difference,
       desktop_engagement_dau_v1_rolling_average_average_1_day_365_day_period_over_period_previous,
       desktop_engagement_dau_v1_rolling_average_average_1_day_365_day_period_over_period_relative_change,
       desktop_engagement_dau_v1_rolling_average_average_1_day_365_day_period_over_period_difference,
@@ -5109,6 +5613,9 @@ desktop_engagement_v1_wau,
       desktop_engagement_dau_v1_rolling_average_average_28_day_365_day_period_over_period_previous,
       desktop_engagement_dau_v1_rolling_average_average_28_day_365_day_period_over_period_relative_change,
       desktop_engagement_dau_v1_rolling_average_average_28_day_365_day_period_over_period_difference,
+      desktop_engagement_dau_v1_rolling_average_average_custom_window_365_day_period_over_period_previous,
+      desktop_engagement_dau_v1_rolling_average_average_custom_window_365_day_period_over_period_relative_change,
+      desktop_engagement_dau_v1_rolling_average_average_custom_window_365_day_period_over_period_difference,
       desktop_engagement_dau_v1_rolling_average_ratio_1_day_365_day_period_over_period_previous,
       desktop_engagement_dau_v1_rolling_average_ratio_1_day_365_day_period_over_period_relative_change,
       desktop_engagement_dau_v1_rolling_average_ratio_1_day_365_day_period_over_period_difference,
@@ -5118,6 +5625,9 @@ desktop_engagement_v1_wau,
       desktop_engagement_dau_v1_rolling_average_ratio_28_day_365_day_period_over_period_previous,
       desktop_engagement_dau_v1_rolling_average_ratio_28_day_365_day_period_over_period_relative_change,
       desktop_engagement_dau_v1_rolling_average_ratio_28_day_365_day_period_over_period_difference,
+      desktop_engagement_dau_v1_rolling_average_ratio_custom_window_365_day_period_over_period_previous,
+      desktop_engagement_dau_v1_rolling_average_ratio_custom_window_365_day_period_over_period_relative_change,
+      desktop_engagement_dau_v1_rolling_average_ratio_custom_window_365_day_period_over_period_difference,
       desktop_engagement_wau_v1_sum,
       desktop_engagement_mau_v1_sum,
     ]
@@ -5178,6 +5688,28 @@ desktop_engagement_v1_wau,
     type: unquoted
     description: "Position of the date field in the group by clause. Required when submission_week, submission_month, submission_quarter, submission_year is selected as BigQuery can't correctly resolve the GROUP BY otherwise"
     default_value: ""
+  }
+
+  parameter: rolling_average_window_size {
+    label: "Rolling Average Custom Window Size (days)"
+    type: unquoted
+    description: "Number of days for the custom rolling average window."
+    default_value: "1"
+
+    allowed_value: {
+      label: "1 days"
+      value: "1"
+    }
+
+    allowed_value: {
+      label: "7 days"
+      value: "7"
+    }
+
+    allowed_value: {
+      label: "28 days"
+      value: "28"
+    }
   }
 
   filter: analysis_period {
