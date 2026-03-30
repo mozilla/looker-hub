@@ -2027,6 +2027,14 @@ view: events_stream {
     group_item_label: "Captivestate"
   }
 
+  dimension: extras__string__card_type {
+    sql: ${TABLE}.extras.string.card_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Card Type"
+  }
+
   dimension: extras__string__category {
     sql: ${TABLE}.extras.string.category ;;
     type: string

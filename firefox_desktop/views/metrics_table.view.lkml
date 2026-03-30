@@ -13704,10 +13704,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_modern_settings_result ;;
+    hidden: yes
+    description: "Result of each attempt to set the default PDF handler by opening modern settings through the ms-settings protocol (ms-settings:defaultapps).
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_pdf_handler_open_with_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_open_with_result ;;
+    hidden: yes
+    description: "Result of each attempt to set the default PDF handler with the undocumented IOpenWithLauncher API for pdfs.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result {
     sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_user_choice_result ;;
     hidden: yes
-    description: "Result of each attempt to set the default browser with SetDefaultExtensionHandlersUserChoice() for pdf extension
+    description: "Result of each attempt to set the default browser by setting the user-choice regkey for pdf extension.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_SET_DEFAULT_PDF_HANDLER_USER_CHOICE_RESULT.
 "
   }

@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: dont_close_ksecdd_in_content_process_user_branch_last_updated {
-  label: "dont_close_ksecdd_in_content_process_user_branch Last Updated"
+datagroup: multiple_profile_switching_rollout_messages_only_last_updated {
+  label: "multiple_profile_switching_rollout_messages_only Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'dont_close_ksecdd_in_content_process_user_branch_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'multiple_profile_switching_rollout_messages_only_statistics')
 
     ) ;;
-  description: "Updates for dont_close_ksecdd_in_content_process_user_branch when referenced tables are modified."
+  description: "Updates for multiple_profile_switching_rollout_messages_only when referenced tables are modified."
   max_cache_age: "24 hours"
 }

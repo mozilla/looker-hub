@@ -209,6 +209,23 @@ view: crash {
     description: "Set if the crash was the result of a hang, with a value which describes the type of hang (e.g. \"ui\" or \"shutdown\")."
   }
 
+  dimension: metrics__string__crash_id {
+    label: "Crash: ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID for the crash event."
+  }
+
   dimension: metrics__string__crash_ipc_channel_error {
     label: "Crash: Ipc Channel Error"
     hidden: no

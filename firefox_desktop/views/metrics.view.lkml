@@ -2700,6 +2700,40 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result {
+    label: "Browser: Set Default Pdf Handler Modern Settings Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_modern_settings_result ;;
+    group_label: "Browser"
+    group_item_label: "Set Default Pdf Handler Modern Settings Result"
+
+    link: {
+      label: "Glean Dictionary reference for Browser: Set Default Pdf Handler Modern Settings Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_set_default_pdf_handler_modern_settings_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of each attempt to set the default PDF handler by opening modern settings through the ms-settings protocol (ms-settings:defaultapps).
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_pdf_handler_open_with_result {
+    label: "Browser: Set Default Pdf Handler Open With Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_open_with_result ;;
+    group_label: "Browser"
+    group_item_label: "Set Default Pdf Handler Open With Result"
+
+    link: {
+      label: "Glean Dictionary reference for Browser: Set Default Pdf Handler Open With Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_set_default_pdf_handler_open_with_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Result of each attempt to set the default PDF handler with the undocumented IOpenWithLauncher API for pdfs.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result {
     label: "Browser: Set Default Pdf Handler User Choice Result"
     hidden: yes
@@ -51493,6 +51527,88 @@ view: metrics__metrics__labeled_counter__browser_set_default_always_check {
 
 view: metrics__metrics__labeled_counter__browser_set_default_error {
   label: "Browser: Set Default Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result {
+  label: "Browser: Set Default Pdf Handler Modern Settings Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_set_default_pdf_handler_open_with_result {
+  label: "Browser: Set Default Pdf Handler Open With Result"
 
   dimension: document_id {
     type: string

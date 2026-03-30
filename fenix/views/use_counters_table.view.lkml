@@ -15079,6 +15079,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_csscontainer_rule_single_condition {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_csscontainer_rule_single_condition ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Csscontainer Rule Single Condition"
+    description: "Whether a document used CSSContainerRuleSingleCondition. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_deprecated_testing_attribute {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_deprecated_testing_attribute ;;
     type: number
@@ -15796,6 +15806,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Create Image Bitmap Canvas Rendering Context2 D"
     description: "Whether a page used CreateImageBitmapCanvasRenderingContext2D. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_csscontainer_rule_single_condition {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_csscontainer_rule_single_condition ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Csscontainer Rule Single Condition"
+    description: "Whether a page used CSSContainerRuleSingleCondition. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
