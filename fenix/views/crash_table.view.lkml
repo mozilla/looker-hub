@@ -818,6 +818,15 @@ The status of individual objects is constructed by taking selected object proper
     description: "Set if the crash was the result of a hang, with a value which describes the type of hang (e.g. \"ui\" or \"shutdown\")."
   }
 
+  dimension: metrics__string__crash_id {
+    sql: ${TABLE}.metrics.string.crash_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash ID"
+    description: "A UUID for the crash event."
+  }
+
   dimension: metrics__string__crash_ipc_channel_error {
     sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
     type: string

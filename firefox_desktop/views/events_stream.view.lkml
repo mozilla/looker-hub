@@ -1843,6 +1843,22 @@ view: events_stream {
     group_item_label: "Memory Bytes"
   }
 
+  dimension: extras__quantity__mentions {
+    sql: ${TABLE}.extras.quantity.mentions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Mentions"
+  }
+
+  dimension: extras__quantity__mentions_available {
+    sql: ${TABLE}.extras.quantity.mentions_available ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Mentions Available"
+  }
+
   dimension: extras__quantity__message_seq {
     sql: ${TABLE}.extras.quantity.message_seq ;;
     type: number
@@ -2299,6 +2315,14 @@ view: events_stream {
     group_item_label: "Tabs Approved"
   }
 
+  dimension: extras__quantity__tabs_available {
+    sql: ${TABLE}.extras.quantity.tabs_available ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Available"
+  }
+
   dimension: extras__quantity__tabs_in_group {
     sql: ${TABLE}.extras.quantity.tabs_in_group ;;
     type: number
@@ -2363,12 +2387,28 @@ view: events_stream {
     group_item_label: "Tabs Per Active Group Min"
   }
 
+  dimension: extras__quantity__tabs_preselected {
+    sql: ${TABLE}.extras.quantity.tabs_preselected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Preselected"
+  }
+
   dimension: extras__quantity__tabs_removed {
     sql: ${TABLE}.extras.quantity.tabs_removed ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tabs Removed"
+  }
+
+  dimension: extras__quantity__tabs_selected {
+    sql: ${TABLE}.extras.quantity.tabs_selected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Selected"
   }
 
   dimension: extras__quantity__tabs_suggested {
@@ -3289,6 +3329,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Current"
+  }
+
+  dimension: extras__string__current_intent {
+    sql: ${TABLE}.extras.string.current_intent ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Current Intent"
   }
 
   dimension: extras__string__current_state {
@@ -5817,6 +5865,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Subcategory"
+  }
+
+  dimension: extras__string__submit_type {
+    sql: ${TABLE}.extras.string.submit_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Submit Type"
   }
 
   dimension: extras__string__surface {

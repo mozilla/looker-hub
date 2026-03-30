@@ -5,20 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: desktop_crashes_table_last_updated {
-  label: "desktop_crashes_table Last Updated"
+datagroup: multiple_profile_switching_rollout_feature_only_last_updated {
+  label: "multiple_profile_switching_rollout_feature_only Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_crashreporter_stable' AND table_name = 'crash_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'firefox_desktop_stable' AND table_name = 'crash_v1')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'multiple_profile_switching_rollout_feature_only_statistics')
 
     ) ;;
-  description: "Updates for desktop_crashes_table when referenced tables are modified."
+  description: "Updates for multiple_profile_switching_rollout_feature_only when referenced tables are modified."
   max_cache_age: "24 hours"
 }

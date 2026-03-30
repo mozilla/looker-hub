@@ -533,6 +533,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_set_default_error}) AS metrics__metrics__labeled_counter__browser_set_default_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_set_default_error.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result}) AS metrics__metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_set_default_pdf_handler_open_with_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_set_default_pdf_handler_open_with_result}) AS metrics__metrics__labeled_counter__browser_set_default_pdf_handler_open_with_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_set_default_pdf_handler_open_with_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result}) AS metrics__metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result.document_id} ;;
