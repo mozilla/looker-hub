@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       vpn_limited_rollout.branch
     ]
     filters:
-      vpn_limited_rollout.metric: 'search_count'
+      vpn_limited_rollout.metric: 'days_of_use'
       vpn_limited_rollout.statistic: mean
     row: 10
     col: 0
@@ -180,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: vpn_limited_rollout
-    type: looker_line
-    fields: [
-      vpn_limited_rollout.submission_date,
-      vpn_limited_rollout.branch,
-      vpn_limited_rollout.point
-    ]
-    pivots: [
-      vpn_limited_rollout.branch
-    ]
-    filters:
-      vpn_limited_rollout.metric: 'days_of_use'
-      vpn_limited_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: vpn_limited_rollout.submission_date
-    field_y: vpn_limited_rollout.point
-    log_scale: false
-    ci_lower: vpn_limited_rollout.lower
-    ci_upper: vpn_limited_rollout.upper
-    show_grid: true
-    listen:
-      Date: vpn_limited_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -234,6 +200,41 @@
     filters:
       vpn_limited_rollout.metric: 'memory_total'
       vpn_limited_rollout.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: vpn_limited_rollout.submission_date
+    field_y: vpn_limited_rollout.point
+    log_scale: false
+    ci_lower: vpn_limited_rollout.lower
+    ci_upper: vpn_limited_rollout.upper
+    show_grid: true
+    listen:
+      Date: vpn_limited_rollout.submission_date
+      Percentile: vpn_limited_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: vpn_limited_rollout
+    type: looker_line
+    fields: [
+      vpn_limited_rollout.submission_date,
+      vpn_limited_rollout.branch,
+      vpn_limited_rollout.point
+    ]
+    pivots: [
+      vpn_limited_rollout.branch
+    ]
+    filters:
+      vpn_limited_rollout.metric: 'search_count'
+      vpn_limited_rollout.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: vpn_limited_rollout.submission_date
-      Percentile: vpn_limited_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

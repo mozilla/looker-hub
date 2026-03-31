@@ -1558,6 +1558,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_response_version}) AS metrics__metrics__labeled_counter__netwerk_eh_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_response_version.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available}) AS metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__netwerk_http3_0rtt_state {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_http3_0rtt_state}) AS metrics__metrics__labeled_counter__netwerk_http3_0rtt_state ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_http3_0rtt_state.document_id} ;;

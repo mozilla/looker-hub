@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       onboarding_rollout_2603_149.branch
     ]
     filters:
-      onboarding_rollout_2603_149.metric: 'search_count'
+      onboarding_rollout_2603_149.metric: 'days_of_use'
       onboarding_rollout_2603_149.statistic: mean
     row: 10
     col: 0
@@ -180,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: onboarding_rollout_2603_149
-    type: looker_line
-    fields: [
-      onboarding_rollout_2603_149.submission_date,
-      onboarding_rollout_2603_149.branch,
-      onboarding_rollout_2603_149.point
-    ]
-    pivots: [
-      onboarding_rollout_2603_149.branch
-    ]
-    filters:
-      onboarding_rollout_2603_149.metric: 'days_of_use'
-      onboarding_rollout_2603_149.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: onboarding_rollout_2603_149.submission_date
-    field_y: onboarding_rollout_2603_149.point
-    log_scale: false
-    ci_lower: onboarding_rollout_2603_149.lower
-    ci_upper: onboarding_rollout_2603_149.upper
-    show_grid: true
-    listen:
-      Date: onboarding_rollout_2603_149.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -234,6 +200,41 @@
     filters:
       onboarding_rollout_2603_149.metric: 'memory_total'
       onboarding_rollout_2603_149.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: onboarding_rollout_2603_149.submission_date
+    field_y: onboarding_rollout_2603_149.point
+    log_scale: false
+    ci_lower: onboarding_rollout_2603_149.lower
+    ci_upper: onboarding_rollout_2603_149.upper
+    show_grid: true
+    listen:
+      Date: onboarding_rollout_2603_149.submission_date
+      Percentile: onboarding_rollout_2603_149.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: onboarding_rollout_2603_149
+    type: looker_line
+    fields: [
+      onboarding_rollout_2603_149.submission_date,
+      onboarding_rollout_2603_149.branch,
+      onboarding_rollout_2603_149.point
+    ]
+    pivots: [
+      onboarding_rollout_2603_149.branch
+    ]
+    filters:
+      onboarding_rollout_2603_149.metric: 'search_count'
+      onboarding_rollout_2603_149.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: onboarding_rollout_2603_149.submission_date
-      Percentile: onboarding_rollout_2603_149.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

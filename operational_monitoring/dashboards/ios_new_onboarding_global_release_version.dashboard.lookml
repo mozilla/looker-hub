@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       ios_new_onboarding_global_release_version.branch
     ]
     filters:
-      ios_new_onboarding_global_release_version.metric: 'search_count'
+      ios_new_onboarding_global_release_version.metric: 'days_of_use'
       ios_new_onboarding_global_release_version.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_new_onboarding_global_release_version.branch
     ]
     filters:
-      ios_new_onboarding_global_release_version.metric: 'days_of_use'
+      ios_new_onboarding_global_release_version.metric: 'search_count'
       ios_new_onboarding_global_release_version.statistic: mean
     row: 10
     col: 12

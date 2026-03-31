@@ -7329,6 +7329,116 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_cancelled_attempt_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_cancelled_attempt_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Cancelled Attempt Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_cancelled_attempt_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_cancelled_attempt_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Cancelled Attempt Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_cancelled_attempt_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_cancelled_attempt_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_attempt_count.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Connection Attempt Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_attempt_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Connection Attempt Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_attempt_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__count {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_establishment_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Connection Establishment Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__sum {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_establishment_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Connection Establishment Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__values {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_establishment_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_time_to_first_attempt__count {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_time_to_first_attempt.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Time To First Attempt"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_time_to_first_attempt__sum {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_time_to_first_attempt.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Time To First Attempt"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_time_to_first_attempt__values {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_time_to_first_attempt.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_winning_attempt_index__count {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_winning_attempt_index.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Winning Attempt Index"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_winning_attempt_index__sum {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_winning_attempt_index.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs Winning Attempt Index"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_winning_attempt_index__values {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_winning_attempt_index.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__network_back_pressure_suspension_cp_type__count {
     sql: ${TABLE}.metrics.custom_distribution.network_back_pressure_suspension_cp_type.count ;;
     type: number
@@ -13604,6 +13714,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_happy_eyeballs_https_record_available ;;
+    hidden: yes
+    description: "Happy Eyeballs: whether an HTTPS service record was available during connection establishment.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_http3_0rtt_state {
     sql: ${TABLE}.metrics.labeled_counter.netwerk_http3_0rtt_state ;;
     hidden: yes
@@ -15356,6 +15473,13 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     hidden: yes
     description: "Absolute difference of each content process' USS and the mean of USS's, normalized by the mean, in percentage. It will be recorded with the rest of the memory probes when gatherMemory is called, if at least 2 content processes are alive. Example: in case of 4 content processes with USS's: 1G, 500MB, 1G, 1.5G, the reported numbers will be: 0, 50, 0, 50. Which indicates that 2 processes used 50% more or 50% less memory than the avarage and 2 used exactly as much as the avarage.
 This metric was generated to correspond to the Legacy Telemetry linear histogram MEMORY_DISTRIBUTION_AMONG_CONTENT.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_resolution_time {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.netwerk_happy_eyeballs_dns_resolution_time ;;
+    hidden: yes
+    description: "Happy Eyeballs: time in milliseconds to resolve each DNS record type (A, AAAA, HTTPS).
 "
   }
 
@@ -51969,6 +52093,76 @@ view: metrics_table__metrics__custom_distribution__mixed_content_unblock_counter
   }
 }
 
+view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_cancelled_attempt_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_time_to_first_attempt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_winning_attempt_index__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__network_back_pressure_suspension_cp_type__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -57142,6 +57336,50 @@ view: metrics_table__metrics__labeled_custom_distribution__memory_distribution_a
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__memory_distribution_among_content__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_resolution_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_resolution_time__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
