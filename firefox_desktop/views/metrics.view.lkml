@@ -24556,6 +24556,113 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_cancelled_attempt_count__sum {
+    label: "Netwerk: Happy Eyeballs Cancelled Attempt Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_cancelled_attempt_count.sum ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs Cancelled Attempt Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Cancelled Attempt Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_happy_eyeballs_cancelled_attempt_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: number of in-flight connection attempts cancelled when the winning attempt succeeded.
+"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__sum {
+    label: "Netwerk: Happy Eyeballs Connection Attempt Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_attempt_count.sum ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs Connection Attempt Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Connection Attempt Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_happy_eyeballs_connection_attempt_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: number of connection attempts started before one succeeded or all failed.
+"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__sum {
+    label: "Netwerk: Happy Eyeballs Connection Establishment Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_establishment_time.sum ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs Connection Establishment Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Connection Establishment Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_happy_eyeballs_connection_establishment_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: end-to-end time in milliseconds from algorithm start to a successful connection or final failure.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available {
+    label: "Netwerk: Happy Eyeballs Https Record Available"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_happy_eyeballs_https_record_available ;;
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs Https Record Available"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Https Record Available"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_happy_eyeballs_https_record_available"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: whether an HTTPS service record was available during connection establishment.
+"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_time_to_first_attempt__sum {
+    label: "Netwerk: Happy Eyeballs Time To First Attempt Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_time_to_first_attempt.sum ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs Time To First Attempt Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Time To First Attempt Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_happy_eyeballs_time_to_first_attempt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: time in milliseconds from algorithm start to the first connection attempt being dispatched. Captures DNS wait time before racing begins.
+"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_winning_attempt_index__sum {
+    label: "Netwerk: Happy Eyeballs Winning Attempt Index Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_winning_attempt_index.sum ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs Winning Attempt Index Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Winning Attempt Index Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_happy_eyeballs_winning_attempt_index"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: 1-based index of the connection attempt that ultimately succeeded (e.g. 1 = first attempt won).
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_http3_0rtt_state {
     label: "Netwerk: Http3 0Rtt State"
     hidden: yes
@@ -59971,6 +60078,47 @@ view: metrics__metrics__labeled_counter__netwerk_eh_response_version {
   }
 }
 
+view: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available {
+  label: "Netwerk: Happy Eyeballs Https Record Available"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_http3_0rtt_state {
   label: "Netwerk: Http3 0Rtt State"
 
@@ -74683,6 +74831,76 @@ view: metrics__metrics__custom_distribution__mixed_content_unblock_counter__valu
   }
 }
 
+view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_cancelled_attempt_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_time_to_first_attempt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_winning_attempt_index__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__network_back_pressure_suspension_cp_type__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -80709,6 +80927,50 @@ view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_c
 }
 
 view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_content__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_resolution_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_resolution_time__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
