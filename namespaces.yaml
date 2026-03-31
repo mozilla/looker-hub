@@ -19397,33 +19397,6 @@ subscription_platform_backend:
       - channel: null
         table: mozdata.subscription_platform_backend.events_unnested
       type: table_view
-subscription_platform_frontend:
-  explores:
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-  glean_app: true
-  owners:
-  - lchan@mozilla.com
-  - subplat-team@mozilla.com
-  pretty_name: Subscription Platform Frontend
-  spoke: looker-spoke-default
-  views:
-    deletion_request:
-      tables:
-      - table: mozdata.subscription_platform_frontend.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.subscription_platform_frontend.deletion_request
-      type: table_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.subscription_platform_frontend.events
-      type: table_view
 syncstorage:
   explores:
     events:
