@@ -1572,6 +1572,36 @@ Corresponds to the value of the `MOZ_UPDATER` define.
 "
   }
 
+  dimension: metrics__boolean__user_ai_summarize_gesture_enabled {
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_gesture_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "User Ai Summarize Gesture Enabled"
+    description: "Records if the user has shake to summarize gesture option enabled.
+"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_summarization_consented {
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_consented ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "User Ai Summarize Summarization Consented"
+    description: "Records if the user has consented to shake to summarize feature.
+"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_summarization_enabled {
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "User Ai Summarize Summarization Enabled"
+    description: "Records if the user has summarization enabled.
+"
+  }
+
   dimension: metrics__boolean__wallpapers_discovered_wallpaper_feature {
     sql: ${TABLE}.metrics.boolean.wallpapers_discovered_wallpaper_feature ;;
     type: yesno
@@ -20571,6 +20601,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__a11y_tree_update_timing__values {
     sql: ${TABLE}.metrics.timing_distribution.a11y_tree_update_timing.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Ai Summarize Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__ai_summarize_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.values ;;
     hidden: yes
   }
 
@@ -65189,6 +65286,20 @@ view: metrics_table__metrics__memory_distribution__webfont_size_per_page__values
 }
 
 view: metrics_table__metrics__timing_distribution__a11y_tree_update_timing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__ai_summarize_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

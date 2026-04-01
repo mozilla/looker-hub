@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: fxa_keychain_refactor_ios_rollout_copy {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.fxa_keychain_refactor_ios_rollout_copy_statistics ;;
+view: ohttp_merino_content_recs_rollout_betanightlyesr {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.ohttp_merino_content_recs_rollout_betanightlyesr_statistics ;;
 
   dimension: submission_date {
     type: date

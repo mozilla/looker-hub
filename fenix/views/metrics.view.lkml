@@ -157,6 +157,26 @@ manually by the user.
 "
   }
 
+  dimension: metrics__timing_distribution__ai_summarize_duration__sum {
+    label: "Ai Summarize: Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ai_summarize_duration.sum ;;
+    type: number
+    group_label: "Ai Summarize"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ai Summarize: Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/ai_summarize_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the total time for generating the summary and showing it to the
+user. Starts when the user triggers summarization. Ends when user sees
+the result or an error.
+"
+  }
+
   dimension: metrics__boolean__android_autofill_enabled {
     label: "Android Autofill: Enabled"
     hidden: no
@@ -3716,6 +3736,60 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "The version of the Terms of Use the user accepted."
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_gesture_enabled {
+    label: "User Ai Summarize: Gesture Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_gesture_enabled ;;
+    type: yesno
+    group_label: "User Ai Summarize"
+    group_item_label: "Gesture Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for User Ai Summarize: Gesture Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/user_ai_summarize_gesture_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has shake to summarize gesture option enabled.
+"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_summarization_consented {
+    label: "User Ai Summarize: Summarization Consented"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_consented ;;
+    type: yesno
+    group_label: "User Ai Summarize"
+    group_item_label: "Summarization Consented"
+
+    link: {
+      label: "Glean Dictionary reference for User Ai Summarize: Summarization Consented"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/user_ai_summarize_summarization_consented"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has consented to shake to summarize feature.
+"
+  }
+
+  dimension: metrics__boolean__user_ai_summarize_summarization_enabled {
+    label: "User Ai Summarize: Summarization Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.user_ai_summarize_summarization_enabled ;;
+    type: yesno
+    group_label: "User Ai Summarize"
+    group_item_label: "Summarization Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for User Ai Summarize: Summarization Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/user_ai_summarize_summarization_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user has summarization enabled.
+"
   }
 
   dimension: metrics__boolean__wallpapers_discovered_wallpaper_feature {
@@ -72581,6 +72655,20 @@ view: metrics__metrics__memory_distribution__webfont_size_per_page__values {
 }
 
 view: metrics__metrics__timing_distribution__a11y_tree_update_timing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__ai_summarize_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
