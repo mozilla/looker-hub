@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026_last_updated {
-  label: "heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026 Last Updated"
+datagroup: ohttp_merino_content_recs_rollout_betanightlyesr_last_updated {
+  label: "ohttp_merino_content_recs_rollout_betanightlyesr Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'ohttp_merino_content_recs_rollout_betanightlyesr_statistics')
 
     ) ;;
-  description: "Updates for heartbeat_survey_new_tab_shortcuts_ur_recruitment_q1_2026 when referenced tables are modified."
+  description: "Updates for ohttp_merino_content_recs_rollout_betanightlyesr when referenced tables are modified."
   max_cache_age: "24 hours"
 }

@@ -4955,6 +4955,14 @@ view: events_stream {
     group_item_label: "Page Type"
   }
 
+  dimension: extras__string__pane {
+    sql: ${TABLE}.extras.string.pane ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Pane"
+  }
+
   dimension: extras__string__panel {
     sql: ${TABLE}.extras.string.panel ;;
     type: string
@@ -5609,6 +5617,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Server Stack"
+  }
+
+  dimension: extras__string__session {
+    sql: ${TABLE}.extras.string.session ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Session"
   }
 
   dimension: extras__string__session_id {
