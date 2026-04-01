@@ -267,6 +267,14 @@ view: events_stream {
     group_item_label: "After Reset"
   }
 
+  dimension: extras__boolean__agreed {
+    sql: ${TABLE}.extras.boolean.agreed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Agreed"
+  }
+
   dimension: extras__boolean__alt_text_modal {
     sql: ${TABLE}.extras.boolean.alt_text_modal ;;
     type: yesno
@@ -1315,6 +1323,22 @@ view: events_stream {
     group_item_label: "Length"
   }
 
+  dimension: extras__quantity__length_chars {
+    sql: ${TABLE}.extras.quantity.length_chars ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Length Chars"
+  }
+
+  dimension: extras__quantity__length_words {
+    sql: ${TABLE}.extras.quantity.length_words ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Length Words"
+  }
+
   dimension: extras__quantity__linenumber {
     sql: ${TABLE}.extras.quantity.linenumber ;;
     type: number
@@ -1577,6 +1601,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Source Text Word Count"
+  }
+
+  dimension: extras__quantity__summarize_duration_ms {
+    sql: ${TABLE}.extras.quantity.summarize_duration_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Summarize Duration Ms"
   }
 
   dimension: extras__quantity__tab_count {
@@ -2185,6 +2217,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Connection Type"
+  }
+
+  dimension: extras__string__content_type {
+    sql: ${TABLE}.extras.string.content_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Content Type"
   }
 
   dimension: extras__string__contenttype {
