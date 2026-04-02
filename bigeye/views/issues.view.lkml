@@ -55,6 +55,12 @@ view: issues {
     hidden: yes
   }
 
+  dimension: assignee_is_service_account {
+    sql: ${TABLE}.assignee_is_service_account ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: assignee_last_login_at {
     sql: ${TABLE}.assignee_last_login_at ;;
     type: number
