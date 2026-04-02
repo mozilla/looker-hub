@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: jetpack_compose_release {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.jetpack_compose_release_statistics ;;
+view: new_tab_150120260304231049_to_release_only_148 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_tab_150120260304231049_to_release_only_148_statistics ;;
 
   dimension: submission_date {
     type: date

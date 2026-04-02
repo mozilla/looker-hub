@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: jetpack_compose_release_last_updated {
-  label: "jetpack_compose_release Last Updated"
+datagroup: new_tab_150120260304231049_to_release_only_148_last_updated {
+  label: "new_tab_150120260304231049_to_release_only_148 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'jetpack_compose_release_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'new_tab_150120260304231049_to_release_only_148_statistics')
 
     ) ;;
-  description: "Updates for jetpack_compose_release when referenced tables are modified."
+  description: "Updates for new_tab_150120260304231049_to_release_only_148 when referenced tables are modified."
   max_cache_age: "24 hours"
 }
