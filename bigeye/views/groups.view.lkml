@@ -91,6 +91,12 @@ view: groups {
     hidden: yes
   }
 
+  dimension: user_is_service_account {
+    sql: ${TABLE}.user_is_service_account ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: user_name {
     sql: ${TABLE}.user_name ;;
     type: string
