@@ -267,6 +267,14 @@ view: events_stream {
     group_item_label: "Agreed"
   }
 
+  dimension: extras__boolean__auto_translate {
+    sql: ${TABLE}.extras.boolean.auto_translate ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Auto Translate"
+  }
+
   dimension: extras__boolean__changed_to {
     sql: ${TABLE}.extras.boolean.changed_to ;;
     type: yesno
@@ -803,6 +811,14 @@ view: events_stream {
     group_item_label: "Flow Type"
   }
 
+  dimension: extras__string__from_language {
+    sql: ${TABLE}.extras.string.from_language ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "From Language"
+  }
+
   dimension: extras__string__groups {
     sql: ${TABLE}.extras.string.groups ;;
     type: string
@@ -1209,6 +1225,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Timeframe"
+  }
+
+  dimension: extras__string__to_language {
+    sql: ${TABLE}.extras.string.to_language ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "To Language"
   }
 
   dimension: extras__string__toggle_type {

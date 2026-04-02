@@ -15389,6 +15389,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_math_ml_deprecated_href_link_on_non_anchor_element {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_math_ml_deprecated_href_link_on_non_anchor_element ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Math Ml Deprecated Href Link On Non Anchor Element"
+    description: "Whether a document used MathML_DeprecatedHrefLinkOnNonAnchorElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_math_ml_deprecated_math_space_value2 {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_math_ml_deprecated_math_space_value2 ;;
     type: number
@@ -16116,6 +16126,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Lenient This"
     description: "Whether a page used LenientThis. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_math_ml_deprecated_href_link_on_non_anchor_element {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_math_ml_deprecated_href_link_on_non_anchor_element ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Math Ml Deprecated Href Link On Non Anchor Element"
+    description: "Whether a page used MathML_DeprecatedHrefLinkOnNonAnchorElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

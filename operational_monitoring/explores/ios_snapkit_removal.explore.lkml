@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/jetpack_compose_release.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/jetpack_compose_release_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/ios_snapkit_removal.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/ios_snapkit_removal_last_updated.datagroup.lkml"
 
-explore: jetpack_compose_release {
+explore: ios_snapkit_removal {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: jetpack_compose_release {
   }
 
   hidden: yes
-  persist_with: jetpack_compose_release_last_updated
+  persist_with: ios_snapkit_removal_last_updated
 }
