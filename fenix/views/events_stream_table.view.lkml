@@ -528,6 +528,14 @@ view: events_stream_table {
     group_item_label: "Has Empty Password"
   }
 
+  dimension: extras__boolean__has_form_action_origin {
+    sql: ${TABLE}.extras.boolean.has_form_action_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Form Action Origin"
+  }
+
   dimension: extras__boolean__has_ftp_origin {
     sql: ${TABLE}.extras.boolean.has_ftp_origin ;;
     type: yesno
@@ -536,12 +544,28 @@ view: events_stream_table {
     group_item_label: "Has Ftp Origin"
   }
 
+  dimension: extras__boolean__has_http_realm {
+    sql: ${TABLE}.extras.boolean.has_http_realm ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has HTTP Realm"
+  }
+
   dimension: extras__boolean__has_non_http_origin {
     sql: ${TABLE}.extras.boolean.has_non_http_origin ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Has Non HTTP Origin"
+  }
+
+  dimension: extras__boolean__has_origin {
+    sql: ${TABLE}.extras.boolean.has_origin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Origin"
   }
 
   dimension: extras__boolean__has_punycode_form_action_origin {

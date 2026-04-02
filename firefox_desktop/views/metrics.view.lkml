@@ -11645,7 +11645,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__boolean__a11y_use_system_colors {
     label: "A11Y: Use System Colors"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.a11y_use_system_colors ;;
     type: yesno
     group_label: "A11Y"
