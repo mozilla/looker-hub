@@ -42,6 +42,12 @@ view: revenue_forecasts {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: fx_scenarios {
+    sql: ${TABLE}.fx_scenarios ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: note {
     sql: ${TABLE}.note ;;
     type: string
@@ -76,6 +82,21 @@ view: revenue_forecasts {
     sql: ${TABLE}.year ;;
     type: number
     suggest_persist_for: "24 hours"
+  }
+
+  dimension_group: forecast_refresh {
+    sql: ${TABLE}.forecast_refresh_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
   }
 
   dimension_group: submission_month {
