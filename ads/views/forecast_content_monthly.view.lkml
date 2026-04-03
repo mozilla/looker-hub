@@ -154,6 +154,29 @@ view: forecast_content_monthly {
     value_to_date: no
   }
 
+  measure: actual_fill_rate_avg {
+    sql: SAFE_DIVIDE(${actual_uapi_impressions_excluding_house_ads_sum},${inferred_actual_native_uapi_inventory_sum}) ;;
+    type: number
+  }
+
+  measure: actual_fill_rate_difference_from_last_month {
+    based_on: actual_fill_rate_avg
+    based_on_time: submission_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: actual_fill_rate_perc_difference_from_last_month {
+    based_on: actual_fill_rate_avg
+    based_on_time: submission_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
   measure: actual_native_glean_inventory_sum {
     sql: ${actual_native_glean_inventory} ;;
     type: sum
@@ -206,7 +229,7 @@ view: forecast_content_monthly {
   }
 
   measure: actual_uapi_impressions_excluding_house_ads_sum {
-    sql: ${actual_uapi_impressions_excluding_house} ;;
+    sql: ${actual_uapi_impressions_excluding_house_ads} ;;
     type: sum
   }
 
@@ -238,6 +261,29 @@ view: forecast_content_monthly {
     value_to_date: no
   }
 
+  measure: forecast_fill_rate_avg {
+    sql: SAFE_DIVIDE(${forecast_uapi_impressions_excluding_house_ads_sum},${forecast_native_uapi_inventory_sum}) ;;
+    type: number
+  }
+
+  measure: forecast_fill_rate_difference_from_previous_forecast {
+    based_on: forecast_fill_rate_avg
+    based_on_time: forecast_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: forecast_fill_rate_perc_difference_from_previous_forecast {
+    based_on: forecast_fill_rate_avg
+    based_on_time: forecast_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
   measure: forecast_native_glean_inventory_sum {
     sql: ${forecast_native_glean_inventory} ;;
     type: sum
@@ -250,6 +296,11 @@ view: forecast_content_monthly {
 
   measure: forecast_native_inventory_sum {
     sql: ${forecast_native_inventory} ;;
+    type: sum
+  }
+
+  measure: forecast_native_uapi_inventory_sum {
+    sql: ${forecast_native_uapi_inventory} ;;
     type: sum
   }
 
@@ -297,6 +348,47 @@ view: forecast_content_monthly {
   measure: forecast_uapi_impressions_excluding_house_ads_sum {
     sql: ${forecast_uapi_impressions_excluding_house_ads} ;;
     type: sum
+  }
+
+  measure: forecast_uapi_inventory_difference_from_previous_forecast {
+    based_on: forecast_native_uapi_inventory_sum
+    based_on_time: forecast_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: forecast_uapi_inventory_perc_difference_from_previous_forecast {
+    based_on: forecast_native_uapi_inventory_sum
+    based_on_time: forecast_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: inferred_actual_native_uapi_inventory_sum {
+    sql: ${inferred_actual_native_uapi_inventory} ;;
+    type: sum
+  }
+
+  measure: inferred_actual_uapi_inventory_difference_from_last_month {
+    based_on: inferred_actual_native_uapi_inventory_sum
+    based_on_time: submission_month_date
+    kind: difference
+    period: month
+    type: period_over_period
+    value_to_date: no
+  }
+
+  measure: inferred_actual_uapi_inventory_perc_difference_from_last_month {
+    based_on: inferred_actual_native_uapi_inventory_sum
+    based_on_time: submission_month_date
+    kind: relative_change
+    period: month
+    type: period_over_period
+    value_to_date: no
   }
 
   sql_table_name: `mozdata.ads.forecast_content_monthly` ;;
