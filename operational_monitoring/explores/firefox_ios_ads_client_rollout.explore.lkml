@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/onboarding_rollout_2603_149.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/onboarding_rollout_2603_149_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/firefox_ios_ads_client_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/firefox_ios_ads_client_rollout_last_updated.datagroup.lkml"
 
-explore: onboarding_rollout_2603_149 {
+explore: firefox_ios_ads_client_rollout {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: onboarding_rollout_2603_149 {
   }
 
   hidden: yes
-  persist_with: onboarding_rollout_2603_149_last_updated
+  persist_with: firefox_ios_ads_client_rollout_last_updated
 }
