@@ -216,7 +216,7 @@ view: forecast_content_monthly {
   }
 
   measure: forecast_ecpm_avg {
-    sql: SAFE_DIVIDE(${forecast_revenue_sum},${forecast_uapi_impressions_excluding_house_ads})*1000 ;;
+    sql: SAFE_DIVIDE(${forecast_revenue_sum},${forecast_uapi_impressions_excluding_house_ads_sum})*1000 ;;
     type: number
   }
 
