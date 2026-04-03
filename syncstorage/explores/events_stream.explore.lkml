@@ -11,6 +11,12 @@ explore: events_stream {
   sql_always_where: ${events_stream.submission_date} >= '2010-01-01' ;;
   view_name: events_stream
 
+  join: events_stream__experiments {
+    view_label: "Events Stream: Experiments"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${events_stream.experiments}) AS events_stream__experiments ;;
+  }
+
   always_filter: {
     filters: [
       submission_date: "7 days",
