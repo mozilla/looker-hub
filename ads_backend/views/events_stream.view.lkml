@@ -255,7 +255,7 @@ view: events_stream {
   }
 
   dimension: experiments {
-    sql: ${TABLE}.experiments ;;
+    sql: JSON_KEYS(${TABLE}.experiments, 1) ;;
     hidden: yes
   }
 
@@ -631,5 +631,31 @@ view: events_stream {
     type: count_distinct
     sql: ${client_id} ;;
     hidden: yes
+  }
+}
+
+view: events_stream__experiments {
+  dimension: id {
+    type: string
+    sql: ${TABLE} ;;
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: branch {
+    type: string
+    sql: JSON_VALUE(events_stream.experiments[${TABLE}].branch) ;;
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: enrollment_id {
+    type: string
+    sql: JSON_VALUE(events_stream.experiments[${TABLE}].extra.enrollment_id) ;;
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: type {
+    type: string
+    sql: JSON_VALUE(events_stream.experiments[${TABLE}].extra.type) ;;
+    suggest_persist_for: "24 hours"
   }
 }
