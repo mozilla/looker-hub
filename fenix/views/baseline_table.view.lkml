@@ -675,6 +675,32 @@ value will be \"custom\"
 "
   }
 
+  dimension: metrics__string__search_default_engine_for_private_code {
+    sql: ${TABLE}.metrics.string.search_default_engine_for_private_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Default Engine For Private Code"
+    description: "If the default private browsing search engine is pre-loaded with Fenix
+this value will be the search engine identifier. If it's a custom search
+engine the value will be \"custom\". If the private browsing default is the
+same as the normal default, this will still record the correct identifier.
+"
+  }
+
+  dimension: metrics__string__search_default_engine_for_private_name {
+    sql: ${TABLE}.metrics.string.search_default_engine_for_private_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Default Engine For Private Name"
+    description: "If the default private browsing search engine is pre-loaded with Fenix
+this value will be the search engine name. If it's a custom search engine
+the value will be \"custom\". If the private browsing default is the same as
+the normal default, this will be \"default\".
+"
+  }
+
   dimension: metrics__string__search_default_engine_name {
     sql: ${TABLE}.metrics.string.search_default_engine_name ;;
     type: string

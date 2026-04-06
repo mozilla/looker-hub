@@ -15395,7 +15395,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Doc Math Ml Deprecated Href Link On Non Anchor Element"
-    description: "Whether a document used MathML_DeprecatedHrefLinkOnNonAnchorElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+    description: "Whether a document used MathML_DeprecatedHrefLinkOnNonAnchorElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17636,6 +17636,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Get User Media Unfocused"
     description: "Whether a document calls MediaDevices.getUserMedia from an unfocused document. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_grid_auto_flow_initial_value_change {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_grid_auto_flow_initial_value_change ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Grid Auto Flow Initial Value Change"
+    description: "Whether a document rendering change for proposed grid-auto-flow initial value. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22726,6 +22736,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Get User Media Unfocused"
     description: "Whether a page calls MediaDevices.getUserMedia from an unfocused document. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_grid_auto_flow_initial_value_change {
+    sql: ${TABLE}.metrics.counter.use_counter_page_grid_auto_flow_initial_value_change ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Grid Auto Flow Initial Value Change"
+    description: "Whether a page rendering change for proposed grid-auto-flow initial value. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

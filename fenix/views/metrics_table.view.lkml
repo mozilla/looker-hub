@@ -13553,7 +13553,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -19805,6 +19805,32 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
 will be the search engine identifier. If it's a custom search engine
 (defined: https://github.com/mozilla-mobile/fenix/issues/1607) the
 value will be \"custom\"
+"
+  }
+
+  dimension: metrics__string__search_default_engine_for_private_code {
+    sql: ${TABLE}.metrics.string.search_default_engine_for_private_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Default Engine For Private Code"
+    description: "If the default private browsing search engine is pre-loaded with Fenix
+this value will be the search engine identifier. If it's a custom search
+engine the value will be \"custom\". If the private browsing default is the
+same as the normal default, this will still record the correct identifier.
+"
+  }
+
+  dimension: metrics__string__search_default_engine_for_private_name {
+    sql: ${TABLE}.metrics.string.search_default_engine_for_private_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Default Engine For Private Name"
+    description: "If the default private browsing search engine is pre-loaded with Fenix
+this value will be the search engine name. If it's a custom search engine
+the value will be \"custom\". If the private browsing default is the same as
+the normal default, this will be \"default\".
 "
   }
 
@@ -49816,12 +49842,33 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__url__search_default_engine_for_private_search_url {
+    sql: ${TABLE}.metrics.url.search_default_engine_for_private_search_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: URL"
+    group_item_label: "Search Default Engine For Private Search URL"
+  }
+
   dimension: metrics__url__search_default_engine_search_url {
     sql: ${TABLE}.metrics.url.search_default_engine_search_url ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics: URL"
     group_item_label: "Search Default Engine Search URL"
+  }
+
+  dimension: metrics__url2__search_default_engine_for_private_search_url {
+    sql: ${TABLE}.metrics.url2.search_default_engine_for_private_search_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Url2"
+    group_item_label: "Search Default Engine For Private Search URL"
+    description: "If the default private browsing search engine is pre-loaded with Fenix
+this value will be the base URL we use to build the search query for the
+search engine. For example: https://mysearchengine.com/?query=%s. If it's
+a custom search engine the value will not be set.
+"
   }
 
   dimension: metrics__url2__search_default_engine_search_url {

@@ -240,6 +240,48 @@ value will be \"custom\"
 "
   }
 
+  dimension: metrics__string__search_default_engine_for_private_code {
+    label: "Search Default Engine For Private: Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine_for_private_code ;;
+    type: string
+    group_label: "Search Default Engine For Private"
+    group_item_label: "Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine For Private: Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_for_private_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the default private browsing search engine is pre-loaded with Fenix
+this value will be the search engine identifier. If it's a custom search
+engine the value will be \"custom\". If the private browsing default is the
+same as the normal default, this will still record the correct identifier.
+"
+  }
+
+  dimension: metrics__string__search_default_engine_for_private_name {
+    label: "Search Default Engine For Private: Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine_for_private_name ;;
+    type: string
+    group_label: "Search Default Engine For Private"
+    group_item_label: "Name"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine For Private: Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_for_private_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the default private browsing search engine is pre-loaded with Fenix
+this value will be the search engine name. If it's a custom search engine
+the value will be \"custom\". If the private browsing default is the same as
+the normal default, this will be \"default\".
+"
+  }
+
   dimension: metrics__boolean__policies_is_enterprise {
     label: "Policies: Is Enterprise"
     hidden: no
