@@ -8281,6 +8281,24 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_boolean__smart_window_memories_optin {
+    label: "Smart Window: Memories Optin"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.smart_window_memories_optin ;;
+    type: string
+    group_label: "Smart Window"
+    group_item_label: "Memories Optin"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Memories Optin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/smart_window_memories_optin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user is currently opted-in for memories from chat or from browsing.
+"
+  }
+
   dimension: metrics__string__smart_window_model {
     label: "Smart Window: Model"
     hidden: no
@@ -9604,6 +9622,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "PLACES: Time for the 6 first autocomplete results (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_AUTOCOMPLETE_6_FIRST_RESULTS_TIME_MS.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_autofill_reintegration {
+    label: "Urlbar Autofill: Reintegration"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_reintegration ;;
+    group_label: "Urlbar Autofill"
+    group_item_label: "Reintegration"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Autofill: Reintegration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_autofill_reintegration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times a blocked autofill result was reintegrated (unblocked) because the user picked the same URL as a non-autofill history result.
 "
   }
 
@@ -68373,6 +68408,47 @@ view: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
   }
 }
 
+view: metrics__metrics__labeled_counter__urlbar_autofill_reintegration {
+  label: "Urlbar Autofill: Reintegration"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__urlbar_picked_autofill_about {
   label: "Urlbar Picked: Autofill About"
 
@@ -79123,6 +79199,20 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
 }
 
 view: metrics__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_boolean__smart_window_memories_optin {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

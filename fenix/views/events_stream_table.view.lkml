@@ -768,6 +768,14 @@ view: events_stream_table {
     group_item_label: "Is Private"
   }
 
+  dimension: extras__boolean__is_private_default {
+    sql: ${TABLE}.extras.boolean.is_private_default ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Private Default"
+  }
+
   dimension: extras__boolean__is_recent_search {
     sql: ${TABLE}.extras.boolean.is_recent_search ;;
     type: yesno

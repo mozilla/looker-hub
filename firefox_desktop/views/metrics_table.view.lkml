@@ -13026,6 +13026,13 @@ while reporting fog.data_diretory_info.
 "
   }
 
+  dimension: metrics__labeled_boolean__smart_window_memories_optin {
+    sql: ${TABLE}.metrics.labeled_boolean.smart_window_memories_optin ;;
+    hidden: yes
+    description: "Records if the user is currently opted-in for memories from chat or from browsing.
+"
+  }
+
   dimension: metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
     sql: ${TABLE}.metrics.labeled_boolean.startup_run_from_dmg_install_outcome ;;
     hidden: yes
@@ -16861,6 +16868,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     description: "We usually install pending updates at startup, but there are a couple of reasons we might not. This value will be set to \"none\" if there was no reason not to install updates. If the value is \"DevToolsLaunching\", that means that we skipped applying updates because the application startup was actually a startup of the Browser Toolbox, not the browser itself. If the value is \"NotAnUpdatingTask\", that means that the browser launch is a background task other than the background update task, (which have update capabilities disabled). If the value is \"OtherInstanceRunning\", that means that the background update task was launched, but it didn't install an update in order to avoid interfering with other application instances. If the value is \"FirstStartup\", we didn't install any updates because the browser was launched by the installer. If the value is \"MultiSessionInstallLockout\", there are other browser instances running and the Multi Session Install Lockout timeout has not expired yet. Note that, for updates to be "
   }
 
+  dimension: metrics__labeled_counter__urlbar_autofill_reintegration {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_reintegration ;;
+    hidden: yes
+    description: "Counts how many times a blocked autofill result was reintegrated (unblocked) because the user picked the same URL as a non-autofill history result.
+"
+  }
+
   dimension: metrics__labeled_counter__urlbar_picked_autofill_about {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_picked_autofill_about ;;
     hidden: yes
@@ -18712,9 +18726,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
-This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 
@@ -60750,6 +60763,20 @@ view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
 }
 
 view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__smart_window_memories_optin {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
