@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_snapkit_removal
-    type: looker_line
-    fields: [
-      ios_snapkit_removal.submission_date,
-      ios_snapkit_removal.branch,
-      ios_snapkit_removal.point
-    ]
-    pivots: [
-      ios_snapkit_removal.branch
-    ]
-    filters:
-      ios_snapkit_removal.metric: 'retained'
-      ios_snapkit_removal.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: ios_snapkit_removal.submission_date
-    field_y: ios_snapkit_removal.point
-    log_scale: false
-    ci_lower: ios_snapkit_removal.lower
-    ci_upper: ios_snapkit_removal.upper
-    show_grid: true
-    listen:
-      Date: ios_snapkit_removal.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -95,6 +61,40 @@
     ]
     filters:
       ios_snapkit_removal.metric: 'search_count'
+      ios_snapkit_removal.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_snapkit_removal.submission_date
+    field_y: ios_snapkit_removal.point
+    log_scale: false
+    ci_lower: ios_snapkit_removal.lower
+    ci_upper: ios_snapkit_removal.upper
+    show_grid: true
+    listen:
+      Date: ios_snapkit_removal.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_snapkit_removal
+    type: looker_line
+    fields: [
+      ios_snapkit_removal.submission_date,
+      ios_snapkit_removal.branch,
+      ios_snapkit_removal.point
+    ]
+    pivots: [
+      ios_snapkit_removal.branch
+    ]
+    filters:
+      ios_snapkit_removal.metric: 'ad_clicks'
       ios_snapkit_removal.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       ios_snapkit_removal.branch
     ]
     filters:
-      ios_snapkit_removal.metric: 'ad_clicks'
+      ios_snapkit_removal.metric: 'retained'
       ios_snapkit_removal.statistic: mean
     row: 20
     col: 0
