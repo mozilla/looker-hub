@@ -1086,6 +1086,10 @@ experimentation:
       type: table_explore
       views:
         base_view: experiment_crash_rates
+    experiment_sample_ratio_mismatch:
+      type: table_explore
+      views:
+        base_view: experiment_sample_ratio_mismatch
   glean_app: false
   owners:
   - ascholtz@mozilla.com
@@ -1150,6 +1154,11 @@ experimentation:
       tables:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_overall_v2
+      type: table_view
+    experiment_sample_ratio_mismatch:
+      tables:
+      - channel: release
+        table: moz-fx-data-experiments.monitoring.experiment_sample_ratio_mismatch_v1
       type: table_view
     experiment_search_aggregates_live:
       tables:
