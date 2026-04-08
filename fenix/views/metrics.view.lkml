@@ -2120,7 +2120,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_awesomebar_shortcuts_suggestions__sum {
     label: "Perf Awesomebar: Shortcuts Suggestions Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_shortcuts_suggestions.sum ;;
     type: number
     group_label: "Perf Awesomebar"
@@ -2837,7 +2837,7 @@ default: false
 
   dimension: metrics__boolean__preferences_search_shortcuts_enabled {
     label: "Preferences: Search Shortcuts Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_search_shortcuts_enabled ;;
     type: yesno
     group_label: "Preferences"

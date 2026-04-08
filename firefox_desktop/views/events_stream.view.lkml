@@ -6339,6 +6339,14 @@ view: events_stream {
     group_item_label: "Window"
   }
 
+  dimension: extras__string__window_mode {
+    sql: ${TABLE}.extras.string.window_mode ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Window Mode"
+  }
+
   dimension: is_bot_generated {
     sql: ${TABLE}.is_bot_generated ;;
     type: yesno
