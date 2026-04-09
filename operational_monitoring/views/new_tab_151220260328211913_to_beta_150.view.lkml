@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: sidebar_button_feature_callout_vertical_tabs_users_existing_profiles {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.sidebar_button_feature_callout_vertical_tabs_users_existing_profiles_statistics ;;
+view: new_tab_151220260328211913_to_beta_150 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_tab_151220260328211913_to_beta_150_statistics ;;
 
   dimension: submission_date {
     type: date
