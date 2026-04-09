@@ -10048,8 +10048,8 @@ operational_monitoring:
             default: release
             options:
             - release
-            - esr
             - beta
+            - esr
             - nightly
             - aurora
             - default
@@ -10878,8 +10878,8 @@ operational_monitoring:
             default: Linux
             options:
             - Linux
-            - Mac
             - Windows
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -11736,15 +11736,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id425
           app:
-            default: Android - daemon_session
+            default: iOS - daemon_session
             options:
-            - Android - daemon_session
-            - Windows - vpn_session
-            - Darwin - vpn_session
             - iOS - daemon_session
-            - iOS - vpn_session
             - Linux - vpn_session
+            - iOS - vpn_session
+            - Windows - vpn_session
+            - Android - daemon_session
             - Android - vpn_session
+            - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id426

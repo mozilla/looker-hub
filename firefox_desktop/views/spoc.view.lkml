@@ -7,7 +7,7 @@
 view: spoc {
   dimension: metrics__text2__pocket_shim {
     label: "Pocket: Shim"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.pocket_shim ;;
     type: string
     group_label: "Pocket"

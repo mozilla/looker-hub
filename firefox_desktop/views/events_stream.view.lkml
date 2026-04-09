@@ -2323,6 +2323,14 @@ view: events_stream {
     group_item_label: "Store Active Count"
   }
 
+  dimension: extras__quantity__system_memory_mb {
+    sql: ${TABLE}.extras.quantity.system_memory_mb ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "System Memory Mb"
+  }
+
   dimension: extras__quantity__tabs {
     sql: ${TABLE}.extras.quantity.tabs ;;
     type: number
