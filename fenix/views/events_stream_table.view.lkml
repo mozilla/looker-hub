@@ -1640,6 +1640,14 @@ view: events_stream_table {
     group_item_label: "Summarize Duration Ms"
   }
 
+  dimension: extras__quantity__system_memory_mb {
+    sql: ${TABLE}.extras.quantity.system_memory_mb ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "System Memory Mb"
+  }
+
   dimension: extras__quantity__tab_count {
     sql: ${TABLE}.extras.quantity.tab_count ;;
     type: number
