@@ -25744,6 +25744,42 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__counter__network_ssl_token_cache_early_connections {
+    label: "Network: SSL Token Cache Early Connections"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_early_connections ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Early Connections"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Early Connections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_early_connections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of TLS connections (via Get()) that started before the background disk load completed. Each occurrence is also logged as a warning.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_evictions {
+    label: "Network: SSL Token Cache Evictions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_evictions ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Evictions"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Evictions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_evictions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Any non-zero value indicates the capacity limit was reached and may need to be increased.
+"
+  }
+
   dimension: metrics__counter__network_ssl_token_cache_expired {
     label: "Network: SSL Token Cache Expired"
     hidden: no
@@ -25776,6 +25812,42 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__sum {
+    label: "Network: SSL Token Cache Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Wall-clock time from SSLTokensCache::Init() to the completion of loading cached tokens from disk.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_persistence_records_loaded {
+    label: "Network: SSL Token Cache Persistence Records Loaded"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_persistence_records_loaded ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Persistence Records Loaded"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Persistence Records Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_persistence_records_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of TLS session resumption token records successfully loaded from disk into the cache on startup.
 "
   }
 
@@ -28942,6 +29014,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Time spent blocked in PR_ConnectContinue during a shutdown (ms).
 This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCONNECTCONTINUE_BLOCKING_TIME_SHUTDOWN.
+"
+  }
+
+  dimension: metrics__counter__networking_proxy_fast_path_used {
+    label: "Networking: Proxy Fast Path Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_proxy_fast_path_used ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Proxy Fast Path Used"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Proxy Fast Path Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_proxy_fast_path_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of HTTP channels that skipped async proxy resolution via the fast path (system proxy reports no proxy configured, no filters registered).
 "
   }
 
@@ -45014,6 +45104,56 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: network_ssl_token_cache_early_connections {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_early_connections} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Early Connections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_early_connections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_early_connections_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_early_connections: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Early Connections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_early_connections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_evictions {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_evictions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Evictions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_evictions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_evictions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_evictions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Evictions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_evictions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: network_ssl_token_cache_expired {
     type: sum
     sql: ${metrics__counter__network_ssl_token_cache_expired} ;;
@@ -45035,6 +45175,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Network SSL Token Cache Expired"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_expired"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_persistence_records_loaded {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_persistence_records_loaded} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Persistence Records Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_persistence_records_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_persistence_records_loaded_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_persistence_records_loaded: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Persistence Records Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_persistence_records_loaded"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -45160,6 +45325,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Networking OS Socket Limit Reached"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_os_socket_limit_reached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_proxy_fast_path_used {
+    type: sum
+    sql: ${metrics__counter__networking_proxy_fast_path_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Proxy Fast Path Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_proxy_fast_path_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_proxy_fast_path_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_proxy_fast_path_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Proxy Fast Path Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_proxy_fast_path_used"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
