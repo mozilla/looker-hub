@@ -1105,6 +1105,22 @@ view: metrics_table {
     group_item_label: "Newtab Handoff Preference Enabled"
   }
 
+  dimension: metrics__boolean__nimbus_qa_prefs_bool_default_value {
+    sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_default_value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Nimbus Qa Prefs Bool Default Value"
+  }
+
+  dimension: metrics__boolean__nimbus_qa_prefs_bool_user_value {
+    sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_user_value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Nimbus Qa Prefs Bool User Value"
+  }
+
   dimension: metrics__boolean__os_environment_is_admin_without_uac {
     sql: ${TABLE}.metrics.boolean.os_environment_is_admin_without_uac ;;
     type: yesno
@@ -13613,6 +13629,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors {
+    sql: ${TABLE}.metrics.labeled_counter.nimbus_qa_prefs_pref_type_errors ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__nss_initialization_fallbacks {
     sql: ${TABLE}.metrics.labeled_counter.nss_initialization_fallbacks ;;
     hidden: yes
@@ -17619,6 +17640,22 @@ view: metrics_table {
     group_item_label: "Networking Nss Initialization"
   }
 
+  dimension: metrics__quantity__nimbus_qa_prefs_int_default_value {
+    sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_default_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Nimbus Qa Prefs Int Default Value"
+  }
+
+  dimension: metrics__quantity__nimbus_qa_prefs_int_user_value {
+    sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_user_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Nimbus Qa Prefs Int User Value"
+  }
+
   dimension: metrics__quantity__pictureinpicture_most_concurrent_players {
     sql: ${TABLE}.metrics.quantity.pictureinpicture_most_concurrent_players ;;
     type: number
@@ -18889,6 +18926,22 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Installation First Seen Version"
+  }
+
+  dimension: metrics__string__nimbus_qa_prefs_string_default_value {
+    sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_default_value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Nimbus Qa Prefs String Default Value"
+  }
+
+  dimension: metrics__string__nimbus_qa_prefs_string_user_value {
+    sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_user_value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Nimbus Qa Prefs String User Value"
   }
 
   dimension: metrics__string__os_environment_allowed_app_sources {

@@ -29424,6 +29424,131 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__boolean__nimbus_qa_prefs_bool_default_value {
+    label: "Nimbus Qa Prefs: Bool Default Value"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_default_value ;;
+    type: yesno
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Bool Default Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Bool Default Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_qa_prefs_bool_default_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.bool-default\" pref.
+"
+  }
+
+  dimension: metrics__boolean__nimbus_qa_prefs_bool_user_value {
+    label: "Nimbus Qa Prefs: Bool User Value"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_user_value ;;
+    type: yesno
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Bool User Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Bool User Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_qa_prefs_bool_user_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.bool-user\" pref.
+"
+  }
+
+  dimension: metrics__quantity__nimbus_qa_prefs_int_default_value {
+    label: "Nimbus Qa Prefs: Int Default Value"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_default_value ;;
+    type: number
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Int Default Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Int Default Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_qa_prefs_int_default_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.int-default\" pref.
+"
+  }
+
+  dimension: metrics__quantity__nimbus_qa_prefs_int_user_value {
+    label: "Nimbus Qa Prefs: Int User Value"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_user_value ;;
+    type: number
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Int User Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Int User Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_qa_prefs_int_user_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.int-user\" pref.
+"
+  }
+
+  dimension: metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors {
+    label: "Nimbus Qa Prefs: Pref Type Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.nimbus_qa_prefs_pref_type_errors ;;
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Pref Type Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Pref Type Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_qa_prefs_pref_type_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Any prefs that we could not get a value -- and thus record a metric value for -- due to type errors.
+"
+  }
+
+  dimension: metrics__string__nimbus_qa_prefs_string_default_value {
+    label: "Nimbus Qa Prefs: String Default Value"
+    hidden: no
+    sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_default_value ;;
+    type: string
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "String Default Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: String Default Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_qa_prefs_string_default_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.string-default\" pref.
+"
+  }
+
+  dimension: metrics__string__nimbus_qa_prefs_string_user_value {
+    label: "Nimbus Qa Prefs: String User Value"
+    hidden: no
+    sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_user_value ;;
+    type: string
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "String User Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: String User Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/nimbus_qa_prefs_string_user_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.string-user\" pref.
+"
+  }
+
   dimension: metrics__labeled_quantity__normandy_recipe_freshness {
     label: "Normandy: Recipe Freshness"
     hidden: yes
@@ -63608,6 +63733,47 @@ view: metrics__metrics__labeled_counter__networking_trr_request_count {
 
 view: metrics__metrics__labeled_counter__networking_trr_request_count_per_conn {
   label: "Networking: Trr Request Count Per Conn"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors {
+  label: "Nimbus Qa Prefs: Pref Type Errors"
 
   dimension: document_id {
     type: string
