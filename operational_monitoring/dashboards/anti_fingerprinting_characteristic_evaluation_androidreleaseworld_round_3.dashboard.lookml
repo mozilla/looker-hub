@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3
+    type: looker_line
+    fields: [
+      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.submission_date,
+      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.branch,
+      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.point
+    ]
+    pivots: [
+      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.branch
+    ]
+    filters:
+      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'retained'
+      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.submission_date
+    field_y: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.point
+    log_scale: false
+    ci_lower: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.lower
+    ci_upper: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.upper
+    show_grid: true
+    listen:
+      Date: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'uri_count'
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.submission_date
@@ -62,8 +96,8 @@
     filters:
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'ad_clicks'
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.submission_date
@@ -97,40 +131,6 @@
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'active_hours'
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.submission_date
-    field_y: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.point
-    log_scale: false
-    ci_lower: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.lower
-    ci_upper: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.upper
-    show_grid: true
-    listen:
-      Date: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3
-    type: looker_line
-    fields: [
-      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.submission_date,
-      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.branch,
-      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.point
-    ]
-    pivots: [
-      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.branch
-    ]
-    filters:
-      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'days_of_use'
-      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.branch
     ]
     filters:
-      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'retained'
+      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'tagged_sap_searches'
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.branch
     ]
     filters:
-      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'tagged_sap_searches'
+      anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.metric: 'days_of_use'
       anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3.statistic: mean
     row: 30
     col: 0
