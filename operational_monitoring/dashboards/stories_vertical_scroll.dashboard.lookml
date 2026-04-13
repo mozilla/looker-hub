@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: stories_vertical_scroll
-    type: looker_line
-    fields: [
-      stories_vertical_scroll.submission_date,
-      stories_vertical_scroll.branch,
-      stories_vertical_scroll.point
-    ]
-    pivots: [
-      stories_vertical_scroll.branch
-    ]
-    filters:
-      stories_vertical_scroll.metric: 'ad_clicks'
-      stories_vertical_scroll.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: stories_vertical_scroll.submission_date
-    field_y: stories_vertical_scroll.point
-    log_scale: false
-    ci_lower: stories_vertical_scroll.lower
-    ci_upper: stories_vertical_scroll.upper
-    show_grid: true
-    listen:
-      Date: stories_vertical_scroll.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       stories_vertical_scroll.metric: 'search_count'
       stories_vertical_scroll.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: stories_vertical_scroll.submission_date
@@ -131,7 +97,7 @@
       stories_vertical_scroll.metric: 'active_hours'
       stories_vertical_scroll.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: stories_vertical_scroll.submission_date
@@ -163,6 +129,40 @@
     ]
     filters:
       stories_vertical_scroll.metric: 'days_of_use'
+      stories_vertical_scroll.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: stories_vertical_scroll.submission_date
+    field_y: stories_vertical_scroll.point
+    log_scale: false
+    ci_lower: stories_vertical_scroll.lower
+    ci_upper: stories_vertical_scroll.upper
+    show_grid: true
+    listen:
+      Date: stories_vertical_scroll.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: stories_vertical_scroll
+    type: looker_line
+    fields: [
+      stories_vertical_scroll.submission_date,
+      stories_vertical_scroll.branch,
+      stories_vertical_scroll.point
+    ]
+    pivots: [
+      stories_vertical_scroll.branch
+    ]
+    filters:
+      stories_vertical_scroll.metric: 'ad_clicks'
       stories_vertical_scroll.statistic: mean
     row: 20
     col: 0
