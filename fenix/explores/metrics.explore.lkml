@@ -1428,6 +1428,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_trr_request_count_per_conn}) AS metrics__metrics__labeled_counter__networking_trr_request_count_per_conn ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_trr_request_count_per_conn.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors}) AS metrics__metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__nss_initialization_fallbacks {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__nss_initialization_fallbacks}) AS metrics__metrics__labeled_counter__nss_initialization_fallbacks ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__nss_initialization_fallbacks.document_id} ;;
