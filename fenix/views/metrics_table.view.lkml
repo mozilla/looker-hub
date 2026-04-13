@@ -1152,6 +1152,26 @@ once we validate these assumptions.
 "
   }
 
+  dimension: metrics__boolean__nimbus_qa_prefs_bool_default_value {
+    sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_default_value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Nimbus Qa Prefs Bool Default Value"
+    description: "The value of the \"nimbus.qa.bool-default\" pref.
+"
+  }
+
+  dimension: metrics__boolean__nimbus_qa_prefs_bool_user_value {
+    sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_user_value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Nimbus Qa Prefs Bool User Value"
+    description: "The value of the \"nimbus.qa.bool-user\" pref.
+"
+  }
+
   dimension: metrics__boolean__os_environment_is_admin_without_uac {
     sql: ${TABLE}.metrics.boolean.os_environment_is_admin_without_uac ;;
     type: yesno
@@ -3215,6 +3235,26 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 "
   }
 
+  dimension: metrics__counter__network_ssl_token_cache_early_connections {
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_early_connections ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network SSL Token Cache Early Connections"
+    description: "Number of TLS connections (via Get()) that started before the background disk load completed. Each occurrence is also logged as a warning.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_evictions {
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_evictions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network SSL Token Cache Evictions"
+    description: "Number of TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Any non-zero value indicates the capacity limit was reached and may need to be increased.
+"
+  }
+
   dimension: metrics__counter__network_ssl_token_cache_expired {
     sql: ${TABLE}.metrics.counter.network_ssl_token_cache_expired ;;
     type: number
@@ -3222,6 +3262,16 @@ between a failed `top_sites_count` ping and 0 top sites, please see
     group_label: "Metrics: Counter"
     group_item_label: "Network SSL Token Cache Expired"
     description: "Counts the number of expired session resumption tokens encountered during cache lookups. High values may indicate token lifetime issues or long delays between connections to the same host.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_persistence_records_loaded {
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_persistence_records_loaded ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network SSL Token Cache Persistence Records Loaded"
+    description: "Number of TLS session resumption token records successfully loaded from disk into the cache on startup.
 "
   }
 
@@ -3292,6 +3342,16 @@ between a failed `top_sites_count` ping and 0 top sites, please see
     group_label: "Metrics: Counter"
     group_item_label: "Networking OS Socket Limit Reached"
     description: "Counts the number of times the os socket limit was reached. i.e. CanAttachSocket() returned false.
+"
+  }
+
+  dimension: metrics__counter__networking_proxy_fast_path_used {
+    sql: ${TABLE}.metrics.counter.networking_proxy_fast_path_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Networking Proxy Fast Path Used"
+    description: "The number of HTTP channels that skipped async proxy resolution via the fast path (system proxy reports no proxy configured, no filters registered).
 "
   }
 
@@ -14359,6 +14419,13 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors {
+    sql: ${TABLE}.metrics.labeled_counter.nimbus_qa_prefs_pref_type_errors ;;
+    hidden: yes
+    description: "Any prefs that we could not get a value -- and thus record a metric value for -- due to type errors.
+"
+  }
+
   dimension: metrics__labeled_counter__nss_initialization_fallbacks {
     sql: ${TABLE}.metrics.labeled_counter.nss_initialization_fallbacks ;;
     hidden: yes
@@ -18253,6 +18320,26 @@ Value will be 0 if the feature is disabled.
 "
   }
 
+  dimension: metrics__quantity__nimbus_qa_prefs_int_default_value {
+    sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_default_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Nimbus Qa Prefs Int Default Value"
+    description: "The value of the \"nimbus.qa.int-default\" pref.
+"
+  }
+
+  dimension: metrics__quantity__nimbus_qa_prefs_int_user_value {
+    sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_user_value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Nimbus Qa Prefs Int User Value"
+    description: "The value of the \"nimbus.qa.int-user\" pref.
+"
+  }
+
   dimension: metrics__quantity__pkcs11_third_party_modules_loaded {
     sql: ${TABLE}.metrics.quantity.pkcs11_third_party_modules_loaded ;;
     type: number
@@ -19641,6 +19728,26 @@ GRID, LIST
     group_label: "Metrics: String"
     group_item_label: "Metrics Total URI Count"
     description: "A counter of URIs visited by the user in the current session, including page reloads. This does not include background page requests and URIs from embedded pages or private browsing.
+"
+  }
+
+  dimension: metrics__string__nimbus_qa_prefs_string_default_value {
+    sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_default_value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Nimbus Qa Prefs String Default Value"
+    description: "The value of the \"nimbus.qa.string-default\" pref.
+"
+  }
+
+  dimension: metrics__string__nimbus_qa_prefs_string_user_value {
+    sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_user_value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Nimbus Qa Prefs String User Value"
+    description: "The value of the \"nimbus.qa.string-user\" pref.
 "
   }
 
@@ -35635,6 +35742,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__network_race_cache_with_network_saved_time__values {
     sql: ${TABLE}.metrics.timing_distribution.network_race_cache_with_network_saved_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Network SSL Token Cache Load Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Network SSL Token Cache Load Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Network SSL Token Cache Load Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Network SSL Token Cache Load Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Network SSL Token Cache Load Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Network SSL Token Cache Load Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Network SSL Token Cache Load Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.values ;;
     hidden: yes
   }
 
@@ -68469,6 +68643,20 @@ view: metrics_table__metrics__timing_distribution__network_race_cache_with_netwo
 }
 
 view: metrics_table__metrics__timing_distribution__network_race_cache_with_network_saved_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_ssl_token_cache_load_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

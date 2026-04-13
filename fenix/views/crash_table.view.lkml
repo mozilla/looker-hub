@@ -800,6 +800,15 @@ The status of individual objects is constructed by taking selected object proper
     description: "The type of crash that occurred (Android-only)."
   }
 
+  dimension: metrics__string__crash_file_system_access_request_path {
+    sql: ${TABLE}.metrics.string.crash_file_system_access_request_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash File System Access Request Path"
+    description: "The anonymized path that was rejected by FileSystemSecurity due to containing path traversal sequences."
+  }
+
   dimension: metrics__string__crash_font_name {
     sql: ${TABLE}.metrics.string.crash_font_name ;;
     type: string

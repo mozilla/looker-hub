@@ -158,6 +158,23 @@ view: crash {
     description: "Present only if higher than 0, indicates that we're running in a nested event loop and indicates the nesting level."
   }
 
+  dimension: metrics__string__crash_file_system_access_request_path {
+    label: "Crash: File System Access Request Path"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_file_system_access_request_path ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "File System Access Request Path"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: File System Access Request Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_file_system_access_request_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The anonymized path that was rejected by FileSystemSecurity due to containing path traversal sequences."
+  }
+
   dimension: metrics__string__crash_font_name {
     label: "Crash: Font Name"
     hidden: no

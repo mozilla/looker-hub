@@ -18354,6 +18354,42 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__counter__network_ssl_token_cache_early_connections {
+    label: "Network: SSL Token Cache Early Connections"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_early_connections ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Early Connections"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Early Connections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_early_connections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of TLS connections (via Get()) that started before the background disk load completed. Each occurrence is also logged as a warning.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_evictions {
+    label: "Network: SSL Token Cache Evictions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_evictions ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Evictions"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Evictions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_evictions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Any non-zero value indicates the capacity limit was reached and may need to be increased.
+"
+  }
+
   dimension: metrics__counter__network_ssl_token_cache_expired {
     label: "Network: SSL Token Cache Expired"
     hidden: no
@@ -18386,6 +18422,42 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Counts session resumption token cache hits and misses. A 'hit' means a valid cached token was found and can be used for session resumption. A 'miss' means no valid token was available.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_ssl_token_cache_load_time__sum {
+    label: "Network: SSL Token Cache Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_ssl_token_cache_load_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Wall-clock time from SSLTokensCache::Init() to the completion of loading cached tokens from disk.
+"
+  }
+
+  dimension: metrics__counter__network_ssl_token_cache_persistence_records_loaded {
+    label: "Network: SSL Token Cache Persistence Records Loaded"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.network_ssl_token_cache_persistence_records_loaded ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "SSL Token Cache Persistence Records Loaded"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache Persistence Records Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_persistence_records_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of TLS session resumption token records successfully loaded from disk into the cache on startup.
 "
   }
 
@@ -21627,6 +21699,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__networking_proxy_fast_path_used {
+    label: "Networking: Proxy Fast Path Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_proxy_fast_path_used ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Proxy Fast Path Used"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Proxy Fast Path Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_proxy_fast_path_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of HTTP channels that skipped async proxy resolution via the fast path (system proxy reports no proxy configured, no filters registered).
+"
+  }
+
   dimension: metrics__labeled_counter__networking_proxy_info_type {
     label: "Networking: Proxy Info Type"
     hidden: yes
@@ -22013,6 +22103,131 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Number of DOH requests per connection keyed by HTTP version
+"
+  }
+
+  dimension: metrics__boolean__nimbus_qa_prefs_bool_default_value {
+    label: "Nimbus Qa Prefs: Bool Default Value"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_default_value ;;
+    type: yesno
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Bool Default Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Bool Default Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_qa_prefs_bool_default_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.bool-default\" pref.
+"
+  }
+
+  dimension: metrics__boolean__nimbus_qa_prefs_bool_user_value {
+    label: "Nimbus Qa Prefs: Bool User Value"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_user_value ;;
+    type: yesno
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Bool User Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Bool User Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_qa_prefs_bool_user_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.bool-user\" pref.
+"
+  }
+
+  dimension: metrics__quantity__nimbus_qa_prefs_int_default_value {
+    label: "Nimbus Qa Prefs: Int Default Value"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_default_value ;;
+    type: number
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Int Default Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Int Default Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_qa_prefs_int_default_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.int-default\" pref.
+"
+  }
+
+  dimension: metrics__quantity__nimbus_qa_prefs_int_user_value {
+    label: "Nimbus Qa Prefs: Int User Value"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_user_value ;;
+    type: number
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Int User Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Int User Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_qa_prefs_int_user_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.int-user\" pref.
+"
+  }
+
+  dimension: metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors {
+    label: "Nimbus Qa Prefs: Pref Type Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.nimbus_qa_prefs_pref_type_errors ;;
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "Pref Type Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: Pref Type Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_qa_prefs_pref_type_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Any prefs that we could not get a value -- and thus record a metric value for -- due to type errors.
+"
+  }
+
+  dimension: metrics__string__nimbus_qa_prefs_string_default_value {
+    label: "Nimbus Qa Prefs: String Default Value"
+    hidden: no
+    sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_default_value ;;
+    type: string
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "String Default Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: String Default Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_qa_prefs_string_default_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.string-default\" pref.
+"
+  }
+
+  dimension: metrics__string__nimbus_qa_prefs_string_user_value {
+    label: "Nimbus Qa Prefs: String User Value"
+    hidden: no
+    sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_user_value ;;
+    type: string
+    group_label: "Nimbus Qa Prefs"
+    group_item_label: "String User Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Qa Prefs: String User Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_qa_prefs_string_user_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the \"nimbus.qa.string-user\" pref.
 "
   }
 
@@ -38396,6 +38611,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: network_ssl_token_cache_early_connections {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_early_connections} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Early Connections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_early_connections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_early_connections_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_early_connections: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Early Connections"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_early_connections"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_evictions {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_evictions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Evictions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_evictions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_evictions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_evictions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Evictions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_evictions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: network_ssl_token_cache_expired {
     type: sum
     sql: ${metrics__counter__network_ssl_token_cache_expired} ;;
@@ -38417,6 +38682,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Network SSL Token Cache Expired"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_expired"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_persistence_records_loaded {
+    type: sum
+    sql: ${metrics__counter__network_ssl_token_cache_persistence_records_loaded} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Persistence Records Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_persistence_records_loaded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_ssl_token_cache_persistence_records_loaded_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_ssl_token_cache_persistence_records_loaded: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network SSL Token Cache Persistence Records Loaded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_persistence_records_loaded"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -38592,6 +38882,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Networking OS Socket Limit Reached"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_os_socket_limit_reached"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_proxy_fast_path_used {
+    type: sum
+    sql: ${metrics__counter__networking_proxy_fast_path_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Proxy Fast Path Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_proxy_fast_path_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_proxy_fast_path_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_proxy_fast_path_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Proxy Fast Path Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_proxy_fast_path_used"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -52746,6 +53061,47 @@ view: metrics__metrics__labeled_counter__networking_trr_request_count {
 
 view: metrics__metrics__labeled_counter__networking_trr_request_count_per_conn {
   label: "Networking: Trr Request Count Per Conn"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__nimbus_qa_prefs_pref_type_errors {
+  label: "Nimbus Qa Prefs: Pref Type Errors"
 
   dimension: document_id {
     type: string
@@ -75854,6 +76210,20 @@ view: metrics__metrics__timing_distribution__network_race_cache_with_network_oce
 }
 
 view: metrics__metrics__timing_distribution__network_race_cache_with_network_saved_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_ssl_token_cache_load_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
