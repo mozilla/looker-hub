@@ -25110,6 +25110,23 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__network_cookies_open_error {
+    label: "Network Cookies: Open Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_cookies_open_error ;;
+    group_label: "Network Cookies"
+    group_item_label: "Open Error"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cookies: Open Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_cookies_open_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the cookie DB failed to open at startup, labeled by nsresult error name. Used to diagnose cases where the cookie DB may be incorrectly wiped due to transient I/O errors rather than actual corruption.
+"
+  }
+
   dimension: metrics__timing_distribution__network_cookies_sqlite_open_readahead__sum {
     label: "Network Cookies: Sqlite Open Readahead Sum"
     hidden: no
@@ -60830,6 +60847,47 @@ view: metrics__metrics__labeled_counter__network_byte_range_request {
 
 view: metrics__metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size {
   label: "Network: Cache Hit Miss Stat Per Cache Size"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_cookies_open_error {
+  label: "Network Cookies: Open Error"
 
   dimension: document_id {
     type: string
