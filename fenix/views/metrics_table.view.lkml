@@ -13868,6 +13868,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__network_cookies_open_error {
+    sql: ${TABLE}.metrics.labeled_counter.network_cookies_open_error ;;
+    hidden: yes
+    description: "Counts the number of times the cookie DB failed to open at startup, labeled by nsresult error name. Used to diagnose cases where the cookie DB may be incorrectly wiped due to transient I/O errors rather than actual corruption.
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
     hidden: yes
