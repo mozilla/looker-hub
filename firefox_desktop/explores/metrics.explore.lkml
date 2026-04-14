@@ -1603,6 +1603,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size}) AS metrics__metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_cache_hit_miss_stat_per_cache_size.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_cookies_open_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_cookies_open_error}) AS metrics__metrics__labeled_counter__network_cookies_open_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_cookies_open_error.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_cors_authorization_header {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_cors_authorization_header}) AS metrics__metrics__labeled_counter__network_cors_authorization_header ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_cors_authorization_header.document_id} ;;
