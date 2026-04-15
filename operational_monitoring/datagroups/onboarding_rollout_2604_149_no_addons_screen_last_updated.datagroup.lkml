@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3_last_updated {
-  label: "anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3 Last Updated"
+datagroup: onboarding_rollout_2604_149_no_addons_screen_last_updated {
+  label: "onboarding_rollout_2604_149_no_addons_screen Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'onboarding_rollout_2604_149_no_addons_screen_statistics')
 
     ) ;;
-  description: "Updates for anti_fingerprinting_characteristic_evaluation_androidreleaseworld_round_3 when referenced tables are modified."
+  description: "Updates for onboarding_rollout_2604_149_no_addons_screen when referenced tables are modified."
   max_cache_age: "24 hours"
 }

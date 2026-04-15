@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: needs_reload_selected_tab_refactor_release_experiment_last_updated {
-  label: "needs_reload_selected_tab_refactor_release_experiment Last Updated"
+datagroup: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout_last_updated {
+  label: "email_pin_tab_taskbar_tab_prompts_treatment_b_rollout Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'needs_reload_selected_tab_refactor_release_experiment_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'email_pin_tab_taskbar_tab_prompts_treatment_b_rollout_statistics')
 
     ) ;;
-  description: "Updates for needs_reload_selected_tab_refactor_release_experiment when referenced tables are modified."
+  description: "Updates for email_pin_tab_taskbar_tab_prompts_treatment_b_rollout when referenced tables are modified."
   max_cache_age: "24 hours"
 }

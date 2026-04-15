@@ -160,7 +160,7 @@ view: crash {
 
   dimension: metrics__string__crash_file_system_access_request_path {
     label: "Crash: File System Access Request Path"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_file_system_access_request_path ;;
     type: string
     group_label: "Crash"

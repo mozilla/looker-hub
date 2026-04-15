@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: hide_descriptions_on_newtab_articles_140_max_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.hide_descriptions_on_newtab_articles_140_max_rollout_statistics ;;
+view: onboarding_rollout_2604_149_no_addons_screen {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.onboarding_rollout_2604_149_no_addons_screen_statistics ;;
 
   dimension: submission_date {
     type: date
