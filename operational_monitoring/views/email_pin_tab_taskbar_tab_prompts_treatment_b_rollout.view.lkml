@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: needs_reload_selected_tab_refactor_release_experiment {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.needs_reload_selected_tab_refactor_release_experiment_statistics ;;
+view: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.email_pin_tab_taskbar_tab_prompts_treatment_b_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
