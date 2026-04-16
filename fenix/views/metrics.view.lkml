@@ -22125,7 +22125,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__boolean__nimbus_qa_prefs_bool_default_value {
     label: "Nimbus Qa Prefs: Bool Default Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_default_value ;;
     type: yesno
     group_label: "Nimbus Qa Prefs"
@@ -22143,7 +22143,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__boolean__nimbus_qa_prefs_bool_user_value {
     label: "Nimbus Qa Prefs: Bool User Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.nimbus_qa_prefs_bool_user_value ;;
     type: yesno
     group_label: "Nimbus Qa Prefs"
@@ -22161,7 +22161,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__quantity__nimbus_qa_prefs_int_default_value {
     label: "Nimbus Qa Prefs: Int Default Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_default_value ;;
     type: number
     group_label: "Nimbus Qa Prefs"
@@ -22179,7 +22179,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__quantity__nimbus_qa_prefs_int_user_value {
     label: "Nimbus Qa Prefs: Int User Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.nimbus_qa_prefs_int_user_value ;;
     type: number
     group_label: "Nimbus Qa Prefs"
@@ -22214,7 +22214,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__string__nimbus_qa_prefs_string_default_value {
     label: "Nimbus Qa Prefs: String Default Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_default_value ;;
     type: string
     group_label: "Nimbus Qa Prefs"
@@ -22232,7 +22232,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__string__nimbus_qa_prefs_string_user_value {
     label: "Nimbus Qa Prefs: String User Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_user_value ;;
     type: string
     group_label: "Nimbus Qa Prefs"

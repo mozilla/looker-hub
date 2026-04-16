@@ -315,6 +315,14 @@ view: events_stream {
     group_item_label: "Autocomplete"
   }
 
+  dimension: extras__boolean__block {
+    sql: ${TABLE}.extras.boolean.block ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Block"
+  }
+
   dimension: extras__boolean__blocked {
     sql: ${TABLE}.extras.boolean.blocked ;;
     type: yesno
@@ -2475,6 +2483,14 @@ view: events_stream {
     group_item_label: "Duration"
   }
 
+  dimension: extras__string__element {
+    sql: ${TABLE}.extras.string.element ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Element"
+  }
+
   dimension: extras__string__element_type {
     sql: ${TABLE}.extras.string.element_type ;;
     type: string
@@ -3217,6 +3233,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Lines"
+  }
+
+  dimension: extras__string__link {
+    sql: ${TABLE}.extras.string.link ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Link"
   }
 
   dimension: extras__string__local_datetime {
@@ -4129,6 +4153,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Selected Total"
+  }
+
+  dimension: extras__string__selection {
+    sql: ${TABLE}.extras.string.selection ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Selection"
   }
 
   dimension: extras__string__selfdetails {
