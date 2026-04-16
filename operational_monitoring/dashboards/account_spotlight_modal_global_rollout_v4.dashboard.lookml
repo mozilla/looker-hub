@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: account_spotlight_modal_global_rollout_v4
+    type: looker_line
+    fields: [
+      account_spotlight_modal_global_rollout_v4.submission_date,
+      account_spotlight_modal_global_rollout_v4.branch,
+      account_spotlight_modal_global_rollout_v4.point
+    ]
+    pivots: [
+      account_spotlight_modal_global_rollout_v4.branch
+    ]
+    filters:
+      account_spotlight_modal_global_rollout_v4.metric: 'uri_count'
+      account_spotlight_modal_global_rollout_v4.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: account_spotlight_modal_global_rollout_v4.submission_date
+    field_y: account_spotlight_modal_global_rollout_v4.point
+    log_scale: false
+    ci_lower: account_spotlight_modal_global_rollout_v4.lower
+    ci_upper: account_spotlight_modal_global_rollout_v4.upper
+    show_grid: true
+    listen:
+      Date: account_spotlight_modal_global_rollout_v4.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -29,6 +63,40 @@
       account_spotlight_modal_global_rollout_v4.metric: 'days_of_use'
       account_spotlight_modal_global_rollout_v4.statistic: mean
     row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: account_spotlight_modal_global_rollout_v4.submission_date
+    field_y: account_spotlight_modal_global_rollout_v4.point
+    log_scale: false
+    ci_lower: account_spotlight_modal_global_rollout_v4.lower
+    ci_upper: account_spotlight_modal_global_rollout_v4.upper
+    show_grid: true
+    listen:
+      Date: account_spotlight_modal_global_rollout_v4.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: account_spotlight_modal_global_rollout_v4
+    type: looker_line
+    fields: [
+      account_spotlight_modal_global_rollout_v4.submission_date,
+      account_spotlight_modal_global_rollout_v4.branch,
+      account_spotlight_modal_global_rollout_v4.point
+    ]
+    pivots: [
+      account_spotlight_modal_global_rollout_v4.branch
+    ]
+    filters:
+      account_spotlight_modal_global_rollout_v4.metric: 'retained'
+      account_spotlight_modal_global_rollout_v4.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,76 +130,6 @@
     filters:
       account_spotlight_modal_global_rollout_v4.metric: 'active_hours'
       account_spotlight_modal_global_rollout_v4.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: account_spotlight_modal_global_rollout_v4.submission_date
-    field_y: account_spotlight_modal_global_rollout_v4.point
-    log_scale: false
-    ci_lower: account_spotlight_modal_global_rollout_v4.lower
-    ci_upper: account_spotlight_modal_global_rollout_v4.upper
-    show_grid: true
-    listen:
-      Date: account_spotlight_modal_global_rollout_v4.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: account_spotlight_modal_global_rollout_v4
-    type: looker_line
-    fields: [
-      account_spotlight_modal_global_rollout_v4.submission_date,
-      account_spotlight_modal_global_rollout_v4.branch,
-      account_spotlight_modal_global_rollout_v4.point
-    ]
-    pivots: [
-      account_spotlight_modal_global_rollout_v4.branch
-    ]
-    filters:
-      account_spotlight_modal_global_rollout_v4.metric: 'uri_count'
-      account_spotlight_modal_global_rollout_v4.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: account_spotlight_modal_global_rollout_v4.submission_date
-    field_y: account_spotlight_modal_global_rollout_v4.point
-    log_scale: false
-    ci_lower: account_spotlight_modal_global_rollout_v4.lower
-    ci_upper: account_spotlight_modal_global_rollout_v4.upper
-    show_grid: true
-    listen:
-      Date: account_spotlight_modal_global_rollout_v4.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: account_spotlight_modal_global_rollout_v4
-    type: "ci-line-chart"
-    fields: [
-      account_spotlight_modal_global_rollout_v4.submission_date,
-      account_spotlight_modal_global_rollout_v4.branch,
-      account_spotlight_modal_global_rollout_v4.upper,
-      account_spotlight_modal_global_rollout_v4.lower,
-      account_spotlight_modal_global_rollout_v4.point
-    ]
-    pivots: [
-      account_spotlight_modal_global_rollout_v4.branch
-    ]
-    filters:
-      account_spotlight_modal_global_rollout_v4.metric: 'memory_total'
-      account_spotlight_modal_global_rollout_v4.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -144,7 +142,6 @@
     show_grid: true
     listen:
       Date: account_spotlight_modal_global_rollout_v4.submission_date
-      Percentile: account_spotlight_modal_global_rollout_v4.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: account_spotlight_modal_global_rollout_v4
-    type: looker_line
-    fields: [
-      account_spotlight_modal_global_rollout_v4.submission_date,
-      account_spotlight_modal_global_rollout_v4.branch,
-      account_spotlight_modal_global_rollout_v4.point
-    ]
-    pivots: [
-      account_spotlight_modal_global_rollout_v4.branch
-    ]
-    filters:
-      account_spotlight_modal_global_rollout_v4.metric: 'retained'
-      account_spotlight_modal_global_rollout_v4.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: account_spotlight_modal_global_rollout_v4.submission_date
-    field_y: account_spotlight_modal_global_rollout_v4.point
-    log_scale: false
-    ci_lower: account_spotlight_modal_global_rollout_v4.lower
-    ci_upper: account_spotlight_modal_global_rollout_v4.upper
-    show_grid: true
-    listen:
-      Date: account_spotlight_modal_global_rollout_v4.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -235,8 +198,8 @@
     filters:
       account_spotlight_modal_global_rollout_v4.metric: 'search_count'
       account_spotlight_modal_global_rollout_v4.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: account_spotlight_modal_global_rollout_v4.submission_date
@@ -270,6 +233,42 @@
       account_spotlight_modal_global_rollout_v4.metric: 'qualified_cumulative_days_of_use'
       account_spotlight_modal_global_rollout_v4.statistic: mean
     row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: account_spotlight_modal_global_rollout_v4.submission_date
+    field_y: account_spotlight_modal_global_rollout_v4.point
+    log_scale: false
+    ci_lower: account_spotlight_modal_global_rollout_v4.lower
+    ci_upper: account_spotlight_modal_global_rollout_v4.upper
+    show_grid: true
+    listen:
+      Date: account_spotlight_modal_global_rollout_v4.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: account_spotlight_modal_global_rollout_v4
+    type: "ci-line-chart"
+    fields: [
+      account_spotlight_modal_global_rollout_v4.submission_date,
+      account_spotlight_modal_global_rollout_v4.branch,
+      account_spotlight_modal_global_rollout_v4.upper,
+      account_spotlight_modal_global_rollout_v4.lower,
+      account_spotlight_modal_global_rollout_v4.point
+    ]
+    pivots: [
+      account_spotlight_modal_global_rollout_v4.branch
+    ]
+    filters:
+      account_spotlight_modal_global_rollout_v4.metric: 'memory_total'
+      account_spotlight_modal_global_rollout_v4.statistic: percentile
+    row: 30
     col: 12
     width: 12
     height: 8
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: account_spotlight_modal_global_rollout_v4.submission_date
+      Percentile: account_spotlight_modal_global_rollout_v4.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
