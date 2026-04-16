@@ -572,6 +572,16 @@ Corresponds to the `extensions.blocklist.enabled` pref.
 "
   }
 
+  dimension: metrics__boolean__browser_global_ai_control_is_blocking {
+    sql: ${TABLE}.metrics.boolean.browser_global_ai_control_is_blocking ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Global Ai Control Is Blocking"
+    description: "Records if the user has the global AI control set to blocked.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
     type: yesno
@@ -12179,6 +12189,14 @@ while reporting fog.data_diretory_info.
 "
   }
 
+  dimension: metrics__labeled_boolean__genai_ai_controls_features_blocked {
+    sql: ${TABLE}.metrics.labeled_boolean.genai_ai_controls_features_blocked ;;
+    hidden: yes
+    description: "Records if each AI feature is blocked. Labels are the feature
+identifiers, e.g. `translations`, `voiceSearch` or `pageSummaries`.
+"
+  }
+
   dimension: metrics__labeled_boolean__geolocation_linux_provider {
     sql: ${TABLE}.metrics.labeled_boolean.geolocation_linux_provider ;;
     hidden: yes
@@ -12488,6 +12506,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "Count the number of times a new top page was starting to load
 This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_TOTAL_TOP_VISITS.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_windows_start_search_activation_count {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_windows_start_search_activation_count ;;
+    hidden: yes
+    description: "Counts Bing navigations on Windows that match the Windows Search pattern, using the Bing base domain and `/search` path as heuristic signals. This metric is intended as a proxy for Firefox activations originating from Windows Start menu search.
 "
   }
 
@@ -17911,6 +17936,48 @@ Windows only.
 * model - The disk's self-reported model string
 * revision - The disk's self-reported revision string
 * diskType - Either \"HDD\" or \"SSD\"
+"
+  }
+
+  dimension: metrics__object__nimbus_qa_prefs_bool_default {
+    sql: ${TABLE}.metrics.object.nimbus_qa_prefs_bool_default ;;
+    hidden: yes
+    description: "The value of the \"nimbus.qa.bool-default\" pref.
+"
+  }
+
+  dimension: metrics__object__nimbus_qa_prefs_bool_user {
+    sql: ${TABLE}.metrics.object.nimbus_qa_prefs_bool_user ;;
+    hidden: yes
+    description: "The value of the \"nimbus.qa.bool-user\" pref.
+"
+  }
+
+  dimension: metrics__object__nimbus_qa_prefs_int_default {
+    sql: ${TABLE}.metrics.object.nimbus_qa_prefs_int_default ;;
+    hidden: yes
+    description: "The value of the \"nimbus.qa.int-default\" pref.
+"
+  }
+
+  dimension: metrics__object__nimbus_qa_prefs_int_user {
+    sql: ${TABLE}.metrics.object.nimbus_qa_prefs_int_user ;;
+    hidden: yes
+    description: "The value of the \"nimbus.qa.int-user\" pref.
+"
+  }
+
+  dimension: metrics__object__nimbus_qa_prefs_string_default {
+    sql: ${TABLE}.metrics.object.nimbus_qa_prefs_string_default ;;
+    hidden: yes
+    description: "The value of the \"nimbus.qa.string-default\" pref.
+"
+  }
+
+  dimension: metrics__object__nimbus_qa_prefs_string_user {
+    sql: ${TABLE}.metrics.object.nimbus_qa_prefs_string_user ;;
+    hidden: yes
+    description: "The value of the \"nimbus.qa.string-user\" pref.
 "
   }
 
@@ -56113,6 +56180,20 @@ view: metrics_table__metrics__labeled_boolean__devtools_tool_registered {
 }
 
 view: metrics_table__metrics__labeled_boolean__fog_subdir_err {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__genai_ai_controls_features_blocked {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
