@@ -2929,6 +2929,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_link_parameters {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_link_parameters ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Link Parameters"
+    description: "Whether a page used the CSS property link-parameters.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_list_style {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_list_style ;;
     type: number
@@ -10196,6 +10206,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Line Height"
     description: "Whether a page used the CSS property line-height. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_link_parameters {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_link_parameters ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Link Parameters"
+    description: "Whether a page used the CSS property link-parameters.
 "
   }
 
@@ -19779,6 +19799,36 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_serial_getports {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_serial_getports ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Serial Getports"
+    description: "Whether a document called called Serial.getPorts. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_serial_requestport {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_serial_requestport ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Serial Requestport"
+    description: "Whether a document called called Serial.requestPort. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_serialport_open {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_serialport_open ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Serialport Open"
+    description: "Whether a document called called SerialPort.open. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_shadowroot_pictureinpictureelement {
     sql: ${TABLE}.metrics.counter.use_counter_doc_shadowroot_pictureinpictureelement ;;
     type: number
@@ -24879,6 +24929,36 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_serial_getports {
+    sql: ${TABLE}.metrics.counter.use_counter_page_serial_getports ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Serial Getports"
+    description: "Whether a page called called Serial.getPorts. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_serial_requestport {
+    sql: ${TABLE}.metrics.counter.use_counter_page_serial_requestport ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Serial Requestport"
+    description: "Whether a page called called Serial.requestPort. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_serialport_open {
+    sql: ${TABLE}.metrics.counter.use_counter_page_serialport_open ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Serialport Open"
+    description: "Whether a page called called SerialPort.open. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_shadowroot_pictureinpictureelement {
     sql: ${TABLE}.metrics.counter.use_counter_page_shadowroot_pictureinpictureelement ;;
     type: number
@@ -27339,6 +27419,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_serial_getports {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_serial_getports ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Serial Getports"
+    description: "Whether a dedicated worker called called Serial.getPorts. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_serialport_open {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_serialport_open ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Serialport Open"
+    description: "Whether a dedicated worker called called SerialPort.open. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_videodecoder_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_videodecoder_constructor ;;
     type: number
@@ -27989,6 +28089,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_serial_getports {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_serial_getports ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Serial Getports"
+    description: "Whether a service worker called called Serial.getPorts. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_serialport_open {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_serialport_open ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Serialport Open"
+    description: "Whether a service worker called called SerialPort.open. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_videodecoder_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_videodecoder_constructor ;;
     type: number
@@ -28636,6 +28756,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Shared Scheduler Posttask"
     description: "Whether a shared worker called called Scheduler.postTask. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_serial_getports {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_serial_getports ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Serial Getports"
+    description: "Whether a shared worker called called Serial.getPorts. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_serialport_open {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_serialport_open ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Serialport Open"
+    description: "Whether a shared worker called called SerialPort.open. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 

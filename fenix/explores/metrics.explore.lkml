@@ -178,6 +178,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_total_top_visits}) AS metrics__metrics__labeled_counter__browser_engagement_total_top_visits ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_total_top_visits.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_windows_start_search_activation_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_windows_start_search_activation_count}) AS metrics__metrics__labeled_counter__browser_engagement_windows_start_search_activation_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_windows_start_search_activation_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_search_ad_clicks {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_ad_clicks}) AS metrics__metrics__labeled_counter__browser_search_ad_clicks ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_ad_clicks.document_id} ;;
