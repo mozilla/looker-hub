@@ -14567,7 +14567,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__pdfjs_organize_action {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_organize_action ;;
     hidden: yes
-    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, move, paste), exports selected pages, or saves a PDF modified through page organization.
+    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, merge, move, paste), exports selected pages, or saves a PDF modified through page organization.
 "
   }
 

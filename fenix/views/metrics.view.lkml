@@ -22930,7 +22930,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, move, paste), exports selected pages, or saves a PDF modified through page organization.
+    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, merge, move, paste), exports selected pages, or saves a PDF modified through page organization.
 "
   }
 
