@@ -16188,7 +16188,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__pdfjs_organize_action {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_organize_action ;;
     hidden: yes
-    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, move, paste), exports selected pages, or saves a PDF modified through page organization.
+    description: "Counts the number of times the user performs a page organization action (copy, cut, delete, merge, move, paste), exports selected pages, or saves a PDF modified through page organization.
 "
   }
 
@@ -18817,9 +18817,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
-This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 
