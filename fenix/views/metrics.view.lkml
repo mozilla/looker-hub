@@ -14786,24 +14786,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_animation__sum {
-    label: "Javascript GC: Animation Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_animation.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Animation Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Animation Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_animation"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent running JS GC when animating.
-"
-  }
-
   dimension: metrics__timing_distribution__javascript_gc_budget__sum {
     label: "Javascript GC: Budget Sum"
     hidden: no
@@ -14819,24 +14801,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Requested GC slice budget.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_budget_overrun__sum {
-    label: "Javascript GC: Budget Overrun Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget_overrun.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Budget Overrun Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Budget Overrun Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_budget_overrun"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How long a GC slice ran over its budget.
 "
   }
 
@@ -14997,24 +14961,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Time spent marking GC objects held live through weakmaps.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_max_pause__sum {
-    label: "Javascript GC: Max Pause Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_max_pause.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Max Pause Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Max Pause Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_max_pause"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Longest GC slice in a GC.
 "
   }
 
@@ -15508,24 +15454,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Time spent in between garbage collections for the main runtime.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
-    label: "Javascript GC: Total Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Total Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Total Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_total_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total time taken by a major collection. (Migrated from the geckoview metric of the same name.)
 "
   }
 
