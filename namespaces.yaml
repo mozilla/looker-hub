@@ -206,6 +206,10 @@ activity_stream:
 ads:
   connection: bigquery-oauth
   explores:
+    ads_client_operations_and_errors_hourly:
+      type: table_explore
+      views:
+        base_view: ads_client_operations_and_errors_hourly
     ads_finance_revenue_targets:
       type: table_explore
       views:
@@ -265,6 +269,10 @@ ads:
   pretty_name: Ads
   spoke: looker-spoke-private
   views:
+    ads_client_operations_and_errors_hourly:
+      tables:
+      - table: moz-fx-data-shared-prod.ads_derived.ads_client_operations_and_errors_hourly_v1
+      type: table_view
     ads_finance_revenue_targets:
       dimensions:
         month_country_pk:
