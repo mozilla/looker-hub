@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       summarizer_mistral_model_rollout_japanese_with_app_attest_copy.branch
     ]
     filters:
-      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.metric: 'search_count'
+      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.metric: 'ad_clicks'
       summarizer_mistral_model_rollout_japanese_with_app_attest_copy.statistic: mean
     row: 0
     col: 0
@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: summarizer_mistral_model_rollout_japanese_with_app_attest_copy
-    type: looker_line
-    fields: [
-      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.submission_date,
-      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.branch,
-      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.point
-    ]
-    pivots: [
-      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.branch
-    ]
-    filters:
-      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.metric: 'ad_clicks'
-      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.submission_date
-    field_y: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.point
-    log_scale: false
-    ci_lower: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.lower
-    ci_upper: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.upper
-    show_grid: true
-    listen:
-      Date: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       summarizer_mistral_model_rollout_japanese_with_app_attest_copy.metric: 'retained'
+      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.submission_date
+    field_y: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.point
+    log_scale: false
+    ci_lower: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.lower
+    ci_upper: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.upper
+    show_grid: true
+    listen:
+      Date: summarizer_mistral_model_rollout_japanese_with_app_attest_copy.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: summarizer_mistral_model_rollout_japanese_with_app_attest_copy
+    type: looker_line
+    fields: [
+      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.submission_date,
+      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.branch,
+      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.point
+    ]
+    pivots: [
+      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.branch
+    ]
+    filters:
+      summarizer_mistral_model_rollout_japanese_with_app_attest_copy.metric: 'search_count'
       summarizer_mistral_model_rollout_japanese_with_app_attest_copy.statistic: mean
     row: 10
     col: 12

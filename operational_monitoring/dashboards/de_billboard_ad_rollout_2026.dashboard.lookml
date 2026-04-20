@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       de_billboard_ad_rollout_2026.branch
     ]
     filters:
-      de_billboard_ad_rollout_2026.metric: 'qualified_cumulative_days_of_use'
+      de_billboard_ad_rollout_2026.metric: 'ad_clicks'
       de_billboard_ad_rollout_2026.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       de_billboard_ad_rollout_2026.branch
     ]
     filters:
-      de_billboard_ad_rollout_2026.metric: 'search_count'
+      de_billboard_ad_rollout_2026.metric: 'qualified_cumulative_days_of_use'
       de_billboard_ad_rollout_2026.statistic: mean
     row: 0
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,9 +162,77 @@
       de_billboard_ad_rollout_2026.branch
     ]
     filters:
-      de_billboard_ad_rollout_2026.metric: 'ad_clicks'
+      de_billboard_ad_rollout_2026.metric: 'retained'
       de_billboard_ad_rollout_2026.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: de_billboard_ad_rollout_2026.submission_date
+    field_y: de_billboard_ad_rollout_2026.point
+    log_scale: false
+    ci_lower: de_billboard_ad_rollout_2026.lower
+    ci_upper: de_billboard_ad_rollout_2026.upper
+    show_grid: true
+    listen:
+      Date: de_billboard_ad_rollout_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: de_billboard_ad_rollout_2026
+    type: looker_line
+    fields: [
+      de_billboard_ad_rollout_2026.submission_date,
+      de_billboard_ad_rollout_2026.branch,
+      de_billboard_ad_rollout_2026.point
+    ]
+    pivots: [
+      de_billboard_ad_rollout_2026.branch
+    ]
+    filters:
+      de_billboard_ad_rollout_2026.metric: 'search_count'
+      de_billboard_ad_rollout_2026.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: de_billboard_ad_rollout_2026.submission_date
+    field_y: de_billboard_ad_rollout_2026.point
+    log_scale: false
+    ci_lower: de_billboard_ad_rollout_2026.lower
+    ci_upper: de_billboard_ad_rollout_2026.upper
+    show_grid: true
+    listen:
+      Date: de_billboard_ad_rollout_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: de_billboard_ad_rollout_2026
+    type: looker_line
+    fields: [
+      de_billboard_ad_rollout_2026.submission_date,
+      de_billboard_ad_rollout_2026.branch,
+      de_billboard_ad_rollout_2026.point
+    ]
+    pivots: [
+      de_billboard_ad_rollout_2026.branch
+    ]
+    filters:
+      de_billboard_ad_rollout_2026.metric: 'active_hours'
+      de_billboard_ad_rollout_2026.statistic: mean
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -200,7 +268,7 @@
     filters:
       de_billboard_ad_rollout_2026.metric: 'memory_total'
       de_billboard_ad_rollout_2026.statistic: percentile
-    row: 20
+    row: 30
     col: 12
     width: 12
     height: 8
@@ -213,74 +281,6 @@
     listen:
       Date: de_billboard_ad_rollout_2026.submission_date
       Percentile: de_billboard_ad_rollout_2026.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: de_billboard_ad_rollout_2026
-    type: looker_line
-    fields: [
-      de_billboard_ad_rollout_2026.submission_date,
-      de_billboard_ad_rollout_2026.branch,
-      de_billboard_ad_rollout_2026.point
-    ]
-    pivots: [
-      de_billboard_ad_rollout_2026.branch
-    ]
-    filters:
-      de_billboard_ad_rollout_2026.metric: 'retained'
-      de_billboard_ad_rollout_2026.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: de_billboard_ad_rollout_2026.submission_date
-    field_y: de_billboard_ad_rollout_2026.point
-    log_scale: false
-    ci_lower: de_billboard_ad_rollout_2026.lower
-    ci_upper: de_billboard_ad_rollout_2026.upper
-    show_grid: true
-    listen:
-      Date: de_billboard_ad_rollout_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: de_billboard_ad_rollout_2026
-    type: looker_line
-    fields: [
-      de_billboard_ad_rollout_2026.submission_date,
-      de_billboard_ad_rollout_2026.branch,
-      de_billboard_ad_rollout_2026.point
-    ]
-    pivots: [
-      de_billboard_ad_rollout_2026.branch
-    ]
-    filters:
-      de_billboard_ad_rollout_2026.metric: 'active_hours'
-      de_billboard_ad_rollout_2026.statistic: mean
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: de_billboard_ad_rollout_2026.submission_date
-    field_y: de_billboard_ad_rollout_2026.point
-    log_scale: false
-    ci_lower: de_billboard_ad_rollout_2026.lower
-    ci_upper: de_billboard_ad_rollout_2026.upper
-    show_grid: true
-    listen:
-      Date: de_billboard_ad_rollout_2026.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

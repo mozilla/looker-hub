@@ -17409,6 +17409,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_element_requestfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_element_requestfullscreen ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Element Requestfullscreen"
+    description: "Whether a document called called Element.requestFullscreen. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_element_scrollintoviewifneeded {
     sql: ${TABLE}.metrics.counter.use_counter_doc_element_scrollintoviewifneeded ;;
     type: number
@@ -19756,6 +19766,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Reportingobserver Constructor"
     description: "Whether a document called called ReportingObserver.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_requested_keyboard_lock {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_requested_keyboard_lock ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Requested Keyboard Lock"
+    description: "Whether a document has requested fullscreen with keyboardlock. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22539,6 +22559,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_element_requestfullscreen {
+    sql: ${TABLE}.metrics.counter.use_counter_page_element_requestfullscreen ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Element Requestfullscreen"
+    description: "Whether a page called called Element.requestFullscreen. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_element_scrollintoviewifneeded {
     sql: ${TABLE}.metrics.counter.use_counter_page_element_scrollintoviewifneeded ;;
     type: number
@@ -24886,6 +24916,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Reportingobserver Constructor"
     description: "Whether a page called called ReportingObserver.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_requested_keyboard_lock {
+    sql: ${TABLE}.metrics.counter.use_counter_page_requested_keyboard_lock ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Requested Keyboard Lock"
+    description: "Whether a page has requested fullscreen with keyboardlock. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
