@@ -578,7 +578,7 @@ The status of individual objects is constructed by taking selected object proper
   dimension: metrics__object__crash_stack_traces {
     sql: ${TABLE}.metrics.object.crash_stack_traces ;;
     hidden: yes
-    description: "Stack traces extracted from the crash minidump, if available. These are sent in pings, however they are extracted and transformed into a different format. The field in the extra file is meant only for client use."
+    description: "Stack traces extracted from the crash minidump, if available. A serialized JSON object (with a structure matching the associated Glean object description)."
   }
 
   dimension: metrics__quantity__crash_event_loop_nesting_level {
