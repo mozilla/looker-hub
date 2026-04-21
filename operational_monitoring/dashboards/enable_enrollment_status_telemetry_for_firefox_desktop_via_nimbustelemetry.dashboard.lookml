@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
     ]
     filters:
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'ad_clicks'
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'active_hours'
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
+    type: "ci-line-chart"
+    fields: [
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper,
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower,
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
+    ]
+    pivots: [
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
+    ]
+    filters:
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'memory_total'
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: percentile
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+    field_y: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
+    log_scale: false
+    ci_lower: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower
+    ci_upper: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper
+    show_grid: true
+    listen:
+      Date: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
+      Percentile: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +131,10 @@
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
     ]
     filters:
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'uri_count'
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'retained'
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
@@ -130,8 +167,8 @@
     filters:
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'days_of_use'
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
@@ -146,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +199,10 @@
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
     ]
     filters:
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'retained'
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'uri_count'
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
@@ -198,40 +235,6 @@
     filters:
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'search_count'
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-    field_y: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
-    log_scale: false
-    ci_lower: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower
-    ci_upper: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper
-    show_grid: true
-    listen:
-      Date: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
-    type: looker_line
-    fields: [
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
-    ]
-    pivots: [
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
-    ]
-    filters:
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'active_hours'
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date,
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch,
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.upper,
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.lower,
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.point
     ]
     pivots: [
       enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.branch
     ]
     filters:
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'memory_total'
-      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: percentile
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.metric: 'ad_clicks'
+      enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.submission_date
-      Percentile: enable_enrollment_status_telemetry_for_firefox_desktop_via_nimbustelemetry.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
