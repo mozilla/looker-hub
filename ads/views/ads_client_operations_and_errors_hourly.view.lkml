@@ -260,5 +260,171 @@ view: ads_client_operations_and_errors_hourly {
     description: "Submission timestamp truncated to the hour."
   }
 
+  measure: build_cache_error_builder_error_sum {
+    sql: ${build_cache_error_builder_error} ;;
+    type: sum
+  }
+
+  measure: build_cache_error_database_error_sum {
+    sql: ${build_cache_error_database_error} ;;
+    type: sum
+  }
+
+  measure: build_cache_error_empty_db_path_sum {
+    sql: ${build_cache_error_empty_db_path} ;;
+    type: sum
+  }
+
+  measure: build_cache_error_invalid_max_size_sum {
+    sql: ${build_cache_error_invalid_max_size} ;;
+    type: sum
+  }
+
+  measure: build_cache_error_invalid_ttl_sum {
+    sql: ${build_cache_error_invalid_ttl} ;;
+    type: sum
+  }
+
+  measure: build_cache_error_rate {
+    sql: SAFE_DIVIDE(${build_cache_errors_total}, ${op_new_sum}) ;;
+    type: number
+    value_format_name: percent_2
+  }
+
+  measure: build_cache_errors_total {
+    sql: ${build_cache_error_builder_error_sum} + ${build_cache_error_database_error_sum} + ${build_cache_error_empty_db_path_sum} + ${build_cache_error_invalid_max_size_sum} + ${build_cache_error_invalid_ttl_sum} ;;
+    type: number
+  }
+
+  measure: client_error_record_click_sum {
+    sql: ${client_error_record_click} ;;
+    type: sum
+  }
+
+  measure: client_error_record_impression_sum {
+    sql: ${client_error_record_impression} ;;
+    type: sum
+  }
+
+  measure: client_error_report_ad_sum {
+    sql: ${client_error_report_ad} ;;
+    type: sum
+  }
+
+  measure: client_error_request_ads_sum {
+    sql: ${client_error_request_ads} ;;
+    type: sum
+  }
+
+  measure: deserialization_error_invalid_ad_item_sum {
+    sql: ${deserialization_error_invalid_ad_item} ;;
+    type: sum
+  }
+
+  measure: deserialization_error_invalid_array_sum {
+    sql: ${deserialization_error_invalid_array} ;;
+    type: sum
+  }
+
+  measure: deserialization_error_invalid_structure_sum {
+    sql: ${deserialization_error_invalid_structure} ;;
+    type: sum
+  }
+
+  measure: deserialization_error_rate {
+    sql: SAFE_DIVIDE(${deserialization_errors_total}, ${op_request_ads_sum}) ;;
+    type: number
+    value_format_name: percent_2
+  }
+
+  measure: deserialization_errors_total {
+    sql: ${deserialization_error_invalid_ad_item_sum} + ${deserialization_error_invalid_array_sum} + ${deserialization_error_invalid_structure_sum} ;;
+    type: number
+  }
+
+  measure: http_cache_outcome_cleanup_failed_sum {
+    sql: ${http_cache_outcome_cleanup_failed} ;;
+    type: sum
+  }
+
+  measure: http_cache_outcome_hit_sum {
+    sql: ${http_cache_outcome_hit} ;;
+    type: sum
+  }
+
+  measure: http_cache_outcome_lookup_failed_sum {
+    sql: ${http_cache_outcome_lookup_failed} ;;
+    type: sum
+  }
+
+  measure: http_cache_outcome_miss_not_cacheable_sum {
+    sql: ${http_cache_outcome_miss_not_cacheable} ;;
+    type: sum
+  }
+
+  measure: http_cache_outcome_miss_stored_sum {
+    sql: ${http_cache_outcome_miss_stored} ;;
+    type: sum
+  }
+
+  measure: http_cache_outcome_no_cache_sum {
+    sql: ${http_cache_outcome_no_cache} ;;
+    type: sum
+  }
+
+  measure: http_cache_outcome_store_failed_sum {
+    sql: ${http_cache_outcome_store_failed} ;;
+    type: sum
+  }
+
+  measure: op_new_sum {
+    sql: ${op_new} ;;
+    type: sum
+  }
+
+  measure: op_record_click_sum {
+    sql: ${op_record_click} ;;
+    type: sum
+  }
+
+  measure: op_record_impression_sum {
+    sql: ${op_record_impression} ;;
+    type: sum
+  }
+
+  measure: op_report_ad_sum {
+    sql: ${op_report_ad} ;;
+    type: sum
+  }
+
+  measure: op_request_ads_sum {
+    sql: ${op_request_ads} ;;
+    type: sum
+  }
+
+  measure: record_click_error_rate {
+    sql: SAFE_DIVIDE(${client_error_record_click_sum}, ${op_record_click_sum}) ;;
+    type: number
+    value_format_name: percent_2
+  }
+
+  measure: record_impression_error_rate {
+    sql: SAFE_DIVIDE(${client_error_record_impression_sum}, ${op_record_impression_sum}) ;;
+    type: number
+    value_format_name: percent_2
+  }
+
+  measure: report_ad_error_rate {
+    sql: SAFE_DIVIDE(${client_error_report_ad_sum}, ${op_report_ad_sum}) ;;
+    type: number
+    value_format_name: percent_2
+  }
+
+  measure: request_ads_error_rate {
+    sql: SAFE_DIVIDE(${client_error_request_ads_sum}, ${op_request_ads_sum}) ;;
+    type: number
+    value_format_name: percent_2
+  }
+
   sql_table_name: `moz-fx-data-shared-prod.ads_derived.ads_client_operations_and_errors_hourly_v1` ;;
 }
