@@ -1699,6 +1699,14 @@ view: events_stream {
     group_item_label: "Iframe Count"
   }
 
+  dimension: extras__quantity__in_use {
+    sql: ${TABLE}.extras.quantity.in_use ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "In Use"
+  }
+
   dimension: extras__quantity__inference_time {
     sql: ${TABLE}.extras.quantity.inference_time ;;
     type: number
