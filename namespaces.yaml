@@ -3995,6 +3995,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.third_party_modules
       type: table_view
+    top_10_content_decoding_errors_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.top_10_content_decoding_errors
+      type: table_view
     top_sites_table:
       tables:
       - channel: null
