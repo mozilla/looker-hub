@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout
-    type: looker_line
-    fields: [
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date,
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch,
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
-    ]
-    pivots: [
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch
-    ]
-    filters:
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'active_hours'
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
-    field_y: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.lower
-    ci_upper: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -63,6 +29,108 @@
       email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'qualified_cumulative_days_of_use'
       email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
+    field_y: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.lower
+    ci_upper: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout
+    type: looker_line
+    fields: [
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date,
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch,
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
+    ]
+    pivots: [
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch
+    ]
+    filters:
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'search_count'
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
+    field_y: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.lower
+    ci_upper: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout
+    type: looker_line
+    fields: [
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date,
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch,
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
+    ]
+    pivots: [
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch
+    ]
+    filters:
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'uri_count'
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
+    field_y: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.lower
+    ci_upper: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout
+    type: looker_line
+    fields: [
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date,
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch,
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
+    ]
+    pivots: [
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch
+    ]
+    filters:
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'ad_clicks'
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -98,7 +166,7 @@
     filters:
       email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'memory_total'
       email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: percentile
-    row: 10
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -111,6 +179,40 @@
     listen:
       Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
       Percentile: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout
+    type: looker_line
+    fields: [
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date,
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch,
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
+    ]
+    pivots: [
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch
+    ]
+    filters:
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'active_hours'
+      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
+    field_y: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
+    log_scale: false
+    ci_lower: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.lower
+    ci_upper: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.upper
+    show_grid: true
+    listen:
+      Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -133,8 +235,8 @@
     filters:
       email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'retained'
       email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
-    row: 10
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
@@ -166,108 +268,6 @@
     ]
     filters:
       email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'days_of_use'
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
-    field_y: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.lower
-    ci_upper: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout
-    type: looker_line
-    fields: [
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date,
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch,
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
-    ]
-    pivots: [
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch
-    ]
-    filters:
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'uri_count'
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
-    field_y: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.lower
-    ci_upper: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout
-    type: looker_line
-    fields: [
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date,
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch,
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
-    ]
-    pivots: [
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch
-    ]
-    filters:
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'search_count'
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
-    field_y: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
-    log_scale: false
-    ci_lower: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.lower
-    ci_upper: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.upper
-    show_grid: true
-    listen:
-      Date: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: email_pin_tab_taskbar_tab_prompts_treatment_b_rollout
-    type: looker_line
-    fields: [
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.submission_date,
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch,
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.point
-    ]
-    pivots: [
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.branch
-    ]
-    filters:
-      email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.metric: 'ad_clicks'
       email_pin_tab_taskbar_tab_prompts_treatment_b_rollout.statistic: mean
     row: 30
     col: 12

@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.mozilla_vpn_in_private_browsing_treatment_d_rollout_en_only_statistics ;;
+view: onboarding_rollout_2604_149_backup_restore {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.onboarding_rollout_2604_149_backup_restore_statistics ;;
 
   dimension: submission_date {
     type: date

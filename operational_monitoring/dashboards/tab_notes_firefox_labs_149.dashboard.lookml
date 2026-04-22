@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: tab_notes_firefox_labs_149
-    type: looker_line
-    fields: [
-      tab_notes_firefox_labs_149.submission_date,
-      tab_notes_firefox_labs_149.branch,
-      tab_notes_firefox_labs_149.point
-    ]
-    pivots: [
-      tab_notes_firefox_labs_149.branch
-    ]
-    filters:
-      tab_notes_firefox_labs_149.metric: 'active_hours'
-      tab_notes_firefox_labs_149.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: tab_notes_firefox_labs_149.submission_date
-    field_y: tab_notes_firefox_labs_149.point
-    log_scale: false
-    ci_lower: tab_notes_firefox_labs_149.lower
-    ci_upper: tab_notes_firefox_labs_149.upper
-    show_grid: true
-    listen:
-      Date: tab_notes_firefox_labs_149.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -63,6 +29,108 @@
       tab_notes_firefox_labs_149.metric: 'qualified_cumulative_days_of_use'
       tab_notes_firefox_labs_149.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: tab_notes_firefox_labs_149.submission_date
+    field_y: tab_notes_firefox_labs_149.point
+    log_scale: false
+    ci_lower: tab_notes_firefox_labs_149.lower
+    ci_upper: tab_notes_firefox_labs_149.upper
+    show_grid: true
+    listen:
+      Date: tab_notes_firefox_labs_149.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: tab_notes_firefox_labs_149
+    type: looker_line
+    fields: [
+      tab_notes_firefox_labs_149.submission_date,
+      tab_notes_firefox_labs_149.branch,
+      tab_notes_firefox_labs_149.point
+    ]
+    pivots: [
+      tab_notes_firefox_labs_149.branch
+    ]
+    filters:
+      tab_notes_firefox_labs_149.metric: 'search_count'
+      tab_notes_firefox_labs_149.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: tab_notes_firefox_labs_149.submission_date
+    field_y: tab_notes_firefox_labs_149.point
+    log_scale: false
+    ci_lower: tab_notes_firefox_labs_149.lower
+    ci_upper: tab_notes_firefox_labs_149.upper
+    show_grid: true
+    listen:
+      Date: tab_notes_firefox_labs_149.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: tab_notes_firefox_labs_149
+    type: looker_line
+    fields: [
+      tab_notes_firefox_labs_149.submission_date,
+      tab_notes_firefox_labs_149.branch,
+      tab_notes_firefox_labs_149.point
+    ]
+    pivots: [
+      tab_notes_firefox_labs_149.branch
+    ]
+    filters:
+      tab_notes_firefox_labs_149.metric: 'uri_count'
+      tab_notes_firefox_labs_149.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: tab_notes_firefox_labs_149.submission_date
+    field_y: tab_notes_firefox_labs_149.point
+    log_scale: false
+    ci_lower: tab_notes_firefox_labs_149.lower
+    ci_upper: tab_notes_firefox_labs_149.upper
+    show_grid: true
+    listen:
+      Date: tab_notes_firefox_labs_149.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: tab_notes_firefox_labs_149
+    type: looker_line
+    fields: [
+      tab_notes_firefox_labs_149.submission_date,
+      tab_notes_firefox_labs_149.branch,
+      tab_notes_firefox_labs_149.point
+    ]
+    pivots: [
+      tab_notes_firefox_labs_149.branch
+    ]
+    filters:
+      tab_notes_firefox_labs_149.metric: 'ad_clicks'
+      tab_notes_firefox_labs_149.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -98,7 +166,7 @@
     filters:
       tab_notes_firefox_labs_149.metric: 'memory_total'
       tab_notes_firefox_labs_149.statistic: percentile
-    row: 10
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -111,6 +179,40 @@
     listen:
       Date: tab_notes_firefox_labs_149.submission_date
       Percentile: tab_notes_firefox_labs_149.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: tab_notes_firefox_labs_149
+    type: looker_line
+    fields: [
+      tab_notes_firefox_labs_149.submission_date,
+      tab_notes_firefox_labs_149.branch,
+      tab_notes_firefox_labs_149.point
+    ]
+    pivots: [
+      tab_notes_firefox_labs_149.branch
+    ]
+    filters:
+      tab_notes_firefox_labs_149.metric: 'active_hours'
+      tab_notes_firefox_labs_149.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: tab_notes_firefox_labs_149.submission_date
+    field_y: tab_notes_firefox_labs_149.point
+    log_scale: false
+    ci_lower: tab_notes_firefox_labs_149.lower
+    ci_upper: tab_notes_firefox_labs_149.upper
+    show_grid: true
+    listen:
+      Date: tab_notes_firefox_labs_149.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -133,8 +235,8 @@
     filters:
       tab_notes_firefox_labs_149.metric: 'retained'
       tab_notes_firefox_labs_149.statistic: mean
-    row: 10
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: tab_notes_firefox_labs_149.submission_date
@@ -166,108 +268,6 @@
     ]
     filters:
       tab_notes_firefox_labs_149.metric: 'days_of_use'
-      tab_notes_firefox_labs_149.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: tab_notes_firefox_labs_149.submission_date
-    field_y: tab_notes_firefox_labs_149.point
-    log_scale: false
-    ci_lower: tab_notes_firefox_labs_149.lower
-    ci_upper: tab_notes_firefox_labs_149.upper
-    show_grid: true
-    listen:
-      Date: tab_notes_firefox_labs_149.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: tab_notes_firefox_labs_149
-    type: looker_line
-    fields: [
-      tab_notes_firefox_labs_149.submission_date,
-      tab_notes_firefox_labs_149.branch,
-      tab_notes_firefox_labs_149.point
-    ]
-    pivots: [
-      tab_notes_firefox_labs_149.branch
-    ]
-    filters:
-      tab_notes_firefox_labs_149.metric: 'uri_count'
-      tab_notes_firefox_labs_149.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: tab_notes_firefox_labs_149.submission_date
-    field_y: tab_notes_firefox_labs_149.point
-    log_scale: false
-    ci_lower: tab_notes_firefox_labs_149.lower
-    ci_upper: tab_notes_firefox_labs_149.upper
-    show_grid: true
-    listen:
-      Date: tab_notes_firefox_labs_149.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: tab_notes_firefox_labs_149
-    type: looker_line
-    fields: [
-      tab_notes_firefox_labs_149.submission_date,
-      tab_notes_firefox_labs_149.branch,
-      tab_notes_firefox_labs_149.point
-    ]
-    pivots: [
-      tab_notes_firefox_labs_149.branch
-    ]
-    filters:
-      tab_notes_firefox_labs_149.metric: 'search_count'
-      tab_notes_firefox_labs_149.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: tab_notes_firefox_labs_149.submission_date
-    field_y: tab_notes_firefox_labs_149.point
-    log_scale: false
-    ci_lower: tab_notes_firefox_labs_149.lower
-    ci_upper: tab_notes_firefox_labs_149.upper
-    show_grid: true
-    listen:
-      Date: tab_notes_firefox_labs_149.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: tab_notes_firefox_labs_149
-    type: looker_line
-    fields: [
-      tab_notes_firefox_labs_149.submission_date,
-      tab_notes_firefox_labs_149.branch,
-      tab_notes_firefox_labs_149.point
-    ]
-    pivots: [
-      tab_notes_firefox_labs_149.branch
-    ]
-    filters:
-      tab_notes_firefox_labs_149.metric: 'ad_clicks'
       tab_notes_firefox_labs_149.statistic: mean
     row: 30
     col: 12
