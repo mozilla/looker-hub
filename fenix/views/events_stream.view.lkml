@@ -1899,6 +1899,14 @@ view: events_stream {
     group_item_label: "Addonversion"
   }
 
+  dimension: extras__string__addon_download_url {
+    sql: ${TABLE}.extras.string.addon_download_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Addon Download URL"
+  }
+
   dimension: extras__string__addon_id {
     sql: ${TABLE}.extras.string.addon_id ;;
     type: string

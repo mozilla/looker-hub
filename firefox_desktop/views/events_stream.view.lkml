@@ -3019,6 +3019,14 @@ view: events_stream {
     group_item_label: "Breach Name"
   }
 
+  dimension: extras__string__breach_status {
+    sql: ${TABLE}.extras.string.breach_status ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Breach Status"
+  }
+
   dimension: extras__string__build_id {
     sql: ${TABLE}.extras.string.build_id ;;
     type: string
