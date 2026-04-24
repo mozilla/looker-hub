@@ -5259,6 +5259,14 @@ mdn_fred:
       - channel: null
         table: mozdata.mdn_fred.events_unnested
       type: table_view
+mdn_mcp:
+  explores: {}
+  glean_app: true
+  owners:
+  - mdn-engineering@mozilla.com
+  pretty_name: MDN MCP
+  spoke: looker-spoke-default
+  views: {}
 mdn_yari:
   explores:
     events:
