@@ -626,6 +626,12 @@ view: metrics__latest_metric_runs__groupDimensions {
     type: string
     suggest_persist_for: "24 hours"
   }
+
+  dimension: nullValue {
+    sql: ${TABLE}.nullValue ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
 }
 
 view: metrics__latest_metric_runs__thresholds {
