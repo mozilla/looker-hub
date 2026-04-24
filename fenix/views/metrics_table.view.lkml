@@ -3702,6 +3702,16 @@ is the same as it was before the load.
 "
   }
 
+  dimension: metrics__counter__rtcpeerconnection_count_rtcp_mux_policy_negotiate {
+    sql: ${TABLE}.metrics.counter.rtcpeerconnection_count_rtcp_mux_policy_negotiate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Rtcpeerconnection Count Rtcp Mux Policy Negotiate"
+    description: "The number of RTCPeerConnections created with rtcpMuxPolicy set to \"negotiate\". This value was removed from the spec, and we would like to track usage before removing it.
+"
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     sql: ${TABLE}.metrics.counter.rtcrtpsender_count ;;
     type: number
