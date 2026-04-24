@@ -25424,6 +25424,24 @@ See the [Region documentation](https://firefox-source-docs.mozilla.org/toolkit/m
 "
   }
 
+  dimension: metrics__counter__rtcpeerconnection_count_rtcp_mux_policy_negotiate {
+    label: "Rtcpeerconnection: Count Rtcp Mux Policy Negotiate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.rtcpeerconnection_count_rtcp_mux_policy_negotiate ;;
+    type: number
+    group_label: "Rtcpeerconnection"
+    group_item_label: "Count Rtcp Mux Policy Negotiate"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcpeerconnection: Count Rtcp Mux Policy Negotiate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/rtcpeerconnection_count_rtcp_mux_policy_negotiate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCPeerConnections created with rtcpMuxPolicy set to \"negotiate\". This value was removed from the spec, and we would like to track usage before removing it.
+"
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender: Count"
     hidden: no
@@ -39581,6 +39599,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Quotamanager Restore Origin Directory Metadata Counter"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/quotamanager_restore_origin_directory_metadata_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcpeerconnection_count_rtcp_mux_policy_negotiate {
+    type: sum
+    sql: ${metrics__counter__rtcpeerconnection_count_rtcp_mux_policy_negotiate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcpeerconnection Count Rtcp Mux Policy Negotiate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/rtcpeerconnection_count_rtcp_mux_policy_negotiate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcpeerconnection_count_rtcp_mux_policy_negotiate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__rtcpeerconnection_count_rtcp_mux_policy_negotiate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcpeerconnection Count Rtcp Mux Policy Negotiate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/rtcpeerconnection_count_rtcp_mux_policy_negotiate"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
