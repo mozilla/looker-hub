@@ -10,6 +10,74 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sections_in_canada_sections_ca_content_rollout
+    type: looker_line
+    fields: [
+      sections_in_canada_sections_ca_content_rollout.submission_date,
+      sections_in_canada_sections_ca_content_rollout.branch,
+      sections_in_canada_sections_ca_content_rollout.point
+    ]
+    pivots: [
+      sections_in_canada_sections_ca_content_rollout.branch
+    ]
+    filters:
+      sections_in_canada_sections_ca_content_rollout.metric: 'uri_count'
+      sections_in_canada_sections_ca_content_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: sections_in_canada_sections_ca_content_rollout.submission_date
+    field_y: sections_in_canada_sections_ca_content_rollout.point
+    log_scale: false
+    ci_lower: sections_in_canada_sections_ca_content_rollout.lower
+    ci_upper: sections_in_canada_sections_ca_content_rollout.upper
+    show_grid: true
+    listen:
+      Date: sections_in_canada_sections_ca_content_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sections_in_canada_sections_ca_content_rollout
+    type: looker_line
+    fields: [
+      sections_in_canada_sections_ca_content_rollout.submission_date,
+      sections_in_canada_sections_ca_content_rollout.branch,
+      sections_in_canada_sections_ca_content_rollout.point
+    ]
+    pivots: [
+      sections_in_canada_sections_ca_content_rollout.branch
+    ]
+    filters:
+      sections_in_canada_sections_ca_content_rollout.metric: 'days_of_use'
+      sections_in_canada_sections_ca_content_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: sections_in_canada_sections_ca_content_rollout.submission_date
+    field_y: sections_in_canada_sections_ca_content_rollout.point
+    log_scale: false
+    ci_lower: sections_in_canada_sections_ca_content_rollout.lower
+    ci_upper: sections_in_canada_sections_ca_content_rollout.upper
+    show_grid: true
+    listen:
+      Date: sections_in_canada_sections_ca_content_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -30,7 +98,7 @@
     filters:
       sections_in_canada_sections_ca_content_rollout.metric: 'memory_total'
       sections_in_canada_sections_ca_content_rollout.statistic: percentile
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -43,40 +111,6 @@
     listen:
       Date: sections_in_canada_sections_ca_content_rollout.submission_date
       Percentile: sections_in_canada_sections_ca_content_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sections_in_canada_sections_ca_content_rollout
-    type: looker_line
-    fields: [
-      sections_in_canada_sections_ca_content_rollout.submission_date,
-      sections_in_canada_sections_ca_content_rollout.branch,
-      sections_in_canada_sections_ca_content_rollout.point
-    ]
-    pivots: [
-      sections_in_canada_sections_ca_content_rollout.branch
-    ]
-    filters:
-      sections_in_canada_sections_ca_content_rollout.metric: 'uri_count'
-      sections_in_canada_sections_ca_content_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: sections_in_canada_sections_ca_content_rollout.submission_date
-    field_y: sections_in_canada_sections_ca_content_rollout.point
-    log_scale: false
-    ci_lower: sections_in_canada_sections_ca_content_rollout.lower
-    ci_upper: sections_in_canada_sections_ca_content_rollout.upper
-    show_grid: true
-    listen:
-      Date: sections_in_canada_sections_ca_content_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -98,40 +132,6 @@
     ]
     filters:
       sections_in_canada_sections_ca_content_rollout.metric: 'ad_clicks'
-      sections_in_canada_sections_ca_content_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: sections_in_canada_sections_ca_content_rollout.submission_date
-    field_y: sections_in_canada_sections_ca_content_rollout.point
-    log_scale: false
-    ci_lower: sections_in_canada_sections_ca_content_rollout.lower
-    ci_upper: sections_in_canada_sections_ca_content_rollout.upper
-    show_grid: true
-    listen:
-      Date: sections_in_canada_sections_ca_content_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sections_in_canada_sections_ca_content_rollout
-    type: looker_line
-    fields: [
-      sections_in_canada_sections_ca_content_rollout.submission_date,
-      sections_in_canada_sections_ca_content_rollout.branch,
-      sections_in_canada_sections_ca_content_rollout.point
-    ]
-    pivots: [
-      sections_in_canada_sections_ca_content_rollout.branch
-    ]
-    filters:
-      sections_in_canada_sections_ca_content_rollout.metric: 'qualified_cumulative_days_of_use'
       sections_in_canada_sections_ca_content_rollout.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       sections_in_canada_sections_ca_content_rollout.branch
     ]
     filters:
-      sections_in_canada_sections_ca_content_rollout.metric: 'days_of_use'
+      sections_in_canada_sections_ca_content_rollout.metric: 'active_hours'
       sections_in_canada_sections_ca_content_rollout.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       sections_in_canada_sections_ca_content_rollout.branch
     ]
     filters:
-      sections_in_canada_sections_ca_content_rollout.metric: 'active_hours'
+      sections_in_canada_sections_ca_content_rollout.metric: 'qualified_cumulative_days_of_use'
       sections_in_canada_sections_ca_content_rollout.statistic: mean
     row: 30
     col: 12
