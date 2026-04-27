@@ -5,6 +5,96 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: play_store_attribution {
+  dimension: metrics__string__meta_attribution_app {
+    label: "Meta Attribution: App"
+    hidden: no
+    sql: ${TABLE}.metrics.string.meta_attribution_app ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "App"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution: App"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_app"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The mobile application ID in Meta's attribution.
+"
+  }
+
+  dimension: metrics__text2__meta_attribution_data {
+    label: "Meta Attribution: Data"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.meta_attribution_data ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "Data"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution: Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Meta attribution data in encrypted format.
+"
+  }
+
+  dimension: metrics__string__meta_attribution_nonce {
+    label: "Meta Attribution: Nonce"
+    hidden: no
+    sql: ${TABLE}.metrics.string.meta_attribution_nonce ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "Nonce"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution: Nonce"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_nonce"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Nonce used to decrypt the encrypted Meta attribution data.
+"
+  }
+
+  dimension: metrics__string__meta_attribution_t {
+    label: "Meta Attribution: T"
+    hidden: no
+    sql: ${TABLE}.metrics.string.meta_attribution_t ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "T"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution: T"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_t"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value tracking user interaction with Meta attribution.
+"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__sum {
+    label: "Play Store Attribution: Attribution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.sum ;;
+    type: number
+    group_label: "Play Store Attribution"
+    group_item_label: "Attribution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution: Attribution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_attribution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to derive the attribution parameters by the Google Play Install Referrer library.
+"
+  }
+
   dimension: metrics__string__play_store_attribution_campaign {
     label: "Play Store Attribution: Campaign"
     hidden: no
@@ -1060,6 +1150,20 @@ view: play_store_attribution__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: play_store_attribution__metrics__timing_distribution__play_store_attribution_attribution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

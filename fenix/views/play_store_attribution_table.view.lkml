@@ -492,6 +492,36 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__meta_attribution_app {
+    sql: ${TABLE}.metrics.string.meta_attribution_app ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Meta Attribution App"
+    description: "The mobile application ID in Meta's attribution.
+"
+  }
+
+  dimension: metrics__string__meta_attribution_nonce {
+    sql: ${TABLE}.metrics.string.meta_attribution_nonce ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Meta Attribution Nonce"
+    description: "Nonce used to decrypt the encrypted Meta attribution data.
+"
+  }
+
+  dimension: metrics__string__meta_attribution_t {
+    sql: ${TABLE}.metrics.string.meta_attribution_t ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Meta Attribution T"
+    description: "Value tracking user interaction with Meta attribution.
+"
+  }
+
   dimension: metrics__string__play_store_attribution_campaign {
     sql: ${TABLE}.metrics.string.play_store_attribution_campaign ;;
     type: string
@@ -562,12 +592,30 @@ This metric is only attached to a ping if it already contains other data.
 "
   }
 
+  dimension: metrics__text__meta_attribution_data {
+    sql: ${TABLE}.metrics.text.meta_attribution_data ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text"
+    group_item_label: "Meta Attribution Data"
+  }
+
   dimension: metrics__text__play_store_attribution_install_referrer_response {
     sql: ${TABLE}.metrics.text.play_store_attribution_install_referrer_response ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text"
     group_item_label: "Play Store Attribution Install Referrer Response"
+  }
+
+  dimension: metrics__text2__meta_attribution_data {
+    sql: ${TABLE}.metrics.text2.meta_attribution_data ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Meta Attribution Data"
+    description: "The Meta attribution data in encrypted format.
+"
   }
 
   dimension: metrics__text2__play_store_attribution_install_referrer_response {
@@ -578,6 +626,73 @@ This metric is only attached to a ping if it already contains other data.
     group_item_label: "Play Store Attribution Install Referrer Response"
     description: "The full install referrer response.
 "
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Play Store Attribution Attribution Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Play Store Attribution Attribution Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Play Store Attribution Attribution Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Play Store Attribution Attribution Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Play Store Attribution Attribution Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Play Store Attribution Attribution Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Play Store Attribution Attribution Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.values ;;
+    hidden: yes
   }
 
   dimension: normalized_app_id {
@@ -822,6 +937,20 @@ view: play_store_attribution_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: play_store_attribution_table__metrics__timing_distribution__play_store_attribution_attribution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

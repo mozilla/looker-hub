@@ -993,6 +993,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_search_count}) AS metrics__metrics__labeled_counter__metrics_search_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_search_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__metrics_tab_group_creation_mode {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_tab_group_creation_mode}) AS metrics__metrics__labeled_counter__metrics_tab_group_creation_mode ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_tab_group_creation_mode.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__mixed_content_audio {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__mixed_content_audio}) AS metrics__metrics__labeled_counter__mixed_content_audio ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__mixed_content_audio.document_id} ;;

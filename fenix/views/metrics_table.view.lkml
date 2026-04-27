@@ -1152,6 +1152,16 @@ once we validate these assumptions.
 "
   }
 
+  dimension: metrics__boolean__network_apple_fast_datapath_used {
+    sql: ${TABLE}.metrics.boolean.network_apple_fast_datapath_used ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Network Apple Fast Datapath Used"
+    description: "True if the Apple fast datapath (sendmsg_x/recvmsg_x) is being used for UDP I/O. This requires the APIs to be available and the probe to succeed. Only recorded on Apple platforms.
+"
+  }
+
   dimension: metrics__boolean__networking_http3_enabled {
     sql: ${TABLE}.metrics.boolean.networking_http3_enabled ;;
     type: yesno
@@ -13784,6 +13794,13 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 `source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
 (depending on the source from which the search started). Also added the
 `other` option for the source but it should never enter on this case.
+"
+  }
+
+  dimension: metrics__labeled_counter__metrics_tab_group_creation_mode {
+    sql: ${TABLE}.metrics.labeled_counter.metrics_tab_group_creation_mode ;;
+    hidden: yes
+    description: "Tracks how users initiated group creation
 "
   }
 
