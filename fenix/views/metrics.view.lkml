@@ -1894,6 +1894,23 @@ once we validate these assumptions.
 "
   }
 
+  dimension: metrics__labeled_counter__metrics_tab_group_creation_mode {
+    label: "Metrics: Tab Group Creation Mode"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.metrics_tab_group_creation_mode ;;
+    group_label: "Metrics"
+    group_item_label: "Tab Group Creation Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics: Tab Group Creation Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_tab_group_creation_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracks how users initiated group creation
+"
+  }
+
   dimension: metrics__string__metrics_tab_view_setting {
     label: "Metrics: Tab View Setting"
     hidden: no
@@ -17444,6 +17461,24 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Counts the number of times we encountered a mismatched ALPN token and needed to reset the connection. Keyed by the negotiated NPN.
+"
+  }
+
+  dimension: metrics__boolean__network_apple_fast_datapath_used {
+    label: "Network: Apple Fast Datapath Used"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.network_apple_fast_datapath_used ;;
+    type: yesno
+    group_label: "Network"
+    group_item_label: "Apple Fast Datapath Used"
+
+    link: {
+      label: "Glean Dictionary reference for Network: Apple Fast Datapath Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_apple_fast_datapath_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the Apple fast datapath (sendmsg_x/recvmsg_x) is being used for UDP I/O. This requires the APIs to be available and the probe to succeed. Only recorded on Apple platforms.
 "
   }
 
@@ -49536,6 +49571,47 @@ view: metrics__metrics__labeled_counter__metrics_bookmarks_open {
 
 view: metrics__metrics__labeled_counter__metrics_search_count {
   label: "Metrics: Search Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__metrics_tab_group_creation_mode {
+  label: "Metrics: Tab Group Creation Mode"
 
   dimension: document_id {
     type: string
