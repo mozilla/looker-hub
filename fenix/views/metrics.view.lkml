@@ -17466,7 +17466,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__boolean__network_apple_fast_datapath_used {
     label: "Network: Apple Fast Datapath Used"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.network_apple_fast_datapath_used ;;
     type: yesno
     group_label: "Network"
