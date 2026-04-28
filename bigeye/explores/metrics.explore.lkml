@@ -64,11 +64,5 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metric_metadata_monitored_objects}) AS metrics__metric_metadata_monitored_objects ;;
   }
 
-  join: metrics__tags {
-    view_label: "Metrics: Tags"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${metrics.tags}) AS metrics__tags ;;
-  }
-
   persist_with: metrics_last_updated
 }
