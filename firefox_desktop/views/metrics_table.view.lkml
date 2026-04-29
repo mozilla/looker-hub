@@ -14107,6 +14107,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_languages ;;
+    hidden: yes
+    description: "Records the items interacted with in the Languages section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_more_from_mozilla ;;
     hidden: yes
@@ -16784,7 +16791,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
   dimension: metrics__labeled_counter__tabgroup_group_interactions {
     sql: ${TABLE}.metrics.labeled_counter.tabgroup_group_interactions ;;
     hidden: yes
-    description: "Records interactions with tab groups: expand/collapse; rename, change color; save/reopen/delete; ungroup tabs; open from tab menu/recent/ Awesomebar; move to another window
+    description: "Records interactions with tab groups: expand/collapse; rename, change color; save/reopen/delete; ungroup tabs; open from tab menu/recent/ Awesomebar; move to another window; copy all links
 "
   }
 

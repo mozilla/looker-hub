@@ -22031,7 +22031,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Time spent on blocking main thread by startup cookie database read (in milliseconds), only for blocking case
+    description: "Time spent blocking the main thread on startup cookie database read and connection initialization (in milliseconds), only for blocking cases.
 "
   }
 
@@ -22049,7 +22049,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How long (in milliseconds) after we finished reading the cookie db until the first cookie request came in (0 implies we blocked the main thread)
+    description: "How long (in milliseconds) after the cookie database connection was initialized until the first cookie request came in (0 implies we blocked the main thread).
 "
   }
 

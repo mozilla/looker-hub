@@ -3319,6 +3319,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages {
+    label: "Browser UI Interaction: Preferences Pane Languages"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_languages ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Preferences Pane Languages"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Preferences Pane Languages"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_preferences_pane_languages"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the items interacted with in the Languages section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla {
     label: "Browser UI Interaction: Preferences Pane More From Mozilla"
     hidden: yes
@@ -8582,7 +8599,7 @@ phase.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records interactions with tab groups: expand/collapse; rename, change color; save/reopen/delete; ungroup tabs; open from tab menu/recent/ Awesomebar; move to another window
+    description: "Records interactions with tab groups: expand/collapse; rename, change color; save/reopen/delete; ungroup tabs; open from tab menu/recent/ Awesomebar; move to another window; copy all links
 "
   }
 
@@ -29330,7 +29347,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Time spent on blocking main thread by startup cookie database read (in milliseconds), only for blocking case
+    description: "Time spent blocking the main thread on startup cookie database read and connection initialization (in milliseconds), only for blocking cases.
 "
   }
 
@@ -29348,7 +29365,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How long (in milliseconds) after we finished reading the cookie db until the first cookie request came in (0 implies we blocked the main thread)
+    description: "How long (in milliseconds) after the cookie database connection was initialized until the first cookie request came in (0 implies we blocked the main thread).
 "
   }
 
@@ -53139,6 +53156,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane
 
 view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_home {
   label: "Browser UI Interaction: Preferences Pane Home"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages {
+  label: "Browser UI Interaction: Preferences Pane Languages"
 
   dimension: document_id {
     type: string
