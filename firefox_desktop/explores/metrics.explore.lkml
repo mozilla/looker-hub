@@ -658,6 +658,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_home}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_home ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_home.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla.document_id} ;;
