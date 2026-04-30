@@ -359,7 +359,7 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
-    description: "X-Foxsec-IP-Reputation header"
+    description: "X-Foxsec-IP-Reputation header (deprecated, https://mozilla-hub.atlassian.net/browse/DENG-10434)"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -13658,7 +13658,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
