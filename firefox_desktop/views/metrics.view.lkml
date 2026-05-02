@@ -3217,6 +3217,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_about {
+    label: "Browser UI Interaction: Preferences Pane About"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_about ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Preferences Pane About"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Preferences Pane About"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_preferences_pane_about"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the items interacted with in the About Firefox section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_accessibility {
     label: "Browser UI Interaction: Preferences Pane Accessibility"
     hidden: yes
@@ -3350,6 +3367,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records the items interacted with in the More From Mozilla section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneMoreFromMozilla.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_permissions_data {
+    label: "Browser UI Interaction: Preferences Pane Permissions Data"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_permissions_data ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Preferences Pane Permissions Data"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Preferences Pane Permissions Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_preferences_pane_permissions_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the items interacted with in the Permissions and data section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
 "
   }
 
@@ -11634,7 +11668,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A list of known accessibility clients that inject into Firefox process space (see https://searchfox.org/mozilla-central/source/accessible/windows/msaa/Compatibility.h).
+    description: "A list of known accessibility clients that inject into Firefox process space (see https://searchfox.org/firefox-main/source/accessible/windows/msaa/Compatibility.h).
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram A11Y_CONSUMERS.
 "
   }
@@ -14418,25 +14452,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__timing_distribution__cycle_collector_async_snow_white_freeing__sum {
-    label: "Cycle Collector: Async Snow White Freeing Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_async_snow_white_freeing.sum ;;
-    type: number
-    group_label: "Cycle Collector"
-    group_item_label: "Async Snow White Freeing Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cycle Collector: Async Snow White Freeing Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_async_snow_white_freeing"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent on one asynchronous SnowWhite freeing (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_ASYNC_SNOW_WHITE_FREEING.
-"
-  }
-
   dimension: metrics__custom_distribution__cycle_collector_collected__sum {
     label: "Cycle Collector: Collected Sum"
     hidden: no
@@ -14456,25 +14471,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
-  dimension: metrics__timing_distribution__cycle_collector_deferred_finalize_async__sum {
-    label: "Cycle Collector: Deferred Finalize Async Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_deferred_finalize_async.sum ;;
-    type: number
-    group_label: "Cycle Collector"
-    group_item_label: "Deferred Finalize Async Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cycle Collector: Deferred Finalize Async Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_deferred_finalize_async"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Pause time for asynchronous deferred finalization (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DEFERRED_FINALIZE_ASYNC.
-"
-  }
-
   dimension: metrics__labeled_counter__cycle_collector_finish_igc {
     label: "Cycle Collector: Finish Igc"
     hidden: yes
@@ -14490,63 +14486,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Cycle collection finished an incremental GC
 This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_FINISH_IGC.
-"
-  }
-
-  dimension: metrics__timing_distribution__cycle_collector_forget_skippable_max__sum {
-    label: "Cycle Collector: Forget Skippable Max Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_forget_skippable_max.sum ;;
-    type: number
-    group_label: "Cycle Collector"
-    group_item_label: "Forget Skippable Max Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cycle Collector: Forget Skippable Max Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_forget_skippable_max"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Max time spent on one forget skippable (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FORGET_SKIPPABLE_MAX.
-"
-  }
-
-  dimension: metrics__timing_distribution__cycle_collector_full__sum {
-    label: "Cycle Collector: Full Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_full.sum ;;
-    type: number
-    group_label: "Cycle Collector"
-    group_item_label: "Full Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cycle Collector: Full Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_full"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Full pause time for one cycle collection, including preparation (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_FULL.
-"
-  }
-
-  dimension: metrics__timing_distribution__cycle_collector_max_pause__sum {
-    label: "Cycle Collector: Max Pause Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_max_pause.sum ;;
-    type: number
-    group_label: "Cycle Collector"
-    group_item_label: "Max Pause Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cycle Collector: Max Pause Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_max_pause"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Longest pause for an individual slice of one cycle collection, including preparation (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_MAX_PAUSE.
 "
   }
 
@@ -14602,44 +14541,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
     description: "Cycle collection synchronously ran forget skippable
 This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_SYNC_SKIPPABLE.
-"
-  }
-
-  dimension: metrics__timing_distribution__cycle_collector_time__sum {
-    label: "Cycle Collector: Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time.sum ;;
-    type: number
-    group_label: "Cycle Collector"
-    group_item_label: "Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cycle Collector: Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent on one cycle collection (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR.
-"
-  }
-
-  dimension: metrics__timing_distribution__cycle_collector_time_between__sum {
-    label: "Cycle Collector: Time Between Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_time_between.sum ;;
-    type: number
-    group_label: "Cycle Collector"
-    group_item_label: "Time Between Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cycle Collector: Time Between Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_time_between"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in between cycle collections (seconds)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_TIME_BETWEEN.
 "
   }
 
@@ -14715,25 +14616,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "Needed garbage collection before cycle collection in a worker.
 This metric was generated to correspond to the Legacy Telemetry boolean histogram CYCLE_COLLECTOR_WORKER_NEED_GC.
-"
-  }
-
-  dimension: metrics__timing_distribution__cycle_collector_worker_time__sum {
-    label: "Cycle Collector: Worker Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.cycle_collector_worker_time.sum ;;
-    type: number
-    group_label: "Cycle Collector"
-    group_item_label: "Worker Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Cycle Collector: Worker Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cycle_collector_worker_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent on one cycle collection in a worker (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_WORKER.
 "
   }
 
@@ -17046,25 +16928,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
 
     description: "The time spent in the fully-black screen in fullscreen transition
 This metric was generated to correspond to the Legacy Telemetry exponential histogram FULLSCREEN_TRANSITION_BLACK_MS.
-"
-  }
-
-  dimension: metrics__timing_distribution__dom_gc_in_progress__sum {
-    label: "DOM: GC In Progress Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.dom_gc_in_progress.sum ;;
-    type: number
-    group_label: "DOM"
-    group_item_label: "GC In Progress Sum"
-
-    link: {
-      label: "Glean Dictionary reference for DOM: GC In Progress Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dom_gc_in_progress"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from the beginning of the first slice to the end of the last slice (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram GC_IN_PROGRESS_MS.
 "
   }
 
@@ -22208,24 +22071,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_budget__sum {
-    label: "Javascript GC: Budget Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_budget.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Budget Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Budget Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_budget"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Requested GC slice budget.
-"
-  }
-
   dimension: metrics__labeled_counter__javascript_gc_budget_was_increased {
     label: "Javascript GC: Budget Was Increased"
     hidden: yes
@@ -22240,24 +22085,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Whether the budget was increased due to taking too long or approaching the incremental limit
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
-    label: "Javascript GC: Compact Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Compact Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Compact Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_compact_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the compact phase. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -22296,24 +22123,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_mark_gray__sum {
-    label: "Javascript GC: Mark Gray Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_gray.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Mark Gray Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Mark Gray Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_mark_gray"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent marking gray GC objects.
-"
-  }
-
   dimension: metrics__custom_distribution__javascript_gc_mark_rate__sum {
     label: "Javascript GC: Mark Rate Sum"
     hidden: no
@@ -22329,60 +22138,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "The number of objects marked per ms during GC.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__sum {
-    label: "Javascript GC: Mark Roots Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Mark Roots Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Mark Roots Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_mark_roots_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent marking GC roots. (Migrated from the geckoview metric of the same name.)
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_mark_time__sum {
-    label: "Javascript GC: Mark Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Mark Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Mark Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_mark_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the mark phase. (Migrated from the geckoview metric of the same name.)
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_mark_weak__sum {
-    label: "Javascript GC: Mark Weak Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_weak.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Mark Weak Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Mark Weak Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_mark_weak"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent marking GC objects held live through weakmaps.
 "
   }
 
@@ -22417,24 +22172,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Reason (enum value) that caused a long (>1ms) minor GC
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
-    label: "Javascript GC: Minor Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Minor Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Minor Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_minor_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taked by a minor (nursery) collection. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -22487,24 +22224,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Reason for performing a non-incremental GC (see js::GCAbortReason)
-"
-  }
-
-  dimension: metrics__memory_distribution__javascript_gc_nursery_bytes__sum {
-    label: "Javascript GC: Nursery Bytes Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.javascript_gc_nursery_bytes.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Nursery Bytes Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Nursery Bytes Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_nursery_bytes"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Size of the GC nursery in bytes.
 "
   }
 
@@ -22597,24 +22316,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_prepare_time__sum {
-    label: "Javascript GC: Prepare Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Prepare Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Prepare Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_prepare_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the preparation phase. (Migrated from the geckoview metric of the same name.)
-"
-  }
-
   dimension: metrics__custom_distribution__javascript_gc_pretenure_count__sum {
     label: "Javascript GC: Pretenure Count Sum"
     hidden: no
@@ -22702,24 +22403,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
-    label: "Javascript GC: Slice Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Slice Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Slice Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_slice_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent running a GC slice. (Migrated from the geckoview metric of the same name.)
-"
-  }
-
   dimension: metrics__labeled_counter__javascript_gc_slice_was_long {
     label: "Javascript GC: Slice Was Long"
     hidden: yes
@@ -22771,42 +22454,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_sweep_time__sum {
-    label: "Javascript GC: Sweep Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Sweep Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Sweep Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_sweep_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the sweep phase. (Migrated from the geckoview metric of the same name.)
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_task_start_delay__sum {
-    label: "Javascript GC: Task Start Delay Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_task_start_delay.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Task Start Delay Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Task Start Delay Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_task_start_delay"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Delay between queuing a GC task and the task starting.
-"
-  }
-
   dimension: metrics__custom_distribution__javascript_gc_tenured_survival_rate__sum {
     label: "Javascript GC: Tenured Survival Rate Sum"
     hidden: no
@@ -22822,60 +22469,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "The percentage of tenured GC things that survived a collection.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_time_between__sum {
-    label: "Javascript GC: Time Between Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Time Between Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Time Between Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_time_between"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in between garbage collections for the main runtime.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_time_between_minor__sum {
-    label: "Javascript GC: Time Between Minor Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_minor.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Time Between Minor Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Time Between Minor Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_time_between_minor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between minor garbage collections (nursery collections) for all runtimes.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_time_between_slices__sum {
-    label: "Javascript GC: Time Between Slices Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_time_between_slices.sum ;;
-    type: number
-    group_label: "Javascript GC"
-    group_item_label: "Time Between Slices Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript GC: Time Between Slices Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_gc_time_between_slices"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in between garbage collections for the main runtime.
 "
   }
 
@@ -40602,7 +40195,6 @@ documented in the ping's pings.yaml file.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
-    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: app_version_major {
@@ -40629,7 +40221,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android SDK Version"
-    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -40638,7 +40229,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
-    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -40647,7 +40237,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
-    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -40656,7 +40245,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
-    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -40665,7 +40253,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
-    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__attribution__campaign {
@@ -40674,7 +40261,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
-    description: "The attribution campaign (e.g. 'mozilla-org')."
   }
 
   dimension: client_info__attribution__content {
@@ -40683,7 +40269,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Content"
-    description: "The attribution content (e.g. 'firefoxview')."
   }
 
   dimension: client_info__attribution__ext {
@@ -40697,7 +40282,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Medium"
-    description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
 
   dimension: client_info__attribution__source {
@@ -40706,7 +40290,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Source"
-    description: "The attribution source (e.g. 'google-play')."
   }
 
   dimension: client_info__attribution__term {
@@ -40715,7 +40298,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Term"
-    description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
   dimension: client_info__build_date {
@@ -40724,13 +40306,11 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
-    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
-    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -40739,7 +40319,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
-    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -40748,7 +40327,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
-    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__distribution__ext {
@@ -40762,7 +40340,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Distribution"
     group_item_label: "Name"
-    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {
@@ -40771,7 +40348,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
-    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -40780,7 +40356,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
-    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -40789,7 +40364,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS"
-    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -40798,7 +40372,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS Version"
-    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__session_count {
@@ -40807,7 +40380,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
-    description: "An optional running counter of the number of sessions for a client."
   }
 
   dimension: client_info__session_id {
@@ -40816,7 +40388,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session ID"
-    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -40825,7 +40396,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry SDK Build"
-    description: "The version of the Glean SDK"
   }
 
   dimension: client_info__windows_build_number {
@@ -40834,13 +40404,11 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
-    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -40870,7 +40438,6 @@ documented in the ping's pings.yaml file.
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -40879,7 +40446,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -40888,7 +40454,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -40897,7 +40462,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -40906,7 +40470,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -40915,7 +40478,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -40945,7 +40507,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -40954,7 +40515,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
-    description: "X-Foxsec-IP-Reputation header (deprecated, https://mozilla-hub.atlassian.net/browse/DENG-10434)"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -40963,7 +40523,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -40972,7 +40531,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -40981,7 +40539,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -40990,7 +40547,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -40999,7 +40555,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -41008,7 +40563,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -41017,7 +40571,6 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -41048,28 +40601,24 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -41121,19 +40670,16 @@ documented in the ping's pings.yaml file.
     suggest_persist_for: "24 hours"
     group_label: "Ping Info: Server Knobs Config"
     group_item_label: "Event Threshold"
-    description: "Optional threshold for event buffering before an events ping is collected and submitted"
   }
 
   dimension: ping_info__server_knobs_config__metrics_enabled {
     sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
     hidden: yes
-    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
   }
 
   dimension: ping_info__server_knobs_config__pings_enabled {
     sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
     hidden: yes
-    description: "Map of ping names to boolean values indicating whether the ping is enabled"
   }
 
   dimension: ping_info__start_time {
@@ -41148,7 +40694,6 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
@@ -41316,7 +40861,6 @@ documented in the ping's pings.yaml file.
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -52949,6 +52493,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_pinned_overflow_
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_about {
+  label: "Browser UI Interaction: Preferences Pane About"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_accessibility {
   label: "Browser UI Interaction: Preferences Pane Accessibility"
 
@@ -53274,6 +52859,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_permissions_data {
+  label: "Browser UI Interaction: Preferences Pane Permissions Data"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -79950,7 +79576,6 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_bookmarks
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -79994,7 +79619,6 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_cards_qua
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80038,7 +79662,6 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_errors {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80082,7 +79705,6 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_extension
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80126,7 +79748,6 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_history_q
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80170,7 +79791,6 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_logins_qu
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80214,7 +79834,6 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_usage {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80258,7 +79877,6 @@ view: metrics__metrics__labeled_custom_distribution__contentblocking_canvas_fing
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80302,7 +79920,6 @@ view: metrics__metrics__labeled_custom_distribution__contentblocking_email_track
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80346,7 +79963,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_attempt_count {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80390,7 +80006,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80434,7 +80049,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80478,7 +80092,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80522,7 +80135,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80566,7 +80178,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80610,7 +80221,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80654,7 +80264,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_f
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80698,7 +80307,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80742,7 +80350,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_strict_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80786,7 +80393,6 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_trr_fir
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80830,7 +80436,6 @@ view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_bl
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80874,7 +80479,6 @@ view: metrics__metrics__labeled_custom_distribution__firefoxview_cumulative_sear
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80918,7 +80522,6 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_large_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80962,7 +80565,6 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_large_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81006,7 +80608,6 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_small_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81050,7 +80651,6 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_small_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81094,7 +80694,6 @@ view: metrics__metrics__labeled_custom_distribution__http3_connection_close_code
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81138,7 +80737,6 @@ view: metrics__metrics__labeled_custom_distribution__http3_counts_pto {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81182,7 +80780,6 @@ view: metrics__metrics__labeled_custom_distribution__http3_ech_outcome {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81226,7 +80823,6 @@ view: metrics__metrics__labeled_custom_distribution__http3_late_ack {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81270,7 +80866,6 @@ view: metrics__metrics__labeled_custom_distribution__http3_late_ack_ratio {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81314,7 +80909,6 @@ view: metrics__metrics__labeled_custom_distribution__http3_received_sent_dgrams 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81358,7 +80952,6 @@ view: metrics__metrics__labeled_custom_distribution__http_channel_page_onstart_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81402,7 +80995,6 @@ view: metrics__metrics__labeled_custom_distribution__http_channel_sub_onstart_su
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81446,7 +81038,6 @@ view: metrics__metrics__labeled_custom_distribution__http_connection_close_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81490,7 +81081,6 @@ view: metrics__metrics__labeled_custom_distribution__http_upload_bandwidth_mbps 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81534,7 +81124,6 @@ view: metrics__metrics__labeled_custom_distribution__media_audible_play_time_per
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81578,7 +81167,6 @@ view: metrics__metrics__labeled_custom_distribution__media_muted_play_time_perce
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81622,7 +81210,6 @@ view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_tim
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81666,7 +81253,6 @@ view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81710,7 +81296,6 @@ view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81754,7 +81339,6 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81798,7 +81382,6 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81842,7 +81425,6 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81886,7 +81468,6 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_size_share {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81930,7 +81511,6 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ec
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81974,7 +81554,6 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_hystart_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82018,7 +81597,6 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_hystart_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82062,7 +81640,6 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_slow_star
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82106,7 +81683,6 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_slow_star
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82150,7 +81726,6 @@ view: metrics__metrics__labeled_custom_distribution__popup_notification_stats {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82194,7 +81769,6 @@ view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_rep
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82238,7 +81812,6 @@ view: metrics__metrics__labeled_custom_distribution__sandbox_failed_launch_keyed
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82282,7 +81855,6 @@ view: metrics__metrics__labeled_custom_distribution__service_worker_running {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82326,7 +81898,6 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_complete_remo
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82370,7 +81941,6 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_error 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82414,7 +81984,6 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82458,7 +82027,6 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82502,7 +82070,6 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeou
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82533,6 +82100,49 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeou
   }
 }
 
+view: metrics__metrics__labeled_memory_distribution__javascript_gc_nursery_bytes {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__javascript_gc_nursery_bytes__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_memory_distribution__memory_js_gc_heap {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -82546,7 +82156,6 @@ view: metrics__metrics__labeled_memory_distribution__memory_js_gc_heap {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82590,7 +82199,6 @@ view: metrics__metrics__labeled_memory_distribution__memory_resident_fast {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82634,7 +82242,6 @@ view: metrics__metrics__labeled_memory_distribution__memory_resident_peak {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82678,7 +82285,6 @@ view: metrics__metrics__labeled_memory_distribution__memory_unique {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82722,7 +82328,6 @@ view: metrics__metrics__labeled_memory_distribution__network_cache_size {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82766,7 +82371,6 @@ view: metrics__metrics__labeled_memory_distribution__network_page_load_size {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82810,7 +82414,6 @@ view: metrics__metrics__labeled_memory_distribution__networking_trr_request_size
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82854,7 +82457,6 @@ view: metrics__metrics__labeled_memory_distribution__networking_trr_response_siz
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83144,7 +82746,6 @@ view: metrics__metrics__labeled_timing_distribution__content_analysis_response_d
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83212,6 +82813,710 @@ view: metrics__metrics__labeled_timing_distribution__content_analysis_response_d
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_async_snow_white_freeing {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_async_snow_white_freeing__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_deferred_finalize_async {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_deferred_finalize_async__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_forget_skippable_max {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_forget_skippable_max__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_full {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_full__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_max_pause {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_max_pause__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_time_between {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_time_between__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_worker_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__cycle_collector_worker_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_delay {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -83233,7 +83538,6 @@ view: metrics__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83322,7 +83626,6 @@ view: metrics__metrics__labeled_timing_distribution__devtools_toolbox_page_reloa
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83411,7 +83714,6 @@ view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83500,7 +83802,6 @@ view: metrics__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_du
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83589,7 +83890,6 @@ view: metrics__metrics__labeled_timing_distribution__dns_trr_lookup_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83657,6 +83957,94 @@ view: metrics__metrics__labeled_timing_distribution__dns_trr_lookup_time__value_
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__dom_gc_in_progress {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dom_gc_in_progress__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__dom_quota_info_load_time {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -83678,7 +84066,6 @@ view: metrics__metrics__labeled_timing_distribution__dom_quota_info_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83767,7 +84154,6 @@ view: metrics__metrics__labeled_timing_distribution__dom_quota_shutdown_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83856,7 +84242,6 @@ view: metrics__metrics__labeled_timing_distribution__event_longtask {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -83945,7 +84330,6 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_backgroun
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84034,7 +84418,6 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_browser_a
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84123,7 +84506,6 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_content_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84212,7 +84594,6 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_event_pag
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84301,7 +84682,6 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_extension
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84390,7 +84770,6 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_page_acti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84479,7 +84858,6 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_storage_l
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84568,7 +84946,6 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_storage_l
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84657,7 +85034,6 @@ view: metrics__metrics__labeled_timing_distribution__firefox_ai_runtime_engine_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84746,7 +85122,6 @@ view: metrics__metrics__labeled_timing_distribution__firefox_ai_runtime_run_infe
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84835,7 +85210,6 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_animation {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84903,6 +85277,94 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_animation__va
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_budget {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_budget__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__javascript_gc_budget_overrun {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -84924,7 +85386,6 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_budget_overru
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84992,6 +85453,446 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_budget_overru
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_compact_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_compact_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_gray {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_gray__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_roots_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_roots_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_weak {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_weak__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__javascript_gc_max_pause {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -85013,7 +85914,6 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_max_pause {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85081,6 +85981,710 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_max_pause__va
   }
 }
 
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_minor_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_minor_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_prepare_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_prepare_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_slice_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_slice_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_sweep_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_sweep_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_task_start_delay {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_task_start_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between_minor {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between_minor__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between_slices {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between_slices__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_timing_distribution__javascript_gc_total_time {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -85102,7 +86706,6 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_total_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85191,7 +86794,6 @@ view: metrics__metrics__labeled_timing_distribution__media_media_play_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85280,7 +86882,6 @@ view: metrics__metrics__labeled_timing_distribution__media_video_visible_play_ti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85369,7 +86970,6 @@ view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_du
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85458,7 +87058,6 @@ view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85547,7 +87146,6 @@ view: metrics__metrics__labeled_timing_distribution__network_async_open_child_to
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85636,7 +87234,6 @@ view: metrics__metrics__labeled_timing_distribution__network_dns_end_to_connect_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85725,7 +87322,6 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_avg_read_inte
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85814,7 +87410,6 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_complete_load
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85903,7 +87498,6 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_first_sent_to
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85992,7 +87586,6 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86081,7 +87674,6 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86170,7 +87762,6 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_tls_handshake
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86259,7 +87850,6 @@ view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86348,7 +87938,6 @@ view: metrics__metrics__labeled_timing_distribution__network_response_end_parent
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86437,7 +88026,6 @@ view: metrics__metrics__labeled_timing_distribution__network_response_start_pare
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86526,7 +88114,6 @@ view: metrics__metrics__labeled_timing_distribution__network_sup_http3_tcp_conne
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86615,7 +88202,6 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86704,7 +88290,6 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86793,7 +88378,6 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86882,7 +88466,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_complete_loa
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86971,7 +88554,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_end {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87060,7 +88642,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_start {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87149,7 +88730,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_fetch_durati
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87238,7 +88818,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_first_sent_t
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87327,7 +88906,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_firs
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87416,7 +88994,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_firs
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87505,7 +89082,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_tcp_connecti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87594,7 +89170,6 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_tls_handshak
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87683,7 +89258,6 @@ view: metrics__metrics__labeled_timing_distribution__orb_javascript_validation {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87772,7 +89346,6 @@ view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_valida
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87861,7 +89434,6 @@ view: metrics__metrics__labeled_timing_distribution__perf_dns_first_byte {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87950,7 +89522,6 @@ view: metrics__metrics__labeled_timing_distribution__perf_dns_first_contentful_p
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88039,7 +89610,6 @@ view: metrics__metrics__labeled_timing_distribution__perf_h3p_first_contentful_p
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88128,7 +89698,6 @@ view: metrics__metrics__labeled_timing_distribution__perf_h3p_page_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88217,7 +89786,6 @@ view: metrics__metrics__labeled_timing_distribution__perf_http3_first_contentful
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88306,7 +89874,6 @@ view: metrics__metrics__labeled_timing_distribution__perf_http3_page_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88395,7 +89962,6 @@ view: metrics__metrics__labeled_timing_distribution__popup_notification_dismissa
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88484,7 +90050,6 @@ view: metrics__metrics__labeled_timing_distribution__popup_notification_main_act
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88573,7 +90138,6 @@ view: metrics__metrics__labeled_timing_distribution__search_suggestions_latency 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88662,7 +90226,6 @@ view: metrics__metrics__labeled_timing_distribution__search_suggestions_ohttp_la
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88751,7 +90314,6 @@ view: metrics__metrics__labeled_timing_distribution__security_https_only_mode_up
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88840,7 +90402,6 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88929,7 +90490,6 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89018,7 +90578,6 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89107,7 +90666,6 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_interc
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89196,7 +90754,6 @@ view: metrics__metrics__labeled_timing_distribution__ssl_time_until_handshake_fi
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89285,7 +90842,6 @@ view: metrics__metrics__labeled_timing_distribution__suggest_ingest_download_tim
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89374,7 +90930,6 @@ view: metrics__metrics__labeled_timing_distribution__suggest_ingest_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89463,7 +91018,6 @@ view: metrics__metrics__labeled_timing_distribution__suggest_query_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89552,7 +91106,6 @@ view: metrics__metrics__labeled_timing_distribution__urlbar_merino_latency_by_re
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89641,7 +91194,6 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_cl_keyed_upda
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89730,7 +91282,6 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_complete_serv
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89819,7 +91370,6 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89908,7 +91458,6 @@ view: metrics__metrics__labeled_timing_distribution__workers_sync_worker_operati
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89997,7 +91546,6 @@ view: metrics__metrics__labeled_timing_distribution__xpi_database_rebuilds {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
-    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
