@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch
     ]
     filters:
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'retained'
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'ad_clicks'
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch
     ]
     filters:
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'qualified_cumulative_days_of_use'
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'search_count'
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
+    field_y: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.point
+    log_scale: false
+    ci_lower: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.lower
+    ci_upper: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.upper
+    show_grid: true
+    listen:
+      Date: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4
+    type: looker_line
+    fields: [
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date,
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch,
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.point
+    ]
+    pivots: [
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch
+    ]
+    filters:
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'uri_count'
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
@@ -97,40 +131,6 @@
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'days_of_use'
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
-    field_y: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.point
-    log_scale: false
-    ci_lower: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.lower
-    ci_upper: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.upper
-    show_grid: true
-    listen:
-      Date: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4
-    type: looker_line
-    fields: [
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date,
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch,
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.point
-    ]
-    pivots: [
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch
-    ]
-    filters:
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'ad_clicks'
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +162,44 @@
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch
     ]
     filters:
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'search_count'
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'retained'
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
     row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
+    field_y: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.point
+    log_scale: false
+    ci_lower: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.lower
+    ci_upper: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.upper
+    show_grid: true
+    listen:
+      Date: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4
+    type: looker_line
+    fields: [
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date,
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch,
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.point
+    ]
+    pivots: [
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch
+    ]
+    filters:
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'qualified_cumulative_days_of_use'
+      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
@@ -200,8 +234,8 @@
     filters:
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'memory_total'
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: percentile
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'active_hours'
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
-    field_y: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.point
-    log_scale: false
-    ci_lower: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.lower
-    ci_upper: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.upper
-    show_grid: true
-    listen:
-      Date: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4
-    type: looker_line
-    fields: [
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.submission_date,
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch,
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.point
-    ]
-    pivots: [
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.branch
-    ]
-    filters:
-      ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.metric: 'uri_count'
       ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4.statistic: mean
     row: 30
     col: 12
