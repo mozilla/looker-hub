@@ -16,9 +16,27 @@ view: metrics_clients_last_seen_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: is_large_device {
+    sql: ${TABLE}.is_large_device ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: isp_name {
+    sql: ${TABLE}.isp_name ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
