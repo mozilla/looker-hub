@@ -15768,6 +15768,13 @@ timeout, 2 = overall timeout). Keyed by provider This metric was generated to co
 "
   }
 
+  dimension: metrics__labeled_memory_distribution__javascript_gc_nursery_bytes {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.javascript_gc_nursery_bytes ;;
+    hidden: yes
+    description: "Size of the GC nursery in bytes, labeled by process type.
+"
+  }
+
   dimension: metrics__labeled_memory_distribution__memory_js_gc_heap {
     sql: ${TABLE}.metrics.labeled_memory_distribution.memory_js_gc_heap ;;
     hidden: yes
@@ -15912,64 +15919,56 @@ See `StartupTimeline.h`
   dimension: metrics__labeled_timing_distribution__cycle_collector_async_snow_white_freeing {
     sql: ${TABLE}.metrics.labeled_timing_distribution.cycle_collector_async_snow_white_freeing ;;
     hidden: yes
-    description: "Time spent on one asynchronous SnowWhite freeing (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_ASYNC_SNOW_WHITE_FREEING.
+    description: "Time spent on one asynchronous SnowWhite freeing (ms), labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_deferred_finalize_async {
     sql: ${TABLE}.metrics.labeled_timing_distribution.cycle_collector_deferred_finalize_async ;;
     hidden: yes
-    description: "Pause time for asynchronous deferred finalization (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DEFERRED_FINALIZE_ASYNC.
+    description: "Pause time for asynchronous deferred finalization (ms), labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_forget_skippable_max {
     sql: ${TABLE}.metrics.labeled_timing_distribution.cycle_collector_forget_skippable_max ;;
     hidden: yes
-    description: "Max time spent on one forget skippable (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FORGET_SKIPPABLE_MAX.
+    description: "Max time spent on one forget skippable (ms), labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_full {
     sql: ${TABLE}.metrics.labeled_timing_distribution.cycle_collector_full ;;
     hidden: yes
-    description: "Full pause time for one cycle collection, including preparation (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_FULL.
+    description: "Full pause time for one cycle collection, including preparation (ms), labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_max_pause {
     sql: ${TABLE}.metrics.labeled_timing_distribution.cycle_collector_max_pause ;;
     hidden: yes
-    description: "Longest pause for an individual slice of one cycle collection, including preparation (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_MAX_PAUSE.
+    description: "Longest pause for an individual slice of one cycle collection, including preparation (ms), labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.cycle_collector_time ;;
     hidden: yes
-    description: "Time spent on one cycle collection (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR.
+    description: "Time spent on one cycle collection (ms), labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_time_between {
     sql: ${TABLE}.metrics.labeled_timing_distribution.cycle_collector_time_between ;;
     hidden: yes
-    description: "Time spent in between cycle collections (seconds)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_TIME_BETWEEN.
+    description: "Time spent in between cycle collections (seconds), labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_worker_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.cycle_collector_worker_time ;;
     hidden: yes
-    description: "Time spent on one cycle collection in a worker (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram CYCLE_COLLECTOR_WORKER.
+    description: "Time spent on one cycle collection in a worker (ms), labeled by process type.
 "
   }
 
@@ -16009,6 +16008,14 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     hidden: yes
     description: "Time for a completed TRR resolution (msec); Keyed by TRR domain
 This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_TRR_LOOKUP_TIME3.
+"
+  }
+
+  dimension: metrics__labeled_timing_distribution__dom_gc_in_progress {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.dom_gc_in_progress ;;
+    hidden: yes
+    description: "Time from the beginning of the first slice to the end of the last slice (ms), labeled by process type.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram GC_IN_PROGRESS_MS.
 "
   }
 
@@ -16124,7 +16131,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__javascript_gc_budget {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_budget ;;
     hidden: yes
-    description: "Requested GC slice budget.
+    description: "Requested GC slice budget, labeled by process type.
 "
   }
 
@@ -16138,35 +16145,35 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__javascript_gc_compact_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_compact_time ;;
     hidden: yes
-    description: "The time spent in the compact phase. (Migrated from the geckoview metric of the same name.)
+    description: "The time spent in the compact phase, labeled by process type. (Migrated from the geckoview metric of the same name.)
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_mark_gray {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_mark_gray ;;
     hidden: yes
-    description: "Time spent marking gray GC objects.
+    description: "Time spent marking gray GC objects, labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_mark_roots_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_mark_roots_time ;;
     hidden: yes
-    description: "The time spent marking GC roots. (Migrated from the geckoview metric of the same name.)
+    description: "The time spent marking GC roots, labeled by process type. (Migrated from the geckoview metric of the same name.)
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_mark_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_mark_time ;;
     hidden: yes
-    description: "The time spent in the mark phase. (Migrated from the geckoview metric of the same name.)
+    description: "The time spent in the mark phase, labeled by process type. (Migrated from the geckoview metric of the same name.)
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_mark_weak {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_mark_weak ;;
     hidden: yes
-    description: "Time spent marking GC objects held live through weakmaps.
+    description: "Time spent marking GC objects held live through weakmaps, labeled by process type.
 "
   }
 
@@ -16180,56 +16187,56 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__javascript_gc_minor_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_minor_time ;;
     hidden: yes
-    description: "The time taked by a minor (nursery) collection. (Migrated from the geckoview metric of the same name.)
+    description: "The time taked by a minor (nursery) collection, labeled by process type. (Migrated from the geckoview metric of the same name.)
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_prepare_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_prepare_time ;;
     hidden: yes
-    description: "The time spent in the preparation phase. (Migrated from the geckoview metric of the same name.)
+    description: "The time spent in the preparation phase, labeled by process type. (Migrated from the geckoview metric of the same name.)
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_slice_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_slice_time ;;
     hidden: yes
-    description: "The time spent running a GC slice. (Migrated from the geckoview metric of the same name.)
+    description: "The time spent running a GC slice, labeled by process type. (Migrated from the geckoview metric of the same name.)
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_sweep_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_sweep_time ;;
     hidden: yes
-    description: "The time spent in the sweep phase. (Migrated from the geckoview metric of the same name.)
+    description: "The time spent in the sweep phase, labeled by process type. (Migrated from the geckoview metric of the same name.)
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_task_start_delay {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_task_start_delay ;;
     hidden: yes
-    description: "Delay between queuing a GC task and the task starting.
+    description: "Delay between queuing a GC task and the task starting, labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_time_between {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_time_between ;;
     hidden: yes
-    description: "Time spent in between garbage collections for the main runtime.
+    description: "Time spent in between garbage collections for the main runtime, labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_time_between_minor {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_time_between_minor ;;
     hidden: yes
-    description: "Time between minor garbage collections (nursery collections) for all runtimes.
+    description: "Time between minor garbage collections (nursery collections) for all runtimes, labeled by process type.
 "
   }
 
   dimension: metrics__labeled_timing_distribution__javascript_gc_time_between_slices {
     sql: ${TABLE}.metrics.labeled_timing_distribution.javascript_gc_time_between_slices ;;
     hidden: yes
-    description: "Time spent in between garbage collections for the main runtime.
+    description: "Time spent in between GC slices for the main runtime, labeled by process type.
 "
   }
 
@@ -58764,6 +58771,50 @@ view: metrics_table__metrics__labeled_custom_distribution__urlclassifier_update_
   }
 }
 
+view: metrics_table__metrics__labeled_memory_distribution__javascript_gc_nursery_bytes {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__javascript_gc_nursery_bytes__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_memory_distribution__memory_js_gc_heap {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -60400,6 +60451,95 @@ view: metrics_table__metrics__labeled_timing_distribution__dns_trr_lookup_time {
 }
 
 view: metrics_table__metrics__labeled_timing_distribution__dns_trr_lookup_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__dom_gc_in_progress {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__dom_gc_in_progress__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
