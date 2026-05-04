@@ -225,6 +225,12 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: device_manufacturer_1 {
+    sql: ${TABLE}.device_manufacturer_1 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: device_model {
     sql: ${TABLE}.device_model ;;
     type: string
@@ -293,6 +299,12 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: is_large_device {
+    sql: ${TABLE}.is_large_device ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
@@ -301,6 +313,12 @@ view: clients_last_seen_joined_table {
 
   dimension: isp {
     sql: ${TABLE}.isp ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: isp_name {
+    sql: ${TABLE}.isp_name ;;
     type: string
     suggest_persist_for: "24 hours"
   }
