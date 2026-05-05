@@ -648,6 +648,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_downloads {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_downloads}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_downloads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_downloads.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental.document_id} ;;
