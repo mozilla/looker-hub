@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: vpn_mvp_beta_rollout_2
-    type: "ci-line-chart"
-    fields: [
-      vpn_mvp_beta_rollout_2.submission_date,
-      vpn_mvp_beta_rollout_2.branch,
-      vpn_mvp_beta_rollout_2.upper,
-      vpn_mvp_beta_rollout_2.lower,
-      vpn_mvp_beta_rollout_2.point
-    ]
-    pivots: [
-      vpn_mvp_beta_rollout_2.branch
-    ]
-    filters:
-      vpn_mvp_beta_rollout_2.metric: 'memory_total'
-      vpn_mvp_beta_rollout_2.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: vpn_mvp_beta_rollout_2.submission_date
-    field_y: vpn_mvp_beta_rollout_2.point
-    log_scale: false
-    ci_lower: vpn_mvp_beta_rollout_2.lower
-    ci_upper: vpn_mvp_beta_rollout_2.upper
-    show_grid: true
-    listen:
-      Date: vpn_mvp_beta_rollout_2.submission_date
-      Percentile: vpn_mvp_beta_rollout_2.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,7 +26,41 @@
       vpn_mvp_beta_rollout_2.branch
     ]
     filters:
-      vpn_mvp_beta_rollout_2.metric: 'uri_count'
+      vpn_mvp_beta_rollout_2.metric: 'active_hours'
+      vpn_mvp_beta_rollout_2.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: vpn_mvp_beta_rollout_2.submission_date
+    field_y: vpn_mvp_beta_rollout_2.point
+    log_scale: false
+    ci_lower: vpn_mvp_beta_rollout_2.lower
+    ci_upper: vpn_mvp_beta_rollout_2.upper
+    show_grid: true
+    listen:
+      Date: vpn_mvp_beta_rollout_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: vpn_mvp_beta_rollout_2
+    type: looker_line
+    fields: [
+      vpn_mvp_beta_rollout_2.submission_date,
+      vpn_mvp_beta_rollout_2.branch,
+      vpn_mvp_beta_rollout_2.point
+    ]
+    pivots: [
+      vpn_mvp_beta_rollout_2.branch
+    ]
+    filters:
+      vpn_mvp_beta_rollout_2.metric: 'ad_clicks'
       vpn_mvp_beta_rollout_2.statistic: mean
     row: 0
     col: 12
@@ -115,6 +112,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: vpn_mvp_beta_rollout_2
+    type: looker_line
+    fields: [
+      vpn_mvp_beta_rollout_2.submission_date,
+      vpn_mvp_beta_rollout_2.branch,
+      vpn_mvp_beta_rollout_2.point
+    ]
+    pivots: [
+      vpn_mvp_beta_rollout_2.branch
+    ]
+    filters:
+      vpn_mvp_beta_rollout_2.metric: 'uri_count'
+      vpn_mvp_beta_rollout_2.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: vpn_mvp_beta_rollout_2.submission_date
+    field_y: vpn_mvp_beta_rollout_2.point
+    log_scale: false
+    ci_lower: vpn_mvp_beta_rollout_2.lower
+    ci_upper: vpn_mvp_beta_rollout_2.upper
+    show_grid: true
+    listen:
+      Date: vpn_mvp_beta_rollout_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -133,7 +164,43 @@
     filters:
       vpn_mvp_beta_rollout_2.metric: 'search_count'
       vpn_mvp_beta_rollout_2.statistic: mean
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: vpn_mvp_beta_rollout_2.submission_date
+    field_y: vpn_mvp_beta_rollout_2.point
+    log_scale: false
+    ci_lower: vpn_mvp_beta_rollout_2.lower
+    ci_upper: vpn_mvp_beta_rollout_2.upper
+    show_grid: true
+    listen:
+      Date: vpn_mvp_beta_rollout_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: vpn_mvp_beta_rollout_2
+    type: "ci-line-chart"
+    fields: [
+      vpn_mvp_beta_rollout_2.submission_date,
+      vpn_mvp_beta_rollout_2.branch,
+      vpn_mvp_beta_rollout_2.upper,
+      vpn_mvp_beta_rollout_2.lower,
+      vpn_mvp_beta_rollout_2.point
+    ]
+    pivots: [
+      vpn_mvp_beta_rollout_2.branch
+    ]
+    filters:
+      vpn_mvp_beta_rollout_2.metric: 'memory_total'
+      vpn_mvp_beta_rollout_2.statistic: percentile
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -145,6 +212,7 @@
     show_grid: true
     listen:
       Date: vpn_mvp_beta_rollout_2.submission_date
+      Percentile: vpn_mvp_beta_rollout_2.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -166,74 +234,6 @@
     ]
     filters:
       vpn_mvp_beta_rollout_2.metric: 'retained'
-      vpn_mvp_beta_rollout_2.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: vpn_mvp_beta_rollout_2.submission_date
-    field_y: vpn_mvp_beta_rollout_2.point
-    log_scale: false
-    ci_lower: vpn_mvp_beta_rollout_2.lower
-    ci_upper: vpn_mvp_beta_rollout_2.upper
-    show_grid: true
-    listen:
-      Date: vpn_mvp_beta_rollout_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: vpn_mvp_beta_rollout_2
-    type: looker_line
-    fields: [
-      vpn_mvp_beta_rollout_2.submission_date,
-      vpn_mvp_beta_rollout_2.branch,
-      vpn_mvp_beta_rollout_2.point
-    ]
-    pivots: [
-      vpn_mvp_beta_rollout_2.branch
-    ]
-    filters:
-      vpn_mvp_beta_rollout_2.metric: 'active_hours'
-      vpn_mvp_beta_rollout_2.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: vpn_mvp_beta_rollout_2.submission_date
-    field_y: vpn_mvp_beta_rollout_2.point
-    log_scale: false
-    ci_lower: vpn_mvp_beta_rollout_2.lower
-    ci_upper: vpn_mvp_beta_rollout_2.upper
-    show_grid: true
-    listen:
-      Date: vpn_mvp_beta_rollout_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: vpn_mvp_beta_rollout_2
-    type: looker_line
-    fields: [
-      vpn_mvp_beta_rollout_2.submission_date,
-      vpn_mvp_beta_rollout_2.branch,
-      vpn_mvp_beta_rollout_2.point
-    ]
-    pivots: [
-      vpn_mvp_beta_rollout_2.branch
-    ]
-    filters:
-      vpn_mvp_beta_rollout_2.metric: 'ad_clicks'
       vpn_mvp_beta_rollout_2.statistic: mean
     row: 30
     col: 0

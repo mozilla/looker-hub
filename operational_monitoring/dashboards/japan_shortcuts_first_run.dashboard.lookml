@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       japan_shortcuts_first_run.branch
     ]
     filters:
-      japan_shortcuts_first_run.metric: 'retained'
+      japan_shortcuts_first_run.metric: 'ad_clicks'
       japan_shortcuts_first_run.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       japan_shortcuts_first_run.branch
     ]
     filters:
-      japan_shortcuts_first_run.metric: 'ad_clicks'
+      japan_shortcuts_first_run.metric: 'retained'
       japan_shortcuts_first_run.statistic: mean
     row: 10
     col: 12
