@@ -10498,8 +10498,8 @@ operational_monitoring:
             - release
             - nightly
             - aurora
-            - esr
             - beta
+            - esr
             - default
             - nightly-pine
             - nightly-larch
@@ -10870,8 +10870,8 @@ operational_monitoring:
             default: aurora
             options:
             - aurora
-            - beta
             - nightly
+            - beta
             - release
             - esr
             - Other
@@ -11326,8 +11326,8 @@ operational_monitoring:
             default: Linux
             options:
             - Linux
-            - Windows
             - Mac
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -12117,15 +12117,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id443
           app:
-            default: Windows - vpn_session
+            default: Android - vpn_session
             options:
-            - Windows - vpn_session
-            - Android - daemon_session
-            - Linux - vpn_session
-            - iOS - daemon_session
-            - Darwin - vpn_session
             - Android - vpn_session
             - iOS - vpn_session
+            - Linux - vpn_session
+            - iOS - daemon_session
+            - Android - daemon_session
+            - Windows - vpn_session
+            - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id444
@@ -13272,11 +13272,11 @@ operational_monitoring:
             - release
             - nightly
           os:
-            default: Darwin
+            default: Linux
             options:
-            - Darwin
-            - Windows_NT
             - Linux
+            - Windows_NT
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id522
