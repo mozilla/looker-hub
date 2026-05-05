@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: uk_billboard_rollout_2026
-    type: "ci-line-chart"
-    fields: [
-      uk_billboard_rollout_2026.submission_date,
-      uk_billboard_rollout_2026.branch,
-      uk_billboard_rollout_2026.upper,
-      uk_billboard_rollout_2026.lower,
-      uk_billboard_rollout_2026.point
-    ]
-    pivots: [
-      uk_billboard_rollout_2026.branch
-    ]
-    filters:
-      uk_billboard_rollout_2026.metric: 'memory_total'
-      uk_billboard_rollout_2026.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: uk_billboard_rollout_2026.submission_date
-    field_y: uk_billboard_rollout_2026.point
-    log_scale: false
-    ci_lower: uk_billboard_rollout_2026.lower
-    ci_upper: uk_billboard_rollout_2026.upper
-    show_grid: true
-    listen:
-      Date: uk_billboard_rollout_2026.submission_date
-      Percentile: uk_billboard_rollout_2026.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,7 +26,41 @@
       uk_billboard_rollout_2026.branch
     ]
     filters:
-      uk_billboard_rollout_2026.metric: 'uri_count'
+      uk_billboard_rollout_2026.metric: 'active_hours'
+      uk_billboard_rollout_2026.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: uk_billboard_rollout_2026.submission_date
+    field_y: uk_billboard_rollout_2026.point
+    log_scale: false
+    ci_lower: uk_billboard_rollout_2026.lower
+    ci_upper: uk_billboard_rollout_2026.upper
+    show_grid: true
+    listen:
+      Date: uk_billboard_rollout_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: uk_billboard_rollout_2026
+    type: looker_line
+    fields: [
+      uk_billboard_rollout_2026.submission_date,
+      uk_billboard_rollout_2026.branch,
+      uk_billboard_rollout_2026.point
+    ]
+    pivots: [
+      uk_billboard_rollout_2026.branch
+    ]
+    filters:
+      uk_billboard_rollout_2026.metric: 'ad_clicks'
       uk_billboard_rollout_2026.statistic: mean
     row: 0
     col: 12
@@ -115,6 +112,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: uk_billboard_rollout_2026
+    type: looker_line
+    fields: [
+      uk_billboard_rollout_2026.submission_date,
+      uk_billboard_rollout_2026.branch,
+      uk_billboard_rollout_2026.point
+    ]
+    pivots: [
+      uk_billboard_rollout_2026.branch
+    ]
+    filters:
+      uk_billboard_rollout_2026.metric: 'uri_count'
+      uk_billboard_rollout_2026.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: uk_billboard_rollout_2026.submission_date
+    field_y: uk_billboard_rollout_2026.point
+    log_scale: false
+    ci_lower: uk_billboard_rollout_2026.lower
+    ci_upper: uk_billboard_rollout_2026.upper
+    show_grid: true
+    listen:
+      Date: uk_billboard_rollout_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -133,7 +164,43 @@
     filters:
       uk_billboard_rollout_2026.metric: 'search_count'
       uk_billboard_rollout_2026.statistic: mean
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: uk_billboard_rollout_2026.submission_date
+    field_y: uk_billboard_rollout_2026.point
+    log_scale: false
+    ci_lower: uk_billboard_rollout_2026.lower
+    ci_upper: uk_billboard_rollout_2026.upper
+    show_grid: true
+    listen:
+      Date: uk_billboard_rollout_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: uk_billboard_rollout_2026
+    type: "ci-line-chart"
+    fields: [
+      uk_billboard_rollout_2026.submission_date,
+      uk_billboard_rollout_2026.branch,
+      uk_billboard_rollout_2026.upper,
+      uk_billboard_rollout_2026.lower,
+      uk_billboard_rollout_2026.point
+    ]
+    pivots: [
+      uk_billboard_rollout_2026.branch
+    ]
+    filters:
+      uk_billboard_rollout_2026.metric: 'memory_total'
+      uk_billboard_rollout_2026.statistic: percentile
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -145,6 +212,7 @@
     show_grid: true
     listen:
       Date: uk_billboard_rollout_2026.submission_date
+      Percentile: uk_billboard_rollout_2026.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -166,74 +234,6 @@
     ]
     filters:
       uk_billboard_rollout_2026.metric: 'retained'
-      uk_billboard_rollout_2026.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: uk_billboard_rollout_2026.submission_date
-    field_y: uk_billboard_rollout_2026.point
-    log_scale: false
-    ci_lower: uk_billboard_rollout_2026.lower
-    ci_upper: uk_billboard_rollout_2026.upper
-    show_grid: true
-    listen:
-      Date: uk_billboard_rollout_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: uk_billboard_rollout_2026
-    type: looker_line
-    fields: [
-      uk_billboard_rollout_2026.submission_date,
-      uk_billboard_rollout_2026.branch,
-      uk_billboard_rollout_2026.point
-    ]
-    pivots: [
-      uk_billboard_rollout_2026.branch
-    ]
-    filters:
-      uk_billboard_rollout_2026.metric: 'active_hours'
-      uk_billboard_rollout_2026.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: uk_billboard_rollout_2026.submission_date
-    field_y: uk_billboard_rollout_2026.point
-    log_scale: false
-    ci_lower: uk_billboard_rollout_2026.lower
-    ci_upper: uk_billboard_rollout_2026.upper
-    show_grid: true
-    listen:
-      Date: uk_billboard_rollout_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: uk_billboard_rollout_2026
-    type: looker_line
-    fields: [
-      uk_billboard_rollout_2026.submission_date,
-      uk_billboard_rollout_2026.branch,
-      uk_billboard_rollout_2026.point
-    ]
-    pivots: [
-      uk_billboard_rollout_2026.branch
-    ]
-    filters:
-      uk_billboard_rollout_2026.metric: 'ad_clicks'
       uk_billboard_rollout_2026.statistic: mean
     row: 30
     col: 0
