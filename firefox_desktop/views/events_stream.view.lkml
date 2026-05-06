@@ -875,6 +875,14 @@ view: events_stream {
     group_item_label: "Is Deleted"
   }
 
+  dimension: extras__boolean__is_destroying {
+    sql: ${TABLE}.extras.boolean.is_destroying ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Destroying"
+  }
+
   dimension: extras__boolean__is_extensions_button_visible {
     sql: ${TABLE}.extras.boolean.is_extensions_button_visible ;;
     type: yesno
