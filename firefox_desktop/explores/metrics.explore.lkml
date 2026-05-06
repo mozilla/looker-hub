@@ -643,6 +643,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_appearance {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_appearance}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_appearance ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_appearance.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers.document_id} ;;

@@ -3268,6 +3268,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_appearance {
+    label: "Browser UI Interaction: Preferences Pane Appearance"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_appearance ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Preferences Pane Appearance"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Preferences Pane Appearance"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_preferences_pane_appearance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the items interacted with in the Appearance section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
     label: "Browser UI Interaction: Preferences Pane Containers"
     hidden: yes
@@ -52682,6 +52699,47 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_appearance {
+  label: "Browser UI Interaction: Preferences Pane Appearance"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
   label: "Browser UI Interaction: Preferences Pane Containers"
 
@@ -52994,19 +53052,19 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 

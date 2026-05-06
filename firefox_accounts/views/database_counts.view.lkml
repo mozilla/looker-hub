@@ -9,12 +9,14 @@ view: database_counts {
     sql: ${TABLE}.table_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the Firefox Accounts database source table being counted, such as accounts, devices, or emails."
   }
 
   dimension: total_rows {
     sql: ${TABLE}.total_rows ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The total number of rows in the source table as of the snapshot date, or the count of distinct accounts meeting a specific condition."
   }
 
   dimension_group: as_of {
@@ -30,6 +32,7 @@ view: database_counts {
     ]
     convert_tz: no
     datatype: date
+    description: "The date for which row counts are captured across FxA database tables, used as the partition column."
   }
 
   measure: total_rows_sum {
