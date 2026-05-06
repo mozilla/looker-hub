@@ -9,12 +9,14 @@ view: recovery_phone_segments {
     sql: ${TABLE}.country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Code of the country in which the activity took place, as determined by the IP geolocation."
   }
 
   dimension: total_rows {
     sql: ${TABLE}.total_rows ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total number of recovery phone records for the given country and date."
   }
 
   dimension_group: as_of {
@@ -30,6 +32,7 @@ view: recovery_phone_segments {
     ]
     convert_tz: no
     datatype: date
+    description: "Date for which the recovery phone counts were computed, used as the partition date."
   }
 
   measure: total_rows_sum {
