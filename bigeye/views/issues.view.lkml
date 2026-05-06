@@ -25,12 +25,14 @@ view: issues {
 
   dimension: alerting_metrics {
     sql: ${TABLE}.alerting_metrics ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: alerting_metrics_with_label {
     sql: ${TABLE}.alerting_metrics_with_label ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: assignee_email {
@@ -41,7 +43,8 @@ view: issues {
 
   dimension: assignee_groups {
     sql: ${TABLE}.assignee_groups ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: assignee_id {
@@ -52,7 +55,8 @@ view: issues {
 
   dimension: assignee_idp_groups {
     sql: ${TABLE}.assignee_idp_groups ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: assignee_is_service_account {
@@ -117,7 +121,8 @@ view: issues {
 
   dimension: events {
     sql: ${TABLE}.events ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: first_metric_run_status {
@@ -134,7 +139,8 @@ view: issues {
 
   dimension: issue_resolution_steps {
     sql: ${TABLE}.issue_resolution_steps ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: issue_type {
@@ -181,7 +187,8 @@ view: issues {
 
   dimension: metric_configuration_filters {
     sql: ${TABLE}.metric_configuration_filters ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_configuration_grain_seconds {
@@ -192,7 +199,8 @@ view: issues {
 
   dimension: metric_configuration_group_bys {
     sql: ${TABLE}.metric_configuration_group_bys ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_configuration_id {
@@ -239,12 +247,14 @@ view: issues {
 
   dimension: metric_configuration_metric_group_overrides {
     sql: ${TABLE}.metric_configuration_metric_group_overrides ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_configuration_metric_observed_column_response {
     sql: ${TABLE}.metric_configuration_metric_observed_column_response ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_configuration_metric_schedule_named_schedule_cron {
@@ -327,12 +337,14 @@ view: issues {
 
   dimension: metric_configuration_notification_channels {
     sql: ${TABLE}.metric_configuration_notification_channels ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_configuration_parameters {
     sql: ${TABLE}.metric_configuration_parameters ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_configuration_rct_override {
@@ -355,7 +367,8 @@ view: issues {
 
   dimension: metric_configuration_thresholds {
     sql: ${TABLE}.metric_configuration_thresholds ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_configuration_warehouse_id {
@@ -366,7 +379,8 @@ view: issues {
 
   dimension: metric_metadata_companion_metrics {
     sql: ${TABLE}.metric_metadata_companion_metrics ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_metadata_created_at {
@@ -425,7 +439,8 @@ view: issues {
 
   dimension: metric_metadata_monitored_objects {
     sql: ${TABLE}.metric_metadata_monitored_objects ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: metric_metadata_run_at {
@@ -496,7 +511,8 @@ view: issues {
 
   dimension: notification_channels {
     sql: ${TABLE}.notification_channels ;;
-    hidden: yes
+    type: string
+    suggest_persist_for: "24 hours"
   }
 
   dimension: opened_time_seconds {
@@ -568,254 +584,4 @@ view: issues {
   }
 
   sql_table_name: `moz-fx-data-shared-prod.bigeye_derived.issue_service_v1` ;;
-}
-
-view: issues__assignee_groups {
-  dimension: displayName {
-    sql: ${TABLE}.displayName ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: id {
-    sql: ${TABLE}.id ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-}
-
-view: issues__metric_configuration_notification_channels {
-  dimension: email {
-    sql: ${TABLE}.email ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: slackChannelInfo__channelId {
-    sql: ${TABLE}.slackChannelInfo.channelId ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Slackchannelinfo"
-    group_item_label: "Channelid"
-  }
-
-  dimension: slackChannelInfo__channelName {
-    sql: ${TABLE}.slackChannelInfo.channelName ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Slackchannelinfo"
-    group_item_label: "Channelname"
-  }
-}
-
-view: issues__metric_configuration_parameters {
-  dimension: columnName {
-    sql: ${TABLE}.columnName ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: stringValue {
-    sql: ${TABLE}.stringValue ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-}
-
-view: issues__metric_configuration_thresholds {
-  dimension: autoThreshold__bound__boundType {
-    sql: ${TABLE}.autoThreshold.bound.boundType ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Autothreshold: Bound"
-    group_item_label: "Boundtype"
-  }
-
-  dimension: autoThreshold__bound__value {
-    sql: ${TABLE}.autoThreshold.bound.value ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Autothreshold: Bound"
-    group_item_label: "Value"
-  }
-
-  dimension: autoThreshold__forecastValue {
-    sql: ${TABLE}.autoThreshold.forecastValue ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Autothreshold"
-    group_item_label: "Forecastvalue"
-  }
-
-  dimension: autoThreshold__modelType {
-    sql: ${TABLE}.autoThreshold.modelType ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Autothreshold"
-    group_item_label: "Modeltype"
-  }
-
-  dimension: autoThreshold__sensitivity {
-    sql: ${TABLE}.autoThreshold.sensitivity ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Autothreshold"
-    group_item_label: "Sensitivity"
-  }
-
-  dimension: constantThreshold__bound__boundType {
-    sql: ${TABLE}.constantThreshold.bound.boundType ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Constantthreshold: Bound"
-    group_item_label: "Boundtype"
-  }
-
-  dimension: constantThreshold__bound__value {
-    sql: ${TABLE}.constantThreshold.bound.value ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Constantthreshold: Bound"
-    group_item_label: "Value"
-  }
-
-  dimension: freshnessScheduleThreshold__bound__boundType {
-    sql: ${TABLE}.freshnessScheduleThreshold.bound.boundType ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold: Bound"
-    group_item_label: "Boundtype"
-  }
-
-  dimension: freshnessScheduleThreshold__bound__value {
-    sql: ${TABLE}.freshnessScheduleThreshold.bound.value ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold: Bound"
-    group_item_label: "Value"
-  }
-
-  dimension: freshnessScheduleThreshold__cron {
-    sql: ${TABLE}.freshnessScheduleThreshold.cron ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold"
-    group_item_label: "Cron"
-  }
-
-  dimension: freshnessScheduleThreshold__delayAtUpdate__intervalType {
-    sql: ${TABLE}.freshnessScheduleThreshold.delayAtUpdate.intervalType ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold: Delayatupdate"
-    group_item_label: "Intervaltype"
-  }
-
-  dimension: freshnessScheduleThreshold__delayAtUpdate__intervalValue {
-    sql: ${TABLE}.freshnessScheduleThreshold.delayAtUpdate.intervalValue ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold: Delayatupdate"
-    group_item_label: "Intervalvalue"
-  }
-
-  dimension: freshnessScheduleThreshold__timezone {
-    sql: ${TABLE}.freshnessScheduleThreshold.timezone ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Freshnessschedulethreshold"
-    group_item_label: "Timezone"
-  }
-
-  dimension: relativeThreshold__bound__boundType {
-    sql: ${TABLE}.relativeThreshold.bound.boundType ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Relativethreshold: Bound"
-    group_item_label: "Boundtype"
-  }
-
-  dimension: relativeThreshold__bound__value {
-    sql: ${TABLE}.relativeThreshold.bound.value ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Relativethreshold: Bound"
-    group_item_label: "Value"
-  }
-
-  dimension: relativeThreshold__lookback__intervalType {
-    sql: ${TABLE}.relativeThreshold.lookback.intervalType ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Relativethreshold: Lookback"
-    group_item_label: "Intervaltype"
-  }
-
-  dimension: relativeThreshold__lookback__intervalValue {
-    sql: ${TABLE}.relativeThreshold.lookback.intervalValue ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Relativethreshold: Lookback"
-    group_item_label: "Intervalvalue"
-  }
-}
-
-view: issues__metric_metadata_companion_metrics {
-  dimension: id {
-    sql: ${TABLE}.id ;;
-    type: number
-    suggest_persist_for: "24 hours"
-  }
-
-  dimension: metricInfo__displayName {
-    sql: ${TABLE}.metricInfo.displayName ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Metricinfo"
-    group_item_label: "Displayname"
-  }
-
-  dimension: metricInfo__id {
-    sql: ${TABLE}.metricInfo.id ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Metricinfo"
-    group_item_label: "ID"
-  }
-
-  dimension: type {
-    sql: ${TABLE}.type ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
-}
-
-view: issues__metric_metadata_monitored_objects {
-  dimension: entityInfo__displayName {
-    sql: ${TABLE}.entityInfo.displayName ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Entityinfo"
-    group_item_label: "Displayname"
-  }
-
-  dimension: entityInfo__id {
-    sql: ${TABLE}.entityInfo.id ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Entityinfo"
-    group_item_label: "ID"
-  }
-
-  dimension: entityType {
-    sql: ${TABLE}.entityType ;;
-    type: string
-    suggest_persist_for: "24 hours"
-  }
 }
