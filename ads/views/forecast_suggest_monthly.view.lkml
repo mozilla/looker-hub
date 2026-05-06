@@ -29,6 +29,12 @@ view: forecast_suggest_monthly {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: actual_sponsored_impressions {
+    sql: ${TABLE}.actual_sponsored_impressions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: actual_total_active {
     sql: ${TABLE}.actual_total_active ;;
     type: number
@@ -37,6 +43,12 @@ view: forecast_suggest_monthly {
 
   dimension: actual_total_clicks {
     sql: ${TABLE}.actual_total_clicks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: actual_total_impressed_users {
+    sql: ${TABLE}.actual_total_impressed_users ;;
     type: number
     suggest_persist_for: "24 hours"
   }
