@@ -1211,6 +1211,14 @@ view: events_stream {
     group_item_label: "Duration Ms"
   }
 
+  dimension: extras__quantity__duration_since_last_visible_seconds {
+    sql: ${TABLE}.extras.quantity.duration_since_last_visible_seconds ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Duration Since Last Visible Seconds"
+  }
+
   dimension: extras__quantity__edited {
     sql: ${TABLE}.extras.quantity.edited ;;
     type: number
