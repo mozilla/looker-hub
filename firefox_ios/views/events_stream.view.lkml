@@ -555,6 +555,14 @@ view: events_stream {
     group_item_label: "Size"
   }
 
+  dimension: extras__quantity__tab_count {
+    sql: ${TABLE}.extras.quantity.tab_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tab Count"
+  }
+
   dimension: extras__quantity__to_version {
     sql: ${TABLE}.extras.quantity.to_version ;;
     type: number
@@ -577,6 +585,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total Tabs In All Groups"
+  }
+
+  dimension: extras__quantity__webview_count {
+    sql: ${TABLE}.extras.quantity.webview_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Webview Count"
   }
 
   dimension: extras__string__action {
