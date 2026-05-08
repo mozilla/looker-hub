@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: summarizer_mistral_model_rollout_existing_users_us_target_all {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.summarizer_mistral_model_rollout_existing_users_us_target_all_statistics ;;
+view: auto_trigger_pin_to_taskbar_notification_treatment_a_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.auto_trigger_pin_to_taskbar_notification_treatment_a_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
