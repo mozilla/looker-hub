@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: summarizer_mistral_model_rollout_language_extension_with_app_attest {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.summarizer_mistral_model_rollout_language_extension_with_app_attest_statistics ;;
+view: split_view_onboarding_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.split_view_onboarding_rollout_statistics ;;
 
   dimension: submission_date {
     type: date

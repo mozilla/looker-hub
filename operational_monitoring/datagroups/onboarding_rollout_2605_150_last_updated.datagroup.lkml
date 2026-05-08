@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: pdf_annotations_signatures_treatment_a_already_default_rollout_last_updated {
-  label: "pdf_annotations_signatures_treatment_a_already_default_rollout Last Updated"
+datagroup: onboarding_rollout_2605_150_last_updated {
+  label: "onboarding_rollout_2605_150 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'pdf_annotations_signatures_treatment_a_already_default_rollout_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'onboarding_rollout_2605_150_statistics')
 
     ) ;;
-  description: "Updates for pdf_annotations_signatures_treatment_a_already_default_rollout when referenced tables are modified."
+  description: "Updates for onboarding_rollout_2605_150 when referenced tables are modified."
   max_cache_age: "24 hours"
 }
