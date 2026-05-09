@@ -185,16 +185,16 @@
   - title: Channel
     name: Channel
     type: string_filter
-    default_value: 'release'
+    default_value: 'nightly'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'release'
       - 'nightly'
       - 'beta'
+      - 'release'
       
   
   
