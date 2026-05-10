@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       merino_recommendations_beta.branch
     ]
     filters:
-      merino_recommendations_beta.metric: 'tagged_sap_searches'
+      merino_recommendations_beta.metric: 'active_hours'
       merino_recommendations_beta.statistic: mean
     row: 0
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       merino_recommendations_beta.branch
     ]
     filters:
-      merino_recommendations_beta.metric: 'active_hours'
+      merino_recommendations_beta.metric: 'tagged_sap_searches'
       merino_recommendations_beta.statistic: mean
     row: 20
     col: 12

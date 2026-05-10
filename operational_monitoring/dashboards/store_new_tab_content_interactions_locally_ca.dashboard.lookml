@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: store_new_tab_content_interactions_locally_ca
+    type: looker_line
+    fields: [
+      store_new_tab_content_interactions_locally_ca.submission_date,
+      store_new_tab_content_interactions_locally_ca.branch,
+      store_new_tab_content_interactions_locally_ca.point
+    ]
+    pivots: [
+      store_new_tab_content_interactions_locally_ca.branch
+    ]
+    filters:
+      store_new_tab_content_interactions_locally_ca.metric: 'active_hours'
+      store_new_tab_content_interactions_locally_ca.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: store_new_tab_content_interactions_locally_ca.submission_date
+    field_y: store_new_tab_content_interactions_locally_ca.point
+    log_scale: false
+    ci_lower: store_new_tab_content_interactions_locally_ca.lower
+    ci_upper: store_new_tab_content_interactions_locally_ca.upper
+    show_grid: true
+    listen:
+      Date: store_new_tab_content_interactions_locally_ca.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -62,42 +96,6 @@
     filters:
       store_new_tab_content_interactions_locally_ca.metric: 'uri_count'
       store_new_tab_content_interactions_locally_ca.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: store_new_tab_content_interactions_locally_ca.submission_date
-    field_y: store_new_tab_content_interactions_locally_ca.point
-    log_scale: false
-    ci_lower: store_new_tab_content_interactions_locally_ca.lower
-    ci_upper: store_new_tab_content_interactions_locally_ca.upper
-    show_grid: true
-    listen:
-      Date: store_new_tab_content_interactions_locally_ca.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: store_new_tab_content_interactions_locally_ca
-    type: "ci-line-chart"
-    fields: [
-      store_new_tab_content_interactions_locally_ca.submission_date,
-      store_new_tab_content_interactions_locally_ca.branch,
-      store_new_tab_content_interactions_locally_ca.upper,
-      store_new_tab_content_interactions_locally_ca.lower,
-      store_new_tab_content_interactions_locally_ca.point
-    ]
-    pivots: [
-      store_new_tab_content_interactions_locally_ca.branch
-    ]
-    filters:
-      store_new_tab_content_interactions_locally_ca.metric: 'memory_total'
-      store_new_tab_content_interactions_locally_ca.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -110,7 +108,6 @@
     show_grid: true
     listen:
       Date: store_new_tab_content_interactions_locally_ca.submission_date
-      Percentile: store_new_tab_content_interactions_locally_ca.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -149,40 +146,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: store_new_tab_content_interactions_locally_ca
-    type: looker_line
-    fields: [
-      store_new_tab_content_interactions_locally_ca.submission_date,
-      store_new_tab_content_interactions_locally_ca.branch,
-      store_new_tab_content_interactions_locally_ca.point
-    ]
-    pivots: [
-      store_new_tab_content_interactions_locally_ca.branch
-    ]
-    filters:
-      store_new_tab_content_interactions_locally_ca.metric: 'retained'
-      store_new_tab_content_interactions_locally_ca.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: store_new_tab_content_interactions_locally_ca.submission_date
-    field_y: store_new_tab_content_interactions_locally_ca.point
-    log_scale: false
-    ci_lower: store_new_tab_content_interactions_locally_ca.lower
-    ci_upper: store_new_tab_content_interactions_locally_ca.upper
-    show_grid: true
-    listen:
-      Date: store_new_tab_content_interactions_locally_ca.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -202,6 +165,40 @@
       store_new_tab_content_interactions_locally_ca.metric: 'qualified_cumulative_days_of_use'
       store_new_tab_content_interactions_locally_ca.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: store_new_tab_content_interactions_locally_ca.submission_date
+    field_y: store_new_tab_content_interactions_locally_ca.point
+    log_scale: false
+    ci_lower: store_new_tab_content_interactions_locally_ca.lower
+    ci_upper: store_new_tab_content_interactions_locally_ca.upper
+    show_grid: true
+    listen:
+      Date: store_new_tab_content_interactions_locally_ca.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: store_new_tab_content_interactions_locally_ca
+    type: looker_line
+    fields: [
+      store_new_tab_content_interactions_locally_ca.submission_date,
+      store_new_tab_content_interactions_locally_ca.branch,
+      store_new_tab_content_interactions_locally_ca.point
+    ]
+    pivots: [
+      store_new_tab_content_interactions_locally_ca.branch
+    ]
+    filters:
+      store_new_tab_content_interactions_locally_ca.metric: 'retained'
+      store_new_tab_content_interactions_locally_ca.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: store_new_tab_content_interactions_locally_ca
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       store_new_tab_content_interactions_locally_ca.submission_date,
       store_new_tab_content_interactions_locally_ca.branch,
+      store_new_tab_content_interactions_locally_ca.upper,
+      store_new_tab_content_interactions_locally_ca.lower,
       store_new_tab_content_interactions_locally_ca.point
     ]
     pivots: [
       store_new_tab_content_interactions_locally_ca.branch
     ]
     filters:
-      store_new_tab_content_interactions_locally_ca.metric: 'active_hours'
-      store_new_tab_content_interactions_locally_ca.statistic: mean
+      store_new_tab_content_interactions_locally_ca.metric: 'memory_total'
+      store_new_tab_content_interactions_locally_ca.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,6 +246,7 @@
     show_grid: true
     listen:
       Date: store_new_tab_content_interactions_locally_ca.submission_date
+      Percentile: store_new_tab_content_interactions_locally_ca.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

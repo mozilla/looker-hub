@@ -19211,6 +19211,14 @@ view: metrics_table {
     group_item_label: "OS Environment Allowed App Sources"
   }
 
+  dimension: metrics__string__os_environment_desktop_entry_exists {
+    sql: ${TABLE}.metrics.string.os_environment_desktop_entry_exists ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "OS Environment Desktop Entry Exists"
+  }
+
   dimension: metrics__string__os_environment_launch_method {
     sql: ${TABLE}.metrics.string.os_environment_launch_method ;;
     type: string
