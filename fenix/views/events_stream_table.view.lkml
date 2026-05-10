@@ -1552,6 +1552,14 @@ view: events_stream_table {
     group_item_label: "Number Of Logins Migrated"
   }
 
+  dimension: extras__quantity__number_of_logins_quarantined {
+    sql: ${TABLE}.extras.quantity.number_of_logins_quarantined ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins Quarantined"
+  }
+
   dimension: extras__quantity__number_of_logins_to_migrate {
     sql: ${TABLE}.extras.quantity.number_of_logins_to_migrate ;;
     type: number
@@ -2254,6 +2262,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Component Stack"
+  }
+
+  dimension: extras__string__computed {
+    sql: ${TABLE}.extras.string.computed ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Computed"
   }
 
   dimension: extras__string__conflict_slug {
@@ -3384,6 +3400,14 @@ view: events_stream_table {
     group_item_label: "Mime Type"
   }
 
+  dimension: extras__string__ml {
+    sql: ${TABLE}.extras.string.ml ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Ml"
+  }
+
   dimension: extras__string__ml_infer_label {
     sql: ${TABLE}.extras.string.ml_infer_label ;;
     type: string
@@ -3446,6 +3470,22 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Mlbf Source"
+  }
+
+  dimension: extras__string__mltime {
+    sql: ${TABLE}.extras.string.mltime ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Mltime"
+  }
+
+  dimension: extras__string__mlversion {
+    sql: ${TABLE}.extras.string.mlversion ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Mlversion"
   }
 
   dimension: extras__string__mode {
@@ -3976,6 +4016,14 @@ view: events_stream_table {
     group_item_label: "Psi Some Avg60"
   }
 
+  dimension: extras__string__re {
+    sql: ${TABLE}.extras.string.re ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Re"
+  }
+
   dimension: extras__string__reader_time {
     sql: ${TABLE}.extras.string.reader_time ;;
     type: string
@@ -4062,6 +4110,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Results"
+  }
+
+  dimension: extras__string__retime {
+    sql: ${TABLE}.extras.string.retime ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Retime"
   }
 
   dimension: extras__string__retryCount {

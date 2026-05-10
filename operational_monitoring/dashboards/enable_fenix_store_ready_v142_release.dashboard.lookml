@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       enable_fenix_store_ready_v142_release.branch
     ]
     filters:
-      enable_fenix_store_ready_v142_release.metric: 'tagged_sap_searches'
+      enable_fenix_store_ready_v142_release.metric: 'active_hours'
       enable_fenix_store_ready_v142_release.statistic: mean
     row: 0
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       enable_fenix_store_ready_v142_release.branch
     ]
     filters:
-      enable_fenix_store_ready_v142_release.metric: 'active_hours'
+      enable_fenix_store_ready_v142_release.metric: 'tagged_sap_searches'
       enable_fenix_store_ready_v142_release.statistic: mean
     row: 20
     col: 12

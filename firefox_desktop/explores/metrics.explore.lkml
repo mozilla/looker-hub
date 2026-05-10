@@ -708,9 +708,29 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_tabs_browsing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_tabs_browsing}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_tabs_browsing ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_tabs_browsing.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown}) AS metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_bookmarks {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_sidebar_bookmarks}) AS metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_bookmarks ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_bookmarks.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_history {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_sidebar_history}) AS metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_history ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_history.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_synced_tabs {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_sidebar_synced_tabs}) AS metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_synced_tabs ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_synced_tabs.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__browser_ui_interaction_tab_movement {

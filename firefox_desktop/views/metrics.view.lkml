@@ -3489,6 +3489,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_tabs_browsing {
+    label: "Browser UI Interaction: Preferences Pane Tabs Browsing"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_tabs_browsing ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Preferences Pane Tabs Browsing"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Preferences Pane Tabs Browsing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_preferences_pane_tabs_browsing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the items interacted with in the Tabs and browsing section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown {
     label: "Browser UI Interaction: Preferences Pane Unknown"
     hidden: yes
@@ -3503,6 +3520,57 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Records the items interacted with in any other section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneUnknown.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_bookmarks {
+    label: "Browser UI Interaction: Sidebar Bookmarks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_bookmarks ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Sidebar Bookmarks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Sidebar Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_sidebar_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the count of actions taken within the sidebar Bookmarks panel.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_history {
+    label: "Browser UI Interaction: Sidebar History"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_history ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Sidebar History"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Sidebar History"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_sidebar_history"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the count of actions taken within the sidebar History panel.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_synced_tabs {
+    label: "Browser UI Interaction: Sidebar Synced Tabs"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_synced_tabs ;;
+    group_label: "Browser UI Interaction"
+    group_item_label: "Sidebar Synced Tabs"
+
+    link: {
+      label: "Glean Dictionary reference for Browser UI Interaction: Sidebar Synced Tabs"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_ui_interaction_sidebar_synced_tabs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the count of actions taken within the sidebar Synced Tabs panel.
 "
   }
 
@@ -5929,6 +5997,31 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__string__os_environment_desktop_entry_exists {
+    label: "OS Environment: Desktop Entry Exists"
+    hidden: no
+    sql: ${TABLE}.metrics.string.os_environment_desktop_entry_exists ;;
+    type: string
+    group_label: "OS Environment"
+    group_item_label: "Desktop Entry Exists"
+
+    link: {
+      label: "Glean Dictionary reference for OS Environment: Desktop Entry Exists"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/os_environment_desktop_entry_exists"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Determines whether a freedesktop.org desktop entry exists that matches the remoting name, i.e. that is likely to associate with browser windows.
+This will only be set on Linux, and is either:
+  * \"absent\", if none exists (or one exists but is marked Hidden, i.e.
+    deleted)
+  * \"invisible\", if it exists but is marked invisible (by NoDisplay etc)
+  * \"visible\" if it exists and is visible
+  * \"sandboxed\" if running under Flatpak or Snap, where it is likely
+    visible but detection is impossible
+"
+  }
+
   dimension: metrics__labeled_counter__os_environment_invoked_to_handle {
     label: "OS Environment: Invoked To Handle"
     hidden: yes
@@ -6033,6 +6126,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Records how Firefox was started on Windows. Currently will be one of \"Desktop\", \"DesktopPrivate\", \"StartMenu\" (including pins), \"StartMenuPrivate\", \"Taskbar\", \"TaskbarPrivate\", \"OtherShortcut\", or \"Other\" This metric was generated to correspond to the Legacy Telemetry scalar os.environment.launch_method.
+"
+  }
+
+  dimension: metrics__string__os_environment_launch_on_login_state {
+    label: "OS Environment: Launch On Login State"
+    hidden: no
+    sql: ${TABLE}.metrics.string.os_environment_launch_on_login_state ;;
+    type: string
+    group_label: "OS Environment"
+    group_item_label: "Launch On Login State"
+
+    link: {
+      label: "Glean Dictionary reference for OS Environment: Launch On Login State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/os_environment_launch_on_login_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The state of the launch-on-login setting at startup. One of: \"enabled\" (launch on login is active), \"disabled\" (not enabled by the user), \"disabled_by_settings\" (blocked by Windows Settings or policy), \"not_supported\" (feature unavailable on this platform), or \"error\" (failed to determine state).
 "
   }
 
@@ -18180,7 +18291,7 @@ while reporting fog.data_diretory_info.
 
   dimension: metrics__labeled_boolean__fog_subdir_err {
     label: "Fog: Subdir Err"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.fog_subdir_err ;;
     type: string
     group_label: "Fog"
@@ -53183,8 +53294,172 @@ view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_tabs_browsing {
+  label: "Browser UI Interaction: Preferences Pane Tabs Browsing"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown {
   label: "Browser UI Interaction: Preferences Pane Unknown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_bookmarks {
+  label: "Browser UI Interaction: Sidebar Bookmarks"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_history {
+  label: "Browser UI Interaction: Sidebar History"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_ui_interaction_sidebar_synced_tabs {
+  label: "Browser UI Interaction: Sidebar Synced Tabs"
 
   dimension: document_id {
     type: string
@@ -56775,19 +57050,19 @@ view: metrics__metrics__labeled_counter__fog_subdir_entry_err {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -56816,19 +57091,19 @@ view: metrics__metrics__labeled_counter__fog_subdir_entry_metadata_err {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
