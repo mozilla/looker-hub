@@ -896,6 +896,45 @@ ai_usage:
       tables:
       - table: moz-fx-data-shared-prod.ai_usage_derived.openai_costs_v1
       type: table_view
+bergamot:
+  explores:
+    custom:
+      type: glean_ping_explore
+      views:
+        base_view: custom
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+  glean_app: true
+  owners:
+  - epavlov@mozilla.com
+  pretty_name: Bergamot Translator
+  spoke: looker-spoke-default
+  views:
+    custom:
+      tables:
+      - table: mozdata.org_mozilla_bergamot.custom
+      type: glean_ping_view
+    custom_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_bergamot.custom
+      type: table_view
+    deletion_request:
+      tables:
+      - table: mozdata.org_mozilla_bergamot.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_bergamot.deletion_request
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_bergamot.events
+      type: table_view
 bigeye:
   explores:
     dashboards:
@@ -4895,6 +4934,77 @@ firefox_okrs:
     mobile_retention:
       tables:
       - table: moz-fx-data-shared-prod.telemetry.mobile_retention
+      type: table_view
+firefox_translations:
+  explores:
+    custom:
+      type: glean_ping_explore
+      views:
+        base_view: custom
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
+  glean_app: true
+  owners:
+  - epavlov@mozilla.com
+  pretty_name: Firefox Translations
+  spoke: looker-spoke-default
+  views:
+    custom:
+      tables:
+      - table: mozdata.firefox_translations.custom
+      type: glean_ping_view
+    custom_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.custom
+      type: table_view
+    deletion_request:
+      tables:
+      - table: mozdata.firefox_translations.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.firefox_translations.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.firefox_translations.events_stream
+      type: events_stream_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.events_stream
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.events_unnested
       type: table_view
 fivetran:
   glean_app: false
@@ -20465,6 +20575,117 @@ user_journey:
   - fbertsch@mozilla.com
   pretty_name: User Journey
   spoke: looker-spoke-default
+viu_politica:
+  explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
+    main_events:
+      type: glean_ping_explore
+      views:
+        base_view: main_events
+    regret_details:
+      type: glean_ping_explore
+      views:
+        base_view: regret_details
+    video_data:
+      type: glean_ping_explore
+      views:
+        base_view: video_data
+    video_index:
+      type: glean_ping_explore
+      views:
+        base_view: video_index
+  glean_app: true
+  owners:
+  - chico@mozillafoundation.org
+  - ranadheer@mozillafoundation.org
+  pretty_name: Viu Politica
+  spoke: looker-spoke-default
+  views:
+    deletion_request:
+      tables:
+      - table: mozdata.viu_politica.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.viu_politica.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.viu_politica.events_stream
+      type: events_stream_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.events_stream
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.events_unnested
+      type: table_view
+    main_events:
+      tables:
+      - table: mozdata.viu_politica.main_events
+      type: glean_ping_view
+    main_events_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.main_events
+      type: table_view
+    regret_details:
+      tables:
+      - table: mozdata.viu_politica.regret_details
+      type: glean_ping_view
+    regret_details_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.regret_details
+      type: table_view
+    video_data:
+      tables:
+      - table: mozdata.viu_politica.video_data
+      type: glean_ping_view
+    video_data_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.video_data
+      type: table_view
+    video_index:
+      tables:
+      - table: mozdata.viu_politica.video_index
+      type: glean_ping_view
+    video_index_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.video_index
+      type: table_view
 websites:
   explores:
     metric_definitions_www_site_landing_page_metrics:
