@@ -5851,18 +5851,205 @@ monitoring:
       - table: mozdata.monitoring.telemetry_missing_columns
       type: ping_view
 mozilla_vpn:
+  explores:
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    client_counts:
+      type: client_counts_explore
+      views:
+        base_view: client_counts
+        extended_view: baseline_clients_daily_table
+    daemonsession:
+      type: glean_ping_explore
+      views:
+        base_view: daemonsession
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    extensionsession:
+      type: glean_ping_explore
+      views:
+        base_view: extensionsession
+    funnel_analysis:
+      type: funnel_analysis_explore
+      views:
+        base_view: funnel_analysis
+    growth_accounting:
+      type: growth_accounting_explore
+      views:
+        base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
+    main:
+      type: glean_ping_explore
+      views:
+        base_view: main
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
+    vpnsession:
+      type: glean_ping_explore
+      views:
+        base_view: vpnsession
   glean_app: true
   owners:
+  - vpn@mozilla.com
+  - amarchesini@mozilla.com
+  - mcleinman@mozilla.com
   - dthorn@mozilla.com
   pretty_name: Mozilla VPN
   spoke: looker-spoke-default
   views:
+    active_subscription_ids_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.active_subscription_ids
+      type: table_view
+    active_subscriptions_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.active_subscriptions
+      type: table_view
+    add_device_events_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.add_device_events
+      type: table_view
+    all_subscriptions_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.all_subscriptions
+      type: table_view
+    baseline:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.baseline
+      type: glean_ping_view
+    baseline_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.baseline_clients_daily
+      type: table_view
+    baseline_clients_last_seen:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.baseline_clients_last_seen
+      type: glean_ping_view
+    baseline_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.baseline_clients_last_seen
+      type: table_view
+    baseline_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.baseline
+      type: table_view
+    channel_group_proportions_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.channel_group_proportions
+      type: table_view
+    client_counts:
+      tables:
+      - table: mozdata.mozilla_vpn.baseline_clients_daily
+      type: client_counts_view
+    daemonsession:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.daemonsession
+      type: glean_ping_view
+    daemonsession_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.daemonsession
+      type: table_view
+    deletion_request:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.deletion_request
+      type: table_view
     devices:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.devices
       type: table_view
+    devices_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.devices
+      type: table_view
+    event_types_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.event_types
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.mozilla_vpn.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.events_daily
+      type: table_view
+    events_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.events_unnested
+      type: table_view
+    exchange_rates_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.exchange_rates
+      type: table_view
+    extensionsession:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.extensionsession
+      type: glean_ping_view
+    extensionsession_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.extensionsession
+      type: table_view
+    funnel_analysis:
+      tables:
+      - event_types: '`mozdata.mozilla_vpn.event_types`'
+        funnel_analysis: events_daily_table
+        step_1: event_types
+        step_2: event_types
+        step_3: event_types
+        step_4: event_types
+      type: funnel_analysis_view
     funnel_fxa_login_to_protected:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.funnel_fxa_login_to_protected
+      type: table_view
+    funnel_fxa_login_to_protected_table:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.funnel_fxa_login_to_protected
@@ -5871,6 +6058,65 @@ mozilla_vpn:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.funnel_ga_to_subscriptions
+      type: table_view
+    funnel_ga_to_subscriptions_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.funnel_ga_to_subscriptions
+      type: table_view
+    funnel_product_page_to_subscribed_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.funnel_product_page_to_subscribed
+      type: table_view
+    growth_accounting:
+      tables:
+      - table: mozdata.mozilla_vpn.baseline_clients_last_seen
+      type: growth_accounting_view
+    health:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.health
+      type: table_view
+    login_flows_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.login_flows
+      type: table_view
+    main:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.main
+      type: glean_ping_view
+    main_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.main
+      type: table_view
+    metrics:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.metrics
+      type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.metrics_clients_daily
+      type: table_view
+    metrics_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.metrics
+      type: table_view
+    protected_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.protected
       type: table_view
     retention_by_subscription:
       tables:
@@ -5882,15 +6128,90 @@ mozilla_vpn:
       - channel: release
         table: moz-fx-data-shared-prod.mozilla_vpn_derived.site_metrics_summary_v2
       type: table_view
+    site_metrics_summary_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.site_metrics_summary
+      type: table_view
+    subscription_events_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.subscription_events
+      type: table_view
     subscriptions:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.all_subscriptions
       type: table_view
+    subscriptions_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.subscriptions
+      type: table_view
+    survey_cancellation_of_service_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.survey_cancellation_of_service
+      type: table_view
+    survey_intercept_q3_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.survey_intercept_q3
+      type: table_view
+    survey_lifecycle_28d_desktop_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.survey_lifecycle_28d_desktop
+      type: table_view
+    survey_lifecycle_28d_mobile_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.survey_lifecycle_28d_mobile
+      type: table_view
+    survey_market_fit_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.survey_market_fit
+      type: table_view
+    survey_product_quality_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.survey_product_quality
+      type: table_view
+    survey_recommend_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.survey_recommend
+      type: table_view
+    users_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.users
+      type: table_view
     vat_rates:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.vat_rates
+      type: table_view
+    vat_rates_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.vat_rates
+      type: table_view
+    vpnsession:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.vpnsession
+      type: glean_ping_view
+    vpnsession_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.vpnsession
+      type: table_view
+    waitlist_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.waitlist
       type: table_view
 multi_product:
   explores:
