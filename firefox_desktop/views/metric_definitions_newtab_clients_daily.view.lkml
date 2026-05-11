@@ -439,8 +439,8 @@ newtab_clients_daily_widget_interaction_count,
 
   dimension: newtab_gt4_searches {
     group_label: "Metrics"
-    label: "Any Newtab Searches"
-    description: "Client performed any Newtab Handoff searches during the experiment
+    label: "Greater Than 4 Newtab Searches"
+    description: "Client performed at least 5 Newtab Handoff searches during the experiment
 "
     type: number
     sql: ${TABLE}.newtab_gt4_searches ;;
