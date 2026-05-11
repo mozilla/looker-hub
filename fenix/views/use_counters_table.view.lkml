@@ -17359,6 +17359,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_editcontext_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_editcontext_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Editcontext Constructor"
+    description: "Whether a document called called EditContext.constructor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_element_attachshadow {
     sql: ${TABLE}.metrics.counter.use_counter_doc_element_attachshadow ;;
     type: number
@@ -22506,6 +22516,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Domparser Parsefromstring"
     description: "Whether a page called called DOMParser.parseFromString. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_editcontext_constructor {
+    sql: ${TABLE}.metrics.counter.use_counter_page_editcontext_constructor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Editcontext Constructor"
+    description: "Whether a page called called EditContext.constructor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

@@ -104,10 +104,6 @@ datagroup: event_monitoring_live_last_updated {
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'mozillavpn_derived' AND table_name = 'event_monitoring_live_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'mozphab_derived' AND table_name = 'event_monitoring_live_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
@@ -136,10 +132,6 @@ datagroup: event_monitoring_live_last_updated {
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_firefox_vpn_derived' AND table_name = 'event_monitoring_live_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'org_mozilla_focus_beta_derived' AND table_name = 'event_monitoring_live_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
@@ -161,14 +153,6 @@ datagroup: event_monitoring_live_last_updated {
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'org_mozilla_ios_firefoxbeta_derived' AND table_name = 'event_monitoring_live_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_firefoxvpn_derived' AND table_name = 'event_monitoring_live_v1')
- UNION ALL 
-    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'org_mozilla_ios_firefoxvpn_network_extension_derived' AND table_name = 'event_monitoring_live_v1')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
