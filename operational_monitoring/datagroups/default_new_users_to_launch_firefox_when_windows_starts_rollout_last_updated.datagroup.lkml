@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: survey_lifecycle_28d_desktop_table_last_updated {
-  label: "survey_lifecycle_28d_desktop_table Last Updated"
+datagroup: default_new_users_to_launch_firefox_when_windows_starts_rollout_last_updated {
+  label: "default_new_users_to_launch_firefox_when_windows_starts_rollout Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'mozilla_vpn_derived' AND table_name = 'survey_lifecycle_28d_desktop_v1')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'default_new_users_to_launch_firefox_when_windows_starts_rollout_statistics')
 
     ) ;;
-  description: "Updates for survey_lifecycle_28d_desktop_table when referenced tables are modified."
+  description: "Updates for default_new_users_to_launch_firefox_when_windows_starts_rollout when referenced tables are modified."
   max_cache_age: "24 hours"
 }
