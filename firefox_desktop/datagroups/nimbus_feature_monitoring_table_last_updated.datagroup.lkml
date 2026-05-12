@@ -101,6 +101,10 @@ datagroup: nimbus_feature_monitoring_table_last_updated {
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'nimbus_feature_monitoring_preonboarding_v1')
+ UNION ALL 
+    SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE (table_schema = 'firefox_desktop_derived' AND table_name = 'nimbus_feature_monitoring_urlbar_v1')
 
     ) ;;
   description: "Updates for nimbus_feature_monitoring_table when referenced tables are modified."
