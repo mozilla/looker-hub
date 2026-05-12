@@ -16,7 +16,7 @@ SAFE_DIVIDE(COALESCE(SUM(search_ad_click_count), 0),  COALESCE(SUM(search_ad_imp
 COALESCE(SUM(organic_content_click_count), 0) AS organic_content_clicks,
 COALESCE(LOGICAL_OR(organic_content_click_count > 0), FALSE) AS any_organic_content_clicks,
 COALESCE(SUM(sponsored_content_click_count), 0) AS sponsored_content_clicks,
-COALESCE(SUM(sponsored_content_click_count), 0) AS organic_content_impressions,
+COALESCE(SUM(organic_content_impression_count), 0) AS organic_content_impressions,
 COALESCE(SUM(sponsored_content_impression_count), 0) AS sponsored_content_impressions,
 COALESCE(SUM(sponsored_topsite_impression_count), 0) AS sponsored_tile_impressions,
 COALESCE(SUM(sponsored_topsite_click_count), 0) AS sponsored_tile_clicks,
