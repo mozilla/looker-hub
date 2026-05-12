@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,9 +26,145 @@
       client_side_sampling_of_performance_metrics.branch
     ]
     filters:
-      client_side_sampling_of_performance_metrics.metric: 'retained'
+      client_side_sampling_of_performance_metrics.metric: 'search_count'
       client_side_sampling_of_performance_metrics.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: client_side_sampling_of_performance_metrics.submission_date
+    field_y: client_side_sampling_of_performance_metrics.point
+    log_scale: false
+    ci_lower: client_side_sampling_of_performance_metrics.lower
+    ci_upper: client_side_sampling_of_performance_metrics.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_of_performance_metrics.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_of_performance_metrics
+    type: looker_line
+    fields: [
+      client_side_sampling_of_performance_metrics.submission_date,
+      client_side_sampling_of_performance_metrics.branch,
+      client_side_sampling_of_performance_metrics.point
+    ]
+    pivots: [
+      client_side_sampling_of_performance_metrics.branch
+    ]
+    filters:
+      client_side_sampling_of_performance_metrics.metric: 'qualified_cumulative_days_of_use'
+      client_side_sampling_of_performance_metrics.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: client_side_sampling_of_performance_metrics.submission_date
+    field_y: client_side_sampling_of_performance_metrics.point
+    log_scale: false
+    ci_lower: client_side_sampling_of_performance_metrics.lower
+    ci_upper: client_side_sampling_of_performance_metrics.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_of_performance_metrics.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_of_performance_metrics
+    type: looker_line
+    fields: [
+      client_side_sampling_of_performance_metrics.submission_date,
+      client_side_sampling_of_performance_metrics.branch,
+      client_side_sampling_of_performance_metrics.point
+    ]
+    pivots: [
+      client_side_sampling_of_performance_metrics.branch
+    ]
+    filters:
+      client_side_sampling_of_performance_metrics.metric: 'uri_count'
+      client_side_sampling_of_performance_metrics.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: client_side_sampling_of_performance_metrics.submission_date
+    field_y: client_side_sampling_of_performance_metrics.point
+    log_scale: false
+    ci_lower: client_side_sampling_of_performance_metrics.lower
+    ci_upper: client_side_sampling_of_performance_metrics.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_of_performance_metrics.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_of_performance_metrics
+    type: looker_line
+    fields: [
+      client_side_sampling_of_performance_metrics.submission_date,
+      client_side_sampling_of_performance_metrics.branch,
+      client_side_sampling_of_performance_metrics.point
+    ]
+    pivots: [
+      client_side_sampling_of_performance_metrics.branch
+    ]
+    filters:
+      client_side_sampling_of_performance_metrics.metric: 'active_hours'
+      client_side_sampling_of_performance_metrics.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: client_side_sampling_of_performance_metrics.submission_date
+    field_y: client_side_sampling_of_performance_metrics.point
+    log_scale: false
+    ci_lower: client_side_sampling_of_performance_metrics.lower
+    ci_upper: client_side_sampling_of_performance_metrics.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_of_performance_metrics.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_of_performance_metrics
+    type: looker_line
+    fields: [
+      client_side_sampling_of_performance_metrics.submission_date,
+      client_side_sampling_of_performance_metrics.branch,
+      client_side_sampling_of_performance_metrics.point
+    ]
+    pivots: [
+      client_side_sampling_of_performance_metrics.branch
+    ]
+    filters:
+      client_side_sampling_of_performance_metrics.metric: 'ad_clicks'
+      client_side_sampling_of_performance_metrics.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -64,7 +200,7 @@
     filters:
       client_side_sampling_of_performance_metrics.metric: 'memory_total'
       client_side_sampling_of_performance_metrics.statistic: percentile
-    row: 0
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -77,176 +213,6 @@
     listen:
       Date: client_side_sampling_of_performance_metrics.submission_date
       Percentile: client_side_sampling_of_performance_metrics.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_of_performance_metrics
-    type: looker_line
-    fields: [
-      client_side_sampling_of_performance_metrics.submission_date,
-      client_side_sampling_of_performance_metrics.branch,
-      client_side_sampling_of_performance_metrics.point
-    ]
-    pivots: [
-      client_side_sampling_of_performance_metrics.branch
-    ]
-    filters:
-      client_side_sampling_of_performance_metrics.metric: 'active_hours'
-      client_side_sampling_of_performance_metrics.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: client_side_sampling_of_performance_metrics.submission_date
-    field_y: client_side_sampling_of_performance_metrics.point
-    log_scale: false
-    ci_lower: client_side_sampling_of_performance_metrics.lower
-    ci_upper: client_side_sampling_of_performance_metrics.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_of_performance_metrics.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_of_performance_metrics
-    type: looker_line
-    fields: [
-      client_side_sampling_of_performance_metrics.submission_date,
-      client_side_sampling_of_performance_metrics.branch,
-      client_side_sampling_of_performance_metrics.point
-    ]
-    pivots: [
-      client_side_sampling_of_performance_metrics.branch
-    ]
-    filters:
-      client_side_sampling_of_performance_metrics.metric: 'ad_clicks'
-      client_side_sampling_of_performance_metrics.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: client_side_sampling_of_performance_metrics.submission_date
-    field_y: client_side_sampling_of_performance_metrics.point
-    log_scale: false
-    ci_lower: client_side_sampling_of_performance_metrics.lower
-    ci_upper: client_side_sampling_of_performance_metrics.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_of_performance_metrics.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_of_performance_metrics
-    type: looker_line
-    fields: [
-      client_side_sampling_of_performance_metrics.submission_date,
-      client_side_sampling_of_performance_metrics.branch,
-      client_side_sampling_of_performance_metrics.point
-    ]
-    pivots: [
-      client_side_sampling_of_performance_metrics.branch
-    ]
-    filters:
-      client_side_sampling_of_performance_metrics.metric: 'qualified_cumulative_days_of_use'
-      client_side_sampling_of_performance_metrics.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: client_side_sampling_of_performance_metrics.submission_date
-    field_y: client_side_sampling_of_performance_metrics.point
-    log_scale: false
-    ci_lower: client_side_sampling_of_performance_metrics.lower
-    ci_upper: client_side_sampling_of_performance_metrics.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_of_performance_metrics.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_of_performance_metrics
-    type: looker_line
-    fields: [
-      client_side_sampling_of_performance_metrics.submission_date,
-      client_side_sampling_of_performance_metrics.branch,
-      client_side_sampling_of_performance_metrics.point
-    ]
-    pivots: [
-      client_side_sampling_of_performance_metrics.branch
-    ]
-    filters:
-      client_side_sampling_of_performance_metrics.metric: 'uri_count'
-      client_side_sampling_of_performance_metrics.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: client_side_sampling_of_performance_metrics.submission_date
-    field_y: client_side_sampling_of_performance_metrics.point
-    log_scale: false
-    ci_lower: client_side_sampling_of_performance_metrics.lower
-    ci_upper: client_side_sampling_of_performance_metrics.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_of_performance_metrics.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_of_performance_metrics
-    type: looker_line
-    fields: [
-      client_side_sampling_of_performance_metrics.submission_date,
-      client_side_sampling_of_performance_metrics.branch,
-      client_side_sampling_of_performance_metrics.point
-    ]
-    pivots: [
-      client_side_sampling_of_performance_metrics.branch
-    ]
-    filters:
-      client_side_sampling_of_performance_metrics.metric: 'search_count'
-      client_side_sampling_of_performance_metrics.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: client_side_sampling_of_performance_metrics.submission_date
-    field_y: client_side_sampling_of_performance_metrics.point
-    log_scale: false
-    ci_lower: client_side_sampling_of_performance_metrics.lower
-    ci_upper: client_side_sampling_of_performance_metrics.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_of_performance_metrics.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +234,40 @@
     ]
     filters:
       client_side_sampling_of_performance_metrics.metric: 'days_of_use'
+      client_side_sampling_of_performance_metrics.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: client_side_sampling_of_performance_metrics.submission_date
+    field_y: client_side_sampling_of_performance_metrics.point
+    log_scale: false
+    ci_lower: client_side_sampling_of_performance_metrics.lower
+    ci_upper: client_side_sampling_of_performance_metrics.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_of_performance_metrics.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_of_performance_metrics
+    type: looker_line
+    fields: [
+      client_side_sampling_of_performance_metrics.submission_date,
+      client_side_sampling_of_performance_metrics.branch,
+      client_side_sampling_of_performance_metrics.point
+    ]
+    pivots: [
+      client_side_sampling_of_performance_metrics.branch
+    ]
+    filters:
+      client_side_sampling_of_performance_metrics.metric: 'retained'
       client_side_sampling_of_performance_metrics.statistic: mean
     row: 30
     col: 12
