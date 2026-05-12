@@ -433,6 +433,7 @@ view: baseline_clients_daily_table__experiments {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Experiment Key"
   }
 
   dimension: value__branch {
@@ -441,6 +442,7 @@ view: baseline_clients_daily_table__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Branch"
+    description: "Experiment Branch"
   }
 
   dimension: value__extra__enrollment_id {
@@ -449,6 +451,7 @@ view: baseline_clients_daily_table__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Enrollment ID"
+    description: "Experiment Enrollment ID"
   }
 
   dimension: value__extra__type {
@@ -457,5 +460,6 @@ view: baseline_clients_daily_table__experiments {
     suggest_persist_for: "24 hours"
     group_label: "Value: Extra"
     group_item_label: "Type"
+    description: "Experiment Type"
   }
 }
