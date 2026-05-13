@@ -78,6 +78,15 @@ view: fenix_distribution_deals {
     description: "The number of clients with Firefox as their default browser."
   }
 
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The manufacturer of the device the application is running on.
+Not set if the device manufacturer can't be determined.
+Currently only collected on Android and iOS."
+  }
+
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
@@ -103,6 +112,20 @@ view: fenix_distribution_deals {
     type: yesno
     suggest_persist_for: "24 hours"
     description: "Indicates if profiles are attributed to one of the partner distributions."
+  }
+
+  dimension: isp_name {
+    sql: ${TABLE}.isp_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The name of the ISP associated with the client's IP address"
+  }
+
+  dimension: large_device_count {
+    sql: ${TABLE}.large_device_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of large devices (tablets) on the submission_date."
   }
 
   dimension: mau {
