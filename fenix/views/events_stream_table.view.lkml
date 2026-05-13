@@ -1080,6 +1080,14 @@ view: events_stream_table {
     group_item_label: "Average Words Per Second"
   }
 
+  dimension: extras__quantity__bookmarks_count {
+    sql: ${TABLE}.extras.quantity.bookmarks_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Bookmarks Count"
+  }
+
   dimension: extras__quantity__bounce_time {
     sql: ${TABLE}.extras.quantity.bounce_time ;;
     type: number
