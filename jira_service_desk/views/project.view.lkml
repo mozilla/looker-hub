@@ -11,6 +11,18 @@ view: project {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: archived {
+    sql: ${TABLE}.archived ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: archived_by_id {
+    sql: ${TABLE}.archived_by_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: description {
     sql: ${TABLE}.description ;;
     type: string
@@ -67,6 +79,20 @@ view: project {
 
   dimension_group: _fivetran_synced {
     sql: ${TABLE}._fivetran_synced ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: archived {
+    sql: ${TABLE}.archived_date ;;
     type: time
     timeframes: [
       raw,

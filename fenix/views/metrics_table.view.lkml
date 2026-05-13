@@ -48371,6 +48371,140 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Worker Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Worker Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Worker Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Worker Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Worker Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Worker Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlclassifier Check Channel Helper Worker Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__urlclassifier_cl_check_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.urlclassifier_cl_check_time.bucket_count ;;
     type: number
@@ -73978,6 +74112,34 @@ view: metrics_table__metrics__timing_distribution__update_last_notify_interval_d
 }
 
 view: metrics_table__metrics__timing_distribution__urlclassifier_async_classifylocal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__urlclassifier_check_channel_helper_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

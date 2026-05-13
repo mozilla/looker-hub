@@ -29858,6 +29858,42 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_time__sum {
+    label: "Urlclassifier: Check Channel Helper Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_time.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Check Channel Helper Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Check Channel Helper Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_check_channel_helper_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent classifying a channel in AntiTrackingChannelClassifierUtils::CheckChannelHelper (ms), from the initial dispatch to the URL-classifier worker thread through the main-thread completion of annotation/blocking.
+"
+  }
+
+  dimension: metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__sum {
+    label: "Urlclassifier: Check Channel Helper Worker Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.urlclassifier_check_channel_helper_worker_time.sum ;;
+    type: number
+    group_label: "Urlclassifier"
+    group_item_label: "Check Channel Helper Worker Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Urlclassifier: Check Channel Helper Worker Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/urlclassifier_check_channel_helper_worker_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on the URL-classifier worker thread inside AntiTrackingChannelClassifierUtils::CheckChannelHelper (ms), covering content-classifier and URL-classifier feature lookups.
+"
+  }
+
   dimension: metrics__timing_distribution__urlclassifier_cl_check_time__sum {
     label: "Urlclassifier: Cl Check Time Sum"
     hidden: no
@@ -81006,6 +81042,34 @@ view: metrics__metrics__timing_distribution__update_last_notify_interval_days_su
 }
 
 view: metrics__metrics__timing_distribution__urlclassifier_async_classifylocal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_check_channel_helper_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__urlclassifier_check_channel_helper_worker_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
