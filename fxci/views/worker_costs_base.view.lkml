@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: worker_costs_base {
+  dimension: cloud_provider {
+    sql: ${TABLE}.cloud_provider ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: instance_id {
     sql: ${TABLE}.instance_id ;;
     type: string
