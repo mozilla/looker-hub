@@ -1243,6 +1243,14 @@ view: events_stream {
     group_item_label: "Error Code"
   }
 
+  dimension: extras__quantity__event_number {
+    sql: ${TABLE}.extras.quantity.event_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Event Number"
+  }
+
   dimension: extras__quantity__extracted_code_units {
     sql: ${TABLE}.extras.quantity.extracted_code_units ;;
     type: number
