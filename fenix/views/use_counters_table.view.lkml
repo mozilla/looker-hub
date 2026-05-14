@@ -17429,6 +17429,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_element_requestpointerlock {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_element_requestpointerlock ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Element Requestpointerlock"
+    description: "Whether a document called called Element.requestPointerLock. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_element_scrollintoviewifneeded {
     sql: ${TABLE}.metrics.counter.use_counter_doc_element_scrollintoviewifneeded ;;
     type: number
@@ -19786,6 +19796,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Requested Keyboard Lock"
     description: "Whether a document has requested fullscreen with keyboardlock. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_requested_pointer_lock_unadjusted_movement {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_requested_pointer_lock_unadjusted_movement ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Requested Pointer Lock Unadjusted Movement"
+    description: "Whether a document has requested pointer lock with unadjustedMovement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -22589,6 +22609,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_element_requestpointerlock {
+    sql: ${TABLE}.metrics.counter.use_counter_page_element_requestpointerlock ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Element Requestpointerlock"
+    description: "Whether a page called called Element.requestPointerLock. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_element_scrollintoviewifneeded {
     sql: ${TABLE}.metrics.counter.use_counter_page_element_scrollintoviewifneeded ;;
     type: number
@@ -24946,6 +24976,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Requested Keyboard Lock"
     description: "Whether a page has requested fullscreen with keyboardlock. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_requested_pointer_lock_unadjusted_movement {
+    sql: ${TABLE}.metrics.counter.use_counter_page_requested_pointer_lock_unadjusted_movement ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Requested Pointer Lock Unadjusted Movement"
+    description: "Whether a page has requested pointer lock with unadjustedMovement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

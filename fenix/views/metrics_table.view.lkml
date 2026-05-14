@@ -15643,7 +15643,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_entry_count ;;
     hidden: yes
     description: "Number of entries in the cache keyed by cache capacity calculation type. Numbers are sampled periodically, every time 2GB of data is written to the cache.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_CACHE_ENTRY_COUNT.
 "
   }
 
@@ -15811,7 +15810,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_memory_distribution.network_cache_size ;;
     hidden: yes
     description: "Cache size in megabytes keyed by cache capacity calculation type. Numbers are sampled periodically, every time 2GB of data is written to the cache.
-This metric was generated to correspond to the Legacy Telemetry linear histogram NETWORK_CACHE_SIZE.
 "
   }
 
@@ -16469,7 +16467,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.perf_dns_first_byte ;;
     hidden: yes
     description: "The time from a top-level document's HTTP channel open to the first byte of the reply is received (ms). Keyed by TRR domain for DoH or 'Native' otherwise
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_PERF_FIRST_BYTE_MS.
 "
   }
 

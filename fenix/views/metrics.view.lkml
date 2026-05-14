@@ -23206,7 +23206,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Time in milliseconds from navigationStart to domLoading.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram TIME_TO_DOM_LOADING_MS.
 "
   }
 
