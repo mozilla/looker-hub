@@ -107,6 +107,13 @@ Currently only collected on Android and iOS."
     suggest_persist_for: "24 hours"
   }
 
+  dimension: is_large_device {
+    sql: ${TABLE}.is_large_device ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "True if the device is a large screen device. This refers to a tablet."
+  }
+
   dimension: is_partner_distribution {
     sql: ${TABLE}.is_partner_distribution ;;
     type: yesno
@@ -119,13 +126,6 @@ Currently only collected on Android and iOS."
     type: string
     suggest_persist_for: "24 hours"
     description: "The name of the ISP associated with the client's IP address"
-  }
-
-  dimension: large_device_count {
-    sql: ${TABLE}.large_device_count ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    description: "Number of large devices (tablets) on the submission_date."
   }
 
   dimension: mau {
