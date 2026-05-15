@@ -4288,6 +4288,14 @@ view: events_stream_table {
     group_item_label: "Sequence Position"
   }
 
+  dimension: extras__string__server_content_process_stack {
+    sql: ${TABLE}.extras.string.server_content_process_stack ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Server Content Process Stack"
+  }
+
   dimension: extras__string__server_stack {
     sql: ${TABLE}.extras.string.server_stack ;;
     type: string
