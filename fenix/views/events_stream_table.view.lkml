@@ -440,6 +440,14 @@ view: events_stream_table {
     group_item_label: "Enabled"
   }
 
+  dimension: extras__boolean__engine_available {
+    sql: ${TABLE}.extras.boolean.engine_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Engine Available"
+  }
+
   dimension: extras__boolean__filled {
     sql: ${TABLE}.extras.boolean.filled ;;
     type: yesno
