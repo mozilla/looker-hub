@@ -114,6 +114,64 @@ post-install/early-startup in Firefox.
 "
   }
 
+  dimension: metrics__string__profiles_source {
+    label: "Profiles: Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.profiles_source ;;
+    type: string
+    group_label: "Profiles"
+    group_item_label: "Source"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The original creation source of the profile:
+  firstrun-created-default
+    Matches the meaning in startup.profile_selection_reason
+  firstrun-skipped-default
+    Matches the meaning in startup.profile_selection_reason
+  restart-skipped-default
+    Matches the meaning in startup.profile_selection_reason
+  cmdline
+    Created by the --createprofile command line argument
+  downgrade
+    Created from the profile downgrade UI
+  legacy
+    Created to support versions of Firefox prior to 47
+  aboutprofiles
+    Created from about:profiles
+  profile-manager
+    Created from the legacy startup profile manager
+  selector-startup
+    Created from the selectable profiles profile selector during startup
+  selector-runtime
+    Created from the selectable profiles profile selector at runtime
+  profiles-panel
+    Created from the profiles panel in the application menu
+  main-menu
+    Created from the OS main menu
+  replace-last
+    Created when deleting the last profile in the group of selectable profiles
+  reset
+    Created by profile reset
+  backup
+    Created by restoring a profile from a backup
+  copy
+    Created by copying a profile from the selectable profiles UI
+  sync-warning
+    Created when warning the user about signing into a different account
+  asrouter
+    Created from the messaging system.
+  backgroundtasks
+    A profile created for a background task
+  unknown
+    The profile was created without supplying a source
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation: Experimentation ID"
     hidden: no

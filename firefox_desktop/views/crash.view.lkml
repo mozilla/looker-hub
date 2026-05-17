@@ -775,6 +775,23 @@ view: crash {
     description: "Set to 1 when DOM fission is enabled, and subframes are potentially loaded in a separate process."
   }
 
+  dimension: metrics__string__crash_event_id {
+    label: "Crash: Event ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_event_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Event ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Event ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/crash_event_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID for the crash event."
+  }
+
   dimension: metrics__string__crash_file_system_access_request_path {
     label: "Crash: File System Access Request Path"
     hidden: yes
@@ -811,7 +828,7 @@ view: crash {
 
   dimension: metrics__string__crash_id {
     label: "Crash: ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_id ;;
     type: string
     group_label: "Crash"

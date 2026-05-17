@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smartwindow_mvp_microsurvey
+    type: looker_line
+    fields: [
+      smartwindow_mvp_microsurvey.submission_date,
+      smartwindow_mvp_microsurvey.branch,
+      smartwindow_mvp_microsurvey.point
+    ]
+    pivots: [
+      smartwindow_mvp_microsurvey.branch
+    ]
+    filters:
+      smartwindow_mvp_microsurvey.metric: 'search_count'
+      smartwindow_mvp_microsurvey.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: smartwindow_mvp_microsurvey.submission_date
+    field_y: smartwindow_mvp_microsurvey.point
+    log_scale: false
+    ci_lower: smartwindow_mvp_microsurvey.lower
+    ci_upper: smartwindow_mvp_microsurvey.upper
+    show_grid: true
+    listen:
+      Date: smartwindow_mvp_microsurvey.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -29,40 +63,6 @@
       smartwindow_mvp_microsurvey.metric: 'qualified_cumulative_days_of_use'
       smartwindow_mvp_microsurvey.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: smartwindow_mvp_microsurvey.submission_date
-    field_y: smartwindow_mvp_microsurvey.point
-    log_scale: false
-    ci_lower: smartwindow_mvp_microsurvey.lower
-    ci_upper: smartwindow_mvp_microsurvey.upper
-    show_grid: true
-    listen:
-      Date: smartwindow_mvp_microsurvey.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: smartwindow_mvp_microsurvey
-    type: looker_line
-    fields: [
-      smartwindow_mvp_microsurvey.submission_date,
-      smartwindow_mvp_microsurvey.branch,
-      smartwindow_mvp_microsurvey.point
-    ]
-    pivots: [
-      smartwindow_mvp_microsurvey.branch
-    ]
-    filters:
-      smartwindow_mvp_microsurvey.metric: 'active_hours'
-      smartwindow_mvp_microsurvey.statistic: mean
-    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       smartwindow_mvp_microsurvey.branch
     ]
     filters:
-      smartwindow_mvp_microsurvey.metric: 'retained'
+      smartwindow_mvp_microsurvey.metric: 'days_of_use'
       smartwindow_mvp_microsurvey.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       smartwindow_mvp_microsurvey.branch
     ]
     filters:
-      smartwindow_mvp_microsurvey.metric: 'days_of_use'
+      smartwindow_mvp_microsurvey.metric: 'uri_count'
       smartwindow_mvp_microsurvey.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       smartwindow_mvp_microsurvey.branch
     ]
     filters:
-      smartwindow_mvp_microsurvey.metric: 'uri_count'
+      smartwindow_mvp_microsurvey.metric: 'active_hours'
       smartwindow_mvp_microsurvey.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       smartwindow_mvp_microsurvey.branch
     ]
     filters:
-      smartwindow_mvp_microsurvey.metric: 'search_count'
+      smartwindow_mvp_microsurvey.metric: 'retained'
       smartwindow_mvp_microsurvey.statistic: mean
     row: 30
     col: 12

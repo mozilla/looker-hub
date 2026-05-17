@@ -228,7 +228,7 @@ view: crash {
 
   dimension: metrics__string__crash_id {
     label: "Crash: ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.crash_id ;;
     type: string
     group_label: "Crash"

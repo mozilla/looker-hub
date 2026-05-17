@@ -534,6 +534,24 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__string__browser_backup_scheduler_toggle_source {
+    label: "Browser Backup: Scheduler Toggle Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.browser_backup_scheduler_toggle_source ;;
+    type: string
+    group_label: "Browser Backup"
+    group_item_label: "Scheduler Toggle Source"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup: Scheduler Toggle Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_scheduler_toggle_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Identifies the UI that caused the most recent change to whether scheduled backups are enabled. Pair with scheduler_enabled to disambiguate: when scheduler_enabled is true this is the surface that turned backup on; when scheduler_enabled is false this is the surface that turned backup off. Set to \"preferences\" for the main backup settings page. If toggled by a message, the message ID is reported. Defaults to \"unknown\" when the toggling surface did not provide attribution (e.g., a direct pref flip).
+"
+  }
+
   dimension: metrics__quantity__browser_backup_security_data_size {
     label: "Browser Backup: Security Data Size"
     hidden: no
@@ -27313,6 +27331,131 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__memory_distribution__networking_http_3_search_empty_buffer_bdp_estimate__sum {
+    label: "Networking: HTTP 3 Search Empty Buffer Bdp Estimate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_search_empty_buffer_bdp_estimate.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Search Empty Buffer Bdp Estimate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Search Empty Buffer Bdp Estimate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_search_empty_buffer_bdp_estimate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Records the BDP estimate with empty buffers at slow start exit when using SEARCH. The SEARCH draft suggests a cwnd drain-phase using this as a target value; We record it for evaluation without implementing the drain-phase.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_min_rtt__sum {
+    label: "Networking: HTTP 3 Search First Rtt Vs Min Rtt Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_min_rtt.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Search First Rtt Vs Min Rtt Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Search First Rtt Vs Min Rtt Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_search_first_rtt_vs_min_rtt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Records the ratio of SEARCH's first RTT sample to the connection's min_rtt, expressed as an integer percentage (100 = identical, 200 = 2x inflated). Quantifies how much the initial RTT used to set bin_duration is inflated relative to the minimum path RTT.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_second_rtt__sum {
+    label: "Networking: HTTP 3 Search First Rtt Vs Second Rtt Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_second_rtt.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Search First Rtt Vs Second Rtt Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Search First Rtt Vs Second Rtt Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_search_first_rtt_vs_second_rtt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Records the ratio of SEARCH's first RTT sample to the second RTT sample, expressed as an integer percentage (100 = identical, 200 = first was 2x the second). Helps evaluate whether using the second RTT sample instead of the first would improve SEARCH initialization.
+"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_search_full_buffer_bdp_estimate__sum {
+    label: "Networking: HTTP 3 Search Full Buffer Bdp Estimate Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_search_full_buffer_bdp_estimate.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Search Full Buffer Bdp Estimate Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Search Full Buffer Bdp Estimate Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_search_full_buffer_bdp_estimate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Records the BDP estimate with full buffers at slow start exit when using SEARCH. The SEARCH draft suggests a cwnd drain-phase using the empty-buffer version of this as a target value; We record this alternative for evaluation without implementing the drain-phase.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_lookback_bins__sum {
+    label: "Networking: HTTP 3 Search Lookback Bins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_lookback_bins.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Search Lookback Bins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Search Lookback Bins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_search_lookback_bins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Tracks the per connection maximum of lookback bins needed when RTT inflation prevents SEARCH from evaluating. Helps determine if the EXTRA_BINS constant value is sufficient.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_max_passed_bins__sum {
+    label: "Networking: HTTP 3 Search Max Passed Bins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_max_passed_bins.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Search Max Passed Bins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Search Max Passed Bins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_search_max_passed_bins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Tracks the maximum number of passed bins for SEARCH connections that had at least one reset due to stale data. Can help evaluate the aggressiveness of the reset mechanism. Starts at 11, because that is the first value that would trigger a reset.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_search_rtt_inflated {
+    label: "Networking: HTTP 3 Search Rtt Inflated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_search_rtt_inflated ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Search Rtt Inflated"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Search Rtt Inflated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_search_rtt_inflated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Tracks whether a connection couldn't run the SEARCH evaluation because the RTT inflated past the point where there wasn't enough data for lookback.
+"
+  }
+
   dimension: metrics__memory_distribution__networking_http_3_slow_start_exit_cwnd__sum {
     label: "Networking: HTTP 3 Slow Start Exit Cwnd Sum"
     hidden: no
@@ -32161,6 +32304,64 @@ e.g. 16446
 "
   }
 
+  dimension: metrics__string__profiles_source {
+    label: "Profiles: Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.profiles_source ;;
+    type: string
+    group_label: "Profiles"
+    group_item_label: "Source"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The original creation source of the profile:
+  firstrun-created-default
+    Matches the meaning in startup.profile_selection_reason
+  firstrun-skipped-default
+    Matches the meaning in startup.profile_selection_reason
+  restart-skipped-default
+    Matches the meaning in startup.profile_selection_reason
+  cmdline
+    Created by the --createprofile command line argument
+  downgrade
+    Created from the profile downgrade UI
+  legacy
+    Created to support versions of Firefox prior to 47
+  aboutprofiles
+    Created from about:profiles
+  profile-manager
+    Created from the legacy startup profile manager
+  selector-startup
+    Created from the selectable profiles profile selector during startup
+  selector-runtime
+    Created from the selectable profiles profile selector at runtime
+  profiles-panel
+    Created from the profiles panel in the application menu
+  main-menu
+    Created from the OS main menu
+  replace-last
+    Created when deleting the last profile in the group of selectable profiles
+  reset
+    Created by profile reset
+  backup
+    Created by restoring a profile from a backup
+  copy
+    Created by copying a profile from the selectable profiles UI
+  sync-warning
+    Created when warning the user about signing into a different account
+  asrouter
+    Created from the messaging system.
+  backgroundtasks
+    A profile created for a background task
+  unknown
+    The profile was created without supplying a source
+"
+  }
+
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     label: "Pwmgr: Form Autofill Result"
     hidden: yes
@@ -34729,6 +34930,38 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
   default:
     The default profile was selected as normal.
 This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_selection_reason.
+"
+  }
+
+  dimension: metrics__string__startup_profiles_ini_status {
+    label: "Startup: Profiles Ini Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.startup_profiles_ini_status ;;
+    type: string
+    group_label: "Startup"
+    group_item_label: "Profiles Ini Status"
+
+    link: {
+      label: "Glean Dictionary reference for Startup: Profiles Ini Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/startup_profiles_ini_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the status of parsing the profiles.ini file during startup:
+  ok:
+    The ini file parsed correctly
+  ini-failed:
+    Parsing the ini file completely failed, normally this would indicate
+    an out of memory issue.
+  ini-error:
+    The ini parser recorded some kind of failure during parsing
+  missing-name:
+    A profile section was missing the name
+  missing-path:
+    A profile section was missing the path
+  invalid-path:
+    A profile section's path was invalid
+Note that if multiple profile sections contain errors then only the last will be reported.
 "
   }
 
@@ -62808,6 +63041,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
 
 view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
   label: "Networking: HTTP 3 Quic Frame Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_search_rtt_inflated {
+  label: "Networking: HTTP 3 Search Rtt Inflated"
 
   dimension: document_id {
     type: string
