@@ -1853,6 +1853,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_quic_frame_count}) AS metrics__metrics__labeled_counter__networking_http_3_quic_frame_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_quic_frame_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_search_rtt_inflated {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_search_rtt_inflated}) AS metrics__metrics__labeled_counter__networking_http_3_search_rtt_inflated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_search_rtt_inflated.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic}) AS metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_slow_start_exit_direction_heuristic.document_id} ;;

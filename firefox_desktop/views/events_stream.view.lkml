@@ -5147,6 +5147,14 @@ view: events_stream {
     group_item_label: "Pc ID"
   }
 
+  dimension: extras__string__permission_type {
+    sql: ${TABLE}.extras.string.permission_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Permission Type"
+  }
+
   dimension: extras__string__platform {
     sql: ${TABLE}.extras.string.platform ;;
     type: string
