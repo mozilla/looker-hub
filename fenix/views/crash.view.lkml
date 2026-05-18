@@ -141,6 +141,23 @@ view: crash {
     description: "Set to 1 when DOM fission is enabled, and subframes are potentially loaded in a separate process."
   }
 
+  dimension: metrics__string__crash_event_id {
+    label: "Crash: Event ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_event_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Event ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Event ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_event_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID for the crash event."
+  }
+
   dimension: metrics__quantity__crash_event_loop_nesting_level {
     label: "Crash: Event Loop Nesting Level"
     hidden: no

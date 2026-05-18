@@ -800,6 +800,15 @@ The status of individual objects is constructed by taking selected object proper
     description: "The type of crash that occurred (Android-only)."
   }
 
+  dimension: metrics__string__crash_event_id {
+    sql: ${TABLE}.metrics.string.crash_event_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Event ID"
+    description: "A UUID for the crash event."
+  }
+
   dimension: metrics__string__crash_file_system_access_request_path {
     sql: ${TABLE}.metrics.string.crash_file_system_access_request_path ;;
     type: string
