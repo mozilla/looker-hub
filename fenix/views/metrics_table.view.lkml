@@ -8527,6 +8527,94 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_min_rtt__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_min_rtt.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Search First Rtt Vs Min Rtt"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_min_rtt__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_min_rtt.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Search First Rtt Vs Min Rtt"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_min_rtt__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_min_rtt.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_second_rtt__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_second_rtt.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Search First Rtt Vs Second Rtt"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_second_rtt__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_second_rtt.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Search First Rtt Vs Second Rtt"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_second_rtt__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_second_rtt.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_lookback_bins__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_lookback_bins.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Search Lookback Bins"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_lookback_bins__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_lookback_bins.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Search Lookback Bins"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_lookback_bins__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_lookback_bins.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_max_passed_bins__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_max_passed_bins.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Search Max Passed Bins"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_max_passed_bins__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_max_passed_bins.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Search Max Passed Bins"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_search_max_passed_bins__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_max_passed_bins.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_spurious_congestion_event_ratio.count ;;
     type: number
@@ -13658,7 +13746,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -14237,6 +14325,13 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_frame_count ;;
     hidden: yes
     description: "Number of QUIC frames send and received by type.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_search_rtt_inflated {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_search_rtt_inflated ;;
+    hidden: yes
+    description: "HTTP3: Tracks whether a connection couldn't run the SEARCH evaluation because the RTT inflated past the point where there wasn't enough data for lookback.
 "
   }
 
@@ -15687,6 +15782,28 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_hystart_css_rounds_finished ;;
     hidden: yes
     description: "Measures how many CSS (Conservative Slow Start) rounds were finished when using HyStart++. Only records for connections that saw congestion window growth. A count that is higher than the RFC threshold value of 5 rounds that are completed by design points at spurious CSS entries and time spent throttling congestion window growth rate during those extra CSS rounds. Values below 5 mean that slow start was not exited (heuristically) on that connection.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_search_max_norm_diff {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_search_max_norm_diff ;;
+    hidden: yes
+    description: "HTTP3: Records the maximum non-exiting value that the scaled, normalized difference between sent and acked bytes ever reached for a connection. Can be used to tune the exit threshold (THRESH). Is capped out at 25, since the current THRESH is 26, so any diff > 25 will exit.
+The bucket with the 'exited_ce' label is of special interest, since those are connections that then ended up exiting slow start with loss.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_search_reset_count {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_search_reset_count ;;
+    hidden: yes
+    description: "HTTP3: Records how many resets due to stale data happened for each SEARCH connection. Is labeled by slow start outcome to help with evaluation (i.e. no resets + not_exited makes sense, since the connection might've been very short).
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__networking_http_3_search_zero_bytes_sent {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.networking_http_3_search_zero_bytes_sent ;;
+    hidden: yes
+    description: "HTTP3: Records how often SEARCH observes zero bytes sent in the previous RTT. Provides insight into app-limited behavior. Is labeled by slow start outcome to help reason about results.
 "
   }
 
@@ -17388,6 +17505,50 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__memory_distribution__networking_http_3_final_w_max__values {
     sql: ${TABLE}.metrics.memory_distribution.networking_http_3_final_w_max.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_search_empty_buffer_bdp_estimate__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_search_empty_buffer_bdp_estimate.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Search Empty Buffer Bdp Estimate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_search_empty_buffer_bdp_estimate__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_search_empty_buffer_bdp_estimate.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Search Empty Buffer Bdp Estimate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_search_empty_buffer_bdp_estimate__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_search_empty_buffer_bdp_estimate.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_search_full_buffer_bdp_estimate__count {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_search_full_buffer_bdp_estimate.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Search Full Buffer Bdp Estimate"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_search_full_buffer_bdp_estimate__sum {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_search_full_buffer_bdp_estimate.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Networking HTTP 3 Search Full Buffer Bdp Estimate"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__networking_http_3_search_full_buffer_bdp_estimate__values {
+    sql: ${TABLE}.metrics.memory_distribution.networking_http_3_search_full_buffer_bdp_estimate.values ;;
     hidden: yes
   }
 
@@ -20185,6 +20346,43 @@ default: \"system\" for API 28+, else \"light\"
 "
   }
 
+  dimension: metrics__string__profiles_source {
+    sql: ${TABLE}.metrics.string.profiles_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Profiles Source"
+    description: "The original creation source of the profile:
+  firstrun-created-default
+    Matches the meaning in startup.profile_selection_reason
+  firstrun-skipped-default
+    Matches the meaning in startup.profile_selection_reason
+  restart-skipped-default
+    Matches the meaning in startup.profile_selection_reason
+  cmdline
+    Created by the --createprofile command line argument
+  downgrade
+    Created from the profile downgrade UI
+  legacy
+    Created to support versions of Firefox prior to 47
+  aboutprofiles
+    Created from about:profiles
+  profile-manager
+    Created from the legacy startup profile manager
+  selector-startup
+    Created from the selectable profiles profile selector during startup
+  selector-runtime
+    Created from the selectable profiles profile selector at runtime
+  profiles-panel
+    Created from the profiles panel in the application menu
+  main-menu
+    Created from the OS main menu
+  replace-last
+    Created when deleting the last profile in the group of selectable profiles
+  reset
+    Created"
+  }
+
   dimension: metrics__string__region_home_region {
     sql: ${TABLE}.metrics.string.region_home_region ;;
     type: string
@@ -20304,6 +20502,30 @@ will be \"custom\"
     profile and created a new profile.
   restart-claimed-default:
     A first run of a dedicate"
+  }
+
+  dimension: metrics__string__startup_profiles_ini_status {
+    sql: ${TABLE}.metrics.string.startup_profiles_ini_status ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Startup Profiles Ini Status"
+    description: "Records the status of parsing the profiles.ini file during startup:
+  ok:
+    The ini file parsed correctly
+  ini-failed:
+    Parsing the ini file completely failed, normally this would indicate
+    an out of memory issue.
+  ini-error:
+    The ini parser recorded some kind of failure during parsing
+  missing-name:
+    A profile section was missing the name
+  missing-path:
+    A profile section was missing the path
+  invalid-path:
+    A profile section's path was invalid
+Note that if multiple profile sections contain errors then only the last will be reported.
+"
   }
 
   dimension: metrics__string__system_apple_model_id {
@@ -53526,6 +53748,62 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_peer_max_ud
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_search_first_rtt_vs_min_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_search_first_rtt_vs_second_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_search_lookback_bins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_search_max_passed_bins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_spurious_congestion_event_ratio__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -58449,6 +58727,138 @@ view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_hys
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_hystart_css_rounds_finished__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_search_max_norm_diff {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_search_max_norm_diff__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_search_reset_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_search_reset_count__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_search_zero_bytes_sent {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_search_zero_bytes_sent__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -68117,6 +68527,34 @@ view: metrics_table__metrics__memory_distribution__networking_http_3_final_cwnd_
 }
 
 view: metrics_table__metrics__memory_distribution__networking_http_3_final_w_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_search_empty_buffer_bdp_estimate__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__networking_http_3_search_full_buffer_bdp_estimate__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
