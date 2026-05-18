@@ -29,6 +29,18 @@ view: forecast_content_monthly {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: actual_uapi_clicks {
+    sql: ${TABLE}.actual_uapi_clicks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: actual_uapi_clicks_excluding_house_ads {
+    sql: ${TABLE}.actual_uapi_clicks_excluding_house_ads ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: actual_uapi_impressions {
     sql: ${TABLE}.actual_uapi_impressions ;;
     type: number
