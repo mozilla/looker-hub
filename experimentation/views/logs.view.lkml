@@ -11,6 +11,12 @@ view: logs {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: analysis_period {
+    sql: ${TABLE}.analysis_period ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: exception {
     sql: ${TABLE}.exception ;;
     type: string
