@@ -10725,9 +10725,9 @@ operational_monitoring:
             default: release
             options:
             - release
-            - beta
             - esr
             - nightly
+            - beta
             - aurora
             - default
             - nightly-pine
@@ -11096,11 +11096,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id353
           normalized_channel:
-            default: beta
+            default: nightly
             options:
-            - beta
-            - aurora
             - nightly
+            - aurora
+            - beta
             - release
             - esr
             - Other
@@ -11552,11 +11552,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id374
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
             - Linux
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -12449,15 +12449,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id458
           app:
-            default: Android - daemon_session
+            default: Darwin - vpn_session
             options:
+            - Darwin - vpn_session
+            - Android - vpn_session
+            - Linux - vpn_session
             - Android - daemon_session
+            - iOS - daemon_session
             - iOS - vpn_session
             - Windows - vpn_session
-            - iOS - daemon_session
-            - Darwin - vpn_session
-            - Linux - vpn_session
-            - Android - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id459
@@ -13566,10 +13566,10 @@ operational_monitoring:
             - nightly
             - release
           os:
-            default: Darwin
+            default: Windows_NT
             options:
-            - Darwin
             - Windows_NT
+            - Darwin
             - Linux
         explore: print_background_task_times
         group_by_dimension: null
