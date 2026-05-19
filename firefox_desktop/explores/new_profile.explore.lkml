@@ -10,8 +10,28 @@ include: "/looker-hub/firefox_desktop/datagroups/new_profile_last_updated.datagr
 explore: new_profile {
   sql_always_where: ${new_profile.submission_date} >= '2010-01-01' ;;
   view_label: " New_Profile"
-  description: "Explore for the new_profile ping. "
+  description: "Explore for the new_profile ping. Sent once for every new profile during the first successful shutdown."
   view_name: new_profile
+
+  join: new_profile__metrics__labeled_counter__glean_error_invalid_label {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${new_profile.metrics__labeled_counter__glean_error_invalid_label}) AS new_profile__metrics__labeled_counter__glean_error_invalid_label ON ${new_profile.document_id} = ${new_profile__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
+  }
+
+  join: new_profile__metrics__labeled_counter__glean_error_invalid_overflow {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${new_profile.metrics__labeled_counter__glean_error_invalid_overflow}) AS new_profile__metrics__labeled_counter__glean_error_invalid_overflow ON ${new_profile.document_id} = ${new_profile__metrics__labeled_counter__glean_error_invalid_overflow.document_id} ;;
+  }
+
+  join: new_profile__metrics__labeled_counter__glean_error_invalid_state {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${new_profile.metrics__labeled_counter__glean_error_invalid_state}) AS new_profile__metrics__labeled_counter__glean_error_invalid_state ON ${new_profile.document_id} = ${new_profile__metrics__labeled_counter__glean_error_invalid_state.document_id} ;;
+  }
+
+  join: new_profile__metrics__labeled_counter__glean_error_invalid_value {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${new_profile.metrics__labeled_counter__glean_error_invalid_value}) AS new_profile__metrics__labeled_counter__glean_error_invalid_value ON ${new_profile.document_id} = ${new_profile__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
+  }
 
   join: new_profile__metrics__labeled_counter__profiles_creation_place {
     relationship: one_to_many
