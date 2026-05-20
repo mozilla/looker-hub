@@ -60,6 +60,13 @@ channel land in datasets prefixed with this value
 for display in dashboards and documentation."
   }
 
+  dimension: channel_description {
+    sql: ${TABLE}.channel_description ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Channel-specific description (distinct from `app_description`)."
+  }
+
   dimension: dependencies {
     sql: ${TABLE}.dependencies ;;
     hidden: yes
@@ -74,13 +81,6 @@ Includes any channel-specific additional dependencies."
     suggest_persist_for: "24 hours"
     description: "True when this app/channel is marked as deprecated and is no longer
 actively scraped or maintained."
-  }
-
-  dimension: description {
-    sql: ${TABLE}.description ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    description: "Channel-specific description (distinct from `app_description`)."
   }
 
   dimension: document_namespace {

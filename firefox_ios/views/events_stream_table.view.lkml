@@ -816,6 +816,14 @@ view: events_stream_table {
     group_item_label: "Feature ID"
   }
 
+  dimension: extras__string__fifa_code {
+    sql: ${TABLE}.extras.string.fifa_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Fifa Code"
+  }
+
   dimension: extras__string__flow_type {
     sql: ${TABLE}.extras.string.flow_type ;;
     type: string
@@ -910,6 +918,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Location"
+  }
+
+  dimension: extras__string__match {
+    sql: ${TABLE}.extras.string.match ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Match"
   }
 
   dimension: extras__string__media_type {

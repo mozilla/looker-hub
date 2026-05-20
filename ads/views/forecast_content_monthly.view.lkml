@@ -240,6 +240,21 @@ view: forecast_content_monthly {
     value_to_date: no
   }
 
+  measure: actual_uapi_clicks {
+    sql: ${actual_uapi_clicks} ;;
+    type: sum
+  }
+
+  measure: actual_uapi_clicks_excluding_house_ads_sum {
+    sql: ${actual_uapi_clicks_excluding_house_ads} ;;
+    type: sum
+  }
+
+  measure: actual_uapi_impressions {
+    sql: ${actual_uapi_impressions} ;;
+    type: sum
+  }
+
   measure: actual_uapi_impressions_excluding_house_ads_sum {
     sql: ${actual_uapi_impressions_excluding_house_ads} ;;
     type: sum
