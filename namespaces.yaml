@@ -599,6 +599,15 @@ ads:
           period: month
           type: period_over_period
           value_to_date: 'no'
+        actual_uapi_clicks:
+          sql: ${actual_uapi_clicks}
+          type: sum
+        actual_uapi_clicks_excluding_house_ads_sum:
+          sql: ${actual_uapi_clicks_excluding_house_ads}
+          type: sum
+        actual_uapi_impressions:
+          sql: ${actual_uapi_impressions}
+          type: sum
         actual_uapi_impressions_excluding_house_ads_sum:
           sql: ${actual_uapi_impressions_excluding_house_ads}
           type: sum
