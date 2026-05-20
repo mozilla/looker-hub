@@ -18419,7 +18419,7 @@ See Environment.sys.mjs' `DEFAULT_ENVIRONMENT_PREFS`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Avif Aom Decode Error"
-    description: "Image-decode Error from AOM decoder
+    description: "Image-decode Error from AOM decoder (Migrated from the geckoview metric of the same name).
 "
   }
 
