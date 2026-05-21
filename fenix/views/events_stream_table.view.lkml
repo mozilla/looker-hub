@@ -312,6 +312,14 @@ view: events_stream_table {
     group_item_label: "Autocomplete"
   }
 
+  dimension: extras__boolean__baseline {
+    sql: ${TABLE}.extras.boolean.baseline ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Baseline"
+  }
+
   dimension: extras__boolean__block {
     sql: ${TABLE}.extras.boolean.block ;;
     type: yesno
