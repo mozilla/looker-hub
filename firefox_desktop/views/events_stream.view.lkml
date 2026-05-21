@@ -307,6 +307,14 @@ view: events_stream {
     group_item_label: "Auto Translate"
   }
 
+  dimension: extras__boolean__baseline {
+    sql: ${TABLE}.extras.boolean.baseline ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Baseline"
+  }
+
   dimension: extras__boolean__blocked {
     sql: ${TABLE}.extras.boolean.blocked ;;
     type: yesno
