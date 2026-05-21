@@ -11,6 +11,12 @@ view: top_10_content_decoding_errors_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: error_type {
+    sql: ${TABLE}.error_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: series {
     sql: ${TABLE}.series ;;
     type: string

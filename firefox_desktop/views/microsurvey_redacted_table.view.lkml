@@ -259,6 +259,11 @@ view: microsurvey_redacted_table {
     hidden: yes
   }
 
+  dimension: metrics__object__microsurvey_smart_window_user_feedback_data {
+    sql: ${TABLE}.metrics.object.microsurvey_smart_window_user_feedback_data ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__microsurvey_event_screen_index {
     sql: ${TABLE}.metrics.quantity.microsurvey_event_screen_index ;;
     type: number
