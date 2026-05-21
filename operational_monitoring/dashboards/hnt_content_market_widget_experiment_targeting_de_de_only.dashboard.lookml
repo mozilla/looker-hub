@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       hnt_content_market_widget_experiment_targeting_de_de_only.branch
     ]
     filters:
-      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'retained'
+      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'ad_clicks'
       hnt_content_market_widget_experiment_targeting_de_de_only.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       hnt_content_market_widget_experiment_targeting_de_de_only.branch
     ]
     filters:
-      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'qualified_cumulative_days_of_use'
+      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'uri_count'
       hnt_content_market_widget_experiment_targeting_de_de_only.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: hnt_content_market_widget_experiment_targeting_de_de_only.submission_date
+    field_y: hnt_content_market_widget_experiment_targeting_de_de_only.point
+    log_scale: false
+    ci_lower: hnt_content_market_widget_experiment_targeting_de_de_only.lower
+    ci_upper: hnt_content_market_widget_experiment_targeting_de_de_only.upper
+    show_grid: true
+    listen:
+      Date: hnt_content_market_widget_experiment_targeting_de_de_only.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_content_market_widget_experiment_targeting_de_de_only
+    type: looker_line
+    fields: [
+      hnt_content_market_widget_experiment_targeting_de_de_only.submission_date,
+      hnt_content_market_widget_experiment_targeting_de_de_only.branch,
+      hnt_content_market_widget_experiment_targeting_de_de_only.point
+    ]
+    pivots: [
+      hnt_content_market_widget_experiment_targeting_de_de_only.branch
+    ]
+    filters:
+      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'search_count'
+      hnt_content_market_widget_experiment_targeting_de_de_only.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: hnt_content_market_widget_experiment_targeting_de_de_only.submission_date
@@ -95,40 +129,6 @@
     ]
     filters:
       hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'active_hours'
-      hnt_content_market_widget_experiment_targeting_de_de_only.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_content_market_widget_experiment_targeting_de_de_only.submission_date
-    field_y: hnt_content_market_widget_experiment_targeting_de_de_only.point
-    log_scale: false
-    ci_lower: hnt_content_market_widget_experiment_targeting_de_de_only.lower
-    ci_upper: hnt_content_market_widget_experiment_targeting_de_de_only.upper
-    show_grid: true
-    listen:
-      Date: hnt_content_market_widget_experiment_targeting_de_de_only.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_content_market_widget_experiment_targeting_de_de_only
-    type: looker_line
-    fields: [
-      hnt_content_market_widget_experiment_targeting_de_de_only.submission_date,
-      hnt_content_market_widget_experiment_targeting_de_de_only.branch,
-      hnt_content_market_widget_experiment_targeting_de_de_only.point
-    ]
-    pivots: [
-      hnt_content_market_widget_experiment_targeting_de_de_only.branch
-    ]
-    filters:
-      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'days_of_use'
       hnt_content_market_widget_experiment_targeting_de_de_only.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       hnt_content_market_widget_experiment_targeting_de_de_only.branch
     ]
     filters:
-      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'ad_clicks'
+      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'retained'
       hnt_content_market_widget_experiment_targeting_de_de_only.statistic: mean
     row: 20
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       hnt_content_market_widget_experiment_targeting_de_de_only.branch
     ]
     filters:
-      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'uri_count'
+      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'qualified_cumulative_days_of_use'
       hnt_content_market_widget_experiment_targeting_de_de_only.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       hnt_content_market_widget_experiment_targeting_de_de_only.branch
     ]
     filters:
-      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'search_count'
+      hnt_content_market_widget_experiment_targeting_de_de_only.metric: 'days_of_use'
       hnt_content_market_widget_experiment_targeting_de_de_only.statistic: mean
     row: 30
     col: 12
