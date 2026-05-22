@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       shake_to_summarize_mistral_rollout_languages_150.branch
     ]
     filters:
-      shake_to_summarize_mistral_rollout_languages_150.metric: 'ad_clicks'
+      shake_to_summarize_mistral_rollout_languages_150.metric: 'days_of_use'
       shake_to_summarize_mistral_rollout_languages_150.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: shake_to_summarize_mistral_rollout_languages_150.submission_date
-    field_y: shake_to_summarize_mistral_rollout_languages_150.point
-    log_scale: false
-    ci_lower: shake_to_summarize_mistral_rollout_languages_150.lower
-    ci_upper: shake_to_summarize_mistral_rollout_languages_150.upper
-    show_grid: true
-    listen:
-      Date: shake_to_summarize_mistral_rollout_languages_150.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: shake_to_summarize_mistral_rollout_languages_150
-    type: looker_line
-    fields: [
-      shake_to_summarize_mistral_rollout_languages_150.submission_date,
-      shake_to_summarize_mistral_rollout_languages_150.branch,
-      shake_to_summarize_mistral_rollout_languages_150.point
-    ]
-    pivots: [
-      shake_to_summarize_mistral_rollout_languages_150.branch
-    ]
-    filters:
-      shake_to_summarize_mistral_rollout_languages_150.metric: 'search_count'
-      shake_to_summarize_mistral_rollout_languages_150.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: shake_to_summarize_mistral_rollout_languages_150.submission_date
@@ -96,8 +62,76 @@
     filters:
       shake_to_summarize_mistral_rollout_languages_150.metric: 'active_hours'
       shake_to_summarize_mistral_rollout_languages_150.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: shake_to_summarize_mistral_rollout_languages_150.submission_date
+    field_y: shake_to_summarize_mistral_rollout_languages_150.point
+    log_scale: false
+    ci_lower: shake_to_summarize_mistral_rollout_languages_150.lower
+    ci_upper: shake_to_summarize_mistral_rollout_languages_150.upper
+    show_grid: true
+    listen:
+      Date: shake_to_summarize_mistral_rollout_languages_150.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: shake_to_summarize_mistral_rollout_languages_150
+    type: looker_line
+    fields: [
+      shake_to_summarize_mistral_rollout_languages_150.submission_date,
+      shake_to_summarize_mistral_rollout_languages_150.branch,
+      shake_to_summarize_mistral_rollout_languages_150.point
+    ]
+    pivots: [
+      shake_to_summarize_mistral_rollout_languages_150.branch
+    ]
+    filters:
+      shake_to_summarize_mistral_rollout_languages_150.metric: 'search_count'
+      shake_to_summarize_mistral_rollout_languages_150.statistic: mean
     row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: shake_to_summarize_mistral_rollout_languages_150.submission_date
+    field_y: shake_to_summarize_mistral_rollout_languages_150.point
+    log_scale: false
+    ci_lower: shake_to_summarize_mistral_rollout_languages_150.lower
+    ci_upper: shake_to_summarize_mistral_rollout_languages_150.upper
+    show_grid: true
+    listen:
+      Date: shake_to_summarize_mistral_rollout_languages_150.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: shake_to_summarize_mistral_rollout_languages_150
+    type: looker_line
+    fields: [
+      shake_to_summarize_mistral_rollout_languages_150.submission_date,
+      shake_to_summarize_mistral_rollout_languages_150.branch,
+      shake_to_summarize_mistral_rollout_languages_150.point
+    ]
+    pivots: [
+      shake_to_summarize_mistral_rollout_languages_150.branch
+    ]
+    filters:
+      shake_to_summarize_mistral_rollout_languages_150.metric: 'ad_clicks'
+      shake_to_summarize_mistral_rollout_languages_150.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: shake_to_summarize_mistral_rollout_languages_150.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       shake_to_summarize_mistral_rollout_languages_150.metric: 'retained'
-      shake_to_summarize_mistral_rollout_languages_150.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: shake_to_summarize_mistral_rollout_languages_150.submission_date
-    field_y: shake_to_summarize_mistral_rollout_languages_150.point
-    log_scale: false
-    ci_lower: shake_to_summarize_mistral_rollout_languages_150.lower
-    ci_upper: shake_to_summarize_mistral_rollout_languages_150.upper
-    show_grid: true
-    listen:
-      Date: shake_to_summarize_mistral_rollout_languages_150.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: shake_to_summarize_mistral_rollout_languages_150
-    type: looker_line
-    fields: [
-      shake_to_summarize_mistral_rollout_languages_150.submission_date,
-      shake_to_summarize_mistral_rollout_languages_150.branch,
-      shake_to_summarize_mistral_rollout_languages_150.point
-    ]
-    pivots: [
-      shake_to_summarize_mistral_rollout_languages_150.branch
-    ]
-    filters:
-      shake_to_summarize_mistral_rollout_languages_150.metric: 'days_of_use'
       shake_to_summarize_mistral_rollout_languages_150.statistic: mean
     row: 20
     col: 0

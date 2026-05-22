@@ -2854,6 +2854,16 @@ displayed to the user. (for tile counts)
 "
   }
 
+  dimension: metrics__counter__http3_stale_dcb_dcz_cache_entries_purged {
+    sql: ${TABLE}.metrics.counter.http3_stale_dcb_dcz_cache_entries_purged ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Http3 Stale Dcb Dcz Cache Entries Purged"
+    description: "Number of HTTP cache entries doomed because they had dcb or dcz in their Content-Encoding metadata — artifacts of early compression-dictionary code that failed to clear the header before writing cache metadata. Tracking this lets us know when the stale-entry population has died out.
+"
+  }
+
   dimension: metrics__counter__httpsfirst_downgraded {
     sql: ${TABLE}.metrics.counter.httpsfirst_downgraded ;;
     type: number
