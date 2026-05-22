@@ -13964,6 +13964,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__http3_stale_dcb_dcz_cache_entries_purged {
+    label: "Http3: Stale Dcb Dcz Cache Entries Purged"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.http3_stale_dcb_dcz_cache_entries_purged ;;
+    type: number
+    group_label: "Http3"
+    group_item_label: "Stale Dcb Dcz Cache Entries Purged"
+
+    link: {
+      label: "Glean Dictionary reference for Http3: Stale Dcb Dcz Cache Entries Purged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/http3_stale_dcb_dcz_cache_entries_purged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of HTTP cache entries doomed because they had dcb or dcz in their Content-Encoding metadata — artifacts of early compression-dictionary code that failed to clear the header before writing cache metadata. Tracking this lets us know when the stale-entry population has died out.
+"
+  }
+
   dimension: metrics__timing_distribution__http3_timer_delayed__sum {
     label: "Http3: Timer Delayed Sum"
     hidden: no
@@ -38043,6 +38061,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Hls Canplay Supported"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/hls_canplay_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: http3_stale_dcb_dcz_cache_entries_purged {
+    type: sum
+    sql: ${metrics__counter__http3_stale_dcb_dcz_cache_entries_purged} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Stale Dcb Dcz Cache Entries Purged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/http3_stale_dcb_dcz_cache_entries_purged"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: http3_stale_dcb_dcz_cache_entries_purged_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__http3_stale_dcb_dcz_cache_entries_purged: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Http3 Stale Dcb Dcz Cache Entries Purged"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/http3_stale_dcb_dcz_cache_entries_purged"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
