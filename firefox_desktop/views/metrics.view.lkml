@@ -21640,7 +21640,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__http3_stale_dcb_dcz_cache_entries_purged {
     label: "Http3: Stale Dcb Dcz Cache Entries Purged"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.http3_stale_dcb_dcz_cache_entries_purged ;;
     type: number
     group_label: "Http3"
