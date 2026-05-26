@@ -1195,6 +1195,14 @@ view: events_stream {
     group_item_label: "Sidebar Open"
   }
 
+  dimension: extras__boolean__signed_in {
+    sql: ${TABLE}.extras.boolean.signed_in ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Signed In"
+  }
+
   dimension: extras__boolean__site_settings {
     sql: ${TABLE}.extras.boolean.site_settings ;;
     type: yesno
@@ -2363,6 +2371,14 @@ view: events_stream {
     group_item_label: "Source Text Word Count"
   }
 
+  dimension: extras__quantity__status_code {
+    sql: ${TABLE}.extras.quantity.status_code ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Status Code"
+  }
+
   dimension: extras__quantity__step {
     sql: ${TABLE}.extras.quantity.step ;;
     type: number
@@ -3089,6 +3105,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Bundle Policy"
+  }
+
+  dimension: extras__string__button {
+    sql: ${TABLE}.extras.string.button ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Button"
   }
 
   dimension: extras__string__caller {
@@ -5809,6 +5833,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Severity"
+  }
+
+  dimension: extras__string__share_type {
+    sql: ${TABLE}.extras.string.share_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Share Type"
   }
 
   dimension: extras__string__shortcut {
