@@ -4091,6 +4091,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.user_characteristics
       type: table_view
+    widgets_client_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.widgets_client_daily
+      type: table_view
     widgets_visit_daily_table:
       tables:
       - channel: null
