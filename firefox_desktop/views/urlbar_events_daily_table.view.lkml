@@ -30,7 +30,7 @@ view: urlbar_events_daily_table {
     sql: ${TABLE}.is_ai ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Flag for when result type is associated with an \"ai\" result"
+    description: "Flag for when result type is associated with an AI or LLM generated result."
   }
 
   dimension: is_from_device {
@@ -59,6 +59,13 @@ view: urlbar_events_daily_table {
     type: yesno
     suggest_persist_for: "24 hours"
     description: "Flag for when result type is from Online Suggest."
+  }
+
+  dimension: is_search {
+    sql: ${TABLE}.is_search ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Flag for when result type is associated with a search engine result, or leading to a SERP (Search engine results page)."
   }
 
   dimension: is_semantic {
@@ -166,6 +173,13 @@ view: urlbar_events_daily_table {
     description: "Sponsored Suggestions Enabled"
   }
 
+  dimension: urlbar_abandonments {
+    sql: ${TABLE}.urlbar_abandonments ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of times that a user clicked into the browser address bar and left it without clicking a result or performing a search."
+  }
+
   dimension: urlbar_annoyances {
     sql: ${TABLE}.urlbar_annoyances ;;
     type: number
@@ -173,11 +187,25 @@ view: urlbar_events_daily_table {
     description: "URL Bar Annoyances"
   }
 
+  dimension: urlbar_bounces {
+    sql: ${TABLE}.urlbar_bounces ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of times a urlbar session ended because the user moved keyboard focus away from the urlbar."
+  }
+
   dimension: urlbar_clicks {
     sql: ${TABLE}.urlbar_clicks ;;
     type: number
     suggest_persist_for: "24 hours"
     description: "URL Bar Clicks"
+  }
+
+  dimension: urlbar_disables {
+    sql: ${TABLE}.urlbar_disables ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Number of times a urlbar session ended because the urlbar was disabled."
   }
 
   dimension: urlbar_impressions {
@@ -192,6 +220,14 @@ view: urlbar_events_daily_table {
     type: number
     suggest_persist_for: "24 hours"
     description: "URL Bar Sessions"
+  }
+
+  dimension: window_mode {
+    sql: ${TABLE}.window_mode ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The standard display of the browser: classic, private, or smartwindow.
+"
   }
 
   dimension_group: submission {
