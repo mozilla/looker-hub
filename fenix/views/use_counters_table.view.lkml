@@ -18269,6 +18269,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_async_generator_function_created {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_async_generator_function_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Js Async Generator Function Created"
+    description: "Whether a document created an async generator function. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_async_generator_function_ion_eligible {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_async_generator_function_ion_eligible ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Js Async Generator Function Ion Eligible"
+    description: "Whether a document created an async generator function eligible for Ion compilation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_dateparse {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_dateparse ;;
     type: number
@@ -18366,6 +18386,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Js Errorstack Setter Nonstring"
     description: "Whether a document called error.stack setter with non-string input. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_generator_function_created {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_generator_function_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Js Generator Function Created"
+    description: "Whether a document created a generator function. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_generator_function_ion_eligible {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_generator_function_ion_eligible ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Js Generator Function Ion Eligible"
+    description: "Whether a document created a generator function eligible for Ion compilation. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -23449,6 +23489,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_js_async_generator_function_created {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_async_generator_function_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Js Async Generator Function Created"
+    description: "Whether a page created an async generator function. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_async_generator_function_ion_eligible {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_async_generator_function_ion_eligible ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Js Async Generator Function Ion Eligible"
+    description: "Whether a page created an async generator function eligible for Ion compilation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_js_dateparse {
     sql: ${TABLE}.metrics.counter.use_counter_page_js_dateparse ;;
     type: number
@@ -23546,6 +23606,26 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Js Errorstack Setter Nonstring"
     description: "Whether a page called error.stack setter with non-string input. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_generator_function_created {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_generator_function_created ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Js Generator Function Created"
+    description: "Whether a page created a generator function. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_generator_function_ion_eligible {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_generator_function_ion_eligible ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Js Generator Function Ion Eligible"
+    description: "Whether a page created a generator function eligible for Ion compilation. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
