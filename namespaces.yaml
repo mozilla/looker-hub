@@ -11155,10 +11155,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id365
           normalized_channel:
-            default: beta
+            default: aurora
             options:
-            - beta
             - aurora
+            - beta
             - nightly
             - release
             - esr
@@ -12488,14 +12488,14 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id467
           app:
-            default: Windows - vpn_session
+            default: Android - vpn_session
             options:
-            - Windows - vpn_session
-            - Android - daemon_session
-            - Linux - vpn_session
-            - iOS - vpn_session
-            - Darwin - vpn_session
             - Android - vpn_session
+            - Linux - vpn_session
+            - Darwin - vpn_session
+            - Android - daemon_session
+            - iOS - vpn_session
+            - Windows - vpn_session
             - iOS - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
@@ -13675,11 +13675,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id548
           channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
             - release
+            - beta
           os:
             default: Windows_NT
             options:

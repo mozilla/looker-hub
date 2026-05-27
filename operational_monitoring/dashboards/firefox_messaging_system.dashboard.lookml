@@ -276,15 +276,15 @@
   - title: Normalized Channel
     name: Normalized Channel
     type: string_filter
-    default_value: 'beta'
+    default_value: 'aurora'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'beta'
       - 'aurora'
+      - 'beta'
       - 'nightly'
       - 'release'
       - 'esr'
