@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.branch
     ]
     filters:
-      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.metric: 'days_of_use'
+      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.metric: 'uri_count'
       hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.statistic: mean
     row: 0
     col: 12
@@ -146,40 +146,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta
-    type: looker_line
-    fields: [
-      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.submission_date,
-      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.branch,
-      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.point
-    ]
-    pivots: [
-      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.branch
-    ]
-    filters:
-      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.metric: 'uri_count'
-      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.submission_date
-    field_y: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.point
-    log_scale: false
-    ci_lower: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.lower
-    ci_upper: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -201,7 +167,7 @@
       hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.metric: 'memory_total'
       hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.statistic: percentile
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.submission_date
@@ -217,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,10 +199,10 @@
       hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.branch
     ]
     filters:
-      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.metric: 'active_hours'
+      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.metric: 'days_of_use'
       hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.metric: 'ad_clicks'
+      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.submission_date
+    field_y: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.point
+    log_scale: false
+    ci_lower: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.lower
+    ci_upper: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta
+    type: looker_line
+    fields: [
+      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.submission_date,
+      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.branch,
+      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.point
+    ]
+    pivots: [
+      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.branch
+    ]
+    filters:
+      hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.metric: 'active_hours'
       hnt_wattle_firefox_labs_new_tab_widgets_lists_timer_december_beta.statistic: mean
     row: 30
     col: 12

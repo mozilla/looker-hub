@@ -422,6 +422,30 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_counter__glean_upload_pending_pings_deleted {
+    label: "Glean Upload: Pending Pings Deleted"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_upload_pending_pings_deleted ;;
+    group_label: "Glean Upload"
+    group_item_label: "Pending Pings Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload: Pending Pings Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_upload_pending_pings_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of pings deleted because a pending pings quota was exceeded,
+labeled by which quota triggered the deletion.
+
+* `count_quota`: the maximum number of pending pings was reached.
+* `size_quota`: the maximum size of the pending pings directory was reached.
+
+Sent on the health ping only; use this metric to verify whether
+the configured limits are sufficient to survive connectivity outages.
+"
+  }
+
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
     label: "Glean Upload: Pending Pings Directory Size Sum"
     hidden: no
@@ -1631,6 +1655,47 @@ view: health__metrics__labeled_counter__glean_health_file_read_error {
 
 view: health__metrics__labeled_counter__glean_health_file_write_error {
   label: "Glean Health: File Write Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${health.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${health.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${health.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: health__metrics__labeled_counter__glean_upload_pending_pings_deleted {
+  label: "Glean Upload: Pending Pings Deleted"
 
   dimension: document_id {
     type: string

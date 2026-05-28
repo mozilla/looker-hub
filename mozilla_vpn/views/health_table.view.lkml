@@ -587,6 +587,20 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_counter__glean_upload_pending_pings_deleted {
+    sql: ${TABLE}.metrics.labeled_counter.glean_upload_pending_pings_deleted ;;
+    hidden: yes
+    description: "The number of pings deleted because a pending pings quota was exceeded,
+labeled by which quota triggered the deletion.
+
+* `count_quota`: the maximum number of pending pings was reached.
+* `size_quota`: the maximum size of the pending pings directory was reached.
+
+Sent on the health ping only; use this metric to verify whether
+the configured limits are sufficient to survive connectivity outages.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
     sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
     hidden: yes
