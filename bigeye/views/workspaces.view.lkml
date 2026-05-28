@@ -47,6 +47,12 @@ view: workspaces {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: ignore_schemas_prefix {
+    sql: ${TABLE}.ignore_schemas_prefix ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: is_favorite {
     sql: ${TABLE}.is_favorite ;;
     type: yesno
