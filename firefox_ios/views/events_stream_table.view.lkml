@@ -352,14 +352,6 @@ view: events_stream_table {
     group_item_label: "Is Homepage"
   }
 
-  dimension: extras__boolean__is_impression {
-    sql: ${TABLE}.extras.boolean.is_impression ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Is Impression"
-  }
-
   dimension: extras__boolean__is_new_email_mask {
     sql: ${TABLE}.extras.boolean.is_new_email_mask ;;
     type: yesno
@@ -1318,14 +1310,6 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "User Selection"
-  }
-
-  dimension: extras__string__view {
-    sql: ${TABLE}.extras.string.view ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "View"
   }
 
   dimension: extras__string__wallpaper_name {
