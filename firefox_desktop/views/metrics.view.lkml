@@ -39,7 +39,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Firefox: Time to initialize the bookmarks toolbar view (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_BOOKMARKS_TOOLBAR_INIT_MS.
 "
   }
 
@@ -5461,7 +5460,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "PLACES: Time to search the history library (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_HISTORY_LIBRARY_SEARCH_TIME_MS.
 "
   }
 
@@ -6450,7 +6448,6 @@ broken down by structured ingestion namespace.
     }
 
     description: "PLACES: Number of pages annotations
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_ANNOS_PAGES_COUNT.
 "
   }
 
@@ -6469,7 +6466,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Time to build the bookmarks tree
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_BACKUPS_BOOKMARKSTREE_MS.
 "
   }
 
@@ -6488,7 +6484,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Days from last backup
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_BACKUPS_DAYSFROMLAST.
 "
   }
 
@@ -6507,7 +6502,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "PLACES: Time to convert and write the backup
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_BACKUPS_TOJSON_MS.
 "
   }
 
@@ -6526,7 +6520,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Number of bookmarks
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_BOOKMARKS_COUNT.
 "
   }
 
@@ -6545,7 +6538,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Favicons database filesize (MB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_DATABASE_FAVICONS_FILESIZE_MB.
 "
   }
 
@@ -6564,7 +6556,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Database filesize (MB)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_DATABASE_FILESIZE_MB.
 "
   }
 
@@ -6637,7 +6628,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Expiration steps to cleanup the database
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram PLACES_EXPIRATION_STEPS_TO_CLEAN2.
 "
   }
 
@@ -6656,7 +6646,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "PLACES: Time to convert and write bookmarks.html
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_EXPORT_TOHTML_MS.
 "
   }
 
@@ -6675,7 +6664,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Time to recalculate frecency for a chunk of pages (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_FRECENCY_RECALC_CHUNK_TIME_MS.
 "
   }
 
@@ -6694,7 +6682,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Time to decay all frecencies values on idle (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_IDLE_FRECENCY_DECAY_TIME_MS.
 "
   }
 
@@ -6713,7 +6700,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Time to execute maintenance tasks on idle (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_IDLE_MAINTENANCE_TIME_MS.
 "
   }
 
@@ -6732,7 +6718,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Number of keywords
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_KEYWORDS_COUNT.
 "
   }
 
@@ -6751,7 +6736,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Days from last maintenance
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_MAINTENANCE_DAYSFROMLAST.
 "
   }
 
@@ -6770,7 +6754,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: the most recent expired visit in days
-This metric was generated to correspond to the Legacy Telemetry linear histogram PLACES_MOST_RECENT_EXPIRED_VISIT_DAYS.
 "
   }
 
@@ -6789,7 +6772,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "PLACES: Number of unique pages
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_PAGES_COUNT.
 "
   }
 
@@ -6807,7 +6789,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Number of pages that need a frecency recalculation. This metric was generated to correspond to the Legacy Telemetry scalar places.pages_need_frecency_recalculation.
+    description: "Number of pages that need a frecency recalculation.
 "
   }
 
@@ -6916,7 +6898,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "PLACES: Percentage of bookmarks organized in folders
-This metric was generated to correspond to the Legacy Telemetry linear histogram PLACES_SORTED_BOOKMARKS_PERC.
 "
   }
 
@@ -6953,7 +6934,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "PLACES: Percentage of tagged bookmarks
-This metric was generated to correspond to the Legacy Telemetry linear histogram PLACES_TAGGED_BOOKMARKS_PERC.
 "
   }
 
@@ -6972,7 +6952,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "PLACES: Number of tags
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_TAGS_COUNT.
 "
   }
 
@@ -29339,6 +29318,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__networking_trans_found_in_pending_queue {
+    label: "Networking: Trans Found In Pending Queue"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_trans_found_in_pending_queue ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Trans Found In Pending Queue"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Trans Found In Pending Queue"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_trans_found_in_pending_queue"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a transaction was unexpectedly still found in a connection entry's pending queue when nsHttpConnectionMgr::CheckTransInPendingQueue ran.
+"
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
     label: "Networking: Transaction Wait Time Sum"
     hidden: yes
@@ -45844,6 +45841,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Networking Set Invalid First Party Partitioned Cookie"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_set_invalid_first_party_partitioned_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_trans_found_in_pending_queue {
+    type: sum
+    sql: ${metrics__counter__networking_trans_found_in_pending_queue} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trans Found In Pending Queue"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_trans_found_in_pending_queue"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_trans_found_in_pending_queue_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_trans_found_in_pending_queue: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trans Found In Pending Queue"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_trans_found_in_pending_queue"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

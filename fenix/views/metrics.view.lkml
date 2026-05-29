@@ -21755,6 +21755,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__networking_trans_found_in_pending_queue {
+    label: "Networking: Trans Found In Pending Queue"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_trans_found_in_pending_queue ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Trans Found In Pending Queue"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Trans Found In Pending Queue"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_trans_found_in_pending_queue"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a transaction was unexpectedly still found in a connection entry's pending queue when nsHttpConnectionMgr::CheckTransInPendingQueue ran.
+"
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
     label: "Networking: Transaction Wait Time Sum"
     hidden: yes
@@ -34012,6 +34030,24 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 "
   }
 
+  dimension: metrics__counter__places_manager_connection_initialized {
+    label: "Places Manager: Connection Initialized"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.places_manager_connection_initialized ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Connection Initialized"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Connection Initialized"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_connection_initialized"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a `PlacesConnection` was initialized.
+"
+  }
+
   dimension: metrics__memory_distribution__places_manager_db_size_after_maintenance__sum {
     label: "Places Manager: DB Size After Maintenance Sum"
     hidden: no
@@ -34100,6 +34136,26 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`"
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__sum {
+    label: "Places Manager: Run Maintenance Chk Pnt Time Temp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Chk Pnt Time Temp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Chk Pnt Time Temp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_chk_pnt_time_temp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`
+
+Duplication of `run_maintenance_chk_pnt_time_temp` for glean-sym testing.
+"
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__sum {
     label: "Places Manager: Run Maintenance Optimize Time Sum"
     hidden: no
@@ -34117,6 +34173,26 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     description: "Time taken to execute `PRAGMA optimize` inside `run_maintenance()`"
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__sum {
+    label: "Places Manager: Run Maintenance Optimize Time Temp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Optimize Time Temp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Optimize Time Temp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_optimize_time_temp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `PRAGMA optimize` inside `run_maintenance()`
+
+Duplication of `run_maintenance_optimize_time` for glean-sym testing.
+"
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__sum {
     label: "Places Manager: Run Maintenance Prune Time Sum"
     hidden: no
@@ -34132,6 +34208,26 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
 
     description: "Time taken to execute `prune_older_visits()` inside `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__sum {
+    label: "Places Manager: Run Maintenance Prune Time Temp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Prune Time Temp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Prune Time Temp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_prune_time_temp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `prune_older_visits()` inside `run_maintenance()`
+
+Duplication of `run_maintenance_prune_time` for glean-sym testing.
+"
   }
 
   dimension: metrics__timing_distribution__places_manager_run_maintenance_time__sum {
@@ -34166,6 +34262,26 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
 
     description: "Time taken to execute `VACUUM` inside `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__sum {
+    label: "Places Manager: Run Maintenance Vacuum Time Temp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Vacuum Time Temp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager: Run Maintenance Vacuum Time Temp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_vacuum_time_temp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `VACUUM` inside `run_maintenance()`
+
+Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
+"
   }
 
   dimension: metrics__timing_distribution__places_manager_scan_query_time__sum {
@@ -38890,6 +39006,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: networking_trans_found_in_pending_queue {
+    type: sum
+    sql: ${metrics__counter__networking_trans_found_in_pending_queue} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trans Found In Pending Queue"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_trans_found_in_pending_queue"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_trans_found_in_pending_queue_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_trans_found_in_pending_queue: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trans Found In Pending Queue"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_trans_found_in_pending_queue"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: opaque_response_blocking_cross_origin_opaque_response_count {
     type: sum
     sql: ${metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count} ;;
@@ -41311,6 +41452,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Logins Store Write Query Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_write_query_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: places_manager_connection_initialized {
+    type: sum
+    sql: ${metrics__counter__places_manager_connection_initialized} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Connection Initialized"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_connection_initialized"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: places_manager_connection_initialized_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__places_manager_connection_initialized: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Connection Initialized"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_connection_initialized"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -80897,6 +81063,20 @@ view: metrics__metrics__timing_distribution__places_manager_run_maintenance_chk_
   }
 }
 
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__places_manager_run_maintenance_optimize_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -80911,7 +81091,35 @@ view: metrics__metrics__timing_distribution__places_manager_run_maintenance_opti
   }
 }
 
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__timing_distribution__places_manager_run_maintenance_prune_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -80940,6 +81148,20 @@ view: metrics__metrics__timing_distribution__places_manager_run_maintenance_time
 }
 
 view: metrics__metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

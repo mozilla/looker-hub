@@ -3373,6 +3373,16 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__networking_trans_found_in_pending_queue {
+    sql: ${TABLE}.metrics.counter.networking_trans_found_in_pending_queue ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Networking Trans Found In Pending Queue"
+    description: "Counts the number of times a transaction was unexpectedly still found in a connection entry's pending queue when nsHttpConnectionMgr::CheckTransInPendingQueue ran.
+"
+  }
+
   dimension: metrics__counter__opaque_response_blocking_cross_origin_opaque_response_count {
     sql: ${TABLE}.metrics.counter.opaque_response_blocking_cross_origin_opaque_response_count ;;
     type: number
@@ -22122,7 +22132,7 @@ See `nsIXULRuntime.launcherProcessState`
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Places Pages Need Frecency Recalculation"
-    description: "Number of pages that need a frecency recalculation. This metric was generated to correspond to the Legacy Telemetry scalar places.pages_need_frecency_recalculation.
+    description: "Number of pages that need a frecency recalculation.
 "
   }
 
