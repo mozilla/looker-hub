@@ -971,6 +971,14 @@ view: events_stream {
     group_item_label: "Is Remote Ice Lite"
   }
 
+  dimension: extras__boolean__is_retry {
+    sql: ${TABLE}.extras.boolean.is_retry ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Retry"
+  }
+
   dimension: extras__boolean__is_shopping_page {
     sql: ${TABLE}.extras.boolean.is_shopping_page ;;
     type: yesno
