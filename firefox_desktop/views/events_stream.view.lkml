@@ -1355,12 +1355,28 @@ view: events_stream {
     group_item_label: "Top Position"
   }
 
+  dimension: extras__boolean__trigger_sampled {
+    sql: ${TABLE}.extras.boolean.trigger_sampled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Trigger Sampled"
+  }
+
   dimension: extras__boolean__triggered_externally {
     sql: ${TABLE}.extras.boolean.triggered_externally ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Triggered Externally"
+  }
+
+  dimension: extras__boolean__uniform_sampled {
+    sql: ${TABLE}.extras.boolean.uniform_sampled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Uniform Sampled"
   }
 
   dimension: extras__boolean__unload_selected_tab {
@@ -2731,6 +2747,30 @@ view: events_stream {
     group_item_label: "Total Words"
   }
 
+  dimension: extras__quantity__trigger_sampling_probability {
+    sql: ${TABLE}.extras.quantity.trigger_sampling_probability ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Trigger Sampling Probability"
+  }
+
+  dimension: extras__quantity__turn_number {
+    sql: ${TABLE}.extras.quantity.turn_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Turn Number"
+  }
+
+  dimension: extras__quantity__uniform_sampling_probability {
+    sql: ${TABLE}.extras.quantity.uniform_sampling_probability ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Uniform Sampling Probability"
+  }
+
   dimension: extras__quantity__user_label_length {
     sql: ${TABLE}.extras.quantity.user_label_length ;;
     type: number
@@ -2985,6 +3025,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Alt Text Type"
+  }
+
+  dimension: extras__string__attribute_name {
+    sql: ${TABLE}.extras.string.attribute_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Attribute Name"
+  }
+
+  dimension: extras__string__attribute_value {
+    sql: ${TABLE}.extras.string.attribute_value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Attribute Value"
   }
 
   dimension: extras__string__audio_codec {
@@ -3281,6 +3337,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Chat ID"
+  }
+
+  dimension: extras__string__chat_version {
+    sql: ${TABLE}.extras.string.chat_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Chat Version"
   }
 
   dimension: extras__string__choice {
@@ -5507,6 +5571,14 @@ view: events_stream {
     group_item_label: "Reason"
   }
 
+  dimension: extras__string__record_type {
+    sql: ${TABLE}.extras.string.record_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Record Type"
+  }
+
   dimension: extras__string__redirects {
     sql: ${TABLE}.extras.string.redirects ;;
     type: string
@@ -6203,6 +6275,22 @@ view: events_stream {
     group_item_label: "Tel"
   }
 
+  dimension: extras__string__telemetry_name {
+    sql: ${TABLE}.extras.string.telemetry_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Telemetry Name"
+  }
+
+  dimension: extras__string__telemetry_version {
+    sql: ${TABLE}.extras.string.telemetry_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Telemetry Version"
+  }
+
   dimension: extras__string__terminal {
     sql: ${TABLE}.extras.string.terminal ;;
     type: string
@@ -6321,6 +6409,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Trigger"
+  }
+
+  dimension: extras__string__triggers {
+    sql: ${TABLE}.extras.string.triggers ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Triggers"
   }
 
   dimension: extras__string__trr {
