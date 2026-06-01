@@ -1939,6 +1939,176 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_corner_block_end_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_block_end_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Block End Shape"
+    description: "Whether a document used the CSS property corner-block-end-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_block_start_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_block_start_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Block Start Shape"
+    description: "Whether a document used the CSS property corner-block-start-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_bottom_left_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_bottom_left_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Bottom Left Shape"
+    description: "Whether a document used the CSS property corner-bottom-left-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_bottom_right_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_bottom_right_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Bottom Right Shape"
+    description: "Whether a document used the CSS property corner-bottom-right-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_bottom_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_bottom_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Bottom Shape"
+    description: "Whether a document used the CSS property corner-bottom-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_end_end_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_end_end_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner End End Shape"
+    description: "Whether a document used the CSS property corner-end-end-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_end_start_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_end_start_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner End Start Shape"
+    description: "Whether a document used the CSS property corner-end-start-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_inline_end_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_inline_end_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Inline End Shape"
+    description: "Whether a document used the CSS property corner-inline-end-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_inline_start_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_inline_start_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Inline Start Shape"
+    description: "Whether a document used the CSS property corner-inline-start-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_left_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_left_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Left Shape"
+    description: "Whether a document used the CSS property corner-left-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_right_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_right_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Right Shape"
+    description: "Whether a document used the CSS property corner-right-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Shape"
+    description: "Whether a document used the CSS property corner-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_start_end_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_start_end_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Start End Shape"
+    description: "Whether a document used the CSS property corner-start-end-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_start_start_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_start_start_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Start Start Shape"
+    description: "Whether a document used the CSS property corner-start-start-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_top_left_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_top_left_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Top Left Shape"
+    description: "Whether a document used the CSS property corner-top-left-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_top_right_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_top_right_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Top Right Shape"
+    description: "Whether a document used the CSS property corner-top-right-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_corner_top_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_corner_top_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Corner Top Shape"
+    description: "Whether a document used the CSS property corner-top-shape. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_counter_increment {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_counter_increment ;;
     type: number
@@ -9216,6 +9386,176 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Content Visibility"
     description: "Whether a page used the CSS property content-visibility. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_block_end_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_block_end_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Block End Shape"
+    description: "Whether a page used the CSS property corner-block-end-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_block_start_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_block_start_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Block Start Shape"
+    description: "Whether a page used the CSS property corner-block-start-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_bottom_left_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_bottom_left_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Bottom Left Shape"
+    description: "Whether a page used the CSS property corner-bottom-left-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_bottom_right_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_bottom_right_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Bottom Right Shape"
+    description: "Whether a page used the CSS property corner-bottom-right-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_bottom_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_bottom_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Bottom Shape"
+    description: "Whether a page used the CSS property corner-bottom-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_end_end_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_end_end_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner End End Shape"
+    description: "Whether a page used the CSS property corner-end-end-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_end_start_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_end_start_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner End Start Shape"
+    description: "Whether a page used the CSS property corner-end-start-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_inline_end_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_inline_end_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Inline End Shape"
+    description: "Whether a page used the CSS property corner-inline-end-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_inline_start_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_inline_start_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Inline Start Shape"
+    description: "Whether a page used the CSS property corner-inline-start-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_left_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_left_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Left Shape"
+    description: "Whether a page used the CSS property corner-left-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_right_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_right_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Right Shape"
+    description: "Whether a page used the CSS property corner-right-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Shape"
+    description: "Whether a page used the CSS property corner-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_start_end_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_start_end_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Start End Shape"
+    description: "Whether a page used the CSS property corner-start-end-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_start_start_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_start_start_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Start Start Shape"
+    description: "Whether a page used the CSS property corner-start-start-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_top_left_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_top_left_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Top Left Shape"
+    description: "Whether a page used the CSS property corner-top-left-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_top_right_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_top_right_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Top Right Shape"
+    description: "Whether a page used the CSS property corner-top-right-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_corner_top_shape {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_corner_top_shape ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Corner Top Shape"
+    description: "Whether a page used the CSS property corner-top-shape. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

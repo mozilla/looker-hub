@@ -565,7 +565,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Accentcolor"
-    description: "The CSS system-color Accentcolor.
+    description: "The platform Accentcolor returned by LookAndFeel::GetColor with ColorScheme::Light forced and UseStandins::No (see PopulateCSSProperties in nsUserCharacteristics.cpp). On Windows this reports the user's real OS accent color; the AccentColor entry in `css_system_colors` instead reports the Firefox brand color 0060DF because the content path applies a standin gated on widget.non-native-theme.use-theme-accent (default false on Windows), see widget/ThemeColors.h::sDefaultAccent and nsXPLookAndFeel.cpp::ShouldUseStandinsForNativeColorForNonNativeTheme. In Windows High Contrast / forced-colors mode (`use_document_colors`=false) the standin is suppressed and content sees the real accent. The value is the raw nscolor uint32 with R in the low byte and includes the alpha channel; `css_system_colors` discards alpha and emits RRGGBB.
 "
   }
 
@@ -575,7 +575,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Accentcolortext"
-    description: "The CSS system-color Accentcolortext.
+    description: "The platform Accentcolortext returned by LookAndFeel::GetColor with ColorScheme::Light forced and UseStandins::No (see PopulateCSSProperties in nsUserCharacteristics.cpp). Same standin semantics as `color_accentcolor`: on Windows the content path (`css_system_colors`) substitutes the Firefox brand AccentColorText while this metric reports the real OS value. The value is the raw nscolor uint32 with R in the low byte and includes the alpha channel; `css_system_colors` discards alpha and emits RRGGBB.
 "
   }
 
@@ -585,7 +585,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Canvas"
-    description: "The CSS system-color Canvas.
+    description: "The Canvas default background from PreferenceSheet::ContentPrefs::ColorsFor(ColorScheme::Light) .mDefaultBackground (see PopulateCSSProperties in nsUserCharacteristics.cpp). This value is forced-Light: for users browsing in dark mode it is still the Light default (typically FFFFFF) and is NOT the canvas the user actually sees rendered (Firefox's dark canvas is 1C1B22). To capture the canvas as it resolves in content with the page color-scheme applied, see the Canvas entry in `css_system_colors`. The value is the raw nscolor uint32 with R in the low byte and includes the alpha channel; `css_system_colors` discards alpha and emits RRGGBB.
 "
   }
 
@@ -595,7 +595,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Canvastext"
-    description: "The CSS system-color Canvastext.
+    description: "The Canvas default foreground from PreferenceSheet::ContentPrefs::ColorsFor(ColorScheme::Light) .mDefault (see PopulateCSSProperties in nsUserCharacteristics.cpp). Same forced-Light semantics as `color_canvas`: dark-mode users still see the Light default here, while the content-rendered value lives in the CanvasText entry of `css_system_colors`. The value is the raw nscolor uint32 with R in the low byte and includes the alpha channel; `css_system_colors` discards alpha and emits RRGGBB.
 "
   }
 
@@ -625,7 +625,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Highlight"
-    description: "The CSS system-color Highlight.
+    description: "The platform Highlight (selection background) returned by LookAndFeel::GetColor with ColorScheme::Light forced and UseStandins::No (see PopulateCSSProperties in nsUserCharacteristics.cpp). This metric preserves the alpha channel: the OS-default highlight is translucent on several platforms (e.g. macOS alpha 0x7F, Android 0x4E); the parallel Highlight entry in `css_system_colors` resolves with the page color-scheme and discards alpha. The value is the raw nscolor uint32 with R in the low byte.
 "
   }
 
@@ -635,7 +635,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Highlighttext"
-    description: "The CSS system-color Highlighttext.
+    description: "The platform Highlighttext (selection foreground) returned by LookAndFeel::GetColor with ColorScheme::Light forced and UseStandins::No (see PopulateCSSProperties in nsUserCharacteristics.cpp). Includes alpha — on some platforms (e.g. Android) the OS value is a translucent/edge color with no direct equivalent in the content-resolved path; the parallel HighlightText entry in `css_system_colors` resolves with the page color-scheme against a backdrop and discards alpha. The value is the raw nscolor uint32 with R in the low byte.
 "
   }
 
@@ -655,7 +655,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Selecteditem"
-    description: "The CSS system-color Selecteditem.
+    description: "The platform Selecteditem color returned by LookAndFeel::GetColor with ColorScheme::Light forced and UseStandins::No (see PopulateCSSProperties in nsUserCharacteristics.cpp). Same alpha-preservation and forced-Light semantics as `color_highlight`; the parallel SelectedItem entry in `css_system_colors` resolves with the page color-scheme and discards alpha. The value is the raw nscolor uint32 with R in the low byte.
 "
   }
 
@@ -665,7 +665,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Characteristics Color Selecteditemtext"
-    description: "The CSS system-color Selecteditemtext.
+    description: "The platform Selecteditemtext color returned by LookAndFeel::GetColor with ColorScheme::Light forced and UseStandins::No (see PopulateCSSProperties in nsUserCharacteristics.cpp). Same alpha-preservation and forced-Light semantics as `color_highlighttext`; the parallel SelectedItemText entry in `css_system_colors` resolves with the page color-scheme and discards alpha. The value is the raw nscolor uint32 with R in the low byte.
 "
   }
 
@@ -4381,8 +4381,7 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Text2"
     group_item_label: "Characteristics Css System Colors"
-    description: "JSON array containing CSS system color keywords and their computed values as uppercase hex (without # prefix). System colors (like Canvas, ButtonFace, LinkText, etc.) are CSS keywords that resolve to theme/OS-specific colors and can be used for fingerprinting. This metric collects the computed backgroundColor for each system color keyword. Data format: [{\"Canvas\": \"FFFFFF\"}, {\"ButtonFace\": \"F0F0F0\"}, ...].
-"
+    description: "JSON array containing CSS system color keywords and their computed values as uppercase hex (without # prefix). System colors (like Canvas, ButtonFace, LinkText, etc.) are CSS keywords that resolve to theme/OS-specific colors and can be used for fingerprinting. This metric collects the computed backgroundColor for each system color keyword. Data format: [{\"Canvas\": \"FFFFFF\"}, {\"ButtonFace\": \"F0F0F0\"}, ...]. Values here are content-resolved: they respect the page color-scheme (so dark-mode users will see Firefox's dark Canvas 1C1B22, etc.) and have content-side standins applied. Notably on Windows the AccentColor entry returns the Firefox brand color 0060DF rather than the user's real Windows accent because widget.non-native-theme.use-theme-accent defaults to false on Windows (see widget/ThemeColors.h::sDefaultAccent and nsXPLookAndFeel.cpp::ShouldUseStandinsForNativeColorForNonNativeTheme). The standin is suppressed in High Contrast / forced-colors mode (`use_document_colors`=false), where the real accent pass"
   }
 
   dimension: metrics__text2__characteristics_css_system_fonts {
