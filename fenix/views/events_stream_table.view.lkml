@@ -3248,6 +3248,14 @@ view: events_stream_table {
     group_item_label: "Item Preference Key"
   }
 
+  dimension: extras__string__item_type {
+    sql: ${TABLE}.extras.string.item_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Item Type"
+  }
+
   dimension: extras__string__key_system {
     sql: ${TABLE}.extras.string.key_system ;;
     type: string
