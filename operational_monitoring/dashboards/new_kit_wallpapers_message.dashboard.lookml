@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       new_kit_wallpapers_message.branch
     ]
     filters:
-      new_kit_wallpapers_message.metric: 'active_hours'
+      new_kit_wallpapers_message.metric: 'retained'
       new_kit_wallpapers_message.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       new_kit_wallpapers_message.branch
     ]
     filters:
-      new_kit_wallpapers_message.metric: 'days_of_use'
+      new_kit_wallpapers_message.metric: 'search_count'
       new_kit_wallpapers_message.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: new_kit_wallpapers_message.submission_date
+    field_y: new_kit_wallpapers_message.point
+    log_scale: false
+    ci_lower: new_kit_wallpapers_message.lower
+    ci_upper: new_kit_wallpapers_message.upper
+    show_grid: true
+    listen:
+      Date: new_kit_wallpapers_message.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_kit_wallpapers_message
+    type: looker_line
+    fields: [
+      new_kit_wallpapers_message.submission_date,
+      new_kit_wallpapers_message.branch,
+      new_kit_wallpapers_message.point
+    ]
+    pivots: [
+      new_kit_wallpapers_message.branch
+    ]
+    filters:
+      new_kit_wallpapers_message.metric: 'uri_count'
+      new_kit_wallpapers_message.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: new_kit_wallpapers_message.submission_date
@@ -99,7 +133,7 @@
       new_kit_wallpapers_message.metric: 'memory_total'
       new_kit_wallpapers_message.statistic: percentile
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: new_kit_wallpapers_message.submission_date
@@ -133,40 +167,6 @@
     filters:
       new_kit_wallpapers_message.metric: 'ad_clicks'
       new_kit_wallpapers_message.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: new_kit_wallpapers_message.submission_date
-    field_y: new_kit_wallpapers_message.point
-    log_scale: false
-    ci_lower: new_kit_wallpapers_message.lower
-    ci_upper: new_kit_wallpapers_message.upper
-    show_grid: true
-    listen:
-      Date: new_kit_wallpapers_message.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_kit_wallpapers_message
-    type: looker_line
-    fields: [
-      new_kit_wallpapers_message.submission_date,
-      new_kit_wallpapers_message.branch,
-      new_kit_wallpapers_message.point
-    ]
-    pivots: [
-      new_kit_wallpapers_message.branch
-    ]
-    filters:
-      new_kit_wallpapers_message.metric: 'retained'
-      new_kit_wallpapers_message.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,44 +199,10 @@
       new_kit_wallpapers_message.branch
     ]
     filters:
-      new_kit_wallpapers_message.metric: 'uri_count'
+      new_kit_wallpapers_message.metric: 'active_hours'
       new_kit_wallpapers_message.statistic: mean
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: new_kit_wallpapers_message.submission_date
-    field_y: new_kit_wallpapers_message.point
-    log_scale: false
-    ci_lower: new_kit_wallpapers_message.lower
-    ci_upper: new_kit_wallpapers_message.upper
-    show_grid: true
-    listen:
-      Date: new_kit_wallpapers_message.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_kit_wallpapers_message
-    type: looker_line
-    fields: [
-      new_kit_wallpapers_message.submission_date,
-      new_kit_wallpapers_message.branch,
-      new_kit_wallpapers_message.point
-    ]
-    pivots: [
-      new_kit_wallpapers_message.branch
-    ]
-    filters:
-      new_kit_wallpapers_message.metric: 'search_count'
-      new_kit_wallpapers_message.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: new_kit_wallpapers_message.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       new_kit_wallpapers_message.metric: 'qualified_cumulative_days_of_use'
+      new_kit_wallpapers_message.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_kit_wallpapers_message.submission_date
+    field_y: new_kit_wallpapers_message.point
+    log_scale: false
+    ci_lower: new_kit_wallpapers_message.lower
+    ci_upper: new_kit_wallpapers_message.upper
+    show_grid: true
+    listen:
+      Date: new_kit_wallpapers_message.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_kit_wallpapers_message
+    type: looker_line
+    fields: [
+      new_kit_wallpapers_message.submission_date,
+      new_kit_wallpapers_message.branch,
+      new_kit_wallpapers_message.point
+    ]
+    pivots: [
+      new_kit_wallpapers_message.branch
+    ]
+    filters:
+      new_kit_wallpapers_message.metric: 'days_of_use'
       new_kit_wallpapers_message.statistic: mean
     row: 30
     col: 12
