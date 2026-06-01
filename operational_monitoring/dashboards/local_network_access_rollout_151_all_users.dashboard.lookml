@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       local_network_access_rollout_151_all_users.branch
     ]
     filters:
-      local_network_access_rollout_151_all_users.metric: 'retained'
+      local_network_access_rollout_151_all_users.metric: 'active_hours'
       local_network_access_rollout_151_all_users.statistic: mean
     row: 0
     col: 0
@@ -78,6 +78,145 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: local_network_access_rollout_151_all_users
+    type: "ci-line-chart"
+    fields: [
+      local_network_access_rollout_151_all_users.submission_date,
+      local_network_access_rollout_151_all_users.branch,
+      local_network_access_rollout_151_all_users.upper,
+      local_network_access_rollout_151_all_users.lower,
+      local_network_access_rollout_151_all_users.point
+    ]
+    pivots: [
+      local_network_access_rollout_151_all_users.branch
+    ]
+    filters:
+      local_network_access_rollout_151_all_users.metric: 'memory_total'
+      local_network_access_rollout_151_all_users.statistic: percentile
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_151_all_users.submission_date
+    field_y: local_network_access_rollout_151_all_users.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_151_all_users.lower
+    ci_upper: local_network_access_rollout_151_all_users.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_151_all_users.submission_date
+      Percentile: local_network_access_rollout_151_all_users.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_rollout_151_all_users
+    type: looker_line
+    fields: [
+      local_network_access_rollout_151_all_users.submission_date,
+      local_network_access_rollout_151_all_users.branch,
+      local_network_access_rollout_151_all_users.point
+    ]
+    pivots: [
+      local_network_access_rollout_151_all_users.branch
+    ]
+    filters:
+      local_network_access_rollout_151_all_users.metric: 'ad_clicks'
+      local_network_access_rollout_151_all_users.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_151_all_users.submission_date
+    field_y: local_network_access_rollout_151_all_users.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_151_all_users.lower
+    ci_upper: local_network_access_rollout_151_all_users.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_151_all_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_rollout_151_all_users
+    type: looker_line
+    fields: [
+      local_network_access_rollout_151_all_users.submission_date,
+      local_network_access_rollout_151_all_users.branch,
+      local_network_access_rollout_151_all_users.point
+    ]
+    pivots: [
+      local_network_access_rollout_151_all_users.branch
+    ]
+    filters:
+      local_network_access_rollout_151_all_users.metric: 'retained'
+      local_network_access_rollout_151_all_users.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_151_all_users.submission_date
+    field_y: local_network_access_rollout_151_all_users.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_151_all_users.lower
+    ci_upper: local_network_access_rollout_151_all_users.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_151_all_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_rollout_151_all_users
+    type: looker_line
+    fields: [
+      local_network_access_rollout_151_all_users.submission_date,
+      local_network_access_rollout_151_all_users.branch,
+      local_network_access_rollout_151_all_users.point
+    ]
+    pivots: [
+      local_network_access_rollout_151_all_users.branch
+    ]
+    filters:
+      local_network_access_rollout_151_all_users.metric: 'uri_count'
+      local_network_access_rollout_151_all_users.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_151_all_users.submission_date
+    field_y: local_network_access_rollout_151_all_users.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_151_all_users.lower
+    ci_upper: local_network_access_rollout_151_all_users.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_151_all_users.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -96,7 +235,7 @@
     filters:
       local_network_access_rollout_151_all_users.metric: 'search_count'
       local_network_access_rollout_151_all_users.statistic: mean
-    row: 10
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -129,145 +268,6 @@
     ]
     filters:
       local_network_access_rollout_151_all_users.metric: 'qualified_cumulative_days_of_use'
-      local_network_access_rollout_151_all_users.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_151_all_users.submission_date
-    field_y: local_network_access_rollout_151_all_users.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_151_all_users.lower
-    ci_upper: local_network_access_rollout_151_all_users.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_151_all_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_rollout_151_all_users
-    type: looker_line
-    fields: [
-      local_network_access_rollout_151_all_users.submission_date,
-      local_network_access_rollout_151_all_users.branch,
-      local_network_access_rollout_151_all_users.point
-    ]
-    pivots: [
-      local_network_access_rollout_151_all_users.branch
-    ]
-    filters:
-      local_network_access_rollout_151_all_users.metric: 'active_hours'
-      local_network_access_rollout_151_all_users.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_151_all_users.submission_date
-    field_y: local_network_access_rollout_151_all_users.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_151_all_users.lower
-    ci_upper: local_network_access_rollout_151_all_users.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_151_all_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_rollout_151_all_users
-    type: looker_line
-    fields: [
-      local_network_access_rollout_151_all_users.submission_date,
-      local_network_access_rollout_151_all_users.branch,
-      local_network_access_rollout_151_all_users.point
-    ]
-    pivots: [
-      local_network_access_rollout_151_all_users.branch
-    ]
-    filters:
-      local_network_access_rollout_151_all_users.metric: 'ad_clicks'
-      local_network_access_rollout_151_all_users.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_151_all_users.submission_date
-    field_y: local_network_access_rollout_151_all_users.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_151_all_users.lower
-    ci_upper: local_network_access_rollout_151_all_users.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_151_all_users.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: local_network_access_rollout_151_all_users
-    type: "ci-line-chart"
-    fields: [
-      local_network_access_rollout_151_all_users.submission_date,
-      local_network_access_rollout_151_all_users.branch,
-      local_network_access_rollout_151_all_users.upper,
-      local_network_access_rollout_151_all_users.lower,
-      local_network_access_rollout_151_all_users.point
-    ]
-    pivots: [
-      local_network_access_rollout_151_all_users.branch
-    ]
-    filters:
-      local_network_access_rollout_151_all_users.metric: 'memory_total'
-      local_network_access_rollout_151_all_users.statistic: percentile
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_151_all_users.submission_date
-    field_y: local_network_access_rollout_151_all_users.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_151_all_users.lower
-    ci_upper: local_network_access_rollout_151_all_users.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_151_all_users.submission_date
-      Percentile: local_network_access_rollout_151_all_users.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_rollout_151_all_users
-    type: looker_line
-    fields: [
-      local_network_access_rollout_151_all_users.submission_date,
-      local_network_access_rollout_151_all_users.branch,
-      local_network_access_rollout_151_all_users.point
-    ]
-    pivots: [
-      local_network_access_rollout_151_all_users.branch
-    ]
-    filters:
-      local_network_access_rollout_151_all_users.metric: 'uri_count'
       local_network_access_rollout_151_all_users.statistic: mean
     row: 30
     col: 12
