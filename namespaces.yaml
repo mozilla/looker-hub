@@ -3766,6 +3766,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.newtab_visits
       type: table_view
+    newtab_widgets_daily_aggregates_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.newtab_widgets_daily_aggregates
+      type: table_view
     nimbus_targeting_context_table:
       tables:
       - channel: null
