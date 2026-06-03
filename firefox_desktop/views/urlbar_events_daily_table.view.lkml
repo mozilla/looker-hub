@@ -215,13 +215,6 @@ view: urlbar_events_daily_table {
     description: "URL Bar Impressions"
   }
 
-  dimension: urlbar_sessions {
-    sql: ${TABLE}.urlbar_sessions ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    description: "URL Bar Sessions"
-  }
-
   dimension: window_mode {
     sql: ${TABLE}.window_mode ;;
     type: string
