@@ -907,6 +907,14 @@ view: events_stream {
     group_item_label: "Is Extensions Panel Empty"
   }
 
+  dimension: extras__boolean__is_first_startup {
+    sql: ${TABLE}.extras.boolean.is_first_startup ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is First Startup"
+  }
+
   dimension: extras__boolean__is_frame {
     sql: ${TABLE}.extras.boolean.is_frame ;;
     type: yesno
@@ -1513,6 +1521,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Buttontype"
+  }
+
+  dimension: extras__quantity__candidates {
+    sql: ${TABLE}.extras.quantity.candidates ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Candidates"
   }
 
   dimension: extras__quantity__cc_number_multi_parts {
@@ -2283,6 +2299,14 @@ view: events_stream {
     group_item_label: "Position"
   }
 
+  dimension: extras__quantity__preselected {
+    sql: ${TABLE}.extras.quantity.preselected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Preselected"
+  }
+
   dimension: extras__quantity__previous {
     sql: ${TABLE}.extras.quantity.previous ;;
     type: number
@@ -2329,6 +2353,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Screeny"
+  }
+
+  dimension: extras__quantity__selected {
+    sql: ${TABLE}.extras.quantity.selected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Selected"
   }
 
   dimension: extras__quantity__selected_position {
@@ -2529,6 +2561,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tabs Removed"
+  }
+
+  dimension: extras__quantity__tabs_restored {
+    sql: ${TABLE}.extras.quantity.tabs_restored ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Restored"
   }
 
   dimension: extras__quantity__tabs_selected {
@@ -5475,6 +5515,14 @@ view: events_stream {
     group_item_label: "Prompt Enabled"
   }
 
+  dimension: extras__string__prompt_type {
+    sql: ${TABLE}.extras.string.prompt_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Prompt Type"
+  }
+
   dimension: extras__string__provider {
     sql: ${TABLE}.extras.string.provider ;;
     type: string
@@ -5657,6 +5705,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Resolution"
+  }
+
+  dimension: extras__string__response {
+    sql: ${TABLE}.extras.string.response ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Response"
   }
 
   dimension: extras__string__result {
