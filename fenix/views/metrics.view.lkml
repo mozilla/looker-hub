@@ -16885,6 +16885,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery {
+    label: "Netwerk: Happy Eyeballs H3 Discovery"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_happy_eyeballs_h3_discovery ;;
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs H3 Discovery"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs H3 Discovery"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_happy_eyeballs_h3_discovery"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: how HTTP/3 (h3) reachability was advertised for a connection, crossing whether an Alt-Svc header advertised h3 with whether an HTTPS DNS record advertised h3 in its ALPN set. The \"altsvc_only\" bucket is the case where a site advertises h3 via Alt-Svc but publishes no h3-capable HTTPS record: the first connection cannot use h3 and must spend an extra round trip discovering it, where an HTTPS record would have allowed h3 immediately.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available {
     label: "Netwerk: Happy Eyeballs Https Record Available"
     hidden: yes
@@ -16899,6 +16916,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Happy Eyeballs: whether an HTTPS service record was available during connection establishment.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_happy_eyeballs_https_rr_features {
+    label: "Netwerk: Happy Eyeballs Https Rr Features"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_happy_eyeballs_https_rr_features ;;
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs Https Rr Features"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Https Rr Features"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_happy_eyeballs_https_rr_features"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: which connection-bootstrapping features the HTTPS DNS records carried, combined across all HTTPS records received for a connection (the union of features over every record, not per record). The \"total\" label is incremented once per connection that saw at least one non-empty HTTPS record and serves as the denominator; each feature label is incremented once per connection whose combined records carried that feature. \"ech\" and the address hints can only be delivered ahead of the first connection via the DNS record, not via an Alt-Svc header.
 "
   }
 
@@ -49956,6 +49990,47 @@ view: metrics__metrics__labeled_counter__netwerk_eh_response_version {
   }
 }
 
+view: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery {
+  label: "Netwerk: Happy Eyeballs H3 Discovery"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available {
   label: "Netwerk: Happy Eyeballs Https Record Available"
 
@@ -49994,6 +50069,47 @@ view: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_ava
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_rr_features {
+  label: "Netwerk: Happy Eyeballs Https Rr Features"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 

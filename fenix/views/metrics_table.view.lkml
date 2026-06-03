@@ -13776,7 +13776,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -13974,10 +13974,24 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_happy_eyeballs_h3_discovery ;;
+    hidden: yes
+    description: "Happy Eyeballs: how HTTP/3 (h3) reachability was advertised for a connection, crossing whether an Alt-Svc header advertised h3 with whether an HTTPS DNS record advertised h3 in its ALPN set. The \"altsvc_only\" bucket is the case where a site advertises h3 via Alt-Svc but publishes no h3-capable HTTPS record: the first connection cannot use h3 and must spend an extra round trip discovering it, where an HTTPS record would have allowed h3 immediately.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available {
     sql: ${TABLE}.metrics.labeled_counter.netwerk_happy_eyeballs_https_record_available ;;
     hidden: yes
     description: "Happy Eyeballs: whether an HTTPS service record was available during connection establishment.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_happy_eyeballs_https_rr_features {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_happy_eyeballs_https_rr_features ;;
+    hidden: yes
+    description: "Happy Eyeballs: which connection-bootstrapping features the HTTPS DNS records carried, combined across all HTTPS records received for a connection (the union of features over every record, not per record). The \"total\" label is incremented once per connection that saw at least one non-empty HTTPS record and serves as the denominator; each feature label is incremented once per connection whose combined records carried that feature. \"ech\" and the address hints can only be delivered ahead of the first connection via the DNS record, not via an Alt-Svc header.
 "
   }
 
