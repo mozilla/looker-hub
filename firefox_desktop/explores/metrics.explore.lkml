@@ -1618,9 +1618,19 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_response_version}) AS metrics__metrics__labeled_counter__netwerk_eh_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_response_version.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery}) AS metrics__metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available}) AS metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_record_available.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_rr_features {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_happy_eyeballs_https_rr_features}) AS metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_rr_features ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_happy_eyeballs_https_rr_features.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__netwerk_http3_0rtt_state {
