@@ -784,6 +784,14 @@ view: events_stream_table {
     group_item_label: "Is Lang Attribute Valid"
   }
 
+  dimension: extras__boolean__is_local_tab {
+    sql: ${TABLE}.extras.boolean.is_local_tab ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Local Tab"
+  }
+
   dimension: extras__boolean__is_new_email_mask {
     sql: ${TABLE}.extras.boolean.is_new_email_mask ;;
     type: yesno
@@ -854,6 +862,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Is Valid Section"
+  }
+
+  dimension: extras__boolean__is_window_closed {
+    sql: ${TABLE}.extras.boolean.is_window_closed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Window Closed"
   }
 
   dimension: extras__boolean__issued_by_cca {
@@ -2448,6 +2464,14 @@ view: events_stream_table {
     group_item_label: "Deletedby"
   }
 
+  dimension: extras__string__descriptor_type {
+    sql: ${TABLE}.extras.string.descriptor_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Descriptor Type"
+  }
+
   dimension: extras__string__destroyed {
     sql: ${TABLE}.extras.string.destroyed ;;
     type: string
@@ -3078,6 +3102,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Host"
+  }
+
+  dimension: extras__string__host_type {
+    sql: ${TABLE}.extras.string.host_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Host Type"
   }
 
   dimension: extras__string__hours_since {
