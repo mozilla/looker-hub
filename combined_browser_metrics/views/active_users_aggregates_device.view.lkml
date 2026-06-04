@@ -9,18 +9,21 @@ view: active_users_aggregates_device {
     sql: ${TABLE}.active_hours ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total active browsing hours accumulated by clients in this segment on the submission date."
   }
 
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total count of ad clicks recorded across all clients in this segment on the submission date."
   }
 
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The name of the browser or application (e.g., 'Firefox Desktop', 'Fenix', 'Firefox iOS')."
   }
 
   dimension: app_version {
@@ -34,18 +37,21 @@ view: active_users_aggregates_device {
     sql: ${TABLE}.attributed ;;
     type: yesno
     suggest_persist_for: "24 hours"
+    description: "Indicates whether the clients in this row have a known install attribution. True if attribution data is present, false otherwise."
   }
 
   dimension: attribution_medium {
     sql: ${TABLE}.attribution_medium ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The attribution medium from the install attribution, indicating the category of channel that drove the installation (e.g., 'organic', 'referral', 'cpc')."
   }
 
   dimension: attribution_source {
     sql: ${TABLE}.attribution_source ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The attribution source from the install attribution, indicating the referring partner domain or website that drove the installation."
   }
 
   dimension: channel {
@@ -74,12 +80,14 @@ view: active_users_aggregates_device {
     sql: ${TABLE}.device_model ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The hardware model identifier of the client's device (e.g., 'iPhone14,5', 'Redmi 7A'). Populated for mobile clients; null for desktop."
   }
 
   dimension: first_seen_year {
     sql: ${TABLE}.first_seen_year ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "The calendar year in which the client's profile was first seen by Mozilla's telemetry pipeline."
   }
 
   dimension: is_default_browser {
@@ -100,12 +108,14 @@ view: active_users_aggregates_device {
     sql: ${TABLE}.new_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Count of newly created profiles first seen on the submission date."
   }
 
   dimension: organic_search_count {
     sql: ${TABLE}.organic_search_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total count of organic (non-paid) search queries made by clients in this segment on the submission date."
   }
 
   dimension: os {
@@ -125,6 +135,7 @@ view: active_users_aggregates_device {
     sql: ${TABLE}.os_version ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "The operating system version string on the client's device (e.g., '10.0' for Windows, '16' for Android)."
   }
 
   dimension: os_version_major {
@@ -152,18 +163,21 @@ view: active_users_aggregates_device {
     sql: ${TABLE}.search_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total count of search queries made by clients in this segment on the submission date."
   }
 
   dimension: search_with_ads {
     sql: ${TABLE}.search_with_ads ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total count of searches that returned pages containing ads, for clients in this segment on the submission date."
   }
 
   dimension: uri_count {
     sql: ${TABLE}.uri_count ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Total count of URIs visited by clients in this segment on the submission date."
   }
 
   dimension: wau {
