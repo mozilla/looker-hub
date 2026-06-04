@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: settings_microsurvey_2026_r1_rollout_v2
-    type: "ci-line-chart"
-    fields: [
-      settings_microsurvey_2026_r1_rollout_v2.submission_date,
-      settings_microsurvey_2026_r1_rollout_v2.branch,
-      settings_microsurvey_2026_r1_rollout_v2.upper,
-      settings_microsurvey_2026_r1_rollout_v2.lower,
-      settings_microsurvey_2026_r1_rollout_v2.point
-    ]
-    pivots: [
-      settings_microsurvey_2026_r1_rollout_v2.branch
-    ]
-    filters:
-      settings_microsurvey_2026_r1_rollout_v2.metric: 'memory_total'
-      settings_microsurvey_2026_r1_rollout_v2.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: settings_microsurvey_2026_r1_rollout_v2.submission_date
-    field_y: settings_microsurvey_2026_r1_rollout_v2.point
-    log_scale: false
-    ci_lower: settings_microsurvey_2026_r1_rollout_v2.lower
-    ci_upper: settings_microsurvey_2026_r1_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: settings_microsurvey_2026_r1_rollout_v2.submission_date
-      Percentile: settings_microsurvey_2026_r1_rollout_v2.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,7 +26,41 @@
       settings_microsurvey_2026_r1_rollout_v2.branch
     ]
     filters:
-      settings_microsurvey_2026_r1_rollout_v2.metric: 'ad_clicks'
+      settings_microsurvey_2026_r1_rollout_v2.metric: 'retained'
+      settings_microsurvey_2026_r1_rollout_v2.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: settings_microsurvey_2026_r1_rollout_v2.submission_date
+    field_y: settings_microsurvey_2026_r1_rollout_v2.point
+    log_scale: false
+    ci_lower: settings_microsurvey_2026_r1_rollout_v2.lower
+    ci_upper: settings_microsurvey_2026_r1_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: settings_microsurvey_2026_r1_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: settings_microsurvey_2026_r1_rollout_v2
+    type: looker_line
+    fields: [
+      settings_microsurvey_2026_r1_rollout_v2.submission_date,
+      settings_microsurvey_2026_r1_rollout_v2.branch,
+      settings_microsurvey_2026_r1_rollout_v2.point
+    ]
+    pivots: [
+      settings_microsurvey_2026_r1_rollout_v2.branch
+    ]
+    filters:
+      settings_microsurvey_2026_r1_rollout_v2.metric: 'qualified_cumulative_days_of_use'
       settings_microsurvey_2026_r1_rollout_v2.statistic: mean
     row: 0
     col: 12
@@ -115,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: settings_microsurvey_2026_r1_rollout_v2
-    type: looker_line
-    fields: [
-      settings_microsurvey_2026_r1_rollout_v2.submission_date,
-      settings_microsurvey_2026_r1_rollout_v2.branch,
-      settings_microsurvey_2026_r1_rollout_v2.point
-    ]
-    pivots: [
-      settings_microsurvey_2026_r1_rollout_v2.branch
-    ]
-    filters:
-      settings_microsurvey_2026_r1_rollout_v2.metric: 'qualified_cumulative_days_of_use'
-      settings_microsurvey_2026_r1_rollout_v2.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: settings_microsurvey_2026_r1_rollout_v2.submission_date
-    field_y: settings_microsurvey_2026_r1_rollout_v2.point
-    log_scale: false
-    ci_lower: settings_microsurvey_2026_r1_rollout_v2.lower
-    ci_upper: settings_microsurvey_2026_r1_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: settings_microsurvey_2026_r1_rollout_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -167,7 +130,112 @@
     filters:
       settings_microsurvey_2026_r1_rollout_v2.metric: 'days_of_use'
       settings_microsurvey_2026_r1_rollout_v2.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: settings_microsurvey_2026_r1_rollout_v2.submission_date
+    field_y: settings_microsurvey_2026_r1_rollout_v2.point
+    log_scale: false
+    ci_lower: settings_microsurvey_2026_r1_rollout_v2.lower
+    ci_upper: settings_microsurvey_2026_r1_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: settings_microsurvey_2026_r1_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: settings_microsurvey_2026_r1_rollout_v2
+    type: "ci-line-chart"
+    fields: [
+      settings_microsurvey_2026_r1_rollout_v2.submission_date,
+      settings_microsurvey_2026_r1_rollout_v2.branch,
+      settings_microsurvey_2026_r1_rollout_v2.upper,
+      settings_microsurvey_2026_r1_rollout_v2.lower,
+      settings_microsurvey_2026_r1_rollout_v2.point
+    ]
+    pivots: [
+      settings_microsurvey_2026_r1_rollout_v2.branch
+    ]
+    filters:
+      settings_microsurvey_2026_r1_rollout_v2.metric: 'memory_total'
+      settings_microsurvey_2026_r1_rollout_v2.statistic: percentile
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: settings_microsurvey_2026_r1_rollout_v2.submission_date
+    field_y: settings_microsurvey_2026_r1_rollout_v2.point
+    log_scale: false
+    ci_lower: settings_microsurvey_2026_r1_rollout_v2.lower
+    ci_upper: settings_microsurvey_2026_r1_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: settings_microsurvey_2026_r1_rollout_v2.submission_date
+      Percentile: settings_microsurvey_2026_r1_rollout_v2.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: settings_microsurvey_2026_r1_rollout_v2
+    type: looker_line
+    fields: [
+      settings_microsurvey_2026_r1_rollout_v2.submission_date,
+      settings_microsurvey_2026_r1_rollout_v2.branch,
+      settings_microsurvey_2026_r1_rollout_v2.point
+    ]
+    pivots: [
+      settings_microsurvey_2026_r1_rollout_v2.branch
+    ]
+    filters:
+      settings_microsurvey_2026_r1_rollout_v2.metric: 'ad_clicks'
+      settings_microsurvey_2026_r1_rollout_v2.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: settings_microsurvey_2026_r1_rollout_v2.submission_date
+    field_y: settings_microsurvey_2026_r1_rollout_v2.point
+    log_scale: false
+    ci_lower: settings_microsurvey_2026_r1_rollout_v2.lower
+    ci_upper: settings_microsurvey_2026_r1_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: settings_microsurvey_2026_r1_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: settings_microsurvey_2026_r1_rollout_v2
+    type: looker_line
+    fields: [
+      settings_microsurvey_2026_r1_rollout_v2.submission_date,
+      settings_microsurvey_2026_r1_rollout_v2.branch,
+      settings_microsurvey_2026_r1_rollout_v2.point
+    ]
+    pivots: [
+      settings_microsurvey_2026_r1_rollout_v2.branch
+    ]
+    filters:
+      settings_microsurvey_2026_r1_rollout_v2.metric: 'search_count'
+      settings_microsurvey_2026_r1_rollout_v2.statistic: mean
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -200,74 +268,6 @@
     ]
     filters:
       settings_microsurvey_2026_r1_rollout_v2.metric: 'active_hours'
-      settings_microsurvey_2026_r1_rollout_v2.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: settings_microsurvey_2026_r1_rollout_v2.submission_date
-    field_y: settings_microsurvey_2026_r1_rollout_v2.point
-    log_scale: false
-    ci_lower: settings_microsurvey_2026_r1_rollout_v2.lower
-    ci_upper: settings_microsurvey_2026_r1_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: settings_microsurvey_2026_r1_rollout_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: settings_microsurvey_2026_r1_rollout_v2
-    type: looker_line
-    fields: [
-      settings_microsurvey_2026_r1_rollout_v2.submission_date,
-      settings_microsurvey_2026_r1_rollout_v2.branch,
-      settings_microsurvey_2026_r1_rollout_v2.point
-    ]
-    pivots: [
-      settings_microsurvey_2026_r1_rollout_v2.branch
-    ]
-    filters:
-      settings_microsurvey_2026_r1_rollout_v2.metric: 'retained'
-      settings_microsurvey_2026_r1_rollout_v2.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: settings_microsurvey_2026_r1_rollout_v2.submission_date
-    field_y: settings_microsurvey_2026_r1_rollout_v2.point
-    log_scale: false
-    ci_lower: settings_microsurvey_2026_r1_rollout_v2.lower
-    ci_upper: settings_microsurvey_2026_r1_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: settings_microsurvey_2026_r1_rollout_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: settings_microsurvey_2026_r1_rollout_v2
-    type: looker_line
-    fields: [
-      settings_microsurvey_2026_r1_rollout_v2.submission_date,
-      settings_microsurvey_2026_r1_rollout_v2.branch,
-      settings_microsurvey_2026_r1_rollout_v2.point
-    ]
-    pivots: [
-      settings_microsurvey_2026_r1_rollout_v2.branch
-    ]
-    filters:
-      settings_microsurvey_2026_r1_rollout_v2.metric: 'search_count'
       settings_microsurvey_2026_r1_rollout_v2.statistic: mean
     row: 30
     col: 12
