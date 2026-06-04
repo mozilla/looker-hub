@@ -49,9 +49,22 @@ view: urlbar_events_daily_engagement_by_product_result_type_table {
     description: "A UUID uniquely identifying the profile group, not shared with other telemetry data."
   }
 
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "A number, 0-99, that samples by client_id and allows filtering data for analysis. It is a pipeline-generated artifact that should match between pings."
+  }
+
   dimension: sponsored_suggestions_enabled {
     sql: ${TABLE}.sponsored_suggestions_enabled ;;
     type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: urlbar_abandonments {
+    sql: ${TABLE}.urlbar_abandonments ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 
@@ -61,8 +74,20 @@ view: urlbar_events_daily_engagement_by_product_result_type_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: urlbar_bounces {
+    sql: ${TABLE}.urlbar_bounces ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: urlbar_clicks {
     sql: ${TABLE}.urlbar_clicks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: urlbar_disables {
+    sql: ${TABLE}.urlbar_disables ;;
     type: number
     suggest_persist_for: "24 hours"
   }
