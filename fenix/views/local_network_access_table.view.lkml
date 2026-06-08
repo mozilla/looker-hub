@@ -127,7 +127,7 @@ view: local_network_access_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
-    description: "X-Foxsec-IP-Reputation header"
+    description: "X-Foxsec-IP-Reputation header (deprecated, https://mozilla-hub.atlassian.net/browse/DENG-10434)"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -263,6 +263,11 @@ for the purpose of experimentation enrollment.
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: normalized_app_id {
@@ -392,6 +397,51 @@ view: local_network_access_table__events {
     sql: ${TABLE}.name ;;
     type: string
     suggest_persist_for: "24 hours"
+  }
+
+  dimension: session__event_seq {
+    sql: ${TABLE}.session.event_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
+  }
+
+  dimension: session__session_id {
+    sql: ${TABLE}.session.session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session ID"
+    description: "The unique UUID for this session."
+  }
+
+  dimension: session__session_sample_rate {
+    sql: ${TABLE}.session.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
+  }
+
+  dimension: session__session_seq {
+    sql: ${TABLE}.session.session_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
+  }
+
+  dimension: session__session_start_time {
+    sql: ${TABLE}.session.session_start_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {

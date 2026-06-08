@@ -700,6 +700,51 @@ view: quick_suggest_deletion_request_table__events {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: session__event_seq {
+    sql: ${TABLE}.session.event_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
+  }
+
+  dimension: session__session_id {
+    sql: ${TABLE}.session.session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session ID"
+    description: "The unique UUID for this session."
+  }
+
+  dimension: session__session_sample_rate {
+    sql: ${TABLE}.session.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
+  }
+
+  dimension: session__session_seq {
+    sql: ${TABLE}.session.session_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
+  }
+
+  dimension: session__session_start_time {
+    sql: ${TABLE}.session.session_start_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
+  }
+
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number

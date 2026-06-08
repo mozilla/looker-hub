@@ -161,6 +161,12 @@ view: issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_configuration_custom_rule_id {
+    sql: ${TABLE}.metric_configuration_custom_rule_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_configuration_dataset_id {
     sql: ${TABLE}.metric_configuration_dataset_id ;;
     type: number
@@ -284,6 +290,12 @@ view: issues {
   dimension: metric_configuration_metric_schedule_schedule_frequency_interval_value {
     sql: ${TABLE}.metric_configuration_metric_schedule_schedule_frequency_interval_value ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: metric_configuration_metric_type_custom_rule_type {
+    sql: ${TABLE}.metric_configuration_metric_type_custom_rule_type ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
