@@ -7297,6 +7297,57 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_quantity__search_counts_hidden_engines {
+    label: "Search Counts: Hidden Engines"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.search_counts_hidden_engines ;;
+    type: string
+    group_label: "Search Counts"
+    group_item_label: "Hidden Engines"
+
+    link: {
+      label: "Glean Dictionary reference for Search Counts: Hidden Engines"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_counts_hidden_engines"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the count of hidden search engines.
+- `oneOff` refers to an engine hidden from only the one-off buttons or
+  the unified search button.
+- `disabled` refers to an engine that has been disabled from the whole
+  application, e.g. removed from the old settings (prior to FF 152) or
+  disabled in the new settings (FF 152 & later).
+"
+  }
+
+  dimension: metrics__labeled_quantity__search_counts_totals {
+    label: "Search Counts: Totals"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_quantity.search_counts_totals ;;
+    type: string
+    group_label: "Search Counts"
+    group_item_label: "Totals"
+
+    link: {
+      label: "Glean Dictionary reference for Search Counts: Totals"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_counts_totals"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the type and number of search engines that a user has installed and enabled.
+The total of all labels is the total count of search engines installed.
+- `appProvidedConfig` refers to the search engine integrations provided by
+  the application.
+- `userInstalledConfig` refers to engines from the application's
+  configuration that the user has chosen to install.
+- `openSearch` refers to an engine installed via a web page providing an
+  \"OpenSearch\" definition.
+- `addon` refers to an engine linked to a particular add-on. - `policy` refers to an engine added by an enterprise policy. - `user` refers to an engine a user has added, e.g. via the settings
+  UI to add an engine, or via right-clicking on a search field on a web
+  page.
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default: Display Name"
     hidden: no
@@ -12697,7 +12748,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether bfcache is used when loading a page from session history
+    description: "Whether bfcache is used when loading a page from session history. This metric was disabled between bugs 1892551 and 2037998, so the data may have discontinuities over that period.
 This metric was generated to correspond to the Legacy Telemetry boolean histogram BFCACHE_PAGE_RESTORED.
 "
   }
@@ -16738,7 +16789,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__timing_distribution__dns_by_type_succeeded_lookup_time__sum {
     label: "DNS: By Type Succeeded Lookup Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.dns_by_type_succeeded_lookup_time.sum ;;
     type: number
     group_label: "DNS"
@@ -74228,6 +74279,51 @@ view: metrics__events {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: session__event_seq {
+    sql: ${TABLE}.session.event_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
+  }
+
+  dimension: session__session_id {
+    sql: ${TABLE}.session.session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session ID"
+    description: "The unique UUID for this session."
+  }
+
+  dimension: session__session_sample_rate {
+    sql: ${TABLE}.session.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
+  }
+
+  dimension: session__session_seq {
+    sql: ${TABLE}.session.session_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
+  }
+
+  dimension: session__session_start_time {
+    sql: ${TABLE}.session.session_start_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
+  }
+
   dimension: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: number
@@ -83948,6 +84044,34 @@ view: metrics__metrics__labeled_quantity__pinned_tabs_count {
   }
 }
 
+view: metrics__metrics__labeled_quantity__search_counts_hidden_engines {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_quantity__search_counts_totals {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_quantity__session_restore_startup_timeline {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -85171,6 +85295,95 @@ view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_
 }
 
 view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_delay__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_https_rr_lookup_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__dns_https_rr_lookup_time__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

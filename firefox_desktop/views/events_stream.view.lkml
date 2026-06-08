@@ -1515,14 +1515,6 @@ view: events_stream {
     group_item_label: "Average Words Per Second"
   }
 
-  dimension: extras__quantity__bounce_time {
-    sql: ${TABLE}.extras.quantity.bounce_time ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Bounce Time"
-  }
-
   dimension: extras__quantity__buffering_time {
     sql: ${TABLE}.extras.quantity.buffering_time ;;
     type: number
@@ -6081,14 +6073,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Site Category"
-  }
-
-  dimension: extras__string__site_host {
-    sql: ${TABLE}.extras.string.site_host ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Site Host"
   }
 
   dimension: extras__string__skip_reason {
