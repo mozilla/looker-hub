@@ -955,6 +955,14 @@ view: events_stream {
     group_item_label: "Restricted"
   }
 
+  dimension: extras__boolean__sampled_in {
+    sql: ${TABLE}.extras.boolean.sampled_in ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Sampled In"
+  }
+
   dimension: extras__boolean__saved {
     sql: ${TABLE}.extras.boolean.saved ;;
     type: yesno
@@ -1673,6 +1681,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Seq"
+  }
+
+  dimension: extras__quantity__session_seq {
+    sql: ${TABLE}.extras.quantity.session_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Session Seq"
   }
 
   dimension: extras__quantity__size {
@@ -4377,6 +4393,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Session ID"
+  }
+
+  dimension: extras__string__session_start_time {
+    sql: ${TABLE}.extras.string.session_start_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Session Start Time"
   }
 
   dimension: extras__string__setting {

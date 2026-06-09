@@ -172,6 +172,15 @@ view: clients_daily_joined_table {
     description: "The attribution medium from the install (e.g., 'organic', 'referral', 'cpc')."
   }
 
+  dimension: attribution__msstoresignedin {
+    sql: ${TABLE}.attribution.msstoresignedin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Msstoresignedin"
+    description: "Whether the user was signed in to the Microsoft Store at install time, when Firefox was installed via the Microsoft Store"
+  }
+
   dimension: attribution__source {
     sql: ${TABLE}.attribution.source ;;
     type: string
