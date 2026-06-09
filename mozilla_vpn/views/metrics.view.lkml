@@ -261,6 +261,29 @@ In Version 0 this reported the total number of tasks enqueued.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__counter__glean_sessions_seen {
+    label: "Glean: Sessions Seen"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_sessions_seen ;;
+    type: number
+    group_label: "Glean"
+    group_item_label: "Sessions Seen"
+
+    link: {
+      label: "Glean Dictionary reference for Glean: Sessions Seen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_sessions_seen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of sessions started since the last metrics ping.
+Incremented for every session start, regardless of sampling.
+This metric is a counter and is out-of-session by default, so it
+is never suppressed by any session sampling which means it can be
+used to validate sampling rates against the events-ping session_start
+count.
+"
+  }
+
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time: Invalid Timezone Offset"
     hidden: yes
@@ -1247,6 +1270,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Glean Error Preinit Tasks Overflow"
       url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_preinit_tasks_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_sessions_seen {
+    type: sum
+    sql: ${metrics__counter__glean_sessions_seen} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Sessions Seen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_sessions_seen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_sessions_seen_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_sessions_seen: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Sessions Seen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_sessions_seen"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
