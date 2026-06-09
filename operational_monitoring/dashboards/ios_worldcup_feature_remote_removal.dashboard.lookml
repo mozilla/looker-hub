@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_worldcup_feature_remote_removal
+    type: looker_line
+    fields: [
+      ios_worldcup_feature_remote_removal.submission_date,
+      ios_worldcup_feature_remote_removal.branch,
+      ios_worldcup_feature_remote_removal.point
+    ]
+    pivots: [
+      ios_worldcup_feature_remote_removal.branch
+    ]
+    filters:
+      ios_worldcup_feature_remote_removal.metric: 'days_of_use'
+      ios_worldcup_feature_remote_removal.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_worldcup_feature_remote_removal.submission_date
+    field_y: ios_worldcup_feature_remote_removal.point
+    log_scale: false
+    ci_lower: ios_worldcup_feature_remote_removal.lower
+    ci_upper: ios_worldcup_feature_remote_removal.upper
+    show_grid: true
+    listen:
+      Date: ios_worldcup_feature_remote_removal.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -62,8 +96,8 @@
     filters:
       ios_worldcup_feature_remote_removal.metric: 'search_count'
       ios_worldcup_feature_remote_removal.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: ios_worldcup_feature_remote_removal.submission_date
@@ -95,40 +129,6 @@
     ]
     filters:
       ios_worldcup_feature_remote_removal.metric: 'retained'
-      ios_worldcup_feature_remote_removal.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_worldcup_feature_remote_removal.submission_date
-    field_y: ios_worldcup_feature_remote_removal.point
-    log_scale: false
-    ci_lower: ios_worldcup_feature_remote_removal.lower
-    ci_upper: ios_worldcup_feature_remote_removal.upper
-    show_grid: true
-    listen:
-      Date: ios_worldcup_feature_remote_removal.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_worldcup_feature_remote_removal
-    type: looker_line
-    fields: [
-      ios_worldcup_feature_remote_removal.submission_date,
-      ios_worldcup_feature_remote_removal.branch,
-      ios_worldcup_feature_remote_removal.point
-    ]
-    pivots: [
-      ios_worldcup_feature_remote_removal.branch
-    ]
-    filters:
-      ios_worldcup_feature_remote_removal.metric: 'days_of_use'
       ios_worldcup_feature_remote_removal.statistic: mean
     row: 10
     col: 12
