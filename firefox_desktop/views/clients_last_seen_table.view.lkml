@@ -152,6 +152,14 @@ view: clients_last_seen_table {
     group_item_label: "Medium"
   }
 
+  dimension: attribution__msstoresignedin {
+    sql: ${TABLE}.attribution.msstoresignedin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Msstoresignedin"
+  }
+
   dimension: attribution__source {
     sql: ${TABLE}.attribution.source ;;
     type: string
