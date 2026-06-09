@@ -2701,6 +2701,21 @@ In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
+  dimension: metrics__counter__glean_sessions_seen {
+    sql: ${TABLE}.metrics.counter.glean_sessions_seen ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Sessions Seen"
+    description: "The total number of sessions started since the last metrics ping.
+Incremented for every session start, regardless of sampling.
+This metric is a counter and is out-of-session by default, so it
+is never suppressed by any session sampling which means it can be
+used to validate sampling rates against the events-ping session_start
+count.
+"
+  }
+
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
@@ -13776,7 +13791,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
