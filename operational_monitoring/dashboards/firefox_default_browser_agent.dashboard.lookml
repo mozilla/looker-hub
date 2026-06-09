@@ -365,9 +365,9 @@
       display: inline
       options:
       - 'release'
-      - 'esr'
-      - 'nightly'
       - 'beta'
+      - 'nightly'
+      - 'esr'
       - 'aurora'
       - 'default'
       - 'nightly-pine'
