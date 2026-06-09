@@ -67,6 +67,15 @@ view: client_ltv_table {
     group_item_label: "Medium"
   }
 
+  dimension: attribution__msstoresignedin {
+    sql: ${TABLE}.attribution.msstoresignedin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Attribution"
+    group_item_label: "Msstoresignedin"
+    description: "Whether the user was signed in to the Microsoft Store at install time, when Firefox was installed via the Microsoft Store"
+  }
+
   dimension: attribution__source {
     sql: ${TABLE}.attribution.source ;;
     type: string
