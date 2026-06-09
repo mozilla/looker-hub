@@ -24,11 +24,11 @@ datagroup: glean_active_users_aggregates_last_updated {
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'focus_android_derived' AND table_name = 'active_users_aggregates_v3')
+    WHERE (table_schema = 'focus_android_derived' AND table_name = 'active_users_aggregates_v4')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'focus_android_derived' AND table_name = 'active_users_aggregates_v3')
+    WHERE (table_schema = 'focus_android_derived' AND table_name = 'active_users_aggregates_v4')
  UNION ALL 
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
