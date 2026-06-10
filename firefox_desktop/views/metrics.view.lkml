@@ -74297,6 +74297,7 @@ view: metrics__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
   }
 
   dimension: session__session_id {
@@ -74305,6 +74306,7 @@ view: metrics__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session ID"
+    description: "The unique UUID for this session."
   }
 
   dimension: session__session_sample_rate {
@@ -74313,6 +74315,7 @@ view: metrics__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
   }
 
   dimension: session__session_seq {
@@ -74321,6 +74324,7 @@ view: metrics__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
   }
 
   dimension: session__session_start_time {
@@ -74329,6 +74333,7 @@ view: metrics__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {
@@ -80870,6 +80875,7 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_bookmarks
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80913,6 +80919,7 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_cards_qua
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80956,6 +80963,7 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_errors {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -80999,6 +81007,7 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_extension
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81042,6 +81051,7 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_history_q
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81085,6 +81095,7 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_logins_qu
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81128,6 +81139,7 @@ view: metrics__metrics__labeled_custom_distribution__browser_migration_usage {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81171,6 +81183,7 @@ view: metrics__metrics__labeled_custom_distribution__contentblocking_canvas_fing
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81214,6 +81227,7 @@ view: metrics__metrics__labeled_custom_distribution__contentblocking_email_track
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81257,6 +81271,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_attempt_count {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81300,6 +81315,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81343,6 +81359,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81386,6 +81403,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81429,6 +81447,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_relevant_skip_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81472,6 +81491,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81515,6 +81535,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_native_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81558,6 +81579,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_f
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81601,6 +81623,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_retry_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81644,6 +81667,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_strict_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81687,6 +81711,7 @@ view: metrics__metrics__labeled_custom_distribution__dns_trr_skip_reason_trr_fir
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81730,6 +81755,7 @@ view: metrics__metrics__labeled_custom_distribution__downloads_user_action_on_bl
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81773,6 +81799,7 @@ view: metrics__metrics__labeled_custom_distribution__firefoxview_cumulative_sear
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81816,6 +81843,7 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_large_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81859,6 +81887,7 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_large_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81902,6 +81931,7 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_small_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81945,6 +81975,7 @@ view: metrics__metrics__labeled_custom_distribution__gfx_content_small_paint_pha
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -81988,6 +82019,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_connection_close_code
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82031,6 +82063,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_counts_pto {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82074,6 +82107,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_ech_outcome {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82117,6 +82151,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_late_ack {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82160,6 +82195,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_late_ack_ratio {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82203,6 +82239,7 @@ view: metrics__metrics__labeled_custom_distribution__http3_received_sent_dgrams 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82246,6 +82283,7 @@ view: metrics__metrics__labeled_custom_distribution__http_channel_page_onstart_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82289,6 +82327,7 @@ view: metrics__metrics__labeled_custom_distribution__http_channel_sub_onstart_su
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82332,6 +82371,7 @@ view: metrics__metrics__labeled_custom_distribution__http_connection_close_reaso
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82375,6 +82415,7 @@ view: metrics__metrics__labeled_custom_distribution__http_upload_bandwidth_mbps 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82418,6 +82459,7 @@ view: metrics__metrics__labeled_custom_distribution__media_audible_play_time_per
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82461,6 +82503,7 @@ view: metrics__metrics__labeled_custom_distribution__media_muted_play_time_perce
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82504,6 +82547,7 @@ view: metrics__metrics__labeled_custom_distribution__media_video_hidden_play_tim
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82547,6 +82591,7 @@ view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82590,6 +82635,7 @@ view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_conn
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82633,6 +82679,7 @@ view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_conn
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82676,6 +82723,7 @@ view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_dns_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82719,6 +82767,7 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82762,6 +82811,7 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_entry_count_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82805,6 +82855,7 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_hit_rate_per_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82848,6 +82899,7 @@ view: metrics__metrics__labeled_custom_distribution__network_cache_size_share {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82891,6 +82943,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_ecn_ce_ec
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82934,6 +82987,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_hystart_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -82977,6 +83031,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_hystart_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83020,6 +83075,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_search_ma
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83063,6 +83119,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_search_re
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83106,6 +83163,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_search_ze
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83149,6 +83207,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_slow_star
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83192,6 +83251,7 @@ view: metrics__metrics__labeled_custom_distribution__networking_http_3_slow_star
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83235,6 +83295,7 @@ view: metrics__metrics__labeled_custom_distribution__popup_notification_stats {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83278,6 +83339,7 @@ view: metrics__metrics__labeled_custom_distribution__quotamanager_initialize_rep
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83321,6 +83383,7 @@ view: metrics__metrics__labeled_custom_distribution__sandbox_failed_launch_keyed
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83364,6 +83427,7 @@ view: metrics__metrics__labeled_custom_distribution__service_worker_running {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83407,6 +83471,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_complete_remo
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83450,6 +83515,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_error 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83493,6 +83559,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83536,6 +83603,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_remote
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83579,6 +83647,7 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeou
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83622,6 +83691,7 @@ view: metrics__metrics__labeled_memory_distribution__javascript_gc_nursery_bytes
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83665,6 +83735,7 @@ view: metrics__metrics__labeled_memory_distribution__memory_js_gc_heap {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83708,6 +83779,7 @@ view: metrics__metrics__labeled_memory_distribution__memory_resident_fast {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83751,6 +83823,7 @@ view: metrics__metrics__labeled_memory_distribution__memory_resident_peak {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83794,6 +83867,7 @@ view: metrics__metrics__labeled_memory_distribution__memory_unique {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83837,6 +83911,7 @@ view: metrics__metrics__labeled_memory_distribution__network_cache_size {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83880,6 +83955,7 @@ view: metrics__metrics__labeled_memory_distribution__network_page_load_size {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83923,6 +83999,7 @@ view: metrics__metrics__labeled_memory_distribution__networking_trr_request_size
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -83966,6 +84043,7 @@ view: metrics__metrics__labeled_memory_distribution__networking_trr_response_siz
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -84283,6 +84361,7 @@ view: metrics__metrics__labeled_timing_distribution__content_analysis_response_d
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84371,6 +84450,7 @@ view: metrics__metrics__labeled_timing_distribution__cycle_collector_async_snow_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84459,6 +84539,7 @@ view: metrics__metrics__labeled_timing_distribution__cycle_collector_deferred_fi
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84547,6 +84628,7 @@ view: metrics__metrics__labeled_timing_distribution__cycle_collector_forget_skip
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84635,6 +84717,7 @@ view: metrics__metrics__labeled_timing_distribution__cycle_collector_full {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84723,6 +84806,7 @@ view: metrics__metrics__labeled_timing_distribution__cycle_collector_max_pause {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84811,6 +84895,7 @@ view: metrics__metrics__labeled_timing_distribution__cycle_collector_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84899,6 +84984,7 @@ view: metrics__metrics__labeled_timing_distribution__cycle_collector_time_betwee
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -84987,6 +85073,7 @@ view: metrics__metrics__labeled_timing_distribution__cycle_collector_worker_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85075,6 +85162,7 @@ view: metrics__metrics__labeled_timing_distribution__devtools_cold_toolbox_open_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85163,6 +85251,7 @@ view: metrics__metrics__labeled_timing_distribution__devtools_toolbox_page_reloa
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85251,6 +85340,7 @@ view: metrics__metrics__labeled_timing_distribution__devtools_warm_toolbox_open_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85339,6 +85429,7 @@ view: metrics__metrics__labeled_timing_distribution__dns_https_rr_lookup_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85427,6 +85518,7 @@ view: metrics__metrics__labeled_timing_distribution__dns_trr_http3_0rtt_state_du
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85515,6 +85607,7 @@ view: metrics__metrics__labeled_timing_distribution__dns_trr_lookup_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85603,6 +85696,7 @@ view: metrics__metrics__labeled_timing_distribution__dom_gc_in_progress {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85691,6 +85785,7 @@ view: metrics__metrics__labeled_timing_distribution__dom_quota_info_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85779,6 +85874,7 @@ view: metrics__metrics__labeled_timing_distribution__dom_quota_shutdown_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85867,6 +85963,7 @@ view: metrics__metrics__labeled_timing_distribution__event_longtask {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -85955,6 +86052,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_backgroun
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86043,6 +86141,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_browser_a
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86131,6 +86230,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_content_s
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86219,6 +86319,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_event_pag
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86307,6 +86408,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_extension
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86395,6 +86497,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_page_acti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86483,6 +86586,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_storage_l
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86571,6 +86675,7 @@ view: metrics__metrics__labeled_timing_distribution__extensions_timing_storage_l
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86659,6 +86764,7 @@ view: metrics__metrics__labeled_timing_distribution__firefox_ai_runtime_engine_c
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86747,6 +86853,7 @@ view: metrics__metrics__labeled_timing_distribution__firefox_ai_runtime_run_infe
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86835,6 +86942,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_animation {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -86923,6 +87031,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_budget {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87011,6 +87120,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_budget_overru
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87099,6 +87209,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_compact_time 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87187,6 +87298,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_gray {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87275,6 +87387,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_roots_ti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87363,6 +87476,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87451,6 +87565,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_mark_weak {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87539,6 +87654,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_max_pause {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87627,6 +87743,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_minor_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87715,6 +87832,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_prepare_time 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87803,6 +87921,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_slice_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87891,6 +88010,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_sweep_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -87979,6 +88099,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_task_start_de
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88067,6 +88188,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88155,6 +88277,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88243,6 +88366,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_time_between_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88331,6 +88455,7 @@ view: metrics__metrics__labeled_timing_distribution__javascript_gc_total_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88419,6 +88544,7 @@ view: metrics__metrics__labeled_timing_distribution__media_media_play_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88507,6 +88633,7 @@ view: metrics__metrics__labeled_timing_distribution__media_video_visible_play_ti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88595,6 +88722,7 @@ view: metrics__metrics__labeled_timing_distribution__netwerk_http3_0rtt_state_du
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88683,6 +88811,7 @@ view: metrics__metrics__labeled_timing_distribution__netwerk_http3_time_to_reuse
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88771,6 +88900,7 @@ view: metrics__metrics__labeled_timing_distribution__network_async_open_child_to
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88859,6 +88989,7 @@ view: metrics__metrics__labeled_timing_distribution__network_dns_end_to_connect_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -88947,6 +89078,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_avg_read_inte
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89035,6 +89167,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_complete_load
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89123,6 +89256,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_first_sent_to
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89211,6 +89345,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89299,6 +89434,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_open_to_first
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89387,6 +89523,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http3_tls_handshake
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89475,6 +89612,7 @@ view: metrics__metrics__labeled_timing_distribution__network_http_fetch_duration
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89563,6 +89701,7 @@ view: metrics__metrics__labeled_timing_distribution__network_response_end_parent
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89651,6 +89790,7 @@ view: metrics__metrics__labeled_timing_distribution__network_response_start_pare
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89739,6 +89879,7 @@ view: metrics__metrics__labeled_timing_distribution__network_sup_http3_tcp_conne
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89827,6 +89968,7 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -89915,6 +90057,7 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90003,6 +90146,7 @@ view: metrics__metrics__labeled_timing_distribution__network_trr_idle_close_time
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90091,6 +90235,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_complete_loa
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90179,6 +90324,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_end {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90267,6 +90413,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_dns_start {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90355,6 +90502,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_fetch_durati
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90443,6 +90591,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_first_sent_t
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90531,6 +90680,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_firs
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90619,6 +90769,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_open_to_firs
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90707,6 +90858,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_tcp_connecti
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90795,6 +90947,7 @@ view: metrics__metrics__labeled_timing_distribution__networking_trr_tls_handshak
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90883,6 +91036,7 @@ view: metrics__metrics__labeled_timing_distribution__orb_javascript_validation {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -90971,6 +91125,7 @@ view: metrics__metrics__labeled_timing_distribution__orb_receive_data_for_valida
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91059,6 +91214,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_dns_first_byte {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91147,6 +91303,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_dns_first_contentful_p
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91235,6 +91392,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_h3p_first_contentful_p
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91323,6 +91481,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_h3p_page_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91411,6 +91570,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_http3_first_contentful
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91499,6 +91659,7 @@ view: metrics__metrics__labeled_timing_distribution__perf_http3_page_load_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91587,6 +91748,7 @@ view: metrics__metrics__labeled_timing_distribution__popup_notification_dismissa
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91675,6 +91837,7 @@ view: metrics__metrics__labeled_timing_distribution__popup_notification_main_act
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91763,6 +91926,7 @@ view: metrics__metrics__labeled_timing_distribution__search_suggestions_latency 
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91851,6 +92015,7 @@ view: metrics__metrics__labeled_timing_distribution__search_suggestions_ohttp_la
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -91939,6 +92104,7 @@ view: metrics__metrics__labeled_timing_distribution__security_https_only_mode_up
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92027,6 +92193,7 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92115,6 +92282,7 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92203,6 +92371,7 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_event_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92291,6 +92460,7 @@ view: metrics__metrics__labeled_timing_distribution__service_worker_fetch_interc
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92379,6 +92549,7 @@ view: metrics__metrics__labeled_timing_distribution__ssl_time_until_handshake_fi
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92467,6 +92638,7 @@ view: metrics__metrics__labeled_timing_distribution__suggest_ingest_download_tim
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92555,6 +92727,7 @@ view: metrics__metrics__labeled_timing_distribution__suggest_ingest_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92643,6 +92816,7 @@ view: metrics__metrics__labeled_timing_distribution__suggest_query_time {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92731,6 +92905,7 @@ view: metrics__metrics__labeled_timing_distribution__urlbar_autofill_reintegrati
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92819,6 +92994,7 @@ view: metrics__metrics__labeled_timing_distribution__urlbar_merino_latency_by_re
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92907,6 +93083,7 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_cl_keyed_upda
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -92995,6 +93172,7 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_complete_serv
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -93083,6 +93261,7 @@ view: metrics__metrics__labeled_timing_distribution__urlclassifier_update_server
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -93171,6 +93350,7 @@ view: metrics__metrics__labeled_timing_distribution__workers_sync_worker_operati
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
@@ -93259,6 +93439,7 @@ view: metrics__metrics__labeled_timing_distribution__xpi_database_rebuilds {
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {
