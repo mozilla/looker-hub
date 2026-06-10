@@ -16849,42 +16849,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
-  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__sum {
-    label: "Netwerk: Happy Eyeballs Connection Attempt Count Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_attempt_count.sum ;;
-    type: number
-    group_label: "Netwerk"
-    group_item_label: "Happy Eyeballs Connection Attempt Count Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Connection Attempt Count Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_happy_eyeballs_connection_attempt_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Happy Eyeballs: number of connection attempts started before one succeeded or all failed.
-"
-  }
-
-  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__sum {
-    label: "Netwerk: Happy Eyeballs Connection Establishment Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_establishment_time.sum ;;
-    type: number
-    group_label: "Netwerk"
-    group_item_label: "Happy Eyeballs Connection Establishment Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Connection Establishment Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_happy_eyeballs_connection_establishment_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Happy Eyeballs: end-to-end time in milliseconds from algorithm start to a successful connection or final failure.
-"
-  }
-
   dimension: metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery {
     label: "Netwerk: Happy Eyeballs H3 Discovery"
     hidden: yes
@@ -65759,6 +65723,94 @@ view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_c
 }
 
 view: metrics__metrics__labeled_custom_distribution__memory_distribution_among_content__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_attempt_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_establishment_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
