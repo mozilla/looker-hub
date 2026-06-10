@@ -13791,7 +13791,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+    description: "Failure occurs when initializing the audio stream.
 "
   }
 
@@ -15783,6 +15783,20 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     hidden: yes
     description: "Absolute difference of each content process' USS and the mean of USS's, normalized by the mean, in percentage. It will be recorded with the rest of the memory probes when gatherMemory is called, if at least 2 content processes are alive. Example: in case of 4 content processes with USS's: 1G, 500MB, 1G, 1.5G, the reported numbers will be: 0, 50, 0, 50. Which indicates that 2 processes used 50% more or 50% less memory than the avarage and 2 used exactly as much as the avarage.
 This metric was generated to correspond to the Legacy Telemetry linear histogram MEMORY_DISTRIBUTION_AMONG_CONTENT.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_attempt_count {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.netwerk_happy_eyeballs_connection_attempt_count ;;
+    hidden: yes
+    description: "Happy Eyeballs: number of connection attempts started before one succeeded or all failed, keyed by whether the algorithm ultimately succeeded or failed.
+"
+  }
+
+  dimension: metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_establishment_time {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.netwerk_happy_eyeballs_connection_establishment_time ;;
+    hidden: yes
+    description: "Happy Eyeballs: end-to-end time in milliseconds from algorithm start to a successful connection or final failure, keyed by whether the algorithm ultimately succeeded or failed.
 "
   }
 
@@ -58754,6 +58768,94 @@ view: metrics_table__metrics__labeled_custom_distribution__memory_distribution_a
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__memory_distribution_among_content__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_attempt_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_establishment_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
