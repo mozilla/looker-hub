@@ -24553,42 +24553,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
-  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_attempt_count__sum {
-    label: "Netwerk: Happy Eyeballs Connection Attempt Count Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_attempt_count.sum ;;
-    type: number
-    group_label: "Netwerk"
-    group_item_label: "Happy Eyeballs Connection Attempt Count Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Connection Attempt Count Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_happy_eyeballs_connection_attempt_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Happy Eyeballs: number of connection attempts started before one succeeded or all failed.
-"
-  }
-
-  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__sum {
-    label: "Netwerk: Happy Eyeballs Connection Establishment Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_connection_establishment_time.sum ;;
-    type: number
-    group_label: "Netwerk"
-    group_item_label: "Happy Eyeballs Connection Establishment Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs Connection Establishment Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_happy_eyeballs_connection_establishment_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Happy Eyeballs: end-to-end time in milliseconds from algorithm start to a successful connection or final failure.
-"
-  }
-
   dimension: metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery {
     label: "Netwerk: Happy Eyeballs H3 Discovery"
     hidden: yes
