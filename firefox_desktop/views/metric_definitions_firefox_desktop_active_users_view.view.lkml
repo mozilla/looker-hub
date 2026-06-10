@@ -8,6 +8,7 @@ view: metric_definitions_firefox_desktop_active_users_view {
   derived_table: {
     sql: SELECT
                 COUNTIF(is_dau) AS client_level_daily_active_users_v2,
+COALESCE(LOGICAL_OR(is_dau), FALSE) AS retained_dau,
 COALESCE(MIN(mozfun.bits28.days_since_seen(days_active_bits)), 30) < 3 AS active_in_last_3_days_legacy,
 
                 looker_base_fields_app_name,
@@ -216,6 +217,20 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.client_level_daily_active_users_v2 ;;
   }
 
+  dimension: retained_dau {
+    group_label: "Metrics"
+    label: "Retained (DAU)"
+    description: "    Whether the client had at least one DAU-qualifying day in the analysis window (is_dau = TRUE on any day).
+
+    Conventionally expressed as a percentage rate: The percentage of clients from the originating cohort that were then active in the later period. 
+    
+    Most typically, this is measured as Week 2 Retention in order to balance timeliness and accuracy. 
+    But when time permits, Data Science recommends using Week 4 Retention as more representative of long-term effects.
+"
+    type: number
+    sql: ${TABLE}.retained_dau ;;
+  }
+
   dimension: active_in_last_3_days_legacy {
     group_label: "Metrics"
     label: "3 Days Retention"
@@ -332,7 +347,7 @@ looker_base_fields_sample_id,
   }
 
   set: metrics {
-    fields: [client_level_daily_active_users_v2, active_in_last_3_days_legacy]
+    fields: [client_level_daily_active_users_v2, retained_dau, active_in_last_3_days_legacy]
   }
 
   parameter: aggregate_metrics_by {

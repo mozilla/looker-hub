@@ -396,7 +396,12 @@ looker_base_fields_sample_id,
   dimension: retained {
     group_label: "Metrics"
     label: "Retained"
-    description: "Records whether a client submitted any pings (i.e. used Firefox)."
+    description: "    Records whether a client submitted any pings (i.e. used Firefox).
+
+    Note: As of June 2026, this metric is being deprecated in favor of \"Retained (DAU)\", which better matches the conventional 
+    definition of Retention based on \"active\" instead of \"seen\" now recommended by Data Science team and used for reporting in
+    other contexts. 
+"
     type: number
     sql: ${TABLE}.retained ;;
   }
