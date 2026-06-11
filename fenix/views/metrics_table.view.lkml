@@ -3296,7 +3296,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Network SSL Token Cache Evictions"
-    description: "Number of TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Any non-zero value indicates the capacity limit was reached and may need to be increased.
+    description: "Number of still-valid TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Already-expired tokens removed under capacity pressure are not counted here (those are tracked by ssl_token_cache_expired). Any non-zero value indicates the capacity limit was reached and may need to be increased.
 "
   }
 

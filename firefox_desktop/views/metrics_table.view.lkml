@@ -3254,7 +3254,7 @@ This does not include deletion-request pings.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Network SSL Token Cache Evictions"
-    description: "Number of TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Any non-zero value indicates the capacity limit was reached and may need to be increased.
+    description: "Number of still-valid TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Already-expired tokens removed under capacity pressure are not counted here (those are tracked by ssl_token_cache_expired). Any non-zero value indicates the capacity limit was reached and may need to be increased.
 "
   }
 
@@ -19364,8 +19364,9 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
-    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are search engine identifiers for built-in search engines and 'other' for non-built-in search engines.
+    description: "Records the latencies (ms) of search suggestions fetches per search engine. Keys in this histogram are the search engine identifier for configuration provided search engines and 'other' for search engines installed via other methods.
 This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SUGGESTIONS_LATENCY_MS.
+This metric was renamed in Gecko 144 from `search.suggestions_latency` and changed to report the search engine identifier rather than the telemetry identifier.
 "
   }
 

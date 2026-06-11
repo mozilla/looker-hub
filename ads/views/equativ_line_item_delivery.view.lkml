@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: equativ_line_item_delivery {
+  dimension: ad_unit {
+    sql: ${TABLE}.ad_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: advertiser_id {
     sql: ${TABLE}.advertiser_id ;;
     type: number
@@ -116,6 +122,30 @@ view: equativ_line_item_delivery {
   dimension: oversold_impressions {
     sql: ${TABLE}.oversold_impressions ;;
     type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: product_id {
+    sql: ${TABLE}.product_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: product_page {
+    sql: ${TABLE}.product_page ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: product_property {
+    sql: ${TABLE}.product_property ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: product_surface {
+    sql: ${TABLE}.product_surface ;;
+    type: string
     suggest_persist_for: "24 hours"
   }
 
