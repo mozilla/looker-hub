@@ -3105,7 +3105,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Doc Css Link Parameters"
-    description: "Whether a page used the CSS property link-parameters.
+    description: "Whether a document used the CSS property link-parameters. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -10555,7 +10555,7 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Link Parameters"
-    description: "Whether a page used the CSS property link-parameters.
+    description: "Whether a page used the CSS property link-parameters. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
