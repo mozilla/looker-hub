@@ -25699,7 +25699,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Number of TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Any non-zero value indicates the capacity limit was reached and may need to be increased.
+    description: "Number of still-valid TLS session resumption tokens evicted because the in-memory cache exceeded network.ssl_tokens_cache_capacity. Already-expired tokens removed under capacity pressure are not counted here (those are tracked by ssl_token_cache_expired). Any non-zero value indicates the capacity limit was reached and may need to be increased.
 "
   }
 

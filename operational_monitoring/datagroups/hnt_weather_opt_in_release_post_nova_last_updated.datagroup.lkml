@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: firefox_labs_new_tab_widgets_lists_timer_december_last_updated {
-  label: "firefox_labs_new_tab_widgets_lists_timer_december Last Updated"
+datagroup: hnt_weather_opt_in_release_post_nova_last_updated {
+  label: "hnt_weather_opt_in_release_post_nova Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'firefox_labs_new_tab_widgets_lists_timer_december_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'hnt_weather_opt_in_release_post_nova_statistics')
 
     ) ;;
-  description: "Updates for firefox_labs_new_tab_widgets_lists_timer_december when referenced tables are modified."
+  description: "Updates for hnt_weather_opt_in_release_post_nova when referenced tables are modified."
   max_cache_age: "24 hours"
 }
