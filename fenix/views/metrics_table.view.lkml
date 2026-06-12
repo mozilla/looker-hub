@@ -13791,7 +13791,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
-    description: "Failure occurs when initializing the audio stream.
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -34061,6 +34061,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__logins_store_write_query_time__values {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Longfox Game Played Length"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__count {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Longfox Game Played Length"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Longfox Game Played Length"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Longfox Game Played Length"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__range {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__sum {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Longfox Game Played Length"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Longfox Game Played Length"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Longfox Game Played Length"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__longfox_game_played_length__values {
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.values ;;
     hidden: yes
   }
 
@@ -72065,6 +72132,20 @@ view: metrics_table__metrics__timing_distribution__logins_store_unlock_time__val
 }
 
 view: metrics_table__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__longfox_game_played_length__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

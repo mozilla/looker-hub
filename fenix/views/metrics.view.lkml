@@ -1143,6 +1143,23 @@ displayed to the user. (for tile counts)
 "
   }
 
+  dimension: metrics__timing_distribution__longfox_game_played_length__sum {
+    label: "Longfox: Game Played Length Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.longfox_game_played_length.sum ;;
+    type: number
+    group_label: "Longfox"
+    group_item_label: "Game Played Length Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Longfox: Game Played Length Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/longfox_game_played_length"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sent when the longfox game is played."
+  }
+
   dimension: metrics__boolean__metrics_activity_state_provider_error {
     label: "Metrics: Activity State Provider Error"
     hidden: yes
@@ -79020,6 +79037,20 @@ view: metrics__metrics__timing_distribution__logins_store_unlock_time__values {
 }
 
 view: metrics__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__longfox_game_played_length__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
