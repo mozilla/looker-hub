@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/vpn_limited_rollout.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/vpn_limited_rollout_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/hnt_wattle_3w_ncm_pre_june_9.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/hnt_wattle_3w_ncm_pre_june_9_last_updated.datagroup.lkml"
 
-explore: vpn_limited_rollout {
+explore: hnt_wattle_3w_ncm_pre_june_9 {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: vpn_limited_rollout {
   }
 
   hidden: yes
-  persist_with: vpn_limited_rollout_last_updated
+  persist_with: hnt_wattle_3w_ncm_pre_june_9_last_updated
 }

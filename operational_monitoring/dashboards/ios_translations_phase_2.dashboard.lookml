@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_translations_phase_2
-    type: looker_line
-    fields: [
-      ios_translations_phase_2.submission_date,
-      ios_translations_phase_2.branch,
-      ios_translations_phase_2.point
-    ]
-    pivots: [
-      ios_translations_phase_2.branch
-    ]
-    filters:
-      ios_translations_phase_2.metric: 'search_count'
-      ios_translations_phase_2.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_translations_phase_2.submission_date
-    field_y: ios_translations_phase_2.point
-    log_scale: false
-    ci_lower: ios_translations_phase_2.lower
-    ci_upper: ios_translations_phase_2.upper
-    show_grid: true
-    listen:
-      Date: ios_translations_phase_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       ios_translations_phase_2.metric: 'retained'
       ios_translations_phase_2.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: ios_translations_phase_2.submission_date
@@ -95,6 +61,40 @@
     ]
     filters:
       ios_translations_phase_2.metric: 'days_of_use'
+      ios_translations_phase_2.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_translations_phase_2.submission_date
+    field_y: ios_translations_phase_2.point
+    log_scale: false
+    ci_lower: ios_translations_phase_2.lower
+    ci_upper: ios_translations_phase_2.upper
+    show_grid: true
+    listen:
+      Date: ios_translations_phase_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_translations_phase_2
+    type: looker_line
+    fields: [
+      ios_translations_phase_2.submission_date,
+      ios_translations_phase_2.branch,
+      ios_translations_phase_2.point
+    ]
+    pivots: [
+      ios_translations_phase_2.branch
+    ]
+    filters:
+      ios_translations_phase_2.metric: 'search_count'
       ios_translations_phase_2.statistic: mean
     row: 10
     col: 0
