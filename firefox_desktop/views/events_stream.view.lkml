@@ -1403,6 +1403,14 @@ view: events_stream {
     group_item_label: "Triggered Externally"
   }
 
+  dimension: extras__boolean__undo_available {
+    sql: ${TABLE}.extras.boolean.undo_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Undo Available"
+  }
+
   dimension: extras__boolean__uniform_sampled {
     sql: ${TABLE}.extras.boolean.uniform_sampled ;;
     type: yesno
@@ -2491,6 +2499,14 @@ view: events_stream {
     group_item_label: "Tabs"
   }
 
+  dimension: extras__quantity__tabs_affected {
+    sql: ${TABLE}.extras.quantity.tabs_affected ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Affected"
+  }
+
   dimension: extras__quantity__tabs_approved {
     sql: ${TABLE}.extras.quantity.tabs_approved ;;
     type: number
@@ -2529,6 +2545,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tabs Inside Groups"
+  }
+
+  dimension: extras__quantity__tabs_open {
+    sql: ${TABLE}.extras.quantity.tabs_open ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Open"
   }
 
   dimension: extras__quantity__tabs_outside_groups {
@@ -5561,6 +5585,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Prompt Type"
+  }
+
+  dimension: extras__string__prompt_version {
+    sql: ${TABLE}.extras.string.prompt_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Prompt Version"
   }
 
   dimension: extras__string__provider {
