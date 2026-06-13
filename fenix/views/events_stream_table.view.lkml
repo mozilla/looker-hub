@@ -2664,14 +2664,6 @@ view: events_stream_table {
     group_item_label: "Enterprise"
   }
 
-  dimension: extras__string__entry_point {
-    sql: ${TABLE}.extras.string.entry_point ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Entry Point"
-  }
-
   dimension: extras__string__entrypoint {
     sql: ${TABLE}.extras.string.entrypoint ;;
     type: string
