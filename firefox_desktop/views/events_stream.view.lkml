@@ -4755,6 +4755,14 @@ view: events_stream {
     group_item_label: "Media Extension"
   }
 
+  dimension: extras__string__memory_source {
+    sql: ${TABLE}.extras.string.memory_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Memory Source"
+  }
+
   dimension: extras__string__menu_action {
     sql: ${TABLE}.extras.string.menu_action ;;
     type: string
@@ -6027,6 +6035,14 @@ view: events_stream {
     group_item_label: "Session Start Time"
   }
 
+  dimension: extras__string__setdefault_source {
+    sql: ${TABLE}.extras.string.setdefault_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Setdefault Source"
+  }
+
   dimension: extras__string__setting {
     sql: ${TABLE}.extras.string.setting ;;
     type: string
@@ -6121,6 +6137,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Site Category"
+  }
+
+  dimension: extras__string__site_permission {
+    sql: ${TABLE}.extras.string.site_permission ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Site Permission"
   }
 
   dimension: extras__string__skip_reason {
@@ -6505,6 +6529,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "To Language"
+  }
+
+  dimension: extras__string__tool_name {
+    sql: ${TABLE}.extras.string.tool_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Tool Name"
   }
 
   dimension: extras__string__top_preferred_language {
