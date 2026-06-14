@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: hnt_wattle_wcw_ncm_eu_rollout_june_8
-    type: "ci-line-chart"
-    fields: [
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date,
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.branch,
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.upper,
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.lower,
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.point
-    ]
-    pivots: [
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.branch
-    ]
-    filters:
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'memory_total'
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
-    field_y: hnt_wattle_wcw_ncm_eu_rollout_june_8.point
-    log_scale: false
-    ci_lower: hnt_wattle_wcw_ncm_eu_rollout_june_8.lower
-    ci_upper: hnt_wattle_wcw_ncm_eu_rollout_june_8.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
-      Percentile: hnt_wattle_wcw_ncm_eu_rollout_june_8.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,10 +26,10 @@
       hnt_wattle_wcw_ncm_eu_rollout_june_8.branch
     ]
     filters:
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'days_of_use'
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'uri_count'
       hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
@@ -98,6 +61,40 @@
     ]
     filters:
       hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'search_count'
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
+    field_y: hnt_wattle_wcw_ncm_eu_rollout_june_8.point
+    log_scale: false
+    ci_lower: hnt_wattle_wcw_ncm_eu_rollout_june_8.lower
+    ci_upper: hnt_wattle_wcw_ncm_eu_rollout_june_8.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_wcw_ncm_eu_rollout_june_8
+    type: looker_line
+    fields: [
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date,
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.branch,
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.point
+    ]
+    pivots: [
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.branch
+    ]
+    filters:
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'active_hours'
       hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: mean
     row: 10
     col: 0
@@ -149,24 +146,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: hnt_wattle_wcw_ncm_eu_rollout_june_8
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date,
       hnt_wattle_wcw_ncm_eu_rollout_june_8.branch,
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.upper,
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.lower,
       hnt_wattle_wcw_ncm_eu_rollout_june_8.point
     ]
     pivots: [
       hnt_wattle_wcw_ncm_eu_rollout_june_8.branch
     ]
     filters:
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'active_hours'
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: mean
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'memory_total'
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: percentile
     row: 20
     col: 0
     width: 12
@@ -179,12 +178,13 @@
     show_grid: true
     listen:
       Date: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
+      Percentile: hnt_wattle_wcw_ncm_eu_rollout_june_8.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,44 +199,10 @@
       hnt_wattle_wcw_ncm_eu_rollout_june_8.branch
     ]
     filters:
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'uri_count'
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'days_of_use'
       hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: mean
     row: 20
     col: 12
-    width: 12
-    height: 8
-    field_x: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
-    field_y: hnt_wattle_wcw_ncm_eu_rollout_june_8.point
-    log_scale: false
-    ci_lower: hnt_wattle_wcw_ncm_eu_rollout_june_8.lower
-    ci_upper: hnt_wattle_wcw_ncm_eu_rollout_june_8.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_wcw_ncm_eu_rollout_june_8
-    type: looker_line
-    fields: [
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date,
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.branch,
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.point
-    ]
-    pivots: [
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.branch
-    ]
-    filters:
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'qualified_cumulative_days_of_use'
-      hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: mean
-    row: 30
-    col: 0
     width: 12
     height: 8
     field_x: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'retained'
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
+    field_y: hnt_wattle_wcw_ncm_eu_rollout_june_8.point
+    log_scale: false
+    ci_lower: hnt_wattle_wcw_ncm_eu_rollout_june_8.lower
+    ci_upper: hnt_wattle_wcw_ncm_eu_rollout_june_8.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_wcw_ncm_eu_rollout_june_8
+    type: looker_line
+    fields: [
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.submission_date,
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.branch,
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.point
+    ]
+    pivots: [
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.branch
+    ]
+    filters:
+      hnt_wattle_wcw_ncm_eu_rollout_june_8.metric: 'qualified_cumulative_days_of_use'
       hnt_wattle_wcw_ncm_eu_rollout_june_8.statistic: mean
     row: 30
     col: 12
