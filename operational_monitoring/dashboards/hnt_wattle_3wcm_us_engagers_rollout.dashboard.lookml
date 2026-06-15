@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       hnt_wattle_3wcm_us_engagers_rollout.branch
     ]
     filters:
-      hnt_wattle_3wcm_us_engagers_rollout.metric: 'ad_clicks'
+      hnt_wattle_3wcm_us_engagers_rollout.metric: 'uri_count'
       hnt_wattle_3wcm_us_engagers_rollout.statistic: mean
     row: 0
     col: 0
@@ -78,26 +78,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: hnt_wattle_3wcm_us_engagers_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       hnt_wattle_3wcm_us_engagers_rollout.submission_date,
       hnt_wattle_3wcm_us_engagers_rollout.branch,
-      hnt_wattle_3wcm_us_engagers_rollout.upper,
-      hnt_wattle_3wcm_us_engagers_rollout.lower,
       hnt_wattle_3wcm_us_engagers_rollout.point
     ]
     pivots: [
       hnt_wattle_3wcm_us_engagers_rollout.branch
     ]
     filters:
-      hnt_wattle_3wcm_us_engagers_rollout.metric: 'memory_total'
-      hnt_wattle_3wcm_us_engagers_rollout.statistic: percentile
+      hnt_wattle_3wcm_us_engagers_rollout.metric: 'ad_clicks'
+      hnt_wattle_3wcm_us_engagers_rollout.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -110,7 +108,6 @@
     show_grid: true
     listen:
       Date: hnt_wattle_3wcm_us_engagers_rollout.submission_date
-      Percentile: hnt_wattle_3wcm_us_engagers_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_3wcm_us_engagers_rollout
-    type: looker_line
-    fields: [
-      hnt_wattle_3wcm_us_engagers_rollout.submission_date,
-      hnt_wattle_3wcm_us_engagers_rollout.branch,
-      hnt_wattle_3wcm_us_engagers_rollout.point
-    ]
-    pivots: [
-      hnt_wattle_3wcm_us_engagers_rollout.branch
-    ]
-    filters:
-      hnt_wattle_3wcm_us_engagers_rollout.metric: 'uri_count'
-      hnt_wattle_3wcm_us_engagers_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_wattle_3wcm_us_engagers_rollout.submission_date
-    field_y: hnt_wattle_3wcm_us_engagers_rollout.point
-    log_scale: false
-    ci_lower: hnt_wattle_3wcm_us_engagers_rollout.lower
-    ci_upper: hnt_wattle_3wcm_us_engagers_rollout.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_3wcm_us_engagers_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -235,8 +198,8 @@
     filters:
       hnt_wattle_3wcm_us_engagers_rollout.metric: 'active_hours'
       hnt_wattle_3wcm_us_engagers_rollout.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: hnt_wattle_3wcm_us_engagers_rollout.submission_date
@@ -270,6 +233,42 @@
       hnt_wattle_3wcm_us_engagers_rollout.metric: 'search_count'
       hnt_wattle_3wcm_us_engagers_rollout.statistic: mean
     row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_3wcm_us_engagers_rollout.submission_date
+    field_y: hnt_wattle_3wcm_us_engagers_rollout.point
+    log_scale: false
+    ci_lower: hnt_wattle_3wcm_us_engagers_rollout.lower
+    ci_upper: hnt_wattle_3wcm_us_engagers_rollout.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_3wcm_us_engagers_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: hnt_wattle_3wcm_us_engagers_rollout
+    type: "ci-line-chart"
+    fields: [
+      hnt_wattle_3wcm_us_engagers_rollout.submission_date,
+      hnt_wattle_3wcm_us_engagers_rollout.branch,
+      hnt_wattle_3wcm_us_engagers_rollout.upper,
+      hnt_wattle_3wcm_us_engagers_rollout.lower,
+      hnt_wattle_3wcm_us_engagers_rollout.point
+    ]
+    pivots: [
+      hnt_wattle_3wcm_us_engagers_rollout.branch
+    ]
+    filters:
+      hnt_wattle_3wcm_us_engagers_rollout.metric: 'memory_total'
+      hnt_wattle_3wcm_us_engagers_rollout.statistic: percentile
+    row: 30
     col: 12
     width: 12
     height: 8
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: hnt_wattle_3wcm_us_engagers_rollout.submission_date
+      Percentile: hnt_wattle_3wcm_us_engagers_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

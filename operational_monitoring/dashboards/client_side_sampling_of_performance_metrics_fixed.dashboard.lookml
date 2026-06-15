@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       client_side_sampling_of_performance_metrics_fixed.branch
     ]
     filters:
-      client_side_sampling_of_performance_metrics_fixed.metric: 'ad_clicks'
+      client_side_sampling_of_performance_metrics_fixed.metric: 'uri_count'
       client_side_sampling_of_performance_metrics_fixed.statistic: mean
     row: 0
     col: 0
@@ -78,26 +78,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: client_side_sampling_of_performance_metrics_fixed
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       client_side_sampling_of_performance_metrics_fixed.submission_date,
       client_side_sampling_of_performance_metrics_fixed.branch,
-      client_side_sampling_of_performance_metrics_fixed.upper,
-      client_side_sampling_of_performance_metrics_fixed.lower,
       client_side_sampling_of_performance_metrics_fixed.point
     ]
     pivots: [
       client_side_sampling_of_performance_metrics_fixed.branch
     ]
     filters:
-      client_side_sampling_of_performance_metrics_fixed.metric: 'memory_total'
-      client_side_sampling_of_performance_metrics_fixed.statistic: percentile
+      client_side_sampling_of_performance_metrics_fixed.metric: 'ad_clicks'
+      client_side_sampling_of_performance_metrics_fixed.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -110,7 +108,6 @@
     show_grid: true
     listen:
       Date: client_side_sampling_of_performance_metrics_fixed.submission_date
-      Percentile: client_side_sampling_of_performance_metrics_fixed.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_of_performance_metrics_fixed
-    type: looker_line
-    fields: [
-      client_side_sampling_of_performance_metrics_fixed.submission_date,
-      client_side_sampling_of_performance_metrics_fixed.branch,
-      client_side_sampling_of_performance_metrics_fixed.point
-    ]
-    pivots: [
-      client_side_sampling_of_performance_metrics_fixed.branch
-    ]
-    filters:
-      client_side_sampling_of_performance_metrics_fixed.metric: 'uri_count'
-      client_side_sampling_of_performance_metrics_fixed.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: client_side_sampling_of_performance_metrics_fixed.submission_date
-    field_y: client_side_sampling_of_performance_metrics_fixed.point
-    log_scale: false
-    ci_lower: client_side_sampling_of_performance_metrics_fixed.lower
-    ci_upper: client_side_sampling_of_performance_metrics_fixed.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_of_performance_metrics_fixed.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -235,8 +198,8 @@
     filters:
       client_side_sampling_of_performance_metrics_fixed.metric: 'active_hours'
       client_side_sampling_of_performance_metrics_fixed.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: client_side_sampling_of_performance_metrics_fixed.submission_date
@@ -270,6 +233,42 @@
       client_side_sampling_of_performance_metrics_fixed.metric: 'search_count'
       client_side_sampling_of_performance_metrics_fixed.statistic: mean
     row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: client_side_sampling_of_performance_metrics_fixed.submission_date
+    field_y: client_side_sampling_of_performance_metrics_fixed.point
+    log_scale: false
+    ci_lower: client_side_sampling_of_performance_metrics_fixed.lower
+    ci_upper: client_side_sampling_of_performance_metrics_fixed.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_of_performance_metrics_fixed.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: client_side_sampling_of_performance_metrics_fixed
+    type: "ci-line-chart"
+    fields: [
+      client_side_sampling_of_performance_metrics_fixed.submission_date,
+      client_side_sampling_of_performance_metrics_fixed.branch,
+      client_side_sampling_of_performance_metrics_fixed.upper,
+      client_side_sampling_of_performance_metrics_fixed.lower,
+      client_side_sampling_of_performance_metrics_fixed.point
+    ]
+    pivots: [
+      client_side_sampling_of_performance_metrics_fixed.branch
+    ]
+    filters:
+      client_side_sampling_of_performance_metrics_fixed.metric: 'memory_total'
+      client_side_sampling_of_performance_metrics_fixed.statistic: percentile
+    row: 30
     col: 12
     width: 12
     height: 8
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: client_side_sampling_of_performance_metrics_fixed.submission_date
+      Percentile: client_side_sampling_of_performance_metrics_fixed.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

@@ -443,14 +443,6 @@ view: events_stream {
     group_item_label: "Did Select Un"
   }
 
-  dimension: extras__boolean__did_user_confirm {
-    sql: ${TABLE}.extras.boolean.did_user_confirm ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Did User Confirm"
-  }
-
   dimension: extras__boolean__enabled {
     sql: ${TABLE}.extras.boolean.enabled ;;
     type: yesno
@@ -1385,14 +1377,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Input Tokens"
-  }
-
-  dimension: extras__quantity__items_changed_count {
-    sql: ${TABLE}.extras.quantity.items_changed_count ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Items Changed Count"
   }
 
   dimension: extras__quantity__items_count {
@@ -2681,6 +2665,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Enterprise"
+  }
+
+  dimension: extras__string__entry_point {
+    sql: ${TABLE}.extras.string.entry_point ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Entry Point"
   }
 
   dimension: extras__string__entrypoint {
@@ -4451,14 +4443,6 @@ view: events_stream {
     group_item_label: "Signed Date"
   }
 
-  dimension: extras__string__site_permission {
-    sql: ${TABLE}.extras.string.site_permission ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Site Permission"
-  }
-
   dimension: extras__string__skip_reason {
     sql: ${TABLE}.extras.string.skip_reason ;;
     type: string
@@ -4473,14 +4457,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Slug"
-  }
-
-  dimension: extras__string__slug_id {
-    sql: ${TABLE}.extras.string.slug_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Slug ID"
   }
 
   dimension: extras__string__sort_key {
