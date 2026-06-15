@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: shake_to_summarize_mistral_rollout_languages
-    type: looker_line
-    fields: [
-      shake_to_summarize_mistral_rollout_languages.submission_date,
-      shake_to_summarize_mistral_rollout_languages.branch,
-      shake_to_summarize_mistral_rollout_languages.point
-    ]
-    pivots: [
-      shake_to_summarize_mistral_rollout_languages.branch
-    ]
-    filters:
-      shake_to_summarize_mistral_rollout_languages.metric: 'ad_clicks'
-      shake_to_summarize_mistral_rollout_languages.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: shake_to_summarize_mistral_rollout_languages.submission_date
-    field_y: shake_to_summarize_mistral_rollout_languages.point
-    log_scale: false
-    ci_lower: shake_to_summarize_mistral_rollout_languages.lower
-    ci_upper: shake_to_summarize_mistral_rollout_languages.upper
-    show_grid: true
-    listen:
-      Date: shake_to_summarize_mistral_rollout_languages.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       shake_to_summarize_mistral_rollout_languages.metric: 'days_of_use'
+      shake_to_summarize_mistral_rollout_languages.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: shake_to_summarize_mistral_rollout_languages.submission_date
+    field_y: shake_to_summarize_mistral_rollout_languages.point
+    log_scale: false
+    ci_lower: shake_to_summarize_mistral_rollout_languages.lower
+    ci_upper: shake_to_summarize_mistral_rollout_languages.upper
+    show_grid: true
+    listen:
+      Date: shake_to_summarize_mistral_rollout_languages.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: shake_to_summarize_mistral_rollout_languages
+    type: looker_line
+    fields: [
+      shake_to_summarize_mistral_rollout_languages.submission_date,
+      shake_to_summarize_mistral_rollout_languages.branch,
+      shake_to_summarize_mistral_rollout_languages.point
+    ]
+    pivots: [
+      shake_to_summarize_mistral_rollout_languages.branch
+    ]
+    filters:
+      shake_to_summarize_mistral_rollout_languages.metric: 'ad_clicks'
       shake_to_summarize_mistral_rollout_languages.statistic: mean
     row: 0
     col: 12
