@@ -12262,8 +12262,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__dual_labeled_counter__sqlite_store_open {
     sql: ${TABLE}.metrics.dual_labeled_counter.sqlite_store_open ;;
     hidden: yes
-    description: "The result of attempting to open a sqlite file.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram SQLITE_STORE_OPEN.
+    description: "The result of attempting to open a SQLite file.
 Initially this metric also recorded the \"success\" category, but due to the high volume of recording those, only failure categories are now tracked.
 "
   }
@@ -12271,8 +12270,7 @@ Initially this metric also recorded the \"success\" category, but due to the hig
   dimension: metrics__dual_labeled_counter__sqlite_store_query {
     sql: ${TABLE}.metrics.dual_labeled_counter.sqlite_store_query ;;
     hidden: yes
-    description: "The result of attempting to query a sqlite file.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram SQLITE_STORE_QUERY.
+    description: "The result of attempting to query a SQLite file.
 Initially this metric also recorded the \"success\" category, but due to the high volume of recording those, only failure categories are now tracked.
 "
   }
@@ -13358,6 +13356,13 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.geolocation_macos_error_code ;;
     hidden: yes
     description: "Records the error code when MacOS CoreLocation geolocation fails. The CoreLocation error domain is kCLErrorDomain and can usually be used to get a human readable error for these values.  Records up to 16 codes.
+"
+  }
+
+  dimension: metrics__labeled_counter__geolocation_network_failures {
+    sql: ${TABLE}.metrics.labeled_counter.geolocation_network_failures ;;
+    hidden: yes
+    description: "How many network geolocation requests received an error response.  The number of successful network geolocation requests should resemble the the values for these labels in the geolocation_service probe, minus these failure counts.  Not all failures can be known.
 "
   }
 
