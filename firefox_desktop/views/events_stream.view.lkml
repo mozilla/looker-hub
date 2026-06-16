@@ -5595,14 +5595,6 @@ view: events_stream {
     group_item_label: "Prompt Version"
   }
 
-  dimension: extras__string__protocol {
-    sql: ${TABLE}.extras.string.protocol ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Protocol"
-  }
-
   dimension: extras__string__provider {
     sql: ${TABLE}.extras.string.provider ;;
     type: string
