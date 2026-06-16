@@ -113,6 +113,12 @@ view: forecast_content_monthly {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: product {
+    sql: ${TABLE}.product ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension_group: forecast_month {
     sql: ${TABLE}.forecast_month ;;
     type: time
