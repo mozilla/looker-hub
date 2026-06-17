@@ -659,6 +659,14 @@ view: events_stream {
     group_item_label: "Activity Identifier"
   }
 
+  dimension: extras__string__age {
+    sql: ${TABLE}.extras.string.age ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Age"
+  }
+
   dimension: extras__string__alert_setting {
     sql: ${TABLE}.extras.string.alert_setting ;;
     type: string
@@ -747,6 +755,14 @@ view: events_stream {
     group_item_label: "Disabled Engines"
   }
 
+  dimension: extras__string__duration {
+    sql: ${TABLE}.extras.string.duration ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Duration"
+  }
+
   dimension: extras__string__enabled_engines {
     sql: ${TABLE}.extras.string.enabled_engines ;;
     type: string
@@ -769,6 +785,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Error"
+  }
+
+  dimension: extras__string__errorName {
+    sql: ${TABLE}.extras.string.errorName ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Errorname"
   }
 
   dimension: extras__string__error_code {
@@ -1307,6 +1331,14 @@ view: events_stream {
     group_item_label: "Timeframe"
   }
 
+  dimension: extras__string__timestamp {
+    sql: ${TABLE}.extras.string.timestamp ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Timestamp"
+  }
+
   dimension: extras__string__to_language {
     sql: ${TABLE}.extras.string.to_language ;;
     type: string
@@ -1361,6 +1393,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "User Selection"
+  }
+
+  dimension: extras__string__value {
+    sql: ${TABLE}.extras.string.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Value"
   }
 
   dimension: extras__string__view {
