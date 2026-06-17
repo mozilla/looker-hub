@@ -7,7 +7,7 @@
 view: interaction {
   dimension: metrics__string__ad_advertiser {
     label: "Ad: Advertiser"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_advertiser ;;
     type: string
     group_label: "Ad"
@@ -25,7 +25,7 @@ view: interaction {
 
   dimension: metrics__string__ad_country_code {
     label: "Ad: Country Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_country_code ;;
     type: string
     group_label: "Ad"
@@ -43,7 +43,7 @@ view: interaction {
 
   dimension: metrics__string__ad_creative_id {
     label: "Ad: Creative ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_creative_id ;;
     type: string
     group_label: "Ad"
@@ -61,7 +61,7 @@ view: interaction {
 
   dimension: metrics__labeled_boolean__ad_flags {
     label: "Ad: Flags"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.ad_flags ;;
     type: string
     group_label: "Ad"
@@ -79,7 +79,7 @@ view: interaction {
 
   dimension: metrics__string__ad_flight_id {
     label: "Ad: Flight ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_flight_id ;;
     type: string
     group_label: "Ad"
@@ -97,7 +97,7 @@ view: interaction {
 
   dimension: metrics__string__ad_format {
     label: "Ad: Format"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_format ;;
     type: string
     group_label: "Ad"
@@ -115,7 +115,7 @@ view: interaction {
 
   dimension: metrics__string__ad_id {
     label: "Ad: ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_id ;;
     type: string
     group_label: "Ad"
@@ -133,7 +133,7 @@ view: interaction {
 
   dimension: metrics__string__ad_interaction {
     label: "Ad: Interaction"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_interaction ;;
     type: string
     group_label: "Ad"
@@ -151,7 +151,7 @@ view: interaction {
 
   dimension: metrics__string__ad_internal_line_item_id {
     label: "Ad: Internal Line Item ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_internal_line_item_id ;;
     type: string
     group_label: "Ad"
@@ -169,7 +169,7 @@ view: interaction {
 
   dimension: metrics__string__ad_line_item_id {
     label: "Ad: Line Item ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_line_item_id ;;
     type: string
     group_label: "Ad"
@@ -187,7 +187,7 @@ view: interaction {
 
   dimension: metrics__string__ad_product {
     label: "Ad: Product"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_product ;;
     type: string
     group_label: "Ad"
@@ -205,7 +205,7 @@ view: interaction {
 
   dimension: metrics__string__ad_provider {
     label: "Ad: Provider"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_provider ;;
     type: string
     group_label: "Ad"
@@ -223,7 +223,7 @@ view: interaction {
 
   dimension: metrics__string__ad_region_code {
     label: "Ad: Region Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_region_code ;;
     type: string
     group_label: "Ad"
@@ -241,7 +241,7 @@ view: interaction {
 
   dimension: metrics__string__ad_taxonomy {
     label: "Ad: Taxonomy"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_taxonomy ;;
     type: string
     group_label: "Ad"
@@ -259,7 +259,7 @@ view: interaction {
 
   dimension: metrics__string__ad_client_context_id {
     label: "Ad Client: Context ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_context_id ;;
     type: string
     group_label: "Ad Client"
@@ -277,7 +277,7 @@ view: interaction {
 
   dimension: metrics__string__ad_client_dma_code {
     label: "Ad Client: Dma Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_dma_code ;;
     type: string
     group_label: "Ad Client"
@@ -295,7 +295,7 @@ view: interaction {
 
   dimension: metrics__string__ad_client_form_factor {
     label: "Ad Client: Form Factor"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_form_factor ;;
     type: string
     group_label: "Ad Client"
@@ -313,7 +313,7 @@ view: interaction {
 
   dimension: metrics__string__ad_client_os {
     label: "Ad Client: OS"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_os ;;
     type: string
     group_label: "Ad Client"
@@ -331,7 +331,7 @@ view: interaction {
 
   dimension: metrics__string__ad_client_placement {
     label: "Ad Client: Placement"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_placement ;;
     type: string
     group_label: "Ad Client"
@@ -349,7 +349,7 @@ view: interaction {
 
   dimension: metrics__string__ad_client_position {
     label: "Ad Client: Position"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_position ;;
     type: string
     group_label: "Ad Client"
@@ -367,7 +367,7 @@ view: interaction {
 
   dimension: metrics__string__technical_operations_creative_id {
     label: "Technical Operations: Creative ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.technical_operations_creative_id ;;
     type: string
     group_label: "Technical Operations"
@@ -385,7 +385,7 @@ view: interaction {
 
   dimension: metrics__string__technical_operations_firefox_version {
     label: "Technical Operations: Firefox Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.technical_operations_firefox_version ;;
     type: string
     group_label: "Technical Operations"
@@ -403,7 +403,7 @@ view: interaction {
 
   dimension: metrics__string__technical_operations_report_reason {
     label: "Technical Operations: Report Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.technical_operations_report_reason ;;
     type: string
     group_label: "Technical Operations"
@@ -421,7 +421,7 @@ view: interaction {
 
   dimension: metrics__string__technical_operations_request_id {
     label: "Technical Operations: Request ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.technical_operations_request_id ;;
     type: string
     group_label: "Technical Operations"
@@ -439,7 +439,7 @@ view: interaction {
 
   dimension: metrics__string__technical_operations_user_agent {
     label: "Technical Operations: User Agent"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.technical_operations_user_agent ;;
     type: string
     group_label: "Technical Operations"

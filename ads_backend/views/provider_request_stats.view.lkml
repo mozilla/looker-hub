@@ -7,7 +7,7 @@
 view: provider_request_stats {
   dimension: metrics__string__ad_client_country_code {
     label: "Ad Client: Country Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_country_code ;;
     type: string
     group_label: "Ad Client"
@@ -25,7 +25,7 @@ view: provider_request_stats {
 
   dimension: metrics__string__ad_client_dma_code {
     label: "Ad Client: Dma Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_dma_code ;;
     type: string
     group_label: "Ad Client"
@@ -43,7 +43,7 @@ view: provider_request_stats {
 
   dimension: metrics__string__ad_client_form_factor {
     label: "Ad Client: Form Factor"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_form_factor ;;
     type: string
     group_label: "Ad Client"
@@ -61,7 +61,7 @@ view: provider_request_stats {
 
   dimension: metrics__string__ad_client_os {
     label: "Ad Client: OS"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_os ;;
     type: string
     group_label: "Ad Client"
@@ -79,7 +79,7 @@ view: provider_request_stats {
 
   dimension: metrics__string__ad_client_region_code {
     label: "Ad Client: Region Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_region_code ;;
     type: string
     group_label: "Ad Client"
@@ -97,7 +97,7 @@ view: provider_request_stats {
 
   dimension: metrics__quantity__provider_request_count_requested {
     label: "Provider Request: Count Requested"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.provider_request_count_requested ;;
     type: number
     group_label: "Provider Request"
@@ -115,7 +115,7 @@ view: provider_request_stats {
 
   dimension: metrics__quantity__provider_request_count_returned {
     label: "Provider Request: Count Returned"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.provider_request_count_returned ;;
     type: number
     group_label: "Provider Request"
@@ -133,7 +133,7 @@ view: provider_request_stats {
 
   dimension: metrics__string__provider_request_provider {
     label: "Provider Request: Provider"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.provider_request_provider ;;
     type: string
     group_label: "Provider Request"

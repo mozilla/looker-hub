@@ -7,7 +7,7 @@
 view: request_stats {
   dimension: metrics__string__ad_country_code {
     label: "Ad: Country Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_country_code ;;
     type: string
     group_label: "Ad"
@@ -25,7 +25,7 @@ view: request_stats {
 
   dimension: metrics__labeled_boolean__ad_flags {
     label: "Ad: Flags"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.ad_flags ;;
     type: string
     group_label: "Ad"
@@ -43,7 +43,7 @@ view: request_stats {
 
   dimension: metrics__string__ad_region_code {
     label: "Ad: Region Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_region_code ;;
     type: string
     group_label: "Ad"
@@ -61,7 +61,7 @@ view: request_stats {
 
   dimension: metrics__string__ad_taxonomy {
     label: "Ad: Taxonomy"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_taxonomy ;;
     type: string
     group_label: "Ad"
@@ -79,7 +79,7 @@ view: request_stats {
 
   dimension: metrics__string__ad_client_dma_code {
     label: "Ad Client: Dma Code"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_dma_code ;;
     type: string
     group_label: "Ad Client"
@@ -97,7 +97,7 @@ view: request_stats {
 
   dimension: metrics__string__ad_client_form_factor {
     label: "Ad Client: Form Factor"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_form_factor ;;
     type: string
     group_label: "Ad Client"
@@ -115,7 +115,7 @@ view: request_stats {
 
   dimension: metrics__string__ad_client_placement {
     label: "Ad Client: Placement"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.ad_client_placement ;;
     type: string
     group_label: "Ad Client"
@@ -133,7 +133,7 @@ view: request_stats {
 
   dimension: metrics__quantity__technical_operations_count_filtered {
     label: "Technical Operations: Count Filtered"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.technical_operations_count_filtered ;;
     type: number
     group_label: "Technical Operations"
@@ -151,7 +151,7 @@ view: request_stats {
 
   dimension: metrics__quantity__technical_operations_count_requested {
     label: "Technical Operations: Count Requested"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.technical_operations_count_requested ;;
     type: number
     group_label: "Technical Operations"
@@ -169,7 +169,7 @@ view: request_stats {
 
   dimension: metrics__quantity__technical_operations_count_returned {
     label: "Technical Operations: Count Returned"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.technical_operations_count_returned ;;
     type: number
     group_label: "Technical Operations"
@@ -187,7 +187,7 @@ view: request_stats {
 
   dimension: metrics__string__technical_operations_firefox_version {
     label: "Technical Operations: Firefox Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.technical_operations_firefox_version ;;
     type: string
     group_label: "Technical Operations"
@@ -205,7 +205,7 @@ view: request_stats {
 
   dimension: metrics__string__technical_operations_request_id {
     label: "Technical Operations: Request ID"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.technical_operations_request_id ;;
     type: string
     group_label: "Technical Operations"
