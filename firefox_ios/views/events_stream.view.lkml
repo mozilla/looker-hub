@@ -331,6 +331,14 @@ view: events_stream {
     group_item_label: "Has Share Message"
   }
 
+  dimension: extras__boolean__is_at_bottom {
+    sql: ${TABLE}.extras.boolean.is_at_bottom ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is At Bottom"
+  }
+
   dimension: extras__boolean__is_enabled {
     sql: ${TABLE}.extras.boolean.is_enabled ;;
     type: yesno
