@@ -16883,6 +16883,42 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_failed__sum {
+    label: "Netwerk: Happy Eyeballs End To End Time Failed Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_failed.sum ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs End To End Time Failed Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs End To End Time Failed Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_happy_eyeballs_end_to_end_time_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: end-to-end time in milliseconds for the whole algorithm run, from algorithm start to final failure (all connection attempts failed).
+"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_succeeded__sum {
+    label: "Netwerk: Happy Eyeballs End To End Time Succeeded Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_succeeded.sum ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs End To End Time Succeeded Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs End To End Time Succeeded Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_happy_eyeballs_end_to_end_time_succeeded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: end-to-end time in milliseconds for the whole algorithm run, from algorithm start to a successful connection.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_happy_eyeballs_h3_discovery {
     label: "Netwerk: Happy Eyeballs H3 Discovery"
     hidden: yes
@@ -60514,6 +60550,34 @@ view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_connection_a
 }
 
 view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_failed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_succeeded__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

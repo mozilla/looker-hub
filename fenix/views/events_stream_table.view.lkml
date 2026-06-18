@@ -1696,6 +1696,14 @@ view: events_stream_table {
     group_item_label: "Seq"
   }
 
+  dimension: extras__quantity__session_duration {
+    sql: ${TABLE}.extras.quantity.session_duration ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Session Duration"
+  }
+
   dimension: extras__quantity__session_seq {
     sql: ${TABLE}.extras.quantity.session_seq ;;
     type: number

@@ -7560,6 +7560,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_failed__count {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_failed.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs End To End Time Failed"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_failed__sum {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_failed.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs End To End Time Failed"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_failed__values {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_failed.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_succeeded__count {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_succeeded.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs End To End Time Succeeded"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_succeeded__sum {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_succeeded.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs End To End Time Succeeded"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_succeeded__values {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_succeeded.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__netwerk_happy_eyeballs_time_to_first_attempt__count {
     sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_time_to_first_attempt.count ;;
     type: number
@@ -53556,6 +53600,34 @@ view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_connec
 }
 
 view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_failed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_succeeded__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
