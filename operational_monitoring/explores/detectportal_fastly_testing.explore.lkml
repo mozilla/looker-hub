@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/app_icon_selector_release_rollout.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/app_icon_selector_release_rollout_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/detectportal_fastly_testing.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/detectportal_fastly_testing_last_updated.datagroup.lkml"
 
-explore: app_icon_selector_release_rollout {
+explore: detectportal_fastly_testing {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: app_icon_selector_release_rollout {
   }
 
   hidden: yes
-  persist_with: app_icon_selector_release_rollout_last_updated
+  persist_with: detectportal_fastly_testing_last_updated
 }

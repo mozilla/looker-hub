@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_snapkit_removal_re_run
-    type: looker_line
-    fields: [
-      ios_snapkit_removal_re_run.submission_date,
-      ios_snapkit_removal_re_run.branch,
-      ios_snapkit_removal_re_run.point
-    ]
-    pivots: [
-      ios_snapkit_removal_re_run.branch
-    ]
-    filters:
-      ios_snapkit_removal_re_run.metric: 'days_of_use'
-      ios_snapkit_removal_re_run.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_snapkit_removal_re_run.submission_date
-    field_y: ios_snapkit_removal_re_run.point
-    log_scale: false
-    ci_lower: ios_snapkit_removal_re_run.lower
-    ci_upper: ios_snapkit_removal_re_run.upper
-    show_grid: true
-    listen:
-      Date: ios_snapkit_removal_re_run.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       ios_snapkit_removal_re_run.metric: 'active_hours'
+      ios_snapkit_removal_re_run.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_snapkit_removal_re_run.submission_date
+    field_y: ios_snapkit_removal_re_run.point
+    log_scale: false
+    ci_lower: ios_snapkit_removal_re_run.lower
+    ci_upper: ios_snapkit_removal_re_run.upper
+    show_grid: true
+    listen:
+      Date: ios_snapkit_removal_re_run.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_snapkit_removal_re_run
+    type: looker_line
+    fields: [
+      ios_snapkit_removal_re_run.submission_date,
+      ios_snapkit_removal_re_run.branch,
+      ios_snapkit_removal_re_run.point
+    ]
+    pivots: [
+      ios_snapkit_removal_re_run.branch
+    ]
+    filters:
+      ios_snapkit_removal_re_run.metric: 'retained'
       ios_snapkit_removal_re_run.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_snapkit_removal_re_run.branch
     ]
     filters:
-      ios_snapkit_removal_re_run.metric: 'retained'
+      ios_snapkit_removal_re_run.metric: 'days_of_use'
       ios_snapkit_removal_re_run.statistic: mean
     row: 10
     col: 12
