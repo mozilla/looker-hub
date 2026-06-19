@@ -3432,6 +3432,14 @@ view: events_stream_table {
     group_item_label: "Main Frame"
   }
 
+  dimension: extras__string__media_content_type {
+    sql: ${TABLE}.extras.string.media_content_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Media Content Type"
+  }
+
   dimension: extras__string__media_extension {
     sql: ${TABLE}.extras.string.media_extension ;;
     type: string
