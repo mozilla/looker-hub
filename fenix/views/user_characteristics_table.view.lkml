@@ -779,6 +779,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_font_smoothing_type {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_smoothing_type ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Characteristics Font Smoothing Type"
+    description: "The system font-smoothing type, normalized across platforms: 0 = disabled, 1 = grayscale (standard), 2 = subpixel. On Windows this is the subpixel-vs-grayscale type (SPI_GETFONTSMOOTHINGTYPE), distinct from text_anti_aliasing (which records the ClearType contrast level). On Linux it is the GNOME org.gnome.desktop.interface font-antialiasing setting (rgba/grayscale/none). Not set on macOS (grayscale-only, no subpixel type) or where the value cannot be determined.
+"
+  }
+
   dimension: metrics__quantity__characteristics_gl2_version_software {
     sql: ${TABLE}.metrics.quantity.characteristics_gl2_version_software ;;
     type: number
@@ -2763,6 +2773,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_font_hinting {
+    sql: ${TABLE}.metrics.string.characteristics_font_hinting ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Font Hinting"
+    description: "The font hinting style. On Linux this is the GNOME org.gnome.desktop.interface font-hinting setting, one of \"none\", \"slight\", \"medium\", or \"full\". Hinting reshapes glyph outlines, so it affects rasterized output including canvas text readback. Not set on other platforms, which expose no comparable per-user setting.
+"
+  }
+
   dimension: metrics__string__characteristics_font_minimum_size_default_group {
     sql: ${TABLE}.metrics.string.characteristics_font_minimum_size_default_group ;;
     type: string
@@ -2840,6 +2860,16 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics: String"
     group_item_label: "Characteristics Font Name Serif Western"
     description: "The value of the font.name.serif.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_rgba_order {
+    sql: ${TABLE}.metrics.string.characteristics_font_rgba_order ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Characteristics Font Rgba Order"
+    description: "The subpixel (LCD) element order. On Linux this is the GNOME org.gnome.desktop.interface font-rgba-order setting, one of \"rgba\", \"rgb\", \"bgr\", \"vrgb\", or \"vbgr\". On Windows it is the ClearType orientation (SPI_GETFONTSMOOTHINGORIENTATION), normalized to \"rgb\" or \"bgr\" (Windows exposes no vertical variants). Only affects rendering when subpixel antialiasing is active (see font_smoothing_type); it does not affect canvas readback, which is grayscale. Not set on macOS or Android.
 "
   }
 
