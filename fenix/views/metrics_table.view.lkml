@@ -14436,6 +14436,13 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_quic_version {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_version ;;
+    hidden: yes
+    description: "The QUIC version negotiated for an HTTP/3 connection, recorded once per connection that completes its handshake. Used to track the effect of enabling compatible version negotiation (RFC 9368/9369), i.e. how often connections end up on QUIC v2 versus v1.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_search_rtt_inflated {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_search_rtt_inflated ;;
     hidden: yes

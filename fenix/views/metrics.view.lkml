@@ -19850,6 +19850,23 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_quic_version {
+    label: "Networking: HTTP 3 Quic Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_quic_version ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Quic Version"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Quic Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_quic_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The QUIC version negotiated for an HTTP/3 connection, recorded once per connection that completes its handshake. Used to track the effect of enabling compatible version negotiation (RFC 9368/9369), i.e. how often connections end up on QUIC v2 versus v1.
+"
+  }
+
   dimension: metrics__memory_distribution__networking_http_3_search_empty_buffer_bdp_estimate__sum {
     label: "Networking: HTTP 3 Search Empty Buffer Bdp Estimate Sum"
     hidden: no
@@ -52124,6 +52141,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
 
 view: metrics__metrics__labeled_counter__networking_http_3_quic_frame_count {
   label: "Networking: HTTP 3 Quic Frame Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_3_quic_version {
+  label: "Networking: HTTP 3 Quic Version"
 
   dimension: document_id {
     type: string
