@@ -405,6 +405,7 @@ view: pageload_domain_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
   }
 
   dimension: session__session_id {
@@ -413,6 +414,7 @@ view: pageload_domain_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session ID"
+    description: "The unique UUID for this session."
   }
 
   dimension: session__session_sample_rate {
@@ -421,6 +423,7 @@ view: pageload_domain_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
   }
 
   dimension: session__session_seq {
@@ -429,6 +432,7 @@ view: pageload_domain_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
   }
 
   dimension: session__session_start_time {
@@ -437,6 +441,7 @@ view: pageload_domain_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {
