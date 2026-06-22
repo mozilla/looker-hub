@@ -475,14 +475,6 @@ view: events_stream {
     group_item_label: "Encrypted"
   }
 
-  dimension: extras__boolean__ended_in_error {
-    sql: ${TABLE}.extras.boolean.ended_in_error ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Ended In Error"
-  }
-
   dimension: extras__boolean__enrolled {
     sql: ${TABLE}.extras.boolean.enrolled ;;
     type: yesno
@@ -1147,14 +1139,6 @@ view: events_stream {
     group_item_label: "Reader Mode"
   }
 
-  dimension: extras__boolean__recovered {
-    sql: ${TABLE}.extras.boolean.recovered ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Recovered"
-  }
-
   dimension: extras__boolean__reset_disabled {
     sql: ${TABLE}.extras.boolean.reset_disabled ;;
     type: yesno
@@ -1529,14 +1513,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Attemptcount"
-  }
-
-  dimension: extras__quantity__attempts {
-    sql: ${TABLE}.extras.quantity.attempts ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Attempts"
   }
 
   dimension: extras__quantity__average_words_per_request {
@@ -1929,14 +1905,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Last Line Len"
-  }
-
-  dimension: extras__quantity__last_platform_error {
-    sql: ${TABLE}.extras.quantity.last_platform_error ;;
-    type: number
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Quantity"
-    group_item_label: "Last Platform Error"
   }
 
   dimension: extras__quantity__last_used {
@@ -3033,30 +3001,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Active"
-  }
-
-  dimension: extras__string__adapter_device_id {
-    sql: ${TABLE}.extras.string.adapter_device_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Adapter Device ID"
-  }
-
-  dimension: extras__string__adapter_driver_version {
-    sql: ${TABLE}.extras.string.adapter_driver_version ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Adapter Driver Version"
-  }
-
-  dimension: extras__string__adapter_vendor_id {
-    sql: ${TABLE}.extras.string.adapter_vendor_id ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Adapter Vendor ID"
   }
 
   dimension: extras__string__additional_name {
