@@ -228,6 +228,10 @@ ads:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_ad_metrics_daily
+    metric_definitions_ad_metrics_native_reporting:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_ad_metrics_native_reporting
     metric_definitions_admarketplace:
       type: metric_definitions_explore
       views:
@@ -723,6 +727,8 @@ ads:
       - table: mozdata.ads.forecast_suggest_monthly
       type: table_view
     metric_definitions_ad_metrics_daily:
+      type: metric_definitions_view
+    metric_definitions_ad_metrics_native_reporting:
       type: metric_definitions_view
     metric_definitions_admarketplace:
       type: metric_definitions_view
