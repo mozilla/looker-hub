@@ -2701,6 +2701,47 @@ In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
+  dimension: metrics__counter__glean_migration_error {
+    sql: ${TABLE}.metrics.counter.glean_migration_error ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Migration Error"
+    description: "The number of times a migration was attempted and failed.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_failed_metrics {
+    sql: ${TABLE}.metrics.counter.glean_migration_failed_metrics ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Migration Failed Metrics"
+    description: "Number of metrics that failed to deserialize from storage
+while iterating the Rkv database for migration.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_metrics_in_sqlite {
+    sql: ${TABLE}.metrics.counter.glean_migration_metrics_in_sqlite ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Migration Metrics In Sqlite"
+    description: "The number of metrics stored in SQLite after a migration run.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_migrated_metrics {
+    sql: ${TABLE}.metrics.counter.glean_migration_migrated_metrics ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Migration Migrated Metrics"
+    description: "The number of metrics migrated from Rkv storage to SQLite storage.
+"
+  }
+
   dimension: metrics__counter__glean_sessions_seen {
     sql: ${TABLE}.metrics.counter.glean_sessions_seen ;;
     type: number
@@ -20180,6 +20221,16 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__glean_database_load_error {
+    sql: ${TABLE}.metrics.string.glean_database_load_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Glean Database Load Error"
+    description: "If there was an error loading the sqlite database, record it.
+"
+  }
+
   dimension: metrics__string__glean_database_rkv_load_error {
     sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
     type: string
@@ -30030,6 +30081,73 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__glean_database_write_time__values {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.values ;;
     hidden: yes
   }
 
@@ -71362,6 +71480,20 @@ view: metrics_table__metrics__timing_distribution__glam_experiment_time__values 
 }
 
 view: metrics_table__metrics__timing_distribution__glean_database_write_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_migration_migration_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

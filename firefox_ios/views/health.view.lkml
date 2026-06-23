@@ -24,6 +24,24 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__glean_database_load_error {
+    label: "Glean Database: Load Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_database_load_error ;;
+    type: string
+    group_label: "Glean Database"
+    group_item_label: "Load Error"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Database: Load Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_database_load_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If there was an error loading the sqlite database, record it.
+"
+  }
+
   dimension: metrics__string__glean_database_rkv_load_error {
     label: "Glean Database: Rkv Load Error"
     hidden: no
@@ -303,6 +321,97 @@ Valid options are:
     description: "A client_id recovered from a `client_id.txt` file on disk.
 Only expected to have a value for the exception states `empty-db`, `c0ffee-in-db` and `client-id-mismatch`.
 See `exception_state` for different exception states when this can happen.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_error {
+    label: "Glean Migration: Error"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_migration_error ;;
+    type: number
+    group_label: "Glean Migration"
+    group_item_label: "Error"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration: Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a migration was attempted and failed.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_failed_metrics {
+    label: "Glean Migration: Failed Metrics"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_migration_failed_metrics ;;
+    type: number
+    group_label: "Glean Migration"
+    group_item_label: "Failed Metrics"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration: Failed Metrics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_failed_metrics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of metrics that failed to deserialize from storage
+while iterating the Rkv database for migration.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_metrics_in_sqlite {
+    label: "Glean Migration: Metrics In Sqlite"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_migration_metrics_in_sqlite ;;
+    type: number
+    group_label: "Glean Migration"
+    group_item_label: "Metrics In Sqlite"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration: Metrics In Sqlite"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_metrics_in_sqlite"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of metrics stored in SQLite after a migration run.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_migrated_metrics {
+    label: "Glean Migration: Migrated Metrics"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_migration_migrated_metrics ;;
+    type: number
+    group_label: "Glean Migration"
+    group_item_label: "Migrated Metrics"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration: Migrated Metrics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_migrated_metrics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of metrics migrated from Rkv storage to SQLite storage.
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__sum {
+    label: "Glean Migration: Migration Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.sum ;;
+    type: number
+    group_label: "Glean Migration"
+    group_item_label: "Migration Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration: Migration Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_migration_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration for one full migration run at startup.
 "
   }
 
@@ -1293,6 +1402,106 @@ Most samples are expected to be below the 10s timeout used.
     }
   }
 
+  measure: glean_migration_error {
+    type: sum
+    sql: ${metrics__counter__glean_migration_error} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_migration_error_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_migration_error: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_migration_failed_metrics {
+    type: sum
+    sql: ${metrics__counter__glean_migration_failed_metrics} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration Failed Metrics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_failed_metrics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_migration_failed_metrics_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_migration_failed_metrics: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration Failed Metrics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_failed_metrics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_migration_metrics_in_sqlite {
+    type: sum
+    sql: ${metrics__counter__glean_migration_metrics_in_sqlite} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration Metrics In Sqlite"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_metrics_in_sqlite"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_migration_metrics_in_sqlite_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_migration_metrics_in_sqlite: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration Metrics In Sqlite"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_metrics_in_sqlite"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_migration_migrated_metrics {
+    type: sum
+    sql: ${metrics__counter__glean_migration_migrated_metrics} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration Migrated Metrics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_migrated_metrics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_migration_migrated_metrics_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_migration_migrated_metrics: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Migration Migrated Metrics"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_migration_migrated_metrics"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: glean_upload_deleted_pings_after_quota_hit {
     type: sum
     sql: ${metrics__counter__glean_upload_deleted_pings_after_quota_hit} ;;
@@ -1900,6 +2109,20 @@ view: health__metrics__memory_distribution__glean_upload_pending_pings_directory
 }
 
 view: health__metrics__timing_distribution__glean_database_write_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: health__metrics__timing_distribution__glean_migration_migration_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
