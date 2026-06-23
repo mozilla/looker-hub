@@ -9,7 +9,7 @@ view: crash_counts_aggregates {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "release, beta, nightly, esr."
+    description: "The Firefox release channel through which the client received its build, such as 'release', 'beta', 'aurora', or 'esr'. Used to segment data by product maturity and release train."
   }
 
   dimension: classification_bit {
@@ -23,14 +23,14 @@ view: crash_counts_aggregates {
     sql: ${TABLE}.major_version ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Extracted version from crash_app_display_version."
+    description: "The major version number of the Firefox browser (e.g., 128, 151), representing the primary release train. Used to segment clients by their browser generation."
   }
 
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "OS of app"
+    description: "The raw operating system name as reported by the client, such as 'Windows_NT', 'Darwin', 'Linux', 'Android', or 'iOS'. This is the unprocessed OS string before normalization."
   }
 
   dimension: process_type_bit {
@@ -74,7 +74,7 @@ view: crash_counts_aggregates {
     ]
     convert_tz: no
     datatype: date
-    description: "Date the table was last updated."
+    description: "The UTC calendar date on which a ping or record was received by Mozilla's ingestion pipeline. Used as the primary partitioning and filtering dimension for date-based analysis."
   }
 
   sql_table_name: `moz-fx-data-shared-prod.telemetry_derived.crash_counts_aggregates_v1` ;;

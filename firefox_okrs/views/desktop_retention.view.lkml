@@ -9,63 +9,63 @@ view: desktop_retention {
     sql: ${TABLE}.active_metric_date ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of Clients Active on Metric Date"
+    description: "Indicates whether the client was active on the metric (reference) date."
   }
 
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "App Version"
+    description: "The full version string of the application at the time of the event (e.g., '151.0.2'). Combines major, minor, and patch components into a single human-readable version identifier."
   }
 
   dimension: attribution_campaign {
     sql: ${TABLE}.attribution_campaign ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Attribution Campaign"
+    description: "The marketing campaign name associated with the Firefox installation, sourced from attribution parameters (e.g., 'SET_DEFAULT_BROWSER'). Null when attribution data is unavailable."
   }
 
   dimension: attribution_content {
     sql: ${TABLE}.attribution_content ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Attribution Content"
+    description: "The content variant or creative identifier from the marketing attribution parameters, used to distinguish specific ad placements or page elements (e.g., 'body-download-button'). Null when attribution data is unavailable."
   }
 
   dimension: attribution_dlsource {
     sql: ${TABLE}.attribution_dlsource ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Attribution DL Source"
+    description: "The download source identifier from attribution parameters, indicating the platform or property from which Firefox was downloaded (e.g., 'mozorg', 'fxdotcom', 'mozillaci'). Null when attribution data is unavailable."
   }
 
   dimension: attribution_experiment {
     sql: ${TABLE}.attribution_experiment ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Attribution Experiment"
+    description: "The experiment identifier from attribution parameters, indicating whether the install was part of a specific marketing experiment (e.g., 'download-privacy'). Null when no experiment was associated with the attribution."
   }
 
   dimension: attribution_medium {
     sql: ${TABLE}.attribution_medium ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Attribution Medium"
+    description: "The marketing medium from attribution parameters describing how the user arrived at the download (e.g., 'referral', 'firefox-desktop'). Null when attribution data is unavailable."
   }
 
   dimension: attribution_ua {
     sql: ${TABLE}.attribution_ua ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Attribution UA"
+    description: "The user agent type of the browser the user was using when they downloaded Firefox, as captured in attribution parameters (e.g., 'chrome', 'edge', 'firefox'). Null when attribution data is unavailable."
   }
 
   dimension: attribution_variation {
     sql: ${TABLE}.attribution_variation ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Attribution Variation"
+    description: "The A/B test variation from attribution parameters that the user was assigned to during the download funnel (e.g., 'treatment', 'control'). Null when no variation was recorded."
   }
 
   dimension: country {
@@ -73,21 +73,21 @@ view: desktop_retention {
     type: string
     suggest_persist_for: "24 hours"
     map_layer_name: countries
-    description: "Country"
+    description: "The ISO 3166-1 alpha-2 country code (e.g., 'US', 'DE', 'FR') derived from the client's IP address or profile geography. Used for geographic segmentation of telemetry data."
   }
 
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Distribution ID"
+    description: "An identifier for the Firefox distribution package the client is running, such as 'default' for the standard Mozilla build or partner-specific identifiers like 'canonical-002' or 'mozilla-MSIX'. This field is null when no distribution identifier is available."
   }
 
   dimension: is_desktop {
     sql: ${TABLE}.is_desktop ;;
     type: yesno
     suggest_persist_for: "24 hours"
-    description: "Indicates if the client is included in the desktop KPI"
+    description: "Indicates whether the client is running on a desktop platform as opposed to a mobile device. True means the client is on desktop; false means it is on a mobile platform."
   }
 
   dimension: lifecycle_stage {
@@ -100,35 +100,35 @@ view: desktop_retention {
     sql: ${TABLE}.locale ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Locale"
+    description: "The language and region locale of the Firefox browser or application, such as 'en' for English or 'fr' for French. A null value indicates the locale could not be determined."
   }
 
   dimension: new_profiles_metric_date {
     sql: ${TABLE}.new_profiles_metric_date ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of New Profiles on Metric Date"
+    description: "The count of new profiles attributed to the specific metric date for the record. Used to track profile creation volume on a given date within an aggregated dataset."
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized Channel"
+    description: "The standardized release channel of the Firefox application, such as 'release', 'beta', 'nightly', 'esr', or 'aurora'. 'Other' is used when the channel does not match a known value."
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized OS"
+    description: "The standardized operating system name for the client device, such as 'Windows', 'Mac', or 'Linux'. This normalizes raw OS strings into a consistent set of values."
   }
 
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Normalized OS Version"
+    description: "The standardized version string of the client's operating system, such as '10.0' for Windows 10 or '6.8.0' for a Linux kernel version. Provides a normalized representation across different OS reporting formats."
   }
 
   dimension: paid_vs_organic {
@@ -141,42 +141,42 @@ view: desktop_retention {
     sql: ${TABLE}.ping_sent_metric_date ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of Pings Sent on Metric Date"
+    description: "Indicates whether a telemetry ping was sent on the metric reference date. True means a ping was successfully submitted for that date; null indicates the data is unavailable or the client was inactive."
   }
 
   dimension: ping_sent_week_4 {
     sql: ${TABLE}.ping_sent_week_4 ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of Pings Sent on Week 4"
+    description: "Indicates whether a telemetry ping was sent during week 4 of the measurement window. True means the client was active and submitted a ping in that week; false means no ping was received."
   }
 
   dimension: repeat_profiles {
     sql: ${TABLE}.repeat_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of Repeat Profiles"
+    description: "The count of profiles that have been seen in a previous reporting period (i.e., returning profiles) for a given dimension or segment. Complements new profile counts to provide a full picture of the user base."
   }
 
   dimension: retained_week_4 {
     sql: ${TABLE}.retained_week_4 ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of Clients Retained on Week 4"
+    description: "A boolean flag indicating whether a profile was active during the fourth week after its creation. True means the profile was retained; false means it was not; null indicates the window had not yet elapsed."
   }
 
   dimension: retained_week_4_new_profiles {
     sql: ${TABLE}.retained_week_4_new_profiles ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Count of New Profiles Retained on Week 4"
+    description: "The count of new profiles that were retained through the fourth week after their creation date, for a given segment or reporting dimension."
   }
 
   dimension: startup_profile_selection_reason {
     sql: ${TABLE}.startup_profile_selection_reason ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Startup Profile Selection Reason"
+    description: "The reason or method by which a Firefox profile was selected at the start of a session. Common values include 'firstrun-created-default' (a new default profile was created on first run) and 'default' (the existing default profile was selected)."
   }
 
   dimension_group: first_seen {
@@ -192,7 +192,7 @@ view: desktop_retention {
     ]
     convert_tz: no
     datatype: date
-    description: "First Seen Date"
+    description: "The calendar date on which the client profile was first observed in telemetry data. This is used to determine client tenure and cohort assignment."
   }
 
   dimension_group: metric {
@@ -208,7 +208,7 @@ view: desktop_retention {
     ]
     convert_tz: no
     datatype: date
-    description: "Metric Date"
+    description: "The calendar date associated with the metric observation or aggregation window. Used to partition and filter metric data by time."
   }
 
   sql_table_name: `moz-fx-data-shared-prod.telemetry.desktop_retention` ;;
