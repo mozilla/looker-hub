@@ -1281,6 +1281,47 @@ In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
+  dimension: metrics__counter__glean_migration_error {
+    sql: ${TABLE}.metrics.counter.glean_migration_error ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Migration Error"
+    description: "The number of times a migration was attempted and failed.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_failed_metrics {
+    sql: ${TABLE}.metrics.counter.glean_migration_failed_metrics ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Migration Failed Metrics"
+    description: "Number of metrics that failed to deserialize from storage
+while iterating the Rkv database for migration.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_metrics_in_sqlite {
+    sql: ${TABLE}.metrics.counter.glean_migration_metrics_in_sqlite ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Migration Metrics In Sqlite"
+    description: "The number of metrics stored in SQLite after a migration run.
+"
+  }
+
+  dimension: metrics__counter__glean_migration_migrated_metrics {
+    sql: ${TABLE}.metrics.counter.glean_migration_migrated_metrics ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Glean Migration Migrated Metrics"
+    description: "The number of metrics migrated from Rkv storage to SQLite storage.
+"
+  }
+
   dimension: metrics__counter__glean_sessions_seen {
     sql: ${TABLE}.metrics.counter.glean_sessions_seen ;;
     type: number
@@ -1828,6 +1869,16 @@ from the page action menu.
     group_label: "Metrics: Counter"
     group_item_label: "Password Generator Shown"
     description: "The password generator bottom sheet was shown and is visible
+"
+  }
+
+  dimension: metrics__counter__places_manager_connection_initialized {
+    sql: ${TABLE}.metrics.counter.places_manager_connection_initialized ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Places Manager Connection Initialized"
+    description: "Number of times a `PlacesConnection` was initialized.
 "
   }
 
@@ -3048,6 +3099,16 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__glean_database_load_error {
+    sql: ${TABLE}.metrics.string.glean_database_load_error ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Glean Database Load Error"
+    description: "If there was an error loading the sqlite database, record it.
+"
+  }
+
   dimension: metrics__string__glean_database_rkv_load_error {
     sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
     type: string
@@ -3410,6 +3471,73 @@ This metric is only attached to a ping if it already contains other data.
 
   dimension: metrics__timing_distribution__glean_database_write_time__values {
     sql: ${TABLE}.metrics.timing_distribution.glean_database_write_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Glean Migration Migration Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_migration_migration_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_migration_migration_duration.values ;;
     hidden: yes
   }
 
@@ -4080,6 +4208,274 @@ This metric is only attached to a ping if it already contains other data.
 
   dimension: metrics__timing_distribution__places_history_migration_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Chk Pnt Time Temp"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Chk Pnt Time Temp"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Chk Pnt Time Temp"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Chk Pnt Time Temp"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Chk Pnt Time Temp"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Chk Pnt Time Temp"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Chk Pnt Time Temp"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time_temp.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Optimize Time Temp"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Optimize Time Temp"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Optimize Time Temp"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Optimize Time Temp"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Optimize Time Temp"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Optimize Time Temp"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Optimize Time Temp"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time_temp.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Prune Time Temp"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Prune Time Temp"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Prune Time Temp"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Prune Time Temp"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Prune Time Temp"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Prune Time Temp"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Prune Time Temp"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time_temp.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Vacuum Time Temp"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Vacuum Time Temp"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Vacuum Time Temp"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Vacuum Time Temp"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Vacuum Time Temp"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Vacuum Time Temp"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Manager Run Maintenance Vacuum Time Temp"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time_temp.values ;;
     hidden: yes
   }
 
@@ -4785,6 +5181,20 @@ view: metrics_table__metrics__timing_distribution__glean_database_write_time__va
   }
 }
 
+view: metrics_table__metrics__timing_distribution__glean_migration_migration_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__glean_upload_send_failure__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -4912,6 +5322,62 @@ view: metrics_table__metrics__timing_distribution__nimbus_health_fetch_experimen
 }
 
 view: metrics_table__metrics__timing_distribution__places_history_migration_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time_temp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_optimize_time_temp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_prune_time_temp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_vacuum_time_temp__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
