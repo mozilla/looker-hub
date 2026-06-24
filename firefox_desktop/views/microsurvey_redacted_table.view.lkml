@@ -259,6 +259,11 @@ view: microsurvey_redacted_table {
     hidden: yes
   }
 
+  dimension: metrics__object__microsurvey_smart_window_chat {
+    sql: ${TABLE}.metrics.object.microsurvey_smart_window_chat ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__microsurvey_smart_window_user_feedback_data {
     sql: ${TABLE}.metrics.object.microsurvey_smart_window_user_feedback_data ;;
     hidden: yes
@@ -294,6 +299,14 @@ view: microsurvey_redacted_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Microsurvey Addon Version"
+  }
+
+  dimension: metrics__string__microsurvey_app_build_id {
+    sql: ${TABLE}.metrics.string.microsurvey_app_build_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Microsurvey App Build ID"
   }
 
   dimension: metrics__string__microsurvey_app_channel {
