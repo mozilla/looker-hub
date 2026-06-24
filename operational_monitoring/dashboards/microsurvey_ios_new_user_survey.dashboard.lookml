@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       microsurvey_ios_new_user_survey.branch
     ]
     filters:
-      microsurvey_ios_new_user_survey.metric: 'ad_clicks'
+      microsurvey_ios_new_user_survey.metric: 'days_of_use'
       microsurvey_ios_new_user_survey.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +94,44 @@
       microsurvey_ios_new_user_survey.branch
     ]
     filters:
-      microsurvey_ios_new_user_survey.metric: 'days_of_use'
+      microsurvey_ios_new_user_survey.metric: 'search_count'
       microsurvey_ios_new_user_survey.statistic: mean
     row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: microsurvey_ios_new_user_survey.submission_date
+    field_y: microsurvey_ios_new_user_survey.point
+    log_scale: false
+    ci_lower: microsurvey_ios_new_user_survey.lower
+    ci_upper: microsurvey_ios_new_user_survey.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_ios_new_user_survey.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_ios_new_user_survey
+    type: looker_line
+    fields: [
+      microsurvey_ios_new_user_survey.submission_date,
+      microsurvey_ios_new_user_survey.branch,
+      microsurvey_ios_new_user_survey.point
+    ]
+    pivots: [
+      microsurvey_ios_new_user_survey.branch
+    ]
+    filters:
+      microsurvey_ios_new_user_survey.metric: 'ad_clicks'
+      microsurvey_ios_new_user_survey.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: microsurvey_ios_new_user_survey.submission_date
@@ -129,40 +163,6 @@
     ]
     filters:
       microsurvey_ios_new_user_survey.metric: 'retained'
-      microsurvey_ios_new_user_survey.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: microsurvey_ios_new_user_survey.submission_date
-    field_y: microsurvey_ios_new_user_survey.point
-    log_scale: false
-    ci_lower: microsurvey_ios_new_user_survey.lower
-    ci_upper: microsurvey_ios_new_user_survey.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_ios_new_user_survey.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_ios_new_user_survey
-    type: looker_line
-    fields: [
-      microsurvey_ios_new_user_survey.submission_date,
-      microsurvey_ios_new_user_survey.branch,
-      microsurvey_ios_new_user_survey.point
-    ]
-    pivots: [
-      microsurvey_ios_new_user_survey.branch
-    ]
-    filters:
-      microsurvey_ios_new_user_survey.metric: 'search_count'
       microsurvey_ios_new_user_survey.statistic: mean
     row: 20
     col: 0

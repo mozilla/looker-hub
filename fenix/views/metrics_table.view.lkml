@@ -8657,6 +8657,116 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_iface_mtu__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_iface_mtu.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Iface Mtu"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_iface_mtu__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_iface_mtu.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Iface Mtu"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_iface_mtu__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_iface_mtu.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_pmtu__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_pmtu.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Pmtu"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_pmtu__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_pmtu.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Pmtu"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_pmtu__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_pmtu.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_acked__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_acked.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Probes Acked"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_acked__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_acked.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Probes Acked"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_acked__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_acked.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_lost__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_lost.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Probes Lost"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_lost__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_lost.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Probes Lost"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_lost__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_lost.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_sent__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_sent.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Probes Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_sent__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_sent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Pmtud Probes Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_sent__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_sent.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_search_first_rtt_vs_min_rtt__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_search_first_rtt_vs_min_rtt.count ;;
     type: number
@@ -54397,6 +54507,76 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_pmtud_iface_mtu__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_pmtud_pmtu__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_pmtud_probes_acked__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_pmtud_probes_lost__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_pmtud_probes_sent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
