@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: smart_shortcuts_v3_lr2_no_lr_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.smart_shortcuts_v3_lr2_no_lr_rollout_statistics ;;
+view: hnt_wattle_world_cup_settings_persistence_opt_ins {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.hnt_wattle_world_cup_settings_persistence_opt_ins_statistics ;;
 
   dimension: submission_date {
     type: date

@@ -19833,6 +19833,96 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_iface_mtu__sum {
+    label: "Networking: HTTP 3 Pmtud Iface Mtu Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_iface_mtu.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Pmtud Iface Mtu Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Pmtud Iface Mtu Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_pmtud_iface_mtu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: the MTU (in bytes) of the local interface used for the connection's most recent path, used by PMTUD as a search bound. Recorded at connection teardown when known.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_pmtu__sum {
+    label: "Networking: HTTP 3 Pmtud Pmtu Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_pmtu.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Pmtud Pmtu Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Pmtud Pmtu Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_pmtud_pmtu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: the path MTU (in bytes) discovered by PMTUD for the connection's current path, recorded at connection teardown. Only recorded when PMTUD determined a path MTU.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_acked__sum {
+    label: "Networking: HTTP 3 Pmtud Probes Acked Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_acked.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Pmtud Probes Acked Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Pmtud Probes Acked Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_pmtud_probes_acked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: number of PMTUD probes acknowledged over the lifetime of a connection, recorded once at connection teardown when PMTUD ran.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_lost__sum {
+    label: "Networking: HTTP 3 Pmtud Probes Lost Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_lost.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Pmtud Probes Lost Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Pmtud Probes Lost Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_pmtud_probes_lost"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: number of PMTUD probes lost over the lifetime of a connection, recorded once at connection teardown when PMTUD ran.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_sent__sum {
+    label: "Networking: HTTP 3 Pmtud Probes Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Pmtud Probes Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Pmtud Probes Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_pmtud_probes_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: number of PMTUD probes sent over the lifetime of a connection, recorded once at connection teardown when PMTUD ran.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_quic_frame_count {
     label: "Networking: HTTP 3 Quic Frame Count"
     hidden: yes
@@ -61489,6 +61579,76 @@ view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio_filter
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_pmtud_iface_mtu__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_pmtud_pmtu__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_pmtud_probes_acked__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_pmtud_probes_lost__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_pmtud_probes_sent__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

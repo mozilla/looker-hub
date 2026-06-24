@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       detectportal_fastly_testing.branch
     ]
     filters:
-      detectportal_fastly_testing.metric: 'qualified_cumulative_days_of_use'
+      detectportal_fastly_testing.metric: 'days_of_use'
       detectportal_fastly_testing.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       detectportal_fastly_testing.branch
     ]
     filters:
-      detectportal_fastly_testing.metric: 'ad_clicks'
+      detectportal_fastly_testing.metric: 'active_hours'
       detectportal_fastly_testing.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       detectportal_fastly_testing.branch
     ]
     filters:
-      detectportal_fastly_testing.metric: 'search_count'
+      detectportal_fastly_testing.metric: 'qualified_cumulative_days_of_use'
       detectportal_fastly_testing.statistic: mean
     row: 10
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,10 +199,44 @@
       detectportal_fastly_testing.branch
     ]
     filters:
-      detectportal_fastly_testing.metric: 'days_of_use'
+      detectportal_fastly_testing.metric: 'search_count'
       detectportal_fastly_testing.statistic: mean
     row: 20
     col: 12
+    width: 12
+    height: 8
+    field_x: detectportal_fastly_testing.submission_date
+    field_y: detectportal_fastly_testing.point
+    log_scale: false
+    ci_lower: detectportal_fastly_testing.lower
+    ci_upper: detectportal_fastly_testing.upper
+    show_grid: true
+    listen:
+      Date: detectportal_fastly_testing.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: detectportal_fastly_testing
+    type: looker_line
+    fields: [
+      detectportal_fastly_testing.submission_date,
+      detectportal_fastly_testing.branch,
+      detectportal_fastly_testing.point
+    ]
+    pivots: [
+      detectportal_fastly_testing.branch
+    ]
+    filters:
+      detectportal_fastly_testing.metric: 'ad_clicks'
+      detectportal_fastly_testing.statistic: mean
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: detectportal_fastly_testing.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       detectportal_fastly_testing.metric: 'retained'
-      detectportal_fastly_testing.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: detectportal_fastly_testing.submission_date
-    field_y: detectportal_fastly_testing.point
-    log_scale: false
-    ci_lower: detectportal_fastly_testing.lower
-    ci_upper: detectportal_fastly_testing.upper
-    show_grid: true
-    listen:
-      Date: detectportal_fastly_testing.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: detectportal_fastly_testing
-    type: looker_line
-    fields: [
-      detectportal_fastly_testing.submission_date,
-      detectportal_fastly_testing.branch,
-      detectportal_fastly_testing.point
-    ]
-    pivots: [
-      detectportal_fastly_testing.branch
-    ]
-    filters:
-      detectportal_fastly_testing.metric: 'active_hours'
       detectportal_fastly_testing.statistic: mean
     row: 30
     col: 12
