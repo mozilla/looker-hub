@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       android_marketing_card_removal_eu_removal_release.branch
     ]
     filters:
-      android_marketing_card_removal_eu_removal_release.metric: 'days_of_use'
+      android_marketing_card_removal_eu_removal_release.metric: 'retained'
       android_marketing_card_removal_eu_removal_release.statistic: mean
     row: 0
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       android_marketing_card_removal_eu_removal_release.branch
     ]
     filters:
-      android_marketing_card_removal_eu_removal_release.metric: 'retained'
+      android_marketing_card_removal_eu_removal_release.metric: 'days_of_use'
       android_marketing_card_removal_eu_removal_release.statistic: mean
     row: 30
     col: 0
