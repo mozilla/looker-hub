@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: viewpoint_ios_june_2026 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_june_2026_statistics ;;
+view: hnt_wattle_world_cup_message_add_back_june_23 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.hnt_wattle_world_cup_message_add_back_june_23_statistics ;;
 
   dimension: submission_date {
     type: date

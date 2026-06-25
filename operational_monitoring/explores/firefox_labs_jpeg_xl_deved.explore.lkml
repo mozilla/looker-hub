@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/viewpoint_android_june_2026.view.lkml"
-include: "/looker-hub/operational_monitoring/datagroups/viewpoint_android_june_2026_last_updated.datagroup.lkml"
+include: "/looker-hub/operational_monitoring/views/firefox_labs_jpeg_xl_deved.view.lkml"
+include: "/looker-hub/operational_monitoring/datagroups/firefox_labs_jpeg_xl_deved_last_updated.datagroup.lkml"
 
-explore: viewpoint_android_june_2026 {
+explore: firefox_labs_jpeg_xl_deved {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -15,5 +15,5 @@ explore: viewpoint_android_june_2026 {
   }
 
   hidden: yes
-  persist_with: viewpoint_android_june_2026_last_updated
+  persist_with: firefox_labs_jpeg_xl_deved_last_updated
 }

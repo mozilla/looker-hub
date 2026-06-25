@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       categories_in_feed_ios.branch
     ]
     filters:
-      categories_in_feed_ios.metric: 'active_hours'
+      categories_in_feed_ios.metric: 'retained'
       categories_in_feed_ios.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       categories_in_feed_ios.branch
     ]
     filters:
-      categories_in_feed_ios.metric: 'search_count'
+      categories_in_feed_ios.metric: 'active_hours'
       categories_in_feed_ios.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       categories_in_feed_ios.branch
     ]
     filters:
-      categories_in_feed_ios.metric: 'retained'
+      categories_in_feed_ios.metric: 'search_count'
       categories_in_feed_ios.statistic: mean
     row: 20
     col: 0
