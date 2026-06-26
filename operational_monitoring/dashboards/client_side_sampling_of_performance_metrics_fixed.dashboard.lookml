@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_of_performance_metrics_fixed
+    type: looker_line
+    fields: [
+      client_side_sampling_of_performance_metrics_fixed.submission_date,
+      client_side_sampling_of_performance_metrics_fixed.branch,
+      client_side_sampling_of_performance_metrics_fixed.point
+    ]
+    pivots: [
+      client_side_sampling_of_performance_metrics_fixed.branch
+    ]
+    filters:
+      client_side_sampling_of_performance_metrics_fixed.metric: 'days_of_use'
+      client_side_sampling_of_performance_metrics_fixed.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: client_side_sampling_of_performance_metrics_fixed.submission_date
+    field_y: client_side_sampling_of_performance_metrics_fixed.point
+    log_scale: false
+    ci_lower: client_side_sampling_of_performance_metrics_fixed.lower
+    ci_upper: client_side_sampling_of_performance_metrics_fixed.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_of_performance_metrics_fixed.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -31,41 +65,6 @@
       client_side_sampling_of_performance_metrics_fixed.metric: 'memory_total'
       client_side_sampling_of_performance_metrics_fixed.statistic: percentile
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: client_side_sampling_of_performance_metrics_fixed.submission_date
-    field_y: client_side_sampling_of_performance_metrics_fixed.point
-    log_scale: false
-    ci_lower: client_side_sampling_of_performance_metrics_fixed.lower
-    ci_upper: client_side_sampling_of_performance_metrics_fixed.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_of_performance_metrics_fixed.submission_date
-      Percentile: client_side_sampling_of_performance_metrics_fixed.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_of_performance_metrics_fixed
-    type: looker_line
-    fields: [
-      client_side_sampling_of_performance_metrics_fixed.submission_date,
-      client_side_sampling_of_performance_metrics_fixed.branch,
-      client_side_sampling_of_performance_metrics_fixed.point
-    ]
-    pivots: [
-      client_side_sampling_of_performance_metrics_fixed.branch
-    ]
-    filters:
-      client_side_sampling_of_performance_metrics_fixed.metric: 'qualified_cumulative_days_of_use'
-      client_side_sampling_of_performance_metrics_fixed.statistic: mean
-    row: 0
     col: 12
     width: 12
     height: 8
@@ -77,40 +76,7 @@
     show_grid: true
     listen:
       Date: client_side_sampling_of_performance_metrics_fixed.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: client_side_sampling_of_performance_metrics_fixed
-    type: looker_line
-    fields: [
-      client_side_sampling_of_performance_metrics_fixed.submission_date,
-      client_side_sampling_of_performance_metrics_fixed.branch,
-      client_side_sampling_of_performance_metrics_fixed.point
-    ]
-    pivots: [
-      client_side_sampling_of_performance_metrics_fixed.branch
-    ]
-    filters:
-      client_side_sampling_of_performance_metrics_fixed.metric: 'retained'
-      client_side_sampling_of_performance_metrics_fixed.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: client_side_sampling_of_performance_metrics_fixed.submission_date
-    field_y: client_side_sampling_of_performance_metrics_fixed.point
-    log_scale: false
-    ci_lower: client_side_sampling_of_performance_metrics_fixed.lower
-    ci_upper: client_side_sampling_of_performance_metrics_fixed.upper
-    show_grid: true
-    listen:
-      Date: client_side_sampling_of_performance_metrics_fixed.submission_date
+      Percentile: client_side_sampling_of_performance_metrics_fixed.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -132,6 +98,40 @@
     ]
     filters:
       client_side_sampling_of_performance_metrics_fixed.metric: 'uri_count'
+      client_side_sampling_of_performance_metrics_fixed.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: client_side_sampling_of_performance_metrics_fixed.submission_date
+    field_y: client_side_sampling_of_performance_metrics_fixed.point
+    log_scale: false
+    ci_lower: client_side_sampling_of_performance_metrics_fixed.lower
+    ci_upper: client_side_sampling_of_performance_metrics_fixed.upper
+    show_grid: true
+    listen:
+      Date: client_side_sampling_of_performance_metrics_fixed.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: client_side_sampling_of_performance_metrics_fixed
+    type: looker_line
+    fields: [
+      client_side_sampling_of_performance_metrics_fixed.submission_date,
+      client_side_sampling_of_performance_metrics_fixed.branch,
+      client_side_sampling_of_performance_metrics_fixed.point
+    ]
+    pivots: [
+      client_side_sampling_of_performance_metrics_fixed.branch
+    ]
+    filters:
+      client_side_sampling_of_performance_metrics_fixed.metric: 'qualified_cumulative_days_of_use'
       client_side_sampling_of_performance_metrics_fixed.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       client_side_sampling_of_performance_metrics_fixed.branch
     ]
     filters:
-      client_side_sampling_of_performance_metrics_fixed.metric: 'search_count'
+      client_side_sampling_of_performance_metrics_fixed.metric: 'retained'
       client_side_sampling_of_performance_metrics_fixed.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       client_side_sampling_of_performance_metrics_fixed.branch
     ]
     filters:
-      client_side_sampling_of_performance_metrics_fixed.metric: 'days_of_use'
+      client_side_sampling_of_performance_metrics_fixed.metric: 'search_count'
       client_side_sampling_of_performance_metrics_fixed.statistic: mean
     row: 30
     col: 12

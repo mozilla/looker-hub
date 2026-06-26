@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_15202026050433143_to_release_only_150
+    type: looker_line
+    fields: [
+      new_tab_15202026050433143_to_release_only_150.submission_date,
+      new_tab_15202026050433143_to_release_only_150.branch,
+      new_tab_15202026050433143_to_release_only_150.point
+    ]
+    pivots: [
+      new_tab_15202026050433143_to_release_only_150.branch
+    ]
+    filters:
+      new_tab_15202026050433143_to_release_only_150.metric: 'days_of_use'
+      new_tab_15202026050433143_to_release_only_150.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_tab_15202026050433143_to_release_only_150.submission_date
+    field_y: new_tab_15202026050433143_to_release_only_150.point
+    log_scale: false
+    ci_lower: new_tab_15202026050433143_to_release_only_150.lower
+    ci_upper: new_tab_15202026050433143_to_release_only_150.upper
+    show_grid: true
+    listen:
+      Date: new_tab_15202026050433143_to_release_only_150.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -31,41 +65,6 @@
       new_tab_15202026050433143_to_release_only_150.metric: 'memory_total'
       new_tab_15202026050433143_to_release_only_150.statistic: percentile
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_tab_15202026050433143_to_release_only_150.submission_date
-    field_y: new_tab_15202026050433143_to_release_only_150.point
-    log_scale: false
-    ci_lower: new_tab_15202026050433143_to_release_only_150.lower
-    ci_upper: new_tab_15202026050433143_to_release_only_150.upper
-    show_grid: true
-    listen:
-      Date: new_tab_15202026050433143_to_release_only_150.submission_date
-      Percentile: new_tab_15202026050433143_to_release_only_150.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_15202026050433143_to_release_only_150
-    type: looker_line
-    fields: [
-      new_tab_15202026050433143_to_release_only_150.submission_date,
-      new_tab_15202026050433143_to_release_only_150.branch,
-      new_tab_15202026050433143_to_release_only_150.point
-    ]
-    pivots: [
-      new_tab_15202026050433143_to_release_only_150.branch
-    ]
-    filters:
-      new_tab_15202026050433143_to_release_only_150.metric: 'qualified_cumulative_days_of_use'
-      new_tab_15202026050433143_to_release_only_150.statistic: mean
-    row: 0
     col: 12
     width: 12
     height: 8
@@ -77,40 +76,7 @@
     show_grid: true
     listen:
       Date: new_tab_15202026050433143_to_release_only_150.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: new_tab_15202026050433143_to_release_only_150
-    type: looker_line
-    fields: [
-      new_tab_15202026050433143_to_release_only_150.submission_date,
-      new_tab_15202026050433143_to_release_only_150.branch,
-      new_tab_15202026050433143_to_release_only_150.point
-    ]
-    pivots: [
-      new_tab_15202026050433143_to_release_only_150.branch
-    ]
-    filters:
-      new_tab_15202026050433143_to_release_only_150.metric: 'retained'
-      new_tab_15202026050433143_to_release_only_150.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: new_tab_15202026050433143_to_release_only_150.submission_date
-    field_y: new_tab_15202026050433143_to_release_only_150.point
-    log_scale: false
-    ci_lower: new_tab_15202026050433143_to_release_only_150.lower
-    ci_upper: new_tab_15202026050433143_to_release_only_150.upper
-    show_grid: true
-    listen:
-      Date: new_tab_15202026050433143_to_release_only_150.submission_date
+      Percentile: new_tab_15202026050433143_to_release_only_150.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -132,6 +98,40 @@
     ]
     filters:
       new_tab_15202026050433143_to_release_only_150.metric: 'uri_count'
+      new_tab_15202026050433143_to_release_only_150.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: new_tab_15202026050433143_to_release_only_150.submission_date
+    field_y: new_tab_15202026050433143_to_release_only_150.point
+    log_scale: false
+    ci_lower: new_tab_15202026050433143_to_release_only_150.lower
+    ci_upper: new_tab_15202026050433143_to_release_only_150.upper
+    show_grid: true
+    listen:
+      Date: new_tab_15202026050433143_to_release_only_150.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: new_tab_15202026050433143_to_release_only_150
+    type: looker_line
+    fields: [
+      new_tab_15202026050433143_to_release_only_150.submission_date,
+      new_tab_15202026050433143_to_release_only_150.branch,
+      new_tab_15202026050433143_to_release_only_150.point
+    ]
+    pivots: [
+      new_tab_15202026050433143_to_release_only_150.branch
+    ]
+    filters:
+      new_tab_15202026050433143_to_release_only_150.metric: 'qualified_cumulative_days_of_use'
       new_tab_15202026050433143_to_release_only_150.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       new_tab_15202026050433143_to_release_only_150.branch
     ]
     filters:
-      new_tab_15202026050433143_to_release_only_150.metric: 'search_count'
+      new_tab_15202026050433143_to_release_only_150.metric: 'retained'
       new_tab_15202026050433143_to_release_only_150.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       new_tab_15202026050433143_to_release_only_150.branch
     ]
     filters:
-      new_tab_15202026050433143_to_release_only_150.metric: 'days_of_use'
+      new_tab_15202026050433143_to_release_only_150.metric: 'search_count'
       new_tab_15202026050433143_to_release_only_150.statistic: mean
     row: 30
     col: 12

@@ -19835,7 +19835,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 
   dimension: metrics__custom_distribution__networking_http_3_pmtud_iface_mtu__sum {
     label: "Networking: HTTP 3 Pmtud Iface Mtu Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_iface_mtu.sum ;;
     type: number
     group_label: "Networking"
@@ -19853,7 +19853,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 
   dimension: metrics__custom_distribution__networking_http_3_pmtud_pmtu__sum {
     label: "Networking: HTTP 3 Pmtud Pmtu Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_pmtu.sum ;;
     type: number
     group_label: "Networking"
@@ -19871,7 +19871,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 
   dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_acked__sum {
     label: "Networking: HTTP 3 Pmtud Probes Acked Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_acked.sum ;;
     type: number
     group_label: "Networking"
@@ -19889,7 +19889,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 
   dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_lost__sum {
     label: "Networking: HTTP 3 Pmtud Probes Lost Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_lost.sum ;;
     type: number
     group_label: "Networking"
@@ -19907,7 +19907,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 
   dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_sent__sum {
     label: "Networking: HTTP 3 Pmtud Probes Sent Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_sent.sum ;;
     type: number
     group_label: "Networking"
@@ -30932,7 +30932,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__rate__web_notification_show_safe_browsing_block__numerator {
     label: "Web Notification: Show Safe Browsing Block Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.numerator ;;
     type: number
     group_label: "Web Notification"
@@ -30950,7 +30950,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
   dimension: metrics__rate__web_notification_show_safe_browsing_block__denominator {
     label: "Web Notification: Show Safe Browsing Block Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.web_notification_show_safe_browsing_block.denominator ;;
     type: number
     group_label: "Web Notification"
