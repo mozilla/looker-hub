@@ -8,6 +8,7 @@ view: metric_definitions_firefox_desktop_active_users_view {
   derived_table: {
     sql: SELECT
                 COUNTIF(is_dau) AS client_level_daily_active_users_v2,
+COUNTIF(is_dau) * 1000 AS daily_active_users_per_1000_clients_legacy,
 COALESCE(LOGICAL_OR(is_dau), FALSE) AS retained_dau,
 COALESCE(MIN(mozfun.bits28.days_since_seen(days_active_bits)), 30) < 3 AS active_in_last_3_days_legacy,
 
@@ -217,6 +218,23 @@ looker_base_fields_sample_id,
     sql: ${TABLE}.client_level_daily_active_users_v2 ;;
   }
 
+  dimension: daily_active_users_per_1000_clients_legacy {
+    group_label: "Metrics"
+    label: "DAU per 1,000 clients"
+    description: "    This metric uses our [canonical, supported definition of Daily Active Users
+    (DAU)](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric), expressed in a format
+    suited for use in experiments. In an experimental comparison, it describes the *additional (incremental) DAU* seen on each day from a treatment.
+    
+    The units are expressed in terms of thousands of clients enrolled or exposed, so the effect can be scaled to either the observed
+    or expected rollout population as needed to estimate absolute DAU impact.
+
+    Effects are averaged to a per-day basis over each analysis period. Since feature changes often show a strong \"novelty effect\", this 
+    metric is best interpreted over Week 4 or later, in order to better estimate what the lasting steady-state effects are.
+"
+    type: number
+    sql: ${TABLE}.daily_active_users_per_1000_clients_legacy ;;
+  }
+
   dimension: retained_dau {
     group_label: "Metrics"
     label: "Retained (DAU)"
@@ -347,7 +365,7 @@ looker_base_fields_sample_id,
   }
 
   set: metrics {
-    fields: [client_level_daily_active_users_v2, retained_dau, active_in_last_3_days_legacy]
+    fields: [client_level_daily_active_users_v2, daily_active_users_per_1000_clients_legacy, retained_dau, active_in_last_3_days_legacy]
   }
 
   parameter: aggregate_metrics_by {

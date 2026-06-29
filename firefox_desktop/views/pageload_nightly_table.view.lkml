@@ -527,6 +527,14 @@ view: pageload_nightly_table {
     hidden: yes
   }
 
+  dimension: ping_info__server_knobs_config__session_sample_rate {
+    sql: ${TABLE}.ping_info.server_knobs_config.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Session Sample Rate"
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string

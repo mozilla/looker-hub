@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: hnt_wattle_world_cup_settings_persistence_us_de_rollouts {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.hnt_wattle_world_cup_settings_persistence_us_de_rollouts_statistics ;;
+view: new_tab_15422026062461428_to_release_152_wcw_v6 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_tab_15422026062461428_to_release_152_wcw_v6_statistics ;;
 
   dimension: submission_date {
     type: date

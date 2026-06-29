@@ -123,6 +123,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__boolean__newtab_scroll {
+    label: "Newtab: Scroll"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.newtab_scroll ;;
+    type: yesno
+    group_label: "Newtab"
+    group_item_label: "Scroll"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab: Scroll"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_scroll"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user scrolled more than SCROLL_TELEMETRY_THRESHOLD pixels during a newtab session. Absent if no qualifying scroll occurred during the session.
+"
+  }
+
   dimension: metrics__boolean__newtab_search_enabled {
     label: "Newtab Search: Enabled"
     hidden: no
@@ -446,6 +464,24 @@ be `other`.
     }
 
     description: "Whether \"topsites\" is enabled on the newtab. AKA the \"Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.topsites` pref.
+"
+  }
+
+  dimension: metrics__quantity__topsites_pinned_count {
+    label: "Topsites: Pinned Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.topsites_pinned_count ;;
+    type: number
+    group_label: "Topsites"
+    group_item_label: "Pinned Count"
+
+    link: {
+      label: "Glean Dictionary reference for Topsites: Pinned Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/topsites_pinned_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of pinned top site tiles at the time of the newtab session.
 "
   }
 
@@ -1147,6 +1183,15 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
     hidden: yes
     description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__session_sample_rate {
+    sql: ${TABLE}.ping_info.server_knobs_config.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Session Sample Rate"
+    description: "Remote override for the session sampling rate (0.0–1.0)."
   }
 
   dimension: ping_info__start_time {

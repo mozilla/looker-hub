@@ -8635,6 +8635,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_min_rtt__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_min_rtt.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Min Rtt"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_min_rtt__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_min_rtt.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Min Rtt"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_min_rtt__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_min_rtt.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_peer_max_udp_payload.count ;;
     type: number
@@ -8764,6 +8786,50 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__custom_distribution__networking_http_3_pmtud_probes_sent__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_pmtud_probes_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_rtt__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_rtt.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Rtt"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_rtt__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_rtt.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Rtt"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_rtt__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_rtt.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_rtt_var__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_rtt_var.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Rtt Var"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_rtt_var__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_rtt_var.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Rtt Var"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_rtt_var__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_rtt_var.values ;;
     hidden: yes
   }
 
@@ -12412,6 +12478,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.media_playback_unencrypted_sw_decode_error ;;
     hidden: yes
     description: "Count of decode errors for unencrypted software media playback, keyed by codec and error name. Only fires when the decoder gives up after exhausting retries. Does not cover encrypted (EME) playback; see media.playback.encrypted_decode_error for that.
+"
+  }
+
+  dimension: metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver {
+    sql: ${TABLE}.metrics.dual_labeled_counter.netwerk_happy_eyeballs_https_rr_features_by_resolver ;;
+    hidden: yes
+    description: "Happy Eyeballs: which connection-bootstrapping features the HTTPS DNS records carried, combined across all HTTPS records received for a connection (the union of features over every record, not per record), split by the resolver type (DoH/TRR vs native) that produced the HTTPS response. The \"total\" category is incremented once per connection that saw at least one non-empty HTTPS record and serves as the denominator; each feature category is incremented once per connection whose combined records carried that feature. \"ech\" and the address hints can only be delivered ahead of the first connection via the DNS record, not via an Alt-Svc header. Used to compare how often DoH versus native resolution yields a usable (and h3-capable) HTTPS record. This is the resolver-split companion of happy_eyeballs_https_rr_features.
 "
   }
 
@@ -51520,6 +51593,15 @@ Shared Preferences.
     description: "Map of ping names to boolean values indicating whether the ping is enabled"
   }
 
+  dimension: ping_info__server_knobs_config__session_sample_rate {
+    sql: ${TABLE}.ping_info.server_knobs_config.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Session Sample Rate"
+    description: "Remote override for the session sampling rate (0.0–1.0)."
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -54506,6 +54588,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_min_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -54577,6 +54673,34 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_pmtud_probe
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_pmtud_probes_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_rtt_var__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -57301,6 +57425,33 @@ view: metrics_table__metrics__dual_labeled_counter__media_playback_unencrypted_s
 }
 
 view: metrics_table__metrics__dual_labeled_counter__media_playback_unencrypted_sw_decode_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -8738,6 +8738,24 @@ in browser.
 "
   }
 
+  dimension: metrics__boolean__smart_window_topsites_enabled {
+    label: "Smart Window: Topsites Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.smart_window_topsites_enabled ;;
+    type: yesno
+    group_label: "Smart Window"
+    group_item_label: "Topsites Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Topsites Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/smart_window_topsites_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the single-row Top Sites are shown below the Smartbar in Smart Window fullpage mode. Corresponds to the inverse of the `browser.smartwindow.hideTopSites` pref (true when Top Sites are shown).
+"
+  }
+
   dimension: metrics__labeled_counter__splitview_uri_count {
     label: "Splitview: URI Count"
     hidden: yes
@@ -27465,6 +27483,24 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_min_rtt__sum {
+    label: "Networking: HTTP 3 Min Rtt Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_min_rtt.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Min Rtt Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Min Rtt Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_min_rtt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: The minimum round-trip time in milliseconds observed on the connection's primary path, sampled at connection close.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_peer_max_udp_payload__sum {
     label: "Networking: HTTP 3 Peer Max Udp Payload Sum"
     hidden: no
@@ -27604,6 +27640,42 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
     }
 
     description: "The QUIC version negotiated for an HTTP/3 connection, recorded once per connection that completes its handshake. Used to track the effect of enabling compatible version negotiation (RFC 9368/9369), i.e. how often connections end up on QUIC v2 versus v1.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_rtt__sum {
+    label: "Networking: HTTP 3 Rtt Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_rtt.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Rtt Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Rtt Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_rtt"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: The smoothed round-trip time estimate in milliseconds on the connection's primary path, sampled at connection close.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_rtt_var__sum {
+    label: "Networking: HTTP 3 Rtt Var Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_rtt_var.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Rtt Var Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Rtt Var Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_rtt_var"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: The round-trip time variation in milliseconds on the connection's primary path, sampled at connection close.
 "
   }
 
@@ -41620,6 +41692,15 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
     hidden: yes
     description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__session_sample_rate {
+    sql: ${TABLE}.ping_info.server_knobs_config.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Session Sample Rate"
+    description: "Remote override for the session sampling rate (0.0–1.0)."
   }
 
   dimension: ping_info__start_time {
@@ -77670,6 +77751,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio_filter
   }
 }
 
+view: metrics__metrics__custom_distribution__networking_http_3_min_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__networking_http_3_peer_max_udp_payload__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -77741,6 +77836,34 @@ view: metrics__metrics__custom_distribution__networking_http_3_pmtud_probes_lost
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_pmtud_probes_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_rtt__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_rtt_var__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -80758,6 +80881,33 @@ view: metrics__metrics__dual_labeled_counter__media_playback_unencrypted_sw_deco
 }
 
 view: metrics__metrics__dual_labeled_counter__media_playback_unencrypted_sw_decode_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

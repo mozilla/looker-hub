@@ -1083,6 +1083,14 @@ view: events_stream {
     group_item_label: "Next To Active Tab"
   }
 
+  dimension: extras__boolean__no_connectivity {
+    sql: ${TABLE}.extras.boolean.no_connectivity ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "No Connectivity"
+  }
+
   dimension: extras__boolean__no_rule {
     sql: ${TABLE}.extras.boolean.no_rule ;;
     type: yesno
@@ -1417,6 +1425,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Triggered Externally"
+  }
+
+  dimension: extras__boolean__trr_only {
+    sql: ${TABLE}.extras.boolean.trr_only ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Trr Only"
   }
 
   dimension: extras__boolean__undo_available {
@@ -2931,6 +2947,14 @@ view: events_stream {
     group_item_label: "View Time"
   }
 
+  dimension: extras__quantity__visible_topsites {
+    sql: ${TABLE}.extras.quantity.visible_topsites ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Visible Topsites"
+  }
+
   dimension: extras__quantity__wait_count {
     sql: ${TABLE}.extras.quantity.wait_count ;;
     type: number
@@ -3377,6 +3401,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Captivestate"
+  }
+
+  dimension: extras__string__captive_portal_state {
+    sql: ${TABLE}.extras.string.captive_portal_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Captive Portal State"
   }
 
   dimension: extras__string__category {

@@ -459,6 +459,16 @@ view: newtab_table {
 "
   }
 
+  dimension: metrics__boolean__newtab_scroll {
+    sql: ${TABLE}.metrics.boolean.newtab_scroll ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Newtab Scroll"
+    description: "Whether the user scrolled more than SCROLL_TELEMETRY_THRESHOLD pixels during a newtab session. Absent if no qualifying scroll occurred during the session.
+"
+  }
+
   dimension: metrics__boolean__newtab_search_enabled {
     sql: ${TABLE}.metrics.boolean.newtab_search_enabled ;;
     type: yesno
@@ -580,6 +590,16 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__quantity__topsites_pinned_count {
+    sql: ${TABLE}.metrics.quantity.topsites_pinned_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Topsites Pinned Count"
+    description: "The number of pinned top site tiles at the time of the newtab session.
 "
   }
 
@@ -993,6 +1013,15 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
     hidden: yes
     description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__session_sample_rate {
+    sql: ${TABLE}.ping_info.server_knobs_config.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Session Sample Rate"
+    description: "Remote override for the session sampling rate (0.0–1.0)."
   }
 
   dimension: ping_info__start_time {
