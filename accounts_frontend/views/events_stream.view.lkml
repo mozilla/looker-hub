@@ -395,6 +395,14 @@ view: events_stream {
     group_item_label: "Label"
   }
 
+  dimension: extras__string__mobile_device_count {
+    sql: ${TABLE}.extras.string.mobile_device_count ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Mobile Device Count"
+  }
+
   dimension: extras__string__nimbus_user_id {
     sql: ${TABLE}.extras.string.nimbus_user_id ;;
     type: string
