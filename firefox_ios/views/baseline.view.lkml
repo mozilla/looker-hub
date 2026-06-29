@@ -847,6 +847,7 @@ Now it only records counts for the Glean built-in pings.
     suggest_persist_for: "24 hours"
     group_label: "Ping Info: Server Knobs Config"
     group_item_label: "Session Sample Rate"
+    description: "Remote override for the session sampling rate (0.0–1.0)."
   }
 
   dimension: ping_info__start_time {

@@ -896,6 +896,14 @@ view: events_stream_table {
     group_item_label: "Lang Tags Match"
   }
 
+  dimension: extras__boolean__no_connectivity {
+    sql: ${TABLE}.extras.boolean.no_connectivity ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "No Connectivity"
+  }
+
   dimension: extras__boolean__no_rule {
     sql: ${TABLE}.extras.boolean.no_rule ;;
     type: yesno
@@ -1070,6 +1078,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Triggered Externally"
+  }
+
+  dimension: extras__boolean__trr_only {
+    sql: ${TABLE}.extras.boolean.trr_only ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Trr Only"
   }
 
   dimension: extras__boolean__userAction {
@@ -2214,6 +2230,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Captivestate"
+  }
+
+  dimension: extras__string__captive_portal_state {
+    sql: ${TABLE}.extras.string.captive_portal_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Captive Portal State"
   }
 
   dimension: extras__string__card_type {

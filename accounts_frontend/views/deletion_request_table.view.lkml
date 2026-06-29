@@ -596,6 +596,15 @@ for the purpose of experimentation enrollment.
     description: "Map of ping names to boolean values indicating whether the ping is enabled"
   }
 
+  dimension: ping_info__server_knobs_config__session_sample_rate {
+    sql: ${TABLE}.ping_info.server_knobs_config.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Session Sample Rate"
+    description: "Remote override for the session sampling rate (0.0–1.0)."
+  }
+
   dimension: ping_info__start_time {
     sql: ${TABLE}.ping_info.start_time ;;
     type: string
@@ -698,6 +707,7 @@ view: deletion_request_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
   }
 
   dimension: session__session_id {
@@ -706,6 +716,7 @@ view: deletion_request_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session ID"
+    description: "The unique UUID for this session."
   }
 
   dimension: session__session_sample_rate {
@@ -714,6 +725,7 @@ view: deletion_request_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
   }
 
   dimension: session__session_seq {
@@ -722,6 +734,7 @@ view: deletion_request_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
   }
 
   dimension: session__session_start_time {
@@ -730,6 +743,7 @@ view: deletion_request_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {
