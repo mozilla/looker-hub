@@ -3321,6 +3321,26 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 "
   }
 
+  dimension: metrics__counter__network_no_vary_search_header_received {
+    sql: ${TABLE}.metrics.counter.network_no_vary_search_header_received ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network No Vary Search Header Received"
+    description: "Number of cacheable HTTP responses that carried a No-Vary-Search response header. Only counts responses that reach the cache-write path; headers on non-cacheable responses are not counted.
+"
+  }
+
+  dimension: metrics__counter__network_no_vary_search_parse_error {
+    sql: ${TABLE}.metrics.counter.network_no_vary_search_parse_error ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Network No Vary Search Parse Error"
+    description: "Number of received No-Vary-Search headers (on cacheable responses) that failed to parse and fell back to exact-match behavior.
+"
+  }
+
   dimension: metrics__counter__network_ssl_token_cache_early_connections {
     sql: ${TABLE}.metrics.counter.network_ssl_token_cache_early_connections ;;
     type: number
@@ -14373,6 +14393,27 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "Network ID presence when the network connectivity checker reports that we have connectivity
 This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_ID_ONLINE.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_no_vary_search_hit_by_rule {
+    sql: ${TABLE}.metrics.labeled_counter.network_no_vary_search_hit_by_rule ;;
+    hidden: yes
+    description: "Breakdown by variation rule of the cache hits won via No-Vary-Search (the 'matched' outcome of no_vary_search_match). The sum across labels equals no_vary_search_match['matched'].
+"
+  }
+
+  dimension: metrics__labeled_counter__network_no_vary_search_match {
+    sql: ${TABLE}.metrics.labeled_counter.network_no_vary_search_match ;;
+    hidden: yes
+    description: "Outcome of a No-Vary-Search secondary cache lookup, recorded only when the secondary index had at least one candidate for the request's base path. 'matched' means an equivalent cached entry was found and used as a cache hit that exact-URL matching would have missed; 'not_matched' means candidates existed but none were equivalent.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_no_vary_search_rule_type {
+    sql: ${TABLE}.metrics.labeled_counter.network_no_vary_search_rule_type ;;
+    hidden: yes
+    description: "The parsed variation rule of each received No-Vary-Search header, recorded once per cacheable response. 'exact_match' includes both key-order-only headers and headers that failed to parse.
 "
   }
 
