@@ -1118,6 +1118,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_id_online}) AS metrics__metrics__labeled_counter__network_id_online ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_id_online.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_no_vary_search_hit_by_rule {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_no_vary_search_hit_by_rule}) AS metrics__metrics__labeled_counter__network_no_vary_search_hit_by_rule ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_no_vary_search_hit_by_rule.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_no_vary_search_match {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_no_vary_search_match}) AS metrics__metrics__labeled_counter__network_no_vary_search_match ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_no_vary_search_match.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_no_vary_search_rule_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_no_vary_search_rule_type}) AS metrics__metrics__labeled_counter__network_no_vary_search_rule_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_no_vary_search_rule_type.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_race_cache_validation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_race_cache_validation}) AS metrics__metrics__labeled_counter__network_race_cache_validation ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_race_cache_validation.document_id} ;;

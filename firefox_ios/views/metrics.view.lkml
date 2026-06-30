@@ -5131,7 +5131,7 @@ startup, as part of the initialization sequence.
 
     description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`
 
-Duplication of `run_maintenance_chk_pnt_time_temp` for glean-sym testing.
+Duplication of `run_maintenance_chk_pnt_time` for glean-sym testing.
 "
   }
 

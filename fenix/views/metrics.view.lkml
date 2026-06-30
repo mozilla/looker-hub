@@ -17728,6 +17728,93 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__counter__network_no_vary_search_header_received {
+    label: "Network: No Vary Search Header Received"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.network_no_vary_search_header_received ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "No Vary Search Header Received"
+
+    link: {
+      label: "Glean Dictionary reference for Network: No Vary Search Header Received"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_header_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of cacheable HTTP responses that carried a No-Vary-Search response header. Only counts responses that reach the cache-write path; headers on non-cacheable responses are not counted.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_no_vary_search_hit_by_rule {
+    label: "Network: No Vary Search Hit By Rule"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_no_vary_search_hit_by_rule ;;
+    group_label: "Network"
+    group_item_label: "No Vary Search Hit By Rule"
+
+    link: {
+      label: "Glean Dictionary reference for Network: No Vary Search Hit By Rule"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_hit_by_rule"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Breakdown by variation rule of the cache hits won via No-Vary-Search (the 'matched' outcome of no_vary_search_match). The sum across labels equals no_vary_search_match['matched'].
+"
+  }
+
+  dimension: metrics__labeled_counter__network_no_vary_search_match {
+    label: "Network: No Vary Search Match"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_no_vary_search_match ;;
+    group_label: "Network"
+    group_item_label: "No Vary Search Match"
+
+    link: {
+      label: "Glean Dictionary reference for Network: No Vary Search Match"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_match"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Outcome of a No-Vary-Search secondary cache lookup, recorded only when the secondary index had at least one candidate for the request's base path. 'matched' means an equivalent cached entry was found and used as a cache hit that exact-URL matching would have missed; 'not_matched' means candidates existed but none were equivalent.
+"
+  }
+
+  dimension: metrics__counter__network_no_vary_search_parse_error {
+    label: "Network: No Vary Search Parse Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.network_no_vary_search_parse_error ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "No Vary Search Parse Error"
+
+    link: {
+      label: "Glean Dictionary reference for Network: No Vary Search Parse Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_parse_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of received No-Vary-Search headers (on cacheable responses) that failed to parse and fell back to exact-match behavior.
+"
+  }
+
+  dimension: metrics__labeled_counter__network_no_vary_search_rule_type {
+    label: "Network: No Vary Search Rule Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_no_vary_search_rule_type ;;
+    group_label: "Network"
+    group_item_label: "No Vary Search Rule Type"
+
+    link: {
+      label: "Glean Dictionary reference for Network: No Vary Search Rule Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_rule_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The parsed variation rule of each received No-Vary-Search header, recorded once per cacheable response. 'exact_match' includes both key-order-only headers and headers that failed to parse.
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_first_received__sum {
     label: "Network: Open To First Received Sum"
     hidden: no
@@ -34513,7 +34600,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
     description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`
 
-Duplication of `run_maintenance_chk_pnt_time_temp` for glean-sym testing.
+Duplication of `run_maintenance_chk_pnt_time` for glean-sym testing.
 "
   }
 
@@ -38997,6 +39084,56 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     link: {
       label: "Glean Dictionary reference for Netwerk Parent Connect Timeout"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_parent_connect_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_no_vary_search_header_received {
+    type: sum
+    sql: ${metrics__counter__network_no_vary_search_header_received} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network No Vary Search Header Received"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_header_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_no_vary_search_header_received_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_no_vary_search_header_received: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network No Vary Search Header Received"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_header_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_no_vary_search_parse_error {
+    type: sum
+    sql: ${metrics__counter__network_no_vary_search_parse_error} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network No Vary Search Parse Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_parse_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: network_no_vary_search_parse_error_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__network_no_vary_search_parse_error: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Network No Vary Search Parse Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_no_vary_search_parse_error"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -51145,6 +51282,129 @@ view: metrics__metrics__labeled_counter__network_id_online {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_no_vary_search_hit_by_rule {
+  label: "Network: No Vary Search Hit By Rule"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_no_vary_search_match {
+  label: "Network: No Vary Search Match"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_no_vary_search_rule_type {
+  label: "Network: No Vary Search Rule Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
