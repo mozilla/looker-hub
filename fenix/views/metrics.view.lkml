@@ -34513,7 +34513,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
     description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`
 
-Duplication of `run_maintenance_chk_pnt_time_temp` for glean-sym testing.
+Duplication of `run_maintenance_chk_pnt_time` for glean-sym testing.
 "
   }
 
