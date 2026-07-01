@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: vertical_tabs_promo_rollout_day_3_profiles_all_locales {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.vertical_tabs_promo_rollout_day_3_profiles_all_locales_statistics ;;
+view: auto_trigger_pin_to_taskbar_notification_rollout_2606_152 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.auto_trigger_pin_to_taskbar_notification_rollout_2606_152_statistics ;;
 
   dimension: submission_date {
     type: date
