@@ -2360,14 +2360,6 @@ view: events_stream_table {
     group_item_label: "Collection Name"
   }
 
-  dimension: extras__string__color {
-    sql: ${TABLE}.extras.string.color ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Color"
-  }
-
   dimension: extras__string__component_stack {
     sql: ${TABLE}.extras.string.component_stack ;;
     type: string
@@ -4702,14 +4694,6 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Taar Based"
-  }
-
-  dimension: extras__string__tab_group_color_changed {
-    sql: ${TABLE}.extras.string.tab_group_color_changed ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Tab Group Color Changed"
   }
 
   dimension: extras__string__tab_pos {
