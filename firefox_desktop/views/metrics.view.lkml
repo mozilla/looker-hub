@@ -8555,7 +8555,11 @@ in browser.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of history items opened from the History sidebar. This metric was generated to correspond to the Legacy Telemetry scalar sidebar.link.
+    description: "The number of links opened from the sidebar, labeled by which sidebar
+panel the click originated from:
+  - bookmarks: a bookmark opened from the Bookmarks sidebar panel
+  - history: a history link opened from the History sidebar panel
+  - synced_tabs: a synced tab opened from the Synced Tabs sidebar
 "
   }
 

@@ -281,6 +281,12 @@ view: issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_configuration_metric_schedule_named_schedule_timezone {
+    sql: ${TABLE}.metric_configuration_metric_schedule_named_schedule_timezone ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_configuration_metric_schedule_schedule_frequency_interval_type {
     sql: ${TABLE}.metric_configuration_metric_schedule_schedule_frequency_interval_type ;;
     type: string
