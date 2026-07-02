@@ -272,14 +272,6 @@ view: events_stream_table {
     group_item_label: "Error Code"
   }
 
-  dimension: extras__string__platform {
-    sql: ${TABLE}.extras.string.platform ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Platform"
-  }
-
   dimension: extras__string__reason {
     sql: ${TABLE}.extras.string.reason ;;
     type: string
