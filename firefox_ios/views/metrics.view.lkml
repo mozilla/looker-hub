@@ -2056,7 +2056,7 @@ in the page action menu
 
   dimension: metrics__counter__page_action_menu_report_site_issue {
     label: "Page Action Menu: Report Site Issue"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_report_site_issue ;;
     type: number
     group_label: "Page Action Menu"
