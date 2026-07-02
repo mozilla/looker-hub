@@ -17730,7 +17730,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__counter__network_no_vary_search_header_received {
     label: "Network: No Vary Search Header Received"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.network_no_vary_search_header_received ;;
     type: number
     group_label: "Network"
@@ -17782,7 +17782,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__counter__network_no_vary_search_parse_error {
     label: "Network: No Vary Search Parse Error"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.network_no_vary_search_parse_error ;;
     type: number
     group_label: "Network"
@@ -51310,19 +51310,19 @@ view: metrics__metrics__labeled_counter__network_no_vary_search_hit_by_rule {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -51351,19 +51351,19 @@ view: metrics__metrics__labeled_counter__network_no_vary_search_match {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -51392,19 +51392,19 @@ view: metrics__metrics__labeled_counter__network_no_vary_search_rule_type {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
