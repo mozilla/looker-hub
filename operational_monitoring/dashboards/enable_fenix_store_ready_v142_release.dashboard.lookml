@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       enable_fenix_store_ready_v142_release.branch
     ]
     filters:
-      enable_fenix_store_ready_v142_release.metric: 'uri_count'
+      enable_fenix_store_ready_v142_release.metric: 'retained'
       enable_fenix_store_ready_v142_release.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       enable_fenix_store_ready_v142_release.branch
     ]
     filters:
-      enable_fenix_store_ready_v142_release.metric: 'active_hours'
+      enable_fenix_store_ready_v142_release.metric: 'uri_count'
       enable_fenix_store_ready_v142_release.statistic: mean
     row: 10
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       enable_fenix_store_ready_v142_release.branch
     ]
     filters:
-      enable_fenix_store_ready_v142_release.metric: 'retained'
+      enable_fenix_store_ready_v142_release.metric: 'active_hours'
       enable_fenix_store_ready_v142_release.statistic: mean
     row: 30
     col: 0
