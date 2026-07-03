@@ -2203,6 +2203,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pinned_tabs_activations}) AS metrics__metrics__labeled_counter__pinned_tabs_activations ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pinned_tabs_activations.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__places_semantic_history_indexing_stopped {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__places_semantic_history_indexing_stopped}) AS metrics__metrics__labeled_counter__places_semantic_history_indexing_stopped ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__places_semantic_history_indexing_stopped.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.document_id} ;;
