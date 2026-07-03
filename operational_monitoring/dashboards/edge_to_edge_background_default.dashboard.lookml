@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       edge_to_edge_background_default.branch
     ]
     filters:
-      edge_to_edge_background_default.metric: 'uri_count'
+      edge_to_edge_background_default.metric: 'retained'
       edge_to_edge_background_default.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       edge_to_edge_background_default.branch
     ]
     filters:
-      edge_to_edge_background_default.metric: 'active_hours'
+      edge_to_edge_background_default.metric: 'uri_count'
       edge_to_edge_background_default.statistic: mean
     row: 10
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       edge_to_edge_background_default.branch
     ]
     filters:
-      edge_to_edge_background_default.metric: 'retained'
+      edge_to_edge_background_default.metric: 'active_hours'
       edge_to_edge_background_default.statistic: mean
     row: 30
     col: 0
