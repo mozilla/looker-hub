@@ -939,6 +939,14 @@ view: events_stream {
     group_item_label: "Poisoned"
   }
 
+  dimension: extras__boolean__primary_password_set {
+    sql: ${TABLE}.extras.boolean.primary_password_set ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Primary Password Set"
+  }
+
   dimension: extras__boolean__psi_available {
     sql: ${TABLE}.extras.boolean.psi_available ;;
     type: yesno
@@ -1121,6 +1129,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Wasactive"
+  }
+
+  dimension: extras__quantity__attempt {
+    sql: ${TABLE}.extras.quantity.attempt ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Attempt"
   }
 
   dimension: extras__quantity__attemptCount {
@@ -1649,6 +1665,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Number Of Logins To Migrate"
+  }
+
+  dimension: extras__quantity__number_of_vulnerable_passwords {
+    sql: ${TABLE}.extras.quantity.number_of_vulnerable_passwords ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Vulnerable Passwords"
   }
 
   dimension: extras__quantity__output_tokens {
@@ -2681,6 +2705,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "End Reason"
+  }
+
+  dimension: extras__string__end_state {
+    sql: ${TABLE}.extras.string.end_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "End State"
   }
 
   dimension: extras__string__engine {

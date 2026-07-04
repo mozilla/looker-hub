@@ -1139,6 +1139,14 @@ view: events_stream {
     group_item_label: "Poisoned"
   }
 
+  dimension: extras__boolean__primary_password_set {
+    sql: ${TABLE}.extras.boolean.primary_password_set ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Primary Password Set"
+  }
+
   dimension: extras__boolean__psi_available {
     sql: ${TABLE}.extras.boolean.psi_available ;;
     type: yesno
@@ -1539,6 +1547,14 @@ view: events_stream {
     group_item_label: "Ads Visible"
   }
 
+  dimension: extras__quantity__attempt {
+    sql: ${TABLE}.extras.quantity.attempt ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Attempt"
+  }
+
   dimension: extras__quantity__attemptCount {
     sql: ${TABLE}.extras.quantity.attemptCount ;;
     type: number
@@ -1793,6 +1809,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "First Frame Loaded Time"
+  }
+
+  dimension: extras__quantity__gate_wait_ms {
+    sql: ${TABLE}.extras.quantity.gate_wait_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Gate Wait Ms"
   }
 
   dimension: extras__quantity__has_alt_text {
@@ -2291,6 +2315,14 @@ view: events_stream {
     group_item_label: "Number Of Logins To Migrate"
   }
 
+  dimension: extras__quantity__number_of_vulnerable_passwords {
+    sql: ${TABLE}.extras.quantity.number_of_vulnerable_passwords ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Vulnerable Passwords"
+  }
+
   dimension: extras__quantity__opened_tabs {
     sql: ${TABLE}.extras.quantity.opened_tabs ;;
     type: number
@@ -2393,6 +2425,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Prompts"
+  }
+
+  dimension: extras__quantity__recovery_count {
+    sql: ${TABLE}.extras.quantity.recovery_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Recovery Count"
   }
 
   dimension: extras__quantity__rendered_frames {
@@ -3939,6 +3979,14 @@ view: events_stream {
     group_item_label: "End Reason"
   }
 
+  dimension: extras__string__end_state {
+    sql: ${TABLE}.extras.string.end_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "End State"
+  }
+
   dimension: extras__string__engagement_type {
     sql: ${TABLE}.extras.string.engagement_type ;;
     type: string
@@ -5467,6 +5515,14 @@ view: events_stream {
     group_item_label: "Permission Type"
   }
 
+  dimension: extras__string__phase {
+    sql: ${TABLE}.extras.string.phase ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Phase"
+  }
+
   dimension: extras__string__platform {
     sql: ${TABLE}.extras.string.platform ;;
     type: string
@@ -5787,12 +5843,28 @@ view: events_stream {
     group_item_label: "Re"
   }
 
+  dimension: extras__string__reaction {
+    sql: ${TABLE}.extras.string.reaction ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Reaction"
+  }
+
   dimension: extras__string__reader_time {
     sql: ${TABLE}.extras.string.reader_time ;;
     type: string
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Reader Time"
+  }
+
+  dimension: extras__string__readiness {
+    sql: ${TABLE}.extras.string.readiness ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Readiness"
   }
 
   dimension: extras__string__reason {
