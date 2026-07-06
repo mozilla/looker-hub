@@ -3133,6 +3133,25 @@ Possible values are: new_tab, share, bookmark, translate, homepage or back.
 "
   }
 
+  dimension: metrics__string__preferences_toolbar_tab_strip_shortcut {
+    label: "Preferences: Toolbar Tab Strip Shortcut"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_toolbar_tab_strip_shortcut ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Toolbar Tab Strip Shortcut"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences: Toolbar Tab Strip Shortcut"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_toolbar_tab_strip_shortcut"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The toolbar shortcut used when the tab strip is enabled.
+Possible values are: share, bookmark, translate, homepage, back, summarize or none.
+"
+  }
+
   dimension: metrics__string__preferences_user_theme {
     label: "Preferences: User Theme"
     hidden: no

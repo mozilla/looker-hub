@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       sample_uptakeremotecontent_events_glean_feature.branch
     ]
     filters:
-      sample_uptakeremotecontent_events_glean_feature.metric: 'uri_count'
+      sample_uptakeremotecontent_events_glean_feature.metric: 'active_hours'
       sample_uptakeremotecontent_events_glean_feature.statistic: mean
     row: 0
     col: 12
@@ -112,24 +112,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: sample_uptakeremotecontent_events_glean_feature
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       sample_uptakeremotecontent_events_glean_feature.submission_date,
       sample_uptakeremotecontent_events_glean_feature.branch,
+      sample_uptakeremotecontent_events_glean_feature.upper,
+      sample_uptakeremotecontent_events_glean_feature.lower,
       sample_uptakeremotecontent_events_glean_feature.point
     ]
     pivots: [
       sample_uptakeremotecontent_events_glean_feature.branch
     ]
     filters:
-      sample_uptakeremotecontent_events_glean_feature.metric: 'active_hours'
-      sample_uptakeremotecontent_events_glean_feature.statistic: mean
+      sample_uptakeremotecontent_events_glean_feature.metric: 'memory_total'
+      sample_uptakeremotecontent_events_glean_feature.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -142,6 +144,7 @@
     show_grid: true
     listen:
       Date: sample_uptakeremotecontent_events_glean_feature.submission_date
+      Percentile: sample_uptakeremotecontent_events_glean_feature.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,6 +183,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sample_uptakeremotecontent_events_glean_feature
+    type: looker_line
+    fields: [
+      sample_uptakeremotecontent_events_glean_feature.submission_date,
+      sample_uptakeremotecontent_events_glean_feature.branch,
+      sample_uptakeremotecontent_events_glean_feature.point
+    ]
+    pivots: [
+      sample_uptakeremotecontent_events_glean_feature.branch
+    ]
+    filters:
+      sample_uptakeremotecontent_events_glean_feature.metric: 'uri_count'
+      sample_uptakeremotecontent_events_glean_feature.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
+    field_y: sample_uptakeremotecontent_events_glean_feature.point
+    log_scale: false
+    ci_lower: sample_uptakeremotecontent_events_glean_feature.lower
+    ci_upper: sample_uptakeremotecontent_events_glean_feature.upper
+    show_grid: true
+    listen:
+      Date: sample_uptakeremotecontent_events_glean_feature.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -198,42 +235,6 @@
     filters:
       sample_uptakeremotecontent_events_glean_feature.metric: 'days_of_use'
       sample_uptakeremotecontent_events_glean_feature.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
-    field_y: sample_uptakeremotecontent_events_glean_feature.point
-    log_scale: false
-    ci_lower: sample_uptakeremotecontent_events_glean_feature.lower
-    ci_upper: sample_uptakeremotecontent_events_glean_feature.upper
-    show_grid: true
-    listen:
-      Date: sample_uptakeremotecontent_events_glean_feature.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: sample_uptakeremotecontent_events_glean_feature
-    type: "ci-line-chart"
-    fields: [
-      sample_uptakeremotecontent_events_glean_feature.submission_date,
-      sample_uptakeremotecontent_events_glean_feature.branch,
-      sample_uptakeremotecontent_events_glean_feature.upper,
-      sample_uptakeremotecontent_events_glean_feature.lower,
-      sample_uptakeremotecontent_events_glean_feature.point
-    ]
-    pivots: [
-      sample_uptakeremotecontent_events_glean_feature.branch
-    ]
-    filters:
-      sample_uptakeremotecontent_events_glean_feature.metric: 'memory_total'
-      sample_uptakeremotecontent_events_glean_feature.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: sample_uptakeremotecontent_events_glean_feature.submission_date
-      Percentile: sample_uptakeremotecontent_events_glean_feature.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

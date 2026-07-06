@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_tou_experience_0_rollout
-    type: looker_line
-    fields: [
-      ios_tou_experience_0_rollout.submission_date,
-      ios_tou_experience_0_rollout.branch,
-      ios_tou_experience_0_rollout.point
-    ]
-    pivots: [
-      ios_tou_experience_0_rollout.branch
-    ]
-    filters:
-      ios_tou_experience_0_rollout.metric: 'search_count'
-      ios_tou_experience_0_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: ios_tou_experience_0_rollout.submission_date
-    field_y: ios_tou_experience_0_rollout.point
-    log_scale: false
-    ci_lower: ios_tou_experience_0_rollout.lower
-    ci_upper: ios_tou_experience_0_rollout.upper
-    show_grid: true
-    listen:
-      Date: ios_tou_experience_0_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -95,6 +61,40 @@
     ]
     filters:
       ios_tou_experience_0_rollout.metric: 'active_hours'
+      ios_tou_experience_0_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_tou_experience_0_rollout.submission_date
+    field_y: ios_tou_experience_0_rollout.point
+    log_scale: false
+    ci_lower: ios_tou_experience_0_rollout.lower
+    ci_upper: ios_tou_experience_0_rollout.upper
+    show_grid: true
+    listen:
+      Date: ios_tou_experience_0_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_tou_experience_0_rollout
+    type: looker_line
+    fields: [
+      ios_tou_experience_0_rollout.submission_date,
+      ios_tou_experience_0_rollout.branch,
+      ios_tou_experience_0_rollout.point
+    ]
+    pivots: [
+      ios_tou_experience_0_rollout.branch
+    ]
+    filters:
+      ios_tou_experience_0_rollout.metric: 'search_count'
       ios_tou_experience_0_rollout.statistic: mean
     row: 10
     col: 0

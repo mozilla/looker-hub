@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_fenix_store_ready_v142_release
-    type: looker_line
-    fields: [
-      enable_fenix_store_ready_v142_release.submission_date,
-      enable_fenix_store_ready_v142_release.branch,
-      enable_fenix_store_ready_v142_release.point
-    ]
-    pivots: [
-      enable_fenix_store_ready_v142_release.branch
-    ]
-    filters:
-      enable_fenix_store_ready_v142_release.metric: 'uri_count'
-      enable_fenix_store_ready_v142_release.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: enable_fenix_store_ready_v142_release.submission_date
-    field_y: enable_fenix_store_ready_v142_release.point
-    log_scale: false
-    ci_lower: enable_fenix_store_ready_v142_release.lower
-    ci_upper: enable_fenix_store_ready_v142_release.upper
-    show_grid: true
-    listen:
-      Date: enable_fenix_store_ready_v142_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       enable_fenix_store_ready_v142_release.metric: 'active_hours'
       enable_fenix_store_ready_v142_release.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: enable_fenix_store_ready_v142_release.submission_date
@@ -129,6 +95,40 @@
     ]
     filters:
       enable_fenix_store_ready_v142_release.metric: 'search_count'
+      enable_fenix_store_ready_v142_release.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: enable_fenix_store_ready_v142_release.submission_date
+    field_y: enable_fenix_store_ready_v142_release.point
+    log_scale: false
+    ci_lower: enable_fenix_store_ready_v142_release.lower
+    ci_upper: enable_fenix_store_ready_v142_release.upper
+    show_grid: true
+    listen:
+      Date: enable_fenix_store_ready_v142_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_fenix_store_ready_v142_release
+    type: looker_line
+    fields: [
+      enable_fenix_store_ready_v142_release.submission_date,
+      enable_fenix_store_ready_v142_release.branch,
+      enable_fenix_store_ready_v142_release.point
+    ]
+    pivots: [
+      enable_fenix_store_ready_v142_release.branch
+    ]
+    filters:
+      enable_fenix_store_ready_v142_release.metric: 'uri_count'
       enable_fenix_store_ready_v142_release.statistic: mean
     row: 10
     col: 12
@@ -180,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enable_fenix_store_ready_v142_release
-    type: looker_line
-    fields: [
-      enable_fenix_store_ready_v142_release.submission_date,
-      enable_fenix_store_ready_v142_release.branch,
-      enable_fenix_store_ready_v142_release.point
-    ]
-    pivots: [
-      enable_fenix_store_ready_v142_release.branch
-    ]
-    filters:
-      enable_fenix_store_ready_v142_release.metric: 'ad_clicks'
-      enable_fenix_store_ready_v142_release.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: enable_fenix_store_ready_v142_release.submission_date
-    field_y: enable_fenix_store_ready_v142_release.point
-    log_scale: false
-    ci_lower: enable_fenix_store_ready_v142_release.lower
-    ci_upper: enable_fenix_store_ready_v142_release.upper
-    show_grid: true
-    listen:
-      Date: enable_fenix_store_ready_v142_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Tagged Sap Searches
     name: Tagged Sap Searches_mean
     note_state: expanded
@@ -231,6 +197,40 @@
     ]
     filters:
       enable_fenix_store_ready_v142_release.metric: 'tagged_sap_searches'
+      enable_fenix_store_ready_v142_release.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: enable_fenix_store_ready_v142_release.submission_date
+    field_y: enable_fenix_store_ready_v142_release.point
+    log_scale: false
+    ci_lower: enable_fenix_store_ready_v142_release.lower
+    ci_upper: enable_fenix_store_ready_v142_release.upper
+    show_grid: true
+    listen:
+      Date: enable_fenix_store_ready_v142_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enable_fenix_store_ready_v142_release
+    type: looker_line
+    fields: [
+      enable_fenix_store_ready_v142_release.submission_date,
+      enable_fenix_store_ready_v142_release.branch,
+      enable_fenix_store_ready_v142_release.point
+    ]
+    pivots: [
+      enable_fenix_store_ready_v142_release.branch
+    ]
+    filters:
+      enable_fenix_store_ready_v142_release.metric: 'ad_clicks'
       enable_fenix_store_ready_v142_release.statistic: mean
     row: 30
     col: 0

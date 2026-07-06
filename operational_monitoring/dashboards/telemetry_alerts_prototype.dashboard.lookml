@@ -11,12 +11,14 @@
 
   elements:
   - title: Metric
-    name: Metric_sum
+    name: Metric_percentile
     explore: telemetry_alerts_prototype
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       telemetry_alerts_prototype.build_id,
       telemetry_alerts_prototype.branch,
+      telemetry_alerts_prototype.upper,
+      telemetry_alerts_prototype.lower,
       telemetry_alerts_prototype.point
     ]
     pivots: [
@@ -34,6 +36,7 @@
     show_grid: true
     listen:
       Date: telemetry_alerts_prototype.build_id
+      Percentile: telemetry_alerts_prototype.parameter
       OS: telemetry_alerts_prototype.os
       Metric: telemetry_alerts_prototype.metric
       Statistic: telemetry_alerts_prototype.statistic
@@ -129,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'main_crashes'
+    default_value: 'perf_first_contentful_paint_ms'
     allow_multiple_values: false
     required: true
     ui_config:
@@ -142,7 +145,7 @@
   - name: Statistic
     title: Statistic
     type: field_filter
-    default_value: 'sum'
+    default_value: 'percentile'
     allow_multiple_values: false
     required: true
     ui_config:
