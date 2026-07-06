@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_shake_to_summarize_mistral_worldwide_english_release_rollout
-    type: looker_line
-    fields: [
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date,
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.branch,
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.point
-    ]
-    pivots: [
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.branch
-    ]
-    filters:
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.metric: 'uri_count'
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
-    field_y: android_shake_to_summarize_mistral_worldwide_english_release_rollout.point
-    log_scale: false
-    ci_lower: android_shake_to_summarize_mistral_worldwide_english_release_rollout.lower
-    ci_upper: android_shake_to_summarize_mistral_worldwide_english_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       android_shake_to_summarize_mistral_worldwide_english_release_rollout.metric: 'active_hours'
       android_shake_to_summarize_mistral_worldwide_english_release_rollout.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
@@ -129,6 +95,40 @@
     ]
     filters:
       android_shake_to_summarize_mistral_worldwide_english_release_rollout.metric: 'search_count'
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
+    field_y: android_shake_to_summarize_mistral_worldwide_english_release_rollout.point
+    log_scale: false
+    ci_lower: android_shake_to_summarize_mistral_worldwide_english_release_rollout.lower
+    ci_upper: android_shake_to_summarize_mistral_worldwide_english_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_shake_to_summarize_mistral_worldwide_english_release_rollout
+    type: looker_line
+    fields: [
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date,
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.branch,
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.point
+    ]
+    pivots: [
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.branch
+    ]
+    filters:
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.metric: 'uri_count'
       android_shake_to_summarize_mistral_worldwide_english_release_rollout.statistic: mean
     row: 10
     col: 12
@@ -180,40 +180,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_shake_to_summarize_mistral_worldwide_english_release_rollout
-    type: looker_line
-    fields: [
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date,
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.branch,
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.point
-    ]
-    pivots: [
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.branch
-    ]
-    filters:
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.metric: 'ad_clicks'
-      android_shake_to_summarize_mistral_worldwide_english_release_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
-    field_y: android_shake_to_summarize_mistral_worldwide_english_release_rollout.point
-    log_scale: false
-    ci_lower: android_shake_to_summarize_mistral_worldwide_english_release_rollout.lower
-    ci_upper: android_shake_to_summarize_mistral_worldwide_english_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Tagged Sap Searches
     name: Tagged Sap Searches_mean
     note_state: expanded
@@ -231,6 +197,40 @@
     ]
     filters:
       android_shake_to_summarize_mistral_worldwide_english_release_rollout.metric: 'tagged_sap_searches'
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
+    field_y: android_shake_to_summarize_mistral_worldwide_english_release_rollout.point
+    log_scale: false
+    ci_lower: android_shake_to_summarize_mistral_worldwide_english_release_rollout.lower
+    ci_upper: android_shake_to_summarize_mistral_worldwide_english_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_shake_to_summarize_mistral_worldwide_english_release_rollout
+    type: looker_line
+    fields: [
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.submission_date,
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.branch,
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.point
+    ]
+    pivots: [
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.branch
+    ]
+    filters:
+      android_shake_to_summarize_mistral_worldwide_english_release_rollout.metric: 'ad_clicks'
       android_shake_to_summarize_mistral_worldwide_english_release_rollout.statistic: mean
     row: 30
     col: 0

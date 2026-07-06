@@ -20746,6 +20746,17 @@ Possible values are: new_tab, share, bookmark, translate, homepage or back.
 "
   }
 
+  dimension: metrics__string__preferences_toolbar_tab_strip_shortcut {
+    sql: ${TABLE}.metrics.string.preferences_toolbar_tab_strip_shortcut ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Preferences Toolbar Tab Strip Shortcut"
+    description: "The toolbar shortcut used when the tab strip is enabled.
+Possible values are: share, bookmark, translate, homepage, back, summarize or none.
+"
+  }
+
   dimension: metrics__string__preferences_user_theme {
     sql: ${TABLE}.metrics.string.preferences_user_theme ;;
     type: string
