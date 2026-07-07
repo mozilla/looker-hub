@@ -427,6 +427,14 @@ view: events_stream {
     group_item_label: "OS Major"
   }
 
+  dimension: extras__string__outcome {
+    sql: ${TABLE}.extras.string.outcome ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Outcome"
+  }
+
   dimension: extras__string__ppa {
     sql: ${TABLE}.extras.string.ppa ;;
     type: string

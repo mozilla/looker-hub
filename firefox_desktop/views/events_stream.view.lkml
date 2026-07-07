@@ -555,14 +555,6 @@ view: events_stream {
     group_item_label: "Firsttimetoggle"
   }
 
-  dimension: extras__boolean__first_interaction {
-    sql: ${TABLE}.extras.boolean.first_interaction ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "First Interaction"
-  }
-
   dimension: extras__boolean__force_sync {
     sql: ${TABLE}.extras.boolean.force_sync ;;
     type: yesno

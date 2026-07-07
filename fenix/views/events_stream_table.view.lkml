@@ -472,14 +472,6 @@ view: events_stream_table {
     group_item_label: "Filled"
   }
 
-  dimension: extras__boolean__first_interaction {
-    sql: ${TABLE}.extras.boolean.first_interaction ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "First Interaction"
-  }
-
   dimension: extras__boolean__foreground_tab {
     sql: ${TABLE}.extras.boolean.foreground_tab ;;
     type: yesno
@@ -2958,14 +2950,6 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Feature Ids"
-  }
-
-  dimension: extras__string__feature_name {
-    sql: ${TABLE}.extras.string.feature_name ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Feature Name"
   }
 
   dimension: extras__string__fieldType {
