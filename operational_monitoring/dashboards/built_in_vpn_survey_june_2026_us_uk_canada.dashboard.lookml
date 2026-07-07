@@ -10,108 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_survey_june_2026_us_uk_canada
-    type: looker_line
-    fields: [
-      built_in_vpn_survey_june_2026_us_uk_canada.submission_date,
-      built_in_vpn_survey_june_2026_us_uk_canada.branch,
-      built_in_vpn_survey_june_2026_us_uk_canada.point
-    ]
-    pivots: [
-      built_in_vpn_survey_june_2026_us_uk_canada.branch
-    ]
-    filters:
-      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'retained'
-      built_in_vpn_survey_june_2026_us_uk_canada.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
-    field_y: built_in_vpn_survey_june_2026_us_uk_canada.point
-    log_scale: false
-    ci_lower: built_in_vpn_survey_june_2026_us_uk_canada.lower
-    ci_upper: built_in_vpn_survey_june_2026_us_uk_canada.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_survey_june_2026_us_uk_canada
-    type: looker_line
-    fields: [
-      built_in_vpn_survey_june_2026_us_uk_canada.submission_date,
-      built_in_vpn_survey_june_2026_us_uk_canada.branch,
-      built_in_vpn_survey_june_2026_us_uk_canada.point
-    ]
-    pivots: [
-      built_in_vpn_survey_june_2026_us_uk_canada.branch
-    ]
-    filters:
-      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'active_hours'
-      built_in_vpn_survey_june_2026_us_uk_canada.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
-    field_y: built_in_vpn_survey_june_2026_us_uk_canada.point
-    log_scale: false
-    ci_lower: built_in_vpn_survey_june_2026_us_uk_canada.lower
-    ci_upper: built_in_vpn_survey_june_2026_us_uk_canada.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_survey_june_2026_us_uk_canada
-    type: looker_line
-    fields: [
-      built_in_vpn_survey_june_2026_us_uk_canada.submission_date,
-      built_in_vpn_survey_june_2026_us_uk_canada.branch,
-      built_in_vpn_survey_june_2026_us_uk_canada.point
-    ]
-    pivots: [
-      built_in_vpn_survey_june_2026_us_uk_canada.branch
-    ]
-    filters:
-      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'qualified_cumulative_days_of_use'
-      built_in_vpn_survey_june_2026_us_uk_canada.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
-    field_y: built_in_vpn_survey_june_2026_us_uk_canada.point
-    log_scale: false
-    ci_lower: built_in_vpn_survey_june_2026_us_uk_canada.lower
-    ci_upper: built_in_vpn_survey_june_2026_us_uk_canada.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -132,6 +30,109 @@
     filters:
       built_in_vpn_survey_june_2026_us_uk_canada.metric: 'memory_total'
       built_in_vpn_survey_june_2026_us_uk_canada.statistic: percentile
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
+    field_y: built_in_vpn_survey_june_2026_us_uk_canada.point
+    log_scale: false
+    ci_lower: built_in_vpn_survey_june_2026_us_uk_canada.lower
+    ci_upper: built_in_vpn_survey_june_2026_us_uk_canada.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
+      Percentile: built_in_vpn_survey_june_2026_us_uk_canada.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_survey_june_2026_us_uk_canada
+    type: looker_line
+    fields: [
+      built_in_vpn_survey_june_2026_us_uk_canada.submission_date,
+      built_in_vpn_survey_june_2026_us_uk_canada.branch,
+      built_in_vpn_survey_june_2026_us_uk_canada.point
+    ]
+    pivots: [
+      built_in_vpn_survey_june_2026_us_uk_canada.branch
+    ]
+    filters:
+      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'ad_clicks'
+      built_in_vpn_survey_june_2026_us_uk_canada.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
+    field_y: built_in_vpn_survey_june_2026_us_uk_canada.point
+    log_scale: false
+    ci_lower: built_in_vpn_survey_june_2026_us_uk_canada.lower
+    ci_upper: built_in_vpn_survey_june_2026_us_uk_canada.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_survey_june_2026_us_uk_canada
+    type: looker_line
+    fields: [
+      built_in_vpn_survey_june_2026_us_uk_canada.submission_date,
+      built_in_vpn_survey_june_2026_us_uk_canada.branch,
+      built_in_vpn_survey_june_2026_us_uk_canada.point
+    ]
+    pivots: [
+      built_in_vpn_survey_june_2026_us_uk_canada.branch
+    ]
+    filters:
+      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'retained'
+      built_in_vpn_survey_june_2026_us_uk_canada.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
+    field_y: built_in_vpn_survey_june_2026_us_uk_canada.point
+    log_scale: false
+    ci_lower: built_in_vpn_survey_june_2026_us_uk_canada.lower
+    ci_upper: built_in_vpn_survey_june_2026_us_uk_canada.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_survey_june_2026_us_uk_canada
+    type: looker_line
+    fields: [
+      built_in_vpn_survey_june_2026_us_uk_canada.submission_date,
+      built_in_vpn_survey_june_2026_us_uk_canada.branch,
+      built_in_vpn_survey_june_2026_us_uk_canada.point
+    ]
+    pivots: [
+      built_in_vpn_survey_june_2026_us_uk_canada.branch
+    ]
+    filters:
+      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'uri_count'
+      built_in_vpn_survey_june_2026_us_uk_canada.statistic: mean
     row: 10
     col: 12
     width: 12
@@ -144,7 +145,6 @@
     show_grid: true
     listen:
       Date: built_in_vpn_survey_june_2026_us_uk_canada.submission_date
-      Percentile: built_in_vpn_survey_june_2026_us_uk_canada.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       built_in_vpn_survey_june_2026_us_uk_canada.branch
     ]
     filters:
-      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'uri_count'
+      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'active_hours'
       built_in_vpn_survey_june_2026_us_uk_canada.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       built_in_vpn_survey_june_2026_us_uk_canada.branch
     ]
     filters:
-      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'ad_clicks'
+      built_in_vpn_survey_june_2026_us_uk_canada.metric: 'qualified_cumulative_days_of_use'
       built_in_vpn_survey_june_2026_us_uk_canada.statistic: mean
     row: 30
     col: 12
