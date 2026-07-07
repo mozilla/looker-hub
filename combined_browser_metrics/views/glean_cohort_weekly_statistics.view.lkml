@@ -104,6 +104,13 @@ view: glean_cohort_weekly_statistics {
     description: "Distribution ID"
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "The source through which the application was installed, such as 'com.android.vending' for the Google Play Store. A null value indicates the install source could not be determined."
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
