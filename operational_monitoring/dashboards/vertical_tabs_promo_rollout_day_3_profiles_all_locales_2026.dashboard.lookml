@@ -10,26 +10,24 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date,
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch,
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.upper,
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.lower,
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
     ]
     pivots: [
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch
     ]
     filters:
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'memory_total'
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: percentile
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'qualified_cumulative_days_of_use'
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: mean
     row: 0
     col: 0
     width: 12
@@ -42,7 +40,6 @@
     show_grid: true
     listen:
       Date: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
-      Percentile: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -81,74 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026
-    type: looker_line
-    fields: [
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date,
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch,
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
-    ]
-    pivots: [
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch
-    ]
-    filters:
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'retained'
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
-    field_y: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
-    log_scale: false
-    ci_lower: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.lower
-    ci_upper: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.upper
-    show_grid: true
-    listen:
-      Date: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026
-    type: looker_line
-    fields: [
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date,
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch,
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
-    ]
-    pivots: [
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch
-    ]
-    filters:
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'uri_count'
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
-    field_y: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
-    log_scale: false
-    ci_lower: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.lower
-    ci_upper: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.upper
-    show_grid: true
-    listen:
-      Date: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -167,6 +96,76 @@
     filters:
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'search_count'
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
+    field_y: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
+    log_scale: false
+    ci_lower: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.lower
+    ci_upper: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.upper
+    show_grid: true
+    listen:
+      Date: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026
+    type: looker_line
+    fields: [
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date,
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch,
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
+    ]
+    pivots: [
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch
+    ]
+    filters:
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'days_of_use'
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
+    field_y: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
+    log_scale: false
+    ci_lower: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.lower
+    ci_upper: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.upper
+    show_grid: true
+    listen:
+      Date: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026
+    type: "ci-line-chart"
+    fields: [
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date,
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch,
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.upper,
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.lower,
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.point
+    ]
+    pivots: [
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch
+    ]
+    filters:
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'memory_total'
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: percentile
     row: 20
     col: 0
     width: 12
@@ -179,6 +178,7 @@
     show_grid: true
     listen:
       Date: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.submission_date
+      Percentile: vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch
     ]
     filters:
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'days_of_use'
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'retained'
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.branch
     ]
     filters:
-      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'qualified_cumulative_days_of_use'
+      vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.metric: 'uri_count'
       vertical_tabs_promo_rollout_day_3_profiles_all_locales_2026.statistic: mean
     row: 30
     col: 12

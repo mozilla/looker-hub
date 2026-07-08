@@ -17719,6 +17719,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_edit_context_canvas {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_edit_context_canvas ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Edit Context Canvas"
+    description: "Whether a document attaches an EditContext to a canvas element. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_editcontext_constructor {
     sql: ${TABLE}.metrics.counter.use_counter_doc_editcontext_constructor ;;
     type: number
@@ -22946,6 +22956,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Domparser Parsefromstring"
     description: "Whether a page called called DOMParser.parseFromString. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_edit_context_canvas {
+    sql: ${TABLE}.metrics.counter.use_counter_page_edit_context_canvas ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Edit Context Canvas"
+    description: "Whether a page attaches an EditContext to a canvas element. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
