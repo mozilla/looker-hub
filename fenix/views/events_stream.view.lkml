@@ -1035,6 +1035,14 @@ view: events_stream {
     group_item_label: "Status"
   }
 
+  dimension: extras__boolean__succeeded {
+    sql: ${TABLE}.extras.boolean.succeeded ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Succeeded"
+  }
+
   dimension: extras__boolean__success {
     sql: ${TABLE}.extras.boolean.success ;;
     type: yesno
@@ -4545,6 +4553,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Slug ID"
+  }
+
+  dimension: extras__string__slug_ids {
+    sql: ${TABLE}.extras.string.slug_ids ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Slug Ids"
   }
 
   dimension: extras__string__sort_key {
