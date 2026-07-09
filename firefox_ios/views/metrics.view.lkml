@@ -99,6 +99,26 @@ Firefox-iOS.
 "
   }
 
+  dimension: metrics__timing_distribution__ai_quick_answers_results_time__sum {
+    label: "Ai Quick Answers: Results Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.ai_quick_answers_results_time.sum ;;
+    type: number
+    group_label: "Ai Quick Answers"
+    group_item_label: "Results Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Ai Quick Answers: Results Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/ai_quick_answers_results_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the total time for generating the results and showing them to the user.
+Starts when the request for fetching results starts.
+Ends when the user sees the results or an error.
+"
+  }
+
   dimension: metrics__timing_distribution__ai_summarize_summarization_time__sum {
     label: "Ai Summarize: Summarization Time Sum"
     hidden: no
@@ -11307,6 +11327,20 @@ view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pi
 }
 
 view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__ai_quick_answers_results_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
