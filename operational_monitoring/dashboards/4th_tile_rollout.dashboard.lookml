@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: 4th_tile_rollout
+    type: looker_line
+    fields: [
+      4th_tile_rollout.submission_date,
+      4th_tile_rollout.branch,
+      4th_tile_rollout.point
+    ]
+    pivots: [
+      4th_tile_rollout.branch
+    ]
+    filters:
+      4th_tile_rollout.metric: 'search_count'
+      4th_tile_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: 4th_tile_rollout.submission_date
+    field_y: 4th_tile_rollout.point
+    log_scale: false
+    ci_lower: 4th_tile_rollout.lower
+    ci_upper: 4th_tile_rollout.upper
+    show_grid: true
+    listen:
+      Date: 4th_tile_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -29,6 +63,40 @@
       4th_tile_rollout.metric: 'qualified_cumulative_days_of_use'
       4th_tile_rollout.statistic: mean
     row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: 4th_tile_rollout.submission_date
+    field_y: 4th_tile_rollout.point
+    log_scale: false
+    ci_lower: 4th_tile_rollout.lower
+    ci_upper: 4th_tile_rollout.upper
+    show_grid: true
+    listen:
+      Date: 4th_tile_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: 4th_tile_rollout
+    type: looker_line
+    fields: [
+      4th_tile_rollout.submission_date,
+      4th_tile_rollout.branch,
+      4th_tile_rollout.point
+    ]
+    pivots: [
+      4th_tile_rollout.branch
+    ]
+    filters:
+      4th_tile_rollout.metric: 'retained'
+      4th_tile_rollout.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,42 +130,8 @@
     filters:
       4th_tile_rollout.metric: 'ad_clicks'
       4th_tile_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: 4th_tile_rollout.submission_date
-    field_y: 4th_tile_rollout.point
-    log_scale: false
-    ci_lower: 4th_tile_rollout.lower
-    ci_upper: 4th_tile_rollout.upper
-    show_grid: true
-    listen:
-      Date: 4th_tile_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: 4th_tile_rollout
-    type: looker_line
-    fields: [
-      4th_tile_rollout.submission_date,
-      4th_tile_rollout.branch,
-      4th_tile_rollout.point
-    ]
-    pivots: [
-      4th_tile_rollout.branch
-    ]
-    filters:
-      4th_tile_rollout.metric: 'search_count'
-      4th_tile_rollout.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: 4th_tile_rollout.submission_date
@@ -130,8 +164,8 @@
     filters:
       4th_tile_rollout.metric: 'days_of_use'
       4th_tile_rollout.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: 4th_tile_rollout.submission_date
@@ -167,41 +201,6 @@
       4th_tile_rollout.metric: 'memory_total'
       4th_tile_rollout.statistic: percentile
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: 4th_tile_rollout.submission_date
-    field_y: 4th_tile_rollout.point
-    log_scale: false
-    ci_lower: 4th_tile_rollout.lower
-    ci_upper: 4th_tile_rollout.upper
-    show_grid: true
-    listen:
-      Date: 4th_tile_rollout.submission_date
-      Percentile: 4th_tile_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: 4th_tile_rollout
-    type: looker_line
-    fields: [
-      4th_tile_rollout.submission_date,
-      4th_tile_rollout.branch,
-      4th_tile_rollout.point
-    ]
-    pivots: [
-      4th_tile_rollout.branch
-    ]
-    filters:
-      4th_tile_rollout.metric: 'active_hours'
-      4th_tile_rollout.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -213,40 +212,7 @@
     show_grid: true
     listen:
       Date: 4th_tile_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: 4th_tile_rollout
-    type: looker_line
-    fields: [
-      4th_tile_rollout.submission_date,
-      4th_tile_rollout.branch,
-      4th_tile_rollout.point
-    ]
-    pivots: [
-      4th_tile_rollout.branch
-    ]
-    filters:
-      4th_tile_rollout.metric: 'retained'
-      4th_tile_rollout.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: 4th_tile_rollout.submission_date
-    field_y: 4th_tile_rollout.point
-    log_scale: false
-    ci_lower: 4th_tile_rollout.lower
-    ci_upper: 4th_tile_rollout.upper
-    show_grid: true
-    listen:
-      Date: 4th_tile_rollout.submission_date
+      Percentile: 4th_tile_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +234,40 @@
     ]
     filters:
       4th_tile_rollout.metric: 'uri_count'
+      4th_tile_rollout.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: 4th_tile_rollout.submission_date
+    field_y: 4th_tile_rollout.point
+    log_scale: false
+    ci_lower: 4th_tile_rollout.lower
+    ci_upper: 4th_tile_rollout.upper
+    show_grid: true
+    listen:
+      Date: 4th_tile_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: 4th_tile_rollout
+    type: looker_line
+    fields: [
+      4th_tile_rollout.submission_date,
+      4th_tile_rollout.branch,
+      4th_tile_rollout.point
+    ]
+    pivots: [
+      4th_tile_rollout.branch
+    ]
+    filters:
+      4th_tile_rollout.metric: 'active_hours'
       4th_tile_rollout.statistic: mean
     row: 30
     col: 12
