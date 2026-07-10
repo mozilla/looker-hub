@@ -335,6 +335,12 @@ view: clients_last_seen_joined_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: marketing_notifications_allowed {
+    sql: ${TABLE}.marketing_notifications_allowed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: n_metrics_ping {
     sql: ${TABLE}.n_metrics_ping ;;
     type: number
@@ -362,6 +368,12 @@ view: clients_last_seen_joined_table {
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: notifications_allowed {
+    sql: ${TABLE}.notifications_allowed ;;
+    type: yesno
     suggest_persist_for: "24 hours"
   }
 
