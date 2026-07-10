@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: new_tab_logo_variation_for_sports_widget_2 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_tab_logo_variation_for_sports_widget_2_statistics ;;
+view: built_in_vpn_survey_june_2026_germany {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.built_in_vpn_survey_june_2026_germany_statistics ;;
 
   dimension: submission_date {
     type: date
