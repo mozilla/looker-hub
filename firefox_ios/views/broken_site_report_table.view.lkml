@@ -449,6 +449,69 @@ view: broken_site_report_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__broken_site_report_browser_info_graphics_has_touch_screen {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_graphics_has_touch_screen ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Broken Site Report Browser Info Graphics Has Touch Screen"
+    description: "Whether the device reports a touch screen (navigator.maxTouchPoints > 0).
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Broken Site Report Browser Info System Is Tablet"
+    description: "Whether the reporting device is a tablet (iPad).
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_is_private_browsing {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_is_private_browsing ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Broken Site Report Tab Info Antitracking Is Private Browsing"
+    description: "Whether the reported tab is in private browsing mode.
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_frameworks_fastclick {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_fastclick ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Broken Site Report Tab Info Frameworks Fastclick"
+    description: "Whether the FastClick library was detected on the reported page
+(detected via injected JS at report time).
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_frameworks_marfeel {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_marfeel ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Broken Site Report Tab Info Frameworks Marfeel"
+    description: "Whether the Marfeel framework was detected on the reported page
+(detected via injected JS at report time).
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_frameworks_mobify {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_mobify ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Broken Site Report Tab Info Frameworks Mobify"
+    description: "Whether the Mobify framework was detected on the reported page
+(detected via injected JS at report time).
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -481,6 +544,60 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__broken_site_report_browser_info_system_memory {
+    sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_system_memory ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Broken Site Report Browser Info System Memory"
+    description: "Total physical memory of the device, in megabytes.
+"
+  }
+
+  dimension: metrics__string__broken_site_report_breakage_category {
+    sql: ${TABLE}.metrics.string.broken_site_report_breakage_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Broken Site Report Breakage Category"
+    description: "The user-selected reason the site is broken (e.g. \"media\", \"load\",
+\"content\"). Serialized as a single value even though the UI presents a
+two-level picker. The option set is UI-driven and may change over time.
+"
+  }
+
+  dimension: metrics__string__broken_site_report_browser_info_graphics_device_pixel_ratio {
+    sql: ${TABLE}.metrics.string.broken_site_report_browser_info_graphics_device_pixel_ratio ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Broken Site Report Browser Info Graphics Device Pixel Ratio"
+    description: "The device pixel ratio (screen scale) as a decimal string, e.g. \"3.0\".
+"
+  }
+
+  dimension: metrics__string__broken_site_report_tab_info_antitracking_block_list {
+    sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_block_list ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Broken Site Report Tab Info Antitracking Block List"
+    description: "Which content-blocking rule set is active for the tab: a single value,
+one of \"basic\" or \"strict\" (not a list of blocked items; those are in
+blocked_origins). Named block_list to match the cross-platform schema.
+"
+  }
+
+  dimension: metrics__string__broken_site_report_tab_info_antitracking_etp_category {
+    sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_etp_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Broken Site Report Tab Info Antitracking Etp Category"
+    description: "The user's tracking-protection strength setting (\"basic\" or \"strict\").
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -492,6 +609,30 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string_list__broken_site_report_browser_info_app_default_locales {
+    sql: ${TABLE}.metrics.string_list.broken_site_report_browser_info_app_default_locales ;;
+    hidden: yes
+    description: "The app's preferred locale list (e.g. [\"en-US\", \"en\"]).
+"
+  }
+
+  dimension: metrics__string_list__broken_site_report_tab_info_antitracking_blocked_origins {
+    sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_antitracking_blocked_origins ;;
+    hidden: yes
+    description: "Origins blocked by tracking protection on the reported page. Only
+included when the user keeps the \"list of items blocked by tracking
+protection\" option on.
+"
+  }
+
+  dimension: metrics__string_list__broken_site_report_tab_info_languages {
+    sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_languages ;;
+    hidden: yes
+    description: "The languages the reported page actually saw (navigator.languages),
+read from the page context at report time.
+"
+  }
+
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
@@ -499,6 +640,82 @@ for the purpose of experimentation enrollment.
 Should be the same as the ones defined for that particular ping.
 
 This metric is only attached to a ping if it already contains other data.
+"
+  }
+
+  dimension: metrics__text__broken_site_report_browser_info_app_default_useragent_string {
+    sql: ${TABLE}.metrics.text.broken_site_report_browser_info_app_default_useragent_string ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text"
+    group_item_label: "Broken Site Report Browser Info App Default Useragent String"
+  }
+
+  dimension: metrics__text__broken_site_report_description {
+    sql: ${TABLE}.metrics.text.broken_site_report_description ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text"
+    group_item_label: "Broken Site Report Description"
+  }
+
+  dimension: metrics__text__broken_site_report_tab_info_useragent_string {
+    sql: ${TABLE}.metrics.text.broken_site_report_tab_info_useragent_string ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text"
+    group_item_label: "Broken Site Report Tab Info Useragent String"
+  }
+
+  dimension: metrics__text2__broken_site_report_browser_info_app_default_useragent_string {
+    sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_app_default_useragent_string ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Broken Site Report Browser Info App Default Useragent String"
+    description: "The app's default user agent string (the app-level UA, distinct from the
+per-page `tab_info.useragent_string`).
+"
+  }
+
+  dimension: metrics__text2__broken_site_report_description {
+    sql: ${TABLE}.metrics.text2.broken_site_report_description ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Broken Site Report Description"
+    description: "Optional free-text \"Additional Details\" entered by the user. May contain
+PII (free-form text).
+"
+  }
+
+  dimension: metrics__text2__broken_site_report_tab_info_useragent_string {
+    sql: ${TABLE}.metrics.text2.broken_site_report_tab_info_useragent_string ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Text2"
+    group_item_label: "Broken Site Report Tab Info Useragent String"
+    description: "The user agent string the reported page actually saw
+(navigator.userAgent), read from the page context at report time.
+"
+  }
+
+  dimension: metrics__url__broken_site_report_url {
+    sql: ${TABLE}.metrics.url.broken_site_report_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: URL"
+    group_item_label: "Broken Site Report URL"
+  }
+
+  dimension: metrics__url2__broken_site_report_url {
+    sql: ${TABLE}.metrics.url2.broken_site_report_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Url2"
+    group_item_label: "Broken Site Report URL"
+    description: "The URL of the site the user is reporting. The user may edit this before
+submitting. May contain PII.
 "
   }
 

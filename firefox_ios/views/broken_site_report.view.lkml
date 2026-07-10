@@ -5,6 +5,287 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: broken_site_report {
+  dimension: metrics__string__broken_site_report_breakage_category {
+    label: "Broken Site Report: Breakage Category"
+    hidden: no
+    sql: ${TABLE}.metrics.string.broken_site_report_breakage_category ;;
+    type: string
+    group_label: "Broken Site Report"
+    group_item_label: "Breakage Category"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report: Breakage Category"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_breakage_category"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user-selected reason the site is broken (e.g. \"media\", \"load\",
+\"content\"). Serialized as a single value even though the UI presents a
+two-level picker. The option set is UI-driven and may change over time.
+"
+  }
+
+  dimension: metrics__text2__broken_site_report_browser_info_app_default_useragent_string {
+    label: "Broken Site Report Browser Info App: Default Useragent String"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.broken_site_report_browser_info_app_default_useragent_string ;;
+    type: string
+    group_label: "Broken Site Report Browser Info App"
+    group_item_label: "Default Useragent String"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info App: Default Useragent String"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_browser_info_app_default_useragent_string"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The app's default user agent string (the app-level UA, distinct from the
+per-page `tab_info.useragent_string`).
+"
+  }
+
+  dimension: metrics__string__broken_site_report_browser_info_graphics_device_pixel_ratio {
+    label: "Broken Site Report Browser Info Graphics: Device Pixel Ratio"
+    hidden: no
+    sql: ${TABLE}.metrics.string.broken_site_report_browser_info_graphics_device_pixel_ratio ;;
+    type: string
+    group_label: "Broken Site Report Browser Info Graphics"
+    group_item_label: "Device Pixel Ratio"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics: Device Pixel Ratio"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_browser_info_graphics_device_pixel_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The device pixel ratio (screen scale) as a decimal string, e.g. \"3.0\".
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_graphics_has_touch_screen {
+    label: "Broken Site Report Browser Info Graphics: Has Touch Screen"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_graphics_has_touch_screen ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info Graphics"
+    group_item_label: "Has Touch Screen"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info Graphics: Has Touch Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_browser_info_graphics_has_touch_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the device reports a touch screen (navigator.maxTouchPoints > 0).
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_browser_info_system_is_tablet {
+    label: "Broken Site Report Browser Info System: Is Tablet"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_browser_info_system_is_tablet ;;
+    type: yesno
+    group_label: "Broken Site Report Browser Info System"
+    group_item_label: "Is Tablet"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info System: Is Tablet"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_browser_info_system_is_tablet"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the reporting device is a tablet (iPad).
+"
+  }
+
+  dimension: metrics__quantity__broken_site_report_browser_info_system_memory {
+    label: "Broken Site Report Browser Info System: Memory"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_system_memory ;;
+    type: number
+    group_label: "Broken Site Report Browser Info System"
+    group_item_label: "Memory"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Browser Info System: Memory"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_browser_info_system_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total physical memory of the device, in megabytes.
+"
+  }
+
+  dimension: metrics__text2__broken_site_report_description {
+    label: "Broken Site Report: Description"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.broken_site_report_description ;;
+    type: string
+    group_label: "Broken Site Report"
+    group_item_label: "Description"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report: Description"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_description"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Optional free-text \"Additional Details\" entered by the user. May contain
+PII (free-form text).
+"
+  }
+
+  dimension: metrics__string__broken_site_report_tab_info_antitracking_block_list {
+    label: "Broken Site Report Tab Info Antitracking: Block List"
+    hidden: no
+    sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_block_list ;;
+    type: string
+    group_label: "Broken Site Report Tab Info Antitracking"
+    group_item_label: "Block List"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Block List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_tab_info_antitracking_block_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which content-blocking rule set is active for the tab: a single value,
+one of \"basic\" or \"strict\" (not a list of blocked items; those are in
+blocked_origins). Named block_list to match the cross-platform schema.
+"
+  }
+
+  dimension: metrics__string__broken_site_report_tab_info_antitracking_etp_category {
+    label: "Broken Site Report Tab Info Antitracking: Etp Category"
+    hidden: no
+    sql: ${TABLE}.metrics.string.broken_site_report_tab_info_antitracking_etp_category ;;
+    type: string
+    group_label: "Broken Site Report Tab Info Antitracking"
+    group_item_label: "Etp Category"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Etp Category"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_tab_info_antitracking_etp_category"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user's tracking-protection strength setting (\"basic\" or \"strict\").
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_is_private_browsing {
+    label: "Broken Site Report Tab Info Antitracking: Is Private Browsing"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_is_private_browsing ;;
+    type: yesno
+    group_label: "Broken Site Report Tab Info Antitracking"
+    group_item_label: "Is Private Browsing"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Is Private Browsing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_tab_info_antitracking_is_private_browsing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the reported tab is in private browsing mode.
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_frameworks_fastclick {
+    label: "Broken Site Report Tab Info Frameworks: Fastclick"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_fastclick ;;
+    type: yesno
+    group_label: "Broken Site Report Tab Info Frameworks"
+    group_item_label: "Fastclick"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks: Fastclick"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_tab_info_frameworks_fastclick"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the FastClick library was detected on the reported page
+(detected via injected JS at report time).
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_frameworks_marfeel {
+    label: "Broken Site Report Tab Info Frameworks: Marfeel"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_marfeel ;;
+    type: yesno
+    group_label: "Broken Site Report Tab Info Frameworks"
+    group_item_label: "Marfeel"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks: Marfeel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_tab_info_frameworks_marfeel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the Marfeel framework was detected on the reported page
+(detected via injected JS at report time).
+"
+  }
+
+  dimension: metrics__boolean__broken_site_report_tab_info_frameworks_mobify {
+    label: "Broken Site Report Tab Info Frameworks: Mobify"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_frameworks_mobify ;;
+    type: yesno
+    group_label: "Broken Site Report Tab Info Frameworks"
+    group_item_label: "Mobify"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Frameworks: Mobify"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_tab_info_frameworks_mobify"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the Mobify framework was detected on the reported page
+(detected via injected JS at report time).
+"
+  }
+
+  dimension: metrics__text2__broken_site_report_tab_info_useragent_string {
+    label: "Broken Site Report Tab Info: Useragent String"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.broken_site_report_tab_info_useragent_string ;;
+    type: string
+    group_label: "Broken Site Report Tab Info"
+    group_item_label: "Useragent String"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info: Useragent String"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_tab_info_useragent_string"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user agent string the reported page actually saw
+(navigator.userAgent), read from the page context at report time.
+"
+  }
+
+  dimension: metrics__url2__broken_site_report_url {
+    label: "Broken Site Report: URL"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.broken_site_report_url ;;
+    type: string
+    group_label: "Broken Site Report"
+    group_item_label: "URL"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report: URL"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The URL of the site the user is reporting. The user may edit this before
+submitting. May contain PII.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation: Experimentation ID"
     hidden: no

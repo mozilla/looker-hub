@@ -8,11 +8,11 @@ view: metric_definitions_events {
   derived_table: {
     sql: SELECT
                       COALESCE(COUNTIF(
-          event.category = 'top_site'
+          event.category = 'top_sites'
           AND event.name = 'contile_impression'
       ),0) AS spoc_tiles_impressions,
       COALESCE(COUNTIF(
-          event.category = 'top_site'
+          event.category = 'top_sites'
           AND event.name = 'contile_click'
       ),0) AS spoc_tiles_clicks,
   COALESCE(SUM(CASE WHEN
