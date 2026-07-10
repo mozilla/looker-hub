@@ -40,6 +40,12 @@ view: metrics_clients_daily_table {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: marketing_notifications_allowed {
+    sql: ${TABLE}.marketing_notifications_allowed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: n_metrics_ping {
     sql: ${TABLE}.n_metrics_ping ;;
     type: number
@@ -49,6 +55,12 @@ view: metrics_clients_daily_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: notifications_allowed {
+    sql: ${TABLE}.notifications_allowed ;;
+    type: yesno
     suggest_persist_for: "24 hours"
   }
 
