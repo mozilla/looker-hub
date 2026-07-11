@@ -1291,6 +1291,14 @@ view: events_stream {
     group_item_label: "Skipped"
   }
 
+  dimension: extras__boolean__smart_window {
+    sql: ${TABLE}.extras.boolean.smart_window ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Smart Window"
+  }
+
   dimension: extras__boolean__smartblockEmbedTogglesShown {
     sql: ${TABLE}.extras.boolean.smartblockEmbedTogglesShown ;;
     type: yesno
@@ -2577,6 +2585,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "System Memory Mb"
+  }
+
+  dimension: extras__quantity__tab_count {
+    sql: ${TABLE}.extras.quantity.tab_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tab Count"
   }
 
   dimension: extras__quantity__tabs {
