@@ -219,8 +219,8 @@
       display: inline
       options:
       - 'Windows'
-      - 'Linux'
       - 'Mac'
+      - 'Linux'
       - 'Other'
       
   

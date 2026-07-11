@@ -2543,6 +2543,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__suggest_relevance_status}) AS metrics__metrics__labeled_counter__suggest_relevance_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__suggest_relevance_status.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__tab_actions {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tab_actions}) AS metrics__metrics__labeled_counter__tab_actions ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tab_actions.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tab_tab_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tab_tab_count}) AS metrics__metrics__labeled_counter__tab_tab_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tab_tab_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__tabgroup_group_interactions {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tabgroup_group_interactions}) AS metrics__metrics__labeled_counter__tabgroup_group_interactions ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tabgroup_group_interactions.document_id} ;;
