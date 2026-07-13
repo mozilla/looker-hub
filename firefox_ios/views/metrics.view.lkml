@@ -3794,6 +3794,24 @@ tracking-protection that is enabled. One of:
 "
   }
 
+  dimension: metrics__boolean__user_search_google_lens_enabled {
+    label: "User Search: Google Lens Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.user_search_google_lens_enabled ;;
+    type: yesno
+    group_label: "User Search"
+    group_item_label: "Google Lens Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for User Search: Google Lens Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_search_google_lens_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user has the Google Lens image search feature enabled in the settings.
+"
+  }
+
   dimension: metrics__counter__user_terms_of_use_dismissed_count {
     label: "User Terms Of Use: Dismissed Count"
     hidden: no

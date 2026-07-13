@@ -2776,6 +2776,25 @@ Possible values:
     description: "Measures user retention of the Global Privacy Control (GPC) setting at start-up."
   }
 
+  dimension: metrics__boolean__preferences_google_lens_enabled {
+    label: "Preferences: Google Lens Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_google_lens_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Google Lens Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences: Google Lens Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_google_lens_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the Google Lens search feature is both available to the user and
+enabled by them in the settings.
+"
+  }
+
   dimension: metrics__string__preferences_https_only_mode {
     label: "Preferences: Https Only Mode"
     hidden: no

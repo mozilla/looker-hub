@@ -436,11 +436,13 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -470,6 +472,7 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -478,6 +481,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -486,6 +490,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -494,6 +499,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -502,6 +508,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -510,6 +517,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -539,6 +547,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -547,6 +556,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
+    description: "X-Foxsec-IP-Reputation header (deprecated, https://mozilla-hub.atlassian.net/browse/DENG-10434)"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -555,6 +565,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -563,6 +574,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -571,6 +583,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -579,6 +592,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -587,6 +601,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -595,6 +610,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -603,6 +619,7 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -633,24 +650,28 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -663,6 +684,7 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -692,6 +714,7 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: ping_count {
@@ -898,6 +921,7 @@ view: usage_reporting__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Event Seq"
+    description: "Per-session event counter, reset at each new session."
   }
 
   dimension: session__session_id {
@@ -906,6 +930,7 @@ view: usage_reporting__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session ID"
+    description: "The unique UUID for this session."
   }
 
   dimension: session__session_sample_rate {
@@ -914,6 +939,7 @@ view: usage_reporting__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Sample Rate"
+    description: "The sampling rate in effect for this session."
   }
 
   dimension: session__session_seq {
@@ -922,6 +948,7 @@ view: usage_reporting__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Seq"
+    description: "Monotonically increasing session counter, persisted across restarts."
   }
 
   dimension: session__session_start_time {
@@ -930,6 +957,7 @@ view: usage_reporting__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Start Time"
+    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {
@@ -966,6 +994,7 @@ view: usage_reporting__metrics__labeled_custom_distribution__browser_engagement_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__sum {
@@ -1017,6 +1046,7 @@ view: usage_reporting__metrics__labeled_timing_distribution__browser_engagement_
     suggest_persist_for: "24 hours"
     group_label: "Value"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: value__histogram_type {

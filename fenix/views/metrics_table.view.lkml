@@ -1272,6 +1272,17 @@ default: true
     description: "Measures user retention of the Global Privacy Control (GPC) setting at start-up."
   }
 
+  dimension: metrics__boolean__preferences_google_lens_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_google_lens_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Preferences Google Lens Enabled"
+    description: "Whether the Google Lens search feature is both available to the user and
+enabled by them in the settings.
+"
+  }
+
   dimension: metrics__boolean__preferences_inactive_tabs_enabled {
     sql: ${TABLE}.metrics.boolean.preferences_inactive_tabs_enabled ;;
     type: yesno
