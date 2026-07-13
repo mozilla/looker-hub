@@ -812,6 +812,16 @@ preference.
 "
   }
 
+  dimension: metrics__boolean__user_search_google_lens_enabled {
+    sql: ${TABLE}.metrics.boolean.user_search_google_lens_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "User Search Google Lens Enabled"
+    description: "Whether the user has the Google Lens image search feature enabled in the settings.
+"
+  }
+
   dimension: metrics__counter__app_menu_block_images_disabled {
     sql: ${TABLE}.metrics.counter.app_menu_block_images_disabled ;;
     type: number

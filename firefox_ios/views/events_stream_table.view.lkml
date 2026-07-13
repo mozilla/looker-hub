@@ -424,6 +424,14 @@ view: events_stream_table {
     group_item_label: "Sampled In"
   }
 
+  dimension: extras__boolean__succeeded {
+    sql: ${TABLE}.extras.boolean.succeeded ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Succeeded"
+  }
+
   dimension: extras__quantity__api_query_count {
     sql: ${TABLE}.extras.quantity.api_query_count ;;
     type: number
@@ -478,6 +486,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Groups With More Than Two Tab"
+  }
+
+  dimension: extras__quantity__http_status {
+    sql: ${TABLE}.extras.quantity.http_status ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "HTTP Status"
   }
 
   dimension: extras__quantity__index {
