@@ -1249,6 +1249,14 @@ view: metrics_table {
     group_item_label: "Search Suggestions Ohttp Enabled"
   }
 
+  dimension: metrics__boolean__session_restore_new_tab_on_restore_enabled {
+    sql: ${TABLE}.metrics.boolean.session_restore_new_tab_on_restore_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Session Restore New Tab On Restore Enabled"
+  }
+
   dimension: metrics__boolean__shopping_settings_auto_close_user_disabled {
     sql: ${TABLE}.metrics.boolean.shopping_settings_auto_close_user_disabled ;;
     type: yesno
@@ -14802,6 +14810,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_input_context_menu_dismissal ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__urlbar_autofill_reintegration {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_reintegration ;;
     hidden: yes
@@ -15342,6 +15355,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_engagement_consecutive_active_ticks ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_bookmarks_quantity ;;
     hidden: yes
@@ -15799,6 +15817,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_string__places_places_database_corruption_handling_stage {
     sql: ${TABLE}.metrics.labeled_string.places_places_database_corruption_handling_stage ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.browser_engagement_inactive_period_duration ;;
     hidden: yes
   }
 
@@ -57643,6 +57666,49 @@ view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
   }
 }
 
+view: metrics_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -61044,6 +61110,94 @@ view: metrics_table__metrics__labeled_string__places_places_database_corruption_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

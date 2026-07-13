@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_survey_june_2026_france
+    type: looker_line
+    fields: [
+      built_in_vpn_survey_june_2026_france.submission_date,
+      built_in_vpn_survey_june_2026_france.branch,
+      built_in_vpn_survey_june_2026_france.point
+    ]
+    pivots: [
+      built_in_vpn_survey_june_2026_france.branch
+    ]
+    filters:
+      built_in_vpn_survey_june_2026_france.metric: 'ad_clicks'
+      built_in_vpn_survey_june_2026_france.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: built_in_vpn_survey_june_2026_france.submission_date
+    field_y: built_in_vpn_survey_june_2026_france.point
+    log_scale: false
+    ci_lower: built_in_vpn_survey_june_2026_france.lower
+    ci_upper: built_in_vpn_survey_june_2026_france.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_survey_june_2026_france.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Qualified Cumulative Days Of Use
     name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       built_in_vpn_survey_june_2026_france.metric: 'qualified_cumulative_days_of_use'
       built_in_vpn_survey_june_2026_france.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: built_in_vpn_survey_june_2026_france.submission_date
@@ -62,7 +96,41 @@
     filters:
       built_in_vpn_survey_june_2026_france.metric: 'retained'
       built_in_vpn_survey_june_2026_france.statistic: mean
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: built_in_vpn_survey_june_2026_france.submission_date
+    field_y: built_in_vpn_survey_june_2026_france.point
+    log_scale: false
+    ci_lower: built_in_vpn_survey_june_2026_france.lower
+    ci_upper: built_in_vpn_survey_june_2026_france.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_survey_june_2026_france.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_survey_june_2026_france
+    type: looker_line
+    fields: [
+      built_in_vpn_survey_june_2026_france.submission_date,
+      built_in_vpn_survey_june_2026_france.branch,
+      built_in_vpn_survey_june_2026_france.point
+    ]
+    pivots: [
+      built_in_vpn_survey_june_2026_france.branch
+    ]
+    filters:
+      built_in_vpn_survey_june_2026_france.metric: 'days_of_use'
+      built_in_vpn_survey_june_2026_france.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -96,7 +164,7 @@
     filters:
       built_in_vpn_survey_june_2026_france.metric: 'search_count'
       built_in_vpn_survey_june_2026_france.statistic: mean
-    row: 10
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -132,7 +200,7 @@
     filters:
       built_in_vpn_survey_june_2026_france.metric: 'memory_total'
       built_in_vpn_survey_june_2026_france.statistic: percentile
-    row: 10
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -145,108 +213,6 @@
     listen:
       Date: built_in_vpn_survey_june_2026_france.submission_date
       Percentile: built_in_vpn_survey_june_2026_france.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_survey_june_2026_france
-    type: looker_line
-    fields: [
-      built_in_vpn_survey_june_2026_france.submission_date,
-      built_in_vpn_survey_june_2026_france.branch,
-      built_in_vpn_survey_june_2026_france.point
-    ]
-    pivots: [
-      built_in_vpn_survey_june_2026_france.branch
-    ]
-    filters:
-      built_in_vpn_survey_june_2026_france.metric: 'uri_count'
-      built_in_vpn_survey_june_2026_france.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: built_in_vpn_survey_june_2026_france.submission_date
-    field_y: built_in_vpn_survey_june_2026_france.point
-    log_scale: false
-    ci_lower: built_in_vpn_survey_june_2026_france.lower
-    ci_upper: built_in_vpn_survey_june_2026_france.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_survey_june_2026_france.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_survey_june_2026_france
-    type: looker_line
-    fields: [
-      built_in_vpn_survey_june_2026_france.submission_date,
-      built_in_vpn_survey_june_2026_france.branch,
-      built_in_vpn_survey_june_2026_france.point
-    ]
-    pivots: [
-      built_in_vpn_survey_june_2026_france.branch
-    ]
-    filters:
-      built_in_vpn_survey_june_2026_france.metric: 'ad_clicks'
-      built_in_vpn_survey_june_2026_france.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: built_in_vpn_survey_june_2026_france.submission_date
-    field_y: built_in_vpn_survey_june_2026_france.point
-    log_scale: false
-    ci_lower: built_in_vpn_survey_june_2026_france.lower
-    ci_upper: built_in_vpn_survey_june_2026_france.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_survey_june_2026_france.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_survey_june_2026_france
-    type: looker_line
-    fields: [
-      built_in_vpn_survey_june_2026_france.submission_date,
-      built_in_vpn_survey_june_2026_france.branch,
-      built_in_vpn_survey_june_2026_france.point
-    ]
-    pivots: [
-      built_in_vpn_survey_june_2026_france.branch
-    ]
-    filters:
-      built_in_vpn_survey_june_2026_france.metric: 'days_of_use'
-      built_in_vpn_survey_june_2026_france.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: built_in_vpn_survey_june_2026_france.submission_date
-    field_y: built_in_vpn_survey_june_2026_france.point
-    log_scale: false
-    ci_lower: built_in_vpn_survey_june_2026_france.lower
-    ci_upper: built_in_vpn_survey_june_2026_france.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_survey_june_2026_france.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +234,40 @@
     ]
     filters:
       built_in_vpn_survey_june_2026_france.metric: 'active_hours'
+      built_in_vpn_survey_june_2026_france.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: built_in_vpn_survey_june_2026_france.submission_date
+    field_y: built_in_vpn_survey_june_2026_france.point
+    log_scale: false
+    ci_lower: built_in_vpn_survey_june_2026_france.lower
+    ci_upper: built_in_vpn_survey_june_2026_france.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_survey_june_2026_france.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_survey_june_2026_france
+    type: looker_line
+    fields: [
+      built_in_vpn_survey_june_2026_france.submission_date,
+      built_in_vpn_survey_june_2026_france.branch,
+      built_in_vpn_survey_june_2026_france.point
+    ]
+    pivots: [
+      built_in_vpn_survey_june_2026_france.branch
+    ]
+    filters:
+      built_in_vpn_survey_june_2026_france.metric: 'uri_count'
       built_in_vpn_survey_june_2026_france.statistic: mean
     row: 30
     col: 12

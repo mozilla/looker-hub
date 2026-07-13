@@ -8228,6 +8228,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__boolean__session_restore_new_tab_on_restore_enabled {
+    label: "Session Restore: New Tab On Restore Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.session_restore_new_tab_on_restore_enabled ;;
+    type: yesno
+    group_label: "Session Restore"
+    group_item_label: "New Tab On Restore Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Session Restore: New Tab On Restore Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/session_restore_new_tab_on_restore_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the browser.sessionstore.newTabOnRestore pref is enabled. Set on startup and updated when the pref changes.
+"
+  }
+
   dimension: metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__sum {
     label: "Session Restore: Number Of Eager Tabs Restored Sum"
     hidden: no
@@ -10142,6 +10160,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
     description: "PLACES: Time for the 6 first autocomplete results (ms)
 This metric was generated to correspond to the Legacy Telemetry exponential histogram PLACES_AUTOCOMPLETE_6_FIRST_RESULTS_TIME_MS.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal {
+    label: "Urlbar Autofill: Input Context Menu Dismissal"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_input_context_menu_dismissal ;;
+    group_label: "Urlbar Autofill"
+    group_item_label: "Input Context Menu Dismissal"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Autofill: Input Context Menu Dismissal"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/urlbar_autofill_input_context_menu_dismissal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times the user dismissed a heuristic autofill result via the urlbar input's right-click context menu. Labeled by which menu item was used: `dismiss` only blocks the autofill pairing, `forget` also removes the page from history.
 "
   }
 
@@ -70910,6 +70945,47 @@ view: metrics__metrics__labeled_counter__update_skip_startup_update_reason {
   }
 }
 
+view: metrics__metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal {
+  label: "Urlbar Autofill: Input Context Menu Dismissal"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__urlbar_autofill_reintegration {
   label: "Urlbar Autofill: Reintegration"
 
@@ -82089,6 +82165,49 @@ view: metrics__metrics__labeled_boolean__widget_pointing_devices {
   }
 }
 
+view: metrics__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -85490,6 +85609,94 @@ view: metrics__metrics__labeled_string__places_places_database_corruption_handli
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__bucket_count {
+    sql: ${TABLE}.value.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+  }
+
+  dimension: value__histogram_type {
+    sql: ${TABLE}.value.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: value__overflow {
+    sql: ${TABLE}.value.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Overflow"
+  }
+
+  dimension: value__range {
+    sql: ${TABLE}.value.range ;;
+    hidden: yes
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__time_unit {
+    sql: ${TABLE}.value.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: value__underflow {
+    sql: ${TABLE}.value.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Underflow"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

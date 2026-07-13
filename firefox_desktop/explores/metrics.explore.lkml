@@ -2693,6 +2693,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__update_skip_startup_update_reason}) AS metrics__metrics__labeled_counter__update_skip_startup_update_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__update_skip_startup_update_reason.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal}) AS metrics__metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__urlbar_autofill_reintegration {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_autofill_reintegration}) AS metrics__metrics__labeled_counter__urlbar_autofill_reintegration ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_autofill_reintegration.document_id} ;;
