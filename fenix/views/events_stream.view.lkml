@@ -283,6 +283,14 @@ view: events_stream {
     group_item_label: "Alt Text Modal"
   }
 
+  dimension: extras__boolean__always_ask {
+    sql: ${TABLE}.extras.boolean.always_ask ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Always Ask"
+  }
+
   dimension: extras__boolean__app_foreground {
     sql: ${TABLE}.extras.boolean.app_foreground ;;
     type: yesno
@@ -1371,6 +1379,14 @@ view: events_stream {
     group_item_label: "Has No Alt Text"
   }
 
+  dimension: extras__quantity__http_status_code {
+    sql: ${TABLE}.extras.quantity.http_status_code ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "HTTP Status Code"
+  }
+
   dimension: extras__quantity__identification_time {
     sql: ${TABLE}.extras.quantity.identification_time ;;
     type: number
@@ -2217,6 +2233,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Bundle Policy"
+  }
+
+  dimension: extras__string__button {
+    sql: ${TABLE}.extras.string.button ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Button"
   }
 
   dimension: extras__string__caller {
@@ -3153,6 +3177,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Hadprevious"
+  }
+
+  dimension: extras__string__handler {
+    sql: ${TABLE}.extras.string.handler ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Handler"
   }
 
   dimension: extras__string__hang_duration {
