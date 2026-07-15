@@ -27557,7 +27557,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_handshake_completed__sum {
     label: "SSL Handshake: Completed Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_completed.sum ;;
     type: number
     group_label: "SSL Handshake"
@@ -27576,7 +27576,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_handshake_privacy__sum {
     label: "SSL Handshake: Privacy Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_privacy.sum ;;
     type: number
     group_label: "SSL Handshake"
@@ -27595,7 +27595,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_handshake_result__sum {
     label: "SSL Handshake: Result Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result.sum ;;
     type: number
     group_label: "SSL Handshake"
@@ -27614,7 +27614,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_handshake_result_conservative__sum {
     label: "SSL Handshake: Result Conservative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_conservative.sum ;;
     type: number
     group_label: "SSL Handshake"
@@ -27633,7 +27633,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_handshake_result_ech__sum {
     label: "SSL Handshake: Result Ech Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_ech.sum ;;
     type: number
     group_label: "SSL Handshake"
@@ -27652,7 +27652,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_handshake_result_ech_grease__sum {
     label: "SSL Handshake: Result Ech Grease Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_ech_grease.sum ;;
     type: number
     group_label: "SSL Handshake"
@@ -27671,7 +27671,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_handshake_result_first_try__sum {
     label: "SSL Handshake: Result First Try Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_result_first_try.sum ;;
     type: number
     group_label: "SSL Handshake"
@@ -27690,7 +27690,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_handshake_version__sum {
     label: "SSL Handshake: Version Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_handshake_version.sum ;;
     type: number
     group_label: "SSL Handshake"

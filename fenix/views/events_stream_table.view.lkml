@@ -1152,6 +1152,14 @@ view: events_stream_table {
     group_item_label: "Attemptcount"
   }
 
+  dimension: extras__quantity__average_chunk_time {
+    sql: ${TABLE}.extras.quantity.average_chunk_time ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Average Chunk Time"
+  }
+
   dimension: extras__quantity__average_words_per_request {
     sql: ${TABLE}.extras.quantity.average_words_per_request ;;
     type: number
@@ -1838,6 +1846,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Time Per Output Token"
+  }
+
+  dimension: extras__quantity__time_to_first_chunk {
+    sql: ${TABLE}.extras.quantity.time_to_first_chunk ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time To First Chunk"
   }
 
   dimension: extras__quantity__time_to_first_token {

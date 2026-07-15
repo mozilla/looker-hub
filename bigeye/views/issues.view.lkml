@@ -347,6 +347,12 @@ view: issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: metric_configuration_muted_until_epoch_seconds {
+    sql: ${TABLE}.metric_configuration_muted_until_epoch_seconds ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: metric_configuration_name {
     sql: ${TABLE}.metric_configuration_name ;;
     type: string
