@@ -2598,6 +2598,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_success}) AS metrics__metrics__labeled_counter__telemetry_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_success.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__tls_handshake_completed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_handshake_completed}) AS metrics__metrics__labeled_counter__tls_handshake_completed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_handshake_completed.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tls_handshake_privacy {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_handshake_privacy}) AS metrics__metrics__labeled_counter__tls_handshake_privacy ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_handshake_privacy.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tls_handshake_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_handshake_version}) AS metrics__metrics__labeled_counter__tls_handshake_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_handshake_version.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_xyber_intolerance_reason}) AS metrics__metrics__labeled_counter__tls_xyber_intolerance_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.document_id} ;;

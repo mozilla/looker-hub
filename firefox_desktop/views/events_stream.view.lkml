@@ -1587,6 +1587,14 @@ view: events_stream {
     group_item_label: "Attempts"
   }
 
+  dimension: extras__quantity__average_chunk_time {
+    sql: ${TABLE}.extras.quantity.average_chunk_time ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Average Chunk Time"
+  }
+
   dimension: extras__quantity__average_words_per_request {
     sql: ${TABLE}.extras.quantity.average_words_per_request ;;
     type: number
@@ -2817,6 +2825,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Time Remote"
+  }
+
+  dimension: extras__quantity__time_to_first_chunk {
+    sql: ${TABLE}.extras.quantity.time_to_first_chunk ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Time To First Chunk"
   }
 
   dimension: extras__quantity__time_to_first_token {
@@ -4601,22 +4617,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Hours Since"
-  }
-
-  dimension: extras__string__hresult_local {
-    sql: ${TABLE}.extras.string.hresult_local ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Hresult Local"
-  }
-
-  dimension: extras__string__hresult_remote {
-    sql: ${TABLE}.extras.string.hresult_remote ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Hresult Remote"
   }
 
   dimension: extras__string__html_lang_attribute {
