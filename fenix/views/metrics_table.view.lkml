@@ -3201,6 +3201,16 @@ displayed to the user. (for tile counts)
 "
   }
 
+  dimension: metrics__counter__media_muted_by_content_attribute_runtime {
+    sql: ${TABLE}.metrics.counter.media_muted_by_content_attribute_runtime ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Media Muted By Content Attribute Runtime"
+    description: "How often a media element whose muted state is \"default\" is muted only by a muted content attribute that was added at runtime, measured at playback when the element would otherwise be audible (has an audio track, non-zero volume, is playing, and is not otherwise muted). Recorded at most once per resource, to measure how often pages rely on this pattern across channels.
+"
+  }
+
   dimension: metrics__counter__metrics_credit_cards_autofill_count {
     sql: ${TABLE}.metrics.counter.metrics_credit_cards_autofill_count ;;
     type: number
@@ -12574,6 +12584,12 @@ Initially this metric also recorded the \"success\" category, but due to the hig
 "
   }
 
+  dimension: metrics__dual_labeled_counter__tls_handshake_result {
+    sql: ${TABLE}.metrics.dual_labeled_counter.tls_handshake_result ;;
+    hidden: yes
+    description: "TLS handshake result under various conditions"
+  }
+
   dimension: metrics__dual_labeled_counter__urlclassifier_complete_timeout {
     sql: ${TABLE}.metrics.dual_labeled_counter.urlclassifier_complete_timeout ;;
     hidden: yes
@@ -15479,6 +15495,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
     description: "The area that the tabs tray was accessed from.
 "
+  }
+
+  dimension: metrics__labeled_counter__tls_handshake_completed {
+    sql: ${TABLE}.metrics.labeled_counter.tls_handshake_completed ;;
+    hidden: yes
+    description: "Type of handshake completed (resumed, false started, etc.)"
+  }
+
+  dimension: metrics__labeled_counter__tls_handshake_privacy {
+    sql: ${TABLE}.metrics.labeled_counter.tls_handshake_privacy ;;
+    hidden: yes
+    description: "What combination of privacy features protected the TLS handshake? (TLS 1.3? Revocation privacy? DNS privacy? ECH?)
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_handshake_version {
+    sql: ${TABLE}.metrics.labeled_counter.tls_handshake_version ;;
+    hidden: yes
+    description: "TLS version negotiated in handshake"
   }
 
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
@@ -57704,6 +57739,33 @@ view: metrics_table__metrics__dual_labeled_counter__sqlite_store_query {
 }
 
 view: metrics_table__metrics__dual_labeled_counter__sqlite_store_query__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__tls_handshake_result {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__tls_handshake_result__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -3089,6 +3089,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_line_clamp {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_line_clamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Line Clamp"
+    description: "Whether a document used the CSS property line-clamp. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_line_height {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_line_height ;;
     type: number
@@ -10546,6 +10556,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Line Break"
     description: "Whether a page used the CSS property line-break. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_line_clamp {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_line_clamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Line Clamp"
+    description: "Whether a page used the CSS property line-clamp. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

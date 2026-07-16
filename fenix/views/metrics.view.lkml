@@ -16013,6 +16013,24 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__counter__media_muted_by_content_attribute_runtime {
+    label: "Media: Muted By Content Attribute Runtime"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_muted_by_content_attribute_runtime ;;
+    type: number
+    group_label: "Media"
+    group_item_label: "Muted By Content Attribute Runtime"
+
+    link: {
+      label: "Glean Dictionary reference for Media: Muted By Content Attribute Runtime"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_muted_by_content_attribute_runtime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a media element whose muted state is \"default\" is muted only by a muted content attribute that was added at runtime, measured at playback when the element would otherwise be audible (has an audio track, non-zero volume, is playing, and is not otherwise muted). Recorded at most once per resource, to measure how often pages rely on this pattern across channels.
+"
+  }
+
   dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
     label: "Media Playback: Device Hardware Decoder Support"
     hidden: no
@@ -28908,6 +28926,55 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__labeled_counter__tls_handshake_completed {
+    label: "TLS Handshake: Completed"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_handshake_completed ;;
+    group_label: "TLS Handshake"
+    group_item_label: "Completed"
+
+    link: {
+      label: "Glean Dictionary reference for TLS Handshake: Completed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_handshake_completed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of handshake completed (resumed, false started, etc.)"
+  }
+
+  dimension: metrics__labeled_counter__tls_handshake_privacy {
+    label: "TLS Handshake: Privacy"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_handshake_privacy ;;
+    group_label: "TLS Handshake"
+    group_item_label: "Privacy"
+
+    link: {
+      label: "Glean Dictionary reference for TLS Handshake: Privacy"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_handshake_privacy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What combination of privacy features protected the TLS handshake? (TLS 1.3? Revocation privacy? DNS privacy? ECH?)
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_handshake_version {
+    label: "TLS Handshake: Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_handshake_version ;;
+    group_label: "TLS Handshake"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for TLS Handshake: Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_handshake_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "TLS version negotiated in handshake"
+  }
+
   dimension: metrics__rate__translations_error_rate__numerator {
     label: "Translations: Error Rate Numerator"
     hidden: yes
@@ -39097,6 +39164,31 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     link: {
       label: "Glean Dictionary reference for Media Mkv Content Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_mkv_content_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_muted_by_content_attribute_runtime {
+    type: sum
+    sql: ${metrics__counter__media_muted_by_content_attribute_runtime} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Muted By Content Attribute Runtime"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_muted_by_content_attribute_runtime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_muted_by_content_attribute_runtime_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_muted_by_content_attribute_runtime: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Muted By Content Attribute Runtime"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_muted_by_content_attribute_runtime"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -57104,6 +57196,129 @@ view: metrics__metrics__labeled_counter__tabs_tray_access_point {
   }
 }
 
+view: metrics__metrics__labeled_counter__tls_handshake_completed {
+  label: "TLS Handshake: Completed"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tls_handshake_privacy {
+  label: "TLS Handshake: Privacy"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tls_handshake_version {
+  label: "TLS Handshake: Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   label: "TLS: Xyber Intolerance Reason"
 
@@ -64992,6 +65207,33 @@ view: metrics__metrics__dual_labeled_counter__sqlite_store_query {
 }
 
 view: metrics__metrics__dual_labeled_counter__sqlite_store_query__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__tls_handshake_result {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__tls_handshake_result__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

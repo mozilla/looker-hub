@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: account_adoption_callout_credit_cards_treatment_c_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.account_adoption_callout_credit_cards_treatment_c_rollout_statistics ;;
+view: account_adoption_callout_for_bookmarks_global_rollout_2026 {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.account_adoption_callout_for_bookmarks_global_rollout_2026_statistics ;;
 
   dimension: submission_date {
     type: date

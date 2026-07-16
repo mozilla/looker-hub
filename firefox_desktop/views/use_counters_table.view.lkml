@@ -2665,6 +2665,14 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Margin Top"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_margin_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_margin_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Margin Trim"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_marker {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_marker ;;
     type: number
@@ -8639,6 +8647,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Margin Top"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_margin_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_margin_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Margin Trim"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_marker {

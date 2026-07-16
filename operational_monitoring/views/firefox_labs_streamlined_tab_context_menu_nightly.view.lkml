@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: needs_reload_selected_tab_refactor_release_experiment_v2 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.needs_reload_selected_tab_refactor_release_experiment_v2_statistics ;;
+view: firefox_labs_streamlined_tab_context_menu_nightly {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.firefox_labs_streamlined_tab_context_menu_nightly_statistics ;;
 
   dimension: submission_date {
     type: date
