@@ -47,8 +47,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,77 +63,9 @@
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch
     ]
     filters:
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'qualified_cumulative_days_of_use'
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'uri_count'
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-    field_y: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.point
-    log_scale: false
-    ci_lower: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.lower
-    ci_upper: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.upper
-    show_grid: true
-    listen:
-      Date: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort
-    type: looker_line
-    fields: [
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch,
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.point
-    ]
-    pivots: [
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch
-    ]
-    filters:
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'active_hours'
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-    field_y: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.point
-    log_scale: false
-    ci_lower: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.lower
-    ci_upper: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.upper
-    show_grid: true
-    listen:
-      Date: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort
-    type: looker_line
-    fields: [
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch,
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.point
-    ]
-    pivots: [
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch
-    ]
-    filters:
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'ad_clicks'
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -167,8 +99,42 @@
     filters:
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'days_of_use'
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 20
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+    field_y: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.point
+    log_scale: false
+    ci_lower: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.lower
+    ci_upper: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.upper
+    show_grid: true
+    listen:
+      Date: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort
+    type: looker_line
+    fields: [
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch,
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.point
+    ]
+    pivots: [
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch
+    ]
+    filters:
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'active_hours'
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
@@ -202,7 +168,7 @@
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'search_count'
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
@@ -217,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,10 +199,10 @@
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch
     ]
     filters:
-      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'uri_count'
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'ad_clicks'
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 30
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'retained'
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+    field_y: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.point
+    log_scale: false
+    ci_lower: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.lower
+    ci_upper: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.upper
+    show_grid: true
+    listen:
+      Date: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort
+    type: looker_line
+    fields: [
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch,
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.point
+    ]
+    pivots: [
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.branch
+    ]
+    filters:
+      hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'qualified_cumulative_days_of_use'
       hnt_weather_widget_size_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
     row: 30
     col: 12

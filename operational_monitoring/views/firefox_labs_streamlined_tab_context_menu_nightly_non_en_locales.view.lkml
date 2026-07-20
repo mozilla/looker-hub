@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: built_in_vpn_survey_june_2026_germany {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.built_in_vpn_survey_june_2026_germany_statistics ;;
+view: firefox_labs_streamlined_tab_context_menu_nightly_non_en_locales {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.firefox_labs_streamlined_tab_context_menu_nightly_non_en_locales_statistics ;;
 
   dimension: submission_date {
     type: date
