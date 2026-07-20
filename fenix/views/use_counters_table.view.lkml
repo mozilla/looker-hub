@@ -3269,6 +3269,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_margin_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_margin_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Margin Trim"
+    description: "Whether a document used the CSS property margin-trim. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_marker {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_marker ;;
     type: number
@@ -10736,6 +10746,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Margin Top"
     description: "Whether a page used the CSS property margin-top. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_margin_trim {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_margin_trim ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Margin Trim"
+    description: "Whether a page used the CSS property margin-trim. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

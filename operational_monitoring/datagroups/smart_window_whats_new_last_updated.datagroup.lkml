@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: built_in_vpn_survey_june_2026_germany_last_updated {
-  label: "built_in_vpn_survey_june_2026_germany Last Updated"
+datagroup: smart_window_whats_new_last_updated {
+  label: "smart_window_whats_new Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'built_in_vpn_survey_june_2026_germany_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'smart_window_whats_new_statistics')
 
     ) ;;
-  description: "Updates for built_in_vpn_survey_june_2026_germany when referenced tables are modified."
+  description: "Updates for smart_window_whats_new when referenced tables are modified."
   max_cache_age: "24 hours"
 }
