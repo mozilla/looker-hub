@@ -1459,6 +1459,48 @@ History, Reading List, or Downloads buttons
 "
   }
 
+  dimension: metrics__timing_distribution__google_lens_toolbar_button_search_time__sum {
+    label: "Google Lens: Toolbar Button Search Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.google_lens_toolbar_button_search_time.sum ;;
+    type: number
+    group_label: "Google Lens"
+    group_item_label: "Toolbar Button Search Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Google Lens: Toolbar Button Search Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/google_lens_toolbar_button_search_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the total time for generating Google Lens results and showing
+them to the user after a search initiated from the toolbar button.
+Starts when the request for fetching results starts.
+Ends when the user sees the results or an error.
+"
+  }
+
+  dimension: metrics__timing_distribution__google_lens_webpage_image_search_time__sum {
+    label: "Google Lens: Webpage Image Search Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.google_lens_webpage_image_search_time.sum ;;
+    type: number
+    group_label: "Google Lens"
+    group_item_label: "Webpage Image Search Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Google Lens: Webpage Image Search Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/google_lens_webpage_image_search_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the total time for generating Google Lens results and showing
+them to the user after a search initiated from a webpage image context menu.
+Starts when the user selects the Google Lens context menu action.
+Ends when the user sees the results or an error.
+"
+  }
+
   dimension: metrics__counter__history_group_list {
     label: "History: Group List"
     hidden: yes
@@ -11471,6 +11513,34 @@ view: metrics__metrics__timing_distribution__glean_validation_shutdown_dispatche
 }
 
 view: metrics__metrics__timing_distribution__glean_validation_shutdown_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__google_lens_toolbar_button_search_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__google_lens_webpage_image_search_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
