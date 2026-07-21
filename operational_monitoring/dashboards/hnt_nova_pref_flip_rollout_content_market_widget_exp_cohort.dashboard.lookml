@@ -10,43 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort
-    type: "ci-line-chart"
-    fields: [
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
-    ]
-    pivots: [
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch
-    ]
-    filters:
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'memory_total'
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-    field_y: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
-    log_scale: false
-    ci_lower: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower
-    ci_upper: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper
-    show_grid: true
-    listen:
-      Date: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-      Percentile: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -66,7 +29,7 @@
       hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'uri_count'
       hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
@@ -99,109 +62,7 @@
     filters:
       hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'days_of_use'
       hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-    field_y: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
-    log_scale: false
-    ci_lower: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower
-    ci_upper: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper
-    show_grid: true
-    listen:
-      Date: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort
-    type: looker_line
-    fields: [
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
-    ]
-    pivots: [
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch
-    ]
-    filters:
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'active_hours'
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-    field_y: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
-    log_scale: false
-    ci_lower: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower
-    ci_upper: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper
-    show_grid: true
-    listen:
-      Date: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort
-    type: looker_line
-    fields: [
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
-    ]
-    pivots: [
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch
-    ]
-    filters:
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'search_count'
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-    field_y: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
-    log_scale: false
-    ci_lower: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower
-    ci_upper: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper
-    show_grid: true
-    listen:
-      Date: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort
-    type: looker_line
-    fields: [
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch,
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
-    ]
-    pivots: [
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch
-    ]
-    filters:
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'ad_clicks'
-      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 20
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -235,8 +96,42 @@
     filters:
       hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'retained'
       hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
-    row: 30
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+    field_y: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
+    log_scale: false
+    ci_lower: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower
+    ci_upper: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper
+    show_grid: true
+    listen:
+      Date: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort
+    type: looker_line
+    fields: [
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
+    ]
+    pivots: [
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch
+    ]
+    filters:
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'search_count'
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
@@ -268,6 +163,111 @@
     ]
     filters:
       hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'qualified_cumulative_days_of_use'
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+    field_y: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
+    log_scale: false
+    ci_lower: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower
+    ci_upper: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper
+    show_grid: true
+    listen:
+      Date: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort
+    type: looker_line
+    fields: [
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
+    ]
+    pivots: [
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch
+    ]
+    filters:
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'active_hours'
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+    field_y: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
+    log_scale: false
+    ci_lower: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower
+    ci_upper: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper
+    show_grid: true
+    listen:
+      Date: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort
+    type: "ci-line-chart"
+    fields: [
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
+    ]
+    pivots: [
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch
+    ]
+    filters:
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'memory_total'
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: percentile
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+    field_y: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
+    log_scale: false
+    ci_lower: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.lower
+    ci_upper: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.upper
+    show_grid: true
+    listen:
+      Date: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date
+      Percentile: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort
+    type: looker_line
+    fields: [
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.submission_date,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch,
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.point
+    ]
+    pivots: [
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.branch
+    ]
+    filters:
+      hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.metric: 'ad_clicks'
       hnt_nova_pref_flip_rollout_content_market_widget_exp_cohort.statistic: mean
     row: 30
     col: 12
