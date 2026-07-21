@@ -4635,6 +4635,14 @@ view: events_stream {
     group_item_label: "Ice Transport Policy"
   }
 
+  dimension: extras__string__icon_id {
+    sql: ${TABLE}.extras.string.icon_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Icon ID"
+  }
+
   dimension: extras__string__id {
     sql: ${TABLE}.extras.string.id ;;
     type: string
