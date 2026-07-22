@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       smart_window_whats_new_history_images.branch
     ]
     filters:
-      smart_window_whats_new_history_images.metric: 'uri_count'
+      smart_window_whats_new_history_images.metric: 'active_hours'
       smart_window_whats_new_history_images.statistic: mean
     row: 0
     col: 0
@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: smart_window_whats_new_history_images
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       smart_window_whats_new_history_images.submission_date,
       smart_window_whats_new_history_images.branch,
+      smart_window_whats_new_history_images.upper,
+      smart_window_whats_new_history_images.lower,
       smart_window_whats_new_history_images.point
     ]
     pivots: [
       smart_window_whats_new_history_images.branch
     ]
     filters:
-      smart_window_whats_new_history_images.metric: 'days_of_use'
-      smart_window_whats_new_history_images.statistic: mean
+      smart_window_whats_new_history_images.metric: 'memory_total'
+      smart_window_whats_new_history_images.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,6 +76,7 @@
     show_grid: true
     listen:
       Date: smart_window_whats_new_history_images.submission_date
+      Percentile: smart_window_whats_new_history_images.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -112,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +131,7 @@
       smart_window_whats_new_history_images.branch
     ]
     filters:
-      smart_window_whats_new_history_images.metric: 'search_count'
+      smart_window_whats_new_history_images.metric: 'ad_clicks'
       smart_window_whats_new_history_images.statistic: mean
     row: 10
     col: 12
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       smart_window_whats_new_history_images.branch
     ]
     filters:
-      smart_window_whats_new_history_images.metric: 'active_hours'
+      smart_window_whats_new_history_images.metric: 'uri_count'
       smart_window_whats_new_history_images.statistic: mean
     row: 20
     col: 12
@@ -214,45 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: smart_window_whats_new_history_images
-    type: "ci-line-chart"
-    fields: [
-      smart_window_whats_new_history_images.submission_date,
-      smart_window_whats_new_history_images.branch,
-      smart_window_whats_new_history_images.upper,
-      smart_window_whats_new_history_images.lower,
-      smart_window_whats_new_history_images.point
-    ]
-    pivots: [
-      smart_window_whats_new_history_images.branch
-    ]
-    filters:
-      smart_window_whats_new_history_images.metric: 'memory_total'
-      smart_window_whats_new_history_images.statistic: percentile
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: smart_window_whats_new_history_images.submission_date
-    field_y: smart_window_whats_new_history_images.point
-    log_scale: false
-    ci_lower: smart_window_whats_new_history_images.lower
-    ci_upper: smart_window_whats_new_history_images.upper
-    show_grid: true
-    listen:
-      Date: smart_window_whats_new_history_images.submission_date
-      Percentile: smart_window_whats_new_history_images.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +233,41 @@
       smart_window_whats_new_history_images.branch
     ]
     filters:
-      smart_window_whats_new_history_images.metric: 'ad_clicks'
+      smart_window_whats_new_history_images.metric: 'days_of_use'
+      smart_window_whats_new_history_images.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: smart_window_whats_new_history_images.submission_date
+    field_y: smart_window_whats_new_history_images.point
+    log_scale: false
+    ci_lower: smart_window_whats_new_history_images.lower
+    ci_upper: smart_window_whats_new_history_images.upper
+    show_grid: true
+    listen:
+      Date: smart_window_whats_new_history_images.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: smart_window_whats_new_history_images
+    type: looker_line
+    fields: [
+      smart_window_whats_new_history_images.submission_date,
+      smart_window_whats_new_history_images.branch,
+      smart_window_whats_new_history_images.point
+    ]
+    pivots: [
+      smart_window_whats_new_history_images.branch
+    ]
+    filters:
+      smart_window_whats_new_history_images.metric: 'search_count'
       smart_window_whats_new_history_images.statistic: mean
     row: 30
     col: 12
