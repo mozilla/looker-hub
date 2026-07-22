@@ -1293,6 +1293,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_connection_close_reason}) AS metrics__metrics__labeled_counter__networking_http_3_connection_close_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_connection_close_reason.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_http_3_ecn_ect_received {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_ecn_ect_received}) AS metrics__metrics__labeled_counter__networking_http_3_ecn_ect_received ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_ecn_ect_received.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_3_ecn_path_capability}) AS metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability.document_id} ;;

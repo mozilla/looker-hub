@@ -1045,6 +1045,22 @@ This metric is only attached to a ping if it already contains other data.
 "
   }
 
+  dimension: metrics__timespan__crash_install_time__time_unit {
+    sql: ${TABLE}.metrics.timespan.crash_install_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Install Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__crash_install_time__value {
+    sql: ${TABLE}.metrics.timespan.crash_install_time.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Install Time"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__timespan__crash_last_interaction_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.time_unit ;;
     type: string

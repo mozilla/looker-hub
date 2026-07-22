@@ -14739,6 +14739,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__custom_distribution__javascript_gc_buffer_alloc_heap_density__sum {
+    label: "Javascript GC: Buffer Alloc Heap Density Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_buffer_alloc_heap_density.sum ;;
+    type: number
+    group_label: "Javascript GC"
+    group_item_label: "Buffer Alloc Heap Density Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript GC: Buffer Alloc Heap Density Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_buffer_alloc_heap_density"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Percentage of buffer allocator memory (summed across all zones) that holds live data, as opposed to free space or administrative overhead. Recorded after each major GC. This applies to small and medium allocations only; there is no wasted space for large allocations.
+"
+  }
+
   dimension: metrics__custom_distribution__javascript_gc_effectiveness__sum {
     label: "Javascript GC: Effectiveness Sum"
     hidden: no
@@ -19866,6 +19884,23 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
     }
 
     description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000) sent.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_3_ecn_ect_received {
+    label: "Networking: HTTP 3 Ecn Ect Received"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_ect_received ;;
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Ecn Ect Received"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Ecn Ect Received"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_ecn_ect_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP3: Which ECN codepoints were observed on received (server->browser) packets, recorded once per connection that completed its handshake. Used to measure how many servers mark ECN on the traffic they send us and, among those, the adoption of ECT(1) (L4S) versus ECT(0) (classic ECN).
 "
   }
 
@@ -52850,6 +52885,47 @@ view: metrics__metrics__labeled_counter__networking_http_3_connection_close_reas
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_http_3_ecn_ect_received {
+  label: "Networking: HTTP 3 Ecn Ect Received"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_3_ecn_path_capability {
   label: "Networking: HTTP 3 Ecn Path Capability"
 
@@ -60964,6 +61040,20 @@ view: metrics__metrics__custom_distribution__image_decode_count__values {
   }
 }
 
+view: metrics__metrics__custom_distribution__javascript_gc_buffer_alloc_heap_density__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__custom_distribution__javascript_gc_effectiveness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -67973,6 +68063,94 @@ view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeou
 }
 
 view: metrics__metrics__labeled_custom_distribution__urlclassifier_update_timeout__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__javascript_gc_buffer_alloc_heap_bytes {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__javascript_gc_buffer_alloc_heap_bytes__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__javascript_gc_mark_stack_max_capacity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_memory_distribution__javascript_gc_mark_stack_max_capacity__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
