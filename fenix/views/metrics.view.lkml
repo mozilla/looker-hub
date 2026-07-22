@@ -19847,7 +19847,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000) received.
+    description: "HTTP3: ECN CE to ECT0 ratio (multiply by 10000) received. As of https://bugzilla.mozilla.org/show_bug.cgi?id=2056075, only recorded for connections that observed ECT(0) without ever observing ECT(1), since a CE mark on a connection that saw both cannot be attributed to either type.
 "
   }
 

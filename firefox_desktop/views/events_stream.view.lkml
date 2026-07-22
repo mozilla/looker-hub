@@ -1427,6 +1427,14 @@ view: events_stream {
     group_item_label: "Top Position"
   }
 
+  dimension: extras__boolean__trackers_blocked {
+    sql: ${TABLE}.extras.boolean.trackers_blocked ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Trackers Blocked"
+  }
+
   dimension: extras__boolean__trigger_sampled {
     sql: ${TABLE}.extras.boolean.trigger_sampled ;;
     type: yesno
