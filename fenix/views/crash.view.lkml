@@ -260,6 +260,23 @@ view: crash {
     description: "A UUID for the crash event."
   }
 
+  dimension: metrics__timespan__crash_install_time__value {
+    label: "Crash: Install Time Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_install_time.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Install Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Install Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_install_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time when Firefox was installed expressed as seconds since the Epoch"
+  }
+
   dimension: metrics__string__crash_ipc_channel_error {
     label: "Crash: Ipc Channel Error"
     hidden: no

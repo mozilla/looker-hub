@@ -6806,6 +6806,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__javascript_gc_buffer_alloc_heap_density__count {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_buffer_alloc_heap_density.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Javascript GC Buffer Alloc Heap Density"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_buffer_alloc_heap_density__sum {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_buffer_alloc_heap_density.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Javascript GC Buffer Alloc Heap Density"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__javascript_gc_buffer_alloc_heap_density__values {
+    sql: ${TABLE}.metrics.custom_distribution.javascript_gc_buffer_alloc_heap_density.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__javascript_gc_effectiveness__count {
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_effectiveness.count ;;
     type: number
@@ -14714,6 +14736,13 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_3_ecn_ect_received {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_ect_received ;;
+    hidden: yes
+    description: "HTTP3: Which ECN codepoints were observed on received (server->browser) packets, recorded once per connection that completed its handshake. Used to measure how many servers mark ECN on the traffic they send us and, among those, the adoption of ECT(1) (L4S) versus ECT(0) (classic ECN).
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_3_ecn_path_capability {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_3_ecn_path_capability ;;
     hidden: yes
@@ -16321,6 +16350,20 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     hidden: yes
     description: " Whether or not an update timed out (0 = no timeout, 1 = server respond
 timeout, 2 = overall timeout). Keyed by provider This metric was generated to correspond to the Legacy Telemetry enumerated histogram URLCLASSIFIER_UPDATE_TIMEOUT.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__javascript_gc_buffer_alloc_heap_bytes {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.javascript_gc_buffer_alloc_heap_bytes ;;
+    hidden: yes
+    description: "Size of retained buffer allocator memory in bytes, labeled by process type. For small and medium allocations only.
+"
+  }
+
+  dimension: metrics__labeled_memory_distribution__javascript_gc_mark_stack_max_capacity {
+    sql: ${TABLE}.metrics.labeled_memory_distribution.javascript_gc_mark_stack_max_capacity ;;
+    hidden: yes
+    description: "The maximum mark stack capacity (in bytes) reached by any marker during the marking phase of a major GC.
 "
   }
 
@@ -53496,6 +53539,20 @@ view: metrics_table__metrics__custom_distribution__image_decode_count__values {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__javascript_gc_buffer_alloc_heap_density__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__javascript_gc_effectiveness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -60505,6 +60562,94 @@ view: metrics_table__metrics__labeled_custom_distribution__urlclassifier_update_
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__urlclassifier_update_timeout__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__javascript_gc_buffer_alloc_heap_bytes {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__javascript_gc_buffer_alloc_heap_bytes__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__javascript_gc_mark_stack_max_capacity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__count {
+    sql: ${TABLE}.value.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_memory_distribution__javascript_gc_mark_stack_max_capacity__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
