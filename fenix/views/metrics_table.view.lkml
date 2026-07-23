@@ -12544,6 +12544,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__dual_labeled_counter__netwerk_happy_eyeballs_h3_discovery_by_resolver {
+    sql: ${TABLE}.metrics.dual_labeled_counter.netwerk_happy_eyeballs_h3_discovery_by_resolver ;;
+    hidden: yes
+    description: "Happy Eyeballs: how HTTP/3 (h3) reachability was advertised for a connection (the same crossing of Alt-Svc h3 and HTTPS-record h3 as happy_eyeballs_h3_discovery), split by the resolver type (DoH/TRR vs native) that resolved the connection. Only the HTTPS-record axis (https_rr_only, both) depends on the resolver; Alt-Svc comes from a prior response header and is resolver-independent, so altsvc_only and none serve as control categories. Used to measure how often each resolver yields a first-connection-capable h3 opportunity, and to tell a resolver mechanism apart from site/network selection. The resolver is attributed from whether any of the connection's DNS records were resolved via TRR. This is the resolver-split companion of happy_eyeballs_h3_discovery.
+"
+  }
+
   dimension: metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver {
     sql: ${TABLE}.metrics.dual_labeled_counter.netwerk_happy_eyeballs_https_rr_features_by_resolver ;;
     hidden: yes
@@ -57580,6 +57587,33 @@ view: metrics_table__metrics__dual_labeled_counter__media_playback_unencrypted_s
 }
 
 view: metrics_table__metrics__dual_labeled_counter__media_playback_unencrypted_sw_decode_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__netwerk_happy_eyeballs_h3_discovery_by_resolver {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__netwerk_happy_eyeballs_h3_discovery_by_resolver__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

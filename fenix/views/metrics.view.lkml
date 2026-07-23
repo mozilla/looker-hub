@@ -65094,6 +65094,33 @@ view: metrics__metrics__dual_labeled_counter__media_playback_unencrypted_sw_deco
   }
 }
 
+view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_h3_discovery_by_resolver {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_h3_discovery_by_resolver__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics__metrics__dual_labeled_counter__netwerk_happy_eyeballs_https_rr_features_by_resolver {
   dimension: key {
     sql: ${TABLE}.key ;;
