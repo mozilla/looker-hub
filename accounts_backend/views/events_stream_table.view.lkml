@@ -256,6 +256,14 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: extras__boolean__exclude_dau {
+    sql: ${TABLE}.extras.boolean.exclude_dau ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Exclude Dau"
+  }
+
   dimension: extras__boolean__linking {
     sql: ${TABLE}.extras.boolean.linking ;;
     type: yesno
