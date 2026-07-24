@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: built_in_vpn_messaging_evergreen
-    type: "ci-line-chart"
-    fields: [
-      built_in_vpn_messaging_evergreen.submission_date,
-      built_in_vpn_messaging_evergreen.branch,
-      built_in_vpn_messaging_evergreen.upper,
-      built_in_vpn_messaging_evergreen.lower,
-      built_in_vpn_messaging_evergreen.point
-    ]
-    pivots: [
-      built_in_vpn_messaging_evergreen.branch
-    ]
-    filters:
-      built_in_vpn_messaging_evergreen.metric: 'memory_total'
-      built_in_vpn_messaging_evergreen.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: built_in_vpn_messaging_evergreen.submission_date
-    field_y: built_in_vpn_messaging_evergreen.point
-    log_scale: false
-    ci_lower: built_in_vpn_messaging_evergreen.lower
-    ci_upper: built_in_vpn_messaging_evergreen.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_messaging_evergreen.submission_date
-      Percentile: built_in_vpn_messaging_evergreen.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,10 +26,10 @@
       built_in_vpn_messaging_evergreen.branch
     ]
     filters:
-      built_in_vpn_messaging_evergreen.metric: 'qualified_cumulative_days_of_use'
+      built_in_vpn_messaging_evergreen.metric: 'retained'
       built_in_vpn_messaging_evergreen.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: built_in_vpn_messaging_evergreen.submission_date
@@ -99,6 +62,40 @@
     filters:
       built_in_vpn_messaging_evergreen.metric: 'ad_clicks'
       built_in_vpn_messaging_evergreen.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: built_in_vpn_messaging_evergreen.submission_date
+    field_y: built_in_vpn_messaging_evergreen.point
+    log_scale: false
+    ci_lower: built_in_vpn_messaging_evergreen.lower
+    ci_upper: built_in_vpn_messaging_evergreen.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_messaging_evergreen.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_messaging_evergreen
+    type: looker_line
+    fields: [
+      built_in_vpn_messaging_evergreen.submission_date,
+      built_in_vpn_messaging_evergreen.branch,
+      built_in_vpn_messaging_evergreen.point
+    ]
+    pivots: [
+      built_in_vpn_messaging_evergreen.branch
+    ]
+    filters:
+      built_in_vpn_messaging_evergreen.metric: 'qualified_cumulative_days_of_use'
+      built_in_vpn_messaging_evergreen.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -115,8 +112,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: built_in_vpn_messaging_evergreen
+    type: "ci-line-chart"
+    fields: [
+      built_in_vpn_messaging_evergreen.submission_date,
+      built_in_vpn_messaging_evergreen.branch,
+      built_in_vpn_messaging_evergreen.upper,
+      built_in_vpn_messaging_evergreen.lower,
+      built_in_vpn_messaging_evergreen.point
+    ]
+    pivots: [
+      built_in_vpn_messaging_evergreen.branch
+    ]
+    filters:
+      built_in_vpn_messaging_evergreen.metric: 'memory_total'
+      built_in_vpn_messaging_evergreen.statistic: percentile
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: built_in_vpn_messaging_evergreen.submission_date
+    field_y: built_in_vpn_messaging_evergreen.point
+    log_scale: false
+    ci_lower: built_in_vpn_messaging_evergreen.lower
+    ci_upper: built_in_vpn_messaging_evergreen.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_messaging_evergreen.submission_date
+      Percentile: built_in_vpn_messaging_evergreen.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,9 +165,43 @@
       built_in_vpn_messaging_evergreen.branch
     ]
     filters:
-      built_in_vpn_messaging_evergreen.metric: 'days_of_use'
+      built_in_vpn_messaging_evergreen.metric: 'uri_count'
       built_in_vpn_messaging_evergreen.statistic: mean
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: built_in_vpn_messaging_evergreen.submission_date
+    field_y: built_in_vpn_messaging_evergreen.point
+    log_scale: false
+    ci_lower: built_in_vpn_messaging_evergreen.lower
+    ci_upper: built_in_vpn_messaging_evergreen.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_messaging_evergreen.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_messaging_evergreen
+    type: looker_line
+    fields: [
+      built_in_vpn_messaging_evergreen.submission_date,
+      built_in_vpn_messaging_evergreen.branch,
+      built_in_vpn_messaging_evergreen.point
+    ]
+    pivots: [
+      built_in_vpn_messaging_evergreen.branch
+    ]
+    filters:
+      built_in_vpn_messaging_evergreen.metric: 'active_hours'
+      built_in_vpn_messaging_evergreen.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -167,74 +235,6 @@
     filters:
       built_in_vpn_messaging_evergreen.metric: 'search_count'
       built_in_vpn_messaging_evergreen.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: built_in_vpn_messaging_evergreen.submission_date
-    field_y: built_in_vpn_messaging_evergreen.point
-    log_scale: false
-    ci_lower: built_in_vpn_messaging_evergreen.lower
-    ci_upper: built_in_vpn_messaging_evergreen.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_messaging_evergreen.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_messaging_evergreen
-    type: looker_line
-    fields: [
-      built_in_vpn_messaging_evergreen.submission_date,
-      built_in_vpn_messaging_evergreen.branch,
-      built_in_vpn_messaging_evergreen.point
-    ]
-    pivots: [
-      built_in_vpn_messaging_evergreen.branch
-    ]
-    filters:
-      built_in_vpn_messaging_evergreen.metric: 'uri_count'
-      built_in_vpn_messaging_evergreen.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: built_in_vpn_messaging_evergreen.submission_date
-    field_y: built_in_vpn_messaging_evergreen.point
-    log_scale: false
-    ci_lower: built_in_vpn_messaging_evergreen.lower
-    ci_upper: built_in_vpn_messaging_evergreen.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_messaging_evergreen.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_messaging_evergreen
-    type: looker_line
-    fields: [
-      built_in_vpn_messaging_evergreen.submission_date,
-      built_in_vpn_messaging_evergreen.branch,
-      built_in_vpn_messaging_evergreen.point
-    ]
-    pivots: [
-      built_in_vpn_messaging_evergreen.branch
-    ]
-    filters:
-      built_in_vpn_messaging_evergreen.metric: 'retained'
-      built_in_vpn_messaging_evergreen.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       built_in_vpn_messaging_evergreen.branch
     ]
     filters:
-      built_in_vpn_messaging_evergreen.metric: 'active_hours'
+      built_in_vpn_messaging_evergreen.metric: 'days_of_use'
       built_in_vpn_messaging_evergreen.statistic: mean
     row: 30
     col: 12

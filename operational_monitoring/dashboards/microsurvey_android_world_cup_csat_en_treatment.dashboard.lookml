@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       microsurvey_android_world_cup_csat_en_treatment.branch
     ]
     filters:
-      microsurvey_android_world_cup_csat_en_treatment.metric: 'ad_clicks'
+      microsurvey_android_world_cup_csat_en_treatment.metric: 'retained'
       microsurvey_android_world_cup_csat_en_treatment.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       microsurvey_android_world_cup_csat_en_treatment.branch
     ]
     filters:
-      microsurvey_android_world_cup_csat_en_treatment.metric: 'days_of_use'
+      microsurvey_android_world_cup_csat_en_treatment.metric: 'ad_clicks'
       microsurvey_android_world_cup_csat_en_treatment.statistic: mean
     row: 0
     col: 12
@@ -112,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_android_world_cup_csat_en_treatment
-    type: looker_line
-    fields: [
-      microsurvey_android_world_cup_csat_en_treatment.submission_date,
-      microsurvey_android_world_cup_csat_en_treatment.branch,
-      microsurvey_android_world_cup_csat_en_treatment.point
-    ]
-    pivots: [
-      microsurvey_android_world_cup_csat_en_treatment.branch
-    ]
-    filters:
-      microsurvey_android_world_cup_csat_en_treatment.metric: 'search_count'
-      microsurvey_android_world_cup_csat_en_treatment.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: microsurvey_android_world_cup_csat_en_treatment.submission_date
-    field_y: microsurvey_android_world_cup_csat_en_treatment.point
-    log_scale: false
-    ci_lower: microsurvey_android_world_cup_csat_en_treatment.lower
-    ci_upper: microsurvey_android_world_cup_csat_en_treatment.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_android_world_cup_csat_en_treatment.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: URI Count
     name: URI Count_mean
     note_state: expanded
@@ -164,41 +130,7 @@
     filters:
       microsurvey_android_world_cup_csat_en_treatment.metric: 'uri_count'
       microsurvey_android_world_cup_csat_en_treatment.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: microsurvey_android_world_cup_csat_en_treatment.submission_date
-    field_y: microsurvey_android_world_cup_csat_en_treatment.point
-    log_scale: false
-    ci_lower: microsurvey_android_world_cup_csat_en_treatment.lower
-    ci_upper: microsurvey_android_world_cup_csat_en_treatment.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_android_world_cup_csat_en_treatment.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_android_world_cup_csat_en_treatment
-    type: looker_line
-    fields: [
-      microsurvey_android_world_cup_csat_en_treatment.submission_date,
-      microsurvey_android_world_cup_csat_en_treatment.branch,
-      microsurvey_android_world_cup_csat_en_treatment.point
-    ]
-    pivots: [
-      microsurvey_android_world_cup_csat_en_treatment.branch
-    ]
-    filters:
-      microsurvey_android_world_cup_csat_en_treatment.metric: 'retained'
-      microsurvey_android_world_cup_csat_en_treatment.statistic: mean
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -231,6 +163,74 @@
     ]
     filters:
       microsurvey_android_world_cup_csat_en_treatment.metric: 'active_hours'
+      microsurvey_android_world_cup_csat_en_treatment.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: microsurvey_android_world_cup_csat_en_treatment.submission_date
+    field_y: microsurvey_android_world_cup_csat_en_treatment.point
+    log_scale: false
+    ci_lower: microsurvey_android_world_cup_csat_en_treatment.lower
+    ci_upper: microsurvey_android_world_cup_csat_en_treatment.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_android_world_cup_csat_en_treatment.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_android_world_cup_csat_en_treatment
+    type: looker_line
+    fields: [
+      microsurvey_android_world_cup_csat_en_treatment.submission_date,
+      microsurvey_android_world_cup_csat_en_treatment.branch,
+      microsurvey_android_world_cup_csat_en_treatment.point
+    ]
+    pivots: [
+      microsurvey_android_world_cup_csat_en_treatment.branch
+    ]
+    filters:
+      microsurvey_android_world_cup_csat_en_treatment.metric: 'search_count'
+      microsurvey_android_world_cup_csat_en_treatment.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: microsurvey_android_world_cup_csat_en_treatment.submission_date
+    field_y: microsurvey_android_world_cup_csat_en_treatment.point
+    log_scale: false
+    ci_lower: microsurvey_android_world_cup_csat_en_treatment.lower
+    ci_upper: microsurvey_android_world_cup_csat_en_treatment.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_android_world_cup_csat_en_treatment.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_android_world_cup_csat_en_treatment
+    type: looker_line
+    fields: [
+      microsurvey_android_world_cup_csat_en_treatment.submission_date,
+      microsurvey_android_world_cup_csat_en_treatment.branch,
+      microsurvey_android_world_cup_csat_en_treatment.point
+    ]
+    pivots: [
+      microsurvey_android_world_cup_csat_en_treatment.branch
+    ]
+    filters:
+      microsurvey_android_world_cup_csat_en_treatment.metric: 'days_of_use'
       microsurvey_android_world_cup_csat_en_treatment.statistic: mean
     row: 30
     col: 0
