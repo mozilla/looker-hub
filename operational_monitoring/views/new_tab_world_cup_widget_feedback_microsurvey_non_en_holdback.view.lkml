@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.ai_chatbot_page_summarization_mvp_treatment_a_callout_badge_rollout_v4_statistics ;;
+view: new_tab_world_cup_widget_feedback_microsurvey_non_en_holdback {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.new_tab_world_cup_widget_feedback_microsurvey_non_en_holdback_statistics ;;
 
   dimension: submission_date {
     type: date

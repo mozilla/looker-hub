@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: onboarding_rollout_2606_152_1
-    type: "ci-line-chart"
-    fields: [
-      onboarding_rollout_2606_152_1.submission_date,
-      onboarding_rollout_2606_152_1.branch,
-      onboarding_rollout_2606_152_1.upper,
-      onboarding_rollout_2606_152_1.lower,
-      onboarding_rollout_2606_152_1.point
-    ]
-    pivots: [
-      onboarding_rollout_2606_152_1.branch
-    ]
-    filters:
-      onboarding_rollout_2606_152_1.metric: 'memory_total'
-      onboarding_rollout_2606_152_1.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: onboarding_rollout_2606_152_1.submission_date
-    field_y: onboarding_rollout_2606_152_1.point
-    log_scale: false
-    ci_lower: onboarding_rollout_2606_152_1.lower
-    ci_upper: onboarding_rollout_2606_152_1.upper
-    show_grid: true
-    listen:
-      Date: onboarding_rollout_2606_152_1.submission_date
-      Percentile: onboarding_rollout_2606_152_1.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,10 +26,10 @@
       onboarding_rollout_2606_152_1.branch
     ]
     filters:
-      onboarding_rollout_2606_152_1.metric: 'qualified_cumulative_days_of_use'
+      onboarding_rollout_2606_152_1.metric: 'retained'
       onboarding_rollout_2606_152_1.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: onboarding_rollout_2606_152_1.submission_date
@@ -99,6 +62,40 @@
     filters:
       onboarding_rollout_2606_152_1.metric: 'ad_clicks'
       onboarding_rollout_2606_152_1.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: onboarding_rollout_2606_152_1.submission_date
+    field_y: onboarding_rollout_2606_152_1.point
+    log_scale: false
+    ci_lower: onboarding_rollout_2606_152_1.lower
+    ci_upper: onboarding_rollout_2606_152_1.upper
+    show_grid: true
+    listen:
+      Date: onboarding_rollout_2606_152_1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: onboarding_rollout_2606_152_1
+    type: looker_line
+    fields: [
+      onboarding_rollout_2606_152_1.submission_date,
+      onboarding_rollout_2606_152_1.branch,
+      onboarding_rollout_2606_152_1.point
+    ]
+    pivots: [
+      onboarding_rollout_2606_152_1.branch
+    ]
+    filters:
+      onboarding_rollout_2606_152_1.metric: 'qualified_cumulative_days_of_use'
+      onboarding_rollout_2606_152_1.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -115,8 +112,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: onboarding_rollout_2606_152_1
+    type: "ci-line-chart"
+    fields: [
+      onboarding_rollout_2606_152_1.submission_date,
+      onboarding_rollout_2606_152_1.branch,
+      onboarding_rollout_2606_152_1.upper,
+      onboarding_rollout_2606_152_1.lower,
+      onboarding_rollout_2606_152_1.point
+    ]
+    pivots: [
+      onboarding_rollout_2606_152_1.branch
+    ]
+    filters:
+      onboarding_rollout_2606_152_1.metric: 'memory_total'
+      onboarding_rollout_2606_152_1.statistic: percentile
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: onboarding_rollout_2606_152_1.submission_date
+    field_y: onboarding_rollout_2606_152_1.point
+    log_scale: false
+    ci_lower: onboarding_rollout_2606_152_1.lower
+    ci_upper: onboarding_rollout_2606_152_1.upper
+    show_grid: true
+    listen:
+      Date: onboarding_rollout_2606_152_1.submission_date
+      Percentile: onboarding_rollout_2606_152_1.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,9 +165,43 @@
       onboarding_rollout_2606_152_1.branch
     ]
     filters:
-      onboarding_rollout_2606_152_1.metric: 'days_of_use'
+      onboarding_rollout_2606_152_1.metric: 'uri_count'
       onboarding_rollout_2606_152_1.statistic: mean
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: onboarding_rollout_2606_152_1.submission_date
+    field_y: onboarding_rollout_2606_152_1.point
+    log_scale: false
+    ci_lower: onboarding_rollout_2606_152_1.lower
+    ci_upper: onboarding_rollout_2606_152_1.upper
+    show_grid: true
+    listen:
+      Date: onboarding_rollout_2606_152_1.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: onboarding_rollout_2606_152_1
+    type: looker_line
+    fields: [
+      onboarding_rollout_2606_152_1.submission_date,
+      onboarding_rollout_2606_152_1.branch,
+      onboarding_rollout_2606_152_1.point
+    ]
+    pivots: [
+      onboarding_rollout_2606_152_1.branch
+    ]
+    filters:
+      onboarding_rollout_2606_152_1.metric: 'active_hours'
+      onboarding_rollout_2606_152_1.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -167,74 +235,6 @@
     filters:
       onboarding_rollout_2606_152_1.metric: 'search_count'
       onboarding_rollout_2606_152_1.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: onboarding_rollout_2606_152_1.submission_date
-    field_y: onboarding_rollout_2606_152_1.point
-    log_scale: false
-    ci_lower: onboarding_rollout_2606_152_1.lower
-    ci_upper: onboarding_rollout_2606_152_1.upper
-    show_grid: true
-    listen:
-      Date: onboarding_rollout_2606_152_1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: onboarding_rollout_2606_152_1
-    type: looker_line
-    fields: [
-      onboarding_rollout_2606_152_1.submission_date,
-      onboarding_rollout_2606_152_1.branch,
-      onboarding_rollout_2606_152_1.point
-    ]
-    pivots: [
-      onboarding_rollout_2606_152_1.branch
-    ]
-    filters:
-      onboarding_rollout_2606_152_1.metric: 'uri_count'
-      onboarding_rollout_2606_152_1.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: onboarding_rollout_2606_152_1.submission_date
-    field_y: onboarding_rollout_2606_152_1.point
-    log_scale: false
-    ci_lower: onboarding_rollout_2606_152_1.lower
-    ci_upper: onboarding_rollout_2606_152_1.upper
-    show_grid: true
-    listen:
-      Date: onboarding_rollout_2606_152_1.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: onboarding_rollout_2606_152_1
-    type: looker_line
-    fields: [
-      onboarding_rollout_2606_152_1.submission_date,
-      onboarding_rollout_2606_152_1.branch,
-      onboarding_rollout_2606_152_1.point
-    ]
-    pivots: [
-      onboarding_rollout_2606_152_1.branch
-    ]
-    filters:
-      onboarding_rollout_2606_152_1.metric: 'retained'
-      onboarding_rollout_2606_152_1.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       onboarding_rollout_2606_152_1.branch
     ]
     filters:
-      onboarding_rollout_2606_152_1.metric: 'active_hours'
+      onboarding_rollout_2606_152_1.metric: 'days_of_use'
       onboarding_rollout_2606_152_1.statistic: mean
     row: 30
     col: 12
