@@ -4579,6 +4579,14 @@ view: events_stream {
     group_item_label: "Signed Date"
   }
 
+  dimension: extras__string__site_category {
+    sql: ${TABLE}.extras.string.site_category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Site Category"
+  }
+
   dimension: extras__string__site_permission {
     sql: ${TABLE}.extras.string.site_permission ;;
     type: string
