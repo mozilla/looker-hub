@@ -2629,6 +2629,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_font_width {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_font_width ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Font Width"
+    description: "Whether a document used the CSS property font-width. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_forced_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_forced_color_adjust ;;
     type: number
@@ -10109,6 +10119,16 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_font_width {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_font_width ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Font Width"
+    description: "Whether a page used the CSS property font-width. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_forced_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_forced_color_adjust ;;
     type: number
@@ -15699,6 +15719,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_idbindex_moz_get_all {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbindex_moz_get_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Idbindex Moz Get All"
+    description: "Whether a document used IDBIndexMozGetAll. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Idbindex Moz Get All Keys"
+    description: "Whether a document used IDBIndexMozGetAllKeys. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbobject_store_create_index_locale ;;
     type: number
@@ -15706,6 +15746,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Doc Idbobject Store Create Index Locale"
     description: "Whether a document used IDBObjectStoreCreateIndexLocale. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_moz_get_all {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbobject_store_moz_get_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Idbobject Store Moz Get All"
+    description: "Whether a document used IDBObjectStoreMozGetAll. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -16439,6 +16489,26 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_page_idbindex_moz_get_all {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbindex_moz_get_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Idbindex Moz Get All"
+    description: "Whether a page used IDBIndexMozGetAll. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_idbindex_moz_get_all_keys {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbindex_moz_get_all_keys ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Idbindex Moz Get All Keys"
+    description: "Whether a page used IDBIndexMozGetAllKeys. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_page_idbobject_store_create_index_locale {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbobject_store_create_index_locale ;;
     type: number
@@ -16446,6 +16516,16 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Deprecated Ops Page Idbobject Store Create Index Locale"
     description: "Whether a page used IDBObjectStoreCreateIndexLocale. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_idbobject_store_moz_get_all {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbobject_store_moz_get_all ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Idbobject Store Moz Get All"
+    description: "Whether a page used IDBObjectStoreMozGetAll. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

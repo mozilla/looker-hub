@@ -8160,6 +8160,78 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__devtools_localmode_mappings_add_permanent_from_notification {
+    label: "Devtools Localmode Mappings: Add Permanent From Notification"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_localmode_mappings_add_permanent_from_notification ;;
+    type: number
+    group_label: "Devtools Localmode Mappings"
+    group_item_label: "Add Permanent From Notification"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings: Add Permanent From Notification"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_permanent_from_notification"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a permanent Local Mappings was added from the file:// URL notification.
+"
+  }
+
+  dimension: metrics__counter__devtools_localmode_mappings_add_permanent_from_options {
+    label: "Devtools Localmode Mappings: Add Permanent From Options"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_localmode_mappings_add_permanent_from_options ;;
+    type: number
+    group_label: "Devtools Localmode Mappings"
+    group_item_label: "Add Permanent From Options"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings: Add Permanent From Options"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_permanent_from_options"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a permanent Local Mappings was added from the Settings panel.
+"
+  }
+
+  dimension: metrics__counter__devtools_localmode_mappings_add_transient {
+    label: "Devtools Localmode Mappings: Add Transient"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_localmode_mappings_add_transient ;;
+    type: number
+    group_label: "Devtools Localmode Mappings"
+    group_item_label: "Add Transient"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings: Add Transient"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_transient"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times a transient Local Mappings was added from the file:// URL notification.
+"
+  }
+
+  dimension: metrics__quantity__devtools_localmode_mappings_count {
+    label: "Devtools Localmode Mappings: Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.devtools_localmode_mappings_count ;;
+    type: number
+    group_label: "Devtools Localmode Mappings"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings: Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of Local Mode mappings currently used when opening DevTools.
+"
+  }
+
   dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
     label: "Devtools Markup Flexboxhighlighter: Opened"
     hidden: no
@@ -15391,6 +15463,24 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 
     description: "Whether, and in what mode, the launcher process is enabled (or not).
 See `nsIXULRuntime.launcherProcessState`
+"
+  }
+
+  dimension: metrics__counter__layout_global_stylesheet_not_found {
+    label: "Layout: Global Stylesheet Not Found"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.layout_global_stylesheet_not_found ;;
+    type: number
+    group_label: "Layout"
+    group_item_label: "Global Stylesheet Not Found"
+
+    link: {
+      label: "Glean Dictionary reference for Layout: Global Stylesheet Not Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/layout_global_stylesheet_not_found"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments each time one of the GlobalStyleSheetCache stylesheets are not found in the omnijar. See bug 1681745 and bug 2056926.
 "
   }
 
@@ -37528,6 +37618,81 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     }
   }
 
+  measure: devtools_localmode_mappings_add_permanent_from_notification {
+    type: sum
+    sql: ${metrics__counter__devtools_localmode_mappings_add_permanent_from_notification} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings Add Permanent From Notification"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_permanent_from_notification"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_localmode_mappings_add_permanent_from_notification_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_localmode_mappings_add_permanent_from_notification: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings Add Permanent From Notification"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_permanent_from_notification"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_localmode_mappings_add_permanent_from_options {
+    type: sum
+    sql: ${metrics__counter__devtools_localmode_mappings_add_permanent_from_options} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings Add Permanent From Options"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_permanent_from_options"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_localmode_mappings_add_permanent_from_options_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_localmode_mappings_add_permanent_from_options: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings Add Permanent From Options"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_permanent_from_options"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_localmode_mappings_add_transient {
+    type: sum
+    sql: ${metrics__counter__devtools_localmode_mappings_add_transient} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings Add Transient"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_transient"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_localmode_mappings_add_transient_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_localmode_mappings_add_transient: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Localmode Mappings Add Transient"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_localmode_mappings_add_transient"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: devtools_markup_flexboxhighlighter_opened {
     type: sum
     sql: ${metrics__counter__devtools_markup_flexboxhighlighter_opened} ;;
@@ -39024,6 +39189,31 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     link: {
       label: "Glean Dictionary reference for Javascript Self Hosted Cache Total"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: layout_global_stylesheet_not_found {
+    type: sum
+    sql: ${metrics__counter__layout_global_stylesheet_not_found} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Layout Global Stylesheet Not Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/layout_global_stylesheet_not_found"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: layout_global_stylesheet_not_found_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__layout_global_stylesheet_not_found: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Layout Global Stylesheet Not Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/layout_global_stylesheet_not_found"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
