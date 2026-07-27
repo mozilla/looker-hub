@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.branch
     ]
     filters:
-      temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.metric: 'qualified_cumulative_days_of_use'
+      temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.metric: 'days_of_use'
       temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.branch
     ]
     filters:
-      temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.metric: 'uri_count'
+      temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.metric: 'ad_clicks'
       temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.branch
     ]
     filters:
-      temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.metric: 'days_of_use'
+      temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.metric: 'uri_count'
       temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.statistic: mean
     row: 10
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.branch
     ]
     filters:
-      temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.metric: 'ad_clicks'
+      temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.metric: 'qualified_cumulative_days_of_use'
       temporarily_disable_new_tab_train_hops_on_linux_for_beta_and_release_2.statistic: mean
     row: 30
     col: 0

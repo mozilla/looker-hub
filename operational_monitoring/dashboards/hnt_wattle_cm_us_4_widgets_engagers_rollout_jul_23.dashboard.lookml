@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.branch
     ]
     filters:
-      hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.metric: 'qualified_cumulative_days_of_use'
+      hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.metric: 'days_of_use'
       hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.branch
     ]
     filters:
-      hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.metric: 'uri_count'
+      hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.metric: 'ad_clicks'
       hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.branch
     ]
     filters:
-      hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.metric: 'days_of_use'
+      hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.metric: 'uri_count'
       hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.statistic: mean
     row: 10
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.branch
     ]
     filters:
-      hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.metric: 'ad_clicks'
+      hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.metric: 'qualified_cumulative_days_of_use'
       hnt_wattle_cm_us_4_widgets_engagers_rollout_jul_23.statistic: mean
     row: 30
     col: 0

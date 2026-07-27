@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_ios_world_cup_csat_en_treatment
-    type: looker_line
-    fields: [
-      microsurvey_ios_world_cup_csat_en_treatment.submission_date,
-      microsurvey_ios_world_cup_csat_en_treatment.branch,
-      microsurvey_ios_world_cup_csat_en_treatment.point
-    ]
-    pivots: [
-      microsurvey_ios_world_cup_csat_en_treatment.branch
-    ]
-    filters:
-      microsurvey_ios_world_cup_csat_en_treatment.metric: 'active_hours'
-      microsurvey_ios_world_cup_csat_en_treatment.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: microsurvey_ios_world_cup_csat_en_treatment.submission_date
-    field_y: microsurvey_ios_world_cup_csat_en_treatment.point
-    log_scale: false
-    ci_lower: microsurvey_ios_world_cup_csat_en_treatment.lower
-    ci_upper: microsurvey_ios_world_cup_csat_en_treatment.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_ios_world_cup_csat_en_treatment.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       microsurvey_ios_world_cup_csat_en_treatment.metric: 'ad_clicks'
+      microsurvey_ios_world_cup_csat_en_treatment.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: microsurvey_ios_world_cup_csat_en_treatment.submission_date
+    field_y: microsurvey_ios_world_cup_csat_en_treatment.point
+    log_scale: false
+    ci_lower: microsurvey_ios_world_cup_csat_en_treatment.lower
+    ci_upper: microsurvey_ios_world_cup_csat_en_treatment.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_ios_world_cup_csat_en_treatment.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_ios_world_cup_csat_en_treatment
+    type: looker_line
+    fields: [
+      microsurvey_ios_world_cup_csat_en_treatment.submission_date,
+      microsurvey_ios_world_cup_csat_en_treatment.branch,
+      microsurvey_ios_world_cup_csat_en_treatment.point
+    ]
+    pivots: [
+      microsurvey_ios_world_cup_csat_en_treatment.branch
+    ]
+    filters:
+      microsurvey_ios_world_cup_csat_en_treatment.metric: 'active_hours'
       microsurvey_ios_world_cup_csat_en_treatment.statistic: mean
     row: 10
     col: 12
