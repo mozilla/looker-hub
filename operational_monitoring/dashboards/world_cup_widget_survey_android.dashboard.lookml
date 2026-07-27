@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: world_cup_widget_survey_android
-    type: looker_line
-    fields: [
-      world_cup_widget_survey_android.submission_date,
-      world_cup_widget_survey_android.branch,
-      world_cup_widget_survey_android.point
-    ]
-    pivots: [
-      world_cup_widget_survey_android.branch
-    ]
-    filters:
-      world_cup_widget_survey_android.metric: 'uri_count'
-      world_cup_widget_survey_android.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: world_cup_widget_survey_android.submission_date
-    field_y: world_cup_widget_survey_android.point
-    log_scale: false
-    ci_lower: world_cup_widget_survey_android.lower
-    ci_upper: world_cup_widget_survey_android.upper
-    show_grid: true
-    listen:
-      Date: world_cup_widget_survey_android.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -96,41 +62,7 @@
     filters:
       world_cup_widget_survey_android.metric: 'days_of_use'
       world_cup_widget_survey_android.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: world_cup_widget_survey_android.submission_date
-    field_y: world_cup_widget_survey_android.point
-    log_scale: false
-    ci_lower: world_cup_widget_survey_android.lower
-    ci_upper: world_cup_widget_survey_android.upper
-    show_grid: true
-    listen:
-      Date: world_cup_widget_survey_android.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: world_cup_widget_survey_android
-    type: looker_line
-    fields: [
-      world_cup_widget_survey_android.submission_date,
-      world_cup_widget_survey_android.branch,
-      world_cup_widget_survey_android.point
-    ]
-    pivots: [
-      world_cup_widget_survey_android.branch
-    ]
-    filters:
-      world_cup_widget_survey_android.metric: 'active_hours'
-      world_cup_widget_survey_android.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -164,7 +96,7 @@
     filters:
       world_cup_widget_survey_android.metric: 'tagged_sap_searches'
       world_cup_widget_survey_android.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -197,6 +129,74 @@
     ]
     filters:
       world_cup_widget_survey_android.metric: 'ad_clicks'
+      world_cup_widget_survey_android.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: world_cup_widget_survey_android.submission_date
+    field_y: world_cup_widget_survey_android.point
+    log_scale: false
+    ci_lower: world_cup_widget_survey_android.lower
+    ci_upper: world_cup_widget_survey_android.upper
+    show_grid: true
+    listen:
+      Date: world_cup_widget_survey_android.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: world_cup_widget_survey_android
+    type: looker_line
+    fields: [
+      world_cup_widget_survey_android.submission_date,
+      world_cup_widget_survey_android.branch,
+      world_cup_widget_survey_android.point
+    ]
+    pivots: [
+      world_cup_widget_survey_android.branch
+    ]
+    filters:
+      world_cup_widget_survey_android.metric: 'uri_count'
+      world_cup_widget_survey_android.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: world_cup_widget_survey_android.submission_date
+    field_y: world_cup_widget_survey_android.point
+    log_scale: false
+    ci_lower: world_cup_widget_survey_android.lower
+    ci_upper: world_cup_widget_survey_android.upper
+    show_grid: true
+    listen:
+      Date: world_cup_widget_survey_android.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: world_cup_widget_survey_android
+    type: looker_line
+    fields: [
+      world_cup_widget_survey_android.submission_date,
+      world_cup_widget_survey_android.branch,
+      world_cup_widget_survey_android.point
+    ]
+    pivots: [
+      world_cup_widget_survey_android.branch
+    ]
+    filters:
+      world_cup_widget_survey_android.metric: 'active_hours'
       world_cup_widget_survey_android.statistic: mean
     row: 20
     col: 12
