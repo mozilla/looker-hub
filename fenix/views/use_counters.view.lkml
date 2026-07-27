@@ -3929,6 +3929,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_font_width {
+    label: "Use Counter Css Doc: Css Font Width"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_font_width ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Font Width"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc: Css Font Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_font_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property font-width. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_forced_color_adjust {
     label: "Use Counter Css Doc: Css Forced Color Adjust"
     hidden: no
@@ -17393,6 +17411,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_font_width {
+    label: "Use Counter Css Page: Css Font Width"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_font_width ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Font Width"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page: Css Font Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_font_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property font-width. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_forced_color_adjust {
     label: "Use Counter Css Page: Css Forced Color Adjust"
     hidden: no
@@ -27437,6 +27473,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_idbindex_moz_get_all {
+    label: "Use Counter Deprecated Ops Doc: Idbindex Moz Get All"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbindex_moz_get_all ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Idbindex Moz Get All"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc: Idbindex Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbindex_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used IDBIndexMozGetAll. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys {
+    label: "Use Counter Deprecated Ops Doc: Idbindex Moz Get All Keys"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Idbindex Moz Get All Keys"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc: Idbindex Moz Get All Keys"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used IDBIndexMozGetAllKeys. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
     label: "Use Counter Deprecated Ops Doc: Idbobject Store Create Index Locale"
     hidden: no
@@ -27452,6 +27524,24 @@ view: use_counters {
     }
 
     description: "Whether a document used IDBObjectStoreCreateIndexLocale. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_moz_get_all {
+    label: "Use Counter Deprecated Ops Doc: Idbobject Store Moz Get All"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbobject_store_moz_get_all ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Idbobject Store Moz Get All"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc: Idbobject Store Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbobject_store_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used IDBObjectStoreMozGetAll. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -28553,6 +28643,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_page_idbindex_moz_get_all {
+    label: "Use Counter Deprecated Ops Page: Idbindex Moz Get All"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbindex_moz_get_all ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Idbindex Moz Get All"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page: Idbindex Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbindex_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used IDBIndexMozGetAll. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_idbindex_moz_get_all_keys {
+    label: "Use Counter Deprecated Ops Page: Idbindex Moz Get All Keys"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbindex_moz_get_all_keys ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Idbindex Moz Get All Keys"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page: Idbindex Moz Get All Keys"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbindex_moz_get_all_keys"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used IDBIndexMozGetAllKeys. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_page_idbobject_store_create_index_locale {
     label: "Use Counter Deprecated Ops Page: Idbobject Store Create Index Locale"
     hidden: no
@@ -28568,6 +28694,24 @@ view: use_counters {
     }
 
     description: "Whether a page used IDBObjectStoreCreateIndexLocale. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_idbobject_store_moz_get_all {
+    label: "Use Counter Deprecated Ops Page: Idbobject Store Moz Get All"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbobject_store_moz_get_all ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Idbobject Store Moz Get All"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page: Idbobject Store Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbobject_store_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used IDBObjectStoreMozGetAll. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -57932,6 +58076,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_font_width {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_font_width} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Font Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_font_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_font_width_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_font_width: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Font Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_font_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_forced_color_adjust {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_forced_color_adjust} ;;
@@ -76632,6 +76801,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_font_width {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_font_width} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Font Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_font_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_font_width_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_font_width: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Font Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_font_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_forced_color_adjust {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_forced_color_adjust} ;;
@@ -90582,6 +90776,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_deprecated_ops_doc_idbindex_moz_get_all {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_idbindex_moz_get_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbindex Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbindex_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_idbindex_moz_get_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_idbindex_moz_get_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbindex Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbindex_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbindex Moz Get All Keys"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbindex Moz Get All Keys"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbindex_moz_get_all_keys"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
     type: sum
     sql: ${metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale} ;;
@@ -90603,6 +90847,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbobject Store Create Index Locale"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbobject_store_create_index_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_idbobject_store_moz_get_all {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_moz_get_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbobject Store Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbobject_store_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_idbobject_store_moz_get_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_moz_get_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbobject Store Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_doc_idbobject_store_moz_get_all"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -92132,6 +92401,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_deprecated_ops_page_idbindex_moz_get_all {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_idbindex_moz_get_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbindex Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbindex_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_idbindex_moz_get_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_idbindex_moz_get_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbindex Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbindex_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_idbindex_moz_get_all_keys {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_idbindex_moz_get_all_keys} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbindex Moz Get All Keys"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbindex_moz_get_all_keys"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_idbindex_moz_get_all_keys_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_idbindex_moz_get_all_keys: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbindex Moz Get All Keys"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbindex_moz_get_all_keys"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_deprecated_ops_page_idbobject_store_create_index_locale {
     type: sum
     sql: ${metrics__counter__use_counter_deprecated_ops_page_idbobject_store_create_index_locale} ;;
@@ -92153,6 +92472,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbobject Store Create Index Locale"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbobject_store_create_index_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_idbobject_store_moz_get_all {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_idbobject_store_moz_get_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbobject Store Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbobject_store_moz_get_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_idbobject_store_moz_get_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_idbobject_store_moz_get_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbobject Store Moz Get All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_deprecated_ops_page_idbobject_store_moz_get_all"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

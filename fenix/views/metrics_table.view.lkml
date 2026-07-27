@@ -2120,6 +2120,36 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__devtools_localmode_mappings_add_permanent_from_notification {
+    sql: ${TABLE}.metrics.counter.devtools_localmode_mappings_add_permanent_from_notification ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Localmode Mappings Add Permanent From Notification"
+    description: "Number of times a permanent Local Mappings was added from the file:// URL notification.
+"
+  }
+
+  dimension: metrics__counter__devtools_localmode_mappings_add_permanent_from_options {
+    sql: ${TABLE}.metrics.counter.devtools_localmode_mappings_add_permanent_from_options ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Localmode Mappings Add Permanent From Options"
+    description: "Number of times a permanent Local Mappings was added from the Settings panel.
+"
+  }
+
+  dimension: metrics__counter__devtools_localmode_mappings_add_transient {
+    sql: ${TABLE}.metrics.counter.devtools_localmode_mappings_add_transient ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Localmode Mappings Add Transient"
+    description: "Number of times a transient Local Mappings was added from the file:// URL notification.
+"
+  }
+
   dimension: metrics__counter__devtools_markup_flexboxhighlighter_opened {
     sql: ${TABLE}.metrics.counter.devtools_markup_flexboxhighlighter_opened ;;
     type: number
@@ -3018,6 +3048,16 @@ displayed to the user. (for tile counts)
     group_label: "Metrics: Counter"
     group_item_label: "Javascript Self Hosted Cache Total"
     description: "How many self-hosted cache accesses are performed.
+"
+  }
+
+  dimension: metrics__counter__layout_global_stylesheet_not_found {
+    sql: ${TABLE}.metrics.counter.layout_global_stylesheet_not_found ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Layout Global Stylesheet Not Found"
+    description: "Increments each time one of the GlobalStyleSheetCache stylesheets are not found in the omnijar. See bug 1681745 and bug 2056926.
 "
   }
 
@@ -19004,6 +19044,16 @@ See Environment.sys.mjs' `DEFAULT_ENVIRONMENT_PREFS`.
     group_label: "Metrics: Quantity"
     group_item_label: "Data Storage Site Security Service State"
     description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__devtools_localmode_mappings_count {
+    sql: ${TABLE}.metrics.quantity.devtools_localmode_mappings_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Devtools Localmode Mappings Count"
+    description: "Number of Local Mode mappings currently used when opening DevTools.
+"
   }
 
   dimension: metrics__quantity__e10s_multi_processes {
