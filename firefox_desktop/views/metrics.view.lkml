@@ -23337,6 +23337,24 @@ See `nsIXULRuntime.launcherProcessState`
 "
   }
 
+  dimension: metrics__counter__layout_global_stylesheet_not_found {
+    label: "Layout: Global Stylesheet Not Found"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.layout_global_stylesheet_not_found ;;
+    type: number
+    group_label: "Layout"
+    group_item_label: "Global Stylesheet Not Found"
+
+    link: {
+      label: "Glean Dictionary reference for Layout: Global Stylesheet Not Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/layout_global_stylesheet_not_found"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments each time one of the GlobalStyleSheetCache stylesheets are not found in the omnijar. See bug 1681745 and bug 2056926.
+"
+  }
+
   dimension: metrics__timing_distribution__layout_input_event_queued_click__sum {
     label: "Layout: Input Event Queued Click Sum"
     hidden: no
@@ -46254,6 +46272,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Javascript Self Hosted Cache Total"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/javascript_self_hosted_cache_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: layout_global_stylesheet_not_found {
+    type: sum
+    sql: ${metrics__counter__layout_global_stylesheet_not_found} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Layout Global Stylesheet Not Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/layout_global_stylesheet_not_found"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: layout_global_stylesheet_not_found_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__layout_global_stylesheet_not_found: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Layout Global Stylesheet Not Found"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/layout_global_stylesheet_not_found"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

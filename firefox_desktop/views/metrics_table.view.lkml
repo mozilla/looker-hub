@@ -2577,6 +2577,14 @@ view: metrics_table {
     group_item_label: "Javascript Self Hosted Cache Total"
   }
 
+  dimension: metrics__counter__layout_global_stylesheet_not_found {
+    sql: ${TABLE}.metrics.counter.layout_global_stylesheet_not_found ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Layout Global Stylesheet Not Found"
+  }
+
   dimension: metrics__counter__localstorage_request_recv_cancel_counter {
     sql: ${TABLE}.metrics.counter.localstorage_request_recv_cancel_counter ;;
     type: number
