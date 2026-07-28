@@ -504,6 +504,14 @@ view: events_stream_table {
     group_item_label: "Form Data"
   }
 
+  dimension: extras__boolean__hadPreviousJwt {
+    sql: ${TABLE}.extras.boolean.hadPreviousJwt ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Hadpreviousjwt"
+  }
+
   dimension: extras__boolean__had_errors {
     sql: ${TABLE}.extras.boolean.had_errors ;;
     type: yesno
@@ -1382,6 +1390,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Has No Alt Text"
+  }
+
+  dimension: extras__quantity__httpStatus {
+    sql: ${TABLE}.extras.quantity.httpStatus ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Httpstatus"
   }
 
   dimension: extras__quantity__http_status_code {

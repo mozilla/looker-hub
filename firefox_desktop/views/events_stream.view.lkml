@@ -595,6 +595,14 @@ view: events_stream {
     group_item_label: "Fxa"
   }
 
+  dimension: extras__boolean__hadPreviousJwt {
+    sql: ${TABLE}.extras.boolean.hadPreviousJwt ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Hadpreviousjwt"
+  }
+
   dimension: extras__boolean__had_errors {
     sql: ${TABLE}.extras.boolean.had_errors ;;
     type: yesno
@@ -1873,6 +1881,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Height"
+  }
+
+  dimension: extras__quantity__httpStatus {
+    sql: ${TABLE}.extras.quantity.httpStatus ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Httpstatus"
   }
 
   dimension: extras__quantity__http_status {
