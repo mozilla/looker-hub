@@ -2947,6 +2947,38 @@ view: events_stream {
     group_item_label: "Experiment Type"
   }
 
+  dimension: extras__string__expiry_date {
+    sql: ${TABLE}.extras.string.expiry_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Expiry Date"
+  }
+
+  dimension: extras__string__expiry_date_day {
+    sql: ${TABLE}.extras.string.expiry_date_day ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Expiry Date Day"
+  }
+
+  dimension: extras__string__expiry_date_month {
+    sql: ${TABLE}.extras.string.expiry_date_month ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Expiry Date Month"
+  }
+
+  dimension: extras__string__expiry_date_year {
+    sql: ${TABLE}.extras.string.expiry_date_year ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Expiry Date Year"
+  }
+
   dimension: extras__string__extension_ids {
     sql: ${TABLE}.extras.string.extension_ids ;;
     type: string
@@ -3419,6 +3451,38 @@ view: events_stream {
     group_item_label: "Issue"
   }
 
+  dimension: extras__string__issue_date {
+    sql: ${TABLE}.extras.string.issue_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Issue Date"
+  }
+
+  dimension: extras__string__issue_date_day {
+    sql: ${TABLE}.extras.string.issue_date_day ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Issue Date Day"
+  }
+
+  dimension: extras__string__issue_date_month {
+    sql: ${TABLE}.extras.string.issue_date_month ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Issue Date Month"
+  }
+
+  dimension: extras__string__issue_date_year {
+    sql: ${TABLE}.extras.string.issue_date_year ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Issue Date Year"
+  }
+
   dimension: extras__string__item {
     sql: ${TABLE}.extras.string.item ;;
     type: string
@@ -3857,6 +3921,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Num Strings"
+  }
+
+  dimension: extras__string__number {
+    sql: ${TABLE}.extras.string.number ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Number"
   }
 
   dimension: extras__string__object {
