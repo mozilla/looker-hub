@@ -17047,6 +17047,24 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_dns_answer_spread__sum {
+    label: "Netwerk: Happy Eyeballs DNS Answer Spread Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_dns_answer_spread.sum ;;
+    type: number
+    group_label: "Netwerk"
+    group_item_label: "Happy Eyeballs DNS Answer Spread Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk: Happy Eyeballs DNS Answer Spread Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_happy_eyeballs_dns_answer_spread"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Happy Eyeballs: time in milliseconds between the first positive DNS answer and the last positive DNS answer received before the first connection attempt of a single algorithm run, across the A, AAAA and HTTPS queries (a positive answer is one that carried at least one address or service info). Answers arriving after racing begins are excluded, since the resolution delay no longer applies to them. This is the window during which additional, possibly preferred-family, addresses keep arriving after the first usable answer. Used to tune the resolution delay (network.http.happy_eyeballs_resolution_delay): the delay should cover most of this spread so the preferred address family is usually available before the connection phase begins. A run with a single positive answer records 0.
+"
+  }
+
   dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_failed__sum {
     label: "Netwerk: Happy Eyeballs End To End Time Failed Sum"
     hidden: no
@@ -61763,6 +61781,20 @@ view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_connection_a
 }
 
 view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__netwerk_happy_eyeballs_dns_answer_spread__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

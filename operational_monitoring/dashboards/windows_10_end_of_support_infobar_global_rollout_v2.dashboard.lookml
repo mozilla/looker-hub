@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       windows_10_end_of_support_infobar_global_rollout_v2.branch
     ]
     filters:
-      windows_10_end_of_support_infobar_global_rollout_v2.metric: 'active_hours'
+      windows_10_end_of_support_infobar_global_rollout_v2.metric: 'uri_count'
       windows_10_end_of_support_infobar_global_rollout_v2.statistic: mean
     row: 0
     col: 0
@@ -40,6 +40,43 @@
     show_grid: true
     listen:
       Date: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: windows_10_end_of_support_infobar_global_rollout_v2
+    type: "ci-line-chart"
+    fields: [
+      windows_10_end_of_support_infobar_global_rollout_v2.submission_date,
+      windows_10_end_of_support_infobar_global_rollout_v2.branch,
+      windows_10_end_of_support_infobar_global_rollout_v2.upper,
+      windows_10_end_of_support_infobar_global_rollout_v2.lower,
+      windows_10_end_of_support_infobar_global_rollout_v2.point
+    ]
+    pivots: [
+      windows_10_end_of_support_infobar_global_rollout_v2.branch
+    ]
+    filters:
+      windows_10_end_of_support_infobar_global_rollout_v2.metric: 'memory_total'
+      windows_10_end_of_support_infobar_global_rollout_v2.statistic: percentile
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
+    field_y: windows_10_end_of_support_infobar_global_rollout_v2.point
+    log_scale: false
+    ci_lower: windows_10_end_of_support_infobar_global_rollout_v2.lower
+    ci_upper: windows_10_end_of_support_infobar_global_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
+      Percentile: windows_10_end_of_support_infobar_global_rollout_v2.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -61,40 +98,6 @@
     ]
     filters:
       windows_10_end_of_support_infobar_global_rollout_v2.metric: 'qualified_cumulative_days_of_use'
-      windows_10_end_of_support_infobar_global_rollout_v2.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
-    field_y: windows_10_end_of_support_infobar_global_rollout_v2.point
-    log_scale: false
-    ci_lower: windows_10_end_of_support_infobar_global_rollout_v2.lower
-    ci_upper: windows_10_end_of_support_infobar_global_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_end_of_support_infobar_global_rollout_v2
-    type: looker_line
-    fields: [
-      windows_10_end_of_support_infobar_global_rollout_v2.submission_date,
-      windows_10_end_of_support_infobar_global_rollout_v2.branch,
-      windows_10_end_of_support_infobar_global_rollout_v2.point
-    ]
-    pivots: [
-      windows_10_end_of_support_infobar_global_rollout_v2.branch
-    ]
-    filters:
-      windows_10_end_of_support_infobar_global_rollout_v2.metric: 'uri_count'
       windows_10_end_of_support_infobar_global_rollout_v2.statistic: mean
     row: 10
     col: 0
@@ -146,77 +149,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: windows_10_end_of_support_infobar_global_rollout_v2
-    type: looker_line
-    fields: [
-      windows_10_end_of_support_infobar_global_rollout_v2.submission_date,
-      windows_10_end_of_support_infobar_global_rollout_v2.branch,
-      windows_10_end_of_support_infobar_global_rollout_v2.point
-    ]
-    pivots: [
-      windows_10_end_of_support_infobar_global_rollout_v2.branch
-    ]
-    filters:
-      windows_10_end_of_support_infobar_global_rollout_v2.metric: 'search_count'
-      windows_10_end_of_support_infobar_global_rollout_v2.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
-    field_y: windows_10_end_of_support_infobar_global_rollout_v2.point
-    log_scale: false
-    ci_lower: windows_10_end_of_support_infobar_global_rollout_v2.lower
-    ci_upper: windows_10_end_of_support_infobar_global_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: windows_10_end_of_support_infobar_global_rollout_v2
-    type: "ci-line-chart"
-    fields: [
-      windows_10_end_of_support_infobar_global_rollout_v2.submission_date,
-      windows_10_end_of_support_infobar_global_rollout_v2.branch,
-      windows_10_end_of_support_infobar_global_rollout_v2.upper,
-      windows_10_end_of_support_infobar_global_rollout_v2.lower,
-      windows_10_end_of_support_infobar_global_rollout_v2.point
-    ]
-    pivots: [
-      windows_10_end_of_support_infobar_global_rollout_v2.branch
-    ]
-    filters:
-      windows_10_end_of_support_infobar_global_rollout_v2.metric: 'memory_total'
-      windows_10_end_of_support_infobar_global_rollout_v2.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
-    field_y: windows_10_end_of_support_infobar_global_rollout_v2.point
-    log_scale: false
-    ci_lower: windows_10_end_of_support_infobar_global_rollout_v2.lower
-    ci_upper: windows_10_end_of_support_infobar_global_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
-      Percentile: windows_10_end_of_support_infobar_global_rollout_v2.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -235,7 +167,7 @@
     filters:
       windows_10_end_of_support_infobar_global_rollout_v2.metric: 'retained'
       windows_10_end_of_support_infobar_global_rollout_v2.statistic: mean
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -268,6 +200,74 @@
     ]
     filters:
       windows_10_end_of_support_infobar_global_rollout_v2.metric: 'days_of_use'
+      windows_10_end_of_support_infobar_global_rollout_v2.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
+    field_y: windows_10_end_of_support_infobar_global_rollout_v2.point
+    log_scale: false
+    ci_lower: windows_10_end_of_support_infobar_global_rollout_v2.lower
+    ci_upper: windows_10_end_of_support_infobar_global_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_end_of_support_infobar_global_rollout_v2
+    type: looker_line
+    fields: [
+      windows_10_end_of_support_infobar_global_rollout_v2.submission_date,
+      windows_10_end_of_support_infobar_global_rollout_v2.branch,
+      windows_10_end_of_support_infobar_global_rollout_v2.point
+    ]
+    pivots: [
+      windows_10_end_of_support_infobar_global_rollout_v2.branch
+    ]
+    filters:
+      windows_10_end_of_support_infobar_global_rollout_v2.metric: 'search_count'
+      windows_10_end_of_support_infobar_global_rollout_v2.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
+    field_y: windows_10_end_of_support_infobar_global_rollout_v2.point
+    log_scale: false
+    ci_lower: windows_10_end_of_support_infobar_global_rollout_v2.lower
+    ci_upper: windows_10_end_of_support_infobar_global_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: windows_10_end_of_support_infobar_global_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: windows_10_end_of_support_infobar_global_rollout_v2
+    type: looker_line
+    fields: [
+      windows_10_end_of_support_infobar_global_rollout_v2.submission_date,
+      windows_10_end_of_support_infobar_global_rollout_v2.branch,
+      windows_10_end_of_support_infobar_global_rollout_v2.point
+    ]
+    pivots: [
+      windows_10_end_of_support_infobar_global_rollout_v2.branch
+    ]
+    filters:
+      windows_10_end_of_support_infobar_global_rollout_v2.metric: 'active_hours'
       windows_10_end_of_support_infobar_global_rollout_v2.statistic: mean
     row: 30
     col: 12

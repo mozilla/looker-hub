@@ -7704,6 +7704,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_dns_answer_spread__count {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_dns_answer_spread.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs DNS Answer Spread"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_dns_answer_spread__sum {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_dns_answer_spread.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Netwerk Happy Eyeballs DNS Answer Spread"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__netwerk_happy_eyeballs_dns_answer_spread__values {
+    sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_dns_answer_spread.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__netwerk_happy_eyeballs_end_to_end_time_failed__count {
     sql: ${TABLE}.metrics.custom_distribution.netwerk_happy_eyeballs_end_to_end_time_failed.count ;;
     type: number
@@ -54129,6 +54151,20 @@ view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_connec
 }
 
 view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_connection_establishment_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__netwerk_happy_eyeballs_dns_answer_spread__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

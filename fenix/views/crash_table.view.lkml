@@ -588,6 +588,12 @@ The status of individual objects is constructed by taking selected object proper
     description: "Stack traces extracted from the crash minidump, if available. A serialized JSON object (with a structure matching the associated Glean object description)."
   }
 
+  dimension: metrics__object__meta_annotations {
+    sql: ${TABLE}.metrics.object.meta_annotations ;;
+    hidden: yes
+    description: "The source crash annotations for this ping."
+  }
+
   dimension: metrics__quantity__crash_event_loop_nesting_level {
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number
