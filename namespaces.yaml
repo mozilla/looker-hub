@@ -23591,30 +23591,6 @@ reference:
       tables:
       - table: mozdata.external.us_unemployment
       type: table_view
-relay:
-  glean_app: false
-  owners:
-  - srose@mozilla.com
-  - ysmith@mozilla.com
-  pretty_name: Firefox Relay
-  spoke: looker-spoke-default
-  views:
-    active_subscription_ids:
-      tables:
-      - table: mozdata.relay.active_subscription_ids
-      type: table_view
-    active_subscriptions:
-      tables:
-      - table: mozdata.relay.active_subscriptions
-      type: table_view
-    subscription_events:
-      tables:
-      - table: mozdata.relay.subscription_events
-      type: table_view
-    subscriptions:
-      tables:
-      - table: mozdata.relay.subscriptions
-      type: table_view
 relay_backend:
   explores:
     events:
