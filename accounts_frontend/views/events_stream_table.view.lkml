@@ -368,6 +368,14 @@ view: events_stream_table {
     group_item_label: "Error Reason"
   }
 
+  dimension: extras__string__has_passkey_option {
+    sql: ${TABLE}.extras.string.has_passkey_option ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Has Passkey Option"
+  }
+
   dimension: extras__string__hyb {
     sql: ${TABLE}.extras.string.hyb ;;
     type: string
