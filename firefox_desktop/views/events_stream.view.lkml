@@ -2067,6 +2067,14 @@ view: events_stream {
     group_item_label: "Levenshtein Distance"
   }
 
+  dimension: extras__quantity__lineno {
+    sql: ${TABLE}.extras.quantity.lineno ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Lineno"
+  }
+
   dimension: extras__quantity__linenumber {
     sql: ${TABLE}.extras.quantity.linenumber ;;
     type: number
@@ -3569,6 +3577,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Caught Exceptio"
+  }
+
+  dimension: extras__string__cause {
+    sql: ${TABLE}.extras.string.cause ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Cause"
   }
 
   dimension: extras__string__cc_exp {
