@@ -1107,6 +1107,14 @@ view: events_stream {
     group_item_label: "Origin"
   }
 
+  dimension: extras__string__outcome {
+    sql: ${TABLE}.extras.string.outcome ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Outcome"
+  }
+
   dimension: extras__string__part_id {
     sql: ${TABLE}.extras.string.part_id ;;
     type: string
