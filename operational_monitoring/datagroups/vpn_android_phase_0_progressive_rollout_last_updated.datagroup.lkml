@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: one_click_set_to_default_new_users_rollout_last_updated {
-  label: "one_click_set_to_default_new_users_rollout Last Updated"
+datagroup: vpn_android_phase_0_progressive_rollout_last_updated {
+  label: "vpn_android_phase_0_progressive_rollout Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'one_click_set_to_default_new_users_rollout_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'vpn_android_phase_0_progressive_rollout_statistics')
 
     ) ;;
-  description: "Updates for one_click_set_to_default_new_users_rollout when referenced tables are modified."
+  description: "Updates for vpn_android_phase_0_progressive_rollout when referenced tables are modified."
   max_cache_age: "24 hours"
 }

@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,10 +60,44 @@
       microsurvey_ios_world_cup_csat_en_holdback.branch
     ]
     filters:
-      microsurvey_ios_world_cup_csat_en_holdback.metric: 'retained'
+      microsurvey_ios_world_cup_csat_en_holdback.metric: 'search_count'
       microsurvey_ios_world_cup_csat_en_holdback.statistic: mean
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: microsurvey_ios_world_cup_csat_en_holdback.submission_date
+    field_y: microsurvey_ios_world_cup_csat_en_holdback.point
+    log_scale: false
+    ci_lower: microsurvey_ios_world_cup_csat_en_holdback.lower
+    ci_upper: microsurvey_ios_world_cup_csat_en_holdback.upper
+    show_grid: true
+    listen:
+      Date: microsurvey_ios_world_cup_csat_en_holdback.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: microsurvey_ios_world_cup_csat_en_holdback
+    type: looker_line
+    fields: [
+      microsurvey_ios_world_cup_csat_en_holdback.submission_date,
+      microsurvey_ios_world_cup_csat_en_holdback.branch,
+      microsurvey_ios_world_cup_csat_en_holdback.point
+    ]
+    pivots: [
+      microsurvey_ios_world_cup_csat_en_holdback.branch
+    ]
+    filters:
+      microsurvey_ios_world_cup_csat_en_holdback.metric: 'active_hours'
+      microsurvey_ios_world_cup_csat_en_holdback.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: microsurvey_ios_world_cup_csat_en_holdback.submission_date
@@ -97,40 +131,6 @@
       microsurvey_ios_world_cup_csat_en_holdback.metric: 'days_of_use'
       microsurvey_ios_world_cup_csat_en_holdback.statistic: mean
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: microsurvey_ios_world_cup_csat_en_holdback.submission_date
-    field_y: microsurvey_ios_world_cup_csat_en_holdback.point
-    log_scale: false
-    ci_lower: microsurvey_ios_world_cup_csat_en_holdback.lower
-    ci_upper: microsurvey_ios_world_cup_csat_en_holdback.upper
-    show_grid: true
-    listen:
-      Date: microsurvey_ios_world_cup_csat_en_holdback.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: microsurvey_ios_world_cup_csat_en_holdback
-    type: looker_line
-    fields: [
-      microsurvey_ios_world_cup_csat_en_holdback.submission_date,
-      microsurvey_ios_world_cup_csat_en_holdback.branch,
-      microsurvey_ios_world_cup_csat_en_holdback.point
-    ]
-    pivots: [
-      microsurvey_ios_world_cup_csat_en_holdback.branch
-    ]
-    filters:
-      microsurvey_ios_world_cup_csat_en_holdback.metric: 'search_count'
-      microsurvey_ios_world_cup_csat_en_holdback.statistic: mean
-    row: 10
     col: 12
     width: 12
     height: 8
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       microsurvey_ios_world_cup_csat_en_holdback.branch
     ]
     filters:
-      microsurvey_ios_world_cup_csat_en_holdback.metric: 'active_hours'
+      microsurvey_ios_world_cup_csat_en_holdback.metric: 'retained'
       microsurvey_ios_world_cup_csat_en_holdback.statistic: mean
     row: 20
     col: 0
