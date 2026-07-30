@@ -3221,6 +3221,36 @@ displayed to the user. (for tile counts)
 "
   }
 
+  dimension: metrics__counter__media_audio_session_api_used {
+    sql: ${TABLE}.metrics.counter.media_audio_session_api_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Media Audio Session Api Used"
+    description: "Incremented once per document that accesses `navigator.audioSession` (recorded in the content process, so it counts accessing documents).
+"
+  }
+
+  dimension: metrics__counter__media_audio_session_inactivated_by_arbitration {
+    sql: ${TABLE}.metrics.counter.media_audio_session_inactivated_by_arbitration ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Media Audio Session Inactivated By Arbitration"
+    description: "Number of times audio-session arbitration inactivates one or more active sessions because another session takes over. Counted once per arbitration pass that displaces a session, not once per displaced session.
+"
+  }
+
+  dimension: metrics__counter__media_audio_session_selected_changed {
+    sql: ${TABLE}.metrics.counter.media_audio_session_selected_changed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Media Audio Session Selected Changed"
+    description: "Number of times the selected audio session changed for a top-level browsing context.
+"
+  }
+
   dimension: metrics__counter__media_element_in_page_count {
     sql: ${TABLE}.metrics.counter.media_element_in_page_count ;;
     type: number
@@ -14199,10 +14229,45 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__media_audio_focus_interrupt_count {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_focus_interrupt_count ;;
+    hidden: yes
+    description: "Number of audio-session interruptions, by cause.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_focus_platform_focus_type {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_focus_platform_focus_type ;;
+    hidden: yes
+    description: "Android only: the effective audio-session type Firefox forwards to the embedder to shape the platform audio-focus request, by value. This is the type actually used on the platform, including the source-derived fallback (e.g. ambient for Web Audio, transient for Web Speech) when no page set a type explicitly.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_focus_resume_decision {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_focus_resume_decision ;;
+    hidden: yes
+    description: "When an interruption ends, the number of times each suspended audible source (media element, Web Audio, or Web Speech) was dispatched its resume signal. Sources the interruption never suspended, or that the page took over during the interruption, are not counted.
+"
+  }
+
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     hidden: yes
     description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_session_effective_auto_type {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_session_effective_auto_type ;;
+    hidden: yes
+    description: "The concrete type an `auto`-typed selected session resolves to under the audio-session type priority ranking.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_session_type_set {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_session_type_set ;;
+    hidden: yes
+    description: "Number of explicit `audioSession.type` assignments, by value.
 "
   }
 

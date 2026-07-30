@@ -15943,6 +15943,145 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__media_audio_focus_interrupt_count {
+    label: "Media Audio Focus: Interrupt Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_focus_interrupt_count ;;
+    group_label: "Media Audio Focus"
+    group_item_label: "Interrupt Count"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Focus: Interrupt Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_focus_interrupt_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of audio-session interruptions, by cause.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_focus_platform_focus_type {
+    label: "Media Audio Focus: Platform Focus Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_focus_platform_focus_type ;;
+    group_label: "Media Audio Focus"
+    group_item_label: "Platform Focus Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Focus: Platform Focus Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_focus_platform_focus_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Android only: the effective audio-session type Firefox forwards to the embedder to shape the platform audio-focus request, by value. This is the type actually used on the platform, including the source-derived fallback (e.g. ambient for Web Audio, transient for Web Speech) when no page set a type explicitly.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_focus_resume_decision {
+    label: "Media Audio Focus: Resume Decision"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_focus_resume_decision ;;
+    group_label: "Media Audio Focus"
+    group_item_label: "Resume Decision"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Focus: Resume Decision"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_focus_resume_decision"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When an interruption ends, the number of times each suspended audible source (media element, Web Audio, or Web Speech) was dispatched its resume signal. Sources the interruption never suspended, or that the page took over during the interruption, are not counted.
+"
+  }
+
+  dimension: metrics__counter__media_audio_session_api_used {
+    label: "Media Audio Session: Api Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_audio_session_api_used ;;
+    type: number
+    group_label: "Media Audio Session"
+    group_item_label: "Api Used"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session: Api Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_api_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented once per document that accesses `navigator.audioSession` (recorded in the content process, so it counts accessing documents).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_session_effective_auto_type {
+    label: "Media Audio Session: Effective Auto Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_session_effective_auto_type ;;
+    group_label: "Media Audio Session"
+    group_item_label: "Effective Auto Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session: Effective Auto Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_effective_auto_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The concrete type an `auto`-typed selected session resolves to under the audio-session type priority ranking.
+"
+  }
+
+  dimension: metrics__counter__media_audio_session_inactivated_by_arbitration {
+    label: "Media Audio Session: Inactivated By Arbitration"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_audio_session_inactivated_by_arbitration ;;
+    type: number
+    group_label: "Media Audio Session"
+    group_item_label: "Inactivated By Arbitration"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session: Inactivated By Arbitration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_inactivated_by_arbitration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times audio-session arbitration inactivates one or more active sessions because another session takes over. Counted once per arbitration pass that displaces a session, not once per displaced session.
+"
+  }
+
+  dimension: metrics__counter__media_audio_session_selected_changed {
+    label: "Media Audio Session: Selected Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.media_audio_session_selected_changed ;;
+    type: number
+    group_label: "Media Audio Session"
+    group_item_label: "Selected Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session: Selected Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_selected_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the selected audio session changed for a top-level browsing context.
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_session_type_set {
+    label: "Media Audio Session: Type Set"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_session_type_set ;;
+    group_label: "Media Audio Session"
+    group_item_label: "Type Set"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session: Type Set"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_type_set"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of explicit `audioSession.type` assignments, by value.
+"
+  }
+
   dimension: metrics__labeled_counter__media_capture_stream_usage {
     label: "Media: Capture Stream Usage"
     hidden: yes
@@ -39361,6 +39500,81 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     }
   }
 
+  measure: media_audio_session_api_used {
+    type: sum
+    sql: ${metrics__counter__media_audio_session_api_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session Api Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_api_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_audio_session_api_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_audio_session_api_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session Api Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_api_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_audio_session_inactivated_by_arbitration {
+    type: sum
+    sql: ${metrics__counter__media_audio_session_inactivated_by_arbitration} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session Inactivated By Arbitration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_inactivated_by_arbitration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_audio_session_inactivated_by_arbitration_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_audio_session_inactivated_by_arbitration: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session Inactivated By Arbitration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_inactivated_by_arbitration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_audio_session_selected_changed {
+    type: sum
+    sql: ${metrics__counter__media_audio_session_selected_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session Selected Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_selected_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: media_audio_session_selected_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__media_audio_session_selected_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Session Selected Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_session_selected_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: media_element_in_page_count {
     type: sum
     sql: ${metrics__counter__media_element_in_page_count} ;;
@@ -50018,6 +50232,129 @@ view: metrics__metrics__labeled_counter__media_audio_backend {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_audio_focus_interrupt_count {
+  label: "Media Audio Focus: Interrupt Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_focus_platform_focus_type {
+  label: "Media Audio Focus: Platform Focus Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_focus_resume_decision {
+  label: "Media Audio Focus: Resume Decision"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__media_audio_init_failure {
   label: "Media: Audio Init Failure"
 
@@ -50056,6 +50393,88 @@ view: metrics__metrics__labeled_counter__media_audio_init_failure {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_session_effective_auto_type {
+  label: "Media Audio Session: Effective Auto Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_session_type_set {
+  label: "Media Audio Session: Type Set"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
