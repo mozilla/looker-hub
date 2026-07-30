@@ -2355,6 +2355,14 @@ view: events_stream {
     group_item_label: "Caught Exceptio"
   }
 
+  dimension: extras__string__cause {
+    sql: ${TABLE}.extras.string.cause ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Cause"
+  }
+
   dimension: extras__string__cc_exp {
     sql: ${TABLE}.extras.string.cc_exp ;;
     type: string
@@ -4033,6 +4041,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "OS"
+  }
+
+  dimension: extras__string__outcome {
+    sql: ${TABLE}.extras.string.outcome ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Outcome"
   }
 
   dimension: extras__string__packet_error {

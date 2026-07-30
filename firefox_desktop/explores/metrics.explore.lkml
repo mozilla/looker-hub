@@ -1528,9 +1528,34 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_backend}) AS metrics__metrics__labeled_counter__media_audio_backend ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_backend.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__media_audio_focus_interrupt_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_focus_interrupt_count}) AS metrics__metrics__labeled_counter__media_audio_focus_interrupt_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_focus_interrupt_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_audio_focus_platform_focus_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_focus_platform_focus_type}) AS metrics__metrics__labeled_counter__media_audio_focus_platform_focus_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_focus_platform_focus_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_audio_focus_resume_decision {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_focus_resume_decision}) AS metrics__metrics__labeled_counter__media_audio_focus_resume_decision ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_focus_resume_decision.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__media_audio_init_failure {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_init_failure}) AS metrics__metrics__labeled_counter__media_audio_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_init_failure.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_audio_session_effective_auto_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_session_effective_auto_type}) AS metrics__metrics__labeled_counter__media_audio_session_effective_auto_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_session_effective_auto_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_audio_session_type_set {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_session_type_set}) AS metrics__metrics__labeled_counter__media_audio_session_type_set ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_session_type_set.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__media_capture_stream_usage {
@@ -2501,6 +2526,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__sidebar_search {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__sidebar_search}) AS metrics__metrics__labeled_counter__sidebar_search ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__sidebar_search.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__smart_window_bookmarkbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__smart_window_bookmarkbar}) AS metrics__metrics__labeled_counter__smart_window_bookmarkbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__smart_window_bookmarkbar.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__splitview_uri_count {
