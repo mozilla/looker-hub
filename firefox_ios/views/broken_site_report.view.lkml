@@ -169,7 +169,9 @@ blocked_origins). Named block_list to match the cross-platform schema.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The user's tracking-protection strength setting (\"basic\" or \"strict\").
+    description: "The user's tracking-protection strength in the cross-platform ETP vocabulary:
+\"standard\" (iOS calls this basic) or \"strict\". iOS has no \"custom\" equivalent.
+`block_list` reports the same setting in iOS's own basic/strict wording.
 "
   }
 
