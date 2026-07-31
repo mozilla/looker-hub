@@ -29154,6 +29154,39 @@ See `StartupTimeline.h`
 "
   }
 
+  dimension: metrics__labeled_counter__tls_auth_algorithm {
+    label: "TLS: Auth Algorithm"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_auth_algorithm ;;
+    group_label: "TLS"
+    group_item_label: "Auth Algorithm"
+
+    link: {
+      label: "Glean Dictionary reference for TLS: Auth Algorithm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_auth_algorithm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Algorithm used to authenticate the full TLS handshake. See SSLAuthType in sslt.h.
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_auth_ecdsa_curve {
+    label: "TLS: Auth Ecdsa Curve"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_auth_ecdsa_curve ;;
+    group_label: "TLS"
+    group_item_label: "Auth Ecdsa Curve"
+
+    link: {
+      label: "Glean Dictionary reference for TLS: Auth Ecdsa Curve"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_auth_ecdsa_curve"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ECDSA signature curve for TLS_*_ECDSA_* in full TLS handshake"
+  }
+
   dimension: metrics__counter__tls_certificate_verifications {
     label: "TLS: Certificate Verifications"
     hidden: no
@@ -29188,6 +29221,55 @@ See `StartupTimeline.h`
 
     description: "Negotiated cipher suite in TLS handshake (see key in AccumulateCipherSuite in nsNSSCallbacks.cpp)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram TLS_CIPHER_SUITE.
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_kea_ecdhe_curve {
+    label: "TLS: Kea Ecdhe Curve"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_kea_ecdhe_curve ;;
+    group_label: "TLS"
+    group_item_label: "Kea Ecdhe Curve"
+
+    link: {
+      label: "Glean Dictionary reference for TLS: Kea Ecdhe Curve"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_kea_ecdhe_curve"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ECDHE KEA (TLS_ECDHE_*) curve in full TLS handshake"
+  }
+
+  dimension: metrics__labeled_counter__tls_npn_type {
+    label: "TLS: Npn Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_npn_type ;;
+    group_label: "TLS"
+    group_item_label: "Npn Type"
+
+    link: {
+      label: "Glean Dictionary reference for TLS: Npn Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_npn_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "NPN (next protocol negotiation) results"
+  }
+
+  dimension: metrics__labeled_counter__tls_reasons_for_not_false_starting {
+    label: "TLS: Reasons For Not False Starting"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_reasons_for_not_false_starting ;;
+    group_label: "TLS"
+    group_item_label: "Reasons For Not False Starting"
+
+    link: {
+      label: "Glean Dictionary reference for TLS: Reasons For Not False Starting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_reasons_for_not_false_starting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Collection of reasons we did not false start when libssl would have let us.
 "
   }
 
@@ -57899,6 +57981,88 @@ view: metrics__metrics__labeled_counter__tabs_tray_access_point {
   }
 }
 
+view: metrics__metrics__labeled_counter__tls_auth_algorithm {
+  label: "TLS: Auth Algorithm"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tls_auth_ecdsa_curve {
+  label: "TLS: Auth Ecdsa Curve"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__tls_handshake_completed {
   label: "TLS Handshake: Completed"
 
@@ -57983,6 +58147,129 @@ view: metrics__metrics__labeled_counter__tls_handshake_privacy {
 
 view: metrics__metrics__labeled_counter__tls_handshake_version {
   label: "TLS Handshake: Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tls_kea_ecdhe_curve {
+  label: "TLS: Kea Ecdhe Curve"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tls_npn_type {
+  label: "TLS: Npn Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tls_reasons_for_not_false_starting {
+  label: "TLS: Reasons For Not False Starting"
 
   dimension: document_id {
     type: string
@@ -65992,6 +66279,33 @@ view: metrics__metrics__dual_labeled_counter__tls_handshake_result {
 }
 
 view: metrics__metrics__dual_labeled_counter__tls_handshake_result__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__tls_key_exchange_algorithm {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__dual_labeled_counter__tls_key_exchange_algorithm__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

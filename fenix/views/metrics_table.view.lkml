@@ -12711,6 +12711,12 @@ Initially this metric also recorded the \"success\" category, but due to the hig
     description: "TLS handshake result under various conditions"
   }
 
+  dimension: metrics__dual_labeled_counter__tls_key_exchange_algorithm {
+    sql: ${TABLE}.metrics.dual_labeled_counter.tls_key_exchange_algorithm ;;
+    hidden: yes
+    description: "Key Exchange Algorithm for TLS handshake"
+  }
+
   dimension: metrics__dual_labeled_counter__urlclassifier_complete_timeout {
     sql: ${TABLE}.metrics.dual_labeled_counter.urlclassifier_complete_timeout ;;
     hidden: yes
@@ -15660,6 +15666,19 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__tls_auth_algorithm {
+    sql: ${TABLE}.metrics.labeled_counter.tls_auth_algorithm ;;
+    hidden: yes
+    description: "Algorithm used to authenticate the full TLS handshake. See SSLAuthType in sslt.h.
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_auth_ecdsa_curve {
+    sql: ${TABLE}.metrics.labeled_counter.tls_auth_ecdsa_curve ;;
+    hidden: yes
+    description: "ECDSA signature curve for TLS_*_ECDSA_* in full TLS handshake"
+  }
+
   dimension: metrics__labeled_counter__tls_handshake_completed {
     sql: ${TABLE}.metrics.labeled_counter.tls_handshake_completed ;;
     hidden: yes
@@ -15677,6 +15696,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     sql: ${TABLE}.metrics.labeled_counter.tls_handshake_version ;;
     hidden: yes
     description: "TLS version negotiated in handshake"
+  }
+
+  dimension: metrics__labeled_counter__tls_kea_ecdhe_curve {
+    sql: ${TABLE}.metrics.labeled_counter.tls_kea_ecdhe_curve ;;
+    hidden: yes
+    description: "ECDHE KEA (TLS_ECDHE_*) curve in full TLS handshake"
+  }
+
+  dimension: metrics__labeled_counter__tls_npn_type {
+    sql: ${TABLE}.metrics.labeled_counter.tls_npn_type ;;
+    hidden: yes
+    description: "NPN (next protocol negotiation) results"
+  }
+
+  dimension: metrics__labeled_counter__tls_reasons_for_not_false_starting {
+    sql: ${TABLE}.metrics.labeled_counter.tls_reasons_for_not_false_starting ;;
+    hidden: yes
+    description: "Collection of reasons we did not false start when libssl would have let us.
+"
   }
 
   dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
@@ -58008,6 +58046,33 @@ view: metrics_table__metrics__dual_labeled_counter__tls_handshake_result {
 }
 
 view: metrics_table__metrics__dual_labeled_counter__tls_handshake_result__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__tls_key_exchange_algorithm {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__tls_key_exchange_algorithm__value {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
