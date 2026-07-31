@@ -2633,6 +2633,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__telemetry_success}) AS metrics__metrics__labeled_counter__telemetry_success ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__telemetry_success.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__tls_auth_algorithm {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_auth_algorithm}) AS metrics__metrics__labeled_counter__tls_auth_algorithm ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_auth_algorithm.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tls_auth_ecdsa_curve {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_auth_ecdsa_curve}) AS metrics__metrics__labeled_counter__tls_auth_ecdsa_curve ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_auth_ecdsa_curve.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__tls_handshake_completed {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_handshake_completed}) AS metrics__metrics__labeled_counter__tls_handshake_completed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_handshake_completed.document_id} ;;
@@ -2646,6 +2656,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__tls_handshake_version {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_handshake_version}) AS metrics__metrics__labeled_counter__tls_handshake_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_handshake_version.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tls_kea_ecdhe_curve {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_kea_ecdhe_curve}) AS metrics__metrics__labeled_counter__tls_kea_ecdhe_curve ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_kea_ecdhe_curve.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tls_npn_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_npn_type}) AS metrics__metrics__labeled_counter__tls_npn_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_npn_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tls_reasons_for_not_false_starting {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_reasons_for_not_false_starting}) AS metrics__metrics__labeled_counter__tls_reasons_for_not_false_starting ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_reasons_for_not_false_starting.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
