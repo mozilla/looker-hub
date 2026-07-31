@@ -27177,7 +27177,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__ssl_auth_algorithm_full__sum {
     label: "SSL: Auth Algorithm Full Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_algorithm_full.sum ;;
     type: number
     group_label: "SSL"
@@ -27196,7 +27196,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_auth_ecdsa_curve_full__sum {
     label: "SSL: Auth Ecdsa Curve Full Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_ecdsa_curve_full.sum ;;
     type: number
     group_label: "SSL"
@@ -27215,7 +27215,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_auth_rsa_key_size_full__sum {
     label: "SSL: Auth Rsa Key Size Full Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_auth_rsa_key_size_full.sum ;;
     type: number
     group_label: "SSL"
@@ -27328,7 +27328,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_kea_dhe_key_size_full__sum {
     label: "SSL: Kea Dhe Key Size Full Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_dhe_key_size_full.sum ;;
     type: number
     group_label: "SSL"
@@ -27347,7 +27347,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_kea_ecdhe_curve_full__sum {
     label: "SSL: Kea Ecdhe Curve Full Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_ecdhe_curve_full.sum ;;
     type: number
     group_label: "SSL"
@@ -27366,7 +27366,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_kea_rsa_key_size_full__sum {
     label: "SSL: Kea Rsa Key Size Full Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_kea_rsa_key_size_full.sum ;;
     type: number
     group_label: "SSL"
@@ -27385,7 +27385,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_key_exchange_algorithm_full__sum {
     label: "SSL: Key Exchange Algorithm Full Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_key_exchange_algorithm_full.sum ;;
     type: number
     group_label: "SSL"
@@ -27404,7 +27404,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_key_exchange_algorithm_resumed__sum {
     label: "SSL: Key Exchange Algorithm Resumed Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_key_exchange_algorithm_resumed.sum ;;
     type: number
     group_label: "SSL"
@@ -27423,7 +27423,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__ssl_npn_type__sum {
     label: "SSL: Npn Type Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_npn_type.sum ;;
     type: number
     group_label: "SSL"
@@ -27480,7 +27480,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__ssl_reasons_for_not_false_starting__sum {
     label: "SSL: Reasons For Not False Starting Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.ssl_reasons_for_not_false_starting.sum ;;
     type: number
     group_label: "SSL"
