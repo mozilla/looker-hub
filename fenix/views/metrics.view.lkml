@@ -24172,7 +24172,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__boolean__pkcs11_external_trust_anchor_module_loaded {
     label: "Pkcs11: External Trust Anchor Module Loaded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.pkcs11_external_trust_anchor_module_loaded ;;
     type: yesno
     group_label: "Pkcs11"
