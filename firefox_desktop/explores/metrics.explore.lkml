@@ -2233,6 +2233,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pinned_tabs_activations}) AS metrics__metrics__labeled_counter__pinned_tabs_activations ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pinned_tabs_activations.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pkcs11_builtin_roots_module_source {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pkcs11_builtin_roots_module_source}) AS metrics__metrics__labeled_counter__pkcs11_builtin_roots_module_source ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pkcs11_builtin_roots_module_source.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__places_semantic_history_indexing_stopped {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__places_semantic_history_indexing_stopped}) AS metrics__metrics__labeled_counter__places_semantic_history_indexing_stopped ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__places_semantic_history_indexing_stopped.document_id} ;;
