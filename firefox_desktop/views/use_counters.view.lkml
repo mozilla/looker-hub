@@ -35537,6 +35537,168 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_speculation_rules_document_source {
+    label: "Use Counter Doc: Speculation Rules Document Source"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_document_source ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Document Source"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with a document source. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_conservative {
+    label: "Use Counter Doc: Speculation Rules Eagerness Conservative"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_conservative ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Eagerness Conservative"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with \"conservative\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_eager {
+    label: "Use Counter Doc: Speculation Rules Eagerness Eager"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_eager ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Eagerness Eager"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with \"eager\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_immediate {
+    label: "Use Counter Doc: Speculation Rules Eagerness Immediate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_immediate ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Eagerness Immediate"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with \"immediate\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_moderate {
+    label: "Use Counter Doc: Speculation Rules Eagerness Moderate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_moderate ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Eagerness Moderate"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with \"moderate\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_list_source {
+    label: "Use Counter Doc: Speculation Rules List Source"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_list_source ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules List Source"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with a list source. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_prefetch {
+    label: "Use Counter Doc: Speculation Rules Prefetch"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_prefetch ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Prefetch"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a prefetch speculation rule. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_script_tag {
+    label: "Use Counter Doc: Speculation Rules Script Tag"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_script_tag ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Script Tag"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a <script type=\"speculationrules\"> element. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_tag {
+    label: "Use Counter Doc: Speculation Rules Tag"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_tag ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Tag"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with a non-null tag. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_svgsvgelement_currentscale_getter {
     label: "Use Counter Doc: Svgsvgelement Currentscale Getter"
     hidden: no
@@ -44986,6 +45148,168 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_speculation_rules_document_source {
+    label: "Use Counter Page: Speculation Rules Document Source"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_document_source ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Document Source"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with a document source. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_conservative {
+    label: "Use Counter Page: Speculation Rules Eagerness Conservative"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_conservative ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Eagerness Conservative"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with \"conservative\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_eager {
+    label: "Use Counter Page: Speculation Rules Eagerness Eager"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_eager ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Eagerness Eager"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with \"eager\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_immediate {
+    label: "Use Counter Page: Speculation Rules Eagerness Immediate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_immediate ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Eagerness Immediate"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with \"immediate\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_moderate {
+    label: "Use Counter Page: Speculation Rules Eagerness Moderate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_moderate ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Eagerness Moderate"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with \"moderate\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_list_source {
+    label: "Use Counter Page: Speculation Rules List Source"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_list_source ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules List Source"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with a list source. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_prefetch {
+    label: "Use Counter Page: Speculation Rules Prefetch"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_prefetch ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Prefetch"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a prefetch speculation rule. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_script_tag {
+    label: "Use Counter Page: Speculation Rules Script Tag"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_script_tag ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Script Tag"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a <script type=\"speculationrules\"> element. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_tag {
+    label: "Use Counter Page: Speculation Rules Tag"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_tag ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Tag"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with a non-null tag. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_svgsvgelement_currentscale_getter {
     label: "Use Counter Page: Svgsvgelement Currentscale Getter"
     hidden: no
@@ -51992,7 +52316,6 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
-    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: app_version_major {
@@ -52019,7 +52342,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Android SDK Version"
-    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -52028,7 +52350,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Build"
-    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -52037,7 +52358,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Channel"
-    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -52046,7 +52366,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "App Display Version"
-    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -52055,7 +52374,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Architecture"
-    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__attribution__campaign {
@@ -52064,7 +52382,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Campaign"
-    description: "The attribution campaign (e.g. 'mozilla-org')."
   }
 
   dimension: client_info__attribution__content {
@@ -52073,7 +52390,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Content"
-    description: "The attribution content (e.g. 'firefoxview')."
   }
 
   dimension: client_info__attribution__ext {
@@ -52087,7 +52403,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Medium"
-    description: "The attribution medium (e.g. 'organic' for a search engine)."
   }
 
   dimension: client_info__attribution__source {
@@ -52096,7 +52411,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Source"
-    description: "The attribution source (e.g. 'google-play')."
   }
 
   dimension: client_info__attribution__term {
@@ -52105,7 +52419,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Attribution"
     group_item_label: "Term"
-    description: "The attribution term (e.g. 'browser with developer tools for android')."
   }
 
   dimension: client_info__build_date {
@@ -52114,13 +52427,11 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Build Date"
-    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
-    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -52129,7 +52440,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
-    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -52138,7 +52448,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Device Model"
-    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__distribution__ext {
@@ -52152,7 +52461,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info: Distribution"
     group_item_label: "Name"
-    description: "The distribution name (e.g. 'MozillaOnline')."
   }
 
   dimension: client_info__first_run_date {
@@ -52161,7 +52469,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "First Run Date"
-    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -52170,7 +52477,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Locale"
-    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -52179,7 +52485,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS"
-    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -52188,7 +52493,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "OS Version"
-    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__session_count {
@@ -52197,7 +52501,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session Count"
-    description: "An optional running counter of the number of sessions for a client."
   }
 
   dimension: client_info__session_id {
@@ -52206,7 +52509,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Session ID"
-    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -52215,7 +52517,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Telemetry SDK Build"
-    description: "The version of the Glean SDK"
   }
 
   dimension: client_info__windows_build_number {
@@ -52224,13 +52525,11 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
-    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -52260,7 +52559,6 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -52269,7 +52567,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -52278,7 +52575,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -52287,7 +52583,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -52296,7 +52591,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -52305,7 +52599,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -52335,7 +52628,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -52344,7 +52636,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
-    description: "X-Foxsec-IP-Reputation header (deprecated, https://mozilla-hub.atlassian.net/browse/DENG-10434)"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -52353,7 +52644,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -52362,7 +52652,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -52371,7 +52660,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -52380,7 +52668,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -52389,7 +52676,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -52398,7 +52684,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -52407,7 +52692,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -52438,28 +52722,24 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -52511,19 +52791,16 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Ping Info: Server Knobs Config"
     group_item_label: "Event Threshold"
-    description: "Optional threshold for event buffering before an events ping is collected and submitted"
   }
 
   dimension: ping_info__server_knobs_config__metrics_enabled {
     sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
     hidden: yes
-    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
   }
 
   dimension: ping_info__server_knobs_config__pings_enabled {
     sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
     hidden: yes
-    description: "Map of ping names to boolean values indicating whether the ping is enabled"
   }
 
   dimension: ping_info__server_knobs_config__session_sample_rate {
@@ -52532,7 +52809,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Ping Info: Server Knobs Config"
     group_item_label: "Session Sample Rate"
-    description: "Remote override for the session sampling rate (0.0–1.0)."
   }
 
   dimension: ping_info__start_time {
@@ -52547,7 +52823,6 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -52607,7 +52882,6 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -101969,6 +102243,231 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_speculation_rules_document_source {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_document_source} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_document_source_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_document_source: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_conservative {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_eagerness_conservative} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_conservative_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_eagerness_conservative: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_eager {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_eagerness_eager} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_eager_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_eagerness_eager: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_immediate {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_eagerness_immediate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_immediate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_eagerness_immediate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_moderate {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_eagerness_moderate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_moderate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_eagerness_moderate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_list_source {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_list_source} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_list_source_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_list_source: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_prefetch {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_prefetch} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_prefetch_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_prefetch: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_script_tag {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_script_tag} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_script_tag_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_script_tag: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_tag {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_tag} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_tag_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_tag: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_svgsvgelement_currentscale_getter {
     type: sum
     sql: ${metrics__counter__use_counter_doc_svgsvgelement_currentscale_getter} ;;
@@ -115069,6 +115568,231 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_page_speculation_rules_document_source {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_document_source} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_document_source_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_document_source: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_conservative {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_eagerness_conservative} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_conservative_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_eagerness_conservative: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_eager {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_eagerness_eager} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_eager_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_eagerness_eager: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_immediate {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_eagerness_immediate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_immediate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_eagerness_immediate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_moderate {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_eagerness_moderate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_moderate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_eagerness_moderate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_list_source {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_list_source} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_list_source_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_list_source: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_prefetch {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_prefetch} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_prefetch_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_prefetch: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_script_tag {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_script_tag} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_script_tag_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_script_tag: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_tag {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_tag} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_tag_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_tag: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_page_svgsvgelement_currentscale_getter {
     type: sum
     sql: ${metrics__counter__use_counter_page_svgsvgelement_currentscale_getter} ;;
@@ -124901,7 +125625,6 @@ view: use_counters__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Event Seq"
-    description: "Per-session event counter, reset at each new session."
   }
 
   dimension: session__session_id {
@@ -124910,7 +125633,6 @@ view: use_counters__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session ID"
-    description: "The unique UUID for this session."
   }
 
   dimension: session__session_sample_rate {
@@ -124919,7 +125641,6 @@ view: use_counters__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Sample Rate"
-    description: "The sampling rate in effect for this session."
   }
 
   dimension: session__session_seq {
@@ -124928,7 +125649,6 @@ view: use_counters__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Seq"
-    description: "Monotonically increasing session counter, persisted across restarts."
   }
 
   dimension: session__session_start_time {
@@ -124937,7 +125657,6 @@ view: use_counters__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Start Time"
-    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {
