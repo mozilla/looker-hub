@@ -24170,6 +24170,24 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__pkcs11_builtin_roots_module_source {
+    label: "Pkcs11: Builtin Roots Module Source"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pkcs11_builtin_roots_module_source ;;
+    group_label: "Pkcs11"
+    group_item_label: "Builtin Roots Module Source"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11: Builtin Roots Module Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pkcs11_builtin_roots_module_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which source the built-in roots (CKBI) module was loaded from.
+`xul` is the usual case, and means the roots linked in to libxul were used. `gre_directory` means a `libnssckbi.so` sitting next to the Firefox binary was loaded instead, which some distributions arrange in order to substitute the system trust store. `os_library_path` and `nss3_directory` are only reachable in builds configured with `--with-system-nss`, and likewise indicate that the trust anchors came from the system trust store rather than from Firefox. `none` means no built-in roots module could be loaded at all.
+"
+  }
+
   dimension: metrics__boolean__pkcs11_external_trust_anchor_module_loaded {
     label: "Pkcs11: External Trust Anchor Module Loaded"
     hidden: yes
@@ -24185,6 +24203,25 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Whether or not an external trust anchor module was loaded."
+  }
+
+  dimension: metrics__boolean__pkcs11_fips_enabled {
+    label: "Pkcs11: Fips Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.pkcs11_fips_enabled ;;
+    type: yesno
+    group_label: "Pkcs11"
+    group_item_label: "Fips Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Pkcs11: Fips Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pkcs11_fips_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the NSS internal PKCS#11 module is in FIPS mode after NSS initialization, as reported by `PK11_IsFIPS()`.
+Note that this is always `false` in builds that use the in-tree copy of NSS, which is compiled with `disable_fips=1` (`NSS_FIPS_DISABLED`): that disables both the `/proc/sys/crypto/fips_enabled` check and the ability to toggle FIPS mode from the device manager. This is only ever `true` in builds configured with `--with-system-nss`, where the system NSS may have been built with FIPS support and forces FIPS mode on when the host is in FIPS mode.
+"
   }
 
   dimension: metrics__rate__pkcs11_nss_cert_db__numerator {
@@ -56056,6 +56093,47 @@ view: metrics__metrics__labeled_counter__perf_startup_startup_type {
 
 view: metrics__metrics__labeled_counter__permissions_unused_permissions_expired_by_type {
   label: "Permissions: Unused Permissions Expired By Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pkcs11_builtin_roots_module_source {
+  label: "Pkcs11: Builtin Roots Module Source"
 
   dimension: document_id {
     type: string

@@ -1623,6 +1623,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__permissions_unused_permissions_expired_by_type}) AS metrics__metrics__labeled_counter__permissions_unused_permissions_expired_by_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__permissions_unused_permissions_expired_by_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pkcs11_builtin_roots_module_source {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pkcs11_builtin_roots_module_source}) AS metrics__metrics__labeled_counter__pkcs11_builtin_roots_module_source ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pkcs11_builtin_roots_module_source.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__places_manager_read_query_error_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__places_manager_read_query_error_count}) AS metrics__metrics__labeled_counter__places_manager_read_query_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__places_manager_read_query_error_count.document_id} ;;

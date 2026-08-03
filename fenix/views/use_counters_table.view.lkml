@@ -20429,6 +20429,96 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_speculation_rules_document_source {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_document_source ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Document Source"
+    description: "Whether a document has a speculation rule with a document source. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_conservative {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_conservative ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Eagerness Conservative"
+    description: "Whether a document has a speculation rule with \"conservative\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_eager {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_eager ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Eagerness Eager"
+    description: "Whether a document has a speculation rule with \"eager\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_immediate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_immediate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Eagerness Immediate"
+    description: "Whether a document has a speculation rule with \"immediate\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_moderate {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_moderate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Eagerness Moderate"
+    description: "Whether a document has a speculation rule with \"moderate\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_list_source {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_list_source ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules List Source"
+    description: "Whether a document has a speculation rule with a list source. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_prefetch {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_prefetch ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Prefetch"
+    description: "Whether a document has a prefetch speculation rule. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_script_tag {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_script_tag ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Script Tag"
+    description: "Whether a document has a <script type=\"speculationrules\"> element. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_tag {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_tag ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Speculation Rules Tag"
+    description: "Whether a document has a speculation rule with a non-null tag. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_svgsvgelement_currentscale_getter {
     sql: ${TABLE}.metrics.counter.use_counter_doc_svgsvgelement_currentscale_getter ;;
     type: number
@@ -25666,6 +25756,96 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Shadowroot Pictureinpictureelement"
     description: "Whether a page called called ShadowRoot.pictureInPictureElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_document_source {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_document_source ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Document Source"
+    description: "Whether a page has a speculation rule with a document source. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_conservative {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_conservative ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Eagerness Conservative"
+    description: "Whether a page has a speculation rule with \"conservative\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_eager {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_eager ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Eagerness Eager"
+    description: "Whether a page has a speculation rule with \"eager\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_immediate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_immediate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Eagerness Immediate"
+    description: "Whether a page has a speculation rule with \"immediate\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_moderate {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_moderate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Eagerness Moderate"
+    description: "Whether a page has a speculation rule with \"moderate\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_list_source {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_list_source ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules List Source"
+    description: "Whether a page has a speculation rule with a list source. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_prefetch {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_prefetch ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Prefetch"
+    description: "Whether a page has a prefetch speculation rule. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_script_tag {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_script_tag ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Script Tag"
+    description: "Whether a page has a <script type=\"speculationrules\"> element. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_tag {
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_tag ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Speculation Rules Tag"
+    description: "Whether a page has a speculation rule with a non-null tag. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

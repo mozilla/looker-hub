@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       built_in_vpn_messaging_evergreen.branch
     ]
     filters:
-      built_in_vpn_messaging_evergreen.metric: 'retained'
+      built_in_vpn_messaging_evergreen.metric: 'active_hours'
       built_in_vpn_messaging_evergreen.statistic: mean
     row: 0
     col: 0
@@ -81,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,7 +97,7 @@
       built_in_vpn_messaging_evergreen.branch
     ]
     filters:
-      built_in_vpn_messaging_evergreen.metric: 'active_hours'
+      built_in_vpn_messaging_evergreen.metric: 'retained'
       built_in_vpn_messaging_evergreen.statistic: mean
     row: 10
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       built_in_vpn_messaging_evergreen.branch
     ]
     filters:
-      built_in_vpn_messaging_evergreen.metric: 'days_of_use'
+      built_in_vpn_messaging_evergreen.metric: 'search_count'
       built_in_vpn_messaging_evergreen.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       built_in_vpn_messaging_evergreen.branch
     ]
     filters:
-      built_in_vpn_messaging_evergreen.metric: 'search_count'
+      built_in_vpn_messaging_evergreen.metric: 'days_of_use'
       built_in_vpn_messaging_evergreen.statistic: mean
     row: 30
     col: 12

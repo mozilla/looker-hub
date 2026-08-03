@@ -594,7 +594,9 @@ blocked_origins). Named block_list to match the cross-platform schema.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Broken Site Report Tab Info Antitracking Etp Category"
-    description: "The user's tracking-protection strength setting (\"basic\" or \"strict\").
+    description: "The user's tracking-protection strength in the cross-platform ETP vocabulary:
+\"standard\" (iOS calls this basic) or \"strict\". iOS has no \"custom\" equivalent.
+`block_list` reports the same setting in iOS's own basic/strict wording.
 "
   }
 
