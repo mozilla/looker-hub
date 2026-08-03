@@ -35537,6 +35537,168 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_speculation_rules_document_source {
+    label: "Use Counter Doc: Speculation Rules Document Source"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_document_source ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Document Source"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with a document source. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_conservative {
+    label: "Use Counter Doc: Speculation Rules Eagerness Conservative"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_conservative ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Eagerness Conservative"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with \"conservative\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_eager {
+    label: "Use Counter Doc: Speculation Rules Eagerness Eager"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_eager ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Eagerness Eager"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with \"eager\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_immediate {
+    label: "Use Counter Doc: Speculation Rules Eagerness Immediate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_immediate ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Eagerness Immediate"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with \"immediate\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_eagerness_moderate {
+    label: "Use Counter Doc: Speculation Rules Eagerness Moderate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_eagerness_moderate ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Eagerness Moderate"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with \"moderate\" eagerness. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_list_source {
+    label: "Use Counter Doc: Speculation Rules List Source"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_list_source ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules List Source"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with a list source. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_prefetch {
+    label: "Use Counter Doc: Speculation Rules Prefetch"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_prefetch ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Prefetch"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a prefetch speculation rule. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_script_tag {
+    label: "Use Counter Doc: Speculation Rules Script Tag"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_script_tag ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Script Tag"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a <script type=\"speculationrules\"> element. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_speculation_rules_tag {
+    label: "Use Counter Doc: Speculation Rules Tag"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_speculation_rules_tag ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Speculation Rules Tag"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document has a speculation rule with a non-null tag. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_svgsvgelement_currentscale_getter {
     label: "Use Counter Doc: Svgsvgelement Currentscale Getter"
     hidden: no
@@ -44983,6 +45145,168 @@ view: use_counters {
     }
 
     description: "Whether a page called called ShadowRoot.pictureInPictureElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_document_source {
+    label: "Use Counter Page: Speculation Rules Document Source"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_document_source ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Document Source"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with a document source. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_conservative {
+    label: "Use Counter Page: Speculation Rules Eagerness Conservative"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_conservative ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Eagerness Conservative"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with \"conservative\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_eager {
+    label: "Use Counter Page: Speculation Rules Eagerness Eager"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_eager ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Eagerness Eager"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with \"eager\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_immediate {
+    label: "Use Counter Page: Speculation Rules Eagerness Immediate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_immediate ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Eagerness Immediate"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with \"immediate\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_eagerness_moderate {
+    label: "Use Counter Page: Speculation Rules Eagerness Moderate"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_eagerness_moderate ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Eagerness Moderate"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with \"moderate\" eagerness. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_list_source {
+    label: "Use Counter Page: Speculation Rules List Source"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_list_source ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules List Source"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with a list source. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_prefetch {
+    label: "Use Counter Page: Speculation Rules Prefetch"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_prefetch ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Prefetch"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a prefetch speculation rule. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_script_tag {
+    label: "Use Counter Page: Speculation Rules Script Tag"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_script_tag ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Script Tag"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a <script type=\"speculationrules\"> element. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_speculation_rules_tag {
+    label: "Use Counter Page: Speculation Rules Tag"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_speculation_rules_tag ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Speculation Rules Tag"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page has a speculation rule with a non-null tag. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -101976,6 +102300,231 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_speculation_rules_document_source {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_document_source} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_document_source_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_document_source: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_conservative {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_eagerness_conservative} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_conservative_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_eagerness_conservative: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_eager {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_eagerness_eager} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_eager_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_eagerness_eager: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_immediate {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_eagerness_immediate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_immediate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_eagerness_immediate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_moderate {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_eagerness_moderate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_eagerness_moderate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_eagerness_moderate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_list_source {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_list_source} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_list_source_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_list_source: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_prefetch {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_prefetch} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_prefetch_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_prefetch: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_script_tag {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_script_tag} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_script_tag_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_script_tag: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_tag {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_speculation_rules_tag} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_speculation_rules_tag_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_speculation_rules_tag: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_svgsvgelement_currentscale_getter {
     type: sum
     sql: ${metrics__counter__use_counter_doc_svgsvgelement_currentscale_getter} ;;
@@ -115072,6 +115621,231 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Shadowroot Pictureinpictureelement"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_shadowroot_pictureinpictureelement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_document_source {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_document_source} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_document_source_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_document_source: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Document Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_document_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_conservative {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_eagerness_conservative} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_conservative_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_eagerness_conservative: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Conservative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_conservative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_eager {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_eagerness_eager} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_eager_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_eagerness_eager: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Eager"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_eager"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_immediate {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_eagerness_immediate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_immediate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_eagerness_immediate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Immediate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_immediate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_moderate {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_eagerness_moderate} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_eagerness_moderate_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_eagerness_moderate: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Eagerness Moderate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_eagerness_moderate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_list_source {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_list_source} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_list_source_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_list_source: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules List Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_list_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_prefetch {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_prefetch} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_prefetch_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_prefetch: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Prefetch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_prefetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_script_tag {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_script_tag} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_script_tag_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_script_tag: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Script Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_script_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_tag {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_speculation_rules_tag} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_tag"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_speculation_rules_tag_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_speculation_rules_tag: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Speculation Rules Tag"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_speculation_rules_tag"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

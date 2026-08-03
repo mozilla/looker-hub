@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       local_network_access_rollout_151_all_users_10.branch
     ]
     filters:
-      local_network_access_rollout_151_all_users_10.metric: 'retained'
+      local_network_access_rollout_151_all_users_10.metric: 'active_hours'
       local_network_access_rollout_151_all_users_10.statistic: mean
     row: 0
     col: 0
@@ -81,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,7 +97,7 @@
       local_network_access_rollout_151_all_users_10.branch
     ]
     filters:
-      local_network_access_rollout_151_all_users_10.metric: 'active_hours'
+      local_network_access_rollout_151_all_users_10.metric: 'retained'
       local_network_access_rollout_151_all_users_10.statistic: mean
     row: 10
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       local_network_access_rollout_151_all_users_10.branch
     ]
     filters:
-      local_network_access_rollout_151_all_users_10.metric: 'days_of_use'
+      local_network_access_rollout_151_all_users_10.metric: 'search_count'
       local_network_access_rollout_151_all_users_10.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       local_network_access_rollout_151_all_users_10.branch
     ]
     filters:
-      local_network_access_rollout_151_all_users_10.metric: 'search_count'
+      local_network_access_rollout_151_all_users_10.metric: 'days_of_use'
       local_network_access_rollout_151_all_users_10.statistic: mean
     row: 30
     col: 12

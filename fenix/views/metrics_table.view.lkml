@@ -1211,6 +1211,17 @@ once we validate these assumptions.
     description: "Whether or not an external trust anchor module was loaded."
   }
 
+  dimension: metrics__boolean__pkcs11_fips_enabled {
+    sql: ${TABLE}.metrics.boolean.pkcs11_fips_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Pkcs11 Fips Enabled"
+    description: "Whether the NSS internal PKCS#11 module is in FIPS mode after NSS initialization, as reported by `PK11_IsFIPS()`.
+Note that this is always `false` in builds that use the in-tree copy of NSS, which is compiled with `disable_fips=1` (`NSS_FIPS_DISABLED`): that disables both the `/proc/sys/crypto/fips_enabled` check and the ability to toggle FIPS mode from the device manager. This is only ever `true` in builds configured with `--with-system-nss`, where the system NSS may have been built with FIPS support and forces FIPS mode on when the host is in FIPS mode.
+"
+  }
+
   dimension: metrics__boolean__policies_is_enterprise {
     sql: ${TABLE}.metrics.boolean.policies_is_enterprise ;;
     type: yesno
@@ -15323,6 +15334,14 @@ pr"
     sql: ${TABLE}.metrics.labeled_counter.permissions_unused_permissions_expired_by_type ;;
     hidden: yes
     description: "Count of permissions expired due to inactivity, broken down by permission type (e.g. \"desktop-notification\", \"geo\"). Helps identify which permission types are expired most often.
+"
+  }
+
+  dimension: metrics__labeled_counter__pkcs11_builtin_roots_module_source {
+    sql: ${TABLE}.metrics.labeled_counter.pkcs11_builtin_roots_module_source ;;
+    hidden: yes
+    description: "Which source the built-in roots (CKBI) module was loaded from.
+`xul` is the usual case, and means the roots linked in to libxul were used. `gre_directory` means a `libnssckbi.so` sitting next to the Firefox binary was loaded instead, which some distributions arrange in order to substitute the system trust store. `os_library_path` and `nss3_directory` are only reachable in builds configured with `--with-system-nss`, and likewise indicate that the trust anchors came from the system trust store rather than from Firefox. `none` means no built-in roots module could be loaded at all.
 "
   }
 
