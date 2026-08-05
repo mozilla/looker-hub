@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       sample_uptakeremotecontent_events_glean_feature.branch
     ]
     filters:
-      sample_uptakeremotecontent_events_glean_feature.metric: 'active_hours'
+      sample_uptakeremotecontent_events_glean_feature.metric: 'retained'
       sample_uptakeremotecontent_events_glean_feature.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
-    field_y: sample_uptakeremotecontent_events_glean_feature.point
-    log_scale: false
-    ci_lower: sample_uptakeremotecontent_events_glean_feature.lower
-    ci_upper: sample_uptakeremotecontent_events_glean_feature.upper
-    show_grid: true
-    listen:
-      Date: sample_uptakeremotecontent_events_glean_feature.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: sample_uptakeremotecontent_events_glean_feature
-    type: looker_line
-    fields: [
-      sample_uptakeremotecontent_events_glean_feature.submission_date,
-      sample_uptakeremotecontent_events_glean_feature.branch,
-      sample_uptakeremotecontent_events_glean_feature.point
-    ]
-    pivots: [
-      sample_uptakeremotecontent_events_glean_feature.branch
-    ]
-    filters:
-      sample_uptakeremotecontent_events_glean_feature.metric: 'ad_clicks'
-      sample_uptakeremotecontent_events_glean_feature.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
@@ -98,8 +64,8 @@
     filters:
       sample_uptakeremotecontent_events_glean_feature.metric: 'memory_total'
       sample_uptakeremotecontent_events_glean_feature.statistic: percentile
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
@@ -115,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,10 +97,10 @@
       sample_uptakeremotecontent_events_glean_feature.branch
     ]
     filters:
-      sample_uptakeremotecontent_events_glean_feature.metric: 'uri_count'
+      sample_uptakeremotecontent_events_glean_feature.metric: 'search_count'
       sample_uptakeremotecontent_events_glean_feature.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
@@ -167,8 +133,8 @@
     filters:
       sample_uptakeremotecontent_events_glean_feature.metric: 'qualified_cumulative_days_of_use'
       sample_uptakeremotecontent_events_glean_feature.statistic: mean
-    row: 20
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
@@ -183,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,10 +165,10 @@
       sample_uptakeremotecontent_events_glean_feature.branch
     ]
     filters:
-      sample_uptakeremotecontent_events_glean_feature.metric: 'retained'
+      sample_uptakeremotecontent_events_glean_feature.metric: 'active_hours'
       sample_uptakeremotecontent_events_glean_feature.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
@@ -235,6 +201,40 @@
     filters:
       sample_uptakeremotecontent_events_glean_feature.metric: 'days_of_use'
       sample_uptakeremotecontent_events_glean_feature.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: sample_uptakeremotecontent_events_glean_feature.submission_date
+    field_y: sample_uptakeremotecontent_events_glean_feature.point
+    log_scale: false
+    ci_lower: sample_uptakeremotecontent_events_glean_feature.lower
+    ci_upper: sample_uptakeremotecontent_events_glean_feature.upper
+    show_grid: true
+    listen:
+      Date: sample_uptakeremotecontent_events_glean_feature.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: sample_uptakeremotecontent_events_glean_feature
+    type: looker_line
+    fields: [
+      sample_uptakeremotecontent_events_glean_feature.submission_date,
+      sample_uptakeremotecontent_events_glean_feature.branch,
+      sample_uptakeremotecontent_events_glean_feature.point
+    ]
+    pivots: [
+      sample_uptakeremotecontent_events_glean_feature.branch
+    ]
+    filters:
+      sample_uptakeremotecontent_events_glean_feature.metric: 'uri_count'
+      sample_uptakeremotecontent_events_glean_feature.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       sample_uptakeremotecontent_events_glean_feature.branch
     ]
     filters:
-      sample_uptakeremotecontent_events_glean_feature.metric: 'search_count'
+      sample_uptakeremotecontent_events_glean_feature.metric: 'ad_clicks'
       sample_uptakeremotecontent_events_glean_feature.statistic: mean
     row: 30
     col: 12
