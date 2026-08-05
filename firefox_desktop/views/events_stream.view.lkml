@@ -563,6 +563,14 @@ view: events_stream {
     group_item_label: "Firsttimetoggle"
   }
 
+  dimension: extras__boolean__first_visit {
+    sql: ${TABLE}.extras.boolean.first_visit ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "First Visit"
+  }
+
   dimension: extras__boolean__force_sync {
     sql: ${TABLE}.extras.boolean.force_sync ;;
     type: yesno
