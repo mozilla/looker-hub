@@ -6177,7 +6177,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Whether a probable font fingerprinting attempt was detected
-This metric was generated to correspond to the Legacy Telemetry boolean histogram FONT_FINGERPRINTING_PER_TAB.
 "
   }
 
@@ -6653,7 +6652,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     label: "Cookie Banners: Normal Window Service Mode"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
     type: string
     group_label: "Cookie Banners"
@@ -6671,7 +6670,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__labeled_boolean__cookie_banners_private_window_service_mode {
     label: "Cookie Banners: Private Window Service Mode"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_private_window_service_mode ;;
     type: string
     group_label: "Cookie Banners"
@@ -6723,7 +6722,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__boolean__cookie_banners_service_detect_only {
     label: "Cookie Banners: Service Detect Only"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.cookie_banners_service_detect_only ;;
     type: yesno
     group_label: "Cookie Banners"

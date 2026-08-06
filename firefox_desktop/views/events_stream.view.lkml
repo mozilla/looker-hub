@@ -3707,6 +3707,14 @@ view: events_stream {
     group_item_label: "Choice"
   }
 
+  dimension: extras__string__click_type {
+    sql: ${TABLE}.extras.string.click_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Click Type"
+  }
+
   dimension: extras__string__codecs {
     sql: ${TABLE}.extras.string.codecs ;;
     type: string

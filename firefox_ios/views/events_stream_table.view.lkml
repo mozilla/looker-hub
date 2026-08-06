@@ -464,6 +464,14 @@ view: events_stream_table {
     group_item_label: "Count"
   }
 
+  dimension: extras__quantity__figures {
+    sql: ${TABLE}.extras.quantity.figures ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Figures"
+  }
+
   dimension: extras__quantity__from_version {
     sql: ${TABLE}.extras.quantity.from_version ;;
     type: number
