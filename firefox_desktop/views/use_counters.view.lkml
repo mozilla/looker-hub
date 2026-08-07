@@ -3931,7 +3931,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_font_width {
     label: "Use Counter Css Doc: Css Font Width"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_font_width ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -17413,7 +17413,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_font_width {
     label: "Use Counter Css Page: Css Font Width"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_font_width ;;
     type: number
     group_label: "Use Counter Css Page"
