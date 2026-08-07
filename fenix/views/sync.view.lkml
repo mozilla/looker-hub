@@ -241,7 +241,7 @@ Expected in most cases to be identical to `client_info.os`.
 
   dimension: metrics__quantity__system_os_service_pack_major {
     label: "System OS: Service Pack Major"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_major ;;
     type: number
     group_label: "System OS"
@@ -261,7 +261,7 @@ e.g. 0
 
   dimension: metrics__quantity__system_os_service_pack_minor {
     label: "System OS: Service Pack Minor"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.system_os_service_pack_minor ;;
     type: number
     group_label: "System OS"
@@ -313,7 +313,7 @@ Expected in most cases to be identical to `client_info.os_version`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The Windows build number, according to WindowsVersionInfo.
+    description: "The Windows build number, according to 'CurrentBuild' in the Windows registry.
 Windows only.
 e.g. 26100
 Expected in most cases to be identical to `client_info.windows_build_number`.
