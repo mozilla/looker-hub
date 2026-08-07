@@ -320,6 +320,22 @@ view: events_stream_table {
     group_item_label: "Granted"
   }
 
+  dimension: extras__boolean__has_blocked_trackers_list {
+    sql: ${TABLE}.extras.boolean.has_blocked_trackers_list ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Blocked Trackers List"
+  }
+
+  dimension: extras__boolean__has_screenshot {
+    sql: ${TABLE}.extras.boolean.has_screenshot ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Screenshot"
+  }
+
   dimension: extras__boolean__has_share_message {
     sql: ${TABLE}.extras.boolean.has_share_message ;;
     type: yesno

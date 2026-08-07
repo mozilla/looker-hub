@@ -13324,7 +13324,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_font_fingerprinting_per_tab ;;
     hidden: yes
     description: "Whether a probable font fingerprinting attempt was detected
-This metric was generated to correspond to the Legacy Telemetry boolean histogram FONT_FINGERPRINTING_PER_TAB.
 "
   }
 
@@ -19777,7 +19776,7 @@ e.g. 0
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "System OS Windows Build Number"
-    description: "The Windows build number, according to WindowsVersionInfo.
+    description: "The Windows build number, according to 'CurrentBuild' in the Windows registry.
 Windows only.
 e.g. 26100
 Expected in most cases to be identical to `client_info.windows_build_number`.
