@@ -25865,8 +25865,9 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Result of XHR request fetching the country-code. 0=SUCCESS, 1=SUCCESS_WITHOUT_DATA, 2=XHRTIMEOUT, 3=ERROR (rest reserved for finer-grained error codes later)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram SEARCH_SERVICE_COUNTRY_FETCH_RESULT.
+    description: "Result of XHR request fetching the country-code.
+- `0 = SUCCESS` - `1 = SUCCESS_WITHOUT_DATA` - `2 = XHRTIMEOUT` - `3 = ERROR`
+Other codes are reserved for finer-grained error codes later.
 "
   }
 
@@ -25884,8 +25885,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Time (ms) it takes to fetch the country code
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SEARCH_SERVICE_COUNTRY_FETCH_TIME_MS.
+    description: "Time (ms) it takes to fetch the country code.
 "
   }
 
