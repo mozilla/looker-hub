@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,9 +60,77 @@
       hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch
     ]
     filters:
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'search_count'
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'uri_count'
       hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
     row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
+    field_y: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
+    log_scale: false
+    ci_lower: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.lower
+    ci_upper: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th
+    type: looker_line
+    fields: [
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date,
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch,
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
+    ]
+    pivots: [
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch
+    ]
+    filters:
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'retained'
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
+    field_y: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
+    log_scale: false
+    ci_lower: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.lower
+    ci_upper: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th
+    type: looker_line
+    fields: [
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date,
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch,
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
+    ]
+    pivots: [
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch
+    ]
+    filters:
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'active_hours'
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -96,8 +164,42 @@
     filters:
       hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'ad_clicks'
       hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
-    row: 10
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
+    field_y: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
+    log_scale: false
+    ci_lower: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.lower
+    ci_upper: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th
+    type: looker_line
+    fields: [
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date,
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch,
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
+    ]
+    pivots: [
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch
+    ]
+    filters:
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'search_count'
+      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
@@ -132,42 +234,7 @@
     filters:
       hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'memory_total'
       hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: percentile
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
-    field_y: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
-    log_scale: false
-    ci_lower: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.lower
-    ci_upper: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
-      Percentile: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th
-    type: looker_line
-    fields: [
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date,
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch,
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
-    ]
-    pivots: [
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch
-    ]
-    filters:
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'active_hours'
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
-    row: 20
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -179,40 +246,7 @@
     show_grid: true
     listen:
       Date: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th
-    type: looker_line
-    fields: [
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date,
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch,
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
-    ]
-    pivots: [
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch
-    ]
-    filters:
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'uri_count'
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
-    field_y: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
-    log_scale: false
-    ci_lower: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.lower
-    ci_upper: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
+      Percentile: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -234,40 +268,6 @@
     ]
     filters:
       hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'days_of_use'
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
-    field_y: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
-    log_scale: false
-    ci_lower: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.lower
-    ci_upper: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th
-    type: looker_line
-    fields: [
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.submission_date,
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch,
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.point
-    ]
-    pivots: [
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.branch
-    ]
-    filters:
-      hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.metric: 'retained'
       hnt_wattle_ncm_eu_4_widgets_rollout_jul_16_th.statistic: mean
     row: 30
     col: 12

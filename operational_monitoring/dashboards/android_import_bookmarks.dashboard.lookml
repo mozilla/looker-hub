@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,9 +26,77 @@
       android_import_bookmarks.branch
     ]
     filters:
-      android_import_bookmarks.metric: 'search_count'
+      android_import_bookmarks.metric: 'uri_count'
       android_import_bookmarks.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: android_import_bookmarks.submission_date
+    field_y: android_import_bookmarks.point
+    log_scale: false
+    ci_lower: android_import_bookmarks.lower
+    ci_upper: android_import_bookmarks.upper
+    show_grid: true
+    listen:
+      Date: android_import_bookmarks.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_import_bookmarks
+    type: looker_line
+    fields: [
+      android_import_bookmarks.submission_date,
+      android_import_bookmarks.branch,
+      android_import_bookmarks.point
+    ]
+    pivots: [
+      android_import_bookmarks.branch
+    ]
+    filters:
+      android_import_bookmarks.metric: 'retained'
+      android_import_bookmarks.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: android_import_bookmarks.submission_date
+    field_y: android_import_bookmarks.point
+    log_scale: false
+    ci_lower: android_import_bookmarks.lower
+    ci_upper: android_import_bookmarks.upper
+    show_grid: true
+    listen:
+      Date: android_import_bookmarks.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_import_bookmarks
+    type: looker_line
+    fields: [
+      android_import_bookmarks.submission_date,
+      android_import_bookmarks.branch,
+      android_import_bookmarks.point
+    ]
+    pivots: [
+      android_import_bookmarks.branch
+    ]
+    filters:
+      android_import_bookmarks.metric: 'active_hours'
+      android_import_bookmarks.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -62,8 +130,42 @@
     filters:
       android_import_bookmarks.metric: 'ad_clicks'
       android_import_bookmarks.statistic: mean
-    row: 0
+    row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: android_import_bookmarks.submission_date
+    field_y: android_import_bookmarks.point
+    log_scale: false
+    ci_lower: android_import_bookmarks.lower
+    ci_upper: android_import_bookmarks.upper
+    show_grid: true
+    listen:
+      Date: android_import_bookmarks.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_import_bookmarks
+    type: looker_line
+    fields: [
+      android_import_bookmarks.submission_date,
+      android_import_bookmarks.branch,
+      android_import_bookmarks.point
+    ]
+    pivots: [
+      android_import_bookmarks.branch
+    ]
+    filters:
+      android_import_bookmarks.metric: 'search_count'
+      android_import_bookmarks.statistic: mean
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: android_import_bookmarks.submission_date
@@ -96,8 +198,8 @@
     filters:
       android_import_bookmarks.metric: 'tagged_sap_searches'
       android_import_bookmarks.statistic: mean
-    row: 10
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: android_import_bookmarks.submission_date
@@ -129,108 +231,6 @@
     ]
     filters:
       android_import_bookmarks.metric: 'days_of_use'
-      android_import_bookmarks.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_import_bookmarks.submission_date
-    field_y: android_import_bookmarks.point
-    log_scale: false
-    ci_lower: android_import_bookmarks.lower
-    ci_upper: android_import_bookmarks.upper
-    show_grid: true
-    listen:
-      Date: android_import_bookmarks.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_import_bookmarks
-    type: looker_line
-    fields: [
-      android_import_bookmarks.submission_date,
-      android_import_bookmarks.branch,
-      android_import_bookmarks.point
-    ]
-    pivots: [
-      android_import_bookmarks.branch
-    ]
-    filters:
-      android_import_bookmarks.metric: 'uri_count'
-      android_import_bookmarks.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: android_import_bookmarks.submission_date
-    field_y: android_import_bookmarks.point
-    log_scale: false
-    ci_lower: android_import_bookmarks.lower
-    ci_upper: android_import_bookmarks.upper
-    show_grid: true
-    listen:
-      Date: android_import_bookmarks.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_import_bookmarks
-    type: looker_line
-    fields: [
-      android_import_bookmarks.submission_date,
-      android_import_bookmarks.branch,
-      android_import_bookmarks.point
-    ]
-    pivots: [
-      android_import_bookmarks.branch
-    ]
-    filters:
-      android_import_bookmarks.metric: 'active_hours'
-      android_import_bookmarks.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_import_bookmarks.submission_date
-    field_y: android_import_bookmarks.point
-    log_scale: false
-    ci_lower: android_import_bookmarks.lower
-    ci_upper: android_import_bookmarks.upper
-    show_grid: true
-    listen:
-      Date: android_import_bookmarks.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_import_bookmarks
-    type: looker_line
-    fields: [
-      android_import_bookmarks.submission_date,
-      android_import_bookmarks.branch,
-      android_import_bookmarks.point
-    ]
-    pivots: [
-      android_import_bookmarks.branch
-    ]
-    filters:
-      android_import_bookmarks.metric: 'retained'
       android_import_bookmarks.statistic: mean
     row: 30
     col: 0
