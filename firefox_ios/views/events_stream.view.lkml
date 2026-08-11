@@ -435,6 +435,14 @@ view: events_stream {
     group_item_label: "Outcome"
   }
 
+  dimension: extras__boolean__photo_selected {
+    sql: ${TABLE}.extras.boolean.photo_selected ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Photo Selected"
+  }
+
   dimension: extras__boolean__sampled_in {
     sql: ${TABLE}.extras.boolean.sampled_in ;;
     type: yesno
