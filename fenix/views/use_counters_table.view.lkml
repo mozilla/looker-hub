@@ -18149,6 +18149,56 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_file_system_file_handle_move {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_file_system_file_handle_move ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc File System File Handle Move"
+    description: "Whether a document calls FileSystemHandle.move() on a file handle. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_file_system_handle_move_stringified_object {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_file_system_handle_move_stringified_object ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc File System Handle Move Stringified Object"
+    description: "Whether a document calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Filesystemhandle Move Filesystemdirectoryhandle"
+    description: "Whether a document called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    description: "Whether a document called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_filesystemhandle_move_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_filesystemhandle_move_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Filesystemhandle Move Usvstring"
+    description: "Whether a document called called FileSystemHandle.move_USVString. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_filtered_cross_origin_iframe {
     sql: ${TABLE}.metrics.counter.use_counter_doc_filtered_cross_origin_iframe ;;
     type: number
@@ -23479,6 +23529,56 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_file_system_file_handle_move {
+    sql: ${TABLE}.metrics.counter.use_counter_page_file_system_file_handle_move ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page File System File Handle Move"
+    description: "Whether a page calls FileSystemHandle.move() on a file handle. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_file_system_handle_move_stringified_object {
+    sql: ${TABLE}.metrics.counter.use_counter_page_file_system_handle_move_stringified_object ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page File System Handle Move Stringified Object"
+    description: "Whether a page calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_filesystemhandle_move_filesystemdirectoryhandle {
+    sql: ${TABLE}.metrics.counter.use_counter_page_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Filesystemhandle Move Filesystemdirectoryhandle"
+    description: "Whether a page called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    description: "Whether a page called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_filesystemhandle_move_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_page_filesystemhandle_move_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Filesystemhandle Move Usvstring"
+    description: "Whether a page called called FileSystemHandle.move_USVString. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_filtered_cross_origin_iframe {
     sql: ${TABLE}.metrics.counter.use_counter_page_filtered_cross_origin_iframe ;;
     type: number
@@ -27949,6 +28049,56 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_file_system_file_handle_move {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_file_system_file_handle_move ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated File System File Handle Move"
+    description: "Whether a dedicated worker calls FileSystemHandle.move() on a file handle. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_file_system_handle_move_stringified_object {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_file_system_handle_move_stringified_object ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated File System Handle Move Stringified Object"
+    description: "Whether a dedicated worker calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Filesystemhandle Move Filesystemdirectoryhandle"
+    description: "Whether a dedicated worker called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    description: "Whether a dedicated worker called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_filesystemhandle_move_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Dedicated Filesystemhandle Move Usvstring"
+    description: "Whether a dedicated worker called called FileSystemHandle.move_USVString. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_mls_deriveexporter {
     sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_mls_deriveexporter ;;
     type: number
@@ -28619,6 +28769,56 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_file_system_file_handle_move {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_file_system_file_handle_move ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service File System File Handle Move"
+    description: "Whether a service worker calls FileSystemHandle.move() on a file handle. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_file_system_handle_move_stringified_object {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_file_system_handle_move_stringified_object ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service File System Handle Move Stringified Object"
+    description: "Whether a service worker calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Filesystemhandle Move Filesystemdirectoryhandle"
+    description: "Whether a service worker called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    description: "Whether a service worker called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_filesystemhandle_move_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_filesystemhandle_move_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Service Filesystemhandle Move Usvstring"
+    description: "Whether a service worker called called FileSystemHandle.move_USVString. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_mls_deriveexporter {
     sql: ${TABLE}.metrics.counter.use_counter_worker_service_mls_deriveexporter ;;
     type: number
@@ -29286,6 +29486,56 @@ view: use_counters_table {
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Worker Shared Cookiestore Set"
     description: "Whether a shared worker called called CookieStore.set. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_file_system_file_handle_move {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_file_system_file_handle_move ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared File System File Handle Move"
+    description: "Whether a shared worker calls FileSystemHandle.move() on a file handle. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_file_system_handle_move_stringified_object {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_file_system_handle_move_stringified_object ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared File System Handle Move Stringified Object"
+    description: "Whether a shared worker calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Filesystemhandle Move Filesystemdirectoryhandle"
+    description: "Whether a shared worker called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    description: "Whether a shared worker called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_filesystemhandle_move_usvstring {
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_filesystemhandle_move_usvstring ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Worker Shared Filesystemhandle Move Usvstring"
+    description: "Whether a shared worker called called FileSystemHandle.move_USVString. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 

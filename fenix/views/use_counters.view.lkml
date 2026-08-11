@@ -31433,6 +31433,96 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_file_system_file_handle_move {
+    label: "Use Counter Doc: File System File Handle Move"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_file_system_file_handle_move ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "File System File Handle Move"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document calls FileSystemHandle.move() on a file handle. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_file_system_handle_move_stringified_object {
+    label: "Use Counter Doc: File System Handle Move Stringified Object"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_file_system_handle_move_stringified_object ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "File System Handle Move Stringified Object"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle {
+    label: "Use Counter Doc: Filesystemhandle Move Filesystemdirectoryhandle"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    label: "Use Counter Doc: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_filesystemhandle_move_usvstring {
+    label: "Use Counter Doc: Filesystemhandle Move Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_filesystemhandle_move_usvstring ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Filesystemhandle Move Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called FileSystemHandle.move_USVString. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_filtered_cross_origin_iframe {
     label: "Use Counter Doc: Filtered Cross Origin Iframe"
     hidden: no
@@ -41044,6 +41134,96 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_file_system_file_handle_move {
+    label: "Use Counter Page: File System File Handle Move"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_file_system_file_handle_move ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "File System File Handle Move"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page calls FileSystemHandle.move() on a file handle. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_file_system_handle_move_stringified_object {
+    label: "Use Counter Page: File System Handle Move Stringified Object"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_file_system_handle_move_stringified_object ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "File System Handle Move Stringified Object"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_filesystemhandle_move_filesystemdirectoryhandle {
+    label: "Use Counter Page: Filesystemhandle Move Filesystemdirectoryhandle"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    label: "Use Counter Page: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_filesystemhandle_move_usvstring {
+    label: "Use Counter Page: Filesystemhandle Move Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_filesystemhandle_move_usvstring ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Filesystemhandle Move Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called FileSystemHandle.move_USVString. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_filtered_cross_origin_iframe {
     label: "Use Counter Page: Filtered Cross Origin Iframe"
     hidden: no
@@ -49090,6 +49270,96 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_dedicated_file_system_file_handle_move {
+    label: "Use Counter Worker Dedicated: File System File Handle Move"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_file_system_file_handle_move ;;
+    type: number
+    group_label: "Use Counter Worker Dedicated"
+    group_item_label: "File System File Handle Move"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated: File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a dedicated worker calls FileSystemHandle.move() on a file handle. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_file_system_handle_move_stringified_object {
+    label: "Use Counter Worker Dedicated: File System Handle Move Stringified Object"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_file_system_handle_move_stringified_object ;;
+    type: number
+    group_label: "Use Counter Worker Dedicated"
+    group_item_label: "File System Handle Move Stringified Object"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated: File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a dedicated worker calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle {
+    label: "Use Counter Worker Dedicated: Filesystemhandle Move Filesystemdirectoryhandle"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    group_label: "Use Counter Worker Dedicated"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated: Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a dedicated worker called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    label: "Use Counter Worker Dedicated: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    group_label: "Use Counter Worker Dedicated"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a dedicated worker called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_usvstring {
+    label: "Use Counter Worker Dedicated: Filesystemhandle Move Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_dedicated_filesystemhandle_move_usvstring ;;
+    type: number
+    group_label: "Use Counter Worker Dedicated"
+    group_item_label: "Filesystemhandle Move Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated: Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a dedicated worker called called FileSystemHandle.move_USVString. Compare against `use.counter.dedicated_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_dedicated_mls_deriveexporter {
     label: "Use Counter Worker Dedicated: Mls Deriveexporter"
     hidden: no
@@ -50296,6 +50566,96 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_worker_service_file_system_file_handle_move {
+    label: "Use Counter Worker Service: File System File Handle Move"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_file_system_file_handle_move ;;
+    type: number
+    group_label: "Use Counter Worker Service"
+    group_item_label: "File System File Handle Move"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service: File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a service worker calls FileSystemHandle.move() on a file handle. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_file_system_handle_move_stringified_object {
+    label: "Use Counter Worker Service: File System Handle Move Stringified Object"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_file_system_handle_move_stringified_object ;;
+    type: number
+    group_label: "Use Counter Worker Service"
+    group_item_label: "File System Handle Move Stringified Object"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service: File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a service worker calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle {
+    label: "Use Counter Worker Service: Filesystemhandle Move Filesystemdirectoryhandle"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    group_label: "Use Counter Worker Service"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service: Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a service worker called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    label: "Use Counter Worker Service: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    group_label: "Use Counter Worker Service"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a service worker called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_service_filesystemhandle_move_usvstring {
+    label: "Use Counter Worker Service: Filesystemhandle Move Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_service_filesystemhandle_move_usvstring ;;
+    type: number
+    group_label: "Use Counter Worker Service"
+    group_item_label: "Filesystemhandle Move Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service: Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a service worker called called FileSystemHandle.move_USVString. Compare against `use.counter.service_workers_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_worker_service_mls_deriveexporter {
     label: "Use Counter Worker Service: Mls Deriveexporter"
     hidden: no
@@ -51499,6 +51859,96 @@ view: use_counters {
     }
 
     description: "Whether a shared worker called called CookieStore.set. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_file_system_file_handle_move {
+    label: "Use Counter Worker Shared: File System File Handle Move"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_file_system_file_handle_move ;;
+    type: number
+    group_label: "Use Counter Worker Shared"
+    group_item_label: "File System File Handle Move"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared: File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a shared worker calls FileSystemHandle.move() on a file handle. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_file_system_handle_move_stringified_object {
+    label: "Use Counter Worker Shared: File System Handle Move Stringified Object"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_file_system_handle_move_stringified_object ;;
+    type: number
+    group_label: "Use Counter Worker Shared"
+    group_item_label: "File System Handle Move Stringified Object"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared: File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a shared worker calls FileSystemHandle.move() with a stringified object as name. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle {
+    label: "Use Counter Worker Shared: Filesystemhandle Move Filesystemdirectoryhandle"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle ;;
+    type: number
+    group_label: "Use Counter Worker Shared"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared: Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a shared worker called called FileSystemHandle.move_FileSystemDirectoryHandle. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    label: "Use Counter Worker Shared: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring ;;
+    type: number
+    group_label: "Use Counter Worker Shared"
+    group_item_label: "Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared: Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a shared worker called called FileSystemHandle.move_FileSystemDirectoryHandle_USVString. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_worker_shared_filesystemhandle_move_usvstring {
+    label: "Use Counter Worker Shared: Filesystemhandle Move Usvstring"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_worker_shared_filesystemhandle_move_usvstring ;;
+    type: number
+    group_label: "Use Counter Worker Shared"
+    group_item_label: "Filesystemhandle Move Usvstring"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared: Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a shared worker called called FileSystemHandle.move_USVString. Compare against `use.counter.shared_workers_destroyed` to calculate the rate.
 "
   }
 
@@ -96600,6 +97050,131 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_file_system_file_handle_move {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_file_system_file_handle_move} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_file_system_file_handle_move_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_file_system_file_handle_move: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_file_system_handle_move_stringified_object {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_file_system_handle_move_stringified_object} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_file_system_handle_move_stringified_object_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_file_system_handle_move_stringified_object: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_filesystemhandle_move_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_filesystemhandle_move_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_filesystemhandle_move_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_filesystemhandle_move_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_filtered_cross_origin_iframe {
     type: sum
     sql: ${metrics__counter__use_counter_doc_filtered_cross_origin_iframe} ;;
@@ -109925,6 +110500,131 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_page_file_system_file_handle_move {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_file_system_file_handle_move} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_file_system_file_handle_move_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_file_system_file_handle_move: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_file_system_handle_move_stringified_object {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_file_system_handle_move_stringified_object} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_file_system_handle_move_stringified_object_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_file_system_handle_move_stringified_object: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_filesystemhandle_move_filesystemdirectoryhandle {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_filesystemhandle_move_filesystemdirectoryhandle} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_filesystemhandle_move_filesystemdirectoryhandle: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_filesystemhandle_move_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_filesystemhandle_move_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_filesystemhandle_move_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_filesystemhandle_move_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_page_filtered_cross_origin_iframe {
     type: sum
     sql: ${metrics__counter__use_counter_page_filtered_cross_origin_iframe} ;;
@@ -121100,6 +121800,131 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_worker_dedicated_file_system_file_handle_move {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_dedicated_file_system_file_handle_move} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_file_system_file_handle_move_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_dedicated_file_system_file_handle_move: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_file_system_handle_move_stringified_object {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_dedicated_file_system_handle_move_stringified_object} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_file_system_handle_move_stringified_object_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_dedicated_file_system_handle_move_stringified_object: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_filesystemhandle_move_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_dedicated_filesystemhandle_move_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_dedicated_filesystemhandle_move_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Dedicated Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_dedicated_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_worker_dedicated_mls_deriveexporter {
     type: sum
     sql: ${metrics__counter__use_counter_worker_dedicated_mls_deriveexporter} ;;
@@ -122775,6 +123600,131 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_worker_service_file_system_file_handle_move {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_service_file_system_file_handle_move} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_file_system_file_handle_move_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_service_file_system_file_handle_move: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_file_system_handle_move_stringified_object {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_service_file_system_handle_move_stringified_object} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_file_system_handle_move_stringified_object_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_service_file_system_handle_move_stringified_object: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_filesystemhandle_move_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_service_filesystemhandle_move_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_service_filesystemhandle_move_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_service_filesystemhandle_move_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Service Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_service_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_worker_service_mls_deriveexporter {
     type: sum
     sql: ${metrics__counter__use_counter_worker_service_mls_deriveexporter} ;;
@@ -124446,6 +125396,131 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Worker Shared Cookiestore Set"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_cookiestore_set"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_file_system_file_handle_move {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_shared_file_system_file_handle_move} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_file_system_file_handle_move_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_shared_file_system_file_handle_move: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared File System File Handle Move"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_file_system_file_handle_move"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_file_system_handle_move_stringified_object {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_shared_file_system_handle_move_stringified_object} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_file_system_handle_move_stringified_object_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_shared_file_system_handle_move_stringified_object: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared File System Handle Move Stringified Object"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_file_system_handle_move_stringified_object"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared Filesystemhandle Move Filesystemdirectoryhandle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared Filesystemhandle Move Filesystemdirectoryhandle Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_filesystemdirectoryhandle_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_filesystemhandle_move_usvstring {
+    type: sum
+    sql: ${metrics__counter__use_counter_worker_shared_filesystemhandle_move_usvstring} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_usvstring"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_worker_shared_filesystemhandle_move_usvstring_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_worker_shared_filesystemhandle_move_usvstring: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Worker Shared Filesystemhandle Move Usvstring"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_worker_shared_filesystemhandle_move_usvstring"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
