@@ -3203,6 +3203,10 @@ firefox_desktop:
       views:
         base_view: glean_events
         extended_view: events_unnested_table
+    hang_report_redacted:
+      type: glean_ping_explore
+      views:
+        base_view: hang_report_redacted
     health:
       type: glean_ping_explore
       views:
@@ -3696,6 +3700,15 @@ firefox_desktop:
       - base_table: mozdata.firefox_desktop.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    hang_report_redacted:
+      tables:
+      - table: mozdata.firefox_desktop.hang_report_redacted
+      type: glean_ping_view
+    hang_report_redacted_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.hang_report_redacted
+      type: table_view
     health:
       tables:
       - table: mozdata.firefox_desktop.health
