@@ -137,6 +137,12 @@ view: issues {
     suggest_persist_for: "24 hours"
   }
 
+  dimension: issue_links {
+    sql: ${TABLE}.issue_links ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
   dimension: issue_resolution_steps {
     sql: ${TABLE}.issue_resolution_steps ;;
     type: string
