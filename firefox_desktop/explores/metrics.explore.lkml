@@ -1503,6 +1503,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__javascript_gc_slow_task}) AS metrics__metrics__labeled_counter__javascript_gc_slow_task ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__javascript_gc_slow_task.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__jxl_animated {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__jxl_animated}) AS metrics__metrics__labeled_counter__jxl_animated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__jxl_animated.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__jxl_decode_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__jxl_decode_result}) AS metrics__metrics__labeled_counter__jxl_decode_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__jxl_decode_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__jxl_hdr {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__jxl_hdr}) AS metrics__metrics__labeled_counter__jxl_hdr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__jxl_hdr.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__layout_long_reflow_interruptible {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__layout_long_reflow_interruptible}) AS metrics__metrics__labeled_counter__layout_long_reflow_interruptible ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__layout_long_reflow_interruptible.document_id} ;;
