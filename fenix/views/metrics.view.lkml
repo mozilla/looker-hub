@@ -14530,6 +14530,24 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__memory_distribution__image_decode_speed_jxl__sum {
+    label: "Image Decode: Speed Jxl Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jxl.sum ;;
+    type: number
+    group_label: "Image Decode"
+    group_item_label: "Speed Jxl Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Image Decode: Speed Jxl Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/image_decode_speed_jxl"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "JPEG XL image decode speed (Kbytes/sec)
+"
+  }
+
   dimension: metrics__memory_distribution__image_decode_speed_png__sum {
     label: "Image Decode: Speed Png Sum"
     hidden: no
@@ -15443,6 +15461,57 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "How many self-hosted cache accesses are performed.
+"
+  }
+
+  dimension: metrics__labeled_counter__jxl_animated {
+    label: "Jxl: Animated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.jxl_animated ;;
+    group_label: "Jxl"
+    group_item_label: "Animated"
+
+    link: {
+      label: "Glean Dictionary reference for Jxl: Animated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/jxl_animated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a successfully decoded JPEG XL image is animated.
+"
+  }
+
+  dimension: metrics__labeled_counter__jxl_decode_result {
+    label: "Jxl: Decode Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.jxl_decode_result ;;
+    group_label: "Jxl"
+    group_item_label: "Decode Result"
+
+    link: {
+      label: "Glean Dictionary reference for Jxl: Decode Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/jxl_decode_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Decode result of a JPEG XL image. Failures are recorded on whichever decode pass first fails (so failures during the metadata or frame-count pass are still captured); successes are recorded only on the pixel-producing decode. success means a complete frame was produced (for an animation, at least one complete frame, even if a later frame was truncated; a hard decode error on any frame is recorded as a failure instead); partial_frame means the decode ended with only a partial (progressive) frame rendered; no_frame means it ended without producing any frame; no_basic_info means there was not enough data to even parse the basic info (image dimensions).
+"
+  }
+
+  dimension: metrics__labeled_counter__jxl_hdr {
+    label: "Jxl: Hdr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.jxl_hdr ;;
+    group_label: "Jxl"
+    group_item_label: "Hdr"
+
+    link: {
+      label: "Glean Dictionary reference for Jxl: Hdr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/jxl_hdr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a successfully decoded JPEG XL image used the HDR (f16) output path.
 "
   }
 
@@ -50104,6 +50173,129 @@ view: metrics__metrics__labeled_counter__javascript_gc_slow_task {
   }
 }
 
+view: metrics__metrics__labeled_counter__jxl_animated {
+  label: "Jxl: Animated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__jxl_decode_result {
+  label: "Jxl: Decode Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__jxl_hdr {
+  label: "Jxl: Hdr"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__layout_long_reflow_interruptible {
   label: "Layout: Long Reflow Interruptible"
 
@@ -78233,6 +78425,20 @@ view: metrics__metrics__memory_distribution__image_decode_speed_gif__values {
 }
 
 view: metrics__metrics__memory_distribution__image_decode_speed_jpeg__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__memory_distribution__image_decode_speed_jxl__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
