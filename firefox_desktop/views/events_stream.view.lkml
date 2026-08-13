@@ -1811,6 +1811,14 @@ view: events_stream {
     group_item_label: "Dropped Frames"
   }
 
+  dimension: extras__quantity__duplicate_tabs {
+    sql: ${TABLE}.extras.quantity.duplicate_tabs ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Duplicate Tabs"
+  }
+
   dimension: extras__quantity__duration {
     sql: ${TABLE}.extras.quantity.duration ;;
     type: number
@@ -1873,6 +1881,30 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Gate Wait Ms"
+  }
+
+  dimension: extras__quantity__grouped_id {
+    sql: ${TABLE}.extras.quantity.grouped_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Grouped ID"
+  }
+
+  dimension: extras__quantity__grouped_tabs {
+    sql: ${TABLE}.extras.quantity.grouped_tabs ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Grouped Tabs"
+  }
+
+  dimension: extras__quantity__groups {
+    sql: ${TABLE}.extras.quantity.groups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Groups"
   }
 
   dimension: extras__quantity__has_alt_text {
@@ -2675,6 +2707,14 @@ view: events_stream {
     group_item_label: "Store Active Count"
   }
 
+  dimension: extras__quantity__suggested_groups {
+    sql: ${TABLE}.extras.quantity.suggested_groups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Suggested Groups"
+  }
+
   dimension: extras__quantity__system_memory_mb {
     sql: ${TABLE}.extras.quantity.system_memory_mb ;;
     type: number
@@ -2993,6 +3033,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total Inference Seconds"
+  }
+
+  dimension: extras__quantity__total_length {
+    sql: ${TABLE}.extras.quantity.total_length ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Length"
   }
 
   dimension: extras__quantity__total_size_bytes {
@@ -6369,14 +6417,6 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Selected Result"
-  }
-
-  dimension: extras__string__selected_result_subtype {
-    sql: ${TABLE}.extras.string.selected_result_subtype ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Selected Result Subtype"
   }
 
   dimension: extras__string__selection {

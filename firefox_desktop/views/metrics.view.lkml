@@ -9179,6 +9179,23 @@ phase.
 "
   }
 
+  dimension: metrics__labeled_counter__tab_stale_drag_recovery {
+    label: "Tab: Stale Drag Recovery"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tab_stale_drag_recovery ;;
+    group_label: "Tab"
+    group_item_label: "Stale Drag Recovery"
+
+    link: {
+      label: "Glean Dictionary reference for Tab: Stale Drag Recovery"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/tab_stale_drag_recovery"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how often the tab strip had to recover from a tab drag that never ended, leaving the toolbar unusable. \"session_live\" means a drag session was still current, i.e. the session outlived the drag; \"session_ended\" means none was left, i.e. the end of the drag never reached the tab strip. The \"_after_drop\" variants mean the drag was dropped and the drop animation is what failed to leave moving-tab mode, so they measure a Firefox shortcoming while the others measure a platform one.
+"
+  }
+
   dimension: metrics__labeled_counter__tab_tab_count {
     label: "Tab: Tab Count"
     hidden: yes
@@ -34567,7 +34584,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__timing_distribution__screenwakelock_held_duration__sum {
     label: "Screenwakelock: Held Duration Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.sum ;;
     type: number
     group_label: "Screenwakelock"
@@ -34586,7 +34603,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__screenwakelock_release_battery_level_discharging__sum {
     label: "Screenwakelock: Release Battery Level Discharging Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.screenwakelock_release_battery_level_discharging.sum ;;
     type: number
     group_label: "Screenwakelock"
@@ -63233,19 +63250,19 @@ view: metrics__metrics__labeled_counter__mixed_content_audio {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -63274,19 +63291,19 @@ view: metrics__metrics__labeled_counter__mixed_content_images {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -63315,19 +63332,19 @@ view: metrics__metrics__labeled_counter__mixed_content_video {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -69998,19 +70015,19 @@ view: metrics__metrics__labeled_counter__script_preloader_requests {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -71123,6 +71140,47 @@ view: metrics__metrics__labeled_counter__suggest_relevance_status {
 
 view: metrics__metrics__labeled_counter__tab_actions {
   label: "Tab: Actions"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tab_stale_drag_recovery {
+  label: "Tab: Stale Drag Recovery"
 
   dimension: document_id {
     type: string

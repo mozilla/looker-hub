@@ -2608,6 +2608,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tab_actions}) AS metrics__metrics__labeled_counter__tab_actions ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tab_actions.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__tab_stale_drag_recovery {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tab_stale_drag_recovery}) AS metrics__metrics__labeled_counter__tab_stale_drag_recovery ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tab_stale_drag_recovery.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__tab_tab_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tab_tab_count}) AS metrics__metrics__labeled_counter__tab_tab_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tab_tab_count.document_id} ;;
