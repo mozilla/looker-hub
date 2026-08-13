@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: onboarding_rollout_max_fx152_last_updated {
-  label: "onboarding_rollout_max_fx152 Last Updated"
+datagroup: ios_web_compatibility_reporting_tool_last_updated {
+  label: "ios_web_compatibility_reporting_tool Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'onboarding_rollout_max_fx152_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'ios_web_compatibility_reporting_tool_statistics')
 
     ) ;;
-  description: "Updates for onboarding_rollout_max_fx152 when referenced tables are modified."
+  description: "Updates for ios_web_compatibility_reporting_tool when referenced tables are modified."
   max_cache_age: "24 hours"
 }

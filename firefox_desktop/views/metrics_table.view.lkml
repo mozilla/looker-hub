@@ -14862,6 +14862,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__tab_stale_drag_recovery {
+    sql: ${TABLE}.metrics.labeled_counter.tab_stale_drag_recovery ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__tab_tab_count {
     sql: ${TABLE}.metrics.labeled_counter.tab_tab_count ;;
     hidden: yes

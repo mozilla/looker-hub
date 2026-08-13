@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: auto_trigger_pin_to_taskbar_notification_rollout_max_fx_152 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.auto_trigger_pin_to_taskbar_notification_rollout_max_fx_152_statistics ;;
+view: ios_web_compatibility_reporting_tool {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.ios_web_compatibility_reporting_tool_statistics ;;
 
   dimension: submission_date {
     type: date

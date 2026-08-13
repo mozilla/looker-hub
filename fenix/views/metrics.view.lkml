@@ -26594,7 +26594,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 
   dimension: metrics__timing_distribution__screenwakelock_held_duration__sum {
     label: "Screenwakelock: Held Duration Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.sum ;;
     type: number
     group_label: "Screenwakelock"
@@ -26613,7 +26613,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__custom_distribution__screenwakelock_release_battery_level_discharging__sum {
     label: "Screenwakelock: Release Battery Level Discharging Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.screenwakelock_release_battery_level_discharging.sum ;;
     type: number
     group_label: "Screenwakelock"
@@ -51277,19 +51277,19 @@ view: metrics__metrics__labeled_counter__mixed_content_audio {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -51318,19 +51318,19 @@ view: metrics__metrics__labeled_counter__mixed_content_images {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -51359,19 +51359,19 @@ view: metrics__metrics__labeled_counter__mixed_content_video {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -57714,19 +57714,19 @@ view: metrics__metrics__labeled_counter__script_preloader_requests {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
