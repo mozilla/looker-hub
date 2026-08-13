@@ -10,8 +10,45 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: hnt_wattle_cm_canada_widgets_rollout
+    type: "ci-line-chart"
+    fields: [
+      hnt_wattle_cm_canada_widgets_rollout.submission_date,
+      hnt_wattle_cm_canada_widgets_rollout.branch,
+      hnt_wattle_cm_canada_widgets_rollout.upper,
+      hnt_wattle_cm_canada_widgets_rollout.lower,
+      hnt_wattle_cm_canada_widgets_rollout.point
+    ]
+    pivots: [
+      hnt_wattle_cm_canada_widgets_rollout.branch
+    ]
+    filters:
+      hnt_wattle_cm_canada_widgets_rollout.metric: 'memory_total'
+      hnt_wattle_cm_canada_widgets_rollout.statistic: percentile
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_cm_canada_widgets_rollout.submission_date
+    field_y: hnt_wattle_cm_canada_widgets_rollout.point
+    log_scale: false
+    ci_lower: hnt_wattle_cm_canada_widgets_rollout.lower
+    ci_upper: hnt_wattle_cm_canada_widgets_rollout.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_cm_canada_widgets_rollout.submission_date
+      Percentile: hnt_wattle_cm_canada_widgets_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +63,10 @@
       hnt_wattle_cm_canada_widgets_rollout.branch
     ]
     filters:
-      hnt_wattle_cm_canada_widgets_rollout.metric: 'search_count'
+      hnt_wattle_cm_canada_widgets_rollout.metric: 'uri_count'
       hnt_wattle_cm_canada_widgets_rollout.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: hnt_wattle_cm_canada_widgets_rollout.submission_date
@@ -62,8 +99,8 @@
     filters:
       hnt_wattle_cm_canada_widgets_rollout.metric: 'qualified_cumulative_days_of_use'
       hnt_wattle_cm_canada_widgets_rollout.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: hnt_wattle_cm_canada_widgets_rollout.submission_date
@@ -97,7 +134,7 @@
       hnt_wattle_cm_canada_widgets_rollout.metric: 'active_hours'
       hnt_wattle_cm_canada_widgets_rollout.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: hnt_wattle_cm_canada_widgets_rollout.submission_date
@@ -112,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,10 +165,10 @@
       hnt_wattle_cm_canada_widgets_rollout.branch
     ]
     filters:
-      hnt_wattle_cm_canada_widgets_rollout.metric: 'days_of_use'
+      hnt_wattle_cm_canada_widgets_rollout.metric: 'ad_clicks'
       hnt_wattle_cm_canada_widgets_rollout.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: hnt_wattle_cm_canada_widgets_rollout.submission_date
@@ -165,42 +202,6 @@
       hnt_wattle_cm_canada_widgets_rollout.metric: 'retained'
       hnt_wattle_cm_canada_widgets_rollout.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_wattle_cm_canada_widgets_rollout.submission_date
-    field_y: hnt_wattle_cm_canada_widgets_rollout.point
-    log_scale: false
-    ci_lower: hnt_wattle_cm_canada_widgets_rollout.lower
-    ci_upper: hnt_wattle_cm_canada_widgets_rollout.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_cm_canada_widgets_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: hnt_wattle_cm_canada_widgets_rollout
-    type: "ci-line-chart"
-    fields: [
-      hnt_wattle_cm_canada_widgets_rollout.submission_date,
-      hnt_wattle_cm_canada_widgets_rollout.branch,
-      hnt_wattle_cm_canada_widgets_rollout.upper,
-      hnt_wattle_cm_canada_widgets_rollout.lower,
-      hnt_wattle_cm_canada_widgets_rollout.point
-    ]
-    pivots: [
-      hnt_wattle_cm_canada_widgets_rollout.branch
-    ]
-    filters:
-      hnt_wattle_cm_canada_widgets_rollout.metric: 'memory_total'
-      hnt_wattle_cm_canada_widgets_rollout.statistic: percentile
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -212,13 +213,12 @@
     show_grid: true
     listen:
       Date: hnt_wattle_cm_canada_widgets_rollout.submission_date
-      Percentile: hnt_wattle_cm_canada_widgets_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       hnt_wattle_cm_canada_widgets_rollout.branch
     ]
     filters:
-      hnt_wattle_cm_canada_widgets_rollout.metric: 'ad_clicks'
+      hnt_wattle_cm_canada_widgets_rollout.metric: 'search_count'
       hnt_wattle_cm_canada_widgets_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       hnt_wattle_cm_canada_widgets_rollout.branch
     ]
     filters:
-      hnt_wattle_cm_canada_widgets_rollout.metric: 'uri_count'
+      hnt_wattle_cm_canada_widgets_rollout.metric: 'days_of_use'
       hnt_wattle_cm_canada_widgets_rollout.statistic: mean
     row: 30
     col: 12
