@@ -10,8 +10,45 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: compression_dictionaries_rollout_control_rollout
+    type: "ci-line-chart"
+    fields: [
+      compression_dictionaries_rollout_control_rollout.submission_date,
+      compression_dictionaries_rollout_control_rollout.branch,
+      compression_dictionaries_rollout_control_rollout.upper,
+      compression_dictionaries_rollout_control_rollout.lower,
+      compression_dictionaries_rollout_control_rollout.point
+    ]
+    pivots: [
+      compression_dictionaries_rollout_control_rollout.branch
+    ]
+    filters:
+      compression_dictionaries_rollout_control_rollout.metric: 'memory_total'
+      compression_dictionaries_rollout_control_rollout.statistic: percentile
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: compression_dictionaries_rollout_control_rollout.submission_date
+    field_y: compression_dictionaries_rollout_control_rollout.point
+    log_scale: false
+    ci_lower: compression_dictionaries_rollout_control_rollout.lower
+    ci_upper: compression_dictionaries_rollout_control_rollout.upper
+    show_grid: true
+    listen:
+      Date: compression_dictionaries_rollout_control_rollout.submission_date
+      Percentile: compression_dictionaries_rollout_control_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +63,10 @@
       compression_dictionaries_rollout_control_rollout.branch
     ]
     filters:
-      compression_dictionaries_rollout_control_rollout.metric: 'search_count'
+      compression_dictionaries_rollout_control_rollout.metric: 'uri_count'
       compression_dictionaries_rollout_control_rollout.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: compression_dictionaries_rollout_control_rollout.submission_date
@@ -62,8 +99,8 @@
     filters:
       compression_dictionaries_rollout_control_rollout.metric: 'qualified_cumulative_days_of_use'
       compression_dictionaries_rollout_control_rollout.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: compression_dictionaries_rollout_control_rollout.submission_date
@@ -97,7 +134,7 @@
       compression_dictionaries_rollout_control_rollout.metric: 'active_hours'
       compression_dictionaries_rollout_control_rollout.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: compression_dictionaries_rollout_control_rollout.submission_date
@@ -112,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,10 +165,10 @@
       compression_dictionaries_rollout_control_rollout.branch
     ]
     filters:
-      compression_dictionaries_rollout_control_rollout.metric: 'days_of_use'
+      compression_dictionaries_rollout_control_rollout.metric: 'ad_clicks'
       compression_dictionaries_rollout_control_rollout.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: compression_dictionaries_rollout_control_rollout.submission_date
@@ -165,42 +202,6 @@
       compression_dictionaries_rollout_control_rollout.metric: 'retained'
       compression_dictionaries_rollout_control_rollout.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: compression_dictionaries_rollout_control_rollout.submission_date
-    field_y: compression_dictionaries_rollout_control_rollout.point
-    log_scale: false
-    ci_lower: compression_dictionaries_rollout_control_rollout.lower
-    ci_upper: compression_dictionaries_rollout_control_rollout.upper
-    show_grid: true
-    listen:
-      Date: compression_dictionaries_rollout_control_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: compression_dictionaries_rollout_control_rollout
-    type: "ci-line-chart"
-    fields: [
-      compression_dictionaries_rollout_control_rollout.submission_date,
-      compression_dictionaries_rollout_control_rollout.branch,
-      compression_dictionaries_rollout_control_rollout.upper,
-      compression_dictionaries_rollout_control_rollout.lower,
-      compression_dictionaries_rollout_control_rollout.point
-    ]
-    pivots: [
-      compression_dictionaries_rollout_control_rollout.branch
-    ]
-    filters:
-      compression_dictionaries_rollout_control_rollout.metric: 'memory_total'
-      compression_dictionaries_rollout_control_rollout.statistic: percentile
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -212,13 +213,12 @@
     show_grid: true
     listen:
       Date: compression_dictionaries_rollout_control_rollout.submission_date
-      Percentile: compression_dictionaries_rollout_control_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       compression_dictionaries_rollout_control_rollout.branch
     ]
     filters:
-      compression_dictionaries_rollout_control_rollout.metric: 'ad_clicks'
+      compression_dictionaries_rollout_control_rollout.metric: 'search_count'
       compression_dictionaries_rollout_control_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       compression_dictionaries_rollout_control_rollout.branch
     ]
     filters:
-      compression_dictionaries_rollout_control_rollout.metric: 'uri_count'
+      compression_dictionaries_rollout_control_rollout.metric: 'days_of_use'
       compression_dictionaries_rollout_control_rollout.statistic: mean
     row: 30
     col: 12
