@@ -14201,6 +14201,27 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__jxl_animated {
+    sql: ${TABLE}.metrics.labeled_counter.jxl_animated ;;
+    hidden: yes
+    description: "Whether a successfully decoded JPEG XL image is animated.
+"
+  }
+
+  dimension: metrics__labeled_counter__jxl_decode_result {
+    sql: ${TABLE}.metrics.labeled_counter.jxl_decode_result ;;
+    hidden: yes
+    description: "Decode result of a JPEG XL image. Failures are recorded on whichever decode pass first fails (so failures during the metadata or frame-count pass are still captured); successes are recorded only on the pixel-producing decode. success means a complete frame was produced (for an animation, at least one complete frame, even if a later frame was truncated; a hard decode error on any frame is recorded as a failure instead); partial_frame means the decode ended with only a partial (progressive) frame rendered; no_frame means it ended without producing any frame; no_basic_info means there was not enough data to even parse the basic info (image dimensions).
+"
+  }
+
+  dimension: metrics__labeled_counter__jxl_hdr {
+    sql: ${TABLE}.metrics.labeled_counter.jxl_hdr ;;
+    hidden: yes
+    description: "Whether a successfully decoded JPEG XL image used the HDR (f16) output path.
+"
+  }
+
   dimension: metrics__labeled_counter__layout_long_reflow_interruptible {
     sql: ${TABLE}.metrics.labeled_counter.layout_long_reflow_interruptible ;;
     hidden: yes
@@ -17723,6 +17744,28 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__memory_distribution__image_decode_speed_jpeg__values {
     sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jpeg.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_jxl__count {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jxl.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Image Decode Speed Jxl"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_jxl__sum {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jxl.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Image Decode Speed Jxl"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__image_decode_speed_jxl__values {
+    sql: ${TABLE}.metrics.memory_distribution.image_decode_speed_jxl.values ;;
     hidden: yes
   }
 
@@ -69941,6 +69984,20 @@ view: metrics_table__metrics__memory_distribution__image_decode_speed_gif__value
 }
 
 view: metrics_table__metrics__memory_distribution__image_decode_speed_jpeg__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__image_decode_speed_jxl__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

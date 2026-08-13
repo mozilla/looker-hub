@@ -6323,6 +6323,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_moz_line_scroll_amount {
+    label: "Use Counter Css Doc: Css Moz Line Scroll Amount"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_moz_line_scroll_amount ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Moz Line Scroll Amount"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc: Css Moz Line Scroll Amount"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_moz_line_scroll_amount"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property -moz-line-scroll-amount. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_moz_margin_end {
     label: "Use Counter Css Doc: Css Moz Margin End"
     hidden: no
@@ -19802,6 +19820,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property -moz-inert. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_moz_line_scroll_amount {
+    label: "Use Counter Css Page: Css Moz Line Scroll Amount"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_moz_line_scroll_amount ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Moz Line Scroll Amount"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page: Css Moz Line Scroll Amount"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_moz_line_scroll_amount"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property -moz-line-scroll-amount. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -62175,6 +62211,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_moz_line_scroll_amount {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_moz_line_scroll_amount} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Moz Line Scroll Amount"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_moz_line_scroll_amount"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_moz_line_scroll_amount_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_moz_line_scroll_amount: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Moz Line Scroll Amount"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_moz_line_scroll_amount"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_moz_margin_end {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_moz_margin_end} ;;
@@ -80896,6 +80957,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Moz Inert"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_moz_inert"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_moz_line_scroll_amount {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_moz_line_scroll_amount} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Moz Line Scroll Amount"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_moz_line_scroll_amount"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_moz_line_scroll_amount_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_moz_line_scroll_amount: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Moz Line Scroll Amount"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_moz_line_scroll_amount"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
