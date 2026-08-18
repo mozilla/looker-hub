@@ -3609,7 +3609,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Opaque Response Blocking Cross Origin Opaque Response Count"
-    description: "The number of loads of cross origin opaque resources. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.cross_origin_opaque_response_count.
+    description: "The number of loads of cross origin opaque resources.
 "
   }
 
@@ -3619,7 +3619,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Opaque Response Blocking Javascript Validation Count"
-    description: "The number of times we run the JS validator. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.javascript_validation_count.
+    description: "The number of times we run the JS validator.
 "
   }
 
@@ -3967,6 +3967,36 @@ is the same as it was before the load.
     group_label: "Metrics: Counter"
     group_item_label: "Sct Signature Cache Total"
     description: "How many SCT signature verifications are performed.
+"
+  }
+
+  dimension: metrics__counter__security_ui_neterror_alternate_host_suggested {
+    sql: ${TABLE}.metrics.counter.security_ui_neterror_alternate_host_suggested ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Security UI Neterror Alternate Host Suggested"
+    description: "Count of times the \"did you mean\" alternate-host suggestion was injected into a dnsNotFound error page. Counted on both of the error page implementations that can show it, the legacy about:neterror markup and the net-error-card element used by the Felt Privacy redesign. The suggestion depends on an async DNS lookup that resolves after load_aboutneterror has already recorded, so it cannot be an extra key on that event. This counter is the impression signal instead, and the denominator for click_dns_suggestion_link. Content-free: a count only, never the suggested host.
+"
+  }
+
+  dimension: metrics__counter__security_ui_neterror_search_cta_clicked {
+    sql: ${TABLE}.metrics.counter.security_ui_neterror_search_cta_clicked ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Security UI Neterror Search Cta Clicked"
+    description: "Count of times the user clicked the online dnsNotFound Search CTA button. Content-free.
+"
+  }
+
+  dimension: metrics__counter__security_ui_neterror_search_cta_shown {
+    sql: ${TABLE}.metrics.counter.security_ui_neterror_search_cta_shown ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Security UI Neterror Search Cta Shown"
+    description: "Count of times the online dnsNotFound Search CTA button was actually shown (gates passed and a default search engine exists). Content-free.
 "
   }
 
@@ -8801,6 +8831,28 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_max_consecutive_ptos__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_max_consecutive_ptos.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Max Consecutive Ptos"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_max_consecutive_ptos__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_max_consecutive_ptos.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Networking HTTP 3 Max Consecutive Ptos"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_max_consecutive_ptos__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_max_consecutive_ptos.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_min_rtt__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_min_rtt.count ;;
     type: number
@@ -13164,6 +13216,13 @@ where:
 "
   }
 
+  dimension: metrics__labeled_counter__cache_schema_init_error {
+    sql: ${TABLE}.metrics.labeled_counter.cache_schema_init_error ;;
+    hidden: yes
+    description: "Counts errors encountered when initializing or migrating a Cache API caches.sqlite schema during quota initialization. Labeled by error category: \"future_version\" when the on-disk schema version exceeds the code's latest version (e.g. profile downgrade), \"other\" for all remaining schema errors.
+"
+  }
+
   dimension: metrics__labeled_counter__canvas_used_2d {
     sql: ${TABLE}.metrics.labeled_counter.canvas_used_2d ;;
     hidden: yes
@@ -15213,7 +15272,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.orb_did_ever_block_response ;;
     hidden: yes
     description: "If any opaque response was blocked for a given top-level window context.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram ORB_DID_EVER_BLOCK_RESPONSE.
 "
   }
 
@@ -15647,6 +15705,27 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.security_client_auth_cert_usage ;;
     hidden: yes
     description: "Measures how many servers have requested a client authentication certificate (key: \"requested\") and how many times the user has opted to send one in response (key: \"sent\"). This metric was generated to correspond to the Legacy Telemetry scalar security.client_auth_cert_usage.
+"
+  }
+
+  dimension: metrics__labeled_counter__security_ui_neterror_search_cta_action {
+    sql: ${TABLE}.metrics.labeled_counter.security_ui_neterror_search_cta_action ;;
+    hidden: yes
+    description: "The action taken by the online dnsNotFound Search CTA decision, recorded once per eligible page load (gated by browser.netError.searchCTA.enabled). \"keywords\" and \"host\" mean a CTA was shown searching path keywords or the registrable domain respectively; \"none\" means no CTA was shown. Records only the action label, never the URL, keywords, or host.
+"
+  }
+
+  dimension: metrics__labeled_counter__security_ui_neterror_search_cta_click_aborted {
+    sql: ${TABLE}.metrics.labeled_counter.security_ui_neterror_search_cta_click_aborted ;;
+    hidden: yes
+    description: "Count of times the user clicked the online dnsNotFound Search CTA button but no search was run. connectivity_lost means the page was online when the CTA was shown, connectivity dropped before the click, and the click was aborted with an offline message shown in the button's place. These clicks are also counted by search_cta_clicked, so searches actually launched = search_cta_clicked minus search_cta_click_aborted. Kept separate from search_cta_reason because that metric describes the page-load decision, one per eligible page load. Content-free.
+"
+  }
+
+  dimension: metrics__labeled_counter__security_ui_neterror_search_cta_reason {
+    sql: ${TABLE}.metrics.labeled_counter.security_ui_neterror_search_cta_reason ;;
+    hidden: yes
+    description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. Records only the reason label, never content.
 "
   }
 
@@ -17269,7 +17348,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.orb_javascript_validation ;;
     hidden: yes
     description: "Time (in ms) that it takes for a ORB JavaScript validator to complete a validation, including IPC to the validator actor.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram ORB_JAVASCRIPT_VALIDATION_MS.
 "
   }
 
@@ -17277,7 +17355,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.orb_receive_data_for_validation ;;
     hidden: yes
     description: "Time (in ms) that it takes to receive data for ORB JavaScript validation, including IPC to the validator actor.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram ORB_RECEIVE_DATA_FOR_VALIDATION_MS.
 "
   }
 
@@ -54987,6 +55064,20 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_loss_ratio_filtered__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_max_consecutive_ptos__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

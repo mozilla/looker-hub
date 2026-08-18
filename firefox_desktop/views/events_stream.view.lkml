@@ -403,6 +403,14 @@ view: events_stream {
     group_item_label: "Cookies And Storage"
   }
 
+  dimension: extras__boolean__cta_shown {
+    sql: ${TABLE}.extras.boolean.cta_shown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Cta Shown"
+  }
+
   dimension: extras__boolean__description {
     sql: ${TABLE}.extras.boolean.description ;;
     type: yesno
@@ -1385,6 +1393,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Success"
+  }
+
+  dimension: extras__boolean__suggestion_shown {
+    sql: ${TABLE}.extras.boolean.suggestion_shown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Suggestion Shown"
   }
 
   dimension: extras__boolean__sync {

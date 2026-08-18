@@ -123,6 +123,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__string__newtab_page_layout_variant {
+    label: "Newtab: Page Layout Variant"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_page_layout_variant ;;
+    type: string
+    group_label: "Newtab"
+    group_item_label: "Page Layout Variant"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab: Page Layout Variant"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_page_layout_variant"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the newtab page layout variant the client is assigned, for layout experimentation. One of nova-full-width, side-by-side-content-lead, side-by-side-widgets-lead, side-by-side-content-lead-five or side-by-side-widgets-lead-five. The -five variants reach five card columns counting the widgets column, the others four. Reports the assigned variant whether or not the page can currently render it, and covers variants set by pref as well as by a Nimbus train-hop configuration.
+"
+  }
+
   dimension: metrics__boolean__newtab_scroll {
     label: "Newtab: Scroll"
     hidden: no

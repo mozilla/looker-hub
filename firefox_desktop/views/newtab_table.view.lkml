@@ -674,6 +674,16 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__newtab_page_layout_variant {
+    sql: ${TABLE}.metrics.string.newtab_page_layout_variant ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Newtab Page Layout Variant"
+    description: "The name of the newtab page layout variant the client is assigned, for layout experimentation. One of nova-full-width, side-by-side-content-lead, side-by-side-widgets-lead, side-by-side-content-lead-five or side-by-side-widgets-lead-five. The -five variants reach five card columns counting the widgets column, the others four. Reports the assigned variant whether or not the page can currently render it, and covers variants set by pref as well as by a Nimbus train-hop configuration.
+"
+  }
+
   dimension: metrics__string__search_engine_default_engine_id {
     sql: ${TABLE}.metrics.string.search_engine_default_engine_id ;;
     type: string

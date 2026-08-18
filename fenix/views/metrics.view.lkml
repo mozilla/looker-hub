@@ -5288,6 +5288,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__cache_schema_init_error {
+    label: "Cache: Schema Init Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cache_schema_init_error ;;
+    group_label: "Cache"
+    group_item_label: "Schema Init Error"
+
+    link: {
+      label: "Glean Dictionary reference for Cache: Schema Init Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cache_schema_init_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts errors encountered when initializing or migrating a Cache API caches.sqlite schema during quota initialization. Labeled by error category: \"future_version\" when the on-disk schema version exceeds the code's latest version (e.g. profile downgrade), \"other\" for all remaining schema errors.
+"
+  }
+
   dimension: metrics__labeled_counter__canvas_used_2d {
     label: "Canvas: Used 2D"
     hidden: yes
@@ -9359,7 +9376,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Percent of the cycle collector's forget skippable done during idle time
-This metric was generated to correspond to the Legacy Telemetry linear histogram FORGET_SKIPPABLE_DURING_IDLE.
 "
   }
 
@@ -9378,7 +9394,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "Number of forget skippables occurred during a minute
-This metric was generated to correspond to the Legacy Telemetry linear histogram FORGET_SKIPPABLE_FREQUENCY.
 "
   }
 
@@ -20308,6 +20323,24 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_max_consecutive_ptos__sum {
+    label: "Networking: HTTP 3 Max Consecutive Ptos Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_max_consecutive_ptos.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "HTTP 3 Max Consecutive Ptos Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: HTTP 3 Max Consecutive Ptos Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_max_consecutive_ptos"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The longest run of consecutive probe timeouts (PTOs) an established HTTP/3 connection saw over its lifetime, recorded once when the connection is closed. A long run means the path went dark (a black hole): this is the condition neqo's max_pto black-hole detector acts on, so the distribution shows how often established connections break and, once the detector is enabled, whether it closes them sooner. 0 means the connection saw no PTO.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_min_rtt__sum {
     label: "Networking: HTTP 3 Min Rtt Sum"
     hidden: no
@@ -22809,7 +22842,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of loads of cross origin opaque resources. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.cross_origin_opaque_response_count.
+    description: "The number of loads of cross origin opaque resources.
 "
   }
 
@@ -22827,7 +22860,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of times we run the JS validator. This metric was generated to correspond to the Legacy Telemetry scalar opaque.response.blocking.javascript_validation_count.
+    description: "The number of times we run the JS validator.
 "
   }
 
@@ -22881,7 +22914,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "If any opaque response was blocked for a given top-level window context.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram ORB_DID_EVER_BLOCK_RESPONSE.
 "
   }
 
@@ -26917,6 +26949,111 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
     description: "Security-related UI events (addons, form submission, TLS certs, Safe Browsing, updates and geolocation). See /security/manager/ssl/nsISecurityUITelemetry.idl for the specific values.
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram SECURITY_UI.
+"
+  }
+
+  dimension: metrics__counter__security_ui_neterror_alternate_host_suggested {
+    label: "Security UI Neterror: Alternate Host Suggested"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.security_ui_neterror_alternate_host_suggested ;;
+    type: number
+    group_label: "Security UI Neterror"
+    group_item_label: "Alternate Host Suggested"
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror: Alternate Host Suggested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_alternate_host_suggested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of times the \"did you mean\" alternate-host suggestion was injected into a dnsNotFound error page. Counted on both of the error page implementations that can show it, the legacy about:neterror markup and the net-error-card element used by the Felt Privacy redesign. The suggestion depends on an async DNS lookup that resolves after load_aboutneterror has already recorded, so it cannot be an extra key on that event. This counter is the impression signal instead, and the denominator for click_dns_suggestion_link. Content-free: a count only, never the suggested host.
+"
+  }
+
+  dimension: metrics__labeled_counter__security_ui_neterror_search_cta_action {
+    label: "Security UI Neterror: Search Cta Action"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.security_ui_neterror_search_cta_action ;;
+    group_label: "Security UI Neterror"
+    group_item_label: "Search Cta Action"
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror: Search Cta Action"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_action"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The action taken by the online dnsNotFound Search CTA decision, recorded once per eligible page load (gated by browser.netError.searchCTA.enabled). \"keywords\" and \"host\" mean a CTA was shown searching path keywords or the registrable domain respectively; \"none\" means no CTA was shown. Records only the action label, never the URL, keywords, or host.
+"
+  }
+
+  dimension: metrics__labeled_counter__security_ui_neterror_search_cta_click_aborted {
+    label: "Security UI Neterror: Search Cta Click Aborted"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.security_ui_neterror_search_cta_click_aborted ;;
+    group_label: "Security UI Neterror"
+    group_item_label: "Search Cta Click Aborted"
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror: Search Cta Click Aborted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_click_aborted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of times the user clicked the online dnsNotFound Search CTA button but no search was run. connectivity_lost means the page was online when the CTA was shown, connectivity dropped before the click, and the click was aborted with an offline message shown in the button's place. These clicks are also counted by search_cta_clicked, so searches actually launched = search_cta_clicked minus search_cta_click_aborted. Kept separate from search_cta_reason because that metric describes the page-load decision, one per eligible page load. Content-free.
+"
+  }
+
+  dimension: metrics__counter__security_ui_neterror_search_cta_clicked {
+    label: "Security UI Neterror: Search Cta Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.security_ui_neterror_search_cta_clicked ;;
+    type: number
+    group_label: "Security UI Neterror"
+    group_item_label: "Search Cta Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror: Search Cta Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of times the user clicked the online dnsNotFound Search CTA button. Content-free.
+"
+  }
+
+  dimension: metrics__labeled_counter__security_ui_neterror_search_cta_reason {
+    label: "Security UI Neterror: Search Cta Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.security_ui_neterror_search_cta_reason ;;
+    group_label: "Security UI Neterror"
+    group_item_label: "Search Cta Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror: Search Cta Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. Records only the reason label, never content.
+"
+  }
+
+  dimension: metrics__counter__security_ui_neterror_search_cta_shown {
+    label: "Security UI Neterror: Search Cta Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.security_ui_neterror_search_cta_shown ;;
+    type: number
+    group_label: "Security UI Neterror"
+    group_item_label: "Search Cta Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror: Search Cta Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of times the online dnsNotFound Search CTA button was actually shown (gates passed and a default search engine exists). Content-free.
 "
   }
 
@@ -41037,6 +41174,81 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     }
   }
 
+  measure: security_ui_neterror_alternate_host_suggested {
+    type: sum
+    sql: ${metrics__counter__security_ui_neterror_alternate_host_suggested} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror Alternate Host Suggested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_alternate_host_suggested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: security_ui_neterror_alternate_host_suggested_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__security_ui_neterror_alternate_host_suggested: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror Alternate Host Suggested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_alternate_host_suggested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: security_ui_neterror_search_cta_clicked {
+    type: sum
+    sql: ${metrics__counter__security_ui_neterror_search_cta_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror Search Cta Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: security_ui_neterror_search_cta_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__security_ui_neterror_search_cta_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror Search Cta Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: security_ui_neterror_search_cta_shown {
+    type: sum
+    sql: ${metrics__counter__security_ui_neterror_search_cta_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror Search Cta Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: security_ui_neterror_search_cta_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__security_ui_neterror_search_cta_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Security UI Neterror Search Cta Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/security_ui_neterror_search_cta_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: security_ui_protectionspopup_smartblockembeds_shown {
     type: sum
     sql: ${metrics__counter__security_ui_protectionspopup_smartblockembeds_shown} ;;
@@ -44517,6 +44729,47 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
 
 view: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
   label: "Browser UI Interaction: Keyboard"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cache_schema_init_error {
+  label: "Cache: Schema Init Error"
 
   dimension: document_id {
     type: string
@@ -57963,6 +58216,129 @@ view: metrics__metrics__labeled_counter__security_client_auth_cert_usage {
   }
 }
 
+view: metrics__metrics__labeled_counter__security_ui_neterror_search_cta_action {
+  label: "Security UI Neterror: Search Cta Action"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__security_ui_neterror_search_cta_click_aborted {
+  label: "Security UI Neterror: Search Cta Click Aborted"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__security_ui_neterror_search_cta_reason {
+  label: "Security UI Neterror: Search Cta Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__ssl_resumed_session {
   label: "SSL: Resumed Session"
 
@@ -63428,6 +63804,20 @@ view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio__value
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_loss_ratio_filtered__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_max_consecutive_ptos__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
