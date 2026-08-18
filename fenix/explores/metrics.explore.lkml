@@ -203,6 +203,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_keyboard}) AS metrics__metrics__labeled_counter__browser_ui_interaction_keyboard ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_keyboard.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cache_schema_init_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cache_schema_init_error}) AS metrics__metrics__labeled_counter__cache_schema_init_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cache_schema_init_error.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__canvas_used_2d {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__canvas_used_2d}) AS metrics__metrics__labeled_counter__canvas_used_2d ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__canvas_used_2d.document_id} ;;
@@ -1836,6 +1841,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__security_client_auth_cert_usage {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__security_client_auth_cert_usage}) AS metrics__metrics__labeled_counter__security_client_auth_cert_usage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__security_client_auth_cert_usage.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__security_ui_neterror_search_cta_action {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__security_ui_neterror_search_cta_action}) AS metrics__metrics__labeled_counter__security_ui_neterror_search_cta_action ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__security_ui_neterror_search_cta_action.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__security_ui_neterror_search_cta_click_aborted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__security_ui_neterror_search_cta_click_aborted}) AS metrics__metrics__labeled_counter__security_ui_neterror_search_cta_click_aborted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__security_ui_neterror_search_cta_click_aborted.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__security_ui_neterror_search_cta_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__security_ui_neterror_search_cta_reason}) AS metrics__metrics__labeled_counter__security_ui_neterror_search_cta_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__security_ui_neterror_search_cta_reason.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__ssl_resumed_session {

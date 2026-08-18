@@ -32659,7 +32659,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_async_generator_function_created {
     label: "Use Counter Doc: Js Async Generator Function Created"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_async_generator_function_created ;;
     type: number
     group_label: "Use Counter Doc"
@@ -32677,7 +32677,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_async_generator_function_ion_eligible {
     label: "Use Counter Doc: Js Async Generator Function Ion Eligible"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_async_generator_function_ion_eligible ;;
     type: number
     group_label: "Use Counter Doc"
@@ -32875,7 +32875,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_generator_function_created {
     label: "Use Counter Doc: Js Generator Function Created"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_generator_function_created ;;
     type: number
     group_label: "Use Counter Doc"
@@ -32893,7 +32893,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_generator_function_ion_eligible {
     label: "Use Counter Doc: Js Generator Function Ion Eligible"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_generator_function_ion_eligible ;;
     type: number
     group_label: "Use Counter Doc"
@@ -42360,7 +42360,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_async_generator_function_created {
     label: "Use Counter Page: Js Async Generator Function Created"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_async_generator_function_created ;;
     type: number
     group_label: "Use Counter Page"
@@ -42378,7 +42378,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_async_generator_function_ion_eligible {
     label: "Use Counter Page: Js Async Generator Function Ion Eligible"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_async_generator_function_ion_eligible ;;
     type: number
     group_label: "Use Counter Page"
@@ -42576,7 +42576,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_generator_function_created {
     label: "Use Counter Page: Js Generator Function Created"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_generator_function_created ;;
     type: number
     group_label: "Use Counter Page"
@@ -42594,7 +42594,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_generator_function_ion_eligible {
     label: "Use Counter Page: Js Generator Function Ion Eligible"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_generator_function_ion_eligible ;;
     type: number
     group_label: "Use Counter Page"

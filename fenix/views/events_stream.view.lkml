@@ -403,6 +403,14 @@ view: events_stream {
     group_item_label: "Corrupt"
   }
 
+  dimension: extras__boolean__cta_shown {
+    sql: ${TABLE}.extras.boolean.cta_shown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Cta Shown"
+  }
+
   dimension: extras__boolean__data_fetched {
     sql: ${TABLE}.extras.boolean.data_fetched ;;
     type: yesno
@@ -1065,6 +1073,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Success"
+  }
+
+  dimension: extras__boolean__suggestion_shown {
+    sql: ${TABLE}.extras.boolean.suggestion_shown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Suggestion Shown"
   }
 
   dimension: extras__boolean__sync {

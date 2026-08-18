@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: ios_ad_blocker_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.ios_ad_blocker_rollout_statistics ;;
+view: add_voice_search_icon_to_addressbar_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.add_voice_search_icon_to_addressbar_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
