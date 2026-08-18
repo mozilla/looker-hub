@@ -4099,6 +4099,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.review_checker_microsurvey
       type: table_view
+    safe_browsing_interstitials_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.safe_browsing_interstitials
+      type: table_view
     search_with:
       tables:
       - table: mozdata.firefox_desktop.search_with
