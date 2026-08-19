@@ -2013,6 +2013,56 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__counter__devtools_debugger_stylesheets_links_opened_in_debugger_count {
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_links_opened_in_debugger_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Debugger Stylesheets Links Opened In Debugger Count"
+    description: "Number of times stylesheets link from another panel opens the stylesheet in the debugger.
+"
+  }
+
+  dimension: metrics__counter__devtools_debugger_stylesheets_stylesheet_pref_disabled_count {
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_stylesheet_pref_disabled_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Debugger Stylesheets Stylesheet Pref Disabled Count"
+    description: "Number of times the preference to enable the stylesheets in the debugger feature has been disabled from the Settings panel.
+"
+  }
+
+  dimension: metrics__counter__devtools_debugger_stylesheets_stylesheet_pref_enabled_count {
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_stylesheet_pref_enabled_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Debugger Stylesheets Stylesheet Pref Enabled Count"
+    description: "Number of times the preference to enable the stylesheets in the debugger feature has been enabled from the Settings panel.
+"
+  }
+
+  dimension: metrics__counter__devtools_debugger_stylesheets_stylesheets_edited_count {
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_stylesheets_edited_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Debugger Stylesheets Stylesheets Edited Count"
+    description: "Number of unique stylesheets edited in the debugger.
+"
+  }
+
+  dimension: metrics__counter__devtools_debugger_stylesheets_stylesheets_opened_count {
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_stylesheets_opened_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Devtools Debugger Stylesheets Stylesheets Opened Count"
+    description: "Number of times stylesheets have been selected and opened in the debugger.
+"
+  }
+
   dimension: metrics__counter__devtools_dom_opened_count {
     sql: ${TABLE}.metrics.counter.devtools_dom_opened_count ;;
     type: number
