@@ -363,6 +363,14 @@ view: events_stream {
     group_item_label: "Cache"
   }
 
+  dimension: extras__boolean__can_stage {
+    sql: ${TABLE}.extras.boolean.can_stage ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Can Stage"
+  }
+
   dimension: extras__boolean__cancelled {
     sql: ${TABLE}.extras.boolean.cancelled ;;
     type: yesno
@@ -755,6 +763,14 @@ view: events_stream {
     group_item_label: "Is Addon Active"
   }
 
+  dimension: extras__boolean__is_background {
+    sql: ${TABLE}.extras.boolean.is_background ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Background"
+  }
+
   dimension: extras__boolean__is_deleted {
     sql: ${TABLE}.extras.boolean.is_deleted ;;
     type: yesno
@@ -827,6 +843,14 @@ view: events_stream {
     group_item_label: "Is New Email Mask"
   }
 
+  dimension: extras__boolean__is_patch {
+    sql: ${TABLE}.extras.boolean.is_patch ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Patch"
+  }
+
   dimension: extras__boolean__is_private {
     sql: ${TABLE}.extras.boolean.is_private ;;
     type: yesno
@@ -873,6 +897,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Is Selected"
+  }
+
+  dimension: extras__boolean__is_success {
+    sql: ${TABLE}.extras.boolean.is_success ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Success"
   }
 
   dimension: extras__boolean__is_top_level_frame {
@@ -1945,6 +1977,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total Inference Seconds"
+  }
+
+  dimension: extras__quantity__total_retries {
+    sql: ${TABLE}.extras.quantity.total_retries ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Retries"
   }
 
   dimension: extras__quantity__total_size_bytes {
@@ -4267,6 +4307,14 @@ view: events_stream {
     group_item_label: "Previous Language"
   }
 
+  dimension: extras__string__previous_version {
+    sql: ${TABLE}.extras.string.previous_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Previous Version"
+  }
+
   dimension: extras__string__principalType {
     sql: ${TABLE}.extras.string.principalType ;;
     type: string
@@ -4977,6 +5025,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Target Type"
+  }
+
+  dimension: extras__string__target_version {
+    sql: ${TABLE}.extras.string.target_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Target Version"
   }
 
   dimension: extras__string__taskName {
