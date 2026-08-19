@@ -7670,6 +7670,96 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__counter__devtools_debugger_stylesheets_links_opened_in_debugger_count {
+    label: "Devtools Debugger Stylesheets: Links Opened In Debugger Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_links_opened_in_debugger_count ;;
+    type: number
+    group_label: "Devtools Debugger Stylesheets"
+    group_item_label: "Links Opened In Debugger Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets: Links Opened In Debugger Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_links_opened_in_debugger_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times stylesheets link from another panel opens the stylesheet in the debugger.
+"
+  }
+
+  dimension: metrics__counter__devtools_debugger_stylesheets_stylesheet_pref_disabled_count {
+    label: "Devtools Debugger Stylesheets: Stylesheet Pref Disabled Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_stylesheet_pref_disabled_count ;;
+    type: number
+    group_label: "Devtools Debugger Stylesheets"
+    group_item_label: "Stylesheet Pref Disabled Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets: Stylesheet Pref Disabled Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheet_pref_disabled_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the preference to enable the stylesheets in the debugger feature has been disabled from the Settings panel.
+"
+  }
+
+  dimension: metrics__counter__devtools_debugger_stylesheets_stylesheet_pref_enabled_count {
+    label: "Devtools Debugger Stylesheets: Stylesheet Pref Enabled Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_stylesheet_pref_enabled_count ;;
+    type: number
+    group_label: "Devtools Debugger Stylesheets"
+    group_item_label: "Stylesheet Pref Enabled Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets: Stylesheet Pref Enabled Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheet_pref_enabled_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the preference to enable the stylesheets in the debugger feature has been enabled from the Settings panel.
+"
+  }
+
+  dimension: metrics__counter__devtools_debugger_stylesheets_stylesheets_edited_count {
+    label: "Devtools Debugger Stylesheets: Stylesheets Edited Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_stylesheets_edited_count ;;
+    type: number
+    group_label: "Devtools Debugger Stylesheets"
+    group_item_label: "Stylesheets Edited Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets: Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of unique stylesheets edited in the debugger.
+"
+  }
+
+  dimension: metrics__counter__devtools_debugger_stylesheets_stylesheets_opened_count {
+    label: "Devtools Debugger Stylesheets: Stylesheets Opened Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.devtools_debugger_stylesheets_stylesheets_opened_count ;;
+    type: number
+    group_label: "Devtools Debugger Stylesheets"
+    group_item_label: "Stylesheets Opened Count"
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets: Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheets_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times stylesheets have been selected and opened in the debugger.
+"
+  }
+
   dimension: metrics__counter__devtools_dom_opened_count {
     label: "Devtools: DOM Opened Count"
     hidden: no
@@ -37820,6 +37910,131 @@ Duplication of `run_maintenance_vacuum_time` for glean-sym testing.
     link: {
       label: "Glean Dictionary reference for Devtools Custom Opened Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_custom_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_links_opened_in_debugger_count {
+    type: sum
+    sql: ${metrics__counter__devtools_debugger_stylesheets_links_opened_in_debugger_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Links Opened In Debugger Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_links_opened_in_debugger_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_links_opened_in_debugger_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_debugger_stylesheets_links_opened_in_debugger_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Links Opened In Debugger Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_links_opened_in_debugger_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_stylesheet_pref_disabled_count {
+    type: sum
+    sql: ${metrics__counter__devtools_debugger_stylesheets_stylesheet_pref_disabled_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Stylesheet Pref Disabled Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheet_pref_disabled_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_stylesheet_pref_disabled_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_debugger_stylesheets_stylesheet_pref_disabled_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Stylesheet Pref Disabled Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheet_pref_disabled_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_stylesheet_pref_enabled_count {
+    type: sum
+    sql: ${metrics__counter__devtools_debugger_stylesheets_stylesheet_pref_enabled_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Stylesheet Pref Enabled Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheet_pref_enabled_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_stylesheet_pref_enabled_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_debugger_stylesheets_stylesheet_pref_enabled_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Stylesheet Pref Enabled Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheet_pref_enabled_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_stylesheets_edited_count {
+    type: sum
+    sql: ${metrics__counter__devtools_debugger_stylesheets_stylesheets_edited_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_stylesheets_edited_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_debugger_stylesheets_stylesheets_edited_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Stylesheets Edited Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheets_edited_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_stylesheets_opened_count {
+    type: sum
+    sql: ${metrics__counter__devtools_debugger_stylesheets_stylesheets_opened_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheets_opened_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: devtools_debugger_stylesheets_stylesheets_opened_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__devtools_debugger_stylesheets_stylesheets_opened_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Devtools Debugger Stylesheets Stylesheets Opened Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/devtools_debugger_stylesheets_stylesheets_opened_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
