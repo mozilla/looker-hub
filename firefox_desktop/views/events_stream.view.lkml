@@ -363,6 +363,14 @@ view: events_stream {
     group_item_label: "Callout"
   }
 
+  dimension: extras__boolean__can_stage {
+    sql: ${TABLE}.extras.boolean.can_stage ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Can Stage"
+  }
+
   dimension: extras__boolean__cancelled {
     sql: ${TABLE}.extras.boolean.cancelled ;;
     type: yesno
@@ -899,6 +907,14 @@ view: events_stream {
     group_item_label: "Is Addon Active"
   }
 
+  dimension: extras__boolean__is_background {
+    sql: ${TABLE}.extras.boolean.is_background ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Background"
+  }
+
   dimension: extras__boolean__is_customizing {
     sql: ${TABLE}.extras.boolean.is_customizing ;;
     type: yesno
@@ -995,6 +1011,14 @@ view: events_stream {
     group_item_label: "Is Local Tab"
   }
 
+  dimension: extras__boolean__is_patch {
+    sql: ${TABLE}.extras.boolean.is_patch ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Patch"
+  }
+
   dimension: extras__boolean__is_persistent {
     sql: ${TABLE}.extras.boolean.is_persistent ;;
     type: yesno
@@ -1041,6 +1065,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Is Signed In"
+  }
+
+  dimension: extras__boolean__is_success {
+    sql: ${TABLE}.extras.boolean.is_success ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Success"
   }
 
   dimension: extras__boolean__is_temporarily_shown {
@@ -2587,6 +2619,14 @@ view: events_stream {
     group_item_label: "Rendered Frames"
   }
 
+  dimension: extras__quantity__resume_prompts {
+    sql: ${TABLE}.extras.quantity.resume_prompts ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Resume Prompts"
+  }
+
   dimension: extras__quantity__saved_count {
     sql: ${TABLE}.extras.quantity.saved_count ;;
     type: number
@@ -3057,6 +3097,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Total Length"
+  }
+
+  dimension: extras__quantity__total_retries {
+    sql: ${TABLE}.extras.quantity.total_retries ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Total Retries"
   }
 
   dimension: extras__quantity__total_size_bytes {
@@ -5955,6 +6003,14 @@ view: events_stream {
     group_item_label: "Previous Model"
   }
 
+  dimension: extras__string__previous_version {
+    sql: ${TABLE}.extras.string.previous_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Previous Version"
+  }
+
   dimension: extras__string__primary {
     sql: ${TABLE}.extras.string.primary ;;
     type: string
@@ -6715,6 +6771,14 @@ view: events_stream {
     group_item_label: "Start State"
   }
 
+  dimension: extras__string__starter_type {
+    sql: ${TABLE}.extras.string.starter_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Starter Type"
+  }
+
   dimension: extras__string__status {
     sql: ${TABLE}.extras.string.status ;;
     type: string
@@ -6865,6 +6929,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Target Type"
+  }
+
+  dimension: extras__string__target_version {
+    sql: ${TABLE}.extras.string.target_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Target Version"
   }
 
   dimension: extras__string__taskName {
