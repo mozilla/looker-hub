@@ -8,6 +8,7 @@ view: metric_definitions_metrics {
   derived_table: {
     sql: SELECT
                 COALESCE(LOGICAL_OR(mozfun.map.get_key(metrics.labeled_boolean.os_environment_is_default_handler, '.pdf')), FALSE) AS is_default_pdf_handler,
+CAST(COALESCE(SUM(CASE WHEN metrics.boolean.fxa_account_enabled IS TRUE THEN 1 ELSE 0 END),0) > 0 AS INT) AS fxa_signed_in_glean,
 (
     (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "freetext")) > 0, FALSE) OR
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "ink")) > 0, FALSE) OR
@@ -269,6 +270,14 @@ looker_base_fields_sample_id,
 "
     type: number
     sql: ${TABLE}.is_default_pdf_handler ;;
+  }
+
+  dimension: fxa_signed_in_glean {
+    group_label: "Metrics"
+    label: "FxA Sign-in Rate (Glean)"
+    description: "Is the client signed in at any point during the experiment, based on the Glean `fxa.account_enabled` metric"
+    type: number
+    sql: ${TABLE}.fxa_signed_in_glean ;;
   }
 
   dimension: pdf_engagement {
@@ -589,6 +598,7 @@ looker_base_fields_sample_id,
   set: metrics {
     fields: [
       is_default_pdf_handler,
+      fxa_signed_in_glean,
       pdf_engagement,
       pdf_freetext,
       pdf_ink,
