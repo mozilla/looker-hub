@@ -8872,6 +8872,24 @@ panel the click originated from:
 "
   }
 
+  dimension: metrics__boolean__smart_window_enabled {
+    label: "Smart Window: Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.smart_window_enabled ;;
+    type: yesno
+    group_label: "Smart Window"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Smart Window: Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/smart_window_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records if the user currently has Smart Window enabled.
+"
+  }
+
   dimension: metrics__labeled_quantity__smart_window_memories_count {
     label: "Smart Window: Memories Count"
     hidden: no

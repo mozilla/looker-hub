@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: expand_vertical_tabs_callout_existing_profiles {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.expand_vertical_tabs_callout_existing_profiles_statistics ;;
+view: copilot_chatbot_sunset {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.copilot_chatbot_sunset_statistics ;;
 
   dimension: submission_date {
     type: date
