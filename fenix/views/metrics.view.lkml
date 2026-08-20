@@ -9040,7 +9040,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "DNS Cache Entry Age for by-type queries at Removal Time (minutes)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_BY_TYPE_CLEANUP_AGE.
 "
   }
 
@@ -9059,7 +9058,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time for a completed by-type resolution that has a negative answer (msec).
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_BY_TYPE_FAILED_LOOKUP_TIME.
 "
   }
 
@@ -9078,7 +9076,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "DNS Cache Entry Age for by-type queries at Removal Time of non-expired entries (minutes)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_BY_TYPE_PREMATURE_EVICTION.
 "
   }
 
@@ -9116,7 +9113,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "DNS Cache Entry Age at Removal Time (minutes)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_CLEANUP_AGE.
 "
   }
 
@@ -9152,7 +9148,6 @@ This is to keep track of the amount of possible breakage that is occuring due to
     }
 
     description: "DNS: lookup algorithm
-This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_LOOKUP_ALGORITHM.
 "
   }
 
@@ -9171,7 +9166,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "DNS Lookup Type (hit, renewal, negative-hit, literal, overflow, network-first, network-shared)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram DNS_LOOKUP_METHOD2.
 "
   }
 
@@ -9190,7 +9184,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time for a completed native name resolution (msec)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_NATIVE_LOOKUP_TIME.
 "
   }
 
@@ -9209,7 +9202,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time in resolve queue waiting to getaddrinfo (msec)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_NATIVE_QUEUING.
 "
   }
 
@@ -9228,7 +9220,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "DNS Cache Entry Age at Removal Time of non-expired entries (minutes)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_PREMATURE_EVICTION.
 "
   }
 
@@ -9264,7 +9255,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time from the last received byte of the response until we have notified the consumer with a DNS record (msec)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_TRR_PROCESSING_TIME.
 "
   }
 
@@ -13458,7 +13448,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Whether or not a new alt-svc mapping would change the target hostname of the existing mapping
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_ALTSVC_MAPPING_CHANGED_TARGET.
 "
   }
 
@@ -13476,7 +13465,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Cache discovered inconsistent last-modified entry
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CACHE_LM_INCONSISTENT.
 "
   }
 
@@ -13495,7 +13483,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Channel Disposition: 0=Cancel, 1=Disk, 2=NetOK, 3=NetEarlyFail, 4=NetlateFail, +8 for HTTPS
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_CHANNEL_DISPOSITION.
 "
   }
 
@@ -13513,7 +13500,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Successfully started HTTP channels
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_CHANNEL_ONSTART_SUCCESS.
 "
   }
 
@@ -13531,7 +13517,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Fraction of sockets that used a nsConnectionEntry with history - size 300.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_CONNECTION_ENTRY_CACHE_HIT_1.
 "
   }
 
@@ -13550,7 +13535,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "encoding removed: 0=unknown, 1=gzip, 2=deflate, 3=brotli, 4=zstd
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_CONTENT_ENCODING.
 "
   }
 
@@ -13588,7 +13572,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Record at which stage an HTTPSSVC record is received
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram DNS_HTTPSSVC_RECORD_RECEIVING_STAGE.
 "
   }
 
@@ -13607,7 +13590,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "I want to be tracked, I do NOT want to be tracked, DNT unset
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram DNT_USAGE.
 "
   }
 
@@ -13625,7 +13607,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "TLS handshake with and without EchConfig success rate.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram ECHCONFIG_SUCCESS_RATE.
 "
   }
 
@@ -13643,7 +13624,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Whether an HTTP/2 session failed because the peer did not handshake properly
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP2_FAIL_BEFORE_SETTINGS.
 "
   }
 
@@ -13662,7 +13642,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "HTTP: KB read per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_KBREAD_PER_CONN2.
 "
   }
 
@@ -13680,7 +13659,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether a HTTP page load was over SSL or not. Recorded during response processing for all first-party page loads.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_PAGELOAD_IS_SSL.
 "
   }
 
@@ -13718,7 +13696,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "HTTP: requests per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_REQUEST_PER_CONN.
 "
   }
 
@@ -13737,7 +13714,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP: Requests per page (count)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_REQUEST_PER_PAGE.
 "
   }
 
@@ -13756,7 +13732,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP: Requests serviced from cache (%)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_REQUEST_PER_PAGE_FROM_CACHE.
 "
   }
 
@@ -13775,7 +13750,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "HTTP: Protocol Version Used on Response from nsHttp.h
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_RESPONSE_VERSION.
 "
   }
 
@@ -13812,7 +13786,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Whether the script load has a MIME type of ...?  (unknown, javaScript, image, audio, video, text_plain, text_csv, text_xml, app_octet_stream, app_xml, app_json, text_json, text_html, empty). Whether the script load is from ...?  (serviceworker_load, worker_load, importSript_load, script_load). Whether the script load is of ...?  (same_origin, CORS_origin, cross_origin)
-This metric was generated to correspond to the Legacy Telemetry categorical histogram SCRIPT_BLOCK_INCORRECT_MIME_3.
 "
   }
 
@@ -13831,7 +13804,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "HTTP subitem channel: Page start -> first byte received for subitem reply (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_SUBITEM_FIRST_BYTE_LATENCY_TIME.
 "
   }
 
@@ -13850,7 +13822,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP subitem channel: Page start -> subitem open() (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_SUBITEM_OPEN_LATENCY_TIME.
 "
   }
 
@@ -13868,7 +13839,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "TLS early data was used and it was accepted (true) or rejected (false) by the remote host.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram TLS_EARLY_DATA_ACCEPTED.
 "
   }
 
@@ -13887,7 +13857,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Sending TLS early data was possible: 0 - not possible, 1 - possible but not used, 2 - possible and used.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TLS_EARLY_DATA_NEGOTIATED.
 "
   }
 
@@ -13906,7 +13875,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "When echConfig is enabled, number of times a transaction is retried because of SSL_ERROR_ECH_FAILED
-This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_ECH_RETRY_ECH_FAILED_COUNT.
 "
   }
 
@@ -13925,7 +13893,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "When echConfig is enabled, number of times a transaction is retried because of other error
-This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_ECH_RETRY_OTHERS_COUNT.
 "
   }
 
@@ -13944,7 +13911,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "When echConfig is enabled, number of times a transaction is retried because of SSL_ERROR_ECH_RETRY_WITH_ECH
-This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_ECH_RETRY_WITH_ECH_COUNT.
 "
   }
 
@@ -13963,7 +13929,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "When echConfig is enabled, number of times a transaction is retried because of SSL_ERROR_ECH_RETRY_WITHOUT_ECH
-This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_ECH_RETRY_WITHOUT_ECH_COUNT.
 "
   }
 
@@ -13981,7 +13946,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Whether an HTTP request occurred over TLS/SSL or not. Recorded during response processing for all requests.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_TRANSACTION_IS_SSL.
 "
   }
 
@@ -14018,7 +13982,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Whether a HTTP transaction was routed via Alt-Svc or not.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_TRANSACTION_USE_ALTSVC.
 "
   }
 
@@ -14037,7 +14000,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Time from submission to dispatch of HTTP transaction (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_WAIT_TIME_HTTP.
 "
   }
 
@@ -14075,7 +14037,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time from submission to dispatch of HTTP/3 transaction (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_WAIT_TIME_HTTP3.
 "
   }
 
@@ -14094,7 +14055,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time from submission to dispatch of SPDY transaction (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram TRANSACTION_WAIT_TIME_SPDY.
 "
   }
 
@@ -14113,7 +14073,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP3: number of times a connection is blocked by maximum allowed number of parallel streams per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_BLOCKED_BY_STREAM_LIMIT_PER_CONN.
 "
   }
 
@@ -14132,7 +14091,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP3: the number of dropped datagrams.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_DROP_DGRAMS.
 "
   }
 
@@ -14151,7 +14109,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP3: packet loss ratio (multiply by 10000).
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_LOSS_RATIO.
 "
   }
 
@@ -14170,7 +14127,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP3: Streams created per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_REQUEST_PER_CONN.
 "
   }
 
@@ -14189,7 +14145,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP3: the number of saved datagrams that are waiting for keys to be available.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_SAVED_DGRAMS.
 "
   }
 
@@ -14207,8 +14162,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "HTTP3: number of times when a stream is blocked by the flow control while sendnig data.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_SENDING_BLOCKED_BY_FLOW_CONTROL_PER_TRANS.
+    description: "HTTP3: number of times when a stream is blocked by the flow control while sending data.
 "
   }
 
@@ -14245,7 +14199,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time difference between setting timer value and actually firing the timer for calling neqo
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_TIMER_DELAYED.
 "
   }
 
@@ -14264,7 +14217,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP3: number of transactions that are blocked by maximum allowed number of parallel streams per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_TRANS_BLOCKED_BY_STREAM_LIMIT_PER_CONN.
 "
   }
 
@@ -14283,7 +14235,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "HTTP3: number of times streams are blocked by the flow control while sending data per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_TRANS_SENDING_BLOCKED_BY_FLOW_CONTROL_PER_CONN.
 "
   }
 
@@ -17635,8 +17586,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Collect the content policy when the resource is non-local and suspended by back pressure (0-44 from nsContentPolicyType in nsIContentPolicy.idl).
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_BACK_PRESSURE_SUSPENSION_CP_TYPE.
+    description: "Collect the content policy when the resource is non-local and suspended by back pressure (0-44 from nsContentPolicyType in nsIContentPolicy.idl).3
 "
   }
 
@@ -17655,7 +17605,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "The delay caused by the e10s back pressure suspension(ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_BACK_PRESSURE_SUSPENSION_DELAY_TIME_MS.
 "
   }
 
@@ -17673,7 +17622,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Collect whether the resource is suspended by back pressure. And split by local-ness.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_BACK_PRESSURE_SUSPENSION_RATE_V2.
 "
   }
 
@@ -17692,7 +17640,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Maximum number of concurrent threads reached during a given download session
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram BACKGROUNDFILESAVER_THREAD_COUNT.
 "
   }
 
@@ -17780,7 +17727,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from connection cache read start to cache read end. Corresponds to Legacy histogram HTTP_PAGE_CACHE_READ_TIME_V2 in Desktop.
+    description: "In the HTTP page channel, time from connection cache read start to cache read end.
 "
   }
 
@@ -17799,7 +17746,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Final status of the CacheFileInputStream (0=ok, 1=other error, 2=out of memory, 3=disk full, 4=file corrupted, 5=file not found, 6=binding aborted)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_CACHE_V2_INPUT_STREAM_STATUS.
 "
   }
 
@@ -17818,7 +17764,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Final status of the CacheFileOutputStream (0=ok, 1=other error, 2=out of memory, 3=disk full, 4=file corrupted, 5=file not found, 6=binding aborted)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_CACHE_V2_OUTPUT_STREAM_STATUS.
 "
   }
 
@@ -17836,7 +17781,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from connection open to complete load (cache read end/until the last byte received) Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_V2 in Desktop.
+    description: "In the HTTP page channel, time from connection open to complete load (cache read end/until the last byte received)
 "
   }
 
@@ -17854,7 +17799,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from connection open to cache read end. Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_CACHED_V2 in Desktop.
+    description: "In the HTTP page channel, time from connection open to cache read end.
 "
   }
 
@@ -17872,7 +17817,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from connection open to the last byte received. Corresponds to Legacy histogram HTTP_PAGE_COMPLETE_LOAD_NET_V2 in Desktop.
+    description: "In the HTTP page channel, time from connection open to the last byte received.
 "
   }
 
@@ -17908,7 +17853,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Time spent on cookie DB open with readahead (ms)
-This metric was generated to correspond to the Legacy Telemetry exponential histogram MOZ_SQLITE_COOKIES_OPEN_READAHEAD_MS.
 "
   }
 
@@ -17978,7 +17922,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent (ms) during shutdown deleting disk cache v2 for 'clear private data' option
-This metric was generated to correspond to the Legacy Telemetry exponential histogram NETWORK_DISK_CACHE2_SHUTDOWN_CLEAR_PRIVATE.
 "
   }
 
@@ -18015,7 +17958,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_PAGE_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP page channel, time from the DNS request being issued to the response.
 "
   }
 
@@ -18033,7 +17976,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_PAGE_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP page channel, time from connection open to the DNS request being issued.
 "
   }
 
@@ -18051,7 +17994,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+    description: "In the HTTP page channel, time from connection open to cache read start.
 "
   }
 
@@ -18069,7 +18012,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from first byte of request sent to the last byte received. Corresponds to Legacy histogram HTTP_PAGE_FIRST_SENT_TO_LAST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP page channel, time from first byte of request sent to the last byte received.
 "
   }
 
@@ -18106,7 +18049,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time for which an HTTP cache entry is kept warmed in memory
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_CACHE_ENTRY_ALIVE_TIME.
 "
   }
 
@@ -18125,7 +18067,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time before we reload an HTTP cache entry again to memory
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP_CACHE_ENTRY_RELOAD_TIME.
 "
   }
 
@@ -18144,7 +18085,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Reuse count of an HTTP cache entry warmed in memory
-This metric was generated to correspond to the Legacy Telemetry linear histogram HTTP_CACHE_ENTRY_REUSE_COUNT.
 "
   }
 
@@ -18162,7 +18102,7 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time for positive cache validation Corresponds to Legacy histogram HTTP_PAGE_REVALIDATION in Desktop.
+    description: "In the HTTP page channel, time for positive cache validation
 "
   }
 
@@ -18181,7 +18121,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     }
 
     description: "Network identification (0=None, 1=New Ipv4, 2=Same, 3=New IPv6, 4=New dual)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_ID2.
 "
   }
 
@@ -18199,7 +18138,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "Network ID presence when the network connectivity checker reports that we have connectivity
-This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_ID_ONLINE.
 "
   }
 
@@ -18218,7 +18156,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Count the number of 0) successful connections to an ipv4 address, 1) failed connection an ipv4 address, 2) successful connection to an ipv6 address and 3) failed connections to an ipv6 address.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram IPV4_AND_IPV6_ADDRESS_CONNECTIVITY.
 "
   }
 
@@ -18323,7 +18260,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel,time from connection open to the first byte received. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP subitem channel,time from connection open to the first byte received.
 "
   }
 
@@ -18341,7 +18278,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from connection open to the first byte of requst sent. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_SENT in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP page channel, time from connection open to the first byte of requst sent.
 "
   }
 
@@ -18508,7 +18445,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Ratio of used and unused resources preloaded with link rel=preload tag or response header, broken down by supported resource type.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram REL_PRELOAD_MISS_RATIO.
 "
   }
 
@@ -18770,7 +18706,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from connection cache read start to cache read end. Corresponds to Legacy histogram HTTP_SUB_CACHE_READ_TIME_V2 in Desktop.
+    description: "In the HTTP subitem channel, time from connection cache read start to cache read end.
 "
   }
 
@@ -18788,7 +18724,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from connection open to complete load (cache read end/until the last byte received) Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_V2 in Desktop.
+    description: "In the HTTP subitem channel, time from connection open to complete load (cache read end/until the last byte received)
 "
   }
 
@@ -18806,7 +18742,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from connection open to cache read end. Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_CACHED_V2 in Desktop.
+    description: "In the HTTP subitem channel, time from connection open to cache read end.
 "
   }
 
@@ -18824,7 +18760,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from connection open to the last byte received. Corresponds to Legacy histogram HTTP_SUB_COMPLETE_LOAD_NET_V2 in Desktop.
+    description: "In the HTTP subitem channel, time from connection open to the last byte received.
 "
   }
 
@@ -18842,7 +18778,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_SUB_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP subitem channel, time from the DNS request being issued to the response.
 "
   }
 
@@ -18860,7 +18796,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_SUB_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP subitem channel, time from connection open to the DNS request being issued.
 "
   }
 
@@ -18878,7 +18814,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+    description: "In the HTTP subitem channel, time from connection open to cache read start.
 "
   }
 
@@ -18896,7 +18832,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from first byte of request sent to the last byte received. Corresponds to Legacy histogram HTTP_SUB_FIRST_SENT_TO_LAST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP subitem channel, time from first byte of request sent to the last byte received.
 "
   }
 
@@ -18914,7 +18850,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time for positive cache validation Corresponds to Legacy histogram HTTP_SUB_REVALIDATION in Desktop.
+    description: "In the HTTP subitem channel, time for positive cache validation
 "
   }
 
@@ -18932,7 +18868,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from connection open to the first byte received. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_RECEIVED in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP subitem channel, time from connection open to the first byte received.
 "
   }
 
@@ -18950,7 +18886,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from connection open to the first byte of requst sent. Corresponds to Legacy histogram HTTP_SUB_OPEN_TO_FIRST_SENT in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP subitem channel, time from connection open to the first byte of requst sent.
 "
   }
 
@@ -18968,7 +18904,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_SUB_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP subitem channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP.
 "
   }
 
@@ -18986,7 +18922,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP subitem channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_SUB_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP subitem channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP.
 "
   }
 
@@ -19123,7 +19059,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP.
 "
   }
 
@@ -19193,7 +19129,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
+    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP.
 "
   }
 
@@ -19599,8 +19535,6 @@ Available keys are:
   \"Y21_P3FpLead\",
   \"Y22_P3FpBg\",
   \"Y23_P3FpOth\"
-
-This metric was generated to correspond to the Legacy Telemetry scalar networking.data_transferred_v3_kb.
 "
   }
 
@@ -19831,7 +19765,7 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "True if HTTP3 is enabled at the start of a session. This metric was generated to correspond to the Legacy Telemetry scalar networking.http3_enabled.
+    description: "True if HTTP3 is enabled at the start of a session.
 "
   }
 
@@ -21643,7 +21577,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A bitfield representation for the usage of HTTPS RR prefs. bit 0: network.dns.upgrade_with_https_rr is enabled or not. bit 1: network.dns.use_https_rr_as_altsvc is enabled or not. bit 2: network.dns.echconfig.enabled is enabled or not. This metric was generated to correspond to the Legacy Telemetry scalar networking.https_rr_prefs_usage.
+    description: "A bitfield representation for the usage of HTTPS RR prefs. bit 0: network.dns.upgrade_with_https_rr is enabled or not. bit 1: network.dns.use_https_rr_as_altsvc is enabled or not. bit 2: network.dns.echconfig.enabled is enabled or not.
 "
   }
 
@@ -21915,7 +21849,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent blocked in PR_Close when there has been the connectivity change in the last 60s (ms).
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_CONNECTIVITY_CHANGE.
 "
   }
 
@@ -21934,7 +21867,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent blocked in PR_Close when there has been a link change in the last 60s (ms).
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_LINK_CHANGE.
 "
   }
 
@@ -21953,7 +21885,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent blocked in PR_Close when we are not shutting down and there has been niether a network nor an offline state change in the last 60s (ms).
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_NORMAL.
 "
   }
 
@@ -21972,7 +21903,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent blocked in PR_Close when the offline state has changed in the last 60s (ms).
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_OFFLINE.
 "
   }
 
@@ -21991,7 +21921,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Time spent blocked in PR_Close during a shutdown (ms).
-This metric was generated to correspond to the Legacy Telemetry exponential histogram PRCLOSE_UDP_BLOCKING_TIME_SHUTDOWN.
 "
   }
 
@@ -22667,7 +22596,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL. This metric was generated to correspond to the Legacy Telemetry scalar networking.trr_connection_cycle_count.
+    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL.
 "
   }
 
@@ -22968,7 +22897,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The initiator of this ORB blocked request.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram ORB_BLOCK_INITIATOR.
 "
   }
 
@@ -22986,7 +22914,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "The reason of why this request was blocked by ORB
-This metric was generated to correspond to the Legacy Telemetry categorical histogram ORB_BLOCK_REASON.
 "
   }
 
@@ -27006,7 +26933,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__security_referrer_policy_count__sum {
     label: "Security: Referrer Policy Count Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.security_referrer_policy_count.sum ;;
     type: number
     group_label: "Security"
@@ -27275,7 +27202,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Size of continued H2 headers in bytes.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_CONTINUED_HEADERS.
 "
   }
 
@@ -27294,7 +27220,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "H2: goaway reason client sent from rfc 7540. 31 is none sent.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram SPDY_GOAWAY_LOCAL.
 "
   }
 
@@ -27313,7 +27238,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "H2: goaway reason from peer from rfc 7540. 31 is none received.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram SPDY_GOAWAY_PEER.
 "
   }
 
@@ -27332,7 +27256,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "SPDY: KB read per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_KBREAD_PER_CONN2.
 "
   }
 
@@ -27351,7 +27274,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "SPDY: Streams concurrent active per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_PARALLEL_STREAMS.
 "
   }
 
@@ -27370,7 +27292,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "SPDY: Streams created per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_REQUEST_PER_CONN_3.
 "
   }
 
@@ -27389,7 +27310,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "SPDY: Streams received per connection
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_SERVER_INITIATED_STREAMS.
 "
   }
 
@@ -27427,7 +27347,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "H2: Settings Max Streams parameter
-This metric was generated to correspond to the Legacy Telemetry exponential histogram SPDY_SETTINGS_MAX_STREAMS.
 "
   }
 
