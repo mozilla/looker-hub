@@ -1168,7 +1168,7 @@ once we validate these assumptions.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Networking Http3 Enabled"
-    description: "True if HTTP3 is enabled at the start of a session. This metric was generated to correspond to the Legacy Telemetry scalar networking.http3_enabled.
+    description: "True if HTTP3 is enabled at the start of a session.
 "
   }
 
@@ -12622,7 +12622,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_lookup_disposition ;;
     hidden: yes
     description: "DNS: lookup algorithm; Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_LOOKUP_DISPOSITION3.
 "
   }
 
@@ -12630,7 +12629,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_blacklisted ;;
     hidden: yes
     description: "DNS check for TRR was blocked by blacklist; Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry boolean histogram DNS_TRR_BLACKLISTED3.
 "
   }
 
@@ -12638,7 +12636,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_disabled ;;
     hidden: yes
     description: "Resolve success rate when in TRR-first and called TRR-disabled (fall-back mode); Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry boolean histogram DNS_TRR_DISABLED3.
 "
   }
 
@@ -12646,7 +12643,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_first ;;
     hidden: yes
     description: "TRR-first mode distribution. 0=Worked, 1=fell back fine after TRR fail, 2=native worked, 3=both failed; Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_TRR_FIRST4.
 "
   }
 
@@ -12654,7 +12650,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_http_version ;;
     hidden: yes
     description: "HTTP version used by DoH endpoint
-This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_TRR_HTTP_VERSION2.
 "
   }
 
@@ -12662,7 +12657,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_ns_verfified ;;
     hidden: yes
     description: "TRR managed to verify NS entry; Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry boolean histogram DNS_TRR_NS_VERFIFIED3.
 "
   }
 
@@ -12670,7 +12664,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_trr_success ;;
     hidden: yes
     description: "How often TRR (Trusted Recursive Resolver) requests are fine, time-out or error. Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_TRR_SUCCESS3.
 "
   }
 
@@ -12709,7 +12702,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.http_cache_disposition ;;
     hidden: yes
     description: "HTTP Cache v2 hit/miss stats keyed by content type.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram HTTP_CACHE_DISPOSITION_3.
 "
   }
 
@@ -12717,7 +12709,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.http_traffic_analysis ;;
     hidden: yes
     description: "Numbers of HTTP transactions and connections by type. There are some categories separated by labels based on 5 parameters: 1. normal browsing or private browsing 2. system principal or not 3. first party or third party 4. class of service (Leader/Background/Others) 5. tracking classification (Basic/Content/FingerprintingContent).
-This metric was generated to correspond to the Legacy Telemetry categorical histogram HTTP_TRAFFIC_ANALYSIS_3.
 "
   }
 
@@ -12767,7 +12758,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.dual_labeled_counter.networking_http3_channel_onstart_success ;;
     hidden: yes
     description: "Successfully started HTTP channels when HTTP3 is used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP3_CHANNEL_ONSTART_SUCCESS.
 "
   }
 
@@ -12775,7 +12765,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.dual_labeled_counter.networking_http_channel_disposition_upgrade ;;
     hidden: yes
     description: "Upgrading display content Channel Disposition
-This metric was generated to correspond to the Legacy Telemetry categorical histogram HTTP_CHANNEL_DISPOSITION_UPGRADE.
 "
   }
 
@@ -13669,7 +13658,6 @@ This is to keep track of the amount of possible breakage that is occuring due to
     sql: ${TABLE}.metrics.labeled_counter.dns_lookup_algorithm ;;
     hidden: yes
     description: "DNS: lookup algorithm
-This metric was generated to correspond to the Legacy Telemetry categorical histogram DNS_LOOKUP_ALGORITHM.
 "
   }
 
@@ -14057,7 +14045,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_altsvc_mapping_changed_target ;;
     hidden: yes
     description: "Whether or not a new alt-svc mapping would change the target hostname of the existing mapping
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_ALTSVC_MAPPING_CHANGED_TARGET.
 "
   }
 
@@ -14065,7 +14052,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_cache_lm_inconsistent ;;
     hidden: yes
     description: "Cache discovered inconsistent last-modified entry
-This metric was generated to correspond to the Legacy Telemetry boolean histogram CACHE_LM_INCONSISTENT.
 "
   }
 
@@ -14073,7 +14059,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_channel_onstart_success ;;
     hidden: yes
     description: "Successfully started HTTP channels
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_CHANNEL_ONSTART_SUCCESS.
 "
   }
 
@@ -14081,7 +14066,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_connection_entry_cache_hit ;;
     hidden: yes
     description: "Fraction of sockets that used a nsConnectionEntry with history - size 300.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_CONNECTION_ENTRY_CACHE_HIT_1.
 "
   }
 
@@ -14089,7 +14073,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_echconfig_success_rate ;;
     hidden: yes
     description: "TLS handshake with and without EchConfig success rate.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram ECHCONFIG_SUCCESS_RATE.
 "
   }
 
@@ -14097,7 +14080,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.http_http2_fail_before_settings ;;
     hidden: yes
     description: "Whether an HTTP/2 session failed because the peer did not handshake properly
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP2_FAIL_BEFORE_SETTINGS.
 "
   }
 
@@ -14105,7 +14087,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_pageload_is_ssl ;;
     hidden: yes
     description: "Whether a HTTP page load was over SSL or not. Recorded during response processing for all first-party page loads.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_PAGELOAD_IS_SSL.
 "
   }
 
@@ -14113,7 +14094,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_script_block_incorrect_mime ;;
     hidden: yes
     description: "Whether the script load has a MIME type of ...?  (unknown, javaScript, image, audio, video, text_plain, text_csv, text_xml, app_octet_stream, app_xml, app_json, text_json, text_html, empty). Whether the script load is from ...?  (serviceworker_load, worker_load, importSript_load, script_load). Whether the script load is of ...?  (same_origin, CORS_origin, cross_origin)
-This metric was generated to correspond to the Legacy Telemetry categorical histogram SCRIPT_BLOCK_INCORRECT_MIME_3.
 "
   }
 
@@ -14121,7 +14101,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.http_tls_early_data_accepted ;;
     hidden: yes
     description: "TLS early data was used and it was accepted (true) or rejected (false) by the remote host.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram TLS_EARLY_DATA_ACCEPTED.
 "
   }
 
@@ -14129,7 +14108,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_transaction_is_ssl ;;
     hidden: yes
     description: "Whether an HTTP request occurred over TLS/SSL or not. Recorded during response processing for all requests.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_TRANSACTION_IS_SSL.
 "
   }
 
@@ -14137,7 +14115,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.http_transaction_use_altsvc ;;
     hidden: yes
     description: "Whether a HTTP transaction was routed via Alt-Svc or not.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram HTTP_TRANSACTION_USE_ALTSVC.
 "
   }
 
@@ -14671,7 +14648,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.network_back_pressure_suspension_rate ;;
     hidden: yes
     description: "Collect whether the resource is suspended by back pressure. And split by local-ness.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_BACK_PRESSURE_SUSPENSION_RATE_V2.
 "
   }
 
@@ -14721,7 +14697,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.network_id_online ;;
     hidden: yes
     description: "Network ID presence when the network connectivity checker reports that we have connectivity
-This metric was generated to correspond to the Legacy Telemetry categorical histogram NETWORK_ID_ONLINE.
 "
   }
 
@@ -14766,7 +14741,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.network_rel_preload_miss_ratio ;;
     hidden: yes
     description: "Ratio of used and unused resources preloaded with link rel=preload tag or response header, broken down by supported resource type.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram REL_PRELOAD_MISS_RATIO.
 "
   }
 
@@ -14962,8 +14936,6 @@ Available keys are:
   \"Y21_P3FpLead\",
   \"Y22_P3FpBg\",
   \"Y23_P3FpOth\"
-
-This metric was generated to correspond to the Legacy Telemetry scalar networking.data_transferred_v3_kb.
 "
   }
 
@@ -15271,7 +15243,7 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
   dimension: metrics__labeled_counter__networking_trr_connection_cycle_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_trr_connection_cycle_count ;;
     hidden: yes
-    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL. This metric was generated to correspond to the Legacy Telemetry scalar networking.trr_connection_cycle_count.
+    description: "Number of times we cycled the TRR connection during a subsession. Keyed by TRR provider URL.
 "
   }
 
@@ -15306,7 +15278,6 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
     sql: ${TABLE}.metrics.labeled_counter.orb_block_initiator ;;
     hidden: yes
     description: "The initiator of this ORB blocked request.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram ORB_BLOCK_INITIATOR.
 "
   }
 
@@ -15314,7 +15285,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.orb_block_reason ;;
     hidden: yes
     description: "The reason of why this request was blocked by ORB
-This metric was generated to correspond to the Legacy Telemetry categorical histogram ORB_BLOCK_REASON.
 "
   }
 
@@ -16286,7 +16256,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_attempt_count ;;
     hidden: yes
     description: "Number of times we attempted TRR for a successful lookup in TRR-first mode. Keyed by provider.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_ATTEMPT_COUNT.
 "
   }
 
@@ -16294,7 +16263,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_relevant_skip_reason_native_failed ;;
     hidden: yes
     description: "When in TRR-first mode, if TRR was skipped and native failed, it lists the reason we may have skipped TRR, keyed by the provider. Does not include requests that intentionally skip TRR.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_RELEVANT_SKIP_REASON_NATIVE_FAILED.
 "
   }
 
@@ -16302,7 +16270,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_relevant_skip_reason_native_success ;;
     hidden: yes
     description: "When in TRR-first mode, if TRR was skipped and native succeeded, it lists the reason we may have skipped TRR, keyed by the provider. Does not include requests that intentionally skip TRR.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_RELEVANT_SKIP_REASON_NATIVE_SUCCESS.
 "
   }
 
@@ -16310,7 +16277,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_relevant_skip_reason_trr_first ;;
     hidden: yes
     description: "When in TRR-first mode, it lists the reason we may have skipped TRR, keyed by the provider. Does not include requests that intentionally skip TRR.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_RELEVANT_SKIP_REASON_TRR_FIRST.
 "
   }
 
@@ -16318,7 +16284,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_relevant_skip_reason_trr_first_type_rec ;;
     hidden: yes
     description: "When in TRR-first mode, it lists the reason we may have skipped TRR for HTTPS RR, keyed by the provider. Does not include requests that intentionally skip TRR.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_RELEVANT_SKIP_REASON_TRR_FIRST_TYPE_REC.
 "
   }
 
@@ -16326,7 +16291,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_skip_reason_native_failed ;;
     hidden: yes
     description: "When in TRR-first mode, if TRR was skipped and native failed, it lists the reason we may have skipped TRR, keyed by the provider.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_SKIP_REASON_NATIVE_FAILED.
 "
   }
 
@@ -16334,7 +16298,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_skip_reason_native_success ;;
     hidden: yes
     description: "When in TRR-first mode, if TRR was skipped and native succeeded, it lists the reason we may have skipped TRR, keyed by the provider.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_SKIP_REASON_NATIVE_SUCCESS.
 "
   }
 
@@ -16342,7 +16305,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_skip_reason_retry_failed ;;
     hidden: yes
     description: "When in TRR-first mode, if TRR failed once and retried unsuccessfully, it lists the reason for the first failure, keyed by the provider.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_SKIP_REASON_RETRY_FAILED.
 "
   }
 
@@ -16350,7 +16312,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_skip_reason_retry_success ;;
     hidden: yes
     description: "When in TRR-first mode, if TRR failed once and was successfully retried, it lists the reason for the first failure, keyed by the provider.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_SKIP_REASON_RETRY_SUCCESS.
 "
   }
 
@@ -16358,7 +16319,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_skip_reason_strict_mode ;;
     hidden: yes
     description: "When in TRR-first mode, it lists the reason we may have skipped TRR. The key is like `<provider>|<skip reason of first attempt>` or just `<provider>` used when there was no second attempt.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_SKIP_REASON_STRICT_MODE.
 "
   }
 
@@ -16366,7 +16326,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.dns_trr_skip_reason_trr_first ;;
     hidden: yes
     description: "When in TRR-first mode, it lists the reason we may have skipped TRR, keyed by the provider.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRR_SKIP_REASON_TRR_FIRST2.
 "
   }
 
@@ -16414,7 +16373,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_custom_distribution.http3_connection_close_code ;;
     hidden: yes
     description: "Error code when http3 connection is closed. Look at Http3Session for more details.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP3_CONNECTION_CLOSE_CODE_3.
 "
   }
 
@@ -16422,7 +16380,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.http3_counts_pto ;;
     hidden: yes
     description: "HTTP3: the number of PTOs.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_COUNTS_PTO.
 "
   }
 
@@ -16430,7 +16387,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_custom_distribution.http3_ech_outcome ;;
     hidden: yes
     description: "Success / Fail Rates for HTTP3 Keyed by ECH Usage
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP3_ECH_OUTCOME.
 "
   }
 
@@ -16438,7 +16394,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.http3_late_ack ;;
     hidden: yes
     description: "HTTP3: the number of spurious retransmissions.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_LATE_ACK.
 "
   }
 
@@ -16446,7 +16401,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_custom_distribution.http3_late_ack_ratio ;;
     hidden: yes
     description: "HTTP3: spurious retransmissions ratio (spurios_retransmission / packet sent * 10000).
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_LATE_ACK_RATIO.
 "
   }
 
@@ -16454,7 +16408,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_custom_distribution.http3_received_sent_dgrams ;;
     hidden: yes
     description: "HTTP3: the number of received/sent packets.
-This metric was generated to correspond to the Legacy Telemetry exponential histogram HTTP3_RECEIVED_SENT_DGRAMS.
 "
   }
 
@@ -16462,7 +16415,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_custom_distribution.http_channel_page_onstart_success_trr ;;
     hidden: yes
     description: "Successfully started HTTP channels for page loading when TRR is enabled; Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_CHANNEL_PAGE_ONSTART_SUCCESS_TRR3.
 "
   }
 
@@ -16470,7 +16422,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.http_channel_sub_onstart_success_trr ;;
     hidden: yes
     description: "Successfully started HTTP channels for resource loading when TRR is enabled; Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram HTTP_CHANNEL_SUB_ONSTART_SUCCESS_TRR3.
 "
   }
 
@@ -16554,7 +16505,6 @@ This metric was generated to correspond to the Legacy Telemetry linear histogram
     sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_entry_count_share ;;
     hidden: yes
     description: "Percentage of the entries with the given content type. Numbers are sampled periodically, every time 2GB of data is written to the cache.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_CACHE_ENTRY_COUNT_SHARE.
 "
   }
 
@@ -16569,7 +16519,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     sql: ${TABLE}.metrics.labeled_custom_distribution.network_cache_size_share ;;
     hidden: yes
     description: "Percentage of the cache size occupied by given content type. Numbers are sampled periodically, every time 2GB of data is written to the cache.
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram NETWORK_CACHE_SIZE_SHARE.
 "
   }
 
@@ -16952,7 +16901,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_timing_distribution.dns_trr_lookup_time ;;
     hidden: yes
     description: "Time for a completed TRR resolution (msec); Keyed by TRR domain
-This metric was generated to correspond to the Legacy Telemetry exponential histogram DNS_TRR_LOOKUP_TIME3.
 "
   }
 
@@ -19612,7 +19560,7 @@ Value will be 0 if the feature is disabled.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Networking Https Rr Prefs Usage"
-    description: "A bitfield representation for the usage of HTTPS RR prefs. bit 0: network.dns.upgrade_with_https_rr is enabled or not. bit 1: network.dns.use_https_rr_as_altsvc is enabled or not. bit 2: network.dns.echconfig.enabled is enabled or not. This metric was generated to correspond to the Legacy Telemetry scalar networking.https_rr_prefs_usage.
+    description: "A bitfield representation for the usage of HTTPS RR prefs. bit 0: network.dns.upgrade_with_https_rr is enabled or not. bit 1: network.dns.use_https_rr_as_altsvc is enabled or not. bit 2: network.dns.echconfig.enabled is enabled or not.
 "
   }
 
