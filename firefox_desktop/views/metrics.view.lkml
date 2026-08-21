@@ -2701,7 +2701,16 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the WebExtension ID of a search engine where the WebExtension is not installed (= 1), disabled (= 2), search engine no longer specified (= 4), a different name (= 5), where the submission URL is different between the search engine and the WebExtension (= 6). The value '3' has been replaced by '6' to distinguish newer entries. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.engine_invalid_webextension, which was removed in Fx 139.
+    description: "Records when a search engine details are not in sync with the associated
+WebExtension. The labels are the WebExtension identifiers.
+The values are a custom enumeration with meanings being where the WebExtension:
+
+1. is not installed
+2. is disabled
+3. (Unused, replaced by 6 which has a better algorithm)
+4. no longer specifies a search engine
+5. has a different name for the search engine
+6. has a different submission URL to the search engine
 "
   }
 
@@ -2719,7 +2728,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the number of insecure (i.e., using http) OpenSearch search engines a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.insecure_opensearch_engine_count.
+    description: "Records the number of insecure (i.e., using http) OpenSearch search
+engines a given user has installed.
 "
   }
 
@@ -2737,7 +2747,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the number of OpenSearch search engines with insecure updates enabled (i.e., using http) a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.insecure_opensearch_update_count.
+    description: "Records the number of OpenSearch search engines with insecure
+updates enabled (i.e., using http) a given user has installed.
 "
   }
 
@@ -2755,7 +2766,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the number of secure (i.e., using https) OpenSearch search engines a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.secure_opensearch_engine_count.
+    description: "Records the number of secure (i.e., using https) OpenSearch search
+engines a given user has installed.
 "
   }
 
@@ -2773,7 +2785,8 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the number of OpenSearch search engines with secure updates enabled (i.e., using https) a given user has installed. This metric was generated to correspond to the Legacy Telemetry scalar browser.searchinit.secure_opensearch_update_count.
+    description: "Records the number of OpenSearch search engines with secure updates
+enabled (i.e., using https) a given user has installed.
 "
   }
 
@@ -4812,7 +4825,6 @@ attention_permission_denied is when the browser wants to draw attention to the f
     }
 
     description: "The time content uses to enter/exit fullscreen regardless of fullscreen transition timeout
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FULLSCREEN_CHANGE_MS.
 "
   }
 
@@ -7515,6 +7527,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Records the count of hidden search engines.
+
 - `oneOff` refers to an engine hidden from only the one-off buttons or
   the unified search button.
 - `disabled` refers to an engine that has been disabled from the whole
@@ -7537,15 +7550,20 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Records the type and number of search engines that a user has installed and enabled.
+    description: "Records the type and number of search engines that a user has installed
+and enabled.
+
 The total of all labels is the total count of search engines installed.
+
 - `appProvidedConfig` refers to the search engine integrations provided by
   the application.
 - `userInstalledConfig` refers to engines from the application's
   configuration that the user has chosen to install.
 - `openSearch` refers to an engine installed via a web page providing an
   \"OpenSearch\" definition.
-- `addon` refers to an engine linked to a particular add-on. - `policy` refers to an engine added by an enterprise policy. - `user` refers to an engine a user has added, e.g. via the settings
+- `addon` refers to an engine linked to a particular add-on.
+- `policy` refers to an engine added by an enterprise policy.
+- `user` refers to an engine a user has added, e.g. via the settings
   UI to add an engine, or via right-clicking on a search field on a web
   page.
 "
@@ -7583,11 +7601,10 @@ The total of all labels is the total count of search engines installed.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Deprecated in Fx139, please use provider_id, partner_code,
-overridden_by_third_party and display_name instead.
+    description: "**Deprecated in Fx 139**, please use `provider_id`, `partner_code`,
+`overridden_by_third_party` and `display_name` instead.
 
-The telemetry id of the search engine.
-For example: \"engine1\"
+The telemetry id of the search engine. For example: `google-b-d`.
 
 For application-provided engines, this is the identifier plus telemetry
 suffix supplied by the configuration.
@@ -7610,14 +7627,14 @@ For other engines, this is `other-<engineName>`.
     }
 
     description: "A path relating to where the search engine was installed/loaded from.
+
 For example:
-  `[app]appDefault` for a config search engine.
-  `[addon]<extension id>` for a WebExtension-based engine.
-  `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
-  engine.
-  `[policy]` for an enteprise policy engine.
-  `[user]` for a search engine defined by the user or generated from a
-  web page.
+- `[app]<config identifier>` for a config search engine.
+- `[addon]<extension id>` for a WebExtension-based engine.
+- `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based engine.
+- `[policy]` for an enteprise policy engine.
+- `[user]` for a search engine defined by the user or generated from a web page.
+
 Note: this metric is truncated at 100 characters.
 "
   }
@@ -7636,7 +7653,7 @@ Note: this metric is truncated at 100 characters.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Set to true if the user's default search engine has been allowed to be
+    description: "Set to `true` if the user's default search engine has been allowed to be
 overridden by a third-party add-on or OpenSearch engine.
 "
   }
@@ -7698,11 +7715,10 @@ be `other`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The submission URL of the default engine. This is only reported in the
-cases where:
-  The engine is an application provided engine.
-  The engine has the same name as an application provided engine.
-  The engine matches one of a specific list of well known search engines.
+    description: "The submission URL of the default engine. This is only reported in the cases where:
+- The engine is an application provided engine.
+- The engine has the same name as an application provided engine.
+- The engine matches one of a specific list of well known search engines.
 "
   }
 
@@ -7765,11 +7781,10 @@ default engine, and hence both versions of these fields will be filled in.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Deprecated in Fx139, please use provider_id, partner_code,
-overridden_by_third_party and display_name instead.
+    description: "**Deprecated in Fx 139**, please use `provider_id`, `partner_code`,
+`overridden_by_third_party` and `display_name` instead.
 
-The telemetry id of the search engine.
-For example: \"engine1\"
+The telemetry id of the search engine. For example: `google-b-d`.
 
 For application-provided engines, this is the identifier plus telemetry
 suffix supplied by the configuration.
@@ -7798,14 +7813,14 @@ default engine, and hence both versions of these fields will be filled in.
     }
 
     description: "A path relating to where the search engine was installed/loaded from.
+
 For example:
-  `[app]appDefault` for a config search engine.
-  `[addon]<extension id>` for a WebExtension-based engine.
-  `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based
-  engine.
-  `[policy]` for an enteprise policy engine.
-  `[user]` for a search engine defined by the user or generated from a
-  web page.
+- `[app]<config identifier>` for a config search engine.
+- `[addon]<extension id>` for a WebExtension-based engine.
+- `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch-based engine.
+- `[policy]` for an enteprise policy engine.
+- `[user]` for a search engine defined by the user or generated from a web page.
+
 Note: this metric is truncated at 100 characters.
 
 If this string is an empty string (`\"\"`), this means that one or both of
@@ -7830,7 +7845,7 @@ default engine, and hence both versions of these fields will be filled in.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Set to true if the user's default search engine has been allowed to be
+    description: "Set to `true` if the user's default search engine has been allowed to be
 overridden by a third-party add-on or OpenSearch engine.
 "
   }
@@ -7945,15 +7960,17 @@ default engine, and hence both versions of these fields will be filled in.
     }
 
     description: "Counts the type of initialization statuses on start up.
-failedSettings - failed loading and migrating the search settings file.
-failedFetchEngines - failed to load or parse the configuration from remote
-                     settings.
-failedLoadEngines - failed to create all the search engines from the
-                    configuration or user installed engines.
-failedLoadSettingsAddonManager - the addon manager ready promise was rejected. (from FF135)
-settingsCorrupt - the search settings were reset because of an exception, but
-                  the search service still finished initializing. (from FF136)
-success - search service successfully initialized.
+
+- `failedSettings` failed loading and migrating the search settings file.
+- `failedFetchEngines` failed to load or parse the configuration from
+  remote settings.
+- `failedLoadEngines` failed to create all the search engines from the
+  configuration or user installed engines.
+- `failedLoadSettingsAddonManager` the addon manager ready promise was
+  rejected. (from Fx 135)
+- `settingsCorrupt` the search settings were reset because of an exception,
+  but the search service still finished initializing. (from Fx 136)
+- `success` the search service successfully initialized.
 "
   }
 
@@ -64441,19 +64458,19 @@ view: metrics__metrics__labeled_counter__network_cookies_open_error {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

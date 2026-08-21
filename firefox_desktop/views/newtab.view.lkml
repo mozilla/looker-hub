@@ -299,11 +299,10 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Deprecated in Fx139, please use provider_id, partner_code,
-overridden_by_third_party and display_name instead.
+    description: "**Deprecated in Fx 139**, please use `provider_id`, `partner_code`,
+`overridden_by_third_party` and `display_name` instead.
 
-The telemetry id of the search engine.
-For example: \"engine1\"
+The telemetry id of the search engine. For example: `google-b-d`.
 
 For application-provided engines, this is the identifier plus telemetry
 suffix supplied by the configuration.
@@ -325,7 +324,7 @@ For other engines, this is `other-<engineName>`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Set to true if the user's default search engine has been allowed to be
+    description: "Set to `true` if the user's default search engine has been allowed to be
 overridden by a third-party add-on or OpenSearch engine.
 "
   }
@@ -387,11 +386,10 @@ be `other`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Deprecated in Fx139, please use provider_id, partner_code,
-overridden_by_third_party and display_name instead.
+    description: "**Deprecated in Fx 139**, please use `provider_id`, `partner_code`,
+`overridden_by_third_party` and `display_name` instead.
 
-The telemetry id of the search engine.
-For example: \"engine1\"
+The telemetry id of the search engine. For example: `google-b-d`.
 
 For application-provided engines, this is the identifier plus telemetry
 suffix supplied by the configuration.
@@ -419,7 +417,7 @@ default engine, and hence both versions of these fields will be filled in.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Set to true if the user's default search engine has been allowed to be
+    description: "Set to `true` if the user's default search engine has been allowed to be
 overridden by a third-party add-on or OpenSearch engine.
 "
   }
