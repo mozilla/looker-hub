@@ -281,14 +281,12 @@ view: bigquery_usage__bi_engine_reasons {
     sql: ${TABLE}.code ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Machine-readable reason code."
   }
 
   dimension: message {
     sql: ${TABLE}.message ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Human-readable explanation of the reason."
   }
 }
 
@@ -297,13 +295,11 @@ view: bigquery_usage__labels {
     sql: ${TABLE}.key ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Label key."
   }
 
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Label value."
   }
 }

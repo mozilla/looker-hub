@@ -43,7 +43,6 @@ view: usage_reporting_table {
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -52,7 +51,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -61,7 +59,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -70,7 +67,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -79,7 +75,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -88,7 +83,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -118,7 +112,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -127,7 +120,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
-    description: "X-Foxsec-IP-Reputation header (deprecated, https://mozilla-hub.atlassian.net/browse/DENG-10434)"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -136,7 +128,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -145,7 +136,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -154,7 +144,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -163,7 +152,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -172,7 +160,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -181,7 +168,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -190,7 +176,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -223,8 +208,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Metrics Default Browser"
-    description: "Is Fenix the default browser?
-"
   }
 
   dimension: metrics__datetime__usage_first_run_date {
@@ -233,8 +216,6 @@ view: usage_reporting_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Datetime"
     group_item_label: "Usage First Run Date"
-    description: "The date of the first run of the application.
-"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -275,9 +256,6 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Glean Client Annotation Experimentation ID"
-    description: "An experimentation identifier derived and provided by the application
-for the purpose of experimentation enrollment.
-"
   }
 
   dimension: metrics__string__metrics_distribution_id {
@@ -286,10 +264,6 @@ for the purpose of experimentation enrollment.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Metrics Distribution ID"
-    description: "A string containing the distribution identifier. This was used
-to identify installs from Mozilla Online, but now also identifies
-partnership deal distributions
-"
   }
 
   dimension: metrics__string__usage_app_build {
@@ -298,10 +272,6 @@ partnership deal distributions
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Usage App Build"
-    description: "The build identifier generated by the CI system (e.g. \"1234/A\").
-If the value was not provided through configuration,
-this metric gets set to `Unknown`.
-"
   }
 
   dimension: metrics__string__usage_app_channel {
@@ -310,8 +280,6 @@ this metric gets set to `Unknown`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Usage App Channel"
-    description: "The channel the application is being distributed on.
-"
   }
 
   dimension: metrics__string__usage_app_display_version {
@@ -320,10 +288,6 @@ this metric gets set to `Unknown`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Usage App Display Version"
-    description: "The user visible version string (e.g. \"1.0.3\").
-If the value was not provided through configuration,
-this metric gets set to `Unknown`.
-"
   }
 
   dimension: metrics__string__usage_os {
@@ -332,11 +296,6 @@ this metric gets set to `Unknown`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Usage OS"
-    description: "The name of the operating system.
-Possible values:
-Android, iOS, Linux, Darwin, Windows,
-FreeBSD, NetBSD, OpenBSD, Solaris, Unknown
-"
   }
 
   dimension: metrics__string__usage_os_version {
@@ -345,9 +304,6 @@ FreeBSD, NetBSD, OpenBSD, Solaris, Unknown
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Usage OS Version"
-    description: "The user-visible version of the operating system (e.g. \"1.2.3\").
-If the version detection fails, this metric gets set to `Unknown`.
-"
   }
 
   dimension: metrics__string__usage_reason {
@@ -356,10 +312,6 @@ If the version detection fails, this metric gets set to `Unknown`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Usage Reason"
-    description: "The optional reason the ping was submitted.
-The specific values for reason are specific to each ping, and are
-documented in the ping's pings.yaml file.
-"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
@@ -394,9 +346,6 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: UUID"
     group_item_label: "Usage Profile ID"
-    description: "A UUID uniquely identifying the profile,
-not shared with other telemetry data.
-"
   }
 
   dimension: normalized_app_id {
@@ -534,7 +483,6 @@ view: usage_reporting_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Event Seq"
-    description: "Per-session event counter, reset at each new session."
   }
 
   dimension: session__session_id {
@@ -543,7 +491,6 @@ view: usage_reporting_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session ID"
-    description: "The unique UUID for this session."
   }
 
   dimension: session__session_sample_rate {
@@ -552,7 +499,6 @@ view: usage_reporting_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Sample Rate"
-    description: "The sampling rate in effect for this session."
   }
 
   dimension: session__session_seq {
@@ -561,7 +507,6 @@ view: usage_reporting_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Seq"
-    description: "Monotonically increasing session counter, persisted across restarts."
   }
 
   dimension: session__session_start_time {
@@ -570,7 +515,6 @@ view: usage_reporting_table__events {
     suggest_persist_for: "24 hours"
     group_label: "Session"
     group_item_label: "Session Start Time"
-    description: "Wall-clock timestamp at session start (RFC 3339). Absent on events from before this field was introduced."
   }
 
   dimension: timestamp {

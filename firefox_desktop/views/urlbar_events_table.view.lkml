@@ -293,27 +293,23 @@ view: urlbar_events_table__results {
     sql: ${TABLE}.position ;;
     type: number
     suggest_persist_for: "24 hours"
-    description: "Display rank of this result, starting from 1."
   }
 
   dimension: product_result_type {
     sql: ${TABLE}.product_result_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Product type identifier for this result."
   }
 
   dimension: result_group {
     sql: ${TABLE}.result_group ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Result group this result belongs to. Eg. 'heuristic', 'suggest'."
   }
 
   dimension: result_type {
     sql: ${TABLE}.result_type ;;
     type: string
     suggest_persist_for: "24 hours"
-    description: "Raw type identifier for this result."
   }
 }
