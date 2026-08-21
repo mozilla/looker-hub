@@ -17774,7 +17774,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The time spent in the fully-black screen in fullscreen transition
-This metric was generated to correspond to the Legacy Telemetry exponential histogram FULLSCREEN_TRANSITION_BLACK_MS.
 "
   }
 
@@ -34990,7 +34989,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. Records only the reason label, never content.
+    description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. not_top_level means the error document was not the top-level document (a DNS failure inside an embedded document on a page that loaded fine), so no CTA was offered; it is evaluated before the failed URL is looked at, which is why such a load can never appear under keywords_found, no_path or no_meaningful_keywords. When computing shown-rate or click-through rate, exclude not_top_level from the denominator: it is a scope exclusion, not a failure to find keywords. Records only the reason label, never content.
 "
   }
 
