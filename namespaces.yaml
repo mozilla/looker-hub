@@ -4305,6 +4305,327 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.widgets_visit_daily
       type: table_view
+firefox_enterprise_desktop:
+  explores:
+    addons:
+      type: glean_ping_explore
+      views:
+        base_view: addons
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    broken_site_report:
+      type: glean_ping_explore
+      views:
+        base_view: broken_site_report
+    client_counts:
+      type: client_counts_explore
+      views:
+        base_view: client_counts
+        extended_view: baseline_clients_daily_table
+    content_decoding_error:
+      type: glean_ping_explore
+      views:
+        base_view: content_decoding_error
+    crash:
+      type: glean_ping_explore
+      views:
+        base_view: crash
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
+    gecko_trace:
+      type: glean_ping_explore
+      views:
+        base_view: gecko_trace
+    growth_accounting:
+      type: growth_accounting_explore
+      views:
+        base_view: growth_accounting
+    health:
+      type: glean_ping_explore
+      views:
+        base_view: health
+    local_network_access:
+      type: glean_ping_explore
+      views:
+        base_view: local_network_access
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
+    pageload_base_domain:
+      type: glean_ping_explore
+      views:
+        base_view: pageload_base_domain
+    pageload_domain:
+      type: glean_ping_explore
+      views:
+        base_view: pageload_domain
+    prefs_file_invalid:
+      type: glean_ping_explore
+      views:
+        base_view: prefs_file_invalid
+    temp_fog_initial_state:
+      type: glean_ping_explore
+      views:
+        base_view: temp_fog_initial_state
+    traces:
+      type: glean_ping_explore
+      views:
+        base_view: traces
+    url_classifier_harmful_addon:
+      type: glean_ping_explore
+      views:
+        base_view: url_classifier_harmful_addon
+    use_counters:
+      type: glean_ping_explore
+      views:
+        base_view: use_counters
+    user_characteristics:
+      type: glean_ping_explore
+      views:
+        base_view: user_characteristics
+  glean_app: true
+  owners:
+  - enterprise-telemetry@mozilla.org
+  pretty_name: Firefox Enterprise for Desktop
+  spoke: looker-spoke-default
+  views:
+    addons:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.addons
+      type: glean_ping_view
+    addons_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.addons
+      type: table_view
+    baseline:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.baseline
+      type: glean_ping_view
+    baseline_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.baseline_clients_daily
+      type: table_view
+    baseline_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.baseline_clients_last_seen
+      type: table_view
+    baseline_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.baseline
+      type: table_view
+    broken_site_report:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.broken_site_report
+      type: glean_ping_view
+    broken_site_report_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.broken_site_report
+      type: table_view
+    client_counts:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.baseline_clients_daily
+      type: client_counts_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.clients_last_seen_joined
+      type: table_view
+    content_decoding_error:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.content_decoding_error
+      type: glean_ping_view
+    content_decoding_error_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.content_decoding_error
+      type: table_view
+    crash:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.crash
+      type: glean_ping_view
+    crash_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.crash
+      type: table_view
+    deletion_request:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.firefox_enterprise_desktop.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_stream:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.events_stream
+      type: events_stream_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.events_stream
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.events_unnested
+      type: table_view
+    gecko_trace:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.gecko_trace
+      type: glean_ping_view
+    gecko_trace_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.gecko_trace
+      type: table_view
+    growth_accounting:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.baseline_clients_last_seen
+      type: growth_accounting_view
+    health:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.health
+      type: glean_ping_view
+    health_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.health
+      type: table_view
+    local_network_access:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.local_network_access
+      type: glean_ping_view
+    local_network_access_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.local_network_access
+      type: table_view
+    metrics:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.metrics
+      type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.metrics_clients_last_seen
+      type: table_view
+    metrics_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.metrics
+      type: table_view
+    pageload_base_domain:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.pageload_base_domain
+      type: glean_ping_view
+    pageload_base_domain_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.pageload_base_domain
+      type: table_view
+    pageload_domain:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.pageload_domain
+      type: glean_ping_view
+    pageload_domain_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.pageload_domain
+      type: table_view
+    prefs_file_invalid:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.prefs_file_invalid
+      type: glean_ping_view
+    prefs_file_invalid_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.prefs_file_invalid
+      type: table_view
+    temp_fog_initial_state:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.temp_fog_initial_state
+      type: glean_ping_view
+    temp_fog_initial_state_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.temp_fog_initial_state
+      type: table_view
+    traces:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.traces
+      type: glean_ping_view
+    traces_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.traces
+      type: table_view
+    url_classifier_harmful_addon:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.url_classifier_harmful_addon
+      type: glean_ping_view
+    url_classifier_harmful_addon_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.url_classifier_harmful_addon
+      type: table_view
+    use_counters:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.use_counters
+      type: glean_ping_view
+    use_counters_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.use_counters
+      type: table_view
+    user_characteristics:
+      tables:
+      - table: mozdata.firefox_enterprise_desktop.user_characteristics
+      type: glean_ping_view
+    user_characteristics_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_enterprise_desktop.user_characteristics
+      type: table_view
 firefox_ios:
   explores:
     baseline:
@@ -5991,6 +6312,49 @@ monitoring:
       tables:
       - table: mozdata.monitoring.telemetry_missing_columns
       type: ping_view
+mozcloud_backstage:
+  explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events_stream:
+      type: events_stream_explore
+      views:
+        base_view: events_stream
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
+  glean_app: true
+  owners:
+  - wstuckey@mozilla.com
+  pretty_name: Mozcloud Service Catalog
+  spoke: looker-spoke-default
+  views:
+    deletion_request:
+      tables:
+      - table: mozdata.moz_backstage.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.moz_backstage.deletion_request
+      type: table_view
+    events_stream:
+      tables:
+      - table: mozdata.mozcloud_backstage.events_stream
+      type: events_stream_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.moz_backstage.events_stream
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.moz_backstage.events
+      type: table_view
 mozilla_vpn:
   explores:
     baseline:
