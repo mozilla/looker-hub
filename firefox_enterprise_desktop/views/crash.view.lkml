@@ -1,0 +1,1925 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
+view: crash {
+  dimension: metrics__string__crash_app_build {
+    label: "Crash: App Build"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_build ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Build"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: App Build"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_app_build"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application build ID, the format is YYYYMMDDHHMMSS."
+  }
+
+  dimension: metrics__string__crash_app_channel {
+    label: "Crash: App Channel"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_channel ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Channel"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: App Channel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_app_channel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application release channel (e.g. default, beta, ...)"
+  }
+
+  dimension: metrics__string__crash_app_display_version {
+    label: "Crash: App Display Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_app_display_version ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "App Display Version"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: App Display Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_app_display_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Product version."
+  }
+
+  dimension: metrics__string__crash_application_build_id {
+    label: "Crash: Application Build ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_application_build_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Application Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Application Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_application_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Android application's build ID."
+  }
+
+  dimension: metrics__string__crash_background_task_name {
+    label: "Crash: Background Task Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_background_task_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Background Task Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Background Task Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_background_task_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the app was invoked in background task mode via `--backgroundtask <task name>`, the string \"task name\"."
+  }
+
+  dimension: metrics__string__crash_build_id {
+    label: "Crash: Build ID"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.crash_build_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Build ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Build ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application build ID, the format is YYYYMMDDHHMMSS."
+  }
+
+  dimension: metrics__string__crash_crash_type {
+    label: "Crash: Crash Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_crash_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Crash Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Crash Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_crash_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of crash that occurred (Android-only)."
+  }
+
+  dimension: metrics__boolean__crash_dom_fission_enabled {
+    label: "Crash: DOM Fission Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_dom_fission_enabled ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "DOM Fission Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: DOM Fission Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_dom_fission_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 when DOM fission is enabled, and subframes are potentially loaded in a separate process."
+  }
+
+  dimension: metrics__string__crash_event_id {
+    label: "Crash: Event ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_event_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Event ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Event ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_event_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID for the crash event."
+  }
+
+  dimension: metrics__quantity__crash_event_loop_nesting_level {
+    label: "Crash: Event Loop Nesting Level"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Event Loop Nesting Level"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Event Loop Nesting Level"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_event_loop_nesting_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Present only if higher than 0, indicates that we're running in a nested event loop and indicates the nesting level."
+  }
+
+  dimension: metrics__string__crash_file_system_access_request_path {
+    label: "Crash: File System Access Request Path"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.crash_file_system_access_request_path ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "File System Access Request Path"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: File System Access Request Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_file_system_access_request_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The anonymized path that was rejected by FileSystemSecurity due to containing path traversal sequences."
+  }
+
+  dimension: metrics__string__crash_font_name {
+    label: "Crash: Font Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_font_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Font Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Font Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_font_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set before attempting to load a font to help diagnose crashes during loading."
+  }
+
+  dimension: metrics__quantity__crash_gpu_process_launch {
+    label: "Crash: GPU Process Launch"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "GPU Process Launch"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: GPU Process Launch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_gpu_process_launch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the GPU process was launched."
+  }
+
+  dimension: metrics__string__crash_hang {
+    label: "Crash: Hang"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_hang ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Hang"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Hang"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_hang"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set if the crash was the result of a hang, with a value which describes the type of hang (e.g. \"ui\" or \"shutdown\")."
+  }
+
+  dimension: metrics__string__crash_id {
+    label: "Crash: ID"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.crash_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID for the crash event."
+  }
+
+  dimension: metrics__timespan__crash_install_time__value {
+    label: "Crash: Install Time Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_install_time.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Install Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Install Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_install_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time when Firefox was installed expressed as seconds since the Epoch"
+  }
+
+  dimension: metrics__string__crash_ipc_channel_error {
+    label: "Crash: Ipc Channel Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Ipc Channel Error"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Ipc Channel Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_ipc_channel_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set before a content process crashes because of an IPC channel error. Holds a description of the error."
+  }
+
+  dimension: metrics__boolean__crash_is_garbage_collecting {
+    label: "Crash: Is Garbage Collecting"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "Is Garbage Collecting"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Is Garbage Collecting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_is_garbage_collecting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If true then the JavaScript garbage collector was running when the crash occurred."
+  }
+
+  dimension: metrics__timespan__crash_last_interaction_duration__value {
+    label: "Crash: Last Interaction Duration Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_last_interaction_duration.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Last Interaction Duration Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Last Interaction Duration Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_last_interaction_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long the user had been inactive in seconds if the user was inactive at crash.  The value is not set if the user state was active."
+  }
+
+  dimension: metrics__string__crash_linux_memory_psi {
+    label: "Crash: Linux Memory Psi"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_linux_memory_psi ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Linux Memory Psi"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Linux Memory Psi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_linux_memory_psi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Memory PSI (Pressure Stall Information) values from /proc/pressure/memory as comma-separated list: some_avg10,some_avg60,some_avg300,some_total,full_avg10,full_avg60,full_avg300,full_total"
+  }
+
+  dimension: metrics__string__crash_main_thread_runnable_name {
+    label: "Crash: Main Thread Runnable Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Main Thread Runnable Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Main Thread Runnable Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_main_thread_runnable_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the currently executing nsIRunnable on the main thread."
+  }
+
+  dimension: metrics__string__crash_minidump_sha256_hash {
+    label: "Crash: Minidump Sha256 Hash"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Minidump Sha256 Hash"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Minidump Sha256 Hash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_minidump_sha256_hash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha256 hash of the minidump file, if available."
+  }
+
+  dimension: metrics__string__crash_minidump_sha_256_hash {
+    label: "Crash: Minidump Sha 256 Hash"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.crash_minidump_sha_256_hash ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Minidump Sha 256 Hash"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Minidump Sha 256 Hash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_minidump_sha_256_hash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The sha256 hash of the minidump file, if available."
+  }
+
+  dimension: metrics__string__crash_moz_crash_reason {
+    label: "Crash: Moz Crash Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Moz Crash Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Moz Crash Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_moz_crash_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Plaintext description of why Firefox crashed, this is usually set by assertions and the like."
+  }
+
+  dimension: metrics__string__crash_process_type {
+    label: "Crash: Process Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_process_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of the process that crashed, the possible values are defined in GeckoProcessTypes.h."
+  }
+
+  dimension: metrics__string__crash_product_id {
+    label: "Crash: Product ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_product_id ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Product ID"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Product ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_product_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application UUID (e.g. ec8030f7-c20a-464f-9b0e-13a3a9e97384)."
+  }
+
+  dimension: metrics__string__crash_product_name {
+    label: "Crash: Product Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_product_name ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Product Name"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Product Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_product_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Application name (e.g. Firefox)."
+  }
+
+  dimension: metrics__string__crash_profiler_child_shutdown_phase {
+    label: "Crash: Profiler Child Shutdown Phase"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Profiler Child Shutdown Phase"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Profiler Child Shutdown Phase"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_profiler_child_shutdown_phase"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When a child process shuts down, this describes if the profiler is running, and the point the profiler shutdown sequence has reached."
+  }
+
+  dimension: metrics__string__crash_remote_type {
+    label: "Crash: Remote Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_remote_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Remote Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Remote Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_remote_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of the content process, can be set to \"web\", \"file\" or \"extension\"."
+  }
+
+  dimension: metrics__string__crash_shutdown_progress {
+    label: "Crash: Shutdown Progress"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Shutdown Progress"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Shutdown Progress"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_shutdown_progress"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Shutdown step at which the browser crashed, can be set to \"quit-application\", \"profile-change-teardown\", \"profile-before-change\", \"xpcom-will-shutdown\" or \"xpcom-shutdown\"."
+  }
+
+  dimension: metrics__string__crash_shutdown_reason {
+    label: "Crash: Shutdown Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_shutdown_reason ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Shutdown Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Shutdown Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_shutdown_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "One out of \"Unknown\", \"AppClose\", \"AppRestart\", \"OSForceClose\", \"OSSessionEnd\" or \"OSShutdown\"."
+  }
+
+  dimension: metrics__boolean__crash_startup {
+    label: "Crash: Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_startup ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If set to 1 then this crash occurred during startup."
+  }
+
+  dimension: metrics__timespan__crash_time_since_last_crash__value {
+    label: "Crash: Time Since Last Crash Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_time_since_last_crash.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Time Since Last Crash Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Time Since Last Crash Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_time_since_last_crash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in seconds since the last crash occurred."
+  }
+
+  dimension: metrics__boolean__crash_windows_error_reporting {
+    label: "Crash Windows: Error Reporting"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_windows_error_reporting ;;
+    type: yesno
+    group_label: "Crash Windows"
+    group_item_label: "Error Reporting"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Windows: Error Reporting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_windows_error_reporting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 if this crash was intercepted via the Windows Error Reporting runtime exception module."
+  }
+
+  dimension: metrics__string__crash_windows_file_dialog_error_code {
+    label: "Crash Windows: File Dialog Error Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_windows_file_dialog_error_code ;;
+    type: string
+    group_label: "Crash Windows"
+    group_item_label: "File Dialog Error Code"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Windows: File Dialog Error Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/crash_windows_file_dialog_error_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The HRESULT returned from a Win32 system call leading to termination of the file-dialog utility process. MozCrashReason is expected to provide context for the value."
+  }
+
+  dimension: metrics__boolean__dll_blocklist_init_failed {
+    label: "Dll Blocklist: Init Failed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.dll_blocklist_init_failed ;;
+    type: yesno
+    group_label: "Dll Blocklist"
+    group_item_label: "Init Failed"
+
+    link: {
+      label: "Glean Dictionary reference for Dll Blocklist: Init Failed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/dll_blocklist_init_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 if the DLL blocklist could not be initialized."
+  }
+
+  dimension: metrics__boolean__dll_blocklist_user32_loaded_before {
+    label: "Dll Blocklist: User32 Loaded Before"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.dll_blocklist_user32_loaded_before ;;
+    type: yesno
+    group_label: "Dll Blocklist"
+    group_item_label: "User32 Loaded Before"
+
+    link: {
+      label: "Glean Dictionary reference for Dll Blocklist: User32 Loaded Before"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/dll_blocklist_user32_loaded_before"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Set to 1 if user32.dll was loaded before we could install the DLL blocklist."
+  }
+
+  dimension: metrics__boolean__environment_headless_mode {
+    label: "Environment: Headless Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
+    type: yesno
+    group_label: "Environment"
+    group_item_label: "Headless Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Environment: Headless Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/environment_headless_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the app was invoked in headless mode via `--headless ...` or `--backgroundtask ...`, false otherwise."
+  }
+
+  dimension: metrics__timespan__environment_uptime__value {
+    label: "Environment: Uptime Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
+    type: number
+    group_label: "Environment"
+    group_item_label: "Uptime Value"
+
+    link: {
+      label: "Glean Dictionary reference for Environment: Uptime Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/environment_uptime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Uptime in seconds. This annotation uses a string instead of an integer because it has a fractional component."
+  }
+
+  dimension: metrics__quantity__memory_available_commit {
+    label: "Memory: Available Commit"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Commit"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Available Commit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_available_commit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available commit-space in bytes. - Under Windows, computed from the PERFORMANCE_INFORMATION structure by substracting
+  the CommitTotal field from the CommitLimit field.
+- Under Linux, computed from /proc/meminfo's CommitLimit - Committed_AS. Note that
+  the kernel is not guaranteed to enforce that CommittedLimit >= Committed_AS. If
+  Committed_AS > CommittedLimit, this value is set to 0.
+- Not available on other platforms."
+  }
+
+  dimension: metrics__quantity__memory_available_physical {
+    label: "Memory: Available Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Available Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_available_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of free physical memory in bytes. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullAvailPhys field. - Under macOS, populated with vm_statistics64_data_t::free_count. - Under Linux, populated with /proc/meminfo's MemFree. - Not available on other platforms."
+  }
+
+  dimension: metrics__quantity__memory_available_swap {
+    label: "Memory: Available Swap"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Swap"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Available Swap"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_available_swap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of free swap space in bytes. - Under macOS, populated with the contents of
+  sysctl \"vm.swapusage\" :: xsu_avail.
+- Under Linux, populated with /proc/meminfo's SwapFree. - Not available on other platforms."
+  }
+
+  dimension: metrics__quantity__memory_available_virtual {
+    label: "Memory: Available Virtual"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Available Virtual"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Available Virtual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_available_virtual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of free virtual memory in bytes - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullAvailVirtual field. - Under Linux, populated with /proc/meminfo's MemAvailable. - Not available on other platforms. - For macOS, see AvailableSwapMemory, AvailablePhysicalMemory and PurgeablePhysicalMemory."
+  }
+
+  dimension: metrics__string__memory_js_large_allocation_failure {
+    label: "Memory: Js Large Allocation Failure"
+    hidden: no
+    sql: ${TABLE}.metrics.string.memory_js_large_allocation_failure ;;
+    type: string
+    group_label: "Memory"
+    group_item_label: "Js Large Allocation Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Js Large Allocation Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_js_large_allocation_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A large allocation couldn't be satisfied, check the JSOutOfMemory description for the possible values of this annotation."
+  }
+
+  dimension: metrics__string__memory_js_out_of_memory {
+    label: "Memory: Js Out Of Memory"
+    hidden: no
+    sql: ${TABLE}.metrics.string.memory_js_out_of_memory ;;
+    type: string
+    group_label: "Memory"
+    group_item_label: "Js Out Of Memory"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Js Out Of Memory"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_js_out_of_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A small allocation couldn't be satisfied, the annotation may contain the \"Reporting\", \"Reported\" or \"Recovered\" value. The first one means that we crashed while responding to the OOM condition (possibly while running a memory-pressure observers), the second that we crashed after having tried to free some memory, and the last that the GC had managed to free enough memory to satisfy the allocation."
+  }
+
+  dimension: metrics__quantity__memory_low_physical {
+    label: "Memory: Low Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Low Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Low Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_low_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times the available memory tracker has detected that free physical memory is running low. This is a Windows-specific annotation."
+  }
+
+  dimension: metrics__quantity__memory_oom_allocation_size {
+    label: "Memory: Oom Allocation Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Oom Allocation Size"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Oom Allocation Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_oom_allocation_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the allocation that caused an out-of-memory condition."
+  }
+
+  dimension: metrics__quantity__memory_purgeable_physical {
+    label: "Memory: Purgeable Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Purgeable Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Purgeable Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_purgeable_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "macOS only. Amount of physical memory currently allocated but which may be deallocated by the system in case of memory pressure. Populated from vm_statistics64_data_t::purgeable_count * vm_page_size."
+  }
+
+  dimension: metrics__quantity__memory_system_use_percentage {
+    label: "Memory: System Use Percentage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "System Use Percentage"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: System Use Percentage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_system_use_percentage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Windows-only, percentage of physical memory in use. This annotation is populated with the contents of the MEMORYSTATUSEX's structure dwMemoryLoad field."
+  }
+
+  dimension: metrics__quantity__memory_texture {
+    label: "Memory: Texture"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_texture ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Texture"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Texture"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_texture"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of memory in bytes consumed by textures."
+  }
+
+  dimension: metrics__quantity__memory_total_page_file {
+    label: "Memory: Total Page File"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Page File"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Total Page File"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_total_page_file"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Maximum amount of memory that can be committed without extending the swap/page file. - Under Windows, populated with the contents of the PERFORMANCE_INFORMATION's
+  structure CommitLimit field.
+- Under Linux, populated with /proc/meminfo MemTotal + SwapTotal. The swap file
+  typically cannot be extended, so that's a hard limit.
+- Not available on other systems."
+  }
+
+  dimension: metrics__quantity__memory_total_physical {
+    label: "Memory: Total Physical"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Physical"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Total Physical"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_total_physical"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of physical memory in bytes. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure ullTotalPhys field. - Under macOS, populated with sysctl \"hw.memsize\". - Under Linux, populated with /proc/meminfo's \"MemTotal\". - Not available on other systems."
+  }
+
+  dimension: metrics__quantity__memory_total_virtual {
+    label: "Memory: Total Virtual"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
+    type: number
+    group_label: "Memory"
+    group_item_label: "Total Virtual"
+
+    link: {
+      label: "Glean Dictionary reference for Memory: Total Virtual"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/memory_total_virtual"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the virtual address space. - Under Windows, populated with the contents of the MEMORYSTATUSEX's structure
+  ullTotalVirtual field.
+- Not available on other platforms."
+  }
+
+  dimension: metrics__string__windows_package_family_name {
+    label: "Windows: Package Family Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.windows_package_family_name ;;
+    type: string
+    group_label: "Windows"
+    group_item_label: "Package Family Name"
+
+    link: {
+      label: "Glean Dictionary reference for Windows: Package Family Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/windows_package_family_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If running in a Windows package context, the package family name, per https://docs.microsoft.com/en-us/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefamilyname.
+The package family name is only included when it is likely to have been produced by Mozilla: it starts \"Mozilla.\" or \"MozillaCorporation.\"."
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation: Experimentation ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation ID"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error: Invalid Label"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error: Invalid Overflow"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error: Invalid State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error: Invalid Value"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: additional_properties {
+    sql: ${TABLE}.additional_properties ;;
+    hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: client_info__android_sdk_version {
+    sql: ${TABLE}.client_info.android_sdk_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Android SDK Version"
+  }
+
+  dimension: client_info__app_build {
+    sql: ${TABLE}.client_info.app_build ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "App Build"
+  }
+
+  dimension: client_info__app_channel {
+    sql: ${TABLE}.client_info.app_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "App Channel"
+  }
+
+  dimension: client_info__app_display_version {
+    sql: ${TABLE}.client_info.app_display_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "App Display Version"
+  }
+
+  dimension: client_info__architecture {
+    sql: ${TABLE}.client_info.architecture ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Architecture"
+  }
+
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Term"
+  }
+
+  dimension: client_info__build_date {
+    sql: ${TABLE}.client_info.build_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Build Date"
+  }
+
+  dimension: client_info__client_id {
+    sql: ${TABLE}.client_info.client_id ;;
+    hidden: yes
+  }
+
+  dimension: client_info__device_manufacturer {
+    sql: ${TABLE}.client_info.device_manufacturer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Device Manufacturer"
+  }
+
+  dimension: client_info__device_model {
+    sql: ${TABLE}.client_info.device_model ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Distribution"
+    group_item_label: "Name"
+  }
+
+  dimension: client_info__first_run_date {
+    sql: ${TABLE}.client_info.first_run_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "First Run Date"
+  }
+
+  dimension: client_info__locale {
+    sql: ${TABLE}.client_info.locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Locale"
+  }
+
+  dimension: client_info__os {
+    sql: ${TABLE}.client_info.os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "OS"
+  }
+
+  dimension: client_info__os_version {
+    sql: ${TABLE}.client_info.os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "OS Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Session ID"
+  }
+
+  dimension: client_info__telemetry_sdk_build {
+    sql: ${TABLE}.client_info.telemetry_sdk_build ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Telemetry SDK Build"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+  }
+
+  dimension: document_id {
+    sql: ${TABLE}.document_id ;;
+    hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
+    primary_key: yes
+  }
+
+  dimension: events {
+    sql: ${TABLE}.events ;;
+    hidden: yes
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: metadata__geo__city {
+    sql: ${TABLE}.metadata.geo.city ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "City"
+  }
+
+  dimension: metadata__geo__country {
+    sql: ${TABLE}.metadata.geo.country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "Country"
+    map_layer_name: countries
+  }
+
+  dimension: metadata__geo__db_version {
+    sql: ${TABLE}.metadata.geo.db_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "DB Version"
+  }
+
+  dimension: metadata__geo__subdivision1 {
+    sql: ${TABLE}.metadata.geo.subdivision1 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "Subdivision1"
+  }
+
+  dimension: metadata__geo__subdivision2 {
+    sql: ${TABLE}.metadata.geo.subdivision2 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "Subdivision2"
+  }
+
+  dimension: metadata__header__date {
+    sql: ${TABLE}.metadata.header.date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "Date"
+  }
+
+  dimension: metadata__header__dnt {
+    sql: ${TABLE}.metadata.header.dnt ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "DNT"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header: Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header: Parsed X LB Tags"
+    group_item_label: "TLS Version"
+  }
+
+  dimension: metadata__header__parsed_x_source_tags {
+    sql: ${TABLE}.metadata.header.parsed_x_source_tags ;;
+    hidden: yes
+  }
+
+  dimension: metadata__header__x_debug_id {
+    sql: ${TABLE}.metadata.header.x_debug_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Debug ID"
+  }
+
+  dimension: metadata__header__x_foxsec_ip_reputation {
+    sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Foxsec IP Reputation"
+  }
+
+  dimension: metadata__header__x_lb_tags {
+    sql: ${TABLE}.metadata.header.x_lb_tags ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X LB Tags"
+  }
+
+  dimension: metadata__header__x_pingsender_version {
+    sql: ${TABLE}.metadata.header.x_pingsender_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Pingsender Version"
+  }
+
+  dimension: metadata__header__x_source_tags {
+    sql: ${TABLE}.metadata.header.x_source_tags ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Source Tags"
+  }
+
+  dimension: metadata__header__x_telemetry_agent {
+    sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Telemetry Agent"
+  }
+
+  dimension: metadata__isp__db_version {
+    sql: ${TABLE}.metadata.isp.db_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: ISP"
+    group_item_label: "DB Version"
+  }
+
+  dimension: metadata__isp__name {
+    sql: ${TABLE}.metadata.isp.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: ISP"
+    group_item_label: "Name"
+  }
+
+  dimension: metadata__isp__organization {
+    sql: ${TABLE}.metadata.isp.organization ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: ISP"
+    group_item_label: "Organization"
+  }
+
+  dimension: metadata__user_agent__browser {
+    sql: ${TABLE}.metadata.user_agent.browser ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: User Agent"
+    group_item_label: "Browser"
+  }
+
+  dimension: metadata__user_agent__os {
+    sql: ${TABLE}.metadata.user_agent.os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: User Agent"
+    group_item_label: "OS"
+  }
+
+  dimension: metadata__user_agent__version {
+    sql: ${TABLE}.metadata.user_agent.version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: User Agent"
+    group_item_label: "Version"
+  }
+
+  dimension: normalized_app_name {
+    sql: ${TABLE}.normalized_app_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
+  }
+
+  dimension: normalized_country_code {
+    sql: ${TABLE}.normalized_country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.normalized_os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ping_info__end_time {
+    sql: ${TABLE}.ping_info.end_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "End Time"
+  }
+
+  dimension: ping_info__experiments {
+    sql: ${TABLE}.ping_info.experiments ;;
+    hidden: yes
+  }
+
+  dimension: ping_info__ping_type {
+    sql: ${TABLE}.ping_info.ping_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "Ping Type"
+  }
+
+  dimension: ping_info__reason {
+    sql: ${TABLE}.ping_info.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "Reason"
+  }
+
+  dimension: ping_info__seq {
+    sql: ${TABLE}.ping_info.seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "Seq"
+  }
+
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__session_sample_rate {
+    sql: ${TABLE}.ping_info.server_knobs_config.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Session Sample Rate"
+  }
+
+  dimension: ping_info__start_time {
+    sql: ${TABLE}.ping_info.start_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "Start Time"
+  }
+
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.metadata.header.parsed_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Header: Parsed Date"
+  }
+
+  dimension_group: ping_info__parsed_end {
+    sql: ${TABLE}.ping_info.parsed_end_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed End Time"
+  }
+
+  dimension_group: ping_info__parsed_start {
+    sql: ${TABLE}.ping_info.parsed_start_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed Start Time"
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Time when the ingestion edge server accepted this message"
+  }
+
+  measure: clients {
+    type: count_distinct
+    sql: ${client_info__client_id} ;;
+  }
+
+  measure: ping_count {
+    type: count
+  }
+
+  sql_table_name: `mozdata.firefox_enterprise_desktop.crash` ;;
+}
+
+view: crash__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error: Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${crash.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${crash.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${crash.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: crash__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error: Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${crash.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${crash.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${crash.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: crash__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error: Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${crash.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${crash.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${crash.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: crash__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error: Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${crash.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${crash.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${crash.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: crash__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: session__event_seq {
+    sql: ${TABLE}.session.event_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Event Seq"
+  }
+
+  dimension: session__session_id {
+    sql: ${TABLE}.session.session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session ID"
+  }
+
+  dimension: session__session_sample_rate {
+    sql: ${TABLE}.session.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Sample Rate"
+  }
+
+  dimension: session__session_seq {
+    sql: ${TABLE}.session.session_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Seq"
+  }
+
+  dimension: session__session_start_time {
+    sql: ${TABLE}.session.session_start_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Start Time"
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: crash__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: crash__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value: Extra"
+    group_item_label: "Enrollment ID"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value: Extra"
+    group_item_label: "Type"
+  }
+}
+
+view: crash__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: crash__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}

@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: win10_eos_hnt_mobile_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.win10_eos_hnt_mobile_rollout_statistics ;;
+view: rollout_newtab_layout_delivery_mechanism {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.rollout_newtab_layout_delivery_mechanism_statistics ;;
 
   dimension: submission_date {
     type: date
