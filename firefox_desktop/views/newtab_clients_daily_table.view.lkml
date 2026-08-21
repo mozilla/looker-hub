@@ -226,6 +226,13 @@ view: newtab_clients_daily_table {
     description: "Scheduled surface identifier based on locale and region, with fallback to computed value from country and locale"
   }
 
+  dimension: newtab_scroll {
+    sql: ${TABLE}.newtab_scroll ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    description: "Whether the user scrolled more than the scroll telemetry threshold during any newtab visit that day. NULL if no visit that day recorded a qualifying scroll (the Glean metric is only set when the threshold is crossed). Sourced from the `newtab.scroll` Glean metric."
+  }
+
   dimension: newtab_search_enabled {
     sql: ${TABLE}.newtab_search_enabled ;;
     type: yesno
