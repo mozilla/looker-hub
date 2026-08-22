@@ -419,6 +419,38 @@ view: baseline_table {
     group_item_label: "Policies Is Enterprise"
   }
 
+  dimension: metrics__boolean__usage_is_default_browser {
+    sql: ${TABLE}.metrics.boolean.usage_is_default_browser ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Usage Is Default Browser"
+  }
+
+  dimension: metrics__counter__browser_engagement_active_ticks {
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Active Ticks"
+  }
+
+  dimension: metrics__counter__browser_engagement_active_ticks_non_synthesized {
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks_non_synthesized ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Active Ticks Non Synthesized"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement URI Count"
+  }
+
   dimension: metrics__datetime__raw_glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
@@ -476,6 +508,26 @@ Now it only records counts for the Glean built-in pings.
 "
   }
 
+  dimension: metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_engagement_consecutive_active_ticks ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.browser_engagement_inactive_period_duration ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__glean_attribution_ext {
+    sql: ${TABLE}.metrics.object.glean_attribution_ext ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__glean_distribution_ext {
+    sql: ${TABLE}.metrics.object.glean_distribution_ext ;;
+    hidden: yes
+  }
+
   dimension: metrics__string__glean_baseline_locale {
     sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
     type: string
@@ -498,6 +550,14 @@ Now it only records counts for the Glean built-in pings.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Startup Profile Selection Reason"
+  }
+
+  dimension: metrics__string__usage_distribution_id {
+    sql: ${TABLE}.metrics.string.usage_distribution_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Usage Distribution ID"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
@@ -524,6 +584,22 @@ This metric is only attached to a ping if it already contains other data.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Timespan: Glean Baseline Duration"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Client ID"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Profile Group ID"
   }
 
   dimension: normalized_app_name {
@@ -793,6 +869,76 @@ view: baseline_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: baseline_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: baseline_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: baseline_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: baseline_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

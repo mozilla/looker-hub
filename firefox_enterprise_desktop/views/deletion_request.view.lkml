@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: deletion_request {
+  dimension: metrics__string__deletion_request_context_id {
+    label: "Deletion Request: Context ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.deletion_request_context_id ;;
+    type: string
+    group_label: "Deletion Request"
+    group_item_label: "Context ID"
+
+    link: {
+      label: "Glean Dictionary reference for Deletion Request: Context ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/deletion_request_context_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An identifier to identify users for Contextual Services user interaction pings. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.context_id.
+"
+  }
+
+  dimension: metrics__string__deletion_request_impression_id {
+    label: "Deletion Request: Impression ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.deletion_request_impression_id ;;
+    type: string
+    group_label: "Deletion Request"
+    group_item_label: "Impression ID"
+
+    link: {
+      label: "Glean Dictionary reference for Deletion Request: Impression ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/deletion_request_impression_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An identifier used by user interaction pings in Pocket/newtab and Messaging System. This metric was generated to correspond to the Legacy Telemetry scalar deletion.request.impression_id.
+"
+  }
+
   dimension: metrics__uuid__characteristics_client_identifier {
     label: "Characteristics: Client Identifier"
     hidden: no

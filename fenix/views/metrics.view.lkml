@@ -6104,7 +6104,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "A count of the status of cryptominer blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one cryptominer was blocked, 'allowed' = at least one cryptominer was detected and allowed.) Note, pageLoad is used as a baseline measurement.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram CRYPTOMINERS_BLOCKED_COUNT.
 "
   }
 

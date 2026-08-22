@@ -476,6 +476,22 @@ This metric is only attached to a ping if it already contains other data.
 "
   }
 
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Client ID"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Profile Group ID"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

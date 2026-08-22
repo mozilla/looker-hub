@@ -5,6 +5,162 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: baseline {
+  dimension: metrics__counter__browser_engagement_active_ticks {
+    label: "Browser Engagement: Active Ticks"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Active Ticks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement: Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of five-second intervals ('ticks') the user was considered
+'active'.
+
+'active' means keyboard or mouse interaction with the application.
+It doesn't take into account whether or not the window has focus or is in
+the foreground, only if it is receiving these interaction events.
+
+Migrated from Telemetry's `browser.engagement.active_ticks`.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_active_ticks_non_synthesized {
+    label: "Browser Engagement: Active Ticks Non Synthesized"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks_non_synthesized ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Active Ticks Non Synthesized"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement: Active Ticks Non Synthesized"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_active_ticks_non_synthesized"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of five-second intervals ('ticks') the user was considered
+'active', counting only non-synthesized events.
+
+This is a corrected version of `active_ticks` that excludes synthesized
+mouse and pointer events (for example, the synthesized pointer move that
+is dispatched when content shifts under a stationary cursor during
+scrolling, reflow or content insertion). Such synthesized events inflated
+`active_ticks` starting in Firefox 140. Recorded side-by-side with
+`active_ticks` for data continuity while the correction is evaluated.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count {
+    label: "Browser Engagement: URI Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "URI Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement: URI Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of total non-unique http(s) URIs visited, including page
+reloads, after the session has been restored. URIs on minimized or
+background tabs may also be counted. Private browsing uris are included.
+
+Migrated from Telemetry's
+`browser.engagement.total_uri_count_normal_and_private_mode`.
+"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    label: "Legacy Telemetry: Client ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Client ID"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry: Client ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/legacy_telemetry_client_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The client_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
+in pings near when the data upload pref is disabled (if Telemetry gets
+to go first), or between when a client_id has been removed and when it
+has been regenerated.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    label: "Legacy Telemetry: Profile Group ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Profile Group ID"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry: Profile Group ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/legacy_telemetry_profile_group_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The profile_group_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
+  dimension: metrics__string__usage_distribution_id {
+    label: "Usage: Distribution ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.usage_distribution_id ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Distribution ID"
+
+    link: {
+      label: "Glean Dictionary reference for Usage: Distribution ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/usage_distribution_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The distribution id associated with the install of Firefox.
+"
+  }
+
+  dimension: metrics__boolean__usage_is_default_browser {
+    label: "Usage: Is Default Browser"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.usage_is_default_browser ;;
+    type: yesno
+    group_label: "Usage"
+    group_item_label: "Is Default Browser"
+
+    link: {
+      label: "Glean Dictionary reference for Usage: Is Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/usage_is_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether Firefox is set as the default browser.
+"
+  }
+
   dimension: metrics__boolean__policies_is_enterprise {
     label: "Policies: Is Enterprise"
     hidden: no
@@ -839,6 +995,81 @@ Now it only records counts for the Glean built-in pings.
     type: count
   }
 
+  measure: browser_engagement_active_ticks {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_active_ticks} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_active_ticks_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_active_ticks: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_active_ticks_non_synthesized {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_active_ticks_non_synthesized} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks Non Synthesized"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_active_ticks_non_synthesized"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_active_ticks_non_synthesized_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_active_ticks_non_synthesized: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks Non Synthesized"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_active_ticks_non_synthesized"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_uri_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement URI Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement URI Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   sql_table_name: `mozdata.firefox_enterprise_desktop.baseline` ;;
 }
 
@@ -1122,6 +1353,76 @@ view: baseline__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: baseline__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: baseline__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: baseline__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: baseline__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

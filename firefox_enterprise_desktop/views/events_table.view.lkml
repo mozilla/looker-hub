@@ -419,6 +419,102 @@ view: events_table {
     group_item_label: "Policies Is Enterprise"
   }
 
+  dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
+    sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Search Engine Default Overridden By Third Party"
+  }
+
+  dimension: metrics__boolean__search_engine_private_overridden_by_third_party {
+    sql: ${TABLE}.metrics.boolean.search_engine_private_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Search Engine Private Overridden By Third Party"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_all {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_all ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest All"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_online_available {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest Online Available"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_online_enabled {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest Online Enabled"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_sponsored {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_sponsored ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest Sponsored"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_topsites {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_topsites ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest Topsites"
+  }
+
+  dimension: metrics__boolean__usage_is_default_browser {
+    sql: ${TABLE}.metrics.boolean.usage_is_default_browser ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Usage Is Default Browser"
+  }
+
+  dimension: metrics__counter__browser_engagement_active_ticks {
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Active Ticks"
+  }
+
+  dimension: metrics__counter__browser_engagement_active_ticks_non_synthesized {
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks_non_synthesized ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Active Ticks Non Synthesized"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_open_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Tab Open Event Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement URI Count"
+  }
+
   dimension: metrics__dual_labeled_counter__media_error {
     sql: ${TABLE}.metrics.dual_labeled_counter.media_error ;;
     hidden: yes
@@ -458,6 +554,42 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_engagement_consecutive_active_ticks ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.browser_engagement_inactive_period_duration ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__glean_attribution_ext {
+    sql: ${TABLE}.metrics.object.glean_attribution_ext ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__glean_distribution_ext {
+    sql: ${TABLE}.metrics.object.glean_distribution_ext ;;
+    hidden: yes
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Count"
+  }
+
+  dimension: metrics__quantity__urlbar_pref_max_results {
+    sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Urlbar Pref Max Results"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -474,6 +606,70 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Region Home Region"
   }
 
+  dimension: metrics__string__search_engine_default_display_name {
+    sql: ${TABLE}.metrics.string.search_engine_default_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Display Name"
+  }
+
+  dimension: metrics__string__search_engine_default_load_path {
+    sql: ${TABLE}.metrics.string.search_engine_default_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Load Path"
+  }
+
+  dimension: metrics__string__search_engine_default_partner_code {
+    sql: ${TABLE}.metrics.string.search_engine_default_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Partner Code"
+  }
+
+  dimension: metrics__string__search_engine_default_provider_id {
+    sql: ${TABLE}.metrics.string.search_engine_default_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Provider ID"
+  }
+
+  dimension: metrics__string__search_engine_private_display_name {
+    sql: ${TABLE}.metrics.string.search_engine_private_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Display Name"
+  }
+
+  dimension: metrics__string__search_engine_private_load_path {
+    sql: ${TABLE}.metrics.string.search_engine_private_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Load Path"
+  }
+
+  dimension: metrics__string__search_engine_private_partner_code {
+    sql: ${TABLE}.metrics.string.search_engine_private_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Partner Code"
+  }
+
+  dimension: metrics__string__search_engine_private_provider_id {
+    sql: ${TABLE}.metrics.string.search_engine_private_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Provider ID"
+  }
+
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
@@ -482,6 +678,38 @@ Should be the same as the ones defined for that particular ping.
 
 This metric is only attached to a ping if it already contains other data.
 "
+  }
+
+  dimension: metrics__url2__search_engine_default_submission_url {
+    sql: ${TABLE}.metrics.url2.search_engine_default_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Url2"
+    group_item_label: "Search Engine Default Submission URL"
+  }
+
+  dimension: metrics__url2__search_engine_private_submission_url {
+    sql: ${TABLE}.metrics.url2.search_engine_private_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Url2"
+    group_item_label: "Search Engine Private Submission URL"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Client ID"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Profile Group ID"
   }
 
   dimension: normalized_app_name {
@@ -754,6 +982,76 @@ view: events_table__metrics__dual_labeled_counter__media_error {
 }
 
 view: events_table__metrics__dual_labeled_counter__media_error__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: events_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: events_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: events_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: events_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
