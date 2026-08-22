@@ -1087,6 +1087,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
+    label: "Browser Engagement Navigation: Newtab Searchbar"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Newtab Searchbar"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Newtab Searchbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_navigation_newtab_searchbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     label: "Browser Engagement Navigation: Searchbar"
     hidden: yes
@@ -14403,7 +14420,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "A count of the status of cryptominer blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one cryptominer was blocked, 'allowed' = at least one cryptominer was detected and allowed.) Note, pageLoad is used as a baseline measurement.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram CRYPTOMINERS_BLOCKED_COUNT.
 "
   }
 
@@ -18734,6 +18750,23 @@ startup function is called to when the startup promise resolves.
     }
 
     description: "Counts how long to generate canvas random noises.
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
+    label: "Firefox Ai Runtime: Onnx Native Availability"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_ai_runtime_onnx_native_availability ;;
+    group_label: "Firefox Ai Runtime"
+    group_item_label: "Onnx Native Availability"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Ai Runtime: Onnx Native Availability"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/firefox_ai_runtime_onnx_native_availability"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the native ONNX runtime could be loaded in the inference process, as reported by InferenceSession.isAvailable(). It is recorded at most once per profile, guarded by the browser.ml.onnxNativeAvailabilityReported pref.
 "
   }
 
@@ -26611,6 +26644,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Counts the status of fallback requests to aus5.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
+    label: "Network: SSL Token Cache DB Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
+    group_label: "Network"
+    group_item_label: "SSL Token Cache DB Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache DB Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_ssl_token_cache_db_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
 "
   }
 
@@ -51888,6 +51938,47 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextme
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
+  label: "Browser Engagement Navigation: Newtab Searchbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar {
   label: "Browser Engagement Navigation: Searchbar"
 
@@ -52774,19 +52865,19 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_smartbar {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -52815,19 +52906,19 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_smartwindow_ass
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -53471,19 +53562,19 @@ view: metrics__metrics__labeled_counter__browser_search_content_smartbar {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -53512,19 +53603,19 @@ view: metrics__metrics__labeled_counter__browser_search_content_smartwindow_assi
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -54168,19 +54259,19 @@ view: metrics__metrics__labeled_counter__browser_search_withads_smartbar {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -54209,19 +54300,19 @@ view: metrics__metrics__labeled_counter__browser_search_withads_smartwindow_assi
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -59883,6 +59974,47 @@ view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
   }
 }
 
+view: metrics__metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
+  label: "Firefox Ai Runtime: Onnx Native Availability"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__fog_subdir_entry_err {
   label: "Fog: Subdir Entry Err"
 
@@ -65051,6 +65183,47 @@ view: metrics__metrics__labeled_counter__network_retried_system_channel_telemetr
 
 view: metrics__metrics__labeled_counter__network_retried_system_channel_update_status {
   label: "Network: Retried System Channel Update Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_ssl_token_cache_db_errors {
+  label: "Network: SSL Token Cache DB Errors"
 
   dimension: document_id {
     type: string

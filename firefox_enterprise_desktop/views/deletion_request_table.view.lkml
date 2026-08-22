@@ -443,6 +443,22 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__deletion_request_context_id {
+    sql: ${TABLE}.metrics.string.deletion_request_context_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Deletion Request Context ID"
+  }
+
+  dimension: metrics__string__deletion_request_impression_id {
+    sql: ${TABLE}.metrics.string.deletion_request_impression_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Deletion Request Impression ID"
+  }
+
   dimension: metrics__string__deletion_request_sync_device_id {
     sql: ${TABLE}.metrics.string.deletion_request_sync_device_id ;;
     type: string

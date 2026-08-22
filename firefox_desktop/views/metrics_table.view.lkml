@@ -12786,6 +12786,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_searchbar ;;
     hidden: yes
@@ -14193,6 +14198,11 @@ the extensions StartupCache file.
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
+    sql: ${TABLE}.metrics.labeled_counter.firefox_ai_runtime_onnx_native_availability ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__fog_subdir_entry_err {
     sql: ${TABLE}.metrics.labeled_counter.fog_subdir_entry_err ;;
     hidden: yes
@@ -15128,6 +15138,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "Counts the status of fallback requests to aus5.mozilla.org
 "
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__network_ssl_token_cache_hits {

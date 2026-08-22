@@ -459,6 +459,110 @@ view: metrics_table {
     group_item_label: "Blocklist Enabled"
   }
 
+  dimension: metrics__boolean__browser_backup_archive_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_archive_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Backup Archive Enabled"
+  }
+
+  dimension: metrics__boolean__browser_backup_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Backup Enabled"
+  }
+
+  dimension: metrics__boolean__browser_backup_pswd_encrypted {
+    sql: ${TABLE}.metrics.boolean.browser_backup_pswd_encrypted ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Backup Pswd Encrypted"
+  }
+
+  dimension: metrics__boolean__browser_backup_restore_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_restore_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Backup Restore Enabled"
+  }
+
+  dimension: metrics__boolean__browser_backup_scheduler_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_backup_scheduler_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Backup Scheduler Enabled"
+  }
+
+  dimension: metrics__boolean__browser_default_at_launch {
+    sql: ${TABLE}.metrics.boolean.browser_default_at_launch ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Default At Launch"
+  }
+
+  dimension: metrics__boolean__browser_global_ai_control_is_blocking {
+    sql: ${TABLE}.metrics.boolean.browser_global_ai_control_is_blocking ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Global Ai Control Is Blocking"
+  }
+
+  dimension: metrics__boolean__browser_startup_abouthome_cache_shutdownwrite {
+    sql: ${TABLE}.metrics.boolean.browser_startup_abouthome_cache_shutdownwrite ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Startup Abouthome Cache Shutdownwrite"
+  }
+
+  dimension: metrics__boolean__browser_startup_kiosk_mode {
+    sql: ${TABLE}.metrics.boolean.browser_startup_kiosk_mode ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Browser Startup Kiosk Mode"
+  }
+
+  dimension: metrics__boolean__content_analysis_allow_url_regex_list_set {
+    sql: ${TABLE}.metrics.boolean.content_analysis_allow_url_regex_list_set ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Content Analysis Allow URL Regex List Set"
+  }
+
+  dimension: metrics__boolean__content_analysis_bypass_for_same_tab_operations {
+    sql: ${TABLE}.metrics.boolean.content_analysis_bypass_for_same_tab_operations ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Content Analysis Bypass For Same Tab Operations"
+  }
+
+  dimension: metrics__boolean__content_analysis_deny_url_regex_list_set {
+    sql: ${TABLE}.metrics.boolean.content_analysis_deny_url_regex_list_set ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Content Analysis Deny URL Regex List Set"
+  }
+
+  dimension: metrics__boolean__content_analysis_show_blocked_result {
+    sql: ${TABLE}.metrics.boolean.content_analysis_show_blocked_result ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Content Analysis Show Blocked Result"
+  }
+
   dimension: metrics__boolean__contentblocking_cryptomining_blocking_enabled {
     sql: ${TABLE}.metrics.boolean.contentblocking_cryptomining_blocking_enabled ;;
     type: yesno
@@ -499,6 +603,86 @@ view: metrics_table {
     group_item_label: "Cookie Banners Service Detect Only"
   }
 
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_cache {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_cache ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Cache"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_cookies {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_cookies ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Cookies"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_downloads {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_downloads ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Downloads"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_formdata {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_formdata ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Formdata"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_history {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_history ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown History"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_offline_apps {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_offline_apps ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Offline Apps"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_open_windows {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_open_windows ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Open Windows"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_sessions {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_sessions ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Sessions"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_clear_on_shutdown_site_settings {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_clear_on_shutdown_site_settings ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Clear On Shutdown Site Settings"
+  }
+
+  dimension: metrics__boolean__datasanitization_privacy_sanitize_sanitize_on_shutdown {
+    sql: ${TABLE}.metrics.boolean.datasanitization_privacy_sanitize_sanitize_on_shutdown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Datasanitization Privacy Sanitize Sanitize On Shutdown"
+  }
+
   dimension: metrics__boolean__devtools_shadowdom_reveal_link_clicked {
     sql: ${TABLE}.metrics.boolean.devtools_shadowdom_reveal_link_clicked ;;
     type: yesno
@@ -523,6 +707,14 @@ view: metrics_table {
     group_item_label: "Devtools Shadowdom Shadow Root Expanded"
   }
 
+  dimension: metrics__boolean__distribution_mozillaonline_ignored {
+    sql: ${TABLE}.metrics.boolean.distribution_mozillaonline_ignored ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Distribution Mozillaonline Ignored"
+  }
+
   dimension: metrics__boolean__dom_parentprocess_private_window_used {
     sql: ${TABLE}.metrics.boolean.dom_parentprocess_private_window_used ;;
     type: yesno
@@ -545,6 +737,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Extensions Allow Execute Script In Moz Extension"
+  }
+
+  dimension: metrics__boolean__extensions_button_prefers_hidden_button {
+    sql: ${TABLE}.metrics.boolean.extensions_button_prefers_hidden_button ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Extensions Button Prefers Hidden Button"
   }
 
   dimension: metrics__boolean__extensions_use_remote_policy {
@@ -595,6 +795,94 @@ view: metrics_table {
     group_item_label: "Formautofill OS Auth Enabled"
   }
 
+  dimension: metrics__boolean__fxa_account_enabled {
+    sql: ${TABLE}.metrics.boolean.fxa_account_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Fxa Account Enabled"
+  }
+
+  dimension: metrics__boolean__fxa_sync_enabled {
+    sql: ${TABLE}.metrics.boolean.fxa_sync_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Fxa Sync Enabled"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_enabled {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Chatbot Enabled"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_menu {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_menu ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Chatbot Menu"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_page {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_page ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Chatbot Page"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_shortcuts {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Chatbot Shortcuts"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_shortcuts_custom {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_shortcuts_custom ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Chatbot Shortcuts Custom"
+  }
+
+  dimension: metrics__boolean__genai_chatbot_sidebar {
+    sql: ${TABLE}.metrics.boolean.genai_chatbot_sidebar ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Chatbot Sidebar"
+  }
+
+  dimension: metrics__boolean__genai_linkpreview_ai_optin {
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_ai_optin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Linkpreview Ai Optin"
+  }
+
+  dimension: metrics__boolean__genai_linkpreview_enabled {
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Linkpreview Enabled"
+  }
+
+  dimension: metrics__boolean__genai_linkpreview_key_points {
+    sql: ${TABLE}.metrics.boolean.genai_linkpreview_key_points ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Genai Linkpreview Key Points"
+  }
+
   dimension: metrics__boolean__gfx_d2d_enabled {
     sql: ${TABLE}.metrics.boolean.gfx_d2d_enabled ;;
     type: yesno
@@ -643,6 +931,86 @@ view: metrics_table {
     group_item_label: "Gfx Supports Hdr"
   }
 
+  dimension: metrics__boolean__installation_first_seen_admin_user {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_admin_user ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Installation First Seen Admin User"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_default_path {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_default_path ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Installation First Seen Default Path"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_from_msi {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_from_msi ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Installation First Seen From Msi"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_install_existed {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_install_existed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Installation First Seen Install Existed"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_inst {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_inst ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Installation First Seen Other Inst"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_msix_inst {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_msix_inst ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Installation First Seen Other Msix Inst"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_profdir_existed {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_profdir_existed ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Installation First Seen Profdir Existed"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_silent {
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_silent ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Installation First Seen Silent"
+  }
+
+  dimension: metrics__boolean__link_handling_open_next_to_active_tab_settings_enabled {
+    sql: ${TABLE}.metrics.boolean.link_handling_open_next_to_active_tab_settings_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Link Handling Open Next To Active Tab Settings Enabled"
+  }
+
+  dimension: metrics__boolean__migration_uninstaller_profile_refresh {
+    sql: ${TABLE}.metrics.boolean.migration_uninstaller_profile_refresh ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Migration Uninstaller Profile Refresh"
+  }
+
   dimension: metrics__boolean__network_apple_fast_datapath_used {
     sql: ${TABLE}.metrics.boolean.network_apple_fast_datapath_used ;;
     type: yesno
@@ -657,6 +1025,30 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Networking Http3 Enabled"
+  }
+
+  dimension: metrics__boolean__newtab_activity_stream_ctor_success {
+    sql: ${TABLE}.metrics.boolean.newtab_activity_stream_ctor_success ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Newtab Activity Stream Ctor Success"
+  }
+
+  dimension: metrics__boolean__newtab_addon_ready_success {
+    sql: ${TABLE}.metrics.boolean.newtab_addon_ready_success ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Newtab Addon Ready Success"
+  }
+
+  dimension: metrics__boolean__newtab_addon_xpi_used {
+    sql: ${TABLE}.metrics.boolean.newtab_addon_xpi_used ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Newtab Addon Xpi Used"
   }
 
   dimension: metrics__boolean__nimbus_qa_prefs_bool_default_value {
@@ -675,12 +1067,52 @@ view: metrics_table {
     group_item_label: "Nimbus Qa Prefs Bool User Value"
   }
 
+  dimension: metrics__boolean__nova_enabled {
+    sql: ${TABLE}.metrics.boolean.nova_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Nova Enabled"
+  }
+
   dimension: metrics__boolean__os_environment_is_admin_without_uac {
     sql: ${TABLE}.metrics.boolean.os_environment_is_admin_without_uac ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "OS Environment Is Admin Without Uac"
+  }
+
+  dimension: metrics__boolean__os_environment_is_kept_in_dock {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_kept_in_dock ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "OS Environment Is Kept In Dock"
+  }
+
+  dimension: metrics__boolean__os_environment_is_taskbar_pinned {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_taskbar_pinned ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "OS Environment Is Taskbar Pinned"
+  }
+
+  dimension: metrics__boolean__os_environment_is_taskbar_pinned_private {
+    sql: ${TABLE}.metrics.boolean.os_environment_is_taskbar_pinned_private ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "OS Environment Is Taskbar Pinned Private"
+  }
+
+  dimension: metrics__boolean__pictureinpicture_toggle_enabled {
+    sql: ${TABLE}.metrics.boolean.pictureinpicture_toggle_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Pictureinpicture Toggle Enabled"
   }
 
   dimension: metrics__boolean__pkcs11_external_trust_anchor_module_loaded {
@@ -715,6 +1147,14 @@ view: metrics_table {
     group_item_label: "Preferences Prefs File Was Invalid"
   }
 
+  dimension: metrics__boolean__primary_password_enabled {
+    sql: ${TABLE}.metrics.boolean.primary_password_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Primary Password Enabled"
+  }
+
   dimension: metrics__boolean__pwmgr_os_auth_enabled {
     sql: ${TABLE}.metrics.boolean.pwmgr_os_auth_enabled ;;
     type: yesno
@@ -729,6 +1169,70 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Pwmgr Saving Enabled"
+  }
+
+  dimension: metrics__boolean__search_engine_default_overridden_by_third_party {
+    sql: ${TABLE}.metrics.boolean.search_engine_default_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Search Engine Default Overridden By Third Party"
+  }
+
+  dimension: metrics__boolean__search_engine_private_overridden_by_third_party {
+    sql: ${TABLE}.metrics.boolean.search_engine_private_overridden_by_third_party ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Search Engine Private Overridden By Third Party"
+  }
+
+  dimension: metrics__boolean__session_restore_new_tab_on_restore_enabled {
+    sql: ${TABLE}.metrics.boolean.session_restore_new_tab_on_restore_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Session Restore New Tab On Restore Enabled"
+  }
+
+  dimension: metrics__boolean__smart_window_enabled {
+    sql: ${TABLE}.metrics.boolean.smart_window_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Smart Window Enabled"
+  }
+
+  dimension: metrics__boolean__smart_window_set_default_optin {
+    sql: ${TABLE}.metrics.boolean.smart_window_set_default_optin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Smart Window Set Default Optin"
+  }
+
+  dimension: metrics__boolean__smart_window_topsites_enabled {
+    sql: ${TABLE}.metrics.boolean.smart_window_topsites_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Smart Window Topsites Enabled"
+  }
+
+  dimension: metrics__boolean__sslkeylogging_enabled {
+    sql: ${TABLE}.metrics.boolean.sslkeylogging_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Sslkeylogging Enabled"
+  }
+
+  dimension: metrics__boolean__startup_is_cold {
+    sql: ${TABLE}.metrics.boolean.startup_is_cold ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Startup Is Cold"
   }
 
   dimension: metrics__boolean__system_has_win_package_id {
@@ -755,6 +1259,22 @@ view: metrics_table {
     group_item_label: "System Is Wow Arm 64"
   }
 
+  dimension: metrics__boolean__tabgroup_smart_tab_enabled {
+    sql: ${TABLE}.metrics.boolean.tabgroup_smart_tab_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Tabgroup Smart Tab Enabled"
+  }
+
+  dimension: metrics__boolean__telemetry_data_upload_optin {
+    sql: ${TABLE}.metrics.boolean.telemetry_data_upload_optin ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Telemetry Data Upload Optin"
+  }
+
   dimension: metrics__boolean__update_settings_auto_download {
     sql: ${TABLE}.metrics.boolean.update_settings_auto_download ;;
     type: yesno
@@ -779,12 +1299,60 @@ view: metrics_table {
     group_item_label: "Update Settings Enabled"
   }
 
+  dimension: metrics__boolean__update_suppress_prompts {
+    sql: ${TABLE}.metrics.boolean.update_suppress_prompts ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Update Suppress Prompts"
+  }
+
   dimension: metrics__boolean__updater_available {
     sql: ${TABLE}.metrics.boolean.updater_available ;;
     type: yesno
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Updater Available"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_all {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_all ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest All"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_online_available {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest Online Available"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_online_enabled {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_online_enabled ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest Online Enabled"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_sponsored {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_sponsored ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest Sponsored"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_topsites {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_topsites ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Urlbar Pref Suggest Topsites"
   }
 
   dimension: metrics__boolean__widget_dark_mode {
@@ -795,12 +1363,60 @@ view: metrics_table {
     group_item_label: "Widget Dark Mode"
   }
 
+  dimension: metrics__boolean__widget_rosetta_status {
+    sql: ${TABLE}.metrics.boolean.widget_rosetta_status ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Widget Rosetta Status"
+  }
+
   dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
     sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Bounce Tracking Protection Purge Count Classified Tracker"
+  }
+
+  dimension: metrics__counter__browser_content_crash_dump_unavailable {
+    sql: ${TABLE}.metrics.counter.browser_content_crash_dump_unavailable ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Content Crash Dump Unavailable"
+  }
+
+  dimension: metrics__counter__browser_content_crash_not_submitted {
+    sql: ${TABLE}.metrics.counter.browser_content_crash_not_submitted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Content Crash Not Submitted"
+  }
+
+  dimension: metrics__counter__browser_customkeys_opened {
+    sql: ${TABLE}.metrics.counter.browser_customkeys_opened ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Customkeys Opened"
+  }
+
+  dimension: metrics__counter__browser_engagement_active_ticks {
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Active Ticks"
+  }
+
+  dimension: metrics__counter__browser_engagement_active_ticks_non_synthesized {
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks_non_synthesized ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Active Ticks Non Synthesized"
   }
 
   dimension: metrics__counter__browser_engagement_bookmarks_toolbar_bookmark_added {
@@ -819,6 +1435,102 @@ view: metrics_table {
     group_item_label: "Browser Engagement Bookmarks Toolbar Bookmark Opened"
   }
 
+  dimension: metrics__counter__browser_engagement_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_open_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Tab Open Event Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_pinned_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_pinned_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Tab Pinned Event Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_reload_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_reload_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Tab Reload Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_tab_unload_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_tab_unload_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Tab Unload Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_unfiltered_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_unfiltered_uri_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Unfiltered URI Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement URI Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count_normal_mode {
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count_normal_mode ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement URI Count Normal Mode"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_open_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Vertical Tab Open Event Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_vertical_tab_pinned_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_vertical_tab_pinned_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Vertical Tab Pinned Event Count"
+  }
+
+  dimension: metrics__counter__browser_engagement_window_open_event_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_window_open_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser Engagement Window Open Event Count"
+  }
+
+  dimension: metrics__counter__browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count {
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_all_tabs_panel_dragstart_tab_event_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser UI Interaction All Tabs Panel Dragstart Tab Event Count"
+  }
+
+  dimension: metrics__counter__browser_ui_interaction_textrecognition_error {
+    sql: ${TABLE}.metrics.counter.browser_ui_interaction_textrecognition_error ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Browser UI Interaction Textrecognition Error"
+  }
+
   dimension: metrics__counter__cert_signature_cache_total {
     sql: ${TABLE}.metrics.counter.cert_signature_cache_total ;;
     type: number
@@ -835,12 +1547,68 @@ view: metrics_table {
     group_item_label: "Cert Trust Cache Total"
   }
 
+  dimension: metrics__counter__content_analysis_connection_attempt {
+    sql: ${TABLE}.metrics.counter.content_analysis_connection_attempt ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Content Analysis Connection Attempt"
+  }
+
+  dimension: metrics__counter__content_analysis_connection_attempt_retry {
+    sql: ${TABLE}.metrics.counter.content_analysis_connection_attempt_retry ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Content Analysis Connection Attempt Retry"
+  }
+
+  dimension: metrics__counter__content_analysis_request_allowed_by_allow_url {
+    sql: ${TABLE}.metrics.counter.content_analysis_request_allowed_by_allow_url ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Content Analysis Request Allowed By Allow URL"
+  }
+
+  dimension: metrics__counter__content_analysis_request_blocked_by_deny_url {
+    sql: ${TABLE}.metrics.counter.content_analysis_request_blocked_by_deny_url ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Content Analysis Request Blocked By Deny URL"
+  }
+
   dimension: metrics__counter__contentblocking_trackers_blocked_count {
     sql: ${TABLE}.metrics.counter.contentblocking_trackers_blocked_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Contentblocking Trackers Blocked Count"
+  }
+
+  dimension: metrics__counter__crash_submission_failure {
+    sql: ${TABLE}.metrics.counter.crash_submission_failure ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Crash Submission Failure"
+  }
+
+  dimension: metrics__counter__crash_submission_pending {
+    sql: ${TABLE}.metrics.counter.crash_submission_pending ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Crash Submission Pending"
+  }
+
+  dimension: metrics__counter__crash_submission_success {
+    sql: ${TABLE}.metrics.counter.crash_submission_success ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Crash Submission Success"
   }
 
   dimension: metrics__counter__devtools_aboutdebugging_opened_count {
@@ -1283,6 +2051,14 @@ view: metrics_table {
     group_item_label: "Downloads File Opened"
   }
 
+  dimension: metrics__counter__downloads_panel_shown {
+    sql: ${TABLE}.metrics.counter.downloads_panel_shown ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Downloads Panel Shown"
+  }
+
   dimension: metrics__counter__findbar_find_next {
     sql: ${TABLE}.metrics.counter.findbar_find_next ;;
     type: number
@@ -1683,6 +2459,14 @@ view: metrics_table {
     group_item_label: "Media Muted By Content Attribute Runtime"
   }
 
+  dimension: metrics__counter__messaging_system_glean_ping_for_ping_failures {
+    sql: ${TABLE}.metrics.counter.messaging_system_glean_ping_for_ping_failures ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Messaging System Glean Ping For Ping Failures"
+  }
+
   dimension: metrics__counter__netwerk_parent_connect_timeout {
     sql: ${TABLE}.metrics.counter.netwerk_parent_connect_timeout ;;
     type: number
@@ -1851,6 +2635,22 @@ view: metrics_table {
     group_item_label: "Opaque Response Blocking Javascript Validation Count"
   }
 
+  dimension: metrics__counter__page_icon_fit_icon_count {
+    sql: ${TABLE}.metrics.counter.page_icon_fit_icon_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Page Icon Fit Icon Count"
+  }
+
+  dimension: metrics__counter__page_icon_small_icon_count {
+    sql: ${TABLE}.metrics.counter.page_icon_small_icon_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Page Icon Small Icon Count"
+  }
+
   dimension: metrics__counter__pdfjs_editing_highlight_color_changed {
     sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_color_changed ;;
     type: number
@@ -1939,6 +2739,14 @@ view: metrics_table {
     group_item_label: "Permissions Sql Corrupted"
   }
 
+  dimension: metrics__counter__places_sponsored_visit_no_triggering_url {
+    sql: ${TABLE}.metrics.counter.places_sponsored_visit_no_triggering_url ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Places Sponsored Visit No Triggering URL"
+  }
+
   dimension: metrics__counter__power_cpu_time_bogus_values {
     sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
     type: number
@@ -2019,6 +2827,38 @@ view: metrics_table {
     group_item_label: "Printing Silent Print"
   }
 
+  dimension: metrics__counter__privacy_reduced_page_protection_banner_shown {
+    sql: ${TABLE}.metrics.counter.privacy_reduced_page_protection_banner_shown ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Privacy Reduced Page Protection Banner Shown"
+  }
+
+  dimension: metrics__counter__privacy_reduced_page_protection_disable_clicked {
+    sql: ${TABLE}.metrics.counter.privacy_reduced_page_protection_disable_clicked ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Privacy Reduced Page Protection Disable Clicked"
+  }
+
+  dimension: metrics__counter__privacy_reduced_page_protection_reload_clicked {
+    sql: ${TABLE}.metrics.counter.privacy_reduced_page_protection_reload_clicked ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Privacy Reduced Page Protection Reload Clicked"
+  }
+
+  dimension: metrics__counter__qrcode_opened {
+    sql: ${TABLE}.metrics.counter.qrcode_opened ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Qrcode Opened"
+  }
+
   dimension: metrics__counter__quotamanager_restore_origin_directory_metadata_counter {
     sql: ${TABLE}.metrics.counter.quotamanager_restore_origin_directory_metadata_counter ;;
     type: number
@@ -2097,6 +2937,86 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Security UI Protectionspopup Smartblockembeds Shown"
+  }
+
+  dimension: metrics__counter__smart_window_tabs_opened {
+    sql: ${TABLE}.metrics.counter.smart_window_tabs_opened ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Smart Window Tabs Opened"
+  }
+
+  dimension: metrics__counter__telemetry_archive_session_ping_count {
+    sql: ${TABLE}.metrics.counter.telemetry_archive_session_ping_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Archive Session Ping Count"
+  }
+
+  dimension: metrics__counter__telemetry_invalid_payload_submitted {
+    sql: ${TABLE}.metrics.counter.telemetry_invalid_payload_submitted ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Invalid Payload Submitted"
+  }
+
+  dimension: metrics__counter__telemetry_pending_load_failure_parse {
+    sql: ${TABLE}.metrics.counter.telemetry_pending_load_failure_parse ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Pending Load Failure Parse"
+  }
+
+  dimension: metrics__counter__telemetry_pending_load_failure_read {
+    sql: ${TABLE}.metrics.counter.telemetry_pending_load_failure_read ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Pending Load Failure Read"
+  }
+
+  dimension: metrics__counter__telemetry_ping_evicted_for_server_errors {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_evicted_for_server_errors ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Ping Evicted For Server Errors"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_archived {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_archived ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Ping Size Exceeded Archived"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_pending {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_pending ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Ping Size Exceeded Pending"
+  }
+
+  dimension: metrics__counter__telemetry_ping_size_exceeded_send {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_size_exceeded_send ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Ping Size Exceeded Send"
+  }
+
+  dimension: metrics__counter__telemetry_ping_submission_waiting_clientid {
+    sql: ${TABLE}.metrics.counter.telemetry_ping_submission_waiting_clientid ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Telemetry Ping Submission Waiting Clientid"
   }
 
   dimension: metrics__counter__tls_certificate_verifications {
@@ -2185,6 +3105,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Update Invalid Lastupdatetime Subsequent"
+  }
+
+  dimension: metrics__counter__update_no_window_auto_restarts {
+    sql: ${TABLE}.metrics.counter.update_no_window_auto_restarts ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Update No Window Auto Restarts"
   }
 
   dimension: metrics__counter__update_not_pref_update_auto_external {
@@ -2339,6 +3267,70 @@ view: metrics_table {
     group_item_label: "Update Unable To Apply Subsequent"
   }
 
+  dimension: metrics__counter__urlbar_autofill_deletion {
+    sql: ${TABLE}.metrics.counter.urlbar_autofill_deletion ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Urlbar Autofill Deletion"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_revert_by_popup_count {
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_revert_by_popup_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Urlbar Persistedsearchterms Revert By Popup Count"
+  }
+
+  dimension: metrics__counter__urlbar_persistedsearchterms_view_count {
+    sql: ${TABLE}.metrics.counter.urlbar_persistedsearchterms_view_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Urlbar Persistedsearchterms View Count"
+  }
+
+  dimension: metrics__counter__urlbar_trending_block {
+    sql: ${TABLE}.metrics.counter.urlbar_trending_block ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Urlbar Trending Block"
+  }
+
+  dimension: metrics__counter__urlbar_unifiedsearchbutton_opened {
+    sql: ${TABLE}.metrics.counter.urlbar_unifiedsearchbutton_opened ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Urlbar Unifiedsearchbutton Opened"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_abandonment {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_abandonment ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Urlbar Zeroprefix Abandonment"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_engagement {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_engagement ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Urlbar Zeroprefix Engagement"
+  }
+
+  dimension: metrics__counter__urlbar_zeroprefix_exposure {
+    sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_exposure ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Urlbar Zeroprefix Exposure"
+  }
+
   dimension: metrics__counter__use_counter_top_level_content_documents_destroyed {
     sql: ${TABLE}.metrics.counter.use_counter_top_level_content_documents_destroyed ;;
     type: number
@@ -2467,6 +3459,14 @@ view: metrics_table {
     group_item_label: "Webrtcdtls Server Handshake Started Counter"
   }
 
+  dimension: metrics__counter__widget_mac_application_menu_opened {
+    sql: ${TABLE}.metrics.counter.widget_mac_application_menu_opened ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Widget Mac Application Menu Opened"
+  }
+
   dimension: metrics__counter__workers_dedicated_worker_spawn_gets_queued {
     sql: ${TABLE}.metrics.counter.workers_dedicated_worker_spawn_gets_queued ;;
     type: number
@@ -2556,6 +3556,19 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.bookmarks_sidebar_cumulative_searches.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Bookmarks Sidebar Cumulative Searches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__values {
+    sql: ${TABLE}.metrics.custom_distribution.bookmarks_sidebar_cumulative_searches.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__sum {
     sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.sum ;;
     type: number
@@ -2566,6 +3579,71 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
     sql: ${TABLE}.metrics.custom_distribution.bounce_tracking_protection_num_hosts_per_purge_run.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__browser_engagement_loaded_tab_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.browser_engagement_loaded_tab_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Browser Engagement Loaded Tab Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__browser_engagement_loaded_tab_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.browser_engagement_loaded_tab_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__browser_engagement_tab_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.browser_engagement_tab_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Browser Engagement Tab Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__browser_engagement_tab_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.browser_engagement_tab_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__browser_migration_source_browser__sum {
+    sql: ${TABLE}.metrics.custom_distribution.browser_migration_source_browser.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Browser Migration Source Browser"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__browser_migration_source_browser__values {
+    sql: ${TABLE}.metrics.custom_distribution.browser_migration_source_browser.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__sum {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_dialog_prompt_rawcount.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Browser Set Default Dialog Prompt Rawcount"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__values {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_dialog_prompt_rawcount.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_result__sum {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_result.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Browser Set Default Result"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__browser_set_default_result__values {
+    sql: ${TABLE}.metrics.custom_distribution.browser_set_default_result.values ;;
     hidden: yes
   }
 
@@ -3284,6 +4362,32 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_filter_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_filter_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: History Sidebar Cumulative Filter Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_filter_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_filter_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_searches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_searches.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: History Sidebar Cumulative Searches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__history_sidebar_cumulative_searches__values {
+    sql: ${TABLE}.metrics.custom_distribution.history_sidebar_cumulative_searches.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__sum {
     sql: ${TABLE}.metrics.custom_distribution.hpack_bytes_evicted_ratio_compressor.sum ;;
     type: number
@@ -3879,6 +4983,71 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__javascript_gc_zones_collected__values {
     sql: ${TABLE}.metrics.custom_distribution.javascript_gc_zones_collected.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_bookmark_searches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_bookmark_searches.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Library Cumulative Bookmark Searches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_bookmark_searches__values {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_bookmark_searches.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_history_searches__sum {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_history_searches.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Library Cumulative History Searches"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__library_cumulative_history_searches__values {
+    sql: ${TABLE}.metrics.custom_distribution.library_cumulative_history_searches.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__link_icon_sizes_attr_dimension__sum {
+    sql: ${TABLE}.metrics.custom_distribution.link_icon_sizes_attr_dimension.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Link Icon Sizes Attr Dimension"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__link_icon_sizes_attr_dimension__values {
+    sql: ${TABLE}.metrics.custom_distribution.link_icon_sizes_attr_dimension.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__link_icon_sizes_attr_usage__sum {
+    sql: ${TABLE}.metrics.custom_distribution.link_icon_sizes_attr_usage.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Link Icon Sizes Attr Usage"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__link_icon_sizes_attr_usage__values {
+    sql: ${TABLE}.metrics.custom_distribution.link_icon_sizes_attr_usage.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__media_decoder_backend_used__sum {
+    sql: ${TABLE}.metrics.custom_distribution.media_decoder_backend_used.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Media Decoder Backend Used"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__media_decoder_backend_used__values {
+    sql: ${TABLE}.metrics.custom_distribution.media_decoder_backend_used.values ;;
     hidden: yes
   }
 
@@ -5091,6 +6260,32 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__newtab_page_blocked_sites_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_blocked_sites_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Newtab Page Blocked Sites Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__newtab_page_blocked_sites_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_blocked_sites_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__newtab_page_pinned_sites_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_pinned_sites_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Newtab Page Pinned Sites Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__newtab_page_pinned_sites_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.newtab_page_pinned_sites_count.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__sum {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.sum ;;
     type: number
@@ -5140,6 +6335,110 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__permissions_unused_permission_modified_age_at_expiry__values {
     sql: ${TABLE}.metrics.custom_distribution.permissions_unused_permission_modified_age_at_expiry.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_annos_pages_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_annos_pages_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Places Annos Pages Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_annos_pages_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_annos_pages_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_bookmarks_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_bookmarks_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Places Bookmarks Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_bookmarks_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_bookmarks_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_expiration_steps_to_clean__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_expiration_steps_to_clean.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Places Expiration Steps To Clean"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_expiration_steps_to_clean__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_expiration_steps_to_clean.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_keywords_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_keywords_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Places Keywords Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_keywords_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_keywords_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_pages_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_pages_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Places Pages Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_pages_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_pages_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_sorted_bookmarks_perc__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_sorted_bookmarks_perc.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Places Sorted Bookmarks Perc"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_sorted_bookmarks_perc__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_sorted_bookmarks_perc.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_tagged_bookmarks_perc__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_tagged_bookmarks_perc.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Places Tagged Bookmarks Perc"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_tagged_bookmarks_perc__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_tagged_bookmarks_perc.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__places_tags_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.places_tags_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Places Tags Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__places_tags_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.places_tags_count.values ;;
     hidden: yes
   }
 
@@ -5478,6 +6777,45 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__security_ui_events__values {
     sql: ${TABLE}.metrics.custom_distribution.security_ui_events.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__sum {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_eager_tabs_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Session Restore Number Of Eager Tabs Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__values {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_eager_tabs_restored.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_tabs_restored__sum {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_tabs_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Session Restore Number Of Tabs Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_tabs_restored__values {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_tabs_restored.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_windows_restored__sum {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_windows_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Session Restore Number Of Windows Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__session_restore_number_of_windows_restored__values {
+    sql: ${TABLE}.metrics.custom_distribution.session_restore_number_of_windows_restored.values ;;
     hidden: yes
   }
 
@@ -6076,6 +7414,97 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__sync_device_count_mobile__values {
     sql: ${TABLE}.metrics.custom_distribution.sync_device_count_mobile.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_directories_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_directories_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Telemetry Archive Directories Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_directories_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_directories_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_old_dirs__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_old_dirs.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Telemetry Archive Evicted Old Dirs"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_old_dirs__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_old_dirs.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_over_quota__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Telemetry Archive Evicted Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_evicted_over_quota__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_evicted_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_oldest_directory_age__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_oldest_directory_age.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Telemetry Archive Oldest Directory Age"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_oldest_directory_age__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_oldest_directory_age.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_scan_ping_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_scan_ping_count.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Telemetry Archive Scan Ping Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_archive_scan_ping_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_archive_scan_ping_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__sum {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_pending_pings_evicted_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Telemetry Pending Pings Evicted Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__values {
+    sql: ${TABLE}.metrics.custom_distribution.telemetry_pending_pings_evicted_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__text_recognition_text_length__sum {
+    sql: ${TABLE}.metrics.custom_distribution.text_recognition_text_length.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Custom Distribution: Text Recognition Text Length"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__text_recognition_text_length__values {
+    sql: ${TABLE}.metrics.custom_distribution.text_recognition_text_length.values ;;
     hidden: yes
   }
 
@@ -6972,6 +8401,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     description: "Fingerprinting detection hits by known fingerprinting string (key) and source (category)."
   }
 
+  dimension: metrics__dual_labeled_counter__crash_submit_success {
+    sql: ${TABLE}.metrics.dual_labeled_counter.crash_submit_success ;;
+    hidden: yes
+  }
+
   dimension: metrics__dual_labeled_counter__dns_lookup_disposition {
     sql: ${TABLE}.metrics.dual_labeled_counter.dns_lookup_disposition ;;
     hidden: yes
@@ -7161,6 +8595,11 @@ Initially this metric also recorded the \"success\" category, but due to the hig
 "
   }
 
+  dimension: metrics__dual_labeled_counter__telemetry_send_failure_type_per_ping {
+    sql: ${TABLE}.metrics.dual_labeled_counter.telemetry_send_failure_type_per_ping ;;
+    hidden: yes
+  }
+
   dimension: metrics__dual_labeled_counter__tls_handshake_result {
     sql: ${TABLE}.metrics.dual_labeled_counter.tls_handshake_result ;;
     hidden: yes
@@ -7200,6 +8639,16 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "OS high contrast or other accessibility theme is enabled. The result is split into keys which represent the values of browser.display.document_color_use: \"default\", \"always\", or \"never\". This metric was generated to correspond to the Legacy Telemetry scalar a11y.theme.
 "
+  }
+
+  dimension: metrics__labeled_boolean__browser_ai_control_is_blocking {
+    sql: ${TABLE}.metrics.labeled_boolean.browser_ai_control_is_blocking ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
+    sql: ${TABLE}.metrics.labeled_boolean.browser_ui_mirror_for_toolbar_widgets ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
@@ -7259,6 +8708,11 @@ while reporting fog.data_diretory_info.
 "
   }
 
+  dimension: metrics__labeled_boolean__media_wmf_codec_no_extension {
+    sql: ${TABLE}.metrics.labeled_boolean.media_wmf_codec_no_extension ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__mediadrm_decryption {
     sql: ${TABLE}.metrics.labeled_boolean.mediadrm_decryption ;;
     hidden: yes
@@ -7273,11 +8727,31 @@ while reporting fog.data_diretory_info.
 "
   }
 
+  dimension: metrics__labeled_boolean__newtab_metric_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_metric_registered ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__newtab_ping_registered {
+    sql: ${TABLE}.metrics.labeled_boolean.newtab_ping_registered ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__os_environment_is_default_handler {
+    sql: ${TABLE}.metrics.labeled_boolean.os_environment_is_default_handler ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__pdfjs_image_alt_text_edit {
     sql: ${TABLE}.metrics.labeled_boolean.pdfjs_image_alt_text_edit ;;
     hidden: yes
     description: "Stores alt text modal settings for the user.
 "
+  }
+
+  dimension: metrics__labeled_boolean__smart_window_memories_optin {
+    sql: ${TABLE}.metrics.labeled_boolean.smart_window_memories_optin ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
@@ -7288,11 +8762,36 @@ either %AppData% or %LocalAppData%.
 "
   }
 
+  dimension: metrics__labeled_boolean__widget_ime_name_on_linux {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_linux ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__widget_ime_name_on_mac {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_mac ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__widget_ime_name_on_windows {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_windows ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__widget_ime_name_on_windows_inserted_crlf {
+    sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_windows_inserted_crlf ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__widget_pointing_devices {
     sql: ${TABLE}.metrics.labeled_boolean.widget_pointing_devices ;;
     hidden: yes
     description: "Whether the system has any matching pointing device for each label.
 "
+  }
+
+  dimension: metrics__labeled_counter__ads_client_client_operation_total {
+    sql: ${TABLE}.metrics.labeled_counter.ads_client_client_operation_total ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__application_reputation_binary_archive {
@@ -7523,6 +9022,81 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__browser_attribution_errors {
+    sql: ${TABLE}.metrics.labeled_counter.browser_attribution_errors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_customkeys_actions {
+    sql: ${TABLE}.metrics.labeled_counter.browser_customkeys_actions ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_about_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_home ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_about_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_newtab ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu_visual ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_searchbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_smartbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartwindow_assistant ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_handoff ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_persisted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_searchmode ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_webextension {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_webextension ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_sessionrestore_interstitial {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_sessionrestore_interstitial ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_total_top_visits {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_total_top_visits ;;
     hidden: yes
@@ -7538,11 +9112,501 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__browser_is_user_default {
+    sql: ${TABLE}.metrics.labeled_counter.browser_is_user_default ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_is_user_default_error {
+    sql: ${TABLE}.metrics.labeled_counter.browser_is_user_default_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_migration_entry_point_categorical {
+    sql: ${TABLE}.metrics.labeled_counter.browser_migration_entry_point_categorical ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_about_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_about_home ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_about_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_about_newtab ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu_visual ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_reload {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_reload ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_searchbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_smartbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_smartbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_smartwindow_assistant {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_smartwindow_assistant ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_system {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_system ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_tabhistory {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_tabhistory ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_unknown ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_handoff ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_persisted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_persisted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_searchmode {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_searchmode ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_adclicks_webextension {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_webextension ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_about_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_about_home ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_about_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_about_newtab ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_contextmenu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu_visual ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_reload {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_reload ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_searchbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_smartbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_smartbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_smartwindow_assistant {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_smartwindow_assistant ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_system {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_system ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_tabhistory {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_tabhistory ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_unknown ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_urlbar_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_handoff ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_urlbar_persisted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_persisted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_urlbar_searchmode {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_searchmode ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_content_webextension {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_content_webextension ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_about_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_about_home ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_about_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_about_newtab ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_contextmenu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu_visual ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_reload {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_reload ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_searchbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_searchbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_smartbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_smartbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_smartwindow_assistant {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_smartwindow_assistant ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_system {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_system ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_tabhistory {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_tabhistory ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_unknown ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_urlbar_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_handoff ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_urlbar_persisted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_persisted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_urlbar_searchmode {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_searchmode ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_withads_webextension {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_webextension ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_always_check {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_always_check ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_error {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_modern_settings_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_user_choice_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_protocol_handler_modern_settings_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_protocol_handler_modern_settings_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_set_default_user_choice_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_set_default_user_choice_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_tabswitch_spinner_visible_trigger {
+    sql: ${TABLE}.metrics.labeled_counter.browser_tabswitch_spinner_visible_trigger ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_customized_widgets {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_customized_widgets ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_all_tabs_panel_entrypoint {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_all_tabs_panel_entrypoint ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_app_menu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_app_menu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_bookmarks_bar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_bookmarks_bar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_content_context {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_content_context ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
     hidden: yes
     description: "Records a count of interactions with keyboard shortcuts. See https://firefox-source- docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.keyboard.
 "
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_list_all_tabs_action ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_menu_bar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_menu_bar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_nav_bar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_nav_bar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_overflow_menu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_overflow_menu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_pageaction_panel {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pageaction_panel ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_pageaction_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pageaction_urlbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pinned_overflow_menu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_about {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_about ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_accessibility {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_accessibility ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_ai ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_appearance {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_appearance ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_containers ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_downloads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_downloads ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_experimental ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_general {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_general ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_home {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_home ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_languages ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_more_from_mozilla ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_passwords_autofill {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_passwords_autofill ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_permissions_data {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_permissions_data ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_privacy {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_privacy ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_search {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_search ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_search_results {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_search_results ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_sync ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_tabs_browsing {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_tabs_browsing ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_unknown ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_bookmarks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_bookmarks ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_history {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_history ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_synced_tabs {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_synced_tabs ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_tab_movement {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tab_movement ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_tabs_bar {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_bar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_tabs_context {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_context ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_tabs_context_entrypoint {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_context_entrypoint ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_unified_extensions_area {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_unified_extensions_area ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_ui_interaction_vertical_tabs_container {
+    sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_vertical_tabs_container ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__cache_schema_init_error {
@@ -7671,6 +9735,26 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__content_analysis_connection_failure {
+    sql: ${TABLE}.metrics.labeled_counter.content_analysis_connection_failure ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__content_analysis_request_sent_by_analysis_type {
+    sql: ${TABLE}.metrics.labeled_counter.content_analysis_request_sent_by_analysis_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__content_analysis_request_sent_by_reason {
+    sql: ${TABLE}.metrics.labeled_counter.content_analysis_request_sent_by_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__content_analysis_response_action {
+    sql: ${TABLE}.metrics.labeled_counter.content_analysis_response_action ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_canvas_fingerprinting_per_tab2 ;;
     hidden: yes
@@ -7747,6 +9831,31 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     description: "True if tracking protection in Private Browsing mode is disabled at startup.
 This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_PBM_DISABLED.
 "
+  }
+
+  dimension: metrics__labeled_counter__contextual_services_topsites_click {
+    sql: ${TABLE}.metrics.labeled_counter.contextual_services_topsites_click ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__contextual_services_topsites_impression {
+    sql: ${TABLE}.metrics.labeled_counter.contextual_services_topsites_impression ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__crash_submission_channel_status {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_channel_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__crash_submission_collector_errors {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__crash_submit_attempt {
+    sql: ${TABLE}.metrics.labeled_counter.crash_submit_attempt ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
@@ -7968,6 +10077,11 @@ DNR rules for extensions loaded on application startup.
 "
   }
 
+  dimension: metrics__labeled_counter__extensions_button_temporarily_unhidden {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_button_temporarily_unhidden ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
     sql: ${TABLE}.metrics.labeled_counter.extensions_counters_browser_action_preload_result ;;
     hidden: yes
@@ -8006,6 +10120,11 @@ builds.
     description: "The number of times an unexpected error has been raised while reading
 the extensions StartupCache file.
 "
+  }
+
+  dimension: metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
+    sql: ${TABLE}.metrics.labeled_counter.firefox_ai_runtime_onnx_native_availability ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__fog_subdir_entry_err {
@@ -8187,6 +10306,11 @@ Now it only records counts for the Glean built-in pings.
     hidden: yes
     description: "How often we use different fallbacks when the GPU process crashes
 "
+  }
+
+  dimension: metrics__labeled_counter__history_sidebar_filter_type {
+    sql: ${TABLE}.metrics.labeled_counter.history_sidebar_filter_type ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__htmleditors_overridden_by_beforeinput_listeners {
@@ -8426,6 +10550,21 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__library_link {
+    sql: ${TABLE}.metrics.labeled_counter.library_link ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__library_opened {
+    sql: ${TABLE}.metrics.labeled_counter.library_opened ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__library_search {
+    sql: ${TABLE}.metrics.labeled_counter.library_search ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__localdomstorage_preload_pending_on_first_access {
     sql: ${TABLE}.metrics.labeled_counter.localdomstorage_preload_pending_on_first_access ;;
     hidden: yes
@@ -8548,6 +10687,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     description: "ISOBMFF brand pattern used to identify MP4 in media sniffer
 This metric was generated to correspond to the Legacy Telemetry categorical histogram MEDIA_SNIFFER_MP4_BRAND_PATTERN.
 "
+  }
+
+  dimension: metrics__labeled_counter__migration_discovered_migrators {
+    sql: ${TABLE}.metrics.labeled_counter.migration_discovered_migrators ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__mixed_content_audio {
@@ -8742,6 +10886,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     hidden: yes
     description: "Counts the status of fallback requests to aus5.mozilla.org
 "
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__network_ssl_token_cache_hits {
@@ -9239,6 +11388,16 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__labeled_counter__os_environment_invoked_to_handle {
+    sql: ${TABLE}.metrics.labeled_counter.os_environment_invoked_to_handle ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__os_environment_launched_to_handle {
+    sql: ${TABLE}.metrics.labeled_counter.os_environment_launched_to_handle ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__oskeystore_dummy_storage {
     sql: ${TABLE}.metrics.labeled_counter.oskeystore_dummy_storage ;;
     hidden: yes
@@ -9350,12 +11509,22 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
 "
   }
 
+  dimension: metrics__labeled_counter__pinned_tabs_activations {
+    sql: ${TABLE}.metrics.labeled_counter.pinned_tabs_activations ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__pkcs11_builtin_roots_module_source {
     sql: ${TABLE}.metrics.labeled_counter.pkcs11_builtin_roots_module_source ;;
     hidden: yes
     description: "Which source the built-in roots (CKBI) module was loaded from.
 `xul` is the usual case, and means the roots linked in to libxul were used. `gre_directory` means a `libnssckbi.so` sitting next to the Firefox binary was loaded instead, which some distributions arrange in order to substitute the system trust store. `os_library_path` and `nss3_directory` are only reachable in builds configured with `--with-system-nss`, and likewise indicate that the trust anchors came from the system trust store rather than from Firefox. `none` means no built-in roots module could be loaded at all.
 "
+  }
+
+  dimension: metrics__labeled_counter__places_semantic_history_indexing_stopped {
+    sql: ${TABLE}.metrics.labeled_counter.places_semantic_history_indexing_stopped ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
@@ -9517,6 +11686,16 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
 "
   }
 
+  dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
+    sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_handler_prompt_shown ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__protocolhandler_mailto_prompt_clicked {
+    sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_prompt_clicked ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
     hidden: yes
@@ -9570,12 +11749,32 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__sap_deprecated_counts {
+    sql: ${TABLE}.metrics.labeled_counter.sap_deprecated_counts ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
+    sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_contextmenu_visual ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__script_preloader_requests {
     sql: ${TABLE}.metrics.labeled_counter.script_preloader_requests ;;
     hidden: yes
     description: "Record hits and misses to the script preloader, with categories.
 This metric was generated to correspond to the Legacy Telemetry categorical histogram SCRIPT_PRELOADER_REQUESTS.
 "
+  }
+
+  dimension: metrics__labeled_counter__search_service_initialization_status {
+    sql: ${TABLE}.metrics.labeled_counter.search_service_initialization_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__searchbar_selected_result_method {
+    sql: ${TABLE}.metrics.labeled_counter.searchbar_selected_result_method ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__security_client_auth_cert_usage {
@@ -9603,6 +11802,56 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.security_ui_neterror_search_cta_reason ;;
     hidden: yes
     description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. not_top_level means the error document was not the top-level document (a DNS failure inside an embedded document on a page that loaded fine), so no CTA was offered; it is evaluated before the failed URL is looked at, which is why such a load can never appear under keywords_found, no_path or no_mean"
+  }
+
+  dimension: metrics__labeled_counter__serp_ads_blocked_count {
+    sql: ${TABLE}.metrics.labeled_counter.serp_ads_blocked_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__session_restore_all_files_corrupt {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_all_files_corrupt ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__session_restore_corrupt_file {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_corrupt_file ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__session_restore_shutdown_flush_all_outcomes {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_flush_all_outcomes ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__session_restore_shutdown_ok {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_ok ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__session_restore_shutdown_type {
+    sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__sidebar_link {
+    sql: ${TABLE}.metrics.labeled_counter.sidebar_link ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__sidebar_search {
+    sql: ${TABLE}.metrics.labeled_counter.sidebar_search ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__smart_window_bookmarkbar {
+    sql: ${TABLE}.metrics.labeled_counter.smart_window_bookmarkbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__splitview_uri_count {
+    sql: ${TABLE}.metrics.labeled_counter.splitview_uri_count ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__ssl_resumed_session {
@@ -9651,6 +11900,71 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     description: "Counts the number of times launching a subprocess fails. Counts are by subprocess-type using the GeckoProcessType enum.
 This metric was generated to correspond to the Legacy Telemetry count histogram SUBPROCESS_LAUNCH_FAILURE.
 "
+  }
+
+  dimension: metrics__labeled_counter__suggest_relevance_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.suggest_relevance_outcome ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__suggest_relevance_status {
+    sql: ${TABLE}.metrics.labeled_counter.suggest_relevance_status ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tab_actions {
+    sql: ${TABLE}.metrics.labeled_counter.tab_actions ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tab_stale_drag_recovery {
+    sql: ${TABLE}.metrics.labeled_counter.tab_stale_drag_recovery ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tab_tab_count {
+    sql: ${TABLE}.metrics.labeled_counter.tab_tab_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tabgroup_group_interactions {
+    sql: ${TABLE}.metrics.labeled_counter.tabgroup_group_interactions ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tabgroup_tab_interactions {
+    sql: ${TABLE}.metrics.labeled_counter.tabgroup_tab_interactions ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__telemetry_event_ping_sent {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_ping_sent ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__telemetry_event_recording_error {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_recording_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__telemetry_event_registration_error {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_event_registration_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__telemetry_invalid_ping_type_submitted {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_invalid_ping_type_submitted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__telemetry_send_failure_type {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_send_failure_type ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__telemetry_success {
+    sql: ${TABLE}.metrics.labeled_counter.telemetry_success ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__tls_auth_algorithm {
@@ -9718,6 +12032,11 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
 "
   }
 
+  dimension: metrics__labeled_counter__update_bitshresult {
+    sql: ${TABLE}.metrics.labeled_counter.update_bitshresult ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__update_can_use_bits_external {
     sql: ${TABLE}.metrics.labeled_counter.update_can_use_bits_external ;;
     hidden: yes
@@ -9764,6 +12083,11 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     description: "Update: keyed count (key names are prefixed with AUS_CHECK_EX_ERR_) of background update check extended error code (timer initiated)
 This metric was generated to correspond to the Legacy Telemetry count histogram UPDATE_CHECK_EXTENDED_ERROR_SUBSEQUENT.
 "
+  }
+
+  dimension: metrics__labeled_counter__update_move_result {
+    sql: ${TABLE}.metrics.labeled_counter.update_move_result ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__update_notification_badge_shown {
@@ -9828,6 +12152,106 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     description: "Update: whether the service is installed (after we already have an update ready)
 This metric was generated to correspond to the Legacy Telemetry boolean histogram UPDATE_SERVICE_INSTALLED_SUBSEQUENT.
 "
+  }
+
+  dimension: metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_input_context_menu_dismissal ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_autofill_reintegration {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_reintegration ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_quickaction_picked {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_quickaction_picked ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_bookmarkmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_bookmarkmenu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_handoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_handoff ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_historymenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_historymenu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_keywordoffer {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_keywordoffer ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_messaging_system {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_messaging_system ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_oneoff {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_oneoff ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_other {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_other ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_searchbutton {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_searchbutton ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_shortcut {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_shortcut ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_tabmenu {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabmenu ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_tabtosearch {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabtosearch ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_tabtosearch_onboard {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabtosearch_onboard ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_topsites_newtab {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_topsites_newtab ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_topsites_urlbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_topsites_urlbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_touchbar {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_touchbar ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_searchmode_typed {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_typed ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_unifiedsearchbutton_picked {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_unifiedsearchbutton_picked ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {
@@ -10078,6 +12502,51 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__widget_touch_enabled_device {
+    sql: ${TABLE}.metrics.labeled_counter.widget_touch_enabled_device ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_engagement_consecutive_active_ticks ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_bookmarks_quantity ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_cards_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_cards_quantity ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_errors {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_errors ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_extensions_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_extensions_quantity ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_history_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_history_quantity ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_logins_quantity {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_logins_quantity ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_custom_distribution__browser_migration_usage {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_usage ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_custom_distribution__contentblocking_canvas_fingerprinting_per_tab {
     sql: ${TABLE}.metrics.labeled_custom_distribution.contentblocking_canvas_fingerprinting_per_tab ;;
     hidden: yes
@@ -10177,6 +12646,11 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     description: "Users action on blocked download, keyed by verdict type (0=Number of blocked downloads, 1=Confirm block, 2=Confirm unblock)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram DOWNLOADS_USER_ACTION_ON_BLOCKED_DOWNLOAD.
 "
+  }
+
+  dimension: metrics__labeled_custom_distribution__firefoxview_cumulative_searches {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.firefoxview_cumulative_searches ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_custom_distribution__gfx_content_large_paint_phase_weight_full {
@@ -10414,6 +12888,11 @@ The bucket with the 'exited_ce' label is of special interest, since those are co
 "
   }
 
+  dimension: metrics__labeled_custom_distribution__popup_notification_stats {
+    sql: ${TABLE}.metrics.labeled_custom_distribution.popup_notification_stats ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
     sql: ${TABLE}.metrics.labeled_custom_distribution.quotamanager_initialize_repository_number_of_iterations ;;
     hidden: yes
@@ -10566,6 +13045,11 @@ Previously carried in Legacy \"main\" ping `simpleMeasurements`.
 "
   }
 
+  dimension: metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
+    sql: ${TABLE}.metrics.labeled_quantity.browser_searchinit_engine_invalid_webextension ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_quantity__browser_timings_startup_timeline {
     sql: ${TABLE}.metrics.labeled_quantity.browser_timings_startup_timeline ;;
     hidden: yes
@@ -10581,11 +13065,101 @@ Previously carried in the Legacy \"main\" ping `simpleMeasurements`.
 "
   }
 
+  dimension: metrics__labeled_quantity__pinned_tabs_count {
+    sql: ${TABLE}.metrics.labeled_quantity.pinned_tabs_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__search_counts_hidden_engines {
+    sql: ${TABLE}.metrics.labeled_quantity.search_counts_hidden_engines ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__search_counts_totals {
+    sql: ${TABLE}.metrics.labeled_quantity.search_counts_totals ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__session_restore_startup_timeline {
+    sql: ${TABLE}.metrics.labeled_quantity.session_restore_startup_timeline ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__smart_window_memories_count {
+    sql: ${TABLE}.metrics.labeled_quantity.smart_window_memories_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__startup_io_read {
+    sql: ${TABLE}.metrics.labeled_quantity.startup_io_read ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__startup_io_write {
+    sql: ${TABLE}.metrics.labeled_quantity.startup_io_write ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_active_groups {
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_active_groups ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tab_count_in_groups {
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tab_count_in_groups ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tabs_per_active_group {
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_active_group ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_quantity__tabgroup_tabs_per_saved_group {
+    sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_saved_group ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_string__ads_client_build_cache_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_build_cache_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_string__ads_client_client_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_client_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_string__ads_client_deserialization_error {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_deserialization_error ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_string__ads_client_http_cache_outcome {
+    sql: ${TABLE}.metrics.labeled_string.ads_client_http_cache_outcome ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     hidden: yes
     description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
 "
+  }
+
+  dimension: metrics__labeled_string__places_places_database_corruption_handling_stage {
+    sql: ${TABLE}.metrics.labeled_string.places_places_database_corruption_handling_stage ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.browser_engagement_inactive_period_duration ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__content_analysis_response_duration_by_analysis_type {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.content_analysis_response_duration_by_analysis_type ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_async_snow_white_freeing {
@@ -11181,6 +13755,21 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_timing_distribution__popup_notification_dismissal {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.popup_notification_dismissal ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__popup_notification_main_action {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.popup_notification_main_action ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_timing_distribution__security_https_only_mode_upgrade_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.security_https_only_mode_upgrade_time ;;
     hidden: yes
@@ -11229,6 +13818,31 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_timing_distribution__suggest_ingest_download_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_download_time ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_ingest_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_time ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__suggest_query_time {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_query_time ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__urlbar_autofill_reintegration_after_backspace {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.urlbar_autofill_reintegration_after_backspace ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_timing_distribution__urlbar_merino_latency_by_response_status {
+    sql: ${TABLE}.metrics.labeled_timing_distribution.urlbar_merino_latency_by_response_status ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_timing_distribution__urlclassifier_cl_keyed_update_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.urlclassifier_cl_keyed_update_time ;;
     hidden: yes
@@ -11270,6 +13884,32 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 "
   }
 
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Browser Backup Compressed Archive Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_compressed_archive_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_compressed_archive_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Browser Backup Total Backup Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__browser_backup_total_backup_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.browser_backup_total_backup_size.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__cert_storage_memory__sum {
     sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.sum ;;
     type: number
@@ -11280,6 +13920,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__memory_distribution__cert_storage_memory__values {
     sql: ${TABLE}.metrics.memory_distribution.cert_storage_memory.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__crash_compressed_store_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.crash_compressed_store_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Crash Compressed Store Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__crash_compressed_store_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.crash_compressed_store_size.values ;;
     hidden: yes
   }
 
@@ -11842,6 +14495,84 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__sum {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Newtab Spons Nav Traffic Recvd"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_recvd__values {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_recvd.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__sum {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Newtab Spons Nav Traffic Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__newtab_spons_nav_traffic_sent__values {
+    sql: ${TABLE}.metrics.memory_distribution.newtab_spons_nav_traffic_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__places_database_favicons_filesize__sum {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_favicons_filesize.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Places Database Favicons Filesize"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__places_database_favicons_filesize__values {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_favicons_filesize.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__places_database_filesize__sum {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_filesize.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Places Database Filesize"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__places_database_filesize__values {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_filesize.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__places_database_semantic_history_filesize__sum {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_semantic_history_filesize.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Places Database Semantic History Filesize"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__places_database_semantic_history_filesize__values {
+    sql: ${TABLE}.metrics.memory_distribution.places_database_semantic_history_filesize.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__session_restore_file_size_bytes__sum {
+    sql: ${TABLE}.metrics.memory_distribution.session_restore_file_size_bytes.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Session Restore File Size Bytes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__session_restore_file_size_bytes__values {
+    sql: ${TABLE}.metrics.memory_distribution.session_restore_file_size_bytes.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__spdy_chunk_recvd__sum {
     sql: ${TABLE}.metrics.memory_distribution.spdy_chunk_recvd.sum ;;
     type: number
@@ -11933,6 +14664,71 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__telemetry_archive_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_archive_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Telemetry Archive Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_archive_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_archive_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_archived_pings_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_archived_pings_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Telemetry Discarded Archived Pings Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_archived_pings_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_archived_pings_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_pending_pings_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_pending_pings_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Telemetry Discarded Pending Pings Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_pending_pings_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_pending_pings_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_send_pings_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_send_pings_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Telemetry Discarded Send Pings Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_discarded_send_pings_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_discarded_send_pings_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__telemetry_pending_pings_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_pending_pings_size.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Memory Distribution: Telemetry Pending Pings Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__telemetry_pending_pings_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.telemetry_pending_pings_size.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__webfont_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.webfont_size.sum ;;
     type: number
@@ -11976,6 +14772,16 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__object__addons_theme {
     sql: ${TABLE}.metrics.object.addons_theme ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__browser_backup_restored_profile_data {
+    sql: ${TABLE}.metrics.object.browser_backup_restored_profile_data ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__browser_ui_toolbar_widgets {
+    sql: ${TABLE}.metrics.object.browser_ui_toolbar_widgets ;;
     hidden: yes
   }
 
@@ -12034,8 +14840,18 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__object__glean_attribution_ext {
+    sql: ${TABLE}.metrics.object.glean_attribution_ext ;;
+    hidden: yes
+  }
+
   dimension: metrics__object__glean_database_load_sizes {
     sql: ${TABLE}.metrics.object.glean_database_load_sizes ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__glean_distribution_ext {
+    sql: ${TABLE}.metrics.object.glean_distribution_ext ;;
     hidden: yes
   }
 
@@ -12118,6 +14934,286 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Bounce Tracking Protection Mode"
   }
 
+  dimension: metrics__quantity__browser_backup_browser_extension_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_browser_extension_data_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Browser Extension Data Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_cookies_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_cookies_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Cookies Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_credentials_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_credentials_data_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Credentials Data Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_extension_store_permissions_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_extension_store_permissions_data_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Extension Store Permissions Data Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_json_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_json_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Extensions Json Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_storage_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_storage_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Extensions Storage Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_xpi_directory_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_xpi_directory_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Extensions Xpi Directory Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_favicons_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_favicons_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Favicons Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_form_history_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_form_history_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Form History Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_location_on_device {
+    sql: ${TABLE}.metrics.quantity.browser_backup_location_on_device ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Location On Device"
+  }
+
+  dimension: metrics__quantity__browser_backup_misc_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_misc_data_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Misc Data Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_places_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_places_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Places Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_preferences_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_preferences_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Preferences Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_prof_d_disk_space {
+    sql: ${TABLE}.metrics.quantity.browser_backup_prof_d_disk_space ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Prof D Disk Space"
+  }
+
+  dimension: metrics__quantity__browser_backup_security_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_security_data_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Security Data Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_session_store_backups_directory_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_session_store_backups_directory_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Session Store Backups Directory Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_session_store_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_session_store_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Session Store Size"
+  }
+
+  dimension: metrics__quantity__browser_backup_storage_sync_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_storage_sync_size ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Backup Storage Sync Size"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Count"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_tab_pinned_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_tab_pinned_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Tab Pinned Count"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_vertical_tab_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_vertical_tab_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Vertical Tab Count"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_vertical_tab_pinned_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_vertical_tab_pinned_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Vertical Tab Pinned Count"
+  }
+
+  dimension: metrics__quantity__browser_engagement_max_concurrent_window_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_max_concurrent_window_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Max Concurrent Window Count"
+  }
+
+  dimension: metrics__quantity__browser_engagement_profile_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Profile Count"
+  }
+
+  dimension: metrics__quantity__browser_engagement_session_time_excluding_suspend {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_excluding_suspend ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Session Time Excluding Suspend"
+  }
+
+  dimension: metrics__quantity__browser_engagement_session_time_including_suspend {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_session_time_including_suspend ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Session Time Including Suspend"
+  }
+
+  dimension: metrics__quantity__browser_engagement_unique_domains_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_unique_domains_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Engagement Unique Domains Count"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_insecure_opensearch_engine_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_insecure_opensearch_engine_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Searchinit Insecure Opensearch Engine Count"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_insecure_opensearch_update_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_insecure_opensearch_update_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Searchinit Insecure Opensearch Update Count"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_secure_opensearch_engine_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_secure_opensearch_engine_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Searchinit Secure Opensearch Engine Count"
+  }
+
+  dimension: metrics__quantity__browser_searchinit_secure_opensearch_update_count {
+    sql: ${TABLE}.metrics.quantity.browser_searchinit_secure_opensearch_update_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Searchinit Secure Opensearch Update Count"
+  }
+
+  dimension: metrics__quantity__browser_startup_abouthome_cache_result {
+    sql: ${TABLE}.metrics.quantity.browser_startup_abouthome_cache_result ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Startup Abouthome Cache Result"
+  }
+
+  dimension: metrics__quantity__browser_timings_last_shutdown {
+    sql: ${TABLE}.metrics.quantity.browser_timings_last_shutdown ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Browser Timings Last Shutdown"
+  }
+
+  dimension: metrics__quantity__content_analysis_default_result {
+    sql: ${TABLE}.metrics.quantity.content_analysis_default_result ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Content Analysis Default Result"
+  }
+
+  dimension: metrics__quantity__content_analysis_timeout_result {
+    sql: ${TABLE}.metrics.quantity.content_analysis_timeout_result ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Content Analysis Timeout Result"
+  }
+
   dimension: metrics__quantity__contentblocking_category {
     sql: ${TABLE}.metrics.quantity.contentblocking_category ;;
     type: number
@@ -12156,6 +15252,14 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Data Storage Site Security Service State"
+  }
+
+  dimension: metrics__quantity__datasanitization_session_permission_exceptions {
+    sql: ${TABLE}.metrics.quantity.datasanitization_session_permission_exceptions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Datasanitization Session Permission Exceptions"
   }
 
   dimension: metrics__quantity__devtools_localmode_mappings_count {
@@ -12334,6 +15438,14 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Nimbus Qa Prefs Int User Value"
   }
 
+  dimension: metrics__quantity__pictureinpicture_most_concurrent_players {
+    sql: ${TABLE}.metrics.quantity.pictureinpicture_most_concurrent_players ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Pictureinpicture Most Concurrent Players"
+  }
+
   dimension: metrics__quantity__pkcs11_third_party_modules_loaded {
     sql: ${TABLE}.metrics.quantity.pkcs11_third_party_modules_loaded ;;
     type: number
@@ -12342,12 +15454,60 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Pkcs11 Third Party Modules Loaded"
   }
 
+  dimension: metrics__quantity__places_database_semantic_history_num_entries {
+    sql: ${TABLE}.metrics.quantity.places_database_semantic_history_num_entries ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Places Database Semantic History Num Entries"
+  }
+
+  dimension: metrics__quantity__places_database_semantic_history_wasted_percentage {
+    sql: ${TABLE}.metrics.quantity.places_database_semantic_history_wasted_percentage ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Places Database Semantic History Wasted Percentage"
+  }
+
+  dimension: metrics__quantity__places_pages_need_frecency_recalculation {
+    sql: ${TABLE}.metrics.quantity.places_pages_need_frecency_recalculation ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Places Pages Need Frecency Recalculation"
+  }
+
+  dimension: metrics__quantity__places_previousday_visits {
+    sql: ${TABLE}.metrics.quantity.places_previousday_visits ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Places Previousday Visits"
+  }
+
+  dimension: metrics__quantity__places_semantic_history_max_chunks_count {
+    sql: ${TABLE}.metrics.quantity.places_semantic_history_max_chunks_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Places Semantic History Max Chunks Count"
+  }
+
   dimension: metrics__quantity__policies_count {
     sql: ${TABLE}.metrics.quantity.policies_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Policies Count"
+  }
+
+  dimension: metrics__quantity__profile_lock_failed_lock_count {
+    sql: ${TABLE}.metrics.quantity.profile_lock_failed_lock_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Profile Lock Failed Lock Count"
   }
 
   dimension: metrics__quantity__profiles_creation_date {
@@ -12414,12 +15574,60 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Sandbox Effective Content Process Level"
   }
 
+  dimension: metrics__quantity__security_global_privacy_control_enabled {
+    sql: ${TABLE}.metrics.quantity.security_global_privacy_control_enabled ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Security Global Privacy Control Enabled"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled {
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Security Https Only Mode Enabled"
+  }
+
+  dimension: metrics__quantity__security_https_only_mode_enabled_pbm {
+    sql: ${TABLE}.metrics.quantity.security_https_only_mode_enabled_pbm ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Security Https Only Mode Enabled Pbm"
+  }
+
+  dimension: metrics__quantity__sidebar_width {
+    sql: ${TABLE}.metrics.quantity.sidebar_width ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Sidebar Width"
+  }
+
+  dimension: metrics__quantity__smart_window_chat_storage {
+    sql: ${TABLE}.metrics.quantity.smart_window_chat_storage ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Smart Window Chat Storage"
+  }
+
   dimension: metrics__quantity__startup_profile_count {
     sql: ${TABLE}.metrics.quantity.startup_profile_count ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Startup Profile Count"
+  }
+
+  dimension: metrics__quantity__startup_seconds_since_last_os_restart {
+    sql: ${TABLE}.metrics.quantity.startup_seconds_since_last_os_restart ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Startup Seconds Since Last OS Restart"
   }
 
   dimension: metrics__quantity__system_cpu_big_cores {
@@ -12558,6 +15766,30 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "System Virtual Memory"
   }
 
+  dimension: metrics__quantity__tabgroup_saved_groups {
+    sql: ${TABLE}.metrics.quantity.tabgroup_saved_groups ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Tabgroup Saved Groups"
+  }
+
+  dimension: metrics__quantity__termsofuse_version {
+    sql: ${TABLE}.metrics.quantity.termsofuse_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Termsofuse Version"
+  }
+
+  dimension: metrics__quantity__timestamps_about_home_topsites_first_paint {
+    sql: ${TABLE}.metrics.quantity.timestamps_about_home_topsites_first_paint ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Timestamps About Home Topsites First Paint"
+  }
+
   dimension: metrics__quantity__timestamps_first_paint {
     sql: ${TABLE}.metrics.quantity.timestamps_first_paint ;;
     type: number
@@ -12572,6 +15804,22 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Timestamps First Paint Two"
+  }
+
+  dimension: metrics__quantity__urlbar_pref_max_results {
+    sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Urlbar Pref Max Results"
+  }
+
+  dimension: metrics__quantity__web_app_installed_web_app_count {
+    sql: ${TABLE}.metrics.quantity.web_app_installed_web_app_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Web App Installed Web App Count"
   }
 
   dimension: metrics__rate__cert_signature_cache_hits__denominator {
@@ -12926,6 +16174,38 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__rate__urlbar_heuristic_result_missing__denominator {
+    sql: ${TABLE}.metrics.rate.urlbar_heuristic_result_missing.denominator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Urlbar Heuristic Result Missing"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__urlbar_heuristic_result_missing__numerator {
+    sql: ${TABLE}.metrics.rate.urlbar_heuristic_result_missing.numerator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Urlbar Heuristic Result Missing"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__urlbar_searchmode_url_like_query__denominator {
+    sql: ${TABLE}.metrics.rate.urlbar_searchmode_url_like_query.denominator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Urlbar Searchmode URL Like Query"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__urlbar_searchmode_url_like_query__numerator {
+    sql: ${TABLE}.metrics.rate.urlbar_searchmode_url_like_query.numerator ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Rate: Urlbar Searchmode URL Like Query"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__denominator {
     sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.denominator ;;
     type: number
@@ -13046,6 +16326,54 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Blocklist Mlbf Source"
   }
 
+  dimension: metrics__string__browser_backup_archive_disabled_reason {
+    sql: ${TABLE}.metrics.string.browser_backup_archive_disabled_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Browser Backup Archive Disabled Reason"
+  }
+
+  dimension: metrics__string__browser_backup_restore_disabled_reason {
+    sql: ${TABLE}.metrics.string.browser_backup_restore_disabled_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Browser Backup Restore Disabled Reason"
+  }
+
+  dimension: metrics__string__browser_backup_scheduler_toggle_source {
+    sql: ${TABLE}.metrics.string.browser_backup_scheduler_toggle_source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Browser Backup Scheduler Toggle Source"
+  }
+
+  dimension: metrics__string__content_analysis_agent_name {
+    sql: ${TABLE}.metrics.string.content_analysis_agent_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Content Analysis Agent Name"
+  }
+
+  dimension: metrics__string__content_analysis_client_signature {
+    sql: ${TABLE}.metrics.string.content_analysis_client_signature ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Content Analysis Client Signature"
+  }
+
+  dimension: metrics__string__custom_icon_current {
+    sql: ${TABLE}.metrics.string.custom_icon_current ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Custom Icon Current"
+  }
+
   dimension: metrics__string__gecko_build_id {
     sql: ${TABLE}.metrics.string.gecko_build_id ;;
     type: string
@@ -13060,6 +16388,30 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Gecko Version"
+  }
+
+  dimension: metrics__string__genai_chatbot_badges {
+    sql: ${TABLE}.metrics.string.genai_chatbot_badges ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Genai Chatbot Badges"
+  }
+
+  dimension: metrics__string__genai_chatbot_provider {
+    sql: ${TABLE}.metrics.string.genai_chatbot_provider ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Genai Chatbot Provider"
+  }
+
+  dimension: metrics__string__genai_linkpreview_shortcut {
+    sql: ${TABLE}.metrics.string.genai_linkpreview_shortcut ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Genai Linkpreview Shortcut"
   }
 
   dimension: metrics__string__gfx_adapter_primary_description {
@@ -13214,6 +16566,30 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "GPU Process Feature Status"
   }
 
+  dimension: metrics__string__installation_first_seen_failure_reason {
+    sql: ${TABLE}.metrics.string.installation_first_seen_failure_reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Installation First Seen Failure Reason"
+  }
+
+  dimension: metrics__string__installation_first_seen_installer_type {
+    sql: ${TABLE}.metrics.string.installation_first_seen_installer_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Installation First Seen Installer Type"
+  }
+
+  dimension: metrics__string__installation_first_seen_version {
+    sql: ${TABLE}.metrics.string.installation_first_seen_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Installation First Seen Version"
+  }
+
   dimension: metrics__string__nimbus_qa_prefs_string_default_value {
     sql: ${TABLE}.metrics.string.nimbus_qa_prefs_string_default_value ;;
     type: string
@@ -13228,6 +16604,38 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Nimbus Qa Prefs String User Value"
+  }
+
+  dimension: metrics__string__os_environment_allowed_app_sources {
+    sql: ${TABLE}.metrics.string.os_environment_allowed_app_sources ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "OS Environment Allowed App Sources"
+  }
+
+  dimension: metrics__string__os_environment_desktop_entry_exists {
+    sql: ${TABLE}.metrics.string.os_environment_desktop_entry_exists ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "OS Environment Desktop Entry Exists"
+  }
+
+  dimension: metrics__string__os_environment_launch_method {
+    sql: ${TABLE}.metrics.string.os_environment_launch_method ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "OS Environment Launch Method"
+  }
+
+  dimension: metrics__string__os_environment_launch_on_login_state {
+    sql: ${TABLE}.metrics.string.os_environment_launch_on_login_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "OS Environment Launch On Login State"
   }
 
   dimension: metrics__string__preferences_prefs_file_first_parse_error {
@@ -13252,6 +16660,118 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Region Home Region"
+  }
+
+  dimension: metrics__string__search_engine_default_display_name {
+    sql: ${TABLE}.metrics.string.search_engine_default_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Display Name"
+  }
+
+  dimension: metrics__string__search_engine_default_engine_id {
+    sql: ${TABLE}.metrics.string.search_engine_default_engine_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Engine ID"
+  }
+
+  dimension: metrics__string__search_engine_default_load_path {
+    sql: ${TABLE}.metrics.string.search_engine_default_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Load Path"
+  }
+
+  dimension: metrics__string__search_engine_default_partner_code {
+    sql: ${TABLE}.metrics.string.search_engine_default_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Partner Code"
+  }
+
+  dimension: metrics__string__search_engine_default_provider_id {
+    sql: ${TABLE}.metrics.string.search_engine_default_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Default Provider ID"
+  }
+
+  dimension: metrics__string__search_engine_private_display_name {
+    sql: ${TABLE}.metrics.string.search_engine_private_display_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Display Name"
+  }
+
+  dimension: metrics__string__search_engine_private_engine_id {
+    sql: ${TABLE}.metrics.string.search_engine_private_engine_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Engine ID"
+  }
+
+  dimension: metrics__string__search_engine_private_load_path {
+    sql: ${TABLE}.metrics.string.search_engine_private_load_path ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Load Path"
+  }
+
+  dimension: metrics__string__search_engine_private_partner_code {
+    sql: ${TABLE}.metrics.string.search_engine_private_partner_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Partner Code"
+  }
+
+  dimension: metrics__string__search_engine_private_provider_id {
+    sql: ${TABLE}.metrics.string.search_engine_private_provider_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Search Engine Private Provider ID"
+  }
+
+  dimension: metrics__string__sidebar_display_settings {
+    sql: ${TABLE}.metrics.string.sidebar_display_settings ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Sidebar Display Settings"
+  }
+
+  dimension: metrics__string__sidebar_position_settings {
+    sql: ${TABLE}.metrics.string.sidebar_position_settings ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Sidebar Position Settings"
+  }
+
+  dimension: metrics__string__sidebar_tabs_layout {
+    sql: ${TABLE}.metrics.string.sidebar_tabs_layout ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Sidebar Tabs Layout"
+  }
+
+  dimension: metrics__string__smart_window_model {
+    sql: ${TABLE}.metrics.string.smart_window_model ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Smart Window Model"
   }
 
   dimension: metrics__string__startup_profile_database_version {
@@ -13366,6 +16886,30 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Update Settings Channel"
   }
 
+  dimension: metrics__string__update_version_pin {
+    sql: ${TABLE}.metrics.string.update_version_pin ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Update Version Pin"
+  }
+
+  dimension: metrics__string__widget_desktop_environment {
+    sql: ${TABLE}.metrics.string.widget_desktop_environment ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Widget Desktop Environment"
+  }
+
+  dimension: metrics__string__widget_gtk_version {
+    sql: ${TABLE}.metrics.string.widget_gtk_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Widget Gtk Version"
+  }
+
   dimension: metrics__string__xpcom_abi {
     sql: ${TABLE}.metrics.string.xpcom_abi ;;
     type: string
@@ -13380,6 +16924,26 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Xpi Database Startup Error"
+  }
+
+  dimension: metrics__string_list__background_update_reasons_to_not_update {
+    sql: ${TABLE}.metrics.string_list.background_update_reasons_to_not_update ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__browser_migration_matched_extensions {
+    sql: ${TABLE}.metrics.string_list.browser_migration_matched_extensions ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__browser_migration_unmatched_extensions {
+    sql: ${TABLE}.metrics.string_list.browser_migration_unmatched_extensions ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__content_analysis_interception_points_turned_off {
+    sql: ${TABLE}.metrics.string_list.content_analysis_interception_points_turned_off ;;
+    hidden: yes
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
@@ -13446,6 +17010,21 @@ This metric is only attached to a ping if it already contains other data.
     hidden: yes
     description: "Recognized CPU extensions.
 "
+  }
+
+  dimension: metrics__string_list__windows_security_antispyware {
+    sql: ${TABLE}.metrics.string_list.windows_security_antispyware ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__windows_security_antivirus {
+    sql: ${TABLE}.metrics.string_list.windows_security_antivirus ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__windows_security_firewall {
+    sql: ${TABLE}.metrics.string_list.windows_security_firewall ;;
+    hidden: yes
   }
 
   dimension: metrics__string_list__xpi_database_startup_load_reasons {
@@ -13537,6 +17116,22 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     group_item_label: "Value"
   }
 
+  dimension: metrics__timespan__migration_time_to_produce_migrator_list__time_unit {
+    sql: ${TABLE}.metrics.timespan.migration_time_to_produce_migrator_list.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Migration Time To Produce Migrator List"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__migration_time_to_produce_migrator_list__value {
+    sql: ${TABLE}.metrics.timespan.migration_time_to_produce_migrator_list.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Migration Time To Produce Migrator List"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__timespan__networking_loading_certs_task__time_unit {
     sql: ${TABLE}.metrics.timespan.networking_loading_certs_task.time_unit ;;
     type: string
@@ -13595,6 +17190,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__sum {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Bookmarks Toolbar Init"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__bookmarks_toolbar_init__values {
+    sql: ${TABLE}.metrics.timing_distribution.bookmarks_toolbar_init.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
     sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.sum ;;
     type: number
@@ -13605,6 +17213,253 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Backup Favicons Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_favicons_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_favicons_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Backup Places Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_places_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_places_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Backup Total Backup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_backup_total_backup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_backup_total_backup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_engagement_tab_unload_to_reload__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_engagement_tab_unload_to_reload.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Engagement Tab Unload To Reload"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_engagement_tab_unload_to_reload__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_engagement_tab_unload_to_reload.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_cache__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_cache.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer Cache"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_cache__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_cache.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_cookies__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_cookies.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer Cookies"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_cookies__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_cookies.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_downloads__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_downloads.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer Downloads"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_downloads__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_downloads.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_formdata__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_formdata.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer Formdata"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_formdata__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_formdata.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_history__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_history.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer History"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_history__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_history.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_openwindows__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_openwindows.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer Openwindows"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_openwindows__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_openwindows.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_sessions__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_sessions.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer Sessions"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_sessions__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_sessions.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_sitesettings__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_sitesettings.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer Sitesettings"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_sitesettings__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_sitesettings.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_total__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_total.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Sanitizer Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_sanitizer_total__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_sanitizer_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_tabclose_permit_unload_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabclose_permit_unload_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Tabclose Permit Unload Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_tabclose_permit_unload_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabclose_permit_unload_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_tabclose_time_anim__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabclose_time_anim.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Tabclose Time Anim"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_tabclose_time_anim__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabclose_time_anim.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_tabclose_time_no_anim__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabclose_time_no_anim.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Tabclose Time No Anim"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_tabclose_time_no_anim__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabclose_time_no_anim.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_tabswitch_spinner_visible__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabswitch_spinner_visible.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Tabswitch Spinner Visible"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_tabswitch_spinner_visible__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabswitch_spinner_visible.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_tabswitch_total__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabswitch_total.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Tabswitch Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_tabswitch_total__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabswitch_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_tabswitch_update__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabswitch_update.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Tabswitch Update"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_tabswitch_update__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_tabswitch_update.values ;;
     hidden: yes
   }
 
@@ -14765,6 +18620,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__fullscreen_change__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fullscreen_change.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Fullscreen Change"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fullscreen_change__values {
+    sql: ${TABLE}.metrics.timing_distribution.fullscreen_change.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__geckoview_page_load_progress_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.sum ;;
     type: number
@@ -15048,6 +18916,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__gpu_process_launch_time__values {
     sql: ${TABLE}.metrics.timing_distribution.gpu_process_launch_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: History Sidebar Lastvisited Tree Query Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.history_sidebar_lastvisited_tree_query_time.values ;;
     hidden: yes
   }
 
@@ -15571,6 +19452,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__library_history_search_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Library History Search Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__library_history_search_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.library_history_search_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__localdomstorage_shutdown_database__sum {
     sql: ${TABLE}.metrics.timing_distribution.localdomstorage_shutdown_database.sum ;;
     type: number
@@ -15724,6 +19618,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__memory_free_purged_pages__values {
     sql: ${TABLE}.metrics.timing_distribution.memory_free_purged_pages.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__messaging_system_message_request_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.messaging_system_message_request_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Messaging System Message Request Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__messaging_system_message_request_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.messaging_system_message_request_time.values ;;
     hidden: yes
   }
 
@@ -16845,6 +20752,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__sum {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Abouthome Cache Construction"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__newtab_abouthome_cache_construction__values {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_abouthome_cache_construction.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__ocsp_request_time_cancel__sum {
     sql: ${TABLE}.metrics.timing_distribution.ocsp_request_time_cancel.sum ;;
     type: number
@@ -16985,6 +20905,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__values {
     sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_tab_switch_composite.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Performance Interaction Tab Switch Composite"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_tab_switch_composite.values ;;
     hidden: yes
   }
 
@@ -17235,6 +21168,214 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__pictureinpicture_background_tab_playing_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.pictureinpicture_background_tab_playing_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Pictureinpicture Background Tab Playing Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__pictureinpicture_background_tab_playing_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.pictureinpicture_background_tab_playing_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__pictureinpicture_foreground_tab_playing_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.pictureinpicture_foreground_tab_playing_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Pictureinpicture Foreground Tab Playing Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__pictureinpicture_foreground_tab_playing_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.pictureinpicture_foreground_tab_playing_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__pictureinpicture_window_open_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.pictureinpicture_window_open_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Pictureinpicture Window Open Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__pictureinpicture_window_open_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.pictureinpicture_window_open_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Backups Bookmarkstree"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_bookmarkstree__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_bookmarkstree.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Backups Daysfromlast"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_daysfromlast__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_daysfromlast.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Backups Tojson"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_backups_tojson__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_backups_tojson.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Database Semantic History Defragment Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_defragment_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_defragment_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_reindex_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_reindex_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Database Semantic History Reindex Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_database_semantic_history_reindex_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_database_semantic_history_reindex_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Export Tohtml"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_export_tohtml__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_export_tohtml.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Frecency Recalc Chunk Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_frecency_recalc_chunk_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_frecency_recalc_chunk_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Idle Frecency Decay Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_frecency_decay_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_frecency_decay_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Idle Maintenance Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_idle_maintenance_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_idle_maintenance_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Maintenance Daysfromlast"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_maintenance_daysfromlast__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_maintenance_daysfromlast.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Most Recent Expired Visit"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_most_recent_expired_visit__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_most_recent_expired_visit.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_semantic_history_chunk_calculate_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_semantic_history_chunk_calculate_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Semantic History Chunk Calculate Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_semantic_history_chunk_calculate_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_semantic_history_chunk_calculate_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_semantic_history_find_chunks_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_semantic_history_find_chunks_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Places Semantic History Find Chunks Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_semantic_history_find_chunks_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_semantic_history_find_chunks_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__predictor_learn_work_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.predictor_learn_work_time.sum ;;
     type: number
@@ -17391,6 +21532,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__relevancy_classify_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Relevancy Classify Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__screenwakelock_held_duration__sum {
     sql: ${TABLE}.metrics.timing_distribution.screenwakelock_held_duration.sum ;;
     type: number
@@ -17414,6 +21568,32 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__script_preloader_wait_time__values {
     sql: ${TABLE}.metrics.timing_distribution.script_preloader_wait_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Search Service Startup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: SERP Categorization Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.values ;;
     hidden: yes
   }
 
@@ -17453,6 +21633,136 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__service_worker_registration_loading__values {
     sql: ${TABLE}.metrics.timing_distribution.service_worker_registration_loading.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Auto Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_auto_restore_duration_until_eager_tabs_restored.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Collect All Windows Data"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_all_windows_data__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_all_windows_data.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Collect Data"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_data__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_data.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Collect Session History"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_collect_session_history__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_collect_session_history.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Manual Restore Duration Until Eager Tabs Restored"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_manual_restore_duration_until_eager_tabs_restored.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Read File"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_read_file__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_read_file.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Restore Window"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_restore_window__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_restore_window.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Startup Init Session"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_init_session__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_init_session.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Startup Onload Initial Window"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_startup_onload_initial_window__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_startup_onload_initial_window.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__sum {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Session Restore Write File"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__session_restore_write_file__values {
+    sql: ${TABLE}.metrics.timing_distribution.session_restore_write_file.values ;;
     hidden: yes
   }
 
@@ -17586,6 +21896,162 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Archive Checking Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_checking_over_quota__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_checking_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Archive Evicting Dirs"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_dirs__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_dirs.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Archive Evicting Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_archive_evicting_over_quota__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_archive_evicting_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Compress"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_compress__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_compress.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Pending Checking Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_checking_over_quota__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_checking_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Pending Evicting Over Quota"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_evicting_over_quota__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_evicting_over_quota.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Pending Pings Age"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_pending_pings_age__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_pending_pings_age.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Send Failure"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_failure__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_failure.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Send Success"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_send_success__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_send_success.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__sum {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Telemetry Stringify"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__telemetry_stringify__values {
+    sql: ${TABLE}.metrics.timing_distribution.telemetry_stringify.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__text_recognition_api_performance__sum {
+    sql: ${TABLE}.metrics.timing_distribution.text_recognition_api_performance.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Text Recognition Api Performance"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__text_recognition_api_performance__values {
+    sql: ${TABLE}.metrics.timing_distribution.text_recognition_api_performance.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__text_recognition_interaction_timing__sum {
+    sql: ${TABLE}.metrics.timing_distribution.text_recognition_interaction_timing.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Text Recognition Interaction Timing"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__text_recognition_interaction_timing__values {
+    sql: ${TABLE}.metrics.timing_distribution.text_recognition_interaction_timing.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__thumbnails_capture_canvas_draw_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.thumbnails_capture_canvas_draw_time.sum ;;
     type: number
@@ -17703,6 +22169,32 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__urlbar_autocomplete_first_result_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_autocomplete_first_result_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlbar Autocomplete First Result Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_autocomplete_first_result_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_autocomplete_first_result_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__urlbar_autocomplete_sixth_result_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_autocomplete_sixth_result_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Urlbar Autocomplete Sixth Result Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__urlbar_autocomplete_sixth_result_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.urlbar_autocomplete_sixth_result_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__urlclassifier_async_classifylocal_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.urlclassifier_async_classifylocal_time.sum ;;
     type: number
@@ -17817,6 +22309,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__urlclassifier_vlps_fileload_time__values {
     sql: ${TABLE}.metrics.timing_distribution.urlclassifier_vlps_fileload_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__web_app_usage_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.web_app_usage_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Web App Usage Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__web_app_usage_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.web_app_usage_time.values ;;
     hidden: yes
   }
 
@@ -18117,6 +22622,46 @@ Previously reported in \"main\" ping `simpleMeasurements`.
   dimension: metrics__timing_distribution__xpi_database_parses__values {
     sql: ${TABLE}.metrics.timing_distribution.xpi_database_parses.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__url2__search_engine_default_submission_url {
+    sql: ${TABLE}.metrics.url2.search_engine_default_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Url2"
+    group_item_label: "Search Engine Default Submission URL"
+  }
+
+  dimension: metrics__url2__search_engine_private_submission_url {
+    sql: ${TABLE}.metrics.url2.search_engine_private_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Url2"
+    group_item_label: "Search Engine Private Submission URL"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Client ID"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_profile_group_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_profile_group_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Profile Group ID"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_session_id {
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: UUID"
+    group_item_label: "Legacy Telemetry Session ID"
   }
 
   dimension: normalized_app_name {
@@ -18520,7 +23065,91 @@ view: metrics_table__metrics__custom_distribution__apz_zoom_pinchsource__values 
   }
 }
 
+view: metrics_table__metrics__custom_distribution__bookmarks_sidebar_cumulative_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__bounce_tracking_protection_num_hosts_per_purge_run__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__browser_engagement_loaded_tab_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__browser_engagement_tab_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__browser_migration_source_browser__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__browser_set_default_dialog_prompt_rawcount__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__browser_set_default_result__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -19304,6 +23933,34 @@ view: metrics_table__metrics__custom_distribution__gfx_sanity_test__values {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__history_sidebar_cumulative_filter_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__history_sidebar_cumulative_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__hpack_bytes_evicted_ratio_compressor__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -19935,6 +24592,76 @@ view: metrics_table__metrics__custom_distribution__javascript_gc_zone_count__val
 }
 
 view: metrics_table__metrics__custom_distribution__javascript_gc_zones_collected__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__library_cumulative_bookmark_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__library_cumulative_history_searches__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__link_icon_sizes_attr_dimension__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__link_icon_sizes_attr_usage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__media_decoder_backend_used__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -21250,6 +25977,34 @@ view: metrics_table__metrics__custom_distribution__networking_local_network_acce
   }
 }
 
+view: metrics_table__metrics__custom_distribution__newtab_page_blocked_sites_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__newtab_page_pinned_sites_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -21293,6 +26048,118 @@ view: metrics_table__metrics__custom_distribution__permissions_unused_permission
 }
 
 view: metrics_table__metrics__custom_distribution__permissions_unused_permission_modified_age_at_expiry__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_annos_pages_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_bookmarks_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_expiration_steps_to_clean__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_keywords_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_pages_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_sorted_bookmarks_perc__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_tagged_bookmarks_perc__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__places_tags_count__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -21657,6 +26524,48 @@ view: metrics_table__metrics__custom_distribution__security_referrer_policy_coun
 }
 
 view: metrics_table__metrics__custom_distribution__security_ui_events__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__session_restore_number_of_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__session_restore_number_of_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__session_restore_number_of_windows_restored__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -22301,6 +27210,104 @@ view: metrics_table__metrics__custom_distribution__sync_device_count_desktop__va
 }
 
 view: metrics_table__metrics__custom_distribution__sync_device_count_mobile__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_directories_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_evicted_old_dirs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_evicted_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_oldest_directory_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_archive_scan_ping_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__telemetry_pending_pings_evicted_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__text_recognition_text_length__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -23291,6 +28298,33 @@ view: metrics_table__metrics__dual_labeled_counter__contentblocking_canvas_finge
   }
 }
 
+view: metrics_table__metrics__dual_labeled_counter__crash_submit_success {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__crash_submit_success__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__dual_labeled_counter__dns_lookup_disposition {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -23993,6 +29027,33 @@ view: metrics_table__metrics__dual_labeled_counter__sqlite_store_query__value {
   }
 }
 
+view: metrics_table__metrics__dual_labeled_counter__telemetry_send_failure_type_per_ping {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__dual_labeled_counter__telemetry_send_failure_type_per_ping__value {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__dual_labeled_counter__tls_handshake_result {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -24142,6 +29203,34 @@ view: metrics_table__metrics__labeled_boolean__a11y_theme {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__browser_ai_control_is_blocking {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -24254,6 +29343,20 @@ view: metrics_table__metrics__labeled_boolean__media_video_hd_hardware_decoding_
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__media_wmf_codec_no_extension {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__mediadrm_decryption {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -24282,7 +29385,63 @@ view: metrics_table__metrics__labeled_boolean__networking_doh_heuristic_ever_tri
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__newtab_metric_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__newtab_ping_registered {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__os_environment_is_default_handler {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__pdfjs_image_alt_text_edit {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__smart_window_memories_optin {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -24310,6 +29469,62 @@ view: metrics_table__metrics__labeled_boolean__system_special_directory_appdata_
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_linux {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_mac {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_windows {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__widget_ime_name_on_windows_inserted_crlf {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -24320,6 +29535,286 @@ view: metrics_table__metrics__labeled_boolean__widget_pointing_devices {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_cards_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_cards_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_errors {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_errors__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_extensions_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_extensions_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_history_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_history_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_logins_quantity {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_logins_quantity__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_usage {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__browser_migration_usage__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }
@@ -24801,6 +30296,41 @@ view: metrics_table__metrics__labeled_custom_distribution__downloads_user_action
 }
 
 view: metrics_table__metrics__labeled_custom_distribution__downloads_user_action_on_blocked_download__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__firefoxview_cumulative_searches {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__firefoxview_cumulative_searches__value__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -25934,6 +31464,41 @@ view: metrics_table__metrics__labeled_custom_distribution__networking_http_3_slo
   }
 }
 
+view: metrics_table__metrics__labeled_custom_distribution__popup_notification_stats {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_custom_distribution__popup_notification_stats__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -26613,6 +32178,20 @@ view: metrics_table__metrics__labeled_quantity__addons_manager_startup_timeline 
   }
 }
 
+view: metrics_table__metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_quantity__browser_timings_startup_timeline {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -26641,6 +32220,216 @@ view: metrics_table__metrics__labeled_quantity__normandy_recipe_freshness {
   }
 }
 
+view: metrics_table__metrics__labeled_quantity__pinned_tabs_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__search_counts_hidden_engines {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__search_counts_totals {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__session_restore_startup_timeline {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__smart_window_memories_count {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__startup_io_read {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__startup_io_write {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__tabgroup_active_groups {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__tabgroup_tab_count_in_groups {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__tabgroup_tabs_per_active_group {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_quantity__tabgroup_tabs_per_saved_group {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_build_cache_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_client_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_deserialization_error {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__ads_client_http_cache_outcome {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -26651,6 +32440,90 @@ view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_string__places_places_database_corruption_handling_stage {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__content_analysis_response_duration_by_analysis_type {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__content_analysis_response_duration_by_analysis_type__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }
@@ -29490,6 +35363,111 @@ view: metrics_table__metrics__labeled_timing_distribution__perf_http3_page_load_
   }
 }
 
+view: metrics_table__metrics__labeled_timing_distribution__popup_notification_dismissal {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__popup_notification_dismissal__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__popup_notification_main_action {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__popup_notification_main_action__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__search_suggestions_latency {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__search_suggestions_latency__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_timing_distribution__security_https_only_mode_upgrade_time {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -29700,6 +35678,181 @@ view: metrics_table__metrics__labeled_timing_distribution__ssl_time_until_handsh
   }
 }
 
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_download_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_download_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_ingest_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_query_time {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__suggest_query_time__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__urlbar_autofill_reintegration_after_backspace {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__urlbar_autofill_reintegration_after_backspace__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__urlbar_merino_latency_by_response_status {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__sum {
+    sql: ${TABLE}.value.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Sum"
+  }
+
+  dimension: value__values {
+    sql: ${TABLE}.value.values ;;
+    hidden: yes
+  }
+}
+
+view: metrics_table__metrics__labeled_timing_distribution__urlbar_merino_latency_by_response_status__value__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__labeled_timing_distribution__urlclassifier_cl_keyed_update_time {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -29875,7 +36028,49 @@ view: metrics_table__metrics__labeled_timing_distribution__xpi_database_rebuilds
   }
 }
 
+view: metrics_table__metrics__memory_distribution__browser_backup_compressed_archive_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__browser_backup_total_backup_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__cert_storage_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__crash_compressed_store_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -30491,6 +36686,90 @@ view: metrics_table__metrics__memory_distribution__networking_http_3_udp_datagra
   }
 }
 
+view: metrics_table__metrics__memory_distribution__newtab_spons_nav_traffic_recvd__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__newtab_spons_nav_traffic_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__places_database_favicons_filesize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__places_database_filesize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__places_database_semantic_history_filesize__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__session_restore_file_size_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__spdy_chunk_recvd__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -30589,6 +36868,76 @@ view: metrics_table__metrics__memory_distribution__ssl_bytes_before_cert_callbac
   }
 }
 
+view: metrics_table__metrics__memory_distribution__telemetry_archive_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__telemetry_discarded_archived_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__telemetry_discarded_pending_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__telemetry_discarded_send_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__telemetry_pending_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__webfont_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -30645,7 +36994,287 @@ view: metrics_table__metrics__timing_distribution__application_reputation_remote
   }
 }
 
+view: metrics_table__metrics__timing_distribution__bookmarks_toolbar_init__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_backup_favicons_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_backup_places_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_backup_total_backup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_engagement_tab_unload_to_reload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_cookies__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_downloads__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_formdata__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_history__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_openwindows__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_sessions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_sitesettings__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_sanitizer_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_tabclose_permit_unload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_tabclose_time_anim__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_tabclose_time_no_anim__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_tabswitch_spinner_visible__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_tabswitch_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_tabswitch_update__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -31905,6 +38534,20 @@ view: metrics_table__metrics__timing_distribution__fontlist_system_font_fallback
   }
 }
 
+view: metrics_table__metrics__timing_distribution__fullscreen_change__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__geckoview_page_load_progress_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -32200,6 +38843,20 @@ view: metrics_table__metrics__timing_distribution__gpu_process_initialization_ti
 }
 
 view: metrics_table__metrics__timing_distribution__gpu_process_launch_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__history_sidebar_lastvisited_tree_query_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -32773,6 +39430,20 @@ view: metrics_table__metrics__timing_distribution__layout_time_to_first_interact
   }
 }
 
+view: metrics_table__metrics__timing_distribution__library_history_search_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__localdomstorage_shutdown_database__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -32928,6 +39599,20 @@ view: metrics_table__metrics__timing_distribution__memory_collection_time__value
 }
 
 view: metrics_table__metrics__timing_distribution__memory_free_purged_pages__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__messaging_system_message_request_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -34145,6 +40830,20 @@ view: metrics_table__metrics__timing_distribution__networking_transaction_wait_t
   }
 }
 
+view: metrics_table__metrics__timing_distribution__newtab_abouthome_cache_construction__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__ocsp_request_time_cancel__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -34286,6 +40985,20 @@ view: metrics_table__metrics__timing_distribution__performance_interaction_keypr
 }
 
 view: metrics_table__metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_interaction_tab_switch_composite__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -34565,6 +41278,230 @@ view: metrics_table__metrics__timing_distribution__performance_time_to_first_con
   }
 }
 
+view: metrics_table__metrics__timing_distribution__pictureinpicture_background_tab_playing_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__pictureinpicture_foreground_tab_playing_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__pictureinpicture_window_open_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_backups_bookmarkstree__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_backups_daysfromlast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_backups_tojson__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_database_semantic_history_defragment_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_database_semantic_history_reindex_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_export_tohtml__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_frecency_recalc_chunk_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_idle_frecency_decay_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_idle_maintenance_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_maintenance_daysfromlast__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_most_recent_expired_visit__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_semantic_history_chunk_calculate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_semantic_history_find_chunks_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__predictor_learn_work_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -34733,6 +41670,20 @@ view: metrics_table__metrics__timing_distribution__region_fetch_time__values {
   }
 }
 
+view: metrics_table__metrics__timing_distribution__relevancy_classify_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__screenwakelock_held_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -34748,6 +41699,34 @@ view: metrics_table__metrics__timing_distribution__screenwakelock_held_duration_
 }
 
 view: metrics_table__metrics__timing_distribution__script_preloader_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__search_service_startup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__serp_categorization_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -34790,6 +41769,146 @@ view: metrics_table__metrics__timing_distribution__service_worker_launch_time__v
 }
 
 view: metrics_table__metrics__timing_distribution__service_worker_registration_loading__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_auto_restore_duration_until_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_collect_all_windows_data__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_collect_data__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_collect_session_history__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_manual_restore_duration_until_eager_tabs_restored__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_read_file__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_restore_window__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_startup_init_session__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_startup_onload_initial_window__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__session_restore_write_file__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -34943,6 +42062,174 @@ view: metrics_table__metrics__timing_distribution__sts_poll_cycle__values {
   }
 }
 
+view: metrics_table__metrics__timing_distribution__telemetry_archive_checking_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_archive_evicting_dirs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_archive_evicting_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_compress__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_pending_checking_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_pending_evicting_over_quota__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_pending_pings_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_send_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__telemetry_stringify__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__text_recognition_api_performance__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__text_recognition_interaction_timing__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__thumbnails_capture_canvas_draw_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -35069,6 +42356,34 @@ view: metrics_table__metrics__timing_distribution__update_last_notify_interval_d
   }
 }
 
+view: metrics_table__metrics__timing_distribution__urlbar_autocomplete_first_result_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__urlbar_autocomplete_sixth_result_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__urlclassifier_async_classifylocal_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -35182,6 +42497,20 @@ view: metrics_table__metrics__timing_distribution__urlclassifier_vlps_fallocate_
 }
 
 view: metrics_table__metrics__timing_distribution__urlclassifier_vlps_fileload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__web_app_usage_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
