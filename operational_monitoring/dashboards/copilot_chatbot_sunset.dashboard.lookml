@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: copilot_chatbot_sunset
+    type: looker_line
+    fields: [
+      copilot_chatbot_sunset.submission_date,
+      copilot_chatbot_sunset.branch,
+      copilot_chatbot_sunset.point
+    ]
+    pivots: [
+      copilot_chatbot_sunset.branch
+    ]
+    filters:
+      copilot_chatbot_sunset.metric: 'ad_clicks'
+      copilot_chatbot_sunset.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: copilot_chatbot_sunset.submission_date
+    field_y: copilot_chatbot_sunset.point
+    log_scale: false
+    ci_lower: copilot_chatbot_sunset.lower
+    ci_upper: copilot_chatbot_sunset.upper
+    show_grid: true
+    listen:
+      Date: copilot_chatbot_sunset.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -29,40 +63,6 @@
       copilot_chatbot_sunset.metric: 'search_count'
       copilot_chatbot_sunset.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: copilot_chatbot_sunset.submission_date
-    field_y: copilot_chatbot_sunset.point
-    log_scale: false
-    ci_lower: copilot_chatbot_sunset.lower
-    ci_upper: copilot_chatbot_sunset.upper
-    show_grid: true
-    listen:
-      Date: copilot_chatbot_sunset.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: copilot_chatbot_sunset
-    type: looker_line
-    fields: [
-      copilot_chatbot_sunset.submission_date,
-      copilot_chatbot_sunset.branch,
-      copilot_chatbot_sunset.point
-    ]
-    pivots: [
-      copilot_chatbot_sunset.branch
-    ]
-    filters:
-      copilot_chatbot_sunset.metric: 'qualified_cumulative_days_of_use'
-      copilot_chatbot_sunset.statistic: mean
-    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,26 +78,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: copilot_chatbot_sunset
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       copilot_chatbot_sunset.submission_date,
       copilot_chatbot_sunset.branch,
-      copilot_chatbot_sunset.upper,
-      copilot_chatbot_sunset.lower,
       copilot_chatbot_sunset.point
     ]
     pivots: [
       copilot_chatbot_sunset.branch
     ]
     filters:
-      copilot_chatbot_sunset.metric: 'memory_total'
-      copilot_chatbot_sunset.statistic: percentile
+      copilot_chatbot_sunset.metric: 'active_hours'
+      copilot_chatbot_sunset.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -110,7 +108,6 @@
     show_grid: true
     listen:
       Date: copilot_chatbot_sunset.submission_date
-      Percentile: copilot_chatbot_sunset.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -149,24 +146,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: copilot_chatbot_sunset
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       copilot_chatbot_sunset.submission_date,
       copilot_chatbot_sunset.branch,
+      copilot_chatbot_sunset.upper,
+      copilot_chatbot_sunset.lower,
       copilot_chatbot_sunset.point
     ]
     pivots: [
       copilot_chatbot_sunset.branch
     ]
     filters:
-      copilot_chatbot_sunset.metric: 'ad_clicks'
-      copilot_chatbot_sunset.statistic: mean
+      copilot_chatbot_sunset.metric: 'memory_total'
+      copilot_chatbot_sunset.statistic: percentile
     row: 20
     col: 0
     width: 12
@@ -179,6 +178,7 @@
     show_grid: true
     listen:
       Date: copilot_chatbot_sunset.submission_date
+      Percentile: copilot_chatbot_sunset.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,40 +217,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: copilot_chatbot_sunset
-    type: looker_line
-    fields: [
-      copilot_chatbot_sunset.submission_date,
-      copilot_chatbot_sunset.branch,
-      copilot_chatbot_sunset.point
-    ]
-    pivots: [
-      copilot_chatbot_sunset.branch
-    ]
-    filters:
-      copilot_chatbot_sunset.metric: 'active_hours'
-      copilot_chatbot_sunset.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: copilot_chatbot_sunset.submission_date
-    field_y: copilot_chatbot_sunset.point
-    log_scale: false
-    ci_lower: copilot_chatbot_sunset.lower
-    ci_upper: copilot_chatbot_sunset.upper
-    show_grid: true
-    listen:
-      Date: copilot_chatbot_sunset.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -268,6 +234,40 @@
     ]
     filters:
       copilot_chatbot_sunset.metric: 'days_of_use'
+      copilot_chatbot_sunset.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: copilot_chatbot_sunset.submission_date
+    field_y: copilot_chatbot_sunset.point
+    log_scale: false
+    ci_lower: copilot_chatbot_sunset.lower
+    ci_upper: copilot_chatbot_sunset.upper
+    show_grid: true
+    listen:
+      Date: copilot_chatbot_sunset.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: copilot_chatbot_sunset
+    type: looker_line
+    fields: [
+      copilot_chatbot_sunset.submission_date,
+      copilot_chatbot_sunset.branch,
+      copilot_chatbot_sunset.point
+    ]
+    pivots: [
+      copilot_chatbot_sunset.branch
+    ]
+    filters:
+      copilot_chatbot_sunset.metric: 'qualified_cumulative_days_of_use'
       copilot_chatbot_sunset.statistic: mean
     row: 30
     col: 12

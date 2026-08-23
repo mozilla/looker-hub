@@ -12786,6 +12786,11 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_errorpage {
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_errorpage ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
     hidden: yes

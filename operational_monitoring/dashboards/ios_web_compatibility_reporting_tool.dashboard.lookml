@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_web_compatibility_reporting_tool
-    type: looker_line
-    fields: [
-      ios_web_compatibility_reporting_tool.submission_date,
-      ios_web_compatibility_reporting_tool.branch,
-      ios_web_compatibility_reporting_tool.point
-    ]
-    pivots: [
-      ios_web_compatibility_reporting_tool.branch
-    ]
-    filters:
-      ios_web_compatibility_reporting_tool.metric: 'search_count'
-      ios_web_compatibility_reporting_tool.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_web_compatibility_reporting_tool.submission_date
-    field_y: ios_web_compatibility_reporting_tool.point
-    log_scale: false
-    ci_lower: ios_web_compatibility_reporting_tool.lower
-    ci_upper: ios_web_compatibility_reporting_tool.upper
-    show_grid: true
-    listen:
-      Date: ios_web_compatibility_reporting_tool.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       ios_web_compatibility_reporting_tool.metric: 'ad_clicks'
       ios_web_compatibility_reporting_tool.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: ios_web_compatibility_reporting_tool.submission_date
@@ -78,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +60,10 @@
       ios_web_compatibility_reporting_tool.branch
     ]
     filters:
-      ios_web_compatibility_reporting_tool.metric: 'retained'
+      ios_web_compatibility_reporting_tool.metric: 'search_count'
       ios_web_compatibility_reporting_tool.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: ios_web_compatibility_reporting_tool.submission_date
@@ -131,7 +97,7 @@
       ios_web_compatibility_reporting_tool.metric: 'active_hours'
       ios_web_compatibility_reporting_tool.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: ios_web_compatibility_reporting_tool.submission_date
@@ -163,6 +129,40 @@
     ]
     filters:
       ios_web_compatibility_reporting_tool.metric: 'days_of_use'
+      ios_web_compatibility_reporting_tool.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_web_compatibility_reporting_tool.submission_date
+    field_y: ios_web_compatibility_reporting_tool.point
+    log_scale: false
+    ci_lower: ios_web_compatibility_reporting_tool.lower
+    ci_upper: ios_web_compatibility_reporting_tool.upper
+    show_grid: true
+    listen:
+      Date: ios_web_compatibility_reporting_tool.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_web_compatibility_reporting_tool
+    type: looker_line
+    fields: [
+      ios_web_compatibility_reporting_tool.submission_date,
+      ios_web_compatibility_reporting_tool.branch,
+      ios_web_compatibility_reporting_tool.point
+    ]
+    pivots: [
+      ios_web_compatibility_reporting_tool.branch
+    ]
+    filters:
+      ios_web_compatibility_reporting_tool.metric: 'retained'
       ios_web_compatibility_reporting_tool.statistic: mean
     row: 20
     col: 0
