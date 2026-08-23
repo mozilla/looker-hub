@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_nova_pref_flip_restore
+    type: looker_line
+    fields: [
+      hnt_nova_pref_flip_restore.submission_date,
+      hnt_nova_pref_flip_restore.branch,
+      hnt_nova_pref_flip_restore.point
+    ]
+    pivots: [
+      hnt_nova_pref_flip_restore.branch
+    ]
+    filters:
+      hnt_nova_pref_flip_restore.metric: 'ad_clicks'
+      hnt_nova_pref_flip_restore.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_nova_pref_flip_restore.submission_date
+    field_y: hnt_nova_pref_flip_restore.point
+    log_scale: false
+    ci_lower: hnt_nova_pref_flip_restore.lower
+    ci_upper: hnt_nova_pref_flip_restore.upper
+    show_grid: true
+    listen:
+      Date: hnt_nova_pref_flip_restore.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -29,40 +63,6 @@
       hnt_nova_pref_flip_restore.metric: 'search_count'
       hnt_nova_pref_flip_restore.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_nova_pref_flip_restore.submission_date
-    field_y: hnt_nova_pref_flip_restore.point
-    log_scale: false
-    ci_lower: hnt_nova_pref_flip_restore.lower
-    ci_upper: hnt_nova_pref_flip_restore.upper
-    show_grid: true
-    listen:
-      Date: hnt_nova_pref_flip_restore.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_nova_pref_flip_restore
-    type: looker_line
-    fields: [
-      hnt_nova_pref_flip_restore.submission_date,
-      hnt_nova_pref_flip_restore.branch,
-      hnt_nova_pref_flip_restore.point
-    ]
-    pivots: [
-      hnt_nova_pref_flip_restore.branch
-    ]
-    filters:
-      hnt_nova_pref_flip_restore.metric: 'qualified_cumulative_days_of_use'
-      hnt_nova_pref_flip_restore.statistic: mean
-    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,26 +78,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: hnt_nova_pref_flip_restore
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       hnt_nova_pref_flip_restore.submission_date,
       hnt_nova_pref_flip_restore.branch,
-      hnt_nova_pref_flip_restore.upper,
-      hnt_nova_pref_flip_restore.lower,
       hnt_nova_pref_flip_restore.point
     ]
     pivots: [
       hnt_nova_pref_flip_restore.branch
     ]
     filters:
-      hnt_nova_pref_flip_restore.metric: 'memory_total'
-      hnt_nova_pref_flip_restore.statistic: percentile
+      hnt_nova_pref_flip_restore.metric: 'active_hours'
+      hnt_nova_pref_flip_restore.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -110,7 +108,6 @@
     show_grid: true
     listen:
       Date: hnt_nova_pref_flip_restore.submission_date
-      Percentile: hnt_nova_pref_flip_restore.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -149,24 +146,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: hnt_nova_pref_flip_restore
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       hnt_nova_pref_flip_restore.submission_date,
       hnt_nova_pref_flip_restore.branch,
+      hnt_nova_pref_flip_restore.upper,
+      hnt_nova_pref_flip_restore.lower,
       hnt_nova_pref_flip_restore.point
     ]
     pivots: [
       hnt_nova_pref_flip_restore.branch
     ]
     filters:
-      hnt_nova_pref_flip_restore.metric: 'ad_clicks'
-      hnt_nova_pref_flip_restore.statistic: mean
+      hnt_nova_pref_flip_restore.metric: 'memory_total'
+      hnt_nova_pref_flip_restore.statistic: percentile
     row: 20
     col: 0
     width: 12
@@ -179,6 +178,7 @@
     show_grid: true
     listen:
       Date: hnt_nova_pref_flip_restore.submission_date
+      Percentile: hnt_nova_pref_flip_restore.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,40 +217,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_nova_pref_flip_restore
-    type: looker_line
-    fields: [
-      hnt_nova_pref_flip_restore.submission_date,
-      hnt_nova_pref_flip_restore.branch,
-      hnt_nova_pref_flip_restore.point
-    ]
-    pivots: [
-      hnt_nova_pref_flip_restore.branch
-    ]
-    filters:
-      hnt_nova_pref_flip_restore.metric: 'active_hours'
-      hnt_nova_pref_flip_restore.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_nova_pref_flip_restore.submission_date
-    field_y: hnt_nova_pref_flip_restore.point
-    log_scale: false
-    ci_lower: hnt_nova_pref_flip_restore.lower
-    ci_upper: hnt_nova_pref_flip_restore.upper
-    show_grid: true
-    listen:
-      Date: hnt_nova_pref_flip_restore.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -268,6 +234,40 @@
     ]
     filters:
       hnt_nova_pref_flip_restore.metric: 'days_of_use'
+      hnt_nova_pref_flip_restore.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_nova_pref_flip_restore.submission_date
+    field_y: hnt_nova_pref_flip_restore.point
+    log_scale: false
+    ci_lower: hnt_nova_pref_flip_restore.lower
+    ci_upper: hnt_nova_pref_flip_restore.upper
+    show_grid: true
+    listen:
+      Date: hnt_nova_pref_flip_restore.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_nova_pref_flip_restore
+    type: looker_line
+    fields: [
+      hnt_nova_pref_flip_restore.submission_date,
+      hnt_nova_pref_flip_restore.branch,
+      hnt_nova_pref_flip_restore.point
+    ]
+    pivots: [
+      hnt_nova_pref_flip_restore.branch
+    ]
+    filters:
+      hnt_nova_pref_flip_restore.metric: 'qualified_cumulative_days_of_use'
       hnt_nova_pref_flip_restore.statistic: mean
     row: 30
     col: 12
