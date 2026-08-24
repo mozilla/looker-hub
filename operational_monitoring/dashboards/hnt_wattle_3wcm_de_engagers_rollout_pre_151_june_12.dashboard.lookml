@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12
-    type: looker_line
-    fields: [
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date,
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch,
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
-    ]
-    pivots: [
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch
-    ]
-    filters:
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'ad_clicks'
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
-    field_y: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
-    log_scale: false
-    ci_lower: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.lower
-    ci_upper: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -63,6 +29,40 @@
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'search_count'
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
+    field_y: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
+    log_scale: false
+    ci_lower: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.lower
+    ci_upper: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12
+    type: looker_line
+    fields: [
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date,
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch,
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
+    ]
+    pivots: [
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch
+    ]
+    filters:
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'qualified_cumulative_days_of_use'
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: mean
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date,
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch,
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.upper,
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.lower,
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
     ]
     pivots: [
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch
     ]
     filters:
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'active_hours'
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: mean
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'memory_total'
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
+      Percentile: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,43 +149,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12
-    type: "ci-line-chart"
-    fields: [
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date,
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch,
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.upper,
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.lower,
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
-    ]
-    pivots: [
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch
-    ]
-    filters:
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'memory_total'
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: percentile
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
-    field_y: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
-    log_scale: false
-    ci_lower: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.lower
-    ci_upper: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
-      Percentile: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -202,7 +168,7 @@
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'retained'
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
@@ -235,6 +201,40 @@
     filters:
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'days_of_use'
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
+    field_y: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
+    log_scale: false
+    ci_lower: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.lower
+    ci_upper: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12
+    type: looker_line
+    fields: [
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.submission_date,
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch,
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.point
+    ]
+    pivots: [
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch
+    ]
+    filters:
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'active_hours'
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.branch
     ]
     filters:
-      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'qualified_cumulative_days_of_use'
+      hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.metric: 'ad_clicks'
       hnt_wattle_3wcm_de_engagers_rollout_pre_151_june_12.statistic: mean
     row: 30
     col: 12
