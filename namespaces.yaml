@@ -5706,11 +5706,6 @@ jira_service_desk:
       - table: moz-fx-data-shared-prod.jira_service_desk.user
       type: table_view
 kpi:
-  explores:
-    unified_metrics:
-      type: ping_explore
-      views:
-        base_view: unified_metrics
   glean_app: false
   owners:
   - loines@mozilla.com
@@ -5725,10 +5720,6 @@ kpi:
       tables:
       - table: moz-fx-data-shared-prod.telemetry_derived.kpi_automated_forecast_v1
       type: table_view
-    unified_metrics:
-      tables:
-      - table: mozdata.telemetry.unified_metrics
-      type: ping_view
 marketing:
   glean_app: false
   owners:
