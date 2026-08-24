@@ -8340,6 +8340,14 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__datetime__raw_background_update_time_last_update_scheduled {
+    sql: ${TABLE}.metrics.datetime.raw_background_update_time_last_update_scheduled ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Raw Background Update Time Last Update Scheduled"
+  }
+
   dimension: metrics__datetime__raw_blocklist_last_modified_rs_addons_mblf {
     sql: ${TABLE}.metrics.datetime.raw_blocklist_last_modified_rs_addons_mblf ;;
     type: string
@@ -8380,6 +8388,30 @@ view: metrics_table {
     group_item_label: "Raw Blocklist Mlbf Stash Time Oldest"
   }
 
+  dimension: metrics__datetime__raw_legacy_telemetry_session_start_date {
+    sql: ${TABLE}.metrics.datetime.raw_legacy_telemetry_session_start_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Raw Legacy Telemetry Session Start Date"
+  }
+
+  dimension: metrics__datetime__raw_smart_window_memories_last_updated {
+    sql: ${TABLE}.metrics.datetime.raw_smart_window_memories_last_updated ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Raw Smart Window Memories Last Updated"
+  }
+
+  dimension: metrics__datetime__raw_termsofuse_date {
+    sql: ${TABLE}.metrics.datetime.raw_termsofuse_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Datetime"
+    group_item_label: "Raw Termsofuse Date"
+  }
+
   dimension: metrics__dual_labeled_counter__application_reputation_server_verdict_2 {
     sql: ${TABLE}.metrics.dual_labeled_counter.application_reputation_server_verdict_2 ;;
     hidden: yes
@@ -8404,6 +8436,9 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__dual_labeled_counter__crash_submit_success {
     sql: ${TABLE}.metrics.dual_labeled_counter.crash_submit_success ;;
     hidden: yes
+    description: "The submission status when main/plugin/content crashes are submitted. 1 is success, 0 is failure. Keyed on the CrashManager Crash.type.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram PROCESS_CRASH_SUBMIT_SUCCESS.
+"
   }
 
   dimension: metrics__dual_labeled_counter__dns_lookup_disposition {
@@ -8598,6 +8633,9 @@ Initially this metric also recorded the \"success\" category, but due to the hig
   dimension: metrics__dual_labeled_counter__telemetry_send_failure_type_per_ping {
     sql: ${TABLE}.metrics.dual_labeled_counter.telemetry_send_failure_type_per_ping ;;
     hidden: yes
+    description: "Counts of the different ways sending a Telemetry ping can fail per ping type.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_SEND_FAILURE_TYPE_PER_PING.
+"
   }
 
   dimension: metrics__dual_labeled_counter__tls_handshake_result {
@@ -8644,11 +8682,16 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_boolean__browser_ai_control_is_blocking {
     sql: ${TABLE}.metrics.labeled_boolean.browser_ai_control_is_blocking ;;
     hidden: yes
+    description: "Status of the AI controls per feature setting.
+When true, the feature enhancement is blocked.
+"
   }
 
   dimension: metrics__labeled_boolean__browser_ui_mirror_for_toolbar_widgets {
     sql: ${TABLE}.metrics.labeled_boolean.browser_ui_mirror_for_toolbar_widgets ;;
     hidden: yes
+    description: "The widgets in the toolbars. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.toolbar_widgets.
+"
   }
 
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
@@ -8711,6 +8754,8 @@ while reporting fog.data_diretory_info.
   dimension: metrics__labeled_boolean__media_wmf_codec_no_extension {
     sql: ${TABLE}.metrics.labeled_boolean.media_wmf_codec_no_extension ;;
     hidden: yes
+    description: "Set to true for a given codec when its required Windows Store extension is not installed (WINCODEC_ERR_COMPONENTNOTFOUND during WMF decoder initialization). Recorded once per session. Not recorded when the codec is disabled by pref or DXVA is unavailable.
+"
   }
 
   dimension: metrics__labeled_boolean__mediadrm_decryption {
@@ -8730,16 +8775,22 @@ while reporting fog.data_diretory_info.
   dimension: metrics__labeled_boolean__newtab_metric_registered {
     sql: ${TABLE}.metrics.labeled_boolean.newtab_metric_registered ;;
     hidden: yes
+    description: "Records technical data about whether the metric registration at runtime succeeded
+"
   }
 
   dimension: metrics__labeled_boolean__newtab_ping_registered {
     sql: ${TABLE}.metrics.labeled_boolean.newtab_ping_registered ;;
     hidden: yes
+    description: "Records technical data about whether the ping registration at runtime succeeded
+"
   }
 
   dimension: metrics__labeled_boolean__os_environment_is_default_handler {
     sql: ${TABLE}.metrics.labeled_boolean.os_environment_is_default_handler ;;
     hidden: yes
+    description: "Records whether Firefox was the default handler for particular file types or protocols.  The result is split into keys which represent the file extension or scheme: currently, a subset of the file types Firefox registers to handle, namely \".pdf\" and \"mailto\" as protocol. In the future, more file types may be recorded. This metric was generated to correspond to the Legacy Telemetry scalar os.environment.is_default_handler.
+"
   }
 
   dimension: metrics__labeled_boolean__pdfjs_image_alt_text_edit {
@@ -8752,6 +8803,8 @@ while reporting fog.data_diretory_info.
   dimension: metrics__labeled_boolean__smart_window_memories_optin {
     sql: ${TABLE}.metrics.labeled_boolean.smart_window_memories_optin ;;
     hidden: yes
+    description: "Records if the user is currently opted-in for memories from chat or from browsing.
+"
   }
 
   dimension: metrics__labeled_boolean__system_special_directory_appdata_fallback {
@@ -8765,21 +8818,29 @@ either %AppData% or %LocalAppData%.
   dimension: metrics__labeled_boolean__widget_ime_name_on_linux {
     sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_linux ;;
     hidden: yes
+    description: "Name of active IM (e.g., xim, fcitx, ibus, etc) which was actually set by env on Linux.  Different from Windows and macOS, this value includes non-IME users even though this is recoded when first compositionstart event because dead key is also implemented by IME on Linux. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_linux.
+"
   }
 
   dimension: metrics__labeled_boolean__widget_ime_name_on_mac {
     sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_mac ;;
     hidden: yes
+    description: "Name of IME which was selected by users on macOS.  The value is Input Source ID if non-Japanese IME was open.  Otherwise, if Japanese IME was open, the value is Bundle ID.  Input Source ID includes input mode, but Bundle ID does not include input mode. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_mac.
+"
   }
 
   dimension: metrics__labeled_boolean__widget_ime_name_on_windows {
     sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_windows ;;
     hidden: yes
+    description: "Locale ID and name of IME which was selected by users on Windows. This does NOT collect legacy IMM-IME names since we cannot get readable names and we do not support IMM-IME so aggressively because IME vendors should've already released TIP for TSF for supporting Windows 8 or later completely. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_windows.
+"
   }
 
   dimension: metrics__labeled_boolean__widget_ime_name_on_windows_inserted_crlf {
     sql: ${TABLE}.metrics.labeled_boolean.widget_ime_name_on_windows_inserted_crlf ;;
     hidden: yes
+    description: "Same data as ime_name_on_windows, but only collecting IME names which inserted CRLF to check whether the feature works. This metric was generated to correspond to the Legacy Telemetry scalar widget.ime_name_on_windows_inserted_crlf.
+"
   }
 
   dimension: metrics__labeled_boolean__widget_pointing_devices {
@@ -8792,6 +8853,8 @@ either %AppData% or %LocalAppData%.
   dimension: metrics__labeled_counter__ads_client_client_operation_total {
     sql: ${TABLE}.metrics.labeled_counter.ads_client_client_operation_total ;;
     hidden: yes
+    description: "The total number of operations attempted by the ads client, labeled by operation type. Used as the denominator for client_operation_success_rate.
+"
   }
 
   dimension: metrics__labeled_counter__application_reputation_binary_archive {
@@ -9025,76 +9088,107 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__browser_attribution_errors {
     sql: ${TABLE}.metrics.labeled_counter.browser_attribution_errors ;;
     hidden: yes
+    description: "Count for the number of errors encountered trying to determine attribution data: on Windows, from the installers (stub and full); on macOS, from an extended attributed on the .app bundle.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_ATTRIBUTION_ERRORS.
+"
   }
 
   dimension: metrics__labeled_counter__browser_customkeys_actions {
     sql: ${TABLE}.metrics.labeled_counter.browser_customkeys_actions ;;
     hidden: yes
+    description: "The actions taken in about:keyboard.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_about_home {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_home ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from about:home, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_home.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_about_newtab {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_about_newtab ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from about:newtab, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.about_newtab.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the contextmenu, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.contextmenu.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_contextmenu_visual ;;
     hidden: yes
+    description: "The count of URI loads triggered in a subsession from the context menu's visual search menuitem, broken down by the originating action.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_searchbar ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the searchbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.searchbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_smartbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartbar ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the smartbar, broken down by the originating action.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_smartwindow_assistant {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_smartwindow_assistant ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the AI window assistant search handoff button.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_handoff ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_handoff.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_persisted {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_persisted ;;
     hidden: yes
+    description: "The count of URI loads triggered in a subsession from the urlbar after the search term was shown in the urlbar, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_persisted.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_urlbar_searchmode {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_urlbar_searchmode ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar's search mode, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.urlbar_searchmode.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_webextension {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_webextension ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from a webextension. This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.navigation.webextension.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_sessionrestore_interstitial {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_sessionrestore_interstitial ;;
     hidden: yes
+    description: "Whether we show about:sessionrestore or not. Split by key, which indicates why we showed the item or not. Specifically, 'deferred_restore' means we didn't autorestore and thus didn't show the interstitial; 'autorestore' indicates we autorestored without showing the interstitial. 'shown_old_session', 'shown_only_about_welcomeback', 'shown_many_crashes', 'shown_many_crashes_old_session' all indicate we did show the interstitial because of a crash, and the text after 'shown' indicates what secondary reason there was to show this page (as we don't show it for 'just' one crash). This metric was generated to correspond to the Legacy Telemetry scalar browser.engagement.sessionrestore_interstitial.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_total_top_visits {
@@ -9115,316 +9209,450 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__browser_is_user_default {
     sql: ${TABLE}.metrics.labeled_counter.browser_is_user_default ;;
     hidden: yes
+    description: "Whether Firefox is the system default browser on startup. A true value is also recorded here, and a false value is recorded to set_default_error, if a user clicked 'Use Firefox as my default browser' on an in-product prompt. (Note that on Windows 8+ the latter action opens the right settings dialog but does not actually change the default browser without further user action.) On Windows, 'system default browser' is operationalized as whether Firefox is the default HTTP protocol handler.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_IS_USER_DEFAULT.
+"
   }
 
   dimension: metrics__labeled_counter__browser_is_user_default_error {
     sql: ${TABLE}.metrics.labeled_counter.browser_is_user_default_error ;;
     hidden: yes
+    description: "True if the browser was unable to determine if the browser was set as default.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_IS_USER_DEFAULT_ERROR.
+"
   }
 
   dimension: metrics__labeled_counter__browser_migration_entry_point_categorical {
     sql: ${TABLE}.metrics.labeled_counter.browser_migration_entry_point_categorical ;;
     hidden: yes
+    description: "Where the migration wizard was entered from.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram FX_MIGRATION_ENTRY_POINT_CATEGORICAL.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_about_home {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_about_home ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from about:home. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.about_home.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_about_newtab {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_about_newtab ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.about_newtab.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.contextmenu.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_contextmenu_visual {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_contextmenu_visual ;;
     hidden: yes
+    description: "Records clicks of adverts on visual-search SERP pages where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_reload {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_reload ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was loaded by reloading the page. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.reload.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_searchbar ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the search bar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.searchbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_smartbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_smartbar ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the smartbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_smartwindow_assistant {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_smartwindow_assistant ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_system {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_system ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the system, e.g. command line. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.system.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_tabhistory {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_tabhistory ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was loaded from the tab history. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.tabhistory.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_unknown {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_unknown ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from a place not categorized by the other scalars. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.unknown.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_handoff ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_handoff.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_persisted {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_persisted ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar after the search term was shown in the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_persisted.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_urlbar_searchmode {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_urlbar_searchmode ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from the urlbar in search mode. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.urlbar_searchmode.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_adclicks_webextension {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_adclicks_webextension ;;
     hidden: yes
+    description: "Records clicks of adverts on SERP pages where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.adclicks.webextension.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_about_home {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_about_home ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the about:home. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.about_home.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_about_newtab {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_about_newtab ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the about:newtab. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.about_newtab.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the context menu. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.contextmenu.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_contextmenu_visual {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_contextmenu_visual ;;
     hidden: yes
+    description: "Records counts for in-content visual searches where the search was most likely started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_reload {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_reload ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was loaded by reloading the page. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.reload.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_searchbar ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the search bar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.searchbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_smartbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_smartbar ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the smartbar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_smartwindow_assistant {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_smartwindow_assistant ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the AI window assistant. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_system {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_system ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the system, e.g. command line. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.system.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_tabhistory {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_tabhistory ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was loaded from the tab history. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.tabhistory.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_unknown {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_unknown ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was started from a place that could not be determined or not categorized by the other scalars. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.unknown.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the urlbar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_handoff ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_handoff.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_urlbar_persisted {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_persisted ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the urlbar after the search term was shown in the urlbar. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_persisted.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_urlbar_searchmode {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_urlbar_searchmode ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from the urlbar in search mode. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.urlbar_searchmode.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_content_webextension {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_content_webextension ;;
     hidden: yes
+    description: "Records counts for in-content searches where the search was most likely started from a webextension. The key format is <provider>:[tagged|tagged-follow-on|organic]:[code|other|none] See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.content.webextension.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_about_home {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_about_home ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from about:home. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_home.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_about_newtab {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_about_newtab ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from about:newtab. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.about_newtab.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_contextmenu {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the context menu. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.contextmenu.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_contextmenu_visual {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_contextmenu_visual ;;
     hidden: yes
+    description: "Records counts of visual-search SERP pages with adverts displayed where the search was started from the context menu. The key format is the same as for the `contextmenu` labeled counter.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_reload {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_reload ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was loaded by reloading the page. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.reload.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_searchbar ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the search bar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.searchbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_smartbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_smartbar ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the smartbar. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_smartwindow_assistant {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_smartwindow_assistant ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the AI window assistant. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_system {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_system ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the system, e.g. command line. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.system.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_tabhistory {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_tabhistory ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was loaded from the tab history. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.tabhistory.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_unknown {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_unknown ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from a place not categorized by the other scalars. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.unknown.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_urlbar_handoff {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_handoff ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the urlbar via handoff, broken down by the originating action. This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_handoff.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_urlbar_persisted {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_persisted ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar after the search term was shown in the urlbar. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_persisted.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_urlbar_searchmode {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_urlbar_searchmode ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from the urlbar in search mode. The key format is ‘<provider>:<tagged|organic>’ See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.urlbar_searchmode.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_withads_webextension {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_withads_webextension ;;
     hidden: yes
+    description: "Records counts of SERP pages with adverts displayed where the search was started from a webextension. The key format is ‘<provider>:<tagged|organic>’. See https://firefox-source-docs.mozilla.org/browser/search/telemetry.html#browser-search-content This metric was generated to correspond to the Legacy Telemetry scalar browser.search.withads.webextension.
+"
   }
 
   dimension: metrics__labeled_counter__browser_set_default_always_check {
     sql: ${TABLE}.metrics.labeled_counter.browser_set_default_always_check ;;
     hidden: yes
+    description: "True if the profile has `browser.shell.checkDefaultBrowser` set to true.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_SET_DEFAULT_ALWAYS_CHECK.
+"
   }
 
   dimension: metrics__labeled_counter__browser_set_default_error {
     sql: ${TABLE}.metrics.labeled_counter.browser_set_default_error ;;
     hidden: yes
+    description: "True if the browser was unable to set Firefox as the default browser
+This metric was generated to correspond to the Legacy Telemetry boolean histogram BROWSER_SET_DEFAULT_ERROR.
+"
   }
 
   dimension: metrics__labeled_counter__browser_set_default_pdf_handler_modern_settings_result {
     sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_modern_settings_result ;;
     hidden: yes
+    description: "Result of each attempt to set the default PDF handler by opening modern settings through the ms-settings protocol (ms-settings:defaultapps).
+"
   }
 
   dimension: metrics__labeled_counter__browser_set_default_pdf_handler_user_choice_result {
     sql: ${TABLE}.metrics.labeled_counter.browser_set_default_pdf_handler_user_choice_result ;;
     hidden: yes
+    description: "Result of each attempt to set the default browser by setting the user-choice regkey for pdf extension.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_SET_DEFAULT_PDF_HANDLER_USER_CHOICE_RESULT.
+"
   }
 
   dimension: metrics__labeled_counter__browser_set_default_protocol_handler_modern_settings_result {
     sql: ${TABLE}.metrics.labeled_counter.browser_set_default_protocol_handler_modern_settings_result ;;
     hidden: yes
+    description: "Result of each attempt to set the default protocol handler by opening modern settings through the ms-settings protocol (ms-settings:defaultapps).
+"
   }
 
   dimension: metrics__labeled_counter__browser_set_default_user_choice_result {
     sql: ${TABLE}.metrics.labeled_counter.browser_set_default_user_choice_result ;;
     hidden: yes
+    description: "Result of each attempt to set the default browser with SetDefaultBrowserUserChoice()
+This metric was generated to correspond to the Legacy Telemetry categorical histogram BROWSER_SET_DEFAULT_USER_CHOICE_RESULT.
+"
   }
 
   dimension: metrics__labeled_counter__browser_tabswitch_spinner_visible_trigger {
     sql: ${TABLE}.metrics.labeled_counter.browser_tabswitch_spinner_visible_trigger ;;
     hidden: yes
+    description: "Diagnostic probe to aid in categorizing tab switch spinners. Records what most recently set the loadTimer to null if a spinner was displayed.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram FX_TAB_SWITCH_SPINNER_VISIBLE_TRIGGER.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_customized_widgets {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_customized_widgets ;;
     hidden: yes
+    description: "Records when widgets are added, removed or moved in the UI. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.customized_widgets.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_all_tabs_panel_entrypoint {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_all_tabs_panel_entrypoint ;;
     hidden: yes
+    description: "Records a count of how many times the All Tabs Panel was opened, keyed on a string describing the entrypoint. This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.all_tabs_panel_entrypoint.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_app_menu {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_app_menu ;;
     hidden: yes
+    description: "Records a count of interactions with items in the app menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.app_menu.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_bookmarks_bar {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_bookmarks_bar ;;
     hidden: yes
+    description: "Records a count of interactions with items in the bookmarks bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.bookmarks_bar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_content_context {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_content_context ;;
     hidden: yes
+    description: "Records a count of interactions with items in the content context menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.content_context.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
@@ -9437,176 +9665,246 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__browser_ui_interaction_list_all_tabs_action {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_list_all_tabs_action ;;
     hidden: yes
+    description: "Records how often users interact with any top-level menu option in the \"List All Tabs\" menu.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_menu_bar {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_menu_bar ;;
     hidden: yes
+    description: "Records a count of interactions with items in the menu bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.menu_bar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_nav_bar {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_nav_bar ;;
     hidden: yes
+    description: "Records a count of interactions with items in the nav bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.nav_bar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_overflow_menu {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_overflow_menu ;;
     hidden: yes
+    description: "Records a count of interactions with items in the overflow menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.overflow_menu.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_pageaction_panel {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pageaction_panel ;;
     hidden: yes
+    description: "Records a count of interactions with page action items in the panel. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pageaction_panel.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_pageaction_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pageaction_urlbar ;;
     hidden: yes
+    description: "Records a count of interactions with page action items in the url bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pageaction_urlbar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_pinned_overflow_menu {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_pinned_overflow_menu ;;
     hidden: yes
+    description: "Records a count of interactions with items in the pinned area of the overflow menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.pinned_overflow_menu.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_about {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_about ;;
     hidden: yes
+    description: "Records the items interacted with in the About Firefox section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_accessibility {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_accessibility ;;
     hidden: yes
+    description: "Records the items interacted with in the Accessibility section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_ai {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_ai ;;
     hidden: yes
+    description: "Records the items interacted with in the AI Controls section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_appearance {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_appearance ;;
     hidden: yes
+    description: "Records the items interacted with in the Appearance section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_containers {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_containers ;;
     hidden: yes
+    description: "Records the items interacted with in the Containers section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneContainers.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_downloads {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_downloads ;;
     hidden: yes
+    description: "Records the items interacted with in the Downloads section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_experimental {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_experimental ;;
     hidden: yes
+    description: "Records the items interacted with in the Experimental section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneExperimental.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_general {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_general ;;
     hidden: yes
+    description: "Records the items interacted with in the General section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneGeneral.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_home {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_home ;;
     hidden: yes
+    description: "Records the items interacted with in the Home section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneHome.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_languages {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_languages ;;
     hidden: yes
+    description: "Records the items interacted with in the Languages section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_more_from_mozilla {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_more_from_mozilla ;;
     hidden: yes
+    description: "Records the items interacted with in the More From Mozilla section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneMoreFromMozilla.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_passwords_autofill {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_passwords_autofill ;;
     hidden: yes
+    description: "Records the items interacted with in the Passwords and autofill section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_permissions_data {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_permissions_data ;;
     hidden: yes
+    description: "Records the items interacted with in the Permissions and data section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_privacy {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_privacy ;;
     hidden: yes
+    description: "Records the items interacted with in the Privacy section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_panePrivacy.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_search {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_search ;;
     hidden: yes
+    description: "Records the items interacted with in the Search section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSearch.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_search_results {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_search_results ;;
     hidden: yes
+    description: "Records the items interacted with in the Search results section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSearchResults.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_sync {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_sync ;;
     hidden: yes
+    description: "Records the items interacted with in the Sync section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneSync.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_tabs_browsing {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_tabs_browsing ;;
     hidden: yes
+    description: "Records the items interacted with in the Tabs and browsing section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_preferences_pane_unknown {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_preferences_pane_unknown ;;
     hidden: yes
+    description: "Records the items interacted with in any other section of preferences. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.preferences_paneUnknown.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_bookmarks {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_bookmarks ;;
     hidden: yes
+    description: "Records the count of actions taken within the sidebar Bookmarks panel.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_history {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_history ;;
     hidden: yes
+    description: "Records the count of actions taken within the sidebar History panel.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_sidebar_synced_tabs {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_sidebar_synced_tabs ;;
     hidden: yes
+    description: "Records the count of actions taken within the sidebar Synced Tabs panel.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_tab_movement {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tab_movement ;;
     hidden: yes
+    description: "Records information about user tab movements within the tab strip.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_tabs_bar {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_bar ;;
     hidden: yes
+    description: "Records a count of interactions with items in the tab bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_bar.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_tabs_context {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_context ;;
     hidden: yes
+    description: "Records a count of interactions with items in the tab context menu. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_context.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_tabs_context_entrypoint {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_tabs_context_entrypoint ;;
     hidden: yes
+    description: "Records a count for each entrypoint (the container of the trigger node) when an item from the tabs context menu is selected. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.tabs_context_entrypoint.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_unified_extensions_area {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_unified_extensions_area ;;
     hidden: yes
+    description: "Records a count of interactions with items in the Unified Extensions area. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.unified_extensions_area.
+"
   }
 
   dimension: metrics__labeled_counter__browser_ui_interaction_vertical_tabs_container {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_vertical_tabs_container ;;
     hidden: yes
+    description: "Records a count of interactions with items in the vertical tab bar. See https://firefox-source-docs.mozilla.org/browser/BrowserUsageTelemetry.html This metric was generated to correspond to the Legacy Telemetry scalar browser.ui.interaction.vertical_tabs_container.
+"
   }
 
   dimension: metrics__labeled_counter__cache_schema_init_error {
@@ -9738,21 +10036,25 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__content_analysis_connection_failure {
     sql: ${TABLE}.metrics.labeled_counter.content_analysis_connection_failure ;;
     hidden: yes
+    description: "Recorded when Firefox fails to connect to the DLP agent. The label is the nsresult that was returned by the connection attempt."
   }
 
   dimension: metrics__labeled_counter__content_analysis_request_sent_by_analysis_type {
     sql: ${TABLE}.metrics.labeled_counter.content_analysis_request_sent_by_analysis_type ;;
     hidden: yes
+    description: "Recorded when a request is sent to the DLP agent. The label is the analysisType of the request, which corresponds to a value in the AnalysisConnector enum in analysis.proto. (e.g. \"FILE_DOWNLOADED\", \"FILE_ATTACHED\", \"BULK_DATA_ENTRY\", etc.)"
   }
 
   dimension: metrics__labeled_counter__content_analysis_request_sent_by_reason {
     sql: ${TABLE}.metrics.labeled_counter.content_analysis_request_sent_by_reason ;;
     hidden: yes
+    description: "Recorded when a request is sent to the DLP agent. The label is the reason of the request, which corresponds to a value in the ContentAnalysisRequest::Reason enum in analysis.proto. (e.g. \"CLIPBOARD_PASTE\", \"DRAG_AND_DROP\", etc.)"
   }
 
   dimension: metrics__labeled_counter__content_analysis_response_action {
     sql: ${TABLE}.metrics.labeled_counter.content_analysis_response_action ;;
     hidden: yes
+    description: "Recorded when a response is received from the DLP agent. The label is the action of the response, converted to a string (so \"1\"). The values correspond to nsIContentAnalysisResponse::Action."
   }
 
   dimension: metrics__labeled_counter__contentblocking_canvas_fingerprinting_per_tab2 {
@@ -9766,7 +10068,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_cryptominers_blocked_count ;;
     hidden: yes
     description: "A count of the status of cryptominer blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one cryptominer was blocked, 'allowed' = at least one cryptominer was detected and allowed.) Note, pageLoad is used as a baseline measurement.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram CRYPTOMINERS_BLOCKED_COUNT.
 "
   }
 
@@ -9836,26 +10137,37 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__contextual_services_topsites_click {
     sql: ${TABLE}.metrics.labeled_counter.contextual_services_topsites_click ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user has clicked on the sponsored TopSites on the newtab page. The key is a combination of the source and the placement of the TopSites tile (1-based). such as 'urlbar_1', 'newtab_2'. This metric was generated to correspond to the Legacy Telemetry scalar contextual.services.topsites.click.
+"
   }
 
   dimension: metrics__labeled_counter__contextual_services_topsites_impression {
     sql: ${TABLE}.metrics.labeled_counter.contextual_services_topsites_impression ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user has viewed the sponsored TopSites on the newtab page. The key is a combination of the source and the placement of the TopSites tile (1-based). such as 'urlbar_1', 'newtab_2'. This metric was generated to correspond to the Legacy Telemetry scalar contextual.services.topsites.impression.
+"
   }
 
   dimension: metrics__labeled_counter__crash_submission_channel_status {
     sql: ${TABLE}.metrics.labeled_counter.crash_submission_channel_status ;;
     hidden: yes
+    description: "Collecting XHR channel status on error code when statusCode == 0.
+"
   }
 
   dimension: metrics__labeled_counter__crash_submission_collector_errors {
     sql: ${TABLE}.metrics.labeled_counter.crash_submission_collector_errors ;;
     hidden: yes
+    description: "Amount and error name reported when performing crash submission.
+"
   }
 
   dimension: metrics__labeled_counter__crash_submit_attempt {
     sql: ${TABLE}.metrics.labeled_counter.crash_submit_attempt ;;
     hidden: yes
+    description: "An attempt to submit a crash. Keyed on the CrashManager Crash.type.
+This metric was generated to correspond to the Legacy Telemetry count histogram PROCESS_CRASH_SUBMIT_ATTEMPT.
+"
   }
 
   dimension: metrics__labeled_counter__creditcard_detected_cc_number_fields_count {
@@ -10080,6 +10392,10 @@ DNR rules for extensions loaded on application startup.
   dimension: metrics__labeled_counter__extensions_button_temporarily_unhidden {
     sql: ${TABLE}.metrics.labeled_counter.extensions_button_temporarily_unhidden ;;
     hidden: yes
+    description: "Counts how often the hidden Extensions Button is temporarily shown. There are multiple possible triggers for showing the extensions button, only the first that would trigger the transition from hidden to shown is going to be counted. For example, if the button is shown because the \"attention\" dot is shown, and a permission prompt is shown, then we only count the trigger for the attention dot, not the permission prompt.
+customize is when the user entered Customize Mode, which causes the Extensions Button to show unconditionally until the user exits the mode.
+addon_install_doorhanger covers notifications related to add-on installations, including blocked installations, add-on download progress, and failed installations. Permission prompts are NOT part of this, but covered by extension_permission_prompt. A typical installation flow triggers both addon_install_doorhanger and extension_permission_prompt.
+extension_controlled_setting is when a notification is anchored to the Extensions Button that notifies the user"
   }
 
   dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
@@ -10125,6 +10441,8 @@ the extensions StartupCache file.
   dimension: metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
     sql: ${TABLE}.metrics.labeled_counter.firefox_ai_runtime_onnx_native_availability ;;
     hidden: yes
+    description: "Whether the native ONNX runtime could be loaded in the inference process, as reported by InferenceSession.isAvailable(). It is recorded at most once per profile, guarded by the browser.ml.onnxNativeAvailabilityReported pref.
+"
   }
 
   dimension: metrics__labeled_counter__fog_subdir_entry_err {
@@ -10311,6 +10629,9 @@ Now it only records counts for the Glean built-in pings.
   dimension: metrics__labeled_counter__history_sidebar_filter_type {
     sql: ${TABLE}.metrics.labeled_counter.history_sidebar_filter_type ;;
     hidden: yes
+    description: "The type of search filters used for the sidebar search.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram PLACES_SEARCHBAR_FILTER_TYPE.
+"
   }
 
   dimension: metrics__labeled_counter__htmleditors_overridden_by_beforeinput_listeners {
@@ -10553,16 +10874,22 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__library_link {
     sql: ${TABLE}.metrics.labeled_counter.library_link ;;
     hidden: yes
+    description: "The number of history or bookmark items opened from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.link.
+"
   }
 
   dimension: metrics__labeled_counter__library_opened {
     sql: ${TABLE}.metrics.labeled_counter.library_opened ;;
     hidden: yes
+    description: "The number of times the Library window was opened, keyed by 'history' or 'bookmarks' This metric was generated to correspond to the Legacy Telemetry scalar library.opened.
+"
   }
 
   dimension: metrics__labeled_counter__library_search {
     sql: ${TABLE}.metrics.labeled_counter.library_search ;;
     hidden: yes
+    description: "The number of history-specific or bookmark-specific searches made from the Library window This metric was generated to correspond to the Legacy Telemetry scalar library.search.
+"
   }
 
   dimension: metrics__labeled_counter__localdomstorage_preload_pending_on_first_access {
@@ -10692,6 +11019,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__migration_discovered_migrators {
     sql: ${TABLE}.metrics.labeled_counter.migration_discovered_migrators ;;
     hidden: yes
+    description: "A keyed uint recording how many times the migration wizard detected a browser / profile pair for a particular browser. This is incremented every time the discovery occurs, so multiple openings of the wizard will increase the counts each time. This metric was generated to correspond to the Legacy Telemetry scalar migration.discovered_migrators.
+"
   }
 
   dimension: metrics__labeled_counter__mixed_content_audio {
@@ -10891,6 +11220,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
     sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
     hidden: yes
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
+"
   }
 
   dimension: metrics__labeled_counter__network_ssl_token_cache_hits {
@@ -11391,11 +11722,15 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
   dimension: metrics__labeled_counter__os_environment_invoked_to_handle {
     sql: ${TABLE}.metrics.labeled_counter.os_environment_invoked_to_handle ;;
     hidden: yes
+    description: "Records counts for when Firefox was invoked (i.e., was already running and was not launched) to handle a file type or protocol with `-osint -url ...`.  The result is split into keys which represent the file extension: currently, the set of file types Firefox registers to handle, namely \".avif\", \".htm\", \".html\", \".pdf\", \".shtml\", \".xht\", \".xhtml\", \".svg\", \".webp\", and the set of protocol schemes that Firefox registers to handle, namely \"about\", \"http\", \"https\", \"mailto\".  If Firefox was invoked to handle a file type or protocol it does not register to handle by default, the count is recorded as \".<other extension>\" or \"<other protocol>\", respectively (neither of which are valid extension or protocol identifiers). This metric was generated to correspond to the Legacy Telemetry scalar os.environment.invoked_to_handle.
+"
   }
 
   dimension: metrics__labeled_counter__os_environment_launched_to_handle {
     sql: ${TABLE}.metrics.labeled_counter.os_environment_launched_to_handle ;;
     hidden: yes
+    description: "Records counts for when Firefox was launched afresh (i.e., was not already running) to handle a file type or protocol with `-osint -url ...`.  The result is split into keys which represent the file extension: currently, the set of file types Firefox registers to handle, namely \".avif\", \".htm\", \".html\", \".pdf\", \".shtml\", \".xht\", \".xhtml\", \".svg\", \".webp\", and the set of protocol schemes that Firefox registers to handle, namely \"about\", \"http\", \"https\", \"mailto\".  If Firefox was launched to handle a file type or protocol it does not register to handle by default, the count is recorded as \".<other extension>\" or \"<other protocol>\", respectively (neither of which are valid extension or protocol identifiers). This metric was generated to correspond to the Legacy Telemetry scalar os.environment.launched_to_handle.
+"
   }
 
   dimension: metrics__labeled_counter__oskeystore_dummy_storage {
@@ -11512,6 +11847,8 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
   dimension: metrics__labeled_counter__pinned_tabs_activations {
     sql: ${TABLE}.metrics.labeled_counter.pinned_tabs_activations ;;
     hidden: yes
+    description: "Records how many times a pinned tab gets activated.
+"
   }
 
   dimension: metrics__labeled_counter__pkcs11_builtin_roots_module_source {
@@ -11525,6 +11862,8 @@ This metric can be used to judge how HTTP3 connections behave in regard to their
   dimension: metrics__labeled_counter__places_semantic_history_indexing_stopped {
     sql: ${TABLE}.metrics.labeled_counter.places_semantic_history_indexing_stopped ;;
     hidden: yes
+    description: "Number of times background semantic-history indexing stopped advancing because recent chunks were too slow. The \"failsafe\" label counts the hard brake; the \"soft\" label counts stops gated on the minimum number of embeddings.
+"
   }
 
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
@@ -11689,11 +12028,15 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
   dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
     sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_handler_prompt_shown ;;
     hidden: yes
+    description: "A website was visited, which called registerProtocolHandler for mailto://
+"
   }
 
   dimension: metrics__labeled_counter__protocolhandler_mailto_prompt_clicked {
     sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_prompt_clicked ;;
     hidden: yes
+    description: "User clicked on a button to approve setting the current site as default web mail site. The sum of all counters is the total amount of user interactions and dismissing the same dialog often could be a sign of a bug.
+"
   }
 
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
@@ -11752,11 +12095,18 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
   dimension: metrics__labeled_counter__sap_deprecated_counts {
     sql: ${TABLE}.metrics.labeled_counter.sap_deprecated_counts ;;
     hidden: yes
+    description: "This is deprecated metric that should not be incoporated into dashboards. Use the `sap.counts` event instead.
+This metric has been added to Glean to aid transition of histograms and allow the legacy telemetry SEARCH_COUNTS to continue to be recorded.
+Records search counts for search access points. The format is: <engine-name>.<search-access-point>. For the urlbar when in search mode, the format is <engine name>.urlbar-searchmode. For the urlbar when an internal @engine shortcut is used, the format is: <engine-name>.alias.
+This metric was generated to correspond to the Legacy Telemetry count histogram SEARCH_COUNTS.
+"
   }
 
   dimension: metrics__labeled_counter__sap_impression_counts_contextmenu_visual {
     sql: ${TABLE}.metrics.labeled_counter.sap_impression_counts_contextmenu_visual ;;
     hidden: yes
+    description: "Count of impressions of the visual search context menu item. The counter's label is the engine's identifier if the engine is known at the time of impression and it's an app-provided engine. Otherwise the label is \"none\".
+"
   }
 
   dimension: metrics__labeled_counter__script_preloader_requests {
@@ -11770,11 +12120,27 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__search_service_initialization_status {
     sql: ${TABLE}.metrics.labeled_counter.search_service_initialization_status ;;
     hidden: yes
+    description: "Counts the type of initialization statuses on start up.
+
+- `failedSettings` failed loading and migrating the search settings file.
+- `failedFetchEngines` failed to load or parse the configuration from
+  remote settings.
+- `failedLoadEngines` failed to create all the search engines from the
+  configuration or user installed engines.
+- `failedLoadSettingsAddonManager` the addon manager ready promise was
+  rejected. (from Fx 135)
+- `settingsCorrupt` the search settings were reset because of an exception,
+  but the search service still finished initializing. (from Fx 136)
+- `success` the search service successfully initialized.
+"
   }
 
   dimension: metrics__labeled_counter__searchbar_selected_result_method {
     sql: ${TABLE}.metrics.labeled_counter.searchbar_selected_result_method ;;
     hidden: yes
+    description: "The input method the user used to select a result in the searchbar. 'enter' => The user hit the Enter key without choosing a result in the popup. 'enterSelection' => The user chose a result and then hit the Enter key. 'click' => The user clicked a result with the mouse.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram FX_SEARCHBAR_SELECTED_RESULT_METHOD.
+"
   }
 
   dimension: metrics__labeled_counter__security_client_auth_cert_usage {
@@ -11807,51 +12173,78 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__serp_ads_blocked_count {
     sql: ${TABLE}.metrics.labeled_counter.serp_ads_blocked_count ;;
     hidden: yes
+    description: "Counts the specific type of block.
+"
   }
 
   dimension: metrics__labeled_counter__session_restore_all_files_corrupt {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_all_files_corrupt ;;
     hidden: yes
+    description: "Session restore: Whether none of the backup files contained parse-able JSON
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_ALL_FILES_CORRUPT.
+"
   }
 
   dimension: metrics__labeled_counter__session_restore_corrupt_file {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_corrupt_file ;;
     hidden: yes
+    description: "Session restore: Whether the file read on startup contained parse-able JSON
+This metric was generated to correspond to the Legacy Telemetry boolean histogram FX_SESSION_RESTORE_CORRUPT_FILE.
+"
   }
 
   dimension: metrics__labeled_counter__session_restore_shutdown_flush_all_outcomes {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_flush_all_outcomes ;;
     hidden: yes
+    description: "The count of time-outs, abnormal shutdown and frameloader crashes observed during an async shutdown
+"
   }
 
   dimension: metrics__labeled_counter__session_restore_shutdown_ok {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_ok ;;
     hidden: yes
+    description: "Did the browser start after a successful shutdown
+This metric was generated to correspond to the Legacy Telemetry boolean histogram SHUTDOWN_OK.
+"
   }
 
   dimension: metrics__labeled_counter__session_restore_shutdown_type {
     sql: ${TABLE}.metrics.labeled_counter.session_restore_shutdown_type ;;
     hidden: yes
+    description: "On quit-application-granted, is the shutdown sync (immediate) or async
+"
   }
 
   dimension: metrics__labeled_counter__sidebar_link {
     sql: ${TABLE}.metrics.labeled_counter.sidebar_link ;;
     hidden: yes
+    description: "The number of links opened from the sidebar, labeled by which sidebar
+panel the click originated from:
+  - bookmarks: a bookmark opened from the Bookmarks sidebar panel
+  - history: a history link opened from the History sidebar panel
+  - synced_tabs: a synced tab opened from the Synced Tabs sidebar
+"
   }
 
   dimension: metrics__labeled_counter__sidebar_search {
     sql: ${TABLE}.metrics.labeled_counter.sidebar_search ;;
     hidden: yes
+    description: "The number of searches from the sidebar, per view (e.g.: bookmarks, history). This metric was generated to correspond to the Legacy Telemetry scalar sidebar.search.
+"
   }
 
   dimension: metrics__labeled_counter__smart_window_bookmarkbar {
     sql: ${TABLE}.metrics.labeled_counter.smart_window_bookmarkbar ;;
     hidden: yes
+    description: "Bookmark bar adoption originating from the Smart Window new tab, when the \"Only show on New Tab\" bookmarks toolbar setting is enabled. The \"opened\" label counts each time the user opens a bookmark from the bookmarks toolbar while on the Smart Window new tab.
+"
   }
 
   dimension: metrics__labeled_counter__splitview_uri_count {
     sql: ${TABLE}.metrics.labeled_counter.splitview_uri_count ;;
     hidden: yes
+    description: "Records how many URIs were loaded on each side of the splitview.
+"
   }
 
   dimension: metrics__labeled_counter__ssl_resumed_session {
@@ -11905,66 +12298,98 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
   dimension: metrics__labeled_counter__suggest_relevance_outcome {
     sql: ${TABLE}.metrics.labeled_counter.suggest_relevance_outcome ;;
     hidden: yes
+    description: "For each successful scoring, count whether the relevance score gets boosted or decreased over the original score. Note that given how the score is calculated, it's practically impossible to have the two scores tied. If that's the case anyhow, it will increment the \"boosted\" counter.
+"
   }
 
   dimension: metrics__labeled_counter__suggest_relevance_status {
     sql: ${TABLE}.metrics.labeled_counter.suggest_relevance_status ;;
     hidden: yes
+    description: "Count the successful / failed attempts of relevance scoring in Firefox Suggest.
+"
   }
 
   dimension: metrics__labeled_counter__tab_actions {
     sql: ${TABLE}.metrics.labeled_counter.tab_actions ;;
     hidden: yes
+    description: "Records how many times the user invoked a specific action regardless of how many tabs were included in the action.
+"
   }
 
   dimension: metrics__labeled_counter__tab_stale_drag_recovery {
     sql: ${TABLE}.metrics.labeled_counter.tab_stale_drag_recovery ;;
     hidden: yes
+    description: "Records how often the tab strip had to recover from a tab drag that never ended, leaving the toolbar unusable. \"session_live\" means a drag session was still current, i.e. the session outlived the drag; \"session_ended\" means none was left, i.e. the end of the drag never reached the tab strip. The \"_after_drop\" variants mean the drag was dropped and the drop animation is what failed to leave moving-tab mode, so they measure a Firefox shortcoming while the others measure a platform one.
+"
   }
 
   dimension: metrics__labeled_counter__tab_tab_count {
     sql: ${TABLE}.metrics.labeled_counter.tab_tab_count ;;
     hidden: yes
+    description: "Records how many tabs were impacted by actions the user took.
+"
   }
 
   dimension: metrics__labeled_counter__tabgroup_group_interactions {
     sql: ${TABLE}.metrics.labeled_counter.tabgroup_group_interactions ;;
     hidden: yes
+    description: "Records interactions with tab groups: expand/collapse; rename, change color; save/reopen/delete; ungroup tabs; open from tab menu/recent/ Awesomebar; move to another window; copy all links
+"
   }
 
   dimension: metrics__labeled_counter__tabgroup_tab_interactions {
     sql: ${TABLE}.metrics.labeled_counter.tabgroup_tab_interactions ;;
     hidden: yes
+    description: "Records interactions with tabs related to a group: open, add tab to group, duplicate, create a new tab, close a tab, reorder, and remove from group
+"
   }
 
   dimension: metrics__labeled_counter__telemetry_event_ping_sent {
     sql: ${TABLE}.metrics.labeled_counter.telemetry_event_ping_sent ;;
     hidden: yes
+    description: "Number of 'event' pings sent, by reason
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_PING_SENT.
+"
   }
 
   dimension: metrics__labeled_counter__telemetry_event_recording_error {
     sql: ${TABLE}.metrics.labeled_counter.telemetry_event_recording_error ;;
     hidden: yes
+    description: "Number of event recording failures, by type of failure
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_RECORDING_ERROR.
+"
   }
 
   dimension: metrics__labeled_counter__telemetry_event_registration_error {
     sql: ${TABLE}.metrics.labeled_counter.telemetry_event_registration_error ;;
     hidden: yes
+    description: "Number of event registration failures, by field causing the failure
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_EVENT_REGISTRATION_ERROR.
+"
   }
 
   dimension: metrics__labeled_counter__telemetry_invalid_ping_type_submitted {
     sql: ${TABLE}.metrics.labeled_counter.telemetry_invalid_ping_type_submitted ;;
     hidden: yes
+    description: "Count of individual invalid ping types that were submitted to Telemetry.
+This metric was generated to correspond to the Legacy Telemetry count histogram TELEMETRY_INVALID_PING_TYPE_SUBMITTED.
+"
   }
 
   dimension: metrics__labeled_counter__telemetry_send_failure_type {
     sql: ${TABLE}.metrics.labeled_counter.telemetry_send_failure_type ;;
     hidden: yes
+    description: "Counts of the different ways sending a Telemetry ping can fail.
+This metric was generated to correspond to the Legacy Telemetry categorical histogram TELEMETRY_SEND_FAILURE_TYPE.
+"
   }
 
   dimension: metrics__labeled_counter__telemetry_success {
     sql: ${TABLE}.metrics.labeled_counter.telemetry_success ;;
     hidden: yes
+    description: "Successful telemetry submission
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TELEMETRY_SUCCESS.
+"
   }
 
   dimension: metrics__labeled_counter__tls_auth_algorithm {
@@ -12035,6 +12460,8 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
   dimension: metrics__labeled_counter__update_bitshresult {
     sql: ${TABLE}.metrics.labeled_counter.update_bitshresult ;;
     hidden: yes
+    description: "If a BITS download fails on the Windows side (that is to say, BITS ecounters an error rather than Firefox failing to interact with BITS), it will likely give an hresult error indicating what happened. This probe reports those error codes to allow us to see if BITS is commonly failing on some systems. This probe is keyed on the type of update download, either \"PARTIAL\" or \"COMPLETE\". This metric was generated to correspond to the Legacy Telemetry scalar update.bitshresult.
+"
   }
 
   dimension: metrics__labeled_counter__update_can_use_bits_external {
@@ -12088,6 +12515,8 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
   dimension: metrics__labeled_counter__update_move_result {
     sql: ${TABLE}.metrics.labeled_counter.update_move_result ;;
     hidden: yes
+    description: "Firefox keeps downloading updates in a different place from updates that are ready to install. Once the download completes, the resulting file has to be moved from the downloading update directory to the ready update directory. This probe counts the results that we get when attempting to perform this file move. Valid values for the keys for this probe are stored in the MOVE_RESULT_* values in UpdateTelemetry.sys.mjs. This metric was generated to correspond to the Legacy Telemetry scalar update.move_result.
+"
   }
 
   dimension: metrics__labeled_counter__update_notification_badge_shown {
@@ -12157,101 +12586,141 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__urlbar_autofill_input_context_menu_dismissal {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_input_context_menu_dismissal ;;
     hidden: yes
+    description: "Counts how many times the user dismissed a heuristic autofill result via the urlbar input's right-click context menu. Labeled by which menu item was used: `dismiss` only blocks the autofill pairing, `forget` also removes the page from history.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_autofill_reintegration {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_autofill_reintegration ;;
     hidden: yes
+    description: "Counts how many times a blocked autofill result was reintegrated (unblocked) because the user picked the same URL as a non-autofill history result.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_quickaction_picked {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_quickaction_picked ;;
     hidden: yes
+    description: "Counts how many times quickaction results were selected. The key is the in the form \"actionkey-N\" where N is the number of characters the user typed to be shown the action. This metric was generated to correspond to the Legacy Telemetry scalar quickaction.picked.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_bookmarkmenu {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_bookmarkmenu ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecing the Search Bookmarks menu item in the Library menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.bookmarkmenu.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_handoff {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_handoff ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after being handed off from the search bar on the new tab page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.handoff.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_historymenu {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_historymenu ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecing the Search History menu item in a History menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.historymenu.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_keywordoffer {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_keywordoffer ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a keyword offer result. The scalar key for local search modes entered using a restrict keyword will be suffixed with \"keyword\". For example: tabs_keyword, bookmarks_keyword, history_keyword, and actions_keyword. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.keywordoffer.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_messaging_system {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_messaging_system ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode through the messaging system.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_oneoff {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_oneoff ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a one-off. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.oneoff.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_other {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_other ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode from an unknown entry point. If values appear for this probe in Telemetry, we should review the entry points to search mode. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.other.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_searchbutton {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_searchbutton ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode by unified search button. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.searchbutton.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_shortcut {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_shortcut ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after pressing a keyboard shortcut. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.shortcut.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_tabmenu {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabmenu ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting the Search Tabs menu item in the Tab Overflow menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabmenu.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_tabtosearch {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabtosearch ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a tab-to-search result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabtosearch.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_tabtosearch_onboard {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_tabtosearch_onboard ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a tab-to-search onboarding result. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.tabtosearch_onboard.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_topsites_newtab {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_topsites_newtab ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut Top Site on the New Tab Page. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.topsites_newtab.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_topsites_urlbar {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_topsites_urlbar ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut Top Site in the Urlbar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.topsites_urlbar.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_touchbar {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_touchbar ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after selecting a search shortcut on the macOS Touch Bar. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.touchbar.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_searchmode_typed {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_searchmode_typed ;;
     hidden: yes
+    description: "A keyed uint recording how many times the user entered a particular search mode after typing an alias. The scalar keys for local search modes entered by typing a restrict keyword will be suffixed with \"keyword\". For example: tabs_keyword, bookmarks_keyword, history_keyword, and actions_keyword. If instead search mode was entered by typing a restrict symbol the key will be suffixed with \"symbol\" (e.g. typing \"%\" will generate \"tabs_symbol\"). This metric was generated to correspond to the Legacy Telemetry scalar urlbar.searchmode.typed.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_unifiedsearchbutton_picked {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_unifiedsearchbutton_picked ;;
     hidden: yes
+    description: "Counts how many times Unified Search Button items were selected. The key is followings. * builtin_search: Builtin search engine. * addon_search: Addon search engine. * local_search: Local search engine such as Bookmarks. * settings: Settings menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.picked.
+"
   }
 
   dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {
@@ -12505,46 +12974,87 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__widget_touch_enabled_device {
     sql: ${TABLE}.metrics.labeled_counter.widget_touch_enabled_device ;;
     hidden: yes
+    description: "Boolean indicating if a touch input device is detected.
+This metric was generated to correspond to the Legacy Telemetry boolean histogram TOUCH_ENABLED_DEVICE.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_engagement_consecutive_active_ticks {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_engagement_consecutive_active_ticks ;;
     hidden: yes
+    description: "Distribution of the number of consecutive five-second intervals ('ticks')
+the user was considered 'active' before transitioning to inactive.
+
+Each sample is the length of one uninterrupted run of active ticks,
+recorded when the run ends. This complements the `active_ticks` counters
+(which only track the total) by capturing how long users stay
+continuously engaged, and helps inform whether additional active-tick
+intervals should be introduced in the future.
+
+The `active_ticks` label mirrors the legacy `active_ticks` counter,
+counting all events. The `active_ticks_non_synthesized` label mirrors
+`active_ticks_non_synthesized`, excluding synthesized mouse and pointer
+events. The two labels are recorded side-by-side for easier analysis.
+
+A run still in progress when a ping is submitted is not recorded in that
+ping; it is recorded in a later ping once the run ends.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_migration_bookmarks_quantity {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_bookmarks_quantity ;;
     hidden: yes
+    description: "How many bookmarks we imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_BOOKMARKS_QUANTITY.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_migration_cards_quantity {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_cards_quantity ;;
     hidden: yes
+    description: "How many credit card entries we imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_CARDS_QUANTITY.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_migration_errors {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_errors ;;
     hidden: yes
+    description: "Errors encountered during migration in buckets defined by the datatype, keyed by the string description of the browser.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_MIGRATION_ERRORS.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_migration_extensions_quantity {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_extensions_quantity ;;
     hidden: yes
+    description: "How many extensions were matched to be imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_EXTENSIONS_QUANTITY.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_migration_history_quantity {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_history_quantity ;;
     hidden: yes
+    description: "How many history visits we imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_HISTORY_QUANTITY.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_migration_logins_quantity {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_logins_quantity ;;
     hidden: yes
+    description: "How many logins (passwords) we imported from another browser, keyed by the name of the browser.
+This metric was generated to correspond to the Legacy Telemetry exponential histogram FX_MIGRATION_LOGINS_QUANTITY.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__browser_migration_usage {
     sql: ${TABLE}.metrics.labeled_custom_distribution.browser_migration_usage ;;
     hidden: yes
+    description: "Usage of migration for each datatype when migration is run through the post-firstrun flow which allows individual datatypes, keyed by the string description of the browser.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram FX_MIGRATION_USAGE.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__contentblocking_canvas_fingerprinting_per_tab {
@@ -12651,6 +13161,9 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
   dimension: metrics__labeled_custom_distribution__firefoxview_cumulative_searches {
     sql: ${TABLE}.metrics.labeled_custom_distribution.firefoxview_cumulative_searches ;;
     hidden: yes
+    description: "Cumulative no. of searches performed before selecting a resulting tab.
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram FIREFOX_VIEW_CUMULATIVE_SEARCHES.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__gfx_content_large_paint_phase_weight_full {
@@ -12891,6 +13404,9 @@ The bucket with the 'exited_ce' label is of special interest, since those are co
   dimension: metrics__labeled_custom_distribution__popup_notification_stats {
     sql: ${TABLE}.metrics.labeled_custom_distribution.popup_notification_stats ;;
     hidden: yes
+    description: "(Bug 1207089) Usage of popup notifications, keyed by ID (0 = Offered, 1..4 = Action (3 is unused), 5 = Click outside (unused), 6 = Leave page, 7 = Use 'X' (unused), 8 = Not now (unused), 10 = Open submenu, 11 = Learn more. Add 20 if happened after reopen.)
+This metric was generated to correspond to the Legacy Telemetry enumerated histogram POPUP_NOTIFICATION_STATS.
+"
   }
 
   dimension: metrics__labeled_custom_distribution__quotamanager_initialize_repository_number_of_iterations {
@@ -13048,6 +13564,17 @@ Previously carried in Legacy \"main\" ping `simpleMeasurements`.
   dimension: metrics__labeled_quantity__browser_searchinit_engine_invalid_webextension {
     sql: ${TABLE}.metrics.labeled_quantity.browser_searchinit_engine_invalid_webextension ;;
     hidden: yes
+    description: "Records when a search engine details are not in sync with the associated
+WebExtension. The labels are the WebExtension identifiers.
+The values are a custom enumeration with meanings being where the WebExtension:
+
+1. is not installed
+2. is disabled
+3. (Unused, replaced by 6 which has a better algorithm)
+4. no longer specifies a search engine
+5. has a different name for the search engine
+6. has a different submission URL to the search engine
+"
   }
 
   dimension: metrics__labeled_quantity__browser_timings_startup_timeline {
@@ -13068,76 +13595,132 @@ Previously carried in the Legacy \"main\" ping `simpleMeasurements`.
   dimension: metrics__labeled_quantity__pinned_tabs_count {
     sql: ${TABLE}.metrics.labeled_quantity.pinned_tabs_count ;;
     hidden: yes
+    description: "Records how many pinned tabs the user currently has across all windows.
+"
   }
 
   dimension: metrics__labeled_quantity__search_counts_hidden_engines {
     sql: ${TABLE}.metrics.labeled_quantity.search_counts_hidden_engines ;;
     hidden: yes
+    description: "Records the count of hidden search engines.
+
+- `oneOff` refers to an engine hidden from only the one-off buttons or
+  the unified search button.
+- `disabled` refers to an engine that has been disabled from the whole
+  application, e.g. removed from the old settings (prior to FF 152) or
+  disabled in the new settings (FF 152 & later).
+"
   }
 
   dimension: metrics__labeled_quantity__search_counts_totals {
     sql: ${TABLE}.metrics.labeled_quantity.search_counts_totals ;;
     hidden: yes
+    description: "Records the type and number of search engines that a user has installed
+and enabled.
+
+The total of all labels is the total count of search engines installed.
+
+- `appProvidedConfig` refers to the search engine integrations provided by
+  the application.
+- `userInstalledConfig` refers to engines from the application's
+  configuration that the user has chosen to install.
+- `openSearch` refers to an engine installed via a web page providing an
+  \"OpenSearch\" definition.
+- `addon` refers to an engine linked to a particular add-on.
+- `policy` refers to an engine added by an enterprise policy.
+- `user` refers to an engine a user has added, e.g. via the settings
+  UI to add an engine, or via right-clicking on a search field on a web
+  page.
+"
   }
 
   dimension: metrics__labeled_quantity__session_restore_startup_timeline {
     sql: ${TABLE}.metrics.labeled_quantity.session_restore_startup_timeline ;;
     hidden: yes
+    description: "Events on the startup timeline, in millis since process creation.
+Previously carried in Legacy \"main\" ping `simpleMeasurements`.
+"
   }
 
   dimension: metrics__labeled_quantity__smart_window_memories_count {
     sql: ${TABLE}.metrics.labeled_quantity.smart_window_memories_count ;;
     hidden: yes
+    description: "Number of memories stored for a user, split by source
+"
   }
 
   dimension: metrics__labeled_quantity__startup_io_read {
     sql: ${TABLE}.metrics.labeled_quantity.startup_io_read ;;
     hidden: yes
+    description: "Windows-only.
+Cumulative bytes read by the application according to the OS, per startup
+phase.
+"
   }
 
   dimension: metrics__labeled_quantity__startup_io_write {
     sql: ${TABLE}.metrics.labeled_quantity.startup_io_write ;;
     hidden: yes
+    description: "Windows-only.
+Cumulative bytes written by the application according to the OS, per startup
+phase.
+"
   }
 
   dimension: metrics__labeled_quantity__tabgroup_active_groups {
     sql: ${TABLE}.metrics.labeled_quantity.tabgroup_active_groups ;;
     hidden: yes
+    description: "Records the number of groups present in the tab bar, split by expanded or collapsed.
+"
   }
 
   dimension: metrics__labeled_quantity__tabgroup_tab_count_in_groups {
     sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tab_count_in_groups ;;
     hidden: yes
+    description: "Records the latest number of tabs in the tab bar, split by being inside a group or outside.
+"
   }
 
   dimension: metrics__labeled_quantity__tabgroup_tabs_per_active_group {
     sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_active_group ;;
     hidden: yes
+    description: "Records statistics about the number of tabs per active group: max, median, average and min.
+"
   }
 
   dimension: metrics__labeled_quantity__tabgroup_tabs_per_saved_group {
     sql: ${TABLE}.metrics.labeled_quantity.tabgroup_tabs_per_saved_group ;;
     hidden: yes
+    description: "Records statistics about the number of tabs per saved tab group: max, median, average and min.
+"
   }
 
   dimension: metrics__labeled_string__ads_client_build_cache_error {
     sql: ${TABLE}.metrics.labeled_string.ads_client_build_cache_error ;;
     hidden: yes
+    description: "Errors encountered when building the HTTP cache, labeled by error type. The string value contains the error message or error type.
+"
   }
 
   dimension: metrics__labeled_string__ads_client_client_error {
     sql: ${TABLE}.metrics.labeled_string.ads_client_client_error ;;
     hidden: yes
+    description: "Errors encountered when using the ads client, labeled by operation type. The string value contains the error message or error type. Errors are recorded even if they are propagated to the consumer.
+"
   }
 
   dimension: metrics__labeled_string__ads_client_deserialization_error {
     sql: ${TABLE}.metrics.labeled_string.ads_client_deserialization_error ;;
     hidden: yes
+    description: "Deserialization errors encountered when parsing AdResponse data, labeled by error type. The string value contains the error message or details. Invalid ad items are skipped but these errors are tracked for monitoring data quality issues.
+"
   }
 
   dimension: metrics__labeled_string__ads_client_http_cache_outcome {
     sql: ${TABLE}.metrics.labeled_string.ads_client_http_cache_outcome ;;
     hidden: yes
+    description: "The total number of outcomes encountered during read operations on the http cache, labeled by type. The string value contains the error message or error type.
+"
   }
 
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
@@ -13150,16 +13733,37 @@ Previously carried in the Legacy \"main\" ping `simpleMeasurements`.
   dimension: metrics__labeled_string__places_places_database_corruption_handling_stage {
     sql: ${TABLE}.metrics.labeled_string.places_places_database_corruption_handling_stage ;;
     hidden: yes
+    description: "PLACES - stage reached when trying to fix a database corruption, see Places::Database::eCorruptDBReplaceStage.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__browser_engagement_inactive_period_duration {
     sql: ${TABLE}.metrics.labeled_timing_distribution.browser_engagement_inactive_period_duration ;;
     hidden: yes
+    description: "Distribution of the duration of periods during which the user was
+considered 'inactive', measured from when the user goes inactive until
+the next activity resumes.
+
+Combined with `consecutive_active_ticks`, this helps reason about user
+interaction patterns more holistically and informs whether additional
+active-tick intervals (e.g. 20s or 60s) should be introduced in the
+future.
+
+The `active_ticks` label measures inactive periods for the legacy stream
+(all events). The `active_ticks_non_synthesized` label measures them for
+the corrected stream, which excludes synthesized mouse and pointer
+events. The two labels are recorded side-by-side for easier analysis.
+
+An inactive period still in progress when a ping is submitted is not
+recorded in that ping; it is recorded in a later ping once activity
+resumes.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__content_analysis_response_duration_by_analysis_type {
     sql: ${TABLE}.metrics.labeled_timing_distribution.content_analysis_response_duration_by_analysis_type ;;
     hidden: yes
+    description: "The time between sending a request to the DLP agent and receiving a response from the agent. The label is the analysisType of the request."
   }
 
   dimension: metrics__labeled_timing_distribution__cycle_collector_async_snow_white_freeing {
@@ -13758,16 +14362,33 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__popup_notification_dismissal {
     sql: ${TABLE}.metrics.labeled_timing_distribution.popup_notification_dismissal ;;
     hidden: yes
+    description: "(Bug 1207089) Time in ms between displaying a popup notification and dismissing it without an action the first time, keyed by ID
+This metric was generated to correspond to the Legacy Telemetry exponential histogram POPUP_NOTIFICATION_DISMISSAL_MS.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__popup_notification_main_action {
     sql: ${TABLE}.metrics.labeled_timing_distribution.popup_notification_main_action ;;
     hidden: yes
+    description: "(Bug 1207089) Time in ms between initially requesting a popup notification and triggering the main action, keyed by ID
+This metric was generated to correspond to the Legacy Telemetry exponential histogram POPUP_NOTIFICATION_MAIN_ACTION_MS.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__search_suggestions_latency {
     sql: ${TABLE}.metrics.labeled_timing_distribution.search_suggestions_latency ;;
     hidden: yes
+    description: "Records the latencies (ms) of search suggestions fetches per configuration
+search engine. Labels in this distribution are the search engine identifier
+from the configuration.
+
+This metric was renamed in Gecko 144 from `search.suggestions_latency`
+and changed to report the search engine identifier rather than the telemetry
+identifier.
+
+This metric was changed in Gecko 156 to not record data from non-configuration
+search engines.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__security_https_only_mode_upgrade_time {
@@ -13821,26 +14442,33 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
   dimension: metrics__labeled_timing_distribution__suggest_ingest_download_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_download_time ;;
     hidden: yes
+    description: "Download time for ingestion, labelled by record type"
   }
 
   dimension: metrics__labeled_timing_distribution__suggest_ingest_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_ingest_time ;;
     hidden: yes
+    description: "Time for ingestion (excluding download time), labelled by record type"
   }
 
   dimension: metrics__labeled_timing_distribution__suggest_query_time {
     sql: ${TABLE}.metrics.labeled_timing_distribution.suggest_query_time ;;
     hidden: yes
+    description: "Time executing queries, labelled by provider type"
   }
 
   dimension: metrics__labeled_timing_distribution__urlbar_autofill_reintegration_after_backspace {
     sql: ${TABLE}.metrics.labeled_timing_distribution.urlbar_autofill_reintegration_after_backspace ;;
     hidden: yes
+    description: "Time elapsed between a backspace-induced autofill block and the user re-integrating the same destination by picking it as a non-autofill history result in the same session. Only samples re-integrations of blocks that were set via consecutive backspaces on an autofilled value, blocks set via the result menu Dismiss action do not contribute samples. Labeled by whether the cleared block was at the origin or page-URL level.
+"
   }
 
   dimension: metrics__labeled_timing_distribution__urlbar_merino_latency_by_response_status {
     sql: ${TABLE}.metrics.labeled_timing_distribution.urlbar_merino_latency_by_response_status ;;
     hidden: yes
+    description: "Duration from when the client sends a request to Merino to when the client receives a response, labeled by response status code. Labels are dynamic. For non-OHTTP requests, labels are simply the numeric status code, e.g., \"200\". For OHTTP requests, labels are `${status}_ohttp`, e.g., \"200_ohttp\".
+"
   }
 
   dimension: metrics__labeled_timing_distribution__urlclassifier_cl_keyed_update_time {
@@ -16929,21 +17557,28 @@ Previously reported in \"main\" ping `simpleMeasurements`.
   dimension: metrics__string_list__background_update_reasons_to_not_update {
     sql: ${TABLE}.metrics.string_list.background_update_reasons_to_not_update ;;
     hidden: yes
+    description: "Records which error was causing the background updater to fail. This list supercedes the `background-update.reason` in `mozapps/update/metrics.yaml`
+"
   }
 
   dimension: metrics__string_list__browser_migration_matched_extensions {
     sql: ${TABLE}.metrics.string_list.browser_migration_matched_extensions ;;
     hidden: yes
+    description: "Records a list of the Chrome extension IDs that were successfully matched to Firefox equivalents from the list downloaded from AMO.
+"
   }
 
   dimension: metrics__string_list__browser_migration_unmatched_extensions {
     sql: ${TABLE}.metrics.string_list.browser_migration_unmatched_extensions ;;
     hidden: yes
+    description: "Records a list of the Chrome extension IDs that were unsuccessfully matched to Firefox equivalents from the list downloaded from AMO.
+"
   }
 
   dimension: metrics__string_list__content_analysis_interception_points_turned_off {
     sql: ${TABLE}.metrics.string_list.content_analysis_interception_points_turned_off ;;
     hidden: yes
+    description: "The interception points that are turned off via enterprise policy."
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
@@ -17015,16 +17650,25 @@ This metric is only attached to a ping if it already contains other data.
   dimension: metrics__string_list__windows_security_antispyware {
     sql: ${TABLE}.metrics.string_list.windows_security_antispyware ;;
     hidden: yes
+    description: "Product names of registered antispyware programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__windows_security_antivirus {
     sql: ${TABLE}.metrics.string_list.windows_security_antivirus ;;
     hidden: yes
+    description: "Product names of registered antivirus programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__windows_security_firewall {
     sql: ${TABLE}.metrics.string_list.windows_security_firewall ;;
     hidden: yes
+    description: "Product names of registered firewall programs.
+Windows only.
+"
   }
 
   dimension: metrics__string_list__xpi_database_startup_load_reasons {
@@ -22624,6 +23268,22 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__url__search_engine_default_submission_url {
+    sql: ${TABLE}.metrics.url.search_engine_default_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: URL"
+    group_item_label: "Search Engine Default Submission URL"
+  }
+
+  dimension: metrics__url__search_engine_private_submission_url {
+    sql: ${TABLE}.metrics.url.search_engine_private_submission_url ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: URL"
+    group_item_label: "Search Engine Private Submission URL"
+  }
+
   dimension: metrics__url2__search_engine_default_submission_url {
     sql: ${TABLE}.metrics.url2.search_engine_default_submission_url ;;
     type: string
@@ -22793,6 +23453,21 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     label: "Metadata: Header: Parsed Date"
   }
 
+  dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
+    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics: Datetime: Background Update Time Last Update Scheduled"
+  }
+
   dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
     sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
     type: time
@@ -22866,6 +23541,51 @@ Previously reported in \"main\" ping `simpleMeasurements`.
       year,
     ]
     label: "Metrics: Datetime: Blocklist Mlbf Stash Time Oldest"
+  }
+
+  dimension_group: metrics__datetime__legacy_telemetry_session_start {
+    sql: ${TABLE}.metrics.datetime.legacy_telemetry_session_start_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics: Datetime: Legacy Telemetry Session Start Date"
+  }
+
+  dimension_group: metrics__datetime__smart_window_memories_last_updated {
+    sql: ${TABLE}.metrics.datetime.smart_window_memories_last_updated ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics: Datetime: Smart Window Memories Last Updated"
+  }
+
+  dimension_group: metrics__datetime__termsofuse {
+    sql: ${TABLE}.metrics.datetime.termsofuse_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics: Datetime: Termsofuse Date"
   }
 
   dimension_group: ping_info__parsed_end {

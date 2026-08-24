@@ -10600,6 +10600,23 @@ startup function is called to when the startup promise resolves.
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
+    label: "Firefox Ai Runtime: Onnx Native Availability"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_ai_runtime_onnx_native_availability ;;
+    group_label: "Firefox Ai Runtime"
+    group_item_label: "Onnx Native Availability"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Ai Runtime: Onnx Native Availability"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/firefox_ai_runtime_onnx_native_availability"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the native ONNX runtime could be loaded in the inference process, as reported by InferenceSession.isAvailable(). It is recorded at most once per profile, guarded by the browser.ml.onnxNativeAvailabilityReported pref.
+"
+  }
+
   dimension: metrics__boolean__fission_enabled {
     label: "Fission: Enabled"
     hidden: no
@@ -18545,6 +18562,23 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "Counts the status of fallback requests to aus5.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
+    label: "Network: SSL Token Cache DB Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
+    group_label: "Network"
+    group_item_label: "SSL Token Cache DB Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Network: SSL Token Cache DB Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_ssl_token_cache_db_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
 "
   }
 
@@ -47812,6 +47846,47 @@ view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
   }
 }
 
+view: metrics__metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
+  label: "Firefox Ai Runtime: Onnx Native Availability"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__fog_subdir_entry_err {
   label: "Fog: Subdir Entry Err"
 
@@ -53185,6 +53260,47 @@ view: metrics__metrics__labeled_counter__network_retried_system_channel_telemetr
 
 view: metrics__metrics__labeled_counter__network_retried_system_channel_update_status {
   label: "Network: Retried System Channel Update Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_ssl_token_cache_db_errors {
+  label: "Network: SSL Token Cache DB Errors"
 
   dimension: document_id {
     type: string

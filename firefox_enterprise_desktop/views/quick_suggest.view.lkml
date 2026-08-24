@@ -1,0 +1,1281 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
+view: quick_suggest {
+  dimension: metrics__string__quick_suggest_advertiser {
+    label: "Quick Suggest: Advertiser"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_advertiser ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Advertiser"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Advertiser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_advertiser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the advertiser providing the sponsored TopSite.
+"
+  }
+
+  dimension: metrics__string__quick_suggest_block_id {
+    label: "Quick Suggest: Block ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_block_id ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Block ID"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Block ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_block_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A unique identifier for the suggestion (a.k.a. a keywords block).
+"
+  }
+
+  dimension: metrics__uuid__quick_suggest_context_id {
+    label: "Quick Suggest: Context ID"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.quick_suggest_context_id ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Context ID"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Context ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_context_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An identifier to identify users for Contextual Services user interaction pings.
+"
+  }
+
+  dimension: metrics__string__quick_suggest_country {
+    label: "Quick Suggest: Country"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_country ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Country"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Country"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_country"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the home region of the user as determined by `Region.sys.mjs` and the `browser.search.region` pref.
+"
+  }
+
+  dimension: metrics__string__quick_suggest_iab_category {
+    label: "Quick Suggest: Iab Category"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_iab_category ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Iab Category"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Iab Category"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_iab_category"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The suggestion's category. Either \"22 - Shopping\" or \"5 - Educational\".
+"
+  }
+
+  dimension: metrics__boolean__quick_suggest_improve_suggest_experience {
+    label: "Quick Suggest: Improve Suggest Experience"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.quick_suggest_improve_suggest_experience ;;
+    type: yesno
+    group_label: "Quick Suggest"
+    group_item_label: "Improve Suggest Experience"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Improve Suggest Experience"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_improve_suggest_experience"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether online Suggest is available to the user and enabled.
+"
+  }
+
+  dimension: metrics__boolean__quick_suggest_is_clicked {
+    label: "Quick Suggest: Is Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.quick_suggest_is_clicked ;;
+    type: yesno
+    group_label: "Quick Suggest"
+    group_item_label: "Is Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Is Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_is_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether this quicksuggest-impression ping was for an item that was clicked.
+"
+  }
+
+  dimension: metrics__string__quick_suggest_match_type {
+    label: "Quick Suggest: Match Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_match_type ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Match Type"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Match Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_match_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether this was a best/top match or not. Either \"best-match\" or \"firefox-suggest\".
+"
+  }
+
+  dimension: metrics__string__quick_suggest_ping_type {
+    label: "Quick Suggest: Ping Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_ping_type ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Ping Type"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Ping Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_ping_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The ping's type. In other situations might be designated by an event's name or an interaction field. E.g. \"quicksuggest-impression\", \"quicksuggest-block\", \"quicksuggest-click\".
+"
+  }
+
+  dimension: metrics__quantity__quick_suggest_position {
+    label: "Quick Suggest: Position"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.quick_suggest_position ;;
+    type: number
+    group_label: "Quick Suggest"
+    group_item_label: "Position"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Position"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_position"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The position (1-based) of the QuickSuggest item being interatcted with.
+"
+  }
+
+  dimension: metrics__url2__quick_suggest_reporting_url {
+    label: "Quick Suggest: Reporting URL"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.quick_suggest_reporting_url ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Reporting URL"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Reporting URL"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_reporting_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The url to report this interaction to.
+"
+  }
+
+  dimension: metrics__string__quick_suggest_request_id {
+    label: "Quick Suggest: Request ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_request_id ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Request ID"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Request ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_request_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A request identifier for each API request to [Merino](https://mozilla-services.github.io/merino/). Only present for suggestions provided by Merino.
+"
+  }
+
+  dimension: metrics__string__quick_suggest_source {
+    label: "Quick Suggest: Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_source ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Source"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The source of the interaction. E.g. \"urlbar\".
+"
+  }
+
+  dimension: metrics__string__quick_suggest_suggested_index {
+    label: "Quick Suggest: Suggested Index"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_suggested_index ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Suggested Index"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Suggested Index"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_suggested_index"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A stringified integer value that is the intended index of the suggestion being interacted with. If `suggested_index_relative_to_group` is true, the index is relative to the \"Firefox Suggest\" group; otherwise the index is relative to the entire list of suggestions. Non-negative values (starting at 0) are relative to the start/top of the group/list; negative values are relative to the end/bottom of the group/list.
+"
+  }
+
+  dimension: metrics__boolean__quick_suggest_suggested_index_relative_to_group {
+    label: "Quick Suggest: Suggested Index Relative To Group"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.quick_suggest_suggested_index_relative_to_group ;;
+    type: yesno
+    group_label: "Quick Suggest"
+    group_item_label: "Suggested Index Relative To Group"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Suggested Index Relative To Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_suggested_index_relative_to_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether `suggested_index` is relative to the \"Firefox Suggest\" group. If false, it is relative to the entire list of suggestions.
+"
+  }
+
+  dimension: metrics__string__quick_suggest_suggestion_id {
+    label: "Quick Suggest: Suggestion ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_suggestion_id ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Suggestion ID"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest: Suggestion ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quick_suggest_suggestion_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The suggestion ID from MARS/Merino.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation: Experimentation ID"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation ID"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation: Experimentation ID"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error: Invalid Label"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error: Invalid Overflow"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error: Invalid State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error: Invalid Value"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error: Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: additional_properties {
+    sql: ${TABLE}.additional_properties ;;
+    hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: app_version_patch {
+    sql: ${TABLE}.app_version_patch ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: client_info__android_sdk_version {
+    sql: ${TABLE}.client_info.android_sdk_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Android SDK Version"
+  }
+
+  dimension: client_info__app_build {
+    sql: ${TABLE}.client_info.app_build ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "App Build"
+  }
+
+  dimension: client_info__app_channel {
+    sql: ${TABLE}.client_info.app_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "App Channel"
+  }
+
+  dimension: client_info__app_display_version {
+    sql: ${TABLE}.client_info.app_display_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "App Display Version"
+  }
+
+  dimension: client_info__architecture {
+    sql: ${TABLE}.client_info.architecture ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Architecture"
+  }
+
+  dimension: client_info__attribution__campaign {
+    sql: ${TABLE}.client_info.attribution.campaign ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Campaign"
+  }
+
+  dimension: client_info__attribution__content {
+    sql: ${TABLE}.client_info.attribution.content ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Content"
+  }
+
+  dimension: client_info__attribution__ext {
+    sql: ${TABLE}.client_info.attribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__attribution__medium {
+    sql: ${TABLE}.client_info.attribution.medium ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Medium"
+  }
+
+  dimension: client_info__attribution__source {
+    sql: ${TABLE}.client_info.attribution.source ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Source"
+  }
+
+  dimension: client_info__attribution__term {
+    sql: ${TABLE}.client_info.attribution.term ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Attribution"
+    group_item_label: "Term"
+  }
+
+  dimension: client_info__build_date {
+    sql: ${TABLE}.client_info.build_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Build Date"
+  }
+
+  dimension: client_info__client_id {
+    sql: ${TABLE}.client_info.client_id ;;
+    hidden: yes
+  }
+
+  dimension: client_info__device_manufacturer {
+    sql: ${TABLE}.client_info.device_manufacturer ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Device Manufacturer"
+  }
+
+  dimension: client_info__device_model {
+    sql: ${TABLE}.client_info.device_model ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Device Model"
+  }
+
+  dimension: client_info__distribution__ext {
+    sql: ${TABLE}.client_info.distribution.ext ;;
+    hidden: yes
+  }
+
+  dimension: client_info__distribution__name {
+    sql: ${TABLE}.client_info.distribution.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info: Distribution"
+    group_item_label: "Name"
+  }
+
+  dimension: client_info__first_run_date {
+    sql: ${TABLE}.client_info.first_run_date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "First Run Date"
+  }
+
+  dimension: client_info__locale {
+    sql: ${TABLE}.client_info.locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Locale"
+  }
+
+  dimension: client_info__os {
+    sql: ${TABLE}.client_info.os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "OS"
+  }
+
+  dimension: client_info__os_version {
+    sql: ${TABLE}.client_info.os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "OS Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Session ID"
+  }
+
+  dimension: client_info__telemetry_sdk_build {
+    sql: ${TABLE}.client_info.telemetry_sdk_build ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Telemetry SDK Build"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+  }
+
+  dimension: document_id {
+    sql: ${TABLE}.document_id ;;
+    hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
+    primary_key: yes
+  }
+
+  dimension: events {
+    sql: ${TABLE}.events ;;
+    hidden: yes
+  }
+
+  dimension: is_bot_generated {
+    sql: ${TABLE}.is_bot_generated ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: metadata__geo__city {
+    sql: ${TABLE}.metadata.geo.city ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "City"
+  }
+
+  dimension: metadata__geo__country {
+    sql: ${TABLE}.metadata.geo.country ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "Country"
+    map_layer_name: countries
+  }
+
+  dimension: metadata__geo__db_version {
+    sql: ${TABLE}.metadata.geo.db_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "DB Version"
+  }
+
+  dimension: metadata__geo__subdivision1 {
+    sql: ${TABLE}.metadata.geo.subdivision1 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "Subdivision1"
+  }
+
+  dimension: metadata__geo__subdivision2 {
+    sql: ${TABLE}.metadata.geo.subdivision2 ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Geo"
+    group_item_label: "Subdivision2"
+  }
+
+  dimension: metadata__header__date {
+    sql: ${TABLE}.metadata.header.date ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "Date"
+  }
+
+  dimension: metadata__header__dnt {
+    sql: ${TABLE}.metadata.header.dnt ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "DNT"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header: Parsed X LB Tags"
+    group_item_label: "TLS Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header: Parsed X LB Tags"
+    group_item_label: "TLS Version"
+  }
+
+  dimension: metadata__header__parsed_x_source_tags {
+    sql: ${TABLE}.metadata.header.parsed_x_source_tags ;;
+    hidden: yes
+  }
+
+  dimension: metadata__header__x_debug_id {
+    sql: ${TABLE}.metadata.header.x_debug_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Debug ID"
+  }
+
+  dimension: metadata__header__x_foxsec_ip_reputation {
+    sql: ${TABLE}.metadata.header.x_foxsec_ip_reputation ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Foxsec IP Reputation"
+  }
+
+  dimension: metadata__header__x_lb_tags {
+    sql: ${TABLE}.metadata.header.x_lb_tags ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X LB Tags"
+  }
+
+  dimension: metadata__header__x_pingsender_version {
+    sql: ${TABLE}.metadata.header.x_pingsender_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Pingsender Version"
+  }
+
+  dimension: metadata__header__x_source_tags {
+    sql: ${TABLE}.metadata.header.x_source_tags ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Source Tags"
+  }
+
+  dimension: metadata__header__x_telemetry_agent {
+    sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: Header"
+    group_item_label: "X Telemetry Agent"
+  }
+
+  dimension: metadata__isp__db_version {
+    sql: ${TABLE}.metadata.isp.db_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: ISP"
+    group_item_label: "DB Version"
+  }
+
+  dimension: metadata__isp__name {
+    sql: ${TABLE}.metadata.isp.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: ISP"
+    group_item_label: "Name"
+  }
+
+  dimension: metadata__isp__organization {
+    sql: ${TABLE}.metadata.isp.organization ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: ISP"
+    group_item_label: "Organization"
+  }
+
+  dimension: metadata__user_agent__browser {
+    sql: ${TABLE}.metadata.user_agent.browser ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: User Agent"
+    group_item_label: "Browser"
+  }
+
+  dimension: metadata__user_agent__os {
+    sql: ${TABLE}.metadata.user_agent.os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: User Agent"
+    group_item_label: "OS"
+  }
+
+  dimension: metadata__user_agent__version {
+    sql: ${TABLE}.metadata.user_agent.version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metadata: User Agent"
+    group_item_label: "Version"
+  }
+
+  dimension: normalized_app_name {
+    sql: ${TABLE}.normalized_app_name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
+  }
+
+  dimension: normalized_country_code {
+    sql: ${TABLE}.normalized_country_code ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.normalized_os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: ping_info__end_time {
+    sql: ${TABLE}.ping_info.end_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "End Time"
+  }
+
+  dimension: ping_info__experiments {
+    sql: ${TABLE}.ping_info.experiments ;;
+    hidden: yes
+  }
+
+  dimension: ping_info__ping_type {
+    sql: ${TABLE}.ping_info.ping_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "Ping Type"
+  }
+
+  dimension: ping_info__reason {
+    sql: ${TABLE}.ping_info.reason ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "Reason"
+  }
+
+  dimension: ping_info__seq {
+    sql: ${TABLE}.ping_info.seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "Seq"
+  }
+
+  dimension: ping_info__server_knobs_config__event_threshold {
+    sql: ${TABLE}.ping_info.server_knobs_config.event_threshold ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Event Threshold"
+  }
+
+  dimension: ping_info__server_knobs_config__metrics_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
+    hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__pings_enabled {
+    sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
+    hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
+  }
+
+  dimension: ping_info__server_knobs_config__session_sample_rate {
+    sql: ${TABLE}.ping_info.server_knobs_config.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info: Server Knobs Config"
+    group_item_label: "Session Sample Rate"
+  }
+
+  dimension: ping_info__start_time {
+    sql: ${TABLE}.ping_info.start_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Ping Info"
+    group_item_label: "Start Time"
+  }
+
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.metadata.header.parsed_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Header: Parsed Date"
+  }
+
+  dimension_group: ping_info__parsed_end {
+    sql: ${TABLE}.ping_info.parsed_end_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed End Time"
+  }
+
+  dimension_group: ping_info__parsed_start {
+    sql: ${TABLE}.ping_info.parsed_start_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed Start Time"
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Time when the ingestion edge server accepted this message"
+  }
+
+  measure: clients {
+    type: count_distinct
+    sql: ${client_info__client_id} ;;
+  }
+
+  measure: ping_count {
+    type: count
+  }
+
+  sql_table_name: `mozdata.firefox_enterprise_desktop.quick_suggest` ;;
+}
+
+view: quick_suggest__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error: Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${quick_suggest.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${quick_suggest.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${quick_suggest.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: quick_suggest__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error: Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${quick_suggest.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${quick_suggest.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${quick_suggest.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: quick_suggest__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error: Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${quick_suggest.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${quick_suggest.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${quick_suggest.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: quick_suggest__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error: Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${quick_suggest.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${quick_suggest.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${quick_suggest.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: quick_suggest__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: session__event_seq {
+    sql: ${TABLE}.session.event_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Event Seq"
+  }
+
+  dimension: session__session_id {
+    sql: ${TABLE}.session.session_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session ID"
+  }
+
+  dimension: session__session_sample_rate {
+    sql: ${TABLE}.session.session_sample_rate ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Sample Rate"
+  }
+
+  dimension: session__session_seq {
+    sql: ${TABLE}.session.session_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Seq"
+  }
+
+  dimension: session__session_start_time {
+    sql: ${TABLE}.session.session_start_time ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Session"
+    group_item_label: "Session Start Time"
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: quick_suggest__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: quick_suggest__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value: Extra"
+    group_item_label: "Enrollment ID"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Value: Extra"
+    group_item_label: "Type"
+  }
+}
+
+view: quick_suggest__ping_info__server_knobs_config__metrics_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: quick_suggest__ping_info__server_knobs_config__pings_enabled {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+  }
+}
