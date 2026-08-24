@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: local_network_access_rollout_151_all_users_10
-    type: looker_line
-    fields: [
-      local_network_access_rollout_151_all_users_10.submission_date,
-      local_network_access_rollout_151_all_users_10.branch,
-      local_network_access_rollout_151_all_users_10.point
-    ]
-    pivots: [
-      local_network_access_rollout_151_all_users_10.branch
-    ]
-    filters:
-      local_network_access_rollout_151_all_users_10.metric: 'ad_clicks'
-      local_network_access_rollout_151_all_users_10.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_151_all_users_10.submission_date
-    field_y: local_network_access_rollout_151_all_users_10.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_151_all_users_10.lower
-    ci_upper: local_network_access_rollout_151_all_users_10.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_151_all_users_10.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -63,6 +29,40 @@
       local_network_access_rollout_151_all_users_10.metric: 'search_count'
       local_network_access_rollout_151_all_users_10.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_151_all_users_10.submission_date
+    field_y: local_network_access_rollout_151_all_users_10.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_151_all_users_10.lower
+    ci_upper: local_network_access_rollout_151_all_users_10.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_151_all_users_10.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_rollout_151_all_users_10
+    type: looker_line
+    fields: [
+      local_network_access_rollout_151_all_users_10.submission_date,
+      local_network_access_rollout_151_all_users_10.branch,
+      local_network_access_rollout_151_all_users_10.point
+    ]
+    pivots: [
+      local_network_access_rollout_151_all_users_10.branch
+    ]
+    filters:
+      local_network_access_rollout_151_all_users_10.metric: 'qualified_cumulative_days_of_use'
+      local_network_access_rollout_151_all_users_10.statistic: mean
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,24 +78,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: local_network_access_rollout_151_all_users_10
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       local_network_access_rollout_151_all_users_10.submission_date,
       local_network_access_rollout_151_all_users_10.branch,
+      local_network_access_rollout_151_all_users_10.upper,
+      local_network_access_rollout_151_all_users_10.lower,
       local_network_access_rollout_151_all_users_10.point
     ]
     pivots: [
       local_network_access_rollout_151_all_users_10.branch
     ]
     filters:
-      local_network_access_rollout_151_all_users_10.metric: 'active_hours'
-      local_network_access_rollout_151_all_users_10.statistic: mean
+      local_network_access_rollout_151_all_users_10.metric: 'memory_total'
+      local_network_access_rollout_151_all_users_10.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: local_network_access_rollout_151_all_users_10.submission_date
+      Percentile: local_network_access_rollout_151_all_users_10.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,43 +149,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: local_network_access_rollout_151_all_users_10
-    type: "ci-line-chart"
-    fields: [
-      local_network_access_rollout_151_all_users_10.submission_date,
-      local_network_access_rollout_151_all_users_10.branch,
-      local_network_access_rollout_151_all_users_10.upper,
-      local_network_access_rollout_151_all_users_10.lower,
-      local_network_access_rollout_151_all_users_10.point
-    ]
-    pivots: [
-      local_network_access_rollout_151_all_users_10.branch
-    ]
-    filters:
-      local_network_access_rollout_151_all_users_10.metric: 'memory_total'
-      local_network_access_rollout_151_all_users_10.statistic: percentile
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: local_network_access_rollout_151_all_users_10.submission_date
-    field_y: local_network_access_rollout_151_all_users_10.point
-    log_scale: false
-    ci_lower: local_network_access_rollout_151_all_users_10.lower
-    ci_upper: local_network_access_rollout_151_all_users_10.upper
-    show_grid: true
-    listen:
-      Date: local_network_access_rollout_151_all_users_10.submission_date
-      Percentile: local_network_access_rollout_151_all_users_10.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -202,7 +168,7 @@
       local_network_access_rollout_151_all_users_10.metric: 'retained'
       local_network_access_rollout_151_all_users_10.statistic: mean
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: local_network_access_rollout_151_all_users_10.submission_date
@@ -235,6 +201,40 @@
     filters:
       local_network_access_rollout_151_all_users_10.metric: 'days_of_use'
       local_network_access_rollout_151_all_users_10.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: local_network_access_rollout_151_all_users_10.submission_date
+    field_y: local_network_access_rollout_151_all_users_10.point
+    log_scale: false
+    ci_lower: local_network_access_rollout_151_all_users_10.lower
+    ci_upper: local_network_access_rollout_151_all_users_10.upper
+    show_grid: true
+    listen:
+      Date: local_network_access_rollout_151_all_users_10.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: local_network_access_rollout_151_all_users_10
+    type: looker_line
+    fields: [
+      local_network_access_rollout_151_all_users_10.submission_date,
+      local_network_access_rollout_151_all_users_10.branch,
+      local_network_access_rollout_151_all_users_10.point
+    ]
+    pivots: [
+      local_network_access_rollout_151_all_users_10.branch
+    ]
+    filters:
+      local_network_access_rollout_151_all_users_10.metric: 'active_hours'
+      local_network_access_rollout_151_all_users_10.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       local_network_access_rollout_151_all_users_10.branch
     ]
     filters:
-      local_network_access_rollout_151_all_users_10.metric: 'qualified_cumulative_days_of_use'
+      local_network_access_rollout_151_all_users_10.metric: 'ad_clicks'
       local_network_access_rollout_151_all_users_10.statistic: mean
     row: 30
     col: 12
