@@ -3224,6 +3224,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: fx_accounts
+    fx_accounts_client_info:
+      type: glean_ping_explore
+      views:
+        base_view: fx_accounts_client_info
     gecko_trace:
       type: glean_ping_explore
       views:
@@ -3702,6 +3706,15 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.fx_accounts
       type: glean_ping_view
+    fx_accounts_client_info:
+      tables:
+      - table: mozdata.firefox_desktop.fx_accounts_client_info
+      type: glean_ping_view
+    fx_accounts_client_info_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fx_accounts_client_info
+      type: table_view
     fx_accounts_table:
       tables:
       - channel: null

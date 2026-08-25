@@ -30551,6 +30551,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_document_parsehtml {
+    label: "Use Counter Doc: Document Parsehtml"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_document_parsehtml ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Document Parsehtml"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Document Parsehtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_document_parsehtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called Document.parseHTML. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_document_parsehtmlunsafe {
+    label: "Use Counter Doc: Document Parsehtmlunsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_document_parsehtmlunsafe ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Document Parsehtmlunsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Document Parsehtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_document_parsehtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called Document.parseHTMLUnsafe. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_document_pictureinpictureelement {
     label: "Use Counter Doc: Document Pictureinpictureelement"
     hidden: yes
@@ -31124,6 +31160,24 @@ view: use_counters {
     }
 
     description: "Whether a document called called Element.setHTML. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_element_sethtmlunsafe {
+    label: "Use Counter Doc: Element Sethtmlunsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_element_sethtmlunsafe ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Element Sethtmlunsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Element Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_element_sethtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called Element.setHTMLUnsafe. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -35660,6 +35714,42 @@ view: use_counters {
     }
 
     description: "Whether a document called called ShadowRoot.pictureInPictureElement. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_shadowroot_sethtml {
+    label: "Use Counter Doc: Shadowroot Sethtml"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_shadowroot_sethtml ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Shadowroot Sethtml"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Shadowroot Sethtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_shadowroot_sethtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called ShadowRoot.setHTML. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_shadowroot_sethtmlunsafe {
+    label: "Use Counter Doc: Shadowroot Sethtmlunsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_shadowroot_sethtmlunsafe ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Shadowroot Sethtmlunsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc: Shadowroot Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_shadowroot_sethtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called ShadowRoot.setHTMLUnsafe. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -40252,6 +40342,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_document_parsehtml {
+    label: "Use Counter Page: Document Parsehtml"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_document_parsehtml ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Document Parsehtml"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Document Parsehtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_document_parsehtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called Document.parseHTML. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_document_parsehtmlunsafe {
+    label: "Use Counter Page: Document Parsehtmlunsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_document_parsehtmlunsafe ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Document Parsehtmlunsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Document Parsehtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_document_parsehtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called Document.parseHTMLUnsafe. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_document_pictureinpictureelement {
     label: "Use Counter Page: Document Pictureinpictureelement"
     hidden: yes
@@ -40825,6 +40951,24 @@ view: use_counters {
     }
 
     description: "Whether a page called called Element.setHTML. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_element_sethtmlunsafe {
+    label: "Use Counter Page: Element Sethtmlunsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_element_sethtmlunsafe ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Element Sethtmlunsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Element Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_element_sethtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called Element.setHTMLUnsafe. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -45361,6 +45505,42 @@ view: use_counters {
     }
 
     description: "Whether a page called called ShadowRoot.pictureInPictureElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_shadowroot_sethtml {
+    label: "Use Counter Page: Shadowroot Sethtml"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_shadowroot_sethtml ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Shadowroot Sethtml"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Shadowroot Sethtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_shadowroot_sethtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called ShadowRoot.setHTML. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_shadowroot_sethtmlunsafe {
+    label: "Use Counter Page: Shadowroot Sethtmlunsafe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_shadowroot_sethtmlunsafe ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Shadowroot Sethtmlunsafe"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page: Shadowroot Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_shadowroot_sethtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called ShadowRoot.setHTMLUnsafe. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -95821,6 +96001,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_document_parsehtml {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_document_parsehtml} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Document Parsehtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_document_parsehtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_document_parsehtml_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_document_parsehtml: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Document Parsehtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_document_parsehtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_document_parsehtmlunsafe {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_document_parsehtmlunsafe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Document Parsehtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_document_parsehtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_document_parsehtmlunsafe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_document_parsehtmlunsafe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Document Parsehtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_document_parsehtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_document_pictureinpictureelement {
     type: sum
     sql: ${metrics__counter__use_counter_doc_document_pictureinpictureelement} ;;
@@ -96617,6 +96847,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Doc Element Sethtml"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_element_sethtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_element_sethtmlunsafe {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_element_sethtmlunsafe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Element Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_element_sethtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_element_sethtmlunsafe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_element_sethtmlunsafe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Element Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_element_sethtmlunsafe"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -102917,6 +103172,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Doc Shadowroot Pictureinpictureelement"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_shadowroot_pictureinpictureelement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_shadowroot_sethtml {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_shadowroot_sethtml} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Shadowroot Sethtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_shadowroot_sethtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_shadowroot_sethtml_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_shadowroot_sethtml: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Shadowroot Sethtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_shadowroot_sethtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_shadowroot_sethtmlunsafe {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_shadowroot_sethtmlunsafe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Shadowroot Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_shadowroot_sethtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_shadowroot_sethtmlunsafe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_shadowroot_sethtmlunsafe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Shadowroot Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_doc_shadowroot_sethtmlunsafe"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -109271,6 +109576,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_page_document_parsehtml {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_document_parsehtml} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Document Parsehtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_document_parsehtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_document_parsehtml_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_document_parsehtml: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Document Parsehtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_document_parsehtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_document_parsehtmlunsafe {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_document_parsehtmlunsafe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Document Parsehtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_document_parsehtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_document_parsehtmlunsafe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_document_parsehtmlunsafe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Document Parsehtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_document_parsehtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_page_document_pictureinpictureelement {
     type: sum
     sql: ${metrics__counter__use_counter_page_document_pictureinpictureelement} ;;
@@ -110067,6 +110422,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Element Sethtml"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_element_sethtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_element_sethtmlunsafe {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_element_sethtmlunsafe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Element Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_element_sethtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_element_sethtmlunsafe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_element_sethtmlunsafe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Element Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_element_sethtmlunsafe"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -116367,6 +116747,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Shadowroot Pictureinpictureelement"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_shadowroot_pictureinpictureelement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_shadowroot_sethtml {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_shadowroot_sethtml} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Shadowroot Sethtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_shadowroot_sethtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_shadowroot_sethtml_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_shadowroot_sethtml: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Shadowroot Sethtml"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_shadowroot_sethtml"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_shadowroot_sethtmlunsafe {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_shadowroot_sethtmlunsafe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Shadowroot Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_shadowroot_sethtmlunsafe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_shadowroot_sethtmlunsafe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_shadowroot_sethtmlunsafe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Shadowroot Sethtmlunsafe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_page_shadowroot_sethtmlunsafe"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
