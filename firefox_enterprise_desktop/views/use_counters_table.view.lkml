@@ -14179,6 +14179,22 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Document Open"
   }
 
+  dimension: metrics__counter__use_counter_doc_document_parsehtml {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_document_parsehtml ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Document Parsehtml"
+  }
+
+  dimension: metrics__counter__use_counter_doc_document_parsehtmlunsafe {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_document_parsehtmlunsafe ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Document Parsehtmlunsafe"
+  }
+
   dimension: metrics__counter__use_counter_doc_document_pictureinpictureelement {
     sql: ${TABLE}.metrics.counter.use_counter_doc_document_pictureinpictureelement ;;
     type: number
@@ -14433,6 +14449,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Element Sethtml"
+  }
+
+  dimension: metrics__counter__use_counter_doc_element_sethtmlunsafe {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_element_sethtmlunsafe ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Element Sethtmlunsafe"
   }
 
   dimension: metrics__counter__use_counter_doc_element_setpointercapture {
@@ -16449,6 +16473,22 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Doc Shadowroot Pictureinpictureelement"
+  }
+
+  dimension: metrics__counter__use_counter_doc_shadowroot_sethtml {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_shadowroot_sethtml ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Shadowroot Sethtml"
+  }
+
+  dimension: metrics__counter__use_counter_doc_shadowroot_sethtmlunsafe {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_shadowroot_sethtmlunsafe ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Doc Shadowroot Sethtmlunsafe"
   }
 
   dimension: metrics__counter__use_counter_doc_speculation_rules_document_source {
@@ -18483,6 +18523,22 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Document Open"
   }
 
+  dimension: metrics__counter__use_counter_page_document_parsehtml {
+    sql: ${TABLE}.metrics.counter.use_counter_page_document_parsehtml ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Document Parsehtml"
+  }
+
+  dimension: metrics__counter__use_counter_page_document_parsehtmlunsafe {
+    sql: ${TABLE}.metrics.counter.use_counter_page_document_parsehtmlunsafe ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Document Parsehtmlunsafe"
+  }
+
   dimension: metrics__counter__use_counter_page_document_pictureinpictureelement {
     sql: ${TABLE}.metrics.counter.use_counter_page_document_pictureinpictureelement ;;
     type: number
@@ -18737,6 +18793,14 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Element Sethtml"
+  }
+
+  dimension: metrics__counter__use_counter_page_element_sethtmlunsafe {
+    sql: ${TABLE}.metrics.counter.use_counter_page_element_sethtmlunsafe ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Element Sethtmlunsafe"
   }
 
   dimension: metrics__counter__use_counter_page_element_setpointercapture {
@@ -20753,6 +20817,22 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Page Shadowroot Pictureinpictureelement"
+  }
+
+  dimension: metrics__counter__use_counter_page_shadowroot_sethtml {
+    sql: ${TABLE}.metrics.counter.use_counter_page_shadowroot_sethtml ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Shadowroot Sethtml"
+  }
+
+  dimension: metrics__counter__use_counter_page_shadowroot_sethtmlunsafe {
+    sql: ${TABLE}.metrics.counter.use_counter_page_shadowroot_sethtmlunsafe ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Page Shadowroot Sethtmlunsafe"
   }
 
   dimension: metrics__counter__use_counter_page_speculation_rules_document_source {
