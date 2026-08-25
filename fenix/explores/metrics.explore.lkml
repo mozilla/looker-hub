@@ -563,6 +563,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_startup_cache_read_errors}) AS metrics__metrics__labeled_counter__extensions_startup_cache_read_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability}) AS metrics__metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__fog_subdir_entry_err {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_subdir_entry_err}) AS metrics__metrics__labeled_counter__fog_subdir_entry_err ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_subdir_entry_err.document_id} ;;
@@ -1221,6 +1226,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__network_retried_system_channel_update_status {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_retried_system_channel_update_status}) AS metrics__metrics__labeled_counter__network_retried_system_channel_update_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_retried_system_channel_update_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__network_ssl_token_cache_db_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_ssl_token_cache_db_errors}) AS metrics__metrics__labeled_counter__network_ssl_token_cache_db_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_ssl_token_cache_db_errors.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__network_ssl_token_cache_hits {

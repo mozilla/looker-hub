@@ -12789,11 +12789,15 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_engagement_navigation_errorpage {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_errorpage ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
@@ -13770,7 +13774,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_cryptominers_blocked_count ;;
     hidden: yes
     description: "A count of the status of cryptominer blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one cryptominer was blocked, 'allowed' = at least one cryptominer was detected and allowed.) Note, pageLoad is used as a baseline measurement.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram CRYPTOMINERS_BLOCKED_COUNT.
 "
   }
 
@@ -14206,6 +14209,8 @@ the extensions StartupCache file.
   dimension: metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
     sql: ${TABLE}.metrics.labeled_counter.firefox_ai_runtime_onnx_native_availability ;;
     hidden: yes
+    description: "Whether the native ONNX runtime could be loaded in the inference process, as reported by InferenceSession.isAvailable(). It is recorded at most once per profile, guarded by the browser.ml.onnxNativeAvailabilityReported pref.
+"
   }
 
   dimension: metrics__labeled_counter__fog_subdir_entry_err {
@@ -15148,6 +15153,8 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
     sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
     hidden: yes
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
+"
   }
 
   dimension: metrics__labeled_counter__network_ssl_token_cache_hits {

@@ -38543,6 +38543,42 @@ Most samples are expected to be below the 10s timeout used.
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
+  dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
+    label: "Background Update: Time Last Update Scheduled"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Last time the background update was triggered.
+"
+  }
+
+  dimension_group: metrics__datetime__smart_window_memories_last_updated {
+    label: "Smart Window: Memories Last Updated"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.smart_window_memories_last_updated ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Date when memories were last updated
+"
+  }
+
   dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
     label: "Blocklist: Last Modified Rs Addons Mblf"
     hidden: no

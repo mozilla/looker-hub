@@ -2467,6 +2467,22 @@ view: events_stream {
     group_item_label: "Num Transports"
   }
 
+  dimension: extras__quantity__number_of_logins_added {
+    sql: ${TABLE}.extras.quantity.number_of_logins_added ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins Added"
+  }
+
+  dimension: extras__quantity__number_of_logins_failed {
+    sql: ${TABLE}.extras.quantity.number_of_logins_failed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins Failed"
+  }
+
   dimension: extras__quantity__number_of_logins_migrated {
     sql: ${TABLE}.extras.quantity.number_of_logins_migrated ;;
     type: number
@@ -2483,12 +2499,36 @@ view: events_stream {
     group_item_label: "Number Of Logins Quarantined"
   }
 
+  dimension: extras__quantity__number_of_logins_skipped {
+    sql: ${TABLE}.extras.quantity.number_of_logins_skipped ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins Skipped"
+  }
+
   dimension: extras__quantity__number_of_logins_to_migrate {
     sql: ${TABLE}.extras.quantity.number_of_logins_to_migrate ;;
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Number Of Logins To Migrate"
+  }
+
+  dimension: extras__quantity__number_of_logins_to_restore {
+    sql: ${TABLE}.extras.quantity.number_of_logins_to_restore ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins To Restore"
+  }
+
+  dimension: extras__quantity__number_of_logins_updated {
+    sql: ${TABLE}.extras.quantity.number_of_logins_updated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Number Of Logins Updated"
   }
 
   dimension: extras__quantity__number_of_vulnerable_passwords {
@@ -6777,6 +6817,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Starter Type"
+  }
+
+  dimension: extras__string__state {
+    sql: ${TABLE}.extras.string.state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "State"
   }
 
   dimension: extras__string__status {

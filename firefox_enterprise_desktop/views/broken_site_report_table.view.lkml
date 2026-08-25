@@ -692,6 +692,8 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__string_list__broken_site_report_tab_info_antitracking_blocked_origins {
     sql: ${TABLE}.metrics.string_list.broken_site_report_tab_info_antitracking_blocked_origins ;;
     hidden: yes
+    description: "List of origins which were blocked by antitracking.
+"
   }
 
   dimension: metrics__string_list__broken_site_report_tab_info_languages {

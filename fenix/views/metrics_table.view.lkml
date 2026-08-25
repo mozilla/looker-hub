@@ -12002,7 +12002,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_cryptominers_blocked_count ;;
     hidden: yes
     description: "A count of the status of cryptominer blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one cryptominer was blocked, 'allowed' = at least one cryptominer was detected and allowed.) Note, pageLoad is used as a baseline measurement.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram CRYPTOMINERS_BLOCKED_COUNT.
 "
   }
 
@@ -12395,6 +12394,13 @@ builds.
     hidden: yes
     description: "The number of times an unexpected error has been raised while reading
 the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_ai_runtime_onnx_native_availability {
+    sql: ${TABLE}.metrics.labeled_counter.firefox_ai_runtime_onnx_native_availability ;;
+    hidden: yes
+    description: "Whether the native ONNX runtime could be loaded in the inference process, as reported by InferenceSession.isAvailable(). It is recorded at most once per profile, guarded by the browser.ml.onnxNativeAvailabilityReported pref.
 "
   }
 
@@ -13387,6 +13393,13 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.network_retried_system_channel_update_status ;;
     hidden: yes
     description: "Counts the status of fallback requests to aus5.mozilla.org
+"
+  }
+
+  dimension: metrics__labeled_counter__network_ssl_token_cache_db_errors {
+    sql: ${TABLE}.metrics.labeled_counter.network_ssl_token_cache_db_errors ;;
+    hidden: yes
+    description: "Failures touching the persisted TLS token database: 'open' (unopenable, so removed), 'schema' (no usable table), 'read' (unreadable row), 'write' (snapshot not written). Routine removal when persistence is disabled is not counted.
 "
   }
 
