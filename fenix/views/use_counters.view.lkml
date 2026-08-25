@@ -35539,7 +35539,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_sanitizer_sanitize {
     label: "Use Counter Doc: Sanitizer Sanitize"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_sanitizer_sanitize ;;
     type: number
     group_label: "Use Counter Doc"
@@ -45240,7 +45240,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_sanitizer_sanitize {
     label: "Use Counter Page: Sanitizer Sanitize"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_sanitizer_sanitize ;;
     type: number
     group_label: "Use Counter Page"
