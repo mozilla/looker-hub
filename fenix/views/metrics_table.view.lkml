@@ -12314,7 +12314,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.dom_storage_access_api_ui ;;
     hidden: yes
     description: "Storage Access API UI events.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram STORAGE_ACCESS_API_UI.
 "
   }
 
