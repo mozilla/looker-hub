@@ -155,7 +155,43 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether the user scrolled more than SCROLL_TELEMETRY_THRESHOLD pixels during a newtab session. Absent if no qualifying scroll occurred during the session.
+    description: "Whether the user scrolled more than 50 pixels during a newtab session. Absent if the session ended before the newtab was ever visible.
+"
+  }
+
+  dimension: metrics__boolean__newtab_scroll100 {
+    label: "Newtab: Scroll100"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.newtab_scroll100 ;;
+    type: yesno
+    group_label: "Newtab"
+    group_item_label: "Scroll100"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab: Scroll100"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_scroll100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user scrolled more than 100 pixels during a newtab session. Absent if the session ended before the newtab was ever visible.
+"
+  }
+
+  dimension: metrics__boolean__newtab_scroll250 {
+    label: "Newtab: Scroll250"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.newtab_scroll250 ;;
+    type: yesno
+    group_label: "Newtab"
+    group_item_label: "Scroll250"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab: Scroll250"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_scroll250"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the user scrolled more than 250 pixels during a newtab session. Absent if the session ended before the newtab was ever visible.
 "
   }
 
