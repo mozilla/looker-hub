@@ -54,11 +54,25 @@ view: ads_client_operations_and_errors_hourly {
     description: "Total number of 'invalid_ttl' occurrences from ads_client.build_cache_error labeled_string."
   }
 
+  dimension: build_cache_error_other {
+    sql: ${TABLE}.build_cache_error_other ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of ads_client.build_cache_error labeled_string occurrences with a label not enumerated above (Glean's '__other__' overflow bucket for unrecognized labels)."
+  }
+
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
     suggest_persist_for: "24 hours"
     description: "The channel the application is being distributed on (e.g. release, nightly)."
+  }
+
+  dimension: client_error_other {
+    sql: ${TABLE}.client_error_other ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of ads_client.client_error labeled_string occurrences with a label not enumerated above (Glean's '__other__' overflow bucket for unrecognized labels)."
   }
 
   dimension: client_error_record_click {
@@ -110,6 +124,13 @@ view: ads_client_operations_and_errors_hourly {
     description: "Total number of 'invalid_structure' occurrences from ads_client.deserialization_error labeled_string."
   }
 
+  dimension: deserialization_error_other {
+    sql: ${TABLE}.deserialization_error_other ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of ads_client.deserialization_error labeled_string occurrences with a label not enumerated above (Glean's '__other__' overflow bucket for unrecognized labels)."
+  }
+
   dimension: http_cache_outcome_cleanup_failed {
     sql: ${TABLE}.http_cache_outcome_cleanup_failed ;;
     type: number
@@ -152,11 +173,25 @@ view: ads_client_operations_and_errors_hourly {
     description: "Total number of 'no_cache' occurrences from ads_client.http_cache_outcome labeled_string."
   }
 
+  dimension: http_cache_outcome_other {
+    sql: ${TABLE}.http_cache_outcome_other ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of ads_client.http_cache_outcome labeled_string occurrences with a label not enumerated above (Glean's '__other__' overflow bucket for unrecognized labels). Expected to be non-zero on mobile if 'trim_failed' ever fires there; see that field's description."
+  }
+
   dimension: http_cache_outcome_store_failed {
     sql: ${TABLE}.http_cache_outcome_store_failed ;;
     type: number
     suggest_persist_for: "24 hours"
     description: "Total number of 'store_failed' occurrences from ads_client.http_cache_outcome labeled_string."
+  }
+
+  dimension: http_cache_outcome_trim_failed {
+    sql: ${TABLE}.http_cache_outcome_trim_failed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    description: "Total number of 'trim_failed' occurrences from ads_client.http_cache_outcome labeled_string. Populated by desktop only: the shared ads-client component emits this outcome, but the mobile metrics.yaml omits it from its label list, so on mobile it falls into '__other__'."
   }
 
   dimension: normalized_channel {
