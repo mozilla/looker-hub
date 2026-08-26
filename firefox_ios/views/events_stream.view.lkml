@@ -347,6 +347,14 @@ view: events_stream {
     group_item_label: "Has Share Message"
   }
 
+  dimension: extras__boolean__has_summarizer {
+    sql: ${TABLE}.extras.boolean.has_summarizer ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Has Summarizer"
+  }
+
   dimension: extras__boolean__is_at_bottom {
     sql: ${TABLE}.extras.boolean.is_at_bottom ;;
     type: yesno
@@ -1147,6 +1155,14 @@ view: events_stream {
     group_item_label: "Outcome"
   }
 
+  dimension: extras__string__page_language {
+    sql: ${TABLE}.extras.string.page_language ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Page Language"
+  }
+
   dimension: extras__string__part_id {
     sql: ${TABLE}.extras.string.part_id ;;
     type: string
@@ -1353,6 +1369,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Status"
+  }
+
+  dimension: extras__string__summary_language {
+    sql: ${TABLE}.extras.string.summary_language ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Summary Language"
   }
 
   dimension: extras__string__surface {
