@@ -1866,6 +1866,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.crash
       type: glean_ping_view
+    crash_live_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.crash_live
+      type: table_view
     crash_table:
       tables:
       - channel: release
@@ -3589,6 +3594,11 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.crash
       type: glean_ping_view
+    crash_live_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.crash_live
+      type: table_view
     crash_table:
       tables:
       - channel: null
