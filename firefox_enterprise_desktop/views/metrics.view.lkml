@@ -12086,7 +12086,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "The time remaining until expiration per storage access permissions, in days (one record per permission, not averaged).
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram STORAGE_ACCESS_REMAINING_DAYS.
 "
   }
 
@@ -15194,7 +15193,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "Storage Access API UI events.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram STORAGE_ACCESS_API_UI.
 "
   }
 

@@ -976,14 +976,6 @@ view: events_stream_table {
     group_item_label: "Is Top Level Frame"
   }
 
-  dimension: extras__boolean__is_valid_section {
-    sql: ${TABLE}.extras.boolean.is_valid_section ;;
-    type: yesno
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: Boolean"
-    group_item_label: "Is Valid Section"
-  }
-
   dimension: extras__boolean__is_window_closed {
     sql: ${TABLE}.extras.boolean.is_window_closed ;;
     type: yesno
@@ -4104,22 +4096,6 @@ view: events_stream_table {
     group_item_label: "Family Name"
   }
 
-  dimension: extras__string__fathom_infer_label {
-    sql: ${TABLE}.extras.string.fathom_infer_label ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Fathom Infer Label"
-  }
-
-  dimension: extras__string__fathom_infer_score {
-    sql: ${TABLE}.extras.string.fathom_infer_score ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Fathom Infer Score"
-  }
-
   dimension: extras__string__feature {
     sql: ${TABLE}.extras.string.feature ;;
     type: string
@@ -4536,22 +4512,6 @@ view: events_stream_table {
     group_item_label: "Inactive"
   }
 
-  dimension: extras__string__infer_field_name {
-    sql: ${TABLE}.extras.string.infer_field_name ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Infer Field Name"
-  }
-
-  dimension: extras__string__infer_reason {
-    sql: ${TABLE}.extras.string.infer_reason ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Infer Reason"
-  }
-
   dimension: extras__string__input {
     sql: ${TABLE}.extras.string.input ;;
     type: string
@@ -4910,30 +4870,6 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Ml"
-  }
-
-  dimension: extras__string__ml_infer_label {
-    sql: ${TABLE}.extras.string.ml_infer_label ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Ml Infer Label"
-  }
-
-  dimension: extras__string__ml_infer_score {
-    sql: ${TABLE}.extras.string.ml_infer_score ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Ml Infer Score"
-  }
-
-  dimension: extras__string__ml_revision {
-    sql: ${TABLE}.extras.string.ml_revision ;;
-    type: string
-    suggest_persist_for: "24 hours"
-    group_label: "Extras: String"
-    group_item_label: "Ml Revision"
   }
 
   dimension: extras__string__mlbf_generation {

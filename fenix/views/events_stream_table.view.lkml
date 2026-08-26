@@ -4456,6 +4456,14 @@ view: events_stream_table {
     group_item_label: "Psi Some Avg60"
   }
 
+  dimension: extras__string__rating {
+    sql: ${TABLE}.extras.string.rating ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Rating"
+  }
+
   dimension: extras__string__re {
     sql: ${TABLE}.extras.string.re ;;
     type: string
