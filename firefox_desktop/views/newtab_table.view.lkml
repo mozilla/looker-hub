@@ -721,6 +721,72 @@ This metric is only attached to a ping if it already contains other data.
     group_item_label: "Topsites Sponsored Tiles Received"
   }
 
+  dimension: metrics__timing_distribution__newtab_dwell_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Dwell Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Dwell Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Dwell Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Dwell Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Dwell Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Dwell Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Dwell Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__pocket_spoc_placeholder_duration__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.pocket_spoc_placeholder_duration.bucket_count ;;
     type: number
@@ -1055,6 +1121,20 @@ view: newtab_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: newtab_table__metrics__timing_distribution__newtab_dwell_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

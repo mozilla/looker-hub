@@ -496,6 +496,14 @@ view: events_stream_table {
     group_item_label: "Enter"
   }
 
+  dimension: extras__boolean__error {
+    sql: ${TABLE}.extras.boolean.error ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Error"
+  }
+
   dimension: extras__boolean__excluded {
     sql: ${TABLE}.extras.boolean.excluded ;;
     type: yesno
@@ -936,6 +944,14 @@ view: events_stream_table {
     group_item_label: "Is Retry"
   }
 
+  dimension: extras__boolean__is_shareable {
+    sql: ${TABLE}.extras.boolean.is_shareable ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Is Shareable"
+  }
+
   dimension: extras__boolean__is_shopping_page {
     sql: ${TABLE}.extras.boolean.is_shopping_page ;;
     type: yesno
@@ -1006,6 +1022,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Boolean"
     group_item_label: "Lang Tags Match"
+  }
+
+  dimension: extras__boolean__matches_pinned {
+    sql: ${TABLE}.extras.boolean.matches_pinned ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Matches Pinned"
   }
 
   dimension: extras__boolean__next_to_active_tab {
@@ -1304,6 +1328,14 @@ view: events_stream_table {
     group_item_label: "Toggled On"
   }
 
+  dimension: extras__boolean__token_available {
+    sql: ${TABLE}.extras.boolean.token_available ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Token Available"
+  }
+
   dimension: extras__boolean__trackers_blocked {
     sql: ${TABLE}.extras.boolean.trackers_blocked ;;
     type: yesno
@@ -1486,6 +1518,22 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Average Words Per Second"
+  }
+
+  dimension: extras__quantity__batches_failed {
+    sql: ${TABLE}.extras.quantity.batches_failed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Batches Failed"
+  }
+
+  dimension: extras__quantity__batches_total {
+    sql: ${TABLE}.extras.quantity.batches_total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Batches Total"
   }
 
   dimension: extras__quantity__buffering_time {
@@ -1702,6 +1750,30 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Extraction Time"
+  }
+
+  dimension: extras__quantity__field_seq {
+    sql: ${TABLE}.extras.quantity.field_seq ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Field Seq"
+  }
+
+  dimension: extras__quantity__fields_filled {
+    sql: ${TABLE}.extras.quantity.fields_filled ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Fields Filled"
+  }
+
+  dimension: extras__quantity__fields_total {
+    sql: ${TABLE}.extras.quantity.fields_total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Fields Total"
   }
 
   dimension: extras__quantity__first_frame_loaded_time {
@@ -1928,6 +2000,14 @@ view: events_stream_table {
     group_item_label: "Latency"
   }
 
+  dimension: extras__quantity__latency_ms {
+    sql: ${TABLE}.extras.quantity.latency_ms ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Latency Ms"
+  }
+
   dimension: extras__quantity__length {
     sql: ${TABLE}.extras.quantity.length ;;
     type: number
@@ -1966,6 +2046,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Memories"
+  }
+
+  dimension: extras__quantity__memories_used {
+    sql: ${TABLE}.extras.quantity.memories_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Memories Used"
   }
 
   dimension: extras__quantity__memory_after {
@@ -2632,6 +2720,14 @@ view: events_stream_table {
     group_item_label: "Tabs Selected"
   }
 
+  dimension: extras__quantity__tabs_sent {
+    sql: ${TABLE}.extras.quantity.tabs_sent ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Sent"
+  }
+
   dimension: extras__quantity__tabs_suggested {
     sql: ${TABLE}.extras.quantity.tabs_suggested ;;
     type: number
@@ -2646,6 +2742,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tabs Unloaded"
+  }
+
+  dimension: extras__quantity__tabs_used {
+    sql: ${TABLE}.extras.quantity.tabs_used ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tabs Used"
   }
 
   dimension: extras__quantity__threshold {
@@ -2726,6 +2830,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tokens"
+  }
+
+  dimension: extras__quantity__tokens_available {
+    sql: ${TABLE}.extras.quantity.tokens_available ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Tokens Available"
   }
 
   dimension: extras__quantity__tokens_per_second {
@@ -3536,6 +3648,14 @@ view: events_stream_table {
     group_item_label: "Computed"
   }
 
+  dimension: extras__string__confidence {
+    sql: ${TABLE}.extras.string.confidence ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Confidence"
+  }
+
   dimension: extras__string__configured {
     sql: ${TABLE}.extras.string.configured ;;
     type: string
@@ -4136,6 +4256,14 @@ view: events_stream_table {
     group_item_label: "Fieldtype"
   }
 
+  dimension: extras__string__field_kind {
+    sql: ${TABLE}.extras.string.field_kind ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Field Kind"
+  }
+
   dimension: extras__string__field_name {
     sql: ${TABLE}.extras.string.field_name ;;
     type: string
@@ -4526,6 +4654,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Inputtype"
+  }
+
+  dimension: extras__string__input_type {
+    sql: ${TABLE}.extras.string.input_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Input Type"
   }
 
   dimension: extras__string__insecureWarning {
@@ -5254,6 +5390,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Outcome"
+  }
+
+  dimension: extras__string__output_hash {
+    sql: ${TABLE}.extras.string.output_hash ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Output Hash"
   }
 
   dimension: extras__string__packet_error {
@@ -6504,6 +6648,14 @@ view: events_stream_table {
     group_item_label: "Text Source"
   }
 
+  dimension: extras__string__threshold {
+    sql: ${TABLE}.extras.string.threshold ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Threshold"
+  }
+
   dimension: extras__string__time {
     sql: ${TABLE}.extras.string.time ;;
     type: string
@@ -6566,6 +6718,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "To Language"
+  }
+
+  dimension: extras__string__token_kind {
+    sql: ${TABLE}.extras.string.token_kind ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Token Kind"
   }
 
   dimension: extras__string__tool_name {
