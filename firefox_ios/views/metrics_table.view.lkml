@@ -2608,6 +2608,14 @@ the currently selected wallpaper if it's not the default.
     group_item_label: "Tracking Protection Strength"
   }
 
+  dimension: metrics__string__user_ai_summarize_selected_language {
+    sql: ${TABLE}.metrics.string.user_ai_summarize_selected_language ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "User Ai Summarize Selected Language"
+  }
+
   dimension: metrics__string__user_toolbar_middle_button_type {
     sql: ${TABLE}.metrics.string.user_toolbar_middle_button_type ;;
     type: string

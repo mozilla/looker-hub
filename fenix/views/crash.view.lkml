@@ -107,6 +107,40 @@ view: crash {
     description: "Application build ID, the format is YYYYMMDDHHMMSS."
   }
 
+  dimension: metrics__string__crash_cpu_architecture {
+    label: "Crash: CPU Architecture"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_cpu_architecture ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "CPU Architecture"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: CPU Architecture"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_cpu_architecture"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Architecture of the CPU. One of the values described in `system_info.cpu_arch` of https://github.com/rust-minidump/rust-minidump/blob/main/minidump-processor/json-schema.md: \"x86\", \"amd64\", \"ppc\", \"ppc64\", \"sparc\", \"arm\", \"arm64\", or \"unknown\"."
+  }
+
+  dimension: metrics__string__crash_cpu_info {
+    label: "Crash: CPU Info"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_cpu_info ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "CPU Info"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: CPU Info"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_cpu_info"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Information about the CPU, as a string. This typically includes family, model, and stepping."
+  }
+
   dimension: metrics__string__crash_crash_type {
     label: "Crash: Crash Type"
     hidden: no
@@ -294,6 +328,23 @@ view: crash {
     description: "Set before a content process crashes because of an IPC channel error. Holds a description of the error."
   }
 
+  dimension: metrics__string__crash_ipc_shutdown_state {
+    label: "Crash: Ipc Shutdown State"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_ipc_shutdown_state ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Ipc Shutdown State"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Ipc Shutdown State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_ipc_shutdown_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "IPC shutdown state, can be set to either \"RecvShutdown\" or \"SendFinishShutdown\" by a content process while it's shutting down."
+  }
+
   dimension: metrics__boolean__crash_is_garbage_collecting {
     label: "Crash: Is Garbage Collecting"
     hidden: no
@@ -326,6 +377,23 @@ view: crash {
     }
 
     description: "How long the user had been inactive in seconds if the user was inactive at crash.  The value is not set if the user state was active."
+  }
+
+  dimension: metrics__string__crash_linux_lsb_description {
+    label: "Crash: Linux Lsb Description"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_linux_lsb_description ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Linux Lsb Description"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Linux Lsb Description"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_linux_lsb_description"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Linux lsb_release description."
   }
 
   dimension: metrics__string__crash_linux_memory_psi {
@@ -411,6 +479,40 @@ view: crash {
     }
 
     description: "Plaintext description of why Firefox crashed, this is usually set by assertions and the like."
+  }
+
+  dimension: metrics__string__crash_os {
+    label: "Crash: OS"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_os ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "OS"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: OS"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_os"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The operating system name. One of the values described in `system_info.os` of https://github.com/rust-minidump/rust-minidump/blob/main/minidump-processor/json-schema.md: \"Windows NT\", \"Mac OS X\", \"iOS\", \"Linux\", \"Solaris\", \"Android\", or \"Unknown\"."
+  }
+
+  dimension: metrics__string__crash_os_version {
+    label: "Crash: OS Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_os_version ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "OS Version"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: OS Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_os_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The operating system version number."
   }
 
   dimension: metrics__string__crash_process_type {
@@ -549,6 +651,23 @@ view: crash {
     description: "If set to 1 then this crash occurred during startup."
   }
 
+  dimension: metrics__timespan__crash_startup_time__value {
+    label: "Crash: Startup Time Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_startup_time.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Startup Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Startup Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_startup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time when Firefox was launched expressed in seconds since the Epoch."
+  }
+
   dimension: metrics__timespan__crash_time_since_last_crash__value {
     label: "Crash: Time Since Last Crash Value"
     hidden: no
@@ -564,6 +683,23 @@ view: crash {
     }
 
     description: "Time in seconds since the last crash occurred."
+  }
+
+  dimension: metrics__string__crash_useragent_locale {
+    label: "Crash: Useragent Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_useragent_locale ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Useragent Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Crash: Useragent Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_useragent_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User-agent locale."
   }
 
   dimension: metrics__boolean__crash_windows_error_reporting {

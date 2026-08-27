@@ -3782,6 +3782,26 @@ tracking-protection that is enabled. One of:
 "
   }
 
+  dimension: metrics__string__user_ai_summarize_selected_language {
+    label: "User Ai Summarize: Selected Language"
+    hidden: no
+    sql: ${TABLE}.metrics.string.user_ai_summarize_selected_language ;;
+    type: string
+    group_label: "User Ai Summarize"
+    group_item_label: "Selected Language"
+
+    link: {
+      label: "Glean Dictionary reference for User Ai Summarize: Selected Language"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/user_ai_summarize_selected_language"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the summary language the user selected in the summarize settings.
+Either `websiteLanguage`, or a locale identifier from the `supportedLocales`
+allowlist of the `summarizer-language-expansion-feature` Nimbus feature.
+"
+  }
+
   dimension: metrics__boolean__user_ai_summarize_shake_gesture_enabled {
     label: "User Ai Summarize: Shake Gesture Enabled"
     hidden: no
