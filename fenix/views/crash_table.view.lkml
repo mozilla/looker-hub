@@ -705,6 +705,22 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Crash Cause"
   }
 
+  dimension: metrics__string__crash_cpu_architecture {
+    sql: ${TABLE}.metrics.string.crash_cpu_architecture ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash CPU Architecture"
+  }
+
+  dimension: metrics__string__crash_cpu_info {
+    sql: ${TABLE}.metrics.string.crash_cpu_info ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash CPU Info"
+  }
+
   dimension: metrics__string__crash_crash_type {
     sql: ${TABLE}.metrics.string.crash_crash_type ;;
     type: string
@@ -761,6 +777,22 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Crash Ipc Channel Error"
   }
 
+  dimension: metrics__string__crash_ipc_shutdown_state {
+    sql: ${TABLE}.metrics.string.crash_ipc_shutdown_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Ipc Shutdown State"
+  }
+
+  dimension: metrics__string__crash_linux_lsb_description {
+    sql: ${TABLE}.metrics.string.crash_linux_lsb_description ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Linux Lsb Description"
+  }
+
   dimension: metrics__string__crash_linux_memory_psi {
     sql: ${TABLE}.metrics.string.crash_linux_memory_psi ;;
     type: string
@@ -799,6 +831,22 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Moz Crash Reason"
+  }
+
+  dimension: metrics__string__crash_os {
+    sql: ${TABLE}.metrics.string.crash_os ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash OS"
+  }
+
+  dimension: metrics__string__crash_os_version {
+    sql: ${TABLE}.metrics.string.crash_os_version ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash OS Version"
   }
 
   dimension: metrics__string__crash_process_type {
@@ -855,6 +903,14 @@ The labels are the `category.name` identifier of the metric.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Crash Shutdown Reason"
+  }
+
+  dimension: metrics__string__crash_useragent_locale {
+    sql: ${TABLE}.metrics.string.crash_useragent_locale ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Crash Useragent Locale"
   }
 
   dimension: metrics__string__crash_windows_file_dialog_error_code {
@@ -961,6 +1017,22 @@ This metric is only attached to a ping if it already contains other data.
     type: number
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Timespan: Crash Last Interaction Duration"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__crash_startup_time__time_unit {
+    sql: ${TABLE}.metrics.timespan.crash_startup_time.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Startup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__crash_startup_time__value {
+    sql: ${TABLE}.metrics.timespan.crash_startup_time.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timespan: Crash Startup Time"
     group_item_label: "Value"
   }
 

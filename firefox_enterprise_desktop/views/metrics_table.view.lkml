@@ -9131,11 +9131,15 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
   dimension: metrics__labeled_counter__browser_engagement_navigation_errorpage {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_errorpage ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
     sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
     hidden: yes
+    description: "The count URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
+"
   }
 
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
@@ -10093,7 +10097,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_fingerprinters_blocked_count ;;
     hidden: yes
     description: "A count of the status of fingerprinter blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one fingerprinter was blocked, 'allowed' = at least one fingerprinter was detected and allowed.) Note, pageLoad is used as a baseline measurement.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram FINGERPRINTERS_BLOCKED_COUNT.
 "
   }
 

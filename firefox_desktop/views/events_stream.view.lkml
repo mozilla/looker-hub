@@ -3675,6 +3675,14 @@ view: events_stream {
     group_item_label: "Backend"
   }
 
+  dimension: extras__string__backend_source_revision {
+    sql: ${TABLE}.extras.string.backend_source_revision ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Backend Source Revision"
+  }
+
   dimension: extras__string__backup_step {
     sql: ${TABLE}.extras.string.backup_step ;;
     type: string

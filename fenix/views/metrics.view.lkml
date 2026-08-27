@@ -6157,7 +6157,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "A count of the status of fingerprinter blocking per top level page load. ('pageLoad' = There was a page load, 'blocked' = at least one fingerprinter was blocked, 'allowed' = at least one fingerprinter was detected and allowed.) Note, pageLoad is used as a baseline measurement.
-This metric was generated to correspond to the Legacy Telemetry categorical histogram FINGERPRINTERS_BLOCKED_COUNT.
 "
   }
 
@@ -16285,7 +16284,7 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of times a document hierarchy contained at least one HTMLMediaElement. In addition, the telemetry probe 'MIXED_CONTENT_UNBLOCK_COUNTER' records the total number of loaded top level content documents, which can help us calculate the result of the percentage of documents using media. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
+    description: "The number of times a document hierarchy contained at least one HTMLMediaElement. This metric was generated to correspond to the Legacy Telemetry scalar media.element_in_page_count.
 "
   }
 
@@ -17202,7 +17201,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__custom_distribution__mixed_content_unblock_counter__sum {
     label: "Mixed Content: Unblock Counter Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.mixed_content_unblock_counter.sum ;;
     type: number
     group_label: "Mixed Content"
@@ -25736,7 +25735,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "The safety of a page where we see a password field. (0: safe page & safe submit; 1: safe page & unsafe submit; 2: safe page & unknown submit; 3: unsafe page & safe submit; 4: unsafe page & unsafe submit; 5: unsafe page & unknown submit)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram PWMGR_LOGIN_PAGE_SAFETY.
 "
   }
 

@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: rollout_sponsored_tiles_in_finland_denmark_norway_and_new_zealand_last_updated {
-  label: "rollout_sponsored_tiles_in_finland_denmark_norway_and_new_zealand Last Updated"
+datagroup: ios_google_lens_rollout_last_updated {
+  label: "ios_google_lens_rollout Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'rollout_sponsored_tiles_in_finland_denmark_norway_and_new_zealand_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'ios_google_lens_rollout_statistics')
 
     ) ;;
-  description: "Updates for rollout_sponsored_tiles_in_finland_denmark_norway_and_new_zealand when referenced tables are modified."
+  description: "Updates for ios_google_lens_rollout when referenced tables are modified."
   max_cache_age: "24 hours"
 }
