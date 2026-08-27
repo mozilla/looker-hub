@@ -203,6 +203,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_contextmenu_visual.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_errorpage {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_errorpage}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_errorpage ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_errorpage.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_engagement_navigation_searchbar}) AS metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar.document_id} ;;

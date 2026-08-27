@@ -1052,6 +1052,40 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__browser_engagement_navigation_errorpage {
+    label: "Browser Engagement Navigation: Errorpage"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_errorpage ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Errorpage"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Errorpage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_navigation_errorpage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count URI loads triggered in a subsession from the search CTA on a network error page, broken down by the originating action.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
+    label: "Browser Engagement Navigation: Newtab Searchbar"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_engagement_navigation_newtab_searchbar ;;
+    group_label: "Browser Engagement Navigation"
+    group_item_label: "Newtab Searchbar"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Navigation: Newtab Searchbar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/browser_engagement_navigation_newtab_searchbar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count URI loads triggered in a subsession from the New Tab search bar, broken down by the originating action.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_engagement_navigation_searchbar {
     label: "Browser Engagement Navigation: Searchbar"
     hidden: yes
@@ -7931,7 +7965,7 @@ panel the click originated from:
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether the single-row Top Sites are shown below the Smartbar in Smart Window fullpage mode. Corresponds to the inverse of the `browser.smartwindow.hideTopSites` pref (true when Top Sites are shown).
+    description: "Whether the single-row Top Sites are shown below the Smartbar in Smart Window fullpage mode. True when the `browser.smartwindow.hideTopSites` pref is false and the `browser.newtabpage.activity-stream.feeds.topsites` pref is true.
 "
   }
 
@@ -46886,6 +46920,88 @@ view: metrics__metrics__labeled_counter__browser_engagement_navigation_contextme
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_errorpage {
+  label: "Browser Engagement Navigation: Errorpage"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_engagement_navigation_newtab_searchbar {
+  label: "Browser Engagement Navigation: Newtab Searchbar"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_engagement_navigation_searchbar {
   label: "Browser Engagement Navigation: Searchbar"
 
@@ -47731,19 +47847,19 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_smartbar {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -47772,19 +47888,19 @@ view: metrics__metrics__labeled_counter__browser_search_adclicks_smartwindow_ass
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -48387,19 +48503,19 @@ view: metrics__metrics__labeled_counter__browser_search_content_smartbar {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -48428,19 +48544,19 @@ view: metrics__metrics__labeled_counter__browser_search_content_smartwindow_assi
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -49043,19 +49159,19 @@ view: metrics__metrics__labeled_counter__browser_search_withads_smartbar {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -49084,19 +49200,19 @@ view: metrics__metrics__labeled_counter__browser_search_withads_smartwindow_assi
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

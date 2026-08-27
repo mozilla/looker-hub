@@ -427,6 +427,22 @@ view: newtab_table {
     group_item_label: "Newtab Scroll"
   }
 
+  dimension: metrics__boolean__newtab_scroll100 {
+    sql: ${TABLE}.metrics.boolean.newtab_scroll100 ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Newtab Scroll100"
+  }
+
+  dimension: metrics__boolean__newtab_scroll250 {
+    sql: ${TABLE}.metrics.boolean.newtab_scroll250 ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Newtab Scroll250"
+  }
+
   dimension: metrics__boolean__newtab_search_enabled {
     sql: ${TABLE}.metrics.boolean.newtab_search_enabled ;;
     type: yesno
