@@ -2443,6 +2443,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_num_improved_generated_passwords}) AS metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__quotamanager_storage_sqlite_corruption_unrecovered {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__quotamanager_storage_sqlite_corruption_unrecovered}) AS metrics__metrics__labeled_counter__quotamanager_storage_sqlite_corruption_unrecovered ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__quotamanager_storage_sqlite_corruption_unrecovered.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__region_store_region_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__region_store_region_result}) AS metrics__metrics__labeled_counter__region_store_region_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__region_store_region_result.document_id} ;;

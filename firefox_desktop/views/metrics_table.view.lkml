@@ -16051,6 +16051,11 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__quotamanager_storage_sqlite_corruption_unrecovered {
+    sql: ${TABLE}.metrics.labeled_counter.quotamanager_storage_sqlite_corruption_unrecovered ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__region_store_region_result {
     sql: ${TABLE}.metrics.labeled_counter.region_store_region_result ;;
     hidden: yes

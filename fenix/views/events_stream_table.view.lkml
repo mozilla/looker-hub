@@ -2304,6 +2304,14 @@ view: events_stream_table {
     group_item_label: "Backend"
   }
 
+  dimension: extras__string__backend_source_revision {
+    sql: ${TABLE}.extras.string.backend_source_revision ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Backend Source Revision"
+  }
+
   dimension: extras__string__blockeduridetails {
     sql: ${TABLE}.extras.string.blockeduridetails ;;
     type: string
@@ -2758,6 +2766,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Device Name"
+  }
+
+  dimension: extras__string__device_type {
+    sql: ${TABLE}.extras.string.device_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Device Type"
   }
 
   dimension: extras__string__didResetValue {
@@ -4782,6 +4798,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Signature"
+  }
+
+  dimension: extras__string__signature_type {
+    sql: ${TABLE}.extras.string.signature_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Signature Type"
   }
 
   dimension: extras__string__signed_date {
