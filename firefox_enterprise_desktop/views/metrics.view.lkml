@@ -29979,6 +29979,23 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 "
   }
 
+  dimension: metrics__labeled_counter__quotamanager_storage_sqlite_corruption_unrecovered {
+    label: "Quotamanager: Storage Sqlite Corruption Unrecovered"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.quotamanager_storage_sqlite_corruption_unrecovered ;;
+    group_label: "Quotamanager"
+    group_item_label: "Storage Sqlite Corruption Unrecovered"
+
+    link: {
+      label: "Glean Dictionary reference for Quotamanager: Storage Sqlite Corruption Unrecovered"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/quotamanager_storage_sqlite_corruption_unrecovered"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments when a corruption error (NS_ERROR_FILE_CORRUPTED or NS_ERROR_STORAGE_IOERR) propagates from a storage.sqlite operation during QuotaManager initialization with no recovery path, leaving all storage APIs (localStorage, IndexedDB, Cache API) broken for the session. This covers corruption that passes the initial open check but breaks subsequent operations such as schema upgrades, cache setup, or quota loading. Labeled by the initialization context that failed. See bug 2065480. Note in some cases we recover from corruption: this metric is here to record missing cases where we didn't recover.
+"
+  }
+
   dimension: metrics__custom_distribution__readermode_download_result__sum {
     label: "Readermode: Download Result Sum"
     hidden: no
@@ -63443,6 +63460,47 @@ view: metrics__metrics__labeled_counter__pwmgr_is_username_only_form {
 
 view: metrics__metrics__labeled_counter__pwmgr_num_improved_generated_passwords {
   label: "Pwmgr: Num Improved Generated Passwords"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__quotamanager_storage_sqlite_corruption_unrecovered {
+  label: "Quotamanager: Storage Sqlite Corruption Unrecovered"
 
   dimension: document_id {
     type: string
