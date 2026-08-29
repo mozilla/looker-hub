@@ -721,6 +721,19 @@ This metric is only attached to a ping if it already contains other data.
     group_item_label: "Topsites Sponsored Tiles Received"
   }
 
+  dimension: metrics__timing_distribution__newtab_dwell_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Newtab Dwell Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__newtab_dwell_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__pocket_spoc_placeholder_duration__sum {
     sql: ${TABLE}.metrics.timing_distribution.pocket_spoc_placeholder_duration.sum ;;
     type: number
@@ -1002,6 +1015,20 @@ view: newtab_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: newtab_table__metrics__timing_distribution__newtab_dwell_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

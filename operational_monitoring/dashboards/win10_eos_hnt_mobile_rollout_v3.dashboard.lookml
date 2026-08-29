@@ -10,6 +10,74 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: win10_eos_hnt_mobile_rollout_v3
+    type: looker_line
+    fields: [
+      win10_eos_hnt_mobile_rollout_v3.submission_date,
+      win10_eos_hnt_mobile_rollout_v3.branch,
+      win10_eos_hnt_mobile_rollout_v3.point
+    ]
+    pivots: [
+      win10_eos_hnt_mobile_rollout_v3.branch
+    ]
+    filters:
+      win10_eos_hnt_mobile_rollout_v3.metric: 'active_hours'
+      win10_eos_hnt_mobile_rollout_v3.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
+    field_y: win10_eos_hnt_mobile_rollout_v3.point
+    log_scale: false
+    ci_lower: win10_eos_hnt_mobile_rollout_v3.lower
+    ci_upper: win10_eos_hnt_mobile_rollout_v3.upper
+    show_grid: true
+    listen:
+      Date: win10_eos_hnt_mobile_rollout_v3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: win10_eos_hnt_mobile_rollout_v3
+    type: looker_line
+    fields: [
+      win10_eos_hnt_mobile_rollout_v3.submission_date,
+      win10_eos_hnt_mobile_rollout_v3.branch,
+      win10_eos_hnt_mobile_rollout_v3.point
+    ]
+    pivots: [
+      win10_eos_hnt_mobile_rollout_v3.branch
+    ]
+    filters:
+      win10_eos_hnt_mobile_rollout_v3.metric: 'qualified_cumulative_days_of_use'
+      win10_eos_hnt_mobile_rollout_v3.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
+    field_y: win10_eos_hnt_mobile_rollout_v3.point
+    log_scale: false
+    ci_lower: win10_eos_hnt_mobile_rollout_v3.lower
+    ci_upper: win10_eos_hnt_mobile_rollout_v3.upper
+    show_grid: true
+    listen:
+      Date: win10_eos_hnt_mobile_rollout_v3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -30,7 +98,7 @@
     filters:
       win10_eos_hnt_mobile_rollout_v3.metric: 'memory_total'
       win10_eos_hnt_mobile_rollout_v3.statistic: percentile
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -47,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,44 +131,10 @@
       win10_eos_hnt_mobile_rollout_v3.branch
     ]
     filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'active_hours'
-      win10_eos_hnt_mobile_rollout_v3.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
-    field_y: win10_eos_hnt_mobile_rollout_v3.point
-    log_scale: false
-    ci_lower: win10_eos_hnt_mobile_rollout_v3.lower
-    ci_upper: win10_eos_hnt_mobile_rollout_v3.upper
-    show_grid: true
-    listen:
-      Date: win10_eos_hnt_mobile_rollout_v3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: win10_eos_hnt_mobile_rollout_v3
-    type: looker_line
-    fields: [
-      win10_eos_hnt_mobile_rollout_v3.submission_date,
-      win10_eos_hnt_mobile_rollout_v3.branch,
-      win10_eos_hnt_mobile_rollout_v3.point
-    ]
-    pivots: [
-      win10_eos_hnt_mobile_rollout_v3.branch
-    ]
-    filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'ad_clicks'
+      win10_eos_hnt_mobile_rollout_v3.metric: 'retained'
       win10_eos_hnt_mobile_rollout_v3.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
@@ -133,8 +167,8 @@
     filters:
       win10_eos_hnt_mobile_rollout_v3.metric: 'search_count'
       win10_eos_hnt_mobile_rollout_v3.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
@@ -149,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,10 +199,10 @@
       win10_eos_hnt_mobile_rollout_v3.branch
     ]
     filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'retained'
+      win10_eos_hnt_mobile_rollout_v3.metric: 'ad_clicks'
       win10_eos_hnt_mobile_rollout_v3.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
@@ -200,40 +234,6 @@
     ]
     filters:
       win10_eos_hnt_mobile_rollout_v3.metric: 'days_of_use'
-      win10_eos_hnt_mobile_rollout_v3.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: win10_eos_hnt_mobile_rollout_v3.submission_date
-    field_y: win10_eos_hnt_mobile_rollout_v3.point
-    log_scale: false
-    ci_lower: win10_eos_hnt_mobile_rollout_v3.lower
-    ci_upper: win10_eos_hnt_mobile_rollout_v3.upper
-    show_grid: true
-    listen:
-      Date: win10_eos_hnt_mobile_rollout_v3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: win10_eos_hnt_mobile_rollout_v3
-    type: looker_line
-    fields: [
-      win10_eos_hnt_mobile_rollout_v3.submission_date,
-      win10_eos_hnt_mobile_rollout_v3.branch,
-      win10_eos_hnt_mobile_rollout_v3.point
-    ]
-    pivots: [
-      win10_eos_hnt_mobile_rollout_v3.branch
-    ]
-    filters:
-      win10_eos_hnt_mobile_rollout_v3.metric: 'qualified_cumulative_days_of_use'
       win10_eos_hnt_mobile_rollout_v3.statistic: mean
     row: 30
     col: 0

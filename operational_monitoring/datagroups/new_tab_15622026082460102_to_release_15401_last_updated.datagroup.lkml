@@ -5,16 +5,16 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: fox_doodle_multi_action_cta_2025_dummy_rollout_v2_last_updated {
-  label: "fox_doodle_multi_action_cta_2025_dummy_rollout_v2 Last Updated"
+datagroup: new_tab_15622026082460102_to_release_15401_last_updated {
+  label: "new_tab_15622026082460102_to_release_15401 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM (
         
     SELECT MAX(storage_last_modified_time) AS storage_last_modified_time
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE (table_schema = 'operational_monitoring' AND table_name = 'fox_doodle_multi_action_cta_2025_dummy_rollout_v2_statistics')
+    WHERE (table_schema = 'operational_monitoring' AND table_name = 'new_tab_15622026082460102_to_release_15401_statistics')
 
     ) ;;
-  description: "Updates for fox_doodle_multi_action_cta_2025_dummy_rollout_v2 when referenced tables are modified."
+  description: "Updates for new_tab_15622026082460102_to_release_15401 when referenced tables are modified."
   max_cache_age: "24 hours"
 }

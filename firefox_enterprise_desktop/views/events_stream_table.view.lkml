@@ -1032,6 +1032,14 @@ view: events_stream_table {
     group_item_label: "Matches Pinned"
   }
 
+  dimension: extras__boolean__new_window {
+    sql: ${TABLE}.extras.boolean.new_window ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "New Window"
+  }
+
   dimension: extras__boolean__next_to_active_tab {
     sql: ${TABLE}.extras.boolean.next_to_active_tab ;;
     type: yesno
