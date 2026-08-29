@@ -10,6 +10,74 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_6_widgets_english_rollout_nightly
+    type: looker_line
+    fields: [
+      hnt_wattle_6_widgets_english_rollout_nightly.submission_date,
+      hnt_wattle_6_widgets_english_rollout_nightly.branch,
+      hnt_wattle_6_widgets_english_rollout_nightly.point
+    ]
+    pivots: [
+      hnt_wattle_6_widgets_english_rollout_nightly.branch
+    ]
+    filters:
+      hnt_wattle_6_widgets_english_rollout_nightly.metric: 'active_hours'
+      hnt_wattle_6_widgets_english_rollout_nightly.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
+    field_y: hnt_wattle_6_widgets_english_rollout_nightly.point
+    log_scale: false
+    ci_lower: hnt_wattle_6_widgets_english_rollout_nightly.lower
+    ci_upper: hnt_wattle_6_widgets_english_rollout_nightly.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: hnt_wattle_6_widgets_english_rollout_nightly
+    type: looker_line
+    fields: [
+      hnt_wattle_6_widgets_english_rollout_nightly.submission_date,
+      hnt_wattle_6_widgets_english_rollout_nightly.branch,
+      hnt_wattle_6_widgets_english_rollout_nightly.point
+    ]
+    pivots: [
+      hnt_wattle_6_widgets_english_rollout_nightly.branch
+    ]
+    filters:
+      hnt_wattle_6_widgets_english_rollout_nightly.metric: 'qualified_cumulative_days_of_use'
+      hnt_wattle_6_widgets_english_rollout_nightly.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
+    field_y: hnt_wattle_6_widgets_english_rollout_nightly.point
+    log_scale: false
+    ci_lower: hnt_wattle_6_widgets_english_rollout_nightly.lower
+    ci_upper: hnt_wattle_6_widgets_english_rollout_nightly.upper
+    show_grid: true
+    listen:
+      Date: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -30,7 +98,7 @@
     filters:
       hnt_wattle_6_widgets_english_rollout_nightly.metric: 'memory_total'
       hnt_wattle_6_widgets_english_rollout_nightly.statistic: percentile
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -47,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,44 +131,10 @@
       hnt_wattle_6_widgets_english_rollout_nightly.branch
     ]
     filters:
-      hnt_wattle_6_widgets_english_rollout_nightly.metric: 'active_hours'
-      hnt_wattle_6_widgets_english_rollout_nightly.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
-    field_y: hnt_wattle_6_widgets_english_rollout_nightly.point
-    log_scale: false
-    ci_lower: hnt_wattle_6_widgets_english_rollout_nightly.lower
-    ci_upper: hnt_wattle_6_widgets_english_rollout_nightly.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_6_widgets_english_rollout_nightly
-    type: looker_line
-    fields: [
-      hnt_wattle_6_widgets_english_rollout_nightly.submission_date,
-      hnt_wattle_6_widgets_english_rollout_nightly.branch,
-      hnt_wattle_6_widgets_english_rollout_nightly.point
-    ]
-    pivots: [
-      hnt_wattle_6_widgets_english_rollout_nightly.branch
-    ]
-    filters:
-      hnt_wattle_6_widgets_english_rollout_nightly.metric: 'ad_clicks'
+      hnt_wattle_6_widgets_english_rollout_nightly.metric: 'retained'
       hnt_wattle_6_widgets_english_rollout_nightly.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
@@ -133,8 +167,8 @@
     filters:
       hnt_wattle_6_widgets_english_rollout_nightly.metric: 'search_count'
       hnt_wattle_6_widgets_english_rollout_nightly.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
@@ -149,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,10 +199,10 @@
       hnt_wattle_6_widgets_english_rollout_nightly.branch
     ]
     filters:
-      hnt_wattle_6_widgets_english_rollout_nightly.metric: 'retained'
+      hnt_wattle_6_widgets_english_rollout_nightly.metric: 'ad_clicks'
       hnt_wattle_6_widgets_english_rollout_nightly.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
@@ -200,40 +234,6 @@
     ]
     filters:
       hnt_wattle_6_widgets_english_rollout_nightly.metric: 'days_of_use'
-      hnt_wattle_6_widgets_english_rollout_nightly.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
-    field_y: hnt_wattle_6_widgets_english_rollout_nightly.point
-    log_scale: false
-    ci_lower: hnt_wattle_6_widgets_english_rollout_nightly.lower
-    ci_upper: hnt_wattle_6_widgets_english_rollout_nightly.upper
-    show_grid: true
-    listen:
-      Date: hnt_wattle_6_widgets_english_rollout_nightly.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: hnt_wattle_6_widgets_english_rollout_nightly
-    type: looker_line
-    fields: [
-      hnt_wattle_6_widgets_english_rollout_nightly.submission_date,
-      hnt_wattle_6_widgets_english_rollout_nightly.branch,
-      hnt_wattle_6_widgets_english_rollout_nightly.point
-    ]
-    pivots: [
-      hnt_wattle_6_widgets_english_rollout_nightly.branch
-    ]
-    filters:
-      hnt_wattle_6_widgets_english_rollout_nightly.metric: 'qualified_cumulative_days_of_use'
       hnt_wattle_6_widgets_english_rollout_nightly.statistic: mean
     row: 30
     col: 0

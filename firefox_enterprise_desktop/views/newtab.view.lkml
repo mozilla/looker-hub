@@ -51,6 +51,26 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__timing_distribution__newtab_dwell_time__sum {
+    label: "Newtab: Dwell Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.newtab_dwell_time.sum ;;
+    type: number
+    group_label: "Newtab"
+    group_item_label: "Dwell Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab: Dwell Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/newtab_dwell_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Active time the user spent on this newtab, in milliseconds. Measures how long the user was interacting with the browser, anywhere in the window, while this newtab was the selected tab of the focused window, not how long the tab was open.
+One sample per newtab visit, absent when no active time accrued, so count missing samples as zero when averaging newtab_session_end pings.
+Resolution is about 5 seconds, so expect a cluster just under that from tabs that were opened and then immediately ignored.
+"
+  }
+
   dimension: metrics__boolean__newtab_highlights_enabled {
     label: "Newtab: Highlights Enabled"
     hidden: no
@@ -1532,6 +1552,20 @@ view: newtab__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: newtab__metrics__timing_distribution__newtab_dwell_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
     suggest_persist_for: "24 hours"
   }
 }

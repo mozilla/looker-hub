@@ -10,6 +10,74 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch
+    type: looker_line
+    fields: [
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date,
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch,
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.point
+    ]
+    pivots: [
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch
+    ]
+    filters:
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'active_hours'
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
+    field_y: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.point
+    log_scale: false
+    ci_lower: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.lower
+    ci_upper: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.upper
+    show_grid: true
+    listen:
+      Date: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch
+    type: looker_line
+    fields: [
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date,
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch,
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.point
+    ]
+    pivots: [
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch
+    ]
+    filters:
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'qualified_cumulative_days_of_use'
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
+    field_y: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.point
+    log_scale: false
+    ci_lower: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.lower
+    ci_upper: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.upper
+    show_grid: true
+    listen:
+      Date: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -30,7 +98,7 @@
     filters:
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'memory_total'
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: percentile
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -47,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,44 +131,10 @@
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch
     ]
     filters:
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'active_hours'
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
-    field_y: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.point
-    log_scale: false
-    ci_lower: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.lower
-    ci_upper: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.upper
-    show_grid: true
-    listen:
-      Date: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch
-    type: looker_line
-    fields: [
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date,
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch,
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.point
-    ]
-    pivots: [
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch
-    ]
-    filters:
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'ad_clicks'
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'retained'
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: mean
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
@@ -133,8 +167,8 @@
     filters:
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'search_count'
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
@@ -149,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,10 +199,10 @@
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch
     ]
     filters:
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'retained'
+      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'ad_clicks'
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
@@ -200,40 +234,6 @@
     ]
     filters:
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'days_of_use'
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
-    field_y: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.point
-    log_scale: false
-    ci_lower: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.lower
-    ci_upper: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.upper
-    show_grid: true
-    listen:
-      Date: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch
-    type: looker_line
-    fields: [
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.submission_date,
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch,
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.point
-    ]
-    pivots: [
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.branch
-    ]
-    filters:
-      churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.metric: 'qualified_cumulative_days_of_use'
       churned_new_profiles_day_2_resurrection_finish_setup_treatment_b_relaunch.statistic: mean
     row: 30
     col: 0
