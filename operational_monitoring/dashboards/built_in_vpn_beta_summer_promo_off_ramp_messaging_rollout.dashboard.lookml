@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout
+    type: looker_line
+    fields: [
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date,
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch,
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
+    ]
+    pivots: [
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch
+    ]
+    filters:
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'ad_clicks'
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
+    field_y: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
+    log_scale: false
+    ci_lower: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.lower
+    ci_upper: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -29,7 +63,75 @@
       built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'active_hours'
       built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
     row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
+    field_y: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
+    log_scale: false
+    ci_lower: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.lower
+    ci_upper: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout
+    type: looker_line
+    fields: [
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date,
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch,
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
+    ]
+    pivots: [
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch
+    ]
+    filters:
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'retained'
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
+    field_y: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
+    log_scale: false
+    ci_lower: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.lower
+    ci_upper: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.upper
+    show_grid: true
+    listen:
+      Date: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout
+    type: looker_line
+    fields: [
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date,
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch,
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
+    ]
+    pivots: [
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch
+    ]
+    filters:
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'days_of_use'
+      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
@@ -62,8 +164,8 @@
     filters:
       built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'qualified_cumulative_days_of_use'
       built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
-    row: 0
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
@@ -98,42 +200,7 @@
     filters:
       built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'memory_total'
       built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
-    field_y: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
-    log_scale: false
-    ci_lower: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.lower
-    ci_upper: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
-      Percentile: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout
-    type: looker_line
-    fields: [
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date,
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch,
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
-    ]
-    pivots: [
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch
-    ]
-    filters:
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'retained'
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
-    row: 10
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -145,6 +212,7 @@
     show_grid: true
     listen:
       Date: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
+      Percentile: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -166,74 +234,6 @@
     ]
     filters:
       built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'search_count'
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
-    field_y: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
-    log_scale: false
-    ci_lower: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.lower
-    ci_upper: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout
-    type: looker_line
-    fields: [
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date,
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch,
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
-    ]
-    pivots: [
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch
-    ]
-    filters:
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'ad_clicks'
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
-    field_y: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
-    log_scale: false
-    ci_lower: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.lower
-    ci_upper: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.upper
-    show_grid: true
-    listen:
-      Date: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout
-    type: looker_line
-    fields: [
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.submission_date,
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch,
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.point
-    ]
-    pivots: [
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.branch
-    ]
-    filters:
-      built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.metric: 'days_of_use'
       built_in_vpn_beta_summer_promo_off_ramp_messaging_rollout.statistic: mean
     row: 30
     col: 0

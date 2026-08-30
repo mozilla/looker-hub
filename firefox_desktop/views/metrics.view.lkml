@@ -17876,7 +17876,7 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether a private browsing window has been used in the session. This metric was generated to correspond to the Legacy Telemetry scalar dom.parentprocess.private_window_used.
+    description: "Whether a private browsing window has been used in the session.
 "
   }
 
