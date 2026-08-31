@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.branch
     ]
     filters:
-      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'ad_clicks'
+      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'days_of_use'
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.branch
     ]
     filters:
-      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'retained'
+      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'ad_clicks'
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.branch
     ]
     filters:
-      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'days_of_use'
+      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'search_count'
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.statistic: mean
     row: 10
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.branch
     ]
     filters:
-      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'qualified_cumulative_days_of_use'
+      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'uri_count'
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.branch
     ]
     filters:
-      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'search_count'
+      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'retained'
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.branch
     ]
     filters:
-      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'uri_count'
+      hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.metric: 'qualified_cumulative_days_of_use'
       hnt_wattle_cm_potd_widget_rollout_v2_fr_engagers.statistic: mean
     row: 30
     col: 12

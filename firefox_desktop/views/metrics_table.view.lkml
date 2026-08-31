@@ -16054,6 +16054,8 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__quotamanager_storage_sqlite_corruption_unrecovered {
     sql: ${TABLE}.metrics.labeled_counter.quotamanager_storage_sqlite_corruption_unrecovered ;;
     hidden: yes
+    description: "Increments when a corruption error (NS_ERROR_FILE_CORRUPTED or NS_ERROR_STORAGE_IOERR) propagates from a storage.sqlite operation during QuotaManager initialization with no recovery path, leaving all storage APIs (localStorage, IndexedDB, Cache API) broken for the session. This covers corruption that passes the initial open check but breaks subsequent operations such as schema upgrades, cache setup, or quota loading. Labeled by the initialization context that failed. See bug 2065480. Note in some cases we recover from corruption: this metric is here to record missing cases where we didn't recover.
+"
   }
 
   dimension: metrics__labeled_counter__region_store_region_result {
