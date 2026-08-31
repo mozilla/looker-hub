@@ -83,7 +83,6 @@ view: events {
     group_label: "Metadata: Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -92,7 +91,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "DB Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -101,7 +99,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -110,7 +107,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -119,7 +115,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -128,7 +123,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "DNT"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -158,7 +152,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Debug ID"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -167,7 +160,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Foxsec IP Reputation"
-    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -176,7 +168,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X LB Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -185,7 +176,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -194,7 +184,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -203,7 +192,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -212,7 +200,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "DB Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -221,7 +208,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -230,7 +216,6 @@ view: events {
     suggest_persist_for: "24 hours"
     group_label: "Metadata: ISP"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
