@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,77 +26,9 @@
       doh_autoselect_fenix_nightly_rollout.branch
     ]
     filters:
-      doh_autoselect_fenix_nightly_rollout.metric: 'days_of_use'
+      doh_autoselect_fenix_nightly_rollout.metric: 'uri_count'
       doh_autoselect_fenix_nightly_rollout.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: doh_autoselect_fenix_nightly_rollout.submission_date
-    field_y: doh_autoselect_fenix_nightly_rollout.point
-    log_scale: false
-    ci_lower: doh_autoselect_fenix_nightly_rollout.lower
-    ci_upper: doh_autoselect_fenix_nightly_rollout.upper
-    show_grid: true
-    listen:
-      Date: doh_autoselect_fenix_nightly_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: doh_autoselect_fenix_nightly_rollout
-    type: looker_line
-    fields: [
-      doh_autoselect_fenix_nightly_rollout.submission_date,
-      doh_autoselect_fenix_nightly_rollout.branch,
-      doh_autoselect_fenix_nightly_rollout.point
-    ]
-    pivots: [
-      doh_autoselect_fenix_nightly_rollout.branch
-    ]
-    filters:
-      doh_autoselect_fenix_nightly_rollout.metric: 'active_hours'
-      doh_autoselect_fenix_nightly_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: doh_autoselect_fenix_nightly_rollout.submission_date
-    field_y: doh_autoselect_fenix_nightly_rollout.point
-    log_scale: false
-    ci_lower: doh_autoselect_fenix_nightly_rollout.lower
-    ci_upper: doh_autoselect_fenix_nightly_rollout.upper
-    show_grid: true
-    listen:
-      Date: doh_autoselect_fenix_nightly_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: doh_autoselect_fenix_nightly_rollout
-    type: looker_line
-    fields: [
-      doh_autoselect_fenix_nightly_rollout.submission_date,
-      doh_autoselect_fenix_nightly_rollout.branch,
-      doh_autoselect_fenix_nightly_rollout.point
-    ]
-    pivots: [
-      doh_autoselect_fenix_nightly_rollout.branch
-    ]
-    filters:
-      doh_autoselect_fenix_nightly_rollout.metric: 'ad_clicks'
-      doh_autoselect_fenix_nightly_rollout.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -130,7 +62,7 @@
     filters:
       doh_autoselect_fenix_nightly_rollout.metric: 'tagged_sap_searches'
       doh_autoselect_fenix_nightly_rollout.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -146,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,9 +94,9 @@
       doh_autoselect_fenix_nightly_rollout.branch
     ]
     filters:
-      doh_autoselect_fenix_nightly_rollout.metric: 'uri_count'
+      doh_autoselect_fenix_nightly_rollout.metric: 'active_hours'
       doh_autoselect_fenix_nightly_rollout.statistic: mean
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -197,6 +129,74 @@
     ]
     filters:
       doh_autoselect_fenix_nightly_rollout.metric: 'search_count'
+      doh_autoselect_fenix_nightly_rollout.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: doh_autoselect_fenix_nightly_rollout.submission_date
+    field_y: doh_autoselect_fenix_nightly_rollout.point
+    log_scale: false
+    ci_lower: doh_autoselect_fenix_nightly_rollout.lower
+    ci_upper: doh_autoselect_fenix_nightly_rollout.upper
+    show_grid: true
+    listen:
+      Date: doh_autoselect_fenix_nightly_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: doh_autoselect_fenix_nightly_rollout
+    type: looker_line
+    fields: [
+      doh_autoselect_fenix_nightly_rollout.submission_date,
+      doh_autoselect_fenix_nightly_rollout.branch,
+      doh_autoselect_fenix_nightly_rollout.point
+    ]
+    pivots: [
+      doh_autoselect_fenix_nightly_rollout.branch
+    ]
+    filters:
+      doh_autoselect_fenix_nightly_rollout.metric: 'ad_clicks'
+      doh_autoselect_fenix_nightly_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: doh_autoselect_fenix_nightly_rollout.submission_date
+    field_y: doh_autoselect_fenix_nightly_rollout.point
+    log_scale: false
+    ci_lower: doh_autoselect_fenix_nightly_rollout.lower
+    ci_upper: doh_autoselect_fenix_nightly_rollout.upper
+    show_grid: true
+    listen:
+      Date: doh_autoselect_fenix_nightly_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: doh_autoselect_fenix_nightly_rollout
+    type: looker_line
+    fields: [
+      doh_autoselect_fenix_nightly_rollout.submission_date,
+      doh_autoselect_fenix_nightly_rollout.branch,
+      doh_autoselect_fenix_nightly_rollout.point
+    ]
+    pivots: [
+      doh_autoselect_fenix_nightly_rollout.branch
+    ]
+    filters:
+      doh_autoselect_fenix_nightly_rollout.metric: 'days_of_use'
       doh_autoselect_fenix_nightly_rollout.statistic: mean
     row: 20
     col: 12
