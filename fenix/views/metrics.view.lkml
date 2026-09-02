@@ -12626,7 +12626,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Reports results from the graphics sanity test to track which drivers are having problems (0=TEST_PASSED, 1=TEST_FAILED_RENDER, 2=TEST_FAILED_VIDEO, 3=TEST_CRASHED)
+    description: "Reports results from the graphics sanity test to track which drivers are having problems (0=TEST_PASSED, 1=TEST_FAILED_RENDER, 2=TEST_FAILED_VIDEO_DECODE, 3=TEST_CRASHED, 4=TEST_TIMEOUT, 5=TEST_FAILED_TO_RUN, 6=TEST_FAILED_VIDEO_ENCODE)
 This metric was generated to correspond to the Legacy Telemetry enumerated histogram GRAPHICS_SANITY_TEST.
 "
   }
@@ -17182,7 +17182,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
 
   dimension: metrics__custom_distribution__mixed_content_page_load__sum {
     label: "Mixed Content: Page Load Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.mixed_content_page_load.sum ;;
     type: number
     group_label: "Mixed Content"
