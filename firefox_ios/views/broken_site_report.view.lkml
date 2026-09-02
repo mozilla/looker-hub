@@ -175,6 +175,31 @@ blocked_origins). Named block_list to match the cross-platform schema.
 "
   }
 
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_tracking_content_blocked {
+    label: "Broken Site Report Tab Info Antitracking: Has Tracking Content Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_tracking_content_blocked ;;
+    type: yesno
+    group_label: "Broken Site Report Tab Info Antitracking"
+    group_item_label: "Has Tracking Content Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Broken Site Report Tab Info Antitracking: Has Tracking Content Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/broken_site_report_tab_info_antitracking_has_tracking_content_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether tracking content was blocked on the reported page. True when the
+content blocker recorded at least one block in the advertising, analytics
+or social categories, matching how Gecko scopes tracking content;
+cryptomining and fingerprinting are excluded and carry their own flags
+there. Narrower than blocked_origins, which lists every blocked origin
+across all categories, so the two can disagree. Carries no origins, so it
+is sent independently of the \"list of items blocked by tracking
+protection\" opt-in.
+"
+  }
+
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_is_private_browsing {
     label: "Broken Site Report Tab Info Antitracking: Is Private Browsing"
     hidden: no
