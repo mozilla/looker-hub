@@ -427,6 +427,14 @@ view: broken_site_report_table {
     group_item_label: "Broken Site Report Browser Info System Is Tablet"
   }
 
+  dimension: metrics__boolean__broken_site_report_tab_info_antitracking_has_tracking_content_blocked {
+    sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_has_tracking_content_blocked ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Broken Site Report Tab Info Antitracking Has Tracking Content Blocked"
+  }
+
   dimension: metrics__boolean__broken_site_report_tab_info_antitracking_is_private_browsing {
     sql: ${TABLE}.metrics.boolean.broken_site_report_tab_info_antitracking_is_private_browsing ;;
     type: yesno
@@ -489,6 +497,11 @@ The labels are the `category.name` identifier of the metric.
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
+  }
+
+  dimension: metrics__object__broken_site_report_browser_info_experiments {
+    sql: ${TABLE}.metrics.object.broken_site_report_browser_info_experiments ;;
+    hidden: yes
   }
 
   dimension: metrics__quantity__broken_site_report_browser_info_system_memory {
