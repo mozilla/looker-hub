@@ -3307,6 +3307,22 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Moz Perspective Origin"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_moz_scrollbar_inset_block {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_moz_scrollbar_inset_block ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Moz Scrollbar Inset Block"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_moz_scrollbar_inset_inline {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_moz_scrollbar_inset_inline ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Doc Css Moz Scrollbar Inset Inline"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_moz_subtree_hidden_only_visually {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_moz_subtree_hidden_only_visually ;;
     type: number
@@ -9305,6 +9321,22 @@ view: use_counters_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Counter"
     group_item_label: "Use Counter Css Page Css Moz Perspective Origin"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_moz_scrollbar_inset_block {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_moz_scrollbar_inset_block ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Moz Scrollbar Inset Block"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_moz_scrollbar_inset_inline {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_moz_scrollbar_inset_inline ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Counter"
+    group_item_label: "Use Counter Css Page Css Moz Scrollbar Inset Inline"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_moz_subtree_hidden_only_visually {
