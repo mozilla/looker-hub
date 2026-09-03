@@ -8,6 +8,7 @@ view: newtab_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: app_version_major {
@@ -222,6 +223,7 @@ view: newtab_table {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
   }
 
   dimension: events {
@@ -516,21 +518,33 @@ view: newtab_table {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
   }
 
   dimension: metrics__quantity__topsites_pinned_count {
@@ -656,26 +670,39 @@ view: newtab_table {
   dimension: metrics__string_list__glean_ping_uploader_capabilities {
     sql: ${TABLE}.metrics.string_list.glean_ping_uploader_capabilities ;;
     hidden: yes
+    description: "The list of requested uploader capabilities for the ping this is sent in.
+Should be the same as the ones defined for that particular ping.
+
+This metric is only attached to a ping if it already contains other data.
+"
   }
 
   dimension: metrics__string_list__newtab_blocked_sponsors {
     sql: ${TABLE}.metrics.string_list.newtab_blocked_sponsors ;;
     hidden: yes
+    description: "The advertiser names that have been dismissed by the user.
+"
   }
 
   dimension: metrics__string_list__newtab_selected_topics {
     sql: ${TABLE}.metrics.string_list.newtab_selected_topics ;;
     hidden: yes
+    description: "The list of topics the user selected
+"
   }
 
   dimension: metrics__string_list__newtab_sov_allocation {
     sql: ${TABLE}.metrics.string_list.newtab_sov_allocation ;;
     hidden: yes
+    description: "The partner group assignment for sov
+"
   }
 
   dimension: metrics__string_list__newtab_widgets_enabled_list {
     sql: ${TABLE}.metrics.string_list.newtab_widgets_enabled_list ;;
     hidden: yes
+    description: "The list of widget telemetry names currently enabled by the user. Recorded at startup and whenever a widget is enabled or disabled.
+"
   }
 
   dimension: metrics__text__topsites_sponsored_tiles_received {
@@ -740,24 +767,28 @@ view: newtab_table {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
     suggest_persist_for: "24 hours"
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -814,11 +845,13 @@ view: newtab_table {
   dimension: ping_info__server_knobs_config__metrics_enabled {
     sql: ${TABLE}.ping_info.server_knobs_config.metrics_enabled ;;
     hidden: yes
+    description: "Map of metric identifiers (category.name) to boolean values indicating whether the metric is enabled"
   }
 
   dimension: ping_info__server_knobs_config__pings_enabled {
     sql: ${TABLE}.ping_info.server_knobs_config.pings_enabled ;;
     hidden: yes
+    description: "Map of ping names to boolean values indicating whether the ping is enabled"
   }
 
   dimension: ping_info__server_knobs_config__session_sample_rate {
@@ -841,6 +874,7 @@ view: newtab_table {
     sql: ${TABLE}.sample_id ;;
     type: number
     suggest_persist_for: "24 hours"
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -900,6 +934,7 @@ view: newtab_table {
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   sql_table_name: `mozdata.firefox_enterprise_desktop.newtab` ;;
