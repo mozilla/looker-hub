@@ -13173,7 +13173,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     sql: ${TABLE}.metrics.labeled_custom_distribution.downloads_user_action_on_blocked_download ;;
     hidden: yes
     description: "Users action on blocked download, keyed by verdict type (0=Number of blocked downloads, 1=Confirm block, 2=Confirm unblock)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram DOWNLOADS_USER_ACTION_ON_BLOCKED_DOWNLOAD.
 "
   }
 
