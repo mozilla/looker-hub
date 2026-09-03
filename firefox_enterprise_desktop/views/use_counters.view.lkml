@@ -6523,7 +6523,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_moz_scrollbar_inset_block {
     label: "Use Counter Css Doc: Css Moz Scrollbar Inset Block"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_moz_scrollbar_inset_block ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -6541,7 +6541,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_moz_scrollbar_inset_inline {
     label: "Use Counter Css Doc: Css Moz Scrollbar Inset Inline"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_moz_scrollbar_inset_inline ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -20059,7 +20059,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_moz_scrollbar_inset_block {
     label: "Use Counter Css Page: Css Moz Scrollbar Inset Block"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_moz_scrollbar_inset_block ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -20077,7 +20077,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_moz_scrollbar_inset_inline {
     label: "Use Counter Css Page: Css Moz Scrollbar Inset Inline"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_moz_scrollbar_inset_inline ;;
     type: number
     group_label: "Use Counter Css Page"

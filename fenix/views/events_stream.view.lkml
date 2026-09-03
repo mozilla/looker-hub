@@ -1339,6 +1339,14 @@ view: events_stream {
     group_item_label: "Deleted"
   }
 
+  dimension: extras__quantity__diverged {
+    sql: ${TABLE}.extras.quantity.diverged ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Diverged"
+  }
+
   dimension: extras__quantity__download_time {
     sql: ${TABLE}.extras.quantity.download_time ;;
     type: number
@@ -1409,6 +1417,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Extraction Time"
+  }
+
+  dimension: extras__quantity__failed {
+    sql: ${TABLE}.extras.quantity.failed ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Failed"
+  }
+
+  dimension: extras__quantity__failed_deletions {
+    sql: ${TABLE}.extras.quantity.failed_deletions ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Failed Deletions"
   }
 
   dimension: extras__quantity__first_frame_loaded_time {
@@ -1601,6 +1625,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Metadata Loaded Time"
+  }
+
+  dimension: extras__quantity__migrated {
+    sql: ${TABLE}.extras.quantity.migrated ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Migrated"
   }
 
   dimension: extras__quantity__migrated_version {
@@ -1915,6 +1947,14 @@ view: events_stream {
     group_item_label: "Source Text Word Count"
   }
 
+  dimension: extras__quantity__source_total {
+    sql: ${TABLE}.extras.quantity.source_total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Source Total"
+  }
+
   dimension: extras__quantity__summarize_duration_ms {
     sql: ${TABLE}.extras.quantity.summarize_duration_ms ;;
     type: number
@@ -1937,6 +1977,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Tab Count"
+  }
+
+  dimension: extras__quantity__target_total {
+    sql: ${TABLE}.extras.quantity.target_total ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Target Total"
   }
 
   dimension: extras__quantity__time {
@@ -2161,6 +2209,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Add On ID"
+  }
+
+  dimension: extras__string__added {
+    sql: ${TABLE}.extras.string.added ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Added"
   }
 
   dimension: extras__string__additional_name {
@@ -2515,6 +2571,14 @@ view: events_stream {
     group_item_label: "Cc Type"
   }
 
+  dimension: extras__string__changed {
+    sql: ${TABLE}.extras.string.changed ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Changed"
+  }
+
   dimension: extras__string__changedPref {
     sql: ${TABLE}.extras.string.changedPref ;;
     type: string
@@ -2833,6 +2897,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Download Time"
+  }
+
+  dimension: extras__string__dropped {
+    sql: ${TABLE}.extras.string.dropped ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Dropped"
   }
 
   dimension: extras__string__duration {
