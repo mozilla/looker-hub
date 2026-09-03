@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       rollout_newtab_layout_delivery_mechanism.branch
     ]
     filters:
-      rollout_newtab_layout_delivery_mechanism.metric: 'qualified_cumulative_days_of_use'
+      rollout_newtab_layout_delivery_mechanism.metric: 'ad_clicks'
       rollout_newtab_layout_delivery_mechanism.statistic: mean
     row: 0
     col: 0
@@ -81,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,7 +97,7 @@
       rollout_newtab_layout_delivery_mechanism.branch
     ]
     filters:
-      rollout_newtab_layout_delivery_mechanism.metric: 'days_of_use'
+      rollout_newtab_layout_delivery_mechanism.metric: 'active_hours'
       rollout_newtab_layout_delivery_mechanism.statistic: mean
     row: 10
     col: 0
@@ -149,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,10 +165,44 @@
       rollout_newtab_layout_delivery_mechanism.branch
     ]
     filters:
-      rollout_newtab_layout_delivery_mechanism.metric: 'ad_clicks'
+      rollout_newtab_layout_delivery_mechanism.metric: 'uri_count'
       rollout_newtab_layout_delivery_mechanism.statistic: mean
     row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: rollout_newtab_layout_delivery_mechanism.submission_date
+    field_y: rollout_newtab_layout_delivery_mechanism.point
+    log_scale: false
+    ci_lower: rollout_newtab_layout_delivery_mechanism.lower
+    ci_upper: rollout_newtab_layout_delivery_mechanism.upper
+    show_grid: true
+    listen:
+      Date: rollout_newtab_layout_delivery_mechanism.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: rollout_newtab_layout_delivery_mechanism
+    type: looker_line
+    fields: [
+      rollout_newtab_layout_delivery_mechanism.submission_date,
+      rollout_newtab_layout_delivery_mechanism.branch,
+      rollout_newtab_layout_delivery_mechanism.point
+    ]
+    pivots: [
+      rollout_newtab_layout_delivery_mechanism.branch
+    ]
+    filters:
+      rollout_newtab_layout_delivery_mechanism.metric: 'days_of_use'
+      rollout_newtab_layout_delivery_mechanism.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: rollout_newtab_layout_delivery_mechanism.submission_date
@@ -201,40 +235,6 @@
     filters:
       rollout_newtab_layout_delivery_mechanism.metric: 'search_count'
       rollout_newtab_layout_delivery_mechanism.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: rollout_newtab_layout_delivery_mechanism.submission_date
-    field_y: rollout_newtab_layout_delivery_mechanism.point
-    log_scale: false
-    ci_lower: rollout_newtab_layout_delivery_mechanism.lower
-    ci_upper: rollout_newtab_layout_delivery_mechanism.upper
-    show_grid: true
-    listen:
-      Date: rollout_newtab_layout_delivery_mechanism.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: rollout_newtab_layout_delivery_mechanism
-    type: looker_line
-    fields: [
-      rollout_newtab_layout_delivery_mechanism.submission_date,
-      rollout_newtab_layout_delivery_mechanism.branch,
-      rollout_newtab_layout_delivery_mechanism.point
-    ]
-    pivots: [
-      rollout_newtab_layout_delivery_mechanism.branch
-    ]
-    filters:
-      rollout_newtab_layout_delivery_mechanism.metric: 'uri_count'
-      rollout_newtab_layout_delivery_mechanism.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       rollout_newtab_layout_delivery_mechanism.branch
     ]
     filters:
-      rollout_newtab_layout_delivery_mechanism.metric: 'active_hours'
+      rollout_newtab_layout_delivery_mechanism.metric: 'qualified_cumulative_days_of_use'
       rollout_newtab_layout_delivery_mechanism.statistic: mean
     row: 30
     col: 12
