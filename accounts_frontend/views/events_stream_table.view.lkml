@@ -328,6 +328,14 @@ view: events_stream_table {
     group_item_label: "Uvpa"
   }
 
+  dimension: extras__string__branch {
+    sql: ${TABLE}.extras.string.branch ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Branch"
+  }
+
   dimension: extras__string__browser_family {
     sql: ${TABLE}.extras.string.browser_family ;;
     type: string

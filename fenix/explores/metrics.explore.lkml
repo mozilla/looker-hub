@@ -198,6 +198,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_with_ads}) AS metrics__metrics__labeled_counter__browser_search_with_ads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_with_ads.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_thumbnails_capture_attempted {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_thumbnails_capture_attempted}) AS metrics__metrics__labeled_counter__browser_thumbnails_capture_attempted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_thumbnails_capture_attempted.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_thumbnails_capture_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_thumbnails_capture_result}) AS metrics__metrics__labeled_counter__browser_thumbnails_capture_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_thumbnails_capture_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__browser_ui_interaction_keyboard {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_ui_interaction_keyboard}) AS metrics__metrics__labeled_counter__browser_ui_interaction_keyboard ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_ui_interaction_keyboard.document_id} ;;

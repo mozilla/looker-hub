@@ -2176,6 +2176,14 @@ view: events_stream_table {
     group_item_label: "Acfieldname"
   }
 
+  dimension: extras__string__account_state {
+    sql: ${TABLE}.extras.string.account_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Account State"
+  }
+
   dimension: extras__string__action {
     sql: ${TABLE}.extras.string.action ;;
     type: string
@@ -4512,6 +4520,14 @@ view: events_stream_table {
     group_item_label: "Provider Key"
   }
 
+  dimension: extras__string__proxy_state {
+    sql: ${TABLE}.extras.string.proxy_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Proxy State"
+  }
+
   dimension: extras__string__psi_full_avg10 {
     sql: ${TABLE}.extras.string.psi_full_avg10 ;;
     type: string
@@ -4822,6 +4838,14 @@ view: events_stream_table {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Server Stack"
+  }
+
+  dimension: extras__string__service_state {
+    sql: ${TABLE}.extras.string.service_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Service State"
   }
 
   dimension: extras__string__session_id {

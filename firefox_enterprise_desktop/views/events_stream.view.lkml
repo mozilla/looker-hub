@@ -459,6 +459,14 @@ view: events_stream {
     group_item_label: "Disabledialog"
   }
 
+  dimension: extras__boolean__during_shutdown {
+    sql: ${TABLE}.extras.boolean.during_shutdown ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "During Shutdown"
+  }
+
   dimension: extras__boolean__enabled {
     sql: ${TABLE}.extras.boolean.enabled ;;
     type: yesno
@@ -5217,6 +5225,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Model Revision"
+  }
+
+  dimension: extras__string__modifiers {
+    sql: ${TABLE}.extras.string.modifiers ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Modifiers"
   }
 
   dimension: extras__string__move {
