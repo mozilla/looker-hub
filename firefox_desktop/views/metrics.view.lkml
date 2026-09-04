@@ -456,7 +456,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "1 = the default location, 2 = a non-default location
+    description: "1 = the default location, 2 = a non-default location. Left unset if no default location can be resolved on this device, in which case there is nothing to compare the configured location against.
 "
   }
 
@@ -14634,7 +14634,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "The decrease in the length of the URL when strip on share is used, only if at least one parameter is stripped
-This metric was generated to correspond to the Legacy Telemetry exponential histogram STRIP_ON_SHARE_LENGTH_DECREASE.
 "
   }
 
@@ -14653,7 +14652,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The number of query parameters removed, if any, when strip on share is used
-This metric was generated to correspond to the Legacy Telemetry linear histogram STRIP_ON_SHARE_PARAMS_REMOVED.
 "
   }
 
@@ -17712,7 +17710,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_change_considered.
+    description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened.
 "
   }
 
@@ -17730,7 +17728,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_lowered.
+    description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing.
 "
   }
 
@@ -17748,7 +17746,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_raised.
+    description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it.
 "
   }
 
@@ -39876,7 +39874,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker when required.
-This metric was generated to correspond to the Legacy Telemetry count histogram PUSH_API_NOTIFY.
 "
   }
 

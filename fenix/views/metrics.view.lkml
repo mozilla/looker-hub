@@ -318,6 +318,89 @@ where:
 "
   }
 
+  dimension: metrics__labeled_counter__browser_thumbnails_capture_attempted {
+    label: "Browser Thumbnails: Capture Attempted"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_thumbnails_capture_attempted ;;
+    group_label: "Browser Thumbnails"
+    group_item_label: "Capture Attempted"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Thumbnails: Capture Attempted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_thumbnails_capture_attempted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Increments on every BrowserThumbnails.requestScreenshot() call,
+labeled by the trigger that fired it. Total gives the per-session
+capture rate; the label breakdown shows where the pressure originates
+so regressions can be attributed to a specific trigger source.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__sum {
+    label: "Browser Thumbnails: Capture Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.sum ;;
+    type: number
+    group_label: "Browser Thumbnails"
+    group_item_label: "Capture Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Thumbnails: Capture Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_thumbnails_capture_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Wall-clock time from EngineView.captureThumbnail(...) call to its
+onFinish callback. Includes engine compositor readback but not the
+subsequent disk write. Long tails typically indicate the compositor
+is struggling or the surface is mid-teardown.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_thumbnails_capture_result {
+    label: "Browser Thumbnails: Capture Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_thumbnails_capture_result ;;
+    group_label: "Browser Thumbnails"
+    group_item_label: "Capture Result"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Thumbnails: Capture Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_thumbnails_capture_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Outcome of each capture attempt that reached the request path.
+`succeeded` = engine returned a bitmap and the ContentAction.UpdateThumbnailAction
+was dispatched. `null_bitmap` = engine returned no bitmap (typically the
+compositor detach race). `low_memory` = the isLowOnMemory() gate skipped
+the request before it reached the engine.
+"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__sum {
+    label: "Browser Thumbnails: Disk Write Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.sum ;;
+    type: number
+    group_label: "Browser Thumbnails"
+    group_item_label: "Disk Write Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Thumbnails: Disk Write Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_thumbnails_disk_write_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Wall-clock time from ThumbnailsMiddleware dispatching a
+ThumbnailStorage.saveThumbnail(...) job to that job's completion.
+Includes any queue-wait on ThumbnailStorage's worker pool plus the
+actual disk write. Reveals disk pressure and I/O queue length.
+"
+  }
+
   dimension: metrics__boolean__contextual_menu_long_press_tapped {
     label: "Contextual Menu: Long Press Tapped"
     hidden: yes
@@ -3185,8 +3268,8 @@ Possible values are: share, bookmark, translate, homepage, back, summarize or no
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The theme the user has enabled. \"light,\" \"dark,\" \"system,\" or \"battery\"
-default: \"system\" for API 28+, else \"light\"
+    description: "The theme the user has enabled. \"light,\" \"dark,\" \"oled,\" \"system,\" or
+\"battery\" default: \"system\" for API 28+, else \"light\"
 "
   }
 
@@ -6301,7 +6384,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "The decrease in the length of the URL when strip on share is used, only if at least one parameter is stripped
-This metric was generated to correspond to the Legacy Telemetry exponential histogram STRIP_ON_SHARE_LENGTH_DECREASE.
 "
   }
 
@@ -6320,7 +6402,6 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "The number of query parameters removed, if any, when strip on share is used
-This metric was generated to correspond to the Legacy Telemetry linear histogram STRIP_ON_SHARE_PARAMS_REMOVED.
 "
   }
 
@@ -9379,7 +9460,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_change_considered.
+    description: "The number of times we've had the opportunity to change content process priority due to a tab switch or a tab being opened.
 "
   }
 
@@ -9397,7 +9478,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_lowered.
+    description: "The number of times a content process has had its OS priority lowered due to only containing background tabs without audible media playing.
 "
   }
 
@@ -9415,7 +9496,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it. This metric was generated to correspond to the Legacy Telemetry scalar dom.contentprocess.os_priority_raised.
+    description: "The number of times a content process has had its OS priority raised due to containing at least one foregrounded tab, or a tab with audible media has started playing in it.
 "
   }
 
@@ -31887,7 +31968,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Number of push messages that were successfully decrypted and delivered to a ServiceWorker when required.
-This metric was generated to correspond to the Legacy Telemetry count histogram PUSH_API_NOTIFY.
 "
   }
 
@@ -44827,6 +44907,88 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
 
 view: metrics__metrics__labeled_counter__browser_search_with_ads {
   label: "Browser Search: With Ads"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_thumbnails_capture_attempted {
+  label: "Browser Thumbnails: Capture Attempted"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_thumbnails_capture_result {
+  label: "Browser Thumbnails: Capture Result"
 
   dimension: document_id {
     type: string
@@ -79571,6 +79733,34 @@ view: metrics__metrics__timing_distribution__application_reputation_remote_looku
 }
 
 view: metrics__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_thumbnails_capture_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__browser_thumbnails_disk_write_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

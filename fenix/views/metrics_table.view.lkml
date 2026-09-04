@@ -11852,6 +11852,27 @@ where:
 "
   }
 
+  dimension: metrics__labeled_counter__browser_thumbnails_capture_attempted {
+    sql: ${TABLE}.metrics.labeled_counter.browser_thumbnails_capture_attempted ;;
+    hidden: yes
+    description: "Increments on every BrowserThumbnails.requestScreenshot() call,
+labeled by the trigger that fired it. Total gives the per-session
+capture rate; the label breakdown shows where the pressure originates
+so regressions can be attributed to a specific trigger source.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_thumbnails_capture_result {
+    sql: ${TABLE}.metrics.labeled_counter.browser_thumbnails_capture_result ;;
+    hidden: yes
+    description: "Outcome of each capture attempt that reached the request path.
+`succeeded` = engine returned a bitmap and the ContentAction.UpdateThumbnailAction
+was dispatched. `null_bitmap` = engine returned no bitmap (typically the
+compositor detach race). `low_memory` = the isLowOnMemory() gate skipped
+the request before it reached the engine.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_ui_interaction_keyboard {
     sql: ${TABLE}.metrics.labeled_counter.browser_ui_interaction_keyboard ;;
     hidden: yes
@@ -20053,6 +20074,138 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Capture Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Capture Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Capture Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Capture Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Capture Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Capture Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Capture Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_capture_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_capture_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Disk Write Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Disk Write Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Disk Write Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Disk Write Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Disk Write Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Disk Write Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: Browser Thumbnails Disk Write Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__browser_thumbnails_disk_write_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.browser_thumbnails_disk_write_duration.values ;;
     hidden: yes
   }
 
@@ -67866,6 +68019,34 @@ view: metrics_table__metrics__timing_distribution__application_reputation_remote
 }
 
 view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_thumbnails_capture_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__browser_thumbnails_disk_write_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
