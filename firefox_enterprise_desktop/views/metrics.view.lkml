@@ -438,7 +438,7 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "1 = the default location, 2 = a non-default location
+    description: "1 = the default location, 2 = a non-default location. Left unset if no default location can be resolved on this device, in which case there is nothing to compare the configured location against.
 "
   }
 
@@ -11975,7 +11975,6 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
     }
 
     description: "A count of the classified email trackers. ('base_normal' = The classified email tracker is in base category and loaded under a normal site, 'content_normal' = The classified email tracker is in content category and loaded under a normal site, 'base_email_webapp' = The classified email tracker is in base category and loaded under a known email webapp, 'content_email_webapp' = The classified email tracker is in content category and loaded under a known email webapp.)
-This metric was generated to correspond to the Legacy Telemetry categorical histogram EMAIL_TRACKER_COUNT.
 "
   }
 
@@ -14823,7 +14822,6 @@ This is to keep track of the amount of possible breakage that is occuring due to
     }
 
     description: "Webkit/Blink filesystem used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram BLINK_FILESYSTEM_USED.
 "
   }
 
@@ -15277,7 +15275,6 @@ This metric was generated to correspond to the Legacy Telemetry count histogram 
     }
 
     description: "HTMLInputElement.webkitdirectory attribute used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBKIT_DIRECTORY_USED.
 "
   }
 

@@ -17173,6 +17173,21 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
 "
   }
 
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_abandonment {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_abandonment ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_engagement {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_engagement ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_exposure {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_exposure ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {
     sql: ${TABLE}.metrics.labeled_counter.urlclassifier_global_cache_hit ;;
     hidden: yes

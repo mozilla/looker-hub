@@ -1067,6 +1067,14 @@ view: events_stream {
     group_item_label: "No Connectivity"
   }
 
+  dimension: extras__boolean__on_startup {
+    sql: ${TABLE}.extras.boolean.on_startup ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "On Startup"
+  }
+
   dimension: extras__boolean__onboarding {
     sql: ${TABLE}.extras.boolean.onboarding ;;
     type: yesno
@@ -1513,6 +1521,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Attempts"
+  }
+
+  dimension: extras__quantity__auto_adjustments_prior {
+    sql: ${TABLE}.extras.quantity.auto_adjustments_prior ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Auto Adjustments Prior"
   }
 
   dimension: extras__quantity__average_chunk_time {
@@ -2515,6 +2531,14 @@ view: events_stream {
     group_item_label: "Rendered Frames"
   }
 
+  dimension: extras__quantity__restore_version {
+    sql: ${TABLE}.extras.quantity.restore_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Restore Version"
+  }
+
   dimension: extras__quantity__resume_prompts {
     sql: ${TABLE}.extras.quantity.resume_prompts ;;
     type: number
@@ -3105,6 +3129,22 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: Quantity"
     group_item_label: "Width"
+  }
+
+  dimension: extras__quantity__window_height {
+    sql: ${TABLE}.extras.quantity.window_height ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Window Height"
+  }
+
+  dimension: extras__quantity__window_width {
+    sql: ${TABLE}.extras.quantity.window_width ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Window Width"
   }
 
   dimension: extras__quantity__words_added {
@@ -3979,6 +4019,14 @@ view: events_stream {
     group_item_label: "Device Name"
   }
 
+  dimension: extras__string__device_pixel_ratio {
+    sql: ${TABLE}.extras.string.device_pixel_ratio ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Device Pixel Ratio"
+  }
+
   dimension: extras__string__device_type {
     sql: ${TABLE}.extras.string.device_type ;;
     type: string
@@ -4057,6 +4105,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Duration"
+  }
+
+  dimension: extras__string__effective {
+    sql: ${TABLE}.extras.string.effective ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Effective"
   }
 
   dimension: extras__string__element {
@@ -6865,6 +6921,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Topic"
+  }
+
+  dimension: extras__string__touch_capable {
+    sql: ${TABLE}.extras.string.touch_capable ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Touch Capable"
   }
 
   dimension: extras__string__trigger {

@@ -1875,6 +1875,14 @@ view: events_stream {
     group_item_label: "Pss"
   }
 
+  dimension: extras__quantity__restore_version {
+    sql: ${TABLE}.extras.quantity.restore_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Restore Version"
+  }
+
   dimension: extras__quantity__rss {
     sql: ${TABLE}.extras.quantity.rss ;;
     type: number
