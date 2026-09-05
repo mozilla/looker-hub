@@ -2811,6 +2811,14 @@ view: events_stream {
     group_item_label: "Rendered Frames"
   }
 
+  dimension: extras__quantity__restore_version {
+    sql: ${TABLE}.extras.quantity.restore_version ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Restore Version"
+  }
+
   dimension: extras__quantity__resume_prompts {
     sql: ${TABLE}.extras.quantity.resume_prompts ;;
     type: number

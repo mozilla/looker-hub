@@ -605,6 +605,11 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
   }
 
+  dimension: metrics__object__broken_site_report_tab_info_antitracking_btp_purge_history {
+    sql: ${TABLE}.metrics.object.broken_site_report_tab_info_antitracking_btp_purge_history ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__broken_site_report_browser_info_prefs_cookie_behavior {
     sql: ${TABLE}.metrics.quantity.broken_site_report_browser_info_prefs_cookie_behavior ;;
     type: number
