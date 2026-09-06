@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       vpn_android_phase_0_progressive_rollout_155.branch
     ]
     filters:
-      vpn_android_phase_0_progressive_rollout_155.metric: 'days_of_use'
+      vpn_android_phase_0_progressive_rollout_155.metric: 'retained'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: URI Count
-    name: URI Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       vpn_android_phase_0_progressive_rollout_155.branch
     ]
     filters:
-      vpn_android_phase_0_progressive_rollout_155.metric: 'uri_count'
+      vpn_android_phase_0_progressive_rollout_155.metric: 'active_hours'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       vpn_android_phase_0_progressive_rollout_155.branch
     ]
     filters:
-      vpn_android_phase_0_progressive_rollout_155.metric: 'active_hours'
+      vpn_android_phase_0_progressive_rollout_155.metric: 'days_of_use'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
     row: 10
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: URI Count
+    name: URI Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       vpn_android_phase_0_progressive_rollout_155.branch
     ]
     filters:
-      vpn_android_phase_0_progressive_rollout_155.metric: 'retained'
+      vpn_android_phase_0_progressive_rollout_155.metric: 'uri_count'
       vpn_android_phase_0_progressive_rollout_155.statistic: mean
     row: 30
     col: 0

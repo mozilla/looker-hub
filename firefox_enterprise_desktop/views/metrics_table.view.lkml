@@ -19607,6 +19607,19 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__sum {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: HTTP Altsvc H3 Expired Staleness"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__values {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__http_subitem_first_byte_latency_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.http_subitem_first_byte_latency_time.sum ;;
     type: number
@@ -39609,6 +39622,20 @@ view: metrics_table__metrics__timing_distribution__history_sidebar_lastvisited_t
 }
 
 view: metrics_table__metrics__timing_distribution__http3_timer_delayed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__http_altsvc_h3_expired_staleness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

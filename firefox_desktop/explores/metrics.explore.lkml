@@ -3213,6 +3213,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_unifiedsearchbutton_picked}) AS metrics__metrics__labeled_counter__urlbar_unifiedsearchbutton_picked ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_unifiedsearchbutton_picked.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__urlbar_zeroprefix2_abandonment {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_zeroprefix2_abandonment}) AS metrics__metrics__labeled_counter__urlbar_zeroprefix2_abandonment ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_zeroprefix2_abandonment.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_zeroprefix2_engagement {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_zeroprefix2_engagement}) AS metrics__metrics__labeled_counter__urlbar_zeroprefix2_engagement ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_zeroprefix2_engagement.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__urlbar_zeroprefix2_exposure {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlbar_zeroprefix2_exposure}) AS metrics__metrics__labeled_counter__urlbar_zeroprefix2_exposure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlbar_zeroprefix2_exposure.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__urlclassifier_global_cache_hit {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__urlclassifier_global_cache_hit}) AS metrics__metrics__labeled_counter__urlclassifier_global_cache_hit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__urlclassifier_global_cache_hit.document_id} ;;
