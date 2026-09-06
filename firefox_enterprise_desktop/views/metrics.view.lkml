@@ -18467,6 +18467,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__sum {
+    label: "HTTP: Altsvc H3 Expired Staleness Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.sum ;;
+    type: number
+    group_label: "HTTP"
+    group_item_label: "Altsvc H3 Expired Staleness Sum"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP: Altsvc H3 Expired Staleness Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/http_altsvc_h3_expired_staleness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When an expired HTTP/3 Alt-Svc mapping is discarded on lookup, how long past its expiry (TTL) it was, i.e. how stale the discarded mapping was.
+"
+  }
+
   dimension: metrics__labeled_counter__http_altsvc_mapping_changed_target {
     label: "HTTP: Altsvc Mapping Changed Target"
     hidden: yes
@@ -84491,6 +84509,20 @@ view: metrics__metrics__timing_distribution__history_sidebar_lastvisited_tree_qu
 }
 
 view: metrics__metrics__timing_distribution__http3_timer_delayed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__http_altsvc_h3_expired_staleness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
