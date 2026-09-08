@@ -475,6 +475,14 @@ view: new_profile_table {
     group_item_label: "Installation First Seen Silent"
   }
 
+  dimension: metrics__boolean__profiles_active {
+    sql: ${TABLE}.metrics.boolean.profiles_active ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Active"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -524,6 +532,14 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Browser Engagement Profile Count"
+  }
+
+  dimension: metrics__quantity__profiles_profile_count {
+    sql: ${TABLE}.metrics.quantity.profiles_profile_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Profiles Profile Count"
   }
 
   dimension: metrics__quantity__startup_profile_count {

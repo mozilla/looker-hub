@@ -7401,6 +7401,42 @@ Previously collected in the \"main\" ping's `simpleMeasurements`.
 "
   }
 
+  dimension: metrics__boolean__profiles_active {
+    label: "Profiles: Active"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.profiles_active ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Active"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the selectable profiles feature has been activated by the user creating profiles. Set during initialization.
+"
+  }
+
+  dimension: metrics__quantity__profiles_profile_count {
+    label: "Profiles: Profile Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_profile_count ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Profile Count"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Profile Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_profile_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of selectable profiles in the current profile group. Updated during initialization and whenever the database changes.
+"
+  }
+
   dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
     label: "Protocolhandler Mailto: Handler Prompt Shown"
     hidden: yes
@@ -27626,6 +27662,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Counts cookies loaded from the DB grouped by validation result.
+"
+  }
+
+  dimension: metrics__boolean__networking_cookie_file_present {
+    label: "Networking: Cookie File Present"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.networking_cookie_file_present ;;
+    type: yesno
+    group_label: "Networking"
+    group_item_label: "Cookie File Present"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Cookie File Present"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_file_present"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether this profile holds at least one cookie set by a file:// URL document.
 "
   }
 

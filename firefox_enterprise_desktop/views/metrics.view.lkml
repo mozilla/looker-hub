@@ -9834,7 +9834,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__urlbar_zeroprefix_abandonment {
     label: "Urlbar Zeroprefix: Abandonment"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_abandonment ;;
     type: number
     group_label: "Urlbar Zeroprefix"
@@ -9852,7 +9852,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__urlbar_zeroprefix_engagement {
     label: "Urlbar Zeroprefix: Engagement"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_engagement ;;
     type: number
     group_label: "Urlbar Zeroprefix"
@@ -9870,7 +9870,7 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
 
   dimension: metrics__counter__urlbar_zeroprefix_exposure {
     label: "Urlbar Zeroprefix: Exposure"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.urlbar_zeroprefix_exposure ;;
     type: number
     group_label: "Urlbar Zeroprefix"
@@ -9883,6 +9883,57 @@ This metric was generated to correspond to the Legacy Telemetry exponential hist
     }
 
     description: "Counts how many times the zero-prefix urlbar results panel was shown to the user. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.zeroprefix.exposure.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_abandonment {
+    label: "Urlbar Zeroprefix2: Abandonment"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_abandonment ;;
+    group_label: "Urlbar Zeroprefix2"
+    group_item_label: "Abandonment"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix2: Abandonment"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/urlbar_zeroprefix2_abandonment"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times the zero-prefix results view was abandoned, labeled by the search access point it was shown for.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_engagement {
+    label: "Urlbar Zeroprefix2: Engagement"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_engagement ;;
+    group_label: "Urlbar Zeroprefix2"
+    group_item_label: "Engagement"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix2: Engagement"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/urlbar_zeroprefix2_engagement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times a result was picked in the zero-prefix results view, labeled by the search access point it was shown for.
+"
+  }
+
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_exposure {
+    label: "Urlbar Zeroprefix2: Exposure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_exposure ;;
+    group_label: "Urlbar Zeroprefix2"
+    group_item_label: "Exposure"
+
+    link: {
+      label: "Glean Dictionary reference for Urlbar Zeroprefix2: Exposure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/urlbar_zeroprefix2_exposure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times the zero-prefix results view was shown to the user, labeled by the search access point it was shown for.
 "
   }
 
@@ -23926,6 +23977,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Counts cookies loaded from the DB grouped by validation result.
+"
+  }
+
+  dimension: metrics__boolean__networking_cookie_file_present {
+    label: "Networking: Cookie File Present"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.networking_cookie_file_present ;;
+    type: yesno
+    group_label: "Networking"
+    group_item_label: "Cookie File Present"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Cookie File Present"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/networking_cookie_file_present"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether this profile holds at least one cookie set by a file:// URL document.
 "
   }
 
@@ -67080,6 +67149,129 @@ view: metrics__metrics__labeled_counter__urlbar_searchmode_typed {
 
 view: metrics__metrics__labeled_counter__urlbar_unifiedsearchbutton_picked {
   label: "Urlbar Unifiedsearchbutton: Picked"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_zeroprefix2_abandonment {
+  label: "Urlbar Zeroprefix2: Abandonment"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_zeroprefix2_engagement {
+  label: "Urlbar Zeroprefix2: Engagement"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__urlbar_zeroprefix2_exposure {
+  label: "Urlbar Zeroprefix2: Exposure"
 
   dimension: document_id {
     type: string

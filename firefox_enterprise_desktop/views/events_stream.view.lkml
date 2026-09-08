@@ -1043,6 +1043,14 @@ view: events_stream {
     group_item_label: "Matches Pinned"
   }
 
+  dimension: extras__boolean__native_theme {
+    sql: ${TABLE}.extras.boolean.native_theme ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Boolean"
+    group_item_label: "Native Theme"
+  }
+
   dimension: extras__boolean__new_window {
     sql: ${TABLE}.extras.boolean.new_window ;;
     type: yesno
@@ -3369,6 +3377,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Alt Text Type"
+  }
+
+  dimension: extras__string__appearance {
+    sql: ${TABLE}.extras.string.appearance ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Appearance"
   }
 
   dimension: extras__string__attribute_name {
@@ -5931,6 +5947,14 @@ view: events_stream {
     group_item_label: "Prompt Version"
   }
 
+  dimension: extras__string__property {
+    sql: ${TABLE}.extras.string.property ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Property"
+  }
+
   dimension: extras__string__protocol {
     sql: ${TABLE}.extras.string.protocol ;;
     type: string
@@ -6817,6 +6841,14 @@ view: events_stream {
     suggest_persist_for: "24 hours"
     group_label: "Extras: String"
     group_item_label: "Text Source"
+  }
+
+  dimension: extras__string__theme_id {
+    sql: ${TABLE}.extras.string.theme_id ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Theme ID"
   }
 
   dimension: extras__string__threshold {

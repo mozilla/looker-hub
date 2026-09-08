@@ -1019,6 +1019,14 @@ view: metrics_table {
     group_item_label: "Network Apple Fast Datapath Used"
   }
 
+  dimension: metrics__boolean__networking_cookie_file_present {
+    sql: ${TABLE}.metrics.boolean.networking_cookie_file_present ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Networking Cookie File Present"
+  }
+
   dimension: metrics__boolean__networking_http3_enabled {
     sql: ${TABLE}.metrics.boolean.networking_http3_enabled ;;
     type: yesno
@@ -12740,6 +12748,21 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     hidden: yes
     description: "Counts how many times Unified Search Button items were selected. The key is followings. * builtin_search: Builtin search engine. * addon_search: Addon search engine. * local_search: Local search engine such as Bookmarks. * settings: Settings menu. This metric was generated to correspond to the Legacy Telemetry scalar urlbar.unifiedsearchbutton.picked.
 "
+  }
+
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_abandonment {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_abandonment ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_engagement {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_engagement ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__urlbar_zeroprefix2_exposure {
+    sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_exposure ;;
+    hidden: yes
   }
 
   dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {
