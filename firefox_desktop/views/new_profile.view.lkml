@@ -271,6 +271,42 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__boolean__profiles_active {
+    label: "Profiles: Active"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.profiles_active ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Active"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the selectable profiles feature has been activated by the user creating profiles. Set during initialization.
+"
+  }
+
+  dimension: metrics__quantity__profiles_profile_count {
+    label: "Profiles: Profile Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_profile_count ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Profile Count"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Profile Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/profiles_profile_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of selectable profiles in the current profile group. Updated during initialization and whenever the database changes.
+"
+  }
+
   dimension: metrics__labeled_counter__profiles_creation_place {
     label: "Profiles: Creation Place"
     hidden: yes

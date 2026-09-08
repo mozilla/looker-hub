@@ -1083,6 +1083,14 @@ view: metrics_table {
     group_item_label: "Network Apple Fast Datapath Used"
   }
 
+  dimension: metrics__boolean__networking_cookie_file_present {
+    sql: ${TABLE}.metrics.boolean.networking_cookie_file_present ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Networking Cookie File Present"
+  }
+
   dimension: metrics__boolean__networking_http3_enabled {
     sql: ${TABLE}.metrics.boolean.networking_http3_enabled ;;
     type: yesno
@@ -1225,6 +1233,14 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Primary Password Enabled"
+  }
+
+  dimension: metrics__boolean__profiles_active {
+    sql: ${TABLE}.metrics.boolean.profiles_active ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Active"
   }
 
   dimension: metrics__boolean__pwmgr_os_auth_enabled {
@@ -21303,6 +21319,14 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Profiles First Use Date"
+  }
+
+  dimension: metrics__quantity__profiles_profile_count {
+    sql: ${TABLE}.metrics.quantity.profiles_profile_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Profiles Profile Count"
   }
 
   dimension: metrics__quantity__profiles_recovered_from_backup {
