@@ -483,6 +483,30 @@ view: new_profile_table {
     group_item_label: "Profiles Active"
   }
 
+  dimension: metrics__boolean__profiles_path_in_profiles_ini {
+    sql: ${TABLE}.metrics.boolean.profiles_path_in_profiles_ini ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Path In Profiles Ini"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_in_profiles_ini {
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_in_profiles_ini ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Store ID In Profiles Ini"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_mismatch {
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_mismatch ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Store ID Mismatch"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -524,6 +548,11 @@ existing legacy profile was detected. The `xdg_default` accounts for lack
 of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
 `xdg_config` refers to existing `XDG_CONFIG_HOME`.
 "
+  }
+
+  dimension: metrics__object__profiles_other_profiles {
+    sql: ${TABLE}.metrics.object.profiles_other_profiles ;;
+    hidden: yes
   }
 
   dimension: metrics__quantity__browser_engagement_profile_count {
@@ -604,6 +633,14 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
     suggest_persist_for: "24 hours"
     group_label: "Metrics: String"
     group_item_label: "Startup Profile Selection Reason"
+  }
+
+  dimension: metrics__string__startup_profiles_ini_status {
+    sql: ${TABLE}.metrics.string.startup_profiles_ini_status ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: String"
+    group_item_label: "Startup Profiles Ini Status"
   }
 
   dimension: metrics__string_list__glean_ping_uploader_capabilities {

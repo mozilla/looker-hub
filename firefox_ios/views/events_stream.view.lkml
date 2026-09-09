@@ -795,6 +795,14 @@ view: events_stream {
     group_item_label: "Connection Type"
   }
 
+  dimension: extras__string__dashboard_state {
+    sql: ${TABLE}.extras.string.dashboard_state ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: String"
+    group_item_label: "Dashboard State"
+  }
+
   dimension: extras__string__device_language {
     sql: ${TABLE}.extras.string.device_language ;;
     type: string

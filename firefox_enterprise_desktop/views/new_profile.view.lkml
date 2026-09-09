@@ -271,6 +271,42 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__boolean__profiles_active {
+    label: "Profiles: Active"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.profiles_active ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Active"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the selectable profiles feature has been activated by the user creating profiles. Set during initialization.
+"
+  }
+
+  dimension: metrics__quantity__profiles_profile_count {
+    label: "Profiles: Profile Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_profile_count ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Profile Count"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Profile Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_profile_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of selectable profiles in the current profile group. Updated during initialization and whenever the database changes.
+"
+  }
+
   dimension: metrics__labeled_counter__profiles_creation_place {
     label: "Profiles: Creation Place"
     hidden: yes
@@ -289,6 +325,24 @@ usage of `MOZ_LEGACY_HOME=1` while `legacy_existing` is for the case an
 existing legacy profile was detected. The `xdg_default` accounts for lack
 of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
 `xdg_config` refers to existing `XDG_CONFIG_HOME`.
+"
+  }
+
+  dimension: metrics__boolean__profiles_path_in_profiles_ini {
+    label: "Profiles: Path In Profiles Ini"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.profiles_path_in_profiles_ini ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Path In Profiles Ini"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Path In Profiles Ini"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_path_in_profiles_ini"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the current profile's directory is listed in profiles.ini.
 "
   }
 
@@ -347,6 +401,42 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
     A profile created for a background task
   unknown
     The profile was created without supplying a source
+"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_in_profiles_ini {
+    label: "Profiles: Store ID In Profiles Ini"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_in_profiles_ini ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Store ID In Profiles Ini"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Store ID In Profiles Ini"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_store_id_in_profiles_ini"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the current profile's store ID is listed in profiles.ini.
+"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_mismatch {
+    label: "Profiles: Store ID Mismatch"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_mismatch ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Store ID Mismatch"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Store ID Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_store_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the store ID from ProfilesDatastoreService differs from the store ID on the current profile in profiles.ini.
 "
   }
 
@@ -434,6 +524,38 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
   default:
     The default profile was selected as normal.
 This metric was generated to correspond to the Legacy Telemetry scalar startup.profile_selection_reason.
+"
+  }
+
+  dimension: metrics__string__startup_profiles_ini_status {
+    label: "Startup: Profiles Ini Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.startup_profiles_ini_status ;;
+    type: string
+    group_label: "Startup"
+    group_item_label: "Profiles Ini Status"
+
+    link: {
+      label: "Glean Dictionary reference for Startup: Profiles Ini Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/startup_profiles_ini_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the status of parsing the profiles.ini file during startup:
+  ok:
+    The ini file parsed correctly
+  ini-failed:
+    Parsing the ini file completely failed, normally this would indicate
+    an out of memory issue.
+  ini-error:
+    The ini parser recorded some kind of failure during parsing
+  missing-name:
+    A profile section was missing the name
+  missing-path:
+    A profile section was missing the path
+  invalid-path:
+    A profile section's path was invalid
+Note that if multiple profile sections contain errors then only the last will be reported.
 "
   }
 
