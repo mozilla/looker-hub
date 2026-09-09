@@ -1163,6 +1163,38 @@ view: metrics_table {
     group_item_label: "Primary Password Enabled"
   }
 
+  dimension: metrics__boolean__profiles_active {
+    sql: ${TABLE}.metrics.boolean.profiles_active ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Active"
+  }
+
+  dimension: metrics__boolean__profiles_path_in_profiles_ini {
+    sql: ${TABLE}.metrics.boolean.profiles_path_in_profiles_ini ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Path In Profiles Ini"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_in_profiles_ini {
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_in_profiles_ini ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Store ID In Profiles Ini"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_mismatch {
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_mismatch ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Store ID Mismatch"
+  }
+
   dimension: metrics__boolean__pwmgr_os_auth_enabled {
     sql: ${TABLE}.metrics.boolean.pwmgr_os_auth_enabled ;;
     type: yesno
@@ -16193,6 +16225,14 @@ Previously reported in \"main\" ping `simpleMeasurements`.
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Quantity"
     group_item_label: "Profiles First Use Date"
+  }
+
+  dimension: metrics__quantity__profiles_profile_count {
+    sql: ${TABLE}.metrics.quantity.profiles_profile_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Quantity"
+    group_item_label: "Profiles Profile Count"
   }
 
   dimension: metrics__quantity__profiles_recovered_from_backup {

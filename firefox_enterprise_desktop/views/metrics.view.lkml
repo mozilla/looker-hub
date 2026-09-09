@@ -6661,6 +6661,42 @@ Previously collected in the \"main\" ping's `simpleMeasurements`.
 "
   }
 
+  dimension: metrics__boolean__profiles_active {
+    label: "Profiles: Active"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.profiles_active ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Active"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the selectable profiles feature has been activated by the user creating profiles. Set during initialization.
+"
+  }
+
+  dimension: metrics__quantity__profiles_profile_count {
+    label: "Profiles: Profile Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.profiles_profile_count ;;
+    type: number
+    group_label: "Profiles"
+    group_item_label: "Profile Count"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Profile Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_profile_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of selectable profiles in the current profile group. Updated during initialization and whenever the database changes.
+"
+  }
+
   dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
     label: "Protocolhandler Mailto: Handler Prompt Shown"
     hidden: yes
@@ -18520,7 +18556,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 
   dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__sum {
     label: "HTTP: Altsvc H3 Expired Staleness Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.sum ;;
     type: number
     group_label: "HTTP"
@@ -29670,6 +29706,24 @@ e.g. 16446
 "
   }
 
+  dimension: metrics__boolean__profiles_path_in_profiles_ini {
+    label: "Profiles: Path In Profiles Ini"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.profiles_path_in_profiles_ini ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Path In Profiles Ini"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Path In Profiles Ini"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_path_in_profiles_ini"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the current profile's directory is listed in profiles.ini.
+"
+  }
+
   dimension: metrics__quantity__profiles_recovered_from_backup {
     label: "Profiles: Recovered From Backup"
     hidden: no
@@ -29767,6 +29821,42 @@ e.g. 16446
     A profile created for a background task
   unknown
     The profile was created without supplying a source
+"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_in_profiles_ini {
+    label: "Profiles: Store ID In Profiles Ini"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_in_profiles_ini ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Store ID In Profiles Ini"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Store ID In Profiles Ini"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_store_id_in_profiles_ini"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the current profile's store ID is listed in profiles.ini.
+"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_mismatch {
+    label: "Profiles: Store ID Mismatch"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_mismatch ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Store ID Mismatch"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Store ID Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_enterprise_desktop/metrics/profiles_store_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the store ID from ProfilesDatastoreService differs from the store ID on the current profile in profiles.ini.
 "
   }
 

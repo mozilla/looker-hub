@@ -2512,6 +2512,14 @@ view: events_stream_table {
     group_item_label: "Previous"
   }
 
+  dimension: extras__quantity__profile_count {
+    sql: ${TABLE}.extras.quantity.profile_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Extras: Quantity"
+    group_item_label: "Profile Count"
+  }
+
   dimension: extras__quantity__prompts {
     sql: ${TABLE}.extras.quantity.prompts ;;
     type: number
