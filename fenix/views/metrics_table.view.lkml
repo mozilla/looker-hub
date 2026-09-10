@@ -963,6 +963,14 @@ view: metrics_table {
     group_item_label: "Network Apple Fast Datapath Used"
   }
 
+  dimension: metrics__boolean__networking_cookie_file_present {
+    sql: ${TABLE}.metrics.boolean.networking_cookie_file_present ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Networking Cookie File Present"
+  }
+
   dimension: metrics__boolean__networking_http3_enabled {
     sql: ${TABLE}.metrics.boolean.networking_http3_enabled ;;
     type: yesno
@@ -1193,6 +1201,30 @@ view: metrics_table {
     suggest_persist_for: "24 hours"
     group_label: "Metrics: Boolean"
     group_item_label: "Preferences Voice Search Enabled"
+  }
+
+  dimension: metrics__boolean__profiles_path_in_profiles_ini {
+    sql: ${TABLE}.metrics.boolean.profiles_path_in_profiles_ini ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Path In Profiles Ini"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_in_profiles_ini {
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_in_profiles_ini ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Store ID In Profiles Ini"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_mismatch {
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_mismatch ;;
+    type: yesno
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Boolean"
+    group_item_label: "Profiles Store ID Mismatch"
   }
 
   dimension: metrics__boolean__pull_to_refresh_in_browser_enabled {
@@ -12030,7 +12062,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_email_tracker_count ;;
     hidden: yes
     description: "A count of the classified email trackers. ('base_normal' = The classified email tracker is in base category and loaded under a normal site, 'content_normal' = The classified email tracker is in content category and loaded under a normal site, 'base_email_webapp' = The classified email tracker is in base category and loaded under a known email webapp, 'content_email_webapp' = The classified email tracker is in content category and loaded under a known email webapp.)
-This metric was generated to correspond to the Legacy Telemetry categorical histogram EMAIL_TRACKER_COUNT.
 "
   }
 
@@ -12295,7 +12326,6 @@ This is to keep track of the amount of possible breakage that is occuring due to
     sql: ${TABLE}.metrics.labeled_counter.dom_blink_filesystem_used ;;
     hidden: yes
     description: "Webkit/Blink filesystem used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram BLINK_FILESYSTEM_USED.
 "
   }
 
@@ -12341,7 +12371,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.dom_webkit_directory_used ;;
     hidden: yes
     description: "HTMLInputElement.webkitdirectory attribute used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBKIT_DIRECTORY_USED.
 "
   }
 
@@ -29050,6 +29079,72 @@ Previously reported in \"main\" ping `simpleMeasurements`.
 
   dimension: metrics__timing_distribution__http3_timer_delayed__values {
     sql: ${TABLE}.metrics.timing_distribution.http3_timer_delayed.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.bucket_count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: HTTP Altsvc H3 Expired Staleness"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__count {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.count ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: HTTP Altsvc H3 Expired Staleness"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.histogram_type ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: HTTP Altsvc H3 Expired Staleness"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.overflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: HTTP Altsvc H3 Expired Staleness"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__range {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__sum {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.sum ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: HTTP Altsvc H3 Expired Staleness"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.time_unit ;;
+    type: string
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: HTTP Altsvc H3 Expired Staleness"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.underflow ;;
+    type: number
+    suggest_persist_for: "24 hours"
+    group_label: "Metrics: Timing Distribution: HTTP Altsvc H3 Expired Staleness"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__values {
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.values ;;
     hidden: yes
   }
 
@@ -69923,6 +70018,20 @@ view: metrics_table__metrics__timing_distribution__gpu_process_launch_time__valu
 }
 
 view: metrics_table__metrics__timing_distribution__http3_timer_delayed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__http_altsvc_h3_expired_staleness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
