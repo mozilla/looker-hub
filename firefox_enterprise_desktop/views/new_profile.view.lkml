@@ -330,7 +330,7 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
 
   dimension: metrics__boolean__profiles_path_in_profiles_ini {
     label: "Profiles: Path In Profiles Ini"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.profiles_path_in_profiles_ini ;;
     type: yesno
     group_label: "Profiles"
@@ -406,7 +406,7 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
 
   dimension: metrics__boolean__profiles_store_id_in_profiles_ini {
     label: "Profiles: Store ID In Profiles Ini"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.profiles_store_id_in_profiles_ini ;;
     type: yesno
     group_label: "Profiles"
@@ -424,7 +424,7 @@ of `XDG_CONFIG_HOME` value defaulting to `$HOME/.config` when
 
   dimension: metrics__boolean__profiles_store_id_mismatch {
     label: "Profiles: Store ID Mismatch"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.profiles_store_id_mismatch ;;
     type: yesno
     group_label: "Profiles"

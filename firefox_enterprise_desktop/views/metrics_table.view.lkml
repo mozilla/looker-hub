@@ -10129,7 +10129,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     sql: ${TABLE}.metrics.labeled_counter.contentblocking_email_tracker_count ;;
     hidden: yes
     description: "A count of the classified email trackers. ('base_normal' = The classified email tracker is in base category and loaded under a normal site, 'content_normal' = The classified email tracker is in content category and loaded under a normal site, 'base_email_webapp' = The classified email tracker is in base category and loaded under a known email webapp, 'content_email_webapp' = The classified email tracker is in content category and loaded under a known email webapp.)
-This metric was generated to correspond to the Legacy Telemetry categorical histogram EMAIL_TRACKER_COUNT.
 "
   }
 
@@ -10375,7 +10374,6 @@ This is to keep track of the amount of possible breakage that is occuring due to
     sql: ${TABLE}.metrics.labeled_counter.dom_blink_filesystem_used ;;
     hidden: yes
     description: "Webkit/Blink filesystem used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram BLINK_FILESYSTEM_USED.
 "
   }
 
@@ -10421,7 +10419,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     sql: ${TABLE}.metrics.labeled_counter.dom_webkit_directory_used ;;
     hidden: yes
     description: "HTMLInputElement.webkitdirectory attribute used
-This metric was generated to correspond to the Legacy Telemetry boolean histogram WEBKIT_DIRECTORY_USED.
 "
   }
 
@@ -12785,16 +12782,22 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
   dimension: metrics__labeled_counter__urlbar_zeroprefix2_abandonment {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_abandonment ;;
     hidden: yes
+    description: "Counts how many times the zero-prefix results view was abandoned, labeled by the search access point it was shown for.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_zeroprefix2_engagement {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_engagement ;;
     hidden: yes
+    description: "Counts how many times a result was picked in the zero-prefix results view, labeled by the search access point it was shown for.
+"
   }
 
   dimension: metrics__labeled_counter__urlbar_zeroprefix2_exposure {
     sql: ${TABLE}.metrics.labeled_counter.urlbar_zeroprefix2_exposure ;;
     hidden: yes
+    description: "Counts how many times the zero-prefix results view was shown to the user, labeled by the search access point it was shown for.
+"
   }
 
   dimension: metrics__labeled_counter__urlclassifier_global_cache_hit {

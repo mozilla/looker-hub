@@ -6472,7 +6472,6 @@ This metric was generated to correspond to the Legacy Telemetry categorical hist
     }
 
     description: "True if tracking protection is enabled globally at startup.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_ENABLED.
 "
   }
 
@@ -6490,7 +6489,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "True if tracking protection in Private Browsing mode is disabled at startup.
-This metric was generated to correspond to the Legacy Telemetry boolean histogram TRACKING_PROTECTION_PBM_DISABLED.
 "
   }
 
@@ -6509,7 +6507,6 @@ This metric was generated to correspond to the Legacy Telemetry boolean histogra
     }
 
     description: "Status of the shield icon for each top-level pageload (outside of Private Browsing mode) when tracking protection is enabled (0 = there was a page load, this is used as a baseline, 1 = shield crossed out because CB was disabled on this page by the user, 2 = shield shown because some content was blocked)
-This metric was generated to correspond to the Legacy Telemetry enumerated histogram TRACKING_PROTECTION_SHIELD.
 "
   }
 
@@ -13524,6 +13521,24 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
 "
   }
 
+  dimension: metrics__timing_distribution__http_altsvc_h3_expired_staleness__sum {
+    label: "HTTP: Altsvc H3 Expired Staleness Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.http_altsvc_h3_expired_staleness.sum ;;
+    type: number
+    group_label: "HTTP"
+    group_item_label: "Altsvc H3 Expired Staleness Sum"
+
+    link: {
+      label: "Glean Dictionary reference for HTTP: Altsvc H3 Expired Staleness Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/http_altsvc_h3_expired_staleness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When an expired HTTP/3 Alt-Svc mapping is discarded on lookup, how long past its expiry (TTL) it was, i.e. how stale the discarded mapping was.
+"
+  }
+
   dimension: metrics__labeled_counter__http_altsvc_mapping_changed_target {
     label: "HTTP: Altsvc Mapping Changed Target"
     hidden: yes
@@ -19541,6 +19556,24 @@ This metric was generated to correspond to the Legacy Telemetry scalar networkin
     }
 
     description: "Counts cookies loaded from the DB grouped by validation result.
+"
+  }
+
+  dimension: metrics__boolean__networking_cookie_file_present {
+    label: "Networking: Cookie File Present"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.networking_cookie_file_present ;;
+    type: yesno
+    group_label: "Networking"
+    group_item_label: "Cookie File Present"
+
+    link: {
+      label: "Glean Dictionary reference for Networking: Cookie File Present"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_file_present"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether this profile holds at least one cookie set by a file:// URL document.
 "
   }
 
@@ -25646,6 +25679,24 @@ e.g. 16446
 "
   }
 
+  dimension: metrics__boolean__profiles_path_in_profiles_ini {
+    label: "Profiles: Path In Profiles Ini"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.profiles_path_in_profiles_ini ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Path In Profiles Ini"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Path In Profiles Ini"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/profiles_path_in_profiles_ini"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the current profile's directory is listed in profiles.ini.
+"
+  }
+
   dimension: metrics__quantity__profiles_recovered_from_backup {
     label: "Profiles: Recovered From Backup"
     hidden: no
@@ -25743,6 +25794,42 @@ e.g. 16446
     A profile created for a background task
   unknown
     The profile was created without supplying a source
+"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_in_profiles_ini {
+    label: "Profiles: Store ID In Profiles Ini"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_in_profiles_ini ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Store ID In Profiles Ini"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Store ID In Profiles Ini"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/profiles_store_id_in_profiles_ini"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the current profile's store ID is listed in profiles.ini.
+"
+  }
+
+  dimension: metrics__boolean__profiles_store_id_mismatch {
+    label: "Profiles: Store ID Mismatch"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.profiles_store_id_mismatch ;;
+    type: yesno
+    group_label: "Profiles"
+    group_item_label: "Store ID Mismatch"
+
+    link: {
+      label: "Glean Dictionary reference for Profiles: Store ID Mismatch"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/profiles_store_id_mismatch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the store ID from ProfilesDatastoreService differs from the store ID on the current profile in profiles.ini.
 "
   }
 
@@ -27175,7 +27262,7 @@ This metric was generated to correspond to the Legacy Telemetry enumerated histo
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. not_top_level means the error document was not the top-level document (a DNS failure inside an embedded document on a page that loaded fine), so no CTA was offered; it is evaluated before the failed URL is looked at, which is why such a load can never appear under keywords_found, no_path or no_meaningful_keywords. When computing shown-rate or click-through rate, exclude not_top_level from the denominator: it is a scope exclusion, not a failure to find keywords. Records only the reason label, never content.
+    description: "Why the online dnsNotFound Search CTA reached its action, recorded once per eligible page load, paired with search_cta_action. keywords_found is a keyword query; no_path and no_meaningful_keywords fall back to the host; host_unusable and search_unavailable show no CTA. engine_not_general means a default search engine exists but is special-purpose (e.g. Wikipedia), so the CTA is not shown. connectivity_unconfirmed means we could not confirm we were online at page load: the captive-portal reading was stale and the authoritative re-check came back offline/captive or timed out, so no CTA was shown. Connectivity dropping *after* the CTA was shown is a different thing and is counted by search_cta_click_aborted, not here. decision_timed_out means the decision did not finish inside browser.netError.searchCTA.decisionTimeoutMs, the deadline the page waits out before rendering without a CTA, so it was abandoned and no CTA was shown. It absorbs most of what used to be counted under connectivity_unconfirmed. The stale-reading re-check is the slowest step here and rarely finishes inside that deadline. not_top_level means the error document was not the top-level document (a DNS failure inside an embedded document on a page that loaded fine), so no CTA was offered; it is evaluated before the failed URL is looked at, which is why such a load can never appear under keywords_found, no_path or no_meaningful_keywords. When computing shown-rate or click-through rate, exclude not_top_level from the denominator: it is a scope exclusion, not a failure to find keywords. Records only the reason label, never content.
 "
   }
 
@@ -81634,6 +81721,20 @@ view: metrics__metrics__timing_distribution__gpu_process_launch_time__values {
 }
 
 view: metrics__metrics__timing_distribution__http3_timer_delayed__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+    suggest_persist_for: "24 hours"
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+    suggest_persist_for: "24 hours"
+  }
+}
+
+view: metrics__metrics__timing_distribution__http_altsvc_h3_expired_staleness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
